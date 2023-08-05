@@ -1,0 +1,17 @@
+LICENSE,sha256=VTfU0Qt2uBtujf2LZESApLHvozL7sM22ESbFvnge97Q,6554
+_softfloat.cp37-win_amd64.pyd,sha256=hQCx1QAKyeZDdAHioH3BPrU3yVlTD4I3Youx6mHIfuk,237056
+_softfloat.py,sha256=6TDbJde1V-97bJbUTPQ0wMaOuTbAA7nXS2HNO-2vzDI,309
+softfloat.py,sha256=fVOFiWqHBBkbKZceN56XmoNQB5RQHHy7J4NnYVqNhNk,64341
+__pycache__/_softfloat.cpython-37.pyc,sha256=IZkTcrsTH_3uhihQtfHdjkXXvqJ-8Ky6jmJ0Y3rTuCk,437
+__pycache__/softfloat.cpython-37.pyc,sha256=rE6ercCyLACGu_-HYdLVDQwYAIZA0mrfR5VYju8gvnI,65852
+pymanylinuxdemo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pymanylinuxdemo/__pycache__/__init__.cpython-37.pyc,sha256=9YtCRGOLfUAQ1QVXkzMJ1EGyJKxJ46Qx2MDrdW85uCQ,140
+pymanylinuxdemo/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pymanylinuxdemo/tests/test_extension.py,sha256=MZ6A9RC3bi6n6LFLqRlgbNS022ISInQYXgxZAFB72eg,425
+pymanylinuxdemo/tests/__pycache__/__init__.cpython-37.pyc,sha256=Dx73A9yHSai3Ppq7ZwsPzq_-l1vce-xU9ru6rXDQd7g,146
+pymanylinuxdemo/tests/__pycache__/test_extension.cpython-37.pyc,sha256=nDdd9w2xcwEYLE87WFtGoOZc6UjO8_54vLyJC9OfLo0,1054
+softfloat-0.1.4.dist-info/METADATA,sha256=VvE0SVP3WpWmaBVLiAfig4JTmVg30DVgpI54stoZ71A,469
+softfloat-0.1.4.dist-info/RECORD,,
+softfloat-0.1.4.dist-info/WHEEL,sha256=FVIQ7Sl6OAwD8lpfM9QEIFZkmtUuELrElMAFFelWUUU,94
+softfloat-0.1.4.dist-info/native_libs.txt,sha256=uMd-ONNNveNi7NoS7pkwhGmzPC7czv-fmmIfGYWBcMw,31
+softfloat-0.1.4.dist-info/top_level.txt,sha256=VDo7vCIlKYHnBAO8Xh8G8ub5W9yw47IPncoyXcMlWuU,21
