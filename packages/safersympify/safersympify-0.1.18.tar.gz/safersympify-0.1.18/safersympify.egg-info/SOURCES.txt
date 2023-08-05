@@ -1,0 +1,9 @@
+README.md
+setup.py
+safersympify/__init__.py
+safersympify/safersympify.py
+safersympify.egg-info/PKG-INFO
+safersympify.egg-info/SOURCES.txt
+safersympify.egg-info/dependency_links.txt
+safersympify.egg-info/requires.txt
+safersympify.egg-info/top_level.txt
