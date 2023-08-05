@@ -1,0 +1,3 @@
+[console_scripts]
+mehrp = mehrp.__main__:main
+
