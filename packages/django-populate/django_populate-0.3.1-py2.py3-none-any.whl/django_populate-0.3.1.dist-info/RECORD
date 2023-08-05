@@ -1,0 +1,15 @@
+django_populate/__init__.py,sha256=hb4S3g7sr_mezARHQ40HHXOgzjnMg19Sm1jttcVA-oM,2905
+django_populate/guessers.py,sha256=c5V2f-20RYYJtrXQrwtkeVzxaLZEk0yz0I0Kgs4RwdU,1533
+django_populate/populator.py,sha256=4Jsv2bRWYnoq3Ebk7S_NnDJNeuxq9v1z5DIMP14KcA8,6663
+django_populate/urls.py,sha256=6DdEJm_9swVZEinRDc8Pm8derFG_8x-E2NIxTebAbR4,177
+django_populate/templatetags/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+django_populate/templatetags/fakers.py,sha256=HC6j93tCd3V-h-ar3IJJhUc_piygNF9oVEXoXLv8FZU,4391
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/models.py,sha256=tDVa6Bxga4k5Eqa6ZIi-FE37xBmwVYlFCLIkfO3FQeU,1124
+tests/test_populate.py,sha256=DWKBL2rJVr7fGPsaELssLk_My7_V3G4_PsAyEip_oWc,6156
+tests/test_settings.py,sha256=6K3jVUhsoPbITMsADwQYTSidIIfIb7BLgBHXAz1QQ-U,849
+django_populate-0.3.1.dist-info/LICENSE.txt,sha256=4J9jS2A50x92q3lmNxLvWJzyj8DboAu0BDqteOHAhMg,1065
+django_populate-0.3.1.dist-info/METADATA,sha256=SNNJngw9bWqNiMwqMlpcKytrICgMjcQZJtd1vnfS3To,7124
+django_populate-0.3.1.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+django_populate-0.3.1.dist-info/top_level.txt,sha256=5R_XO1gMYR6rUrrdYrGscgxl1MnroeGkiV8CXp0Ccw0,22
+django_populate-0.3.1.dist-info/RECORD,,

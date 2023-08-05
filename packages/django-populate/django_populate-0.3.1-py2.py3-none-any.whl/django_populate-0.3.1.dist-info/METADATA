@@ -1,0 +1,209 @@
+Metadata-Version: 2.1
+Name: django-populate
+Version: 0.3.1
+Summary: Django-faker uses python-faker to generate test data for Django models and templates.
+Home-page: https://gitlab.com/solarliner/django-populate
+Author: SolarLiner
+Author-email: solarliner@gmail.com
+License: MIT
+Keywords: faker populate database fixtures data test django
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Widget Sets
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Framework :: Django
+Requires-Dist: django (==2.1.7)
+Requires-Dist: faker (==1.0.2)
+Requires-Dist: python-dateutil (==2.8.0)
+Requires-Dist: pytz (==2018.9)
+Requires-Dist: six (==1.12.0)
+Requires-Dist: text-unidecode (==1.2)
+
+Django Populate
+===============
+
+*Django Populate* uses the `faker`_ package to generate test data for Django models and templates.
+
+|pypi| |pipeline| |coverage| |windows_build| |downloads| |license|
+
+How to use
+----------
+
+To install Django Populate you can use pip::
+
+    pip install django-populate
+
+
+Configuration
+~~~~~~~~~~~~~
+
+In django application `settings.py`::
+
+    INSTALLED_APPS = (
+
+        # ...
+        'django_populate',
+    )
+
+    FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
+    FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
+
+
+Populating Django Models
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+*django-populate* provides an adapter for Django Models, for easy population of test databases.
+To populate with Model instances, create a new Populator class,
+then list the class and number of all of Models that must be generated. To launch the actual data population,
+call `execute()` method.
+
+Here is an example showing how to populate 5 `Game` and 10 `Player` objects::
+
+    from django_populate import Faker
+    # this Populator is only a function thats return a django_populate.populator.Populator instance
+    # correctly initialized with a faker.generator.Generator instance, configured as above
+    populator = Faker.getPopulator()
+
+    from myapp.models import Game, Player
+    populator.addEntity(Game,5)
+    populator.addEntity(Player,10)
+
+    insertedPks = populator.execute()
+
+The populator uses name and column type guessers to populate each column with relevant data.
+For instance, django-populate populates a column named `first_name` using the `firstName` formatter, and a column with
+a `datetime` instance using the `dateTime`.
+The resulting entities are therefore coherent. If django-populate misinterprets a column name, you can still specify a custom
+function to be used for populating a particular column, using the third argument to `addEntity()`::
+
+
+    populator.addEntity(Player, 10, {
+        'score':    lambda x: populator.generator.randomInt(0,1000),
+        'nickname': lambda x: populator.generator.email(),
+    })
+    populator.execute()
+
+Of course, django-populate does not populate autoincremented primary keys.
+In addition, `django_populate.populator.Populator.execute()` returns the list of inserted PKs, indexed by class::
+
+    print insertedPks
+    {
+        <class 'faker.django.tests.Player'>: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        <class 'faker.django.tests.Game'>: [1, 2, 3, 4, 5]
+    }
+
+In the previous example, the `Player` and `Game` models share a relationship. Since `Game` entities are populated first,
+Faker is smart enough to relate the populated `Player` entities to one of populated `Game` entities.
+
+
+Template tags and filter
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+django-populate offers a useful template tags and filters for interact with `PyFaker`_::
+
+    {% fake 'name' as myname %}{% fake 'dateTimeBetween' '-10d' as mydate %}
+
+    {{ myname|title }} - {{ mydate|date:"M Y" }}
+
+
+
+    {% load fakers %}
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <contacts>
+        {% fake 'randomInt' 10 20 as times %}
+        {% for i in 10|get_range %}
+        <contact firstName="{% fakestr 'firstName' %}" lastName="{% fakestr 'lastName' %}" email="{% fakestr 'email' %}"/>
+            <phone number="{% fakestr 'phoneNumber' %}"/>
+            {% if 'boolean'|fake:25 %}
+            <birth date="{{ 'dateTimeThisCentury'|fake|date:"D d M Y" }}" place="{% fakestr 'city' %}"/>
+            {% endif %}
+            <address>
+                <street>{% fakestr 'streetAddress' %}</street>
+                <city>{% fakestr 'city' %}</city>
+                <postcode>{% fakestr 'postcode' %}</postcode>
+                <state>{% fakestr 'state' %}</state>
+            </address>
+            <company name="{% fakestr 'company' %}" catchPhrase="{% fakestr 'catchPhrase' %}">
+            {% if 'boolean'|fake:25 %}
+                <offer>{% fakestr 'bs' %}</offer>
+            {% endif %}
+            {% if 'boolean'|fake:33 %}
+                <director name="{% fakestr 'name' %}" />
+            {% endif %}
+            </company>
+            {% if 'boolean'|fake:15 %}
+            <details>
+            <![CDATA[
+            {% fakestr 'text' 500 %}
+            ]]>
+            </details>
+            {% endif %}
+        </contact>
+        {% endfor %}
+    </contacts>
+
+
+Page preview
+~~~~~~~~~~~~
+Open `url.py` in your main application and add this url::
+
+    urlpatterns = patterns('',
+        ...
+        url(r'', include('django_populate.urls')),
+        ...
+    )
+
+http://127.0.0.1:8000/preview/ shows a faked browser windows, useful for screenshots.
+
+Running the Tests
+-----------------
+
+Run django tests in a django environment:
+
+    $ python runtests.py
+
+or if you have 'django_populate' in INSTALLED_APPS:
+
+    $ python manage.py test django_populate
+
+
+`Changelog`_
+---------
+Changelogs have moved to `their own files <CHANGELOG>`_.
+
+.. _faker: https://www.github.com/joke2k/faker/
+
+.. _Changelog: CHANGELOG
+
+.. |pypi| image:: https://img.shields.io/pypi/v/django-populate.svg
+    :target: https://pypi.python.org/pypi/django-populate
+    :alt: Latest version released on PyPi
+
+.. |pipeline| image:: https://gitlab.com/solarliner/django-populate/badges/develop/pipeline.svg
+	:target: https://gitlab.com/solarliner/django-populate/commits/develop
+	:alt: Pipeline status
+
+.. |coverage| image:: ttps://gitlab.com/solarliner/django-populate/badges/develop/coverage.svg
+	:target: https://gitlab.com/solarliner/django-populate/commits/develop
+	:alt: Coverage in % of total files
+
+.. |windows_build|  image:: https://img.shields.io/appveyor/ci/solarliner/django-populate.svg?label=windows%20build
+    :target: https://ci.appveyor.com/project/solarliner/django-populate
+    :alt: Build status of the master branch on Windows
+
+.. |downloads| image:: https://img.shields.io/pypi/dm/django-populate.svg
+    :target: https://pypi.python.org/pypi/django-populate
+    :alt: Monthly downloads
+
+.. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg
+    :target: LICENSE.txt
+    :alt: Package license
+
+
