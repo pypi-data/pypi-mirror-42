@@ -1,0 +1,10 @@
+README.md
+setup.py
+assignables/__init__.py
+assignables/assignables.py
+assignables.egg-info/PKG-INFO
+assignables.egg-info/SOURCES.txt
+assignables.egg-info/dependency_links.txt
+assignables.egg-info/top_level.txt
+tests/__init__.py
+tests/test.py
