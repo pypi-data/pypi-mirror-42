@@ -1,0 +1,4 @@
+setuptools
+Zope>=4.0b4
+ZServer>=4.0b1
+six
