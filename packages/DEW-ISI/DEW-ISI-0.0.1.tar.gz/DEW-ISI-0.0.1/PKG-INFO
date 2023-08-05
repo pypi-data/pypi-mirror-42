@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: DEW-ISI
+Version: 0.0.1
+Summary: Distributed Experiment Workflows
+Home-page: https://github.com/STEELISI/DEW
+Author: Genevieve Bartlett
+Author-email: bartlett@isi.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
