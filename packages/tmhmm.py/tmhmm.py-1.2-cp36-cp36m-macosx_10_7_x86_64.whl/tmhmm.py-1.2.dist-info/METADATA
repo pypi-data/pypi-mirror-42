@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: tmhmm.py
+Version: 1.2
+Summary: A transmembrane helix finder.
+Home-page: https://github.com/dansondergaard/tmhmm.py/
+Author: Dan Søndergaard
+Author-email: das@birc.au.dk
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.9)
+Provides-Extra: plotting
+Requires-Dist: matplotlib; extra == 'plotting'
+
+UNKNOWN
+
+
