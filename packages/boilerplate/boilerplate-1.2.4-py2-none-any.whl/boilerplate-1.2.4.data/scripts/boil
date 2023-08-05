@@ -1,0 +1,8 @@
+#!python
+# -*- coding: utf-8 -*-
+import sys
+
+from boilerplate import cmdline
+
+if __name__ == '__main__':
+    cmdline.handle(sys.argv[1:])
