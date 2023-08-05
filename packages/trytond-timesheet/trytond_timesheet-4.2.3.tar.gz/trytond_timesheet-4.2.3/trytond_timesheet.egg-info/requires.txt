@@ -1,0 +1,4 @@
+python-sql
+trytond_company<4.3,>=4.2
+trytond_company_work_time<4.3,>=4.2
+trytond<4.3,>=4.2
