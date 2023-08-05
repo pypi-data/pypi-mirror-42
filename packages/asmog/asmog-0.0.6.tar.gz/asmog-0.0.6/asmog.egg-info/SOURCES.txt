@@ -1,0 +1,12 @@
+LICENSE.md
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+asmog/__init__.py
+asmog.egg-info/PKG-INFO
+asmog.egg-info/SOURCES.txt
+asmog.egg-info/dependency_links.txt
+asmog.egg-info/not-zip-safe
+asmog.egg-info/requires.txt
+asmog.egg-info/top_level.txt

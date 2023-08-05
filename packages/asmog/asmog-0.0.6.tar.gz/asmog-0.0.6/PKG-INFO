@@ -1,0 +1,68 @@
+Metadata-Version: 1.2
+Name: asmog
+Version: 0.0.6
+Summary: Python API for Ampio Smog Sensors
+Home-page: https://github.com/kstaniek/python-ampio-smog-api
+Author: Klaudiusz Staniek
+Author-email: kstaniek@gmail.com
+License: Apache License 2.0
+Download-URL: https://github.com/kstaniek/python-ampio-smog-api/releases
+Description: Ampio Smog Sensors API Client
+        =============================
+        
+        .. image:: https://travis-ci.org/kstaniek/python-ampio-smog-api.svg?branch=master
+            :target: https://travis-ci.org/kstaniek/python-ampio-smog-api
+        
+        .. image:: https://coveralls.io/repos/github/kstaniek/python-ampio-smog-api/badge.svg?branch=master
+            :target: https://coveralls.io/github/kstaniek/python-ampio-smog-api?branch=master
+        
+        
+        
+        Python Client for interacting with `Ampio Smog Sensors <smog1.ampio.pl:3050>`_
+        
+        This module is not officially developed nor surrported by Ampio.
+        
+        Installation
+        ------------
+        
+        This module is available from the `Python Package Index <https://pypi.python.org/pypi>`_.
+        
+        .. code:: bash
+        
+            $ pip3 install asmog
+        
+        Usage
+        -----
+        
+        The file ``example.py`` contains an example about how to use this module.
+        
+        Development
+        -----------
+        
+        For development is recommended to use a ``venv``.
+        
+        .. code:: bash
+        
+            $ python3.6 -m venv .
+            $ source bin/activate
+            $ python3 setup.py develop
+        
+        License
+        -------
+        
+        ``asmog`` is licensed under Apache 2.0, for more details check LICENSE.
+        
+        
+        
+Keywords: home,automation
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Home Automation
+Requires-Python: >=3.5.0
