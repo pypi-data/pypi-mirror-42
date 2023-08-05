@@ -1,0 +1,3 @@
+[console_scripts]
+codestats = code_stat.cli:generate_code_statistics
+

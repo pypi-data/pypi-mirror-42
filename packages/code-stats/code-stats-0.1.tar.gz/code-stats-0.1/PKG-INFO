@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: code-stats
+Version: 0.1
+Summary: A command line tool to generate code statistics for a given directory.
+    These statistics include
+    1. Total Lines of Code.
+    2. Percentage wise break up of different languages used.
+Home-page: https://github.com/abhinavshaw1993/code-stat
+Author: Abhinav Shaw
+Author-email: abhinav.shaw1993@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
