@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: gym-xmoto
+Version: 0.1.1
+Summary: OpenAi's gym environment for Xmoto game - reinforcement learning research
+Home-page: https://github.com/louis030195/xmoto-gym
+Author: Louis Beaumont
+Author-email: louis.beaumont@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
