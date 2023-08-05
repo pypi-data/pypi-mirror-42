@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: logtree
+Version: 1.1
+Summary: Developer-friendly tree-structured command-line script tool
+Home-page: https://github.com/klira/pylogtree
+Author: Mikael Brockman
+Author-email: mikael@brockman.se
