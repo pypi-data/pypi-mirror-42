@@ -1,0 +1,10 @@
+biomaj_core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+biomaj_core/bmajindex.py,sha256=Qd13gFVq3V31Ksb_yY9nY5mWs2v_gknz4o7DYP8jFZ8,6663
+biomaj_core/config.py,sha256=_vqF7v3pEclwHMdNu0wr2hGAy22fJVzfA0DXsAIpHXA,20334
+biomaj_core/mimes-bio.txt,sha256=razRQ0R7-jMr7ZahtvwgOXhwdMWheNoLOC54ZxcZhPI,586
+biomaj_core/utils.py,sha256=y7uOHANOou_NfqYCV_pSdLk6uqIWu8LX-YbVoCz-_Ls,15511
+biomaj_core-3.0.15.dist-info/LICENSE,sha256=iEtDSVe6aIMRlZDRzkl_1ESpyLcDC278TeglQBxnJb8,34501
+biomaj_core-3.0.15.dist-info/METADATA,sha256=SCNWWSxJy9CUIiW7WBeW6YpFYCogUwIAeSDtKQri_Cg,2123
+biomaj_core-3.0.15.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+biomaj_core-3.0.15.dist-info/top_level.txt,sha256=PlknmCzfpBfV3kFzu1lNbtlKWLjCttcxvaSgjNehfOQ,12
+biomaj_core-3.0.15.dist-info/RECORD,,
