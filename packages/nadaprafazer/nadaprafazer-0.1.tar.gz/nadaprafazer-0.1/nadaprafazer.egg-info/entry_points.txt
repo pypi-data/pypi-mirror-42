@@ -1,0 +1,4 @@
+[console_scripts]
+nadaprafazer = nadaprafazer.cli:main
+nadaprafazer-tgwebhook = nadaprafazer.web:main
+
