@@ -1,0 +1,16 @@
+README.md
+setup.py
+taxbit_gemini/__init__.py
+taxbit_gemini/base_websocket.py
+taxbit_gemini/debugly.py
+taxbit_gemini/market_data_ws.py
+taxbit_gemini/meta.py
+taxbit_gemini/order_book.py
+taxbit_gemini/order_events_ws.py
+taxbit_gemini/private_client.py
+taxbit_gemini/public_client.py
+taxbit_gemini_python.egg-info/PKG-INFO
+taxbit_gemini_python.egg-info/SOURCES.txt
+taxbit_gemini_python.egg-info/dependency_links.txt
+taxbit_gemini_python.egg-info/requires.txt
+taxbit_gemini_python.egg-info/top_level.txt

@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: taxbit-gemini-python
+Version: 0.0.3
+Summary: A python client for the Gemini API and Websocket
+Home-page: https://github.com/taxbit-open-source/gemini-python
+Author: Mohammad Usman
+Author-email: m.t.usman@hotmail.com
+Maintainer: Chris Gunnels
+Maintainer-email: chris@taxbit.com
+License: MIT
+Description: UNKNOWN
+Keywords: gemini,bitcoin,bitcoin-exchange,ethereum,ether,BTC,ETH,gemini-exchange
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3

@@ -1,0 +1,4 @@
+requests
+pytest
+websocket
+websocket-client
