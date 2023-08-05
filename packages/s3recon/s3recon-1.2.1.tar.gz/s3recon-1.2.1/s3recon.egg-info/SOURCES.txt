@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+data/words.txt
+s3recon/__init__.py
+s3recon/__main__.py
+s3recon/constants.py
+s3recon/mongodb.py
+s3recon/s3recon.py
+s3recon/s3recon.yml
+s3recon.egg-info/PKG-INFO
+s3recon.egg-info/SOURCES.txt
+s3recon.egg-info/dependency_links.txt
+s3recon.egg-info/entry_points.txt
+s3recon.egg-info/requires.txt
+s3recon.egg-info/top_level.txt
