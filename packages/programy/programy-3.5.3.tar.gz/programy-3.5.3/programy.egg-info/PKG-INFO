@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: programy
+Version: 3.5.3
+Summary: AIML Framework and Platform
+Home-page: https://github.com/keiffster/program-y.git
+Author: Keith Sterling
+Author-email: keiffster@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/keiffster/program-y/3.5.3.tar.gz
+Description: # Program-Y
+        
+        Program Y is a fully compliant AIML 2.0 chatbot framework written in Python 3. It includes an entire platform for 
+        building your own chat bots using Artificial Intelligence Markup Language, or AIML for short. 
+        For more information about Program-y, its features and its history then check out the Background page.
+        
+        ## New in 3.6
+        * New installation instructions
+        * Updates to Admin Tool
+        * Ability to use items in License.keys file in you configuration
+        * Ability to use tokens in config files which are subsituted at run time
+        
+        
+        ### Installation on OSX and Ubuntu
+        You can now install Program-y directly from PyPi with the follow commands
+        ```bash
+        pip3 install programy
+        ```
+        ### Installation on Windows
+        You can now install Program-y directly from PyPi with the follow commands
+        ```cmd
+        pip install programy
+        ```
+        
+        For more information about installing either via Git or Pip on OSX, Ubuntu and Windows go to 
+        [Installation Instructions](https://github.com/keiffster/program-y/wiki/Install).
+        
+        
+        
+        
+Keywords: aiml,chatbot,virtual assistant,ai
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
