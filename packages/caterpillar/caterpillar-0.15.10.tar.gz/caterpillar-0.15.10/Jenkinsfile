@@ -1,0 +1,91 @@
+pipeline {
+  agent  any
+  environment {
+    GIT_COMMITTER_NAME = "jenkins"
+    // Set the path for pyenv environments so 3.5/3.6/3.7 can be found
+    PATH = "/var/lib/jenkins/.pyenv/shims:$PATH"
+  }
+  stages {
+    stage("Test") {
+      when {
+        not {
+          buildingTag()
+        }
+      }
+      steps {
+        sh 'tox --version'
+        sh 'tox -p auto'
+        junit 'junit*.xml'
+        publishHTML(
+          target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage_report_py35',
+            reportFiles: 'index.html',
+            reportName: 'Coverage Report Python 3.5'
+          ]
+        )
+        publishHTML(
+          target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage_report_py36',
+            reportFiles: 'index.html',
+            reportName: 'Coverage Report Python 3.6'
+          ]
+        )
+        publishHTML(
+          target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage_report_py37',
+            reportFiles: 'index.html',
+            reportName: 'Coverage Report Python 3.7'
+          ]
+        )
+      }
+    }
+    stage("Archive Package"){
+      when {
+        buildingTag()
+      }
+      steps {
+        withCredentials(
+          [
+            usernamePassword(
+              credentialsId: '3cf688b7-5905-44a4-865a-58dc4ce900ff',
+              passwordVariable: 'DEVPI_PASSWORD',
+              usernameVariable: 'DEVPI_USERNAME'
+            ),
+            string(
+              credentialsId: 'devpi_test_index_url',
+              variable: 'DEVPI_REPOSITORY_URL'
+            ),
+            // Pypi credentials
+            usernamePassword(
+              credentialsId: 'ab2cb579-af3f-4a39-9930-5c0e7a7309b6',
+              passwordVariable: 'PYPI_PASSWORD',
+              usernameVariable: 'PYPI_USERNAME'
+            ),
+            string(
+              credentialsId: 'pypi_test_index_url',
+              variable: 'PYPI_REPOSITORY_URL'
+            )
+          ])
+          {
+          sh 'python3 setup.py sdist bdist_wheel'
+          sh 'python3 -m twine upload --repository-url $DEVPI_REPOSITORY_URL -u $DEVPI_USERNAME -p "$DEVPI_PASSWORD" dist/*'
+          sh 'python3 -m twine upload --repository-url $PYPI_REPOSITORY_URL -u $PYPI_USERNAME -p "$PYPI_PASSWORD" dist/*'
+        }
+      }
+    }
+  }
+  post {
+    always {
+      deleteDir()
+    }
+  }
+}
