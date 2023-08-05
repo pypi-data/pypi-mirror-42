@@ -1,0 +1,5 @@
+matplotlib
+numpy
+scipy
+astropy>=3
+sunpy
