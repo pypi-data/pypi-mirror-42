@@ -1,0 +1,7 @@
+#!python -u
+
+"""Hashpipe entry point."""
+
+import hashpipe
+
+hashpipe.main()
