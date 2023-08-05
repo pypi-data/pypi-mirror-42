@@ -1,0 +1,17 @@
+README.rst
+setup.py
+tagliatelle/Client.py
+tagliatelle/ClientRequest.py
+tagliatelle/LowLevelClient.py
+tagliatelle/__init__.py
+tagliatelle.egg-info/PKG-INFO
+tagliatelle.egg-info/SOURCES.txt
+tagliatelle.egg-info/dependency_links.txt
+tagliatelle.egg-info/not-zip-safe
+tagliatelle.egg-info/top_level.txt
+tagliatelle/data/TagBulkResponse.py
+tagliatelle/data/TagRequest.py
+tagliatelle/data/TagResponse.py
+tagliatelle/data/__init__.py
+test/test_ClientRequest.py
+test/test_LowLevelClient.py
