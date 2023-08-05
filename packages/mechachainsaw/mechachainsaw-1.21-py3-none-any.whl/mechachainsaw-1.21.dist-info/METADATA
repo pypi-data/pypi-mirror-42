@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: mechachainsaw
+Version: 1.21
+Summary: An easy to use logging wrapper.
+Home-page: https://github.com/FuelRats/mechachainsaw
+Author: The Fuel Rats Mischief
+Author-email: shatt@fuelrats.com
+License: BSD-3-Clause
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown
+Requires-Dist: coloredlogs
+
+# Mecha Chainsaw
+
+This project is under current development, and is intended as a logging library for [mechasqueak3](https://github.com/FuelRats/pipsqueak3).
+
+However, it does have applications as a standalone logging tool.
+
+This project is currently in *pre-release*.  Use at your own risk!
+
+### Requirements
+* Python 3.7+
+* coloredlogs library
+
+### Installation
+This is python library.  Install using pip/pipenv
+and import mechachainsaw with ``import mechachainsaw``
+
+
+### Usage
+
+```py
+from mechachainsaw import Logger``
+log = Logger("Namespace", "Logfile.txt")
+log.info("This is an info-level entry!")
+```
+
+
+will get you:
+```
+<2019-01-12 15:17:40,572 Namespace> [INFO] This is an info-level entry!
+```
+
+
+### License
+
+*Mecha Chainsaw* is licensed under the BSD 3-Clause License.
+
+
+
