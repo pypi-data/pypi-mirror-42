@@ -1,0 +1,10 @@
+travis_env/__init__.py,sha256=vJXpu2J0TxGlYHooxzTIgM0gFAzqPmJO-EF2sq0-mjI,2281
+travis_env/api.py,sha256=7OAJ8aIuORLzO_aFhn9i_YvQtxyn4ozCttihETMHuWI,620
+travis_env/clear.py,sha256=Rtijei1Y7LqiQ4CdFxSk8EY-36_9zZmxbH_hBkV4sjE,368
+travis_env/delete.py,sha256=KVmd_Dt2PiKC7qybn8U0KK5TowcukjaHMoWvjmZxY_E,487
+travis_env/set.py,sha256=nm9y_naARo0P5epoWf7qkhvwyqGktA589fcQIQZyRZc,546
+travis_env/vars.py,sha256=qZ5SLlr71W8zQRSzQ_jaLG0OQGyyptxwUBjRSwboQOI,455
+travis_env-2019.2.18.dist-info/METADATA,sha256=hg2nDyBFrcX-Knf-3eyBJ-riUgwFeMiX-OaIGAUvSuk,1949
+travis_env-2019.2.18.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+travis_env-2019.2.18.dist-info/top_level.txt,sha256=tW0Ye1cL8jvfLhSf_9_mNpMiRGoKxm2KnrEp39SCh0k,11
+travis_env-2019.2.18.dist-info/RECORD,,
