@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: klaxon
+Version: 0.1.12
+Summary: Use osascript to send notifications.
+Home-page: https://pypi.org/project/klaxon/
+Author: Stephan Fitzpatrick
+Author-email: knowsuchagency@gmail.com
+Keywords: mac,notifications,productivity
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Project-URL: Repository, https://github.com/knowsuchagency/klaxon
