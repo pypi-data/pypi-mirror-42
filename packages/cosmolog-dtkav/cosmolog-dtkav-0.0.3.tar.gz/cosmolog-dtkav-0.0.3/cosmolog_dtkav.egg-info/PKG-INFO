@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: cosmolog-dtkav
+Version: 0.0.3
+Summary: cosmolog fork: do not use
+Home-page: https://github.com/dtkav/cosmolog
+Author: Isil Demir + Daniel Grossmann-Kavanagh
+Author-email: me@danielgk.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: test
