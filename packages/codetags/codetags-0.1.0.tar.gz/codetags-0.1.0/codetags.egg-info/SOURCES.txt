@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+codetags/__init__.py
+codetags/main.py
+codetags/misc.py
+codetags.egg-info/PKG-INFO
+codetags.egg-info/SOURCES.txt
+codetags.egg-info/dependency_links.txt
+codetags.egg-info/top_level.txt
