@@ -1,0 +1,15 @@
+
+[:sys_platform == "darwin"]
+pyobjc
+
+[:sys_platform == "openbsd6"]
+PyQt5
+
+[:sys_platform == "win32"]
+pythonnet
+
+[cef]
+cefpython3
+
+[qt]
+PyQt5
