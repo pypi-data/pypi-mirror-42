@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: ultimate_hosts_blacklist_the_whitelist
+Version: 1.0.1
+Summary: The whitelisting tool of the Ultimate Hosts Blacklist project.
+Home-page: https://github.com/Ultimate-Hosts-Blacklist/whitelist/tree/script
+Author: funilrys
+Author-email: contact@funilrys.com
+License: MIT
+Description: The Ultimate Hosts Blacklist whitelist script
+        =============================================
+        
+        This is the branch which contain the script which we use to whitelist domains or IP into our infrastructure.
+Keywords: Python,hosts,hosts file,whitelist
+Platform: any
+Classifier: Environment :: Console
+Classifier: Topic :: Internet
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License

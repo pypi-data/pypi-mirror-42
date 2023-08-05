@@ -1,0 +1,3 @@
+[console_scripts]
+uhb_whitelist = ultimate_hosts_blacklist_the_whitelist:_command_line
+
