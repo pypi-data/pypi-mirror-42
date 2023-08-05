@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: atlantis
+Version: 0.4
+Summary: Python library for natural language processing
+Home-page: https://github.com/idin/atlantis
+Author: Idin
+Author-email: py@idin.ca
+License: MIT
+Description: # atlantis
+        Python library for natural language processing
+        
+        ## Usage
+        ```python
+        from atlantis import Document
+        
+        # create document
+        document = Document("He also begat and brought up five pairs of male children.")
+        
+        # render entity graph
+        print('Entity Graph')
+        display(document.entity_graph.render())
+        
+        # render document graph
+        print('Document Graph')
+        display(document.graph.render())
+        ```
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
