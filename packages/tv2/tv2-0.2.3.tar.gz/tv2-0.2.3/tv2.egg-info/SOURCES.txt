@@ -1,0 +1,14 @@
+CONTRIBUTING.md
+MANIFEST.in
+README.md
+code-of-conduct.md
+setup.py
+bin/tv2
+tv2/__init__.py
+tv2/notebook.py
+tv2/urwid_ui.py
+tv2.egg-info/PKG-INFO
+tv2.egg-info/SOURCES.txt
+tv2.egg-info/dependency_links.txt
+tv2.egg-info/requires.txt
+tv2.egg-info/top_level.txt
