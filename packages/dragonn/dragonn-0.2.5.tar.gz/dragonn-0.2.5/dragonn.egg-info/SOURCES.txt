@@ -1,0 +1,64 @@
+MANIFEST.in
+README.md
+setup.py
+dragonn/__init__.py
+dragonn/__main__.py
+dragonn/callbacks.py
+dragonn/generators.py
+dragonn/hyperparameter_search_tutorial.py
+dragonn/metrics.py
+dragonn/models.py
+dragonn/plot.py
+dragonn/positional_prc.py
+dragonn/tutorial_utils.py
+dragonn/utils.py
+dragonn/visualize_util.py
+dragonn.egg-info/PKG-INFO
+dragonn.egg-info/SOURCES.txt
+dragonn.egg-info/dependency_links.txt
+dragonn.egg-info/entry_points.txt
+dragonn.egg-info/requires.txt
+dragonn.egg-info/top_level.txt
+examples/example_neg_sequences.fa
+examples/example_pos_sequences.fa
+examples/simple_motif_detection.py
+examples/.ipynb_checkpoints/tutorial1-checkpoint.ipynb
+examples/.ipynb_checkpoints/tutorial2-checkpoint.ipynb
+paper_supplement/Positional PRC.ipynb
+paper_supplement/PrimerTutorial 1 - Exploring model architectures for a homotypic motif density simulation.ipynb
+paper_supplement/PrimerTutorial 2 - Hyperparameter Tuning via Grid Search.ipynb
+paper_supplement/PrimerTutorial 3 - Interpreting features induced by DNN's across multiple types of motif grammars.ipynb
+paper_supplement/PrimerTutorial 4 - Interpreting predictive sequence features in  TF binding events within the GM12878 cell line.ipynb
+paper_supplement/PrimerTutorial 5 - Functional variant characterization for non-coding SNPs within the SPI1 motif.ipynb
+paper_supplement/SPI1 Genomewide regression Born Again Training .ipynb
+paper_supplement/.ipynb_checkpoints/Positional PRC-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial 1 - Exploring model architectures for a homotypic motif density simulation-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial 2 - Hyperparameter Tuning via Grid Search-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial 3 - Interpreting features induced by DNN's across multiple types of motif grammars-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial 4 - Interpreting predictive sequence features in  TF binding events within the GM12878 cell line-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial 5 - Functional variant characterization for non-coding SNPs within the SPI1 motif-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/PrimerTutorial2 - Interpreting features induced by DNN's across multiple types of motif grammars-checkpoint.ipynb
+paper_supplement/.ipynb_checkpoints/SPI1 Genomewide regression Born Again Training -checkpoint.ipynb
+paper_supplement/tutorial_images/CTCF.Tut4.png
+paper_supplement/tutorial_images/SPI1.Tut4.png
+paper_supplement/tutorial_images/classification_task.jpg
+paper_supplement/tutorial_images/dnn_figure.png
+paper_supplement/tutorial_images/dragonn_and_pssm.jpg
+paper_supplement/tutorial_images/dragonn_model_figure.jpg
+paper_supplement/tutorial_images/heterodimer_simulation.jpg
+paper_supplement/tutorial_images/homotypic_motif_density_localization.jpg
+paper_supplement/tutorial_images/homotypic_motif_density_localization_task.jpg
+paper_supplement/tutorial_images/inspecting_code.png
+paper_supplement/tutorial_images/one_hot_encoding.png
+paper_supplement/tutorial_images/play_all_button.png
+paper_supplement/tutorial_images/play_button.png
+paper_supplement/tutorial_images/sequence_properties_1.jpg
+paper_supplement/tutorial_images/sequence_properties_2.jpg
+paper_supplement/tutorial_images/sequence_properties_3.jpg
+paper_supplement/tutorial_images/sequence_properties_4.jpg
+paper_supplement/tutorial_images/sequence_simulations.png
+paper_supplement/tutorial_images/tf_binding.jpg
+scripts/download_model_binary.py
+scripts/download_model_from_gist.sh
+scripts/upload_model_to_gist.sh
+tests/test_architectures.py

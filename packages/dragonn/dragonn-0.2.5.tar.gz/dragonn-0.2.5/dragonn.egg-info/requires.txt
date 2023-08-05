@@ -1,0 +1,12 @@
+numpy>=1.15
+keras>=2.2.0
+tensorflow>=1.6
+deeplift>=0.6.8.1
+shapely
+matplotlib
+scikit-learn
+pydot_ng==1.0.0
+h5py
+concise
+seqdataloader>=0.117
+simdna_dragonn
