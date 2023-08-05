@@ -1,0 +1,71 @@
+---
+
+- hosts: '*'
+  gather_facts: false
+  tasks:
+  - name: Install python for ansible
+    raw: |
+      #!/bin/sh -x
+      sudo=""
+      [ "$USER" = "root" ] || sudo=sudo
+
+      if which python3; then
+          if ! which python; then
+              $sudo ln -sfn $(which python3) /usr/bin/python
+          fi
+          exit 0
+      fi
+
+      if which apt; then
+          $sudo apt update -y
+          $sudo apt install -y python3
+      elif which pacman; then
+          $sudo pacman -Sy --noconfirm
+          $sudo pacman -S --noconfirm python
+      elif which apk; then
+          $sudo apk update
+          $sudo apk add python
+      fi
+
+- hosts: '*'
+  become: true
+  become_method: sudo
+  become_user: root
+  vars:
+    key_id: '9DC858229FC7DD38854AE2D88D81803C0EBFCD88'
+    key_url: https://download.docker.com/linux/ubuntu/gpg
+    repo: deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} edge
+
+  tasks:
+  - name: Install apt-transport-https
+    when: ansible_os_family == 'Debian'
+    apt:
+      name:
+      - apt-transport-https
+      - gnupg2
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Install repository key
+    when: ansible_os_family == 'Debian'
+    apt_key:
+      id: '{{ key_id }}'
+      url: '{{ key_url }}'
+      state: present
+
+  - name: Install repository
+    when: ansible_os_family == 'Debian'
+    register: aptrepo_install
+    apt_repository:
+      repo: '{{ repo }}'
+      state: present
+
+  - name: Update apt
+    when: ansible_os_family == 'Debian' and aptrepo_install.changed
+    apt:
+      update_cache: yes
+
+  - name: Install docker-ce
+    package:
+      name: '{{ docker_package|default("docker-ce" if ansible_os_family == "Debian" else "docker") }}'
+      state: present
