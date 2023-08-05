@@ -1,0 +1,14 @@
+khwarizmi/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+khwarizmi/equations.py,sha256=2pa9s1cgKt6NfAwnFZWaJ1EHpkERSFM9Pk0xqrWGU48,4135
+khwarizmi/exc.py,sha256=NM0XQhpxYQXXBU884aXT69clA7FpUi9Ixvm9gG9AmxY,4146
+khwarizmi/expression.py,sha256=eg9OXsIgU2RufEDikCMYMjo9yyWEETUGh-25fZRnnrM,3895
+khwarizmi/linear.py,sha256=NeGrfJFFE1RsKdn8KFM4uEUhfcpwwVocFREvUNApgHQ,18973
+khwarizmi/misc.py,sha256=74uCmAPI1dNFEIGBZsAzk3fWT4pUo4cSafaJl4Yz9vk,784
+khwarizmi/polynomials.py,sha256=hBrEgjeu9IPrmcpztCPuE5aonKDMLOaebugsV3CuWWg,3904
+khwarizmi/quadratic.py,sha256=fsMLWhu2ZYgD6B0nhFRDzJDzIkPSv9FGzVJZq7AfREs,3856
+khwarizmi/terms_ops.py,sha256=wE9EkKgo1VC_fX1C1CQbGk3Ed3NZs_8eiURRKeKG_0M,4861
+khwarizmi-0.5.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+khwarizmi-0.5.dist-info/METADATA,sha256=g1HLqKOQTRcP5SyW0Cd_5o973Bc6X8IY5yMt4WRMkXg,278
+khwarizmi-0.5.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+khwarizmi-0.5.dist-info/top_level.txt,sha256=sIYq1miOmyhdWyK0qMUyiuKnj-WlRhYCYFB0no2ocxQ,10
+khwarizmi-0.5.dist-info/RECORD,,
