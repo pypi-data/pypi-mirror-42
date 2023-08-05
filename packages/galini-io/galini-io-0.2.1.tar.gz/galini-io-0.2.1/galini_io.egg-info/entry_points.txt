@@ -1,0 +1,5 @@
+[console_scripts]
+galini_io_fake_solver = galini_io.scripts.fake_solver:main
+galini_io_reader = galini_io.scripts.reader:main
+galini_io_writer = galini_io.scripts.writer:main
+
