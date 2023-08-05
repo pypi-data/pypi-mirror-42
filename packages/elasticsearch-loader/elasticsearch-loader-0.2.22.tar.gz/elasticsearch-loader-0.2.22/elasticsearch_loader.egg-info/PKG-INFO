@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: elasticsearch-loader
+Version: 0.2.22
+Summary: A pythonic tool for batch loading data files (json, parquet, csv, tsv) into ElasticSearch
+Home-page: https://github.com/Moshe/elasticsearch_loader
+Author: Moshe Zada
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: elastic,elasticsearch,csv,json,parquet,bulk,loader,redis
+Platform: UNKNOWN
+Provides-Extra: redis
+Provides-Extra: tests
+Provides-Extra: parquet
