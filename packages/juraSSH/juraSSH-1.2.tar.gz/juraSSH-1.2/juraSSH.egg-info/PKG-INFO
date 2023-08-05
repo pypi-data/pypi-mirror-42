@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: juraSSH
+Version: 1.2
+Summary: SSH Client for Network Automation
+Home-page: https://johnnes-smarts.ch
+Author: David Johnnes
+Author-email: david.johnnes@gmail.com
+License: License :: OSI Approved :: MIT License
+Description: # You can use this module if you want to ssh to network devices and execute commands on them.
+        # This Module is for DEVOPs.
+        # Author: David Johnnes
+        # email: david.johnnes@gmail.com
+        # Switzerland: JURA
+        
+Keywords: SSH Client,DEVOPS SSH,Network Automation,Network Orchestration,Vendor Neutral <-> Network Automation
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
