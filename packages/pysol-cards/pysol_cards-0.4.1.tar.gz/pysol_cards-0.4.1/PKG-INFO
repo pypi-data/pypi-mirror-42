@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: pysol_cards
+Version: 0.4.1
+Summary: Deal PySol FC Cards
+Home-page: https://fc-solve.shlomifish.org/
+Author: Shlomi Fish
+Author-email: shlomif@cpan.org
+License: UNKNOWN
+Description: ===============================
+        pysol_cards
+        ===============================
+        
+        Deal PySol FC Cards
+        
+        Please fill here a long description which must be at least 3 lines wrapped on
+        80 cols, so that distribution package maintainers can use it in their packages.
+        Note that this is a hard requirement.
+        
+        * Free software: Apache license
+        * Documentation: https://docs.openstack.org/pysol_cards/latest
+        * Source: https://git.openstack.org/cgit/shlomif/pysol_cards* Bugs: https://storyboard.openstack.org/#!/project/replace with the name of the project on Launchpad or the ID from StoryboardFeatures
+        --------
+        
+        * TODO
+        
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
