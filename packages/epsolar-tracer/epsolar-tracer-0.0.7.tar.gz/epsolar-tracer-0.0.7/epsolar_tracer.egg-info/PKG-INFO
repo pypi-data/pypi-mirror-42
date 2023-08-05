@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: epsolar-tracer
+Version: 0.0.7
+Summary: Tools for EPsolar Tracer A and BN solar charge controller
+Home-page: https://github.com/Salamek/epsolar-tracer
+Author: Adam Schubert
+Author-email: adam.schubert@sg1-game.net
+License: Apache License 2.0
+Description: # epsolar-tracer
+        Tools for EPsolar Tracer A and BN solar charge controller
+        ===================================================
+        ![Img](img/epsolar_tracer_bn.jpg)
+        
+        This is the second generation of the EPsolar Tracer solar charge controller. 
+        You need RS-485 adapter for communication. The first generation controller 
+        used RS-232 and a different protocol. see https://github.com/xxv/tracer.
+        
+        [Product link 1](http://www.epsolarpv.com/en/index.php/Product/pro_content/id/573/am_id/136)  
+        [Product link 2](http://www.epsolarpv.com/en/index.php/Product/index/id/653/am_id/134)
+        
+        Protocol
+        --------
+        [Protocol](http://www.solar-elektro.cz/data/dokumenty/1733_modbus_protocol.pdf)
+        See for [windows capture](archive/epsolar.txt) for some extra commands.
+        
+        Python module
+        -------------
+        Uses modbus library (https://github.com/bashwork/pymodbus)  
+        Example output
+        ```
+        # python info.py 
+        Manufacturer: 'EPsolar Tech co., Ltd'
+        Model: 'Tracer2215BN'
+        Version: 'V02.05+V07.12'
+        Charging equipment rated input voltage = 150.0V
+        Charging equipment rated input voltage = 150.0V
+        Charging equipment rated input current = 20.0A
+        ...
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Operating System :: OS Independent
