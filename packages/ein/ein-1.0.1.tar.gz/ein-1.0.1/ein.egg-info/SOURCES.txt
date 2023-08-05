@@ -1,0 +1,9 @@
+README.md
+setup.py
+ein.egg-info/PKG-INFO
+ein.egg-info/SOURCES.txt
+ein.egg-info/dependency_links.txt
+ein.egg-info/not-zip-safe
+ein.egg-info/requires.txt
+ein.egg-info/top_level.txt
+ein/emptypackage/__init__.py
