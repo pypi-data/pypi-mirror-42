@@ -1,0 +1,3 @@
+[console_scripts]
+track_behavior = video_behavior_tracking.track_behavior:main
+

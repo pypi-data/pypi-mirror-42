@@ -1,0 +1,12 @@
+video_behavior_tracking/LED_detection.py,sha256=lsirNve0_zN1iXNRquM-p-W7PTh_5qKHG17_dNvt7-k,3771
+video_behavior_tracking/__init__.py,sha256=XqlZDqWYejFgGxCze3Vugbx9JSwlqpiJfRN4_XZr-QU,329
+video_behavior_tracking/kalman.py,sha256=tb92kxWfJj1HiZ82yqjtIgv43V52LLeVKfiFHH_IZWg,9899
+video_behavior_tracking/labeled_video.py,sha256=FxLx4BwKUnrJ2995YPAx8mzJWXOuwQ1nDlkunUiuD-4,3099
+video_behavior_tracking/track_behavior.py,sha256=BNMBhe1XC7SmEUHjRQ9tvVUQMjalc8IVpGvnYwTATdU,2694
+video_behavior_tracking/utils.py,sha256=AoITN2GbPTrW24zxAqRK-tDdNBPszj7Vkyz-0scbsRM,6404
+video_behavior_tracking-0.1.8.dev0.dist-info/LICENSE,sha256=TZwZS68enBUjiuvk3db3GZvpF35u_62tVhK0PrIJpX8,1071
+video_behavior_tracking-0.1.8.dev0.dist-info/METADATA,sha256=9PpkD6Kd73djPodq_4IFvGBo8wlIihQk78ZFcxcwlBE,394
+video_behavior_tracking-0.1.8.dev0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+video_behavior_tracking-0.1.8.dev0.dist-info/entry_points.txt,sha256=UztmjYbziurkFNJCen_w4KKVPyhJQwV5niFNfbPyiWI,80
+video_behavior_tracking-0.1.8.dev0.dist-info/top_level.txt,sha256=4ZJSZqhFcfbQQFoLB0aqa-agLrltcBQ96IJ1ij-31yQ,24
+video_behavior_tracking-0.1.8.dev0.dist-info/RECORD,,
