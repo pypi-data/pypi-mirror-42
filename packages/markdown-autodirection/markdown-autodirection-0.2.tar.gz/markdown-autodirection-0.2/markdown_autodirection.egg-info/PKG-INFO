@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: markdown-autodirection
+Version: 0.2
+Summary: Extension for markdown package to set paragraph direction to `auto`
+Home-page: https://github.com/aliva/python-markdown-autodirection/
+License: BSD 3-Clause License
+Description: # Python Markdown Auto Direction
+        
+        [![Build Status](https://travis-ci.org/aliva/python-markdown-autodirection.svg?branch=master)](https://travis-ci.org/aliva/python-markdown-autodirection)
+        
+        Adds `dir="auto"` attribute to paragraphs,
+        This will help browser to set text direction based on the content of current paragraphs
+        
+        ## Install
+        
+        ```
+        pip install markdown-autodirection
+        ```
+        
+        ## Use
+        
+        ```python
+        from markdown import markdown
+        html = markdown(text, extensions=['autodirection'])
+        ```
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

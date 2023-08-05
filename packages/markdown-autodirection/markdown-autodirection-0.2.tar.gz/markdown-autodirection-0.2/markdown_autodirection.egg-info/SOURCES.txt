@@ -1,0 +1,11 @@
+.gitignore
+LICENSE
+README.md
+autodirection.py
+setup.cfg
+setup.py
+test.py
+markdown_autodirection.egg-info/PKG-INFO
+markdown_autodirection.egg-info/SOURCES.txt
+markdown_autodirection.egg-info/dependency_links.txt
+markdown_autodirection.egg-info/top_level.txt
