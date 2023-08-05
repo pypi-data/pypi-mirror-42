@@ -1,0 +1,17 @@
+README.md
+setup.py
+bin/fizi
+pyfizi/__init__.py
+pyfizi/alleles.py
+pyfizi/annot.py
+pyfizi/gwas.py
+pyfizi/impute.py
+pyfizi/infer.py
+pyfizi/io.py
+pyfizi/ref.py
+pyfizi/taus.py
+pyfizi.egg-info/PKG-INFO
+pyfizi.egg-info/SOURCES.txt
+pyfizi.egg-info/dependency_links.txt
+pyfizi.egg-info/requires.txt
+pyfizi.egg-info/top_level.txt

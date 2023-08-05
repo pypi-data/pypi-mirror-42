@@ -1,0 +1,87 @@
+Metadata-Version: 2.1
+Name: pyfizi
+Version: 0.7
+Summary: Impute GWAS summary statistics using reference genotype data
+Home-page: https://github.com/bogdanlab/fizi
+Author: Nicholas Mancuso, Megan Roytman
+Author-email: nick.mancuso@gmail.com, meganroytman@gmail.com
+License: UNKNOWN
+Description: # Functionally-informed Z-score Imputation (FIZI)
+        FIZI leverages functional information together with reference linkage-disequilibrium (LD) to
+        impute GWAS summary statistics (Z-score).
+        
+        This README is a working draft and will be expanded soon.
+        
+        [//]: # (This repository serves as the home for the python implementation of the algorithm described in XX.)
+        
+        Installation
+        ----
+        0. Make sure that setuptools is up-to-date by typing the following command
+        
+            `pip install setuptools --upgrade --user`
+            
+        1. First grab the latest version of FIZI using git as
+        
+            `git clone https://github.com/bogdanlab/fizi`
+            
+        2. FIZI can be installed using setuptools as 
+        
+            `cd fizi` then
+            
+            `python setup.py install --user` or optionally as
+            
+            `sudo python setup.py install` if you have root access and wish to install for all users
+            
+        3. Check that FIZI was installed by typing
+        
+            `fizi --help`
+        
+        4. If that did not work, and `--user` was specified, please check that your local user path is included in
+        `$PATH` environment variable. `--user` location and can be appended to `$PATH`
+        by executing
+        
+            `` export PATH=`python -m site --user-base`/bin/:$PATH ``
+            
+            which can be saved in `.bashrc` or `.bash_profile`. To reload the environment type
+            
+            `source ~/.bashrc` or `source .bash_profile` depending where you entered it.
+        
+        
+        Incorporating functional data to improve summary statistics imputation
+        -----
+        Usage consists of several steps. We outline the general workflow here when the intention to perform imputation on
+        chromosome 1 of our data:
+        
+        1. Munge/clean _all_ GWAS summary data before imputation
+        
+            `fizi munge gwas.sumstat.gz --out cleaned.gwas`
+        
+        2. Partitioning cleaned GWAS summary data into chr1 and everything else (loco-chr1).
+        3. Run LDSC on locoChr to obtain tau estimates
+        4. Perform functionally-informed imputation on chr1 data using tau estimates from loco-chr
+        
+        Imputing summary statistics using only reference LD
+        ------
+        When functional annotations and LDSC estimates are not provided to FIZI, it will fallback to the classic ImpG
+        algorithm described in ref[1]. To impute missing summary statistics using the ImpG algorithm simply enter the
+        command 
+        
+            fizi impute cleaned.gwas.sumstat.gz plink_data_path --chr 1 --out imputed.cleaned.gwas.sumstat
+        
+        Software and support
+        -----
+        If you have any questions or comments please contact nmancuso@mednet.ucla.edu and/or meganroytman@gmail.com
+        
+        For performing various inferences using summary data from large-scale GWASs please find the following useful software:
+        
+        1. Association between predicted expression and complex trait/disease [FUSION](https://github.com/gusevlab/fusion_twas)
+        2. Estimating local heritability or genetic correlation [HESS](https://github.com/huwenboshi/hess)
+        3. Estimating genome-wide heritability or genetic correlation [UNITY](https://github.com/bogdanlab/UNITY)
+        4. Fine-mapping using summary-data [PAINTOR](https://github.com/gkichaev/PAINTOR_V3.0)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
