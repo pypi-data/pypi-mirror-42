@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+data_example.csv
+data_example.mxl
+setup.py
+pitchplots/__init__.py
+pitchplots/functions.py
+pitchplots/parser.py
+pitchplots/reader.py
+pitchplots/static.py
+pitchplots.egg-info/PKG-INFO
+pitchplots.egg-info/SOURCES.txt
+pitchplots.egg-info/dependency_links.txt
+pitchplots.egg-info/top_level.txt
