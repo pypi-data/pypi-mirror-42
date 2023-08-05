@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ecs-lib-tornado-swirl
+Version: 0.0.1
+Summary: Extract swagger specs from your tornado project
+Home-page: https://github.com/arthur-barbosa18/ecs-lib-tornado-swirl.git
+Author: Rodolfo Duldulao modify by Arthur Barbosa
+Author-email: arthuralves187@gmail.com
+License: MIT
+Keywords: SWAGGER,OPENAPI,TORNADO
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6.0
+Requires-Dist: tornado (>=5.1.1)
+
+Please see documentation here: https://github.com/rduldulao/tornado-swirl
+
+
