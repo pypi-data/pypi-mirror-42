@@ -1,0 +1,9 @@
+README.md
+setup.py
+azmonitor/__init__.py
+azmonitor/log_analytics.py
+azmonitor.egg-info/PKG-INFO
+azmonitor.egg-info/SOURCES.txt
+azmonitor.egg-info/dependency_links.txt
+azmonitor.egg-info/requires.txt
+azmonitor.egg-info/top_level.txt
