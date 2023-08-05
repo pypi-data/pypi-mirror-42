@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: grpc-help
+Version: 0.0.1
+Summary: python  grpc help package
+Home-page: https://github.com/caowenbin/grpc-help
+Author: caowenbin
+Author-email: cwb201314@qq.com
+License: BSD
+Download-URL: https://github.com/caowenbin/grpc-help
+Description: UNKNOWN
+Keywords: grpc,python3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
