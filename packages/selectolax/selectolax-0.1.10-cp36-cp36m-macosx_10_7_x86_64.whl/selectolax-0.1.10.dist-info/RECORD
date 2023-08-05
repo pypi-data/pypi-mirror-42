@@ -1,0 +1,13 @@
+selectolax/__init__.py,sha256=V-9IdVJ2V3lAvTgswg_yVZ6VvZCeXKHPG2geSbyLRZk,113
+selectolax/node.pxi,sha256=Lepvr_bDQ2hWVgYEO7fNsfw7q4fvHleOY0XP9b9QSfs,8032
+selectolax/parser.c,sha256=OAvwwPCWDfzTTOJ3CcwDpFGIoOj5P36e0lh2DVW6Q4g,468512
+selectolax/parser.cpython-36m-darwin.so,sha256=5eYQ3ghlBjv4RmzAB7idFJjvrMucfC2aOy9QWFoUkj4,2932268
+selectolax/parser.pxd,sha256=KzkYj2yhKQiCUS02CiD48UwWXmIyLNmsYjIt5VYjiFI,21891
+selectolax/parser.pyx,sha256=EGWEDc1h9IJqVqutrmOnaf1qQ9qPAnhRfOtaUHpotHI,6787
+selectolax/selector.pxi,sha256=wcHJAhR_Bmaqh90XwFP72TQ_iKs5Pe7HRlM4rrVcxiQ,2328
+selectolax-0.1.10.dist-info/DESCRIPTION.rst,sha256=2plGF4kYmN_-Noch8upmceh7awlb5lieQZ9Eq5xy_dU,2282
+selectolax-0.1.10.dist-info/METADATA,sha256=FmlVeckj8NYAuIlCI2TYxmOsTkobWqfgBj83D4W87lc,2947
+selectolax-0.1.10.dist-info/RECORD,,
+selectolax-0.1.10.dist-info/WHEEL,sha256=74RyQNQ88rBYFsd2n9fSga6HOET28X3dMSV592JcRcw,110
+selectolax-0.1.10.dist-info/metadata.json,sha256=xZT3jbLVhPJNWltdiGjl_xnZmee9G_GpR8f2jyJimOM,853
+selectolax-0.1.10.dist-info/top_level.txt,sha256=e5MuEM2PrQzoDlWetkFli9uXSlxa_ktW5jJEihhaI1c,11
