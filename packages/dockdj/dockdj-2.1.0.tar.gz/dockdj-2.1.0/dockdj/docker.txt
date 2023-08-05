@@ -1,0 +1,5 @@
+FROM $docker_image
+RUN pip install celery gunicorn daphne
+ADD . app
+RUN pip install -r /app/$req_file || :
+WORKDIR /app
