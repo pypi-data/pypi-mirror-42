@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: json-pipeline
+Version: 0.1.3.1
+Summary: Json processing pipeline tools
+Home-page: https://github.com/kalessin/json-pipeline
+Author: Martin Olveyra
+Author-email: molveyra@gmail.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+
+Tool for defining dict lists or jsonlines batch processing pipelines.
+
+See tests for usage on the first case. You can also process a jsonlines batch file using the command line tool.
+
+For running tests:
+
+    > nosetest3 tests/test_transform.py
+
+Typically you build command line tool in this way:
+
+```
+from json_pipeline.transform import TransformScript as JPTransformScript
+
+class TransformScript(JPTransformScript):
+    PIPELINE = ...
+
+
+if __name__ == '__main__':
+    transform = TransformScript()
+    transform.main()
+```
+
+You can skip definition of your subclass. In that case pipeline can be passed via command line.
+
+
