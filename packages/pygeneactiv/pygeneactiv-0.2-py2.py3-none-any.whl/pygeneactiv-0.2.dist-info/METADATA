@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pygeneactiv
+Version: 0.2
+Summary: GENEActiv library
+Home-page: https://github.com/harvard-nrg/pygeneactiv
+Author: Neuroinformatics Research Group
+Author-email: info@neuroinfo.org
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pandas
+
+UNKNOWN
+
+
