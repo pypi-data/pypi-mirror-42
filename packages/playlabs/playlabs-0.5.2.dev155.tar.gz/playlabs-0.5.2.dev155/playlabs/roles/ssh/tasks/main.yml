@@ -1,0 +1,47 @@
+---
+
+- name: Include OS specific vars file
+  include_vars: 'vars/{{ ansible_os_family }}.yml'
+
+- name: Install packages to add user
+  package: name={{ item }}
+  with_items:
+  - '{{ password_pkg }}'
+  - '{{ ssh_pkg }}'
+  - sudo
+  - bash
+
+- name: Passwordless sudo for sudo group
+  lineinfile:
+    path: /etc/sudoers.d/passwordless
+    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+    create: yes
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Install sudo group
+  group:
+    name: sudo
+    state: present
+
+- name: Install users group
+  group:
+    name: users
+    state: present
+
+- include: users.yml
+
+- name: Find sshd configuration
+  stat: path=/etc/ssh/sshd_config
+  register: sshd_config
+
+- name: Update sshd configuration
+  notify: Restart sshd
+  when: sshd_config.stat.exists
+  with_dict: '{{ sshd_options }}'
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    line: '{{ item.key }} {{ item.value }}'
+    regexp: '^#?{{ item.key }}'
+    backup: yes
