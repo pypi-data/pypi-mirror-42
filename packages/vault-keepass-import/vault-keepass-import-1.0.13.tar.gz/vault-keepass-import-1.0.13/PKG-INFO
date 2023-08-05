@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: vault-keepass-import
+Version: 1.0.13
+Summary: Import KeePass secrets in Hashicorp Vault
+Home-page: https://lab.enough.community/singuliere/vault-keepass-import
+Author: singuliere
+Author-email: singuliere@autistici.org
+License: GPLv3+
+Project-URL: Bug Tracker, https://lab.enough.community/singuliere/vault-keepass-import/issues
+Project-URL: Documentation, https://vault-keepass-import.readthedocs.io/
+Project-URL: Source Code, https://lab.enough.community/singuliere/vault-keepass-import
+Description: Conversion from keepass to vault
+        --------------------------------
+        
+        Read [the documentation](http://vault-keepass-import.readthedocs.io/).
+        
+        
+Keywords: setup
+distutils
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown; charset=UTF-8
