@@ -1,0 +1,10 @@
+README.md
+setup.py
+doc_cov.egg-info/PKG-INFO
+doc_cov.egg-info/SOURCES.txt
+doc_cov.egg-info/dependency_links.txt
+doc_cov.egg-info/entry_points.txt
+doc_cov.egg-info/requires.txt
+doc_cov.egg-info/top_level.txt
+doccov/__init__.py
+doccov/main.py
