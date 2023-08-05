@@ -1,0 +1,12 @@
+{% from 'macros.html' import render_floor %}
+
+<div class="page" id="page-{{page.page_num}}">
+  <h2>
+    第 {{page.page_num}} 页
+    <a class="headerlink" href="#page-{{page.page_num}}" title="Permalink to this headline">¶</a>
+  </h2>
+
+  {% for floor in page.floors %}
+    {{ render_floor(floor, page, loop.index) }}
+  {% endfor %}
+</div>

@@ -1,0 +1,26 @@
+Metadata-Version: 1.0
+Name: tieba-to-epub
+Version: 0.0.5
+Summary: convert baidu tieba post to epub
+Home-page: https://github.com/lexdene/tieba-post-to-epub
+Author: Elephant Liu
+Author-email: elephant_liu@mail.dlut.edu.cn
+License: GPLv3
+Description: tieba-post-to-epub
+        ==================
+        
+        convert tieba post to epub.
+        
+        将百度贴吧的帖子编译成电子书
+        
+        Install
+        -------
+        
+            pip install tieba-to-epub
+        
+        Usage
+        -----
+        
+            tieba-to-epub --help
+        
+Platform: any
