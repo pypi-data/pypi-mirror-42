@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: PyOpenCell
+Version: 0.0.0
+Summary: Python wrapper for OpenCell (using REST API)
+Home-page: https://gitlab.com/coopdevs/pyopencell
+Author: Coopdevs
+Author-email: info@coopdevs.org
+Maintainer: Daniel Palomar
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: requests
+
+Inspired by https://gitlab.com/rhab/PyOTRS
+
+PyOpenCell is a Python wrapper for accessing `Open Cell <https://www.opencellsoft.com/>`_ (Version 5 or 6) using the
+REST API.
+
+You can see all the API information [here](https://api.opencellsoft.com/6.0.0)
+
+Features
+--------
+
+Access an OpenCell instance to:
+
+* find a Customer by ID
+* create or update a Account Hierarchy
+* create Subscription
+
+Installation
+============
+
+Dependencies
+------------
+
+*Dependencies are installed automatically*
+
+pip:
+
+- python-requests
+
+Python Usage
+============
+
+Quickstart
+----------
+
+Get Customer with Customer ID 1 from OpenCell over the REST API::
+
+>>> client = Client(baseurl='http://myoc/', username='User', password='pwd')
+>>> customer = client.find_customer(1)
+
+License
+=======
+
+
