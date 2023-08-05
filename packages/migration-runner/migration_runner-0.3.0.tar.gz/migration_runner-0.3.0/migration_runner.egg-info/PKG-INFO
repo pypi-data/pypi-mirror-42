@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: migration-runner
+Version: 0.3.0
+Summary: Run MySQL migration scripts sequentially from a specified directory, keeping track of current version in the database.
+Home-page: https://github.com/beveradb/migration_runner
+Author: Andrew Beveridge
+Author-email: andrew@beveridge.uk
+License: MIT license
+Description: Run MySQL migration scripts sequentially from a specified directory, keeping track of current version in the database.
+Keywords: migration_runner
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
