@@ -1,0 +1,6 @@
+include README.rst
+include COPYING
+exclude appveyor.yml
+exclude .travis.yml
+recursive-include src/pykakasi/data *.utf8
+recursive-exclude tests *.py
