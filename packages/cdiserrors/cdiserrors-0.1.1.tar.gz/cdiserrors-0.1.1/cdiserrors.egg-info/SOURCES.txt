@@ -1,0 +1,11 @@
+MANIFEST.in
+Pipfile
+Pipfile.lock
+README.rst
+setup.py
+cdiserrors/__init__.py
+cdiserrors.egg-info/PKG-INFO
+cdiserrors.egg-info/SOURCES.txt
+cdiserrors.egg-info/dependency_links.txt
+cdiserrors.egg-info/requires.txt
+cdiserrors.egg-info/top_level.txt
