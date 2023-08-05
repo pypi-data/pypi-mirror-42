@@ -1,0 +1,69 @@
+<h1>{{ command.name|title }}</h1>
+<div class="command-help">{{ command.help }}</div>
+
+<form id="inputform"
+      method="post"
+      action="{{ request.url }}"
+      onsubmit="return postAndRead('{{ request.url }}');"
+      class="pure-form pure-form-aligned"
+      enctype="multipart/form-data">
+    {% for level in levels %}
+        <fieldset name="{{ level.command.name }}">
+            {% if loop.index == 1 %}
+                {# do not print root command as it most likely is juse "cli" #}
+                <legend class="command-header"></legend>
+            {% else %}
+                <legend class="command-header">{{ level.command.name }}</legend>
+            {% endif %}
+
+            {% for field in level.fields %}
+                <div class="parameter {{ field.param }} {{ field.type }}">
+                    <div class="pure-control-group">
+                        {% for arg in range(field.nargs) %}
+                            <label for="{{ field.name }}">
+                                {{ field.human_readable_name|capitalize }}
+                            </label>
+                            {% if field.type == 'option' %}
+                                <select name="{{ field.name }}">
+                                    {% for option in field.options %}
+                                        <option value="{{ option }}"
+                                                {{ 'selected' if field.default == option else '' }}>
+                                            {{ option }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            {% else %}
+                                {% if field.type == "checkbox" and field.checked %}
+                                    {#
+                                    Hack to work with flags that are default on.
+                                    As checkbox is only sent down when checked we duplicate
+                                    hidden field that is always sent but with empty value.
+                                    https://stackoverflow.com/a/1992745/1306577 #}
+                                    <input name="{{ field.name }}" type='hidden' value='{{ field.off_flag }}'>
+                                {% endif %}
+                                <input name="{{ field.name }}"
+                                       id="{{ field.name }}"
+                                       type="{{ field.type }}"
+                                        {% if field.step %} step="{{ field.step }}"{% endif %}
+                                        {% if field.accept %} accept="{{ field.accept }}"{% endif %}
+                                       value="{{ field.value|default('', true) }}"
+                                        {{ field.checked }}
+                                        {{ 'required' if field.required else '' }}
+
+
+                                >
+                            {% endif %}
+                            <div class="help" style="display: inline-block">
+                                {{ field.desc|default('', true)|capitalize }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </fieldset>
+    {% endfor %}
+    <button type="submit" id="submit_btn" class="pure-button pure-button-primary">Run</button>
+</form>
+
+<div id="output-header" hidden="true"></div>
+<div class="script-output" id="output" hidden="true"></div>
+<div id="output-footer" hidden="true"></div>
