@@ -1,0 +1,10 @@
+GPUtil
+boto3
+cython
+ddls3utils
+docker
+psycopg2-binary
+pyyaml
+requests
+urllib3
+virtualenv
