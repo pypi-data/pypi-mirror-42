@@ -1,0 +1,103 @@
+What is Caterpillar?
+====================
+
+.. image:: https://img.shields.io/travis/Kapiche/caterpillar.svg?style=flat-square
+    :target: https://travis-ci.org/Kapiche/caterpillar
+.. image:: https://img.shields.io/coveralls/Kapiche/caterpillar.svg?style=flat-square
+    :target: https://coveralls.io/r/Kapiche/caterpillar
+
+Caterpillar is a pure Python text indexing and analytics library. It is aimed at supporting advanced text and other semi-structured analytics applications that bridge Natural Language Processing (NLP), Information Retrieval and Topic Modelling.
+
+Some features include:
+
+* pluggable key/value object store for storage (currently only implementation is SQLite)
+* transaction layer for reading/writing (along with associated locking semantics)
+* supports searching indexes with some built in scoring algorithm implementations (including TF/IDF)
+* stores additional data structures for analytics above and beyond traditional information retrieval data structures
+* has a plugin architecture for quickly accessing the data structures and performing custom analytics
+* has 100% test coverage
+
+
+Quick Example
+=============
+Quick example of using caterpillar below::
+
+    import os
+    import tempfile
+
+    from caterpillar.processing.index import IndexWriter, IndexConfig
+    from caterpillar.processing.schema import TEXT, Schema, NUMERIC
+    from caterpillar.storage.sqlite import SqliteStorage
+
+    index_dir = os.path.join(tempfile.mkdtemp(), "examples")
+    with open('caterpillar/test_resources/moby.txt', 'r') as f:
+        data = f.read()
+        with IndexWriter(index_dir, IndexConfig(SqliteStorage, Schema(text=TEXT, some_number=NUMERIC))) as writer:
+            writer.add_document(text=data, some_number=1)
+
+Installation
+============
+.. code::
+
+    pip install caterpillar
+
+Documentation
+=============
+The documentation can be found `here <http://caterpillar.readthedocs.org/en/latest/>`_.
+
+Roadmap
+=======
+Caterpillar is currently in a volatile state, and the next releases are likely to undergo substantial changes in the API.
+
+In particular we plan to:
+
+* Revamp schema and field design, in order to:
+    - better merge the core text indexing with extraction of structured information. For example, integrating and indexing documents by both their textual context and entities identified by a named entity extraction approach
+    - integrate the serialisation of schemas within the transactional lifetimes of IndexWriter objects
+* Improve locking to allow better support for concurrency when indexing large collections
+* Support more languages, in particular to allow multilingual indexes with appropriate markup and representation of different languages
+* Remove the NLTK dependency (great library, but only used for tokenisation)
+* Better API for completely customising what and how data is extracted from documents
+
+
+Python Version
+==============
+Caterpillar now targets Python 3 only. It is intended to support the two most recent releases of Python for new features. Currently this means we aim to support Python 3.5 and 3.6 only.
+
+BDFLs
+=====
+* `Kris Rogers <https://github.com/krisrogers/>`_
+* `Ryan Stuart <https://github.com/rstuart85/>`_
+* `Sam Hames <https://github.com/SamHames/>`_
+
+Contributors
+============
+Anyone who is willing! In other words none yet, but we are more then accepting of contributions.
+
+Contributing
+============
+No code will be merged unless it has 100% test coverage and passes the flake8 linting. We code with a line length of 120 characters (see tox.ini [pep8] section) and we use `py.test <http://pytest.org/>`_ for testing. Tests are in a *test*sub-folder in each package. Tox is configured to run the test suite, reporting unit test passes, coverage and linting
+automatically.
+
+.. code::
+
+    # Run the whole test suite:
+    tox
+
+    # Run just the linting checks by specifying a specific test environment:
+    tox -e flake8
+
+    # Pass some arguments to py.test through the tox runner (in this case run only a specific set of tests)
+    tox -e py35 -- -k test_index
+
+Copyright and License
+=====================
+Caterpillar is copyright © 2013 - 2015 Kapiche Limited. It is licensed under the GNU Affero General Public License.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+The copyright holders grant you an additional permission under Section 7 of the GNU Affero General Public License, version 3, exempting you from the requirement in Section 6 of the GNU General Public License, version 3, to accompany Corresponding Source with Installation Information for the Program or any work based on the Program. You are still required to comply with all other Section 6 requirements to provide Corresponding Source.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+
