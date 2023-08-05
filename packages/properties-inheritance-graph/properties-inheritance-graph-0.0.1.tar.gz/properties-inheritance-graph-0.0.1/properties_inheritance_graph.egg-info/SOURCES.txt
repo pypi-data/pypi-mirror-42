@@ -1,0 +1,9 @@
+README.md
+setup.py
+properties_inheritance_graph/__init__.py
+properties_inheritance_graph/graph.py
+properties_inheritance_graph.egg-info/PKG-INFO
+properties_inheritance_graph.egg-info/SOURCES.txt
+properties_inheritance_graph.egg-info/dependency_links.txt
+properties_inheritance_graph.egg-info/requires.txt
+properties_inheritance_graph.egg-info/top_level.txt
