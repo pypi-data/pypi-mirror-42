@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: infi.winver
+Version: 1.0.3
+Summary: get windows version
+Home-page: https://github.com/Infinidat/infi.winver
+Author: Arnon Yaari
+Author-email: arnony@infinidat.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: infi.cwrap
+Requires-Dist: infi.execute
+Requires-Dist: infi.instruct
+Requires-Dist: infi.registry
+Requires-Dist: setuptools
+
+library for getting and comparing the current Windows version
+
+
