@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+dev_requirements.txt
+pyhdfs.py
+setup.cfg
+setup.py
+PythonWebHDFS.egg-info/PKG-INFO
+PythonWebHDFS.egg-info/SOURCES.txt
+PythonWebHDFS.egg-info/dependency_links.txt
+PythonWebHDFS.egg-info/requires.txt
+PythonWebHDFS.egg-info/top_level.txt
