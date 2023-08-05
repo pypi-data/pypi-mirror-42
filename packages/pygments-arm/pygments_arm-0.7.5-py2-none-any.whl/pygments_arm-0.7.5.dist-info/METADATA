@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: pygments-arm
+Version: 0.7.5
+Summary: Pygments lexer for ARM.
+Home-page: https://github.com/heia-fr/pygments-arm
+Author: Jacques Supcik
+Author-email: jacques.supcik@hefr.ch
+License: Apache 2
+Keywords: pygments arm assembler lexer
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pygments (>=1.4)
+
+Pygments ARM
+============
+
+This is a lexer for ARM Assembly language.
+
+
+Install
++++++++
+
+Using PyPI and pip
+------------------
+
+::
+
+    $ (sudo) pip install pygments-arm
+
+
+Manual
+------
+
+::
+
+    $ git clone https://github.com/heia-fr/pygments-arm.git
+    $ cd pygments-arm
+    $ (sudo) python setup.py install
+
+
+Using
++++++
+
+Just use the **ARM** "language".
+
+
+Using in LaTeX documents
+++++++++++++++++++++++++
+
+See the minted package at http://minted.googlecode.com.
+
+
+Extra information
++++++++++++++++++
+
+Pygments supported languages
+----------------------------
+
+Pygments at the moment supports over 150 different programming languages,
+template languages and other markup languages. To see an exhaustive list of the
+currently supported languages, use the command::
+
+    $ pygmentize -L lexers
+
+Pygments styles avaible
+-----------------------
+
+To get a list of all available stylesheets, execute the following command on the
+command line::
+
+    $ pygmentize -L styles
+
+Please read the `official documentation`_ for further information on the usage
+of pygment styles.
+
+.. _official documentation: http://pygments.org/docs/
+
