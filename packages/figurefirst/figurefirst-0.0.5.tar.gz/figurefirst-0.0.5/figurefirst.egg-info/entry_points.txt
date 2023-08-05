@@ -1,0 +1,3 @@
+[console_scripts]
+figurefirst_ext = figurefirst_scripts.install_inkscape_ext:main
+
