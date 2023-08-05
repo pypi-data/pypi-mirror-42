@@ -1,0 +1,8 @@
+matplotlib>=2.2pydot
+tensorflow
+keras
+scanpy
+louvain
+python-igraph
+h5py
+pandas>=0.21
