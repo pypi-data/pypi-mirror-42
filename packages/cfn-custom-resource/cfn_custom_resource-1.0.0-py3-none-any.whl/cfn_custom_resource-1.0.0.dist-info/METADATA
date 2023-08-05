@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: cfn-custom-resource
+Version: 1.0.0
+Summary: A helper lib for lambda based Cloudformation's Custom Resources
+Home-page: https://bitbucket.org/atlassian/cfn-custom-resource
+Author: Michael Sverdlik
+Author-email: msverdlik@atlassian.com
+License: Apache 2.0
+Keywords: aws,cloudformation,lambda
+Platform: any
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Provides-Extra: dev
+Requires-Dist: tox ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-localserver (==0.5.0) ; extra == 'dev'
+
+# cfn-custom-resource
+
+A Pythonic helper library for creation of Lambda backed Custom Resources for AWS CloudFormation.
+The library handles all the CloudFormation Response details, allowing the user to focus on the logic of the Custom Resource.
+
+
+# Usage
+
+Creating basic Custom Resource is as simple as:
+
+    from cfn_custom_resource import lambda_handler, create, update, delete
+
+	@create()
+	def create(event, context):
+	  resource_id, output_attributes = create_resource(event, context)
+
+	  return resource_id, output_attributes
+
+	@update()
+	def update(event, context):
+	  new_resource_id, output_attributes = update_resource(event, context)
+
+	  return resource_id, new_resource_id
+
+	@delete()
+	def delete(event, context):
+	  delete_resource(event, context)
+
+	  return
+
+Check [the wiki](https://bitbucket.org/atlassian/cfn-custom-resource/wiki/Home) for more details.	  
+
+
+# Installation
+
+To install simply use pip:
+
+    pip install cfn-custom-resource
+
+
+# Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+# License
+
+Copyright (c) 2018 Atlassian and others.
+Apache 2.0 licensed, see [LICENSE.txt](LICENSE.txt) file.
+
