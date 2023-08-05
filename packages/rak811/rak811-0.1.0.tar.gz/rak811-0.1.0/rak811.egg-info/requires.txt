@@ -1,0 +1,10 @@
+click
+RPi.GPIO
+pyserial
+
+[test]
+flake8
+flake8-comprehensions
+flake8-docstrings
+flake8-import-order
+pep8-naming==0.5.0
