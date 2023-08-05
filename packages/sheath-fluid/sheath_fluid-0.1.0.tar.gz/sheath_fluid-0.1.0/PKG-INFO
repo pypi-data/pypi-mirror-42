@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: sheath_fluid
+Version: 0.1.0
+Summary: Solve the stationnary collisionless plasma sheath model using polytropic law as electr energy equation closure
+Home-page: https://github.com/antoinelpp/sheath_fluid
+Author: Antoine Tavant
+Author-email: antoinetavant@hotmail.fr
+License: GNU General Public License v3
+Description: ============
+        sheath_fluid
+        ============
+        
+        
+        .. image:: https://img.shields.io/pypi/v/sheath_fluid.svg
+                :target: https://pypi.python.org/pypi/sheath_fluid
+        
+        .. image:: https://img.shields.io/travis/antoinelpp/sheath_fluid.svg
+                :target: https://travis-ci.org/antoinelpp/sheath_fluid
+        
+        .. image:: https://readthedocs.org/projects/sheath-fluid/badge/?version=latest
+                :target: https://sheath-fluid.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        
+        
+        
+        Solve the stationnary collisionless plasma sheath model using polytropic law as electr energy equation closure
+        
+        
+        * Free software: GNU General Public License v3
+        * Documentation: https://sheath-fluid.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        -------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2019-02-13)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: sheath_fluid
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
