@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+pymy.egg-info/PKG-INFO
+pymy.egg-info/SOURCES.txt
+pymy.egg-info/dependency_links.txt
+pymy.egg-info/requires.txt
+pymy.egg-info/top_level.txt
