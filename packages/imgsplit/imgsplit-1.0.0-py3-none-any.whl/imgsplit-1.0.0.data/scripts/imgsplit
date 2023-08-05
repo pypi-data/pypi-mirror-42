@@ -1,0 +1,95 @@
+#!python
+
+"""Split an image file into multiple segment files by removing runs of
+null or zero bytes.
+
+Usage:
+    imgsplit (--version|--help)
+    imgsplit [--bs BS] [--minskip MINSKIP] <image> [<outpattern>]
+
+Arguments:
+    --bs BS            Block size in bytes. Segments are aligned to this size. [default: 512]
+    --minskip MINSKIP  Minimum number of zero blocks to skip. [default: 1024]
+    <image>            Image file to split.
+    <outpattern>       Pattern for naming the segment files.
+
+Example:
+    imgsplit input.img
+"""
+
+import docopt
+import os
+
+__version__ = "1.0.0"
+
+def is_zero_block(block):
+    for b in block:
+        if b != 0:
+            return False
+    return True
+
+def blocks_from_file(filename, bs=512):
+    offset = 0
+    with open(filename, "rb") as f:
+        while True:
+            b = f.read(bs)
+            if b:
+                yield (b, offset)
+            else:
+                break
+            offset += bs
+
+def main(image, outpat, bs=512, minskip=1024):
+    queued = []
+    out = None
+
+    for blk, offset in blocks_from_file(image, bs):
+        if is_zero_block(blk):
+            zero_blocks += 1
+
+            # Queue block if min skip length not yet reached
+            if zero_blocks < minskip:
+                queued.append(blk)
+
+            # Otherwise clear any queued and close the prior segement
+            else:
+                queued = []
+                if out:
+                    out.close()
+                    out = None
+
+        else:
+            zero_blocks = 0
+
+            # If open file for segment if needed
+            if not out:
+                out = open(outpat%offset, 'wb')
+
+            # Add this block to any previously queued blocks
+            queued.append(blk)
+
+            # Write all queued blocks to the segement
+            for q in queued:
+                out.write(q)
+            queued = []
+
+    if out:
+        out.close()
+        out = None
+
+def out_pattern_for(image):
+    base, ext = os.path.splitext(image)
+    return ''.join([base, '_0x%08x', ext])
+
+if __name__ == "__main__":
+    args = docopt.docopt(
+        __doc__,
+        version="version "+__version__
+    )
+
+    bs      = int(args.get('--bs'))
+    minskip = int(args.get('--minskip'))
+    image   = args.get('<image>')
+    outpat  = args.get('<outpattern>') or out_pattern_for(image)
+
+    main(image, outpat, bs=bs, minskip=minskip)
