@@ -1,0 +1,8 @@
+README.md
+setup.py
+minioc/__init__.py
+minioc.egg-info/PKG-INFO
+minioc.egg-info/SOURCES.txt
+minioc.egg-info/dependency_links.txt
+minioc.egg-info/requires.txt
+minioc.egg-info/top_level.txt
