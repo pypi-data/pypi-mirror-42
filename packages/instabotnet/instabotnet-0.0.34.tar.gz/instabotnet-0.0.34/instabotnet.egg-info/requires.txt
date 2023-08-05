@@ -1,0 +1,8 @@
+requests-toolbelt>=0.8.0
+colorlog
+Pillow
+funcy
+requests>=2.21.0
+click
+colorama
+ruamel.yaml
