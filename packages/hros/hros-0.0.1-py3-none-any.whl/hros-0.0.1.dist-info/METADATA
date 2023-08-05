@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: hros
+Version: 0.0.1
+Summary: H-ROS command line utility
+Home-page: https://github.com/acutronicrobitcs/h-ros-cli
+Author: Acutronic Robotics
+Author-email: contact@acutronicrobitcs.com
+License: GPLv3
+Keywords: H-ROS,modular,ros2,robot operating system
+Platform: UNKNOWN
+Requires-Dist: nmap
+Requires-Dist: netifaces
+
+UNKNOWN
+
+
