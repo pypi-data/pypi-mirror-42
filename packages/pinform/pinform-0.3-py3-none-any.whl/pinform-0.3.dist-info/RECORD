@@ -1,0 +1,11 @@
+pinform/__init__.py,sha256=BiDzkJ36n7ggQ6XIbN3gbS-eD4H2140CnbxwNvtwcsc,13679
+pinform/client.py,sha256=Vmq723f1oazNALtP7xuMTzK-l54THaioZ7waWFCrzO4,15283
+pinform/utils.py,sha256=tiaxitXNRUdRA8LANjLMLc5ZVwsYbJ0aaDNbFAggHjY,589
+pinform/fields/__init__.py,sha256=jhKs0B_0qp3XF4hLJRAS8CGpcF90bV1hiKz13atSX6E,8282
+pinform/tags/__init__.py,sha256=bvRlksHNpko2eNukPSKK7M8WNOTvxCrjVUn7TytdFKE,822
+pinform-0.3.dist-info/DESCRIPTION.rst,sha256=Hu_cHdpR1kV8tnqGCahyvqRFQbSv_-X6TGfp6NDF7Rk,4017
+pinform-0.3.dist-info/METADATA,sha256=W6u6RMNGWPmELZwXMFvRqeAor3eLjla2z4REIKS9mZs,4428
+pinform-0.3.dist-info/RECORD,,
+pinform-0.3.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pinform-0.3.dist-info/metadata.json,sha256=41EF_FnbIFKoGRK2GvCya7c1Js6caJ_SFk1Bs64lWes,592
+pinform-0.3.dist-info/top_level.txt,sha256=0qm94V_HPQGOe78cDK4-179hNTa-ddfFT425jamvG1s,8
