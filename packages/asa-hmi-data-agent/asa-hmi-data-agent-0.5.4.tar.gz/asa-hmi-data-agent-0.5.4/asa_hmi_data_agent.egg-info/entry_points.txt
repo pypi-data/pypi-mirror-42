@@ -1,0 +1,6 @@
+[console_scripts]
+adt = asa_hmi_data_agent.__main__:run
+adt-loader = asa_hmi_data_agent.cli_tools.tool_loader:run
+adt-term = asa_hmi_data_agent.cli_tools.tool_term:run
+asa_hmi_data_agent = asa_hmi_data_agent.__main__:run
+

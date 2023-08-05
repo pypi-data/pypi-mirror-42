@@ -1,0 +1,8 @@
+py-asa-loader
+numpy
+pypiwin32
+PyQt5
+pyserial
+pyzmq
+scipy
+sip
