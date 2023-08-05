@@ -1,0 +1,7 @@
+{% load cms_tags sekizai_tags %}{% include "djangocms_pai_custom_elements/elements/base.html" %}{% addtoblock "js" %}
+<script type="text/javascript">
+    (function(){
+        // console.log('Custom Element loaded', document.getElementById('{{instance.id_name}}'));
+    })();
+</script>
+{% endaddtoblock %}

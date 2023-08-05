@@ -1,0 +1,6 @@
+{% load cms_tags sekizai_tags %}{% if instance.js %}{{ instance.js|safe }}{% endif %}{% if instance.css %}{{ instance.css|safe }}{% endif %}<{{ instance.tag_type }} {% spaceless %}
+    {% endspaceless %}{% if instance.id_name %} id="{{ instance.id_name }}"{% endif %} {% spaceless %}
+    {% endspaceless %}{% if instance.classes %}class="{% spaceless %}
+        {{ instance.classes }}
+    {% endspaceless %}"{% endif %}{% spaceless %}
+    {% endspaceless %}{{ instance.attributes_str }}>{% for plugin in instance.child_plugin_instances %} {% render_plugin plugin %}{% endfor %}</{{ instance.tag_type }}>
