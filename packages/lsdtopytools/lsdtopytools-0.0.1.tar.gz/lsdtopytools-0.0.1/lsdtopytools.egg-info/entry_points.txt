@@ -1,0 +1,3 @@
+[console_scripts]
+lsdtt-concavity-tools = scripts_for_lsdtopytools.lsdtt_concavity_tools:main
+
