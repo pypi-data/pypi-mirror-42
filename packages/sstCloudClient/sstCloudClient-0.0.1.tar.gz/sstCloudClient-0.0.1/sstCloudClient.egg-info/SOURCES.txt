@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+sstCloud/__init__.py
+sstCloudClient.egg-info/PKG-INFO
+sstCloudClient.egg-info/SOURCES.txt
+sstCloudClient.egg-info/dependency_links.txt
+sstCloudClient.egg-info/requires.txt
+sstCloudClient.egg-info/top_level.txt
