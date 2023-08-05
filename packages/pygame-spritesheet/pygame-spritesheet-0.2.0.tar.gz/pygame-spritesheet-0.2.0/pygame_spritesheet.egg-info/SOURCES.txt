@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+pygame_spritesheet.egg-info/PKG-INFO
+pygame_spritesheet.egg-info/SOURCES.txt
+pygame_spritesheet.egg-info/dependency_links.txt
+pygame_spritesheet.egg-info/requires.txt
+pygame_spritesheet.egg-info/top_level.txt
+spritesheet/__init__.py
+spritesheet/types.py

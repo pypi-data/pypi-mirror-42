@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: pygame-spritesheet
+Version: 0.2.0
+Summary: Python pygame extension that provides SpriteSheet class.
+Home-page: https://github.com/purple-ice/pygame-spritesheet
+Author: Purple Ice
+Author-email: purpleice.git@gmail.com
+License: MIT
+Download-URL: https://github.com/purple-ice/pygame-spritesheet/archive/v0.2.0.tar.gz
+Description: UNKNOWN
+Keywords: pygame,sprites,sheet,spritesheet,lightweight,simple
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
