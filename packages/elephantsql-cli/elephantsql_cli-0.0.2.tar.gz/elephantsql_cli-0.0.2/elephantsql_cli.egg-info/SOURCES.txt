@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+elephantsql_cli/__init__.py
+elephantsql_cli/cli.py
+elephantsql_cli/version.py
+elephantsql_cli.egg-info/PKG-INFO
+elephantsql_cli.egg-info/SOURCES.txt
+elephantsql_cli.egg-info/dependency_links.txt
+elephantsql_cli.egg-info/entry_points.txt
+elephantsql_cli.egg-info/requires.txt
+elephantsql_cli.egg-info/top_level.txt
