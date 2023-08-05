@@ -1,0 +1,4 @@
+include requirements.txt
+include poesy/schemes/rhyme_schemes.txt
+include poems/*
+include README.md
