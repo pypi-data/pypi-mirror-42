@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: python-donodoo
+Version: 0.1.0
+Summary: Donodoo API Client
+Home-page: https://bitbucket.org/metadonors/python-donodoo
+Author: Metadonors
+Author-email: fabrizio.arzeni@metadonors.it
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: OdooRPC
+
+UNKNOWN
+
+
