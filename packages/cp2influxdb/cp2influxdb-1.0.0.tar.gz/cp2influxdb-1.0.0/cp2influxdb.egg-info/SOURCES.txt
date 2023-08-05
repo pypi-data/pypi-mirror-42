@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+cp2influxdb/__init__.py
+cp2influxdb/__main__.py
+cp2influxdb/config.py
+cp2influxdb.egg-info/PKG-INFO
+cp2influxdb.egg-info/SOURCES.txt
+cp2influxdb.egg-info/dependency_links.txt
+cp2influxdb.egg-info/entry_points.txt
+cp2influxdb.egg-info/requires.txt
+cp2influxdb.egg-info/top_level.txt

@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: cp2influxdb
+Version: 1.0.0
+Summary: COOPER to InfluxDB
+Home-page: https://github.com/hardwario/cp2influxdb
+Author: HARDWARIO s.r.o.
+Author-email: ask@hardwario.com
+License: MIT
+Description: # COOPER to InfluxDB
+        
+        [![Travis](https://img.shields.io/travis/hardwario/cp2influxdb/master.svg)](https://travis-ci.org/hardwario/cp2influxdb)
+        [![Release](https://img.shields.io/github/release/hardwario/cp2influxdb.svg)](https://github.com/hardwario/cp2influxdb/releases)
+        [![License](https://img.shields.io/github/license/hardwario/cp2influxdb.svg)](https://github.com/hardwario/cp2influxdb/blob/master/LICENSE)
+        
+        ## Installing
+        
+        You can install **cp2influxdb** directly from PyPI:
+        
+        ```sh
+        sudo pip3 install -U cp2influxdb
+        ```
+        
+        ## Usage
+        
+        Update config.yml and run
+        
+        ```sh
+        cp2influxdb -c config.yml
+        ```
+        
+        ## License
+        
+        This project is licensed under the [**MIT License**](https://opensource.org/licenses/MIT/) - see the [**LICENSE**](LICENSE) file for details.
+        
+Keywords: cooper influxdb iot
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
