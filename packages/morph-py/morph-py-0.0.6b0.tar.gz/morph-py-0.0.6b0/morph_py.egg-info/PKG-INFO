@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: morph-py
+Version: 0.0.6b0
+Summary: Automate the refinement of your neural network architecture
+Home-page: https://github.com/stephenjfox/Morph.py
+Author: Stephen Fox
+Author-email: stevethecoder34@gmail.com
+License: GNU
+Download-URL: https://github.com/stephenjfox/Morph.py/archive/v0.0.6.tar.gz
+Description: UNKNOWN
+Keywords: machine learning,deep learning,nas,architecture,neural networks
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
