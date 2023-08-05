@@ -1,0 +1,93 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: notebook-cpu
+  labels:
+    app: notebook-cpu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notebook-cpu
+  template:
+    metadata:
+      labels:
+        app: notebook-cpu
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/admin/nb/hub/metrics"
+        prometheus.io/port: "8754"
+    spec:
+      imagePullSecrets:
+      - name: docker-registry-secret
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: pipeline.ai/role
+#                operator: In
+#                values:
+#                - admin
+      containers:
+      - name: notebook-cpu
+        image: docker.io/pipelineai/notebook-cpu:1.5.0
+        resources:
+          limits:
+            memory: 1Gi
+            cpu: 500m
+          requests:
+            memory: 1Gi
+            cpu: 500m
+        imagePullPolicy: "IfNotPresent"
+        terminationMessagePolicy: "FallbackToLogsOnError"
+        volumeMounts:
+        - name: rootfs-usr-lib
+          mountPath: /rootfs/usr/lib
+          readOnly: true
+        - name: users-volume
+          mountPath: /mnt/pipelineai/users
+#        - name: notebooks-volume
+#          mountPath: /mnt/pipelineai/notebooks
+        env:
+        # Note:  When adding vars here, make sure you whitelist them in jupyterhub_config.py
+        #        otherwise, jupyter notebooks won't be able to see them
+        - name: PIPELINE_USERS_HOME
+          value: /mnt/pipelineai/users
+        - name: PIPELINE_NOTEBOOKS_HOME
+          value: /mnt/pipelineai/notebooks
+        - name: GET_HOSTS_FROM
+          value: env
+        - name: SPARK_MASTER
+          value: spark://spark-2-3-0-master:7077
+        - name: SPARK_SUBMIT_ARGS
+          value: ""
+        - name: JUPYTERHUB_AUTHENTICATOR
+          value: dummyauthenticator.DummyAuthenticator 
+        - name: AUTH0_SUBDOMAIN
+          value: "" 
+        - name: OAUTH_CALLBACK_URL
+          value: "" 
+        - name: OAUTH_CLIENT_ID
+          value: ""
+        - name: OAUTH_CLIENT_SECRET
+          value: ""
+        - name: GITHUB_OAUTH_CLIENT_ID
+          value: ""
+        - name: GITHUB_OAUTH_CLIENT_SECRET
+          value: ""
+        ports:
+        - containerPort: 6006
+        - containerPort: 8754
+        - containerPort: 8755
+      volumes:
+      - name: rootfs-usr-lib
+        hostPath:
+          path: /usr/lib
+      - name: users-volume
+        hostPath:
+          path: /mnt/pipelineai/users
+          type: DirectoryOrCreate
+#      - name: notebooks-volume
+#        gitRepo:
+#          repository: https://github.com/PipelineAI/notebooks
