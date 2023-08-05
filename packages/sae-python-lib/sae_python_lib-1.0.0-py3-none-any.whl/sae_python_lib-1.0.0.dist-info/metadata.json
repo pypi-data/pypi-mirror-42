@@ -1,0 +1,1 @@
+{"extensions": {"python.details": {"contacts": [{"email": "f.r.d@hotmail.it", "name": "Francesco Roberto Dani", "role": "author"}], "document_names": {"description": "DESCRIPTION.rst"}}}, "generator": "bdist_wheel (0.29.0)", "license": "GPLv2.1", "metadata_version": "2.0", "name": "sae-python-lib", "summary": "Python library for audio signal processing", "version": "1.0.0"}
