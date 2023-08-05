@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: conf2yaml
+Version: 0.0.2
+Summary: It's a Network configuration parser, which translates the show outputs
+Home-page: https://github.com/network-tools/conf2yaml
+Author: Kiran Kumar Kotari, Shameer Ali M
+Author-email: kotarikirankumar@gmail.com, ali.shameer@gmail.com
+License: UNKNOWN
+Keywords: network conf parser translator cisco show output parser
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# conf2yaml
+
+coming soon..
+
+
