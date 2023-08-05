@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: dragonn
+Version: 0.2.4
+Summary: Deep RegulAtory GenOmic Neural Networks (DragoNN)
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.15)
+Requires-Dist: keras (>=2.2.0)
+Requires-Dist: tensorflow (>=1.6)
+Requires-Dist: deeplift (>=0.6.8.1)
+Requires-Dist: shapely
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: pydot-ng (==1.0.0)
+Requires-Dist: h5py
+Requires-Dist: concise
+Requires-Dist: seqdataloader (>=0.117)
+Requires-Dist: simdna
+
+UNKNOWN
+
+
