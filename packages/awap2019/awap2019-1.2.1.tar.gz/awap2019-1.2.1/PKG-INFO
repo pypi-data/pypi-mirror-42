@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: awap2019
+Version: 1.2.1
+Summary: Module for AWAP 2019.
+Home-page: http://github.com/cuebeomc/awap2019
+Author: ACM@CMU
+Author-email: cuebeomc@andrew.cmu.edu
+License: GPL
+Description: Contains essential classes for competitors.
+Platform: UNKNOWN
