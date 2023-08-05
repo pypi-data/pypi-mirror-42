@@ -1,0 +1,3 @@
+      [plone.recipe.zope2instance.ctl]
+      verifydb = Products.CMFPlone._scripts.verifydb:zopectl_entry
+    
