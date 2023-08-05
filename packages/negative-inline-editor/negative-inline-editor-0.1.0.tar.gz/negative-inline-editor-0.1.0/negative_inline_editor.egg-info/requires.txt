@@ -1,0 +1,7 @@
+django-i18n
+django-threadlocals
+
+[filer]
+django-rest-framework
+easy-thumbnails
+django-filer
