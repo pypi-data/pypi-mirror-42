@@ -1,0 +1,9 @@
+[console_scripts]
+wm-condaadd = workspacemanager.condaadd:generatePythonpath
+wm-condainst = workspacemanager.condainst:installSublReqs
+wm-dist = workspacemanager.dist:generateDists
+wm-help = workspacemanager.help:printHelp
+wm-pewadd = workspacemanager.pewadd:generatePythonpath
+wm-pewinst = workspacemanager.pewinst:installSublReqs
+wm-setup = workspacemanager.setup:generateSetup
+
