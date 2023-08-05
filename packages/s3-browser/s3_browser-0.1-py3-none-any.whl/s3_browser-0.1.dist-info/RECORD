@@ -1,0 +1,12 @@
+s3_browser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+s3_browser/cli.py,sha256=mTokk6_XOhfCJYODJZpOhs0NDSfFodaP55w-Jxt4HFo,5893
+s3_browser/client.py,sha256=zJTfEStaURFE4IDml6T7DwXV16cKxX_Yt6PRacguyGc,2516
+s3_browser/completion.py,sha256=hmAO6FcCV-oVn2_1CuQbzepIBeXCK2mErFGcoWXl8hU,1107
+s3_browser/paths.py,sha256=PilJ4IXOqItbBg0qU5JMj7ii0Yjkj5bWv4mVA-H4RJY,3086
+s3_browser/utils.py,sha256=zVpOMEiqBUiY6xGtt4vXp0GUpuSbg5oFOHQ4yFAn04Y,964
+s3_browser-0.1.dist-info/LICENSE,sha256=_XnzO_ZVoYR8bLvK45lBImRtNyJQF32D-JoiI8yyNfM,1073
+s3_browser-0.1.dist-info/METADATA,sha256=P44e5_UGBBopZboN3WUUBLxPXaQSyr7e_ajw6aKrnfY,340
+s3_browser-0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+s3_browser-0.1.dist-info/entry_points.txt,sha256=WdDVjQ8ghUj71j1VoINgRKZw30ByB4Qs62V4asXiD04,52
+s3_browser-0.1.dist-info/top_level.txt,sha256=omoYgo5Wp1k0oNxzSogBnCI6BNny95ktFu7H3potgEw,11
+s3_browser-0.1.dist-info/RECORD,,
