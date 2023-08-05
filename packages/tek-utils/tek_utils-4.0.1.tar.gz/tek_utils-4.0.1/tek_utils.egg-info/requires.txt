@@ -1,0 +1,7 @@
+requests
+golgi~=2.0.1
+tek>=3.0.0
+lxml
+ThePirateBay
+pyquery
+cfscrape
