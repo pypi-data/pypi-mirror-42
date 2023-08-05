@@ -1,0 +1,8 @@
+valiot_worker/__init__.py,sha256=7qQRbkcnOadjxEeZmNopMHqt4SH5Ij8I4FablBZwJy0,60
+valiot_worker/text.py,sha256=Etg7zusZ3fPt5psX3e88-PoS7b2vSo99oFlXB3EWhDE,60
+valiot_worker/worker.py,sha256=YxvkorTslh0umRgELV58_H8Zd_xpX7FbVo7nn9ZWSbk,2733
+valiot_worker-0.21.dist-info/LICENSE,sha256=ApYNW887jGu3RXNeCgTXumfJlXODzZsOOXoMT99s2Ps,1093
+valiot_worker-0.21.dist-info/METADATA,sha256=gmqe2AEBMwCwpzUpG9Dr3oyYy1wCQuI2eTtEObLUtQY,327
+valiot_worker-0.21.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+valiot_worker-0.21.dist-info/top_level.txt,sha256=GW7d0D1hLxwO-hAk-7OIPCfzSkoDIIrABLjpeVTwyXQ,14
+valiot_worker-0.21.dist-info/RECORD,,
