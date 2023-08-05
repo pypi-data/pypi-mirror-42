@@ -1,0 +1,2727 @@
+-I- Read in any available data from working directory (data model 2)
+-W- No criteria found: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_criteria.txt 
+data model: 2.0
+-I- Read magic file /Users/nebula/Python/PmagPy/data_files/testing/my_project/magic_measurements.txt
+-I- done sorting meas data
+-I- Reading previous interpretations from specimen/sample/site tables
+-I- running python script:
+ thellier_gui.py -WD /Users/nebula/Python/PmagPy/data_files/testing/my_project
+-I- Read in any available data from working directory (data model 2)
+-W- No criteria found: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_criteria.txt 
+done sort blocks to arai, zij. etc.
+    self.GUI_RESOLUTION 0.9
+-I- Read pmag_specimens.txt for previous interpretation
+-I- Read in any available data from working directory
+-I- Getting method codes from earthref.org
+-I- Importing controlled vocabularies from https://earthref.org
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- running python script:
+ demag_gui.py -WD /Users/nebula/Python/PmagPy/data_files/Pmag_GUI/3_0
+-I- Read in any available data from working directory
+data model: 3.0
+-I- Using magn_moment for intensity
+-E- ERROR: specimen mgf13b01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13b02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03d03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07b04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07b05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07b06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07d01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04a04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06c04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06c05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06c06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06c07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06d01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06d02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08a01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08a02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08a03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08b01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08b03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10b05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13d09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13d10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13d11 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13d12 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03d04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03d05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03d06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03d07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07e07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07e08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07e09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09l01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b11 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b12 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d11 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04d12 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10a02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10d01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10d03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10d04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf10d05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13b10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13b11 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13d02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13e10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03a03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03a04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03a05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03a06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03b06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03g07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03h08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07b07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07d02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07d04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07e01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh07e03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09k04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09l02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09l03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09l04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh12t1PI03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh12t1PI04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04a01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04a02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04a03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj04b01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj06b03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgj06d04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a08 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a09 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06a10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06c03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk06d03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08a04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk09t1PI06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t2PI10 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13b13 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13b14 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03j02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03j04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03j06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09m06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09p02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13f01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13f02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13f03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgf13f04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03f04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09c01 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh09c02 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08e06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgk08e07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgq05t1PI06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i03 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i04 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i05 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i06 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen mgh03i07 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06b4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06b5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07a4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07a5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07b4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07b5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10c3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10d1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10d2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10d3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11c4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz11c5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13b4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13b5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13f1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13f2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13f3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz15c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18a4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18a5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18d2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18d3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18d4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18d5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18e2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz18e3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b7 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a7 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c7 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07c8 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07d6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07e1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07e2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07e3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz09a5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz09a6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10c5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz10c6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13a7 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz13e6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20b4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20b6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20c6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20e1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20e3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20f1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20f2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz20f3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06a3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06b3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz06c3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07a1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07a2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07b1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz07b2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05c6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05e6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05f1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05f2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05f3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05f4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05f6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05g6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h1 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h2 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h3 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h4 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h5 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-E- ERROR: specimen hz05h6 has more than one demagnetization experiment name. You need to merge them to one experiment-name?
+-I- done sorting meas data
+-E- specimen hz07e5 does not exist in measurement data
+-E- specimen mgf13b05 does not exist in measurement data
+-I- Read in any available data from working directory
+-I- running python script:
+ thellier_gui.py -WD /Users/nebula/Python/PmagPy/data_files/Pmag_GUI/3_0
+-I- Read in any available data from working directory
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/Pmag_GUI/3_0/specimens.bak
+-I- 1063 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/Pmag_GUI/3_0/samples.bak
+-I- 244 records written to samples file
+-I- sites table already has ['lat', 'lon'] filled column(s)
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/Pmag_GUI/3_0/sites.bak
+-I- 39 records written to sites file
+-I- Using anisotropy data
+done sort blocks to arai, zij. etc.
+    self.GUI_RESOLUTION 0.9
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- Read in any available data from working directory
+-I- overwriting /Users/nebula/Python/PmagPy/locations.txt
+-I- 2 records written to locations file
+/Users/nebula/Python/PmagPy/measurements.txt
+/Users/nebula/Python/PmagPy/specimens.txt
+/Users/nebula/Python/PmagPy/samples.txt
+/Users/nebula/Python/PmagPy/sites.txt
+-I- Adding age_high and age_low to locations table based on minimum/maximum ages found in sites table
+-I- Adding age_high and age_low to locations table based on minimum/maximum ages found in sites table
+-W- sites table is missing "age" column, skipping
+-I- Adding age_high and age_low to locations table based on minimum/maximum ages found in sites table
+-I- Updating sites table with values from samples table
+-I- Creating new specimens table with data from samples table
+-I- Creating new locations table with data from sites table
+-W- can't propagate from samples to sites table
+    Missing site column in samples table
+-W- Couldn't read in samples table
+-W- propagate_average_up only works with tables that are spaced one apart, i.e. sites and samples.
+    Source table must be lower in the hierarchy than the target table.
+    You have provided "samples" as the target table and "sites" as the source table.
+-W- propagate_average_up only works with tables that are spaced one apart, i.e. sites and samples.
+    Source table must be lower in the hierarchy than the target table.
+    You have provided "sites" as the target table and "specimens" as the source table.
+-I- Trying to propagate ['lithologies', 'geologic_types'] columns from samples table into sites table
+-I- Trying to propagate ['lithologies', 'geologic_types'] columns from samples table into sites table
+-W- Couldn't read in samples table
+site
+mc50    Basalt
+mc50    Basalt
+mc50    Basalt
+mc50    Basalt
+Name: lithologies, dtype: object
+site
+mc50    your type
+mc50    your type
+mc50    your type
+mc50    your type
+Name: geologic_types, dtype: object
+-I- Propagating values up from samples to sites...
+-I- Trying to propagate ['lithologies', 'geologic_types', 'geologic_classes'] columns from samples table into sites table
+-W- could not finish propagating names: samples table is missing site column
+-W- could not finish propagating names: samples table is missing site column
+-W- could not finish propagating names: measurements table is missing site column
+-I- Creating new locations table with data from sites table
+-I- writing locations records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/_locations.txt
+-I- 1 records written to locations file
+-I- Creating new samples table with data from sites table
+-I- writing samples records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/_samples.txt
+-I- 215 records written to samples file
+-I- Creating new locations table with data from sites table
+-I- writing locations records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/_locations.txt
+-I- 1 records written to locations file
+-I- Updating samples table with values from sites table
+-I- writing samples records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/_samples.txt
+-I- 215 records written to samples file
+-I- Creating new locations table with data from sites table
+-I- writing locations records to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/_locations.txt
+-I- 2 records written to locations file
+site name
+1    135
+1    135
+Name: bed_dip_direction, dtype: object
+Series([], Name: bed_dip_direction, dtype: object)
+-W- To make a MagicDataFrame, you must provide either a filename or a datatype
+deleting redundant records for: 2
+setting location name to ""
+setting location name to ""
+saving data...
+24  records written to file  /Users/nebula/Python/PmagPy/data_files/orientation_magic/samples.txt
+2  records written to file  /Users/nebula/Python/PmagPy/data_files/orientation_magic/sites.txt
+Data saved in  /Users/nebula/Python/PmagPy/data_files/orientation_magic/samples.txt  and  /Users/nebula/Python/PmagPy/data_files/orientation_magic/sites.txt
+adding measurement column to measurements table!
+-I- writing measurements records to /Users/nebula/Python/PmagPy/measurements.txt
+-I- 126 records written to measurements file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/specimens.txt
+-I- 7 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/samples.txt
+-I- 1 records written to samples file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/sites.txt
+-I- 1 records written to sites file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/locations.txt
+-I- 1 records written to locations file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/aarm_measurements.txt
+-I- 126 records written to measurements file
+7  records written to file  /Users/nebula/Python/PmagPy/data_files/aarm_magic/new_specimens.txt
+specimen data stored in /Users/nebula/Python/PmagPy/data_files/aarm_magic/new_specimens.txt
+adding measurement column to measurements table!
+-I- overwriting /Users/nebula/Python/PmagPy/measurements.txt
+-I- 126 records written to measurements file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/specimens.txt
+-I- 7 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/samples.txt
+-I- 1 records written to samples file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/sites.txt
+-I- 1 records written to sites file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/locations.txt
+-I- 1 records written to locations file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/aarm_measurements.txt
+-I- 126 records written to measurements file
+7  records written to file  /Users/nebula/Python/PmagPy/new_specimens.txt
+specimen data stored in /Users/nebula/Python/PmagPy/new_specimens.txt
+adding measurement column to measurements table!
+-I- overwriting /Users/nebula/Python/PmagPy/measurements.txt
+-I- 7 records written to measurements file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/specimens.txt
+-I- 7 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/samples.txt
+-I- 7 records written to samples file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/sites.txt
+-I- 2 records written to sites file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/locations.txt
+-I- 1 records written to locations file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/aarm_measurements.txt
+-I- 7 records written to measurements file
+specimen data stored in /Users/nebula/Python/PmagPy/new_specimens.txt
+adding measurement column to measurements table!
+-I- overwriting /Users/nebula/Python/PmagPy/measurements.txt
+-I- 126 records written to measurements file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/specimens.txt
+-I- 7 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/samples.txt
+-I- 1 records written to samples file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/sites.txt
+-I- 1 records written to sites file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/locations.txt
+-I- 1 records written to locations file
+-I- overwriting /Users/nebula/Python/PmagPy/data_files/aarm_magic/aarm_measurements.txt
+-I- 126 records written to measurements file
+Warning: you have provided an invalid age file.  Attempting to use sample file instead
+Could not find rmag_anisotropy type file: /Users/nebula/Python/PmagPy/rmag_anisotropy.txt.
+Please provide a valid file path and try again
+Warning: you have provided an ages format file, which will take precedence over samples
+-W- This function requires a specimen file to run.
+    Make sure you include one in your working directory
+30  records written to file  /Users/nebula/Python/PmagPy/custom_specimens.txt
+specimen data stored in /Users/nebula/Python/PmagPy/custom_specimens.txt
+30  records written to file  /Users/nebula/Python/PmagPy/data_files/atrm_magic/custom_specimens.txt
+specimen data stored in /Users/nebula/Python/PmagPy/data_files/atrm_magic/custom_specimens.txt
+-I- writing measurements records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/new_measurements.txt
+-I- 25470 records written to measurements file
+-I- writing measurements records to /Users/nebula/Python/PmagPy/custom.out
+-I- 50940 records written to measurements file
+-I- writing locations records to /Users/nebula/Python/PmagPy/data_files/3_0/McMurdo/custom_outfile.txt
+-I- 10 records written to locations file
+-I- Removed 1 redundant records from specimens table
+-I- writing specimens records to /Users/nebula/Python/PmagPy/custom.out
+-I- 2747 records written to specimens file
+-I- Removed 1 redundant records from specimens table
+-I- writing specimens records to /Users/nebula/Python/PmagPy/custom.out
+-I- 2747 records written to specimens file
+method: NA not supported
+-W- Column 'composite_depth' isn't in sites table, skipping it
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/measurements.txt
+using intensity key: magn_mass
+no bulk measurement data matched your request
+no data!
+-W- Column 'composite_depth' isn't in sites table, skipping it
+-I- Adding age_high and age_low to locations table based on minimum/maximum ages found in sites table
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/measurements.txt
+using intensity key: magn_mass
+2332 depths found
+-W- Column 'composite_depth' isn't in sites table, skipping it
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/measurements.txt
+using intensity key: magn_mass
+2332 depths found
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/magic_measurements.txt
+using intensity key: measurement_magn_mass
+2332 depths found
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/magic_measurements.txt
+using intensity key: measurement_magn_mass
+2332 depths found
+9328  measurements read in from  /Users/nebula/Python/PmagPy/data_files/core_depthplot/magic_measurements.txt
+using intensity key: measurement_magn_mass
+2332 depths found
+4321  measurements read in from  /Users/nebula/Python/PmagPy/data_files/UTESTA/UTESTA_MagIC/magic_measurements.txt
+using intensity key: measurement_magn_moment
+679 depths found
+no core_depth found for:  XXX-UTESTA-8H-4_W_89
+working on:  'contribution'
+1  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/contribution.txt
+contribution  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/contribution.txt
+working on:  'locations'
+3  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/locations.txt
+locations  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/locations.txt
+working on:  'sites'
+52  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/sites.txt
+sites  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/sites.txt
+working on:  'samples'
+271  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/samples.txt
+samples  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/samples.txt
+working on:  'specimens'
+225  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/specimens.txt
+specimens  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/specimens.txt
+working on:  'measurements'
+3072  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/measurements.txt
+measurements  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/measurements.txt
+working on:  'criteria'
+20  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/criteria.txt
+criteria  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/criteria.txt
+working on:  'ages'
+20  records written to file  /Users/nebula/Python/PmagPy/data_files/download_magic/ages.txt
+ages  data put in  /Users/nebula/Python/PmagPy/data_files/download_magic/ages.txt
+-E- Could not find sites.txt
+1  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc01_g_eqarea.png
+2  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc02_g_eqarea.png
+3  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc03_g_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc04_g_eqarea.png
+5  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc06_g_eqarea.png
+6  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc07_g_eqarea.png
+7  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc08_g_eqarea.png
+8  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc09_g_eqarea.png
+9  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc10_g_eqarea.png
+10  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc100_g_eqarea.png
+11  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc101_g_eqarea.png
+12  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc102_g_eqarea.png
+13  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc103_g_eqarea.png
+14  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc104_g_eqarea.png
+15  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc105_g_eqarea.png
+16  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc106_g_eqarea.png
+17  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc107_g_eqarea.png
+18  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc108_g_eqarea.png
+19  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc109_g_eqarea.png
+20  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc11_g_eqarea.png
+21  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc110_g_eqarea.png
+22  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc111_g_eqarea.png
+23  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc112_g_eqarea.png
+24  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc113_g_eqarea.png
+25  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc114_g_eqarea.png
+26  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc115_g_eqarea.png
+27  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc116_g_eqarea.png
+28  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc117_g_eqarea.png
+29  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc118_g_eqarea.png
+30  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc119_g_eqarea.png
+-W- No dec/inc data
+32  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc120_g_eqarea.png
+33  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc121_g_eqarea.png
+34  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc122_g_eqarea.png
+35  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc123_g_eqarea.png
+36  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc124_g_eqarea.png
+37  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc125_g_eqarea.png
+38  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc126_g_eqarea.png
+39  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc127_g_eqarea.png
+40  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc128_g_eqarea.png
+41  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc129_g_eqarea.png
+42  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc13_g_eqarea.png
+43  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc130_g_eqarea.png
+44  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc131_g_eqarea.png
+45  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc132_g_eqarea.png
+46  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc133_g_eqarea.png
+47  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc134_g_eqarea.png
+48  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc135_g_eqarea.png
+49  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc136_g_eqarea.png
+50  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc137_g_eqarea.png
+51  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc138_g_eqarea.png
+52  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc139_g_eqarea.png
+53  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc14_g_eqarea.png
+54  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc140_g_eqarea.png
+55  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc141_g_eqarea.png
+56  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc142_g_eqarea.png
+57  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc143_g_eqarea.png
+58  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc144_g_eqarea.png
+59  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc145_g_eqarea.png
+60  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc146_g_eqarea.png
+61  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc147_g_eqarea.png
+62  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc148_g_eqarea.png
+-W- No dec/inc data
+64  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc15_g_eqarea.png
+65  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc150_g_eqarea.png
+-W- No dec/inc data
+67  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc152_g_eqarea.png
+68  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc153_g_eqarea.png
+69  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc154_g_eqarea.png
+70  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc155_g_eqarea.png
+71  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc156_g_eqarea.png
+72  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc157_g_eqarea.png
+73  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc158_g_eqarea.png
+-W- No dec/inc data
+75  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc160_g_eqarea.png
+76  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc161_g_eqarea.png
+77  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc162_g_eqarea.png
+78  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc163_g_eqarea.png
+79  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc164_g_eqarea.png
+80  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc165_g_eqarea.png
+81  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc166_g_eqarea.png
+82  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc167_g_eqarea.png
+83  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc168_g_eqarea.png
+-W- No dec/inc data
+85  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc170_g_eqarea.png
+86  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc19_g_eqarea.png
+87  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc20_g_eqarea.png
+88  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc200_g_eqarea.png
+89  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc201_g_eqarea.png
+90  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc202_g_eqarea.png
+91  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc203_g_eqarea.png
+92  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc204_g_eqarea.png
+93  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc205_g_eqarea.png
+94  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc206_g_eqarea.png
+95  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc207_g_eqarea.png
+96  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc208_g_eqarea.png
+97  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc209_g_eqarea.png
+98  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc21_g_eqarea.png
+99  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc210_g_eqarea.png
+100  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc211_g_eqarea.png
+101  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc212_g_eqarea.png
+102  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc213_g_eqarea.png
+103  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc214_g_eqarea.png
+104  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc215_g_eqarea.png
+105  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc216_g_eqarea.png
+106  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc217_g_eqarea.png
+107  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc218_g_eqarea.png
+108  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc219_g_eqarea.png
+-W- No dec/inc data
+110  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc220_g_eqarea.png
+111  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc221_g_eqarea.png
+112  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc222_g_eqarea.png
+113  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc223_g_eqarea.png
+114  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc224_g_eqarea.png
+115  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc225_g_eqarea.png
+116  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc226_g_eqarea.png
+117  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc227_g_eqarea.png
+118  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc228_g_eqarea.png
+119  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc229_g_eqarea.png
+120  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc26_g_eqarea.png
+121  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc28_g_eqarea.png
+122  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/McMurdo_mc29_g_eqarea.png
+1  saved in  /Users/nebula/Python/PmagPy/data_files/eqarea_magic/all_McMurdo_g_eqarea.png
+bad file /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/fake.txt
+-I- overwriting /Users/nebula/Python/PmagPy/custom_specimens.txt
+-I- 5 records written to specimens file
+hysteresis parameters saved in  /Users/nebula/Python/PmagPy/custom_specimens.txt
+1  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-1_hyst.png
+2  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-1_deltaM.png
+3  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-1_DdeltaM.png
+4  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-1_irm.png
+5  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-2_hyst.png
+6  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-2_deltaM.png
+7  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-2_DdeltaM.png
+8  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-2_irm.png
+9  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-3_hyst.png
+10  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-3_deltaM.png
+11  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-3_DdeltaM.png
+12  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-3_irm.png
+13  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-4_hyst.png
+14  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-4_deltaM.png
+15  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-4_DdeltaM.png
+16  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-4_irm.png
+17  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-5_hyst.png
+18  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-5_deltaM.png
+19  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-5_DdeltaM.png
+20  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-5_irm.png
+21  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-6_hyst.png
+22  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-6_deltaM.png
+23  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-6_DdeltaM.png
+24  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-6_irm.png
+25  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-8_hyst.png
+26  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-8_deltaM.png
+27  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-8_DdeltaM.png
+28  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-8_irm.png
+29  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-9_hyst.png
+30  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-9_deltaM.png
+31  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-9_DdeltaM.png
+32  saved in  /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/IS06a-9_irm.png
+-I- writing specimens records to /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/custom_specimens.txt
+-I- 8 records written to specimens file
+f /Users/nebula/Python/PmagPy/data_files/hysteresis_magic/custom_specimens.txt
+1  saved in  /Users/nebula/Python/PmagPy/IS06a-1_hyst.svg
+2  saved in  /Users/nebula/Python/PmagPy/IS06a-1_deltaM.svg
+3  saved in  /Users/nebula/Python/PmagPy/IS06a-1_DdeltaM.svg
+4  saved in  /Users/nebula/Python/PmagPy/IS06a-1_irm.svg
+5  saved in  /Users/nebula/Python/PmagPy/IS06a-2_hyst.svg
+6  saved in  /Users/nebula/Python/PmagPy/IS06a-2_deltaM.svg
+7  saved in  /Users/nebula/Python/PmagPy/IS06a-2_DdeltaM.svg
+8  saved in  /Users/nebula/Python/PmagPy/IS06a-2_irm.svg
+9  saved in  /Users/nebula/Python/PmagPy/IS06a-3_hyst.svg
+10  saved in  /Users/nebula/Python/PmagPy/IS06a-3_deltaM.svg
+11  saved in  /Users/nebula/Python/PmagPy/IS06a-3_DdeltaM.svg
+12  saved in  /Users/nebula/Python/PmagPy/IS06a-3_irm.svg
+13  saved in  /Users/nebula/Python/PmagPy/IS06a-4_hyst.svg
+14  saved in  /Users/nebula/Python/PmagPy/IS06a-4_deltaM.svg
+15  saved in  /Users/nebula/Python/PmagPy/IS06a-4_DdeltaM.svg
+16  saved in  /Users/nebula/Python/PmagPy/IS06a-4_irm.svg
+17  saved in  /Users/nebula/Python/PmagPy/IS06a-5_hyst.svg
+18  saved in  /Users/nebula/Python/PmagPy/IS06a-5_deltaM.svg
+19  saved in  /Users/nebula/Python/PmagPy/IS06a-5_DdeltaM.svg
+20  saved in  /Users/nebula/Python/PmagPy/IS06a-5_irm.svg
+-I- overwriting /Users/nebula/Python/PmagPy/custom_specimens.txt
+-I- 5 records written to specimens file
+setting location name to ""
+setting location name to ""
+saving data...
+24  records written to file  /Users/nebula/Python/PmagPy/samples.txt
+2  records written to file  /Users/nebula/Python/PmagPy/sites.txt
+Data saved in  /Users/nebula/Python/PmagPy/samples.txt  and  /Users/nebula/Python/PmagPy/sites.txt
+(True, None)
+setting location name to ""
+setting location name to ""
+saving data...
+24  records written to file  /Users/nebula/Python/PmagPy/data_files/orientation_magic/samples.txt
+2  records written to file  /Users/nebula/Python/PmagPy/data_files/orientation_magic/sites.txt
+Data saved in  /Users/nebula/Python/PmagPy/data_files/orientation_magic/samples.txt  and  /Users/nebula/Python/PmagPy/data_files/orientation_magic/sites.txt
+data saved in:  /Users/nebula/Python/PmagPy/data_files/download_magic/Directions.txt /Users/nebula/Python/PmagPy/data_files/download_magic/Intensities.txt /Users/nebula/Python/PmagPy/data_files/download_magic/SiteNfo.txt
+data saved in:  /Users/nebula/Python/PmagPy/data_files/download_magic/Directions.tex /Users/nebula/Python/PmagPy/data_files/download_magic/Intensities.tex /Users/nebula/Python/PmagPy/data_files/download_magic/SiteNfo.tex
+1  saved in  Cismon Section_Monte Raparo Limestones_Algarve Bas_POLE_map_t.png
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+1  saved in  Cismon Section_Monte Raparo Limestones_Algarve Bas_POLE_map_t.pdf
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+gridlines only supported for PlateCarree and Mercator plots currently
+1  saved in  Cismon Section_Monte Raparo Limestones_Algarve Bas_POLE_map_t.pdf
+No intensity data for ouput.
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data for data propagation
+s2s0-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-03_deremag.png
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data for data propagation
+s2s0-03
+1  saved in  /Users/nebula/Python/PmagPy/data_files/thellier_magic/s2s0-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/data_files/thellier_magic/s2s0-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/data_files/thellier_magic/s2s0-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/data_files/thellier_magic/s2s0-03_deremag.png
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data for data propagation
+s2s0-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-01_arai.svg
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-01_zijd.svg
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-01_eqarea.svg
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-01_deremag.svg
+s2s0-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-02_arai.svg
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-02_zijd.svg
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-02_eqarea.svg
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-02_deremag.svg
+s2s0-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-03_arai.svg
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-03_zijd.svg
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-03_eqarea.svg
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-03_deremag.svg
+s2s0-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-04_arai.svg
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-04_zijd.svg
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-04_eqarea.svg
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-04_deremag.svg
+s2s0-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-05_arai.svg
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-05_zijd.svg
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-05_eqarea.svg
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-05_deremag.svg
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data
+-I- Make sure you've provided the correct file name
+-W- Couldn't read in specimens data for data propagation
+s2s0-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-01_deremag.png
+s2s0-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-02_deremag.png
+s2s0-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-03_deremag.png
+s2s0-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-04_deremag.png
+s2s0-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-05_deremag.png
+s1s14-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-01_deremag.png
+s1s14-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-02_deremag.png
+s1s14-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-03_deremag.png
+s1s14-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-04_deremag.png
+s1s19-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s19-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s19-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s19-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s19-01_deremag.png
+s1s19-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s19-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s19-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s19-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s19-02_deremag.png
+s1s19-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s19-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s19-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s19-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s19-03_deremag.png
+s1s19-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s19-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s19-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s19-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s19-04_deremag.png
+s1s23-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s23-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s23-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s23-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s23-01_deremag.png
+s1s23-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s23-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s23-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s23-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s23-02_deremag.png
+s1s23-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s23-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s23-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s23-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s23-03_deremag.png
+s1s23-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s23-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s23-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s23-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s23-04_deremag.png
+s1s3-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s3-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s3-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s3-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s3-01_deremag.png
+s1s3-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s3-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s3-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s3-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s3-02_deremag.png
+s1s3-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s3-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s3-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s3-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s3-03_deremag.png
+s1s3-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s3-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s3-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s3-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s3-04_deremag.png
+s1s37-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s37-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s37-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s37-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s37-01_deremag.png
+s1s37-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s37-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s37-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s37-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s37-02_deremag.png
+s1s37-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s37-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s37-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s37-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s37-03_deremag.png
+s1s37-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s37-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s37-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s37-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s37-04_deremag.png
+s1s40a-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s40a-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s40a-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s40a-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s40a-01_deremag.png
+s1s40a-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s40a-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s40a-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s40a-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s40a-02_deremag.png
+s1s40a-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s40a-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s40a-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s40a-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s40a-03_deremag.png
+s1s40a-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s40a-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s40a-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s40a-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s40a-04_deremag.png
+s1s51-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-01_deremag.png
+s1s51-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-02_deremag.png
+s1s51-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-03_deremag.png
+s1s51-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-04_deremag.png
+s1s52-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s52-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s52-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s52-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s52-01_deremag.png
+s1s52-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s52-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s52-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s52-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s52-02_deremag.png
+s1s52-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s52-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s52-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s52-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s52-03_deremag.png
+s1s52-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s52-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s52-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s52-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s52-04_deremag.png
+s1s61-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s61-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s61-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s61-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s61-01_deremag.png
+s1s61-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s61-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s61-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s61-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s61-02_deremag.png
+s1s61-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s61-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s61-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s61-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s61-03_deremag.png
+s1s61-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s61-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s61-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s61-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s61-04_deremag.png
+s1s66-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s66-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s66-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s66-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s66-01_deremag.png
+s1s66-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s66-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s66-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s66-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s66-02_deremag.png
+s1s66-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s66-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s66-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s66-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s66-03_deremag.png
+s1s7-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s7-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s7-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s7-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s7-01_deremag.png
+s1s7-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s7-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s7-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s7-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s7-02_deremag.png
+s1s7-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s7-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s7-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s7-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s7-03_deremag.png
+s1s7-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s7-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s7-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s7-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s7-04_deremag.png
+s1s90-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s90-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s90-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s90-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s90-01_deremag.png
+s1s90-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s90-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s90-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s90-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s90-02_deremag.png
+s1s90-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s90-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s90-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s90-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s90-03_deremag.png
+s1s90-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s90-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s90-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s90-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s90-04_deremag.png
+s1s94-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-01_deremag.png
+s1s94-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-02_deremag.png
+s1s94-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-03_deremag.png
+s1s17-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s17-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s17-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s17-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s17-01_deremag.png
+s1s17-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s17-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s17-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s17-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s17-02_deremag.png
+s1s17-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s17-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s17-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s17-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s17-03_deremag.png
+s1s17-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s17-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s17-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s17-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s17-04_deremag.png
+s2s0-06
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-06_deremag.png
+s2s0-07
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-07_deremag.png
+s2s0-08
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-08_deremag.png
+s2s0-09
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-09_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-09_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-09_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-09_deremag.png
+s2s0-10
+1  saved in  /Users/nebula/Python/PmagPy/s2s0-10_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s0-10_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s0-10_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s0-10_deremag.png
+s2s10-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-01_deremag.png
+s2s10-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-02_deremag.png
+s2s10-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-03_deremag.png
+s2s10-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-04_deremag.png
+s2s10-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-05_deremag.png
+s2s10-06
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-06_deremag.png
+s2s10-07
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-07_deremag.png
+s2s10-08
+1  saved in  /Users/nebula/Python/PmagPy/s2s10-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s10-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s10-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s10-08_deremag.png
+s2s13-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-01_deremag.png
+s2s13-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-02_deremag.png
+s2s13-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-03_deremag.png
+s2s13-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-04_deremag.png
+s2s13-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-05_deremag.png
+s2s13-06
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-06_deremag.png
+s2s13-07
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-07_deremag.png
+s2s13-08
+1  saved in  /Users/nebula/Python/PmagPy/s2s13-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s13-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s13-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s13-08_deremag.png
+s2s8-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-04_deremag.png
+s2s8-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-05_deremag.png
+s2s8-06
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-06_deremag.png
+s2s8-07
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-07_deremag.png
+s2s8-08
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-08_deremag.png
+s1s12-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s12-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s12-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s12-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s12-04_deremag.png
+s1s12-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s12-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s12-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s12-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s12-05_deremag.png
+s1s14-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-05_deremag.png
+s1s14-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-06_deremag.png
+s1s14-07
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-07_deremag.png
+s1s14-08
+1  saved in  /Users/nebula/Python/PmagPy/s1s14-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s14-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s14-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s14-08_deremag.png
+s1s16-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s16-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s16-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s16-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s16-04_deremag.png
+s1s16-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s16-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s16-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s16-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s16-05_deremag.png
+s1s20-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s20-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s20-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s20-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s20-04_deremag.png
+s1s20-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s20-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s20-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s20-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s20-05_deremag.png
+s1s24-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s24-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s24-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s24-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s24-04_deremag.png
+s1s24-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s24-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s24-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s24-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s24-05_deremag.png
+s1s33-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s33-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s33-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s33-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s33-01_deremag.png
+s1s33-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s33-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s33-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s33-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s33-02_deremag.png
+s1s33-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s33-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s33-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s33-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s33-03_deremag.png
+s1s33-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s33-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s33-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s33-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s33-04_deremag.png
+s1s33-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s33-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s33-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s33-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s33-05_deremag.png
+s1s42-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-01_deremag.png
+s1s42-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-02_deremag.png
+s1s42-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-03_deremag.png
+s1s42-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-04_deremag.png
+s1s42-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-05_deremag.png
+s1s44-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-04_deremag.png
+s1s44-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-05_deremag.png
+s1s44-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-06_deremag.png
+s1s44-07
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-07_deremag.png
+s1s47-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-04_deremag.png
+s1s47-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-05_deremag.png
+s1s47-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-06_deremag.png
+s1s47-07
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-07_deremag.png
+s1s48-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-01_deremag.png
+s1s48-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-02_deremag.png
+s1s48-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-03_deremag.png
+s1s48-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-04_deremag.png
+s1s48-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-05_deremag.png
+s1s50-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s50-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s50-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s50-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s50-01_deremag.png
+s1s50-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s50-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s50-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s50-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s50-02_deremag.png
+s1s50-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s50-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s50-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s50-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s50-03_deremag.png
+s1s50-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s50-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s50-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s50-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s50-04_deremag.png
+s1s51-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-05_deremag.png
+s1s51-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-06_deremag.png
+s1s51-07
+1  saved in  /Users/nebula/Python/PmagPy/s1s51-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s51-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s51-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s51-07_deremag.png
+s1s56-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-04_deremag.png
+s1s56-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-05_deremag.png
+s1s56-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-06_deremag.png
+s1s6-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s6-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s6-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s6-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s6-04_deremag.png
+s1s6-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s6-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s6-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s6-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s6-05_deremag.png
+s1s66-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s66-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s66-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s66-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s66-04_deremag.png
+s1s66-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s66-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s66-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s66-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s66-05_deremag.png
+s1s84-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-04_deremag.png
+s1s84-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-05_deremag.png
+s1s84-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-06_deremag.png
+s1s94-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-04_deremag.png
+s1s94-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-05_deremag.png
+s1s100-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s100-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s100-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s100-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s100-01_deremag.png
+s1s100-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s100-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s100-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s100-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s100-02_deremag.png
+s1s100-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s100-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s100-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s100-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s100-03_deremag.png
+s1s100-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s100-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s100-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s100-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s100-04_deremag.png
+s1s101-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s101-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s101-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s101-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s101-01_deremag.png
+s1s101-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s101-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s101-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s101-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s101-02_deremag.png
+s1s101-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s101-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s101-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s101-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s101-03_deremag.png
+s1s101-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s101-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s101-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s101-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s101-04_deremag.png
+s1s108-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s108-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s108-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s108-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s108-01_deremag.png
+s1s108-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s108-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s108-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s108-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s108-02_deremag.png
+s1s108-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s108-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s108-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s108-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s108-03_deremag.png
+s1s108-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s108-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s108-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s108-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s108-04_deremag.png
+s1s110-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s110-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s110-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s110-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s110-01_deremag.png
+s1s110-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s110-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s110-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s110-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s110-02_deremag.png
+s1s110-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s110-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s110-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s110-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s110-03_deremag.png
+s1s110-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s110-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s110-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s110-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s110-04_deremag.png
+s1s117-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s117-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s117-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s117-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s117-01_deremag.png
+s1s117-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s117-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s117-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s117-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s117-02_deremag.png
+s1s117-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s117-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s117-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s117-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s117-03_deremag.png
+s1s117-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s117-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s117-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s117-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s117-04_deremag.png
+s1s119-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s119-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s119-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s119-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s119-01_deremag.png
+s1s119-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s119-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s119-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s119-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s119-02_deremag.png
+s1s119-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s119-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s119-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s119-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s119-03_deremag.png
+s1s119-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s119-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s119-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s119-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s119-04_deremag.png
+s1s124-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s124-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s124-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s124-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s124-01_deremag.png
+s1s124-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s124-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s124-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s124-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s124-02_deremag.png
+s1s124-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s124-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s124-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s124-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s124-03_deremag.png
+s1s124-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s124-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s124-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s124-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s124-04_deremag.png
+s1s37-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s37-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s37-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s37-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s37-05_deremag.png
+s1s42-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s42-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s42-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s42-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s42-06_deremag.png
+s1s53-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-04_deremag.png
+s1s53-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-05_deremag.png
+s1s53-06
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-06_deremag.png
+s1s54-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s54-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s54-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s54-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s54-01_deremag.png
+s1s54-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s54-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s54-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s54-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s54-02_deremag.png
+s1s54-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s54-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s54-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s54-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s54-03_deremag.png
+s1s54-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s54-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s54-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s54-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s54-04_deremag.png
+s1s61-05
+1  saved in  /Users/nebula/Python/PmagPy/s1s61-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s61-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s61-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s61-05_deremag.png
+s1s71-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s71-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s71-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s71-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s71-01_deremag.png
+s1s71-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s71-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s71-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s71-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s71-02_deremag.png
+s1s71-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s71-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s71-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s71-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s71-03_deremag.png
+s1s71-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s71-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s71-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s71-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s71-04_deremag.png
+s1s72-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s72-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s72-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s72-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s72-01_deremag.png
+s1s72-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s72-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s72-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s72-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s72-02_deremag.png
+s1s72-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s72-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s72-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s72-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s72-03_deremag.png
+s1s72-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s72-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s72-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s72-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s72-04_deremag.png
+s1s80-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s80-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s80-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s80-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s80-01_deremag.png
+s1s80-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s80-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s80-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s80-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s80-02_deremag.png
+s1s80-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s80-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s80-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s80-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s80-03_deremag.png
+s1s80-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s80-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s80-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s80-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s80-04_deremag.png
+s1s81-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s81-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s81-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s81-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s81-01_deremag.png
+s1s81-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s81-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s81-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s81-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s81-02_deremag.png
+s1s81-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s81-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s81-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s81-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s81-03_deremag.png
+s1s81-04
+1  saved in  /Users/nebula/Python/PmagPy/s1s81-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s81-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s81-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s81-04_deremag.png
+s1p1-01
+1  saved in  /Users/nebula/Python/PmagPy/s1p1-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1p1-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1p1-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1p1-01_deremag.png
+s1p1-02
+1  saved in  /Users/nebula/Python/PmagPy/s1p1-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1p1-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1p1-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1p1-02_deremag.png
+s1p1-03
+1  saved in  /Users/nebula/Python/PmagPy/s1p1-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1p1-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1p1-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1p1-03_deremag.png
+s1s12-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s12-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s12-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s12-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s12-01_deremag.png
+s1s12-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s12-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s12-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s12-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s12-02_deremag.png
+s1s12-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s12-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s12-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s12-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s12-03_deremag.png
+s1s16-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s16-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s16-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s16-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s16-01_deremag.png
+s1s16-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s16-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s16-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s16-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s16-02_deremag.png
+s1s16-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s16-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s16-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s16-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s16-03_deremag.png
+s1s20-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s20-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s20-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s20-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s20-01_deremag.png
+s1s20-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s20-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s20-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s20-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s20-02_deremag.png
+s1s20-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s20-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s20-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s20-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s20-03_deremag.png
+s1s24-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s24-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s24-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s24-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s24-01_deremag.png
+s1s24-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s24-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s24-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s24-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s24-02_deremag.png
+s1s24-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s24-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s24-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s24-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s24-03_deremag.png
+s1s41-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s41-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s41-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s41-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s41-01_deremag.png
+s1s41-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s41-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s41-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s41-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s41-02_deremag.png
+s1s41-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s41-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s41-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s41-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s41-03_deremag.png
+s1s44-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-01_deremag.png
+s1s44-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-02_deremag.png
+s1s44-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s44-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s44-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s44-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s44-03_deremag.png
+s1s47-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-01_deremag.png
+s1s47-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-02_deremag.png
+s1s47-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s47-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s47-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s47-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s47-03_deremag.png
+s1s49-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s49-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s49-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s49-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s49-01_deremag.png
+s1s49-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s49-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s49-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s49-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s49-02_deremag.png
+s1s49-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s49-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s49-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s49-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s49-03_deremag.png
+s1s53-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-01_deremag.png
+s1s53-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-02_deremag.png
+s1s53-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s53-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s53-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s53-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s53-03_deremag.png
+s1s56-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-01_deremag.png
+s1s56-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-02_deremag.png
+s1s56-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s56-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s56-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s56-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s56-03_deremag.png
+s1s6-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s6-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s6-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s6-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s6-01_deremag.png
+s1s6-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s6-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s6-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s6-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s6-02_deremag.png
+s1s6-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s6-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s6-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s6-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s6-03_deremag.png
+s1s84-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-01_deremag.png
+s1s84-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-02_deremag.png
+s1s84-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s84-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s84-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s84-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s84-03_deremag.png
+s1s85-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s85-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s85-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s85-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s85-01_deremag.png
+s1s85-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s85-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s85-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s85-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s85-02_deremag.png
+s1s85-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s85-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s85-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s85-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s85-03_deremag.png
+s1s9-01
+1  saved in  /Users/nebula/Python/PmagPy/s1s9-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s9-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s9-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s9-01_deremag.png
+s1s9-02
+1  saved in  /Users/nebula/Python/PmagPy/s1s9-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s9-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s9-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s9-02_deremag.png
+s1s9-03
+1  saved in  /Users/nebula/Python/PmagPy/s1s9-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s9-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s9-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s9-03_deremag.png
+s1t2-01
+1  saved in  /Users/nebula/Python/PmagPy/s1t2-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1t2-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1t2-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1t2-01_deremag.png
+s1t2-02
+1  saved in  /Users/nebula/Python/PmagPy/s1t2-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1t2-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1t2-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1t2-02_deremag.png
+s1t2-03
+1  saved in  /Users/nebula/Python/PmagPy/s1t2-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1t2-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1t2-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1t2-03_deremag.png
+s2s1-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s1-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s1-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s1-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s1-01_deremag.png
+s2s1-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s1-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s1-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s1-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s1-02_deremag.png
+s2s1-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s1-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s1-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s1-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s1-03_deremag.png
+s2s4-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s4-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s4-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s4-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s4-01_deremag.png
+s2s4-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s4-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s4-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s4-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s4-02_deremag.png
+s2s4-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s4-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s4-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s4-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s4-03_deremag.png
+s2s7-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-01_deremag.png
+s2s7-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-02_deremag.png
+s2s7-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-03_deremag.png
+s2s8-01
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-01_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-01_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-01_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-01_deremag.png
+s2s8-02
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-02_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-02_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-02_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-02_deremag.png
+s2s8-03
+1  saved in  /Users/nebula/Python/PmagPy/s2s8-03_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s8-03_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s8-03_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s8-03_deremag.png
+s2s7-04
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-04_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-04_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-04_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-04_deremag.png
+s2s7-05
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-05_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-05_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-05_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-05_deremag.png
+s2s7-06
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-06_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-06_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-06_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-06_deremag.png
+s2s7-07
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-07_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-07_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-07_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-07_deremag.png
+s2s7-08
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-08_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-08_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-08_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-08_deremag.png
+s2s7-09
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-09_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-09_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-09_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-09_deremag.png
+s2s7-10
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-10_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-10_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-10_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-10_deremag.png
+s2s7-11
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-11_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-11_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-11_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-11_deremag.png
+s2s7-12
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-12_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-12_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-12_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-12_deremag.png
+s2s7-13
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-13_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-13_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-13_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-13_deremag.png
+s2s7-14
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-14_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-14_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-14_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-14_deremag.png
+s2s7-15
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-15_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-15_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-15_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-15_deremag.png
+s2s7-16
+1  saved in  /Users/nebula/Python/PmagPy/s2s7-16_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s2s7-16_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s2s7-16_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s2s7-16_deremag.png
+s1s48-3a
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-3a_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-3a_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-3a_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-3a_deremag.png
+s1s48-4a
+1  saved in  /Users/nebula/Python/PmagPy/s1s48-4a_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s48-4a_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s48-4a_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s48-4a_deremag.png
+s1s94-5a
+1  saved in  /Users/nebula/Python/PmagPy/s1s94-5a_arai.png
+2  saved in  /Users/nebula/Python/PmagPy/s1s94-5a_zijd.png
+3  saved in  /Users/nebula/Python/PmagPy/s1s94-5a_eqarea.png
+4  saved in  /Users/nebula/Python/PmagPy/s1s94-5a_deremag.png
+-I- Removing old error files from /Users/nebula/Python/PmagPy: locations_errors.txt, samples_errors.txt, specimens_errors.txt, sites_errors.txt, ages_errors.txt, measurements_errors.txt, criteria_errors.txt, contribution_errors.txt, images_errors.txt
+-I- overwriting /Users/nebula/Python/PmagPy/measurements.txt
+-I- 25769 records written to measurements file
+-I- overwriting /Users/nebula/Python/PmagPy/specimens.txt
+-I- 1063 records written to specimens file
+-I- overwriting /Users/nebula/Python/PmagPy/samples.txt
+-I- 244 records written to samples file
+-I- overwriting /Users/nebula/Python/PmagPy/sites.txt
+-I- 39 records written to sites file
+-I- overwriting /Users/nebula/Python/PmagPy/locations.txt
+-I- 2 records written to locations file
+-I- writing contribution records to /Users/nebula/Python/PmagPy/contribution.txt
+-I- 1 records written to contribution file
+-I- writing criteria records to /Users/nebula/Python/PmagPy/criteria.txt
+-I- 8 records written to criteria file
+-I- writing ages records to /Users/nebula/Python/PmagPy/ages.txt
+-I- 29 records written to ages file
+-W- Column 'core_depth' isn't in samples table, skipping it
+-W- Column 'composite_depth' isn't in samples table, skipping it
+-W- Invalid or missing column names, could not propagate columns
+-I- ages file successfully read in
+-I- Validating ages
+-I- No row errors found!
+-I- appending ages data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 29 records written to ages file
+-I- ages written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- contribution file successfully read in
+-W- Contribution table still has some unrecognized columns: magic_version
+-I- Validating contribution
+-I- No row errors found!
+-I- appending contribution data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 1 records written to contribution file
+-I- contribution written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- criteria file successfully read in
+-W- Criteria table still has some unrecognized columns: definition
+-I- Validating criteria
+-I- No row errors found!
+-I- appending criteria data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 8 records written to criteria file
+-I- criteria written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- locations file successfully read in
+-I- Validating locations
+-W- these required columns are missing: age_high, age_low, age, age_unit, geologic_classes, lithologies
+-I- You are missing some required headers
+-I- You are missing these required headers: age_high, age_low, age, age_unit, geologic_classes, lithologies
+-I- appending locations data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 2 records written to locations file
+-I- locations written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- measurements file successfully read in
+-W- Measurements table still has some unrecognized columns: magic_software_packages
+-I- Validating measurements
+-I- No row errors found!
+-I- appending measurements data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 25769 records written to measurements file
+-I- measurements written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- samples file successfully read in
+-I- Validating samples
+-W- these rows have problems:
+ row: 1, name: hz05a
+row: 3, name: hz05b
+row: 5, name: hz05c
+row: 7, name: hz05e
+row: 9, name: hz05f  ...
+(for full error output see error file)
+-W- these columns contain bad values: criteria
+-W- these required columns are missing: result_quality
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/samples_errors.txt
+-I- appending samples data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 244 records written to samples file
+-I- samples written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- sites file successfully read in
+-I- Validating sites
+-W- these rows have problems:
+ row: 18, name: mgh12t1
+row: 19, name: mgh12t1
+row: 26, name: mgk09t1
+row: 27, name: mgk09t1
+row: 30, name: mgq04t1  ...
+(for full error output see error file)
+-W- these columns contain bad values: criteria
+-W- these required columns are missing: result_quality
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/sites_errors.txt
+-I- appending sites data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 39 records written to sites file
+-I- sites written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- specimens file successfully read in
+-W- Specimens table still has some unrecognized columns: int_corr_anisotropy
+-I- Validating specimens
+-W- these rows have problems:
+ row: 0, name: hz05a1
+row: 1, name: hz05a1
+row: 2, name: hz05a2
+row: 3, name: hz05a2
+row: 4, name: hz05a3  ...
+(for full error output see error file)
+-W- these columns contain bad values: experiments
+-W- these required columns are missing: aniso_tilt_correction
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/specimens_errors.txt
+-I- appending specimens data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 1063 records written to specimens file
+-I- specimens written to  /Users/nebula/Python/PmagPy/upload.txt
+Finished preparing upload file: /Users/nebula/Python/PmagPy/Tel-Hazor_Tel-Megiddo_12.Feb.2019.txt 
+-W- These tables have errors: locations, samples, sites, specimens
+-W- validation of upload file has failed.
+You can still upload /Users/nebula/Python/PmagPy/Tel-Hazor_Tel-Megiddo_12.Feb.2019.txt to MagIC,
+but you will need to fix the above errors before your contribution can be activated.
+trying to remove /Users/nebula/Python/PmagPy/measurements.txt
+trying to remove /Users/nebula/Python/PmagPy/specimens.txt
+trying to remove /Users/nebula/Python/PmagPy/samples.txt
+trying to remove /Users/nebula/Python/PmagPy/sites.txt
+trying to remove /Users/nebula/Python/PmagPy/locations.txt
+trying to remove /Users/nebula/Python/PmagPy/ages.txt
+trying to remove /Users/nebula/Python/PmagPy/criteria.txt
+trying to remove /Users/nebula/Python/PmagPy/contribution.txt
+trying to remove /Users/nebula/Python/PmagPy/specimens_errors.txt
+trying to remove /Users/nebula/Python/PmagPy/samples_errors.txt
+trying to remove /Users/nebula/Python/PmagPy/sites_errors.txt
+-I- Removing old error files from /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo: locations_errors.txt, samples_errors.txt, specimens_errors.txt, sites_errors.txt, ages_errors.txt, measurements_errors.txt, criteria_errors.txt, contribution_errors.txt, images_errors.txt
+-W- Column 'core_depth' isn't in samples table, skipping it
+-W- Column 'composite_depth' isn't in samples table, skipping it
+-W- Invalid or missing column names, could not propagate columns
+-I- ages file successfully read in
+-I- Validating ages
+-I- No row errors found!
+-I- appending ages data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 29 records written to ages file
+-I- ages written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- contribution file successfully read in
+-W- Contribution table still has some unrecognized columns: magic_version
+-I- Validating contribution
+-I- No row errors found!
+-I- appending contribution data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 1 records written to contribution file
+-I- contribution written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- criteria file successfully read in
+-W- Criteria table still has some unrecognized columns: definition
+-I- Validating criteria
+-I- No row errors found!
+-I- appending criteria data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 8 records written to criteria file
+-I- criteria written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- locations file successfully read in
+-I- Validating locations
+-W- these required columns are missing: age_high, age_low, age, age_unit, geologic_classes, lithologies
+-I- You are missing some required headers
+-I- You are missing these required headers: age_high, age_low, age, age_unit, geologic_classes, lithologies
+-I- appending locations data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 2 records written to locations file
+-I- locations written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- measurements file successfully read in
+-W- Measurements table still has some unrecognized columns: magic_software_packages
+-I- Validating measurements
+-I- No row errors found!
+-I- appending measurements data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 25769 records written to measurements file
+-I- measurements written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- samples file successfully read in
+-I- Validating samples
+-W- these rows have problems:
+ row: 1, name: hz05a
+row: 3, name: hz05b
+row: 5, name: hz05c
+row: 7, name: hz05e
+row: 9, name: hz05f  ...
+(for full error output see error file)
+-W- these columns contain bad values: criteria
+-W- these required columns are missing: result_quality
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/samples_errors.txt
+-I- appending samples data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 244 records written to samples file
+-I- samples written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- sites file successfully read in
+-I- Validating sites
+-W- these rows have problems:
+ row: 18, name: mgh12t1
+row: 19, name: mgh12t1
+row: 26, name: mgk09t1
+row: 27, name: mgk09t1
+row: 30, name: mgq04t1  ...
+(for full error output see error file)
+-W- these columns contain bad values: criteria
+-W- these required columns are missing: result_quality
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/sites_errors.txt
+-I- appending sites data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 39 records written to sites file
+-I- sites written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- specimens file successfully read in
+-W- Specimens table still has some unrecognized columns: int_corr_anisotropy
+-I- Validating specimens
+-W- these rows have problems:
+ row: 0, name: hz05a1
+row: 1, name: hz05a1
+row: 2, name: hz05a2
+row: 3, name: hz05a2
+row: 4, name: hz05a3  ...
+(for full error output see error file)
+-W- these columns contain bad values: experiments
+-W- these required columns are missing: aniso_tilt_correction
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/specimens_errors.txt
+-I- appending specimens data to /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+-I- 1063 records written to specimens file
+-I- specimens written to  /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/upload.txt
+Finished preparing upload file: /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/Tel-Hazor_Tel-Megiddo_12.Feb.2019.txt 
+-W- These tables have errors: locations, samples, sites, specimens
+-W- validation of upload file has failed.
+You can still upload /Users/nebula/Python/PmagPy/data_files/3_0/Megiddo/Tel-Hazor_Tel-Megiddo_12.Feb.2019.txt to MagIC,
+but you will need to fix the above errors before your contribution can be activated.
+-I- Removing old error files from /Users/nebula/Python/PmagPy/data_files/core_depthplot: locations_errors.txt, samples_errors.txt, specimens_errors.txt, sites_errors.txt, ages_errors.txt, measurements_errors.txt, criteria_errors.txt, contribution_errors.txt, images_errors.txt
+-W- Column 'core_depth' isn't in samples table, skipping it
+-W- Column 'composite_depth' isn't in samples table, skipping it
+-W- Invalid or missing column names, could not propagate columns
+-I- ages file successfully read in
+-I- dropping these columns: level from the ages table
+-I- Validating ages
+-I- No row errors found!
+-I- appending ages data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 2325 records written to ages file
+-I- ages written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- locations file successfully read in
+-I- Validating locations
+-I- No row errors found!
+-I- appending locations data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 1 records written to locations file
+-I- locations written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- measurements file successfully read in
+-I- Validating measurements
+-I- No row errors found!
+-I- appending measurements data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 9328 records written to measurements file
+-I- measurements written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- samples file successfully read in
+-I- Validating samples
+-I- No row errors found!
+-I- appending samples data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 2325 records written to samples file
+-I- samples written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- sites file successfully read in
+-I- Validating sites
+-I- No row errors found!
+-I- appending sites data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 2325 records written to sites file
+-I- sites written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- specimens file successfully read in
+-I- Validating specimens
+-I- No row errors found!
+-I- appending specimens data to /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+-I- 4657 records written to specimens file
+-I- specimens written to  /Users/nebula/Python/PmagPy/data_files/core_depthplot/upload.txt
+Finished preparing upload file: /Users/nebula/Python/PmagPy/data_files/core_depthplot/DSDP-Site-522_12.Feb.2019.txt 
+-I- Your file has passed validation.  You should be able to upload it to the MagIC database without trouble!
+mv /Users/nebula/Python/PmagPy/data_files/core_depthplot/DSDP-Site-522_12.Feb.2019.txt /Users/nebula/Python/PmagPy
+working on:  'ages'
+2325  records written to file  /Users/nebula/Python/PmagPy/ages.txt
+ages  data put in  /Users/nebula/Python/PmagPy/ages.txt
+working on:  'locations'
+1  records written to file  /Users/nebula/Python/PmagPy/locations.txt
+locations  data put in  /Users/nebula/Python/PmagPy/locations.txt
+working on:  'measurements'
+9328  records written to file  /Users/nebula/Python/PmagPy/measurements.txt
+measurements  data put in  /Users/nebula/Python/PmagPy/measurements.txt
+working on:  'samples'
+2325  records written to file  /Users/nebula/Python/PmagPy/samples.txt
+samples  data put in  /Users/nebula/Python/PmagPy/samples.txt
+working on:  'sites'
+2325  records written to file  /Users/nebula/Python/PmagPy/sites.txt
+sites  data put in  /Users/nebula/Python/PmagPy/sites.txt
+working on:  'specimens'
+4657  records written to file  /Users/nebula/Python/PmagPy/specimens.txt
+specimens  data put in  /Users/nebula/Python/PmagPy/specimens.txt
+trying to remove /Users/nebula/Python/PmagPy/measurements.txt
+trying to remove /Users/nebula/Python/PmagPy/specimens.txt
+trying to remove /Users/nebula/Python/PmagPy/samples.txt
+trying to remove /Users/nebula/Python/PmagPy/sites.txt
+trying to remove /Users/nebula/Python/PmagPy/locations.txt
+trying to remove /Users/nebula/Python/PmagPy/ages.txt
+-I- Removing:  ['citation_label', 'compilation', 'calculation_type', 'average_n_lines', 'average_n_planes', 'specimen_grade', 'site_vgp_lat', 'site_vgp_lon', 'direction_type', 'specimen_Z', 'magic_instrument_codes', 'cooling_rate_corr', 'cooling_rate_mcd', 'anisotropy_atrm_alt', 'anisotropy_apar_perc', 'anisotropy_F', 'anisotropy_F_crit', 'specimen_scat', 'specimen_gmax', 'specimen_frac', 'site_vadm', 'site_lon', 'site_vdm', 'site_lat', 'measurement_chi', 'specimen_k_prime', 'specimen_k_prime_sse', 'external_database_names', 'external_database_ids', 'Further Notes', 'Typology', 'Notes (Year/Area/Locus/Level)', 'Site', 'Object Number', 'dir_n_specimens']
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_expeditions.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_locations.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_samples.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_specimens.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_sites.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_ages.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_citations.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/er_mailinglist.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/magic_measurements.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/rmag_hysteresis.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/rmag_anisotropy.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/rmag_remanence.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/rmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/pmag_specimens.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/pmag_samples.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/pmag_sites.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/pmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/pmag_criteria.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/empty_dir/magic_instruments.txt
+empty_file is bad or non-existent - skipping 
+no data found, upload file not created
+-I- Removing old error files from /Users/nebula/Python/PmagPy: locations_errors.txt, samples_errors.txt, specimens_errors.txt, sites_errors.txt, ages_errors.txt, measurements_errors.txt, criteria_errors.txt, contribution_errors.txt, images_errors.txt
+-W- Column 'core_depth' isn't in samples table, skipping it
+-W- Column 'composite_depth' isn't in samples table, skipping it
+-W- Invalid or missing column names, could not propagate columns
+-I- ages file successfully read in
+-I- Validating ages
+-I- No row errors found!
+-I- appending ages data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 99 records written to ages file
+-I- ages written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- contribution file successfully read in
+-I- dropping these columns: version from the contribution table
+-I- Validating contribution
+-I- No row errors found!
+-I- appending contribution data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 1 records written to contribution file
+-I- contribution written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- criteria file successfully read in
+-I- Validating criteria
+-I- No row errors found!
+-I- appending criteria data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 24 records written to criteria file
+-I- criteria written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- images file successfully read in
+-I- Validating images
+-I- No row errors found!
+-I- appending images data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 431 records written to images file
+-I- images written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- locations file successfully read in
+-I- Validating locations
+-W- these required columns are missing: geologic_classes, lithologies
+-I- You are missing some required headers
+-I- You are missing these required headers: geologic_classes, lithologies
+-I- appending locations data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 5 records written to locations file
+-I- locations written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- measurements file successfully read in
+-I- Validating measurements
+-I- No row errors found!
+-I- appending measurements data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 25470 records written to measurements file
+-I- measurements written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- samples file successfully read in
+-I- Validating samples
+-W- these required columns are missing: result_quality, result_type
+-I- You are missing some required headers
+-I- You are missing these required headers: result_quality, result_type
+-I- appending samples data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 1418 records written to samples file
+-I- samples written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- sites file successfully read in
+-I- Validating sites
+-I- No row errors found!
+-I- appending sites data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 388 records written to sites file
+-I- sites written to  /Users/nebula/Python/PmagPy/upload.txt
+-I- specimens file successfully read in
+-I- dropping these columns: location, site from the specimens table
+-I- Validating specimens
+-W- these rows have problems:
+ row: 28, name: mc04c-1
+row: 187, name: mc113a1-1
+row: 225, name: mc117a2-1
+row: 266, name: mc120a2-1
+row: 376, name: mc129a1-1  ...
+(for full error output see error file)
+-W- these columns contain bad values: experiments
+-I- Complete list of row errors can be found in /Users/nebula/Python/PmagPy/specimens_errors.txt
+-I- appending specimens data to /Users/nebula/Python/PmagPy/upload.txt
+-I- 1374 records written to specimens file
+-I- specimens written to  /Users/nebula/Python/PmagPy/upload.txt
+Finished preparing upload file: /Users/nebula/Python/PmagPy/McMurdo_12.Feb.2019.txt 
+-W- These tables have errors: locations, samples, specimens
+-W- validation of upload file has failed.
+You can still upload /Users/nebula/Python/PmagPy/McMurdo_12.Feb.2019.txt to MagIC,
+but you will need to fix the above errors before your contribution can be activated.
+trying to remove /Users/nebula/Python/PmagPy/measurements.txt
+trying to remove /Users/nebula/Python/PmagPy/specimens.txt
+trying to remove /Users/nebula/Python/PmagPy/samples.txt
+trying to remove /Users/nebula/Python/PmagPy/sites.txt
+trying to remove /Users/nebula/Python/PmagPy/locations.txt
+trying to remove /Users/nebula/Python/PmagPy/specimens_errors.txt
+-I- Removing:  ['citation_label', 'compilation', 'calculation_type', 'average_n_lines', 'average_n_planes', 'specimen_grade', 'site_vgp_lat', 'site_vgp_lon', 'direction_type', 'specimen_Z', 'magic_instrument_codes', 'cooling_rate_corr', 'cooling_rate_mcd', 'anisotropy_atrm_alt', 'anisotropy_apar_perc', 'anisotropy_F', 'anisotropy_F_crit', 'specimen_scat', 'specimen_gmax', 'specimen_frac', 'site_vadm', 'site_lon', 'site_vdm', 'site_lat', 'measurement_chi', 'specimen_k_prime', 'specimen_k_prime_sse', 'external_database_names', 'external_database_ids', 'Further Notes', 'Typology', 'Notes (Year/Area/Locus/Level)', 'Site', 'Object Number', 'dir_n_specimens']
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_expeditions.txt
+empty_file is bad or non-existent - skipping 
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_locations.txt  successfully read in
+er_locations written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_samples.txt  successfully read in
+only highest priority orientation record from er_samples.txt read in 
+er_samples written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_specimens.txt  successfully read in
+er_specimens written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_sites.txt  successfully read in
+er_sites written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_ages.txt  successfully read in
+er_ages written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_citations.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/er_mailinglist.txt
+empty_file is bad or non-existent - skipping 
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/magic_measurements.txt  successfully read in
+magic_measurements written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/upload.txt
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/rmag_hysteresis.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/rmag_anisotropy.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/rmag_remanence.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/rmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/pmag_specimens.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/pmag_samples.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/pmag_sites.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/pmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/pmag_criteria.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/magic_instruments.txt
+empty_file is bad or non-existent - skipping 
+-I- Running validation for your upload file
+-I- getting data model, please be patient
+-W- In your sample file, you are missing data in the following required columns: sample_type
+-W- In your age file, you are missing data in the following required columns: magic_method_codes
+Finished preparing upload file: /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/Snake_River_12.Feb.2019.txt 
+-W- validation of upload file has failed.
+You can still upload /Users/nebula/Python/PmagPy/data_files/testing/my_project_with_errors/Snake_River_12.Feb.2019.txt to MagIC,
+but you will need to fix the above errors before your contribution can be activated.
+-I- Removing:  ['citation_label', 'compilation', 'calculation_type', 'average_n_lines', 'average_n_planes', 'specimen_grade', 'site_vgp_lat', 'site_vgp_lon', 'direction_type', 'specimen_Z', 'magic_instrument_codes', 'cooling_rate_corr', 'cooling_rate_mcd', 'anisotropy_atrm_alt', 'anisotropy_apar_perc', 'anisotropy_F', 'anisotropy_F_crit', 'specimen_scat', 'specimen_gmax', 'specimen_frac', 'site_vadm', 'site_lon', 'site_vdm', 'site_lat', 'measurement_chi', 'specimen_k_prime', 'specimen_k_prime_sse', 'external_database_names', 'external_database_ids', 'Further Notes', 'Typology', 'Notes (Year/Area/Locus/Level)', 'Site', 'Object Number', 'dir_n_specimens']
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_expeditions.txt
+empty_file is bad or non-existent - skipping 
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_locations.txt  successfully read in
+er_locations written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_samples.txt  successfully read in
+only highest priority orientation record from er_samples.txt read in 
+er_samples written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_specimens.txt  successfully read in
+er_specimens written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_sites.txt  successfully read in
+er_sites written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_ages.txt  successfully read in
+er_ages written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_citations.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/er_mailinglist.txt
+empty_file is bad or non-existent - skipping 
+-I- file /Users/nebula/Python/PmagPy/data_files/testing/my_project/magic_measurements.txt  successfully read in
+magic_measurements written to  /Users/nebula/Python/PmagPy/data_files/testing/my_project/upload.txt
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/rmag_hysteresis.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/rmag_anisotropy.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/rmag_remanence.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/rmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_specimens.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_samples.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_sites.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_results.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/pmag_criteria.txt
+empty_file is bad or non-existent - skipping 
+File: /Users/nebula/Python/PmagPy/data_files/testing/my_project/magic_instruments.txt
+empty_file is bad or non-existent - skipping 
+-I- Running validation for your upload file
+-I- getting data model, please be patient
+-I- validation was successful
+Finished preparing upload file: /Users/nebula/Python/PmagPy/data_files/testing/my_project/Snake_River_12.Feb.2019.txt 
+No such file: /Users/nebula/Python/PmagPy/measurements.txt
+1  saved in  sr01e2_eqarea.png
+2  saved in  sr01e2_zijd.png
+3  saved in  sr01e2_demag.png
+1  saved in  sr01g2_eqarea.png
+2  saved in  sr01g2_zijd.png
+3  saved in  sr01g2_demag.png
+No plots could be created for specimen: sr01a1
