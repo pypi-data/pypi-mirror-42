@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: ndexutil
+Version: 0.1.0a2
+Summary: Unsupported NDEx utilities
+Home-page: https://github.com/ndexbio/ndexutils
+Author: The NDEx Project
+Author-email: contact@ndexbio.org
+License: BSD
+Keywords: network analysis biology
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: ndex2 (==3.0.0a1)
+Requires-Dist: requests
+Requires-Dist: requests-toolbelt
+Requires-Dist: networkx (==1.11)
+Requires-Dist: urllib3 (>=1.16)
+Requires-Dist: pandas
+Requires-Dist: mygene
+Requires-Dist: enum34
+Requires-Dist: jsonschema
+Requires-Dist: biothings-client
+Requires-Dist: enum ; python_version == "2.6" or python_version == "2.7"
+
+ndex-python-utilities
+=====================
+
+**Warning: This repository is for development and features may change.
+Please use this at your own risk.**
+
+In addition to python, these utilities require some additional modules.
+
+To install these modules, type the following commands:
+
+.. code:: shell
+
+    pip install requests
+    pip install requests-toolbelt
+    pip install ndex2
+    pip install networkx==1.11
+    pip install pandas
+    pip install jsonschema
+
+
+
+
+=======
+History
+=======
+
+
+
+
