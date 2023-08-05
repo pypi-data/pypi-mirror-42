@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: cechmate
+Version: 0.0.5
+Summary: Custom filtration constructors for Python
+Home-page: https://cechmate.scikit-tda.org
+Author: Christopher Tralie, Nathaniel Saul
+Author-email: chris.tralie@gmail.com, nat@saulgill.com
+License: MIT
+Description: [![PyPI version](https://badge.fury.io/py/cechmate.svg)](https://badge.fury.io/py/cechmate)
+        [![Build Status](https://travis-ci.org/scikit-tda/cechmate.svg?branch=master)](https://travis-ci.org/scikit-tda/cechmate)
+        [![codecov](https://codecov.io/gh/scikit-tda/cechmate/branch/master/graph/badge.svg)](https://codecov.io/gh/scikit-tda/cechmate)
+        [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+        
+        This library provides easy to use constructors for custom filtrations that are suitable for use with [Phat](https://github.com/xoltar/phat). 
+        Phat currently provides a clean interface for persistence reduction algorithms for boundary matrices. 
+        This tool helps bridge the gap between data and boundary matrices.  
+        Currently, we support construction of Alpha, Rips, and Cech filtrations, and provide an easy interface for Phat.
+        
+        If you have a particular filtration you would like implemented, please feel free to reach out and we can work on helping with implementation and integration, so others can use it.
+        
+        # Setup
+        
+        We use the following dependencies in this library
+        
+        * Numpy
+        * Scipy
+        * Matplotlib
+        * Phat
+        
+        
+        The latest version of Cechmate can be found on Pypi and installed with pip:
+        
+        ```
+        pip install cechmate
+        ```
+        
+        # Contributions
+        
+        
+        We welcome contributions of all shapes and sizes. There are lots of opportunities for potential projects, so please get in touch if you would like to help out. Everything from an implementation of your favorite distance, notebooks, examples, and documentation are all equally valuable so please don't feel you can't contribute. 
+        
+        To contribute please fork the project make your changes and submit a pull request. We will do our best to work through any issues with you and get your code merged into the main branch.
+        
+        
+        ## Documentation
+        
+        Check out complete documentation at [cechmate.scikit-tda.org](http://www.cechmate.scikit-tda.org/)
+Keywords: persistent homology,persistence images,persistence diagrams,topology data analysis,algebraic topology,unsupervised learning,filtrations,Cech,Alpha,Rips
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Provides-Extra: docs
