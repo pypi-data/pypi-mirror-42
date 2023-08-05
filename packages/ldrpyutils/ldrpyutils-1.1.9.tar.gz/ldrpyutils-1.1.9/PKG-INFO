@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ldrpyutils
+Version: 1.1.9
+Summary: Python utils for the Linked Data Registry
+Home-page: https://github.com/CSIRO-LW-LD/ldrpyutils
+Author: Jonathan Yu
+Author-email: jonathan.yu@csiro.au
+License: MIT
+Description: UNKNOWN
+Keywords: linked-data vocabularies excel linked-data-registry skos
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Text Processing :: Linguistic
