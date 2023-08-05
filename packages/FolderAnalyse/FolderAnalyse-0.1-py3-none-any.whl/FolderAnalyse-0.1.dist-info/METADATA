@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: FolderAnalyse
+Version: 0.1
+Summary: A program that analyses files in a directory with word frequency statistics.
+Home-page: UNKNOWN
+Author: Ryan Pepper
+Author-email: ryan.pepper@soton.ac.uk
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+
+UNKNOWN
+
+
