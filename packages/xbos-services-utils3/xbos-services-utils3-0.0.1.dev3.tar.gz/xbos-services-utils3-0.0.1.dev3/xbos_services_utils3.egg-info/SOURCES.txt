@@ -1,0 +1,14 @@
+CHANGES.txt
+LINCENSE.txt
+MANIFEST.in
+README.md
+setup.py
+xbos_services_utils3/__init__.py
+xbos_services_utils3/utils3.py
+xbos_services_utils3.egg-info/PKG-INFO
+xbos_services_utils3.egg-info/SOURCES.txt
+xbos_services_utils3.egg-info/dependency_links.txt
+xbos_services_utils3.egg-info/requires.txt
+xbos_services_utils3.egg-info/top_level.txt
+xbos_services_utils3/test/__init__.py
+xbos_services_utils3/test/test.py
