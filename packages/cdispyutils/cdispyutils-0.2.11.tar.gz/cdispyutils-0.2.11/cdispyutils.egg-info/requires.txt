@@ -1,0 +1,13 @@
+cryptography>=2.1.2
+PyJWT>=1.5.3
+requests<3.0.0,>=2.5.2
+six>=1.11.0
+cdiserrors>=0.1.1
+
+[profiling]
+Werkzeug<1.0.0,>=0.9.6
+matplotlib<3.0.0,>=2.2.3
+numpy<2.0.0,>=1.15.4
+
+[uwsgi]
+Flask
