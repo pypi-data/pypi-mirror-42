@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: pg-xades
+Version: 0.0.3a0
+Summary: XaDES XML signature. Based on python-xades.
+Home-page: https://github.com/Silverdoses/python-pgxades
+Author: Jaime Bermeo
+Author-email: jaime.bermeo@pragmatic.com.co
+License: BSD
+Description: XaDES XML Signature created with cryptography and lxml
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
