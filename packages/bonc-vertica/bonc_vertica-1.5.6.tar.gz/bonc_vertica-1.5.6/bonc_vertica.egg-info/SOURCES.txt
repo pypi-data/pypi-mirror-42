@@ -1,0 +1,15 @@
+setup.py
+bonc_vertica/__init__.py
+bonc_vertica/db2_to_vertica_ui.py
+bonc_vertica/db2_vertica.py
+bonc_vertica/gui.py
+bonc_vertica/loader.py
+bonc_vertica/main.py
+bonc_vertica/settings.py
+bonc_vertica/vertica.py
+bonc_vertica.egg-info/PKG-INFO
+bonc_vertica.egg-info/SOURCES.txt
+bonc_vertica.egg-info/dependency_links.txt
+bonc_vertica.egg-info/entry_points.txt
+bonc_vertica.egg-info/requires.txt
+bonc_vertica.egg-info/top_level.txt
