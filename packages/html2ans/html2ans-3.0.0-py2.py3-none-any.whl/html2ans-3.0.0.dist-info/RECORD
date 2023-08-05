@@ -1,0 +1,17 @@
+html2ans/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+html2ans/base.py,sha256=nvtJDD_lxClqegeTGPJir9RSVrmVRl7ylUTLsdyq_wc,8535
+html2ans/default.py,sha256=s_u5iUXEktO8oCU89HSe2eZgcISCONbaIdxSeh3gv0w,2546
+html2ans/exc.py,sha256=3VY1hvc_6xzFJvOuBErXmFbgpv4m49KDbfog9xCZOug,44
+html2ans/parsers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+html2ans/parsers/audio.py,sha256=joRhOUZw2nuNmQgRJHyBWNBYx2sX1lgjssndNwhVcCY,1167
+html2ans/parsers/base.py,sha256=Ij6wceFDO2B6EvYButzb2sJ1NE9mjh0BO5w9HyIKBIE,5450
+html2ans/parsers/embeds.py,sha256=K2NUfRUIAX1BF_lVmxMXK3LHhFyh4KdspTWEqOFQmVo,20202
+html2ans/parsers/image.py,sha256=cz2Om0HIsfNXgRZByj5jVbSuIseNif3AX1xQ5Oz-cjQ,4486
+html2ans/parsers/raw_html.py,sha256=C2wpR3mjiKHKpVKQ2n_0ZeV1XQwFTkQYJJAyeb8Pnnw,886
+html2ans/parsers/text.py,sha256=6uT_ShtKHd_s9Ug9yaX1flOlnYW_XMcXFoplrkqc_o8,10369
+html2ans/parsers/utils.py,sha256=YynLsTWgZCBHyx5JpZ0iimNBLfVDS-EImZAVJpmF7QI,4590
+html2ans-3.0.0.dist-info/LICENSE,sha256=-ZwGuUrhCj9o95ATYEaQA5LjSbk6KX3eyQn3EvR--Qc,1075
+html2ans-3.0.0.dist-info/METADATA,sha256=u1OJpbFx2uyVeaBGfevMUgXckyzP0NJtpMhKibPfhIo,1949
+html2ans-3.0.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+html2ans-3.0.0.dist-info/top_level.txt,sha256=cKEIxZXfPd3sZdkh8rtuIAJfO9cu9ygA4pgoYkTLYJE,9
+html2ans-3.0.0.dist-info/RECORD,,
