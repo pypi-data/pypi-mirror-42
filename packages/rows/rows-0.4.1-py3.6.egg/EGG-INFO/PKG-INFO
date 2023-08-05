@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: rows
+Version: 0.4.1
+Summary: A common, beautiful interface to tabular data, no matter the format
+Home-page: https://github.com/turicas/rows/
+Author: Álvaro Justen
+Author-email: alvarojusten@gmail.com
+License: UNKNOWN
+Description: No matter in which format your tabular data is: rows will import it,
+        automatically detect types and give you high-level Python objects so you can
+        start working with the data instead of trying to parse it. It is also
+        locale-and-unicode aware. :)
+        
+        Read the documentation and learn how simple is to use it: http://turicas.info/rows
+Keywords: tabular table csv xls xlsx xpath ods sqlite html pdf rows data opendata
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Utilities
+Provides-Extra: xpath
+Provides-Extra: cli
+Provides-Extra: pdf
+Provides-Extra: ods
+Provides-Extra: pdf-pymupdf
+Provides-Extra: html
+Provides-Extra: postgresql
+Provides-Extra: detect
+Provides-Extra: parquet
+Provides-Extra: xls
+Provides-Extra: all
+Provides-Extra: pdf-pdfminer.six
+Provides-Extra: xlsx
+Provides-Extra: csv
