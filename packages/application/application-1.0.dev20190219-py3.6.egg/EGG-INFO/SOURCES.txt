@@ -1,0 +1,16 @@
+MANIFEST.in
+setup.cfg
+setup.py
+application/__init__.py
+application.egg-info/PKG-INFO
+application.egg-info/SOURCES.txt
+application.egg-info/dependency_links.txt
+application.egg-info/not-zip-safe
+application.egg-info/requires.txt
+application.egg-info/top_level.txt
+controllers/__init__.py
+controllers/roles.py
+models/__init__.py
+models/roles.py
+schema/__init__.py
+schema/rolesschema.py
