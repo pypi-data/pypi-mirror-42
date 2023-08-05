@@ -1,0 +1,3 @@
+setuptools
+requests
+Django<2.0,>=1.11
