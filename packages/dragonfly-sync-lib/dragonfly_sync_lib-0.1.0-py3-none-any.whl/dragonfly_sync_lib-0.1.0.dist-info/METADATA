@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: dragonfly-sync-lib
+Version: 0.1.0
+Summary: A library that facilitates transporting data around.
+Home-page: https://github.com/flowef/dragonfly-sync-lib
+Author: Stephan Chang
+Author-email: stephan.chang@flowef.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# :dragon_face: Dragonfly - A Python Data Synchronization Library
+
+A library that facilitates transporting data around.
+
+
