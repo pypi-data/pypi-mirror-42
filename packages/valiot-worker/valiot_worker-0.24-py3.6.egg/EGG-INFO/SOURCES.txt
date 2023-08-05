@@ -1,0 +1,13 @@
+README.md
+setup.py
+valiot_worker/__init__.py
+valiot_worker/client.py
+valiot_worker/queries.py
+valiot_worker/text.py
+valiot_worker/worker.py
+valiot_worker.egg-info/PKG-INFO
+valiot_worker.egg-info/SOURCES.txt
+valiot_worker.egg-info/dependency_links.txt
+valiot_worker.egg-info/not-zip-safe
+valiot_worker.egg-info/requires.txt
+valiot_worker.egg-info/top_level.txt
