@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: voyager-icon
+Version: 0.0.1
+Summary: Voyager Icon Library
+Home-page: https://github.com/understood/icon-library
+Author: Dmitry Shirokov
+Author-email: dshirokov@understood.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+Voyager Icon Library
+
+
