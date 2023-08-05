@@ -1,0 +1,13 @@
+CHANGELOG.md
+LICENSE.txt
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.py
+src/stdio_mgr/__init__.py
+src/stdio_mgr/stdio_mgr.py
+src/stdio_mgr.egg-info/PKG-INFO
+src/stdio_mgr.egg-info/SOURCES.txt
+src/stdio_mgr.egg-info/dependency_links.txt
+src/stdio_mgr.egg-info/requires.txt
+src/stdio_mgr.egg-info/top_level.txt
