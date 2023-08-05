@@ -1,0 +1,17 @@
+solo/VERSION,sha256=gPjrxuwuClxPLTAyuqGXfRJ3Bf4ye1faaUcxACvUgqM,8
+solo/__init__.py,sha256=0su3ZgbbOQxTfoNz7dwJfBXO84hadw9gXTZ3XV5C5O0,562
+solo/client.py,sha256=pJ8akcaNJIqJllw0AJ5r313xF-bCzteiV6Om22EbuHM,9220
+solo/commands.py,sha256=gU6HLNnFKMBe8f-daptTcH7TJOS9OPxGwUt36itWIrc,1133
+solo/dfu.py,sha256=Z_caTEvdHAZ880sXuRet9lxXZdp6O9bcCd5pmp5UfTQ,5285
+solo/helpers.py,sha256=ZTq9h-IFpqO8SILbJoooz175yTZfa0RHdIbD5T_n0_4,279
+solo/operations.py,sha256=8CXxlHSnKx8axYvBJbJPzMQpl-dIchxReO3GtQZIbAg,3771
+solo/solotool.py,sha256=JYHIEGLSk-WVJo8wR8wwy79qSJCiF5U9gm-tNw_60tk,10264
+solo/cli/__init__.py,sha256=qSWR76ojTONRSK-zEyTSipYgluwjlMqDrSYhFpcwAwE,2391
+solo/cli/device.py,sha256=opfwB5u47_BYhwJNf4fxdyQ1KEoxWOlpr0-5yWNRlEw,2537
+solo/cli/monitor.py,sha256=lqvCp1a-0t5qxSpFf9oyGzmkeT8k-dwKEiTLNBMZh_g,885
+solo_python-0.0.1a5.dist-info/entry_points.txt,sha256=w4ReRAiWwaxYlqPBeNyHcyJTZma5OuRsGsZjIu_oXc8,75
+solo_python-0.0.1a5.dist-info/LICENSE-APACHE,sha256=TRD-XzqhdrBbIpokiGa61wuDTBc_ElKoFP9HSNihODc,10255
+solo_python-0.0.1a5.dist-info/LICENSE-MIT,sha256=I_GOA9xJ35FiL-KnYXZJdATkbO2KcV2dK2enRGVxzKM,1023
+solo_python-0.0.1a5.dist-info/WHEEL,sha256=JXk7EE_UnY8Q4113Zu8f6SlrMizLH61VvvtIzqzkSKE,79
+solo_python-0.0.1a5.dist-info/METADATA,sha256=sr_o_h98hu69Aj2RN6GY1easGHCMCgEZ3QfveomtMYo,610
+solo_python-0.0.1a5.dist-info/RECORD,,
