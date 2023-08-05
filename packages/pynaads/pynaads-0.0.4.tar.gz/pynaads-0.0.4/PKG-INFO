@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pynaads
+Version: 0.0.4
+Summary: Python library to monitor Pelmorex's NAADS service
+Home-page: https://github.com/VE3LSR/pynaads
+Author: VE3LSR / VE3YCA
+Author-email: projects@ve3lsr.ca
+License: UNKNOWN
+Description: # pynaads
+        Python library to monitor Pelmorex's NAADS service
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
