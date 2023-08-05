@@ -1,0 +1,2 @@
+trio>=0.11
+hypothesis~=4.0
