@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: travis-env
+Version: 2019.2.18
+Summary: Travis CI environment variables
+Home-page: https://github.com/looking-for-a-job/travis-env.py
+License: UNKNOWN
+Description: [![](https://img.shields.io/pypi/pyversions/travis-env.svg?longCache=True)](https://pypi.org/project/travis-env/)
+        
+        #### Install
+        ```bash
+        $ [sudo] pip install travis-env
+        ```
+        
+        #### Features
+        +   add, get, delete Travis CI environment variables
+        
+        #### Config
+        ```bash
+        $ travis token
+        xxx
+        $ export TRAVIS_TOKEN="xxx"
+        ```
+        
+        #### Functions
+        function|`__doc__`
+        -|-
+        `travis_env.add(repo, var_name, var_value, public=False)`|add environment variable
+        `travis_env.clear(repo)`|clear all environment variables
+        `travis_env.delete(repo, var_name)`|delete environment variable
+        `travis_env.update(repo, **kwargs)`|update environment variable
+        `travis_env.vars(repo)`|
+        
+        #### CLI
+        usage|`__doc__`
+        -|-
+        `python -m travis_env.clear repo`|clear all environment variables
+        `python -m travis_env.delete repo var_name ...`|delete environment variables by name
+        `python -m travis_env.set repo var_name var_value`|set environment variable
+        `python -m travis_env.vars repo`|print environment variable names
+        
+        #### Examples
+        ```bash
+        $ python -m travis_env.set WEBHOOK_URL url
+        $ python -m travis_env.vars
+        WEBHOOK_URL
+        ```
+        
+        <p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+Keywords: travis
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
