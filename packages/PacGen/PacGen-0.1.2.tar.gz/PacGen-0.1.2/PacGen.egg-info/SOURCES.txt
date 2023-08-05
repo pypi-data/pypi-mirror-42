@@ -1,0 +1,9 @@
+README.md
+setup.py
+PacGen.egg-info/PKG-INFO
+PacGen.egg-info/SOURCES.txt
+PacGen.egg-info/dependency_links.txt
+PacGen.egg-info/top_level.txt
+pacgen/__init__.py
+pacgen/pacgen.py
+scripts/updatepac
