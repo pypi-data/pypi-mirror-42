@@ -1,0 +1,9 @@
+dal_admin_filters/__init__.py,sha256=Wj-gdyfvUu8h_N_PlVqCdf0yVRj8LA-UIykJtNQXqd8,3178
+dal_admin_filters/static/dal_admin_filters/css/autocomplete-fix.css,sha256=86K3a3ESzXaWl8k5p17uFhMR2Fa-3XcB9JtvjCBeXEU,67
+dal_admin_filters/static/dal_admin_filters/js/querystring.js,sha256=iSuypSZa-wPMrbXXr4mHMrTc8QcN53nmNKXsaoyLHCg,2660
+dal_admin_filters/templates/dal_admin_filters/autocomplete-filter.html,sha256=uoEelz7CrkTGP6OjlbTSxxYRX-ttPMveuVwvlxlH1YM,649
+dal_admin_filters-0.3.0.dist-info/LICENSE,sha256=MX3kV02IHGqAlKadfC2EyOQJoaHUSUjCmMPeu8hSRJU,1065
+dal_admin_filters-0.3.0.dist-info/METADATA,sha256=ImBe6ZAo8XwIbx59xxg4aHAQI6Zl0og7A6QPzK8pc38,5594
+dal_admin_filters-0.3.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+dal_admin_filters-0.3.0.dist-info/top_level.txt,sha256=q9TF-Ar5a0_NbOplmDVAwUlwcpr7eVWgO_lDnGNuaxs,18
+dal_admin_filters-0.3.0.dist-info/RECORD,,
