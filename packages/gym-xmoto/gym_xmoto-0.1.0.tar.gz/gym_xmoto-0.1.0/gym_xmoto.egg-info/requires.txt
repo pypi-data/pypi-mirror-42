@@ -1,0 +1,10 @@
+gym
+imutils
+matplotlib
+mss
+numpy
+opencv-python
+pandas
+pyautogui
+python3_xlib
+seaborn
