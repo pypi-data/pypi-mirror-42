@@ -1,0 +1,121 @@
+Metadata-Version: 2.1
+Name: elu-server
+Version: 0.1.0
+Summary: This package handle the communication between smartphone app and hardware module
+Home-page: https://github.com/MaFa961/Eingebettete_Systeme_ELU_Server
+Author: Marcel F
+Author-email: marcel.fasterding@gmx.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Eingebettete_Systeme_ELU_core
+
+1. [Einleitung](#Einleitung)
+1. [Modul](##Modul)
+1. [Github](#Github)
+1. [Pip3](#Pip3)
+1. [Optional](#Optional)
+
+## Einleitung
+
+Das Projekt "Elektronische Lastenunterstützung" (ELU) ist im Rahmen des Studiummodules "Eingebettete Systeme" entstanden.
+
+Das Projekt soll Menschen helfen, die nicht mehr in der Lage sind schwer Lasten/Objekte zu tragen.
+
+Auf den Roboter muss lediglich die "Last" abgelegt werden.
+
+Anschließend kann über die Handyapp der Roboter gesteuert werden.
+
+Mögliche Einsatzgebiete sind:
+
+- Transport von Getränkekisten oder Einkaufstaschen
+- Transport von Blumen, Erde und weitere Artikel die zur Gartenarbeit benötigt werden
+
+
+## Modul
+
+Dieses Modul ist eins von insgesammt drei Komponenten, welches für
+die Kommunikation zwischen der Handyapp und des Hardwaremodules zuständig ist.
+
+Das Projekt zielt darauf ab auf einem Raspberry Pi lauffähig zu sein.
+
+Das Modul wurde auf einem Raspberry Pi 3b+ getestet.
+
+
+## Modul starten
+
+Das Projekt kann entweder über Github oder mit Pip3 heruntergeladen und genutzt werden.
+
+### Github
+
+1. Das Projekt mit dem Befehl
+
+   `git clone git@github.com:MaFa961Eingebettete_Systeme_ELU_Server.git`
+
+   herunterladen.
+
+1. Anschließend in das Projektverzeichnis wechseln
+
+   `cd Eingebettete_Systeme_ELU_Server`
+
+1. Der Server wird mit dem Konsolen befehl
+
+   `./run.sh`
+
+   gestartet.
+
+1. Es muss sichergestellt werden, 
+
+   dass das Core Modul ebenfalls gestartet wurde.
+
+   https://github.com/MaFa961/Eingebettete_Systeme_ELU_core
+
+### Pip3
+
+1. Installation von virtualenv
+
+   `pip3 install virtualenv`
+
+1. Ein Projektverzeichnis erstellen und in das Verzeichnis wechseln
+
+   `mkdir project_folder && cd project_folder`
+
+1. Die virtualenv starten
+
+   `virtualenv venv`
+
+1. Die vitrualenv aktivieren
+
+   `source venv/bin/activate`
+
+1. Install elu_server
+
+   `pip3 install elu-server`
+
+1. Das Projekt importieren und nutzen.
+
+   ```python
+   import server.main
+
+   server.main.startServer()
+   ```
+
+## Optional:
+
+Für den Fall, dass nach dem herunterladen von Github das `run.sh` Script nicht ausführbar ist, 
+
+muss folgender Befehl eingegeben werden:
+
+`chmod +x run.sh`
+
+gegebenenfalls muss das Ganze mit 
+
+`sudo`
+
+ausgeführt werden.
+
+
