@@ -1,0 +1,3 @@
+[console_scripts]
+airctrl = airctrl.airctrl:main
+
