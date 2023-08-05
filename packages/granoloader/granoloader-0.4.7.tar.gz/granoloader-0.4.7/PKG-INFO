@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: granoloader
+Version: 0.4.7
+Summary: Import data to grano using CSV files.
+Home-page: https://github.com/ANCIR/granoloader
+Author: Code for Africa / ANCIR
+Author-email: support@codeforafrica.org
+License: MIT
+Description: UNKNOWN
+Keywords: data client rest grano sna ddj journalism
+Platform: UNKNOWN
