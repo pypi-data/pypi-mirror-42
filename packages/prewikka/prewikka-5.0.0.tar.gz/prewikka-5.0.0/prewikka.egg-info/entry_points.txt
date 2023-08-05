@@ -1,0 +1,42 @@
+[prewikka.auth]
+
+
+[prewikka.dataprovider.backend]
+IDMEFAlert = prewikka.dataprovider.plugins.idmef:IDMEFAlertPlugin
+IDMEFHeartbeat = prewikka.dataprovider.plugins.idmef:IDMEFHeartbeatPlugin
+
+[prewikka.dataprovider.type]
+alert = prewikka.dataprovider.idmef:IDMEFAlertProvider
+heartbeat = prewikka.dataprovider.idmef:IDMEFHeartbeatProvider
+
+[prewikka.plugins]
+
+
+[prewikka.renderer.backend]
+ChartJS = prewikka.renderer.chartjs:ChartJSPlugin
+
+[prewikka.renderer.type]
+ChartJSBar = prewikka.renderer.chartjs.bar:ChartJSBarPlugin
+ChartJSTimebar = prewikka.renderer.chartjs.timeline:ChartJSTimebarPlugin
+
+[prewikka.session]
+Anonymous = prewikka.session.anonymous:AnonymousSession
+
+[prewikka.updatedb]
+prewikka = prewikka.sql
+prewikka.views.filter.filter = prewikka.views.filter.sql
+
+[prewikka.views]
+About = prewikka.views.about:About
+AboutPlugin = prewikka.views.aboutplugin:AboutPlugin
+AgentPlugin = prewikka.views.agents:AgentPlugin
+AlertDataSearch = prewikka.views.datasearch.alert:AlertDataSearch
+CrontabView = prewikka.views.crontab:CrontabView
+FilterView = prewikka.views.filter.filter:FilterView
+HeartbeatDataSearch = prewikka.views.datasearch.heartbeat:HeartbeatDataSearch
+IDMEFnav = prewikka.views.idmefnav:IDMEFNav
+MessageSummary = prewikka.views.messagesummary:MessageSummary
+ThreatDataSearch = prewikka.views.datasearch.threat:ThreatDataSearch
+UserManagement = prewikka.views.usermanagement:UserManagement
+Warning = prewikka.plugins.warning:Warning
+
