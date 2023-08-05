@@ -1,0 +1,13 @@
+gmopg/__init__.py,sha256=DdVjt10697W1hx_Sdv2rufTuKevt9o8-n0sDRDwZ8jM,644
+gmopg/_helpers.py,sha256=zpN4puLsWZYpAFL2EGLy03ATSxbe0i5l20dAu3pYPNI,554
+gmopg/api.py,sha256=DarWgfYtF27XQ-VbcUYA3h8D9V63U3r7pxV0cL8Ve4c,4090
+gmopg/context.py,sha256=TSEJ7DDTD90md4Wh6M9d2f39cLBOH0B1OSdR1rlfTuA,558
+gmopg/errors.py,sha256=htKTsd-JBEqn36eJ8jIo_ngxJLr4t9kxJzhjWGISyWs,16303
+gmopg/exceptions.py,sha256=FE_k38-TO0V-yOO3PTd33zxjq-xxebxWfTCRunXRGnk,614
+gmopg/response.py,sha256=VpOtZ_rmxJWAfOaj2oJvPMkIZ27mx21_wHMYyI7jV00,895
+gmopg-0.0.6.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+gmopg-0.0.6.dist-info/METADATA,sha256=GORkCl_QxokMAqK9hHAAiNXRPrFo8uukgXUh041oopo,356
+gmopg-0.0.6.dist-info/RECORD,,
+gmopg-0.0.6.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+gmopg-0.0.6.dist-info/metadata.json,sha256=9mLY9XEoyUXhZrtRJEvJ_GzWf1dhP4b9VTZuENkkQ1s,556
+gmopg-0.0.6.dist-info/top_level.txt,sha256=Bepp-1cQloC7ikAu-13bnOgjwDxjuxoFLi_ekvZ71VU,6
