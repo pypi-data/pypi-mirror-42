@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        dotnet-generate=dotnet_generate:cli
+    
