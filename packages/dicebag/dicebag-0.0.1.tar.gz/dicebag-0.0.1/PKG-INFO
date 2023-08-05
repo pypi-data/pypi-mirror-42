@@ -1,0 +1,31 @@
+Metadata-Version: 1.2
+Name: dicebag
+Version: 0.0.1
+Summary: An infinite bag of dice.
+Home-page: UNKNOWN
+Author: Mark Smith
+Author-email: judy@judy.co.uk
+License: MIT
+Description: # Dicebag
+        
+        An infinite bag of dice.
+        
+        ```python3
+        >>> import dicebag
+        >>> dicebag.roll_d6()
+        5
+        >>> dicebag.roll_3d6()
+        9
+        >>> dicebag.roll_2d50()
+        43
+        ```
+        
+        # Caveats
+        
+        This was written in a hurry, to show how clever I am. It should probably not be used in production.
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6.0
