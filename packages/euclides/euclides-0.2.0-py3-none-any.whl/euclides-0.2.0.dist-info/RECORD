@@ -1,0 +1,8 @@
+euclides/__init__.py,sha256=UmJBDg5MUh-UoOYi_uJa2EU4iXm37oHd11xRaqvu9sQ,81
+euclides/euclidesproto_pb2.py,sha256=nLISMjt6OV0R2KL7nO4majMG3JbNDn_LW53ztQGK-zI,24713
+euclides/euclidesproto_pb2_grpc.py,sha256=dKzZe6LFu9oT_v8GqBsyVVQIlXUICG_j8aOqcy8g-BU,4758
+euclides/services.py,sha256=JxT4ugYyRNMyQfVmIMx_K42wYm8FHnAl2NpEFS0KK30,2551
+euclides-0.2.0.dist-info/METADATA,sha256=0Q3sPfPjU56K62j0Kep0O0IQrL1hgm6w2azsyAaHYmw,528
+euclides-0.2.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+euclides-0.2.0.dist-info/top_level.txt,sha256=o9i98KLQFCkgsUu9SLjEvWTZmP_mIjejoRCbA9XP2x4,9
+euclides-0.2.0.dist-info/RECORD,,
