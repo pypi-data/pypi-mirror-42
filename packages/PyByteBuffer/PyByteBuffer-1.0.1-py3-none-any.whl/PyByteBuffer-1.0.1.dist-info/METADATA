@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: PyByteBuffer
+Version: 1.0.1
+Summary: A bytes manipulation library inspired by Java ByteBuffer
+Home-page: https://github.com/iGio90/PyByteBuffer
+Author: iGio90
+Author-email: giovanni.rocca.90@gmail.com
+License: GPL 3.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3
+
+# PyByteBuffer
+
+A library to manipulate buffers inspired by [Java nio ByteBuffer](https://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html)
+
+
