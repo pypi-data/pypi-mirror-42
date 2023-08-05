@@ -1,0 +1,150 @@
+Metadata-Version: 2.1
+Name: elu-core
+Version: 0.1.0
+Summary: This package controls the hardware
+Home-page: https://github.com/MaFa961/Eingebettete_Systeme_ELU_core
+Author: Marcel F
+Author-email: marcel.fasterding@gmx.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Eingebettete Systeme ELU core
+
+1. [Einleitung](#Einleitung)
+1. [Modul](##Modul)
+1. [Github](#Github)
+1. [Pip3](#Pip3)
+1. [Optional](#Optional)
+
+## Einleitung
+
+Das Projekt "Elektronische Lastenunterstützung" (ELU) ist im Rahmen des Studiummodules "Eingebettete Systeme" entstanden.
+
+Das Projekt soll Menschen helfen, die nicht mehr in der Lage sind schwer Lasten/Objekte zu tragen.
+
+Auf den Roboter muss lediglich die "Last" abgelegt werden.
+
+Anschließend kann über die Handyapp der Roboter gesteuert werden.
+
+Mögliche Einsatzgebiete sind:
+
+- Transport von Getränkekisten oder Einkaufstaschen
+- Transport von Blumen, Erde und weitere Artikel die zur Gartenarbeit benötigt werden
+
+
+## Modul
+
+Dieses Modul ist eins von insgesammt drei Komponenten, welches für die 
+die Steuerung der Hardware zuständig ist.
+
+Das Projekt zielt darauf ab auf einem Raspberry Pi lauffähig zu sein.
+
+Das Modul wurde auf einem Raspberry Pi 3b+ getestet.
+
+
+## Modul starten
+
+Das Projekt kann über Github oder Pip3 heruntergeladen und genutzt werden.
+
+### Github
+
+1. Das Projekt mit dem Befehl
+
+   ```bash
+   git clone git@github.com:MaFa961/Eingebettete_Systeme_ELU_core.git
+   ```
+
+   herunterladen.
+
+1. Anschließend in das Projektverzeichnis wechseln
+
+   ```bash
+   cd Eingebettete_Systeme_ELU_core
+   ```
+
+1. Das Core Modul wird mit dem Konsolenbefehl
+
+   ```bash
+   ./run.sh
+   ```
+
+   gestartet.
+
+1. Es muss sichergestellt werden, 
+
+   das das Server Modul ebenfalls gestartet wurde.
+
+   https://github.com/MaFa961/Eingebettete_Systeme_ELU_Server
+
+### Pip3
+
+1. Installieren von virtualenv
+
+   ```bash
+   pip3 install virtualenv
+   ```
+
+1. Ein Projektverzeichnis erstellen und in das Verzeichnis wechseln
+
+   ```bash
+   mkdir project_folder && cd project_folder
+   ```
+
+1. Die virtualenv starten
+
+   ```bash
+   virtualenv venv
+   ```
+
+1. Das vitrualenv aktivieren
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+1. Eine requirements.txt erstellen und Abhängigkeiten einfügen
+
+   ```bash
+   echo "
+   elu_core
+   RPi.GPIO==0.6.4
+   requests" >> requirements.txt
+   ```
+
+1. Die Abhängigkeiten installieren
+
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+1. Das Projekt importieren und nutzen.
+
+   Dies funktioniert nur auf einem Raspberry Pi.
+
+   ```python
+   import elu_core.main
+
+   elu_core.main.startCore()
+   ```
+
+## Optional:
+
+Für den Fall, dass nach dem herunterladen von Github das `run.sh` Script nicht ausführbar ist,
+ muss folgender Befehl eingegeben werden:
+
+```bash
+chmod +x run.sh
+```
+
+gegebenenfalls muss das Ganze mit 
+
+```bash
+sudo
+```
+
+ausgeführt werden.
+
