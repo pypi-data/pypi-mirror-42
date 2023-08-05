@@ -1,0 +1,15 @@
+click
+click-log
+component-contribution
+equilibrator-cache
+importlib-resources
+openbabel
+python-dateutil
+quilt
+requests
+tqdm
+
+[development]
+black
+isort
+tox
