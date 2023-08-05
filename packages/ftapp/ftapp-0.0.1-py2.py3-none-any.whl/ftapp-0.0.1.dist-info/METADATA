@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: ftapp
+Version: 0.0.1
+Summary: Script zur Erstellung einer fischertechnik Anwendung
+Home-page: https://github.com/heuer/ftapp/
+Author: Lars Heuer
+Author-email: heuer@semagia.com
+License: BSD
+Keywords: fischertechnik,ftduino
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Dist: click (>=5.1)
+
+ftapp - Script zur Erstellung von fischertechnik Apps
+=====================================================
+
+Installation
+------------
+
+::
+
+    $ pip install ftapp
+
+
+Anwendung erstellen
+-------------------
+
+::
+
+    $ ftapp  /pfad/zu/einem/leeren/oder/nicht/existenten/verzeichnis
+
+Das Script fragt dann diverse Eigenschaften der App ab. In dem angegebenen
+Verzeichnis wird automatisch ein Manifest, ein Icon, sowie eine minimale
+App erstellt.
+
+Changes
+=======
+
+0.0.1 -- 2019-02-19
+-------------------
+* Initial release
+
+
