@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: innoreg
+Version: 0.4
+Summary: Inno Setup Registry
+Home-page: http://phyl.io/?page=innoreg.html
+Author: Philippe Kappel
+Author-email: philippe.kappel@gmail.com
+License: MIT
+Description: `innoreg` customize Windows Registry.
+        
+        Dependencies
+        ------------
+        
+        * [Python](https://www.python.org) 3.6+
+        * [Inno Setup](http://jrsoftware.org/isinfo.php) 5u, 6 — *chosen against* [NSIS](https://nsis.sourceforge.io/Main_Page) *for its DPI scaling support*
+        * [ExecTI](https://winaero.com/comment.php?comment.news.1843) — *optional, for highest permissions*
+Keywords: Inno
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: French
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown

@@ -1,0 +1,21 @@
+﻿[LangOptions]
+LanguageName=English
+LanguageID=$0409
+
+[messages]
+SelectLanguageTitle=Select Setup Language
+SelectLanguageLabel=Select the language to use during the installation:
+SetupWindowTitle=Registry
+WizardSelectComponents=Customize the registry
+SelectComponentsDesc=Which registry values should be modified?
+SelectComponentsLabel2=Select the values you want to modify, clear the values you want to restore.
+FullInstallation=Full selection
+CompactInstallation=Windows default
+CustomInstallation=Custom selection
+ComponentsDiskSpaceMBLabel=All values ​​will be written.
+ButtonInstall=Write
+ButtonCancel=Exit
+FinishedHeadingLabel=Modified Registry
+FinishedRestartLabel=To take into account the modifications, Setup must restart your computer.%n%nWould you like to restart now?
+YesRadio=&Yes, restart the computer now
+NoRadio=&No, I will restart the computer later

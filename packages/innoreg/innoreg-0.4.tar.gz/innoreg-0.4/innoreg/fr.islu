@@ -1,0 +1,21 @@
+﻿[LangOptions]
+LanguageName=Français
+LanguageID=$040C
+
+[messages]
+SelectLanguageTitle=Langue de l’assistant
+SelectLanguageLabel=Veuillez sélectionner la langue qui sera utilisée par l’assistant :
+SetupWindowTitle=Registre
+WizardSelectComponents=Personnaliser le registre
+SelectComponentsDesc=Quels valeurs du registre souhaitez-vous modifier ?
+SelectComponentsLabel2=Sélectionnez les valeurs à modifier, décochez les valeurs à restaurer.
+FullInstallation=Sélection complète
+CompactInstallation=Windows par défaut
+CustomInstallation=Sélection personnalisée
+ComponentsDiskSpaceMBLabel=Toutes les valeurs seront écrites.
+ButtonInstall=Écrire
+ButtonCancel=Sortir
+FinishedHeadingLabel=Registre modifié
+FinishedRestartLabel=L’assistant doit redémarrer votre ordinateur pour prendre en compte les modifications.%n%nVoulez-vous redémarrer maintenant ?
+YesRadio=&Oui, redémarrer mon ordinateur maintenant
+NoRadio=&Non, je préfère redémarrer mon ordinateur plus tard

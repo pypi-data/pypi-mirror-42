@@ -1,0 +1,10 @@
+setup.py
+innoreg/__init__.py
+innoreg/en.islu
+innoreg/fr.islu
+innoreg/logo.bmp
+innoreg.egg-info/PKG-INFO
+innoreg.egg-info/SOURCES.txt
+innoreg.egg-info/dependency_links.txt
+innoreg.egg-info/entry_points.txt
+innoreg.egg-info/top_level.txt
