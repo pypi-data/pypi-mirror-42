@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: simdna-dragonn
+Version: 0.1
+Summary: Simulations of DNA for the Dragonn Package
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Download-URL: https://github.com/kundajelab/simdna_dragonn
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.15)
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+
+UNKNOWN
+
+
