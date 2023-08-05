@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: lenticrypt
+Version: 0.3.1
+Summary: A simple cryptosystem that provides provable plausibly deniable encryption. Lenticrypt can generate a single ciphertext file such that different plaintexts are generated depending on which key is used for decryption.
+Home-page: https://github.com/ESultanik/lenticrypt
+Author: Evan Sultanik
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Topic :: Security :: Cryptography
+Requires-Python: >=3.6

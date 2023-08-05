@@ -1,0 +1,3 @@
+[console_scripts]
+lenticrypt = lenticrypt.__main__:main
+
