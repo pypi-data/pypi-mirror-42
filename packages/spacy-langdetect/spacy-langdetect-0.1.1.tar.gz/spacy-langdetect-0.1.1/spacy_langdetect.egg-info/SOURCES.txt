@@ -1,0 +1,11 @@
+README.md
+setup.py
+spacy_langdetect/__init__.py
+spacy_langdetect/spacy_langdetect.py
+spacy_langdetect.egg-info/PKG-INFO
+spacy_langdetect.egg-info/SOURCES.txt
+spacy_langdetect.egg-info/dependency_links.txt
+spacy_langdetect.egg-info/requires.txt
+spacy_langdetect.egg-info/top_level.txt
+tests/__init__.py
+tests/test_spacy_langdetect.py
