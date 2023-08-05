@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: PytableBox
+Version: 1.0.2
+Summary: can be used to create tables in python
+Home-page: https://github.com/jimmyahalpara/Pytable/tree/Pytable
+Author: jimmy kumar ahalpara
+Author-email: jimmyahalpara123@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+
+module to make tables in python
+
+
