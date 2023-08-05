@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: tnqvm
+Version: 0.1.8
+Summary: XACC plugins for interacting with TNQVM
+Home-page: UNKNOWN
+Author: Alex McCaskey
+Author-email: xacc-dev@eclipse.org
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: xacc (>=0.1.15)
+
+XACC provides a language and hardware agnostic programming framework for hybrid classical-quantum applications.
+
+

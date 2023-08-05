@@ -1,0 +1,7 @@
+xacc/pytnqvm.so,sha256=kDCkA9PqA4yaOTXymEf6NB6hrMwK0dBHzmVhVr-unt4,117736
+xacc/plugins/libtnqvm-itensor.dylib,sha256=5MW1ZGNb0LLkmggu8iApYW6JwBSzUPGPZCmK2m20ZEk,32974800
+xacc/plugins/libtnqvm.dylib,sha256=F19bBQsLiJOXdfhZVU9JeAcf1x0XJ5J3war9Cu7SE7k,186748
+tnqvm-0.1.8.dist-info/METADATA,sha256=fXeJpQtgeNEw8Q0PDC2nSRO9NYkJuAPFiGeMXY-qYoQ,355
+tnqvm-0.1.8.dist-info/WHEEL,sha256=y1rBzL4xB23UYzN2Jc7bov25BUObc6Fk1DdncQqwv6o,111
+tnqvm-0.1.8.dist-info/top_level.txt,sha256=bl117aouIAjdEyif0eO5CO5ZMUVyZiOyZlzybulzcjA,8
+tnqvm-0.1.8.dist-info/RECORD,,
