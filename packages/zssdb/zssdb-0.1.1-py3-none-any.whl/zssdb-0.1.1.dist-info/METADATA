@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: zssdb
+Version: 0.1.1
+Summary: 封装的ssdb连接器
+Home-page: https://pypi.org/project/zssdb
+Author: zlyuan
+Author-email: 1277260932@qq.com
+License: GNU GENERAL PUBLIC LICENSE
+Platform: all
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: pyssdb
+Requires-Dist: zretry
+
+# 一个封装的ssdb连接器
+
+### 参数说明
+参数名|数据类型|默认值|描述
+--|:--:|:--:|---
+
+### 更新日志
+发布时间|发布版本|发布说明
+--|:--:|---
+19-02-19 | 0.1.0 | 发布第一版, 暂时不支持集群连接
+
+- - -
+##### 本项目仅供所有人学习交流使用, 禁止用于商业用途
+
+
