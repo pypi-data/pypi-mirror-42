@@ -1,0 +1,9 @@
+README.md
+setup.py
+chocobo/__init__.py
+chocobo/chocobo.py
+chocobo.egg-info/PKG-INFO
+chocobo.egg-info/SOURCES.txt
+chocobo.egg-info/dependency_links.txt
+chocobo.egg-info/requires.txt
+chocobo.egg-info/top_level.txt
