@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: raspi-lora
+Version: 0.1
+Summary: LoRa RFM9x library for Raspberry Pi inspired by RadioHead
+Home-page: https://gitlab.com/the-plant/raspi-lora
+Author: Anne Wood
+Author-email: anne.w@fastmail.us
+License: MIT
+Description: UNKNOWN
+Keywords: lora rfm95 rfm9x rfm96 rfm97 rfm98 hardware raspberrypi
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Hardware
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
