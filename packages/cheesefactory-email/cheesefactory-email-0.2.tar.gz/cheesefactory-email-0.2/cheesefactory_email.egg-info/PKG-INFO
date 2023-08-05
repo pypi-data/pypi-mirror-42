@@ -1,0 +1,41 @@
+Metadata-Version: 1.1
+Name: cheesefactory-email
+Version: 0.2
+Summary: An easier way to send Email
+Home-page: https://bitbucket.org/hellsgrannies/cheesefactory-email
+Author: Todd Salazar
+Author-email: unixsal@yahoo.com
+License: UNKNOWN
+Description: An easier way to send an Email.
+        
+        Features
+        ========
+        
+        TODO
+        
+        Create an Email object and send
+        ===============================
+        
+        .. code-block:: python
+        
+          from cheesefactory-Email import Email
+        
+          email = Email(
+              recipients=['bob@example.com',],
+              host='localhost',
+              port='25',
+              username='emailuser',
+              password='emailpassword',
+              sender='tom@example.com',
+              subject='Fishing trip',
+              body='Dear Bob,\nHow was the fishing trip?\n\nTom',
+              use_tls=False,
+              attachments=['file1.txt', 'file2.txt']
+          )
+        
+Keywords: cheesefactory excel dataframe pandas development
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.7
