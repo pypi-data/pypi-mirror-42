@@ -1,0 +1,3 @@
+[console_scripts]
+elisctl = elisctl:entry_point
+
