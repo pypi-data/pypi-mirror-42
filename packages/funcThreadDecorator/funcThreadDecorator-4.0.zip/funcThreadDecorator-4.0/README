@@ -1,0 +1,15 @@
+函数线程装饰器的作用是为普通函数附加多线程的能力。
+
+说明
+    1.funcThreadDecoratorNotResult 这个装饰器方法不返回函数值，默认返回的是None
+    2.funcThreadDecoratorResult 这个装饰器返回函数的值
+
+用法：
+    1.导入方法
+       from funcThreadDecorator.funcThreadDecorator import funcThreadDecoratorNotResult,funcThreadDecoratorResult
+
+
+    2.
+        @funcThreadDecoratorNotResult
+        def  test1():
+              print "hello,test1"
