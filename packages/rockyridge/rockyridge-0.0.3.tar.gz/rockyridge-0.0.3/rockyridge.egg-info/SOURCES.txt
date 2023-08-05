@@ -1,0 +1,10 @@
+README.md
+setup.py
+rockyridge/__init__.py
+rockyridge/__main__.py
+rockyridge.egg-info/PKG-INFO
+rockyridge.egg-info/SOURCES.txt
+rockyridge.egg-info/dependency_links.txt
+rockyridge.egg-info/entry_points.txt
+rockyridge.egg-info/not-zip-safe
+rockyridge.egg-info/top_level.txt
