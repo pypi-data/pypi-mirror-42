@@ -1,0 +1,154 @@
+Metadata-Version: 1.1
+Name: fitchain
+Version: 0.0.20
+Summary: Fitchain Python Client
+Home-page: https://bitbucket.org/fitchain/fitchain-sdk-python
+Author: Fitchain
+Author-email: hello@fitchain.io
+License: Proprietary
+Description: ### What is this repository for? ###
+        
+        * python based SDK  
+        * v0.1
+        
+        This repo implements the SDK to manage projects and models on a local fitchain pod
+        
+        ### Feedback ###
+        Reach out and tell us how we can improve this SDK to make it easier for you to work with the pod and build your models.
+        
+        You may always drop us a mail at ``` code@fitchain.io ```
+        
+        
+        ### Getting Started ###
+        #### Prequisites
+        
+        Create a virtual environment
+        
+        ``` virtualenv -p python3 venv ```
+        
+        ``` . venv/bin/activate ```
+        
+        and install all requirements in it
+        
+        ```pip3 install -r requirements.txt```
+        
+        from this virtualenv run the code submitted by data scientist as in
+        
+        ```python ../../fitchain/machine-learning-models/mlp-reuters/train_mlp.py```
+        
+        
+        Make sure libmagic is installed:
+        
+        ```
+        brew install libmagic
+        ```
+        
+        ####Fitchain sdk
+        
+        First install the fitchain sdk using pip:
+        ```bash
+        pip install fitchain
+        ```
+        
+        Once the fitchain sdk has been installed, you can use the library:
+        
+        ```python
+        from fitchain import Runtime
+        
+        fc = Runtime()
+        ```
+        
+        Call the ```projects()``` method to get an overview of all available projects. You may even enter a query string to
+        filter your results.
+        
+        ```python
+        projects = fc.projects()
+        ```
+        
+        Once a project has been chosen, the datasources linked to the project can be retrieved using the ```datasources``` property
+        
+        ```python
+        project = projects[...]
+        project_datasources = project.datasources
+        ```
+        
+        Data for a specific datasource can be loaded by calling the ``` load(<datasource_id) ``` method on the project
+        ```python
+        project_datasource_id = ...
+        project.load(project_datasource_id)
+        ```
+        
+        ### Extracting schema and generating data
+        #### From data owner's pod
+        
+        ```
+            # Loading data and generating schema
+            df = dt.DataTemplate()
+            df.load_data(parentdir+ '/data/titanic_train.csv')
+            data_schema = df.get_template()
+        
+            # Save schema to json file
+            schema_filepath = parentdir+'/data/titanic_schema.json'
+            print('Saving schema to disk at %s'%schema_filepath)
+            with open(schema_filepath, 'w') as outfile:
+                json.dump(data_schema, outfile)
+            del data_schema
+        ```
+        
+        #### From model owner's pod
+        
+        
+        ```
+            # Generating dummy data from local schema
+            # load schema from json file
+            print('Loading schema from %s' % schema_filepath)
+            with open(schema_filepath) as json_data:
+                schema = json.load(json_data)
+                json_data.close()
+                pprint.pprint(schema)
+        
+            dummy = dd.DummyData(schema)
+            dummy_df = dummy.generate_data()
+        
+            # Write model on dummy_df
+            dummy_df.to_csv(parentdir+'/data/dummy_titanic.csv')
+        ```
+        
+        
+        ### Reference
+        The following methods are available as part of the SDK
+        
+        ##### Pod Identity #####
+        ```python
+        identity = fc.identity()
+        ```
+        
+        ##### List projects #####
+        ```python
+        projects = fc.projects()
+        ```
+        
+        ##### List workspaces #####
+        ```python
+        workspaces = fc.workspaces()
+        ```
+        
+        ##### List providers #####
+        ```python
+        providers = fc.providers()
+        ```
+        
+        ##### List Owned Datasources #####
+        ```python
+        datasources = fc.datasources()
+        ```
+        
+        ##### List jobs #####
+        ```python
+        jobs = fc.jobs()
+        ```
+        
+Keywords: fitchain data client
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
