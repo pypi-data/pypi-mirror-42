@@ -1,0 +1,14 @@
+autocomplete_chained/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+autocomplete_chained/admin.py,sha256=4VQG3sb3757m0dbo-8-OM8e3uHl7uyDxH1sEXa65qDA,2191
+autocomplete_chained/apps.py,sha256=14lcumdAf2l6HUjRIw-gt6xw7FgfqPMk1cYx9F0BsGQ,114
+autocomplete_chained/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+autocomplete_chained/urls.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+autocomplete_chained/views.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+autocomplete_chained/widgets.py,sha256=JPZqmwGXhJEIIzNzzNALUCWSUkwluAtP8c-SwufJ49Y,1134
+autocomplete_chained/static/dist/autocomplete_chained.js,sha256=JOaHllxAhQF-JGfI4FAdXfQ-mMkJmuuLhjPCjczZ_QA,1569
+django_chained_autocomplete-0.0.8.dist-info/DESCRIPTION.rst,sha256=8GpSC1XPYUwu06sdCzPgQQ7-pkzQ6tVR4XcayvoB-BA,537
+django_chained_autocomplete-0.0.8.dist-info/METADATA,sha256=sW0Upn8dtwWWBiG3Hq6-yIdzg-DM2Y-cwlFLUa0yO9w,1135
+django_chained_autocomplete-0.0.8.dist-info/RECORD,,
+django_chained_autocomplete-0.0.8.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+django_chained_autocomplete-0.0.8.dist-info/metadata.json,sha256=PyS6CnESbl7QrNPxOXrmlQ03OT-b8Q0B4mEMVh0-F4o,827
+django_chained_autocomplete-0.0.8.dist-info/top_level.txt,sha256=-rnj0wKpmQyP3dCiD88f7DyiqkVgSh9fgBbuFuTrULo,21
