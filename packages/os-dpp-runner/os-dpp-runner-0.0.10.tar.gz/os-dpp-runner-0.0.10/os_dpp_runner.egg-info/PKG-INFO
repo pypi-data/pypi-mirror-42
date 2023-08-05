@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: os-dpp-runner
+Version: 0.0.10
+Summary: pipeline runner lib and server
+Home-page: https://github.com/openspending/os-dpp-runner
+Author: OpenSpending
+Author-email: info@openspending.org
+License: MIT
+Description: # pipeline runner lib and server
+Keywords: data
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
