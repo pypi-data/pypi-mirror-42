@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: grano-client
+Version: 0.4.7
+Summary: Client library for grano, a social network analysis tool.
+Home-page: https://github.com/ANCIR/grano-client
+Author: Code for Africa / ANCIR
+Author-email: support@codeforafrica.org
+License: MIT
+Description: grano client
+        ============
+        
+        This library provides a Python client for the `grano API <http://docs.grano.cc/rest_api.html>`_. ``grano`` is a web-based framework for the storage, analysis and presentation of social network information. The tool provides building blocks for custom, data-driven investigative solutions.
+        
+        Comprehensive documentation is `available as part of the grano documentation here <http://docs.grano.cc/rest_client.html>`_.
+Keywords: data client rest grano sna ddj journalism
+Platform: UNKNOWN
