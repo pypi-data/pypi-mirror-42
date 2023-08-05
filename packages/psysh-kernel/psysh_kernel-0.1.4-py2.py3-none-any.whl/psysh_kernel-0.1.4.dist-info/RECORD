@@ -1,0 +1,14 @@
+assets/logo-32x32.png,sha256=xAqRNjtDDAfQouEDvIssDMFXpbdRcun59YTSYca2Aa4,2085
+assets/logo-64x64.png,sha256=jHZug3CiIxntFl2Bt2qIDhcXpDNi9Ux8pbZpHLEA144,3392
+psysh_kernel/__init__.py,sha256=NF6r15aXsOfKjVHLWcw57MP9l6_k5FNyLpQ-F4bvj6c,117
+psysh_kernel/__main__.py,sha256=6Ve80toI9SqdG3QVGuitMdzZDPG_MQ-z6jLCEzjWDGs,91
+psysh_kernel/kernel.json,sha256=yN188HGV5zOq2-Nybpgmz1zWXwF8zmbineqF2Nx-GOM,205
+psysh_kernel/kernel.py,sha256=RMDyzfcU8KauoeUG5uvmDl4gDKqRtE9khtvpuz1ZErs,7605
+psysh_kernel-0.1.4.data/data/share/jupyter/kernels/octave/kernel.json,sha256=yN188HGV5zOq2-Nybpgmz1zWXwF8zmbineqF2Nx-GOM,205
+psysh_kernel-0.1.4.data/data/share/jupyter/kernels/octave/logo-32x32.png,sha256=xAqRNjtDDAfQouEDvIssDMFXpbdRcun59YTSYca2Aa4,2085
+psysh_kernel-0.1.4.data/data/share/jupyter/kernels/octave/logo-64x64.png,sha256=jHZug3CiIxntFl2Bt2qIDhcXpDNi9Ux8pbZpHLEA144,3392
+psysh_kernel-0.1.4.dist-info/LICENSE.txt,sha256=m-lGSW8exMJGLvMfe9fURePTN_7CMEoGdtWaXugwC7Y,91
+psysh_kernel-0.1.4.dist-info/METADATA,sha256=okO5HjNYhInxyPXrUYp_74tvBGGruQ26FrYnK8Wx3JM,1985
+psysh_kernel-0.1.4.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+psysh_kernel-0.1.4.dist-info/top_level.txt,sha256=9R-7lf4SJsrhvZcuU0-OKZJDpDyGjEV711kx0qD3-CY,13
+psysh_kernel-0.1.4.dist-info/RECORD,,
