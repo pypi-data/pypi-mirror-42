@@ -1,0 +1,8 @@
+django_geoaxis/__init__.py,sha256=QMrtsx90kuhJGWtYvY_xqiHmRUXjbALt7fMzco7xOpk,849
+django_geoaxis/backends/__init__.py,sha256=QMrtsx90kuhJGWtYvY_xqiHmRUXjbALt7fMzco7xOpk,849
+django_geoaxis/backends/geoaxis.py,sha256=YTwl7s0xIJ1twTu3DzIq-f2aIOaaPF3PpGX3sYpJPLw,3616
+django_geoaxis-0.0.2.dist-info/LICENSE,sha256=pd5TzdH7rgn8tV_YSFHzKV8SW7nJiLLQp7FclHU-CdU,1066
+django_geoaxis-0.0.2.dist-info/METADATA,sha256=ezJRNML4bBXJI0nAkeAjxOmGPLnxE6YmXDbnPW6MoiM,3358
+django_geoaxis-0.0.2.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+django_geoaxis-0.0.2.dist-info/top_level.txt,sha256=2vSBtz9DffgkFjEvewC0n7rpwv6sjnxAI0QhtSReq9c,15
+django_geoaxis-0.0.2.dist-info/RECORD,,
