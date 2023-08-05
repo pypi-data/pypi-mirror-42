@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: tkintertoy
+Version: 1.0.1
+Summary: A simple GUI package based on Tkinter
+Home-page: https://github.com/mcalla314/tkintertoy/archive/v1.0.1.tar.gz
+Author: Mike Callahan
+Author-email: mcalla@twc.com
+License: UNKNOWN
+Description: # Tkintertoy
+        
+        Tkintertoy was designed to be a easy to use GUI library based on Tkinter.
+        It was intented for "young" programmers to develop GUIs with as little
+        trouble as possible. However, more "advanced" programmers can reach the
+        more complex features of Tkinter easily.
+Keywords: GUI,Tkinter
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: User Interfaces
+Description-Content-Type: text/markdown
