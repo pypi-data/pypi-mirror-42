@@ -1,0 +1,3 @@
+[console_scripts]
+hexdoor = hexdoor.main:main
+
