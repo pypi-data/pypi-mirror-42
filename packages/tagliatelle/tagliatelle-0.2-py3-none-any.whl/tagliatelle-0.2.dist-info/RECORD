@@ -1,0 +1,12 @@
+tagliatelle/Client.py,sha256=_VtJlsTw2U2ZIheKeuF4A0_YNjBq5vcD8Ljweo22__g,372
+tagliatelle/ClientRequest.py,sha256=xomZIzI1JlPFZvQYHDATL6-30dh2M8J9rjhFoAJTEPE,2187
+tagliatelle/LowLevelClient.py,sha256=KUfXOck46Bn-fE_CpuU1n9qN35ebBp0S6eYSOO3nRbQ,3083
+tagliatelle/__init__.py,sha256=QubGIUba-UCac6PNxW2XxbkTcp16tSA4lW8NSsZUjYY,60
+tagliatelle/data/TagBulkResponse.py,sha256=xi9YT_EyZ1Hzff7XN7Mwb1vza-JGo0CAF3VZRr5-iSQ,193
+tagliatelle/data/TagRequest.py,sha256=7HHeDbxj5JZbuNK1SGZj5RfVdPiQ-p18uUWqsZNpt5E,174
+tagliatelle/data/TagResponse.py,sha256=rimOWdrKFetMfJ6pdYNYxM7SUs-rgw8OKZa8p7h3LXU,452
+tagliatelle/data/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+tagliatelle-0.2.dist-info/METADATA,sha256=ZrWxZqrfulUYmHE7pZtSpWCnQq9fMUPawu2CtEmcanc,274
+tagliatelle-0.2.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+tagliatelle-0.2.dist-info/top_level.txt,sha256=byUplgKkdydV486A_RCVk7g81AK3XK6G8MZvAFoWX7M,12
+tagliatelle-0.2.dist-info/RECORD,,
