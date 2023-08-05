@@ -1,0 +1,3 @@
+[console_scripts]
+cell = clusterx.cli.main:main
+
