@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: dxl-py
+Version: 0.1
+Summary: Dynamixel SDK Python Wrapper
+Home-page: https://github.com/HugoCMU/dxl_py.git
+Author: Hugo Ponte
+License: MIT
+Description: # dxl_py
+        Simple python wrapper over the [Dynamixel API](https://github.com/ROBOTIS-GIT/DynamixelSDK).
+        Allows commanding and receiving positions for an arbitrary number of servos.
+        ### Use
+        
+        Create a config dictionary with one entry per servo:
+        ```
+        MY_SERVOS_CONFIG = {
+            'test_servo': {
+                'id': 1,  # Servo ID
+                'model': 'mx',  # Servo model tag, one of 'MX' or 'PRO'
+                'min': 0, # Minimum position (MX servos go from 0 to 4095)
+                'max': 4095, # Maximum position
+            },
+            ...
+        }
+        ```
+        Create the servo object using your config dictionary.
+        ```
+        from dxl.servos import Servos
+        my_servos = Servos(config = MY_SERVOS_CONFIG, action_bounds = [-1.0, 1.0])
+        ```
+        Set the servo position. The `action_bounds` kwarg determines how actions relate to positions. An action of 1.0 here
+        sets the position of the servo to `4095`.
+        ```
+        my_servos.set({'test_servo' : 1.0, ...})
+        ```
+        Get the servo position.
+        ```
+        my_servos.get(['test_servo', ...])
+        ```
+        ### Setup
+        
+        Clone the DynamixelAPI repo into the desired directory. Install into your desired python environment (consider using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)).
+        ```
+        $ git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git .
+        $ cd DynamixelSDK/python/
+        $ pip install -e .
+        ```
+        The wrapper can be installed as a pip package:
+        ```
+        pip install dxl_py
+        ```
+        This repo uses `MX-28` model dynamixel servos connected via USB through a [U2D2](http://www.robotis.us/u2d2/).
+        After connecting the device, check it exists (the name might be different from the one below):
+        ```
+        $ ls /dev/ttyUSB*
+        /dev/ttyUSB0
+        ```
+        Now configure and add a custom udev rule using the `fix_udev.sh` script. You might need to reboot.
+        ```
+        $ sudo ./fix_udev.sh
+        ```
+        If we check the devices again we should now see the dynamixel device.
+        ```
+        $ ls /dev/dynamixel
+        /dev/dynamixel
+        ```
+        Connect a servo with `id=1` and run the test with `python -m unittest`.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
