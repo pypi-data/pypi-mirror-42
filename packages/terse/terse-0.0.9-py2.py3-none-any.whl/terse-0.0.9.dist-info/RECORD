@@ -1,0 +1,17 @@
+terse/__init__.py,sha256=AttKwmZ3xer6iemj0pOwiBLlqQaI5kMlNjhiix3HwqY,265
+terse/in_directory.py,sha256=VwZELrUNjnJWEhv4gMhx22vy5iCc9rLUjjgCfkabi5w,417
+terse/invoke.py,sha256=btrvls4J9yVGM9Gx_g0EKrYeDv0soGDE2hVm6tQYeWE,401
+terse/on_exit.py,sha256=Ahl8lZCQv9M6-h_UuV9vEcvpDiov7eijq3OLR6Ub-cs,1321
+terse/future/__init__.py,sha256=n7R4UtjN9xtho1mysrLrRh-JxgmBS3Z74WM9EOzTqK0,250
+terse/future/on_exit.py,sha256=Z7-7qsWhgZt6_hCRff8BRnVWsbYjsj9itDQjPVWkoeU,4039
+terse/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+terse/test/test_chdir.py,sha256=SZ7j9id0GFCrSBjPa5NIMxnR6c6ZgkTf9hVH2Lq0nNU,768
+terse/test/test_invoke.py,sha256=ar5a-BCl7zJ9NJk5zGvy_tZ37SQlwSGvCQF5DaTd_fY,196
+terse/test/test_invoke_helper.py,sha256=PDKwuPDote23NJBO0wrab_qe9guqMB9TUnksmaIX2Nk,172
+terse/test/test_on_exit.py,sha256=e2RxiYqkYwJmsc4O0-ubeyEDpBk12wECfzDbXS3E2B8,5529
+terse-0.0.9.dist-info/DESCRIPTION.rst,sha256=hhYGzYBopB_ZLpiYDpU4THwbxMK7_8kJ_ue_F_pI-ik,7591
+terse-0.0.9.dist-info/METADATA,sha256=80wK2SYyJN4k6iV76pkHDrfraOMiGyWyk7ppMNkNtZ4,8164
+terse-0.0.9.dist-info/RECORD,,
+terse-0.0.9.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+terse-0.0.9.dist-info/metadata.json,sha256=_NYnbPJ2BPDqswZmiVgaqpPa4lNKWEblsqxTbN-GYeI,714
+terse-0.0.9.dist-info/top_level.txt,sha256=WnR25519uMav71iM8fWm0HKGMULMLwc9ofm8rSqdqyU,6
