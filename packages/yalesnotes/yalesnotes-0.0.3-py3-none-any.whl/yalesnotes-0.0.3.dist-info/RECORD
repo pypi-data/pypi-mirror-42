@@ -1,0 +1,15 @@
+yalesnotes/__init__.py,sha256=tkZ_iuY7UZngMK-oaQCp920Zz6e1y2WdSbVxPTYo_DA,38
+yalesnotes/main.py,sha256=bZdvR3Us9E5c4cu1hx9W3tHYWXXFIAhAi40Akd2d2sI,5762
+yalesnotes/res/bareme-2017-2018.csv,sha256=u-GEomi_iU9ijnJR_MxmCZxSEgjkhlB4VNW7dhECDd0,4553
+yalesnotes/src/__init__.py,sha256=tkZ_iuY7UZngMK-oaQCp920Zz6e1y2WdSbVxPTYo_DA,38
+yalesnotes/src/core/__init__.py,sha256=tkZ_iuY7UZngMK-oaQCp920Zz6e1y2WdSbVxPTYo_DA,38
+yalesnotes/src/core/bareme_tools.py,sha256=zhe3xs9jcT_O0jvQZX_W7xMhn91ZT6Gvm02dec3VQ1Q,3380
+yalesnotes/src/core/parser.py,sha256=47bY3MAM_dfD5JZ_3si_UPF6SUo47aN2UXWNbapJdi0,886
+yalesnotes/src/utils/__init__.py,sha256=tkZ_iuY7UZngMK-oaQCp920Zz6e1y2WdSbVxPTYo_DA,38
+yalesnotes/src/utils/iterators.py,sha256=xCYSOF_rf__KeKuG6rkjrkyWd_MEp6OBlFwEzytzca8,403
+yalesnotes-0.0.3.dist-info/LICENSE.txt,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+yalesnotes-0.0.3.dist-info/METADATA,sha256=hMhrYSJAMwx69QfygIu4FRDHEU89SDYAWu5SBMtYnQk,1069
+yalesnotes-0.0.3.dist-info/WHEEL,sha256=UpB-bp5SQQdekLv3_zfFAhrQBtaQjJZABvUiavkhjZ0,97
+yalesnotes-0.0.3.dist-info/entry_points.txt,sha256=7nQCj7KWkzo1m31GgxA3mTxtmi4ajzTFXZeoW-zWz14,105
+yalesnotes-0.0.3.dist-info/top_level.txt,sha256=_P20Ru2G04CbRQgoAfdxlv43twTLmeyNXQ-1kTgs928,11
+yalesnotes-0.0.3.dist-info/RECORD,,
