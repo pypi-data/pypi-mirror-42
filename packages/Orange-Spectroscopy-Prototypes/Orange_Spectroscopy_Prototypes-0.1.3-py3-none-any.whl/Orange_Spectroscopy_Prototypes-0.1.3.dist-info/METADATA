@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Orange-Spectroscopy-Prototypes
+Version: 0.1.3
+Summary: Prototype widgets for orange-spectroscopy add-on
+Home-page: https://github.com/stuart-cls/orange-spectroscopy-prototypes
+Author: Canadian Light Source, Biolab UL, Soleil, Elettra
+Author-email: stuart.read@lightsource.ca
+License: UNKNOWN
+Keywords: orange3 add-on,spectroscopy,infrared,prototypes
+Platform: UNKNOWN
+Requires-Dist: orange-spectroscopy (>=0.4.1)
+
+orange-spectroscopy-prototypes
+==============================
+
+Prototypes for orange-spectroscopy Orange add-on for spectral data analysis.
+
