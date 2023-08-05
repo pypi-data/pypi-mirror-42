@@ -1,0 +1,8 @@
+github_webhooks/__init__.py,sha256=QJoYmalJg80a66WOpjX5VGGxL64RCEpDtvTSFlITV2M,1657
+github_webhooks/create.py,sha256=kJSZffwhS10dtQ6qCxov07F7tfjABQ2O5tqy9w5moUA,461
+github_webhooks/delete.py,sha256=LoiwJTtL1MDxuYW_vZK41IGSpOmYgi9UDgstRsDv4JA,366
+github_webhooks/urls.py,sha256=QrzGy97oP_uwObSzD4HxawSeCCShnIKWqaTDajjPKjQ,382
+github_webhooks-2019.2.15.dist-info/METADATA,sha256=wqDEXwkWFsE0P-gYJKx1d-ClRw79kQb-5ki8VsSRiOs,1803
+github_webhooks-2019.2.15.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+github_webhooks-2019.2.15.dist-info/top_level.txt,sha256=6iGWiyFPFOhuZ5F_3xbIoa5ZcrN81wEoJuQ_cu6WC2U,16
+github_webhooks-2019.2.15.dist-info/RECORD,,
