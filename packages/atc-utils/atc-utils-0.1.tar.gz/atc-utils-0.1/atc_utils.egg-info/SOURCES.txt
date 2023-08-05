@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+atc_utils/__init__.py
+atc_utils/util.py
+atc_utils.egg-info/PKG-INFO
+atc_utils.egg-info/SOURCES.txt
+atc_utils.egg-info/dependency_links.txt
+atc_utils.egg-info/not-zip-safe
+atc_utils.egg-info/top_level.txt
+atc_utils/core/__init__.py
+atc_utils/core/baidu.py
+test/test_voice.py
