@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: tatt
+Version: 0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Click
+Requires-Dist: awscli
+Requires-Dist: boto3
+Requires-Dist: requests
+
+UNKNOWN
+
+
