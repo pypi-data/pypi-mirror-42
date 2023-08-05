@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: specify
+Version: 0.0.9
+Summary: A spec tool to describe your classes
+Home-page: None
+Author: Einenlum
+Author-email: yann.rabiller@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Testing :: Acceptance
+Classifier: Topic :: Software Development :: Testing :: BDD
+Classifier: Topic :: Software Development :: Testing :: Mocking
+Classifier: Topic :: Software Development :: Testing :: Unit
+Requires-Dist: prophepy (>=0.0.4)
