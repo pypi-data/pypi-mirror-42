@@ -1,0 +1,34 @@
+Metadata-Version: 1.0
+Name: smart-parking
+Version: 1.0.0.dev13
+Summary: Smart Parking
+Home-page: https://bitbucket.org/jonathanmartinssandri/managersmartparking.git
+Author: Jonathan Martins Sandri
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: # ManagerSmartParking
+        
+        Smart Parking using computational vision.
+        
+        ## Installation
+        
+        Use the package manager [pip](https://pypi.org/search/?q=smart-parking) to install smart-parking.
+        
+        ```bash
+        virtualenv -p python3 smart-parking 
+        source smart-parking/bin/activate   
+        pip install smart-parking           
+        deactivate                         
+        ```
+        
+        ## Usage
+        
+        ```bash
+        source smart-parking/bin/activate   
+        ```
+        
+        ## License
+        [MIT](https://choosealicense.com/licenses/mit/)
+        
+        
+Platform: UNKNOWN
