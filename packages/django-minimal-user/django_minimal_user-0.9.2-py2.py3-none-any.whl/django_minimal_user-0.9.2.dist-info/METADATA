@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: django-minimal-user
+Version: 0.9.2
+Summary: Bare minimum user model for Django
+Home-page: https://github.com/ionata/django-minimal-user
+Author: Ionata Digital
+Author-email: webmaster@ionata.com.au
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.5
+Requires-Dist: django (>=1.8.0)
+Provides-Extra: drf
+Requires-Dist: django-rest-auth ; extra == 'drf'
+Requires-Dist: django-rest-framework ; extra == 'drf'
+
+# django-minimal-user - Minimum User model for Django
+
+Contains a User implementation without the cruft
+
+There are two primary uses:
+
+* Use `minimal_user`.User directly
+* Inherit from `minimal_user.AbstractUser` to create a User model with only
+  the fields necessary for your project.
+
+If using the serializers from `minimal_user.drf` ensure this project is
+installed with the `drf` extras. (e.g. `django-minimal-user[drf]`).
+
+
