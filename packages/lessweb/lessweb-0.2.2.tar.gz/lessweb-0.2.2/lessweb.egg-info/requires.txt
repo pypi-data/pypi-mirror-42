@@ -1,0 +1,4 @@
+aiohttp
+aiohttp_wsgi
+requests
+typing_extensions
