@@ -1,0 +1,16 @@
+language: python
+python:
+- 3.6
+install: pip install -U tox-travis
+script: echo test
+deploy:
+  provider: pypi
+  user: terrycain
+  distributions: sdist bdist_wheel
+  password:
+    secure: v1G5mVIChVZa1yC1ljxTc58/CtrRdlackJwWRac3Qwb9wtSh7r7oMuiKPzWeq8mcZXOQp/9fPte9xVutL01TTsW6z6regbz3vyappISDf4eh+21PB8iIT0fsxyBDQo5jR3jA6Xp/cDXbsu7HdsV6aTWO4Gq0kW1JjQAgrH9z2z242Mp1sohyaqtnoAYXqesYtI1P8gM1Y/PxHOSSzfaBh6kSGfdOeEUrcyIXfKAxZpPO1eMJ/ReyhJ6GJkkXdW7hfBjIJRYXeNcHNO2uujs6OQX920kFnmMARrPgZuCP5JVnfQbZc78LbLIeS4PaJID/hGdw9N2pSoXlYfnIH0tf9o3Hr/S7C+/Uc/oKRGiKsLUeUH75hbkwafCxt2MfAGLcqhB02sFwrZBNgtaria9iXWB8sYTx44PO5YEbS4os+QwfjokxDwQQxkHDP2SFZ3lMMZ7z4X/xdivFs/SDRyjkEjOLsMiFVQFCzC8uKhsBvsvRLblwWjI8ji1+pC14XHboDnTqtWFC4LmwG0DxXDcTdgcqu5fMS/n24bKeoMZMvZG5dtuTD+cdCM941rAVBFfwl20KWsD/MQ/Kl4sO60Aqw20+rNNfciv2H0mE0Fktk11yNMjvCjxNgPEANSxhdblQTNYyS9dWe5IiV4+XskmcRn20PP/uq2MFOBvHH4rlVKA=
+  on:
+    tags: true
+    repo: terrycain/sanic-openid-provider
+    all_branches: true
+    python: 3.6
