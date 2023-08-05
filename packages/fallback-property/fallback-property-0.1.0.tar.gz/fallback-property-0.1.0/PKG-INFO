@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: fallback-property
+Version: 0.1.0
+Summary: A decorator which prefers a precalculated attribute over calling the decorated method.
+Home-page: https://github.com/jonasunnderwolf/fallback_property
+Author: Jonas und der Wolf GmbH
+Author-email: opensource@jonasundderwolf.de
+Requires-Python: >=3.6
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Project-URL: Documentation, https://github.com/jonasundderwolf/fallback_property/blob/master/README.rst
+Project-URL: Repository, https://github.com/jonasundderwolf/fallback_property
