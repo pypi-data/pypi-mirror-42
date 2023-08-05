@@ -1,0 +1,3 @@
+include atc_utils/*.py
+include atc_utils/core/*.py
+include setup.py
