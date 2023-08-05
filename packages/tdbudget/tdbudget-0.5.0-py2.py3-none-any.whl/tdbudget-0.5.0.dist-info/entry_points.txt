@@ -1,0 +1,3 @@
+[console_scripts]
+tdbudget = tdbudget.tdbudget:main
+
