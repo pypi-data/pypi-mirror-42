@@ -1,0 +1,11 @@
+LICENSE,sha256=VTfU0Qt2uBtujf2LZESApLHvozL7sM22ESbFvnge97Q,6554
+_softposit.cp37-win_amd64.pyd,sha256=4xNcYBwtBk38gbCBVW2Wt8x0u-rn8IfNQTwszJMYTf8,249344
+_softposit.py,sha256=HoOqFt5TAuTKjeganIqU5N5UmSTRS_MBitdnaWcGsYw,309
+softposit.py,sha256=eZ38bv9NSbLXpHgcm8mEGL5Stav6RbQzAj6IfOiqD_8,110393
+__pycache__/_softposit.cpython-37.pyc,sha256=J8gy6KIO-j25XX8p5Hif3iNmyjjQfv8bRVD2ksOZ1Rg,437
+__pycache__/softposit.cpython-37.pyc,sha256=V134Znkbt2VU2Nrm3rYYLIkbbrdJA6OeS9xLTeMzhOk,107593
+softposit-0.3.4.dist-info/METADATA,sha256=ocEzq7-HqQ7LR6vVvM6p01YddUeU--ZKawR3dsC1-vI,487
+softposit-0.3.4.dist-info/RECORD,,
+softposit-0.3.4.dist-info/WHEEL,sha256=FVIQ7Sl6OAwD8lpfM9QEIFZkmtUuELrElMAFFelWUUU,94
+softposit-0.3.4.dist-info/native_libs.txt,sha256=6i65VXvoSIFR-Ceu_VDQrmxjXP7DYBTWKs6kJ1PCltk,31
+softposit-0.3.4.dist-info/top_level.txt,sha256=4kaFWXN0tahNpnput-BeiQ3JlWoua7dlYow4Ll4DXqM,21
