@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: django-rest-framework-kong-consumers
+Version: 0.1.3
+Summary: Kong consumers for Django
+Home-page: https://bitbucket.org/pai/django-rest-framework-kong-consumers
+Author: pai
+Author-email: paiuolo@gmail.com
+License: mit
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+UNKNOWN
+
+
