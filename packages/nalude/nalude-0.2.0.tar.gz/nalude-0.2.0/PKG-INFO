@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: nalude
+Version: 0.2.0
+Summary: A standard module.  Inspired by Haskell's Prelude.
+Home-page: https://github.com/nasyxx/nalude
+Author: Nasy
+Author-email: nasyxx+nalude@gmail.com
+Keywords: base,prelude,nasy
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Project-URL: Repository, https://github.com/nasyxx/nalude
