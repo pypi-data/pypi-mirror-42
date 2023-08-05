@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: gisty
+Version: 0.0.1
+Summary: A cli utility for querying GitHub gists
+Home-page: https://github.com/firegrass/gisty
+Author: Patrick McEvoy
+Author-email: patrick.mcevoy@gmail.com
+License: UNKNOWN
+Description: # Gisty
+        
+        A cli utility for retrieving Gists on GitHub.
+        
+        ### Installation
+        
+        > Note. Requires python3
+        
+        ```bash
+        pip3 install gisty
+        ```
+        
+        ### Getting started
+        
+        List all Gists
+        
+        ```bash
+        gisty firegrass --format list --colour
+        ```
+        
+        Find Gists this year
+        
+        ```bash
+        gisty firegrass --since 'last year' --order 'desc'
+        ```
+        
+        Watch for new Gists
+        
+        ```bash
+        gisty firegrass --watch --since 'now'
+        ```
+        
+        ## Development
+        
+        ```bash
+        # Install locally
+        python3 setup.py install --user
+        
+        # Build and push to test PyPI
+        python3 setup.py sdist bdist_wheel
+        python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
