@@ -1,0 +1,7 @@
+ansible
+cli2
+pexpect-py3-patch
+flake8
+pytest
+pytest-cov
+sh
