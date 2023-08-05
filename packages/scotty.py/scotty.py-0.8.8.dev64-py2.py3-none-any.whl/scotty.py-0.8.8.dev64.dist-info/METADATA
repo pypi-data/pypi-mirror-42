@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: scotty.py
+Version: 0.8.8.dev64
+Summary: A continuous experimentation framework to perform infrastructure experiments
+Home-page: https://gitlab.gwdg.de/scotty/scotty.py.git
+Author: Maik Srba
+Author-email: msrba@gwdg.de
+License: UNKNOWN
+Keywords: scotty
+Requires-Dist: setuptools
+Requires-Dist: pbr (!=2.1.0,>=2.0.0)
+Requires-Dist: pyyaml
+Requires-Dist: appdirs
+Requires-Dist: GitPython
+Requires-Dist: python-heatclient (<1.16.0,>=1.15.0)
+Requires-Dist: keystoneauth1
+Requires-Dist: python-keystoneclient (<3.17.0,>=3.16.0)
+Requires-Dist: python-novaclient (<10.3.0,>=10.2.0)
+
+A continuous experimentation framework to perform infrastructure experiments
+
+
