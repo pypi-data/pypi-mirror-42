@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+README.md
+setup.cfg
+setup.py
+abp_blocklist_parser/BlockListParser.py
+abp_blocklist_parser/FastHash.py
+abp_blocklist_parser/RegexParser.py
+abp_blocklist_parser/__init__.py
+abp_blocklist_parser.egg-info/PKG-INFO
+abp_blocklist_parser.egg-info/SOURCES.txt
+abp_blocklist_parser.egg-info/dependency_links.txt
+abp_blocklist_parser.egg-info/not-zip-safe
+abp_blocklist_parser.egg-info/top_level.txt

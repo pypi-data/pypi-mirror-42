@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: abp-blocklist-parser
+Version: 0.2
+Summary: Library for parsing ABP filter lists
+Home-page: https://github.com/englehardt/abp-blocklist-parser
+Author: Steven Englehardt
+License: GPL v3
+Description: # BlockListParser
+        Code to detect if a url matches any of the regexes in lists like ad block plus lists
+        
+        In order to use it,
+        
+        blocklist_parser = new BlockListParser(regex_file) 
+        
+        or 
+        
+        blocklist_parser = new BlockListParser(regexes)
+        where regexes is comma separated list of regexes
+        
+        Then to detect if something should be blocked,
+        
+        blocklist_parser.should_block(ur, options)
+        where options is a dictionary with keys like image, third-party, etc. (look at RegexParser.py for a list of options possible).
+        
+        Also, use
+        
+        blocklist_parser.should_block_with_items(url, options) 
+        to get the list of regexes which block a certain url
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment :: Mozilla
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Description-Content-Type: text/markdown
