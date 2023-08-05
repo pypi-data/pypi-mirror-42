@@ -1,0 +1,3 @@
+[console_scripts]
+pyramid-mock-server-spec-enhancer = pyramid_mock_server.enhance_swagger_spec:main
+
