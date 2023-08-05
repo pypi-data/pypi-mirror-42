@@ -1,0 +1,13 @@
+hotness/__init__.py,sha256=gLNlV6Km9l0eTzPANfc4xqTWWsONTNS_tUekaGvy0MQ,230
+hotness/anitya.py,sha256=2Xv_2Yui2lD4agF5gkXZ5UVUBwSGNQXJbWIdeWSUxic,10256
+hotness/buildsys.py,sha256=cylZicoBNSr8x7V58avMOXr1FXSKyN92QCUJGHF-SCI,13850
+hotness/bz.py,sha256=f8S4fVY8Ss0_VHGteIb42Eqae7teZDBGFwLRJMnichg,9953
+hotness/cache.py,sha256=78AHfKMzvc_VDgBwhQYpf13dffMZAhA9Mz8NQhnmGjU,387
+hotness/consumers.py,sha256=69qAL7v7VSr5kLIXytS_P1-VWcx-FhLVdcaDLENoHfc,18008
+hotness/exceptions.py,sha256=k4jca2KSKB0VZQHIAX02iWpH9tC8YLwK2bp8zni9V3E,1264
+hotness/helpers.py,sha256=HY0qeRpEGhIbDaAOzfsNE2HqSdKUBYuDFozjdsiPV9k,8407
+the_new_hotness-0.11.0.dist-info/LICENSE,sha256=3GJlINzVOiL3J68-5Cx3DlbJemT-OtsGN5nYqwMv5VE,26530
+the_new_hotness-0.11.0.dist-info/METADATA,sha256=4AbHmJembW8qrJ13EWIUge8D2DQItRjpBY9emTOaDlQ,556
+the_new_hotness-0.11.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+the_new_hotness-0.11.0.dist-info/top_level.txt,sha256=g0EDYBXOEBwozF7-Vvi1QCVt1CLqJMBlL_nnMHDx4Rc,8
+the_new_hotness-0.11.0.dist-info/RECORD,,
