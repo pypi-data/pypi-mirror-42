@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=DrumsT
+Exec=drumst %U
+GenericName=A free School Management For Drum Teachers
+GenericName[it]=Un gestionale scolastico libero per insegnanti di batteria
+Comment=Drum Course Management
+Comment[it]=Gestione Corsi Di Batteria
+Icon=drumsT
+Terminal=false
+Categories=Education

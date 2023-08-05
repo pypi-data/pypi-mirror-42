@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+#
+#########################################################
+# Name: launcher.py
+# Porpose: main binary script of drumsT for system installation
+# Compatibility: Python3
+# Author: Gianluca Pernigoto <jeanlucperni@gmail.com>
+# Copyright: (c) 2018/2019 Gianluca Pernigoto <jeanlucperni@gmail.com>
+# license: GPL3
+# Rev (11) Gennary 29 2019
+#########################################################
+
+# This file is part of DrumsT.
+
+#    DrumsT is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    DrumsT is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with DrumsT.  If not, see <http://www.gnu.org/licenses/>.
+
+#########################################################
+
+import sys
+import platform
+
+if __name__ == '__main__':
+    
+    if sys.version_info[0] == 3:
+        try:
+            import wx
+        
+        except ImportError:
+            sys.stderr.write("\n\n[ERROR] 'wx' module is required.\n"
+                        "DrumsT for Python3 need wxPython-Phoenix.\n"
+                        "You could install it with 'pip' tool,\n"
+                        "visit the wxPython web page for more info: "
+                        "<https://wxpython.org>\n\n"
+                            )
+            sys.exit(1)
+        
+        from drumsT import DrumsT
+        DrumsT.main()
+    
+    else:
+        sys.stderr.write("\n\n[ERROR] Not a supported Python version.\n"
+                         "Need Python3, you are using Python version "
+                         "%s\n\n" % sys.version
+                         )
+        sys.exit(1)
+        

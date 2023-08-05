@@ -1,0 +1,39 @@
+DrumsT Builds and Installation Instructions
+
+Base Dependencies:
+
+    - Python 3
+    - wxPython 4 (Phoenix)
+    - pip
+
+#--------------------------------------------------------------------------#
+NOTE: [Linux/Macintosh/Unix/Windows]
+
+
+DrumsT can be run without installing by un-tarring the source package and 
+executing the "launcher" script in the root of the un-tarred directory.
+
+    python launcher
+    
+Alternatively, if you simply want to install DrumsT from the 
+python Package Index (aka PyPi) follow the Options below.
+
+#--------------------------------------------------------------------------#
+Installing from Pypi: [Linux/Macintosh/Unix/Windows]
+
+    pip install drumst
+    
+- To uninstall use the same version of the Pip tool:
+
+    pip uninstall drumst
+
+#--------------------------------------------------------------------------#
+Build as wheel: [Linux/Macintosh/Unix/Windows]
+
+python setup.py bdist_wheel
+
+#--------------------------------------------------------------------------#
+
+
+
+

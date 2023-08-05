@@ -1,0 +1,6 @@
+include launcher README.md AUTHORS BUGS CHANGELOG INSTALL COPYING TODO
+recursive-include drumsT*
+recursive-include docs *
+recursive-include art *
+recursive-include share *
+recursive-include locale *

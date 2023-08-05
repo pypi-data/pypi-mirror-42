@@ -1,0 +1,1177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-12 18:49+0100\n"
+"PO-Revision-Date: 2019-02-12 18:53+0100\n"
+"Last-Translator: Gianluca (jeanslack) Pernigotto <jeanlucperni@gmail.com>\n"
+"Language-Team: \n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: ../drumsT/DrumsT.py:85
+msgid ""
+"Can not find the configuration file!\n"
+"Please, remove and reinstall the drumsT application·"
+msgstr ""
+"Impossibile trovare il file di configurazione!\n"
+"Per favore, rimuovi e reinstalla DrumsT."
+
+#: ../drumsT/DrumsT.py:97
+msgid ""
+"The configuration file is wrong! Please, reinstall the drumsT application"
+msgstr ""
+"The configuration file is wrong! Please, reinstall the drumsT application"
+
+#: ../drumsT/DrumsT.py:100
+msgid "DrumsT: Fatal Error"
+msgstr "DrumsT: Errore fatale!"
+
+#: ../drumsT/DrumsT.py:107
+msgid ""
+"The root directory for saving databases no longer\n"
+"exists! Do you want to import an existing one or\n"
+"create a new one?"
+msgstr ""
+"La cartella principale per il ripristino dei database non esiste più!\n"
+"Vuoi importarne una esistente o crearne una nuova?"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:105
+msgid "DrumsT - School Management For Drum Teachers"
+msgstr "DrumsT - Gestione scolastica per insegnanti di batteria"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:125
+msgid "School Year"
+msgstr "Anno Scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:126
+msgid "Name"
+msgstr "Nome"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:127
+msgid "Surname"
+msgstr "Cognome"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:128
+msgid "Phone"
+msgstr "Telefono"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:129
+msgid "Address"
+msgstr "Indirizzo"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:130
+msgid "Birth Date"
+msgstr "Data di Nascita"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:131
+msgid "Joined Date"
+msgstr "Data di Inizio"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:132
+msgid "Level-Course"
+msgstr "Livello del Corso"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:154
+msgid "Name Database Imported"
+msgstr "Nome del Database Importato"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:158
+msgid "School Year selection"
+msgstr "Selezione anno scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:181
+msgid ""
+"To use DrumsT, you need to open a database or create a new one if it does "
+"not exist "
+msgstr ""
+"Per usare DrumsT, è necessario aprire un database o crearne uno nuovo se non "
+"esiste"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:204
+msgid ""
+"Empty database: There isn't any list to load. You must add new students now"
+msgstr ""
+"Database vuoto: Nessuna lista caricata. Ora, dovresti aggiungere nuovi "
+"profili degli studenti."
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:310
+msgid "DrumsT: open a school database.."
+msgstr "DrumsT: Apri un database scolastico.."
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:323
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:466
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:526
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:560
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:738
+#: ../drumsT/drumsT_PANELS/add_lesson.py:327
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:355
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:124
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:133
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:142
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:167
+msgid "DrumsT: Error"
+msgstr "DrumsT: Errore"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:385
+msgid "Open lessons register"
+msgstr "Apri registro lezioni"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:391
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:610
+msgid "Add New Student"
+msgstr "Inserisci Nuovo Studente"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:397
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:612
+msgid "data change student"
+msgstr "Cambia i dati dello studente"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:403
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:614
+msgid "data delete student"
+msgstr "Cancella i dati dello studente"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:433
+msgid "Create a new student profile"
+msgstr "Crea un nuovo profilo studente"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:451
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:511
+msgid "DrumsT: Warning"
+msgstr "DrumsT: Avvertimento"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:469
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:529
+msgid "Successfully stored!"
+msgstr "Archiviato con successo!"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:470
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:530
+#: ../drumsT/drumsT_PANELS/add_lesson.py:335
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:369
+msgid "Info"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:476
+msgid "It was added a new profile"
+msgstr "E' stato aggiunto un nuovo profilo"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:489
+msgid "Change data to student profile"
+msgstr "Cambia i dati al profilo studente"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:536
+msgid "Update new profile"
+msgstr "Aggiorna nuovo profilo"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:546
+msgid ""
+"Are you sure to delete selected student?\n"
+"\n"
+"Note that this process remove all stored\n"
+"information and lessons register.\n"
+"\n"
+"After this action all the deleted data will\n"
+"not be recoverable !"
+msgstr ""
+"Si è sicuri di rimuovere lo studente selezionato?\n"
+"\n"
+"Si consideri che questo processo rimuoverà tutte\n"
+"le informazioni archiviate compreso i dati delle lezioni.\n"
+"\n"
+"Dopo questa azione non sarà più possibile il ripristino\n"
+"dei dati !"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:553
+#: ../drumsT/drumsT_PANELS/add_lesson.py:297
+msgid "DrumsT: Please confirm"
+msgstr "DrumsT - Prego confermare"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:563
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:572
+#, python-brace-format
+msgid "{0} {1} with ID class {2} was deleted"
+msgstr "{0} {1} con ID class {2} è stato cancellato"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:567
+msgid "DrumsT: info"
+msgstr "DrumsT - informazione"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:592
+msgid "&New"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:593
+msgid "Create a new database"
+msgstr "Crea un nuovo database"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:596
+msgid "&Open..."
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:597
+msgid "Open a school database"
+msgstr "Apri un database scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:600
+msgid "&Quit"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:601
+msgid "Exit the application"
+msgstr "Esci dall'applicazione"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:602
+msgid "&File"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:607
+msgid "Set new school year"
+msgstr "Imposta nuovo anno scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:608
+msgid "Set a new school year"
+msgstr "Imposta un nuovo anno scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:616
+msgid "&Edit"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:621
+msgid "Display lessons register"
+msgstr "Visualizza il registro lezioni"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:625
+msgid "Show/Hide Tool Bar"
+msgstr "Mostra/Nascondi barra strumenti"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:626
+msgid "Show or hide tool bar view"
+msgstr "Mostra o nascondi la barra degli strumenti"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:630
+msgid "Show/Hide Status Bar"
+msgstr "Mostra/Nascondi barra di stato"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:631
+msgid "Show or hide status bar view"
+msgstr "Mostra o nascondi la barra di stato"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:635
+msgid "&View"
+msgstr "Visualizza"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:639
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:645
+msgid "&Help"
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:640
+msgid "Online help"
+msgstr "Guida in linea"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:642
+msgid "&About..."
+msgstr ""
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:643
+msgid "About DrumsT program"
+msgstr "Circa DrumsT"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:701
+msgid "DrumsT - New school database.."
+msgstr "DrumsT - Nuovo database scolastico.."
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:718
+msgid "DrumsT: New database has been successfully created!"
+msgstr "DrumsT: Un nuovo database è stato creato con successo!"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:727
+msgid "DrumsT - Add new school year"
+msgstr "DrumsT - Aggiungi nuovo anno scolastico"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:743
+#: ../drumsT/drumsT_PANELS/add_lesson.py:334
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:368
+msgid "DrumsT: Successfully stored!"
+msgstr "DrumsT - Archiviato con successo!"
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:760
+msgid ""
+"Some window is still open!\n"
+"..Save your data before closing the application."
+msgstr ""
+"Qualche finestra risulta ancora aperta!\n"
+"..Salva i tuoi dati prima di chiudere l'applicazione."
+
+#: ../drumsT/drumsT_FRAMES/mainwindow.py:762
+msgid "DrumsT: warning"
+msgstr "DrumsT - Avvertenza"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:83 ../drumsT/drumsT_FRAMES/lessons.py:163
+#, python-format
+msgid "Todays lesson with %s"
+msgstr "Lezione odierna con %s"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:104
+msgid ""
+"On 'todays lesson' there are unsaved data...\n"
+"continue closing?"
+msgstr ""
+"Nella finestra 'Lezione di Oggi' ci sono dati non salvati..\n"
+"Chiudere ugualmente?"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:106
+#: ../drumsT/drumsT_FRAMES/lessons.py:112
+msgid "Please confirm"
+msgstr "Prego confermare"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:110
+msgid ""
+"On 'Previus lessons' there are unsaved data...\n"
+"continue closing?"
+msgstr ""
+"Nella finestra 'Lezioni precedenti' ci sono dati non salvati..\n"
+"Chiudere ugualmente?"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:137
+msgid "Todays lesson"
+msgstr "Lezione di oggi"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:144
+msgid "Previous lessons"
+msgstr "Lezioni Precedenti"
+
+#: ../drumsT/drumsT_FRAMES/lessons.py:175
+#, python-format
+msgid "Previous lessons with %s"
+msgstr "Lezioni precedenti con %s"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:63
+msgid "Start New Lesson"
+msgstr "Inizia Nuova Lezione"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:67
+msgid "lesson date setting"
+msgstr "Impostazione data lezione"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:69
+msgid "Attendances Register"
+msgstr "Registro delle Presenze"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:70
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:162
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:265
+msgid "No absence"
+msgstr "Nessuna Assenza"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:71
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:164
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:266
+msgid "Student is absent"
+msgstr "Lo studente è assente"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:72
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:166
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:267
+msgid "Teacher is absent"
+msgstr "L'insegnante è assente"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:80
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:85
+msgid "Chart Reading"
+msgstr "Lettura Partiture"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:82
+msgid "Hands/Foots Setting"
+msgstr "Impostazioni Mani/Piedi"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:84
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:87
+msgid "Rudiments"
+msgstr "Rudimenti"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:89
+msgid "Independance/Coordination"
+msgstr "Indipendenza/Coordinazione"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:91
+msgid "Elements of Style Rhythm"
+msgstr "Stili e linguaggi Ritmici"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:93
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:90
+msgid "Minus One"
+msgstr "Basi Musicali"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:97
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:91
+msgid "Other-1"
+msgstr "Altro-1"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:98
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:92
+msgid "Other-2"
+msgstr "Altro-2"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:99
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:93
+msgid "Other-3"
+msgstr "Altro-3"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:106
+msgid "Votes/Report"
+msgstr "Votazioni/Segnalazioni"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:109
+msgid "Reminder/Block-notes"
+msgstr "Promemoria/Blocco-Notes"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:161
+msgid "Studies Topic"
+msgstr "Argomenti di Studio"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:171
+msgid "Votes and Reminders"
+msgstr "Votazioni e Promemoria"
+
+#: ../drumsT/drumsT_PANELS/add_lesson.py:295
+msgid "Insert lesson in the database ?"
+msgstr "Archiviare la lezione sul database?"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:74
+msgid "Edit Topic"
+msgstr "Modifica Argomentazioni"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:75
+msgid "&Undo"
+msgstr ""
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:81
+msgid "ID lesson"
+msgstr "ID della lezione"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:82
+msgid "ID class"
+msgstr "ID della classe"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:83
+msgid "Attendances"
+msgstr "Presenze"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:84
+msgid "Lesson Date"
+msgstr "Data Lezione"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:86
+msgid "Hands/foots Setting"
+msgstr "Impostazioni Mani/Piedi"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:88
+msgid "Coordination"
+msgstr "Coordinazione"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:89
+msgid "Styles"
+msgstr "Stili"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:94
+msgid "Votes"
+msgstr "Votazioni"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:95
+msgid "Note/Reminder"
+msgstr "Note/Promemoria"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:107
+msgid "Edit text or values into the cells and append"
+msgstr "Modifica testo o valori nelle celle e aggiungili"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:109
+msgid "Restore to the previous state"
+msgstr "Ripristina lo stato precedente"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:110
+msgid "Update and commit new entries into database"
+msgstr "Aggiorna nuove voci sul database"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:254
+msgid "This column can not be edit."
+msgstr "Questa colonna non può essere modificata."
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:255
+msgid "DrumsT"
+msgstr ""
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:269
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:286
+#, python-brace-format
+msgid "Edit the '{0}' topic in the {1}th lesson      "
+msgstr "Modifica l'argomento '{0}' nella {1}° lezione"
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:317
+msgid ""
+"Before editing cells in other rows, you need to \n"
+"render the changes with the 'Apply' button."
+msgstr ""
+"Prima di modificare le celle di altre righe, dovresti\n"
+"applicare i cambiamenti recenti con il tasto 'Applica'."
+
+#: ../drumsT/drumsT_PANELS/lessons_prospective.py:321
+msgid "DrumsT: Change Not Allowed"
+msgstr "DrumsT - Modifica non consentita"
+
+#: ../drumsT/drumsT_DIALOGS/infoprg.py:65
+msgid ""
+"Music drums school management\n"
+"\n"
+"DrumsT is a school manager application open-source and\n"
+"cross-platform, focused to individual lessons and designed\n"
+"for drums teachers. It can handle independently multiple\n"
+"school locations with progressive data storing of several\n"
+"school years and students lessons who learns\n"
+"the art of drumming.\n"
+"\n"
+"DrumsT is free software that respects your freedom!\n"
+msgstr ""
+"Gestione scolastica di batteria\n"
+"\n"
+"DrumsT è un gestionale scolastico a sorgente aperto\n"
+"multi-piattaforma, focalizzato su lezioni individuali e\n"
+"progettato per insegnanti di batteria. Può gestire più\n"
+"sedi scolastiche in modo indipendente con memorizzazione\n"
+"progressiva di diversi anni scolastici e un numero illimitato\n"
+"di studenti i quali imparano l'arte del drumming.\n"
+"\n"
+"DrumsT è sofware libero che rispetta la tua libertà!\n"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:46
+msgid ""
+"This is the first time you start DrumsT.\n"
+"\n"
+"DrumsT uses only one path to save/open databases.\n"
+"\n"
+"- To create a new database now, press the create button.\n"
+"- If a database already exists press the import button.\n"
+"- Press the exit button to exit simply"
+msgstr ""
+"Questa è la prima volta che avvii DrumsT.\n"
+"\n"
+"DrumsT usa un solo percorso per salvare/aprire i database\n"
+"\n"
+"- Per creare un nuovo database, premi il pulsante 'Crea'.\n"
+"- Se già esiste un database, premi il pulsante 'Importa'.\n"
+"- Premi il pulsante 'Esci' per uscire semplicemente."
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:56
+msgid "Welcome !"
+msgstr "Benvenuto !"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:58
+msgid "Create a new database:"
+msgstr "Creare un nuovo database:"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:60
+msgid "Import a 'drumsT_DB' existing folder:"
+msgstr "Importare una cartella 'drumsT_DB' esistente:"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:62
+msgid "Exit and do nothing:"
+msgstr "Esci e non fare niente"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:63
+msgid "Create"
+msgstr "Crea"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:64
+msgid "Import"
+msgstr "Importa"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:65
+msgid "Exit"
+msgstr "Uscita"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:107
+msgid "DrumsT - create new school database"
+msgstr "DrumsT - crea un nuovo database scolastico"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:115
+msgid "Where do you want to save ?"
+msgstr "Dove vuoi salvare ?"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:148
+#, python-brace-format
+msgid ""
+"A new drumsT rootdir has been created:\n"
+"\n"
+"{0}\n"
+"\n"
+"You must re-start the DrumsT application now.\n"
+"\n"
+"Good Work !"
+msgstr ""
+"E' stata creata una nuova cartella per i database:\n"
+"\n"
+"{0}\n"
+"\n"
+"Ora dovresti riavviare DrumsT.\n"
+"\n"
+"Buon Lavoro !"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:151
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:176
+msgid "Success !"
+msgstr "Successo !"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:159
+msgid "Where is the 'DrumsT_DB' folder?"
+msgstr "Dove si trova la cartella 'DrumsT_DB' ?"
+
+#: ../drumsT/drumsT_DIALOGS/first_time_start.py:173
+#, python-brace-format
+msgid ""
+"A database has been imported successfully:\n"
+"\n"
+"{0}\n"
+"\n"
+"You must re-start the DrumsT application now.\n"
+"\n"
+"Good Work !"
+msgstr ""
+"Un database è stato appena importato con successo:\n"
+"\n"
+"{0}\n"
+"\n"
+"Ora dovresti riavviare l'applicazione.\n"
+"\n"
+"Buon Lavoro !"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:63
+msgid "  Name:"
+msgstr "  Nome:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:64
+msgid "  Surname:"
+msgstr "Cognome:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:65
+msgid "  Phone:"
+msgstr "Recapito Telefonico:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:66
+msgid "  Address:"
+msgstr "Indirizzo:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:67
+msgid "  Birth-Dates:"
+msgstr "Data di Nascita:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:68
+msgid "  Joined Date:"
+msgstr "Data Inizio o Iscrizione:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:69
+msgid "  Level:"
+msgstr "Livello:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:70
+msgid "  Others Info:"
+msgstr "Altre Informazioni:"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:97
+#: ../drumsT/drumsT_DIALOGS/add_school.py:71
+msgid "&Cancel"
+msgstr ""
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:223
+msgid "Incomplete profile assignment!"
+msgstr "Assegnazione profilo incompleta!"
+
+#: ../drumsT/drumsT_DIALOGS/add_student.py:224
+msgid "DrumsT: Unable to save"
+msgstr "DrumsT: Impossibile salvare"
+
+#: ../drumsT/drumsT_DIALOGS/add_school.py:57
+msgid ""
+"Type school name or a location identifier. This will create a new database "
+"with the named school: "
+msgstr ""
+"Digita il nome della scuola o un identificatore di posizione. Questo creerà "
+"un nuovo database con la \n"
+"scuola denominata:"
+
+#: ../drumsT/drumsT_DIALOGS/add_school.py:62
+msgid "School year:"
+msgstr "Anno scolastico:"
+
+#: ../drumsT/drumsT_DIALOGS/add_school.py:72
+msgid "&OK"
+msgstr ""
+
+#: ../drumsT/drumsT_DIALOGS/add_newyear.py:54
+msgid "Set a new school year to opened database:"
+msgstr "Impostare un nuovo anno scolastico al database in uso:"
+
+#: ../drumsT/drumsT_SYS/os_filesystem.py:45
+#, python-brace-format
+msgid ""
+"A new drumsT rootdir has been created on:\n"
+"\n"
+"{0}\n"
+"\n"
+"Restart the DrumsT application now.\n"
+"\n"
+"Good Work !"
+msgstr ""
+"Una nuova cartella radice è stata appena creata in:\n"
+"\n"
+"{0}\n"
+"\n"
+"Ora dovresti riavviare l'applicazione.\n"
+"\n"
+"Buon Lavoro !"
+
+#: ../drumsT/drumsT_SYS/os_filesystem.py:64
+#, python-brace-format
+msgid ""
+"DrumsT: Failed to write drumsT.conf:\n"
+"\n"
+"ERROR: {0}"
+msgstr ""
+"DrumsT: Impossibile scrivere sul file di configurazione\n"
+"drumsT.conf\n"
+"\n"
+"ERRORE: {0}"
+
+#: ../drumsT/drumsT_SYS/os_filesystem.py:83
+#, python-format
+msgid "DrumsT: Already exist : %s"
+msgstr "DrumsT: Esiste già: %s"
+
+#: ../drumsT/drumsT_SYS/os_filesystem.py:90
+#, python-format
+msgid ""
+"DrumsT: Failed to make database root dir\n"
+"\n"
+"OSError: %s"
+msgstr ""
+"DrumsT: Impossibile creare la directory principale del database\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:89
+#, python-format
+msgid ""
+"DrumsT: Failed to create new database\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita! nel creare un nuovo database\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:110
+#, python-brace-format
+msgid ""
+"This name already exists:\n"
+"\n"
+"NAME/SURNAME:  {0} {1}\n"
+"PHONE:  {2}\n"
+"ADDRESS:  {3}\n"
+"BIRTHDATE:  {4}\n"
+"JOINED DATE:  {5}\n"
+"LEVEL:  {6}\n"
+"\n"
+"Want you to save anyway?"
+msgstr ""
+"Identità già esistente:\n"
+"\n"
+"NOME/COGNOME:  {0} {1}\n"
+"TELEFONO:  {2}\n"
+"INDIRIZZO:  {3}\n"
+"DATA DI NASCITA:  {4}\n"
+"DATA ISCRIZIONE:  {5}\n"
+"LIVELLO:  {6}\n"
+"\n"
+"Desideri salvare comunque?"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:137
+#, python-format
+msgid ""
+"DrumsT: Failed to insert student in Class table\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita nell'inserimento studente su Class table\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:166
+#, python-format
+msgid ""
+"DrumsT: Failed to add lesson in Lesson table\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione dati lezione fallita su tavola lezione!\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:245
+msgid "This school year already exist."
+msgstr "Anno scolastico già precedentemente impostato."
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:252
+#, python-format
+msgid ""
+"DrumsT: Failed to add new school year\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita! su nuovo anno scolastico\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:277
+#, python-format
+msgid ""
+"DrumsT: Failed to update student in Class table\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita nell'aggiornare dati studente.\n"
+"(Class table)\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:300
+#, python-format
+msgid ""
+"DrumsT: Failed to delete student and its lesson in Class table and Lesson "
+"table\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita! su cancella dati studente e relative "
+"lezioni \n"
+"(Class table and Lesson table)\n"
+"\n"
+"ERRORE: %s"
+
+#: ../drumsT/drumsT_SYS/SQLite_lib.py:330
+#, python-format
+msgid ""
+"DrumsT: Failed to update lesson in Lesson table\n"
+"\n"
+"ERROR: %s"
+msgstr ""
+"DrumsT: Registrazione Fallita nell'aggiornamento lezione \n"
+"(Lesson table)\n"
+"\n"
+"ERRORE: %s"
+
+#~ msgid ""
+#~ "Double click or type enter or push 'Open lessons register' to open a "
+#~ "individual profile displayed on list"
+#~ msgstr ""
+#~ "Fai doppio click, premi invio o premi il pulsante 'Apri registro "
+#~ "lezioni' \n"
+#~ "per aprire un profilo individuale mostrato sulla lista"
+
+#~ msgid "Show Tool Bar"
+#~ msgstr "Mostra la barra strumenti"
+
+#~ msgid "Show tool bar view"
+#~ msgstr "Mostra/Nascondi la barra strumenti"
+
+#~ msgid ""
+#~ "Double click or type enter or push 'Open lesson in selection' to open a "
+#~ "individual profile displayed in list"
+#~ msgstr ""
+#~ "Fai doppio click, premi invio o premi il pulsante 'Apri lezione' \n"
+#~ "per aprire un profilo individuale selezionato sulla lista"
+
+#~ msgid ""
+#~ "To use DrumsT, you must import a database or create new schools location"
+#~ msgstr ""
+#~ "Per usare DrumsT, dovresti importare un database o impostare una nuova "
+#~ "sede scolastica."
+
+#~ msgid "DrumsT: import a school database"
+#~ msgstr "DrumsT - Importa un database scolastico"
+
+#~ msgid "Successfull storing !"
+#~ msgstr "Archiviato con successo !"
+
+#~ msgid "Success"
+#~ msgstr "Successo"
+
+#~ msgid "Import School Database.."
+#~ msgstr "Importa Database Scolastico.."
+
+#~ msgid "Choose a school database to import"
+#~ msgstr "Scegli un database scolastico da importare"
+
+#~ msgid "Add new school location"
+#~ msgstr "Aggiungi nuova sede scolastica"
+
+#~ msgid "Create database with a new school location"
+#~ msgstr "Crea un database con una nuova sede scolastica"
+
+#~ msgid "Set a new school year to imported database"
+#~ msgstr "Impostare un nuovo anno scolastico al database importato"
+
+#~ msgid "DrumsT - Add new school"
+#~ msgstr "DrumsT - Aggiungi nuova scuola"
+
+#~ msgid "DrumsT: Succesful stored!"
+#~ msgstr "DrumsT - Archiviato con successo!"
+
+#~ msgid ""
+#~ "The lesson register is still open!\n"
+#~ "..Save your data before closing the application."
+#~ msgstr ""
+#~ "Il registro delle lezioni risulta ancora aperto!\n"
+#~ "..Salva i tuoi dati prima di chiudere l'applicazione."
+
+#~ msgid ""
+#~ "On 'Previus lesson' there are unsaved data...\n"
+#~ "continue closing?"
+#~ msgstr ""
+#~ "Nella finestra 'Lezioni precedenti' ci sono dati non salvati..\n"
+#~ "Chiudere ugualmente?"
+
+#~ msgid "DrumsT: Info"
+#~ msgstr "DrumsT: Informazione"
+
+#~ msgid ""
+#~ "Rollback to the last state, first of the confirm with 'Apply Changes'"
+#~ msgstr ""
+#~ "Ripristina all'ultimo stato, prima della conferma con 'Applica modifiche'"
+
+#~ msgid ""
+#~ "This is the first time you start DrumsT.\n"
+#~ "\n"
+#~ "DrumsT uses only one path to save databases.\n"
+#~ "\n"
+#~ "- To create a new database now, press the create button.\n"
+#~ "- If a database already exists press the import button.\n"
+#~ "- Press the exit button to exit simply"
+#~ msgstr ""
+#~ "Questa è la prima volta che avvii DrumsT.\n"
+#~ "\n"
+#~ "DrumsT usa un solo percorso per salvare i database\n"
+#~ "\n"
+#~ "- Per creare un nuovo database, premi il pulsante 'Crea'.\n"
+#~ "- Se già esiste un database, premi il pulsante 'Importa'.\n"
+#~ "- Premi il pulsante 'Esci' per uscire semplicemente."
+
+#~ msgid ""
+#~ "Incomplete profile assignement. Is not still possible to save into the "
+#~ "database !"
+#~ msgstr ""
+#~ "Assegnazione profilo incompleta. Non è ancora consentito salvare nel "
+#~ "database !"
+
+#~ msgid "Set a new school year to imported database:"
+#~ msgstr "Impostare un nuovo anno scolastico al database importato:"
+
+#~ msgid "School Database Importing:"
+#~ msgstr "Importazione del database scolastico:"
+
+#~ msgid "Database Name Imported:"
+#~ msgstr "Nome Database Importato"
+
+#~ msgid "School Year selection:"
+#~ msgstr "Selezione Anno scolastico"
+
+#~ msgid "Select filename with '.drtDB' extension "
+#~ msgstr "Seleziona il nome del file con estensione '.drtDB'"
+
+#~ msgid "Add new identity profile to database"
+#~ msgstr "Aggiungi un nuovo profilo di identità al database"
+
+#~ msgid "Change data into selected identity profile"
+#~ msgstr "Cambia i dati nel profilo di identità selezionato"
+
+#~ msgid "DrumsT: Success!"
+#~ msgstr "DrumsT: Successo!"
+
+#~ msgid ""
+#~ "Are you sure to delete selected student?\n"
+#~ "\n"
+#~ "Note that this process remove all stored\n"
+#~ "information, included all stored lessons.\n"
+#~ "\n"
+#~ "After this action all the deleted data will\n"
+#~ "not be recoverable !"
+#~ msgstr ""
+#~ "Si è sicuri di eliminare il profilo selezionato?\n"
+#~ "\n"
+#~ "Si noti che questo processo rimuove tutte\n"
+#~ "le informazioni compreso le lezioni eseguite.\n"
+#~ "\n"
+#~ "Dopo questa azione non sarà più possibile\n"
+#~ "eseguire il ripristino e/o il recupero !"
+
+#~ msgid "DrumsT: Success"
+#~ msgstr "DrumsT: Successo"
+
+#~ msgid "Add new school"
+#~ msgstr "Aggiungi nuova struttura scolastica"
+
+#~ msgid "Create a new school location"
+#~ msgstr "Crea una nuova collocazione scolastica"
+
+#~ msgid "Add new school year"
+#~ msgstr "Aggiungi nuovo anno scolastico"
+
+#~ msgid "Record a new school year to imported database"
+#~ msgstr "Registra un nuovo anno scolastico nel database importato"
+
+#~ msgid "&Schools"
+#~ msgstr "Scuola"
+
+#~ msgid "About the program"
+#~ msgstr "Informazioni sull'applicazione DrumsT"
+
+#~ msgid "DrumsT - Add new school and date"
+#~ msgstr "DrumsT - Aggiungi nuova scuola e nuova data"
+
+#~ msgid "DrumsT: Success on create new school"
+#~ msgstr "DrumsT: Creazione nuova collocazione scolastica riuscita!"
+
+#~ msgid "DrumsT: Success on create new year"
+#~ msgstr "DrumsT: Creazione nuova anno scolastico riuscita!"
+
+#~ msgid "Record a new lesson for %s"
+#~ msgstr "Registra una nuova lezione per %s"
+
+#~ msgid "Record new lesson"
+#~ msgstr "Registra nuova lezione"
+
+#~ msgid "Course plan"
+#~ msgstr "Piani delle Lezioni"
+
+#~ msgid "Overall view of %s"
+#~ msgstr "Vista di insieme di %s"
+
+#~ msgid "All Present"
+#~ msgstr "Entrambi presenti"
+
+#~ msgid "Are you sure to record this lesson ?"
+#~ msgstr "Sei sicuro di registrare questa lezione?"
+
+#~ msgid "DrumsT: Question"
+#~ msgstr "DrumsT: Domanda"
+
+#~ msgid "Apply Changes"
+#~ msgstr "Applica Cambiamenti"
+
+#~ msgid "Insert a new string:"
+#~ msgstr "Inserisci una nuova stringa:"
+
+#~ msgid "DrumsT: Edit cell value"
+#~ msgstr "DrumsT: Modifica il valore della cella"
+
+#~ msgid "Change Attendance"
+#~ msgstr "Modifica le Presenze"
+
+#~ msgid "This column can not be edit"
+#~ msgstr "Questa colonna non può essere modificata"
+
+#~ msgid ""
+#~ "Before to edit cells in others rows, you must\n"
+#~ "push  'Apply Changes' button to render changes\n"
+#~ "into the edited columns selected in gray.\n"
+#~ "\n"
+#~ "Instead, if you want to remove any change push\n"
+#~ "'Uncommit Last' button"
+#~ msgstr ""
+#~ "Prima di editare le celle di altre righe, dovresti\n"
+#~ "premere il pulsante 'Applicare Cambiamenti' per\n"
+#~ "rendere effettive le ultime modifiche nelle colonne\n"
+#~ "selezionate in grigio.\n"
+#~ "\n"
+#~ "Altrimenti, se se vuoi rimuovere l'ultimo cambiamento\n"
+#~ "eseguito, premi il pulsante 'Annulla'."
+
+#~ msgid "Change Not Allowed"
+#~ msgstr "Modifica Non Consentita"
+
+#~ msgid "You could not set anything"
+#~ msgstr "Non puoi impostare nulla"
+
+#~ msgid "Type school name or location identifier:"
+#~ msgstr "Digita il nome della scuola o luogo, sede, etc:"
+
+#~ msgid "Add a school year to selected school:"
+#~ msgstr "Aggiungi l'anno scolastico nella scuola selezionata:"
+
+#~ msgid "Open lesson in selection"
+#~ msgstr "Apri Registro lezioni"
+
+#~ msgid "User Guide"
+#~ msgstr "Guida Utente"
+
+#~ msgid "About DrumsT"
+#~ msgstr "Circa DrumsT"
+
+#~ msgid ""
+#~ "This is the first time you start DrumsT.\n"
+#~ "\n"
+#~ "DrumsT uses only one path to save databases.\n"
+#~ "\n"
+#~ "- If you want to create a new database now press the create button.\n"
+#~ "- If a database already exists press the import button.\n"
+#~ "- Press the exit button to exit simply"
+#~ msgstr ""
+#~ "Questa è la prima volta che avvii DrumsT.\n"
+#~ "\n"
+#~ "DrumsT usa un solo percorso per salvare i database\n"
+#~ "\n"
+#~ "- Per creare un nuovo database, premi il pulsante 'Crea'.\n"
+#~ "- Se già esiste un database, premi il pulsante 'Importa'.\n"
+#~ "- Premi il pulsante 'Esci' per uscire semplicemente."
+
+#~ msgid ""
+#~ "A new drumsT rootdir has been created:\n"
+#~ "\n"
+#~ "%{0}\n"
+#~ "\n"
+#~ "You must re-start the DrumsT application now.\n"
+#~ "\n"
+#~ "Good Work !"
+#~ msgstr ""
+#~ "Una nuova cartella radice è stata appena creata in:\n"
+#~ "\n"
+#~ "{0}\n"
+#~ "\n"
+#~ "Ora dovresti riavviare l'applicazione.\n"
+#~ "\n"
+#~ "Buon Lavoro !"
+
+#~ msgid "Setting Date lesson"
+#~ msgstr "impostazione data della lezione"
+
+#~ msgid ""
+#~ "Can not find the configuration file. Please, reinstall the drumsT "
+#~ "application"
+#~ msgstr ""
+#~ "Non posso più trovare il file di configurazione di DrumsT, si consiglia "
+#~ "di reinstallare il programma."
+
+#~ msgid ""
+#~ "The configuration file is wrong. Please, reinstall the drumsT application"
+#~ msgstr ""
+#~ "Il file di configurazione è rotto. Si consiglia di reinstallare "
+#~ "l'applicazione."

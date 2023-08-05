@@ -1,0 +1,51 @@
+===================================================
+
+NOTE TO TRASLATORS:
+
+To start a new translation, clone my repo by type:
+
+git clone https://gitlab.com/jeanslack/DrumsT.git
+
+create two new folders inside /DrumsT/locale folder (for example create
+a 'de_DE' folder and within which a 'LC_MESSAGES' folder for the German 
+language support) with the following tree:
+
+    /DrumsT
+        /locale
+            /de_DE
+                /LC_MESSAGES
+            
+Copy the "drumst.pot" file translation template located in the '/locale' 
+folder, and paste into the 'LC_MESSAGES' folder, than rename it to change
+extension name to "drumst.po". 
+Now open the "drumst.po" with a translation editing program, for example 
+'Poedit', and then save it by generating a 'drumst.mo' file with your 
+new native language tanslation.
+
+Optionally, if you want to try your new translation by starting DrumsT, 
+make sure to update the "src/drumsT_SYS/app_const.py" module by adding 
+the newly translated language to the dictionary on 'app_const.py', for 
+example appending this line:
+
+    u "de": wx.LANGUAGE_GERMAN,
+    
+to:
+
+    supLang = {u "en": wx.LANGUAGE_ENGLISH,
+               u "it": wx.LANGUAGE_ITALIAN,
+               u "de": wx.LANGUAGE_GERMAN,
+               }
+
+For a list of the supported languages, please see:
+https://wxpython.org/Phoenix/docs/html/wx.Language.enumeration.html#wx-language
+
+--------------
+
+When you have completed your translation with 'Poedit', please send me the
+traslated files with 'drumst.po' and 'drumst.mo' extensions at:
+
+<jeanlucperni@gmail.com>
+
+I will be grateful!!
+               
+===================================================
