@@ -1,0 +1,8 @@
+flylogging/__init__.py,sha256=QineNI_XlV8upDZxqfualpKgloPkp6tk7HizF8x05MU,81
+flylogging/context_logger.py,sha256=ajMVQbQ3GGHNqJyGlNO_rZKt5huYQyMo6vN_NGk1N4E,1853
+flylogging/handler_handler.py,sha256=Bd4bMQo73E2vw8YpzeZ1rhdys3eOR3AWFa2v8oYOiwY,2236
+flylogging/json_formatter.py,sha256=zP5Jjcs8p1s3zosL_L2oL_BmHwTyFlDeCq8BcsQsEJo,1227
+flylogging-0.0.1rc4.dist-info/METADATA,sha256=8j1Th2Q6xmkAbDkB5qN29aV_70ZpcuHcjG45WN8n9VQ,354
+flylogging-0.0.1rc4.dist-info/WHEEL,sha256=ZvfnntGaZglpRLAKVkx18HrxfMwCXrA0b-ARJVnnMrw,92
+flylogging-0.0.1rc4.dist-info/top_level.txt,sha256=FWjXQnf-VGAN2N1nNe_A9EbmrctrdsCf8xUKg5Kdrec,11
+flylogging-0.0.1rc4.dist-info/RECORD,,
