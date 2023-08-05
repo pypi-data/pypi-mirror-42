@@ -1,0 +1,4 @@
+[console_scripts]
+glucid = glucid.glucid:main
+xglucid = glucid.xglucid:main
+
