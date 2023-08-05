@@ -1,0 +1,10 @@
+spacy_langdetect/__init__.py,sha256=l5c5CScmo6IA5CVxnj2Uz8332XoYXmZKqpcNAL_dgCk,46
+spacy_langdetect/spacy_langdetect.py,sha256=OnFsMZyw2UAcB5IAP9EKXdE0JIGZsW7D0XRtay4SlK4,1783
+spacy_langdetect-0.1.1.dist-info/DESCRIPTION.rst,sha256=pleRXuE0Ipfh_Z4z_wykM-qPRy_zkqfdRZBavTrkDOU,2848
+spacy_langdetect-0.1.1.dist-info/METADATA,sha256=9y4IRSIfr-8NTUl5V1aM6myBO-rao4EK10at3JuOB-U,3374
+spacy_langdetect-0.1.1.dist-info/RECORD,,
+spacy_langdetect-0.1.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+spacy_langdetect-0.1.1.dist-info/metadata.json,sha256=NTbYBcYQ2OLdejbHIrcx6P3l2W6f0ehXwf2DnCYA0GQ,709
+spacy_langdetect-0.1.1.dist-info/top_level.txt,sha256=AERRufG6K5ipwPotfBFD7H7WVUJHCPohELzmzpzHn5k,23
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_spacy_langdetect.py,sha256=FG8O98OCYasDyCWC1X4r_SIfLFs0H5Y-vA7rSocHIa0,1112
