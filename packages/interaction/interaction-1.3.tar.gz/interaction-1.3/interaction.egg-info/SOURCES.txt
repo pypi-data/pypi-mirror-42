@@ -1,0 +1,12 @@
+README.md
+setup.py
+interaction/Iterable.py
+interaction/ProgressBar.py
+interaction/__init__.py
+interaction/colour.py
+interaction/map.py
+interaction.egg-info/PKG-INFO
+interaction.egg-info/SOURCES.txt
+interaction.egg-info/dependency_links.txt
+interaction.egg-info/not-zip-safe
+interaction.egg-info/top_level.txt
