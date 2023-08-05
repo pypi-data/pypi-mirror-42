@@ -1,0 +1,6 @@
+numpy
+matplotlib
+dill
+
+[:python_version < "3.3"]
+backports.functools_lru_cache
