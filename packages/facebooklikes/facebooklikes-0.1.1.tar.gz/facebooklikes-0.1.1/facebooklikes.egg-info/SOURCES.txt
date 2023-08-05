@@ -1,0 +1,11 @@
+HISTORY.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+facebooklikes/__init__.py
+facebooklikes.egg-info/PKG-INFO
+facebooklikes.egg-info/SOURCES.txt
+facebooklikes.egg-info/dependency_links.txt
+facebooklikes.egg-info/not-zip-safe
+facebooklikes.egg-info/top_level.txt
