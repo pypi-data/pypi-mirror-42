@@ -1,0 +1,9 @@
+include LICENSE
+include README.md
+
+global-exclude __pycache__
+global-exclude *.pyc
+
+recursive-include docs *
+recursive-include graphqldoc/static *
+recursive-include graphqldoc/templates *

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block sidenav %} {% include 'sidenav.html' %}  {% endblock %}
+
+{% block content %}
+<h2>
+    {{ detail.name }}
+    {% if detail.kind %}
+    <span class="new badge" data-badge-caption="">
+        {{ detail.kind }}
+    </span>
+    {% endif %}
+
+    <!-- query endpoint -->
+    {% if detail.type %}
+    <span class="new badge purple" data-badge-caption="">
+        Payload: {{ detail.type.name }}
+    </span>
+    {% endif %}
+</h2>
+<blockquote>{{ detail.description }}</blockquote>
+
+{% if detail.inputFields %}
+<h4>Input Fields</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Kind</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for field in detail.inputFields %}
+        <tr>
+            <td><b>{{ field.name }}</b></td>
+            <td><i>{{ field.description }}</i></td>
+            <td><i>{{ field.type.name }}</i></td>
+            <td><i>{{ field.type.kind }}</i></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if detail.fields %}
+<h4>Fields</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Kind</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for field in detail.fields %}
+        <tr>
+            <td>
+                <a href="{%url 'graphqldoc:detail' field.name %}">
+                    <b>{{ field.name }}</b>
+                </a>
+            </td>
+            <td><i>{{ field.description }}</i></td>
+            <td>
+                {% if field.type.name %}
+                <a href="{%url 'graphqldoc:detail' field.type.name %}">
+                    <i>{{ field.type.name }}</i>
+                </a>
+                {% else %}
+                <i>{{ field.type.name }}</i>
+                {% endif %}
+            </td>
+            <td><i>{{ field.type.kind }}</i></td>
+            <td><i>{{ field.type.kind }}</i></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if detail.interfaces %}
+<h4>Implements</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th scope="col">Object</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in detail.interfaces %}
+        <tr>
+            <td><a href="{%url 'graphqldoc:detail' object.name %}">{{ object.name }}</a></td>
+            <td><i>{{ object.description }}</i></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if detail.possibleTypes %}
+<h4>Implemented by</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th scope="col">Object</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in detail.possibleTypes %}
+        <tr>
+            <td><a href="{%url 'graphqldoc:detail' object.name %}">{{ object.name }}</a></td>
+            <td><i>{{ object.description }}</i></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if detail.enumValues %}
+<h4>Enum Values</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in detail.enumValues %}
+        <tr>
+            <td><b>{{ object.name }}</b></td>
+            <td><i>{{ object.description }}</i></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if detail.args %}
+<h4>Arguments</h4>
+<table class="compact-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Kind</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in detail.args %}
+        <tr>
+            <td><b>{{ object.name }}</b></td>
+            <td><i>{{ object.description }}</i></td>
+            {% if object.type.ofType %}
+                <td>
+                    <i><a href="{%url 'graphqldoc:detail' object.type.ofType.name %}">{{ object.type.ofType.name }}</a></i>
+                </td>
+                <td><i>{{ object.type.ofType.kind }}</i></td>
+            {% else %}
+                <td><i>{{ object.type.name }}</i></td>
+                <td><i>{{ object.type.kind }}</i></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% endblock %}
