@@ -1,0 +1,33 @@
+|=== python
+extension = 'py'
+
+run_encoding = 'utf8'
+
+source_start =
+    |```
+    # -*- coding: utf-8 -*-
+
+    import codecs
+    import sys
+    sys.stdout = codecs.getwriter('utf8')(sys.stdout.buffer, 'strict')
+    sys.stderr = codecs.getwriter('utf8')(sys.stderr.buffer, 'strict')
+    |```/
+
+chunk_wrapper =
+    |```
+    print('\n{stdoutdelim}', flush=True)
+    sys.stderr.write('\n{stderrdelim}\n')
+    {code}
+    |```/
+
+inline_expression_formatter =
+    |```
+    _codebraid_temp_{tempsuffix} = str({code})
+    print('\n{stdoutdelim}')
+    sys.stderr.write('\n{stderrdelim}\n')
+    print(_codebraid_temp_{tempsuffix})
+    |```/
+
+error_patterns = 'Error:'
+warning_patterns = 'Warning:'
+line_number_patterns = ['line {number}', ':{number}:']
