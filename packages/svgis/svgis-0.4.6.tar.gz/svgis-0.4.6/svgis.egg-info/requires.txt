@@ -1,0 +1,17 @@
+six<2,>=1.7.3
+click<8,>=6.2
+pyproj<2,>=1.9.5
+fiona<2.0,>=1.8
+fionautil<1.0,>=0.5.3
+tinycss<1,>=0.3
+utm<1,>=0.4.0
+
+[clip]
+shapely>=1.5.7
+
+[inline]
+
+[numpy]
+
+[simplify]
+visvalingamwyatt>=0.1.1
