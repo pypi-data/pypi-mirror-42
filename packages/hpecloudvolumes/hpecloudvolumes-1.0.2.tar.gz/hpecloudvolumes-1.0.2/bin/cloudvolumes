@@ -1,0 +1,173 @@
+#!/usr/bin/env python
+# (C) Copyright 2019 Hewlett Packard Enterprise Development LP.
+
+
+"""AWS EC2 and Direct Connect interface.
+
+Usage:
+  cloudvolumes list (geos | cloud_accounts | cloud_volumes | replication_stores | onprem_replication_partners | replication_partnerships | regions | cv_regions | providers) [options]
+  cloudvolumes describe (cloud_volume | cv) CLOUDVOLUME [options]
+  cloudvolumes delete (cloud_volume | cv) CLOUDVOLUME [options]
+
+  cloudvolumes -h | --help
+  cloudvolumes --version
+
+Options:
+  --email EMAIL
+  --password PASSWORD
+
+  --access-key ACCESS_KEY
+  --access-secret ACCESS_SECRET
+
+  --geo GEO             The HPE CloudVolumes geo to query.
+                        [default: us]
+
+  --hostname HOSTNAME   The HPE Cloud Volumes server to authenticate to.
+                        [default: https://cloudvolumes.hpe.com]
+
+  -d --debug            Enable debug
+  --version             Show version.
+  -h --help             Show this screen.
+"""
+
+
+__version__ = "1.0.0"
+
+
+import logging
+import os
+import sys
+
+from pprint import pprint
+from docopt import docopt
+from terminaltables import AsciiTable
+
+from cloudvolumes import CloudVolumesClient
+
+
+# Setup logging
+logging.basicConfig(format='[%(levelname)s] %(asctime)s - %(funcName)s: %(message)s', level=logging.WARNING)
+
+# Parse command line
+arguments = docopt(__doc__, version=__version__)
+
+# Enable debug if needed
+if arguments['--debug']:
+    logging.getLogger().setLevel(logging.DEBUG)
+
+if arguments['--email']:
+    cli = CloudVolumesClient(arguments['--geo'], email=arguments['--email'], password=arguments['--password'], hostname=arguments.get('--hostname', None))
+
+elif arguments['--access-key']:
+    cli = CloudVolumesClient(arguments['--geo'], access_key=arguments['--access-key'], access_secret=arguments['--access-secret'], hostname=arguments.get('--hostname', None))
+
+else:
+    # Check that we have pre-configured credentials as environment variables
+    if os.environ.get('CLOUDVOLUMES_USER', os.environ.get('CLOUDVOLUMES_ACCESS_KEY', None)) is None:
+        print("No login credentials provided.")
+        sys.exit(1)
+
+    cli = CloudVolumesClient(arguments['--geo'])
+
+if arguments['list']:
+    if arguments['geos']:
+        geos = [['ID', 'Name']]
+
+        for geo, info in cli.geos.items():
+            geos.append([geo, info])
+
+        print(AsciiTable(geos).table)
+
+    elif arguments['cloud_accounts']:
+        cloudaccounts = [['ID', 'Name']]
+
+        for ca in cli.cloud_accounts:
+            cloudaccounts.append([ca['id'], ca['name']])
+
+        print(AsciiTable(cloudaccounts).table)
+
+    elif arguments['cloud_volumes']:
+        cloudvols = [['ID', 'Name', 'Size', 'IOPS', 'Tier', 'CV Region', 'Provider', 'Private Cloud', 'Cloned From']]
+
+        for cv in sorted(cli.cloud_volumes.list(), key=lambda x: x.attrs['name']):
+            provider = list(cv.attrs['private_cloud'].keys())[0]
+            cloud = cv.attrs['private_cloud'][provider]['vpc'] if provider == 'aws' else cv.attrs['private_cloud'][provider]['vnet']
+            if 'cloned_from' in cv.attrs:
+                cloned_from = cv.attrs['cloned_from']['name']
+            else:
+                cloned_from = ''
+
+            cloudvols.append([
+                cv.id,
+                cv.attrs['name'],
+                cv.attrs['size'],
+                cv.attrs['limit_iops'],
+                cv.attrs['volume_type'],
+                cv.attrs['cv_region']['name'],
+                provider,
+                cloud,
+                cloned_from
+            ])
+
+        print(AsciiTable(cloudvols).table)
+
+    elif arguments['replication_stores']:
+        stores = [['ID', 'Name', 'Size', 'CV Region']]
+
+        for store in sorted(cli.replication_stores.list(), key=lambda x: x.attrs['name']):
+            stores.append([store.id, store.attrs['name'], store.attrs['limit_size'], store.attrs['ncv_region']['name']])
+
+        print(AsciiTable(stores).table)
+
+    elif arguments['onprem_replication_partners']:
+        partners = [['ID', 'Name', 'Group UID']]
+
+        for partner in sorted(cli.onprem_replication_partners.list(), key=lambda x: x.attrs['name']):
+            partners.append([partner.id, partner.attrs['name'], partner.attrs['group_uid']])
+
+        print(AsciiTable(partners).table)
+
+    elif arguments['replication_partnerships']:
+        partnerships = [['ID', 'Replication Store', 'OnPrem Partner']]
+
+        for rp in sorted(cli.replication_partnerships.list(), key=lambda x: x.attrs['replication_store']['name']):
+            partnerships.append([rp.id, rp.attrs['replication_store']['name'], rp.attrs['onprem_replication_partner']['name']])
+
+        print(AsciiTable(partnerships).table)
+
+    elif arguments['regions']:
+        regions = [['ID', 'Name', 'CV Region']]
+
+        for r in sorted(cli.regions.list(), key=lambda x: x.attrs['name']):
+            regions.append([r.id, r.attrs['name'], r.attrs['ncv_region']['name']])
+
+        print(AsciiTable(regions).table)
+
+    elif arguments['cv_regions']:
+        regs = [['ID', 'Name', 'PF', 'GPF', 'Replication']]
+
+        for r in sorted(cli.cv_regions.list(), key=lambda x: x.attrs['name']):
+            regs.append([r.id, r.attrs['name'], 'PF' in r.attrs['capabilities'], 'GPF' in r.attrs['capabilities'], 'Replication' in r.attrs['capabilities']])
+
+        print(AsciiTable(regs).table)
+
+    elif arguments['providers']:
+        providers = [['ID', 'Name']]
+
+        for p in sorted(cli.providers.list(), key=lambda x: x.attrs['name']):
+            providers.append([p.id, p.attrs['name']])
+
+        print(AsciiTable(providers).table)
+
+elif arguments['describe']:
+    if arguments['cloud_volume'] or arguments['cv']:
+        try:
+            ident = int(arguments['CLOUDVOLUME'])
+            cv = cli.cloud_volumes.get(ident)
+        except ValueError:
+            cv = cli.cloud_volumes.get(name=arguments['CLOUDVOLUME'])
+            if cv is not None:
+                cv.reload()
+
+        if cv is not None:
+            pprint(cv.attrs)
