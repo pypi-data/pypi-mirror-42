@@ -1,0 +1,8 @@
+README.rst
+brom_spades.py
+setup.py
+bin/brom-spades
+brom_spades.egg-info/PKG-INFO
+brom_spades.egg-info/SOURCES.txt
+brom_spades.egg-info/dependency_links.txt
+brom_spades.egg-info/top_level.txt
