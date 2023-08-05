@@ -1,0 +1,21 @@
+<div class="{{dashboard.cssClass}}" {{dashboard._get_custom_css()|safe}}>
+<table style="width:100%;">
+{% for element in dashboard.childElements %}
+  <tr class="{{element.cssClass}}" style="padding-top:0.9375rem;padding-bottom:0.9375rem;">
+  {% for i in element %}
+  {% if i.size is not none %}
+  	{%set colClass = "col-md-"+i.size|string %}
+  {% else %}
+  	{%set colClass = "col" %}
+  {% endif %}
+    <td colspan={{i.size}}">
+    <div>
+      {{i.toFinalElement()|safe}}
+    </div>
+    </td>
+    {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+</div>
+
