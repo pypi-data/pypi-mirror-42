@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: grocer
+Version: 0.1.0
+Summary: Flat-file JSON store designed for concurrent write access
+Home-page: None
+Author: Barry Moore
+Author-email: moore0557@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
