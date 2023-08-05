@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: rows
+Version: 0.4.1
+Summary: A common, beautiful interface to tabular data, no matter the format
+Home-page: https://github.com/turicas/rows/
+Author: Álvaro Justen
+Author-email: alvarojusten@gmail.com
+License: UNKNOWN
+Keywords: tabular table csv xls xlsx xpath ods sqlite html pdf rows data opendata
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Utilities
+Requires-Dist: six
+Requires-Dist: pathlib
+Requires-Dist: unicodecsv
+Provides-Extra: all
+Requires-Dist: unicodecsv ; extra == 'all'
+Requires-Dist: click ; extra == 'all'
+Requires-Dist: requests ; extra == 'all'
+Requires-Dist: requests-cache ; extra == 'all'
+Requires-Dist: tqdm ; extra == 'all'
+Requires-Dist: file-magic ; extra == 'all'
+Requires-Dist: lxml ; extra == 'all'
+Requires-Dist: parquet ; extra == 'all'
+Requires-Dist: psycopg2-binary ; extra == 'all'
+Requires-Dist: cached-property ; extra == 'all'
+Requires-Dist: pymupdf ; extra == 'all'
+Requires-Dist: pdfminer.six ; extra == 'all'
+Requires-Dist: xlrd ; extra == 'all'
+Requires-Dist: xlwt ; extra == 'all'
+Requires-Dist: openpyxl ; extra == 'all'
+Provides-Extra: cli
+Requires-Dist: click ; extra == 'cli'
+Requires-Dist: requests ; extra == 'cli'
+Requires-Dist: requests-cache ; extra == 'cli'
+Requires-Dist: tqdm ; extra == 'cli'
+Provides-Extra: csv
+Requires-Dist: unicodecsv ; extra == 'csv'
+Provides-Extra: detect
+Requires-Dist: file-magic ; extra == 'detect'
+Provides-Extra: html
+Requires-Dist: lxml ; extra == 'html'
+Provides-Extra: ods
+Requires-Dist: lxml ; extra == 'ods'
+Provides-Extra: parquet
+Requires-Dist: parquet ; extra == 'parquet'
+Provides-Extra: pdf
+Requires-Dist: cached-property ; extra == 'pdf'
+Requires-Dist: pymupdf ; extra == 'pdf'
+Provides-Extra: pdf-pdfminer.six
+Requires-Dist: cached-property ; extra == 'pdf-pdfminer.six'
+Requires-Dist: pdfminer.six ; extra == 'pdf-pdfminer.six'
+Provides-Extra: pdf-pymupdf
+Requires-Dist: cached-property ; extra == 'pdf-pymupdf'
+Requires-Dist: pymupdf ; extra == 'pdf-pymupdf'
+Provides-Extra: postgresql
+Requires-Dist: psycopg2-binary ; extra == 'postgresql'
+Provides-Extra: xls
+Requires-Dist: xlrd ; extra == 'xls'
+Requires-Dist: xlwt ; extra == 'xls'
+Provides-Extra: xlsx
+Requires-Dist: openpyxl ; extra == 'xlsx'
+Provides-Extra: xpath
+Requires-Dist: lxml ; extra == 'xpath'
+
+No matter in which format your tabular data is: rows will import it,
+automatically detect types and give you high-level Python objects so you can
+start working with the data instead of trying to parse it. It is also
+locale-and-unicode aware. :)
+
+Read the documentation and learn how simple is to use it: http://turicas.info/rows
+
