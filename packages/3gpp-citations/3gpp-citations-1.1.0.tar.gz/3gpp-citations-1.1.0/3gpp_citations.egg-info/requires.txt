@@ -1,0 +1,13 @@
+openpyxl==2.4.8
+bibtexparser==0.6.2
+lxml==4.3.1
+requests==2.21.0
+tqdm==4.31.1
+
+[test]
+pytest==4.2.0
+pytest-cov==2.6.1
+pytest-flakes==4.0.0
+pytest-pep8==1.0.6
+pytest-pylint==0.14.
+validators==0.12.

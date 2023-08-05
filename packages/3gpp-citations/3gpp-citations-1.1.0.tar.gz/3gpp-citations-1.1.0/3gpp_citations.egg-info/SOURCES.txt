@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+3gpp_citations.egg-info/PKG-INFO
+3gpp_citations.egg-info/SOURCES.txt
+3gpp_citations.egg-info/dependency_links.txt
+3gpp_citations.egg-info/requires.txt
+3gpp_citations.egg-info/top_level.txt
+bin/3gpp-citations
+examples/3gpp.bib
+examples/3gpp_38-series.bib
+standardcitations/__init__.py
+standardcitations/standardcitations.py
