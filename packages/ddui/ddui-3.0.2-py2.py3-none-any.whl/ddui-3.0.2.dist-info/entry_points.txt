@@ -1,0 +1,3 @@
+[console_scripts]
+ddui = link_ddui_to_airflow:cli
+
