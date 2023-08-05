@@ -1,0 +1,8 @@
+obspy
+numpy
+geopy
+matplotlib
+pandas
+h5py
+pynmea2
+pytz
