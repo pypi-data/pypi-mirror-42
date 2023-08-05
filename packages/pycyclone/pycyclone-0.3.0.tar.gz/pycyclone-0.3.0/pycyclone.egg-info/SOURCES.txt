@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+pycyclone.egg-info/PKG-INFO
+pycyclone.egg-info/SOURCES.txt
+pycyclone.egg-info/dependency_links.txt
+pycyclone.egg-info/not-zip-safe
+pycyclone.egg-info/top_level.txt
