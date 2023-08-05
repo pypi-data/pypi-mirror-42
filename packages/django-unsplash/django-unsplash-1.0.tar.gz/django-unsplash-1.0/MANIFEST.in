@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+recursive-include unsplash/static *
+recursive-include unsplash/templates *
+recursive-include unsplash/templatetags *
+recursive-include docs *
