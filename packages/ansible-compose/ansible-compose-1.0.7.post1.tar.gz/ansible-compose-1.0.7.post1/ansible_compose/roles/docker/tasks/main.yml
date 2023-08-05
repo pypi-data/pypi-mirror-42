@@ -1,0 +1,8 @@
+---
+
+- name: Play docker role only if necessary
+  when: not ansible_facts.ansible_local['ansible_compose_docker']|default(false)
+  include: wrapper.yml
+  become: true
+  become_user: root
+  become_method: sudo
