@@ -1,0 +1,13 @@
+bonobo_trans/__init__.py,sha256=rNzuROsY-hgeEIWdEl0Xh9M5xlWvAs7hL6SKy2nSbt4,21
+bonobo_trans/aggregator.py,sha256=5-dDGYlMvAfCMeFNGlQvAazU8YCMiENOqBNzaLS1c50,15855
+bonobo_trans/logging.py,sha256=aytePurHwfzY2Reauwawk3utDPPt3zMkfevncRMcgNc,140
+bonobo_trans/lookup.py,sha256=rm4G2ZcGqplSpOR8uGi__MJBQ1Myz3AfjRdGiVeVhmg,41173
+bonobo_trans/sequencer.py,sha256=AlCzpt8Xn0ATqs4xNKbxFiYzLCv92mCHuuKMYXvFPmo,12386
+bonobo_trans/sorter.py,sha256=y3tLjMREgrla4qNcPUtx4pZS4NausqGsVdGyGAfdAZs,7207
+bonobo_trans/source.py,sha256=QJrGPTQpg_UyMleBcenqRTBUN8oh6Mn09KdEPrJ8rbE,8723
+bonobo_trans/target.py,sha256=EdA64H4lus5ZBNKQmt9efqNNoqucx2i8fhMb3H8uj1Y,10586
+bonobo_trans-0.0.3.dist-info/LICENSE.txt,sha256=SbvpEU5JIU3yzMMkyzrI0dGqHDoJR_lMKGdl6GZHsy4,11558
+bonobo_trans-0.0.3.dist-info/METADATA,sha256=we5w7vjeOUdBXumCy8OvfhqcOY5w4FbO114GFLQuuVQ,569
+bonobo_trans-0.0.3.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+bonobo_trans-0.0.3.dist-info/top_level.txt,sha256=iiQZ1DLl-dGKJ7BlPi8Sl4GnC_Rk0cCBBpymt058jnQ,13
+bonobo_trans-0.0.3.dist-info/RECORD,,
