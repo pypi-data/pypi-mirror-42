@@ -1,0 +1,14 @@
+calrissian/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+calrissian/context.py,sha256=DHaK3XxEIeGNQDTCybiE5Ld150j8IC7zPh-dXIUKROA,371
+calrissian/executor.py,sha256=-QTyMBmNOtAdDJu2wwPyR3EdMqr1EKXaekAJmqoLVV0,1787
+calrissian/job.py,sha256=Xy6J_0ZpcdxoYP-t0_AYpDPqZKvJtRSbLw52H_hKkgE,20612
+calrissian/k8s.py,sha256=wXEy2WwAyGFNwRUqSmMHpiOqPwcEkZ0MSK74TNLF5MA,8767
+calrissian/main.py,sha256=Ys8r4mUBr41pps_iwgZyOcFQoHOAhdQNRLEwBO6g2jU,2409
+calrissian/tool.py,sha256=zYz6ZSQaUI8F3Ebok81PzQZR3j0NR5rVkwkNvfl0uQs,3166
+calrissian/version.py,sha256=T8Euxwiu8axKd7hR82XbfIXLI9n2CA9YUTN3RpvdKEo,478
+calrissian-0.2.0.dist-info/LICENSE,sha256=pdOUbueNTsxhnp7GV9GDMsiZSyUUGdfBOQt4GLBPz1c,1106
+calrissian-0.2.0.dist-info/METADATA,sha256=Q-cJgQ6DrJImkIQ5Gpy6hPa3Z-M7Q-WZJRh4RFibr6Y,3258
+calrissian-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+calrissian-0.2.0.dist-info/entry_points.txt,sha256=WElRe8EqKCJf5jiZzPb3X9KZHZpUulJzSPaEAhwMWJo,53
+calrissian-0.2.0.dist-info/top_level.txt,sha256=3Urgsd5jmlmv-6hklYOjwZ6JkE4M1l8rCguf5WuY8Uc,11
+calrissian-0.2.0.dist-info/RECORD,,
