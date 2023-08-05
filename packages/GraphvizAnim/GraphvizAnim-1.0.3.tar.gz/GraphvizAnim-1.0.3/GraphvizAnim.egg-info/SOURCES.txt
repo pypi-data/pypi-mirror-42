@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+GraphvizAnim.egg-info/PKG-INFO
+GraphvizAnim.egg-info/SOURCES.txt
+GraphvizAnim.egg-info/dependency_links.txt
+GraphvizAnim.egg-info/top_level.txt
+gvanim/__init__.py
+gvanim/__main__.py
+gvanim/action.py
+gvanim/animation.py
+gvanim/jupyter.py
+gvanim/render.py
