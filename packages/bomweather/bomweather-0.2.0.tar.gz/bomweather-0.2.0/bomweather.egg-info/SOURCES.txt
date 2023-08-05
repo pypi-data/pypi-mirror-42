@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+bomweather/__init__.py
+bomweather/forecast_stations.json
+bomweather/forecasts.py
+bomweather/obs_stations.json
+bomweather/observations.py
+bomweather/stations.py
+bomweather.egg-info/PKG-INFO
+bomweather.egg-info/SOURCES.txt
+bomweather.egg-info/dependency_links.txt
+bomweather.egg-info/requires.txt
+bomweather.egg-info/top_level.txt
