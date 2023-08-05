@@ -1,0 +1,31 @@
+Metadata-Version: 1.1
+Name: pro-net-registry
+Version: 1.0
+Summary: A registry for executing of long running algorithms.
+Home-page: https://github.com/processgraph-net/pro-net-registry
+Author: ProcessGraph.Net
+Author-email: info@processgraph.net
+License: UNKNOWN
+Download-URL: https://github.com/processgraph-net/pro-net-registry/archive/v1.0.tar.gz
+Description: 
+        Pro-Net-Registry
+        ------------
+        
+        A registry for executing of long running algorithms.
+        
+Keywords: Process,Graph,Registry,mulitprocessing
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
