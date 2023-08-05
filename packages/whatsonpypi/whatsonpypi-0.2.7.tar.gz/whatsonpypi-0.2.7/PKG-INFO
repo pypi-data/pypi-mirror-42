@@ -1,0 +1,284 @@
+Metadata-Version: 1.2
+Name: whatsonpypi
+Version: 0.2.7
+Summary: CLI tool to get package info from PyPI and/or manipulate requirements.
+Home-page: https://github.com/viseshrp/whatsonpypi
+Author: Visesh Prasad
+Author-email: viseshrprasad@gmail.com
+License: MIT license
+Description: ===========
+        whatsonpypi
+        ===========
+        
+        
+        .. image:: https://img.shields.io/pypi/v/whatsonpypi.svg
+                :target: https://pypi.python.org/pypi/whatsonpypi
+        
+        .. image:: https://img.shields.io/travis/viseshrp/whatsonpypi.svg
+                :target: https://travis-ci.org/viseshrp/whatsonpypi
+        
+        .. image:: https://readthedocs.org/projects/whatsonpypi/badge/?version=latest
+                :target: https://whatsonpypi.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pepy.tech/badge/whatsonpypi
+                :target: https://pepy.tech/project/whatsonpypi
+                :alt: Downloads
+        
+        
+        CLI tool to get package info from PyPI and/or manipulate requirements.
+        
+        
+        * GitHub: https://github.com/viseshrp/whatsonpypi
+        * PyPI: https://pypi.python.org/pypi/whatsonpypi
+        * Free software: MIT license
+        * Documentation: https://whatsonpypi.readthedocs.io.
+        
+        
+        Installation
+        ------------
+        .. code-block:: bash
+        
+            pip install -U whatsonpypi
+        
+        
+        Requirements
+        ------------
+        
+        #. Python 2.7+
+        
+        
+        Features
+        --------
+        
+        * Find information on a package on PyPI
+        
+            Examples:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django
+                NAME
+                    Django
+                LATEST VERSION
+                    2.1.5
+                SUMMARY
+                    A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+                PACKAGE URL
+                    https://pypi.org/project/Django/
+                AUTHOR
+                    Django Software Foundation
+                LATEST RELEASES
+                    2.2a1, 2.1rc1, 2.1b1, 2.1a1, 2.1.5
+        
+        
+        * For more information..
+        
+            Examples:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django --more
+                ...
+        
+        
+        * Version specific information..
+        
+            Examples:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django==2.1.4 --more
+                ...
+        
+        
+        * Launch documentation URL of project in a browser tab
+        
+            Examples:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django --docs
+        
+        
+        * Add packages to your requirements files.
+        
+            Examples:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django --add
+        
+        
+            By default, it searches for files with names matching ``requirements*.txt``
+            in the current working directory and adds the dependency to the end of the
+            file.
+        
+            You can change the filename pattern to search for. The pattern may contain simple
+            shell-style wildcards.
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi django --add --req-pattern "*.txt"
+        
+        
+            **If there's more than one file**, you will see a prompt allowing you to select the files
+            that should be modified.
+        
+            If you want the dependency to be added to a specific line,
+            mention a comment ``#wopp`` on its own line, which will be replaced with the dependency:
+        
+            Example:
+        
+            Do this in your requirements.txt:
+        
+            .. code-block:: yaml
+        
+                # Django
+                django==2.1.5
+                # testing
+                pytest==4.1.1
+                #wopp
+        
+            Then running this:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi pytest-runner --add
+        
+            will produce this:
+        
+            .. code-block:: yaml
+        
+                # Django
+                django==2.1.5
+                # testing
+                pytest==4.1.1
+                pytest-runner==4.2
+        
+        
+            Existing dependencies will be replaced with newer versions. Dependency version
+            by default is the latest unless specified explicitly like:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi pytest-runner==4.1 --add
+        
+        
+            Optionally, directory to search for requirement files can be specified with ``--req-dir``.
+            Both absolute and relative paths are allowed. Must be a directory.
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi pytest-runner==4.1 --add --req-dir /Users/Me/Documents/GitHub/project/requirements
+        
+            Default value (if not provided) is the directory where the command is run (cwd).
+        
+            Also, optionally, you can specify comments to add before a dependency.
+            Note that the comment will not be added if the dependency already exists in the file.
+        
+            For example, running this:
+        
+            .. code-block:: bash
+        
+                $ whatsonpypi pytest-runner --add --comment 'testing'
+        
+            will add this:
+        
+            .. code-block:: yaml
+        
+                # testing
+                pytest-runner==4.2
+        
+        See all options with:
+        
+        .. code-block:: bash
+        
+            $ whatsonpypi --help
+        
+        Credits
+        -------
+        
+        * Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template for getting me started.
+        
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        
+        =======
+        History
+        =======
+        
+        0.2.7 (2019-02-12)
+        ------------------
+        
+        * fix for py2 ImportError
+        
+        0.2.6 (2019-02-06)
+        ------------------
+        
+        * fix absence of new lines
+        
+        0.2.5 (2019-02-05)
+        ------------------
+        
+        * fix requirements file format check
+        
+        0.2.4 (2019-01-29)
+        ------------------
+        
+        * add --comment to allow mentioning comments with --add
+        
+        0.2.3 (2019-01-26)
+        ------------------
+        
+        * add --req-pattern to allow specifying search pattern for requirements files
+        * raise Error when no requirements files are found
+        
+        0.2.2 (2019-01-23)
+        ------------------
+        
+        * Fix empty dependencies display
+        
+        0.2.1 (2019-01-23)
+        ------------------
+        
+        * Small fixes
+        
+        0.2.0 (2019-01-22)
+        ------------------
+        
+        * Add -a/--add to enable adding packages to requirement files.
+        * Added -d/--docs to launch docs URL in browser
+        * Allow version specific querying
+        
+        0.1.2 (2019-01-20)
+        ------------------
+        
+        * Display more package info
+        * added --more/-m for even more info
+        
+        0.1.1 (2019-01-02)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: whatsonpypi
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=2.7
