@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pythonloc/__init__.py
+pythonloc/__main__.py
+pythonloc/pythonloc.py
+pythonloc.egg-info/PKG-INFO
+pythonloc.egg-info/SOURCES.txt
+pythonloc.egg-info/dependency_links.txt
+pythonloc.egg-info/entry_points.txt
+pythonloc.egg-info/not-zip-safe
+pythonloc.egg-info/requires.txt
+pythonloc.egg-info/top_level.txt
