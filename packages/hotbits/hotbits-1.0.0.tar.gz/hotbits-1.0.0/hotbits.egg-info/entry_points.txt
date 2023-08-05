@@ -1,0 +1,3 @@
+[console_scripts]
+hotbits = hotbits.__main__:main
+
