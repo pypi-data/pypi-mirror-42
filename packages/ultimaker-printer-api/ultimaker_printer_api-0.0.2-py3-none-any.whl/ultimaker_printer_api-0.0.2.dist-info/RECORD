@@ -1,0 +1,9 @@
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/test_ultimaker.py,sha256=hS60RcR0xPhn7BYY-8XQ1rWJWmsWUzCVR9TuNjfYoVE,10790
+ultimaker/__init__.py,sha256=84eWaNjWkkHGFV4fPrgw5lu3qhzuOT5yggSaeZUoINI,88
+ultimaker/api.py,sha256=YXDrxEvlOfKaoTtWZ8TuG9CqQ3QUlMeo7CRk47pwxsg,9266
+ultimaker_printer_api-0.0.2.dist-info/LICENSE,sha256=EzNgDoGvEZXZd2HWITE0dOXU6C_z70duaQSgFG2tpk0,1081
+ultimaker_printer_api-0.0.2.dist-info/METADATA,sha256=R6lCemtJ0GkIkxP4lngqEpwqkxOo09y0_2N1yhS3DLc,1055
+ultimaker_printer_api-0.0.2.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+ultimaker_printer_api-0.0.2.dist-info/top_level.txt,sha256=jSZ852Q_PAoG0xxpllevY3kYUZO6R_EL5T5sMUB-n3E,15
+ultimaker_printer_api-0.0.2.dist-info/RECORD,,
