@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: djangocms-pai-banners
+Version: 0.0.1
+Summary: Django-cms banners app
+Home-page: https://bitbucket.org/pai/djangocms-pai-banners
+Author: pai
+Author-email: paiuolo@gmail.com
+License: mit
+Description: UNKNOWN
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+Provides-Extra: testing
