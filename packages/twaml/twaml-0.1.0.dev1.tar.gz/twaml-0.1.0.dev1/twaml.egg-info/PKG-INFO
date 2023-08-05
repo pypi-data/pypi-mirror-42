@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: twaml
+Version: 0.1.0.dev1
+Summary: tW Analysis Machine Learning
+Home-page: https://git.sr.ht/~ddavis/twaml
+Author: Doug Davis
+Author-email: ddavis@cern.ch
+License: MIT
+Description:  This is a python package for applying machine learning to the
+        ATLAS Full Run II tW Analysis.  
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >3.6.5
