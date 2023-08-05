@@ -1,0 +1,1 @@
+A python library for Sound Arts course at SAE Institute (Milan, IT).

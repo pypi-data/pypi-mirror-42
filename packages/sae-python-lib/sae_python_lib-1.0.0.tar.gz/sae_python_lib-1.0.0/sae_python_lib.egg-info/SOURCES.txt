@@ -1,0 +1,12 @@
+README.md
+setup.py
+sae_python_lib/__init__.py
+sae_python_lib.egg-info/PKG-INFO
+sae_python_lib.egg-info/SOURCES.txt
+sae_python_lib.egg-info/dependency_links.txt
+sae_python_lib.egg-info/not-zip-safe
+sae_python_lib.egg-info/top_level.txt
+sae_python_lib/arduino/__init__.py
+sae_python_lib/osc/__init__.py
+sae_python_lib/soundfile/__init__.py
+sae_python_lib/spectral/__init__.py
