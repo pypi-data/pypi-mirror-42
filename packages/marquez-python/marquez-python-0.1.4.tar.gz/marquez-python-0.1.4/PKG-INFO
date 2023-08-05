@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: marquez-python
+Version: 0.1.4
+Summary: Marquez
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description:     Marquez is an open source **metadata service** for the **collection**, **aggregation**, and **visualization** of a data ecosystem&#39;s metadata.  # noqa: E501
+            
+Keywords: OpenAPI,OpenAPI-Generator,Marquez
+Platform: UNKNOWN
