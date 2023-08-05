@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: gmailIt
+Version: 0.1
+Summary: Send email via Gmail
+Home-page: https://github.com/kid-on-github/gmailIt
+Author: YOUR NAME
+Author-email: mike@lemonshell.com
+License: MIT
+Download-URL: https://github.com/kid-on-github/gmailIt/archive/0.1.tar.gz
+Description: UNKNOWN
+Keywords: GMAIL,EMAIL
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
