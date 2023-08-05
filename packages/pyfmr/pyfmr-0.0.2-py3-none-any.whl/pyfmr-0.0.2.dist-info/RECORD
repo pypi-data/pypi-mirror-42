@@ -1,0 +1,8 @@
+pyfmr/__init__.py,sha256=kMFeNs4426I2JBrPmFmCqR2i1oBC8lj7IQehn8Ngp0I,2093
+pyfmr/lib/fmr-darwin-10.6-amd64.dylib,sha256=twwWD2qNwd1-va4hHiX7YFwcFB9y2m2XCSYzatmM1RY,11920044
+pyfmr/lib/fmr-linux-amd64.so,sha256=26GEb0F46_ZCFTCfd5Xqh8PkD5JG9cqA3a2cnb38Q1w,17216248
+pyfmr/lib/fmr-windows-4.0-amd64.dll,sha256=0mP24T6OF0TVeawpYxcgA6zmLDAUUNEdZ8UUxe6lf00,18174634
+pyfmr-0.0.2.dist-info/METADATA,sha256=yhaI_DibOsWtbtN_nG6Ip0C_yTDSK77nxp9GmPt5Qwg,2370
+pyfmr-0.0.2.dist-info/RECORD,,
+pyfmr-0.0.2.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+pyfmr-0.0.2.dist-info/top_level.txt,sha256=1lzt0_uCSEF2gxkF5aVIIgfA8mVB9IRLAOhjyDYWFWE,6
