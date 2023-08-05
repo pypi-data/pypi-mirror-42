@@ -1,0 +1,9 @@
+README.md
+setup.py
+configuration/__init__.py
+configuration/config.py
+python_config_service/__init__.py
+python_config_service.egg-info/PKG-INFO
+python_config_service.egg-info/SOURCES.txt
+python_config_service.egg-info/dependency_links.txt
+python_config_service.egg-info/top_level.txt
