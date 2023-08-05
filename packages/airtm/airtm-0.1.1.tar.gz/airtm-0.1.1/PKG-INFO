@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: airtm
+Version: 0.1.1
+Summary: Library for AirTM's API
+Home-page: https://bitbucket.org/airtm/payments-sdk-python
+Author: AirTM
+Author-email: partners@airtm.io
+License: UNKNOWN
+Description: A python library for interfacing with the AirTM API.
+Keywords: airtm,api
+Platform: UNKNOWN
