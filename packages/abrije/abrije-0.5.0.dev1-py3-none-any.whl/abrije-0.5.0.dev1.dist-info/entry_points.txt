@@ -1,0 +1,3 @@
+[console_scripts]
+abrije = abrije.abrije:main
+
