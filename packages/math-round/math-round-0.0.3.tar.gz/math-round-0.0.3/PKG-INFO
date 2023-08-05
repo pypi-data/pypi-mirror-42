@@ -1,0 +1,42 @@
+Metadata-Version: 1.1
+Name: math-round
+Version: 0.0.3
+Summary: Mathematical rounding for python 3
+Home-page: https://github.com/anisov/math-round
+Author: Anisov Dmitriy
+Author-email: dimaanisov24@gmail.com
+License: MIT
+Description: Mathematical rounding in Python 3
+        =================================
+        
+        
+        This package is designed for using mathematical rounding. This type of rounding was used by function - round () in python 2.
+        
+        Quick start
+        ===========
+        
+        #. Install this package using pip::
+        
+            pip install math-round
+        
+        #. Import **mround** function from **math_round** package.
+        #. Use like this::
+        
+            mround(12.123) # - > 12
+            mround(12.123, 1) # -> 12.1
+        #. To replace the standard function - round () in the whole project, write the following in the main __init__ file: ::
+        
+            import builtins
+            from math_round import mround
+        
+        
+            builtins.round = mround
+        
+Keywords: math,round,math-round
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
