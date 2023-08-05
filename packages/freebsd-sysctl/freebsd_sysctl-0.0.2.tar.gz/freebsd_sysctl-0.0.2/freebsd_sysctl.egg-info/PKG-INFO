@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: freebsd-sysctl
+Version: 0.0.2
+Summary: A native Python module for FreeBSD sysctl.
+Home-page: https://github.com/gronke/py-freebsd_sysctl
+Author: Stefan Grönke
+Author-email: stefan@gronke.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
