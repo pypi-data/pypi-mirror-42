@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: duet-studio
+Version: 0.0.0
+Summary: Web-based environment for writing lonestar code and viewing data
+Home-page: UNKNOWN
+Author: Jim Kitchen
+Author-email: jim22k@gmail.com
+License: UNKNOWN
+Description: # Duet
+        
+        Duet is a web-based environment for writing code and viewing data simlutaneously.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
