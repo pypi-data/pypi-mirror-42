@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pysherasync/__init__.py
+pysherasync/pysherasync.py
+pysherasync.egg-info/PKG-INFO
+pysherasync.egg-info/SOURCES.txt
+pysherasync.egg-info/dependency_links.txt
+pysherasync.egg-info/not-zip-safe
+pysherasync.egg-info/requires.txt
+pysherasync.egg-info/top_level.txt
