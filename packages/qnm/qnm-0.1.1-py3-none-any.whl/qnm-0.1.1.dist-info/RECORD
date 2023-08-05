@@ -1,0 +1,17 @@
+qnm/__init__.py,sha256=5QjK1DWtgAGWTo1VGvZUGRJMSdWJtMr9QIjgmIxHftg,1473
+qnm/_version.py,sha256=rnObPjuBcEStqSO0S6gsdS_ot8ITOQjVj_-P1LUUYpg,22
+qnm/angular.py,sha256=LDqijnn_3m4o6muPQDh1Q3_BWzPn_LcAhyhpljbqwBw,3468
+qnm/contfrac.py,sha256=Py71Du8I4uYLP0EETI8EweTd3QGLH9Fq9TaJt2mWAbk,3578
+qnm/nearby.py,sha256=PFHKYtrT9e7ezTjvZ6l6DD2-doPT_c7m9Agb84BoxtQ,6800
+qnm/radial.py,sha256=f7AgAvD4UqCUw_ugTJYNLe9eYYufxlXlonTLrNzOrjE,4512
+qnm/spinsequence.py,sha256=2aclRFX2m64RnA5O3a1TizFb_RmABttKvJHDRQ5wIdA,12202
+qnm/schwarzschild/__init__.py,sha256=0uTOjgodvN3UlIG2jYQsF3Ipv4kHduOLyx5hSsRkwfk,235
+qnm/schwarzschild/approx.py,sha256=Wzk7v63bhqNdARVzXep0jyEx2cGDzKNVnNapgV836t4,1399
+qnm/schwarzschild/overtonesequence.py,sha256=rOodSuHkjdklxUT6J0GWBSGw_zqrXt9Vgr8yFeZYd-s,7667
+qnm/schwarzschild/tabulated.py,sha256=GxKWo3XqHMRZw_wj1VJTylSPdDNiUYGHutFnnu0A2ro,5242
+qnm/schwarzschild/data/Schw_dict.pickle,sha256=3Jh17Kt8N5VtkgGqQ30sd34s5ASDZiK1-ntlvisSa7M,88588
+qnm-0.1.1.dist-info/LICENSE,sha256=2ggKeZvSOg1GHmoziW5KQPLlwDPhWIKmSj9285fSBzE,1069
+qnm-0.1.1.dist-info/METADATA,sha256=U14H-UCzJQPadxrqxDfx_lsC8xXr6LwxGYYayYD67io,792
+qnm-0.1.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+qnm-0.1.1.dist-info/top_level.txt,sha256=-T_Ibrgc6O_pzdJJBXIJ9VmEOvU0LXkL3faayypDdr0,4
+qnm-0.1.1.dist-info/RECORD,,

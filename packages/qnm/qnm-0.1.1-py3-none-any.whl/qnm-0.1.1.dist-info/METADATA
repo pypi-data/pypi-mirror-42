@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: qnm
+Version: 0.1.1
+Summary: Calculate quasinormal modes of Kerr black holes.
+Home-page: https://github.com/duetosymmetry/qnm/
+Author: Leo C. Stein
+Author-email: leo.stein@gmail.com
+License: UNKNOWN
+Keywords: black-holes
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: scipy
+
+# qnm
+Python implementation of Cook-Zalutskiy spectral approach to computing Kerr QNM frequencies
+
+
