@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pyShelly
+Version: 0.0.2
+Summary: Library for Shelly smart home devices
+Home-page: https://github.com/StyraHem/pyShelly
+Author: StyraHem / Tarra AB
+Author-email: info@styrahem.se
+License: UNKNOWN
+Description: Library for Shelly smart home devices
+        
+        Features:
+        - Discover devices
+        - Monitor status
+        - Control (turn on/off etc)
+        
+        Devices supported:
+        - Shelly 1
+        - Shelly 2 (relay or roller mode)
+        - Shelly 4 (no power meter)
+        - Shelly PLUG (no power meter)
+        - Shelly BULB (only on/off)
+        - Shelly RGBWW (only on/off)
+        
+        Comming soon:
+        - Shelly RGBW2
+        - Shelly 2.5
+        - Shelly PLUG S
+        - Shelly H&T
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
