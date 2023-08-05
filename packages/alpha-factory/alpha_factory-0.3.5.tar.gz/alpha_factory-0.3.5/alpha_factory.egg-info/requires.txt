@@ -1,0 +1,5 @@
+RNWS>=0.2.1
+single_factor_model>=0.3.2
+data_box
+alphalens
+empyrical
