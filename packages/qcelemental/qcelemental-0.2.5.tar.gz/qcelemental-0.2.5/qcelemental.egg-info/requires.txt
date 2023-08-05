@@ -1,0 +1,14 @@
+numpy
+pint
+pydantic>=0.19
+
+[docs]
+numpydoc
+sphinx
+sphinxcontrib-napoleon
+sphinx_rtd_theme
+
+[tests]
+deepdiff
+pytest
+pytest-cov
