@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: flashgamma
+Version: 0.0.1
+Summary: Analysis of radiotherapy dose distributions
+Home-page: https://github.com/samuelpeet/flashgamma
+Author: Samuel Peet
+Author-email: samuel.peet.physics@gmail.com
+License: UNKNOWN
+Description: # flashgamma
+        Analysis of radiotherapy dose distributions
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

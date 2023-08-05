@@ -1,0 +1,12 @@
+README.md
+setup.py
+flashgamma/__init__.py
+flashgamma/algorithms.py
+flashgamma/distribution.py
+flashgamma/gamma_evaluation_c.c
+flashgamma/helpers.py
+flashgamma.egg-info/PKG-INFO
+flashgamma.egg-info/SOURCES.txt
+flashgamma.egg-info/dependency_links.txt
+flashgamma.egg-info/requires.txt
+flashgamma.egg-info/top_level.txt
