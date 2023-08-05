@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: pyftpd-sink
+Version: 0.4.1
+Summary: write-only ftp server
+Home-page: https://git.hammerle.me/fphammerle/pyftpd-sink
+Author: Fabian Peter Hammerle
+Author-email: fabian@hammerle.me
+License: MIT
+Keywords: ftp,server
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: File Transfer Protocol (FTP)
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Dist: pyftpdlib (>=1.5.4)
+
+UNKNOWN
+
+
