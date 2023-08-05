@@ -1,0 +1,11 @@
+_regex.pyd,sha256=ItJSniidexyqgKraKJBxAlNsQnD0qFQXRAsruPnrUnU,477696
+_regex_core.py,sha256=SsCMf87vfIVkg0aiAUK5XjnbHeNv4aNwL0D0V4lVfNY,141089
+regex.py,sha256=Bd-sQ8lVAlf5Sox8hvfaAMU3W-vQucld4tmTQN6KlGY,30867
+test_regex.py,sha256=igwgONnZF41B1Wj4FTBlohwwQ4B5MwKLkeLxVCly8D0,196563
+regex-2019.02.18.dist-info/DESCRIPTION.rst,sha256=LrnJvaOna_BFnCMpA_yjF47Z7AFhqFZZMl2_d7WMem0,34429
+regex-2019.02.18.dist-info/METADATA,sha256=DlKYvbUoY_YCiIlwqdyuMbQXoC_Vwpk7UFLS7RvtGV4,35471
+regex-2019.02.18.dist-info/RECORD,,
+regex-2019.02.18.dist-info/WHEEL,sha256=Xful7Q1b77XHlTYxdWrV05Eb2DGHDg3TpgDGIUXVBsE,101
+regex-2019.02.18.dist-info/metadata.json,sha256=mkYZkj7hZexRs84KnhhdXjJOumGgyZu1r-NwZ7P2ZzE,867
+regex-2019.02.18.dist-info/top_level.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+regex-2019.02.18.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
