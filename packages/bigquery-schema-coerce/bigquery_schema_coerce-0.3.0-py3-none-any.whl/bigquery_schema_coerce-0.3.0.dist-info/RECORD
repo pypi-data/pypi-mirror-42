@@ -1,0 +1,10 @@
+bigquery_schema_coerce/__init__.py,sha256=Mx1lQEbq69f2Ur7RLpZHYjWQRf0OkM8jbGiCLqlF3bM,62
+bigquery_schema_coerce/core.py,sha256=DcP_WDCrnvLQmDTUlw2LCtRyY5bdFPyjPVM19ZyqOVU,2640
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_core.py,sha256=xQLtu4Dy91C1jiFX2zLcZqDBOsOh0h4L4RgnLUyjsNo,1002
+bigquery_schema_coerce-0.3.0.dist-info/LICENSE,sha256=EqxQR_KvBSLwZ5ixWJ_8RZm8KckflU14dOAyBjTnd8A,35122
+bigquery_schema_coerce-0.3.0.dist-info/METADATA,sha256=m9DfTaka_89aSn53HTSUP9zXxM1cNDsOQKD-Xh2qt5A,617
+bigquery_schema_coerce-0.3.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+bigquery_schema_coerce-0.3.0.dist-info/top_level.txt,sha256=_6bUIxoLfPEtpNvw3WJhsoYtb0BGGWeWqu_BoFeCKjA,29
+bigquery_schema_coerce-0.3.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+bigquery_schema_coerce-0.3.0.dist-info/RECORD,,
