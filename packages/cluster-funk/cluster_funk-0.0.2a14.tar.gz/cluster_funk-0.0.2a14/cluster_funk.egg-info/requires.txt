@@ -1,0 +1,6 @@
+tinydb
+boto3
+colorlog
+jinja2
+pyyaml
+fabric
