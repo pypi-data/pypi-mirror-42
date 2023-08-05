@@ -1,0 +1,7 @@
+scrapy_rabbitmq_publisher/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scrapy_rabbitmq_publisher/pipelines.py,sha256=s8nkV6FilUBqiYg-sJfzIx3LN_o9vBPp6SCDF6PpFnA,2296
+scrapy_rabbitmq_publisher-0.1.4.dist-info/LICENSE,sha256=JNZKY2Mm9672PvZqlQEhbE9rrjVjUuQa4O1JsxZCcMw,1052
+scrapy_rabbitmq_publisher-0.1.4.dist-info/METADATA,sha256=ZiBne02PzgY_Y9zBu5G952mtONwbNNefWNHus_bSLYc,1177
+scrapy_rabbitmq_publisher-0.1.4.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+scrapy_rabbitmq_publisher-0.1.4.dist-info/top_level.txt,sha256=bd57otEzNj2xNv4CqPBWCyNfHUyOSVIAx22OPJhCRSY,26
+scrapy_rabbitmq_publisher-0.1.4.dist-info/RECORD,,
