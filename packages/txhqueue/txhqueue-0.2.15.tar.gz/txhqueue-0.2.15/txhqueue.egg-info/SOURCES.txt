@@ -1,0 +1,8 @@
+README.md
+setup.py
+txhqueue/__init__.py
+txhqueue.egg-info/PKG-INFO
+txhqueue.egg-info/SOURCES.txt
+txhqueue.egg-info/dependency_links.txt
+txhqueue.egg-info/top_level.txt
+txhqueue/consumer/__init__.py
