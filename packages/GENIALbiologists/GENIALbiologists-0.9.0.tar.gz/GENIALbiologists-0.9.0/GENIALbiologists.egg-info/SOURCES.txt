@@ -1,0 +1,13 @@
+README.md
+setup.py
+GENIALbiologists.egg-info/PKG-INFO
+GENIALbiologists.egg-info/SOURCES.txt
+GENIALbiologists.egg-info/dependency_links.txt
+GENIALbiologists.egg-info/not-zip-safe
+GENIALbiologists.egg-info/requires.txt
+GENIALbiologists.egg-info/top_level.txt
+src/GENIAL
+src/GENIALanalysis
+src/GENIALmultidb
+src/GENIALresults
+src/update_databases
