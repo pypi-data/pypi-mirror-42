@@ -1,0 +1,17 @@
+README.md
+setup.py
+terse/__init__.py
+terse/in_directory.py
+terse/invoke.py
+terse/on_exit.py
+terse.egg-info/PKG-INFO
+terse.egg-info/SOURCES.txt
+terse.egg-info/dependency_links.txt
+terse.egg-info/top_level.txt
+terse/future/__init__.py
+terse/future/on_exit.py
+terse/test/__init__.py
+terse/test/test_chdir.py
+terse/test/test_invoke.py
+terse/test/test_invoke_helper.py
+terse/test/test_on_exit.py
