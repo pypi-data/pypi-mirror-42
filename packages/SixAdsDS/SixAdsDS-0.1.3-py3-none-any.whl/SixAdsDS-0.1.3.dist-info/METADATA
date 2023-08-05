@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: SixAdsDS
+Version: 0.1.3
+Summary: Generic functions for SixAds data science projects
+Home-page: https://bitbucket.org/eligijus112/sixadsml/
+Author: Eligijus Bujokas
+Author-email: eligijus@sixads.net
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: inflection
+Requires-Dist: nltk
+Requires-Dist: pandas
+Requires-Dist: sqlalchemy
+Requires-Dist: PyYAML
+Requires-Dist: keras
+Requires-Dist: tensorflow
+Requires-Dist: sklearn
+Requires-Dist: tqdm
+Requires-Dist: pymysql
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+Requires-Dist: requests
+
+# SixAds data science package
+
+This package contains functions that are used in various six ads data science projects.
+
+# Installation
+
+In an anaconda prompt type (windows users):
+
+```console
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install SixAdsDS
+```
+
+# Modules
+
+## Clean_text
+
+Functions to clean and preprocess textual data. 
+
+## Sql_utility 
+
+Functions to read, write and alter information in the database.
+
+## Utility
+
+Utility functions.
+
+## Embeddings
+
+Functions to deal with word embeddings.
+
+## Images 
+
+Utility functions for dealing with images. The main library here is *cv2*.
+
