@@ -1,0 +1,11 @@
+six
+Flask>=0.11
+marshmallow==2.18.0
+marshmallow_jsonapi
+sqlalchemy
+
+[docs]
+sphinx
+
+[tests]
+pytest
