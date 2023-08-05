@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: karix
+Version: 2.0.0
+Summary: Python helper for karix.io
+Home-page: https://github.com/karixtech/karix-python
+Author: UNKNOWN
+Author-email: support@karix.io
+License: UNKNOWN
+Keywords: sms,karix
+Platform: UNKNOWN
+Requires-Dist: urllib3 (>=1.15)
+Requires-Dist: six (>=1.10)
+Requires-Dist: certifi
+Requires-Dist: python-dateutil
+
+Karix API lets you interact with the Karix platform using an omnichannel messaging API. It also allows you to query your account, set up webhooks and buy phone numbers.   # noqa: E501
+
+
