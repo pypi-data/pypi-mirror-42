@@ -1,0 +1,17 @@
+README.md
+setup.py
+webguitest/__init__.py
+webguitest/checkGraphic.py
+webguitest/clickGraphic.py
+webguitest/clickName.py
+webguitest/clickTextElement.py
+webguitest/enterValue.py
+webguitest/enterValueToGraphic.py
+webguitest/enterValueToName.py
+webguitest/getValueFromName.py
+webguitest/openBrowser.py
+webguitest/setValueOfName.py
+webguitest_scubbx.egg-info/PKG-INFO
+webguitest_scubbx.egg-info/SOURCES.txt
+webguitest_scubbx.egg-info/dependency_links.txt
+webguitest_scubbx.egg-info/top_level.txt
