@@ -1,0 +1,9 @@
+god_mode/__init__.py,sha256=E9nBYBMzQc3F6goiPGCf_imDZAYZs0Cs8WOuXlOaleM,17
+god_mode/crypt.py,sha256=zys9Ylzy7c2pwkVafVLELy5eT3byc08Rqewl9Yp_sU4,10722
+god_mode/metadata_rw.py,sha256=PNe0Ql7YCYGJCH8Os4C86TurhBlvRgYiYO748Ze-Bhk,777
+god_mode-0.0.12.dist-info/LICENCE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+god_mode-0.0.12.dist-info/METADATA,sha256=3P7n1eoFsav-7XY760T0yaUnu2TDmK-Rcnu087p16hE,437
+god_mode-0.0.12.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+god_mode-0.0.12.dist-info/entry_points.txt,sha256=iO1Ytao9r7ci-XW9hhsVUpuG8DlhWMv1aa2LgBFkTEw,47
+god_mode-0.0.12.dist-info/top_level.txt,sha256=k3-1lY0mv3ZG3fWzuNh6pGB6qNi3th6hWw7uEJTz_sE,9
+god_mode-0.0.12.dist-info/RECORD,,
