@@ -1,0 +1,39 @@
+.coverage
+*.egg-info
+*.log
+*.mo
+*.py?
+*.swp
+# dirs
+/bin/
+/buildout-cache/
+/develop-eggs/
+/eggs/
+/htmlcov/
+/include/
+/lib/
+/local/
+/parts/
+/devsrc/
+/var/
+# files
+.installed.cfg
+.mr.developer.cfg
+/lib64
+log.html
+output.xml
+pip-selfcheck.json
+report.html
+node_modules
+# excludes
+!.coveragerc
+!.editorconfig
+!.gitattributes
+!.gitignore
+!.gitkeep
+!.travis.yml
+!.yarnrc
+!src/plone
+**/bin/
+**/news/
+!/news/
