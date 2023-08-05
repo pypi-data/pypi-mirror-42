@@ -1,0 +1,2 @@
+[console_scripts]
+ansible-compose = ansible_compose:console_script
