@@ -1,0 +1,12 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+ledger-py/__init__.py
+ledger-py/ledger.py
+ledger_py.egg-info/PKG-INFO
+ledger_py.egg-info/SOURCES.txt
+ledger_py.egg-info/dependency_links.txt
+ledger_py.egg-info/not-zip-safe
+ledger_py.egg-info/requires.txt
+ledger_py.egg-info/top_level.txt
