@@ -1,0 +1,17 @@
+README.md
+setup.py
+style_transfer/__init__.py
+style_transfer/stylize.py
+style_transfer.egg-info/PKG-INFO
+style_transfer.egg-info/SOURCES.txt
+style_transfer.egg-info/dependency_links.txt
+style_transfer.egg-info/requires.txt
+style_transfer.egg-info/top_level.txt
+style_transfer/cyclegan/__init__.py
+style_transfer/gatys/__init__.py
+style_transfer/gatys/neural_style.py
+style_transfer/gatys/neural_style_upload.py
+style_transfer/gatys/neural_style_wrapper.py
+style_transfer/gatys/nst.py
+style_transfer/gatys/nst_utils2.py
+style_transfer/gatys/rough.py
