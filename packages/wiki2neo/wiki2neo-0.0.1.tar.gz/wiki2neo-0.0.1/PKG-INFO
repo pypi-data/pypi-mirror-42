@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: wiki2neo
+Version: 0.0.1
+Summary: Create import CSVs for a Neo4j Wikipedia Page graph
+Home-page: https://github.com/SteadBytes/wiki2neo
+Author: Ben Steadman
+Author-email: steadmanben1@gmail.com
+License: MIT
+Description: 
+        # wiki2neo
+        
+        Produce [Neo4j](https://neo4j.com/) import CSVs from [Wikipedia database dumps](https://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia)
+        to build a graph of links between Wikipedia pages.
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
