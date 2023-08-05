@@ -1,0 +1,26 @@
+family: null
+taskRoleArn: null
+executionRoleArn: null
+containerDefinitions:
+  -
+    name: null
+    image: null
+    command: null
+    cpu: null
+    memory: null
+    portMappings:
+      -
+        containerPort: null
+        hostPort: 0
+        protocol: tcp
+    essential: true
+    environment: []
+    mountPoints: []
+    volumesFrom: []
+    logConfiguration:
+      logDriver:
+      options:
+volumes: []
+placementConstraints: []
+requiresCompatibilities:
+  - EC2
