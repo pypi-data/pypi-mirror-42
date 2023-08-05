@@ -1,0 +1,36 @@
+Metadata-Version: 1.0
+Name: sopel-modules.youtube
+Version: 0.1.2
+Summary: YouTube module for Sopel
+Home-page: http://github.com/sopel-irc/sopel-youtube
+Author: E. Powell
+Author-email: powell.518@gmail.com
+License: Eiffel Forum License, version 2
+Description: # Sopel YouTube Module
+        
+        YouTube module for Sopel
+        
+        ## Getting your API key
+        Go to the [Google Developers Console](https://console.developers.google.com/)
+        and create an application. When it's created, go to the APIs section, select
+        the YouTube Data API and enable it. Then go to the Credentials section,
+        select "Add credentials", pick "API key", and then "Server key". You can enter
+        a name for it and limit the IPs it can be used from, but you don't have to.
+        Copy the value it gives you into the prompt in the config wizard, or the
+        `api_key` value of the config in the `[youtube]` section.
+        
+        
+        Changes between 0.1.1 and 0.1.2
+        ===============================
+        * Fix error when video comments are disabled
+        * Improve duration parser
+        * Restrict google-api-python-client to compatible version range
+        * Fix version-number import issue during installation
+        
+        Changes between 0.1.0 and 0.1.1
+        ===============================
+        * Output is colorized
+        * Fix configuration wizard
+        * pip installation works regardless of pip version
+        
+Platform: UNKNOWN
