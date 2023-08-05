@@ -1,0 +1,3 @@
+[pytest11]
+mock-api = pytest_mock_api
+

@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+pytest_mock_api.py
+setup.py
+pytest_mock_api.egg-info/PKG-INFO
+pytest_mock_api.egg-info/SOURCES.txt
+pytest_mock_api.egg-info/dependency_links.txt
+pytest_mock_api.egg-info/entry_points.txt
+pytest_mock_api.egg-info/requires.txt
+pytest_mock_api.egg-info/top_level.txt
