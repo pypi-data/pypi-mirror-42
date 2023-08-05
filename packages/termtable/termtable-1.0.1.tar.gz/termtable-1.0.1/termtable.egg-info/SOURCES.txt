@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+termtable/__init__.py
+termtable/colour_helpers.py
+termtable/utils.py
+termtable.egg-info/PKG-INFO
+termtable.egg-info/SOURCES.txt
+termtable.egg-info/dependency_links.txt
+termtable.egg-info/requires.txt
+termtable.egg-info/top_level.txt
