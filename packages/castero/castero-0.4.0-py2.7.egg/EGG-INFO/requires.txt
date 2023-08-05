@@ -1,0 +1,9 @@
+requests
+cjkwrap
+python-vlc
+python-mpv
+
+[test]
+pytest
+coverage
+codecov
