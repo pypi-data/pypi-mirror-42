@@ -1,0 +1,11 @@
+audiomentations/__init__.py,sha256=IXkeVevbAPlvkz9LnD2D_0LW6NlomnvbGoOirYLkgGo,139
+audiomentations/augmentations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+audiomentations/augmentations/transforms.py,sha256=rAapzGyAiNZTwwcA20OqfWDEouPb7BK3DMLsK1FJtIg,295
+audiomentations/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+audiomentations/core/composition.py,sha256=ewQfmfkliRgk4-4a7EDGYguaTQmJBPR4SUmPKEd1oAI,356
+audiomentations/core/transforms_interface.py,sha256=hxmdKrkrO1-5hLMZ-003VKE-GjEJiuwTVwywYu0217A,340
+audiomentations-0.1.0.dist-info/LICENSE,sha256=-oFdyJtk-qF9ve3Dctp7FOtTTqzN7rw5yjxqVBPlhec,1089
+audiomentations-0.1.0.dist-info/METADATA,sha256=YTW0RkUH1-w15-AsQZ50cLfDiQiPsoLYoJXhZ7xAHpg,618
+audiomentations-0.1.0.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+audiomentations-0.1.0.dist-info/top_level.txt,sha256=d8cEt2nsjMCQLi7aTJeUKc8395bkx2yMP2-VbgYr4KU,16
+audiomentations-0.1.0.dist-info/RECORD,,

@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: audiomentations
+Version: 0.1.0
+Summary: A library for audio data augmentation. Inspired by albumentations.
+Home-page: https://github.com/iver56/audiomentations
+Author: Iver Jordal
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown
+Requires-Dist: numpy (>=1.13.0)
+
+# Audiomentations
+
+A python library for doing audio data augmentation
+
+
