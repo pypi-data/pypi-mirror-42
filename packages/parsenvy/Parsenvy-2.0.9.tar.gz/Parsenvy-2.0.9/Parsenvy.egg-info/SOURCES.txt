@@ -1,0 +1,8 @@
+README.rst
+setup.py
+Parsenvy.egg-info/PKG-INFO
+Parsenvy.egg-info/SOURCES.txt
+Parsenvy.egg-info/dependency_links.txt
+Parsenvy.egg-info/top_level.txt
+parsenvy/__init__.py
+parsenvy/parsenvy.py
