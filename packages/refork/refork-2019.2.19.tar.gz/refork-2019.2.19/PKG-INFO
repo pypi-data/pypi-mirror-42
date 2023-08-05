@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: refork
+Version: 2019.2.19
+Summary: re-fork git repo
+Home-page: https://github.com/looking-for-a-job/refork
+License: UNKNOWN
+Description: [![](https://img.shields.io/badge/OS-Unix-blue.svg?longCache=True)]()
+        [![](https://img.shields.io/pypi/pyversions/refork.svg?longCache=True)](https://pypi.org/project/refork/)
+        
+        <b>re-fork git repo</b>
+        
+        #### Install
+        ```bash
+        $ [sudo] pip install refork
+        ```
+        
+        #### CLI
+        ```bash
+        usage: refork [url]
+        ```
+        
+        #### Examples
+        ```bash
+        $ cd path/to/forked-repo
+        $ refork git@github.com:wbond/package_control_channel.git # url required 1 time only
+        ```
+        
+        <p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+Keywords: refork git
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: Unix
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
