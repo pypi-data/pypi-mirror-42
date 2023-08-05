@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ElasticSearchSparkLoader
+Version: 1.0.2
+Summary: A module for parallel-bulk-loading a Spark Dataframe or RDD into ElasticSearch.
+Home-page: https://github.com/GregCKrause/ElasticSearchSparkLoader
+Author: Greg Krause
+Author-email: GregCKrause@gmail.com
+License: UNKNOWN
+Description: Utilizes the Python ElasticSearch module to perform a distributed, parallelized ElasticSearch bulk-load on a given Spark RDD or Dataframe.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
