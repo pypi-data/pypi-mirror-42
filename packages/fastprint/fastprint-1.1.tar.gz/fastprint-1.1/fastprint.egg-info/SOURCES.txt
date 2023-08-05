@@ -1,0 +1,8 @@
+README.md
+setup.py
+fastprint/__init__.py
+fastprint/fastprint.py
+fastprint.egg-info/PKG-INFO
+fastprint.egg-info/SOURCES.txt
+fastprint.egg-info/dependency_links.txt
+fastprint.egg-info/top_level.txt
