@@ -1,0 +1,10 @@
+README.md
+setup.py
+pydonodoo/__init__.py
+pydonodoo/donodoo.py
+python_donodoo.egg-info/PKG-INFO
+python_donodoo.egg-info/SOURCES.txt
+python_donodoo.egg-info/dependency_links.txt
+python_donodoo.egg-info/not-zip-safe
+python_donodoo.egg-info/requires.txt
+python_donodoo.egg-info/top_level.txt
