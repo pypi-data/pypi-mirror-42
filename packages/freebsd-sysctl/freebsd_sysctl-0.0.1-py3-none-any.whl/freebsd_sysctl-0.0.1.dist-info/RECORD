@@ -1,0 +1,8 @@
+freebsd_sysctl/__init__.py,sha256=8epvTMWTQnh_rGbHxeLev1KSsXpZd3ScKQej4CHTD0U,10528
+freebsd_sysctl/__version__.py,sha256=JK1HOitbQYhBWHBJ_AlaJbpoJu7YoCMUlTv0dUAnQrg,62
+freebsd_sysctl/libc.py,sha256=f0X-TFg-XcUT_TO1Z2XWwF5dSiha2FEVkBVr0myqhBQ,1373
+freebsd_sysctl-0.0.1.dist-info/LICENSE.txt,sha256=JfJHr_Sw68Poq-9lqQqnR6qqW7X74lJ-K9jgH3MS8sg,1250
+freebsd_sysctl-0.0.1.dist-info/METADATA,sha256=vnmJm21H9Y-eh8O8dvGzUOulmLUmv0tk0zhgitNHkBE,289
+freebsd_sysctl-0.0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+freebsd_sysctl-0.0.1.dist-info/top_level.txt,sha256=AZ6g-GAf1KrCcWtkGilAA1LmJDhWu1moVWoVs2Li6DU,15
+freebsd_sysctl-0.0.1.dist-info/RECORD,,
