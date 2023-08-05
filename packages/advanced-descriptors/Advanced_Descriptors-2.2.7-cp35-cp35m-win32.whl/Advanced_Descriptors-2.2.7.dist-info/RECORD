@@ -1,0 +1,12 @@
+Advanced_Descriptors-2.2.7.dist-info/METADATA,sha256=XMrpb22kEP4iPsiwhS5eOqOEnHemFLUgiNafxZpnu4s,8211
+Advanced_Descriptors-2.2.7.dist-info/RECORD,,
+Advanced_Descriptors-2.2.7.dist-info/WHEEL,sha256=bUVlUcNgUqJ_dxWxr1raWvAfi-FuwSLv_y3ypiOZIeU,102
+Advanced_Descriptors-2.2.7.dist-info/top_level.txt,sha256=2g0oA1iN3algEyqt3onbpQ6JXK4mhxSPbEW1CY8Kfsk,21
+advanced_descriptors/__init__.py,sha256=iC7xTGLBPa-tUtHva3ZJWuX4lRQQ0zUuNnU1mL_KccM,1682
+advanced_descriptors/advanced_property.cp35-win32.pyd,sha256=0QlJUGA7NhoIQRcHMTDhGCMP2SDsPvTIbNBG6a7-K6w,49664
+advanced_descriptors/advanced_property.py,sha256=TwGuzKb0A7Xy_XnSJ_kVnsZkl_qV-3x6XDGpjL4pySw,5956
+advanced_descriptors/log_on_access.cp35-win32.pyd,sha256=m4KKHU5XfnAWqeBGcPCULkKos2f2RgwKjqPAze-L7gk,117760
+advanced_descriptors/log_on_access.py,sha256=g3SlYGA5e2z6VQtV2u-KkAko7HEh4R_wxeYWuAwTB3M,15525
+advanced_descriptors/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+advanced_descriptors/separate_class_method.cp35-win32.pyd,sha256=uQOIDQYu9azV-tDAqm6K1XPIi7lGd-NpKIkHhSIOyFI,61440
+advanced_descriptors/separate_class_method.py,sha256=rVP7hvDSH9WGc4KUX_OquZ4rmciYMaSgPlO5HHMWhO4,6231
