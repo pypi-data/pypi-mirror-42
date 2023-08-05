@@ -1,0 +1,10 @@
+hand_detection_v6/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hand_detection_v6/hand_detection.py,sha256=fb6ByMsPFCtj0nkBD8mlxqEYGJ-3rhR04DjpJxBxxXs,6970
+hand_detection_v6/data/hand_label_map.pbtxt,sha256=ae6rC75rL_rJXfQg7uUirVFn3M6u8anmAFLuJl68njc,32
+hand_detection_v6/data/101968001/101968001_roleid_1_1532946600_out-video-jzccda1caa6f5544519191477b40c3030f_f_1532946591547_t_1532948297067.flv_01703.png,sha256=73OVWHMEA-dpZFpQTfqnJZHo4jRxixv2hrLaXwT67Sc,96766
+hand_detection_v6/models/frozen_inference_graph.pb,sha256=bBVfntMWfEyP64rMlzdVQV6stEvSBAjlvLqVJSvhCPg,27353010
+hand_detection_v6-0.4.1.dist-info/LICENSE,sha256=sw5R9x7YiaESz--wct2pp-gEY_aBiJlnEMnoPHzU0m4,1075
+hand_detection_v6-0.4.1.dist-info/METADATA,sha256=cARjUMbKAwdAYSE_8aRK8pgl8xLiibSsbEj7-veS6C4,497
+hand_detection_v6-0.4.1.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+hand_detection_v6-0.4.1.dist-info/top_level.txt,sha256=wP13Ktbv9jFqs-LCet6Zi8aL3ptgzbvH8A2NPtc0Ve0,66
+hand_detection_v6-0.4.1.dist-info/RECORD,,
