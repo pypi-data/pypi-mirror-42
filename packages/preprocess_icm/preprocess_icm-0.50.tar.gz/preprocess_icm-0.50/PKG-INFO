@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: preprocess_icm
+Version: 0.50
+Summary: Preprocessing incoming messages
+Home-page: UNKNOWN
+Author: Servicefriend
+Author-email: dev@servicefriend.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
