@@ -1,0 +1,17 @@
+gecosistema_core/__init__.py,sha256=QPxbZuLdCHM0AyV54lyfAXuaQ5gT5gPCKH4qOQxBNPw,1262
+gecosistema_core/compression.py,sha256=lKEaW4SKqDynxSyP9H5G8JN2IzAAjiyRJxAuSIvVyQM,3982
+gecosistema_core/datatypes.py,sha256=_Rih8u2M211N__TF4WGPx96mKHvIaQfdAQ9CXV8y988,6893
+gecosistema_core/excel.py,sha256=o3w9kS0Kv2xxw349XUKZ5j6DbJi5LRbEtyq6SZ-f2Bg,11164
+gecosistema_core/exceptions.py,sha256=083rc7kPCKm1nanUttiObhxWrac565UKc-91VIcRKVA,1111
+gecosistema_core/execution.py,sha256=upCTmBQNrWXsu0wl9luCthp6PeFKr2uHwu1EQ9OwWcI,5604
+gecosistema_core/filesystem.py,sha256=yHPNpLgsUCiksIdIoDwZl_XUl6Pir1rqglk9E2VQtwU,10136
+gecosistema_core/http.py,sha256=UQtm4sJyDYi4kS11guM-mtlKiNEdv39PvLj6uPpveYo,10807
+gecosistema_core/maths.py,sha256=wlEHFBWmozu3nIKD0zALH3Rc4C0ppujIpbLJtxa1OB4,1901
+gecosistema_core/platform.py,sha256=YLfKaP7OfdN1Rab05YSskjuvTGHdQWObHNnHRuprZXo,2590
+gecosistema_core/stime.py,sha256=k8JSxLBXJ7ksqJSOn4MnYhy8qpXJ8zT8uBqnR85ZEJM,4905
+gecosistema_core/strings.py,sha256=Ut4zbiJLrqfeJLjOaclpidghXu8KFbhE0nQnQuJAEM4,8659
+gecosistema_core/xml_utils.py,sha256=wqre2jIA_dlypsUPAvad4PT_P5la-_rrV4dkjEDZNOo,3173
+gecosistema_core-0.0.190.dist-info/METADATA,sha256=xXqW3UcNBKvLqiiwyMqkk7kWYNy51G8Z0tGcByblrhs,663
+gecosistema_core-0.0.190.dist-info/RECORD,,
+gecosistema_core-0.0.190.dist-info/WHEEL,sha256=oGGm_O4g839AJOrCbXq_ZxGrWdwSrjduga8Rn8cINEs,97
+gecosistema_core-0.0.190.dist-info/top_level.txt,sha256=zEESpId6VAlHBnv5tbOvv9EBncGz8Lm-c8RYleKG01k,17
