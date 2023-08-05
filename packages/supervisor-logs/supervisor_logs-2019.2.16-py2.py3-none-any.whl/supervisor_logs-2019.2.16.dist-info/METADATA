@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: supervisor-logs
+Version: 2019.2.16
+Summary: supervisor logs
+Home-page: https://github.com/looking-for-a-job/supervisor-logs.py
+License: UNKNOWN
+Keywords: supervisor log
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: public
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/pypi/pyversions/supervisor-logs.svg?longCache=True)](https://pypi.org/project/supervisor-logs/)
+
+#### Install
+```bash
+$ [sudo] pip install supervisor-logs
+```
+
+#### Functions
+function|`__doc__`
+-|-
+`supervisor_logs.add(path)`|add stdout_logfile and stderr_logfile to supervisor config sections
+`supervisor_logs.clear(path)`|clear log files
+`supervisor_logs.create(path)`|add stdout_logfile and stderr_logfile to supervisor config sections
+
+#### CLI
+usage|`__doc__`
+-|-
+`python -m supervisor_logs.add path ...`|add stdout_logfile and stderr_logfile to supervisor config sections
+`python -m supervisor_logs.clear path ...`|clear log files
+`python -m supervisor_logs.create path ...`|create stdout_logfile and stderr_logfile files
+
+#### Examples
+`file.ini` before
+```
+[program:name]
+```
+
+```bash
+$ export SUPERVISOR_LOGS=~/Library/Logs
+$ python -m supervisor_logs.add file.ini
+```
+
+`file.ini` after
+```
+[program:name]
+stderr_logfile = ~/Library/Logs/supervisor/name/err.log
+stdout_logfile = ~/Library/Logs/supervisor/name/out.log
+```
+
+```bash
+$ find . -name "*.ini" -exec supervisor_logs.add {} \;  # add logs to program sections
+$ find . -name "*.ini" -exec supervisor_logs.create {} \;  # create log files
+$ find . -name "*.ini" -exec supervisor_logs.clear {} \;  # clear log files
+```
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
