@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pybasic
+Version: 0.31.dev0
+Summary: A Python semi-beginner module
+Home-page: https://afsoft.eu/s/win95/
+Author: Henry Benson
+Author-email: tomfleetwitter@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+
+pybasic is a module aimed at Python beginners, when they've learned enough but don't remember much, this is the module.
+
+
