@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: sphinx-markdown-parser
+Version: 0.1.0
+Summary: A docutils-compatibility bridge to markdown, enabling you to write markdown with support for tables inside of docutils & sphinx projects.
+Home-page: https://github.com/codejamninja/sphinx-markdown-parser
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
