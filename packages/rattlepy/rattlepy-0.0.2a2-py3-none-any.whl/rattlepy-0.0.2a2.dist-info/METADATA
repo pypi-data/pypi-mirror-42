@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: rattlepy
+Version: 0.0.2a2
+Summary: A easy-to-use pure python HTML template engine
+Home-page: https://github.com/frodo821/Rattlepy
+Author: frodo821 <Twitter: @BoufrawFrodo2>
+Author-email: 1234567890.sakai.jp@gmail.com
+Maintainer: frodo821 <Twitter: @BoufrawFrodo2>
+Maintainer-email: 1234567890.sakai.jp@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Text Processing :: Markup :: XML
+
+UNKNOWN
+
+
