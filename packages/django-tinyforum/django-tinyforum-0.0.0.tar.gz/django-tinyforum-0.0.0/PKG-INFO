@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: django-tinyforum
+Version: 0.0.0
+Summary: Tiny forum for Django
+Home-page: http://github.com/matthiask/django-tinyforum/
+Author: Matthias Kestenholz
+Author-email: mk@feinheit.ch
+License: MIT License
+Description: ================
+        django-tinyforum
+        ================
+        
+        .. image:: https://travis-ci.org/matthiask/django-tinyforum.svg?branch=master
+           :target: https://travis-ci.org/matthiask/django-tinyforum
+        
+Platform: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3

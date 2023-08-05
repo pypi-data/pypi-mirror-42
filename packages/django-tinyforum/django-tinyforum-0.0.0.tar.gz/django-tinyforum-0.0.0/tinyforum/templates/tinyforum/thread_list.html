@@ -1,0 +1,68 @@
+{% extends "tinyforum/base.html" %}
+
+{% load i18n tinyforum staticfiles %}
+
+{% block extra-body-class %}forum{% endblock %}
+
+{% block title %}{% trans 'Forum' %} - {{ block.super }}{% endblock %}
+
+{% block main-region-content %}
+  <div class="forum__controls">
+
+    {% if user.is_authenticated %}
+      <a class="forum__add create-link" href="{% url 'tinyforum:thread-create' %}">{% trans "Create new thread" %}</a>
+    {% else %}
+      <a class="login-link forum__login-link" href="{% url 'login' %}">{% trans "Login" %}</a>
+    {% endif %}
+
+    <span class="thread-filter">
+      {% trans "Status" %}:
+      <a class="thread-filter__link{% if request.GET.status != "closed" %} thread-filter__link--active{% endif %}" href=".">{% trans "Active" %}</a>
+      <a class="thread-filter__link{% ifequal request.GET.status "closed" %} thread-filter__link--active{% endifequal %}" href="?status=closed">{% trans "Closed" %}</a>
+    </span>
+  </div>
+
+  <table class="thread-list">
+    <thead class="thread-list__header">
+      <tr>
+        <th class="thread-list__pin"></th>
+        <th class="thread-list__label"></th>
+        <th class="thread-list__title">{% trans 'Thread' %}</th>
+        <th class="thread-list__post-count">{% trans 'Posts' %}</th>
+        <th class="thread-list__author">{% trans 'Author' %}</th>
+        <th class="thread-list__latest-post">{% trans 'Latest post' %}</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for thread in object_list %}
+      <tr class="thread-list__row">
+        <td class="thread-list__pin">
+          {% if thread.is_pinned %}<img src="{% static "webapp/images/pin.svg" %}" alt="{% trans "Pinned" %}" />{% endif %}
+        </td>
+        <td class="thread-list__label">
+          {% thread_star thread %}
+        </td>
+        <td class="thread-list__title">
+
+          <a href="{{ thread.get_absolute_url }}">
+            {{ thread.title }}
+          </a>
+        </td>
+        <td class="thread-list__post-count">{{ thread.post_count }}</td>
+        <td class="thread-list__author">{{ thread.authored_by.profile }}</td>
+        <td class="thread-list__latest-post">
+          <a href="{{ thread.get_absolute_url }}?page=last">
+            <time datetime="{{ thread.latest_post.created_at|date:'Y-m-d\TH:i' }}">{{ thread.latest_post.created_at|date:'j.m.Y H:i' }}</time><br />
+            {{ thread.latest_post.authored_by.profile }}
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+{% include "tinyforum/pagination.html" %}
+
+{% endblock %}
