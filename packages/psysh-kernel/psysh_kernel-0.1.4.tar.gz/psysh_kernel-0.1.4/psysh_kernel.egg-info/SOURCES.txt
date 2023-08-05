@@ -1,0 +1,13 @@
+README.md
+setup.py
+psysh_kernel/__init__.py
+psysh_kernel/__main__.py
+psysh_kernel/kernel.json
+psysh_kernel/kernel.py
+psysh_kernel.egg-info/PKG-INFO
+psysh_kernel.egg-info/SOURCES.txt
+psysh_kernel.egg-info/dependency_links.txt
+psysh_kernel.egg-info/requires.txt
+psysh_kernel.egg-info/top_level.txt
+psysh_kernel/../assets/logo-32x32.png
+psysh_kernel/../assets/logo-64x64.png
