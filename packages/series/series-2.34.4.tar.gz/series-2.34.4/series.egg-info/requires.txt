@@ -1,0 +1,10 @@
+amino~=12.3.0
+golgi~=1.9.3
+tek-utils~=3.9.8
+requests==2.19.1
+sqlpharmacy==3.0.0
+lxml==4.2.3
+flask==0.12.2
+alembic==0.9.10
+tvrampage==1.0.5
+guessit==3.0.0
