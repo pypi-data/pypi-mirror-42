@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pingping
+Version: 0.0.1
+Summary: Understanding multi languge ping and it's result
+Home-page: https://github.com/network-tools/pingping
+Author: Kiran Kumar Kotari
+Author-email: kotarikirankumar@gmail.com
+License: UNKNOWN
+Keywords: network conf parser translator cisco show output parser
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# pingping
+
+coming soon..
+
+
