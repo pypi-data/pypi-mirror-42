@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: luparnet
+Version: 0.1.1
+Summary: A small basic neural network package
+Home-page: https://github.com/lupeboy2/luparnet
+Author: Nick Lupariello
+Author-email: nicklupe13@gmail.com
+License: UNKNOWN
+Description: # Luparnet
+            **Luparnet** is a barebones machine learning that creates a simple class "net". This
+        network can then be trained.
+        
+        
+        
+        
+        ## Methods
+        	The network takes only two arguments in the constructor, the first being
+        the desired number of layers and the second being an array of the data dimensions.
+        The train function takes three arguments with an option for overload. The function
+        takes first the number of epochs to train for, the second is the input data, the
+        third is the output data. The final argument is an integer which allows for debugging
+        and user training.
+        
+        
+        
+        
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
