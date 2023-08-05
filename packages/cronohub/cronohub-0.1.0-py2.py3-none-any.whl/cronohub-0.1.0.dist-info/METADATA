@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: cronohub
+Version: 0.1.0
+Summary: Archive your github repositories to anywhere you want.
+Home-page: https://github.com/cronohub
+Author: Gergely Brautigam
+Author-email: gergely.brautigam@gmail.com
+License: LICENSE.txt
+Keywords: cli,git
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: PyGithub
+Requires-Dist: setuptools
+Requires-Dist: wheel
+
+Cronohub
+========
+
+Archive from anywhere to anywhere.
+
+How does it work?
+=================
+
+Install
+=======
+
+Usage
+=====
+
+Plugins
+=======
+
+
