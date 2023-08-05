@@ -1,0 +1,14 @@
+aicsmlsegment/__init__.py,sha256=VuKRsH2B8rug7OkkYWOsHyqyzbpOEJSt_xaEIf8hzdI,92
+aicsmlsegment/custom_loss.py,sha256=1JVgyQnKEZCp0mzO0PSEm-OVF_FJ9d0pacYkRU1tZlk,2485
+aicsmlsegment/model_utils.py,sha256=_uwuOKHEy-udm_vCwxcVcvBTri2VsE1bDNwyye5EYBU,5751
+aicsmlsegment/utils.py,sha256=P0-D6Oofp4dU_TTwRL0GgZYHJpsaEO7G7lUISIecYr4,10415
+aicsmlsegment/version.py,sha256=KYRv1jN33SrJBeDVI22RzuikbBEbJ_lu7zBo23ZmD_0,501
+aicsmlsegment/Net3D/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aicsmlsegment/Net3D/uNet_original.py,sha256=f4MNZ-x_wdAqdc197coZKPK80Bte1BUuChDoYH3Bb7g,4018
+aicsmlsegment/Net3D/unet_xy.py,sha256=Ek1btPBnwVcGXCbyMyKcypQxKI9HWZg9Q0g80Xzobgw,6228
+aicsmlsegment/Net3D/unet_xy_enlarge.py,sha256=AJbv525B1iELu-1w6IBr8O4DJX4Dthzif_fS8JEM_-4,6663
+aicsmlsegment-0.0.1.dist-info/LICENSE.txt,sha256=gsctuOxqO29keJMGsxNOdf0pduImJEaupoyeOv3vnNg,1854
+aicsmlsegment-0.0.1.dist-info/METADATA,sha256=A7H2w4yQOWmYqBIXM1biKU9BNu82-ra5Q5rnybSL3ag,1686
+aicsmlsegment-0.0.1.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+aicsmlsegment-0.0.1.dist-info/top_level.txt,sha256=Lp-uBcg4-d0ipLJrwYeaIzIA6JKbPtsa-MAt4WBOZo8,14
+aicsmlsegment-0.0.1.dist-info/RECORD,,
