@@ -1,0 +1,13 @@
+README.md
+setup.py
+gces_subsfm/__init__.py
+gces_subsfm.egg-info/PKG-INFO
+gces_subsfm.egg-info/SOURCES.txt
+gces_subsfm.egg-info/dependency_links.txt
+gces_subsfm.egg-info/entry_points.txt
+gces_subsfm.egg-info/not-zip-safe
+gces_subsfm.egg-info/requires.txt
+gces_subsfm.egg-info/top_level.txt
+tests/__init__.py
+tests/conftest.py
+tests/test_configurator.py

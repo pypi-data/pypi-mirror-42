@@ -1,0 +1,3 @@
+[console_scripts]
+gces-subsfm = gces_subsfm:main
+
