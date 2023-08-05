@@ -1,0 +1,10 @@
+dragonfly/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dragonfly/dragonfly.py,sha256=dTSK67Ua3oZM2ufpmuMhomqig5XK3SEfQczpBJpKZcE,6139
+dragonfly/examples.py,sha256=6Kd9F5meFCDGbE6oDXeCWZyaNEwkMQRjRLTQdgEehCA,3334
+dragonfly/util.py,sha256=RBAhGPXFg16lJFUfOiGOT0fTF2zWAFxLINLtHCnfREo,1630
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dragonfly_sync_lib-0.2.0.dist-info/LICENSE,sha256=B-N9OF82R_tlN7vnHHOZroVX8h1wofIqg4Y-xOsYom4,1100
+dragonfly_sync_lib-0.2.0.dist-info/METADATA,sha256=Y1iriTai_oMIyz7Hu5vWZogvgCZa5Tz1n7BQxCGGdBw,685
+dragonfly_sync_lib-0.2.0.dist-info/WHEEL,sha256=UpB-bp5SQQdekLv3_zfFAhrQBtaQjJZABvUiavkhjZ0,97
+dragonfly_sync_lib-0.2.0.dist-info/top_level.txt,sha256=o2QoBYPJ9mrT6s3Pp-o_kJLPj0Gg5p2A_cv645PIVTs,16
+dragonfly_sync_lib-0.2.0.dist-info/RECORD,,
