@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: ecasb2share
+Version: 0.0.1b0
+Summary: ecasb2share provides a python library to interact with B2SHARE REST API.
+Home-page: https://github.com/SofianeB/ECAS-B2SHARE
+Author: Sofiane Bendoukha
+Author-email: bendoukha@dkrz.de
+License: mit
+Description: ============
+        ECAS B2SHARE
+        ============
+        
+        
+        Python module to talk to B2SHARE HTTP REST API!
+        
+        .. note:: This module is not a B2SHARE client and is related to the ECAS use case.
+        
+        
+        How to install
+        ==============
+        
+        Using pip::
+        
+            pip install ecasb2share
+        
+        
+        
+        
+        ============
+        Contributors
+        ============
+        
+        * Sofiane Bendoukha <bendoukha@dkrz.de>
+        
+        =========
+        Changelog
+        =========
+        
+        Version 0.0.1-a0
+        ================
+        
+        - First basic operations implemented
+        
+        
+Keywords: ecas rest python eosc-hub b2share
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Bug Tracking
+Provides-Extra: testing
