@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: XStatic-mobx
+Version: 5.9.0.1
+Summary: mobx 5.9.0 (XStatic packaging standard)
+Home-page: https://mobx.js.org/
+Author: Thomas Waldmann
+Author-email: tw@waldmann-edv.de
+License: (same as mobx)
+Description: XStatic-mobx
+        --------------
+        
+        mobx javascript library packaged for setuptools (easy_install) / pip.
+        
+        This package is intended to be used by **any** project that needs these files.
+        
+        It intentionally does **not** provide any extra code except some metadata
+        **nor** has any extra requirements. You MAY use some minimal support code from
+        the XStatic base package, if you like.
+        
+        You can find more info about the xstatic packaging way in the package `XStatic`.
+        
+        
+Keywords: mobx xstatic
+Platform: any
