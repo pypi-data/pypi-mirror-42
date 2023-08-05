@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+scrapy_rabbitmq_publisher/__init__.py
+scrapy_rabbitmq_publisher/pipelines.py
+scrapy_rabbitmq_publisher.egg-info/PKG-INFO
+scrapy_rabbitmq_publisher.egg-info/SOURCES.txt
+scrapy_rabbitmq_publisher.egg-info/dependency_links.txt
+scrapy_rabbitmq_publisher.egg-info/requires.txt
+scrapy_rabbitmq_publisher.egg-info/top_level.txt
