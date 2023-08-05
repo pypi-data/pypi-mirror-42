@@ -1,0 +1,16 @@
+numpy>=1.14.0
+scipy>=1.1.0
+matplotlib>=2.0.1
+scikit-learn>=0.20.0
+future
+tasklogger>=0.4.0
+graphtools>=1.0.0
+scprep>=0.10.0
+
+[doc]
+sphinx
+sphinxcontrib-napoleon
+
+[test]
+nose2
+scprep>=0.5.0
