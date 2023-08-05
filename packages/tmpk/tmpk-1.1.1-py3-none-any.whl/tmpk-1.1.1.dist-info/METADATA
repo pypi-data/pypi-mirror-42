@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: tmpk
+Version: 1.1.1
+Summary: Library and tool for Nintendo's TMPK archive format
+Home-page: https://github.com/leoetlino/tmpk
+Author: leoetlino
+Author-email: leo@leolam.fr
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+## Library and tool for Nintendo's TMPK archive format
+
+### Requirements
+* Python 3.6+
+
+### Usage
+
+```
+tmpk create  {files_to_include_in_archive}  {destination_archive}
+tmpk update  {files_to_add_or_replace_in_archive}  {destination_archive}
+tmpk extract {archive}
+tmpk list {archive}
+```
+
+Pass -h to see a full list of commands or usage help for a specific command.
+
+

@@ -1,0 +1,4 @@
+[console_scripts]
+tmpk = tmpk.__main__:main
+tmpktool = tmpk.__main__:main
+
