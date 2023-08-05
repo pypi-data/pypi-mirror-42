@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: rheos_common
+Version: 0.0.6
+Summary: Classes common to various Rheos tools
+Home-page: https://github.com/llevar/rheos
+Author: Sergei Yakneen
+Author-email: llevar@gmail.com
+License: UNKNOWN
+Description: Initial implementation of the Rheos Common classes
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
