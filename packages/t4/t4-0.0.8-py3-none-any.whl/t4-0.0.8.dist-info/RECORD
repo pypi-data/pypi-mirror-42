@@ -1,0 +1,17 @@
+t4/__init__.py,sha256=zS6lfy1dw7FQRjorrIWmn9aew6bg1axD3wtiD_a5VPU,298
+t4/api.py,sha256=dT2d0td3jmW1S_JxW2XL2STKWYelqCVsmTf3Azvspas,16171
+t4/bucket.py,sha256=dQkUzSjru2SDkOrOznkpPqaGa1P31R7nUzNEbtedtiU,9445
+t4/data_transfer.py,sha256=Jy3HI2g6-91fCG_3G0UQCfcXEVQIWsH5yWrhP-tSaVw,28558
+t4/exceptions.py,sha256=ElMrSqetK0sczSTvrloBPj2Du_vvDGTPnrGHKko7sBA,123
+t4/formats.py,sha256=2MXihaejj5nVeBoSyNtdi8fxGAyADsH57n7-ayEFgx8,36546
+t4/main.py,sha256=bamZNAljOa0hkbPs8CRugSkMl_ebkg5ouvnhfkUM2s0,974
+t4/packages.py,sha256=ksz9qczj1m1nwcKT9sYfiBSt5OyW3a6mrN1JvKb3-WY,36415
+t4/search_util.py,sha256=64ki7lal1QMqEvbWIxVNbPuRqPdALe_41AbSmDPP9xs,3340
+t4/session.py,sha256=0-eKwPmG3iAuw3-GGIJNg9fTYohI8PSvg8S-r1Dr0TE,5426
+t4/util.py,sha256=ESFMbaoWrJp-rVPYAgU9uCdT0VC9C-99VrG8nQB-VaM,12063
+t4/xattr.py,sha256=xCLyEa-ddZ83ihLo39f3oLVRlF9f_Xx05Whi27LQv4o,916
+t4-0.0.8.dist-info/METADATA,sha256=ZyX-UPzna7OWX7IeAK7-vo7fTnh6ZbAiX_502WmvGZo,1967
+t4-0.0.8.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+t4-0.0.8.dist-info/entry_points.txt,sha256=Utc7ZcpVAT_LCwDzRtPEXSPTlx2LwmAEMDMH4XWuSME,37
+t4-0.0.8.dist-info/top_level.txt,sha256=Vt8oaXy9c4igvedO7gMswunM8OZM1a9axrOBssTc1Q4,3
+t4-0.0.8.dist-info/RECORD,,
