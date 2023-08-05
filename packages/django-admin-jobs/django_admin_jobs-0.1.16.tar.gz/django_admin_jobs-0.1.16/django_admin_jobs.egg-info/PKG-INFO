@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: django-admin-jobs
+Version: 0.1.16
+Summary: A toolset for jobs in the django admin interface.
+Home-page: UNKNOWN
+Author: Dimitris Papaspyros
+Author-email: dimitris@orfium.com
+License: LICENSE
+Description: UNKNOWN
+Platform: UNKNOWN
