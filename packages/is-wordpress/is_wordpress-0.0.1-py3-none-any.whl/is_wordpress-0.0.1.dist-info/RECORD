@@ -1,0 +1,11 @@
+is_wordpress/__init__.py,sha256=L-Doxhvo8jVhOE5uz-vsTOQfpJ5ctsGkV-OsTf8Oehw,126
+is_wordpress/cli.py,sha256=JyzdL5Um0goygCAiaKWQKps2zjnZJ48QYeo_Yfrq9vY,175
+is_wordpress/get_requests.py,sha256=zwC0gcphh5OFfCQeR-ttLj4GQR_a4RU7Pd1fvgHb-dc,187
+is_wordpress/parser.py,sha256=0sditn-7vOCH6pNlhjwUZjNZnUt0HkSMjo6rjWr5SNY,242
+is_wordpress/run.py,sha256=6-dsvJEj_6XyiCAr6dJwacodCo05-6OQr4g3MAA-G8o,593
+is_wordpress-0.0.1.dist-info/LICENSE,sha256=r6A7EEJXazzxxTpeZvqCls4LVYgP4wBoK6u0LYvkx5k,1067
+is_wordpress-0.0.1.dist-info/METADATA,sha256=Na1FshrcxP2OcPWBcoqhREgkE8NNQGpHcTpPBmIMWmg,1864
+is_wordpress-0.0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+is_wordpress-0.0.1.dist-info/entry_points.txt,sha256=32lwl1H8rEGXCjAC7-d_YtuXxbOkG79YywE6YjsxDvM,56
+is_wordpress-0.0.1.dist-info/top_level.txt,sha256=x7YE8DxEJvYQsCIQsEkG__gaOx814KnXdcqGQjFU3Rk,13
+is_wordpress-0.0.1.dist-info/RECORD,,

@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: is-wordpress
+Version: 0.0.1
+Summary: A simple (or useless) Program to check if a website is based on wordpress or not and if it's on wordpress which version does it use.
+Home-page: https://github.com/numb95/is_wordpress
+Author: AmirHossein Goodarzi
+Author-email: amir@goodarzi.net
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: astroid (==2.1.0)
+Requires-Dist: beautifulsoup4 (==4.7.1)
+Requires-Dist: bs4 (==0.0.1)
+Requires-Dist: certifi (==2018.11.29)
+Requires-Dist: chardet (==3.0.4)
+Requires-Dist: idna (==2.8)
+Requires-Dist: isort (==4.3.4)
+Requires-Dist: lazy-object-proxy (==1.3.1)
+Requires-Dist: mccabe (==0.6.1)
+Requires-Dist: pkg-resources (==0.0.0)
+Requires-Dist: pylint (==2.2.2)
+Requires-Dist: requests (==2.21.0)
+Requires-Dist: six (==1.12.0)
+Requires-Dist: soupsieve (==1.7.3)
+Requires-Dist: typed-ast (==1.3.1)
+Requires-Dist: urllib3 (==1.24.1)
+Requires-Dist: wrapt (==1.11.1)
+
+<!--
+ Copyright (c) 2019 amirhossein
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+# is_wordpress
+A simple (or useless) Program to check if a website is based on wordpress or not and if it's on wordpress which version does it use.
+
+# Installing 
+soon
+
+# Usage 
+```
+usage: main.py [-h] url
+
+Check if selected website is based on wordpress or not.It also show the
+wordpress version.
+
+positional arguments:
+  url         URL to check the website.
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+## Example
+``` 
+$ is_wordpress goodarzi.net
+WordPress 4.9.8
+```
+# Contribution
+Feel free to fork and fix problems. PRs are welcome. :heart:
+
+# Issues
+Use Issues section to report any problem.
+
