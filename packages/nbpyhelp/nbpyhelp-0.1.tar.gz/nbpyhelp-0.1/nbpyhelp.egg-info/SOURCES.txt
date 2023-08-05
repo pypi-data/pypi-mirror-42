@@ -1,0 +1,7 @@
+setup.py
+nbpyhelp/__init__.py
+nbpyhelp.egg-info/PKG-INFO
+nbpyhelp.egg-info/SOURCES.txt
+nbpyhelp.egg-info/dependency_links.txt
+nbpyhelp.egg-info/not-zip-safe
+nbpyhelp.egg-info/top_level.txt
