@@ -1,0 +1,12 @@
+api_client/__init__.py,sha256=1ntt8GD5SSo4MkBWuR9ltp0kwB2R5A4KjT4JeIw3qSU,41
+api_client/authentication_methods.py,sha256=TjfuPG2z8-dM8BQODFW2lVDmRFghAXtAkDHwTqx8tJY,2473
+api_client/client.py,sha256=xWvSg2u1EtFJpTPkDSYbT_yGVH7YJiCjJ_Du_Wfhq7o,6619
+api_client/decorates.py,sha256=_HeIPJ4BAeMZ5GR7gwLlNUQAoUMfc2ea_ZbFnlLBpY0,993
+api_client/exceptions.py,sha256=3JAyFB8wnYPCx6N13H7vOWrjT5Ctm7yHTsGPjCgstkY,835
+api_client/request_formatters.py,sha256=g_IHs653u4fMQMQnuGnem5ayv-5fy_36sCqktNfHvb4,1049
+api_client/response_handlers.py,sha256=gn_8zAmjbsysbkJRQ4TrNSPqRdT_FhrWNnNDb87cRYw,1677
+api_client-0.1.0.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+api_client-0.1.0.dist-info/METADATA,sha256=gv0YAu2j0bsuOGfAcmiQhHL4YoueSp2JtqPKku7pCNI,9111
+api_client-0.1.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+api_client-0.1.0.dist-info/top_level.txt,sha256=GsLgalg1P44VSvxhZqo60dGb8EptZ9n0ybK6R_qQ8pU,11
+api_client-0.1.0.dist-info/RECORD,,
