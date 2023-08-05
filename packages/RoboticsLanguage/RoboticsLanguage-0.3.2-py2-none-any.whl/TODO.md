@@ -1,0 +1,58 @@
+# The Robotics Language TODO
+
+- [x] Parsing command line arguments
+- [x] Package structure
+- [-] RoL Language
+  - [x] infix
+  - [x] prefix
+  - [x] postfix
+  - [x] bracket
+  - [ ] custom
+- [x] Caching
+  - [x] functionality
+  - [x] Refresh cache
+  - [x] Use decorators
+- [-] Mini languages
+  - [x] RoL
+  - [ ] RoLXML
+- [x] generalise template engine: files with pattern `_file_.tex` are replaced using dictionary `{'file':'desired_name'}`
+- [ ] Localisation
+  - [-]   Language
+  - [ ]   Compiler
+- [ ] transformer preprocessor
+  - [x] explicitly fill in all optional arguments
+  - [ ] function definition list
+- [ ] semantic checking:
+  - [ ] check that function prototypes are correct
+  - [x] check variables types
+  - [x] type checking
+- [x] RoL language comments implementation
+- [x] fill in the languages using each outputs default language structure
+- [ ] Add support to multiple file extensions per format
+- [ ] Allow for transformers to operate on XML multiple times using different orders
+- [x] CI with unit testing and coverage
+- [-] Unit testing
+  - [x] Base.Utilities
+  - [x] Base.CommandLine
+  - [x] Base.Transformations
+  - [ ] Base.Inputs
+  - [ ] Base.Outputs
+  - [x] Inputs.RoL.Parse
+- [x] use xpath, dpath, remove deprecated code
+- [x] allow working without input files (for generating development modules, etc)
+- [-] Error handling
+  - [x] jinja
+  - [x] parsley
+  - [x] lxml
+  - [-] file system
+- [ ] ROS package
+  - [x] topics
+  - [ ] action server
+  - [ ] service
+  - [ ] timer
+  - [ ] parameters
+- [ ] Docker
+  - [ ] Match .rol files, deploy folder in docker to user definitions
+  - [ ] Register docker image
+- [ ] Plugin
+  - [-] Finite state machines
