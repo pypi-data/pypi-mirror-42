@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+ansible_compose/__init__.py
+ansible_compose/playbook.yml
+ansible_compose/setup.yml
+ansible_compose.egg-info/PKG-INFO
+ansible_compose.egg-info/SOURCES.txt
+ansible_compose.egg-info/dependency_links.txt
+ansible_compose.egg-info/entry_points.txt
+ansible_compose.egg-info/requires.txt
+ansible_compose.egg-info/top_level.txt
