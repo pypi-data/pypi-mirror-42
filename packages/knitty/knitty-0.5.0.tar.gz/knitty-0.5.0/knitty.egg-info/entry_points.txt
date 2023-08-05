@@ -1,0 +1,6 @@
+[console_scripts]
+knitty = knitty.knitty:main
+knotedown = knitty.notedown.main:app
+pandoc-filter-arg = knitty.pandoc_filter_arg.cli:cli
+pre-knitty = knitty.pre_knitty:main
+
