@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+nd4j/__init__.py
+nd4j.egg-info/PKG-INFO
+nd4j.egg-info/SOURCES.txt
+nd4j.egg-info/dependency_links.txt
+nd4j.egg-info/not-zip-safe
+nd4j.egg-info/top_level.txt
