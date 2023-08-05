@@ -1,0 +1,13 @@
+assimp/postprocess.py,sha256=EsfdwuMbr6C7s7frkyzFYeD7j_g1JLTMYGvzYktCpWA,22887
+assimp/helper.py,sha256=GEvegk2dDGd0R3t6TkAqqRRxgGp87JIe7gIi6MEFi3k,12673
+assimp/material.py,sha256=o_B24xNHcS4uOHGdPJos-cZzVFP58uNy_kzIbfTt6XI,2409
+assimp/formats.py,sha256=nOdH8ToyIyGsFbmgcqOE05GLR3lnQtByKEnqjXpaYaY,736
+assimp/__init__.py,sha256=K0kNy26Vm6A-1V5lST3ily6yVsNLUbiqk6AZDFm2nJI,20
+assimp/core.py,sha256=S0Ls-3Ent7A1u7bBI8MMQv9ygNUAKLXIjRXk0Ljz3jo,22854
+assimp/dummy.so,sha256=FOvkd1XKh1ANpY3rx-UH76XD5tvXdOK-bo94LyjhTOY,5408
+assimp/structs.py,sha256=YA87NUmDkdLunssClQoIVv6Lczvjmv7Mt35fGaASerg,38460
+assimp/errors.py,sha256=nXtxfHi-ntlnmIpuOfKjWS3u2fM-10QUnnNbCoQUdLs,160
+assimp-4.1.4.dist-info/WHEEL,sha256=i5SA-7-fHe0jcG7-zARss1ArnqL6O_idGzRvU-4t9gw,108
+assimp-4.1.4.dist-info/top_level.txt,sha256=gQpjaiBtMH8x1gkX3GDHegl0FSIzI_BnENM4UMMgArc,7
+assimp-4.1.4.dist-info/METADATA,sha256=7KmosCny9Qo9DPMjBktpp_tBxldcCgst6KsyCKl1sJE,2491
+assimp-4.1.4.dist-info/RECORD,,
