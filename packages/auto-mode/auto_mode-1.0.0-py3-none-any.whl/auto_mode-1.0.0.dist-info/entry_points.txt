@@ -1,0 +1,3 @@
+[console_scripts]
+auto-mode = auto_mode:main
+
