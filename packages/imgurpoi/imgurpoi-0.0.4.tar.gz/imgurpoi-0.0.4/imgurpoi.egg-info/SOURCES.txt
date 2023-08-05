@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+imgurpoi/__init__.py
+imgurpoi/cli_upload.py
+imgurpoi/get_config.py
+imgurpoi/imgurpoi.py
+imgurpoi/setup.py
+imgurpoi.egg-info/PKG-INFO
+imgurpoi.egg-info/SOURCES.txt
+imgurpoi.egg-info/dependency_links.txt
+imgurpoi.egg-info/requires.txt
+imgurpoi.egg-info/top_level.txt
+tests/__init__.py
