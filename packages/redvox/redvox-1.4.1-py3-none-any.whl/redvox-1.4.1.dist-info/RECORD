@@ -1,0 +1,9 @@
+redvox/__init__.py,sha256=3MzMpZfffKUgipXRZSTQ-A1TUT6i1ALo0J_-i7SZPA8,283
+redvox/api900/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+redvox/api900/reader.py,sha256=czQsMdXxzNKRpcEX_TfTWXcXW-jouPVvBOTNw50BF4A,71995
+redvox/api900/lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+redvox/api900/lib/api900_pb2.py,sha256=zBTLCg9g8kXK-8nD4_vX_BgM5Svim2JrQ_pGLgYzx2k,51107
+redvox-1.4.1.dist-info/METADATA,sha256=g3uSLxqAToqeEpm9nks2MV_m9LsfVsUsNFgWCkUZlAU,1015
+redvox-1.4.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+redvox-1.4.1.dist-info/top_level.txt,sha256=25RthHL8sMbFtuwB91LoCi17uMl_UMK_Nw-Crv-LXeQ,7
+redvox-1.4.1.dist-info/RECORD,,
