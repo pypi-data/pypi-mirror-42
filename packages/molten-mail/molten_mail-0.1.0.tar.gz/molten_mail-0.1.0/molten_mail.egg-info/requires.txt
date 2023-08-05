@@ -1,0 +1,10 @@
+molten>=0.7.1
+
+[dev]
+pytest
+pytest-cov
+tox
+jinja2<3.0,>=2.10
+
+[templates]
+jinja2<3.0,>=2.10
