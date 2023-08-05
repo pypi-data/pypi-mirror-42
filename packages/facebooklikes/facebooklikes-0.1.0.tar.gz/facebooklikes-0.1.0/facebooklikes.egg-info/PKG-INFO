@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: facebooklikes
+Version: 0.1.0
+Summary: Fetch facebook likes for page or facebook url
+Home-page: https://github.com/sloev/facebooklikes
+Author: sloev
+Author-email: johannes.valbjorn+facebooklikes@gmail.com
+License: UNKNOWN
+Description: facebook likes
+        ==============
+        
+        |Build Status| |Latest Version| |Python Support|
+        
+        Python package to get facebook likes
+        
+        Features
+        ~~~~~~~~
+        
+        -  get facebook likes for pages
+        -  get facebook likes for facebookurls
+        
+        Installation
+        ------------
+        
+        Install the package from
+        `PyPI <https://pypi.python.org/pypi/facebooklikes>`__ using
+        `pip <https://pip.pypa.io/>`__:
+        
+        ::
+        
+           pip install facebooklikes
+        
+        Getting Started
+        ---------------
+        
+        This client only uses stdlib and has no dependencies
+        
+        Usage
+        ~~~~~
+        
+        ::
+        
+           import facebooklikes
+        
+           facebook_likes_for_beyonce_as_integer = facebooklikes.get_facebook_likes_for_page('beyonce')
+           facebook_likes_for_beyonce_as_integer = facebooklikes.get_facebook_likes_from_facebook_url('https://www.facebook.com/beyonce/')
+        
+        .. |Build Status| image:: https://travis-ci.org/sloev/facebooklikes.svg?branch=master
+           :target: https://travis-ci.org/sloev/facebooklikes
+        .. |Latest Version| image:: https://img.shields.io/pypi/v/facebooklikes.svg
+           :target: https://pypi.python.org/pypi/facebooklikes
+        .. |Python Support| image:: https://img.shields.io/pypi/pyversions/facebooklikes.svg
+           :target: https://pypi.python.org/pypi/facebooklikes
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2019-02-13)
+        ------------------
+        
+        * First release
+        
+Keywords: facebook likes
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
