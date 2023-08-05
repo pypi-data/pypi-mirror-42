@@ -1,0 +1,12 @@
+README.md
+setup.py
+databricks/__init__.py
+databricks/html/__init__.py
+databricks/html/html.py
+databricks/html/svg/__init__.py
+databricks/html/svg/arrow.py
+databricks/html/svg/quilmes.py
+miguelemosreverte.egg-info/PKG-INFO
+miguelemosreverte.egg-info/SOURCES.txt
+miguelemosreverte.egg-info/dependency_links.txt
+miguelemosreverte.egg-info/top_level.txt
