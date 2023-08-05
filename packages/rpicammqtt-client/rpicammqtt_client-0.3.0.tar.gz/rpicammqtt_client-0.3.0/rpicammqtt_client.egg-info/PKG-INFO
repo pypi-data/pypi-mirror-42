@@ -1,0 +1,87 @@
+Metadata-Version: 1.1
+Name: rpicammqtt-client
+Version: 0.3.0
+Summary: Client library to control a raspberry PI camera through MQTT
+Home-page: https://gitlab.com/gbus/rpi-cam-mqtt-client
+Author: Gianluca Busiello
+Author-email: gianluca.busiello@gmail.com
+License: UNKNOWN
+Description: # rpi-cam-mqtt-client
+        
+        Client library to control a raspberry PI camera through MQTT.
+        
+        Provides high level methods to control a raspberry PI camera:
+          - get_cmd_list
+          - get_cmd_info
+          - run_command
+          - get_status
+          - get_ptviews
+          - is_active
+          - is_ptview_available
+          - is_recording
+          - is_detecting_motion
+          - set_camera_status
+          - set_motion_detection_status
+          - start_video
+          - stop_video
+          - take_picture
+          - set_exposure_mode
+          - set_wb_mode
+          - set_metering_mode
+          - set_image_effect
+          - set_pantilt
+        
+        The camera needs to have the RPi-Cam-Web-Interface installed and the MQTT agent running. Check `rpi-cam-mqtt` (https://gitlab.com/gbus/rpi-cam-mqtt) project for further details.
+        
+        ## Installation
+        
+        The library can be installed and called in a python module:
+        
+            pip3 install rpicammqtt_client
+        
+            from rpicammqtt_client import RpiCamMqttClient
+            help(RpiCamMqttClient)
+        
+        ## Configuration
+        
+        The configuration file is looked up from:
+        
+            /etc/rpi-cam-mqtt/rpi-cam-mqtt.yaml
+            $HOME/.rpi-cam-mqtt/rpi-cam-mqtt.yaml
+            ./config/rpi-cam-mqtt.yaml
+        
+        A template can be downloaded from:
+        
+            https://gitlab.com/gbus/rpi-cam-mqtt-client/raw/master/rpicammqtt_client/config/rpi-cam-mqtt.yaml
+             
+        
+        ## Use
+        
+        The main class RpiCamMqttClient needs to have passed a reference to publish/subscribe custom definitions to implement the specific calls to the MQTT library of choice.
+        One based on the paho mqtt library is provided and can be used for reference:
+        
+            from rpicammqtt_client import RpiCamMqttClient
+            from rpicammqtt_client.mqtt import MQTT
+        
+        
+        The RpiCamMqttClient needs the `rpicam` name as configured in the remote agent that controls the camera and a few extra options to change the MQTT behaviour.
+        
+        The main method to use is `run_command`, which allows to publish any command as it would normally be sent to the PIPE. More info:
+        
+            https://elinux.org/RPi-Cam-Web-Interface#Pipe
+            
+        Additionally a few higher level methods are provided that simplify the use of the library.
+        A good starting point is the list of examples described in the next section where it is possible to see the library in action. 
+        
+        
+        ## Applications
+        
+        Example of applications using the library can be found in the package:
+        
+            https://gitlab.com/gbus/rpi-cam-mqtt-client/tree/master/rpicammqtt_client/examples
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux

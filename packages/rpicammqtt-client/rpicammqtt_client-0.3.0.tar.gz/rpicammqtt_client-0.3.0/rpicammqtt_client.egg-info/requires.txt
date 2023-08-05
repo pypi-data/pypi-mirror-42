@@ -1,0 +1,2 @@
+PyYaml>=3.12
+paho-mqtt>=1.4.0

@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+rpicammqtt_client/__init__.py
+rpicammqtt_client/loadconfig.py
+rpicammqtt_client/mqtt.py
+rpicammqtt_client.egg-info/PKG-INFO
+rpicammqtt_client.egg-info/SOURCES.txt
+rpicammqtt_client.egg-info/dependency_links.txt
+rpicammqtt_client.egg-info/not-zip-safe
+rpicammqtt_client.egg-info/requires.txt
+rpicammqtt_client.egg-info/top_level.txt
