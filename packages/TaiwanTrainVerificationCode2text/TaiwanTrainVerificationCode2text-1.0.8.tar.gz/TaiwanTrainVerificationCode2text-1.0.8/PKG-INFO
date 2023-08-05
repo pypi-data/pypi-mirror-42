@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: TaiwanTrainVerificationCode2text
+Version: 1.0.8
+Summary: Taiwan Train Verification Code to text
+Home-page: https://github.com/linsamtw/TaiwanTrainVerificationCode2text
+Author: linsam
+Author-email: samlin266118@gmail.com
+License: UNKNOWN
+Project-URL: Source, https://github.com/linsamtw/TaiwanTrainVerificationCode2text
+Description: # TaiwanTrainVerificationCode2text
+Keywords: Verification Code,python,cnn,keras
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
