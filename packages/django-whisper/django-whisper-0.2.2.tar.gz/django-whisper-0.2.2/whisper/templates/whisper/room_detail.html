@@ -1,0 +1,48 @@
+{% load i18n static %}
+
+<h1>{% trans 'Chat room' %} {{ room }}</h1>
+
+<div class="row whisper">
+    {% if not room.is_user_to_user_room %}
+        <div class="col-md-3 col-sm-12">
+            <div class="row">
+                <div class="col-md box-with-shadow grid-container p-0 mb-4">
+                    {% for user in room.users.all %}
+                        <div class="box-with-bottom-shadow d-flex align-items-center justify-content-between p-4">
+                            {% include 'whisper/user.html' %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="col-md-6 col-sm-12 m-auto p-4 box-with-shadow">
+        <div class="chat-room">
+            <div class="message-list-wrapper">
+                <div class="message-list" data-current-username="{{ request.user }}"></div>
+                <small id="user-typing"></small>
+            </div>
+            <div class="message-input-wrapper">
+                <textarea class="form-control message-input autoExpand w-100" rows="1" data-min-rows="1" data-max-rows="7" placeholder="{% trans 'Message' %}"></textarea>
+                <a href="#" class="send-message"><i class="fas fa-lg fa-arrow-circle-up"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script src="{% static 'whisper/js/chat.js' %}"></script>
+
+<script>
+    jQuery(document).ready(function ($) {
+        var room_slug = '{{ room.slug }}';
+
+        if (room_slug) {
+            chat_socket = initSocket(room_slug, $("html, body"));
+        }
+    });
+</script>
