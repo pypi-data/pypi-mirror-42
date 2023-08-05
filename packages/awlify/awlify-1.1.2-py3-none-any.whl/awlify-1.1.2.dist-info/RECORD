@@ -1,0 +1,11 @@
+awlify/__init__.py,sha256=SCU4MG0Lq5KfQ0k9Laou3eArxSccqjDpQ36xTt2wYD0,191
+awlify/__main__.py,sha256=5zcVgwkD7FS8XqMvy7wOJEpY-WFfX4bkbYuf4vQW2g8,400
+awlify/check_sentence.py,sha256=UfETkpBiRT0IC7PxiyMvgFr7z78frBmT2G--Lbzy6bc,617
+awlify/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+awlify/utils/awl_full_results.py,sha256=YTODhw4IontaFy-1bAYEB5Agk6l-HZFFeGT_8R-Dfys,151598
+awlify/utils/check_word.py,sha256=IL4XYMsp-YCXPiwhi80wl0EKxrVTRkYYQ-P86m7XgdE,194
+awlify-1.1.2.dist-info/LICENSE,sha256=oliejq54qrOaO3WpVIKR8AVQK9kri-oARM0V3euLpAI,1047
+awlify-1.1.2.dist-info/METADATA,sha256=nS3IYU8PsIbKrH5b_wswHg1lgQzScXkhwiU4BLDnGAY,3651
+awlify-1.1.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+awlify-1.1.2.dist-info/top_level.txt,sha256=9dv1IJ0WSkIxGU4JilAoHyZWJ3txEHDccUxtwH2hn24,7
+awlify-1.1.2.dist-info/RECORD,,
