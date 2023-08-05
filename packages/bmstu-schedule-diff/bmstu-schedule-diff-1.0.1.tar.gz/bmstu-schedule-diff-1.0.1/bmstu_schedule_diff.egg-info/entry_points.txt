@@ -1,0 +1,3 @@
+[console_scripts]
+bmstu-schedule-diff = bmstu_schedule_diff.__main__:main
+
