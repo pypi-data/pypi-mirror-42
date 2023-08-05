@@ -1,0 +1,9 @@
+kervi-core==0.20.9
+kervi-ui==0.20.9
+kervi-cli==0.20.9
+kervi-hal-generic==0.20.9
+kervi-device-library==0.20.9
+autobahn
+pyzmq
+kervi-hal-win==0.20.9
+kervi-hal-rpi==0.20.9
