@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: imgurpoi
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: https://github.com/_/imgurpoi
+Author: Cswl Coldwind
+Author-email: cswl1337@gmail.com
+Maintainer: Cswl Coldwind
+Maintainer-email: cswl1337@gmail.com
+License: MIT/Apache-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+
+### imgurpoi
+
+Simple python imgur uploader with API and CLI.  
+Based on Imgur API v3.
+
+## Requirements
+- click - For CLI 
+- requests - For functioning
+- pyperclip - For copy to clipboard support
+
+
+## Quickstart
+Getting Imgur API credentials
+Go to https://api.imgur.com/oauth2/addclient and register a new Imgur API client.    
+You will need an Imgur account to do this.   
+
+You can put it any valid URL for the callback URL - we won’t be using it.
+
+First, create a file called ~/.config/imgur_uploader.cfg, with the following contents (substitute your credentials):
+```
+[imgur]
+id = 9354da9ecdcfae3
+secret = 8387eca75687ecad9876ead47786edac0875dc0d
+```
+
+    $ pip install imgurpoi
+
+### License
+-------
+
+imgurpoi is distributed under the terms of both
+
+- `MIT License <https://choosealicense.com/licenses/mit>`_
+
