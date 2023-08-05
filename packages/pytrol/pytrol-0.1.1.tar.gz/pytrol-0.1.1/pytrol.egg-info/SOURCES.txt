@@ -1,0 +1,8 @@
+README.md
+setup.py
+pytrol/__init__.py
+pytrol/pytrol.py
+pytrol.egg-info/PKG-INFO
+pytrol.egg-info/SOURCES.txt
+pytrol.egg-info/dependency_links.txt
+pytrol.egg-info/top_level.txt
