@@ -1,0 +1,13 @@
+[console_scripts]
+color_term = biolxyUtil:color_term
+diff_multiple_list = biolxyUtil:diff_multiple_list
+execute_cmd = biolxyUtil:execute_cmd
+execute_cmd2 = biolxyUtil:execute_cmd2
+getDictbyListFromFasta = biolxyUtil:getDictbyListFromFasta
+getFile = biolxyUtil:getFile
+getTranslatePep = biolxyUtil:getTranslatePep
+get_real_path = biolxyUtil:get_real_path
+getcpuNumber = biolxyUtil:getcpuNumber
+progressBar = biolxyUtil:progressBar
+progressBar2 = biolxyUtil:progressBar2
+
