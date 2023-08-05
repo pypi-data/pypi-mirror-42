@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: odoo12-addon-odoo-debrand-11
+Version: 12.0.1.0.2
+Summary: Odoo Module for backend and frontend debranding.
+Home-page: https://www.linkedin.com/in/hilar-ak/
+Author: Hilar AK
+License: AGPL-3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Requires-Python: >=3.5
+Requires-Dist: odoo (<12.1dev,>=12.0a)
+
+
+To debrand front-end and back-end pages by removing
+ odoo promotions, links, labels and other related
+ stuffs.
+
+
