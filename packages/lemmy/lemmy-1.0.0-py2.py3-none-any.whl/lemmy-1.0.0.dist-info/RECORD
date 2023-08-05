@@ -1,0 +1,11 @@
+lemmy/__init__.py,sha256=OpdwuE8BeSfsXBMOEuof_jZ_2z8S22Y1oSXQiExhgMA,83
+lemmy/lemmatizer.py,sha256=asb6UvwkYwLt5J2x3iGvZvrCJA7gl6s4DLsq9QJZqi4,8438
+lemmy/rules.py,sha256=TvyUt8NaVHZQuY9K8dWB8k9QewRNOuAluXt4joASCFM,2327683
+lemmy/version.py,sha256=L_IRbFAtym26c2Aj29Ab1N5Jn1hZAZytKY2pryVfUFw,64
+lemmy/pipe/__init__.py,sha256=wMNPAg9UzHSwmVGm_jlOSaihBT92L5WdJZfzYPADAxU,84
+lemmy/pipe/component.py,sha256=DDXOajH1U1rzXpapmL8LoOWn-3NcuX4DUcREZWY5cWg,1326
+lemmy-1.0.0.dist-info/LICENSE,sha256=gkJSBQwePFlSauI7S3pF0hNXnlYE9wblYNqUCVQheGk,1079
+lemmy-1.0.0.dist-info/METADATA,sha256=KKFaoKgJT872zb57Xhwxbc1_l5kmlIjJTv0auOgs7zE,3332
+lemmy-1.0.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+lemmy-1.0.0.dist-info/top_level.txt,sha256=qmmC85yvfYLLiPd6wPrrtiLh9-p6f-fFX0xQWDxuO4U,6
+lemmy-1.0.0.dist-info/RECORD,,
