@@ -1,0 +1,3 @@
+recursive-include src *.html *.sass *.css *.js *.jsx *.mustache *.html.erb sybil 
+recursive-include src/static/images/ *.png
+include requirements.txt
