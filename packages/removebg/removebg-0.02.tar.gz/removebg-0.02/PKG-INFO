@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: removebg
+Version: 0.02
+Summary: A Python API wrapper for removing background using remove.bg's API
+Home-page: https://github.com/brilam/remove-bg
+Author: Brian Lam
+Author-email: brian_lam@live.com
+License: gpl-3.0
+Download-URL: https://github.com/brilam/remove-bg/archive/v_001.tar.gz
+Description: UNKNOWN
+Keywords: remove-bg,remove,background
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
