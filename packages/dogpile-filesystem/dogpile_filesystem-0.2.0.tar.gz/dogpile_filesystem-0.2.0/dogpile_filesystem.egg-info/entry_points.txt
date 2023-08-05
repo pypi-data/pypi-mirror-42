@@ -1,0 +1,4 @@
+[dogpile.cache]
+paylogic.filesystem = dogpile_filesystem.backend:GenericFSBackend
+paylogic.raw_filesystem = dogpile_filesystem.backend:RawFSBackend
+
