@@ -1,0 +1,17 @@
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/version.py,sha256=1naoRAeuTPMAeoHeR7oysGCDWCvdLiLA3OKByi7q-XI,693
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/__init__.py,sha256=jnfoMusJmyOp0Cz_tlHqsbcN2A2mTs9B0jsUZ1YTVUg,575
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/proto/metadata_store_pb2.py,sha256=fhjZrY3usgH-_y78t0vlhAN6XlzbNi01t2PaPerKxvY,50493
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/proto/metadata_store_service_pb2.py,sha256=O8suIVVwi8JFjpxDaAOfojKTWi-N_BV38x4SYVBWUzU,74555
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/proto/__init__.py,sha256=jnfoMusJmyOp0Cz_tlHqsbcN2A2mTs9B0jsUZ1YTVUg,575
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/types.py,sha256=eKLh2C-ef_IHVZ6EcVaK6mSBRvQOUUIwOmy6d4CFnWE,35876
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/metadata_store_test.py,sha256=JwXX0F5qP6JFBz-jzrKAFwfzNE2kUk1uzMDjAwcSWdU,18181
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/_pywrap_tf_metadata_store_serialized.so,sha256=wjepa7HinkoDvlYXj9FyNpE4YU5XGupu1Kv7Kku7_a0,12421864
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/pywrap_tf_metadata_store_serialized.py,sha256=VJwMyHJP40KjY6Rgm4vp09T8dfM9EU0I5sJvfn5i6tM,6299
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/types_test.py,sha256=9WcZ4_J0MPThTEwDsUyaVmti-1BDAF9LQaCqW7OU0_Q,14327
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/metadata_store.py,sha256=yH3nd3tAlzgcwtOuKh0x6oDtGK848daeqMZBaindCC8,18351
+ml_metadata-0.13.1.dev0.data/purelib/ml_metadata/metadata_store/__init__.py,sha256=jnfoMusJmyOp0Cz_tlHqsbcN2A2mTs9B0jsUZ1YTVUg,575
+ml_metadata-0.13.1.dev0.dist-info/METADATA,sha256=k-So4io3P3vAtauryIdRWXCD3WvG9tE4JEiisKpwEo0,3551
+ml_metadata-0.13.1.dev0.dist-info/RECORD,,
+ml_metadata-0.13.1.dev0.dist-info/top_level.txt,sha256=qNb5tF2_mHF_d51VKxwVDUDWhOsYpwyCan96IGjksFg,12
+ml_metadata-0.13.1.dev0.dist-info/WHEEL,sha256=CglJikwLcMQ_QQfvsYS0JgeRolE2eD7fD8MfL_ao-M0,110
+ml_metadata-0.13.1.dev0.dist-info/namespace_packages.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
