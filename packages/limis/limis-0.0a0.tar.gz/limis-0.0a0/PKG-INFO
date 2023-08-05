@@ -1,0 +1,23 @@
+Metadata-Version: 1.2
+Name: limis
+Version: 0.0a0
+Summary: light microservice solution
+Home-page: https://limis.io
+Author: Philip Streck
+Author-email: philip@limis.io
+License: MIT
+Description: light microservice solution (limis) provides a framework for creating small services.
+        Simplicity, technical excellence, quality and ease of implementation are the primary
+        tenants prescribed to.
+Platform: any
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.5

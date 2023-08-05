@@ -1,0 +1,9 @@
+README.rst
+setup.py
+limis/__init__.py
+limis.egg-info/PKG-INFO
+limis.egg-info/SOURCES.txt
+limis.egg-info/dependency_links.txt
+limis.egg-info/not-zip-safe
+limis.egg-info/top_level.txt
+limis/core/__init__.py
