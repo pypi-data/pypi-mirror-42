@@ -1,0 +1,12 @@
+README.md
+setup.py
+researchpy/__init__.py
+researchpy/correlation.py
+researchpy/crosstab.py
+researchpy/summary.py
+researchpy/ttest.py
+researchpy.egg-info/PKG-INFO
+researchpy.egg-info/SOURCES.txt
+researchpy.egg-info/dependency_links.txt
+researchpy.egg-info/requires.txt
+researchpy.egg-info/top_level.txt
