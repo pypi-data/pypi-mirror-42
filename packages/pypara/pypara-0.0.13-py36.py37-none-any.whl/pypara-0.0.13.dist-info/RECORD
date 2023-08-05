@@ -1,0 +1,11 @@
+pypara/__init__.py,sha256=aHIcK_Yid12KV3jgPvs7HvV9wixspxV1_tK19L3DbC0,62
+pypara/currencies.py,sha256=I3Cm9YsBaSUcJbfl9t6twklgmS1EqIgHzb2uePFurxM,24108
+pypara/dcc.py,sha256=kdvmPLG31opBcc-pIIAVRNgUNZ553TgxsxA1jGzIJDM,29356
+pypara/exchange.py,sha256=UfU8pmBbw7MB8YfQLXMhjDuW49lbe8Xqs3zrcVbbC4o,5827
+pypara/generic.py,sha256=0vg-DHPxnTdNzjnJSmQRmqUYzsFgJ2OD485woylFSIY,1241
+pypara/monetary.py,sha256=VOFI5utjVyKwdWakQEh2jkqcoCrt_pGPW4xrPdPp5Mc,37909
+pypara-0.0.13.dist-info/LICENSE.txt,sha256=f6fCOOFSHLEENU-Aoh7J45HzxjERxpcuFoXcfpotXSs,1469
+pypara-0.0.13.dist-info/METADATA,sha256=1k9dUBvlr37obtJlU0Bu4RrWNnVgmVHuyg1C3IFkFQw,1852
+pypara-0.0.13.dist-info/RECORD,,
+pypara-0.0.13.dist-info/WHEEL,sha256=6syhQD3D9Hcapy9omi-MDMhuR-TwdMDqVsruCLy73Pk,112
+pypara-0.0.13.dist-info/top_level.txt,sha256=RKFz6if-u-ulsmZ1j0Zx8NAKXB7Kzh2A51XjwdSSxSk,7
