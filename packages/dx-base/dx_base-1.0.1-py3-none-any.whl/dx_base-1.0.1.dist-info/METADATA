@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: dx-base
+Version: 1.0.1
+Summary: Base package for structural design software packages
+Home-page: https://gitlab.com/d-e/dx-base
+Author: Konstantinos Demartinos
+Author-email: kostas@d-e.gr
+Maintainer: demetriou engineering ltd.
+Maintainer-email: kostas@d-e.gr
+License: AGPLv3+
+Keywords: structural-design
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+Requires-Dist: dx-utilities (<2.0.0,>=1.0.0)
+
+
+# `dx-base` package
+
+A collection of base packages and modules for structural design software.
+
+## Features
+
+* Structural elements in plane.
+* Exceptions with error-code.
+* Nodal forces.
+* Structural materials.
+* Material safety factors.
+
+### Sample usage
+
+```
+>>> from dx_base.safety_factors import SafetyFactor
+>>> sf = SafetyFactor(1.24, 'persistent', 'serviceability')
+>>> sf
+1.24
+>>> sf.design_situation
+'persistent'
+>>> sf.limit_stte
+'serviceability'
+```
+
+## Contribute
+
+Source code lives in https://gitlab.com/d-e/dx-base.
+
+## Public API
+
+See the [documentation pages](https://d-e.gitlab.io/dx-base/).
+
+
