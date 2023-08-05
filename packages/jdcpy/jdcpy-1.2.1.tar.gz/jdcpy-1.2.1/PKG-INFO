@@ -1,0 +1,88 @@
+Metadata-Version: 1.0
+Name: jdcpy
+Version: 1.2.1
+Summary: jdcpy模块,吉富数据中心的python接口
+Home-page: UNKNOWN
+Author: JaydenFish@ThizGroup
+Author-email: xmyjd@163.com
+License: UNKNOWN
+Description: # JDC_SDK使用说明
+        
+        ## 登录
+        
+        `login('用户名', '密码')`
+        
+        用户名或密码错误,会抛出异常.
+        
+        ```python
+        import jdcsdk
+        jsdk = jdcsdk.jdcsdk()
+        jsdk.login('用户名','密码')
+        ```
+        
+        ## 返回ID映射表
+        
+        ### read_id
+        
+        `read_id(sourceName, idlist)`
+        
+        第一个参数为一个字符串,数据源,可为"blp", "ft", "wind".
+        
+        第二个参数为一个元组,由各ID组成,None表示所有ID.
+        
+        返回值类型是DataFrame.
+        
+        例:
+        
+        `jsdk.read_id("tw", ("TEMAMAI LX Equity", "270042.OF"))`
+        
+        ## 读数据
+        
+        ### read
+        
+        `read(sourceName, assetType, dataType, columnSet, idSet, startDate=None, endDate=None)`
+        
+        第一个参数为一个字符串,数据源,可为"blp", "ft", "wind".
+        
+        第二个参数为一个字符串,资产类型,可为"fund", "index", "economic".
+        
+        第三个参数为一个字符串,数据类型,可为"nav", "info", "performance".
+        
+        第四个参数为一个无组,由列名组成,不可省略.如果有ID,应放在第一个,如果有date,应放在第二个.
+        
+        第五个参数为一个元组,由各ID组成,None表示所有ID.
+        
+        六七个参数是datetime格式,是开始和结束时间.可为None,表示不限时间.
+        
+        返回值类型是DataFrame.
+        
+        `jsdk.read_nav("blp", "fund", 'nav', ("TEMAMAI LX Equity", "270042.OF"), ('bloomberg_ticker','nav_date','av', 'div', 'split', 'split_factor', 'av_p', 'div_p', 'nav_cal'), start_date, end_date)`
+        
+        ## 更新数据
+        
+        ### update
+        
+        `update(sourceName, assetType, dataType, data)`
+        
+        第一个参数为一个字符串,数据源,可为"blp", "ft", "wind".
+        
+        第二个参数为一个字符串,资产类型,可为"fund", "index", "economic".
+        
+        第三个参数为一个字符串,数据类型,可为"nav", "info", "performance".
+        
+        第四个参数为一个DataFrame,要上传的数据表.
+        
+        返回值为一个字符串,表示taskId.
+        
+        `jsdk.update('blp', 'fund', 'nav', data)`
+        
+        ## 回滚
+        
+        ### rollback
+        
+        `rollback(taskId)`
+        
+        第一个参数为一个字符串,要回滚的taskId.
+        
+        此函数待完善.
+Platform: UNKNOWN
