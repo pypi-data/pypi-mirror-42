@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: async-vk-api
+Version: 0.5.1
+Summary: Async VK API built with asks and trio
+Home-page: https://github.com/Suenweek/async-vk-api
+Author: Roman Novatorov
+Author-email: roman.novatorov@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: asks (>=0.2.1)
+Requires-Dist: trio (>=0.9.0)
+
+UNKNOWN
+
+
