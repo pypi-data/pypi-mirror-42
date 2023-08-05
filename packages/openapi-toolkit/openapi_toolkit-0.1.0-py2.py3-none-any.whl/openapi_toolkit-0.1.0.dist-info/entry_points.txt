@@ -1,0 +1,3 @@
+[console_scripts]
+openapi-toolkit = openapi_toolkit.cli:app
+
