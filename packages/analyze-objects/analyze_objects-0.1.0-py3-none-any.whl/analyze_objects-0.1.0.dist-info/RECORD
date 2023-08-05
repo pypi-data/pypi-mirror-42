@@ -1,0 +1,10 @@
+analyze_objects/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+analyze_objects/find_symbols.py,sha256=-P_LcphC9OCVBeTn-LaRT9lhDrM0qBn2zIBQy2zDRnc,6728
+analyze_objects/obj_analyzer.py,sha256=6gCCQCSrmnU2KtRB2_IzICMZYxgwoLDqbx3Ty_Rfl1w,6211
+analyze_objects/print_colored.py,sha256=A1bZSS-8wifzg7dLVX5Yw9lnkeEEkIzTNlliFy3sX64,1006
+analyze_objects-0.1.0.dist-info/LICENSE.txt,sha256=5K6FlzPFBzWrkg-pw0hWGsXCaBBNbQTNdY-66u3N1Hw,1071
+analyze_objects-0.1.0.dist-info/METADATA,sha256=A7FezvRNP4lFn7DfYKFX10jo6kW1VVqHYKud7gKbses,1965
+analyze_objects-0.1.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+analyze_objects-0.1.0.dist-info/entry_points.txt,sha256=VSAsY6PaQHsHFM2-ibs1yvSPe1AfW926I2DIlow8OOg,68
+analyze_objects-0.1.0.dist-info/top_level.txt,sha256=2LUoOSV3ihGOvz6L-tCxLGDDO2IQiELdzRdcdiiQ9pA,16
+analyze_objects-0.1.0.dist-info/RECORD,,

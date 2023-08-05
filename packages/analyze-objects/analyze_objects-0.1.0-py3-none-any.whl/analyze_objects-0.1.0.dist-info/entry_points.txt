@@ -1,0 +1,3 @@
+[console_scripts]
+find_symbols = analyze_objects.find_symbols:main
+
