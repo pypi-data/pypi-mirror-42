@@ -1,0 +1,12 @@
+README.md
+setup.py
+god_mode/__init__.py
+god_mode/crypt.py
+god_mode/metadata_rw.py
+god_mode.egg-info/PKG-INFO
+god_mode.egg-info/SOURCES.txt
+god_mode.egg-info/dependency_links.txt
+god_mode.egg-info/entry_points.txt
+god_mode.egg-info/not-zip-safe
+god_mode.egg-info/requires.txt
+god_mode.egg-info/top_level.txt
