@@ -1,0 +1,16 @@
+pysamloader
+cython
+kivy
+
+[build]
+doit
+setuptools_scm
+wheel
+twine
+pygithub
+
+[docs]
+sphinx
+sphinx-argparse
+sphinxcontrib-documentedlist
+sphinx-rtd-theme
