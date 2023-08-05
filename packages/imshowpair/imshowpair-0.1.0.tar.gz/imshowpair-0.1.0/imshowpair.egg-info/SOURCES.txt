@@ -1,0 +1,13 @@
+AUTHORS.rst
+LICENSE.rst
+Makefile
+README.rst
+imshowpair.py
+setup.cfg
+setup.py
+utils.py
+imshowpair.egg-info/PKG-INFO
+imshowpair.egg-info/SOURCES.txt
+imshowpair.egg-info/dependency_links.txt
+imshowpair.egg-info/requires.txt
+imshowpair.egg-info/top_level.txt
