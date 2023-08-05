@@ -1,0 +1,10 @@
+dpp_runner/VERSION,sha256=43q9dlBOj2cCXhoG3xNL6qAxZXLmZOTMRiKygqaSpmI,7
+dpp_runner/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dpp_runner/lib.py,sha256=ej3st_b6J4i0B0Dk0lQYcrFgHG95etjCAwRUeVZZUsY,4346
+dpp_runner/server.py,sha256=ZgspyGiMHlyOe4dGpUOPzUhbtpLyrB08JcFpnQdxl4M,1321
+os_dpp_runner-0.0.10.dist-info/DESCRIPTION.rst,sha256=h33yCyDj38JFcGturwLM91G7qQFm3tGs_sgqSLJ5Eqw,35
+os_dpp_runner-0.0.10.dist-info/METADATA,sha256=44wTgn5BWiRjyI3I-ZeNvV87w-1PndUfwrShmRa2eRQ,766
+os_dpp_runner-0.0.10.dist-info/RECORD,,
+os_dpp_runner-0.0.10.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+os_dpp_runner-0.0.10.dist-info/metadata.json,sha256=BS9Zkhvsdeeb8YZHFAFWGMNiUjx6yY6zQTOR761oNZk,929
+os_dpp_runner-0.0.10.dist-info/top_level.txt,sha256=I5PVrLqiZYgG-uCXkP6lmDNLVDXgF6BMOGP1Lxe65bw,11
