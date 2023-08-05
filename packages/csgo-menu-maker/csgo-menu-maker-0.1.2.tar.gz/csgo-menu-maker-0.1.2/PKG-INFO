@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: csgo-menu-maker
+Version: 0.1.2
+Summary: Make cool-looking menus in CSGO consoles
+Home-page: https://github.com/citrusCS/csgo-menu-maker
+Author: Citrus
+Author-email: address@example.com
+License: UNKNOWN
+Description: csgo-menu-maker
+        ===============
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
