@@ -1,0 +1,47 @@
+import argparse
+import sys
+
+import scotty.version
+from scotty.cmd.base import CommandRegistry
+from scotty.cmd import *  # noqa F401
+
+
+class Cli(object):
+    """Command line interface."""
+
+    def parse_command(self, args):
+        """Parse command from command line arguments."""
+        parser = argparse.ArgumentParser(usage="scotty <command> [<args>]")
+        version = f'scotty {scotty.version.__version__}'
+        parser.add_argument('--version', action='version', version=version)
+        subparser = parser.add_subparsers(
+            dest='command',
+            help='Command')
+        subparser.required = True
+        for key in CommandRegistry.registry:
+            subparser.add_parser(key)
+        options = parser.parse_args(args)
+        self.command_builder = CommandRegistry.getbuilder(options.command)
+        self.command_parser = CommandRegistry.getparser(options.command)
+        self.command_class = CommandRegistry.getcommand_class(options.command)
+        return options.command
+
+    def parse_command_options(self, args, command):
+        """Parse options from command line arguments."""
+        parser = argparse.ArgumentParser(usage="scotty {} <action> [<args>]".format(command))
+        self.command_parser.add_arguments(parser)
+        options = parser.parse_args(args)
+        return options
+
+    def execute_command(self, options):
+        """Run command for options."""
+        cmd = self.command_builder.build_command(options, self.command_class)
+        cmd.execute()
+
+
+def run(args=sys.argv):
+    """Run command line interface."""
+    cli = Cli()
+    command = cli.parse_command(args[1:2])
+    options = cli.parse_command_options(args[2:], command)
+    cli.execute_command(options)
