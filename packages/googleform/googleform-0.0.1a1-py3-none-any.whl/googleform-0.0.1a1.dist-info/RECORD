@@ -1,0 +1,10 @@
+googleform/__init__.py,sha256=jG9JHME5kc_IoUPHqJ1IByxAaVibMCuWrlCvPS95idA,70
+googleform/api.py,sha256=Ryr8FVL_rTds5q9wRSz8NbQOTSt4CwEMMJVGIKrw5ec,189
+googleform/form.py,sha256=CHXChclr2IGtJhDbbzfG-PWzC_FUO8fmT4VPQSf_U-I,1210
+googleform/question.py,sha256=1-IbBKaCijwIne3N8ylZPiJrQLN2b8Vmjogg4aRp-N8,974
+googleform/utils.py,sha256=WBdoRPtHzFUTr-h8q0cuIMnxLLKsXHJbf8yRpG1JRig,834
+googleform-0.0.1a1.dist-info/LICENSE,sha256=N7RulaxRIZ2R7gwTu0DTfbeWTwuQKCul1nfKQX7UJIs,1065
+googleform-0.0.1a1.dist-info/METADATA,sha256=JgHU-7qUeXQLdO7S0hvivvo7xrPTUhWJ_12M6pQ8sqs,734
+googleform-0.0.1a1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+googleform-0.0.1a1.dist-info/top_level.txt,sha256=RI8c_kMeZyVMlDodLPbCWIbm0EgD0ZBeK5l7KlFsa00,11
+googleform-0.0.1a1.dist-info/RECORD,,
