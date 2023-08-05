@@ -1,0 +1,15 @@
+AUTHORS
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+ansible/module_utils/morpheus.py
+ansible/modules/morpheus/__init__.py
+ansible/modules/morpheus/morph_cypher.py
+ansible/plugins/lookup/morph_cypher.py
+ansible_modules_morpheus.egg-info/PKG-INFO
+ansible_modules_morpheus.egg-info/SOURCES.txt
+ansible_modules_morpheus.egg-info/dependency_links.txt
+ansible_modules_morpheus.egg-info/requires.txt
+ansible_modules_morpheus.egg-info/top_level.txt
