@@ -1,0 +1,6 @@
+pyserial~=3.0
+
+[test]
+flake8~=3.6.0
+pytest~=3.10.0
+pytest-cov~=2.6.0
