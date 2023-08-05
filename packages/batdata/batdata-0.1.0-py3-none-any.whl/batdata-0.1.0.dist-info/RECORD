@@ -1,0 +1,15 @@
+batdata/__init__.py,sha256=XufB8eHskAPI2dBdBr6wGr4Ls_jaULhVa86K3i-Xnd4,25
+batdata/exceptions.py,sha256=yKjpjmfDlsVECZDwf2ryr1q91LUI5oTzn8-PAAxjXWU,83
+batdata/http.py,sha256=zcLvyVgtVWffnqJseuZnKa3FNwVFDNWApeOfvPtVE2Q,168
+batdata/models.py,sha256=BZOj0tXiBT60ctzDb9Z6ZfPrjlQYEhLR7VO-yRstmIM,423
+batdata/vndData/__init__.py,sha256=ykyrU4sr070lf5I_3QNbLX3Gq8MOlBUymrxE1Fql-Uw,21
+batdata/vndData/funcLookup.py,sha256=SLufpJPf5fNSO50uUDQsWopjij0UQy1XmOUX6qCpICk,1056
+batdata/vndData/taskManagement.py,sha256=D3t9_MIBa7rP0WHspcFz0XWvBPlUWewIhenFw5sj5qc,1329
+batdata/vndData/utils.py,sha256=VM6qIUD-Fh8_a1yHczqyPBw1QkMTGvoVVjlbYt93h8U,1441
+batdata/vndData/vnd.py,sha256=JmxiV1tZCOIbbLWg7X9Pq_EwwfX--jksghLfENCwnjQ,1906
+batdata/vndData/vndApi.py,sha256=VjUr1GM7vg8x_zK-cDaDh6R1hDN-QXICzmB9J-4J-0M,1048
+batdata-0.1.0.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+batdata-0.1.0.dist-info/METADATA,sha256=IUe8mqfufGHPfl3OZGBg4QJhae6EJ_p9C1SQTpVvf9I,1873
+batdata-0.1.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+batdata-0.1.0.dist-info/top_level.txt,sha256=bvzI-27gnLmY5HEeCsU5pj7rBq1T5MGSNxoZb7_VGKM,8
+batdata-0.1.0.dist-info/RECORD,,
