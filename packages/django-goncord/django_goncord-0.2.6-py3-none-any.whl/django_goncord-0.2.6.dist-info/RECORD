@@ -1,0 +1,9 @@
+django_goncord/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_goncord/apps.py,sha256=C0jTMcc2F2DquQbxsE3VilgZRfLkLwwKBAOpBvjkf6Q,98
+django_goncord/backends.py,sha256=bsvIe-flg43EuTG0ODUhEtKNt_ydpgnw-4Wt3HobXkE,5412
+django_goncord/middleware.py,sha256=uxFGKDowXpr0xvoLVy8I5ugbr4CYqMwQcMRuWPJPSxs,1718
+django_goncord-0.2.6.dist-info/LICENSE,sha256=exL3SIovrUzOksYQEIbqUTayb2-rTHjTbW8zsfvUVyk,1066
+django_goncord-0.2.6.dist-info/METADATA,sha256=3F7WpGavbqCtgoxes162UR0xVsd0J13CETTQHkTqRgw,2992
+django_goncord-0.2.6.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+django_goncord-0.2.6.dist-info/top_level.txt,sha256=cqPyoXGK6xKOA2bYmvXLc_5FGRSvU7AMo5asq0pWkMw,15
+django_goncord-0.2.6.dist-info/RECORD,,
