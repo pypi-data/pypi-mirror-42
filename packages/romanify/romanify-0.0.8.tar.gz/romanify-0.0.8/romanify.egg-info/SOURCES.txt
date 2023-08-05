@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+romanify/__init__.py
+romanify/main.py
+romanify.egg-info/PKG-INFO
+romanify.egg-info/SOURCES.txt
+romanify.egg-info/dependency_links.txt
+romanify.egg-info/entry_points.txt
+romanify.egg-info/requires.txt
+romanify.egg-info/top_level.txt
