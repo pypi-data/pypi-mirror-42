@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: os-dpp-runner
+Version: 0.1.0
+Summary: Pipeline runner lib and server
+Home-page: https://github.com/openspending/os-dpp-runner
+Author: OpenSpending
+Author-email: info@openspending.org
+License: MIT
+Keywords: data
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Requires-Dist: datapackage-pipelines (>=1.6.6)
+Requires-Dist: flask
+Requires-Dist: flask-jsonpify
+Requires-Dist: flask-cors
+
+# Pipeline runner lib and server
+
+Allows a [datapackage-pipelines](https://github.com/frictionlessdata/datapackage-pipelines) workflow to be spun up and executed.
+
+This is a legacy library used by OpenSpending [os-conductor](https://github.com/openspending/os-conductor/). This could be replaced by better ways to run a pipeline of processors from applications, namely, [Data Flows](https://github.com/datahq/dataflows/).
+
