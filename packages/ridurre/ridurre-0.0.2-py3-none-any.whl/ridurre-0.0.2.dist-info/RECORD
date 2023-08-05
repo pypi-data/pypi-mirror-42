@@ -1,0 +1,17 @@
+example/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+example/model_pruning_example.py,sha256=Cumy-06ddwiP6mDnE0z_iKy6euVKOpIXg_pU5PDsQDU,3825
+example/test.py,sha256=gRiovvJJGoXp711csj4Y3NXBzUONrs4Tpj055JDFV_E,847
+example/cifar_10_resnet/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+example/cifar_10_resnet/resnet.py,sha256=SLKpzEBek0qtg7JiZBecV2a_3K2SykCkqaY8KBcgcIM,8445
+ridurre/__init__.py,sha256=dpx59c87YfNUz4VFtSTTtC7Hpug3io3hG831ru0EJYo,700
+ridurre/base_filter_pruning.py,sha256=0wxLuyUfcQ28ff0nZpBj-r0KkMfxJzp45VRV7lhLS-g,9610
+ridurre/kmeans_pruning.py,sha256=R-Ep9snNctUOtwpG-QnLIyo0xldn8-NPO_mBu-SAJBY,3875
+ridurre/random_pruning.py,sha256=i12c-awz1AoPzVrg8_rA0PuRmL0MwIxeR1HRGX2YHfA,1933
+ridurre/ultimate_prune.py,sha256=9o8RInkbGOxWELzXP0KlVWe7MDGeTooFJN4EBQdZugY,1028
+ridurre/model_complexity/__init__.py,sha256=86PAVnQjUvCpzGKNSecg5sCGa6tCLHRC3qdQj22AF8k,194
+ridurre/model_complexity/graph_complexity.py,sha256=2r_TKF7qggZ1NGqi0a2vUmh_uJyATSu08BFjOWKq9Ro,2901
+ridurre-0.0.2.dist-info/LICENSE,sha256=sXZAjtPrGYYDgF9qnbNabyhpayTRtkE1tN26rV8adVg,1091
+ridurre-0.0.2.dist-info/METADATA,sha256=OgEJrOPPDWALHPHbPmt5sanL5Sy0d-6V9EAD-KrYsGo,230
+ridurre-0.0.2.dist-info/WHEEL,sha256=UpB-bp5SQQdekLv3_zfFAhrQBtaQjJZABvUiavkhjZ0,97
+ridurre-0.0.2.dist-info/top_level.txt,sha256=dfc8BOQaP-q1SJhJkPPHa8azvqe6tb3v8_Hsj9xMjC8,16
+ridurre-0.0.2.dist-info/RECORD,,

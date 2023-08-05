@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: ridurre
+Version: 0.0.2
+Summary: Keras model convoltuianl filter pruning
+Home-page: https://gaborvecsei.com
+Author: Gabor Vecsei
+License: MIT
+
+# Ridurre - Filter Pruning in Deep Convolutional Networks
+
+
