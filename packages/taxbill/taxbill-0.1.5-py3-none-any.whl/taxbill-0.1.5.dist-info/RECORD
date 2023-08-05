@@ -1,0 +1,12 @@
+taxbill/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+taxbill/__main__.py,sha256=vGvQna6tPUambQrZzPj2plOeYsatihvgZ1HDP2qfQCU,43
+taxbill/analyser.py,sha256=iIwAf0osnpJEr_GjHq9uoT85CzHX8kZ40uTnPvYJR2Y,1699
+taxbill/calculator.py,sha256=OEHclJw6AdTCRxBocyxG_z929oNLgvEWZIBHcA4Xo_s,2582
+taxbill/cli.py,sha256=6r8fpHW80jJY7Odw6VoAujyg-CUXCySrquTjaimoraU,2400
+taxbill/optimiser.py,sha256=_kpcMCuUnOqsQDV5Flw3oo8eMPkhey3H4DcNjzMqc2w,2424
+taxbill/rates.yml,sha256=jRDmhAnX_w9_G3ofnTA2sBkk-Jq9dtSjJgckONW7flc,897
+taxbill-0.1.5.dist-info/entry_points.txt,sha256=mDBj6HSzMTAjP5eV8jQ2gYtSImSron7GGQ9Dys_bFuw,47
+taxbill-0.1.5.dist-info/LICENSE.txt,sha256=N0P3pKtRMvfb64jmgJdlerg3TnS0a2QC776AzPsbZIg,35128
+taxbill-0.1.5.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+taxbill-0.1.5.dist-info/METADATA,sha256=pbOaJspBE_57DDtP5hmS2_-_jMezD6VZbIsdWh9_IGk,522
+taxbill-0.1.5.dist-info/RECORD,,

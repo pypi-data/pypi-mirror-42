@@ -1,0 +1,3 @@
+[console_scripts]
+taxbill=taxbill.cli:taxbill
+
