@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: snipeit
+Version: 0.10
+Summary: Python library to access the SnipeIT API
+Home-page: http://github.com/jlbloomer/SnipeIT-PythonAPI
+Author: Jared Bloomer (Cox Automotive Inc.)
+Author-email: jared.bloomer@coxautoinc.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
