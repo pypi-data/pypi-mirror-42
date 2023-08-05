@@ -1,0 +1,3 @@
+[console_scripts]
+kubectl-gluster = kubectl_gluster.main:main
+
