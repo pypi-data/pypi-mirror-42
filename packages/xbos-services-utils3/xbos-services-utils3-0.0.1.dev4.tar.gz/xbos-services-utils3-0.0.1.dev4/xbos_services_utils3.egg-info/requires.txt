@@ -1,0 +1,4 @@
+pandas==0.24.0
+numpy==1.15.4
+pytz==2018.9
+PyYAML==3.13
