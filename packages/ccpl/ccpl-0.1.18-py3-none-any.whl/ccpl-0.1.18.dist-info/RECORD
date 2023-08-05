@@ -1,0 +1,12 @@
+ccpl/__init__.py,sha256=dq7uCqIPHLZ98DJFDVKt3pewpZzmvs9yZUxbyyQUCcw,13
+ccpl/console.py,sha256=2J6wxjnJ_KtjY6dzy_8_a0dq_A3SXLhhqtvhQX6UicI,329
+ccpl/help.py,sha256=-vGoSlIhagDqk_J82EIiy5cHni6C5cBV85DsAif66oE,196
+ccpl/setup.py,sha256=tkPg3LlcqQ8SWotdgvIpZR9nN9Wamdg0NKl5D4vXUYs,654
+ccpl/scripts/__init__.py,sha256=Qazf5S2lRGpbZZ96X9Jf2Msr1t80tefb-CR0FBFmHhM,21
+ccpl/scripts/createwebproject.py,sha256=szMbFxDZRElJttCNtO-ZeJEU1FSU726pSWoUL8WKkBw,2109
+ccpl/scripts/ytdownloader.py,sha256=819hAzxSVWnduHTwH5dxLBI8uC-fJePM-0R0iRsG9Fc,1454
+ccpl-0.1.18.dist-info/LICENSE,sha256=6kbiFSfobTZ7beWiKnHpN902HgBx-Jzgcme0SvKqhKY,1091
+ccpl-0.1.18.dist-info/METADATA,sha256=HtozOa0561aSRod8FhCDiymTIX3C23vDu3fFLNTAOws,611
+ccpl-0.1.18.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+ccpl-0.1.18.dist-info/top_level.txt,sha256=s0coL1JRM4aHiAQMMVjBoK-f9UDkWYXG3pzFrt40rbE,5
+ccpl-0.1.18.dist-info/RECORD,,
