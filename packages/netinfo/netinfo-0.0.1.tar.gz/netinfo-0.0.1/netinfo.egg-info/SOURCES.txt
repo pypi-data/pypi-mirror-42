@@ -1,0 +1,13 @@
+README.rst
+setup.py
+netinfo/__init__.py
+netinfo.egg-info/PKG-INFO
+netinfo.egg-info/SOURCES.txt
+netinfo.egg-info/dependency_links.txt
+netinfo.egg-info/entry_points.txt
+netinfo.egg-info/not-zip-safe
+netinfo.egg-info/requires.txt
+netinfo.egg-info/top_level.txt
+netinfo/cli/__init__.py
+netinfo/cli/client.py
+netinfo/utils/__init__.py
