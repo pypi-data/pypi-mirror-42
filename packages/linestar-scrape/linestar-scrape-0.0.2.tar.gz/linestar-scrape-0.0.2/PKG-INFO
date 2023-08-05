@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: linestar-scrape
+Version: 0.0.2
+Summary: A package to scrape linestarapp.com ownership data
+Home-page: https://github.com/WolverineSportsAnalytics/linestar-scrape
+Author: Brendan Hart
+Author-email: brendanahart@gmail.com
+License: UNKNOWN
+Description: This is a python project
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
