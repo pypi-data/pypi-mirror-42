@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Options &mdash; pySOT  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="POAP" href="poap.html" />
+    <link rel="prev" title="Surrogate optimization" href="surrogate_optimization.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pySOT
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surrogate_optimization.html">Surrogate optimization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#strategy">Strategy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#srbfstrategy">SRBFStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dycorstrategy">DYCORStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eistrategy">EIStrategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lcbstrategy">LCBStrategy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#experimental-design">Experimental design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#latinhypercube">LatinHypercube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#symmetriclatinhypercube">SymmetricLatinHypercube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#twofactorial">TwoFactorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#surrogate-model">Surrogate model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rbfinterpolant">RBFInterpolant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpregressor">GPRegressor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#marsinterpolant">MARSInterpolant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polyregressor">PolyRegressor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optimization-problem">Optimization problem</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poap.html">POAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source_code.html">Source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pySOT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/options.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="options">
+<h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="strategy">
+<h2>Strategy<a class="headerlink" href="#strategy" title="Permalink to this headline">¶</a></h2>
+<p>We provide implementations of Stochastic RBF (SRBF), DYCORS,
+Expected Improvement (EI), lower confidence bound (LCB) and random search (RS).
+EI can only be used in combination with GPRegressor since uncertainty predictions
+are necessary. All strategies support running in serial, batch synchronous parallel,
+and asynchronous parallel.</p>
+<p>New optimization strategies can be implemented by inheriting from SurrogateBaseStrategy
+and implementing the abstract generate_evals method that proposes num_pts
+new sample points:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Required methods</dt>
+<dd><ul class="first last">
+<li>generate_evals(num_pts): Proposes num_pts new samples.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The following strategies are currently supported:</p>
+<div class="section" id="srbfstrategy">
+<h3>SRBFStrategy<a class="headerlink" href="#srbfstrategy" title="Permalink to this headline">¶</a></h3>
+<p>This is an implementation of the SRBF strategy by Regis and Shoemaker:</p>
+<div class="line-block">
+<div class="line">Rommel G Regis and Christine A Shoemaker.</div>
+<div class="line">A stochastic radial basis function method for the global optimization of expensive functions.</div>
+<div class="line">INFORMS Journal on Computing, 19(4): 497–509, 2007.</div>
+</div>
+<p>Rommel G Regis and Christine A Shoemaker.
+Parallel stochastic global optimization using radial basis functions.
+INFORMS Journal on Computing, 21(3):411–426, 2009.</p>
+<p>The main idea is to pick the new evaluations from a set of candidate
+points where each candidate point is generated as an N(0, sigma^2)
+distributed perturbation from the current best solution. The value of
+sigma is modified based on progress and follows the same logic as in many
+trust region methods; we increase sigma if we make a lot of progress
+(the surrogate is accurate) and decrease sigma when we aren’t able to
+make progress (the surrogate model is inaccurate). More details about how
+sigma is updated is given in the original papers.</p>
+<p>After generating the candidate points we predict their objective function
+value and compute the minimum distance to previously evaluated point. Let
+the candidate points be denoted by C and let the function value predictions
+be s(x_i) and the distance values be d(x_i), both rescaled through a linear
+transformation to the interval [0,1]. This is done to put the values on the
+same scale. The next point selected for evaluation is the candidate point
+x that minimizes the weighted-distance merit function:</p>
+<div class="math notranslate nohighlight">
+\[\text{merit}(x) := w s(x) + (1 - w) (1 - d(x))\]</div>
+<p>where <span class="math notranslate nohighlight">\(0 \leq w \leq 1\)</span>. That is, we want a small function value prediction and a
+large minimum distance from previously evalauted points. The weight w is
+commonly cycled between a few values to achieve both exploitation and
+exploration. When w is close to zero we do pure exploration while w close
+to 1 corresponds to explotation.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>max_evals: Evaluation budget (int)</li>
+<li>opt_prob: Optimization problem object, must implement OptimizationProblem</li>
+<li>exp_design: Experimental design object, must implement ExperimentalDesign</li>
+<li>surrogate: Surrogate object, must implement Surrogate</li>
+<li>asynchronous: Whether or not to use asynchrony (True / False).</li>
+<li>batch_size: Size of the batch. This value is ignored if asynchronous is True. Use 1 for serial or run with asynchronous set to True.</li>
+<li>extra_points: n Extra points to add to the experimental design (numpy.array of size n x dim)</li>
+<li>extra_vals: Values for extra_points. Set elements to np.nan if unknown (numpy.array of size n x 1)</li>
+<li>reset_surrogate: Specify whether or not we are resetting the surrogate model i.e., removing current points (True / False)</li>
+<li>weights: Weights for merit function (list or numpy.array). Default is [0.3, 0.5, 0.8, 0.95]</li>
+<li>num_cand: Number of candidate points (int). Default = 100*dim</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="dycorstrategy">
+<h3>DYCORStrategy<a class="headerlink" href="#dycorstrategy" title="Permalink to this headline">¶</a></h3>
+<p>This is an implementation of the DYCORS strategy by Regis and Shoemaker:</p>
+<div class="line-block">
+<div class="line">Rommel G Regis and Christine A Shoemaker.</div>
+<div class="line">Combining radial basis function surrogates and dynamic coordinate search in
+high-dimensional expensive black-box optimization.</div>
+<div class="line">Engineering Optimization, 45(5): 529–555, 2013.</div>
+</div>
+<p>This is an extension of the SRBF strategy that changes how the candidate
+points are generated. The main idea is that many objective functions depend
+only on a few directions so it may be advantageous to perturb only a few
+directions. In particular, we use a perturbation probability to perturb a
+given coordinate and decrease this probability after each function
+evaluation so fewer coordinates are perturbed later in the optimization.</p>
+<p>The parameters are the same as in the SRBF strategy.</p>
+</div>
+<div class="section" id="eistrategy">
+<h3>EIStrategy<a class="headerlink" href="#eistrategy" title="Permalink to this headline">¶</a></h3>
+<p>This is an implementation of Expected Improvement (EI), arguably the most
+popular acquisition function in Bayesian optimization. Under a Gaussian
+process (GP) prior, the expected value of the improvement:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \text{I}(x) &amp;:= \max(f_{\text{best}} - f(x), 0) \\
+    \text{EI}[x] &amp;:= \mathbb{E}[I(x)]
+\end{align*}\end{split}\]</div>
+<p>can be computed analytically, where f_best is the best observed function
+value.EI is one-step optimal in the sense that selecting the maximizer of
+EI is the optimal action if we have exactly one function value remaining
+and must return a solution with a known function value.</p>
+<p>When using parallelism, we constrain each new evaluation to be a distance
+dtol away from previous and pending evaluations to avoid that the same
+point is being evaluated multiple times. We use a default value of
+dtol = 1e-3 * norm(ub - lb), but note that this value has not been
+tuned carefully and may be far from optimal.</p>
+<p>The optimization strategy terminates when the evaluatio budget has been
+exceeded or when the EI of the next point falls below some threshold,
+where the default threshold is 1e-6 * (max(fX) -  min(fX)).</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>max_evals: Evaluation budget (int)</li>
+<li>opt_prob: Optimization problem object, must implement OptimizationProblem</li>
+<li>exp_design: Experimental design object, must implement ExperimentalDesign</li>
+<li>surrogate: Surrogate object, must implement Surrogate</li>
+<li>asynchronous: Whether or not to use asynchrony (True / False).</li>
+<li>batch_size: Size of the batch. This value is ignored if asynchronous is True. Use 1 for serial or run with asynchronous set to True.</li>
+<li>extra_points: n Extra points to add to the experimental design (numpy.array of size n x dim)</li>
+<li>extra_vals: Values for extra_points. Set elements to np.nan if unknown (numpy.array of size n x 1)</li>
+<li>reset_surrogate: Specify whether or not we are resetting the surrogate model i.e., removing current points (True / False)</li>
+<li>ei_tol: Terminate if the largest EI falls below this threshold (float). Default: 1e-6 * (max(fX) -  min(fX))</li>
+<li>dtol: Minimum distance between new and pending/finished evaluations (float). Default: 1e-3 * norm(ub - lb)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="lcbstrategy">
+<h3>LCBStrategy<a class="headerlink" href="#lcbstrategy" title="Permalink to this headline">¶</a></h3>
+<p>This is an implementation of Lower Confidence Bound (LCB), a
+popular acquisition function in Bayesian optimization. The main idea
+is to minimize:</p>
+<div class="math notranslate nohighlight">
+\[\text{LCB}(x) := \mathbb{E}[x] - \kappa * \sqrt{\mathbb{V}[x]}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbb{E}[x]\)</span> is the predicted function value, <span class="math notranslate nohighlight">\(V[x]\)</span> is the predicted
+variance, and kappa is a constant that balances exploration and
+exploitation. We use a default value of kappa = 2.</p>
+<p>When using parallelism, we constrain each new evaluation to be a distance
+dtol away from previous and pending evaluations to avoid that the same
+point is being evaluated multiple times. We use a default value of
+dtol = 1e-3 * norm(ub - lb), but note that this value has not been
+tuned carefully and may be far from optimal.</p>
+<p>The optimization strategy terminates when the evaluatio budget has been
+exceeded or when the LCB of the next point falls below some threshold,
+where the default threshold is 1e-6 * (max(fX) -  min(fX)).</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>max_evals: Evaluation budget (int)</li>
+<li>opt_prob: Optimization problem object, must implement OptimizationProblem</li>
+<li>exp_design: Experimental design object, must implement ExperimentalDesign</li>
+<li>surrogate: Surrogate object, must implement Surrogate</li>
+<li>asynchronous: Whether or not to use asynchrony (True / False).</li>
+<li>batch_size: Size of the batch. This value is ignored if asynchronous is True. Use 1 for serial or run with asynchronous set to True.</li>
+<li>extra_points: n Extra points to add to the experimental design (numpy.array of size n x dim)</li>
+<li>extra_vals: Values for extra_points. Set elements to np.nan if unknown (numpy.array of size n x 1)</li>
+<li>reset_surrogate: Specify whether or not we are resetting the surrogate model i.e., removing current points (True / False)</li>
+<li>kappa: Constant in the LCB merit function (float). Default: 2.0</li>
+<li>lcb_tol: Terminate if min(fX) - min(LCB(x)) &lt; lcb_tol (float). Default: 1e-6 * (max(fX) -  min(fX))</li>
+<li>dtol: Minimum distance between new and pending/finished evaluations (float). Default: 1e-3 * norm(ub - lb)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="experimental-design">
+<h2>Experimental design<a class="headerlink" href="#experimental-design" title="Permalink to this headline">¶</a></h2>
+<p>The experimental design generates the initial points to be evaluated. A well-chosen
+experimental design is critical in order to fit a surrogate model that captures the behavior
+of the underlying objective function. Any implementation must have the following attributes
+and method:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last">
+<li>dim: Dimensionality</li>
+<li>num_pts: Number of points in the design</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Required methods</dt>
+<dd><ul class="first last">
+<li>generate_points(): Returns an experimental design of size num_pts x dim where
+num_pts is the number of points in the initial design, which was specified
+when the object was created.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The following experimental designs are supported:</p>
+<div class="section" id="latinhypercube">
+<h3>LatinHypercube<a class="headerlink" href="#latinhypercube" title="Permalink to this headline">¶</a></h3>
+<p>A Latin hypercube design</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int).</li>
+<li>num_pts: Number of desired sampling points (int).</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT</span> <span class="kn">import</span> <span class="n">LatinHypercube</span>
+<span class="n">exp_des</span> <span class="o">=</span> <span class="n">LatinHypercube</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_pts</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a Latin hypercube design with 10 points in 3 dimensions</p>
+</div>
+<div class="section" id="symmetriclatinhypercube">
+<h3>SymmetricLatinHypercube<a class="headerlink" href="#symmetriclatinhypercube" title="Permalink to this headline">¶</a></h3>
+<p>A symmetric Latin hypercube design</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int).</li>
+<li>num_pts: Number of desired sampling points (int). Use 2*dim + 1 to make sure the design has full rank.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT</span> <span class="kn">import</span> <span class="n">SymmetricLatinHypercube</span>
+<span class="n">exp_des</span> <span class="o">=</span> <span class="n">SymmetricLatinHypercube</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_pts</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a symmetric Latin hypercube design with 10 points in 3 dimensions</p>
+</div>
+<div class="section" id="twofactorial">
+<h3>TwoFactorial<a class="headerlink" href="#twofactorial" title="Permalink to this headline">¶</a></h3>
+<p>The corners of the unit hypercube</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int).</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT</span> <span class="kn">import</span> <span class="n">TwoFactorial</span>
+<span class="n">exp_des</span> <span class="o">=</span> <span class="n">TwoFactorial</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a two factorial design with 8 points in 3 dimensions</p>
+</div>
+</div>
+<div class="section" id="surrogate-model">
+<h2>Surrogate model<a class="headerlink" href="#surrogate-model" title="Permalink to this headline">¶</a></h2>
+<p>The surrogate model approximates the underlying objective function given all of the
+points that have been evaluated. Any implementation of a surrogate model must
+have the following attributes and methods</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Attributes:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions</li>
+<li>num_pts: Number of points in the surrogate model</li>
+<li>X: Data points, of size num_pts x dim, currently incorporated in the model</li>
+<li>fX: Function values at the data points</li>
+<li>updated: True if all information is incorporated in the model, else a new fit will be triggered</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Required methods</dt>
+<dd><ul class="first last">
+<li>reset(): Resets the surrogate model</li>
+<li>add_points(x, fx): Adds point(s) x with value(s) fx to the surrogate model. This <strong>SHOULD NOT</strong> trigger a new fit of the model.</li>
+<li>predict(x): Evaluates the surrogate model at points x</li>
+<li>predict_deriv(x): Evaluates the derivative of surrogate model at points x</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Optional methods</dt>
+<dd><ul class="first last">
+<li>predict_std(x): Evaluates the uncertainty of the surrogate model at points x</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The following surrogate models are supported:</p>
+<div class="section" id="rbfinterpolant">
+<h3>RBFInterpolant<a class="headerlink" href="#rbfinterpolant" title="Permalink to this headline">¶</a></h3>
+<p>A radial basis function (RBF) takes the form:</p>
+<div class="math notranslate nohighlight">
+\[s(x) = \sum_j c_j \phi(\|x-x_j\|) + \sum_j \lambda_j p_j(x)\]</div>
+<p>where the functions <span class="math notranslate nohighlight">\(p_j(x)\)</span> are low-degree polynomials.
+The fitting equations are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} \eta I &amp; P^T \\ P &amp; \Phi + \eta I \end{bmatrix}
+\begin{bmatrix} \lambda \\ c \end{bmatrix} =
+\begin{bmatrix} 0 \\ f \end{bmatrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_{ij} = p_j(x_i)\)</span> and <span class="math notranslate nohighlight">\(\Phi_{ij}=\phi(\|x_i-x_j\|)\)</span>
+The regularization parameter <span class="math notranslate nohighlight">\(\eta\)</span> allows us to avoid problems
+with potential poor conditioning of the system. Consider using the
+SurrogateUnitBox wrapper or manually scaling the domain to the unit
+hypercube to avoid issues with the domain scaling.</p>
+<p>We add k new points to the RBFInterpolant in <span class="math notranslate nohighlight">\(O(kn^2)\)</span> flops by
+updating the LU factorization of the old RBF system. This is better than
+computing the RBF coefficients from scratch, which costs <span class="math notranslate nohighlight">\(O(n^3)\)</span> flops.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int)</li>
+<li>kernel: RBF kernel object, must implement Kernel. Default: CubicKernel()</li>
+<li>tail: RBF polynomial tail object, must implement Tail. Default: LinearTail(dim)</li>
+<li>eta: Regularization parameter. Use something small like 1e-6 if the domain is [0, 1]^dim</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT.surrogate</span> <span class="kn">import</span> <span class="n">RBFInterpolant</span><span class="p">,</span> <span class="n">CubicKernel</span><span class="p">,</span> <span class="n">LinearTail</span>
+<span class="n">fhat</span> <span class="o">=</span> <span class="n">RBFInterpolant</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">CubicKernel</span><span class="p">(),</span> <span class="n">tail</span><span class="o">=</span><span class="n">LinearTail</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>creates a cubic RBF with a linear tail in dim dimensions.</p>
+</div>
+<div class="section" id="gpregressor">
+<h3>GPRegressor<a class="headerlink" href="#gpregressor" title="Permalink to this headline">¶</a></h3>
+<p>Generate a Gaussian process regression object. This is just a wrapper around the GPRegressor in scikit-learn.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int)</li>
+<li>gp: GPRegressor model in scikit-learn. Uses the SE/RBF/Gaussian kernel as a default if None is passed.</li>
+<li>n_restarts_optimizer: Number of restarts in hyperparamater fitting (int)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT.surrogate</span> <span class="kn">import</span> <span class="n">GPRegressor</span>
+<span class="n">surrogate</span> <span class="o">=</span> <span class="n">GPRegressor</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a GPRegressor object in dim dimensions.</p>
+</div>
+<div class="section" id="marsinterpolant">
+<h3>MARSInterpolant<a class="headerlink" href="#marsinterpolant" title="Permalink to this headline">¶</a></h3>
+<p>Generate a Multivariate Adaptive Regression Splines (MARS) model.</p>
+<div class="math notranslate nohighlight">
+\[\hat{f}(x) = \sum_{i=1}^{k} c_i B_i(x).\]</div>
+<p>The model is a weighted sum of basis functions <span class="math notranslate nohighlight">\(B_i(x)\)</span>. Each basis
+function <span class="math notranslate nohighlight">\(B_i(x)\)</span> takes one of the following three forms:</p>
+<ol class="arabic simple">
+<li>A constant 1.</li>
+<li>A hinge function of the form <span class="math notranslate nohighlight">\(\max(0, x - const)\)</span> or <span class="math notranslate nohighlight">\(\max(0, const - x)\)</span>. MARS automatically selects variables and values of those variables for knots of the hinge functions.</li>
+<li>A product of two or more hinge functions. These basis functions c an model interaction between two or more variables.</li>
+</ol>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This implementation depends on the py-earth module (see <a class="reference internal" href="quickstart.html#quickstart-label"><span class="std std-ref">Dependencies</span></a>)</p>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT.surrogate</span> <span class="kn">import</span> <span class="n">MARSInterpolant</span>
+<span class="n">surrogate</span> <span class="o">=</span> <span class="n">MARSInterpolant</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a MARS interpolant in dim dimensions.</p>
+</div>
+<div class="section" id="polyregressor">
+<h3>PolyRegressor<a class="headerlink" href="#polyregressor" title="Permalink to this headline">¶</a></h3>
+<p>Multivariate polynomial regression with cross-terms. This is just a wrapper around PolynomialFeatures in scikit-learn.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Parameters:</dt>
+<dd><ul class="first last">
+<li>dim: Number of dimensions (int)</li>
+<li>degree: Polynomial degree (int)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pySOT.surrogate</span> <span class="kn">import</span> <span class="n">PolyRegressor</span>
+<span class="n">surrogate</span> <span class="o">=</span> <span class="n">PolyRegressor</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates a polynomial regressor of degree 2.</p>
+</div>
+</div>
+<div class="section" id="optimization-problem">
+<h2>Optimization problem<a class="headerlink" href="#optimization-problem" title="Permalink to this headline">¶</a></h2>
+<p>The optimization problem is its own object and must have certain attributes and methods
+in order to work with the framework. The following attributes and methods must
+always be specified in the optimization problem class:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong>Attributes</strong></dt>
+<dd><ul class="first last">
+<li>lb: Lower bounds for the variables.</li>
+<li>ub: Upper bounds for the variables.</li>
+<li>dim: Number of dimensions</li>
+<li>int_var: Specifies the integer variables. If no variables have
+discrete, set to []</li>
+<li>cont_var: Specifies the continuous variables. If no variables
+are continuous, set to []</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Required methods</strong></dt>
+<dd><ul class="first last">
+<li>eval: Takes one input in the form of an numpy.ndarray with
+shape (1, dim), which corresponds to one point in dim dimensions. Returns the
+value (a scalar) of the objective function at this point.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="poap.html" class="btn btn-neutral float-right" title="POAP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="surrogate_optimization.html" class="btn btn-neutral" title="Surrogate optimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, David Bindel, David Eriksson, Christine Shoemaker
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
