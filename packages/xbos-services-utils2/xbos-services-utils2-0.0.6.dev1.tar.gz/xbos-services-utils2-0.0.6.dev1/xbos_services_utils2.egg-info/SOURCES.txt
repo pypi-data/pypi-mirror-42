@@ -1,0 +1,13 @@
+CHANGES.txt
+MANIFEST.in
+README.md
+setup.py
+xbos_services_utils2/__init__.py
+xbos_services_utils2/utils2.py
+xbos_services_utils2.egg-info/PKG-INFO
+xbos_services_utils2.egg-info/SOURCES.txt
+xbos_services_utils2.egg-info/dependency_links.txt
+xbos_services_utils2.egg-info/requires.txt
+xbos_services_utils2.egg-info/top_level.txt
+xbos_services_utils2/test/__init__.py
+xbos_services_utils2/test/test.py
