@@ -1,0 +1,6 @@
+pipdeptree>=0.13.2
+
+[development]
+black
+isort
+tox
