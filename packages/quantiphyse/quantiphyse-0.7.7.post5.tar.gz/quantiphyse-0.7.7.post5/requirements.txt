@@ -1,0 +1,17 @@
+Cython
+funcsigs
+matplotlib
+nibabel
+numpy
+Pillow
+pyqtgraph
+PySide
+PyYAML
+requests
+scipy
+scikit-learn
+scikit-image
+setuptools
+six
+deprecation
+pandas
