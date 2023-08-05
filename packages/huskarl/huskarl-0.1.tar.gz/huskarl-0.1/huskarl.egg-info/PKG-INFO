@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: huskarl
+Version: 0.1
+Summary: Deep Reinforcement Learning Framework
+Home-page: https://github.com/danaugrs/huskarl
+Author: Daniel Salvadori
+Author-email: danaugrs@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3

@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+huskarl/__init__.py
+huskarl/core.py
+huskarl/memory.py
+huskarl/policy.py
+huskarl/simulation.py
+huskarl.egg-info/PKG-INFO
+huskarl.egg-info/SOURCES.txt
+huskarl.egg-info/dependency_links.txt
+huskarl.egg-info/requires.txt
+huskarl.egg-info/top_level.txt
+huskarl/agent/__init__.py
+huskarl/agent/a2c.py
+huskarl/agent/dqn.py
