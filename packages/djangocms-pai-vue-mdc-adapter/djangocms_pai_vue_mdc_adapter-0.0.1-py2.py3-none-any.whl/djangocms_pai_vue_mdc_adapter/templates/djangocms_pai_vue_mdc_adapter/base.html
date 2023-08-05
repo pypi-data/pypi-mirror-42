@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load cms_tags static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block css %}
+{{block.super}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
+
+<style>
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-weight: 400;
+}
+
+/* webkit patch */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+/* end webkit patch */
+</style>
+
+<!-- import vue-mdc-adapter stylesheet -->
+<link rel="stylesheet" href="https://unpkg.com/vue-mdc-adapter@^0.18.2/dist/vue-mdc-adapter.min.css" type="text/css">
+{% endblock css %}
+
+{% block extra_body_classes %} mdc-typography {% endblock extra_body_classes %}
+
+{% block extrahead %}
+{{block.super}}
+
+<!-- import vue and then vue-mdc-adapter -->
+<script src="https://unpkg.com/vue@2.6.6/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vue-mdc-adapter@^0.18.2/dist/vue-mdc-adapter.min.js"></script>
+{% endblock extrahead %}
+
+{% block content %}
+  {% placeholder "content" %}
+{% endblock content %}
+
+{% block extrajs %}
+{{block.super}}
+{% endblock extrajs %}
+
+{% block jsready %}
+{{block.super}}
+{% endblock jsready%}
