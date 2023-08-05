@@ -1,0 +1,9 @@
+NumPy
+biopython
+pandas
+
+[dev]
+check-manifest
+
+[test]
+coverage
