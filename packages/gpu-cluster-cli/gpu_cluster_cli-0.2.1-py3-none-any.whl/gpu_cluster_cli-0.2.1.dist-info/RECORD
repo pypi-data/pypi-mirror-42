@@ -1,0 +1,8 @@
+cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cli/cli.py,sha256=JkN7Pd6j6TCaVLMlzpoIkYqAePo81OyG5KkSNPZkTYo,30286
+cli/config.py,sha256=DYghF2rJsiMa1HrEQMiZuREcPZN2LY3qHvioeAsNLNQ,95
+gpu_cluster_cli-0.2.1.dist-info/METADATA,sha256=DqRpeGILLmDq0tJXeQbn-NAQDJcJYidILiAN8SDhY9Q,598
+gpu_cluster_cli-0.2.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+gpu_cluster_cli-0.2.1.dist-info/entry_points.txt,sha256=Kz0NGgbfMai-dNppC0cnzj9U64DI6556dQ-Ufk0JiUA,40
+gpu_cluster_cli-0.2.1.dist-info/top_level.txt,sha256=2ImG917oaVHlm0nP9oJE-Qrgs-fq_fGWgba2H1f8fpE,4
+gpu_cluster_cli-0.2.1.dist-info/RECORD,,
