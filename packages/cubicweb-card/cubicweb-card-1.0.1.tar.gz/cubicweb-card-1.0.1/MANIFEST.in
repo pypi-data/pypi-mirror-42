@@ -1,0 +1,10 @@
+include setup.py
+include README
+recursive-include cubicweb_card/i18n *.pot *.po
+recursive-include cubicweb_card/migration *.py
+recursive-include cubicweb_card/data *.css
+include test/data/bootstrap_cubes
+recursive-include test *.py
+prune debian
+prune cubicweb-card.spec
+prune __pkginfo__.py
