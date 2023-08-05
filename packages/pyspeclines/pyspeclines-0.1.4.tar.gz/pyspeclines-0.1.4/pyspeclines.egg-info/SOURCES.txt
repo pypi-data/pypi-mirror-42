@@ -1,0 +1,12 @@
+README.md
+setup.py
+PySpecLines/__init__.py
+PySpecLines/_version.py
+PySpecLines/command_line.py
+PySpecLines/compute_fluxes_and_EWs.py
+pyspeclines.egg-info/PKG-INFO
+pyspeclines.egg-info/SOURCES.txt
+pyspeclines.egg-info/dependency_links.txt
+pyspeclines.egg-info/entry_points.txt
+pyspeclines.egg-info/requires.txt
+pyspeclines.egg-info/top_level.txt
