@@ -1,0 +1,96 @@
+Metadata-Version: 2.1
+Name: mms-python-logger
+Version: 0.0.2
+Summary: A custom MMS/Alice log module for python
+Home-page: https://github.com/EastOfGondor/mms-alice-python-logger
+Author: Tobias hoke
+Author-email: hoke@mediamarktsaturn.com
+License: UNKNOWN
+Description: # mms-alice-python-logger
+        
+        ## Log Module for MMS/Alice standarzised log purposes
+        
+        This is a package for writing logs to GCP App Engine.
+        
+        
+        
+        ## How to use:
+        
+        
+        1. The following dependencies are required:
+        
+        ```python
+        mms-python-logger>=0.0.1
+        ```
+        
+        
+        2. Import module:
+        
+        ```python
+        from mms_alice_python_logger_pkg.alice_log_handler import Logger
+        ```
+        
+        
+        3. Initalize the logger:
+        
+        ```python
+        Cloud Function Logging:
+        
+        logger = Logger(trace_id, project_id, function_name, resource_type)
+        logger = Logger('lksjdfl98', 'v135-5683-alice-ksk-explore', 'cf-sample-implementation', 'cloud_function')
+        
+        
+        App Engine Logging:
+        
+        logger = Logger(trace_id, project_id, module_id, version_id, resource_type)
+        logger = Logger('lksjdfl98', 'v135-5683-alice-ksk-explore', 'app-flex-sample-service', 'v0.0.1', 'gae_app')
+        
+        
+        ```
+        
+        The following resource_types are supported:
+        
+        Cloud Function: 'cloud_function'
+        App Engine: 'gae_app'
+        
+        When resource type is unrecoginzable logs will be processed to 'Global'
+        
+        
+        4. Use the logger:
+        
+        ```python
+        logger.info('your message')
+        logger.warning('your message')
+        logger.error('your message')
+        logger.critical('your message')
+        logger.debug('your message')
+        
+        ```
+        
+        
+        
+        The logs are visible in Stackdriver Logging via GAE Application -> Module_id -> Version_id
+        
+        
+        
+        ## Important
+        
+        This log tool only works in App Engine Standard/Flexible and Cloud Function environment.
+        
+        For local testing do not initialize the logger as it would ran into errors because of the missing GCP context.
+        
+        
+        
+        ## How we log
+        
+        We initialize the logger only in the "app.py" file. From there every log entry will be written - Modules used within app.py need to return the exceptions to the caller so
+        error etc. get logged at one central point within app.py.
+        
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
