@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: python-mercuryapi
+Version: 0.4
+Summary: Python wrapper for the ThingMagic Mercury API
+Home-page: https://github.com/gotthardp/python-mercuryapi
+Author: Petr Gotthard
+Author-email: petr.gotthard@centrum.cz
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
