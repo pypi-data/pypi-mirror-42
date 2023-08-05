@@ -1,0 +1,16 @@
+pyglvis/__init__.py,sha256=ULvO3CLQmZa4d_l13CWyiLo1n9BwyM_h27GTfyYnw1M,271
+pyglvis/_version.py,sha256=ZANMGaqe_1jCdH5_4Rcv-vsnPD5JN8EneyISH_SavDU,72
+pyglvis/widget.py,sha256=23-E5P9jMZPP3ncWFf4LK3dvh9ChLHz0GZWV9VFTmC8,1230
+pyglvis/static/extension.js,sha256=50266ShkvfvMg4KVmg_Lmi9jcqucQDKueN2KUxSq4rE,3345
+pyglvis/static/index.js,sha256=jR-m7Fjxxr2il8tXzK_xDn5D1RhHj53g7BfXDF5gZ0Y,4725546
+pyglvis/static/index.js.map,sha256=aS_CjFWjn3FYv0ak-XWxxvWmdGcepfVSMg4di1jRa7Y,4917269
+pyglvis/static/package.json,sha256=gsnDUHMMLvc28o34Tv6E8lzAggZegw7OoSI-8pE98kw,846
+pyglvis-0.1.2.data/data/etc/jupyter/nbconfig/notebook.d/jupyter-glvis.json,sha256=001qzi9k6bMbw1l-q81OZ86eOhsh_Ccmry_5X2a-5tg,67
+pyglvis-0.1.2.data/data/share/jupyter/nbextensions/jupyter-glvis/extension.js,sha256=50266ShkvfvMg4KVmg_Lmi9jcqucQDKueN2KUxSq4rE,3345
+pyglvis-0.1.2.data/data/share/jupyter/nbextensions/jupyter-glvis/index.js,sha256=jR-m7Fjxxr2il8tXzK_xDn5D1RhHj53g7BfXDF5gZ0Y,4725546
+pyglvis-0.1.2.data/data/share/jupyter/nbextensions/jupyter-glvis/index.js.map,sha256=aS_CjFWjn3FYv0ak-XWxxvWmdGcepfVSMg4di1jRa7Y,4917269
+pyglvis-0.1.2.data/data/share/jupyter/nbextensions/jupyter-glvis/package.json,sha256=gsnDUHMMLvc28o34Tv6E8lzAggZegw7OoSI-8pE98kw,846
+pyglvis-0.1.2.dist-info/METADATA,sha256=2ZeRrbJREj22nn7RdRAYIKHSKUmfvLtS_HKvtV6h2tg,926
+pyglvis-0.1.2.dist-info/RECORD,,
+pyglvis-0.1.2.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+pyglvis-0.1.2.dist-info/top_level.txt,sha256=k56HGweBsdKAn1GFeUnLYIqDFb-UZteFtfKthN7HKHQ,8
