@@ -1,0 +1,11 @@
+pokitdok/__init__.py,sha256=SI6PuEyRG8JB_cZBlDKLKtSF4H2ZR6aPBfh-4TqhaLE,415
+pokitdok/api/__init__.py,sha256=oe8Co7Jlr3eN6leruoAyRY1TjdgZx7BqDGvdh2PdhY0,302
+pokitdok/api/client.py,sha256=iIHXD-rttiaVtdzHpHGg6SLvHSx_w7yJGA6_LuZf2zE,26758
+pokitdok-2.8.1.dist-info/DESCRIPTION.rst,sha256=IQJcZVD1nL71RwPElXQ9gtWcFuoFBwyiDXcDjV9Cc1Q,360
+pokitdok-2.8.1.dist-info/METADATA,sha256=8KMqxvNASCrpFaHOh5mKiEkaEr2BGPRk6EEV8X1crHg,1644
+pokitdok-2.8.1.dist-info/RECORD,,
+pokitdok-2.8.1.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+pokitdok-2.8.1.dist-info/metadata.json,sha256=PDMGztmqqJRC1LogtUGhhpVbmyvhHqS6ICZZYtwsKU4,1503
+pokitdok-2.8.1.dist-info/top_level.txt,sha256=Vif0YUjEE5aUtkNozeB-JWFRJ6vUSwvahbPjJdOlZXA,15
+tests/__init__.py,sha256=RFP6PX1zfIPRF7Bno-SG9x-Gbrl54Fzeg92mR8fernw,195
+tests/test_api_client.py,sha256=WcjQ3usK6ilKKoyxYqtvLH1HP-wkNG-5MN-cxvxLlS4,20270
