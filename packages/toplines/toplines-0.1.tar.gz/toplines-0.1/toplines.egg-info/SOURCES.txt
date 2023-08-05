@@ -1,0 +1,9 @@
+setup.py
+toplines/__init__.py
+toplines/main.py
+toplines.egg-info/PKG-INFO
+toplines.egg-info/SOURCES.txt
+toplines.egg-info/dependency_links.txt
+toplines.egg-info/entry_points.txt
+toplines.egg-info/requires.txt
+toplines.egg-info/top_level.txt
