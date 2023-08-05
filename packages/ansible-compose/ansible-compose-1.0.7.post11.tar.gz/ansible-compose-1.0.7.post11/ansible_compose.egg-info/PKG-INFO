@@ -1,0 +1,138 @@
+Metadata-Version: 2.1
+Name: ansible-compose
+Version: 1.0.7.post11
+Summary: The obscene docker-compose deploy with ansible cli
+Home-page: https://yourlabs.io/oss/ansible-compose
+Author: James Pic
+Author-email: jamespic@gmail.com
+License: UNKNOWN
+Description: ansible-compose: deploy docker-compose over ssh
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        Deploying a docker-compose.yml
+        ==============================
+        
+        First, configure the dsn variable to have the user/host and path to store the
+        compose files in. If not set, localhost in current working directory will be
+        used::
+        
+           export dsn=user@host:22/absolute/target/path
+        
+        Then, run ansible-compose apply -f as you would with k8s::
+        
+           ansible-compose apply -f ./docker-compose-example.yml -f ./examples/nginx.yml
+        
+        Or, deploy from a url, just like kubectl apply would let you::
+        
+           ansible-compose apply -f https://raw.git.../docker-compose.yml
+        
+        Running commands on the compose of a target
+        ===========================================
+        
+        Provide ssh configuration and target dir as first argument, then the
+        docker-compose command::
+        
+           export dsn=user@host:22/absolute/target/path
+           ansible-compose stop
+           ansible-compose start
+           ansible-compose logs
+           ansible-compose help
+        
+        Transforms for docker-compose.yml on the CLI
+        ============================================
+        
+        Transforms apply on the docker-compose.yml as if it was a template we are going
+        to render using environment variables.
+        
+        Suppose that you start with such a docker-compose.yml:
+        
+        .. code-block:: yaml
+        
+           version: '3.4'
+           services:
+             web:
+               build: .
+               environment:
+                 base: here
+                 wrong: todrop
+        
+        First, all build lines will be dropped. You will have to
+        specify images with env vars ie.::
+        
+           web_image=abc  # sets services[web][image]=abc
+        
+        If you wanted to drop the environment line use the drop
+        prefix::
+        
+           drop_web_environment=  # dels services[web][environment]
+        
+        You can also override deeper in the YAML tree::
+        
+           web_environment_SECRET_TOKEN=yoursecret
+        
+        Even for drop::
+        
+           drop_web_environment_VERSION=
+        
+        Or even drop a whole service::
+        
+           drop_web=
+        
+        You can however require all variables to have a particular prefix, ie::
+        
+           dev_drop_mail=              # to prevent the mail service on dev branches
+           ansible_compose_prefix=dev  # to enable only variables starting with dev_
+        
+        Don't forget ansible-compose will also forward extraneous arguments to the
+        ansible-playbook call beneath.
+        
+        Automatic creation of volume dirs
+        =================================
+        
+        It will try to automatically create the volume bind dirs for you. To set the
+        uid and/or guid, set them as env vars, either in the compose.yml::
+        
+           environment:
+             uid: 1001
+             gid: 100
+        
+        Or with an env var::
+        
+           web_environment_uid=1001
+        
+        Installation
+        ============
+        
+        Local::
+        
+           pip install --user ansible-compose
+           export PATH="$HOME/.local/bin:$PATH"
+           echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+        
+        The current configuration in CI for image yourlabs/ansible-compose is:
+        
+        - ANSIBLE_HOST_KEY_CHECKING=false
+        - SSH_PRIVATE_KEY=our passwordless private key generated with ssh-keygen -t ed25519 and default options
+        - SSH_INSECURE=true not checking any host key today !
+        
+        Example gitlab ci job
+        =====================
+        
+        .. code-block:: yaml
+        
+           deploy:
+              stage: deploy
+              image: yourlabs/ansible-compose
+              variables:
+              - dsn=deploy@example.com/home/staging
+              script:
+              - ansible-compose apply -f ./docker-compose.yml
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development
+Classifier: Topic :: System
+Description-Content-Type: text/x-rst
