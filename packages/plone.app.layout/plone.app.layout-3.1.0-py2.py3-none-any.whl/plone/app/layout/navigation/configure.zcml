@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <class class=".navtree.NavtreeStrategyBase">
+        <allow interface=".interfaces.INavtreeStrategy" />
+    </class>
+
+    <!-- a contentprovider -->
+    <adapter
+        factory=".navtree.NavTreeProvider"
+        for="*
+             *
+             *"
+        name="plone.navtree"
+        provides="zope.contentprovider.interfaces.IContentProvider"
+    />
+
+</configure>
