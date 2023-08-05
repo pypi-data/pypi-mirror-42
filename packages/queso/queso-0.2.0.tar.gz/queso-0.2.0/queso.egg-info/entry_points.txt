@@ -1,0 +1,3 @@
+[console_scripts]
+queso = queso.__main__:cli
+
