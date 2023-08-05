@@ -1,0 +1,13 @@
+gblackboard/__init__.py,sha256=A2abVZZKJ1HC6DHk0h1IwJHCPqxy8LrgEBY96rvdC1I,523
+gblackboard/cli.py,sha256=1dDsgKLAbEyvpLdYJQacxWrRQv_cfSKb1kU5X8EzKRY,425
+gblackboard/data.py,sha256=v6H9sUoXOBk_Wc-VzsKM4jDkhhJ3FF9WzYLtGWB6jF8,584
+gblackboard/exception.py,sha256=hf4giATJ5ltHfEOqISvpSp74nNp9LXYaDvKGQrCEbTE,947
+gblackboard/gblackboard.py,sha256=tvsPsOrcpk2JxlAVsKtMLFlwpAiVvRvDKH67vrkq8i8,8455
+gblackboard/wrapper.py,sha256=J-3q6gX1wBw1wtcli1tpDiysyM04xqO0fUyfGMAMx1k,8440
+gblackboard-0.2.0.dist-info/AUTHORS.rst,sha256=bh-aT0-m7X_D2eoRNn82knFYtodmBGUhODmYzGkEMjI,148
+gblackboard-0.2.0.dist-info/LICENSE,sha256=mKFAk78ahNSVy1qhe5fizNC_PNRi-IQnf-IbZNLqzpc,1061
+gblackboard-0.2.0.dist-info/METADATA,sha256=Ao0LuAXaauU8xqTE9btPglAT6xZFWBVyf5uCISyJ1yE,6030
+gblackboard-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+gblackboard-0.2.0.dist-info/entry_points.txt,sha256=RGhbiHlwDHG-xo3roPz42yIybh9-ByrPLw0JalUS2Fk,54
+gblackboard-0.2.0.dist-info/top_level.txt,sha256=cMADZFWk0VkmTkLwr6hcaoj3eaKIOROkXFuqYCNtnJM,12
+gblackboard-0.2.0.dist-info/RECORD,,
