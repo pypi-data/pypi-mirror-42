@@ -1,0 +1,3 @@
+[console_scripts]
+ssm-tree = ssm_tree.main:main
+

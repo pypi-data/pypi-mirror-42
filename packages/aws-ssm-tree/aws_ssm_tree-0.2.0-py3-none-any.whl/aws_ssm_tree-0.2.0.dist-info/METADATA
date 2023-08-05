@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: aws-ssm-tree
+Version: 0.2.0
+Summary: Builds a tree of parameters from AWS System Manager Parameter Store.
+Home-page: https://github.com/brunorubin/aws-ssm-tree
+Author: Bruno Rubin
+Author-email: bruno.rubin@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: boto3
+Requires-Dist: treelib
+
+# SSM Tree
+
+SSM Tree is a tool that provides a tree visualization of the parameters hierarchy from AWS System Manager Parameter Store.
+
+## Installation
+
+SSM Tree can be installed using [pip](https://pip.pypa.io/en/stable/):
+
+```bash
+$ pip install aws-ssm-tree
+```
+
+## Example
+![example](https://user-images.githubusercontent.com/2822509/52458942-3178d700-2bc7-11e9-90c9-2b52930b80df.png)
+
+### Usage
+```
+Usage: ssm-tree [OPTIONS]
+
+  SSM Tree is a tool that provides a tree visualization of the parameters
+  hierarchy from AWS System Manager Parameter Store.
+
+Options:
+  -p, --path TEXT       The hierarchy for the parameter. Hierarchies start
+                        with a forward slash (/) and end with the parameter
+                        name. Here is an example of a hierarchy: /Servers/Prod
+                        [required]
+  -s, --show-encrypted  Show encrypted parameters with a '*' symbol.
+  --no-recursion        Prevent recursion into descending levels.
+  --region TEXT         Specify which AWS Region to send this request to.
+  --version             Shows the version and exit.
+  --help                Shows this message and exit.
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+
