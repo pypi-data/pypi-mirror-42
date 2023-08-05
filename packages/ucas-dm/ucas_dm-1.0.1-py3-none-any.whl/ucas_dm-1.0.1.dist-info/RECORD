@@ -1,0 +1,17 @@
+ucas_dm/__init__.py,sha256=X_Tpb0kQtsMEMNEOTfA759a8MX9Cwgtd6f9DWmLGz0c,665
+ucas_dm/utils.py,sha256=gifHPa5T1vi9C0V6WzUmuJs9kc9ELmnvGsXbMBMJoz4,6084
+ucas_dm/prediction_algorithms/__init__.py,sha256=ujSb0Qd2QLdG9J16PG1tuJvz85AzKBrW6iFOCnyhEAM,489
+ucas_dm/prediction_algorithms/base_algo.py,sha256=po2_m6io-EirZC4GHu7t42mzzwqn8kl8l6MYNnbg6II,2035
+ucas_dm/prediction_algorithms/baseline.py,sha256=QCb5wWnXAaSZSG6Z1hOBNpkI3AQEMfh-3rSjhLkSIA0,1440
+ucas_dm/prediction_algorithms/collaborate_based_algo.py,sha256=wESbElYNGlsPGTIDeBorBIclniRfnRM2ruvryyGdiyQ,2411
+ucas_dm/prediction_algorithms/content_based_algo.py,sha256=l08iIponfMXS39fVmVf2wHTNqzCO2SaB48z18cDjX9s,6462
+ucas_dm/prediction_algorithms/nmf.py,sha256=ZgWOX_Ib_w4I7-9hRJRNuJP3ysR85cqOHriDgBAu6pw,1927
+ucas_dm/prediction_algorithms/surprise_base_algo.py,sha256=_sgXoRqkPsRYbM-HBXQi1PCdcTlmywj6C2S87F-HJ9E,3262
+ucas_dm/prediction_algorithms/topic_based_algo.py,sha256=6jsVYkq4M6m-zbieX3NOmYYrEynddz-PXCL7O7QSrV8,6583
+ucas_dm/preprocess/__init__.py,sha256=VlUyAdDtsW4vy42pxenJLB5cGXmjI4G8086D679OJwA,65
+ucas_dm/preprocess/preprocess.py,sha256=54V1V1Na-Yq8AA8BWwXHtdO7rdaRo3NX5VRzsmj3N_8,4361
+ucas_dm-1.0.1.data/data/ucas_dm/preprocess/stop_words/stop.txt,sha256=LDJSVidvLE7V7AdheMCElK96Rr9E0Lm-L8AhTVtgbUE,7597
+ucas_dm-1.0.1.dist-info/METADATA,sha256=NUuHELjGj5Jm1pducwx9VErYWY5LarDXrEEkObEPQD0,719
+ucas_dm-1.0.1.dist-info/RECORD,,
+ucas_dm-1.0.1.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+ucas_dm-1.0.1.dist-info/top_level.txt,sha256=2LqkqxbQCT8KwS48ROTSyU_xux171oD_ffarTjj5Oek,8
