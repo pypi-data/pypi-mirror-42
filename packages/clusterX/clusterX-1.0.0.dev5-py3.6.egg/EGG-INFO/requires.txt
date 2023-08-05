@@ -1,0 +1,9 @@
+numpy
+scipy
+sklearn
+matplotlib
+ase
+plac
+pytest
+spglib
+sympy
