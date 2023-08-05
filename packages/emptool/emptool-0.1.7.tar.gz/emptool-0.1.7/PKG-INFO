@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: emptool
+Version: 0.1.7
+Summary: Easy MicroPython toolchain
+Home-page: https://github.com/Easy-MicroPython
+Author: singein
+Author-email: singein@qq.com
+License: MIT License
+Description: UNKNOWN
+Keywords: EasyMicroPython EMP 1ZLAB
+Platform: Linux
+Platform: Unix
+Platform: Windows
