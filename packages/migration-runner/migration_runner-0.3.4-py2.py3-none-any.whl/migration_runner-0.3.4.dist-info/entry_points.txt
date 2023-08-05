@@ -1,0 +1,3 @@
+[console_scripts]
+migration_runner = migration_runner.cli:main
+
