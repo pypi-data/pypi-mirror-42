@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+holtwinters/__init__.py
+holtwinters/ad_hw.py
+holtwinters.egg-info/PKG-INFO
+holtwinters.egg-info/SOURCES.txt
+holtwinters.egg-info/dependency_links.txt
+holtwinters.egg-info/not-zip-safe
+holtwinters.egg-info/top_level.txt
