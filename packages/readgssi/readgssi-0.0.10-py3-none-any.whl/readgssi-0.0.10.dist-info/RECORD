@@ -1,0 +1,17 @@
+readgssi/__init__.py,sha256=9YqjPbnLk--RJkiWJRGU7orXgmpBOsE9q0lJrFxZOQA,93
+readgssi/arrayops.py,sha256=UqabYXwLrZdE77e4YeVbXjvE9g2ySoIb_K1YFDPB90E,4250
+readgssi/config.py,sha256=Zw88B6x4E26TjOtHXFFGXcNpL_-3K8AaratDjQFmU7k,2816
+readgssi/constants.py,sha256=R7Bjxn0fAZ0RKOBqwCLsbnmuPTJkUTI3-lqGRzg_O5w,1790
+readgssi/dzt.py,sha256=4HAK60k9nLcUSUtjmm4hbJIUWqZqh7XzQskE1e05Eos,10843
+readgssi/filtering.py,sha256=5ijXDSkN_Ixy6Wg1FUzSmwLD_c-QsDusuLuIgF7c4bU,1661
+readgssi/functions.py,sha256=0Tqxb-wv6XYFIlHcpI0iDAB-wsW1sJ5SagJIsmbCRhc,162
+readgssi/gps.py,sha256=LtwX1LSnRqyqocTrj84_53DxqSrNtHUngCTh_T4Jbzo,8376
+readgssi/plot.py,sha256=9UmuTgVHOWBlV9yZhGpNOw4kVTP5c0uyGYzQoOQWaGc,5336
+readgssi/readgssi.py,sha256=q33g3YbCOQOaSC_BKwRQEfDsKJ_g6H2Z9-H5rsMctt8,15418
+readgssi/translate.py,sha256=sYJEAroBYE8K6CuxG84Eoc74oOL0UcHqjY4nP5YP7h4,9935
+readgssi-0.0.10.dist-info/LICENSE,sha256=dql8h4yceoMhuzlcK0TT_i-NgTFNIZsgE47Q4t3dUYI,34520
+readgssi-0.0.10.dist-info/METADATA,sha256=6xso7vBSWie9A_zA4Hej4TRgy6HQxENxe5owE77OD8w,16794
+readgssi-0.0.10.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+readgssi-0.0.10.dist-info/entry_points.txt,sha256=LLPUTkE70fYPr0vH5n9kKmzCFQ8X057TfI8Jdu76Qvc,71
+readgssi-0.0.10.dist-info/top_level.txt,sha256=KdkIgWzPYem5xCp-MkrlWceDIOanCQqtMKRzhSk0EGA,9
+readgssi-0.0.10.dist-info/RECORD,,
