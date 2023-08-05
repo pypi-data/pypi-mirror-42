@@ -1,0 +1,2 @@
+recursive-include pystreamfs *.py
+include logo.png
