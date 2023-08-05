@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: cognitivecluster
+Version: 0.1.2
+Summary: A library to cluster partners based on metacognitive diversity
+Home-page: https://github.com/mjs2600/cognitivecluster
+License: UNKNOWN
+Author: Michael Simpson
+Author-email: michael@snthesis.com
+Requires-Python: >=3.6,<3.7
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: numpy (>=1.16,<2.0)
+Requires-Dist: scikit-learn (>=0.20.2,<0.21.0)
+Requires-Dist: tensorflow (>=1.12,<2.0)
+Requires-Dist: tensorflow-hub (>=0.2.0,<0.3.0)
+Project-URL: Repository, https://github.com/mjs2600/cognitivecluster
+Description-Content-Type: text/markdown
+
+# Cognitive Cluster
+[![Build Status](https://travis-ci.org/mjs2600/cognitivecluster.svg?branch=master)](https://travis-ci.org/mjs2600/cognitivecluster)
+
+Cognitive Cluster is a library for clustering written metacognitive exercises based on document embeddings.
+This is useful for creating cross-cluster partnerships to increase the diversity of problem solving techniques in teams.
