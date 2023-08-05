@@ -1,0 +1,18 @@
+# Specify path to parent directory of data files.  More specifically
+#
+# [section-name]
+# path_parentdir: "<path_to_dataset_top_directory>"
+#
+# where:
+#   section-name: a unique name given to a set of data
+#   path_parentdir: points to the path of the top-level directory
+#                   The subdirectories will comprise individual data sets.
+#					The top-level directory will have a file named
+#				    `shortnames.txt` which gives a unique name to each
+#					data folder as well as specifies the path to the data
+#				    and associated metadata.
+
+[onavdata-data]
+path_parentdir = "data"
+
+
