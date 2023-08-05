@@ -1,0 +1,17 @@
+paperspace/__init__.py,sha256=CLyiDr0dEe0hPPsHUXkIdwTTbwGGaKjNl9gm7lWI-dc,269
+paperspace/config.py,sha256=xPDPTr5_AaPR8C-C8azB04--VRKmE6NFsW5J96plWEo,492
+paperspace/jobs.py,sha256=YC0frSkV0HP8iU1R948IMqusz1twgwdnnuHcYADeZbQ,13876
+paperspace/login.py,sha256=I1HMvcOymk02gWvo2F5bT9nQXae2XfVdbtBxW0TTqMw,4544
+paperspace/machines.py,sha256=YrD8uNAM-4OOYmrgVWfGkILQQ4FjXoFC2Nl88D6wFxc,1463
+paperspace/main.py,sha256=6Q_z_WOkfaEADMccEsKWxLz_3XdksI8kZNRny7NR4Mg,5296
+paperspace/method.py,sha256=Jlo_B-du7fSHkASeNaT9E2LZy3s_Xyvs5Z0Wfh6CfUs,7063
+paperspace/networks.py,sha256=zuyUUApw4pXmGwv0gzE5nYz3nS5f3MhtPWmtP5ibu4Q,97
+paperspace/scripts.py,sha256=0H2CBrWnsGf4PSs5QiDHI28RiewpFrA94dmJEAjDmHQ,385
+paperspace/templates.py,sha256=UQTRXcSra_Ckc6SjmuImxjIE-kaF3vfIMUB59nCP0hk,99
+paperspace/users.py,sha256=I8dsT2l-1LT7vTMh732n6nrcrN6pnM7TwkrCltpMW5E,91
+paperspace-0.0.15.dist-info/LICENSE.txt,sha256=wLslmmwuJqYazmnYDuiXrOyBh4UUydSj-nNbrp6inpY,753
+paperspace-0.0.15.dist-info/METADATA,sha256=ajEPlDO7U5qk4v2CnE2vKIj3Zpj43rux8l3w2wrtfvU,15802
+paperspace-0.0.15.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+paperspace-0.0.15.dist-info/entry_points.txt,sha256=749ABcvvyekk49Xvkr0jJ6agWWuvGwYLm0nfJbbO5co,60
+paperspace-0.0.15.dist-info/top_level.txt,sha256=L51OaWfrAkFgkC7dzpG9GFDquRhc46tyve2BNJoIifg,11
+paperspace-0.0.15.dist-info/RECORD,,
