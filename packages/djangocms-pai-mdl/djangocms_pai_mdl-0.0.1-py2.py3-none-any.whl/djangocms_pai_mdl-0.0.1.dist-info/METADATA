@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: djangocms-pai-mdl
+Version: 0.0.1
+Summary: Django-cms Material Design Lite template app
+Home-page: https://bitbucket.org/pai/djangocms-pai-mdl
+Author: pai
+Author-email: paiuolo@gmail.com
+License: mit
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+UNKNOWN
+
+
