@@ -1,0 +1,177 @@
+Metadata-Version: 1.2
+Name: autoqube_kubernetes
+Version: 1.0.2
+Summary: Kubernetes Handler module for AUTOQUBE load testing
+Home-page: https://gitlab.com/autoqube/aq-kubernetes
+Author: CloudFxLabs
+Author-email: gswaroop@cloudfxlabs.io
+Maintainer: CloudFxLabs
+Maintainer-email: gswaroop@cloudfxlabs.io
+License: BSD 3
+Description: python-autoqube_kubernetes
+        ==========================
+        
+        This library contains:
+        
+        - Objects for
+           * Creating, updating and deleting a Kubernetes cluster.
+           * Deploying various objects on Kubernetes cluster.
+           * Running Jmeter Load tests on Kubernetes cluster.
+        
+        
+        **Table of Contents**
+        
+        .. contents::
+           :backlinks: none
+           :local:
+        
+        Installation
+        ------------
+        
+        python-autoqube_kubernetes is compatible with Python 3.x. It is listed on `PyPi as 'autoqube_kubernetes'`_. The recommended way to install is via pip_:
+        
+        .. code::
+        
+          pip install autoqube_kubernetes
+        
+        .. _PyPi as 'autoqube_kubernetes': https://pypi.python.org/pypi/autoqube_kubernetes/
+        .. _pip: http://www.pip-installer.org
+        
+        Prerequisites
+        -------------
+        - **kops**:  kops is a command line utility tool required to manage kubernetes cluster. The installation information is available at `kops installation`_.
+        - **kubectl**: kubectl is a command line utility tool required to manage various objects on existing kubernetes cluster. The installation information is available at `kubectl installation`_.
+        - **dns-zone**: A public hosted zone should be created for AWS which would be the same as the name of the cluster. Please refer `creating dns-zone`_.
+        
+        .. _kops installation: https://github.com/kubernetes/kops/blob/master/docs/install.md
+        .. _kubectl installation: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+        .. _creating dns-zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html
+        
+        KubernetesHandler
+        -----------------
+        KubernetesHandler object will create, delete cluster and run load tests.
+        
+        Kubernetes cluster
+        ~~~~~~~~~~~~~~~~~~
+        Currently the cluster creation is supported only on AWS cloud platform.
+        
+        For creating a new Kubernetes cluster, the following parameters are needed:
+        
+        - cloud_provider : The cloud provider on which the cluster needs to be created.
+        - cluster_config : The configuration details for the cluster.
+        - env_config     : The environment configuration for storage of cloud provider essential keys.
+        
+        A typical cluster configuration file would be like
+        
+        .. code-block:: python
+        
+           config = {
+               "cloud_provider": "AWS",
+               "cluster_config": {
+                   'node-count':  2,
+                   'master-size': 't2.small',
+                   'master-zones': 'us-west-2a',
+                   'zones':  'us-west-2a',
+                   'name': 'aq.autoqube.io',
+                   'node-size': 't2.small',
+                   'ssh-public-key': '/Users/autoqube/.ssh/id_rsa.pub',
+                   'dns-zone': 'aq.autoqube.io',
+               },
+               "env_config": {
+                   'AWS_ACCESS_KEY_ID': '*********************',
+                   'AWS_SECRET_ACCESS_KEY': '***********************',
+                   'AWS_REGION': 'us-west-2',
+                   'KUBECONFIG': '/Users/autoqube/kubernetes/aq.autoqube.io/kubeconfig',
+                   'KOPS_STATE_STORE': 's3://agent-kops-store'
+               },
+           }
+        
+        *For better understanding or debugging of various processes running behind, setup a logging functionality.*
+        
+        .. code-block:: python
+        
+          from autoqube_kubernetes import KubernetesHandler
+          import config
+          import logging
+        
+          root_logger = logging.getLogger()
+          console_handler = logging.StreamHandler()
+        
+          root_logger.setLevel(logging.INFO)
+          root_logger.addHandler(console_handler)
+        
+          kubernetes_handler = KubernetesHandler(config)
+          kubernetes_handler.create_cluster() # Creation of cluster with the above configuration.
+          # kubeconfig will be stored in the path specified in the configuration.
+          kubernetes_handler.delete_cluster() # Deletion of cluster with the above configuration.
+        
+        Load Testing
+        ~~~~~~~~~~~~
+        - Currently only 'jmeter' load testing is supported on kubernetes cluster.
+        - Load testing using jmeter on a kubernetes cluster has been inspired from the following `blog`_.
+        - The results of the load test can be visually seen on grafana service dashboards.
+        - The templates for deployment of various kubernetes objects required for jmeter load testing can be downloaded from `Jmeter Load Test Templates`_.
+        - Extract the downloaded templates and place them in location accessible by python.
+        - The following parameters are needed for load testing
+           * load_config - The configuration details about type of load test and the templates for kubernetes objects.
+           * test_file_config - The configuration details about the test files for load test.
+        
+        A sample configuration would be like
+        
+        .. code-block:: python
+        
+           load_config = {
+                'test_type': 'jmeter',
+                'templates_path': '/Users/autoqube/kubernetes/load_testing/k8s_templates/jmeter/'
+            }
+            test_file_config = {
+                'test_files': ['./tmp/sample.jmx', './tmp/sample.csv']
+            }
+        
+        
+        .. _blog: https://blog.kubernauts.io/load-testing-as-a-service-with-jmeter-on-kubernetes-fc5288bb0c8b
+        .. _Jmeter Load Test Templates: https://drive.google.com/file/d/1egtHVMALE3FzwFZ6OJO9ZiR678mvvaaY/
+        
+        KubernetesHandler will create the necessary objects on cluster and run load tests.
+        
+        .. code-block:: python
+        
+          # After creation of kubernetes cluster using 'kubernetes_handler'.
+          kubernetes_handler.create_load_test(load_config)
+          # Creates pods, deployments, services and other objects required for
+          # load testing on cluster.
+        
+          kubernetes_handler.run_load_test(test_file_config)
+          # Run load tests using the test files provided in the configuration
+        
+          kubernetes_handler.destroy_load_test(load_config)
+         # Once the tests are complete, all the resources created can be destroyed
+         # and only empty cluster will remain.
+        
+        KubernetesClient
+        ----------------
+        KubernetesClient can be used to perform various actions on existing cluster like:
+         * Creating objects from yaml files
+         * Destroying resources on cluster
+         * Listing all the pods and services on cluster
+         * Executing commands on a specific pod
+         * Copy files to a specific pod
+        
+        kubeconfig of a cluster is required.
+        
+        .. code-block:: python
+        
+         from autoqube_kubernetes import KubernetesClient
+        
+         kubernetes_client = KubernetesClient('/path/to/kubeconfig')
+         namespace = 'autoqube' # Namespace on which the operations are to be performed.
+         kubernetes_client.create_object('/path/to/yaml', namespace) # Creates object from yaml file.
+         kubernetes_client.get_pod_list(namespace) # Lists all the pods.
+         kubernetes_client.get_service_list(namespace) # Lists all the services.
+         podname = 'autoqube-jmeter'
+         commands_list = ['cd ~', 'ls']
+         kubernetes_client.execute_commands(podname, commands_list, namespace) # Executes the commands on a specific pod.
+         kubernetes_client.destroy_all_resources(namespace) # Destroys all resources in a given namespace.
+        
+Keywords: kubernetes jmeter
+Platform: UNKNOWN
