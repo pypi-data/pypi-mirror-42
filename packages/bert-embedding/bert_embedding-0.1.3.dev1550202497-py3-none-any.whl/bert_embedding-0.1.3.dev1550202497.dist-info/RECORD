@@ -1,0 +1,13 @@
+bert_embedding/__init__.py,sha256=ldict50aJ4t20Wziic-0RV1zTO_U1eXywt7DJyVfCEA,57
+bert_embedding/bert.py,sha256=iMq_jZF9N_tHlwNP5vgxmLAgVShJPMAPXL9i3QPMr0s,5927
+bert_embedding/cli.py,sha256=hzSUCLc5rujfT74iGr3R2xNR8boAq9Rg0fJFB0BAVDw,142
+bert_embedding/dataset.py,sha256=kWtgz0FMB6fewy6Km5q3YEbxV60RARoyHR5AmLLbD6A,782
+bert_embedding/version.py,sha256=jqYAOtki0Q15NlxiQOlR5C4-v7fdfEefsiY4e3pJ5F4,211
+bert_embedding/tests/__init__.py,sha256=3L92qm8yizT0R1oxaL4NxewO9uAYCruW0q8_C7GBS_s,23
+bert_embedding/tests/test_bert.py,sha256=mlDw0yXlFFqsaNBkCiAb8RozGYkJtbk_OsS7jCZlq4A,63
+bert_embedding-0.1.3.dev1550202497.data/scripts/bertemb,sha256=lrQ8CTjVBekWrOvcvYkhiss26Ow9uFQTI4Jf0d-r7xI,58
+bert_embedding-0.1.3.dev1550202497.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+bert_embedding-0.1.3.dev1550202497.dist-info/METADATA,sha256=Annz3fA7UW724-gIkTXVdH9MDDu0_stqBweSXEuBJng,5447
+bert_embedding-0.1.3.dev1550202497.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+bert_embedding-0.1.3.dev1550202497.dist-info/top_level.txt,sha256=erHbu02Onnltp-3ikFJWFpGAQokB0VbQhEzs9TED248,15
+bert_embedding-0.1.3.dev1550202497.dist-info/RECORD,,
