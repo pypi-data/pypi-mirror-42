@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: loutils
+Version: 1.1.0
+Summary: Cross-platform LibreOffice document conversion and printing
+Home-page: https://github.com/scivision/libreoffice-utils
+Author: Michael Hirsch, Ph.D.
+License: UNKNOWN
+Description: [![Build Status](https://travis-ci.com/scivision/libreoffice-utils.svg?branch=master)](https://travis-ci.com/scivision/libreoffice-utils)
+        [![PyPi versions](https://img.shields.io/pypi/pyversions/loutils.svg)](https://pypi.python.org/pypi/loutils)
+        [![PyPi Download stats](http://pepy.tech/badge/loutils)](http://pepy.tech/project/loutils)
+        
+        # LibreOffice Utils
+        
+        Word / rich text document conversion and printing from Python command line using LibreOffice.
+        
+        These scripts use the command-line interface of LibreOffice in a headless (no GUI) fashion.
+        
+        Because LibreOffice (at least through 6.2) is not threadsafe, we cannot yet use asyncio to launch numerous subprocesses for document conversion.
+        Further, since the command-line globbing of LibreOffice conversion is broken, this program provides a sane workaround for mass document conversion using LibreOffcie.
+        
+Keywords: libreoffice
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Utilities
+Requires-Python: >= 3.6
+Description-Content-Type: text/markdown
+Provides-Extra: tests

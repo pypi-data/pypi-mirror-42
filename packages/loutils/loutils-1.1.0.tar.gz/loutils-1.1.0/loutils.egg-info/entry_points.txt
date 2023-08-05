@@ -1,0 +1,4 @@
+[console_scripts]
+doc2pdf = doc2pdf:main
+doc2print = doc2print:main
+
