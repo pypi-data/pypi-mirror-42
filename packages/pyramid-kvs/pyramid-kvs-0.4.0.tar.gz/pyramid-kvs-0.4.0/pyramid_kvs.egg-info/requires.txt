@@ -1,0 +1,7 @@
+pyramid
+redis>=3.0
+python-memcached
+
+[test]
+nose
+coverage
