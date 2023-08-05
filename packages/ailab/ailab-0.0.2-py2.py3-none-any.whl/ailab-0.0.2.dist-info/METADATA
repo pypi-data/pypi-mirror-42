@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: ailab
+Version: 0.0.2
+Summary: An environment to manage all your running ai experiments across multiple computers.
+Home-page: https://github.com/penguinmenac3/ailab-server
+Author: Michael Fuerst
+Author-email: mail@michaelfuerst.de
+License: BSD
+Download-URL: https://github.com/penguinmenac3/ailab-server/tarball/0.0.2
+Description-Content-Type: UNKNOWN
+Requires-Dist: GPUtil
+Requires-Dist: cefpython3 (==66.0)
+Requires-Dist: entangle-python
+Requires-Dist: pyte
+
+# AI Lab Server
+
+
