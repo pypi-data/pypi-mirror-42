@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: stratus-endpoint
+Version: 0.0.1
+Summary: Base classes for creating service endpoints for the Stratus Framework
+Home-page: https://github.com/nasa-nccs-cds/stratus-endpoint
+Author: Thomas Maxwell
+Author-email: thomas.maxwell@nasa.gov
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# stratus-endpoint
+Base classes for creating service endpoints for the [Stratus Framework](https://github.com/nasa-nccs-cds/stratus)
+
+These classes wrap python services for integration with other services using Stratus.
+
+

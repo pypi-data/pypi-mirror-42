@@ -1,0 +1,8 @@
+stratus/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stratus/handlers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stratus/handlers/endpoint.py,sha256=D3O4PkGZW6f47---qjq3ipS3xwMJ-JolV-xrKBXyyP8,638
+stratus_endpoint-0.0.1.dist-info/LICENSE,sha256=7DbybCxlzBcuM3bFg71EqNYfjei4DtxCvV_EQ0iLPl8,1093
+stratus_endpoint-0.0.1.dist-info/METADATA,sha256=XOrS5f0SEeCa3_nGCQ2Cq3iJYNCtgk5Tmu2JnZoFB_E,705
+stratus_endpoint-0.0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+stratus_endpoint-0.0.1.dist-info/top_level.txt,sha256=qcIXBm8KH4C3FKnB8yd63Q8oD8TKHnyyXpGo8qHsgk4,8
+stratus_endpoint-0.0.1.dist-info/RECORD,,
