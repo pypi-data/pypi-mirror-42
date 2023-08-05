@@ -1,0 +1,3 @@
+[console_scripts]
+mkwvconf = mkwvconf.mkwvconf:cli
+
