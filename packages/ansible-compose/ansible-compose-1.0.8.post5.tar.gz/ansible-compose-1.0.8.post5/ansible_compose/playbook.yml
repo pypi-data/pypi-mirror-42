@@ -1,0 +1,100 @@
+---
+
+- hosts: '*'
+  gather_facts: false
+  tasks:
+  - name: Install python for ansible to work
+    raw: |
+      #!/bin/sh -x
+      sudo=""
+      [ "$USER" = "root" ] || sudo=sudo
+
+      if which python3; then
+          if ! which python; then
+              $sudo ln -sfn $(which python3) /usr/bin/python
+          fi
+          exit 0
+      fi
+
+      if which apt; then
+          $sudo apt update -y
+          $sudo apt install -y python3
+      elif which pacman; then
+          $sudo pacman -Sy --noconfirm
+          $sudo pacman -S --noconfirm python
+      elif which apk; then
+          $sudo apk update
+          $sudo apk add python
+      fi
+
+- hosts: '*'
+  roles:
+  - docker
+
+  tasks:
+  - name: Create home directory
+    tags: setup
+    file: path='{{ path }}' state=directory
+
+  - name: Upload new docker-compose file at destination path
+    tags: update
+    loop: '{{ hostvars[inventory_hostname]["composes"] }}'
+    copy:
+      src: '{{ item.0 }}'
+      dest: '{{ path }}/{{ item.1 }}'
+    when: inventory_hostname != 'localhost'
+
+  - name: Set the first as default docker-compose.yml if none is there
+    shell: test -f docker-compose.yml || ln -sfn {{ hostvars[inventory_hostname]["composes"][0][1] }} docker-compose.yml
+    args:
+      chdir: '{{ path }}'
+      executable: /bin/bash
+    when: inventory_hostname != 'localhost'
+
+  - name: Any .env file to upload ?
+    tags: update
+    stat: path=.env
+    delegate_to: localhost
+    register: env_stat
+
+  - name: Upload .env file if any
+    tags: update
+    copy:
+      src: .env
+      dest: '{{ path }}/.env'
+    when: inventory_hostname != 'localhost' and env_stat.stat.exists
+
+  - name: docker-compose pull
+    tags: update
+    async: 300
+    poll: 0
+    shell: docker-compose pull
+    register: compose_pull
+    args:
+      chdir: '{{ path }}'
+      executable: /bin/bash
+
+  - name: Create filesystem directories for each service
+    compose_directories: services='{{ hostvars[inventory_hostname]["services"] }}' path='{{ path }}'
+
+  - name: Compose wait for pull complete
+    async_status:
+      jid: "{{ compose_pull.ansible_job_id }}"
+    register: job_result
+    until: job_result.finished
+    retries: 30
+
+  - name: Restart compose services
+    shell: |
+      set -x;
+      cd {{ path }}
+      {% if inventory_hostname == 'localhost' %}
+      composes="{% for src, dst in hostvars[inventory_hostname]["composes"] %} -f {{ src }}{% endfor %}"
+      {% else %}
+      composes="{% for src, dst in hostvars[inventory_hostname]["composes"] %} -f {{ path }}/{{ dst }}{% endfor %}"
+      {% endif %}
+      docker-compose $composes down
+      docker-compose $composes up -d --remove-orphans
+    args:
+      chdir: '{{ path }}'
+      executable: /bin/bash
