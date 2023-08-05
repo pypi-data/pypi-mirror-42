@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+tupas_verisigner.py
+tupas_verisigner.egg-info/PKG-INFO
+tupas_verisigner.egg-info/SOURCES.txt
+tupas_verisigner.egg-info/dependency_links.txt
+tupas_verisigner.egg-info/not-zip-safe
+tupas_verisigner.egg-info/top_level.txt
