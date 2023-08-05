@@ -1,0 +1,9 @@
+setup.py
+Morfotypos.egg-info/PKG-INFO
+Morfotypos.egg-info/SOURCES.txt
+Morfotypos.egg-info/dependency_links.txt
+Morfotypos.egg-info/top_level.txt
+morfotypos/__init__.py
+morfotypos/morfotypos.py
+tests/__init__.py
+tests/test_main.py
