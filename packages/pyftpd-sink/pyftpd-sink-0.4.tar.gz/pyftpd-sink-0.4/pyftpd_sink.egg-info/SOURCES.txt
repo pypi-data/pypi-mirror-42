@@ -1,0 +1,12 @@
+.gitignore
+LICENSE
+README.md
+pyftpd_sink.py
+pyftpd_sink_test.py
+setup.py
+pyftpd_sink.egg-info/PKG-INFO
+pyftpd_sink.egg-info/SOURCES.txt
+pyftpd_sink.egg-info/dependency_links.txt
+pyftpd_sink.egg-info/entry_points.txt
+pyftpd_sink.egg-info/requires.txt
+pyftpd_sink.egg-info/top_level.txt

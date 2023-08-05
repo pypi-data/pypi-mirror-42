@@ -1,0 +1,3 @@
+[console_scripts]
+pyftpd-sink = pyftpd_sink:main
+
