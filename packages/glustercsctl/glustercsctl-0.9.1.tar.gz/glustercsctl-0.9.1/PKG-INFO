@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: glustercsctl
+Version: 0.9.1
+Summary: GlusterCS deployment tool
+Home-page: https://github.com/aravindavk/glustercsctl
+Author: Gluster Developers
+Author-email: gluster-devel@gluster.org
+License: GPLv2
+Description: 
+            GlusterCS deployment tool
+            
+Keywords: gluster,container,kubernetes,glustercs
+Platform: linux
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
