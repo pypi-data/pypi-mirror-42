@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: data-anonymizer
+Version: 0.0.4
+Summary: A tool to anonymize data within a CSV
+Home-page: https://github.com/calebdinsmore/data-anonymizer
+Author: Caleb Dinsmore
+Author-email: caleb.dinsmore@edusource.us
+License: MIT
+Description: # Data Anonymizer
+        
+        Data Anonymizer is a tool that helps you anonymize data you're working with and building reports on.
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
