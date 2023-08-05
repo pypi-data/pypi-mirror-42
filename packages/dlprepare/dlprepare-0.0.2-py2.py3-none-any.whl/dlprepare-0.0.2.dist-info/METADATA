@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: dlprepare
+Version: 0.0.2
+Summary: A data preparetion package for deep learning.
+Home-page: https://gitlab.com/motkeg/Dlprepare
+Author: Moti Gadian
+Author-email: motkeg@gmail.com
+License: UNKNOWN
+Keywords: deep-learning,data preparetion,tensorflow
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: tensorflow
+
+# dlprepare
+A data preparation package for deep learning.
+current version: _0.0.2_  
+you can see the source code [here]("https://gitlab.com/motkeg/Dlprepare)  
+for contribution pls **open an issue** on the repo site.
+
+### installation:
+`pip install dlprepare`
+
+### Classes:
+* [csv_utils](./dlprepare/csv_utils.py) - Utility helper class for .csv files , to create a (test,train)  set.  
+* [tpu](./dlprepare/tpu.py)  - A set of Decorators to  facilitate the creation of TPU-supporting models  (kears only for now)
+
+

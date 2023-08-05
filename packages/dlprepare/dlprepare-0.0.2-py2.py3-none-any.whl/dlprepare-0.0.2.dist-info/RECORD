@@ -1,0 +1,8 @@
+dlprepare/__init__.py,sha256=htdGWreLKBU_5PZK6KIWSGyD4jEuT43V9slwXLjBeBY,86
+dlprepare/csv_utils.py,sha256=I2N4bgkSu3ucM_uj3zw_yjLh6FbzIjULHzaRa9o7-kI,1335
+dlprepare/tpu.py,sha256=6HnxjxBDnBSC71kxZTypYQahXDGvdezbIQ9dfz9Uias,447
+dlprepare-0.0.2.dist-info/LICENSE,sha256=6cYUexHVTZQNxlGsF6__0m5WAp8cEJwsyoA3f4GfUJ8,1068
+dlprepare-0.0.2.dist-info/METADATA,sha256=e8qkXKQwqmSdbdwN6QubNlNfgX_ZNJcG2kmoAFudVN8,1071
+dlprepare-0.0.2.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+dlprepare-0.0.2.dist-info/top_level.txt,sha256=qzlUVomMzjoVT1sdb96xeG0-fnabX3t4tEs9KmmyyDw,10
+dlprepare-0.0.2.dist-info/RECORD,,
