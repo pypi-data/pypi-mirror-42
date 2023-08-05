@@ -1,0 +1,1 @@
+"""Scotty core module."""
