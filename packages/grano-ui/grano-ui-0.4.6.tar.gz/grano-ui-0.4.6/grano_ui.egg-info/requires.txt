@@ -1,0 +1,4 @@
+grano
+cssmin>=0.1.4
+Flask-Assets
+jsmin>=2.0.9

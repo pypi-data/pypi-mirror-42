@@ -1,0 +1,31 @@
+<h1 class="unboxed">Relation: {{relation.schema.label}}</h1>
+
+<gn-relation-frame section="view" relation="relation" project="project">
+  
+<table class="table">
+    <thead>
+        <tr>
+            <th width="50%">
+                Source
+            </th>
+            <th>
+                Target
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>
+            <a href="#/p/{{relation.project.slug}}/entities/{{relation.source.id}}">
+              {{relation.source.properties.name.value}}</a>
+          </td>
+          <td>
+            <a href="#/p/{{relation.project.slug}}/entities/{{relation.target.id}}">
+              {{relation.target.properties.name.value}}</a>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <gn-property-list obj="relation" refresh="reloadRelation(id)"></gn-property-list>
+</gn-entity-frame>
