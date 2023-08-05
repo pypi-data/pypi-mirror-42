@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: JSutils
+Version: 0.2.1
+Summary: Simple to use functions to emulate native functions like setInterval in JavaScript
+Home-page: https://github.com/Jaimeloeuf/JSutils
+Author: Jaime Loeuf
+Author-email: jaimeloeuf@gmail.com
+License: MIT
+Download-URL: https://github.com/Jaimeloeuf/JSutils/archive/v0.2.0.tar.gz
+Description: ### Package name: JSutils
+        
+        - Author: Jaime Loeuf
+        - License: MIT
+        - Package Desciption:
+        	- This package contains classes/functions that implements functions like the setInterval function from JavaScript.
+        	- This package currently does not have any external dependencies, written only with py std. lib
+        	- Currently this package contains the
+        		1. 'setInterval' class
+        
+        ##### To call a function over and over again with a fixed interval:
+        ```python
+        from JSutils import setInterval
+        
+        def HelloWorld(message):
+        	print('Hello world')
+        	print(message) # Print out / use the arguement.
+        
+        setInterval(5, HelloWorld)
+        ```
+Keywords: setInterval loop interval
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
