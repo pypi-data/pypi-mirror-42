@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: tala
+Version: 1.0.0rc1
+Summary: UNKNOWN
+Home-page: http://www.talkamatic.se
+Author: Talkamatic
+Author-email: dev@talkamatic.se
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Jinja2 (~=2.10)
+Requires-Dist: pathlib (==1.0.1)
+Requires-Dist: lxml (==4.2.5)
+Requires-Dist: iso8601 (==0.1.12)
+Requires-Dist: python-magic (==0.4.15)
+
+UNKNOWN
+
+
