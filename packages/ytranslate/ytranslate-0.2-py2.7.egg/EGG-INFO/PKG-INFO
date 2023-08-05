@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: ytranslate
+Version: 0.2
+Summary: Ytranslate (Why translate) is a simple tool to manage translations
+through creating and updating losely-defined YAML catalogs.
+Home-page: https://github.com/vlegoff/ytranslate
+Author: Vincent Le Goff
+Author-email: vincent.legoff.srs@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: translation,translate,yaml,yml
+Platform: UNKNOWN
