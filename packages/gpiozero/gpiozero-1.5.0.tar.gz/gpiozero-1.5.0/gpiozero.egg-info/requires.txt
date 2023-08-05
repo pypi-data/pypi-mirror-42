@@ -1,0 +1,11 @@
+colorzero
+
+[doc]
+sphinx
+
+[test]
+pytest
+coverage
+mock
+RPi.GPIO
+pigpio
