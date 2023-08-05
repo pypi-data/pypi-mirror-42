@@ -1,0 +1,17 @@
+framler/__init__.py,sha256=Y75fMcDUqOpIeLP6rZs1VNcUffAk4-tEJxe4E8i-QnI,252
+framler/_base.py,sha256=NBFUIW7xurogZ1cj57fS8C847PbR-G18qa9InqkvQ5Y,2074
+framler/articles.py,sha256=AiKMybiuA8YaB62xQQNjmTJODoXiLd-6B1ZMC80L5-E,1048
+framler/cleaners.py,sha256=v4e49O9AI_HzBD1l61T2WRvS20iMQxT0Nae1EaCrJHk,1370
+framler/cli.py,sha256=P6rU6rXuUG_KdYsdRBRzA_iqYTiPCiXGBLr6URXHc-A,413
+framler/configs.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+framler/extractors.py,sha256=FN5v8tWTQMB_XO_EOROiKSgsPr5YAzW2c5FlJrcGMFU,2678
+framler/log.py,sha256=eh6P5q7-YAhBq6UOeMkIqIuUV-D_S1To2DHebtkTDEQ,816
+framler/parsers.py,sha256=qCVHUXxaXRh1d1q7_FaL_I8Kr6mNmjYl8sKOVLJx8tA,1098
+framler/temp.py,sha256=C49CWoFW6CU_WVWZxdAsp5aLoyNz9qf3JEO9VapPlqY,114
+framler/utils.py,sha256=eFRR-PNYIx8sZuSlejo_Q61gctpBuRQKR6-gKwJQW50,1187
+framler-0.0.4.dist-info/AUTHORS.rst,sha256=gQnyNdsaZ_xRZCoBWuPoxMtYI0RCybiALiqv0fVZ17E,163
+framler-0.0.4.dist-info/LICENSE,sha256=adJzQ9emIp060hbQM9R3l-UZKl5rRtuEfTFcs2UOg58,1067
+framler-0.0.4.dist-info/METADATA,sha256=g-OHHu_x1chvy9TJVLOQ1p4DdjZZly96G4SVRaedcIM,3449
+framler-0.0.4.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+framler-0.0.4.dist-info/top_level.txt,sha256=I4zhLU_Qt4IneWCpKnw8N9KxgPbuYyBxH2lFb6DUgYg,8
+framler-0.0.4.dist-info/RECORD,,
