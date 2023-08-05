@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+UNLICENSE
+pyttanko.py
+setup.cfg
+setup.py
+pyttanko.egg-info/PKG-INFO
+pyttanko.egg-info/SOURCES.txt
+pyttanko.egg-info/dependency_links.txt
+pyttanko.egg-info/top_level.txt
