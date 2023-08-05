@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+flex_version/__init__.py
+flex_version/flex_version.py
+flex_version.egg-info/PKG-INFO
+flex_version.egg-info/SOURCES.txt
+flex_version.egg-info/dependency_links.txt
+flex_version.egg-info/top_level.txt
