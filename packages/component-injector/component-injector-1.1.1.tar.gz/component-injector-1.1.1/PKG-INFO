@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: component-injector
+Version: 1.1.1
+Summary: A modern component / dependency injector for python 3.6+.
+Home-page: https://www.github.com/iksteen/component-injector
+Author: Ingmar Steen
+Author-email: iksteen@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: contextvars (>=2.3,<3.0); python_version < "3.7"
+Requires-Dist: dataclasses (>=0.6.0,<0.7.0); python_version < "3.7"
+Project-URL: Documentation, https://component-injector.readthedocs.org/
+Project-URL: Repository, https://www.github.com/iksteen/component-injector.git
