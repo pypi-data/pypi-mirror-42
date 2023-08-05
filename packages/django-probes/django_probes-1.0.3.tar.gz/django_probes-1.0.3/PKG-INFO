@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: django_probes
+Version: 1.0.3
+Summary: Test whether access to the database is possible
+Home-page: https://github.com/vshn/django-probes
+Author: VSHN AG
+Author-email: tech@vshn.ch
+License: MIT
+Description: Django-probes |latest-version|
+        ==============================
+        
+        |build-status| |python-support| |license|
+        
+        This python package provides a management to check whether the database is ready
+        
+        .. |latest-version| image:: https://img.shields.io/pypi/v/django-probes.svg
+           :alt: Latest version on PyPI
+           :target: https://pypi.org/project/django-probes
+        .. |build-status| image:: https://img.shields.io/travis/vshn/django-probes/master.svg
+           :alt: Build status
+           :target: https://travis-ci.org/vshn/django-probes
+        .. |python-support| image:: https://img.shields.io/pypi/pyversions/django-probes.svg
+           :alt: Python versions
+           :target: https://pypi.org/project/django-probes
+        .. |license| image:: https://img.shields.io/pypi/l/django-probes.svg
+           :alt: Software license
+           :target: https://github.com/vshn/django-probes/blob/master/LICENSE
+        
+        Installation
+        ============
+        
+        The easiest way to install django-probes is with pip
+        
+        .. code::
+        
+            $ pip install django-probes
+        
+        Basic Usage
+        ===========
+        
+Keywords: django,database,probes,kubernetes
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.11
+Classifier: Framework :: Django :: 2.0
+Classifier: Framework :: Django :: 2.1
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/x-rst
