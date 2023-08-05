@@ -1,0 +1,13 @@
+scipy
+numpy
+matplotlib
+phat
+
+[docs]
+sphinx
+nbsphinx
+sphinx-better-theme
+sphinxcontrib-fulltoc
+
+[testing]
+pytest-cov
