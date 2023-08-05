@@ -1,0 +1,10 @@
+dynahost/__init__.py,sha256=b6-WiVk0Li5MaV2rBnHYl104TsouINojSWKqHDas0js,22
+dynahost/service.py,sha256=4frTkT6Sgj7d-E4VrlTv380ABTvwqkVbqWvUvBWsDF0,14690
+dynahost-1.1.0.data/data/etc/dynahost.service,sha256=O-9CCoZzR28k4_xyXZG6JsbI-va9BqphzI2-uXjtHyI,224
+dynahost-1.1.0.data/data/etc/dynahost_config_sample.ini,sha256=f3mru3zpPBXQqAcm-ZtQlgN2UeJh4arm2SpQAuu_LV8,2472
+dynahost-1.1.0.dist-info/LICENSE.txt,sha256=CJApvhNJ9M5poET6i6UFJPjy1GygrkESe1wgwXOQUGU,1074
+dynahost-1.1.0.dist-info/METADATA,sha256=4NoOzRwPGM3jxGg0HplcFZfe6Ab7z38TEq57ZP0u5tc,5406
+dynahost-1.1.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+dynahost-1.1.0.dist-info/entry_points.txt,sha256=csbf2OCVV2zlDqTlQzXiICYvK_1NetpCqVtxpLEiEa4,52
+dynahost-1.1.0.dist-info/top_level.txt,sha256=A8XbLVmWqZTv8KWy6BnPyhJVu2w9nQOHIm_HpI6_zFU,9
+dynahost-1.1.0.dist-info/RECORD,,

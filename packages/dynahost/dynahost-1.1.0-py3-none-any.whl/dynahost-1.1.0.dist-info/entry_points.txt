@@ -1,0 +1,3 @@
+[console_scripts]
+dynahost = dynahost.service:main
+
