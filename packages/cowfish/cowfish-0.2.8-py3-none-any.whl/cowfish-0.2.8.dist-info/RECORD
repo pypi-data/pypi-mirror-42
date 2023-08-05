@@ -1,0 +1,15 @@
+cowfish/__init__.py,sha256=dH20nMdyjnZKAWBILoIK0ds5RU3m1Nee8efleFVk7Wk,90
+cowfish/dynamodb.py,sha256=c6O0Nu4id3G7LB1cRp9AOPMBQi6pIuNkIZgOwUE8Lvk,919
+cowfish/firehose.py,sha256=BfaQSVCbUa5nPQ_fINgewvGtn8i0gN9A80Ha_BG5iyA,3453
+cowfish/kinesis.py,sha256=NZvqgZuhKSf7aNEmZWC14sO8tJ4b_V9ARAAg7ozWo-U,4604
+cowfish/pool.py,sha256=ACkil8A8JohIb--mu32TKR4mXz0LkmU6IafQkHzy4yk,3593
+cowfish/sqs.py,sha256=HIB5bRAxIMeNULnRsy25HWUeLRgxmOchmtDlPya59Wo,6390
+cowfish/sqsprocesser.py,sha256=-TOG7n116NSVQy_tcpvY9iu_zY2xO9l5IGhxCTAdDYg,12054
+cowfish/utils.py,sha256=HnEUvLrZOd6B5SWNiEru3C9VutketV2n-Yr3MJNw6sI,927
+cowfish/worker.py,sha256=CgxYwfKMrM1xFRKSLw2eY4Yj-XXdMhOmTSSCF3a77w4,2816
+cowfish-0.2.8.dist-info/LICENSE,sha256=ZW6W8Lk277OJ7DaBoO5gOwLhf7zk1i_L2mmcnhPqwBg,1065
+cowfish-0.2.8.dist-info/METADATA,sha256=arAsyWEegucjMzf0JgSruq9WqBbORaIlHE89Y6bSbdM,1685
+cowfish-0.2.8.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+cowfish-0.2.8.dist-info/entry_points.txt,sha256=r8-MDvip0wc7Tua7W7xRYJCXbXI3ZIWksqTzqWQA0lQ,60
+cowfish-0.2.8.dist-info/top_level.txt,sha256=h-lT3tuESS_9DNOa9tDDYMTiivma0x5fIuvc3u1K2-U,8
+cowfish-0.2.8.dist-info/RECORD,,
