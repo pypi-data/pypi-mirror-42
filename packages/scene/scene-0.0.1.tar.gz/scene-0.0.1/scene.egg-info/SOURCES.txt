@@ -1,0 +1,16 @@
+AUTHORS.rst
+CONTRIBUTING.rst
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+scene/__init__.py
+scene/scene.py
+scene.egg-info/PKG-INFO
+scene.egg-info/SOURCES.txt
+scene.egg-info/dependency_links.txt
+scene.egg-info/not-zip-safe
+scene.egg-info/top_level.txt
+test/test_scene.py
