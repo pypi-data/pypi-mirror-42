@@ -1,0 +1,8 @@
+README.md
+setup.py
+icon_lib/__init__.py
+icon_lib/voyager_icon.py
+voyager_icon.egg-info/PKG-INFO
+voyager_icon.egg-info/SOURCES.txt
+voyager_icon.egg-info/dependency_links.txt
+voyager_icon.egg-info/top_level.txt
