@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: ini2dict
+Version: 2019.2.17
+Summary: read ini file into a dictionary
+Home-page: https://github.com/looking-for-a-job/ini2dict.py
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Keywords: ini
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Requires-Dist: public
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/pypi/pyversions/ini2dict.svg?longCache=True)](https://pypi.org/project/ini2dict/)
+
+#### Install
+```bash
+$ [sudo] pip install ini2dict
+```
+
+#### Functions
+function|`__doc__`
+-|-
+`ini2dict.read(path)`|return a dictionary with ini file data
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
