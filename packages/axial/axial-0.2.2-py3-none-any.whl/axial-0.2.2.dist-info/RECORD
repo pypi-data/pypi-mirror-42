@@ -1,0 +1,17 @@
+axial/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axial/axial.py,sha256=rAoZ1N_HeOOMGAGbfr-0ubRB6CzX5uceAeSsGjWRs98,18927
+axial/go/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axial/go/human_gene_sets.js,sha256=DT67ByLyWboJ4dT2eS288z3cvV9EsQczopkoTGmhmwk,2420618
+axial/go/mouse_gene_sets.js,sha256=gX9eAZZFXJRHujhahDEiD3xywtVOjzXw8e2-w5rbASo,10458879
+axial/templates/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axial/templates/bar.html.j2,sha256=OCHC4Cy_xay31yzeSvsvKWRmxMV1Vr-ztoP-1feEL80,11409
+axial/templates/base.html.j2,sha256=diZvPWy8wG6N4ccIIfJYy0ckmWCsNMdoMNzmDWCqFUU,1048
+axial/templates/braid.html.j2,sha256=cWwkKM-S5815jy2J-9foY9HqDyaViUIECcC7U2CbBrM,18732
+axial/templates/graph.html.j2,sha256=KzgHDEGfaRjQ2I-Xdqxzapdl66zCydUMl-CQ6gb5I0E,7646
+axial/templates/heatmap.html.j2,sha256=liqaVPiBv0ISncm1gU3njWe7NULuJHV_A9OSfJqwuhA,24635
+axial/templates/volcano.html.j2,sha256=ylxQvLFLP_uT6wPY3ZOHGNrWxthDQO4c1dzT3ApPTtc,5997
+axial-0.2.2.dist-info/LICENSE,sha256=xhHp84lSbHAqA3HjQ5heijhfd6PyO0N8s15wP9LDNRc,1073
+axial-0.2.2.dist-info/METADATA,sha256=gWhRFoOFMX3hkchaWgOCLRsyfkV2dEW0eu1ZKQZVkyc,541
+axial-0.2.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+axial-0.2.2.dist-info/top_level.txt,sha256=C2R_PP-9J8EyKYsI782urD0DT_eING7uz2sQ0y9I8vM,6
+axial-0.2.2.dist-info/RECORD,,
