@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: cfn-yaml
+Version: 0.0.1
+Summary: Let you load cloudformation template.yaml
+Home-page: https://github.com/Just4test/cfn-yaml
+Author: Just4test
+Author-email: myservice@just4test.net
+License: wtfpl
+Description: UNKNOWN
+Keywords: CloudFormation,YAML
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3 :: Only
