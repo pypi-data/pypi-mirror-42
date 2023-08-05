@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+simple_schema_validator/__init__.py
+simple_schema_validator/__version__.py
+simple_schema_validator/schema_validator.py
+simple_schema_validator/tests.py
+simple_schema_validator.egg-info/PKG-INFO
+simple_schema_validator.egg-info/SOURCES.txt
+simple_schema_validator.egg-info/dependency_links.txt
+simple_schema_validator.egg-info/top_level.txt
