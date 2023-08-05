@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+neoscrypt.egg-info/PKG-INFO
+neoscrypt.egg-info/SOURCES.txt
+neoscrypt.egg-info/dependency_links.txt
+neoscrypt.egg-info/top_level.txt
+neoscrypt.egg-info/zip-safe
+src/neoscrypt.c
+src/neoscrypt.h
+src/neoscryptmodule.c
