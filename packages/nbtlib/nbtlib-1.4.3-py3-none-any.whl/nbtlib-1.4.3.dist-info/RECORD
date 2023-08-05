@@ -1,0 +1,14 @@
+nbtlib/__init__.py,sha256=8U30INyWToo1vz8IPnq0MriKRO-MiPu00mE__05nqU0,154
+nbtlib/__main__.py,sha256=schE67JzeF4uYozHtlKcYr0M1jCJWk6gBqdC4FvH-A8,62
+nbtlib/cli.py,sha256=2-pP3WdcBNoKwxY5CrYF9HmtN9KT9ZZ3so0eKrT1hnQ,2537
+nbtlib/literal/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nbtlib/literal/parser.py,sha256=amBCQ8WNpzzkOPAro9NrEUAN-tA9LHyLh_CmjyEot1w,8248
+nbtlib/literal/serializer.py,sha256=hav2eoA8DCL7-RSo5QbrSD2IG8D7j91zkIDE4QfAGNw,4658
+nbtlib/nbt.py,sha256=cXBCW-FhE_XzhzEgPFBgrqNZbHie2aZ5dCg81HRjYEE,5072
+nbtlib/schema.py,sha256=72OdvoDS0jqu6JQepIs1AGoy8MU_zs_6ZgYsSWsyAvQ,2957
+nbtlib/tag.py,sha256=HIls1SRZddfhFqTcSM5Ow2u44RUAbiduF-Hq39qZbks,16944
+nbtlib-1.4.3.dist-info/entry_points.txt,sha256=VnK8neeAozFqBeE90CAyrBY3gOYDPF6B7vBkq8QwwEE,39
+nbtlib-1.4.3.dist-info/LICENSE,sha256=V4S0xScfwt554Y7fZKCbrF1RNsEDQOODiSFXWzMkX68,1073
+nbtlib-1.4.3.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+nbtlib-1.4.3.dist-info/METADATA,sha256=i0xjv2bKpcv2oSebpVLgcjim432pANl7eGbXsm48Hg0,8191
+nbtlib-1.4.3.dist-info/RECORD,,
