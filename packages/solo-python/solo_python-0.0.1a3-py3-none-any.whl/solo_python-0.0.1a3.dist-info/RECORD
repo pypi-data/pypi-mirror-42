@@ -1,0 +1,14 @@
+solo/VERSION,sha256=L6Pwtv7WW5gF3E3ht9eNkcDMCCNXA8NFqlmHVFq23Ug,8
+solo/__init__.py,sha256=0su3ZgbbOQxTfoNz7dwJfBXO84hadw9gXTZ3XV5C5O0,562
+solo/cli.py,sha256=QoTHxIoKonvkFYsThkApXMU-xZh5glztkHryWp1EE3U,1003
+solo/client.py,sha256=YSPvLT7s1b6PQISig4HNKdYcW1J-70tn-csJT5d15m4,9066
+solo/commands.py,sha256=gU6HLNnFKMBe8f-daptTcH7TJOS9OPxGwUt36itWIrc,1133
+solo/dfu.py,sha256=Z_caTEvdHAZ880sXuRet9lxXZdp6O9bcCd5pmp5UfTQ,5285
+solo/helpers.py,sha256=ZTq9h-IFpqO8SILbJoooz175yTZfa0RHdIbD5T_n0_4,279
+solo/solotool.py,sha256=SjlSFOMyoBUK4q5pBC3rzWJTL41s_rF50FYkNrznE-s,17597
+solo_python-0.0.1a3.dist-info/entry_points.txt,sha256=w4ReRAiWwaxYlqPBeNyHcyJTZma5OuRsGsZjIu_oXc8,75
+solo_python-0.0.1a3.dist-info/LICENSE-APACHE,sha256=TRD-XzqhdrBbIpokiGa61wuDTBc_ElKoFP9HSNihODc,10255
+solo_python-0.0.1a3.dist-info/LICENSE-MIT,sha256=I_GOA9xJ35FiL-KnYXZJdATkbO2KcV2dK2enRGVxzKM,1023
+solo_python-0.0.1a3.dist-info/WHEEL,sha256=JXk7EE_UnY8Q4113Zu8f6SlrMizLH61VvvtIzqzkSKE,79
+solo_python-0.0.1a3.dist-info/METADATA,sha256=TBlSMdnRgzR7Ln_hdlKWjIIiKX2aKghDV2-hr5o84iM,610
+solo_python-0.0.1a3.dist-info/RECORD,,
