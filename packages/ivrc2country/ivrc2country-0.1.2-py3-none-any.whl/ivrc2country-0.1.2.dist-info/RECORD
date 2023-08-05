@@ -1,0 +1,9 @@
+ivrc2country/__init__.py,sha256=U3AeWEGhRxmF1Hiytzcz3J7c4AmGat8ClhUx6FkA-BE,6374
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_lists.py,sha256=BNdSMu3skCSgy67K7ygsOeEvfPttctN3rMT56qmx0-4,756
+tests/test_lookup.py,sha256=ouSKWjG2OZ1gq7Fp3Cti6ZJnoe5_K5QzGEm0RZxjb00,739
+ivrc2country-0.1.2.dist-info/LICENSE,sha256=mtN7fL9zebSWpbujnRRA9OiHQxMXVjilwGJMlcw_oJg,1059
+ivrc2country-0.1.2.dist-info/METADATA,sha256=Nnuhd_OgQ5C4uqTS7vuX4KG-GYAVi6Nyr8t5shi6Nrg,1631
+ivrc2country-0.1.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+ivrc2country-0.1.2.dist-info/top_level.txt,sha256=oEad75ogImfe2Rpn7-Sc0IMu_ykbUeKdeAj4EKuKJgU,19
+ivrc2country-0.1.2.dist-info/RECORD,,
