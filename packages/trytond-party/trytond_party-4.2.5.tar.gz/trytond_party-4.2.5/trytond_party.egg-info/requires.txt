@@ -1,0 +1,10 @@
+python-sql>=0.4
+python-stdnum
+trytond_country<4.3,>=4.2
+trytond<4.3,>=4.2
+
+[VAT]
+python-stdnum
+
+[phonenumbers]
+phonenumbers
