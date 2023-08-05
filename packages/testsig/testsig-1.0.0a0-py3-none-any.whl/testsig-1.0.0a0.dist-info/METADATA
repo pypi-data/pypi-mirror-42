@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: testsig
+Version: 1.0.0a0
+Summary: testsig
+Home-page: UNKNOWN
+Author: test
+License: Apache 2.0
+Keywords: testsig
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: tabulate
+Requires-Dist: wget
+Requires-Dist: urllib3 (>=1.15)
+Requires-Dist: six (>=1.10)
+Requires-Dist: certifi
+Requires-Dist: python-dateutil
+
+tetst
+
+
