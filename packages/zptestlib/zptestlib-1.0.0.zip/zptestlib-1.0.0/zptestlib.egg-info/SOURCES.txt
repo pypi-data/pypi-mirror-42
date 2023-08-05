@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+Tool.py
+setup.py
+zptestlib/__init__.py
+zptestlib/zplibone.py
+zptestlib.egg-info/PKG-INFO
+zptestlib.egg-info/SOURCES.txt
+zptestlib.egg-info/dependency_links.txt
+zptestlib.egg-info/top_level.txt
