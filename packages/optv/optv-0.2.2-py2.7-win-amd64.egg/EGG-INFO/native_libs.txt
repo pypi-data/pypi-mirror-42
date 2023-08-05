@@ -1,0 +1,11 @@
+optv/calibration.pyd
+optv/correspondences.pyd
+optv/epipolar.pyd
+optv/image_processing.pyd
+optv/imgcoord.pyd
+optv/orientation.pyd
+optv/parameters.pyd
+optv/segmentation.pyd
+optv/tracker.pyd
+optv/tracking_framebuf.pyd
+optv/transforms.pyd
