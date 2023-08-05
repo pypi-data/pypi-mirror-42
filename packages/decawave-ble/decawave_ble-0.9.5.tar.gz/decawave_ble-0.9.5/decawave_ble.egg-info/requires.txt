@@ -1,0 +1,6 @@
+bluepy
+tenacity
+bitstruct
+
+[s3]
+boto3
