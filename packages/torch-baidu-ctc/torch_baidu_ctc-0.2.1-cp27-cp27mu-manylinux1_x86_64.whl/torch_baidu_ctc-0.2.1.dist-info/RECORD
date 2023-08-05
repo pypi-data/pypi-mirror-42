@@ -1,0 +1,9 @@
+torch_baidu_ctc/__init__.py,sha256=KY8uOxDnXLsvQ89Nt_sr0DZM9wUGS-0VdTkgNV7mH_c,6472
+torch_baidu_ctc/test.py,sha256=eJL_4NYY2FSJhcIs29HX1ufCx4aIoVY8dMQfshBONMk,4825
+torch_baidu_ctc/libcudart-f7fdd8d7.so.9.0,sha256=9_3Y181GHGEoBhN3Yhcnve5mfQAAlEyHEpeu2PqiZSc,442392
+torch_baidu_ctc/_C.so,sha256=ZzcQe00YF8vDLp6fcg4TAfAvmS8lwBUEQaajgqvTOVY,7819976
+torch_baidu_ctc-0.2.1.dist-info/METADATA,sha256=2C5hgguXumI015ouR-1ZPcYst6NRNLwcNtMm6Dej7zM,4607
+torch_baidu_ctc-0.2.1.dist-info/WHEEL,sha256=NB2Dxa3kPKa40yOoLqyfan4N9wALlK12jxZ1wXHSf0g,105
+torch_baidu_ctc-0.2.1.dist-info/LICENSE,sha256=xe1kg7-dOJPMiVCZOpJX2jzBHqYWIBofGUl3o99bpPM,11345
+torch_baidu_ctc-0.2.1.dist-info/top_level.txt,sha256=_kmkzcz3Ffst-rC4JWEjvVHGTnHj_M6kN_4xLPCzXeg,16
+torch_baidu_ctc-0.2.1.dist-info/RECORD,,
