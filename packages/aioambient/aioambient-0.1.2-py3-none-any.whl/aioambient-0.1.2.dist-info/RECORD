@@ -1,0 +1,14 @@
+aioambient/__init__.py,sha256=HNYKYNUDxWCIGqPO-47-fl0ADOIeiZYyigPslJxYxKU,64
+aioambient/__version__.py,sha256=XmHf88vwwvmCekAVic6m3eLgembrhQ_pjJUUT9G6pAY,55
+aioambient/api.py,sha256=XieXekDL7l-FC5-C2cMy2UJ9cZTDGgWz0MR-n6IFU5M,2304
+aioambient/client.py,sha256=k00wtJAcKO91VqabAE0-07-byStJAN9J7aE4fY1NaGs,778
+aioambient/errors.py,sha256=l2T3mBbWw1ZYD8OdbBUikubM0R804lr3HY86QmKdRGE,315
+aioambient/websocket.py,sha256=P75tuTTnQTg0yHFlSwKtSJhtXR5W5BlkhCJ8geTDvwU,2363
+tests/fixtures/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/fixtures/api.py,sha256=WAjO9tkfjOtjZVPkGabl3E-wn9knJFJcjYcUkljR7H0,2597
+aioambient-0.1.2.dist-info/AUTHORS.md,sha256=tp4dssURYg4IC-mWv0wTNRnwSLdA1PxaW3AqF8V3_ow,85
+aioambient-0.1.2.dist-info/LICENSE,sha256=FTF9lC9P4MjR5EcYxNqTzoze0OjPm4L7Up_oihQ3S5I,1067
+aioambient-0.1.2.dist-info/METADATA,sha256=6cefXcOHNin_QYc4FSs2L0nE81Xn6Fbsk-a_Aoe79Gw,6600
+aioambient-0.1.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+aioambient-0.1.2.dist-info/top_level.txt,sha256=kBXbX7L3xLLAzxcyJ0xvAxF3_Egik6XPGTrqE7hrdvs,17
+aioambient-0.1.2.dist-info/RECORD,,
