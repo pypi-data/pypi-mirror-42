@@ -1,0 +1,15 @@
+cuclasses/CallableDict.py,sha256=I2NbtYg_MkJ3yp1ddKlCd8VoHzbtib6n3_xS-SOOrGQ,127
+cuclasses/DottableDict.py,sha256=aQBsTuZr5Ap_d-OqbXu7_AWHamS2GmnvTn3QYIXXWE4,1292
+cuclasses/HeaderCopy.py,sha256=m3jwYDJLEVZXfsRRbAmKW3_l1fsMTAxW8rJ6iDXl_Kw,920
+cuclasses/NumGetDict.py,sha256=iCZiI7Bbvv3u26Ks8c116GF59s_TiKFfeWTXOWIpsY0,452
+cuclasses/SingletonDecoration.py,sha256=5sUxHoVpfAzl0m5cYXFWaQshArPDQvrbrV0KWlcev5w,314
+cuclasses/StrKeyDict.py,sha256=U3Z7es_yS4qgtJ-tLjAR0gWBuEBKyvmUeD83XlOG9UU,460
+cuclasses/TimeCount.py,sha256=2WRg9wrMjNR3RXfm6gP9UnEOmPU78z8K--7KhjJ3MoU,549
+cuclasses/TimePrint.py,sha256=1kHE89wNfH8cWoisXv40LqLGCvnJLcz61D-NyPFk1vo,1263
+cuclasses/__init__.py,sha256=Pxy0ug60UKRtXCZl9veKOtccSoi-P7Wlc3fstciQu8c,288
+cuclasses/__main__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cuclasses-0.0.3.dist-info/LICENSE,sha256=VYZJQwE560VRl1mtsDKKMCtQ-oUD2lcxEWdXGYkli2Q,500
+cuclasses-0.0.3.dist-info/METADATA,sha256=XDv__xm9XswOiMAJrBie4HgH4x2tFXfx0ZiUSafM5hM,361
+cuclasses-0.0.3.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+cuclasses-0.0.3.dist-info/top_level.txt,sha256=fc1fhcAGl5GVtaQAAOa6RdJ5tOv6Bs364S93UUAxtuc,10
+cuclasses-0.0.3.dist-info/RECORD,,
