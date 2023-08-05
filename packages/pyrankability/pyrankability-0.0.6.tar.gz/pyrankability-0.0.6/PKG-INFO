@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pyrankability
+Version: 0.0.6
+Summary: Rankability Toolbox
+Home-page: https://github.com/pypa/pyrankability
+Author: Paul Anderson
+Author-email: pauleanderson@gmail.com
+License: UNKNOWN
+Description: ===============
+        Rankability Toolbox
+        ===============
+        This repo contains various implementations that provide insights into the rankability of data.
+        
+        Authors
+        ===============
+        Paul Anderson, Ph.D.
+        Department of Computer Science
+        Director, Data Science Program
+        College of Charleston
+        
+        Amy Langville, Ph.D.
+        Department of Mathematics
+        College of Charleston
+        
+        Tim Chartier, Ph.D.
+        Department of Mathematics
+        Davidson College
+        
+        Acknowledgements
+        ===============
+        We would like to thank the entire IGARDS team at the College of Charleston for their invaluable insight and encouragement.
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
