@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: nbtlib
+Version: 1.4.3
+Summary: A python package to read and edit nbt data
+Home-page: https://github.com/vberlier/nbtlib
+Author: Valentin Berlier
+Author-email: berlier.v@gmail.com
+Keywords: nbt,nbt-parser,schema,minecraft,nbtlib
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: numpy (>=1.16,<2.0)
+Project-URL: Documentation, https://github.com/vberlier/nbtlib
+Project-URL: Repository, https://github.com/vberlier/nbtlib
