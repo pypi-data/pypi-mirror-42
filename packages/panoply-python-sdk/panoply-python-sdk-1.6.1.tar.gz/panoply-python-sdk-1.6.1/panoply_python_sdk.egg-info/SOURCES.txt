@@ -1,0 +1,13 @@
+README.md
+setup.py
+panoply/__init__.py
+panoply/constants.py
+panoply/datasource.py
+panoply/errors.py
+panoply/events.py
+panoply/sdk.py
+panoply_python_sdk.egg-info/PKG-INFO
+panoply_python_sdk.egg-info/SOURCES.txt
+panoply_python_sdk.egg-info/dependency_links.txt
+panoply_python_sdk.egg-info/requires.txt
+panoply_python_sdk.egg-info/top_level.txt
