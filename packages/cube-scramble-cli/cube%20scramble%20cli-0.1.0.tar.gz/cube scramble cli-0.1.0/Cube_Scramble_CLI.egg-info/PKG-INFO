@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: cube-scramble-cli
+Version: 0.1.0
+Summary: A simple CLI for pyTwistyScrambler, to generate random states for twisty puzzles.
+Home-page: https://github.com/seanbreckenridge/cube-scramble-cli
+Author: Sean Breckenridge
+Author-email: seanbrecke@gmail.com
+License: MIT
+Description: Requires Python 3.6 | 3.7.
+        
+        Installation: python3 -m pip install cube-scramble-cli
+        
+        Run: $ scramble-cli
+        
+        More info here: https://github.com/seanbreckenridge/cube-scramble-cli
+Keywords: cube puzzle scramble
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
