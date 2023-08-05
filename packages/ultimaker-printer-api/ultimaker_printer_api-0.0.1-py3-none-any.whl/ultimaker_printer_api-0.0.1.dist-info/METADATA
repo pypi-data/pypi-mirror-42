@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: ultimaker-printer-api
+Version: 0.0.1
+Summary: An Ultimaker Printer API Client implementation in Python
+Home-page: https://github.com/vanderbilt-design-studio/python-ultimaker-printer-api
+Author: Sameer Puri
+Author-email: purisame@spuri.io
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: zeroconf
+Requires-Dist: requests
+Requires-Dist: uuid
+
+# python-ultimaker-printer-api
+
+An Ultimaker Printer API Client implementation in Python
+
+[![Build Status](https://travis-ci.org/vanderbilt-design-studio/python-ultimaker-api.svg?branch=master)](https://travis-ci.org/vanderbilt-design-studio/python-ultimaker-api)
+
+[![Coverage Status](https://coveralls.io/repos/github/vanderbilt-design-studio/python-ultimaker-api/badge.svg?branch=master)](https://coveralls.io/github/vanderbilt-design-studio/python-ultimaker-api?branch=master)
+
+
