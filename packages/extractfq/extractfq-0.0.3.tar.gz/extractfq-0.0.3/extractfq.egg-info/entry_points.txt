@@ -1,0 +1,3 @@
+[console_scripts]
+extractfq = extractfq.extractfq:main
+

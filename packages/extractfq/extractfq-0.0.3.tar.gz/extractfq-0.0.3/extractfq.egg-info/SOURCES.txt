@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+changelog
+setup.py
+extractfq/__init__.py
+extractfq/extractfq.py
+extractfq.egg-info/PKG-INFO
+extractfq.egg-info/SOURCES.txt
+extractfq.egg-info/dependency_links.txt
+extractfq.egg-info/entry_points.txt
+extractfq.egg-info/top_level.txt
