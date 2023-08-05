@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: functional-pipeline
+Version: 0.1.0
+Summary: Functional Pipelines implemented in python
+Home-page: https://github.com/mc706/functional-pipeline
+Author: Ryan McDevitt
+Author-email: mcdevitt.ryan@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities
+Provides-Extra: dev
+Requires-Dist: prospector ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+
+# Functional Pipeline
+
+Functional languages like Haskell, Elixir, and Elm have pipe functions that allow
+the results of one function to be passed to the next function. 
+
+Using functions from `functools`, we can build composition in python, however it is not
+nearly as elegant as a well thought out pipeline. 
+
+This library is designed to make the creation of a functional pipeline easier in python.
+
+```python 
+from operators import add, multiply
+from functional_pipeline import pipeline, tap
+
+result = pipeline(
+    10,
+    [
+        (add, 1),
+        (multiply, 2)
+    ]
+)
+print(result)  # 22
+```
+
+This pattern can be extended for easily dealing with lists or generators.
+
+```python
+from functional_pipeline import pipeline, String
+
+names = [
+    "John",
+    "James",
+    "Bill",
+    "Tiffany",
+    "Jamie",
+]
+
+```
+
+
