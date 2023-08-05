@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: mkey
+Version: 0.4
+Summary: Mouse and Key
+Home-page: http://phyl.io/?page=mkey.html
+Author: Philippe Kappel
+Author-email: philippe.kappel@gmail.com
+License: MIT
+Description: `mkey` automates tasks such as double-click, write a sentense,
+        run delayed commands in a terminal, open a web page and connect with login and password.
+        
+        Dependencies
+        ------------
+        
+        * [Python](https://www.python.org) 3.6+
+        * [AutoHotkey](https://www.autohotkey.com) 2
+Keywords: AutoHotkey
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown

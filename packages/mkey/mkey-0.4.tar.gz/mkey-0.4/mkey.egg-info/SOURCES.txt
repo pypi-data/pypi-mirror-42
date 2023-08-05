@@ -1,0 +1,8 @@
+setup.py
+mkey/__init__.py
+mkey/header.ahk
+mkey.egg-info/PKG-INFO
+mkey.egg-info/SOURCES.txt
+mkey.egg-info/dependency_links.txt
+mkey.egg-info/entry_points.txt
+mkey.egg-info/top_level.txt
