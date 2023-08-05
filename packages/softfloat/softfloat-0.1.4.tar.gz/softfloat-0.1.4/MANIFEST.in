@@ -1,0 +1,4 @@
+include SoftFloat-master/build/Linux-x86_64-GCC/*
+include SoftFloat-master/source/include/*.h
+include SoftFloat-master/source/8086-SSE/*
+include SoftFloat-master/source/*.c

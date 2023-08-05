@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: softfloat
+Version: 0.1.4
+Summary: SoftFloat Python Package
+Home-page: https://gitlab.com/cerlane/SoftFloat-Python
+Author: Siew Hoon LEONG (Cerlane)
+Author-email: cerlane@posithub.org
+License: UNKNOWN
+Description: Berkeley SoftFloat Python Package
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
