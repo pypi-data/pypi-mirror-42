@@ -1,0 +1,16 @@
+etc/pccold.conf,sha256=oI_WUf3WfZj5aKmmDSsPbDjo80o1rm3WXsJJ7G1qDtA,17
+pccold/__init__.py,sha256=7cFAyWvaP9Db5TPSlpZC3w9paUihp3ECURV4MyR1Zus,25
+pccold/bypyrm.py,sha256=74Rfspz_WO7EV4hqIBQV5w9rSRtxQxeg2MWOcLu6IJQ,1192
+pccold/danmu.py,sha256=U6qPUx-XfO7ULMO_1VJEztY1FZHeLhh-tO1kGAFj40o,2888
+pccold/douyutv.py,sha256=1oCJkwZ_cfMPsds4Z8yvT_EBf6wDpfxew16uIYFsGsU,1317
+pccold/manual.py,sha256=8CU8-BXysDwpr6ym6Ukl9rCo_QX0BjZaWoQaHB6AHzE,1530
+pccold/pccold.py,sha256=CGTarXX88WuVYAcGjwpReDycgL-KSfw5f4rNus8049k,2648
+pccold/tools.py,sha256=Rj84KouyqYiFVisiP37Ujlf-pWEiD0NilDQrcXuVwSE,4683
+pccold/videodownload.py,sha256=6IA6R_DvLMPm14bB4et2DIn9MCr2uMApOkOxJ3RvR-w,1217
+pccold-0.11.data/scripts/pccold,sha256=Dt8eozQxwlF69UNnrhD1aJot3fAlcRz6nsYxOVv2f_k,64
+pccold-0.11.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pccold-0.11.dist-info/METADATA,sha256=3h9AWdgUthF_wFAIP8Ub5jY3qH8vPOcUlSGYhOilIlg,324
+pccold-0.11.dist-info/RECORD,,
+pccold-0.11.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pccold-0.11.dist-info/metadata.json,sha256=16RuG9q0rGs5qkxYBRATtCysHwIcFvRplua-4vvPraU,522
+pccold-0.11.dist-info/top_level.txt,sha256=GXSJRCUzqOaKm9AN3AYyox8C9O2-i-8XvIQfkxpEngU,7
