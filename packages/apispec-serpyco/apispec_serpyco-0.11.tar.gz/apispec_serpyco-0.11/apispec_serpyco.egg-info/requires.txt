@@ -1,0 +1,5 @@
+apispec<=1.0.0rc1
+serpyco>=0.16.1
+
+[test]
+pytest
