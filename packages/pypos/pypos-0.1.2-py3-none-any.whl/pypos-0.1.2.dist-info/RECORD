@@ -1,0 +1,8 @@
+pypos/__init__.py,sha256=CUkzHENWkjAorGJn_1UAI32EOkYgpldDhXWq2eIevVM,80
+pypos/hmm.py,sha256=cJFILHDkrsd5V5gkFedb0r-DxU6_gb-hPJDH0SmmOos,2699
+pypos/tagger.py,sha256=hGOmtLgPdjItV5CrzBIg3VyPTaHk24MaXRhwMyF5fls,4344
+pypos-0.1.2.dist-info/LICENSE,sha256=EjWE7M-EqhxRYmkVUOnmdxKTa_3VD89ppHf_lY7RLQo,1055
+pypos-0.1.2.dist-info/METADATA,sha256=R97XbWngDIvPKCklIwODujz4pyHX7pZOawfSUqYahiE,1442
+pypos-0.1.2.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+pypos-0.1.2.dist-info/top_level.txt,sha256=RPccoGtEUbHnIy0t5jW8B_uDIp3XQ2netv_G31sDyjQ,6
+pypos-0.1.2.dist-info/RECORD,,
