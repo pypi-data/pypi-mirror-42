@@ -1,0 +1,10 @@
+huber/__init__.py,sha256=umfEy8R5j9Zq7xRaH_bbWPqK6lZELJ4fOARryehj2sg,1036
+huber/driver.py,sha256=JrIpuhckOVp_Kgus_zTR1EvQvn-mAdnooyjh9shFpq4,7828
+huber/faults.csv,sha256=HSfA7ddJfY8W5ufgZfylXltCUxstMn1kR8f0sL87mZA,189374
+huber/util.py,sha256=d0yG_zxFq1UoEhbKgxMEVc8538pwyz0M2M4RD6hAex8,3765
+huber-0.2.7.dist-info/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+huber-0.2.7.dist-info/METADATA,sha256=IvRqbl_qDEYzInRVg2f91U0j4gm40OvM57U-_9zU5t4,3934
+huber-0.2.7.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+huber-0.2.7.dist-info/entry_points.txt,sha256=AE5pYu1zKH_T3dXvD42Nb-rz8aFrHrH7CDbHqIpOU9A,46
+huber-0.2.7.dist-info/top_level.txt,sha256=ndiv05iLXjkyZa8YwxOv8eYZTvNsF_u9lVtrSD5dx4M,6
+huber-0.2.7.dist-info/RECORD,,
