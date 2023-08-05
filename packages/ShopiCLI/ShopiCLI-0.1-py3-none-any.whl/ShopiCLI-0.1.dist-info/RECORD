@@ -1,0 +1,12 @@
+shopicli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+shopicli/__main__.py,sha256=bYt9eEaoRQWdejEHFD8REx9jxVEdZptECFsV7F49Ink,30
+shopicli/_config.py,sha256=Zz7_qYoLE6PGSv5EJ5wd7X7Tx1zpWXJgiukoq81A5CM,1853
+shopicli/_output.py,sha256=k850k5htBgpDSkFLf1pteR5wlsSaTziGK76MKgwnE60,1690
+shopicli/_types.py,sha256=8VTDKswyRtJ0DrcQIXnXvN7s242aHqNM-cQ_o_4VJqg,509
+shopicli/cli.py,sha256=47CcGEiOzu3jVrF6IAhDIBtf69GeWZJ_JbO1YRjwibg,5436
+shopicli/client.py,sha256=FhEveVxF94pr53PRMLoSG-HKPQ96Z1jxq3zEy4Sc0hI,3732
+ShopiCLI-0.1.dist-info/METADATA,sha256=EbjOnsQZ3us7NclAm1TjgNgheLo234JSkoBWEoqZFVA,1399
+ShopiCLI-0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+ShopiCLI-0.1.dist-info/entry_points.txt,sha256=nxvI2hFM84locGkKUND2nIqqIi4jlCz-FiLN1RVQV34,48
+ShopiCLI-0.1.dist-info/top_level.txt,sha256=cF8ym7TX8-8oJ95y_YkuZoh-OAplYjJTjGMuygTPXQI,9
+ShopiCLI-0.1.dist-info/RECORD,,
