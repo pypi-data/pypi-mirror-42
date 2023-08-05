@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pokemaster
+Version: 0.2.0
+Summary: Get Real, Living™ Pokémon in Python
+Home-page: None
+Author: Kip Yin
+Author-email: kipyty@outlook.com
+Keywords: pokemon,pokedex,pokemaster
+Requires-Python: >=3.6.5,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: pokedex
+Requires-Dist: attrs (>=18.2,<19.0)
+Requires-Dist: construct (<=2.5.3); extra == "pokedex"
+Requires-Dist: pokedex; extra == "pokedex"
+Requires-Dist: sqlalchemy (>=1.2,<2.0)
