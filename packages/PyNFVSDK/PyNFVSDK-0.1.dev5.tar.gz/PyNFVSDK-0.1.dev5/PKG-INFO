@@ -1,0 +1,17 @@
+Metadata-Version: 1.2
+Name: PyNFVSDK
+Version: 0.1.dev5
+Summary: an SDK to faciliate REST calls for various Cisco NFV management platforms
+Home-page: https://github.com/kriswans/
+Author: Kris Swanson, Wade Lehrschall, Aaron Warner 
+Author-email: kriswans@cisco.com, wlehrsch@cisco.com, aawarner@cisco.com
+License: MIT
+Description: an SDK to faciliate REST calls for various Cisco NFV management platforms, such as NFVIS and DNA-Center
+Keywords: NFV,REST,Cisco NFV
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.5
