@@ -1,0 +1,3 @@
+[console_scripts]
+mkalias = mkalias_cli.mkalias:main
+
