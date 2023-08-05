@@ -1,0 +1,61 @@
+Metadata-Version: 1.1
+Name: microhttp-ratelimit
+Version: 0.1.0
+Summary: Rate limit extension for microhttp
+Home-page: UNKNOWN
+Author: Mahdi Ghane.g
+Author-email: UNKNOWN
+License: MIT License
+Description: microhttp-ratelimit
+        ===================
+        
+        Rate limit extension for microhttp
+        
+        - Based LeakyBucket method on Redis
+        - IP throttler decorator
+        
+        
+        Install
+        -------
+        
+        
+        .. code-block:: bash
+        
+            pip install microhttp-ratelimit
+        
+        Note: required to install ``Redis``.
+        
+        
+        Configuration
+        -------------
+        
+        .. code-block:: yaml
+        
+            rate_limit:
+              namespace_prefix: myApp
+              redis:
+                host: localhost
+                port: 6379
+              ip_rules:
+                default:
+                  period: 900 # 15 Minutes
+                  limit: 180
+                slow:
+                  period: 86400 # 24 Hours
+                  limit: 50
+                very_slow:
+                  period: 86400
+                  limit: 10
+        
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

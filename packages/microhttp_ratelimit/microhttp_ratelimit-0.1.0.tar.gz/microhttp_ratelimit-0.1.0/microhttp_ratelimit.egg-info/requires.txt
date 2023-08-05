@@ -1,0 +1,4 @@
+ujson
+nanohttp
+microhttp
+redis~=3.0.0
