@@ -1,0 +1,10 @@
+dataset>=1.1.2
+colorama
+ruamel.yaml
+requests>=2.21.0
+tqdm>=4.30.0
+requests-toolbelt>=0.8.0
+Pillow
+click
+colorlog
+funcy
