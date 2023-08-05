@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: scrapy_rowspan_colspan_contents_copied
+Version: 0.6
+Summary: It detects HTML table's rowspan and colspan and extracts cells with contents copied.
+Home-page: https://github.com/takitakis/scrapy_rowspan_colspan_contents_copied
+Author: Takeaki Kawai
+Author-email: taki.kwi@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: rowspan colspan
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
