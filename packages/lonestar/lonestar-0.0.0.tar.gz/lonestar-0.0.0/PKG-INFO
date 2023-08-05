@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: lonestar
+Version: 0.0.0
+Summary: Delayed execution DSL operating on tabular data
+Home-page: UNKNOWN
+Author: Jim Kitchen
+Author-email: jim22k@gmail.com
+License: UNKNOWN
+Description: # Lonestar
+        
+        Lonestar is both a language and a web-based environment for writing code.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
