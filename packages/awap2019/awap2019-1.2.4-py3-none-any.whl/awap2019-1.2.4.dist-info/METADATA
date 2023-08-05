@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: awap2019
+Version: 1.2.4
+Summary: Module for AWAP 2019.
+Home-page: http://github.com/cuebeomc/awap2019
+Author: ACM@CMU
+Author-email: cuebeomc@andrew.cmu.edu
+License: GPL
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: absl-py
+
+Contains essential classes for competitors.
+
+
