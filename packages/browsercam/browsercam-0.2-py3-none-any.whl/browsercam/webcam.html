@@ -1,0 +1,198 @@
+<html>
+  <style>
+    body, #container {
+      height: 100%;
+    }
+    #container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #videoContainer {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    }
+    #video, #photo {
+      /* flip webcam video element */
+      transform: rotateY(180deg); 
+    }
+    #photo {
+      position: absolute;
+      visibility: hidden;
+      top: 0;
+      left: 0;
+    }
+    #capture {
+      margin: 20px;
+      width: 125px;
+
+      /* nabbed bootstrap button style */
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    #flash {
+      visibility: hidden;
+      background: white;
+      position: absolute;
+      opacity: 1;
+      transition: opacity 2s ease-out;
+      top: 0; left: 0; right: 0; bottom:0;
+    }
+    #capture .sending {
+      display: none;
+    }
+    .flashing #flash {
+      visibility: visible;
+      opacity: 0;
+    }
+    .flashing #photo {
+      visibility: visible;
+    }
+    .flashing #capture {
+      background-color: #6c757d;
+      opacity: .65;
+    }
+    .flashing #capture .sending {
+      display: inline;
+    }
+    .flashing #capture .default {
+      display: none;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="videoContainer">
+        <video id="video" width="320">Video stream not available.</video>
+        <img id="photo">
+        <div id="flash"></div>
+      </div>
+      <button id="capture"><span class="default">Capture</span><span class="sending">Processing...</span></button>
+    </div>
+
+    <script>
+      var webcamStream, imageCapture, dataUrl, streaming;
+
+      function setTakingPicture(on) {
+        container = document.getElementById('container');
+        button = document.getElementById('capture');
+        if (on) {
+          container.classList.add('flashing');
+          capture.setAttribute('disabled', 'disabled');
+        } else {
+          setTimeout(() => {
+            container.classList.remove('flashing');
+            capture.removeAttribute('disabled');
+          }, 1000)
+        }
+      }
+
+      function handleError(error) {
+        setTakingPicture(false);
+        alert('Oops! There was an unexpected error: ' + error);
+      }
+
+      function takePhoto() {
+        return new Promise((resolve, reject) => {
+          imageCapture.takePhoto().then(blob => {
+            if (dataUrl) {
+              window.URL.revokeObjectURL(dataUrl);
+            }
+            dataUrl = window.URL.createObjectURL(blob); 
+            document.getElementById('photo').src = dataUrl;
+            setTakingPicture(true);
+            resolve(blob);
+          }).catch(handleError);
+        });
+      }
+
+      function uploadPhoto(blob) {
+        return new Promise((resolve, reject) => {
+          var fd = new FormData();
+          fd.append('fname', 'capture.png');
+          fd.append('data', blob);
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'http://localhost:5000', true);
+          xhr.onload = function() {
+            setTakingPicture(false);
+            if (xhr.status === 200) {
+              resolve(xhr.response);
+            } else {
+              var error = new Error(xhr.statusText);
+              reject(error);
+            }
+          }
+          xhr.onerror = function(e) {
+            setTakingPicture(false);
+            if (e.target.status === 0) {
+              var error = new Error('Could not connect to webcam service. Is your Python script running?');
+            } else {
+              var error = new Error(xhr.statusText);
+            }
+            reject(error);
+          }
+          xhr.send(fd);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        video = document.getElementById('video');
+        photo = document.getElementById('photo');
+        captureBtn = document.getElementById('capture');
+
+        window.navigator.mediaDevices.getUserMedia({video: true}).then(function(stream) { 
+          webcamStream = stream; 
+          var mediaStreamTrack = stream.getVideoTracks()[0];
+          imageCapture = new ImageCapture(mediaStreamTrack);
+          video.srcObject = stream;
+          video.play();
+          video.addEventListener('canplay', function(ev){
+            if (!streaming) {
+              // set photo dimensions
+              var width = video.getAttribute('width');
+              var height = video.videoHeight / (video.videoWidth/width);
+
+              video.setAttribute('width', width);
+              video.setAttribute('height', height);
+              photo.setAttribute('width', width);
+              photo.setAttribute('height', height);
+
+              streaming = true;
+            }
+          }, false);
+        }).catch(handleError);
+
+        captureBtn.addEventListener('click', function(event) {
+          takePhoto()
+            .then(blob => uploadPhoto(blob))
+            .then(response => {
+              console.log(response);
+            }).catch(handleError);
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>
