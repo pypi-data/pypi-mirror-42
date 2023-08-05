@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: example-pkg-llz-arithmetic
+Version: 0.0.1
+Summary: A small example package
+Home-page: UNKNOWN
+Author: llz
+Author-email: hero1153@sina.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Example Package
+* this is a files that can process four arithmetic operation.
+
+
