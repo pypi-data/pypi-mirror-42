@@ -1,0 +1,14 @@
+six
+nose
+pytest
+python-hostlist
+simplejson
+oyaml
+colorama
+psutil
+tox
+detox
+coverage
+flake8
+prettytable
+hypothesis
