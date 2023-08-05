@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ml4k
+Version: 0.4
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: requests
+Requires-Dist: PIL
+
+# Python wrapper for the machinelearningforkids.co.uk API
+
+
