@@ -1,0 +1,51 @@
+{% extends "djangocms_pai_material_components_web/base.html" %}
+{% load cms_tags static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block css %}
+{{block.super}}
+<style>
+</style>
+{% endblock css %}
+
+
+{% block extracss %}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'djangocms_pai_material_components_web/node_modules/@material/top-app-bar/dist/mdc.top-app-bar.min.css' %}">
+{% endblock extracss %}
+
+
+{% block content %}
+
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="mdcTopAppBar">
+  {% block top-app-bar %}
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section" role="toolbar">
+      {% placeholder top-app-bar %}
+    </section>
+  </div>
+  {% endblock %}
+</header>
+
+<main>
+  {% placeholder "content" %}
+</main>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+{{block.super}}
+
+<script type="text/javascript" src="{% static 'djangocms_pai_material_components_web/node_modules/@material/top-app-bar/dist/mdc.topAppBar.min.js' %}"></script>
+
+<script>
+  window.app.topAppBar = new mdc.topAppBar.MDCTopAppBar(document.getElementById('mdcTopAppBar'));
+</script>
+
+{% endblock extrajs %}
+
+{% block jsready %}
+{{block.super}}
+{% endblock jsready%}
