@@ -1,0 +1,16 @@
+deepquantiles/__init__.py,sha256=jb3s4w_RWrNDiSsCLRMNiLjvrpmzEq5NNUAPs3GlG50,101
+deepquantiles/datasets.py,sha256=2JTzlwJ4EY-dKm7IXnYGcNibKXcBiUCiCPOoFyBrtjw,1057
+deepquantiles/nb_utils.py,sha256=telX4HUDHMw7dGVupmEzRVaU6UTqKDSRKiFBUosj8mA,382
+deepquantiles/presets.py,sha256=LnZ78tU3xNPuJN9V1AmmRw8sWBSCbBZqMTTj4dZNnbw,1464
+deepquantiles/regressors/__init__.py,sha256=0TdFKKehcb9Mg7spQ22abYGTIiviUweUJsS87-8E7-Y,152
+deepquantiles/regressors/batches.py,sha256=_78-zVPA_ItPnsHbfIwmPxx9aUzC27ZLcWp3Fzh6roU,2838
+deepquantiles/regressors/cdf.py,sha256=dosLIURPHKQAEU6WQ5s4-RJZFT1J8tWo-yNVIZ8yHaU,5589
+deepquantiles/regressors/losses.py,sha256=iE9knW9Vx4bvAnMufPqbir7bpL68_n5lIH09yg72zr0,1446
+deepquantiles/regressors/mdn.py,sha256=xomRcLmbsWOR9llGAI_M5VGI06HxPQL5_ESH6Lo9ua4,4749
+deepquantiles/regressors/multiquantile.py,sha256=5hLnPtw1HY_7mJyGf2n4DSjpW2cQNF4XSs_qYOuoChY,3105
+deepquantiles-0.0.1.dist-info/LICENSE,sha256=19PeDyCUSY0qzOdPH_OqLAQLP0K-bAvYvfTHZR8SUDQ,1072
+deepquantiles-0.0.1.dist-info/METADATA,sha256=5lXwjque3Rx_LDYkUV2TUHYL4VrBc4glfSCfY9vtBPc,2978
+deepquantiles-0.0.1.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+deepquantiles-0.0.1.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+deepquantiles-0.0.1.dist-info/top_level.txt,sha256=4ax1RmpV_-MnEkn5h9Oz_-1mrGO0MGjtURVRRzgulGs,14
+deepquantiles-0.0.1.dist-info/RECORD,,
