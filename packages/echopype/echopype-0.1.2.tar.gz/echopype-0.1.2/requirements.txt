@@ -1,0 +1,8 @@
+numpy
+pandas
+scipy
+matplotlib
+netCDF4
+xarray
+pytz
+click
