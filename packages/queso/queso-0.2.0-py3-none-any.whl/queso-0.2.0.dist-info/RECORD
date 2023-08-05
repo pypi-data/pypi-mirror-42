@@ -1,0 +1,16 @@
+queso/__init__.py,sha256=vKhK0fIhr1G3gJACtI_E3-ANxD-FXH6X52vZnj7nC88,94
+queso/__main__.py,sha256=F5YU-Kq20TIAEVUo0BPEtLTceXhRPNGBIIDjMC0EnEM,86
+queso/cli.py,sha256=nLIkVKAf6TvdWoprkGsf3JjYhXensACVm13kSolGCZM,560
+queso/commands.py,sha256=fXqIT4-SaNlHhpsZXsdIZ2lIi3bRnDF4Q7SARPHles0,710
+queso/constants.py,sha256=z7yEJKEgWqxG27crNfq7T7txbfzGdjZWuA2yGF8a8H4,80
+queso/custom.py,sha256=lDIRSUOo4QlBUR1SvROFjTeiQmm2DVpvVrWTGzmwQzE,376
+queso/groups.py,sha256=fOuVNVaVhuAY2EDAVdZhNyv2y-rL6wcNMybGeSq_vQE,1061
+queso/scaffold.py,sha256=BLdPwaOO3x0f8WCGI7kjzUwCGb0oOsBgIGHCTYXCc2I,290
+queso/utils.py,sha256=fYcipw8DZ8Izx4FUPA8Jx9-mwmmshmo7b8-H6WpWHig,2265
+queso/versions.py,sha256=1FsHD1Wai-F7mmpraKLDHHPRUQC40nmrd25Q6sPw2wQ,2225
+queso-0.2.0.dist-info/LICENSE,sha256=y1GSwZQqqWFkpw6G0l-bGmcYDa9PByWjwa2bxVY-puA,1072
+queso-0.2.0.dist-info/METADATA,sha256=LsWQfDukK8hxhQ_euOG2AHU8-CXa19v4q2Bm0n5xrXw,2146
+queso-0.2.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+queso-0.2.0.dist-info/entry_points.txt,sha256=2q8_1zdnheAuFAvTLOlbl0w5aJgXhXj7KmIQQybYGFk,46
+queso-0.2.0.dist-info/top_level.txt,sha256=CpM-3r4g6KB1JmKQlinetXLbt07OnQTgsGwQL2OOx40,6
+queso-0.2.0.dist-info/RECORD,,
