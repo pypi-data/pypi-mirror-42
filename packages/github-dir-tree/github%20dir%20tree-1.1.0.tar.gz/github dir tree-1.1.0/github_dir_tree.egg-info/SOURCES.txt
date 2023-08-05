@@ -1,0 +1,13 @@
+README.md
+setup.py
+github_dir_tree/__init__.py
+github_dir_tree/conf_temp
+github_dir_tree/file_filter.py
+github_dir_tree/generate_tree.py
+github_dir_tree/get_option.py
+github_dir_tree/main.py
+github_dir_tree.egg-info/PKG-INFO
+github_dir_tree.egg-info/SOURCES.txt
+github_dir_tree.egg-info/dependency_links.txt
+github_dir_tree.egg-info/requires.txt
+github_dir_tree.egg-info/top_level.txt
