@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: tornadostack
+Version: 0.0.2
+Summary: Infrastructure for Tornado applications
+Home-page: https://github.com/tornadostack/tornadostack
+Author: Sean Harrison
+Author-email: sah@bookgenesis.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: dev
+Provides-Extra: test
+
+tornadostack: Infrastructure for Tornado applications
+
+
