@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: yalesnotes
+Version: 0.0.3
+Summary: A deamon querying new marks for UPMC/Sorbonne Université students
+Home-page: https://github.com/NicolasBizzozzero/YaLesNotes
+Author: BIZZOZZÉRO Nicolas / BECIRSPARHIC Lucas
+Author-email: nicolasbizzozzero@gmail.com
+License: gpl-v3
+Description: # YaLesNotes
+Keywords: cli,curl,querying,mark_watcher,marks,student,upmc,sorbonne,sorbonne_universite
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: Finger
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Networking :: Monitoring
+Description-Content-Type: text/markdown
