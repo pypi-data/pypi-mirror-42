@@ -1,0 +1,4 @@
+mds-sqlextension>=0.1.8
+pytz
+trytond_company<4.9,>=4.8
+trytond<4.9,>=4.8
