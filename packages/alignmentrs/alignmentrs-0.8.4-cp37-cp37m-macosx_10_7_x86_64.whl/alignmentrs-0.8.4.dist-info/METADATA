@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: alignmentrs
+Version: 0.8.4
+Summary: Quickly read and manipulate multiple sequence alignments in Python
+Home-page: https://github.com/kentwait/alignmentrs
+Author: Kent Kawashima
+Author-email: kentkawashima@gmail.com
+License: UNKNOWN
+Keywords: block,alignment,bioinformatics
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: blockrs
+Requires-Dist: numpy
+
+# alignmentrs
+
+Quickly read and manipulate multiple sequence alignments in Python
+
+
