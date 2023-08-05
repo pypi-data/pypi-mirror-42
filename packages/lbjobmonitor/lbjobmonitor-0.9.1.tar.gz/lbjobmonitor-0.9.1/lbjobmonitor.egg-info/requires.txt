@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+
+[slack]
+slackclient
+
+[telegram]
+python-telegram-bot
