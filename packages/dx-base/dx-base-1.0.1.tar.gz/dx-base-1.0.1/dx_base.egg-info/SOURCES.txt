@@ -1,0 +1,15 @@
+README.md
+setup.py
+dx_base/__init__.py
+dx_base/exceptions.py
+dx_base/forces.py
+dx_base/materials.py
+dx_base/safety_factors.py
+dx_base.egg-info/PKG-INFO
+dx_base.egg-info/SOURCES.txt
+dx_base.egg-info/dependency_links.txt
+dx_base.egg-info/requires.txt
+dx_base.egg-info/top_level.txt
+dx_base/elements/__init__.py
+test/test_elements.py
+test/test_forces.py
