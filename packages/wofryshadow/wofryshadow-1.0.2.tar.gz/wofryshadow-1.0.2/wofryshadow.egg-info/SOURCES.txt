@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+wofryshadow/version.py
+wofryshadow.egg-info/PKG-INFO
+wofryshadow.egg-info/SOURCES.txt
+wofryshadow.egg-info/dependency_links.txt
+wofryshadow.egg-info/not-zip-safe
+wofryshadow.egg-info/requires.txt
+wofryshadow.egg-info/top_level.txt
+wofryshadow/examples/plane_wave.py
+wofryshadow/propagator/wavefront2D/__init__.py
+wofryshadow/propagator/wavefront2D/shadow3_wavefront.py
