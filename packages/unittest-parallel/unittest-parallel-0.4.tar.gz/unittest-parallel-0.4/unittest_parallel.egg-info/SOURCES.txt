@@ -1,0 +1,9 @@
+README.rst
+setup.py
+unittest_parallel/__init__.py
+unittest_parallel/__main__.py
+unittest_parallel.egg-info/PKG-INFO
+unittest_parallel.egg-info/SOURCES.txt
+unittest_parallel.egg-info/dependency_links.txt
+unittest_parallel.egg-info/entry_points.txt
+unittest_parallel.egg-info/top_level.txt
