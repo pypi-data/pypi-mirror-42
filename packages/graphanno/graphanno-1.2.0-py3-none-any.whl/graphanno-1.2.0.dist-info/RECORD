@@ -1,0 +1,13 @@
+graphanno/__init__.py,sha256=wo1Vv0ARIvKsKhxl9qBjWoGuc7ZOfxK5wD_NhcfmnB8,120
+graphanno/graphanno.py,sha256=bms-60l42Od2td1KKbNJFxx4gsCJq_u0TZVKVG121vU,4804
+tests/test_objects/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_objects/advanced.py,sha256=Td1GPnhWBL-48NaaLrj05hSykVErryCV8zMRMusM1p8,375
+tests/test_objects/basic.py,sha256=Hcw8YTpj4BKJ-XYcSyebIhIIzV0ZNfHSZO6WyN6YZ6o,147
+tests/test_objects/duplicated.py,sha256=jWIyBWBjVJWnPcjevWXrc3q2qOmhvfEY2LGajQ6goMs,683
+tests/test_objects/full_example.py,sha256=l2ggpl6G7h71M81Y1cgQiyZHBUPrlT0xhYOmKxZip8s,1446
+tests/test_objects/nested.py,sha256=ypE-Y1Y0OpZVRJin5hPc3GzvBYy3JnrhF3cYPnTQ6pc,357
+graphanno-1.2.0.dist-info/LICENSE,sha256=yKGK7o5GcQY6cjtjw6ZuCe5iZwoup_L1OUi4ZxXS0Nc,1085
+graphanno-1.2.0.dist-info/METADATA,sha256=Xf91UxHLDLk7KBwHTIkIUhKfp0294L67XnVbFQSu_fg,3599
+graphanno-1.2.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+graphanno-1.2.0.dist-info/top_level.txt,sha256=jegHL8gBjhSxA1FXm86xtj9WuBb_tb8WW7Lgqwg5rrY,16
+graphanno-1.2.0.dist-info/RECORD,,
