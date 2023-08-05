@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: scrapy-ive
+Version: 1.1
+Summary: A mini spider framework, like Scrapy
+Home-page: https://github.com/ive1025/spider_plus.git
+Author: ivedong
+Author-email: 2979544546@qq.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: requests (>=2.18.4)
+Requires-Dist: six (>=1.11.0)
+
+UNKNOWN
+
+
