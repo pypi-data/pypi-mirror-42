@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+pycrop/__init__.py
+pycrop/tools.py
+pycrop.egg-info/PKG-INFO
+pycrop.egg-info/SOURCES.txt
+pycrop.egg-info/dependency_links.txt
+pycrop.egg-info/requires.txt
+pycrop.egg-info/top_level.txt
