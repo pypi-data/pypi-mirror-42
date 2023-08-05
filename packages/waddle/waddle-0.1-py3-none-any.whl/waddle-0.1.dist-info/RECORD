@@ -1,0 +1,14 @@
+waddle/__init__.py,sha256=T275NZqLYLvBD3dXC-2oVtHkULALqwzvi_kGl_V7QDQ,208
+waddle/bunch.py,sha256=QUN9FO4XrOybVHI5OJV77fJWRL5AjGmHAVL56PncEM0,7382
+waddle/cli.py,sha256=rU6VZ2iW1-O-W5dJsOlrJjacPNGJDP3IEIZzXPkFA9o,1502
+waddle/param_bunch.py,sha256=IkChTSo_IV17z54sPeG2P2WpAOxHLwYmQyLrnkfRZ3A,5874
+waddle/settings.py,sha256=TKkHDxRJM0tVKHQgiW1cYSV1kJWAAfoQNETuSA99rvo,128
+waddle/aws/__init__.py,sha256=uZ9vAnPUxigGnXyNGT9XuDqDsAFz_SD1lWBU_2NLZeY,61
+waddle/aws/pstore.py,sha256=OGBAx3quUQONdjQwB8OUEeis2kAaMh0UyK7BDYDxpwA,1275
+waddle/aws/session.py,sha256=okno5WvkoHDtdT5CNKJNbOgiVrPG4CW0RWbRj-jAFuE,592
+waddle-0.1.dist-info/METADATA,sha256=kFCk-3D3hGo4o9ZyM69RBNbbqv-5avkNfQikD12P8BI,2180
+waddle-0.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+waddle-0.1.dist-info/entry_points.txt,sha256=8ZnwJkSM7U-M1Tu76zOePPon2njKCxl1iF3ueW2Bl_A,44
+waddle-0.1.dist-info/top_level.txt,sha256=Z43ibNpm8DHTTqwManiK_7Pba7WWyKEp4Pr26PpS9Rs,7
+waddle-0.1.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+waddle-0.1.dist-info/RECORD,,
