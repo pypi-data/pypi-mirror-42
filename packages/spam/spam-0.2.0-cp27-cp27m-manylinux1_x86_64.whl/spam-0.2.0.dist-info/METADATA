@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: spam
+Version: 0.2.0
+Summary: Software for the practical analysis of materials
+Home-page: https://gricad-gitlab.univ-grenoble-alpes.fr/ttk/spam/
+Author: SPAM authors
+Author-email: edward.ando@3sr-grenoble.fr
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pip (>=9.0.1)
+Requires-Dist: numpy (>=1.12.1)
+Requires-Dist: scipy (>=0.18.1)
+Requires-Dist: matplotlib (>=2.0.0)
+Requires-Dist: ipython (>=5.1.0)
+Requires-Dist: tifffile (>=0.12.1)
+Requires-Dist: SimpleITK (>=1.0.0)
+Requires-Dist: progressbar (==2.5)
+
+UNKNOWN
+
+
