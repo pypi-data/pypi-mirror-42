@@ -1,0 +1,9 @@
+setup.py
+myhelloworldxyz/__init__.py
+myhelloworldxyz/text.py
+myhelloworldxyz.egg-info/PKG-INFO
+myhelloworldxyz.egg-info/SOURCES.txt
+myhelloworldxyz.egg-info/dependency_links.txt
+myhelloworldxyz.egg-info/not-zip-safe
+myhelloworldxyz.egg-info/requires.txt
+myhelloworldxyz.egg-info/top_level.txt
