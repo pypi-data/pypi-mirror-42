@@ -1,0 +1,15 @@
+image_file_name_fixer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+image_file_name_fixer/__main__.py,sha256=vq8of8B-0LyHZrvBckQU_Yl2muIeabcxIURdzPJ7x-Q,295
+image_file_name_fixer/app_config.py,sha256=4nmDOkhaFKanzhtpUcE45bcHj_n_TJy0cfe4EZ2XiDc,1538
+image_file_name_fixer/argument_processor.py,sha256=aR-LZ7nMdk9QlF5DBxjheR2STZRAmfXhF_q4A-rR_F8,2598
+image_file_name_fixer/file_utils.py,sha256=L8MwwusgfbTfl4MxsPoRXcF_MfoArNGL_LY2hb25IB0,1995
+image_file_name_fixer/format_mapper.py,sha256=2jFmgJNE-FfkX9QR1pH7F_hW_oQPpqAoe4WR1MuZ7T8,762
+image_file_name_fixer/image_details.py,sha256=HYVLW0woEPBkA04_vI4psRdjK40S9P_yIfve3FaSY1I,2546
+image_file_name_fixer/image_resolution.py,sha256=eBLLxZ75AiuLbOEF3EuZAJ3WRBSpQp404fGKZrPvsDY,2078
+image_file_name_fixer/name_fixer.py,sha256=ENPM-XrqyeslZ7IxlI-vqzdX-JCSjfRqCZ-eVhxAib0,6261
+image_file_name_fixer-0.10.1.dist-info/LICENSE.md,sha256=cArfvO4K4OcpGu3nospXFwafLHm7wgQcnn1DwGsbE2k,1110
+image_file_name_fixer-0.10.1.dist-info/METADATA,sha256=5r_fx7GOQxWu5cyDthZ6hN3JyeLeyAXIajHZYozuVjY,255
+image_file_name_fixer-0.10.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+image_file_name_fixer-0.10.1.dist-info/entry_points.txt,sha256=XPWvMomOEFkbUIdyIDOZufvnNOXHtKJtu-ds24oFxRo,79
+image_file_name_fixer-0.10.1.dist-info/top_level.txt,sha256=Fvb8fx_UNICVs03gS4Dp-9Oe8nm3IomG19oH5ubz6TY,22
+image_file_name_fixer-0.10.1.dist-info/RECORD,,
