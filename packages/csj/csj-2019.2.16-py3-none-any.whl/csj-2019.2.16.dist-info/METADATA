@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: csj
+Version: 2019.2.16
+Summary: Read comma separated JSON
+Home-page: https://github.com/bartbroere/csj/
+Author: Bart Broere
+Author-email: mail@bartbroere.eu
+License: MIT License
+Keywords: csj csv json
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Utilities
+
+# csj
+Read comma separated JSON (it's a thing) with Python
+
+Will implement equivalent functions of everything included in standard 
+library csv and json modules
+
+
