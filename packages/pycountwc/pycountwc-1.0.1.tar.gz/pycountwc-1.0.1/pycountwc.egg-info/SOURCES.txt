@@ -1,0 +1,8 @@
+README.md
+setup.py
+pycountwc/__init__.py
+pycountwc/pycountwc.py
+pycountwc.egg-info/PKG-INFO
+pycountwc.egg-info/SOURCES.txt
+pycountwc.egg-info/dependency_links.txt
+pycountwc.egg-info/top_level.txt

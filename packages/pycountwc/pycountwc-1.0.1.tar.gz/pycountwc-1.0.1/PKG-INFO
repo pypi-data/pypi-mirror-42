@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pycountwc
+Version: 1.0.1
+Summary: A python 3.x package to count words, letters without space, and letters including space in a provided file.
+Home-page: https://github.com/amrs-tech/pycountwc
+Author: Ahamed Musthafa
+Author-email: amrs.tech@gmail.com
+License: UNKNOWN
+Description: #pycount-wc
+        
+        A python 3.x program to count words, characters without space, and characters including space in a provided file.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
