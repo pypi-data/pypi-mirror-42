@@ -1,0 +1,12 @@
+_libhfst_dev.cpython-35m-darwin.so,sha256=rwMjKel-9GxHasdZYs7EXMbOZTz4VNRrN_E_aAhIsUo,27326872
+libhfst_dev.py,sha256=KL_QO2dE-RH2RYVa-q0GirX915yyzKUm0-WSuht51YM,187956
+hfst_dev/__init__.py,sha256=JCN0NAg2xu50YjIHxfOQZnhtIfVVWWagerHABJip4K8,47468
+hfst_dev/exceptions/__init__.py,sha256=Nmb9I7IMlPWlG1X5Q8-x6TBPX7pvd6hH5rOVCioI258,1936
+hfst_dev/sfst_rules/__init__.py,sha256=pIMz1e4kPxzk_MAEwSV8kPJEQ7ttMpZuZgLZAmM9WCY,601
+hfst_dev/xerox_rules/__init__.py,sha256=u2R_HuNGTQYDtM6DeL95cz0qRksLMWBwdwk7jXeslkE,1023
+hfst_dev-3.15.0.5b0.dist-info/DESCRIPTION.rst,sha256=6s3uEWoddHTANKArc-UPy2J_qdogYisLYQZ8Tcg1aSA,4254
+hfst_dev-3.15.0.5b0.dist-info/METADATA,sha256=VVX7C61RxOWCtOJy0UBDQUDnMNrPQ5tKtsnJErm6Dz8,4505
+hfst_dev-3.15.0.5b0.dist-info/RECORD,,
+hfst_dev-3.15.0.5b0.dist-info/WHEEL,sha256=L6knHMubItg16YHnjJjrJuNjve0qnMaRGCdwKBJHQC8,110
+hfst_dev-3.15.0.5b0.dist-info/metadata.json,sha256=BDU_J4cUodxY8EXsob2Lw-70Xc3z1SZif2Dx4hYiSXk,442
+hfst_dev-3.15.0.5b0.dist-info/top_level.txt,sha256=KkXs4x6aqxAgjVxn7h7b7S1fjzQaLMKP5_J3Rx-ZW00,34
