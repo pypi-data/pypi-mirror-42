@@ -1,0 +1,10 @@
+giturl/__init__.py,sha256=rUhDj_W5oRCU7gt9KJqYpgZmcJwOmuCe_jxE5JuAfcI,943
+giturl/exceptions.py,sha256=HtGUfiWnbZchn97MMeVo5bGK4xrJVm6vcWO7Qvzo4ZI,71
+giturl/schema.py,sha256=0E231NuUk0lYgtMBQct-AXbVvaok83y_cN8Ao4eCQoI,1707
+giturl/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+giturl/test/test_parse.py,sha256=2Axvdxi7NwYqPe9srBg9Wgxj2TIkvKMTBO8c2HTXEYg,5150
+giturl-0.1.1.dist-info/LICENSE,sha256=DCEXtUi_R8rkFBJkcPu6gAsNasUmEZ-UH2AKtndQL4U,1474
+giturl-0.1.1.dist-info/METADATA,sha256=hMKj3wLLcA9OwOoj9ZmFQHtmT4uvsDCMtlQl2cDIulk,799
+giturl-0.1.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+giturl-0.1.1.dist-info/top_level.txt,sha256=zTzyFCmif2dArD33E1koN1FhS85ozsrUbRkRQPd5M-U,7
+giturl-0.1.1.dist-info/RECORD,,
