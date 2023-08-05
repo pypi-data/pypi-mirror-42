@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "injectark"
+version = "0.2.0"
+description = "Dependency Injector for Python"
+authors = ["eecheverry <eecheverry@nubark.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.2"
+pytest-cov = "^2.6"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
