@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: restaurante_daviddss_v2
+Version: 0.0.1
+Summary: Un gestor para un restaurante
+Home-page: UNKNOWN
+Author: David da Silva
+Author-email: davdes15@gmail.com
+License: UNKNOWN
+Description: # restaurante_python
+        Proyecto restaurante con python y GTK para el modulo de Desarrollo de Interfaces
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
