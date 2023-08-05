@@ -1,0 +1,8 @@
+[celery.commands]
+condor = gwcelery.condor:CondorCommand
+flask = gwcelery.flask:FlaskCommand
+nagios = gwcelery.nagios:NagiosCommand
+
+[console_scripts]
+gwcelery = gwcelery:app.start
+
