@@ -1,0 +1,14 @@
+codegra_fs/__init__.py,sha256=l4q0X0z-ImGnzcmGrPYwoMqtl19ShDWZqhi1GsKAv7U,232
+codegra_fs/api_consumer.py,sha256=nnUeqqV45nWwpULsVn-mOvh60B4yWKCPch9c1SDVAcM,5008
+codegra_fs/cgapi.py,sha256=QdgPLZjNfMr3pg7qyrh5xUOCp_FdHi9EK0omFGBo_x4,11530
+codegra_fs/cgfs.py,sha256=KeSBZRcmkfYkvkQpbwTYnJRdnAs4iy0pARY2XsxkuMs,66527
+codegra_fs/cgfs_types.py,sha256=pZU2QThGjrtzEN82M-djmEQB0v7_pVho8RAFUbNPmGw,547
+codegra_fs/constants.py,sha256=dsL6mZpv7Utrxgn5NQTZLul2Gyuy1Uu6asFcj-OwL6s,3264
+codegra_fs/gui.py,sha256=me6jjC37V1VuLVJXf4UkxKyOCpdJny-6NmMoPu2OuW0,15539
+codegra_fs/utils.py,sha256=U3qTJ-9EpUdEdaFyhZNagtsgR6gsjcamAMHENq_4Z44,2560
+CodeGra.fs-0.5.0.dist-info/LICENSE,sha256=dql8h4yceoMhuzlcK0TT_i-NgTFNIZsgE47Q4t3dUYI,34520
+CodeGra.fs-0.5.0.dist-info/METADATA,sha256=l5gje3-G6mLICvIOH9qngJNLoUhHG2WmIlxgpN2-W_I,8342
+CodeGra.fs-0.5.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+CodeGra.fs-0.5.0.dist-info/entry_points.txt,sha256=2JN68hoPqq7r73WYtKrr8bIeS-RaUF8jrXt4pR7MqxY,123
+CodeGra.fs-0.5.0.dist-info/top_level.txt,sha256=44Cs360bMHpGLYkZ1HbF0CUiVZGYO22yihFyvMDqhqI,11
+CodeGra.fs-0.5.0.dist-info/RECORD,,
