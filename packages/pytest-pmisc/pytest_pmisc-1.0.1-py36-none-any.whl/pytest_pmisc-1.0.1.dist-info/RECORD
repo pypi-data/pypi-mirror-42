@@ -1,0 +1,10 @@
+pytest_pmisc/__init__.py,sha256=GSwfsomgdyY4Sb7T_e-6AwqZUBUWCV2bdGlExejsO6g,118
+pytest_pmisc/plugin.py,sha256=rbLfBGasNb1gTXn3jMRxbsO_yvwICL2iip6CoOviK84,2119
+pytest_pmisc/version.py,sha256=m5xZD6nxa8GwfVHg0SAp2pYHx77Gqv-3RYMidP-oNek,753
+pytest_pmisc-1.0.1.dist-info/DESCRIPTION.rst,sha256=gdG-rYJu7x002VgZ-qjujvQ0hvmTSYknrUuFkOdlU7I,3486
+pytest_pmisc-1.0.1.dist-info/METADATA,sha256=c_XU2vQA0ZPlc2g6eWRuCAZ0dWKidCCJhwg_rkepHJI,4344
+pytest_pmisc-1.0.1.dist-info/RECORD,,
+pytest_pmisc-1.0.1.dist-info/WHEEL,sha256=WR0oxW7BKz-0pFOyH8k7YvAce2MV8vtAbmywch6861Q,93
+pytest_pmisc-1.0.1.dist-info/entry_points.txt,sha256=A-6eds3TrjevQ_MebqeuQ2vDDWwoVeTPimIBaYw_aIM,47
+pytest_pmisc-1.0.1.dist-info/metadata.json,sha256=NUbMSJVMJYhHLbxwpaqUIsuLK27K_-FVYrmg2NTgZrE,1260
+pytest_pmisc-1.0.1.dist-info/top_level.txt,sha256=03VNjiMvQ-6iCz5V10ijGC3kwLmCjKIwZ1Qd_-d7O0I,13
