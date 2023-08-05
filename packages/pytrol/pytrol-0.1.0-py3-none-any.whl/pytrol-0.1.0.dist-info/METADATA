@@ -1,0 +1,176 @@
+Metadata-Version: 2.1
+Name: pytrol
+Version: 0.1.0
+Summary: easy to use Linux process managment in python
+Home-page: https://github.com/daehruoydeef/pytrol
+Author: daehruoydeef (Oskar)
+Author-email: author@nodata.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+![pytrol](./docs/pytrol.png)
+
+## What is pytrol
+
+pytrol is a helper for subprocess and allows easy process management.
+
+## Installation
+
+#### Automatic (recommended)
+
+```
+$ pip install pytrol
+```
+
+#### Manual
+
+```
+$ git clone git@github.com:daehruoydeef/pytrol.git
+# moving pytrol into your projects lib folder assuming you are cloning it in the same directory
+$ cd myProject
+# create a lib folder inside your python project folder
+$ mkdir lib
+# move the cloned repository inside you lib folder
+$ mv ../pytrol/ ./lib
+```
+
+## Overview
+
+- start
+- startAndWait
+- restart
+- restartAndWait
+- kill
+- isRunning
+- playSound
+- getUser
+- getUserPath
+- notify
+
+## Documentation
+
+#### import
+
+`import pytrol`
+
+`from pytrol import start`
+
+#### start(process)
+
+> starts a process by name. It will not wait for the output and will continue to run, it will not block the current used Thread. The Method Start will append the Process to the system Processes instead of waiting for its output or blocking the thread.
+
+**Example**
+
+`start("firefox")`
+
+`start("telegram-desktop")`
+
+---
+
+#### startAndWait(process)
+
+> starts a process by name. It will wait for the output and will not continue to run, it will block the current used Thread until the process finishes. Finally if the process finishes the method will return the exit code and output.
+
+**Example**
+
+`startAndWait("kate")`
+
+`output = startAndWait("tree")`
+
+---
+
+#### restart(process)
+
+> restarts process and does not wait on return used **start()** internally.
+
+**Example**
+
+`restart("telegram-desktop")`
+
+`restart("telegram-desktop")`
+
+---
+
+**restartAndWait(process)**
+
+> restarts process and does wait on return used **startAndWait()** internally.
+
+**Example**
+
+`startAndWait("kate")`
+
+`output = startAndWait("tree")`
+
+---
+
+#### kill(process)
+
+> kills the process and does not wait for return
+
+**Example**
+
+`kill("firefox")`
+
+`kill("telegram-desktop")`
+
+---
+
+#### isRunning(process)
+
+> return true or false wether the process is running or not
+
+**Example**
+
+`isRunning("firefox")` -> false
+
+`isRunning("brave-browser")` -> true
+
+---
+
+#### playSound(sound)
+
+> plays sound given by path. Will play mp3, wav, flac ... with pulseaudio. If you do not use pulseaudio you might run into troubles.
+
+**Example**
+
+`playSound("click.wav")`
+
+`playSound("./sounds/toks/tok.flac")`
+
+---
+
+#### getUser()
+
+> returns the username that called the script. Note: If you call this script as root you will get "root" as username which is probably not intended.
+
+**Example**
+
+`getUser()` -> daeh
+
+---
+
+#### getUserPath()
+
+> return the path to the users home directory. Note: If you run this with root privileges you will get the root path
+
+**Example**
+
+`getUserPath()` -> /home/daeh/
+
+---
+
+#### notify("message")
+
+> sends system notification to the native system notify service
+
+**Example**
+
+`notify("Process terminated")`
+
+`notify("update available")`
+
+
