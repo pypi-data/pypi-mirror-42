@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: marzano
+Version: 2019.2.14
+Summary: Calculate predicted learning value from history of assessments using Marzano's Power Law
+Home-page: https://github.com/sreyemnayr/marzano
+Author: Ryan Meyers
+Author-email: ryanmeyersweb@gmail.com
+License: MIT license
+Keywords: marzano
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: Click (>=6.0)
+
+============================
+Marzano Power Law Calculator
+============================
+
+
+.. image:: https://img.shields.io/pypi/v/marzano.svg
+        :target: https://pypi.python.org/pypi/marzano
+
+.. image:: https://img.shields.io/travis/sreyemnayr/marzano.svg
+        :target: https://travis-ci.org/sreyemnayr/marzano
+
+.. image:: https://readthedocs.org/projects/marzano/badge/?version=latest
+        :target: https://marzano.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+.. image:: https://pyup.io/repos/github/sreyemnayr/marzano/shield.svg
+     :target: https://pyup.io/repos/github/sreyemnayr/marzano/
+     :alt: Updates
+
+
+
+Requires modern Python
+
+* Free software: MIT license
+* Documentation: https://marzano.readthedocs.io.
+
+
+Features
+--------
+
+* Simple CLI interface for inputting scores
+* marzano.powerlaw() takes a list and returns the power score
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+2019.02.14 (2019-02-14)
+------------------
+
+* First release on PyPI.
+
+
