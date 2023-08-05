@@ -1,0 +1,13 @@
+skeddly/__init__.py,sha256=cFcdsJuC9rawA0ySEPmWa6hsLtUi_wpLoIdJzEZFxsk,95
+skeddly/client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+skeddly/client/actions.py,sha256=3oGTp2k9Sbb16U5rcx5LDJ9d6354JKWEQ_o2uVP4FMw,2113
+skeddly/client/configloader.py,sha256=jCyn1d6Z83fXggSGbc4jdOKMWW0KNWflirggvjE1mng,370
+skeddly/client/core.py,sha256=1f-y-_Ezl3YP4MUIijb4tRvGSG6xK9yuJ1cnt9-NhGs,3035
+skeddly/client/credentials.py,sha256=EeWmek-zvzbIflaCcn-bG4UiMYs4cNc5gFlhYRkvJOE,1019
+skeddly/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+skeddly/models/exceptions.py,sha256=J8pEqbS-XfAMxmfksrB4dQRMHZv9olalNiHIBcXT5sA,551
+skeddly_sdk-1.0.7.dist-info/LICENSE,sha256=cCx1uT6WFlh7gZK32yw0rbjN31OKNvdF9L4dvGOkRFI,1078
+skeddly_sdk-1.0.7.dist-info/METADATA,sha256=RDwps9qa0mQHyaq61D9LLB_vo3oaQ5nQaPc86rtE-Bo,2221
+skeddly_sdk-1.0.7.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+skeddly_sdk-1.0.7.dist-info/top_level.txt,sha256=DCRy-uRw9WTY8ktaXVTSY1ADUbV0axt2Wmgs6RkyMRk,8
+skeddly_sdk-1.0.7.dist-info/RECORD,,
