@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: plot-playground
+Version: 0.0.11
+Summary: plot playground is a plot library that works on Jupyter and Pandas datasets.
+Home-page: https://github.com/simon-ritchie/plot_playground
+Author: simon-ritchie
+Author-email: 
+Maintainer: simon-ritchie
+Maintainer-email: 
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+
+Please see github document for detail information.
+
+
