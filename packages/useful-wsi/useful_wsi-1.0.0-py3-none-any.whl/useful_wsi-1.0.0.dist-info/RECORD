@@ -1,0 +1,12 @@
+useful_wsi/__init__.py,sha256=FHL8ShsHAUfZB49tyVEcCW-nLBmIf9CLUaLWhdARgUM,359
+useful_wsi/patch_sampling.py,sha256=FtW97k831U1a4LGeq2Ef-U1oHZ9mKMJ95pcfsvONiYM,18868
+useful_wsi/tissue_segmentation.py,sha256=P9gBYzH7ueNfy4ykLtbjeGRSOI3eXh6buKTBJ-4I6Nk,3710
+useful_wsi/utils.py,sha256=FHY0WFoQZk4-Ew0Vegozpp6zegfypDLVifaRKNCvYaU,9193
+useful_wsi/version.py,sha256=yzUSuyO6ZAMuXfoweAndwJBrGppZ5oUhWvbrlodlg20,168
+useful_wsi/visu_utils.py,sha256=f9_whPVPZGDEdMUH9sBc0-rpyBIHzDVSaOaoOh6_8Wg,1732
+useful_wsi-1.0.0.dist-info/DESCRIPTION.rst,sha256=u6y06ocKoa2w9mcMlotPdRl3Yuz_ITdI-kcl5viO6oc,462
+useful_wsi-1.0.0.dist-info/METADATA,sha256=F5k7Sm3YmJqmOBISgsL4uk1m5zo1wfHz0IF1Pf-D8FM,632
+useful_wsi-1.0.0.dist-info/RECORD,,
+useful_wsi-1.0.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+useful_wsi-1.0.0.dist-info/metadata.json,sha256=xd4POoQPBIZ7BV1pxE6s_pSI5C4spPoltd0qs_T8KWQ,299
+useful_wsi-1.0.0.dist-info/top_level.txt,sha256=4rsHpGGGPLVPoOCJRwvEm_McPA_d1JSe2zHF5LLD3Co,11
