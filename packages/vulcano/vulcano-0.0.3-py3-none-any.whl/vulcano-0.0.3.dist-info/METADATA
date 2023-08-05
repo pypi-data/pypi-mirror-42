@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: vulcano
+Version: 0.0.3
+Summary: Vulcano
+Home-page: https://github.com/dgarana/vulcano
+Author: David Garaña
+License: UNKNOWN
+Keywords: console development cli repl
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pyparsing
+Requires-Dist: prompt-toolkit
+
+Vulcano
+[![Build Status](https://travis-ci.org/dgarana/vulcano.svg?branch=master)](https://travis-ci.org/dgarana/vulcano)
+[![codecov](https://codecov.io/gh/dgarana/vulcano/branch/master/graph/badge.svg)](https://codecov.io/gh/dgarana/vulcano)
+[![readthedocs](https://readthedocs.org/projects/vulcano/badge/?version=latest)](https://vulcano.readthedocs.org)
+[![py27build](http://travimg.dgarana.com/v1/dgarana/vulcano/master/Python%202.7%20Unit%20Test.svg)](https://travis-ci.org/dgarana/vulcano)
+[![py34build](http://travimg.dgarana.com/v1/dgarana/vulcano/master/Python%203.4%20Unit%20Test.svg)](https://travis-ci.org/dgarana/vulcano)
+[![py35build](http://travimg.dgarana.com/v1/dgarana/vulcano/master/Python%203.5%20Unit%20Test.svg)](https://travis-ci.org/dgarana/vulcano)
+[![py36build](http://travimg.dgarana.com/v1/dgarana/vulcano/master/Pytnon%203.6%20Unit%20Test.svg)](https://travis-ci.org/dgarana/vulcano)
+[![py37build](http://travimg.dgarana.com/v1/dgarana/vulcano/master/Python%203.7%20Unit%20Test.svg)](https://travis-ci.org/dgarana/vulcano)
+=======
+
+What is Vulcano?
+
+Vulcano is a framework for creating command line utils.
+
+Here's a simple example:
+
+```python
+from vulcano.app.classes import VulcanoApp
+
+
+app = VulcanoApp()
+
+@app.register("hi", "Salute people given form parameter")
+def salute_method_here(name, title="Mr."):
+    print("Hi! {} {} :) Glad to see you.".format(title, name))
+
+
+@app.register()
+def bye(name="User"):
+    """ Say goodbye to someone """
+    print("Bye {}!".format(name))
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+This will create two commands:
+- hi: Registered by wrapping the salute_method_here
+- bye: Just registered directly with the bye function
+
+And this will generate something like this:
+
+![Demo gif video](docs/_static/demo.gif?raw=true "Demo gif video")
+
+Nice, right?
+
+
