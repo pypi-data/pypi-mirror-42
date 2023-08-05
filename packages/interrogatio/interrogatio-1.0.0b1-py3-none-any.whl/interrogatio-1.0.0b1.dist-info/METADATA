@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: interrogatio
+Version: 1.0.0b1
+Summary: A python library to prompt user for inputs in a terminal application
+Home-page: https://github.com/ffaraone/interrogatio
+Author: Francesco Faraone
+Author-email: ffaraone@gmail.com
+License: BSD 3-Clause
+Keywords: console input dialog curses prompt
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Console :: Curses
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Terminals
+Requires-Dist: prompt-toolkit (>=2.0.8)
+Requires-Dist: pygments (>=2.3.1)
+Requires-Dist: six (>=1.12.0)
+
+UNKNOWN
+
+
