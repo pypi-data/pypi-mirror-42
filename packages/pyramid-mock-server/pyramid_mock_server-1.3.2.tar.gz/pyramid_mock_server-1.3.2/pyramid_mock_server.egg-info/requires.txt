@@ -1,0 +1,12 @@
+jinja2>=2.7
+pyramid>=1.4
+six
+venusian>=1.0
+
+[cli]
+bravado_core
+pyramid-swagger>=2.3.0
+webtest
+
+[pyramid-swagger]
+pyramid-swagger>=2.3.0
