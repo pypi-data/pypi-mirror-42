@@ -1,0 +1,16 @@
+language: python
+python:
+- 3.6
+install: pip install -U tox-travis
+script: echo test
+deploy:
+  provider: pypi
+  user: terrycain
+  distributions: sdist bdist_wheel
+  password:
+    secure: IGVtqyR787krdkttJgLjVEHzdpXkdJ/lcKpE5ZpkwNBi6tRvS738NsfkDiL3MjF8RN1x/C0lPR2LWigY7PZzGITZWVvVsiMS5l928jVHJFP7qEviKCq56yM2PhYnggudZAbPRp7J+OXfI8jXqTFYEt8vtAjBazVDqu3L4ndG3REHngSqC7RdsPL7BRaL4JybvaUmAxMfppv8JAPLVDy3e4eWauRwhtmuBoBtURu77yWnji+nEksOWPTM/XYdAE3b0dXowuBYMdSl1KoCVQXwuSVfhuvp9nsQTzEVCLh/65mdwETgrUfEGiEu2Pi4GNbwlVY3MnuILpx9tBEJ/83Ib6gMGwDBOR4EptXThaOkK518DIXpj3uUpRb6t3Bv0ERnc6P/p37LZfekJ/GPJSFvdcRl1stEto/vBKwRCvVI5LOfAkdrr7oVhS1d86QqeodCKUNjhP4pAzcVaj/MC92fexL5RHkov9Yy/J0hfJh77271VFlLQKJLwtqFPGI9PPe2+wJdDVkUyyO5rVgPZBPJPp+4gYvv+rfxeerj+mapK5koZXzpemcoB/rp1lFsdvraz6M8XZ3EbUp+VOBrZAyE87s5X/oYviA2AjS2pvyGIuCIi2n9zfrJHUTHrZgM+ASgxVfDn3GzdfEUr0/IaOIqvVsD4nySPWPUwnOjKecJN9M=
+  on:
+    tags: true
+    repo: terrycain/sanic-openid-provider
+    all_branches: true
+    python: 3.6
