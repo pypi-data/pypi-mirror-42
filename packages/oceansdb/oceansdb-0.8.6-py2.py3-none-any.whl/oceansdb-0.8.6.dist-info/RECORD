@@ -1,0 +1,17 @@
+oceansdb/__init__.py,sha256=l5xTgnCOKlkN9Wu9c5au0Qglh1WUcI0lZ7TlvpuYIC0,329
+oceansdb/cars.py,sha256=uWqWjLLy4NL1nTc1U2qIDoAFc8H__l8JbJy0pb5GNBU,14341
+oceansdb/common.py,sha256=EkxWPudRITHW3no0APVo8Sa3ldiCwXYrNLTathg5TKM,2495
+oceansdb/etopo.py,sha256=lonU4r44Tmtqwm2ecQxGbiN_cE3w4fA53igAPRgZpEw,7915
+oceansdb/utils.py,sha256=nzCkHBIOwxa3k9pQ3WD_7QFYpyePagxO0rrt0NHEiig,3583
+oceansdb/woa.py,sha256=VUO8P7TT2XBRz41vIl_mQ0I5Z4rVhYm1wX90RMBcNAs,17524
+oceansdb/datasource/cars.json,sha256=Zrnxpg_WWqY5ygWqK2LTKkr1cL7c4wKoGEuhnT0BJYQ,1687
+oceansdb/datasource/etopo.json,sha256=kOjhbnImvksNGwVgZhvBs5gtMr1B4oUQ4_PJa4Nh2w8,1314
+oceansdb/datasource/woa.json,sha256=J7MefWzjtJfWe6ABisRu2H5cWNWxsCrvY2L3pybIVoQ,2228
+oceansdb/datasource/woa13.json,sha256=-pJ2sG-z4HnWpQVt-OO5QmSYz6Cdc8AATGyYXZ0DA84,18910
+oceansdb/datasource/woa18.json,sha256=bRbgDj1rtUFyUracYJCsPagOLbSTqZ2ifKNp1rACMOQ,17510
+oceansdb-0.8.6.dist-info/AUTHORS.rst,sha256=E-qS4gdViFrj3BixMRq1eE0M482mcQsB1H6w8JadylU,408
+oceansdb-0.8.6.dist-info/LICENSE.rst,sha256=rm_OciWiukVs48jpIg3QWj57P8Da6W-wFMjAwgd7ZqI,1470
+oceansdb-0.8.6.dist-info/METADATA,sha256=llFfsQRXPwymTHHz8FPurFEQpRF3PQNbJAwV1sb9f8I,4591
+oceansdb-0.8.6.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+oceansdb-0.8.6.dist-info/top_level.txt,sha256=pm3IvWvc5QJjGA_Lzix4u244P90TezfjH3ckMhD25Uw,9
+oceansdb-0.8.6.dist-info/RECORD,,
