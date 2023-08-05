@@ -1,0 +1,3 @@
+[console_scripts]
+vault-keepass-import = vault_keepass_import.main:main
+
