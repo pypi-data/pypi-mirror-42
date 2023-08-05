@@ -1,0 +1,3 @@
+[console_scripts]
+sortvis = sortvis.__main__:main
+
