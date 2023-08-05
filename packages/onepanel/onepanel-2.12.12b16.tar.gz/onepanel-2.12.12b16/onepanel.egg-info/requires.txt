@@ -1,0 +1,14 @@
+configparser
+PyYAML==3.13
+prettytable
+requests
+click>=7
+PTable
+configobj
+websocket-client
+humanize
+awscli==1.16.101
+boto3==1.9.91
+watchdog==0.9.0
+iso8601
+future
