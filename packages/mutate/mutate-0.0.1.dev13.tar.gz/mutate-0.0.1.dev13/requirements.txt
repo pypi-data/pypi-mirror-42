@@ -1,0 +1,4 @@
+pyyaml>=3.12
+argparse>=1.4.0
+cerberus>=1.2
+setuptools
