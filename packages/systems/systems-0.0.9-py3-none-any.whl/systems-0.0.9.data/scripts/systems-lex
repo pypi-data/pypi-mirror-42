@@ -1,0 +1,4 @@
+#!python
+
+import systems.lexer
+systems.lexer.main()
