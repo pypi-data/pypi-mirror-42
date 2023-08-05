@@ -1,0 +1,16 @@
+.gitignore
+AUTHORS.rst
+CHANGELOG.rst
+LICENSE.txt
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+ecasb2share/__init__.py
+ecasb2share/ecasb2shareclient.py
+ecasb2share.egg-info/PKG-INFO
+ecasb2share.egg-info/SOURCES.txt
+ecasb2share.egg-info/dependency_links.txt
+ecasb2share.egg-info/not-zip-safe
+ecasb2share.egg-info/requires.txt
+ecasb2share.egg-info/top_level.txt
