@@ -1,0 +1,3 @@
+[console_scripts]
+gblackboard = gblackboard.cli:main
+
