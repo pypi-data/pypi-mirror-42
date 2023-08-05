@@ -1,0 +1,14 @@
+README.md
+setup.py
+obscureridge/__init__.py
+obscureridge/__main__.py
+obscureridge/chatbot.py
+obscureridge/lichess.py
+obscureridge/urllibutils.py
+obscureridge/watchtourney.py
+obscureridge.egg-info/PKG-INFO
+obscureridge.egg-info/SOURCES.txt
+obscureridge.egg-info/dependency_links.txt
+obscureridge.egg-info/entry_points.txt
+obscureridge.egg-info/not-zip-safe
+obscureridge.egg-info/top_level.txt
