@@ -1,0 +1,8 @@
+nilearn>=0.4.0
+pybids>=0.7.1
+statsmodels>=0.8.0
+networkx>=2.0
+python-louvain>=0.13
+pandas>=0.21
+scipy>=1.0.0
+numpy>=1.15.1
