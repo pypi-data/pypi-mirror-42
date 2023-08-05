@@ -1,0 +1,11 @@
+atlantis/Document.py,sha256=mCp11uRJ9Qt2C6GBsSrnhQP6YKlLL10Zj1OEt6eEHxA,3177
+atlantis/DocumentObject.py,sha256=eLPHnts0CYp8Un2DZP81M1-cd2Umpfq1ag2r2QQkASY,2865
+atlantis/Token.py,sha256=31MmZf6ujGwByvhUGnnSjxJIm6dRK5PRbrtmvvDe7vI,2314
+atlantis/__init__.py,sha256=6maeN489frymJhUzwoSl8IbSoGVfmMHCv4OwLY0dmHQ,101
+atlantis/dependency_definitions.py,sha256=pHCahwv-orsqB3SvzkdZgCYoK25-D-ITlncYtTJdDAg,1700
+atlantis/part_of_speach_definitions.py,sha256=BK8inBn_T0AkUXWRrIfJUrKMBPRvuBngg5-lyeRbHVY,221
+atlantis-0.3.dist-info/LICENSE,sha256=30D0nzdQ0rM5_9L8mnIQuyGdVPaeAm67_Bk5meJ6JXU,1061
+atlantis-0.3.dist-info/METADATA,sha256=u90J8Hfb1UTfOAYaTaID46zdHaJYaNh_V-p9FIDPCBg,684
+atlantis-0.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+atlantis-0.3.dist-info/top_level.txt,sha256=GJp5723uVx8JepAXsoI9IR2bjzxE-x5sq28IuMQaq-E,9
+atlantis-0.3.dist-info/RECORD,,
