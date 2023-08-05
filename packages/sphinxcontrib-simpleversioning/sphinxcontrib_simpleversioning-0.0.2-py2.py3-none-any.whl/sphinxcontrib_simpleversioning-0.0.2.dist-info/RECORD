@@ -1,0 +1,9 @@
+sphinxcontrib/__init__.py,sha256=DIzHp4ZwlKiSoacIUQ-8d9cz0wcqdWxb2kuhnQAkPDw,82
+sphinxcontrib/simpleversioning/__init__.py,sha256=DXpW8oDHglUsZWawiGuHP0eJzKvlku34IxQNtQ92YJY,7605
+sphinxcontrib/simpleversioning/_templates/banner.html,sha256=gKQoSSvzXrS4Aq-SKVx285nUS9MXKw7Q1GCmxrfvhLo,376
+sphinxcontrib/simpleversioning/_templates/versions.html,sha256=gupS3vSMdEwoG0tXu2csVpcfdVPyMEtv_V7MQhIhck0,806
+sphinxcontrib_simpleversioning-0.0.2.dist-info/LICENSE,sha256=3FyA8Kjv2xgTEDYvExWeseU8yADrL9wYgVOqooIlJR4,1108
+sphinxcontrib_simpleversioning-0.0.2.dist-info/METADATA,sha256=d4GQLefBmL2Rw4sun8gjA5XIZCmN4M4mY2YrD2rJWZo,2374
+sphinxcontrib_simpleversioning-0.0.2.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+sphinxcontrib_simpleversioning-0.0.2.dist-info/top_level.txt,sha256=lbWl2XMy7qaH3kF4IjwKo_h38fwkB5Aax8Gja2yB5vE,45
+sphinxcontrib_simpleversioning-0.0.2.dist-info/RECORD,,
