@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: lazypsf
+Version: 3.0.1
+Summary: A code for modelling PSFs and injecting fake sources with given flux distributions
+Home-page: https://github.com/ryanc123/LazyPSF
+Author: Ryan Cutter
+Author-email: R.Cutter@wawrcik.ac.uk
+License: GNU
+Description: UNKNOWN
+Platform: UNKNOWN
