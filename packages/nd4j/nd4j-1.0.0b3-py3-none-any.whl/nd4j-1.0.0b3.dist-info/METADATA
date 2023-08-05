@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: nd4j
+Version: 1.0.0b3
+Summary: A package of the Nd4j jars for use by packages that use Py4j.
+Home-page: https://improbable-research.github.io/keanu/python
+Author: Improbable Worlds
+Author-email: keanu-engineering@improbable.io
+License: MIT
+Platform: UNKNOWN
+
+UNKNOWN
+
+
