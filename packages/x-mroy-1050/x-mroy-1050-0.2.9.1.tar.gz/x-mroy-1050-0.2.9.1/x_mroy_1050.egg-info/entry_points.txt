@@ -1,0 +1,5 @@
+[console_scripts]
+x-ea-test = shadowsocks_extension.test_route:sync_main
+x-sspatch = shadowsocks_extension.sspatch:main
+x-sstest = shadowsocks_extension.test_route:main
+
