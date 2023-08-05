@@ -1,0 +1,26 @@
+GitPython
+Logbook
+munch
+requests
+sentinels
+URLObject
+vintage
+
+[sentry]
+raven
+
+[testing]
+slash>=1.5.0
+Flask
+Flask-Loopback
+pylint~=1.7.0
+URLObject
+weber-utils
+
+[testing:python_version < "3.0"]
+pytest
+pytest-cov<2.6
+
+[testing:python_version >= "3.0"]
+pytest>4.0
+pytest-cov>=2.6
