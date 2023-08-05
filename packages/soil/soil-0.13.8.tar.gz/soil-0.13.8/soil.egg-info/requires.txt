@@ -1,0 +1,11 @@
+nxsim
+simpy
+networkx>=2.0
+numpy
+matplotlib
+pyyaml
+pandas
+scipy
+
+[web]
+tornado
