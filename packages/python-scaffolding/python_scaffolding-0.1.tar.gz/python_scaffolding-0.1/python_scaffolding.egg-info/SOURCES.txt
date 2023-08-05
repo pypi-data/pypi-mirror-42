@@ -1,0 +1,8 @@
+setup.py
+python_scaffolding/__init__.py
+python_scaffolding/content_one.py
+python_scaffolding.egg-info/PKG-INFO
+python_scaffolding.egg-info/SOURCES.txt
+python_scaffolding.egg-info/dependency_links.txt
+python_scaffolding.egg-info/not-zip-safe
+python_scaffolding.egg-info/top_level.txt
