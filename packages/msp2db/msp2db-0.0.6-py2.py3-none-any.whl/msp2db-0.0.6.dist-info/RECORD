@@ -1,0 +1,14 @@
+msp2db/__init__.py,sha256=sth__P5le6NI9bJhTEIkW-54YP1bTA_hX70dwtgukg8,158
+msp2db/__main__.py,sha256=PBlfGSIdRlvRd515joVRisojnfbrPztOArYhpS6V8q4,2882
+msp2db/db.py,sha256=OA9YW-ZkcV8rNO2_svSq9bH8Sp5vOIdnWRq5x84fueg,9301
+msp2db/parse.py,sha256=af5cAECR_uQzUWhYbMIshT0r1PDs52ganKU6Y-P_bNQ,27266
+msp2db/re.py,sha256=p8uaxKPbqAJI8uXGSJO8sFA2Y4UkN6hRhSeBgYb61PM,5167
+msp2db/utils.py,sha256=NtUA8uKs-DeFzJRupaXvaV4v_gAiGbWWJ4fxb1KewlM,1239
+tests/__init__.py,sha256=RD0xDqyg_yhh2cNVGl5NZPeChIzhRzI6QcLfZusMGo8,157
+tests/test_msp2db.py,sha256=1nx4inb4DogX1ILXCKTsieNupOIrDpZ2SdV4Yruqfqw,13757
+msp2db-0.0.6.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+msp2db-0.0.6.dist-info/METADATA,sha256=CCDsykeJg6xJUuvfRraS9Tal2_rltYvaQedU6L7OrwM,5036
+msp2db-0.0.6.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+msp2db-0.0.6.dist-info/entry_points.txt,sha256=Fj3Ddv4JNVfu7cOK604nzjnjol7-RA-iezoQNaMXswU,49
+msp2db-0.0.6.dist-info/top_level.txt,sha256=sqi7mE0nSWwFpQzHNO46-jrAzefuJLRARcoCrVzTlxg,13
+msp2db-0.0.6.dist-info/RECORD,,
