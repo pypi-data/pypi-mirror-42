@@ -1,0 +1,23 @@
+[console_scripts]
+grano = grano.manage:run
+
+[grano.entity.change]
+
+
+[grano.periodic]
+bidi_refresh = grano.query.bidi:GenerateBidi
+degrees = grano.logic.metrics:Degrees
+
+[grano.project.change]
+
+
+[grano.relation.change]
+
+
+[grano.schema.change]
+
+
+[grano.startup]
+bidi_create = grano.query.bidi:GenerateBidi
+levenshtein = grano.logic.reconcile:ConfigurePostgres
+
