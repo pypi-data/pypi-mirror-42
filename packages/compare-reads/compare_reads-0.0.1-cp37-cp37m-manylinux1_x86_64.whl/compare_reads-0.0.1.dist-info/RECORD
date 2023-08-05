@@ -1,0 +1,11 @@
+compare_reads-0.0.1.dist-info/WHEEL,sha256=AhV6RMqZ2IDfreRJKo44QWYxYeP-0Jr0bezzBLQ1eog,109
+compare_reads-0.0.1.dist-info/top_level.txt,sha256=KaTZjNShluuyOCYUuIjwLSIQofj7hvg8t86rw6hlLa4,14
+compare_reads-0.0.1.dist-info/METADATA,sha256=La5MWWF52_-RHtYBpDra6ijmHj1e42Aek1VSvi-HLkk,2005
+compare_reads-0.0.1.dist-info/RECORD,,
+compare_reads/_compare_reads.pyx,sha256=i8TRJREJyjrzE4vQ9bzVroAOGQe7oZ00d6UAiX5HVok,732
+compare_reads/strnum_cmp.c,sha256=JbutKWYZgFW8FXX4kw76lHV-E8ij3czHHhRhEnSYYnU,936
+compare_reads/__init__.py,sha256=WW6kq3ThH-44J95IsBMdlHM8TNCUY_nGTqEQR664oZk,683
+compare_reads/_compare_reads.cpython-37m-x86_64-linux-gnu.so,sha256=a6zY9bnh6PYdo3sb6R5i2bdnRuvSqB3w4drTYgJdOHw,147524
+compare_reads/_compare_reads.c,sha256=0TP26hutoN9iOq7EBzHYgff4nz_pLXvbauU8H-9PbCk,209214
+compare_reads/strnum_cmp.cpython-37m-x86_64-linux-gnu.so,sha256=guNA1A6JUGywKfYvbTv_YKMenlUD3Yn5yMXzh3EPFSg,5865
+compare_reads/_compare_reads.pxd,sha256=Y2A8Z5PdR0YQMB4236My4xJmYQsJuPwdcUocvjau20o,361
