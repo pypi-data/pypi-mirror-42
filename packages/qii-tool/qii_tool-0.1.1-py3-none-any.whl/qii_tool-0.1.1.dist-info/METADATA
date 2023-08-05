@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: qii-tool
+Version: 0.1.1
+Summary: A package implements Quantitative Input Influence method
+Home-page: https://github.com/hovinh/QII
+Author: Ho Xuan Vinh
+Author-email: hxvinh.hcmus@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+Quantitative Input Influence - an influence measures for Algorithmic Transparency
+
+The `qii` package is an implementation of the QII method proposed in the paper ["Algorithmic Transparency via Quantitative Input Influence: Theory and Experiments with Learning Systems"](https://www.comp.nus.edu.sg/~zick/papers/transparency.oakland16.pdf). The original paper discusses the transparency-privacy tradeoff, whereas this particular package only exploits its transparency aspect to be used as an influence measures - an instance of interpretable machine learning.
+
+Install `qii` on your system using:
+```python
+pip install qii-tool
+```
+Examples can be found in this [repository](https://github.com/hovinh/QII).
+
