@@ -1,0 +1,13 @@
+---
+- include: setup.yml
+- file: path=/etc/ansible state=directory
+- file: path=/etc/ansible/facts.d state=directory
+- set_fact: 'ansible_container_docker="installed"'
+- shell:
+    cmd: |
+      cat > /etc/ansible/facts.d/ansible_container_docker.fact << EOF
+      #!/bin/sh
+      echo '{"ansible_container_docker" : "installed"}'
+      EOF
+- file: path=/etc/ansible/facts.d/ansible_container_docker.fact mode=0755
+- setup: filter=ansible_local
