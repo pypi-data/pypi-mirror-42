@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: simplegui2pygamemodule
+Version: 1.0.3
+Summary: simplegui programs can be made to run in python
+Home-page: https://github.com/jimmyahalpara/Pytable/tree/simplegui2pygamemodule
+Author: jimmy kumar ahalpara
+Author-email: jimmyahalpara123@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+
+make simplegui program to run in python
+
+
