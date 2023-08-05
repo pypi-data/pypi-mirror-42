@@ -1,0 +1,9 @@
+kervi-core==0.20.10
+kervi-ui==0.20.10
+kervi-cli==0.20.10
+kervi-hal-generic==0.20.10
+kervi-device-library==0.20.10
+autobahn
+pyzmq
+kervi-hal-win==0.20.10
+kervi-hal-rpi==0.20.10
