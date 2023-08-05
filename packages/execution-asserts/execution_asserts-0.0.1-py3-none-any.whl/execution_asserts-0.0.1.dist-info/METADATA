@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: execution-asserts
+Version: 0.0.1
+Summary: A collection of asserts for methods execution
+Home-page: https://github.com/pangan/execution_asserts
+Author: Amir Mofakhar
+Author-email: amir@mofakhar.info
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: memory-profiler
+
+# execution_asserts
+This is a a collection of asserts for unit tests
+
+
