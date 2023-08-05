@@ -1,0 +1,3 @@
+[console_scripts]
+barcode_splitter = barcode_splitter:main
+
