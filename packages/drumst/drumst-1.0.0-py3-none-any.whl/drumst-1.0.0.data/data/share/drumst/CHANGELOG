@@ -1,0 +1,36 @@
++------------------------------------+
+Feb 12, 2019  V.1.0.0. release
++------------------------------------+
+- Fixed issue close of some dialogs
+- Added some dialog boxes before accidental closure with unsaved data
+- improved the informations on dialogs and frames
+- Add new menu items
+- The Todays lesson has a button to enable a new lesson 
+- Fixed system base paths when install via pip with the '--user' flag 
+  (on linux and MacOs)
++------------------------------------+
+Feb 5, 2019  V.0.2.2.a2 Alpha release
++------------------------------------+
+- update readme.md
+- Add compatibility for Python3 only
+- Add internationalization feature
+- New icons set
+- New program icon
+- Setup.py implementation to build package
+- update drumsT.conf with version control
+- Add wx.GetTopLevelParent to instance for lessons frame
+
++------------------------------------+
+Dec 13, 2017  V.0.2.1 Alpha release
++------------------------------------+
+- Add separate info module for set informations
+
+- update readme.md
+
++------------------------------------+
+Oct 25, 2017  V.0.2.0 Alpha release
++------------------------------------+
+- I seem to have solved some compatibility issues with wxPython 3.?.?
+
+- solved problem with the "add new school and date" creation window: forbidden 
+  to overwrite the database directory, a fake problem! :-)

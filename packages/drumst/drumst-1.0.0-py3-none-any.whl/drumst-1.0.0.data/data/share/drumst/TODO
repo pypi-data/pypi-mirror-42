@@ -1,0 +1,24 @@
+
+----------------------------DRUMST----------------------------------
+
+[?] not in working, [*] Needed soon,
+
+[DONE] already working, [TESTING] check for bugs
+--------------------------------------------------------------------
+
+- create lessons calendar
+
+- create a notes/reminder for any school [*]
+
+- create a back-up function with restore mode for databases [*]
+
+- function PDF or HTML printing of all lessons of a one student
+
+- must improve management python exceptions on SQLite_lib.py [DONE]
+
+- create beautiful icons [*]
+
+- management traslates [DONE]
+
+- when open mainwindow.py, disable 'add new school year' in the menu bar
+  because there is not nothing db imported for. [DONE]
