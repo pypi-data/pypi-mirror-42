@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: pyannote.db.odessa.ami
+Version: 1.0
+Summary: ODESSA/AMI plugin for pyannote-database
+Home-page: UNKNOWN
+Author: Hervé Bredin
+Author-email: bredin@limsi.fr
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: pyannote.core (>=2.1)
+Requires-Dist: pyannote.database (>=1.5.5)
+Requires-Dist: pandas (>=0.20)
+
+UNKNOWN
+
+
