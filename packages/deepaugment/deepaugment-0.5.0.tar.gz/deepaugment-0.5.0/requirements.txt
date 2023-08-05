@@ -1,0 +1,22 @@
+# local package
+# -e .
+
+# external requirements
+click
+
+# requirements for imgaug library
+six
+numpy>=1.15,<1.16
+scipy
+Pillow
+matplotlib
+scikit-image
+opencv-python
+imageio
+Shapely
+imgaug
+
+# opencv
+opencv-contrib-python
+# skopt
+scikit-optimize

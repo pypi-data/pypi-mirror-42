@@ -1,0 +1,13 @@
+click
+six
+numpy<1.16,>=1.15
+scipy
+Pillow
+matplotlib
+scikit-image
+opencv-python
+imageio
+Shapely
+imgaug
+opencv-contrib-python
+scikit-optimize
