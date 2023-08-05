@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: runregistryclient
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: https://github.com/ptrstn/runregistryclient
+Author: Peter Stein
+Author-email: peter.stein@cern.ch
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
