@@ -1,0 +1,8 @@
+README.md
+setup.py
+kintsugi/__init__.py
+kintsugi.egg-info/PKG-INFO
+kintsugi.egg-info/SOURCES.txt
+kintsugi.egg-info/dependency_links.txt
+kintsugi.egg-info/requires.txt
+kintsugi.egg-info/top_level.txt
