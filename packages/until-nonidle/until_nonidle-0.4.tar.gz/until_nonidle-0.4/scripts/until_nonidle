@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+import until_nonidle
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Run a program until the user is non idle",
+        epilog="This tools is useful in combination with autolockers")
+    parser.add_argument("command", help="The command to execute")
+    parser.add_argument("args", nargs=argparse.REMAINDER, help="The arguments")
+    args = parser.parse_args()
+    sys.exit(until_nonidle.do([args.command] + args.args))
+
+
+if __name__ == "__main__":
+    main()
