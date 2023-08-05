@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ascii-ruler
+Version: 0.0.3
+Summary: A terminal based ruler for displaying the length of a file, primarily used for codegolfing
+Home-page: https://github.com/blakeanedved/ascii-ruler
+Author: Blake Nedved
+Author-email: blakeanedved@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
