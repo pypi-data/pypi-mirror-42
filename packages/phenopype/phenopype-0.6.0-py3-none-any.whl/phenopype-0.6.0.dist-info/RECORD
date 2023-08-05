@@ -1,0 +1,12 @@
+phenopype/__init__.py,sha256=JdQ8p64Wd5v6azLJZkrCms-FO-wZ1zfTQ9AkEMFCCEY,146
+phenopype/_version.py,sha256=T-nAUpa_rayCLh-ElkQ2f_LQrJu58lzx5Y1RBpq4Mog,278
+phenopype/base.py,sha256=-P772VwR-Rk9kiCKmHeEBeGUt0yO1OlWAqtzKA32_AU,51600
+phenopype/morpho.py,sha256=WoVAhprrlu8X1vdpddHwH-M7KMfHMmx-ueus0cMYXVQ,4771
+phenopype/ocr.py,sha256=WmUx8BchksywJ7_Bj-08qRkRqTS1OWdAQkvoR3lOR_M,10799
+phenopype/tracking.py,sha256=j3pqgt4aXazeBAVBxAoYsGc7ZJPBDWrbRzqRnYt2c4Q,23794
+phenopype/utils.py,sha256=_MK18mA8c3E__-fALe4wNdyJ99blqhB9eRIaGv5zXQ4,5345
+phenopype-0.6.0.dist-info/LICENSE.txt,sha256=-DHn7tV3SBaHqbwLSAJOXkC29lX83gc-3pZLUL5dVdk,7815
+phenopype-0.6.0.dist-info/METADATA,sha256=jmjW7FADtAYiK6AFKuSZ1T5eTbM3NzniLJ3FNwyAT_4,5297
+phenopype-0.6.0.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+phenopype-0.6.0.dist-info/top_level.txt,sha256=8dreEcSC1V3ATgwjpc8ywbAu5gHly_9j5GWIxCQdvCM,10
+phenopype-0.6.0.dist-info/RECORD,,
