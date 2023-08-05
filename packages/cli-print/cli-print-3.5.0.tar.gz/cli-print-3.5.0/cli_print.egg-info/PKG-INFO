@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: cli-print
+Version: 3.5.0
+Summary: Colored CLI Print
+Home-page: https://github.com/VisionNetworkProject/python-cli-print
+Author: Vision Network
+Author-email: michael@vision.network
+License: UNKNOWN
+Description: # Python: CLI Print
+        
+        [![PyPi Version](http://img.shields.io/pypi/v/cli-print.svg)](https://pypi.python.org/pypi/cli-print/)
+        
+        Colored CLI Print
+        
+        
+        ## Installation
+        
+        ``` console
+        $ pip3 install cli-print
+        ```
+        
+        
+        ## Usage
+        
+        ``` python
+        import cli_print as cp
+        ```
+        
+Keywords: Colored,CLI,Terminal,Print
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
