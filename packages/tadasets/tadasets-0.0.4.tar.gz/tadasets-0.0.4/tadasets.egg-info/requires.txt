@@ -1,0 +1,12 @@
+numpy
+matplotlib
+
+[docs]
+sphinx
+nbsphinx
+sphinx-better-theme
+sphinxcontrib-fulltoc
+
+[testing]
+pytest
+scipy
