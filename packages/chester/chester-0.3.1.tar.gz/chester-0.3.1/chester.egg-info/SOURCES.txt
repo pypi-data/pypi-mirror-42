@@ -1,0 +1,12 @@
+README.md
+setup.py
+chester/__init__.py
+chester/match.py
+chester/openingbook.py
+chester/timecontrol.py
+chester/tournament.py
+chester.egg-info/PKG-INFO
+chester.egg-info/SOURCES.txt
+chester.egg-info/dependency_links.txt
+chester.egg-info/requires.txt
+chester.egg-info/top_level.txt
