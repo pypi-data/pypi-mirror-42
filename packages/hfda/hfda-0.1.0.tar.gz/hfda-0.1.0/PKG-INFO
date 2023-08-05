@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: hfda
+Version: 0.1.0
+Summary: Implementation of Higuchi Fractal Dimension Analysis.
+Home-page: https://github.com/iamhirok/HFDA
+Author: Hiroki Kojima
+Author-email: 7316072@gmail.com
+License: BSD
+Description: HFDA
+        ====
+        
+        Implementation of Higuchi Fractal Dimension Analysis.
+        
+Platform: UNKNOWN
