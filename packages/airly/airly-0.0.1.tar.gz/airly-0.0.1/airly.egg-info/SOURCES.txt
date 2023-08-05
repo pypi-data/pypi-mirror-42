@@ -1,0 +1,8 @@
+README.rst
+setup.py
+airly/__init__.py
+airly.egg-info/PKG-INFO
+airly.egg-info/SOURCES.txt
+airly.egg-info/dependency_links.txt
+airly.egg-info/requires.txt
+airly.egg-info/top_level.txt
