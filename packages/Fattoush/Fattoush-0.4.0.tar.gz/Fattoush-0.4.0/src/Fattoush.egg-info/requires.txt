@@ -1,0 +1,9 @@
+argparse>=1.2.1
+future
+jsonschema>=2.3.0
+lettuce==0.2.19
+packaging
+selenium>=3.0.0
+
+[fast]
+python-Levenshtein

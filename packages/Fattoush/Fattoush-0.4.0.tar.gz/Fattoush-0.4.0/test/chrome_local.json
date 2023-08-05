@@ -1,0 +1,30 @@
+{
+  "browsers": {
+    "capabilities": {
+      "chrome-local": {
+        "description": [
+          "This should try to open google chrome on the local",
+          " machine, as nothing else has been specified."
+        ],
+        "browser": "googlechrome"
+      }
+    },
+    "options": {
+      "chrome": [
+         "start-maximized",
+          "enable-automation",
+          "--disable-dev-shm-usage",
+          "--disable-browser-side-navigation",
+          "--disable-infobars",
+          "--headless",
+          "--no-sandbox",
+          "--disable-gpu"
+      ]
+    },
+    "selection": [
+      {
+        "capabilities": "chrome-local", "options": "chrome"
+      }
+    ]
+  }
+}
