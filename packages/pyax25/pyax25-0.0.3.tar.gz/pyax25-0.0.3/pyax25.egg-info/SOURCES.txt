@@ -1,0 +1,8 @@
+README.md
+setup.py
+pyax25/__init__.py
+pyax25/ax25.py
+pyax25.egg-info/PKG-INFO
+pyax25.egg-info/SOURCES.txt
+pyax25.egg-info/dependency_links.txt
+pyax25.egg-info/top_level.txt
