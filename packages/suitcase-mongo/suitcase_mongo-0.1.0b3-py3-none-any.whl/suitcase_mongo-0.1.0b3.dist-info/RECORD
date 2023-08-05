@@ -1,0 +1,14 @@
+suitcase/mongo_layout1/__init__.py,sha256=Ex-b_kUG3lOlbPx-NjR3HP7SOt3xmVrcD0je2NJq3hc,3878
+suitcase/mongo_layout1/_version.py,sha256=cietS-ttaexPsmSv-xyIOZXjP4fuc3C4pkKqznvpEaY,499
+suitcase/mongo_layout1/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+suitcase/mongo_layout1/tests/conftest.py,sha256=bjAeB-2btVaHJ9UXyz4W9YpYBqWJey2ZGlAaMn1YVl8,613
+suitcase/mongo_layout1/tests/tests.py,sha256=Vcu6YvicjbfhNmVAaGoctOF2AQ6kv3otmMIDwaUhCFk,448
+suitcase/mongo_layout2/__init__.py,sha256=-adcX9u_9tUrhJOFzjYqkkFU2Olnjeqx9qkkUKzUNQ8,1858
+suitcase/mongo_layout2/_version.py,sha256=DPkfTL2Fku7jNyYB25OJOyw3XfTb7Ic8JHlvu0WAU5g,18469
+suitcase/mongo_layout2/conftest.py,sha256=FYpin09lUjZzqYupt--XC6FFfIv5BNS_k7wnU_NjEdg,90
+suitcase/mongo_layout2/tests.py,sha256=Pjy_mI0QrHuDH2iB3FKN6iYvivREeu2SZ2ImpY7hySY,133
+suitcase_mongo-0.1.0b3.dist-info/METADATA,sha256=bp5erihe8EMSSijpV7uT-A4qU9l5z6-we23bacSIpmA,519
+suitcase_mongo-0.1.0b3.dist-info/RECORD,,
+suitcase_mongo-0.1.0b3.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+suitcase_mongo-0.1.0b3.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+suitcase_mongo-0.1.0b3.dist-info/top_level.txt,sha256=sXSuqavclz0Rr3FReaX4wdgvAx61STPGF4A1lpA8_m8,9
