@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: esl-s3
+Version: 0.2.22
+Summary: elasticsearch_loader plugin for AWS s3
+Home-page: https://github.com/moshe/elasticsearch_loader
+Author: Moshe Zada
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: elastic,elasticsearch,esl,s3,bulk,loader,boto,aws,cloud
+Platform: UNKNOWN
