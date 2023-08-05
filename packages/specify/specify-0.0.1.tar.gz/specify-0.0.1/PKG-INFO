@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: specify
+Version: 0.0.1
+Summary: A spec tool to describe your classes
+Home-page: None
+Author: Einenlum
+Author-email: yann.rabiller@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: prophepy (>=0.0.1)
