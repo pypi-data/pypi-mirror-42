@@ -1,0 +1,9 @@
+README.md
+setup.py
+outlier/__init__.py
+outlier/outlier.py
+outlier.egg-info/PKG-INFO
+outlier.egg-info/SOURCES.txt
+outlier.egg-info/dependency_links.txt
+outlier.egg-info/requires.txt
+outlier.egg-info/top_level.txt
