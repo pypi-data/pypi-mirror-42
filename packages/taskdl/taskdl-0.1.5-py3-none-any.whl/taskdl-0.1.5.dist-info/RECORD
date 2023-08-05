@@ -1,0 +1,13 @@
+examples/VariantTaskExample.py,sha256=QfLgk4Fw1LKS3PcnDsc5xBVzOkwnzJbc3CQknAn_Gpo,3175
+examples/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+examples/example_classification.py,sha256=3Up89oA94uDL8XkrjVA-YRXIw4GC-OM2_HhOTes4wD8,2686
+examples/example_task_runner.py,sha256=RIgmKlICVhtqFrF63xaekZEw-9UPQnFFMSX2I1VeRuE,405
+examples/language_example.py,sha256=wqUieXxikAK2PzI8BR14hzn4x2pzxFa_H6u3lEyGBY4,3870
+taskdl/TaskWrapper.py,sha256=8QWtq74nTHrafYfdlT40nyOvvHYLGNossCBQt5VzR-o,5711
+taskdl/__init__.py,sha256=CU39rIdj57GFMUxrKQlNPnaYigh7y0oquzMtML-2qKQ,15
+taskdl/tf_task.py,sha256=aPkJakln-0E-wsqv_6tXV4AKKYIzSHuCUNDr2pUzN9g,13196
+taskdl-0.1.5.dist-info/LICENSE,sha256=oRsLXHkhriplwbLutKKIK49sdxv7AH5OSktKCUhMSdk,1065
+taskdl-0.1.5.dist-info/METADATA,sha256=iEGEWqY-OKemyvUSLMyTzfi2q5uZBuId0ncwR5F7rx8,413
+taskdl-0.1.5.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+taskdl-0.1.5.dist-info/top_level.txt,sha256=sOq17DoGH6YtELCkxmmOoNOvRN-wA4CjsysBWk3qV_o,16
+taskdl-0.1.5.dist-info/RECORD,,
