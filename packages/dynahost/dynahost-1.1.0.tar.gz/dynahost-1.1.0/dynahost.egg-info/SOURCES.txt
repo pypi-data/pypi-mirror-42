@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+dynahost.service
+dynahost_config_sample.ini
+setup.py
+dynahost/__init__.py
+dynahost/service.py
+dynahost.egg-info/PKG-INFO
+dynahost.egg-info/SOURCES.txt
+dynahost.egg-info/dependency_links.txt
+dynahost.egg-info/entry_points.txt
+dynahost.egg-info/not-zip-safe
+dynahost.egg-info/requires.txt
+dynahost.egg-info/top_level.txt
