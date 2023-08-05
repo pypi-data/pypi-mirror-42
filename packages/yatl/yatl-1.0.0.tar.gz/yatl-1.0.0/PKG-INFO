@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: yatl
+Version: 1.0.0
+Summary: Yet Another Template Language
+Home-page: https://github.com/web2py/yatl
+Author: Massimo Di Pierro
+Author-email: massimo.dipierro@gmail.com
+License: BSD
+Description: # Yet Another Template Language
+        
+        This is the web2py template language described [here](http://web2py.com/books/default/chapter/29/05/the-views) made available as stand alone package so it can be used anywhere.
+        
+        Basically it is pure python within "{{" ... "}}" delimiters and blocks are terminated with "pass" if termination is not obvious. For example
+        
+        ```
+        from yatl import render, SPAN
+        
+        example = """
+        <div> 
+        {{for k in range(num):}}
+        <span>{{=SPAN(k, _class='number')}} is {{if k % 2 == 0:}}even{{else:}}odd{{pass}}</span>
+        {{pass}}
+        </div>
+        """
+        
+        print(render(example, context=dict(num=10, SPAN=SPAN), delimiters="{{ }}"))
+        ```
+        
+        In the example SPAN is an optional helper.
+        Output is escaped by default unless marked up with the XML helper as in {{=XML('1 < 2')}}.
+        
+        Note that the helpers included here are similar but not identical to the web2py ones. They are 99% compatible but the implementation is different.
+        
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Markup :: HTML
