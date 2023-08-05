@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: termtable
+Version: 1.0.2
+Summary: Pretty text-based interactive terminal tables
+Home-page: https://github.com/jknielse/termtable
+Author: Jacob Kerr Nielsen
+Author-email: jake.k.nielsen@gmail.com
+License: MIT
+Description: # termtable
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Description-Content-Type: text/markdown
