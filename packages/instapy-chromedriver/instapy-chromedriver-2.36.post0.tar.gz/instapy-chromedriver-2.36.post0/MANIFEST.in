@@ -1,0 +1,3 @@
+include README.md
+include CURRENT_VERSION.txt
+include instapy_chromedriver/chromedriver
