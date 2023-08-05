@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: aeropy
+Version: 0.2
+Summary: A universal aerospace engineering toolbox
+Home-page: https://bitbucket.org/lukas-mueller/aeropy
+Author: Lukas Mueller
+Author-email: lukas.mueller94@gmail.com
+License: MIT License
+Download-URL: https://bitbucket.org/lukas-mueller/aeropy/raw/master/dist/aeropy-0.2.tar.gz
+Keywords: aerospace engineering airfoils noise aircraft
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+
+This software is developed as a universal aerospace engineering toolbox.
+This software is still under development and also includes third-party codes.
+If you want to contribute please contact the author Lukas MÃ¼ller.
+
