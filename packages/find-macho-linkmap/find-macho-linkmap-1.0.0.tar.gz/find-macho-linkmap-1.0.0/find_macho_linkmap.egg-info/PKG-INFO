@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: find-macho-linkmap
+Version: 1.0.0
+Summary: find_macho_linkmap_and_output_otool_sections
+Home-page: UNKNOWN
+Author: LiTing
+Author-email: match.lt@alibaba-inc.com
+License: MIT
+Description: UNKNOWN
+Keywords: linkmap macho python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
