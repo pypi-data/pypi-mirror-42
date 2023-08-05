@@ -1,0 +1,4 @@
+requests>=2.18.0<3.0.0
+rstr>=2.2.6
+dictionaryutils>=2.0.3
+cdislogging>=0.0.2
