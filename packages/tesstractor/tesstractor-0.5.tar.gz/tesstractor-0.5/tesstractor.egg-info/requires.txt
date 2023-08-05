@@ -1,0 +1,5 @@
+pytz
+tzlocal
+pyserial
+paho-mqtt
+attrs>=17.4.0
