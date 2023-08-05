@@ -1,0 +1,12 @@
+Colour
+keras
+LMDB
+matplotlib
+opencv-python
+Pillow
+requests
+scipy
+shapely
+tensorflow
+torch==0.3.1
+torchvision
