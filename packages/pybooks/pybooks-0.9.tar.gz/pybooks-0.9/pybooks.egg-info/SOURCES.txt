@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pybooks/errors.py
+pybooks/main.py
+pybooks/sources.json
+pybooks/structures.py
+pybooks.egg-info/PKG-INFO
+pybooks.egg-info/SOURCES.txt
+pybooks.egg-info/dependency_links.txt
+pybooks.egg-info/requires.txt
+pybooks.egg-info/top_level.txt
