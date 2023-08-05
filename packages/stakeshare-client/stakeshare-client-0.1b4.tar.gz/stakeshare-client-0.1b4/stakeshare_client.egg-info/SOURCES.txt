@@ -1,0 +1,11 @@
+setup.py
+stakeshare/__init__.py
+stakeshare/client.py
+stakeshare/errors.py
+stakeshare/utils.py
+stakeshare_client.egg-info/PKG-INFO
+stakeshare_client.egg-info/SOURCES.txt
+stakeshare_client.egg-info/dependency_links.txt
+stakeshare_client.egg-info/not-zip-safe
+stakeshare_client.egg-info/requires.txt
+stakeshare_client.egg-info/top_level.txt
