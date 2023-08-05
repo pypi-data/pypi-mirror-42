@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: proxy-fn
+Version: 3.1.3
+Summary: Python functions for proxy.
+Home-page: https://github.com/VisionNetworkProject/python-proxy-fn
+Author: Vision Network
+Author-email: michael@vision.network
+License: UNKNOWN
+Description: # Python: Functions for proxy
+        
+        [![PyPI Version](http://img.shields.io/pypi/v/proxy-fn.svg)](https://pypi.python.org/pypi/proxy-fn/)
+        
+        Functions for proxy
+        
+        
+        ## Installation
+        
+        ``` console
+        $ pip3 install proxy-fn
+        ```
+        
+        
+        ## Usage
+        
+        ``` python
+        import proxy_fn
+        ```
+        
+        
+Keywords: Functions,Proxy
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
