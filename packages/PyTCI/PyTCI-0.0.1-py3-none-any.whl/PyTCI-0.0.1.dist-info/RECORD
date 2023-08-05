@@ -1,0 +1,13 @@
+PyTCI/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+PyTCI/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+PyTCI/models/propofol.py,sha256=OZG_lW4QJ5rruN3y9gwd5j9tvZig8iV-EymO3WtHgZA,2965
+PyTCI/models/remifentanil.py,sha256=QJr3Ke5JkrzmEAZ5Hmd-HCzdShsdLOp-y-mh7ZredNM,111
+PyTCI/weights/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+PyTCI/weights/leanbodymass.py,sha256=M6Ar8YrdI05v4GpPvFFyBYixaIxS2yV2V0oziQksCM0,3096
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_lbm.py,sha256=qQi93dEnDhes6zFYNlDjbOn9-I8RUHsHaZqLrk203kE,1108
+tests/test_propofol.py,sha256=xPe_DoDsBFQKTowyMaz2Ywt9r136Fp56j6a2MY_aGUU,640
+PyTCI-0.0.1.dist-info/METADATA,sha256=CGbIWc6bRjvpBuBb3LDYaHxsvUEUUrJ_NpQpaUECD4c,2445
+PyTCI-0.0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+PyTCI-0.0.1.dist-info/top_level.txt,sha256=rqUHg5tv61KUySqWRGvOpIZDUncR8zrd0zLnS6eY9so,12
+PyTCI-0.0.1.dist-info/RECORD,,
