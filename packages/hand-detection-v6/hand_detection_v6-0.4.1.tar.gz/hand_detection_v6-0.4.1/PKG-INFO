@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hand_detection_v6
+Version: 0.4.1
+Summary: This is an installation package that detects the hand of the video.
+Home-page: UNKNOWN
+Author: llz
+Author-email: hero1153@sina.com
+License: MIT License
+Description: # hand detection
+        * this is a model to implement the detection of hand.
+        
+        
+Platform: all
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
