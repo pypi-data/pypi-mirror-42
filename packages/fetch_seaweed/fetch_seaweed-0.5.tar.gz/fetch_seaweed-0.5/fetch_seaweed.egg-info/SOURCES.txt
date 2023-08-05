@@ -1,0 +1,8 @@
+__init__.py
+fetch_seaweed.py
+setup.py
+fetch_seaweed.egg-info/PKG-INFO
+fetch_seaweed.egg-info/SOURCES.txt
+fetch_seaweed.egg-info/dependency_links.txt
+fetch_seaweed.egg-info/requires.txt
+fetch_seaweed.egg-info/top_level.txt
