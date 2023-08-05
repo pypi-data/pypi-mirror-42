@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: jhu-primitives
+Version: 2019.2.12
+Summary: JHU Python interfaces for TA1 primitives for d3m
+Home-page: https://github.com/neurodata/primitives-interfaces
+Author: Disa Mhembere, Eric Bridgeford, Youngser Park, Heather G. Patsolic, Tyler M. Tomita, Jesse L. Patsolic, Hayden S. Helm, Joshua Agterberg, Bijan Varjavand
+Author-email: disa@jhu.edu
+License: UNKNOWN
+Description: A library wrapping JHU's Python interfaces for the D3M program's TA1 primitives.
+Keywords: d3m_primitive
+Platform: UNKNOWN
