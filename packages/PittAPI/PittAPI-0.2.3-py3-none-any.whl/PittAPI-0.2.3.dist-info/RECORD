@@ -1,0 +1,16 @@
+PittAPI/__init__.py,sha256=veN2HLk5jrhnm_xNYTxVJ6gGwvmDzPqPHuI8nrKSy8c,969
+PittAPI/course.py,sha256=5Q32XSfVz-OCV4BptxmybyZA0YcuUUz-ZeB-C48ksYw,17419
+PittAPI/dining.py,sha256=mudbo2UsNS7lrsESWEbVlTyPjZXvDwf_ETTyzMVWQGQ,3467
+PittAPI/lab.py,sha256=Ly9PIHR-ZDbI7ipO6jYEargomtZifCuscj6aSEeXMN4,2574
+PittAPI/laundry.py,sha256=2SQlFQOkWy-m9UFxY18CdiPacJim-hhWF2QLKElohKg,3858
+PittAPI/library.py,sha256=dHukwHwrbe8-xdEg87-kRVsDrlsvla2W2-UJN9jYwzk,3679
+PittAPI/news.py,sha256=27KK53kOXGatD_X2M8h1bX3EiJ4Frf5ZlfJWx0qVlic,2418
+PittAPI/people.py,sha256=pCPYxNw4oYIPh9EV8QSM4tZzxXSNE1hADNkkF1V5CP0,3583
+PittAPI/shuttle.py,sha256=LEc1NQRfe-N-bn-59WFtQ_uamtjKNfdoJkD1cPDTOB4,2305
+PittAPI/status.py,sha256=LsWKvso_116LSIh0o6eysIAz_2d9-Z1fcW0IYP9ety0,2790
+PittAPI/textbook.py,sha256=KzFJ8uxeBNuXwoY7zFJ_EivNmgdQ0raKdc8NMR4kT7Y,8035
+PittAPI-0.2.3.dist-info/LICENSE,sha256=T6mWn1i6NFnjK-jfyeG7ZjsJbnOi3O_oVM9mdgRthBg,18385
+PittAPI-0.2.3.dist-info/METADATA,sha256=uFqgDQ1AfGfgHr_QT7jA5Tt0VUrcDWnolY9iaEkDbXQ,602
+PittAPI-0.2.3.dist-info/WHEEL,sha256=UpB-bp5SQQdekLv3_zfFAhrQBtaQjJZABvUiavkhjZ0,97
+PittAPI-0.2.3.dist-info/top_level.txt,sha256=s1xcB7_gjl4wEU_BsHI7OY98JFHbR6wV5Nfx03inDwY,8
+PittAPI-0.2.3.dist-info/RECORD,,

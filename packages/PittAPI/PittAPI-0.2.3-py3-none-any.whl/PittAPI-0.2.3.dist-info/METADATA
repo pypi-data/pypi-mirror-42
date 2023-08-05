@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: PittAPI
+Version: 0.2.3
+Summary: An API to get data from Pitt and Pitt-related applications.
+Home-page: https://github.com/Pitt-CSC/PittAPI
+Author: University of Pittsburgh Computer Science Club
+Author-email: pittcsc@gmail.com
+License: GPLv2
+Requires-Dist: BeautifulSoup4
+Requires-Dist: Requests
+Requires-Dist: grequests
+Requires-Dist: lxml
+Requires-Dist: virtualenv
+Provides-Extra: test
+Requires-Dist: timeout-decorator ; extra == 'test'
+Requires-Dist: nose ; extra == 'test'
+Requires-Dist: nose-cov ; extra == 'test'
+Requires-Dist: nose-timer ; extra == 'test'
+
+Pitt API
+
+
