@@ -1,0 +1,14 @@
+README.md
+setup.cfg
+setup.py
+TaiwanTrainVerificationCode2text/__init__.py
+TaiwanTrainVerificationCode2text/build_verification_code_cnn_model.py
+TaiwanTrainVerificationCode2text/demo.py
+TaiwanTrainVerificationCode2text/download.py
+TaiwanTrainVerificationCode2text/load_model.py
+TaiwanTrainVerificationCode2text/verification_code2text.py
+TaiwanTrainVerificationCode2text/work_vcode.py
+TaiwanTrainVerificationCode2text.egg-info/PKG-INFO
+TaiwanTrainVerificationCode2text.egg-info/SOURCES.txt
+TaiwanTrainVerificationCode2text.egg-info/dependency_links.txt
+TaiwanTrainVerificationCode2text.egg-info/top_level.txt
