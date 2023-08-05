@@ -1,0 +1,3 @@
+groundwork>=0.1.14
+sqlalchemy
+docstring_parser
