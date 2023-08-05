@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dolang
+Version: 0.0.7
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: ['Pablo Winant']
+Author-email: pablo.winant@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: sympy
+Requires-Dist: numba
+
+UNKNOWN
+
+
