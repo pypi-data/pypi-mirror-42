@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: config42
+Version: 0.2
+Summary: Configuration manager for cloud native application, support configuration stored in memory, in files, in databases
+Home-page: https://github.com/yurilaaziz/config42
+Author: Amine Ben Asker
+Author-email: ben.asker.amine@gmail.com
+License: GPLv3+
+Download-URL: https://github.com/yurilaaziz/config42/releases/tag/0.1
+Description: UNKNOWN
+Keywords: Pretty configuration manager,Key value data store,cloud native configuration
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
