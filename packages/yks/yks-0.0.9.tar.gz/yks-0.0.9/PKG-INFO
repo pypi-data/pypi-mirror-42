@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: yks
+Version: 0.0.9
+Summary: A sample project
+Home-page: https://github.com/tonikarppi/yks
+Author: Toni Karppi
+Author-email: karppitoni@gmail.com
+License: UNKNOWN
+Description: # Yks
+        
+        ### An experiment on setting up a Python project.
+        
+        [![Build Status](https://travis-ci.com/tonikarppi/yks.svg?branch=master)](https://travis-ci.com/tonikarppi/yks)
+        
+        This project does not really do anything practical. It's a test for properly configuring a modern Python project with testing and Continuos Integration.
+        
+        ## Installation
+        
+        This project is available for installation on PyPI.
+        
+        ```
+        pip install yks
+        ```
+        
+Keywords: sample
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
