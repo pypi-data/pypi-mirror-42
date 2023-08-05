@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: lzw3
+Version: 0.2
+Summary: Compressor and decompressor for arbitrary files that use LZW algorithm
+Home-page: https://github.com/Docheinstein/lzw3
+Author: Stefano Dottore
+Author-email: docheinstein@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: lzw lzw3 compressor decompressor compression compress uncompress
+Platform: UNKNOWN
+Requires-Python: >=3.5
