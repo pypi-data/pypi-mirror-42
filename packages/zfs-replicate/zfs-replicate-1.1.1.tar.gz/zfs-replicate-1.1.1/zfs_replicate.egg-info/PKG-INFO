@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: zfs-replicate
+Version: 1.1.1
+Summary: ZFS Snapshot Replicator
+Home-page: https://github.com/alunduil/zfs-replicate
+Author: Alex Brandt
+Author-email: alunduil@gmail.com
+License: BSD-2
+Description: UNKNOWN
+Platform: UNKNOWN
