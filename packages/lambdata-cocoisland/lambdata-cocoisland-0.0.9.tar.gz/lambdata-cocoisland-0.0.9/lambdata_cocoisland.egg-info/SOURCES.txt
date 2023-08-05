@@ -1,0 +1,10 @@
+README.md
+setup.py
+lambdata_cocoisland/__init__.py
+lambdata_cocoisland/person.py
+lambdata_cocoisland/trainValTest.py
+lambdata_cocoisland.egg-info/PKG-INFO
+lambdata_cocoisland.egg-info/SOURCES.txt
+lambdata_cocoisland.egg-info/dependency_links.txt
+lambdata_cocoisland.egg-info/requires.txt
+lambdata_cocoisland.egg-info/top_level.txt
