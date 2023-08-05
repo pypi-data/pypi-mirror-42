@@ -1,0 +1,12 @@
+getup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+getup/conf.py,sha256=SxNNTHVwzl19gplFkps7NJPmCu_-WI6x1TNGwhLf_ic,4486
+getup/get.py,sha256=ICKLv9Bs3vwM8gCuH5pZ3Ts3UHG3u8KFAFfdJf7sAmE,398
+getup/middleware.py,sha256=CiD7wzhhJHiJU5gqnnyWvUOU2nRSzunec0Dv-U-ZaWE,924
+getup/set.py,sha256=ryQ0A4lpB9cl0aI1ZTIGoXwZp4RE9QG31PN02iKsdds,645
+getup/up.py,sha256=eCd9qwFmSqd1Y4FnEaIehXuIQrPZV03PVoEsmnt28oY,1516
+getup/wsgi.py,sha256=7KWU8G6ZgGZ0ei-PBxBKd6euMG6PtjSPARpytEBA3o0,141
+getup-0.0.20.dist-info/entry_points.txt,sha256=jMTmFFEhcZL0nXEssKcZQqxgaHAwnYhdhhLPKF7t_4I,39
+getup-0.0.20.dist-info/LICENSE,sha256=HyVuytGSiAUQ6ErWBHTqt1iSGHhLmlC8fO7jTCuR8dU,16725
+getup-0.0.20.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+getup-0.0.20.dist-info/METADATA,sha256=RoGVq1zoyM7O27I03vbJlSDFMsZf2De1-oF7Xb_p7Mk,1357
+getup-0.0.20.dist-info/RECORD,,
