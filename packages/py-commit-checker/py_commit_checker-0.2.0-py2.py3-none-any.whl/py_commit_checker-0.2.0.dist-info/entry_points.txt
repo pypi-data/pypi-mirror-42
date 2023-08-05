@@ -1,0 +1,3 @@
+[console_scripts]
+py-commit-checker = py_commit_checker.py_commit_checker:main
+
