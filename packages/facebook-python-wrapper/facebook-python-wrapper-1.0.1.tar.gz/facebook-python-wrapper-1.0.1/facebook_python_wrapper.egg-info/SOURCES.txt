@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+facebook/__init__.py
+facebook/api.py
+facebook/exceptions.py
+facebook_python_wrapper.egg-info/PKG-INFO
+facebook_python_wrapper.egg-info/SOURCES.txt
+facebook_python_wrapper.egg-info/dependency_links.txt
+facebook_python_wrapper.egg-info/requires.txt
+facebook_python_wrapper.egg-info/top_level.txt
