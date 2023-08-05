@@ -1,0 +1,12 @@
+markovclick/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+markovclick/__version__.py,sha256=qNHzW4pgKOQ7UwSl3mvuoW8KEpuTWonTAUouxU9NdZU,99
+markovclick/dummy.py,sha256=Ax_FycjawlrZj9pzxqgowayyydV2v8_yYC4Bm9OAWjA,935
+markovclick/models.py,sha256=FuYakMu7Dhzp7nOan6gqc7kYnD2I1mBv-1slxiEjM8Q,6584
+markovclick/preprocessing.py,sha256=7eswIverp2YrgisgSb-U3bIkif2GpWeqsaqGnJSVSsM,7291
+markovclick/viz.py,sha256=1fUJ-GhReogLPO4igfqNEhb2AoXrT0dRD0AyR6s40vU,2278
+markovclick/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+markovclick/utils/helpers.py,sha256=ApstxuQBhUNExpZsaKWbN8fp4IcMgl_mR0p0BdyT3go,306
+markovclick-0.1.1.dist-info/METADATA,sha256=Etjfk_8lhBt9tmXNS99uvh7CdPSCAcYa-0ZgvteKvEA,6995
+markovclick-0.1.1.dist-info/RECORD,,
+markovclick-0.1.1.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+markovclick-0.1.1.dist-info/top_level.txt,sha256=laX5JszWh0AxTq491BWgW656Maa3QX9mQz9vVGP6Hlw,12
