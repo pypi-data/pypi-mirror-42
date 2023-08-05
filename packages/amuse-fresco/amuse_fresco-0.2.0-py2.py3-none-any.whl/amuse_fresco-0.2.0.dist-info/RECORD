@@ -1,0 +1,14 @@
+amuse_fresco/__init__.py,sha256=NGwYCgVp8SGfE54GSnEGi5KEVwAh2zWM3jPYuTW2LwQ,22
+amuse_fresco/blackbody.py,sha256=s2mPDMvPCx41U5ALM3zgLIn8dVQuGoi0Nmr9mfdvGKo,3180
+amuse_fresco/color_converter.py,sha256=cj_ndcenJ8lOkk2dOaOIp8CtdJyGrvjDH4sNy0lnpJ4,3738
+amuse_fresco/fieldstars.py,sha256=t7yE-0DQsuITsSjnIv1wqpAPsZ-sU3g8JSF0RcPgRoA,792
+amuse_fresco/filters3.py,sha256=L8M-AYi0yuZbzwuhmQSvf3ODwcBzvmSjPkrx98i8-wQ,3365
+amuse_fresco/fresco.py,sha256=0cb0uPyq7iP4WStW63QEoN9ElMXgUuBMmZXeEWqy9lE,18401
+amuse_fresco/gridify.py,sha256=Mxn55a8siJUsgqzPKU1_GD3QBy0awfPXkq59-1CTIsU,2227
+amuse_fresco/ubvinew.py,sha256=hKz5tDTWsncFuAqNo2shwMpWPBx3n1zv8fhblGvBGXY,8236
+amuse_fresco/xyz.py,sha256=MvwQx2j4RIEbGKMIXwlokBrbQD_j8uV9JwVouiOcVa4,821
+amuse_fresco-0.2.0.dist-info/LICENSE,sha256=4Kz4c4WGzb30yyII24Nj3hwNv867Yy_nmpY0qSbThUc,1092
+amuse_fresco-0.2.0.dist-info/METADATA,sha256=EuZ7tQL5dJJaJETuFAnHcpFkQwxwudEz0wIUgsR8zX4,2569
+amuse_fresco-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+amuse_fresco-0.2.0.dist-info/top_level.txt,sha256=UA9xuMadzw9tdAQDgC7XVsqtp0W2MUTATMd1SUUBI6Q,13
+amuse_fresco-0.2.0.dist-info/RECORD,,
