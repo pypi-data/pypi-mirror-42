@@ -1,0 +1,65 @@
+Metadata-Version: 2.0
+Name: zato-common
+Version: 3.1.1
+Summary: Constants and utils common across the whole of Zato ESB and app server (https://zato.io)
+Home-page: https://zato.io
+Author: Zato Source s.r.o.
+Author-email: info@zato.io
+License: GNU Lesser General Public License v3 (LGPLv3)
+Keywords: soa eai esb middleware messaging queueing asynchronous integration performance http zeromq framework events agile broker messaging server jms enterprise python middleware clustering amqp nosql websphere mq wmq mqseries ibm amqp zmq
+Platform: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Framework :: Buildout
+Classifier: Intended Audience :: Customer Service
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Database
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Server
+Classifier: Topic :: Internet :: File Transfer Protocol (FTP)
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Object Brokering
+Requires-Dist: alembic (>=0.6.5)
+Requires-Dist: anyjson (>=0.3.3)
+Requires-Dist: arrow (>=0.4.2)
+Requires-Dist: boto (>=2.35.1)
+Requires-Dist: bunch (>=1.0.1)
+Requires-Dist: candv (>=1.1.1)
+Requires-Dist: ConcurrentLogHandler (>=0.9.1)
+Requires-Dist: configobj (>=5.0.5)
+Requires-Dist: crontab (>=0.20)
+Requires-Dist: dictalchemy (>=0.1.2.6)
+Requires-Dist: gevent (>=1.0)
+Requires-Dist: lxml (>=3.3.5)
+Requires-Dist: mock (>=1.0.1)
+Requires-Dist: nose (>=1.3.3)
+Requires-Dist: paodate (>=1.2)
+Requires-Dist: pip (>=6.0.8)
+Requires-Dist: psutil (>=2.1.0)
+Requires-Dist: pycrypto (>=2.6)
+Requires-Dist: pyOpenSSL (>=0.14)
+Requires-Dist: pyparsing (>=2.0.1)
+Requires-Dist: python-dateutil (>=2.2)
+Requires-Dist: pytz
+Requires-Dist: pyzmq (>=14.6.0)
+Requires-Dist: redis (>=2.9.1)
+Requires-Dist: requests (>=2.6.0)
+Requires-Dist: rsa (>=3.1.2)
+Requires-Dist: SQLAlchemy (>=0.9.4)
+Requires-Dist: texttable (>=0.8.1)
+
+UNKNOWN
+
+
