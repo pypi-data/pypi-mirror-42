@@ -1,0 +1,12 @@
+defusedxml
+Pillow
+pytest
+pytest-cov
+mapbox_vector_tile
+
+[:python_version < "3"]
+enum34
+more_itertools<6.0.0
+
+[:python_version < "3.4"]
+typing
