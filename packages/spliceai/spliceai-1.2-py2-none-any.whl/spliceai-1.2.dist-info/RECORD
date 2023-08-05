@@ -1,0 +1,16 @@
+spliceai/__init__.py,sha256=cFJdY-tluo_KzfuzNxJDGCrZojWVg7vDutn0wE2fDK0,108
+spliceai/__main__.py,sha256=E8iVGMQexsz4gPcJ_BNoim1r7MwwglWTid2czXGPt6A,2080
+spliceai/normalise_chrom.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+spliceai/utils.py,sha256=dWk8vpgL_kdP1HTKyOLz0XHG81vJ7Ua_2mbJv74dMvk,5669
+spliceai/annotations/grch37.txt,sha256=NME2S1XxZDR5b5RJxIPJ0MDc9CG-RPjmJnEC459uAPY,600070
+spliceai/annotations/grch38.txt,sha256=pFH8akTJWBWHxLzqEfX9Yf0tz-EDFdigZ7wYkZieEkM,576884
+spliceai/models/spliceai1.h5,sha256=4f1a3O90idYEsQ55xAB473kNUe8EjEzjhpyRGaxd5Cs,3131720
+spliceai/models/spliceai2.h5,sha256=arBCuCq5ZrbTWCyzG5bwhZ6gioZPFo1p6DqhRFCjtm4,3131720
+spliceai/models/spliceai3.h5,sha256=4ueQveU9_fQQxtxDSoYSKn0S8_ONwu9F2FmG6ezyL60,3131720
+spliceai/models/spliceai4.h5,sha256=yoisnljmm6b97tMZty8GPxZMmr9zkurM75A-lMHZndY,3131720
+spliceai/models/spliceai5.h5,sha256=eRzSLGKoCgjSymdGFak86BWde1W9FXz-8pg7G9a0E5E,3131720
+spliceai-1.2.dist-info/METADATA,sha256=CjEc0Hmp5uEK5l6Tg1lnNAg4aavfDXBpSP-nac2JUkQ,4140
+spliceai-1.2.dist-info/RECORD,,
+spliceai-1.2.dist-info/WHEEL,sha256=_V8uWu5F_h-lvAz5Mbq4oZqV_uCfL4cHgm4IIlDevzU,92
+spliceai-1.2.dist-info/entry_points.txt,sha256=IZny0cHKI_gRXVqAZrj9KqoMQmM78D54jJ-OBNpGOUQ,53
+spliceai-1.2.dist-info/top_level.txt,sha256=g0Einzofr11-KtWqknRNYtmeeU45oUOskfE62ZbrxL4,9
