@@ -1,0 +1,4 @@
+requests
+
+[:python_version < "3.0"]
+functools32
