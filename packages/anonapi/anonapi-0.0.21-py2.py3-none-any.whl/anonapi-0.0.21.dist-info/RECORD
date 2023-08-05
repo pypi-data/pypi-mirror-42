@@ -1,0 +1,12 @@
+anonapi/__init__.py,sha256=icVtd1eZmnZoqhfaM9bPJG2yMye6YNVv3Rmp4HtJR8A,174
+anonapi/anon.py,sha256=Bj0hMmrIgEA5oCxZrvbYpUJ962twNnc5ET46n5qp4Pg,20963
+anonapi/client.py,sha256=ZVmG-9iiGN28ygn3qSXIHFv0Q34pR9lOjYX4GJvw42w,8760
+anonapi/objects.py,sha256=ZGug_tgWyygpge90oT2WfbSfw89pFhxTGcmYqRAtDXc,545
+anonapi/settings.py,sha256=_eF7_XPkFrKyenXzvCkmCSoggJOZOpm8CUqCOjw4Tho,4535
+anonapi-0.0.21.dist-info/AUTHORS.rst,sha256=EuNxyH3H7KjsIOqO0cxsxEeihpXBOHhUcuIa-Pl3t8Y,183
+anonapi-0.0.21.dist-info/LICENSE,sha256=I8GlRtUmd2rcKvSfAgSDGPtDPfpc1kBF9RFAUFGGC58,1096
+anonapi-0.0.21.dist-info/METADATA,sha256=F61WBAV8H-CzHYqaW5cN33bwm6gJK5QuC9T0ZqvD8QU,2884
+anonapi-0.0.21.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+anonapi-0.0.21.dist-info/entry_points.txt,sha256=HRloQw4QB-k_JFME2gs7GPMvkr4-PdPIp5D6KCBMZBg,44
+anonapi-0.0.21.dist-info/top_level.txt,sha256=hYxmtXUPYJtTOBE4Il4jiV3ZTfVBhMIAC5_5fKYBuTc,8
+anonapi-0.0.21.dist-info/RECORD,,
