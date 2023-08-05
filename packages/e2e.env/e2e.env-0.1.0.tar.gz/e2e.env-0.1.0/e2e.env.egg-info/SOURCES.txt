@@ -1,0 +1,13 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+e2e.env.egg-info/PKG-INFO
+e2e.env.egg-info/SOURCES.txt
+e2e.env.egg-info/dependency_links.txt
+e2e.env.egg-info/requires.txt
+e2e.env.egg-info/top_level.txt
+e2e/env/__init__.py
+e2e/env/exceptions.py
