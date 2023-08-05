@@ -1,0 +1,6 @@
+requests
+websocket-client
+
+[testing]
+pytest
+pytest-cov
