@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: ADRpy
+Version: 0.0.1
+Summary: A Python library of aircraft conceptual design tools.
+Home-page: https://github.com/sobester/ADRpy
+Author: Andras Sobester
+Author-email: sobester@live.com
+License: GPLv3
+Download-URL: https://github.com/sobester/ADRpy/tarball/0.0.1
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: sphinx
+Requires-Dist: sphinx-rtd-theme
+Requires-Dist: nose
+Requires-Dist: coverage
+Requires-Dist: pypi-publisher
+
+Aircraft Design Recipes in Python
+===============================
+
+version number: 0.0.1
+author: Andras Sobester
+
+Overview
+--------
+
+A Python library of aircraft conceptual design tools.
+
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install ADRpy
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/sobester/ADRpy.git
+    $ python setup.py install
+
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD
+

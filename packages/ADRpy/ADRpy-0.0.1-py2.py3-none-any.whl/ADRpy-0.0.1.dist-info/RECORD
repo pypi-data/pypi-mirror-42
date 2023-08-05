@@ -1,0 +1,11 @@
+ADRpy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ADRpy/atmospheres.py,sha256=NKz7WAgD_ahW_0-xB1Oez55ugaWPwQ9_7cSD-Y1O0SQ,27428
+ADRpy/constraintanalysis.py,sha256=M57NCkSj2WL1KY4btqPjY86exTxISJ51dALElwaE2NE,35890
+ADRpy/mtools4acdc.py,sha256=FWbywJHqbEZbPIJIOvQw1Q1bVud3X6CiVFjE2mnX7P8,1669
+ADRpy/unitconversions.py,sha256=iKhkRBSF-Pdz6ZvJ1Bq6D28TLmdn-1ccarecmZ8Eteg,4239
+ADRpy/weathertools.py,sha256=bGOOvIP21Uy8oX2ScBAiAcA2-kSxbJGYz3MR9H8_oEE,1544
+ADRpy-0.0.1.dist-info/LICENSE.md,sha256=aqkkR-jUVm-9NzWIN3idKzbhPUgi5331qMPwOtor85k,1486
+ADRpy-0.0.1.dist-info/METADATA,sha256=W-ACnvAXF2dPe2jGAnnSh-bsm_xcspoDj3P5zWjD75E,1010
+ADRpy-0.0.1.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+ADRpy-0.0.1.dist-info/top_level.txt,sha256=lYuaTJ6MT4EhdR9BPsBKNxlkObak4Oufgmboqcc6DhU,6
+ADRpy-0.0.1.dist-info/RECORD,,
