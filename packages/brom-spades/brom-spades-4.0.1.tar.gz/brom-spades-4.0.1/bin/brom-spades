@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+import argparse
+from importlib import import_module
+import os
+import sys
+
+import brom_spades
+
+
+cwd = os.getcwd()
+for folder in os.listdir(cwd):
+    if folder.startswith("brom-spades-"):
+        sys.path.append(os.path.join(cwd, folder))
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-f', '--frontend', help='frontend class to use')
+parser.add_argument('-b', '--backend', help='backend class to use')
+
+args = parser.parse_args()
+
+if args.backend:
+    backend = args.backend.lower()
+    try:
+        module = import_module('brom_spades_' + backend)
+        backend = module.BackEnd()
+    except ImportError:
+        parser.error("Unknown module: " + backend)
+    except AttributeError:
+        parser.error("Invalid module: " + backend)
+else:
+    backend = brom_spades.SimpleBackEnd()
+
+if args.frontend:
+    frontend = args.frontend.lower()
+    try:
+        module = import_module('brom_spades_' + frontend)
+        frontend = module.FrontEnd(backend)
+    except ImportError:
+        parser.error('Unknown module: ' + frontend)
+    except AttributeError:
+        parser.error('Invalid module: ' + frontend)
+else:
+    frontend = brom_spades.TerminalFrontEnd(backend)
+
+
+brom_spades.main(backend, frontend)
