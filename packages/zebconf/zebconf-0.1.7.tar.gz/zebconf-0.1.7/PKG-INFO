@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: zebconf
+Version: 0.1.7
+Summary: Zebra printer configuration
+Home-page: https://github.com/unipartdigital/zebconf
+Author: Michael Brown
+Author-email: mbrown@fensystems.co.uk
+License: GPLv2+
+Description: Zebra printer configuration tool
+        ================================
+        
+        [![Build Status](https://travis-ci.org/unipartdigital/zebconf.svg?branch=master)](https://travis-ci.org/unipartdigital/zebconf)
+        
+        This package provides a command-line configuration tool for Zebra
+        [printers](https://www.zebra.com/gb/en/products/printers.html).  For
+        example:
+        
+        * Get product name: `zebconf get device.product_name`
+        * Set hostname: `zebconf set device.friendy_name myzq520`
+        * Configure WiFi: `zebconf wifi myessid -p mypassword`
+        * Upgrade firmware: `zebconf upgrade V76.20.15Z.zip`
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Printing
+Description-Content-Type: text/markdown
