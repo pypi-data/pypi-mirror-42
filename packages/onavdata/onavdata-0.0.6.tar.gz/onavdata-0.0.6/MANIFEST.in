@@ -1,0 +1,7 @@
+include onavdata/configs/config.toml
+include onavdata/data/shortnames.txt
+include onavdata/data/*/*.toml
+include onavdata/data/*/*/*/*.txt
+include onavdata/data/*/*/*/*.zip
+
+exclude onavdata/configs/private-config.toml

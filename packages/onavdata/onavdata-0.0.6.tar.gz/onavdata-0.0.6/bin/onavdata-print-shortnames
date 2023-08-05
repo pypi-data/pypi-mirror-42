@@ -1,0 +1,4 @@
+#!/usr/bin/env python
+
+import onavdata
+onavdata.print_shortnames(description=False)

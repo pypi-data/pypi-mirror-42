@@ -1,0 +1,94 @@
+MANIFEST.in
+README.md
+setup.py
+bin/onavdata-print-shortnames
+onavdata/__init__.py
+onavdata/onavdata.py
+onavdata.egg-info/PKG-INFO
+onavdata.egg-info/SOURCES.txt
+onavdata.egg-info/dependency_links.txt
+onavdata.egg-info/requires.txt
+onavdata.egg-info/top_level.txt
+onavdata/configs/config.toml
+onavdata/data/shortnames.txt
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/meta.toml
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/meta_GPSFASER1.toml
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/FASER-Flight-5/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-1/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/GPSFASER-Flight-3/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-60/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-75/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-77/speed_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/accel_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/baroalt_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/control_input_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/gps_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/gps_velocity_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/gyro_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/mag_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/nav_attitude_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/nav_traj_data.txt.zip
+onavdata/data/2014-09-09 UofMN Conservancy 7 UAV Flights/Processed and Parsed Data/THOR-Flight-79/speed_data.txt.zip
+onavdata/data/GNSS Applications and Methods/meta.toml
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/no-errors/TRAJECTORY_A_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/no-errors/TRAJECTORY_B_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/no-errors/TRAJECTORY_C_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/no-errors/TRAJECTORY_D_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/with-errors/TRAJECTORY_A_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/with-errors/TRAJECTORY_B_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/with-errors/TRAJECTORY_C_with_mag.csv.zip
+onavdata/data/GNSS Applications and Methods/Chapter 7 - Case Study 2 - Add Mag/with-errors/TRAJECTORY_D_with_mag.csv.zip
