@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: python-checkit
+Version: 0.1.2
+Summary: Checkit API Client
+Home-page: https://bitbucket.org/metadonors/python-checkit
+Author: Metadonors
+Author-email: fabrizio.arzeni@metadonors.it
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: dev
