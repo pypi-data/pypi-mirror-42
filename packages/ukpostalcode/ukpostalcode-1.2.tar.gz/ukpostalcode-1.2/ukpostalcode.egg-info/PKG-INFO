@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: ukpostalcode
+Version: 1.2
+Summary: UK Post Code Format and Validation
+Home-page: https://git.jquiterio.eu/jquiterio/ukpostalcode
+Author: Jorge Quiterio
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
