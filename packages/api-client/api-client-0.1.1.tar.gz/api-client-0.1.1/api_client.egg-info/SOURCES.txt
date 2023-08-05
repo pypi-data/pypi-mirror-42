@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+api_client/__init__.py
+api_client/authentication_methods.py
+api_client/client.py
+api_client/decorates.py
+api_client/exceptions.py
+api_client/request_formatters.py
+api_client/response_handlers.py
+api_client.egg-info/PKG-INFO
+api_client.egg-info/SOURCES.txt
+api_client.egg-info/dependency_links.txt
+api_client.egg-info/not-zip-safe
+api_client.egg-info/requires.txt
+api_client.egg-info/top_level.txt
