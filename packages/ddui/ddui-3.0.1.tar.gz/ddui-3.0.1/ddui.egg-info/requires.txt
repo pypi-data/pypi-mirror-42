@@ -1,0 +1,10 @@
+pandas
+jinja2<2.9.0,>=2.7.3
+flask<0.13,>=0.12.4
+apache-airflow==1.10.*
+click
+dash
+dash_html_components
+dash_core_components
+dash-dagre>=0.0.2
+dash_table
