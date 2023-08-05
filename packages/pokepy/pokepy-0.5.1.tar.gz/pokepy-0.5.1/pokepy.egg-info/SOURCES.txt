@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+pokepy/__init__.py
+pokepy/api.py
+pokepy/resources_v2.py
+pokepy.egg-info/PKG-INFO
+pokepy.egg-info/SOURCES.txt
+pokepy.egg-info/dependency_links.txt
+pokepy.egg-info/not-zip-safe
+pokepy.egg-info/requires.txt
+pokepy.egg-info/top_level.txt
