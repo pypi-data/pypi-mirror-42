@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/vectorfields/__init__.py
+src/vectorfields/vectorfields.py
+src/vectorfields.egg-info/PKG-INFO
+src/vectorfields.egg-info/SOURCES.txt
+src/vectorfields.egg-info/dependency_links.txt
+src/vectorfields.egg-info/requires.txt
+src/vectorfields.egg-info/top_level.txt
