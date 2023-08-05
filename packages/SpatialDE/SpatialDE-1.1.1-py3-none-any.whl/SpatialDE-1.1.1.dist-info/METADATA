@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: SpatialDE
+Version: 1.1.1
+Summary: Spatial and Temporal DE test
+Home-page: https://github.com/Teichlab/SpatialDE
+Author: Valentine Svensson
+Author-email: valentine@nxn.se
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas (>=0.23)
+Requires-Dist: tqdm
+Requires-Dist: NaiveDE
+Requires-Dist: Click
+
+UNKNOWN
+
+
