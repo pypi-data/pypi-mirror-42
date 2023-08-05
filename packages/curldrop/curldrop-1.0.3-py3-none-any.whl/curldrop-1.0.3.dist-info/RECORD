@@ -1,0 +1,10 @@
+curldrop/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+curldrop/app.py,sha256=WGow5UlBloTylnuPQrtukwY8bCdkhKMt7953XQnMCyI,963
+curldrop/cli.py,sha256=0_Q80HyIz4nTfuv367oU_EjEGhCEWH63u2r70CL1kOk,1351
+curldrop/server.py,sha256=nMT7gboqit8qRbjON_CVXHDK8UPMSUaMtBLhMc-CEts,609
+curldrop-1.0.3.dist-info/LICENSE.md,sha256=sERaWKXVWieN4ebxfnnsmNJTDet1aRiY6CsEIckvWQY,1072
+curldrop-1.0.3.dist-info/METADATA,sha256=QA2pYAxOf-R9fqElyFVRG_gNtygTk1mjHqL-EQ9p85Q,276
+curldrop-1.0.3.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+curldrop-1.0.3.dist-info/entry_points.txt,sha256=HgQeRZ-XDPllTxvPL0ohloK1kPWYDKpeIh_E-YOIoLg,48
+curldrop-1.0.3.dist-info/top_level.txt,sha256=InlgMDqku1rRgB65_na0WSJfFxG9rBwJKWCab74jQWA,9
+curldrop-1.0.3.dist-info/RECORD,,
