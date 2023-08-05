@@ -1,0 +1,3 @@
+[console_scripts]
+sharemux = sharemux.webserver:cli_websrv_start
+

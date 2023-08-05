@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+sharemux/webserver.py
+sharemux.egg-info/PKG-INFO
+sharemux.egg-info/SOURCES.txt
+sharemux.egg-info/dependency_links.txt
+sharemux.egg-info/entry_points.txt
+sharemux.egg-info/not-zip-safe
+sharemux.egg-info/requires.txt
+sharemux.egg-info/top_level.txt
+sharemux/static/index.html
+sharemux/static/jquery/jquery-min.js
+sharemux/static/xterm/xterm.css
+sharemux/static/xterm/xterm.js
+sharemux/static/xterm/xterm.js.map

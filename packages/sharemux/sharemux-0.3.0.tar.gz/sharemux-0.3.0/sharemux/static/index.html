@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <style>
+    .xterm-viewport {
+        overflow-y: hidden !important;
+    }
+    h2 {
+      margin: 10px;
+    }
+    .header {
+      color: #2a3438;
+      background-color: #eee8d5;
+      margin: 20px;
+      padding: 0px 10px;
+      width: 1516px;
+      text-align: left;
+      border: outset;
+      border-width: 7px
+    }
+    .terminal {
+      width: 1536px;
+      border: outset;
+      border-width: 7px
+    }
+  </style>
+
+  <head>
+    <link rel="stylesheet" href="xterm/xterm.css" />
+    <script src="xterm/xterm.js"></script>
+    <script src="jquery/jquery-min.js"></script>
+  </head>
+
+  <body bgcolor="#073642">
+    <center>
+      <font face="arial">
+        <div id="header" class="header">
+        <h2><b>[[ -- SHAREMUX -- ]]</b></h2>
+        <h2>Session: "<span id="session_name">____</span>" <span id="closed" style="color: #dc322f; display: none">(closed)</span></h2>
+        </div>
+      </font>
+      <div id="terminal" class="terminal"></div>
+    </center>
+    <script>
+      document.term = null;
+
+      function b64DecodeUnicode(str) {
+        // Fix for %-encoded chars such as line drawing chars and other misc unicode
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+      }
+
+      function decode_and_write(event){
+        if(event.data === "EOF"){
+          event.target.close();
+          $('#closed').css('display', 'inline');
+          return null;
+        }
+        document.term.write(b64DecodeUnicode(event.data));
+      }
+      $.getJSON('register/'+(new Date).getTime(), function(data){
+        document.term = new Terminal(data.columns, data.rows);
+        $('#terminal').css('width', Math.ceil(9.6*data.columns));
+        $('#session_name').text(data.session);
+        document.term.open(document.getElementById('terminal'));
+        var source = new EventSource("snapshotstream/"+data.consumer_id);
+        source.onmessage = decode_and_write;
+      });
+    </script>
+  </body>
+</html>
