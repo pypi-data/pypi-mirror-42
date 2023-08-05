@@ -1,0 +1,15 @@
+flask_interface_gcp_pubsub/__init__.py,sha256=-Y3MVrbKnfsoZnrStz1klnBQux0gzj51cwj0NwskqPQ,94
+flask_interface_gcp_pubsub/__version__.py,sha256=j0kXhf8SsE6WvYYgZb4zYSgsZYS2uLWaKPeB2abh92U,45
+flask_interface_gcp_pubsub/publisher.py,sha256=6lWwpeR-8jg5hqDODrvn-NfiP9XHhZhvkN5aHZRfyxQ,3263
+flask_interface_gcp_pubsub/pubsub.py,sha256=2WAwVxHev75LRWsGP4ebX8t8pLgsrd48FbH6DYw1cr4,1375
+flask_interface_gcp_pubsub/utils.py,sha256=_eqkpHIwbBLjmw-D4cCZ1jijU4AL9ZPswOFq6BpwRkU,934
+flask_interface_gcp_pubsub/view_scheme_async.py,sha256=AppxzFYFuuOfmwf_viiJSN7bWvSHrlI517WfBlW0nV4,1175
+flask_interface_gcp_pubsub/view_scheme_batch.py,sha256=0R3tF_HPMzzuoKxFkTiW7U2TZ0BBeySIuEE4PJkZxtE,1361
+tests/unit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/unit/test_publisher.py,sha256=d9Tp8XEpePNCVYYW52fa6tCUqJDx7um-d5KeJuMflRg,2466
+tests/unit/test_pubsub.py,sha256=tIpn1PF96qr82KuMgTUyVnjaaVex2_fKnthTcBOlkC4,1143
+Flask_InterfacePubSub-0.2.0.dist-info/LICENSE,sha256=eGBICor1oB6x--_oGmY4q5PR1pplvLeCDVFytPSwBGc,1072
+Flask_InterfacePubSub-0.2.0.dist-info/METADATA,sha256=biShBIyrbDNY_cimWLoUZseNqYqtlt2WW_D3SpHkWdw,1021
+Flask_InterfacePubSub-0.2.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+Flask_InterfacePubSub-0.2.0.dist-info/top_level.txt,sha256=W9urKYOsFbTmfRDaqZKDH07JuWG4JRL3CAjxsOHDEXQ,33
+Flask_InterfacePubSub-0.2.0.dist-info/RECORD,,
