@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: tfwn
+Version: 1.0.0
+Summary: F1-score metric for TensorFlow
+Home-page: https://github.com/shkarupa-alex/tfwn
+Author: Shkarupa Alex
+Author-email: shkarupa.alex@gmail.com
+License: MIT
+Description: # tfwn
+        
+        [Weight Normalization](https://arxiv.org/abs/1602.07868) layer wrapper for TensorFlow-Keras API.
+        
+        Inspired by [Sean Morgan](https://github.com/tensorflow/tensorflow/pull/21276) implementation, but:
+        - No data initialization (only eager mode was implemented in original pull request).
+        - Code refactoring
+        - More tests
+        - CIFAR10 example from original paper reimplemented
+        
+        ## Examples
+        Unfortunately I couldn't reproduce parer results on CIFAR10 with batch size 100.
+        As you can see there is no much difference in accuracy.
+        
+        <img src="https://github.com/shkarupa-alex/tfwn/raw/master/examples/cifar10_accuracy_100.png">
+        <img src="https://github.com/shkarupa-alex/tfwn/raw/master/examples/cifar10_loss_100.png">
+        
+        
+        But with much smaller batch size model with weight normalization is much better then regular one.
+        
+        <img src="https://github.com/shkarupa-alex/tfwn/raw/master/examples/cifar10_accuracy_16.png">
+        <img src="https://github.com/shkarupa-alex/tfwn/raw/master/examples/cifar10_loss_16.png">
+        
+        
+        ## How to use
+        ```python
+        import tensorflow as tf
+        from tfwn import WeightNorm
+        
+        
+        dense_wn = WeightNorm(tf.keras.layers.Dense(3))
+        out = dense_wn(input)
+        ```
+        
+        
+        ## References
+        ### Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks
+        Tim Salimans, and Diederik P. Kingma.
+        
+        ```
+        @inproceedings{Salimans2016WeightNorm,
+          title={Weight Normalization: A Simple Reparameterization to Accelerate Training of Deep Neural Networks},
+          author={Tim Salimans and Diederik P. Kingma},
+          booktitle={Neural Information Processing Systems 2016},
+          year={2016}
+        }
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Provides-Extra: tf_gpu
+Provides-Extra: tf_cpu

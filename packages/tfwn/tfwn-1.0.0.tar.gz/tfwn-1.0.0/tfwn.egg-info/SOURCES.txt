@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+tfwn/__init__.py
+tfwn.egg-info/PKG-INFO
+tfwn.egg-info/SOURCES.txt
+tfwn.egg-info/dependency_links.txt
+tfwn.egg-info/requires.txt
+tfwn.egg-info/top_level.txt
+tfwn/tests/__init__.py
