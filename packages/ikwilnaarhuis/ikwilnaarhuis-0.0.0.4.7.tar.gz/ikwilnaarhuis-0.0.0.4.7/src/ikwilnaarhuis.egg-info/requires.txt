@@ -1,0 +1,7 @@
+numpy
+scipy
+pyinsults
+
+[testing]
+pytest>=4.2.1
+pytest-cov
