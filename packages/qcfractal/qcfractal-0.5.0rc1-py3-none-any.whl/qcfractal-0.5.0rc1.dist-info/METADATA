@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: qcfractal
+Version: 0.5.0rc1
+Summary: A high throughput computing and database tool for quantum chemistry.
+Home-page: https://github.com/molssi/qcfractal
+Author: Daniel Smith
+Author-email: dgasmith@vt.edu
+License: BSD-3C
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: bcrypt
+Requires-Dist: cryptography
+Requires-Dist: numpy (>=1.7)
+Requires-Dist: pandas
+Requires-Dist: pydantic (>=0.19)
+Requires-Dist: pymongo (>=3.0)
+Requires-Dist: requests
+Requires-Dist: tornado
+Requires-Dist: mongoengine
+Requires-Dist: qcengine (>=0.5.1)
+Requires-Dist: qcelemental (>=0.2.4)
+Requires-Dist: pytest
+Provides-Extra: docs
+Requires-Dist: sphinx (==1.2.3); extra == 'docs'
+Requires-Dist: sphinxcontrib-napoleon; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme; extra == 'docs'
+Requires-Dist: numpydoc; extra == 'docs'
+Provides-Extra: tests
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+
+UNKNOWN
+
+
