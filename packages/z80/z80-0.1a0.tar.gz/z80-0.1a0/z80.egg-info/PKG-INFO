@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: z80
+Version: 0.1a0
+Summary: Z80 Simulator
+Home-page: https://github.com/kosarev/z80/
+Author: Ivan Kosarev
+Author-email: ivan@kosarev.info
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Emulators

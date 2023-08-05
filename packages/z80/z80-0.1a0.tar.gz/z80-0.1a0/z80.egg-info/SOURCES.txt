@@ -1,0 +1,8 @@
+README.md
+setup.py
+z80.cpp
+z80/_z80module.cpp
+z80.egg-info/PKG-INFO
+z80.egg-info/SOURCES.txt
+z80.egg-info/dependency_links.txt
+z80.egg-info/top_level.txt
