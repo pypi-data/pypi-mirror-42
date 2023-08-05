@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: json-syntax
+Version: 0.1.1
+Summary: Generates functions to convert Python classes to JSON dumpable objects.
+Home-page: https://github.com/UnitedIncome/json-syntax
+Author: Ben Samuel
+Author-email: bsamuel@unitedincome.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries
+Project-URL: Repository, https://github.com/UnitedIncome/json-syntax
