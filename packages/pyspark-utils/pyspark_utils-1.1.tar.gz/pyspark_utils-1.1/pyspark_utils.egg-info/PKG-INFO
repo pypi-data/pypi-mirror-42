@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pyspark-utils
+Version: 1.1
+Summary: The missing PySpark utils
+Home-page: https://github.com/xiaoxq/pyspark-utils
+Author: Xiangquan Xiao
+Author-email: xiaoxiangquan@gmail.com
+License: Apache License Version 2.0
+Description: # pyspark-utils
+        The missing PySpark utils, such as operators like map_key, filter_key, filter_value, etc.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
