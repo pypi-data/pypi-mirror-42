@@ -1,0 +1,7 @@
+groundwork-database>=0.1.4
+flask-babel
+flask-security
+flask-login
+bcrypt
+groundwork-web>=0.1.4
+groundwork>=0.1.14
