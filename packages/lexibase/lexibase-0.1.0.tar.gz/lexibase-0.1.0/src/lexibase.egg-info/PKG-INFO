@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: lexibase
+Version: 0.1.0
+Summary: An SQLITE3 extension for handling wordlists in LingPy and EDICTOR.
+Home-page: https://github.com/lingpy/lexibase
+Author: Johann-Mattis List
+Author-email: list@shh.mpg.de
+License: GPL
+Description: # lexibase
+        
+        SQLite persistence for `lingpy.Wordlist` and a bridge from `lingpy` to Edictor.
+        
+        [![Build Status](https://travis-ci.org/lingpy/lexibase.svg?branch=master)](https://travis-ci.org/lingpy/lexibase)
+        [![codecov](https://codecov.io/gh/lingpy/lexibase/branch/master/graph/badge.svg)](https://codecov.io/gh/lingpy/lexibase)
+        [![PyPI](https://img.shields.io/pypi/v/lexibase.svg)](https://pypi.org/project/lexibase)
+        
+Keywords: historical linguistics,interface,EDICTOR,LINGPY,SQLITE3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: dev

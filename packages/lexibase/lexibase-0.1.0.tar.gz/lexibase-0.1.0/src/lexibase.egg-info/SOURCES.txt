@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/lexibase/__init__.py
+src/lexibase/lexibase.py
+src/lexibase/util.py
+src/lexibase.egg-info/PKG-INFO
+src/lexibase.egg-info/SOURCES.txt
+src/lexibase.egg-info/dependency_links.txt
+src/lexibase.egg-info/entry_points.txt
+src/lexibase.egg-info/not-zip-safe
+src/lexibase.egg-info/requires.txt
+src/lexibase.egg-info/top_level.txt
