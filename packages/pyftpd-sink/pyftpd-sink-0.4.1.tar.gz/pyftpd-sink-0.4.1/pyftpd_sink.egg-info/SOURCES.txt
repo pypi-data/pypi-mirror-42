@@ -1,0 +1,14 @@
+.dockerignore
+.gitignore
+Dockerfile
+LICENSE
+README.md
+setup.py
+pyftpd_sink/__init__.py
+pyftpd_sink/__init___test.py
+pyftpd_sink.egg-info/PKG-INFO
+pyftpd_sink.egg-info/SOURCES.txt
+pyftpd_sink.egg-info/dependency_links.txt
+pyftpd_sink.egg-info/entry_points.txt
+pyftpd_sink.egg-info/requires.txt
+pyftpd_sink.egg-info/top_level.txt

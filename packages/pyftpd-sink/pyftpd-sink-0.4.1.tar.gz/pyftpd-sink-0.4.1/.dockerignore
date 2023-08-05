@@ -1,0 +1,9 @@
+*.swp
+/*.egg-info/
+/.eggs/
+/.pytest_cache/
+/Pipfile
+/Pipfile.lock
+/__pycache__/
+/build/
+/dist/
