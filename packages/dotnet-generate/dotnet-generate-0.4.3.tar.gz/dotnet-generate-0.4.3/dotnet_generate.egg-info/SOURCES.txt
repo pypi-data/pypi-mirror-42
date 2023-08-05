@@ -1,0 +1,9 @@
+README.md
+dotnet_generate.py
+setup.py
+dotnet_generate.egg-info/PKG-INFO
+dotnet_generate.egg-info/SOURCES.txt
+dotnet_generate.egg-info/dependency_links.txt
+dotnet_generate.egg-info/entry_points.txt
+dotnet_generate.egg-info/requires.txt
+dotnet_generate.egg-info/top_level.txt
