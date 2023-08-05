@@ -1,0 +1,11 @@
+starless/__init__.py,sha256=0qoWYeLMNt0lC3qQkPszskZOaCiMD-MRltopnt9ef9Y,30
+starless/__main__.py,sha256=HpMS2VSfUxAqzU6PteCBUx5TYfyTqs0uf4wuvLZ9awc,341
+starless/cli.py,sha256=A8rQq_4nRb7ZBI_98X_xTpKwaCeQZq-Hk-HQqpguNlY,632
+starless/rewriter.py,sha256=595TDhhi_M4IR0xm77DUmOPFMg2JPlbhlpMa4BXfFQc,3088
+starless/test_cli.py,sha256=CpstNJJc2NmfMKwmOGptpyYqO2XduDQ9ZX1yHpLK5Hg,584
+starless/test_starless.py,sha256=MqtAQQevq_dR_6S5MTJEtj2M8OUyNf488CMv81Odjqo,746
+starless-0.1.dist-info/METADATA,sha256=YpP5pIxKm2FDImkjWFLCzTKAEUuaJ5fhL0dKmFd7u7Q,280
+starless-0.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+starless-0.1.dist-info/entry_points.txt,sha256=4vj0ZP0zin_Ppsceer78JxsUKwJu9kkIVbA1_R2m-4o,48
+starless-0.1.dist-info/top_level.txt,sha256=aHuZ_x7KehwP4fDyQNFcSAV4ME-uhdG7Y2tU_JYLKww,9
+starless-0.1.dist-info/RECORD,,
