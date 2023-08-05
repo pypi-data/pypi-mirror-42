@@ -1,0 +1,9 @@
+README.rst
+setup.py
+fly/__init__.py
+fly/fly.py
+python_fly.egg-info/PKG-INFO
+python_fly.egg-info/SOURCES.txt
+python_fly.egg-info/dependency_links.txt
+python_fly.egg-info/requires.txt
+python_fly.egg-info/top_level.txt
