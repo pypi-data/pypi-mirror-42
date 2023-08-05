@@ -1,0 +1,17 @@
+django_zombodb/__init__.py,sha256=ls1camlIoMxEZz9gSkZ1OJo-MXqHWwKPtdPbZJmwp7E,22
+django_zombodb/admin_mixins.py,sha256=bwOBzDwVuRPx2ci-x_LTTGzTsQ7TD0xdk1wD6vwJ8RM,2142
+django_zombodb/apps.py,sha256=QBs8cxiufBiisCs9kkzeEBhz8W2X0jjOQH1a6fja59s,122
+django_zombodb/base_indexes.py,sha256=dvHrFPzsoOGVRfm0AzCja6DW9-EncU9F9g1aJZMkFOs,1024
+django_zombodb/exceptions.py,sha256=KMtiEAzf3VMCYyHk-qH4bIGxZIWuCkYx442w52fgpzI,53
+django_zombodb/helpers.py,sha256=DJa0Jp_KmPC0NqLLSzAyu480-yuVBgzRh8ncFxeNGCI,1390
+django_zombodb/indexes.py,sha256=Afta82vARkt7df1SgxZOWlvD5pVGH8e6IK_GtRZRhF0,5226
+django_zombodb/operations.py,sha256=CtTMfl2ym7U525Y3PDJZ-Qz4S3KNwjFzBDK47MhrPr0,161
+django_zombodb/querysets.py,sha256=Old7KFbE6gQwFHiTbJKpdcyQd7xN8mr9kZHSNM4nT_o,2553
+django_zombodb/static/django_zombodb/js/hide_show_score.js,sha256=McwQwvJVTpNCA1qThew6bVZU3N5rYkxn_FKR0jBPkog,381
+django_zombodb/templates/django_zombodb/base.html,sha256=zzaUPjEgvwxg-Gn2rZ6gIMWphucmEGvAU_skUXJIcDA,661
+django_zombodb-0.1.1.dist-info/DESCRIPTION.rst,sha256=1WY21WVnAuXZb8xbhS-kCqH4dPeB8vAcUjZUvUIyusc,2991
+django_zombodb-0.1.1.dist-info/METADATA,sha256=aCrWNlYwAGxyCpPvjWvX0hodsMYnaMYxf6Kuy_xP5fs,3984
+django_zombodb-0.1.1.dist-info/RECORD,,
+django_zombodb-0.1.1.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+django_zombodb-0.1.1.dist-info/metadata.json,sha256=VkG87CC7EbfHr-saHhgA2k27KnKuZrAhLc-KP5OENpk,1089
+django_zombodb-0.1.1.dist-info/top_level.txt,sha256=KQzq8Q-tCVM4W-V8UD7xoDqB3jskhnW6zKKaRudY4uQ,15
