@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+CA.py.egg-info/PKG-INFO
+CA.py.egg-info/SOURCES.txt
+CA.py.egg-info/dependency_links.txt
+CA.py.egg-info/requires.txt
+CA.py.egg-info/top_level.txt
+certificator/__init__.py
+certificator/ca.py
+certificator/openssl_util.py
