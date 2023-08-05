@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: helmstack
+Version: 1.1.1
+Summary: See https://github.com/tonsV2/helmstack
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: ruamel.yaml
+
+UNKNOWN
+
+
