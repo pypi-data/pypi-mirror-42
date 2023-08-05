@@ -1,0 +1,10 @@
+
+{
+    "show_overlay" : "True",
+    "show_detection" : "True",
+    "show_streaming" : "True",
+    "application_name" : "Smart Park",
+    "version" : "0.0.1",
+    "detector_streaming" : "False"
+
+}
