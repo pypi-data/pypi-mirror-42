@@ -1,0 +1,3 @@
+[console_scripts]
+pylint2junit = pylint2junit.__main__:main
+

@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: pylint2junit
+Version: 1.0.1
+Summary: Converts pylint output to junit style test results
+Home-page: UNKNOWN
+Author: andrew.roden@crowdstrike.com
+Author-email: andrew.roden@crowdstrike.com
+License: BSD
+Keywords: pylint
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+
+pylint2junit
+============
+Provides junit xml from either `pylint --output-format=pylint2junit.JunitReporter`
+or a shell script to convert pylint text/parsable output to an xml file.
+
+
+Install
+-------
+
+    pip install pylint2junit
+
+Usage
+-----
+
+Output formatter
+
+    pylint --output-format=pylint2junit.JunitReporter example
+
+Conversion script
+
+    pylint --output-format=parseable example > pylint_results.txt
+    pylint2junit --input=pylint_results.txt --output=pylint_results.txt
+
+
+Building
+--------
+
+Validate no pylint problem
+
+     pylint pylint2junit tests
+
+Build
+
+    python setup.py bdsit_wheel
+
+
