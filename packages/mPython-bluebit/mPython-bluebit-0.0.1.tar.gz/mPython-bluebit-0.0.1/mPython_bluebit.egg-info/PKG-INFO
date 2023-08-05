@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: mPython-bluebit
+Version: 0.0.1
+Summary: blue:bit modules library for mPython
+Home-page: https://github.com/labplus-cn/mPython_bluebit
+Author: tangliufeng
+Author-email: 137513285@qq.com
+Maintainer: LabPlus Developers
+License: MIT
+Description: blue:bit 系列模块的掌控板驱动库
+Platform: UNKNOWN
