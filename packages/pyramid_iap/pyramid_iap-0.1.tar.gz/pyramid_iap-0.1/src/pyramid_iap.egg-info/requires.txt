@@ -1,0 +1,11 @@
+pyramid
+PyJWT
+cryptography
+requests
+zope.interface
+
+[tests]
+pytest
+pytest-flake8
+requests-mock
+WebTest

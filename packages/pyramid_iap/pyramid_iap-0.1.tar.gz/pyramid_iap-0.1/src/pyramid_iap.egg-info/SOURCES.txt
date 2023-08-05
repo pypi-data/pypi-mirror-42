@@ -1,0 +1,15 @@
+CHANGES.rst
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+src/pyramid_iap/__init__.py
+src/pyramid_iap/claims.py
+src/pyramid_iap/policy.py
+src/pyramid_iap.egg-info/PKG-INFO
+src/pyramid_iap.egg-info/SOURCES.txt
+src/pyramid_iap.egg-info/dependency_links.txt
+src/pyramid_iap.egg-info/requires.txt
+src/pyramid_iap.egg-info/top_level.txt
+src/pyramid_iap.egg-info/zip-safe
