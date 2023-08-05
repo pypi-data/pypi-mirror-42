@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+dirhash/__init__.py
+dirhash/cli.py
+dirhash.egg-info/PKG-INFO
+dirhash.egg-info/SOURCES.txt
+dirhash.egg-info/dependency_links.txt
+dirhash.egg-info/entry_points.txt
+dirhash.egg-info/requires.txt
+dirhash.egg-info/top_level.txt
