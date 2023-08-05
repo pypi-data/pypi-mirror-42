@@ -1,0 +1,8 @@
+mmcif>=0.34
+ruamel.yaml
+
+[dev]
+check-manifest
+
+[test]
+coverage
