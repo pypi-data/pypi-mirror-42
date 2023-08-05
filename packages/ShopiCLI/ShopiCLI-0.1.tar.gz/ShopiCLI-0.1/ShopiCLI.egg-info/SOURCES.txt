@@ -1,0 +1,16 @@
+README.rst
+setup.py
+ShopiCLI.egg-info/PKG-INFO
+ShopiCLI.egg-info/SOURCES.txt
+ShopiCLI.egg-info/dependency_links.txt
+ShopiCLI.egg-info/entry_points.txt
+ShopiCLI.egg-info/not-zip-safe
+ShopiCLI.egg-info/requires.txt
+ShopiCLI.egg-info/top_level.txt
+shopicli/__init__.py
+shopicli/__main__.py
+shopicli/_config.py
+shopicli/_output.py
+shopicli/_types.py
+shopicli/cli.py
+shopicli/client.py

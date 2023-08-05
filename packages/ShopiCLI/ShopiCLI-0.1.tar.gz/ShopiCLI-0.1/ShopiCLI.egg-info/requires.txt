@@ -1,0 +1,4 @@
+click>=7
+requests>=2
+nicelog>=0.3
+pygments

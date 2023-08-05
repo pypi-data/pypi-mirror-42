@@ -1,0 +1,3 @@
+[console_scripts]
+shopicli = shopicli.cli:main
+
