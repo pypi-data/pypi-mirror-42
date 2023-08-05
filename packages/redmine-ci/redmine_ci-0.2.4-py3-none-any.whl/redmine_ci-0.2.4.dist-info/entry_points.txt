@@ -1,0 +1,3 @@
+[console_scripts]
+redmine-ci = redmineci.main:run
+

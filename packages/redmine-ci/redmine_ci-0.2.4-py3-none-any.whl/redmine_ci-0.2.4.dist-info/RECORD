@@ -1,0 +1,9 @@
+redmine_ci-0.2.4.dist-info/METADATA,sha256=M_wUokoIvWQcrUJS6b7y3usa9BbpA7SnJICU-42s6jA,2473
+redmine_ci-0.2.4.dist-info/RECORD,,
+redmine_ci-0.2.4.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+redmine_ci-0.2.4.dist-info/entry_points.txt,sha256=68k178BOu_Ro_VzLfgPzpKXSKy6vqAkwZoK4YLlAcQw,51
+redmine_ci-0.2.4.dist-info/top_level.txt,sha256=wDRIe_FJikBmoBGm_llO4uD0ZdzdH_Ju3LndRv-R2oU,10
+redmineci/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+redmineci/main.py,sha256=OOaX0VxGRwsSloeotjInPZr6Ueowo4-Hk-H-Bv2g2F8,238
+redmineci/redmineci.py,sha256=ojSXdAk9GhGPLlbcJUe8teklN2B5vYmVkr_LDJJAlDI,12530
+redmineci/requirements.txt,sha256=P6JA-4d-ucqci2WUD5rNtp8O9tUhZm5yLw7XpS640LY,50
