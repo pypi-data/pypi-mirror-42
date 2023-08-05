@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: outlier
+Version: 0.2
+Summary: outlier
+Home-page: https://github.com/archongum/outlier
+Author: archon
+Author-email: qq349074225@live.com
+License: apache
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+# Usage
+
+```python
+def remove_outlier(df, col, partitionby=None, kernel='both', n_std=2, eps=1e-5):
+    """
+    :param col: label column
+    :param partitionby: remove outliers in each partition
+    :param kernel: kernel options: ["std", "quartile", "both"]
+    :type df: pandas.DataFrame
+    :type col: str
+    :type partitionby: list
+    :type kernel: str
+    :type n_std: int
+    :type eps: float
+    :return: pandas.DataFrame
+    """
+```
+
