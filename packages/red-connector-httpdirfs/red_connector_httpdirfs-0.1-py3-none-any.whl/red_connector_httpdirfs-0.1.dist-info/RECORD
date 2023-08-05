@@ -1,0 +1,9 @@
+red_connector_httpdirfs/__init__.py,sha256=zGBhKwrKSA79iDYiRpqeA9_5N5INgRyHwFzn_jUUOI8,75
+red_connector_httpdirfs/httpdirfs.py,sha256=1e_KVjbybMGyNsoTGyquCPDxf974WJ20XrJ8hu77k00,3380
+red_connector_httpdirfs/main.py,sha256=4DTPoMDmcmbWPGwDecoji1yvvKktRh5Jtad5b8P392g,265
+red_connector_httpdirfs/version.py,sha256=gKT09mjzyi1eb8gdTKOzl4wKpDW6y4us9D0MCRYg-LQ,16
+red_connector_httpdirfs-0.1.dist-info/entry_points.txt,sha256=m4QLvZMVrN0bHxI6oR3QMCTPdSXsBzLYGXWo2cueC6k,77
+red_connector_httpdirfs-0.1.dist-info/LICENSE,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+red_connector_httpdirfs-0.1.dist-info/WHEEL,sha256=OyjuYVC9vVJqb-Aqln3fyrroYJ4WrcSwx2msO2AokVc,85
+red_connector_httpdirfs-0.1.dist-info/METADATA,sha256=2JmyBSTPscOh3os-1RXWSYgNbx73fOVZJp42wQhEYbY,1498
+red_connector_httpdirfs-0.1.dist-info/RECORD,,

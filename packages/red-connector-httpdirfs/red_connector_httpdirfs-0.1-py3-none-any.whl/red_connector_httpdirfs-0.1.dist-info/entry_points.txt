@@ -1,0 +1,3 @@
+[console_scripts]
+red-connector-httpdirfs=red_connector_httpdirfs.main:main
+
