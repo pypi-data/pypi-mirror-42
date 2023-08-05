@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: taxbill
+Version: 0.1.2
+Summary: Tax calculator and optimiser for UK freelancers
+Home-page: UNKNOWN
+License: GPL-3.0
+Author: Owen Campbell
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: pulp (>=1.6,<2.0)
+Requires-Dist: pyyaml (>=3.13,<4.0)
