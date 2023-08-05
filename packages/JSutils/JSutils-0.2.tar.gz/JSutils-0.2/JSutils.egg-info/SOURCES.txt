@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+JSutils/__init__.py
+JSutils/cli_interface.py
+JSutils/execution queue.py
+JSutils/loop.py
+JSutils/setInterval.py
+JSutils.egg-info/PKG-INFO
+JSutils.egg-info/SOURCES.txt
+JSutils.egg-info/dependency_links.txt
+JSutils.egg-info/not-zip-safe
+JSutils.egg-info/top_level.txt
