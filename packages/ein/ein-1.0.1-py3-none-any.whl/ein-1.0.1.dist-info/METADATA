@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ein
+Version: 1.0.1
+Summary: namespace package for ein.plus
+Home-page: UNKNOWN
+Author: Qiangning Hong
+Author-email: hongqn@ein.plus
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.3
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: twine ; extra == 'dev'
+
+A placeholder for namespace package `ein`.
+
+Thank [Reorx](https://pypi.org/user/Reorx/) for transfering this project on PyPI.org to me.
+
+
