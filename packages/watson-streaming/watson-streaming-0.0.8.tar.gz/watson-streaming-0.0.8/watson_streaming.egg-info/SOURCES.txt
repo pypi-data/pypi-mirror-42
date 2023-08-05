@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+test/__init__.py
+test/test_sanity.py
+watson_streaming/__init__.py
+watson_streaming/transcriber.py
+watson_streaming/utilities.py
+watson_streaming.egg-info/PKG-INFO
+watson_streaming.egg-info/SOURCES.txt
+watson_streaming.egg-info/dependency_links.txt
+watson_streaming.egg-info/requires.txt
+watson_streaming.egg-info/top_level.txt
