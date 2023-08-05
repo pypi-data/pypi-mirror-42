@@ -1,0 +1,4 @@
+[console_scripts]
+yalesmoyennes = yalesnotes.main:yalesmoyennes
+yalesnotes = yalesnotes.main:yalesnotes
+
