@@ -1,0 +1,9 @@
+json2parquet/__init__.py,sha256=ktnmcGXJBHm9w9YqQOXqGtAq3WdGuoh5-PHHXXwBU2Q,309
+json2parquet/client.py,sha256=65jdLicccBUPPFb7K0Y8249HWWfVMUgl7Bpl-GfcO18,6558
+json2parquet/helpers.py,sha256=Y-7S9A7eGy_VXFYfr182E2GvYuRnpfDJos6yogQvwd4,4922
+json2parquet-0.0.27.dist-info/DESCRIPTION.rst,sha256=rEJqM0OoBT1Xo2IPfKU7TTHR_4zBFuj5w6UokFDeFao,6355
+json2parquet-0.0.27.dist-info/METADATA,sha256=_XXEDPHlORi_ppClDvUir7lj8sUWZQ_nOcfmbUcjvBc,6777
+json2parquet-0.0.27.dist-info/RECORD,,
+json2parquet-0.0.27.dist-info/WHEEL,sha256=hZvi-8L6mc2COqhOUWREM_h2lvnJbaHycZt8eohtmso,92
+json2parquet-0.0.27.dist-info/metadata.json,sha256=xanWmduUcyUBgY_7T7Xi8oU9KIwc22ib7igeuEgCIFQ,591
+json2parquet-0.0.27.dist-info/top_level.txt,sha256=2BuxGxS5mrLnYCun1DVsAatRkYaADeZICceARt7xnQg,13
