@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: dyools
+Version: 0.8.0
+Summary: dyools
+Home-page: https://example.org
+Author: me
+Author-email: me@example.org
+License: LGPL v3
+Keywords: dyools
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: future
+Requires-Dist: pyaml
+Requires-Dist: odoorpc
+Requires-Dist: python-dateutil
+
+UNKNOWN
+
+
