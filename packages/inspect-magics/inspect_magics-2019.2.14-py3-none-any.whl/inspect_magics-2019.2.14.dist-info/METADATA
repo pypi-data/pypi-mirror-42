@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: inspect-magics
+Version: 2019.2.14
+Summary: Jupyter code inspection magics
+Home-page: https://github.com/Lightslayer/inspect_magics.git
+Author: Liam Deacon
+Author-email: liam.m.deacon@gmail.com
+License: GPL v3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: IPython
+Classifier: Framework :: Jupyter
+Description-Content-Type: text/markdown
+Requires-Dist: IPython
+
+
+# Inspection Magics
+
+This package provides code introspection and reflection magics
+as provided by the `inspect` module.
+
+```python
+
+import pandas as pd
+
+%inspect pd.DataFrame
+```
+
+
