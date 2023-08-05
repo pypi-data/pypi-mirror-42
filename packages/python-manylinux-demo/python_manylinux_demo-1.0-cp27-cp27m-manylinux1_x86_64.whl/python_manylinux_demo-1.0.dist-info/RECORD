@@ -1,0 +1,10 @@
+pymanylinuxdemo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pymanylinuxdemo/extension.so,sha256=tmXitlOgNqinQPeWe_4iF_3waJVMK_c_OpadNpcDTMc,30248
+pymanylinuxdemo/.libs/libatlas-dd66cbe8.so.3.0,sha256=2imvM1DGuG-Q-IZdzfu7NqljIgYm8-Tz61URcPb6IMU,7388592
+pymanylinuxdemo/.libs/libcblas-de16e930.so.3.0,sha256=P4lhBo8VB3uU4cfMq6LmetpnXQZYWj3e6bymT3ptg2k,139016
+pymanylinuxdemo/tests/test_extension.py,sha256=MZ6A9RC3bi6n6LFLqRlgbNS022ISInQYXgxZAFB72eg,425
+pymanylinuxdemo/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+python_manylinux_demo-1.0.dist-info/RECORD,,
+python_manylinux_demo-1.0.dist-info/WHEEL,sha256=CKrsQRZNKddeqWkqlP4DoIBo-Lb-ExiV2oTN8bWPh84,109
+python_manylinux_demo-1.0.dist-info/METADATA,sha256=U-zx9xeal0Jxn8SRjBusOWA69DbhVqjzQYKWSrr0j1M,227
+python_manylinux_demo-1.0.dist-info/top_level.txt,sha256=OzmVVMbS4DL3rb8vQ7ssBaY4xZ8JHkpXPyvUiTFDr50,16
