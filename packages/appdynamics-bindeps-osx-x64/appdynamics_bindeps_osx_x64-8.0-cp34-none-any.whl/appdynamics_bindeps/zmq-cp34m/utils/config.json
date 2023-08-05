@@ -1,0 +1,9 @@
+{
+  "bdist_egg": {},
+  "libzmq_extension": true,
+  "skip_check_zmq": false,
+  "have_sys_un_h": true,
+  "no_libzmq_extension": true,
+  "zmq_prefix": "/opt/buildAgent/work/db27fe4153f11eb3/bindeps/deps/libzmq/binaries/release",
+  "build_ext": {}
+}
