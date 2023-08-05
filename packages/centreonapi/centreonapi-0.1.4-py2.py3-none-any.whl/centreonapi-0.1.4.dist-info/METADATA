@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: centreonapi
+Version: 0.1.4
+Summary: Centreon Api for use Webservice in Centreon Web 2.8.0 or later
+Home-page: https://github.com/guillaumewatteeux/centreon-sdk-python
+Author: Guillaume Watteeux
+Author-email: g@15x.fr
+License: Apache-2.0
+Keywords: centreonapi
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: requests
+Requires-Dist: bs4
+
+=============================
+Centreon SDK Python
+=============================
+
+.. image:: https://badge.fury.io/py/centreonapi.png
+    :target: http://badge.fury.io/py/centreonapi
+
+.. image:: https://travis-ci.com/guillaumewatteeux/centreon-sdk-python.svg?branch=dev
+    :target: https://travis-ci.org/guillaumewatteeux/centreon-sdk-python
+
+Make a Python LIB for Centreon API
+
+
+Forked from https://github.com/centreon/centreon-sdk-python
+
+Features
+--------
+
+* TODO
+
+
+
+
+Documentation
+-------------
+
+The full documentation is at http://centreonapi.rtfd.org.
+
+
+
+History
+-------
+
+0.1.0 (2018-12-14)
+++++++++++++++++++
+
+* First release on PyPI.
+
+
