@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: ansible-modules-consul-acl
+Version: 0.0.1
+Summary: Ansible modules for the Consul ACL system
+Home-page: https://github.com/jsundh/ansible-modules-consul-acl
+Author: Jakob Sundh
+Author-email: jsundh@users.noreply.github.com
+License: GNU GPL v3
+Description: # ansible-modules-consul-acl
+        
+        Ansible modules for the [Consul ACL system](https://www.consul.io/docs/agent/acl-system.html).
+Platform: UNKNOWN
