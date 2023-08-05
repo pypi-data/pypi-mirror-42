@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: easyAE
+Version: 0.0.0
+Summary: easy way for non-linear dimensionality increase or reduction
+Home-page: https://github.com/Zhiwu-Zhang-Lab/genetic_spectral_AutoEncoder
+Author: Samuel Revolinski
+Author-email: samuel.revolinski@wsu.edu
+License: UNKNOWN
+Description: This repository is for creating auto-encoders easily. 
+        The main focus of the auto-encoders on this page is for
+         genetic and spectral data analysis but likely could 
+         be used for any high dimensional data
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
