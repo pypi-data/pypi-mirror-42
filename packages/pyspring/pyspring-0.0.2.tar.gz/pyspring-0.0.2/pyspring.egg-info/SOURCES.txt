@@ -1,0 +1,10 @@
+README.md
+setup.py
+pyspring/__init__.py
+pyspring/mastermind.py
+pyspring/mastery.py
+pyspring/palindrome.py
+pyspring.egg-info/PKG-INFO
+pyspring.egg-info/SOURCES.txt
+pyspring.egg-info/dependency_links.txt
+pyspring.egg-info/top_level.txt

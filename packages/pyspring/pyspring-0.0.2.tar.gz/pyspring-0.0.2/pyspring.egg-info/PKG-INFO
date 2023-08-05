@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: pyspring
+Version: 0.0.2
+Summary: Functions that function
+Home-page: https://harens.github.io
+Author: harens
+Author-email: harensdeveloper@gmail.com
+License: GPLv3
+Download-URL: https://github.com/harens/pyspring/archive/master.zip
+Project-URL: Source, https://github.com/harens/pyspring
+Project-URL: Tracker, https://github.com/harens/pyspring/issues
+Description: # pyspring
+        [![Travis build status](https://img.shields.io/travis/com/harens/pyspring.svg?style=for-the-badge)](https://travis-ci.com/harens/pyspring) 
+        [![Latest PyPi release version number](https://img.shields.io/pypi/v/pyspring.svg?logoColor=violet&style=for-the-badge)](https://pypi.org/project/pyspring/)
+        [![PyPi format](https://img.shields.io/pypi/format/pyspring.svg?style=for-the-badge)](https://pypi.org/project/pyspring/)
+        [![Current state (Alpha/Beta/Stable etc.)](https://img.shields.io/pypi/status/pyspring.svg?style=for-the-badge)](https://pypi.org/project/pyspring/)
+        [![Supported Python versions](https://img.shields.io/pypi/pyversions/pyspring.svg?style=for-the-badge)](https://pypi.org/project/pyspring/)
+        <br>
+        <br>
+        *Functions that function!*
+        
+        ## Installation
+        ```shell
+        pip install pyspring
+        ```
+        Or download the project [here](https://github.com/harens/pyspring/archive/master.zip)
+        
+        ## Tests
+        The tests folder can be found [here](https://github.com/harens/pyspring/tree/master/tests)
+        
+        You can run the tests by running `python tests/tests.py`
+        
+        ## License
+        This project is licensed under the [GNU General Public License v3.0](https://github.com/harens/pyspring/blob/master/LICENSE)
+        
+Keywords: Functions,Spring,Test
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
