@@ -1,0 +1,6 @@
+requests>=2.19.1
+logging
+argparse
+lockfile
+requests_toolbelt
+pyyaml
