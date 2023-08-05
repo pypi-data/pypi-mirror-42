@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: django-yarn
+Version: 0.0.2
+Summary: Use Facebook's Yarn package manager with Django.
+Home-page: https://github.com/mvasilkov/django-yarn
+Author: Mark Vasilkov
+Author-email: mvasilkov@gmail.com
+License: MIT
+Description: Use Facebook's Yarn package manager with Django.
+Keywords: django yarn
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3

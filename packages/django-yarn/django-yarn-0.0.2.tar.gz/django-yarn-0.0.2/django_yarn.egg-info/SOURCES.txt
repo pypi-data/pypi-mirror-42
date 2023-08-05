@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+django_yarn.egg-info/PKG-INFO
+django_yarn.egg-info/SOURCES.txt
+django_yarn.egg-info/dependency_links.txt
+django_yarn.egg-info/top_level.txt
+yarn/__init__.py
+yarn/finders.py
