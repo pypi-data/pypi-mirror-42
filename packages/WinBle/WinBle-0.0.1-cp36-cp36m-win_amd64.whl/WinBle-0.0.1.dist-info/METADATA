@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: WinBle
+Version: 0.0.1
+Summary: Native Bluetooth LE support on Windows for SpheroPy.
+Home-page: https://github.com/irvinec/SpheroPy
+Author: Casey Irvine
+Author-email: caseyi@outlook.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pybind11 (>=2.2.3)
+
+UNKNOWN
+
+
