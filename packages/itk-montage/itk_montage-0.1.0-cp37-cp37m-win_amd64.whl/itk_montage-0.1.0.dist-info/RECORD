@@ -1,0 +1,11 @@
+itk/MontagePython.py,sha256=59gUVDbnmadkIFoQ-nrl2IEUYxt315SHBbeVmbSuBis,3407
+itk/_MontagePython.pyd,sha256=tMzjK5TSQ82vqhqsP8pRkl3iDcej-veQrrByPfI3S_8,1568256
+itk/itkPhaseCorrelationImageRegistrationMethodPython.py,sha256=cWLPjbBGPSyr78AF9YxDkS8TnKGk2j5JHshJQrlONUM,69390
+itk/itkPhaseCorrelationOperatorPython.py,sha256=SRNENc4haugMhXXOj8KH8KlJwCwDnraDVfkqFXpWjiY,57927
+itk/itkPhaseCorrelationOptimizerPython.py,sha256=AeDNdB16fyQzQ0NDdyKj5dv4AMrmaP7Rt0BO8NUsQDM,49536
+itk/Configuration/MontageConfig.py,sha256=900couwi8KDO2oIGknr4rTRURRA8RHaBEa0Cpa4d9oE,3605
+itk_montage-0.1.0.dist-info/LICENSE,sha256=Pd-b5cKP4n2tFDpdx27qJSIq0d1ok0oEcGTlbtL6QMU,11560
+itk_montage-0.1.0.dist-info/METADATA,sha256=bN0SvaW8DW6oCARaTtMLZ6QxAXgoz-EHO5iqHT6TEgQ,1481
+itk_montage-0.1.0.dist-info/WHEEL,sha256=9xypf12nKImEmeTXPJW_OaUqDbHGuvtNEl_1mrZ5ndo,99
+itk_montage-0.1.0.dist-info/top_level.txt,sha256=K3Bo2NX2FvAd7ExrYg0rKrdBucaB6n6elW5QBc_g8FA,4
+itk_montage-0.1.0.dist-info/RECORD,,
