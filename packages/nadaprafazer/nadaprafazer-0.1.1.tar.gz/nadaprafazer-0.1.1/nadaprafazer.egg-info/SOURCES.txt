@@ -1,0 +1,14 @@
+README
+setup.py
+nadaprafazer/__init__.py
+nadaprafazer/cache.py
+nadaprafazer/cli.py
+nadaprafazer/core.py
+nadaprafazer/exceptions.py
+nadaprafazer/web.py
+nadaprafazer.egg-info/PKG-INFO
+nadaprafazer.egg-info/SOURCES.txt
+nadaprafazer.egg-info/dependency_links.txt
+nadaprafazer.egg-info/entry_points.txt
+nadaprafazer.egg-info/requires.txt
+nadaprafazer.egg-info/top_level.txt

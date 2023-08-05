@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: nadaprafazer
+Version: 0.1.1
+Summary: Simple crawler to list top reddit threads. Includes webhook stuff
+for telegram bots!
+Home-page: https://github.com/jucacrispim/desafios/crawlers
+Author: Juca Crispim
+Author-email: juca@poraodojuca.net
+License: GPL
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides: nadaprafazer
