@@ -1,0 +1,61 @@
+Metadata-Version: 1.2
+Name: ipromise
+Version: 0.75
+Summary: A Python base class that provides various decorators for specifying promises relating to inheritance.
+Home-page: https://github.com/NeilGirdhar/ipromise
+Author: Neil Girdhar
+Author-email: mistersheik@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/neilgirdhar/ipromise/archive/0.75.tar.gz
+Description: ====
+        ipromise
+        ====
+        .. image:: https://badge.fury.io/py/ipromise.svg
+            :target: https://badge.fury.io/py/ipromise
+        
+        A Python base class that provides various decorators for specifying promises relating to inheritance.
+        
+        It provides the decorator ``overridable``, which indicates that inheriting
+        classes that define this method
+        * must decorate their method overriddes with ``overrides``, and
+        * must call super within their method definition::
+        
+            class A:
+        
+                @overridable
+                def f(self):
+                    return 0
+        
+        
+            class B(A):
+        
+                @overrides(A)
+                def f(self):
+                    return super().f() + 1
+        
+        It provides the decorator ``implements``, which indicates that a method
+        implements an abstract method in a base class::
+        
+            class A:
+        
+                @abstractmethod
+                def f(self):
+                    raise NotImplementedError
+        
+        
+            class B(A):
+        
+                @implements(A)
+                def f(self):
+                    return 0
+        
+Keywords: testing,logging,example
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6
