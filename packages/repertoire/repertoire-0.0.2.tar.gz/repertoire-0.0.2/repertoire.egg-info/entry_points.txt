@@ -1,0 +1,3 @@
+[console_scripts]
+repertoire = repertoire.repertoire:cli
+
