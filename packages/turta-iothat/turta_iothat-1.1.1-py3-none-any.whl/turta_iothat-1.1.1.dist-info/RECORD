@@ -1,0 +1,13 @@
+turta_iothat/Turta_APDS9960.py,sha256=P3Wo-ecAtzuwJKJvsRs6VEo8vIM9hjsXgAuCY64aXqY,10698
+turta_iothat/Turta_BME280.py,sha256=jc-VkfLK4zeSK_j5j5Ky1Eq24gvU9X9rLfFmVs9FkIo,13072
+turta_iothat/Turta_BME680.py,sha256=RP6KS2sQAFLKJjbuW6FrlMwOWSz0oABqVlIOT9Hkomc,22247
+turta_iothat/Turta_IOPort.py,sha256=BQR3cOUvCQU7ZMP4TSy-oL5ecto-qZY8nhGZaxPvq3o,3540
+turta_iothat/Turta_MMA8491Q.py,sha256=__xcm4OSg5aAzdPtZVWwJXew4qWIqi_dvpqm-muU_Jk,4472
+turta_iothat/Turta_RelayController.py,sha256=YNbCtQ_l5lT-l4j7zjZ1SKKbz5ZzSEXRWx6sZLJhnzI,1618
+turta_iothat/Turta_VEML6075.py,sha256=r8XCwt8HS5rqJRuaP0OvF2bO4P7rGte6nvylT6FkI4c,7891
+turta_iothat/__init__.py,sha256=TTY4sn6QBE5H3u-tZecH2QlZfEhQLXcHtBK2QN1_X_k,22
+turta_iothat-1.1.1.dist-info/LICENCE,sha256=5Yt_OMJGvvOYijQVWkbYR8uGIsMQCz0arNA88S9Vjnc,1061
+turta_iothat-1.1.1.dist-info/METADATA,sha256=kK378hBTokHRUzwG0_0bbGwyUmKYTcVm7Q5M8wQ0aIE,1092
+turta_iothat-1.1.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+turta_iothat-1.1.1.dist-info/top_level.txt,sha256=9eINJZKfVdVJMfyPFB2wAev72xeMmdI2X3QQezlMgYU,13
+turta_iothat-1.1.1.dist-info/RECORD,,
