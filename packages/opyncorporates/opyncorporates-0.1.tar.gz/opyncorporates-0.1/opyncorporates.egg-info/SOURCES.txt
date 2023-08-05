@@ -1,0 +1,11 @@
+README.md
+setup.py
+opyncorporates/__init__.py
+opyncorporates/api.py
+opyncorporates/engines.py
+opyncorporates.egg-info/PKG-INFO
+opyncorporates.egg-info/SOURCES.txt
+opyncorporates.egg-info/dependency_links.txt
+opyncorporates.egg-info/not-zip-safe
+opyncorporates.egg-info/requires.txt
+opyncorporates.egg-info/top_level.txt
