@@ -1,0 +1,12 @@
+soneti/__init__.py,sha256=Id3rHqkANLyp13euuFzqx79Y9IaBbZJbY3nvMd4UhJ8,9379
+soneti/tasks.py,sha256=UKTEJVZsxMLrZQBM4rgTV2eJ8EFscuDMYI8TXZm4OQY,5590
+soneti/__pycache__/__init__.cpython-37.pyc,sha256=_hpj1X2ODdYxMNhGyq7d2_HIuwO11w-ldH3dPC2J7Sg,6337
+soneti/cron/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+soneti/cron/__main__.py,sha256=FsHS17FkoRJkbZ_mbKvZijyc41550C5MSsrh5YriXBw,991
+soneti/cron/__pycache__/__init__.cpython-37.pyc,sha256=v_1EkEfvrJ-vZtAhoE8NSB82TPHPcCGJTi50FNH2vQ8,150
+soneti/cron/__pycache__/__main__.cpython-37.pyc,sha256=N3QD7SqXk1TUtACYDSOVNQ9NxPW9yNzugQ0kVPYvYl8,771
+soneti-0.1.4.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+soneti-0.1.4.dist-info/METADATA,sha256=G32HTXD4wT6SQCrE4VuBNgcf2pSBBAI32bwI2opgKVE,907
+soneti-0.1.4.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+soneti-0.1.4.dist-info/top_level.txt,sha256=cOVAhbsK7Apu0Q-imw2_BqdrFSvk92zG9448b8sdjzo,7
+soneti-0.1.4.dist-info/RECORD,,
