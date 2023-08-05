@@ -1,0 +1,5 @@
+pytest>=3.6
+pytest-cov
+coveralls
+codecov
+codeclimate-test-reporter
