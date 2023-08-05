@@ -1,0 +1,4 @@
+aiohttp
+lxml
+ebooklib
+Jinja2>=2.9

@@ -1,0 +1,3 @@
+[console_scripts]
+tieba-to-epub = tieba_to_epub.main:main
+
