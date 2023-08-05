@@ -1,0 +1,13 @@
+numpy
+scipy
+autograd
+toml
+appdirs
+semantic_version
+
+[pytorch]
+torch
+torchvision
+
+[tf]
+tensorflow>=1.12
