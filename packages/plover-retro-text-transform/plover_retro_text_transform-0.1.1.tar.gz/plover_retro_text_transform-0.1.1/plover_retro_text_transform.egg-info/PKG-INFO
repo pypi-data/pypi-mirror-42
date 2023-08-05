@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: plover-retro-text-transform
+Version: 0.1.1
+Summary: Perform various text transforms, such as titlecase, retroactively.
+Home-page: https://github.com/nimble0/plover_retro_text_transform
+Author: Erik Crevel
+Author-email: erik.crevel@ntlworld.com
+License: GNU General Public License v3 or later (GPLv3+)
+Description: UNKNOWN
+Keywords: plover plover_plugin
+Platform: UNKNOWN

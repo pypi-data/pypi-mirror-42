@@ -1,0 +1,8 @@
+[plover.meta]
+retro_capitalise = plover_retro_text_transform:retro_capitalise
+retro_capitalize = plover_retro_text_transform:retro_capitalise
+retro_lower = plover_retro_text_transform:retro_lower
+retro_replace_space = plover_retro_text_transform:retro_replace_space
+retro_title = plover_retro_text_transform:retro_title
+retro_upper = plover_retro_text_transform:retro_upper
+
