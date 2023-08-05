@@ -1,0 +1,234 @@
+#!python
+
+'''Usage:
+        ngst --config <configfile> [-p] --target <ingest_target> [--datafile <datafile>] [--channel=<channel>] [--limit=<max_records>]
+        ngst --config <configfile> --list (targets | datastores | channels | globals)
+
+   Options:            
+        -i --interactive   Start up in interactive mode
+        -p --preview       Display records to be ingested, but do not ingest
+'''
+
+#
+# ngst: command line utility for pushing extracted records into a Mercury data pipeline
+#
+
+
+import os, sys
+from contextlib import ContextDecorator
+import csv
+import json
+import logging
+from collections import namedtuple
+
+import docopt
+from docopt import docopt as docopt_func
+from docopt import DocoptExit
+from snap import snap, common
+from mercury import datamap as dmap
+from mercury.dataload import DataStore, DataStoreRegistry, RecordBuffer, checkpoint
+import yaml
+
+
+def initialize_datastores(yaml_config, service_object_registry):
+    datastores = {}
+    ds_module_name = yaml_config['globals']['datastore_module']
+
+    if not len(yaml_config['datastores']):
+        return datastores        
+
+    for datastore_name in yaml_config['datastores']:
+        datastore_class_name = yaml_config['datastores'][datastore_name]['class']
+        klass = common.load_class(datastore_class_name, ds_module_name)
+    
+        # Channels allow us to handle multiple record types within a single DataStore class.
+        # In the YAML config, we channelize a DataStore by adding  
+        #
+        # channel_selector_function: <function_name>
+        # channels:
+        #   - channel1
+        #   - channel2
+        #   - ...
+        #   - channelN
+        #
+        # to the configuration for that DataStore (on the same level as the "class" and "init_params" keys).
+        # The user must implement <function_name> as a standalone function inside the datastore_module
+        # designated in the global settings.
+        #
+        # The channel_selector function takes a dictionary (representing the record being processed) as input,
+        # and a string (representing the detected channel) as output. A DataStore that is operating in 
+        # channel mode will pass each inbound record to the channel selector, then pass that record to
+        # a method named write_<X> (where X is the channel name).   
+        # 
+        # If the channel selector function returns a channel name not listed in the initfile, ngst will 
+        # raise an exception. ngst will alsso raise an exception if the DataStore class does not contain
+        # all the methods implied by its registered channels.
+        #
+        init_params = {}
+
+        param_config_section = yaml_config['datastores'][datastore_name]['init_params']
+        if param_config_section:        
+            for param in param_config_section:
+                init_params[param['name']] = param['value']
+        
+        channel_mode = False
+        channel_list = []
+        channel_selector_function_name = yaml_config['datastores'][datastore_name].get('channel_selector_function')
+
+        if channel_selector_function_name:
+            channel_mode = True
+
+            if not yaml_config['datastores'][datastore_name].get('channels'):
+                raise Exception('Datastores in channel mode must specify a channel list.')
+
+            for channel in yaml_config['datastores'][datastore_name]['channels']:
+                channel_list.append(channel)
+        
+            init_params['channel_select_function'] = channel_selector_function_name
+            
+        datastore_instance = klass(service_object_registry, *channel_list, **init_params)        
+        datastores[datastore_name] = datastore_instance
+
+    return datastores
+
+
+IngestTarget = namedtuple('IngestTarget', 'datastore_name checkpoint_interval')
+
+
+def load_ingest_targets(yaml_config, datastore_registry):
+    targets = {}
+    for target_name in yaml_config['ingest_targets']:
+        datastore = yaml_config['ingest_targets'][target_name]['datastore']
+        interval = yaml_config['ingest_targets'][target_name]['checkpoint_interval']
+
+        # verify; this will raise an exception if an invalid datastore is specified
+        if not datastore_registry.has_datastore(datastore):
+            raise Exception('The ingest target "%s" specifies a nonexistent datastore: "%s". Please check your config file.' 
+                            % (target_name, datastore))
+        targets[target_name] = IngestTarget(datastore_name=datastore, checkpoint_interval=interval)
+    return targets
+
+
+def lookup_ingest_target_by_name(ingest_target_name, available_ingest_targets):
+    if not available_ingest_targets.get(ingest_target_name):
+        raise Exception('''The ingest target "%s" specified on the command line does not refer to a valid target. 
+                Please check your command syntax or your config file.'''  
+                        % ingest_target_name)
+
+    return available_ingest_targets[ingest_target_name]
+
+
+def initialize_record_buffer(ingest_target, datastore_registry):
+    target_datastore = datastore_registry.lookup(ingest_target.datastore_name)
+    buffer = RecordBuffer(target_datastore)
+    return buffer
+
+
+def main(args):    
+    config_filename = args['<configfile>']
+    yaml_config = common.read_config_file(config_filename)
+    service_object_registry = common.ServiceObjectRegistry(snap.initialize_services(yaml_config))
+    datastore_registry = DataStoreRegistry(initialize_datastores(yaml_config, service_object_registry))
+
+    preview_mode = False
+    if args['--preview']:
+        preview_mode = True
+    
+    limit = -1
+    if args.get('--limit') is not None:
+        limit = int(args['--limit'])
+    list_mode = False
+    stream_input_mode = False
+    file_input_mode = False
+
+    available_ingest_targets = load_ingest_targets(yaml_config, datastore_registry)
+    write_params = {}
+    channel_id = None
+    if args.get('--channel'):
+        channel_id = args['--channel']
+        print('### explicit write channel %s designated. Bypassing internal channel detect logic.' 
+             % channel_id)
+        write_params['channel'] = channel_id
+
+    if args['--target'] == True and args['<datafile>'] is None:
+        stream_input_mode = True
+        ingest_target_name = args['<ingest_target>']
+        ingest_target = lookup_ingest_target_by_name(ingest_target_name, available_ingest_targets)
+
+        target_datastore = datastore_registry.lookup(ingest_target.datastore_name)
+        if target_datastore.channel_mode and channel_id:            
+            if not target_datastore.has_channel(channel_id):
+                raise Exception('No channel "%s" registered in DataStore subclass %s.' 
+                                % (channel_id, target_datastore.__class__.__name__))
+
+        buffer = initialize_record_buffer(ingest_target, datastore_registry)
+
+        record_count = 0
+        with checkpoint(buffer, interval=ingest_target.checkpoint_interval, channel=channel_id):
+            while True:
+                if record_count == limit:
+                    break
+                raw_line = sys.stdin.readline()
+                line = raw_line.lstrip().rstrip()
+                if not len(line):
+                    break
+                if not preview_mode:
+                    buffer.write(line, **write_params)
+                else:
+                    print(line)
+                record_count += 1
+
+    elif args['<datafile>']:
+        file_input_mode = True
+        input_file = args['<datafile>']        
+        ingest_target_name = args['<ingest_target>']
+        ingest_target = lookup_ingest_target_by_name(ingest_target_name, available_ingest_targets)
+
+        target_datastore = datastore_registry.lookup(ingest_target.datastore_name)
+        if target_datastore.channel_mode and channel_id:            
+            if not target_datastore.has_channel(channel_id):
+                raise Exception('No channel "%s" in DataStore subclass %s.' 
+                                % (channel_id, target_datastore.__class__.__name__))
+
+        buffer = initialize_record_buffer(ingest_target, datastore_registry)
+
+        record_count = 0
+        with checkpoint(buffer, interval=ingest_target.checkpoint_interval, channel=channel_id):
+            with open(input_file) as f:
+                for line in f:
+                    if record_count == limit:
+                        break
+                    if not preview_mode:
+                        buffer.write(line, **write_params)
+                    else:
+                        print(line)
+                    record_count += 1
+
+    elif args['--list'] == True:
+        if args['targets']:
+            for target in yaml_config['ingest_targets']:
+                print('::: Ingest target "%s": ' % target)
+                print(common.jsonpretty(yaml_config['ingest_targets'][target]))
+                        
+        if args['datastores']:
+            for dstore in yaml_config['datastores']:
+                print('::: Datastore alias "%s": ' % dstore)
+                print(common.jsonpretty(yaml_config['datastores'][dstore]))
+
+        if args['channels']:
+            for dstore in yaml_config['datastores']:
+                if yaml_config['datastores'][dstore].get('channels'):
+                    print('::: Channels for datastore alias "%s": ' % dstore)
+                    print(common.jsonpretty(yaml_config['datastores'][dstore]['channels']))
+
+        if args['globals']:
+            print('::: Global settings:')
+            print(common.jsonpretty(yaml_config['globals']))
+
+
+if __name__ == '__main__':
+    args = docopt.docopt(__doc__)
+    main(args)
+
+
+
