@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+aliceum/__init__.py
+aliceum.egg-info/PKG-INFO
+aliceum.egg-info/SOURCES.txt
+aliceum.egg-info/dependency_links.txt
+aliceum.egg-info/requires.txt
+aliceum.egg-info/top_level.txt
