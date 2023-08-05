@@ -1,0 +1,6 @@
+boto3
+faas-supervisor
+tabulate
+configparser
+requests
+pyyaml
