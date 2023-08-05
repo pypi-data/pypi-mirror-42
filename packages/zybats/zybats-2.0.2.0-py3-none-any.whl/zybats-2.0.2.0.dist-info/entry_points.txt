@@ -1,0 +1,6 @@
+[console_scripts]
+ate = zybats.cli:main_zats
+locusts = zybats.cli:main_locust
+zats = zybats.cli:main_zats
+zybats = zybats.cli:main_zats
+

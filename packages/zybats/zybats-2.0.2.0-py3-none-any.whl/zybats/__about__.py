@@ -1,0 +1,7 @@
+__title__ = 'zybats'
+__description__ = 'Automation Technical Service'
+__url__ = 'https://github.com/KinmieWang/ZYBATS'
+__version__ = '2.0.2.0'
+__author__ = 'zybqa'
+__author_email__ = 'kinmiewang@163.com'
+__license__ = 'Apache-2.0'
