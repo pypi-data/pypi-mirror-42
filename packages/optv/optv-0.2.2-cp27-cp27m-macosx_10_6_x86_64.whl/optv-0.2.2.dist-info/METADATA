@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: optv
+Version: 0.2.2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy (==1.10.4)
+Requires-Dist: pyyaml
+
+UNKNOWN
+
+
