@@ -1,0 +1,3 @@
+[console_scripts]
+tesstractor = tesstractor.cli:main
+
