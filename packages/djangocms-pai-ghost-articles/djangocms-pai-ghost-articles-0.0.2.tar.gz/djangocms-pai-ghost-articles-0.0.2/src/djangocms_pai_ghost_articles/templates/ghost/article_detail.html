@@ -1,0 +1,14 @@
+{% extends "base_custom_meta.html" %}
+{% load cms_tags meta %}
+
+{% block title %}{{meta.title}}{% endblock title %}
+
+{% block extracss %}{% endblock extracss %}
+
+{% block extra_body_classes %}{% endblock extra_body_classes %}
+
+{% block content %}
+    {{article.html|safe}}
+{% endblock content %}
+
+{% block extrajs %}{% endblock extrajs %}
