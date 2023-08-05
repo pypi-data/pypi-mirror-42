@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: sstCloudClient
+Version: 0.0.1
+Summary: Python client for connecting to the SST Cloud webservice
+Home-page: https://github.com/zarya/sstCloudClient
+Author: Rudy H (Zarya)
+Author-email: sstcloudclient@gigafreak.net
+License: MIT
+Keywords: sst-cloud,sstcloud
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Requires-Dist: requests
+
+UNKNOWN
+
+
