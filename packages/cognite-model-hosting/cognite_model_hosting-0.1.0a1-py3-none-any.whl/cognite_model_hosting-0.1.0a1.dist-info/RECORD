@@ -1,0 +1,16 @@
+cognite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cognite/model_hosting/__init__.py,sha256=lmvUfjeqbjbsnD2PLlUjZbqEGZrq6yUD6t2LZsM61ak,24
+cognite/model_hosting/_utils.py,sha256=2MfBVY7wrEFjnEdt5iUJk1YjM59Y0-lfzEfzy03yKOA,4936
+cognite/model_hosting/data_spec.py,sha256=eQWR-8rGK7ZrN4FWb3-wue3WQpet3WVlCh-9KSEnXSI,8446
+cognite/model_hosting/data_fetcher/__init__.py,sha256=rMzYEEYGE-EUOKvgaDAa4XVbmARWo6a8GDSUL1wXIkU,72
+cognite/model_hosting/data_fetcher/data_fetcher.py,sha256=zQGb-6OzQf2wwZO8X98nlGkp2YLgQs0I5zMd6QzEhBs,8630
+cognite/model_hosting/data_fetcher/exceptions.py,sha256=sW2NoXxd9X7rxhO62Np9MmXTVSPlRB7GODDRncGsUn8,1286
+cognite/model_hosting/data_fetcher/_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cognite/model_hosting/data_fetcher/_client/api_client.py,sha256=zJy2F_VnC2vqXRHnDb6tl7f238PhDZEUmP3tMQZN6is,4961
+cognite/model_hosting/data_fetcher/_client/cdp_client.py,sha256=yOujRUfoYVKB5Q_YBwmRy66csXM9uDmqfY1l4RZU2dA,3894
+cognite/model_hosting/data_fetcher/_client/utils.py,sha256=-D9a8pjKYuu2-40iz-ZKQQl76q6Wc-20_9cIW8LIPpE,1337
+cognite_model_hosting-0.1.0a1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+cognite_model_hosting-0.1.0a1.dist-info/METADATA,sha256=EI0DZ_5HVYh4l5OxxQbIqmDpp5aNtiaDzij1qdFhV58,355
+cognite_model_hosting-0.1.0a1.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+cognite_model_hosting-0.1.0a1.dist-info/top_level.txt,sha256=64aV5H6IpuuyXlucP73BqEoQyR9A6JP1qTY380b6MpQ,8
+cognite_model_hosting-0.1.0a1.dist-info/RECORD,,
