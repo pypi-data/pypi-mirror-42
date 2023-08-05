@@ -1,0 +1,13 @@
+crosscompute_geotable/__init__.py,sha256=sMsMkmjmA8aJtODwPLA7WzXkvxK61YrR2smlcz5X_mQ,1119
+crosscompute_geotable/fallbacks.py,sha256=AAGqC8zFiZGZKcTetLjND5AJFXuVgSy5NvgWHDYlv3o,7516
+crosscompute_geotable/routines.py,sha256=gJWBiLHN-EG8nF3VK61rWB2pU7BXbIiKFN2WZuXwksQ,12174
+crosscompute_geotable/type.jinja2,sha256=yrcFBrjdddMsiaF1t8Tqn8AipXC5KAAzs25werqk8NQ,2770
+crosscompute_geotable/assets/part.min.css,sha256=E2VuRD0_vACnAMyYuSNxI5CQtB8cbWdWKJQooVQoeZI,73
+crosscompute_geotable/assets/part.min.js,sha256=81nXUB4zapsATmNsb4_1NEJHibiFSG7KQ19KHwdITU8,1762
+crosscompute_geotable-0.7.7.4.dist-info/DESCRIPTION.rst,sha256=9Fz2kpx95RoWJvUZgZG3zLQx74qKczEdXN9xmbpC7uw,549
+crosscompute_geotable-0.7.7.4.dist-info/METADATA,sha256=TsyHjVCSsfVlAM3AQZfqz_QGgUH3PHCIL5sTlCJ_-Qs,1320
+crosscompute_geotable-0.7.7.4.dist-info/RECORD,,
+crosscompute_geotable-0.7.7.4.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+crosscompute_geotable-0.7.7.4.dist-info/entry_points.txt,sha256=tijPlErZDWgM4HPUzadiRwZ3-y5j7-3QIzxw5eHolaY,68
+crosscompute_geotable-0.7.7.4.dist-info/metadata.json,sha256=pZM_zWeH1rAm_thTMSXQkaQ9LpkqZWMEV4OlL4MAZ88,995
+crosscompute_geotable-0.7.7.4.dist-info/top_level.txt,sha256=zsLMcIofITt1i-41lSeV3iR7JMlbQ08zapargcx4WFw,22
