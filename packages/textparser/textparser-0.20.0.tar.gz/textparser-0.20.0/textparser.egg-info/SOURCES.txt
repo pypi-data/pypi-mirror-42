@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+Makefile
+README.rst
+setup.py
+textparser.py
+tests/__init__.py
+tests/test_textparser.py
+textparser.egg-info/PKG-INFO
+textparser.egg-info/SOURCES.txt
+textparser.egg-info/dependency_links.txt
+textparser.egg-info/top_level.txt
