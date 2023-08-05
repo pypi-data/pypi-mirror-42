@@ -1,0 +1,9 @@
+cazy_parser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cazy_parser/create_cazy_db.py,sha256=LJUXz5EXoZo-nhXnE7tDaHGgUJ-2OSd7A_krR8Zf0ak,10942
+cazy_parser/extract_cazy_ids.py,sha256=-u2OPx9bcxG2IQDOBBgU1JBEeUoe9QaeMEjnIedmhIg,4902
+cazy_parser-1.4.2.dist-info/LICENSE,sha256=WJ7YI-moTFb-uVrFjnzzhGJrnL9P2iqQe8NuED3hutI,35141
+cazy_parser-1.4.2.dist-info/METADATA,sha256=8gnVmw6zM9QJFJl4kc6lY_HMojaGlgv9r2pjWgvCRHY,1595
+cazy_parser-1.4.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+cazy_parser-1.4.2.dist-info/entry_points.txt,sha256=73a4_Klm1thhDB-pff6hMarKbwDBU0C_fMZTu6K1gb8,121
+cazy_parser-1.4.2.dist-info/top_level.txt,sha256=IBGygVHXsvvKklJPnCL-U9esfh7j9qUFcL1BXW11o9E,12
+cazy_parser-1.4.2.dist-info/RECORD,,
