@@ -1,0 +1,4 @@
+ampere/models/P2D/P2D_fd.cp36-win_amd64.pyd
+ampere/models/SPM/SPM_fd.cp36-win_amd64.pyd
+ampere/models/SPM/SPM_fd_sei.cp36-win_amd64.pyd
+ampere/models/SPM/SPM_par.cp36-win_amd64.pyd
