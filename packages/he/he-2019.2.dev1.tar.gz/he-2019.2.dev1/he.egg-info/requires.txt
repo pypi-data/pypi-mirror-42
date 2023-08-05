@@ -1,0 +1,13 @@
+dpcontracts
+requests
+
+[dev]
+check-manifest
+
+[test]
+pytest
+pytest-cov
+pytest-sugar
+pytest-icdiff
+pytest-xdist
+hypothesis

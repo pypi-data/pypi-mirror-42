@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+data/data_file
+he/__init__.py
+he/package_data.dat
+he.egg-info/PKG-INFO
+he.egg-info/SOURCES.txt
+he.egg-info/dependency_links.txt
+he.egg-info/entry_points.txt
+he.egg-info/requires.txt
+he.egg-info/top_level.txt

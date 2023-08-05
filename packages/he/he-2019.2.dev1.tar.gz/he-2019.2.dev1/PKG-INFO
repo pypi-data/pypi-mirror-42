@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: he
+Version: 2019.2.dev1
+Summary: A library of Python helpers
+Home-page: https://github.com/Laurentiu-Andronache/pe
+Author: Laurențiu Andronache
+Author-email: laurentiu.andronache@trailung.ro
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/Laurentiu-Andronache/pe/issues
+Project-URL: Say Thanks!, https://saythanks.io/to/Laurentiu-Andronache
+Project-URL: Source, https://github.com/Laurentiu-Andronache/pe
+Description: # he - A library of Python helpers
+        
+        It exists to aid Python developers in not reinventing the wheel.
+        
+        To contribute, submit a pull request [on Github].
+        
+        ---
+        
+        License: `MIT`
+        
+        Requires: `Python 3.6 or higher`
+        
+        [on GitHub]: https://github.com/Laurentiu-Andronache/pe
+Keywords: helpers library common useful functions decorators contexts classes
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: dev
