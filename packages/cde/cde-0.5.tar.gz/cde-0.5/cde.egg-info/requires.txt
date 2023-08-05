@@ -1,0 +1,13 @@
+Keras
+numpy
+pandas
+tensorflow>=1.4,<=1.7.0
+matplotlib
+edward>=1.3.4,<=1.3.5
+seaborn
+scipy
+pytest
+scikit_learn
+statsmodels
+ml_logger<=99.99
+progressbar2
