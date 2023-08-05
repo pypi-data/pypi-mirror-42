@@ -1,0 +1,134 @@
+Metadata-Version: 2.1
+Name: ndex2
+Version: 3.0.0a1
+Summary: Nice CX Python includes a client and a data model.
+Home-page: https://github.com/ndexbio/ndex2-client
+Author: The NDEx Project
+Author-email: contact@ndexbio.org
+License: BSD
+Keywords: network analysis biology
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: six
+Requires-Dist: ijson
+Requires-Dist: requests
+Requires-Dist: requests-toolbelt
+Requires-Dist: networkx
+Requires-Dist: urllib3 (>=1.16)
+Requires-Dist: pandas
+Requires-Dist: enum34
+Requires-Dist: pysolr
+Requires-Dist: numpy
+Requires-Dist: enum ; python_version == "2.6" or python_version == "2.7"
+
+**NDEx2 Client v2.0**
+=====================
+
+.. image:: https://img.shields.io/travis/ndexbio/ndex2-client.svg
+        :target: https://travis-ci.org/ndexbio/ndex2-client.svg?branch=master
+
+.. image:: https://img.shields.io/pypi/v/ndex2.svg
+        :target: https://pypi.python.org/pypi/ndex2
+
+.. image:: https://coveralls.io/repos/github/ndexbio/ndex2-client/badge.svg?branch=master
+  :target: https://coveralls.io/github/ndexbio/ndex2-client?branch=master
+
+
+**Overview**
+------------
+
+The NDEx2 Client v2.0 Python module provides methods to access NDEx via
+the NDEx Server API. It also provides methods for common operations on
+networks. It includes the NiceCX network object class for convenient
+NDEx access and as a data model for applications.
+
+**Jupyter Notebook Tutorials**
+------------------------------
+
+-  Basic Use of the NDEx2 Client:  `NDEx2 Client v2.0
+   Tutorial <https://github.com/ndexbio/ndex-jupyter-notebooks/blob/master/notebooks/NDEx2%20Client%20v2.0%20Tutorial.ipynb>`__
+-  Working with the NiceCX Network Class: `NiceCX v2.0
+   Tutorial <https://github.com/ndexbio/ndex-jupyter-notebooks/blob/master/notebooks/NiceCX%20v2.0%20Tutorial.ipynb>`__
+
+To use these tutorials, clone the `ndex-jupyter-notebooks
+repository <https://github.com/ndexbio/ndex-jupyter-notebooks>`__ to
+your local machine and start Jupyter Notebooks in the project directory.
+
+For information on installing and using Jupyter Notebooks, go to
+`jupyter.org <http://jupyter.org/>`__
+
+**Requirements**
+----------------
+
+The NDEx2 Client 2.0 module requires Python 3.6+ and the latest version
+of the PIP Python package manager for installation. `Click
+here <https://pypi.python.org/pypi/pip>`__ to download the PIP Python
+package.
+
+**Installing the NDEx2 Client Module**
+--------------------------------------
+
+The NDEx2 Client 2.0 module can be installed from the Python Package
+Index (PyPI) repository using PIP:
+
+    pip install ndex2
+
+If you already have an older version of the ndex2 module installed, you
+can use this command instead:
+
+    pip install --upgrade ndex2
+
+
+
+=======
+History
+=======
+
+3.0.0a1 (2019-02-11)
+--------------------
+
+* In NiceCXNetwork class ability to add to User-Agent for calls to NDEx service
+  `Issue #36 <https://github.com/ndexbio/ndex2-client/issues/36>`_
+
+* Methods in `ndex2/client.py` should raise an NDExError for invalid credentials
+  `Issue #39 <https://github.com/ndexbio/ndex2-client/issues/39>`_
+
+* Add timeout flag to all web request calls
+  `Issue #33 <https://github.com/ndexbio/ndex2-client/issues/33>`_
+
+* Update `User-Agent` to reflect actual version of software
+  `Issue #35 <https://github.com/ndexbio/ndex2-client/issues/35>`_
+
+* `NiceCXNetwork.set_node_attribute()` incorrectly handles duplicate attributes
+  `Issue #41 <https://github.com/ndexbio/ndex2-client/issues/41>`_
+
+* `NiceCXNetwork.set_node_attribute()` fails if node object passed to it
+  `Issue #42 <https://github.com/ndexbio/ndex2-client/issues/42>`_
+
+* Passing None to user_agent parameterin `Ndex2()` constructor raises TypeError
+  `Issue #34 <https://github.com/ndexbio/ndex2-client/issues/34>`_
+
+* `Ndex2()` constructor does not properly handle invalid json from server
+  `Issue #28 <https://github.com/ndexbio/ndex2-client/issues/28>`_
+
+* Eliminate circular import between ndex2 and ndex2cx/nice_cx_builder.py
+  `Issue #31 <https://github.com/ndexbio/ndex2-client/issues/31>`_
+
+* Replace print statements with logging calls in `ndex2/client.py`
+  `Issue #32 <https://github.com/ndexbio/ndex2-client/issues/32>`_
+
+
+2.0.1 (2019-01-03)
+------------------
+
+* Fixed bug where logs directory is created within
+  the package installation directory. 
+  `Issue #26 <https://github.com/ndexbio/ndex2-client/issues/26>`_
+
+
