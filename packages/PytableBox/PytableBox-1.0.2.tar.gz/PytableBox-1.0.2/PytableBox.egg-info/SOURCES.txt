@@ -1,0 +1,7 @@
+setup.py
+PytableBox/PytableBox.py
+PytableBox/__init__.py
+PytableBox.egg-info/PKG-INFO
+PytableBox.egg-info/SOURCES.txt
+PytableBox.egg-info/dependency_links.txt
+PytableBox.egg-info/top_level.txt
