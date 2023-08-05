@@ -1,0 +1,16 @@
+#!/bin/bash
+# Delete all jobs whose entry in qstatx matches a given regular expression
+
+if [[ -z $1 ]] ; then
+    echo "Usage: $(basename $0) [-v] <regexp>"
+    echo
+    echo "Delete all jobs whose entry in qstatx matches the <regexp> regular expression"    
+    echo "<regexp> should be an extended regular expression as understood by grep (see man grep)"
+    echo "The optional -v flag reverses the match, as in grep."
+    echo "Note: it is a shortcut to" 
+    echo
+    echo '$ qdel $(qgrep <regexp>)'
+    exit 1
+fi
+[ $1 == '-v' ] && inverse='-v'
+qdel $(qstatx | grep $inverse -E "$1" | awk '{print $1}')

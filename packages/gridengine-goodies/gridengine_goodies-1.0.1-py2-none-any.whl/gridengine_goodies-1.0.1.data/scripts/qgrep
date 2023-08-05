@@ -1,0 +1,11 @@
+#!/bin/bash
+# Print all job ids whose entry in qstatx matches a given regular expression
+
+if [[ -z $1 ]] ; then
+    echo "Usage: $(basename $0) <regexp>"
+    echo
+    echo "Print all job ids whose entry in qstatx matches a given regular expression"
+    echo "<regexp> should be an extended regular expression as understood by grep (see man grep)"
+    exit 1
+fi
+qstatx | grep -E "$1" | awk '{print $1}'

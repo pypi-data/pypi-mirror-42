@@ -1,0 +1,109 @@
+Metadata-Version: 2.1
+Name: gridengine-goodies
+Version: 1.0.1
+Summary: Enhancements to the gridengine scheduler
+Home-page: https://gitlab.info-ufr.univ-montp2.fr/daniele.coslovich/gridengine-goodies
+Author: Daniele Coslovich
+Author-email: daniele.coslovich@umontpellier.fr
+License: GPLv3
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: System
+
+gridengine-goodies: Enhancements to gridengine 
+==============================================
+
+The `gridengine-goodies` package provides a few command line scripts that enhance the usability of the
+[gridengine](https://en.wikipedia.org/wiki/Oracle_Grid_Engine) scheduling system.
+
+### qsubx: an improved `qsub`
+qsubx allows to submit multiple jobs at a time while keeping at most N jobs in the queue.
+This way you can submit tons of jobs and still be polite to your fellow users.
+```bash
+qsubx -n 100 job_*.sh
+```
+Note that N=100 is the default. `qsubx` will not return until all the jobs have been submitted.
+
+### qdelx: delete jobs via regular expressions
+To delete jobs by name
+```bash
+qdelx sim_T*_rho*
+```
+To delete all jobs waiting in the queue
+```bash
+qdelx qw
+```
+### qstatx: an improved `qstat`
+It provides better layout and full job names (adapted from a code of Jeet Sukumaran).
+The main benefit of qstatx is to provide full (or almost full) job names and better layout.
+
+```
+------------------------------------------------------------------------------------------------
+id      name      owner  submitted            state  queue  node                    slots
+------------------------------------------------------------------------------------------------
+124905  sleep_10  coslo  2018-10-09 15:54:42  r      all.q  varda.coulomb.univ-mon  1    
+124906  sleep_10  coslo  2018-10-09 15:54:42  r      all.q  varda.coulomb.univ-mon  1    
+124907  sleep_10  coslo  2018-10-09 15:54:42  r      all.q  varda.coulomb.univ-mon  1    
+124908  sleep_10  coslo  2018-10-09 15:54:42  r      all.q  varda.coulomb.univ-mon  1    
+124909  sleep_10  coslo  2018-10-09 15:54:44  qw                                    1    
+124910  sleep_10  coslo  2018-10-09 15:54:44  qw                                    1    
+124911  sleep_10  coslo  2018-10-09 15:54:44  qw                                    1    
+124912  sleep_10  coslo  2018-10-09 15:54:44  qw                                    1    
+------------------------------------------------------------------------------------------------
+Running  :   4 (slots:    4)
+Hold     :   0 (slots:    0)
+Pending  :   4 (slots:    4)
+Deletion :   0 (slots:    0)
+Error    :   0 (slots:    0)
+------------------------------------------------------------------------------------------------
+```
+
+### qexec: execute a command on the cluster
+Execute a command on the computing nodes directly. The job file is created on the fly and stored in a temporary directory under the user `.local/share` folder. The behavior is similar to `qsub -b y <command>` but `qexec` is more flexible and provide persistent access to job files and logs if needed.
+
+This job will sleep for 10 seconds
+```bash
+qexec -c sleep 10
+```
+Submit a script or a program named `code.x` and store log files in the `output_dir` folder
+```bash
+qexec -o output_dir -c code.x --verbose -param 1.0
+```
+
+### qbarrier: halt execution until some jobs are over
+It provides a simple means to create command-line-level dependencies between jobs.
+For finer control on job dependencies, see 'job arrays' in the gridengine documentation.
+
+Installation
+------------
+The above goodies are plain python and bash scripts. You can just copy them and put them somewhere in your path.
+However, to keep up with updates it is better to clone the code repository and install the scripts accordingly
+```
+git clone https://gitlab.info-ufr.univ-montp2.fr/daniele.coslovich/gridengine-goodies.git
+cd gridengine-goodies
+make user
+```
+
+The above procedure will put the scripts in `~/.local/bin` so make sure it is in your `PATH`
+```bash
+export PATH=$HOME/.local/bin:$PATH
+```
+Add the above line to your `.bashrc` to make it persistent across sessions.
+
+To update to the latest version
+```bash
+cd gridengine-goodies
+git pull
+make user
+```
+
+Authors
+-------
+Daniele Coslovich: http://www.coulomb.univ-montp2.fr/perso/daniele.coslovich/
+
+

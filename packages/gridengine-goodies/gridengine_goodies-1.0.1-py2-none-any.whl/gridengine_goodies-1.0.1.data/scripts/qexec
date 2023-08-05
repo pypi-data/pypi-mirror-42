@@ -1,0 +1,231 @@
+#!python
+
+"""
+Submit a command to a gridengine scheduler directly.
+
+The job file is created automatically by qexec and stored in a
+temporary directory under ~/.local/share/qexec.
+
+qexec is similar to
+
+$ qsub -b y <command>
+
+but it is more flexible.
+
+Example:
+-------
+$ qexec -c sleep 10
+"""
+
+from __future__ import print_function
+import sys
+import os
+import tempfile
+import glob
+import shutil
+import argparse
+import subprocess
+
+
+TMP_MAX_DIRS = 100
+TMP_PATH = os.path.expanduser('~/.local/share/qexec/tmp')
+
+
+def _clean():
+    """
+    Safely clean up temporary directory.
+
+    We remove all job files whose jobs are over or could not be submitted.
+    """
+    files = glob.glob(TMP_PATH + '/*/job.id')
+    if len(files) < TMP_MAX_DIRS:
+        return
+
+    # We compare the job id to the job ids in the queue
+    queue = subprocess.check_output(r'qstat | awk "{print \$1}"', shell=True)
+    for fout in files:
+        dirjob = os.path.dirname(fout)
+        jobid = open(fout).read().strip()
+        # Remove job files if they are not in the queue
+        if not jobid in queue:
+            shutil.rmtree(dirjob)
+
+def main(args):
+    """
+    Submit command as a batch script on a grid engine queue
+    """
+    # Clean temporary directory
+    _clean()
+
+    # The command is not set, we return immediately
+    if not args.cmd:
+        return
+
+    # Setup output directory
+    if args.outdir is None and (not args.lastisdir and not args.lastisfile):
+        # We do not provide an output path (either explicitly or implicitly)
+        # Let's create a a tmp directory for job and log files
+        d = TMP_PATH
+        if not os.path.exists(d):
+            os.makedirs(d)
+        args.outdir = tempfile.mkdtemp(dir=d)
+
+    else:
+        # These options allow one to extract the job folder from the path
+        # provided as last command line argument
+        if args.lastisdir:
+            args.outdir = args.cmd[-1]
+        if args.lastisfile:
+            args.outdir = os.path.dirname(args.cmd[-1])
+
+        # We return if the output directory exists and we are not forcing.
+        # We can also force via the QEXEC env variable
+        if not os.path.exists(os.path.join(args.outdir, 'job')):
+            if not os.path.exists(args.outdir):
+                os.makedirs(args.outdir)
+        else:
+            # Check if we are forcing launch or if $QEXEC=="force"
+            if not (args.force or os.path.expandvars('$QEXEC') == 'force'):
+                print('skipping because job file exists: {}'.format(args.outdir))
+                return
+
+    # Format job script
+    # First define some paths
+    args.jobfile = os.path.join(args.outdir, 'job')
+    args.errfile = os.path.join(args.outdir, 'job.err')
+    args.logfile = os.path.join(args.outdir, 'job.out')
+    args.cmdstr = ' '.join(args.cmd)
+
+    # Normalize job name
+    args.jobname = '_'.join(args.cmd).replace('./', '')
+    args.jobname = args.jobname.replace(' ', '_')
+    args.jobname = args.jobname.replace('*', '')
+    args.jobname = args.jobname.replace('./', '')
+    args.jobname = args.jobname.replace('/', '_')
+    args.jobname = args.jobname.replace('-', '')
+    args.jobname = args.jobname.replace('|', '-')
+    if len(args.jobname) > args.maxlen:
+        args.jobname = args.jobname[:args.maxlen/2-1] + '...' + \
+                       args.jobname[len(args.jobname)-args.maxlen/2+1:]
+
+    # Translate settings to SGE-specific options
+    if args.nprocs is None:
+        args.runner = ''
+        args.pe = '#'
+    else:
+        args.runner = 'mpirun -np $NSLOTS'
+        args.pe = '#$ -pe orte %d' % args.nprocs
+    if args.wtime > 0:
+        args.wt = '#$ -l h_rt=%d:00:00' % args.wtime
+    else:
+        args.wt = '#'
+
+    # Interpolate bulk of job script with command line arguments
+    # TODO: put virtualenv stuff in a separate etmplate
+    txt = """\
+#!/bin/bash
+#$ -o {0.logfile}
+#$ -e {0.errfile}
+#$ -N {0.jobname}
+#$ -S /bin/bash
+#$ -cwd
+#$ -notify
+#$ -V
+{0.wt}
+{0.pe}
+
+truncate -s 0 $SGE_STDERR_PATH
+truncate -s 0 $SGE_STDOUT_PATH
+source ~/.bashrc
+
+# If a virtualenv is found, activate it
+if [ -f env/bin/activate ] ; then
+    . env/bin/activate
+    echo '# found virtualenv'
+    pip freeze | awk '{{print "#", $0}}'
+    echo '#'
+fi
+
+hook()
+{{
+   kill -9 $PID 2>/dev/null
+   echo '# job killed:' $(date)
+   sleep 1
+   exit
+}}
+
+trap hook XCPU SIGUSR2 SIGUSR1
+
+echo '#' job start: $(date)
+echo '#' job id: $JOB_ID
+echo '#' job hostname: $HOSTNAME
+echo '#' job cpuinfo: $(grep "model name" /proc/cpuinfo |head -1|cut -d : -f 2)
+JOB_BEGIN=$(date +%s)
+
+# Main command
+{0.runner} {0.cmdstr} &
+PID=$!; wait $PID
+
+JOB_ERR=$?
+JOB_END=$(date +%s)
+JOB_WTIME_S=$(( $JOB_END - $JOB_BEGIN ))
+if [ $JOB_ERR -ne 0 ] ; then
+    echo '#' job failed: $(date)
+else
+    echo '#' job walltime: $JOB_WTIME_S s
+    echo '#' job ended: $(date)
+fi
+""".format(args)
+
+    # Launch the job
+    if args.pretend:
+        # This is a dry run, just print out the script
+        print(txt)
+        print('$', args.submit + ' ' + args.jobfile)
+        if args.outdir is not None and not args.lastisdir:
+            os.rmdir(args.outdir)
+    else:
+        # Submit the job and echo the output
+        with open(args.jobfile, 'w') as fh:
+            fh.write(txt)
+        cmd = args.submit + ' ' + args.jobfile
+        try:
+            out = subprocess.check_output(cmd, shell=True)
+            # Log job id for future reference
+            jobid = out.split()[2]
+            out = out.decode('ascii').strip('\n')
+            print('{} via job file {}'.format(out, args.jobfile))
+
+        except subprocess.CalledProcessError:
+            # Something did not work. We store e negative job id
+            print('Job submission failed, check options or job file {}'.format(args.jobfile))
+            jobid = -1
+
+        # Store job id
+        with open(args.jobfile + '.id', 'w') as fh:
+            fh.write('{}\n'.format(jobid))
+
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--pretend', dest='pretend', action='store_true', help='prepare job file but do not submit')
+    parser.add_argument('--max-len', dest='maxlen', default=120, type=int, help='truncate jobname to MAXLEN chars')
+    parser.add_argument('-q', dest='submit', default='qsub', help='submit command')
+    parser.add_argument('-n', dest='nprocs', type=int, default=None, help='n. of processors. If n>=1, runner=mpirun')
+    parser.add_argument('-w', dest='wtime', type=int, default=0, help='maximum wall time')
+    parser.add_argument('-o', dest='outdir', default=None, help='output path for job and log files')
+    parser.add_argument('-d', dest='lastisdir', action='store_true', help='last command parameter is the directory to store log files (overwrites OUTDIR)')
+    parser.add_argument('-f', dest='lastisfile', action='store_true', help='last command parameter is the file whose dirname will be used to store log files (overwrites OUTDIR)')
+    parser.add_argument('-F', dest='force', action='store_true', help='submit even if job and log files at OUTDIR exist')
+    parser.add_argument('-c', nargs='+', dest='cmd', help='command to submit')
+
+    if '-c' in sys.argv:
+        ind = sys.argv.index('-c')
+        args = parser.parse_args(sys.argv[1:ind])
+        args.cmd = sys.argv[ind+1:]
+    else:
+        args = parser.parse_args()
+
+    main(args)

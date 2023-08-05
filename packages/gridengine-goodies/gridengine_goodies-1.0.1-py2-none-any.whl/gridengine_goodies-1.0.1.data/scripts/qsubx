@@ -1,0 +1,55 @@
+#!/bin/bash
+# Augmented qsub: it allows to submit multiple jobs while keeping 
+# at most N jobs in the queue.
+
+usage(){
+    echo "Usage: qsubx [-f <file>] [-p <n>] [-n <n>] [-i <n>] <jobs>"
+    echo
+    echo "An improved version of qsub that allows to submit multiple jobs"
+    echo "while keeping at most N jobs in the queue."
+    echo
+    echo "Optional arguments:"
+    echo " -f  provide parameters file (default: $HOME/.local/share/qsubx)"
+    echo " -p  set priority (n<=0; default: n=0)"
+    echo " -n  keep at most n user jobs running or queued at a time (default: n=100)"
+    echo " -i  time interval in seconds between resubmission attempts (default: n=100)"
+    echo " -u  watch parameters file for update"
+    echo " -v  verbose"
+}
+[ -z "$1" ] && usage && exit
+
+[ "$1" == "-f" ] && { FILE_PARAMS=$2; shift 2; } || FILE_PARAMS=$HOME/.local/share/qsubx
+
+# Get default parameters
+P=0
+N_LIMIT=100
+SLEEP_TIME=300
+[ -f $FILE_PARAMS ] && . $FILE_PARAMS
+
+# Command line overwrites defaults anyway
+[ "$1" == "-p" ] && P=$2 && shift 2
+[ "$1" == "-n" ] && N_LIMIT=$2 && shift 2
+[ "$1" == "-i" ] && SLEEP_TIME=$2 && shift 2
+[ "$1" == "-u" ] && { UPDATE=1; shift; } || UPDATE=
+[ "$1" == "-v" ] && { VERBOSE=1; shift; } || VERBOSE=
+
+# Try to submit jobs passed on command line. 
+# Sleep for SLEEP_TIME until all conditions are met.
+for JOB ; do
+    while [ 1 == 1 ] ; do
+	nt=$(qstat -u "*"   | awk 'BEGIN{n=0}{n+=$NF}END{print n}')
+ 	nr=$(qstat -u $USER | awk 'BEGIN{n=0}{if ($5=="r"){n+=$NF}}END{print n}')
+ 	nq=$(qstat -u $USER | awk 'BEGIN{n=0}{if ($5=="qw"){n+=$NF}}END{print n}')
+	let nu=$nr+$nq
+	if [ "$nu" -lt $N_LIMIT ] ; then
+	    [ ! -z "$VERBOSE" ] && echo "#qsubx: $JOB submitted: user/limit = $nu/$N_LIMIT, running/queued = $nr/$nq" 
+	    qsub -p $P $JOB
+	    break
+	else
+	    [ ! -z "$VERBOSE" ] && echo "#qsubx: $JOB not submitted (retry in $SLEEP_TIME s): user/limit = $nu/$N_LIMIT, running/queued = $nr/$nq"
+	    [ ! -z "$UPDATE" ] && [ -f $FILE_PARAMS ] && . $FILE_PARAMS 
+	    sleep $SLEEP_TIME
+	fi	
+    done
+done
+

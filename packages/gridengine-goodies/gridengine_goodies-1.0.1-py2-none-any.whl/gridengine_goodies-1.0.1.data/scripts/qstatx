@@ -1,0 +1,300 @@
+#!python 
+# Wrapper around qstat for more compact representation and flexible sorting
+
+###############################################################################
+##  Copyright 2009 Jeet Sukumaran.
+##
+##  This program is free software; you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation; either version 3 of the License, or
+##  (at your option) any later version.
+##
+##  This program is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
+##
+##  You should have received a copy of the GNU General Public License along
+##  with this program. If not, see <http://www.gnu.org/licenses/>.
+##
+###############################################################################
+
+import sys
+import os
+import subprocess
+import datetime
+import re
+try:
+    from elementtree import ElementTree
+except:
+    from xml.etree import ElementTree
+from optparse import OptionGroup
+from optparse import OptionParser
+ 
+_prog_usage = '%prog [options] [qstat arguments]'
+_prog_version = 'QSTAT-X Version 1.0'
+_prog_description = 'Extended/enhanced qstat.'
+_prog_author = 'Jeet Sukumaran'
+_prog_copyright = 'Copyright (C) 2009 Jeet Sukumaran.'
+ 
+### from phylocratics
+def format_table(rows, column_names=None, max_column_width=None, border_style=2, footer=None):
+    """
+    'Pretty-prints' a tuple of dictionaries in a table format. This method
+    can read the column names directly off the dictionary keys, but if a tuple of
+    these keys is provided in the 'column_names' variable, then the order of column_names will follow
+    the order of the fields/keys in that variable.
+    """
+    if column_names or len(rows) > 0:
+        lengths = {}
+        rules = {}
+        if column_names:
+            column_list = column_names
+        else:
+            try:
+                column_list = rows[0].keys()
+            except:
+                column_list = None
+        if column_list:
+            # characters that make up the table rules
+            border_style = int(border_style)
+            #border_style = 0
+            if border_style >= 1:
+                vertical_rule = '  '
+                horizontal_rule = '-'
+                rule_junction = '---'                
+            elif border_style >= 2:
+                vertical_rule = ' | '
+                horizontal_rule = '-'
+                rule_junction = '-+-'
+            else:
+                vertical_rule = '  '
+                horizontal_rule = ''
+                rule_junction = ''                
+            if border_style >= 3:
+                left_table_edge_rule = '| '
+                right_table_edge_rule = ' |'
+                left_table_edge_rule_junction = '+-'
+                right_table_edge_rule_junction = '-+'
+            else:
+                left_table_edge_rule = ''
+                right_table_edge_rule = ''
+                left_table_edge_rule_junction = ''
+                right_table_edge_rule_junction = ''
+ 
+            if max_column_width:
+                column_list = [c[:max_column_width] for c in column_list]
+                trunc_rows = []
+                for row in rows:
+                    new_row = {}
+                    for k in row.keys():
+                        new_row[k[:max_column_width]] = str(row[k])[:max_column_width]
+                    trunc_rows.append(new_row)
+                rows = trunc_rows
+ 
+            for col in column_list:
+                rls = [len(str(row[col])) for row in rows]
+                #lengths[col] = max(rls+[len(col)])
+                lengths[col] = min([44, max(rls+[len(col)])])
+                rules[col] = horizontal_rule*lengths[col]
+ 
+            template_elements = ["%%(%s)-%ss" % (col, lengths[col]) for col in column_list]
+            row_template = vertical_rule.join(template_elements)
+            border_template = rule_junction.join(template_elements)
+            full_line = left_table_edge_rule_junction + (border_template % rules) + right_table_edge_rule_junction 
+            display = []
+            if border_style > 0:
+                display.append(full_line)
+            display.append(left_table_edge_rule + (row_template % dict(zip(column_list, column_list))) + right_table_edge_rule)
+            if border_style > 0:
+                display.append(full_line)            
+            for row in rows:       
+                display.append(left_table_edge_rule + (row_template % row) + right_table_edge_rule)      
+            if border_style > 0:
+                display.append(full_line)
+            # Footer with some summary (coslo)
+            if footer is not None:
+                if border_style > 0:
+                    display.append(footer)
+                    display.append(full_line)
+            
+            return "\n".join(display)
+        else:
+            return ''
+    else:
+        return ''
+ 
+def parse_error(qstat_cmd, stdout, stderr):
+    sys.stderr.write("No information or failed to parse output.\n")
+    sys.stderr.write("Command executed was: \"%s\"\n" % qstat_cmd)
+    sys.stderr.write("Raw result was:\n")
+    sys.stderr.write(stdout)
+    sys.stderr.write("\n")
+    sys.exit(1)
+ 
+def main():
+    """
+    Main CLI handler.
+    """
+ 
+    parser = OptionParser(usage=_prog_usage, 
+        add_help_option=True, 
+        version=_prog_version, 
+        description=_prog_description)    
+
+    parser.add_option('-Q', '--qstat-options',
+        type='string',
+        dest='qstat_opts',
+        default='',
+        metavar='OPTS',
+        help='qstat options')
+
+    parser.add_option('-i', '--id',
+        action='store_const',
+        dest='sort_by',
+        const='id',
+        default='id',
+        help='sort by job id [default]')
+ 
+    parser.add_option('-n', '--name',
+        action='store_const',
+        dest='sort_by',
+        const='name',
+        help='sort by job name')
+ 
+    parser.add_option('-o', '--owner', '-u', '--user', 
+        action='store_const',
+        dest='sort_by',
+        const='owner',
+        help='sort by owner/user')
+ 
+    parser.add_option('-t', '--submitted', 
+        action='store_const',
+        dest='sort_by',
+        const='submitted',
+        help='sort by submission time') 
+ 
+    parser.add_option('-s', '--state', 
+        action='store_const',
+        dest='sort_by',
+        const='state',
+        help='sort by state')
+ 
+    parser.add_option('-q', '--queue', 
+        action='store_const',
+        dest='sort_by',
+        const='queue',
+        help='sort by queue')
+ 
+    parser.add_option('-c', '--node', 
+        action='store_const',
+        dest='sort_by',
+        const='node_index',
+        help='sort by node')        
+ 
+    parser.add_option('-l', '--slots', 
+        action='store_const',
+        dest='sort_by',
+        const='slots',
+        help='sort by slots')
+ 
+    parser.add_option('-r', '--reverse', 
+        action='store_true',
+        dest='reverse',
+        default=False,
+        help='reverse sort')          
+ 
+    (opts, args) = parser.parse_args()
+
+    qstat_cmd = "qstat " + opts.qstat_opts + " -xml " + " ".join(args)
+ 
+    qstat_proc = subprocess.Popen(qstat_cmd,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            env=os.environ)
+    stdout, stderr = qstat_proc.communicate()
+
+    try:
+        root = ElementTree.fromstring(stdout)
+    except:
+        parse_error(qstat_cmd, stdout, stderr)
+    queue_info = root.find('queue_info')
+    job_info = root.find('job_info') # (coslo) get pending jobs as well
+
+    fields = ["id",
+              "name",
+              "owner",
+              "submitted",
+              "state",
+#              "cpu", # not working
+#              "mem",
+#              "io",
+              "queue",
+              "node",
+              "slots"]
+    jobs = []
+    for info in [queue_info, job_info]:
+
+        if info is None:
+            parse_error(qstat_cmd, stdout, stderr)    
+ 
+        for job_list in info:
+            job = {}
+            job['id'] = job_list.find("JB_job_number").text
+            job['name'] = job_list.find("JB_name").text
+            job['owner'] = job_list.find("JB_owner").text
+            job['state'] = job_list.find("state").text
+            #         job['cpu'] = job_list.find("cpu_usage").text
+            #         job['mem'] = job_list.find("mem_usage").text
+            #         job['io'] = job_list.find("io_usage").text
+            job['slots'] = job_list.find("slots").text
+            # stime = datetime.datetime.strptime(job_list.find("JAT_start_time").text, "%Y-%m-%dT%H:%M:%S")
+            try:
+                stime = job_list.find("JAT_start_time").text.replace('T', ' ')
+            except:
+                stime = job_list.find("JB_submission_time").text.replace('T', ' ')
+            job["submitted"] = stime #stime.strftime("%Y-%m-%d %H:%M:%S")
+            if job['state'] == "r":
+                qn = job_list.find("queue_name").text
+                job['queue'], node = qn.split("@")
+                job['node'] = node[:-6]
+                job['node_index'] = 0 #int(node[10:-6])
+
+            # Fix vacant fields
+            for f in fields:
+                if not f in job:
+                    job[f] = ''
+            jobs.append(job)        
+
+    # Setup summary as footer (coslo)
+    jr = [f.find("state").text for f in queue_info]
+    jq = [f.find("state").text for f in job_info]
+    nr = [f.find("slots").text for f in queue_info]
+    nq = [f.find("slots").text for f in job_info]
+    # Count total slots used
+    n = {}
+    n["r"] = n["h"] = n["q"] = n["d"] = n["e"] = 0
+    for i, j in zip(nr, jr):
+        if j == "r": n["r"] += int(i)
+        if j == "dr": n["d"] += int(i)
+    for i, j in zip(nq, jq):
+        if j == "hqw": n["h"] += int(i)
+        if j == "Eqw": n["e"] += int(i)
+        if j == "qw":  n["q"] += int(i)
+    # Summary
+    foot = ""
+    if len(jr) > 0 or len(jq) > 0:
+        foot += "Running  : %3i (slots: %4i)\n" % (jr.count("r"),   n["r"])
+        foot += "Hold     : %3i (slots: %4i)\n" % (jq.count("hqw"), n["h"])
+        foot += "Pending  : %3i (slots: %4i)\n" % (jq.count("qw"),  n["q"])
+        foot += "Deletion : %3i (slots: %4i)\n" % (jr.count("dr"),  n["d"])
+        foot += "Error    : %3i (slots: %4i)"   % (jq.count("Eqw"), n["e"])
+    else:
+        foot = None
+    jobs.sort(key=lambda x : x[opts.sort_by], reverse=opts.reverse)
+    sys.stdout.write(format_table(jobs, fields, border_style=1, footer=foot))
+    sys.stdout.write("\n")
+ 
+if __name__ == "__main__":
+    main()

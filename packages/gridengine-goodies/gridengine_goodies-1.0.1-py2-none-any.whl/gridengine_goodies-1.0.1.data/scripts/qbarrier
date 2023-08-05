@@ -1,0 +1,68 @@
+#!python
+
+"""
+Halt execution until a set of jobs are over.
+
+It provides a simple means to create command-line-level dependencies between jobs.
+For finer control on job dependencies, see 'job arrays' in the gridengine documentation.
+
+Example:
+-------
+Submit two jobs and wait until they are over
+
+$ qsubx job_{1,2}.sh
+$ qbarrier
+
+Submit many jobs and wait until job_1.sh and job_2.sh are over
+
+$ qsubx job_*.sh
+$ qgrep job_[1-2].sh | xargs qbarrier
+
+or alternatively
+
+$ qbarrier $(qgrep job_[1-2].sh)
+"""
+
+from __future__ import print_function
+import time
+import subprocess
+import argparse
+
+
+def main(args):
+    """
+    Barrier to wait until a set of user jobs is over
+    """
+    while True:
+        out = subprocess.check_output('qstat', shell=True)
+        out = out.decode('utf-8').strip('\n')
+        if len(out) == 0:
+            # Queue is empty
+            return
+
+        else:
+            # Look for job ids in the output of qstat
+            if len(args.ids) > 0:
+                found = False
+                for line in out.split('\n'):
+                    job_id = line.split()[0]
+                    if job_id in args.ids:
+                        found = True
+                # We return directly because none of the job ids is in the queue
+                if not found:
+                    return
+            try:
+                time.sleep(args.barrier_wait_sec)
+            except KeyboardInterrupt:
+                print('')
+                return
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--poll', dest='barrier_wait_sec', default=5, type=int, help='seconds to wait in barrier')
+    parser.add_argument(nargs='*', dest='ids', help='job ids to wait for')
+    args = parser.parse_args()
+
+    main(args)
