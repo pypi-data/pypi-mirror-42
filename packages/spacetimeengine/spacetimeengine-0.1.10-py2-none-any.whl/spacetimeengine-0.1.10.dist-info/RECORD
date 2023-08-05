@@ -1,0 +1,15 @@
+spacetimeengine/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spacetimeengine/example.py,sha256=3v1g7Ks4_sYsxl-zOKlm9nqCM3lCf_SuxCoYfQxtlmo,939
+spacetimeengine/utilities.py,sha256=5vtuM9clXRXobhhLno3EuFlp3PnDZ_aMYP7ZXdakFQA,768
+spacetimeengine/src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spacetimeengine/src/solutions.py,sha256=Ay-tumWsHGzpHPpWfrAEishOZ0VYklKEY46Bfkv9eAI,26506
+spacetimeengine/src/spacetime.py,sha256=f4JOqvx8_pAnKss96NsizuFMydlgpHFLRmDW3Uh22Fc,124942
+spacetimeengine/tests/__init__.py,sha256=m1OOq7Ki6VQ_U8gq41YPetqAFteCPO-lR26ylkPbwUg,5215
+spacetimeengine/tests/test_spacetime.py,sha256=m1OOq7Ki6VQ_U8gq41YPetqAFteCPO-lR26ylkPbwUg,5215
+spacetimeengine-0.1.10.dist-info/DESCRIPTION.rst,sha256=Q45PpL-cXaeEMftdUZJHWX4FLqpu7QIewgB8T8ec28c,15559
+spacetimeengine-0.1.10.dist-info/METADATA,sha256=X9eiQPQLHUDswWO3I7t0aTbhcMxqDrdtKMezt3m5HSc,16103
+spacetimeengine-0.1.10.dist-info/RECORD,,
+spacetimeengine-0.1.10.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+spacetimeengine-0.1.10.dist-info/dependency_links.txt,sha256=QryreeNG4Sv7E0MJJDunBQGeD7Gv07o74FBPCKivA74,31
+spacetimeengine-0.1.10.dist-info/metadata.json,sha256=4yfrfLl2F73SfvNdUXZXSdB7lLgCHScohaAcibPYxKs,782
+spacetimeengine-0.1.10.dist-info/top_level.txt,sha256=kdnNdJUS5t8DwvzOjDyT0ZQcy1m3pLMbYwqLkTUg7Yg,16
