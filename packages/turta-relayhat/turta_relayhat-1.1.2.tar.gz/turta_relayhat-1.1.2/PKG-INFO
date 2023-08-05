@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: turta_relayhat
+Version: 1.1.2
+Summary: Python Libraries for Turta Relay HAT
+Home-page: https://www.turta.io/relayhat
+Author: Turta LLC
+Author-email: support@turta.io
+License: UNKNOWN
+Project-URL: Documentation, https://docs.turta.io/raspberry-pi-hats/relay-hat
+Project-URL: Community, https://community.turta.io
+Project-URL: GitHub Repository, https://github.com/Turta-io/RelayHAT
+Description: Relay HAT gives you control to switch high-power devices. It has 4 channel mechanical relays. High current area of the board has been isolated from the control side with cutouts and photocouplers. Raspberry Pi or external power supply can power the relays according to your choice.
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Topic :: System :: Hardware
+Description-Content-Type: text/markdown

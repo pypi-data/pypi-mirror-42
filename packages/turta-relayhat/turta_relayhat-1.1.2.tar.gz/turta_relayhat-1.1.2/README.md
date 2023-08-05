@@ -1,0 +1,1 @@
+Relay HAT gives you control to switch high-power devices. It has 4 channel mechanical relays. High current area of the board has been isolated from the control side with cutouts and photocouplers. Raspberry Pi or external power supply can power the relays according to your choice.
