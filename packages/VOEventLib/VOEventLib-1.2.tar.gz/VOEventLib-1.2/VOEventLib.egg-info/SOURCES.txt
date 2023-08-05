@@ -1,0 +1,9 @@
+README.md
+setup.py
+VOEventLib/VOEvent.py
+VOEventLib/Vutil.py
+VOEventLib/__init__.py
+VOEventLib.egg-info/PKG-INFO
+VOEventLib.egg-info/SOURCES.txt
+VOEventLib.egg-info/dependency_links.txt
+VOEventLib.egg-info/top_level.txt
