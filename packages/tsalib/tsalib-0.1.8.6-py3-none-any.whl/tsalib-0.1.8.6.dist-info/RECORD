@@ -1,0 +1,13 @@
+tsalib/__init__.py,sha256=MBbLjF3EOlfjJA_BsDPdqD6iwawWpvqRdCmuOC2C_Nw,458
+tsalib/backend.py,sha256=_jniQoFHxWNbX6G0Ve8_EdOt0_3qnUlCgX70N1iARbw,4420
+tsalib/tensor_ops.py,sha256=QMWDADiKnzIlodqPnFi__Mv6IUYFj6at2w486ilb8Ws,6276
+tsalib/transforms.py,sha256=i8YQg6M5cWqd1SJg0QJTfTvrwwqpls4ja6iMjd7K0yI,7652
+tsalib/ts.py,sha256=nu35wm_yHivISAMEPe_pdUzRrd4YEu4LX9khc--_a9I,6666
+tsalib/ts_lite.py,sha256=CGv7in-vM6xKGyiRKAt-2F3aMyopBRgOggWsqXb--EE,833
+tsalib/tsn.py,sha256=mZ1tDtJ5zp25LJG_Mo_UotBl6BMKIzo1p3HQOo9c-OM,3897
+tsalib/utils.py,sha256=tSq2mRdYEYjiOUJ-c3aaiFvixuvrslsa0uLFa77ctMY,2147
+tsalib-0.1.8.6.dist-info/LICENSE,sha256=aw9GfyLanRK_eeEo5mpsX2sRGtyNZR8nj2n7KzAw1m4,10764
+tsalib-0.1.8.6.dist-info/METADATA,sha256=kVrGY_mnqHymLZdyGxQu1CoHk3KzsF6RzpUtzn8Ooog,17766
+tsalib-0.1.8.6.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+tsalib-0.1.8.6.dist-info/top_level.txt,sha256=igKoH-tjeeE5pfGlB2XZW_D_z9dPWLy1hmtTgl4-zXI,7
+tsalib-0.1.8.6.dist-info/RECORD,,
