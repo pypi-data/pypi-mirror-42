@@ -1,0 +1,34 @@
+Metadata-Version: 1.1
+Name: occa
+Version: 0.4.1
+Summary: Portable Approach for Parallel Architectures
+Home-page: https://libocca.org
+Author: David Medina
+Author-email: UNKNOWN
+License: MIT
+Description: 
+        In a nutshell, OCCA (like oca-rina) is an open-source library which aims to:
+        
+        - Make it easy to program different types of devices (e.g. CPU, GPU, FPGA)
+        
+        - Provide a unified API for interacting with backend device APIs (e.g. OpenMP, CUDA, OpenCL)
+        
+        - Use just-in-time compilation to build backend kernels
+        
+        - Provide a kernel language, a minor extension to C, to abstract programming for each backend
+        
+Keywords: occa,hpc,gpu,jit,openmp,opencl,cuda
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
