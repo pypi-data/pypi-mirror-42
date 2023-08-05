@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+bif/__init__.py
+bif/exposure_bracketed.py
+bif/resources/README.md
+bif/resources/requirements.txt
+bif/resources/version.txt
+bif/resources/scripts/bif_find
+bracketed_images_finder.egg-info/PKG-INFO
+bracketed_images_finder.egg-info/SOURCES.txt
+bracketed_images_finder.egg-info/dependency_links.txt
+bracketed_images_finder.egg-info/not-zip-safe
+bracketed_images_finder.egg-info/requires.txt
+bracketed_images_finder.egg-info/top_level.txt
+tests/command/__init__.py
+tests/command/test_bif_find.py
