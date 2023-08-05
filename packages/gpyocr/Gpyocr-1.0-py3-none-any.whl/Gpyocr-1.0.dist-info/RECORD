@@ -1,0 +1,10 @@
+gpyocr/__init__.py,sha256=feqOzUtivwQOGXdV2ajiHnElFc4lCBkPxYE3NbWZ1HE,230
+gpyocr/__main__.py,sha256=-_mo0fU-RTIDIADutJv35WKyPkx0UmJf4fKtJrtvoHU,1538
+gpyocr/_gpyocr.py,sha256=4aiXuw9lNkB6qpRBEa9uc6RmTSE7uwuPnFmqUbDyCFs,6721
+tests/resources/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+Gpyocr-1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+Gpyocr-1.0.dist-info/METADATA,sha256=N-GfLuGgKrQM1rncL11HZPELDaWoZv5aOcgEplzDiko,6457
+Gpyocr-1.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+Gpyocr-1.0.dist-info/entry_points.txt,sha256=QI-8tsvF8akQWHyXu21LQ2RWqrxpwHuBHamXLFOhhW4,49
+Gpyocr-1.0.dist-info/top_level.txt,sha256=-cNbJPiXnjg79x_4CdGNVggQeS49vTJuZmsuCc9YyoU,13
+Gpyocr-1.0.dist-info/RECORD,,
