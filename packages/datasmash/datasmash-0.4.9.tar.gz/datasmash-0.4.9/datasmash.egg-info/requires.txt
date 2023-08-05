@@ -1,0 +1,5 @@
+pandas
+numpy==1.15.4
+scikit-learn==0.20.2
+imageio
+d3m
