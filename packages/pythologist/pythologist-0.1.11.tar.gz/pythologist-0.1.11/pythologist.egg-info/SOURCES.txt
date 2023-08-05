@@ -1,0 +1,12 @@
+README.md
+setup.py
+pythologist/__init__.py
+pythologist/image.py
+pythologist/read.py
+pythologist/test.py
+pythologist/write.py
+pythologist.egg-info/PKG-INFO
+pythologist.egg-info/SOURCES.txt
+pythologist.egg-info/dependency_links.txt
+pythologist.egg-info/requires.txt
+pythologist.egg-info/top_level.txt
