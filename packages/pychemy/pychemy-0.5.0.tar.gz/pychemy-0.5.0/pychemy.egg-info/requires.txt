@@ -1,0 +1,4 @@
+matplotlib
+networkx~=1.0
+numpy
+openbabel
