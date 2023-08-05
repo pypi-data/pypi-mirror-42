@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: aws-mfa-gen
+Version: 0.1
+Summary: Provides aws-mfa-gen command that uses AWS STS to assume role and place result into aws cli credentials file.
+Home-page: https://github.com/mbyrdziak/aws-mfa-gen
+Author: Marcin Byrdziak
+Author-email: mbyrdziak@gmail.com
+License: MIT
+Download-URL: https://github.com/mbyrdziak/aws-mfa-gen/tarball/0.1
+Description: UNKNOWN
+Keywords: aws,mfa,login
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python

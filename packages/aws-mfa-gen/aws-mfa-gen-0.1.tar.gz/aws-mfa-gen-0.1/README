@@ -1,0 +1,6 @@
+# aws-mfa-gen
+Provides aws-mfa-gen command that uses AWS STS to assume role and place result into aws cli credentials file.
+
+Motivation around this is that not all tools can handle STS authentication or MFA so this tool will place access key, secret key and session token in credentials file.
+
+
