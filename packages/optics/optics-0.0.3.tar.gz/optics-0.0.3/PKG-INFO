@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: optics
+Version: 0.0.3
+Summary: Transfer matrix simulation of 1D optical multilayers
+Home-page: http://github.com/remy1618/optics
+Author: Remy Ko
+Author-email: remy.ko@mail.utoronto.ca
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=2.7, !=3.*, <4
