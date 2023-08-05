@@ -1,0 +1,12 @@
+sharemux/webserver.py,sha256=opY-mEuNKPaXcaqW54_6sLJXiXWjeM-N930SVOUbaHs,4941
+sharemux/static/index.html,sha256=xverYM_SmWltvC4GmkhHV-M_bOJYuDhnLsJ77GXxE3w,2056
+sharemux/static/jquery/jquery-min.js,sha256=hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4,86659
+sharemux/static/xterm/xterm.css,sha256=b_PTxx-kcAjDgl3mN1V9xbxcrKLTxjYNI6zQrhPU0qw,35296
+sharemux/static/xterm/xterm.js,sha256=UyAvUgHAnYOwUnbbDK4d1qKKBcuXX0nWfejjj_GvMbM,152878
+sharemux/static/xterm/xterm.js.map,sha256=hTAeQ0r2dJuMIJHDXEeZQZIwK6Luwa3-GQ9ui1vo0kw,221966
+sharemux-0.3.0.dist-info/LICENSE,sha256=tb3VrIGkCpk184rEmV-dGok7YKG1nWR9Y3qHywCsF4k,1067
+sharemux-0.3.0.dist-info/METADATA,sha256=aLNQjq6MaRwa4blMQpNfFsOvCgJWQD76fsRmYwldbGo,548
+sharemux-0.3.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+sharemux-0.3.0.dist-info/entry_points.txt,sha256=jIHCB6lqY9GijzL_t01YoZBeqe2CIn5i9Wg4nIGlH-k,66
+sharemux-0.3.0.dist-info/top_level.txt,sha256=BILwGU3XeCtfDnxNcLMu2fQEJngSrMvHGGP4kesEdC8,9
+sharemux-0.3.0.dist-info/RECORD,,

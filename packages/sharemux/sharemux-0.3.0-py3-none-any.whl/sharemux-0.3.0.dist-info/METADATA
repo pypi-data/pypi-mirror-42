@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: sharemux
+Version: 0.3.0
+Summary: Share your tmux session via a hosted web page
+Home-page: https://gitlab.com/rdoyle/sharemux
+Author: Ryan Doyle
+Author-email: rcdoyle@mtu.edu
+License: MIT
+Download-URL: https://gitlab.com/rdoyle/sharemux/-/archive/master/sharemux-master.tar.gz
+Keywords: tmux share host broadcast
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: click (==7.0)
+Requires-Dist: pexpect (==4.6.0)
+Requires-Dist: Flask (==1.0.2)
+
+Share your tmux session via a hosted web page
+
+
