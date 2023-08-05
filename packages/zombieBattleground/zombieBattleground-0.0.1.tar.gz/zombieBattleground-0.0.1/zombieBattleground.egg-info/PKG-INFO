@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: zombieBattleground
+Version: 0.0.1
+Summary: Python simple wrapper for zombie-battleground API game
+Home-page: https://github.com/krlosMata/zombieBattleground-python
+Author: krlosMata
+Author-email: krlosMata@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
