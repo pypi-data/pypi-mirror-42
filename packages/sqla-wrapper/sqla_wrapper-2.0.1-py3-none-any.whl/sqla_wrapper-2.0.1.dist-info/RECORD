@@ -1,0 +1,10 @@
+sqla_wrapper/__init__.py,sha256=urvW1w_wrXOTuxPbbi9_zGsJCVWlj7q3nmgktsSoKNc,212
+sqla_wrapper/base_query.py,sha256=sebfNbTAbGYYFJZAGkbliYewvB8hwHgqDpvmf-oNC8s,1230
+sqla_wrapper/core.py,sha256=YCU0OAMAOnv8GCTSNccQjaPwg3wVhEL5FrA_uj0Jta4,4815
+sqla_wrapper/model.py,sha256=dGpjhBliJ4NhYb3U6MeZFbfHIv-mG5vnRLDT38_salo,4121
+sqla_wrapper/paginator.py,sha256=OrHrYlViBHt5Y_CLStnhUoeWc3QjvW9iIpimyejUnLI,7800
+sqla_wrapper/session_proxy.py,sha256=lrHaZbrHRoOZk6X73xhEVVUvQ3Zs83RQlBXGTUyyNIc,3702
+sqla_wrapper-2.0.1.dist-info/LICENSE,sha256=r_lhE0DmV8_9TzI5hSuniAJCzll3sDjfO_6cob5zPdg,2886
+sqla_wrapper-2.0.1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+sqla_wrapper-2.0.1.dist-info/METADATA,sha256=Vq05aQnSt0OBT6DCw8jhMxl2q4D8UFT5j9cCYZCdF1o,3727
+sqla_wrapper-2.0.1.dist-info/RECORD,,
