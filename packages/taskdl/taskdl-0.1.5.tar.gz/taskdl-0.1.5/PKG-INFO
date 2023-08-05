@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: taskdl
+Version: 0.1.5
+Summary: Deep learning on Lifeomic
+Home-page: https://github.com/lifeomic/TaskDeepLearning
+Author: Derek Miller
+Author-email: dmmiller612@gmail.com
+License: MIT
+Download-URL: https://github.com/lifeomic/TaskDeepLearning/archive/0.1.5.tar.gz
+Description: UNKNOWN
+Keywords: tensorflow,machine learning,lifeomic,deep learning,pytorch
+Platform: UNKNOWN
