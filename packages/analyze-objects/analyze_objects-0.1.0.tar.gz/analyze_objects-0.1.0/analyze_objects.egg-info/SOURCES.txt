@@ -1,0 +1,13 @@
+README.rst
+setup.py
+analyze_objects/__init__.py
+analyze_objects/find_symbols.py
+analyze_objects/obj_analyzer.py
+analyze_objects/print_colored.py
+analyze_objects.egg-info/PKG-INFO
+analyze_objects.egg-info/SOURCES.txt
+analyze_objects.egg-info/dependency_links.txt
+analyze_objects.egg-info/entry_points.txt
+analyze_objects.egg-info/requires.txt
+analyze_objects.egg-info/top_level.txt
+test/test_obj_analyzer.py
