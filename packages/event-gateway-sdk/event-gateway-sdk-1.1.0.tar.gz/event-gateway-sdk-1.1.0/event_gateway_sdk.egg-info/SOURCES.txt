@@ -1,0 +1,11 @@
+README.md
+setup.py
+event_gateway_sdk.egg-info/PKG-INFO
+event_gateway_sdk.egg-info/SOURCES.txt
+event_gateway_sdk.egg-info/dependency_links.txt
+event_gateway_sdk.egg-info/requires.txt
+event_gateway_sdk.egg-info/top_level.txt
+eventgateway/__init__.py
+tests/__init__.py
+tests/context.py
+tests/test_egHappyPath.py
