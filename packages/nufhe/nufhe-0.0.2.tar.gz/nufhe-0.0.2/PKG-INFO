@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: nufhe
+Version: 0.0.2
+Summary: A GPU implementation of fully homomorphic encryption on torus
+Home-page: http://github.com/nucypher/nufhe
+Author: Bogdan Opanchuk
+Author-email: bogdan@nucypher.com
+License: GPLv3
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.5
+Provides-Extra: pyopencl
+Provides-Extra: dev
+Provides-Extra: pycuda
