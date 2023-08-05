@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+sabyenc3.egg-info/PKG-INFO
+sabyenc3.egg-info/SOURCES.txt
+sabyenc3.egg-info/dependency_links.txt
+sabyenc3.egg-info/top_level.txt
+src/sabyenc3.c
+src/sabyenc3.h
