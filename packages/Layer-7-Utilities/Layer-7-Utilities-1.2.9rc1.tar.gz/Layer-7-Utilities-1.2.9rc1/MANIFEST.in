@@ -1,0 +1,5 @@
+recursive-include layer7_utilities/logger logging_config.json
+recursive-include layer7_utilities const.py
+
+include LICENSE.txt
+include ReadMe.md
