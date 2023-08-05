@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+aidu/__init__.py
+aidu/__version__.py
+aidu/aidu.py
+aidu.egg-info/PKG-INFO
+aidu.egg-info/SOURCES.txt
+aidu.egg-info/dependency_links.txt
+aidu.egg-info/top_level.txt
