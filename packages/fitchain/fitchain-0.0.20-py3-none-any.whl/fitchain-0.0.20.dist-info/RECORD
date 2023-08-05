@@ -1,0 +1,17 @@
+fitchain/__init__.py,sha256=O-50HxP4W_LfaFEbVbqWynsXXS2_ySfYbW3YfNPQdTg,4202
+fitchain/connector.py,sha256=0Q7XzbSZkmb9CMmHGTWLS36RKZOeMLvH8Bq_s-ihyXY,15129
+fitchain/constants.py,sha256=k-t2W72Qadw9Oyoc1EjnaEjheqtabhPxBc_GUzq38dM,1917
+fitchain/crypto.py,sha256=PcTnm4BP3JizZQ-dYmALiVUzeZTLgFJe_qzfzLdHDos,6472
+fitchain/data_template.py,sha256=ZSHy3hwRfaNLWtfpgYVM1d_7wGt8sZoChB_qeBUR6q4,8964
+fitchain/datasource_faker.py,sha256=SCMrZxnsWCHDrvyGHVl2YhzjBZjxvqHe-iMWYSoEtiw,356
+fitchain/dummy_data.py,sha256=fn3pPqwifV8BpYzRz3RZXF7YXJT5uVLXMy0hQz5pLfw,14818
+fitchain/extract_geometry.py,sha256=2jXTXxOJT52i8QEctL8DGgXLeG3UDED3GwF53GKL0s8,2326
+fitchain/keras.py,sha256=yBcbjS5CbtD9MlawjWeAkpTpVYBWzoKXP0NCxSdokH4,2066
+fitchain/project.py,sha256=WLFw9JRIs39FWha1QJmi4MWa-uhTVgxqmmczNbSmQRw,976
+fitchain/schema_extractor.py,sha256=uAMAt2g5TWJnlsclthqjjk2fsvD9RTN0xwiJ_GCXeFQ,541
+fitchain/sklearn.py,sha256=AT4Zoj2wz0bYvY33ds2C0FURH1Uq-uXrg4pLmpQ8UuE,658
+fitchain-0.0.20.dist-info/LICENSE.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fitchain-0.0.20.dist-info/METADATA,sha256=fjXSoF1PUTrAt6Wap9RgAb9izTgUV1rMKJ7TjVvf3zQ,3579
+fitchain-0.0.20.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+fitchain-0.0.20.dist-info/top_level.txt,sha256=MMEouoT9uLw8lISQmfi84PSgzJ1FdCRkSjFtRuAeQYU,9
+fitchain-0.0.20.dist-info/RECORD,,
