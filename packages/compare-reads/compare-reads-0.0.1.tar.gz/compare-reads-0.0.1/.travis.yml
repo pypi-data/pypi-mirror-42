@@ -1,0 +1,73 @@
+language: python
+cache: pip
+env:
+  global:
+  - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+  - SEGFAULT_SIGNALS=all
+  - TWINE_USERNAME=mvdbeek
+  - secure: n+q5s0FP8SiS01NHpRdAtjr8+KTsQhFkXBnNleRYV7NiZoAoGsIvdz6vLYP8n5ZmrwYlytg2+RnWjkqv/CDubUEnk2RSEp5XJ0InQYK7CWSsyvqf2PIGOAwPdcwrRR8zIRB8vSbOSMRGwoUreTBiKB5AGe7M703eKNugsDai/+dzK3gZK0RAVwQByRQDnPW2gnxyaRcZzBJvTjOVQpjHd/ze1ZLI1EAFGd1mBqTWjSPMjvbJ6NY6Nj+EoxQH3uO8k18GV7D67mtExWpYxy4dF2RV4c4pACz2DElKyDFw4NP4i27sog5EUPDItIpeYbanzBvjVMV3ke4rfwKyGMAm+nf9XAIXUtcr1TA5FeGn7+QCBkwIVjz7xy0G2RbZbK1a9HO6Dpv4r458Lvkq91H/BYu6K8AJTWq9BaeV7t24xCF9BNRcYJdBArWcTbQbP+hGlRHwM7ZLcf4wsPFEJp6QtPpHrUpss2q4SYDSfBgafWubqHF6jTuIaEQ2Qg/nJORIzqy4bphDe7ML6pMcpMLa5Dg3W2xchX1o219Q6jzYC30gXMFKu8EF5cA5oeCxXkkSzYxS5vfIb9FQqpP5Q+4HSvd15l4Gn3W7+xeThgT1l4X53jXG/lT9iAUDVOEn0IGJNC3taBdW/d2bcfcsEm1cZjpUeyCu3pdfMK5pc48XZ8E=
+  matrix:
+  - TOXENV=check
+  - TOXENV=docs
+matrix:
+  include:
+  - python: '2.7'
+    env:
+    - TOXENV=py27
+  - python: '3.4'
+    env:
+    - TOXENV=py34
+  - python: '3.5'
+    env:
+    - TOXENV=py35
+  - python: '3.6'
+    env:
+    - TOXENV=py36
+  - python: '3.7'
+    dist: xenial
+    env:
+    - TOXENV=py37
+  - sudo: required
+    services:
+    - docker
+    env:
+    - PIP=pip
+    - WHEEL=1
+    - CIBW_BEFORE_BUILD="yum install -y zlib-devel bzip2-devel xz-devel"
+    - CIBW_SKIP="cp34-* *-manylinux1_i686"
+  - os: osx
+    language: generic
+    env:
+    - PIP=pip2
+    - WHEEL=1
+    - CIBW_SKIP="cp34-* cp35-*"
+before_install:
+- python --version
+- uname -a
+install:
+- pip install tox
+- virtualenv --version
+- easy_install --version
+- pip --version
+- tox --version
+script:
+- |
+  if [ "$WHEEL" == "1" ]; then
+      $PIP install cibuildwheel==0.10.1
+      cibuildwheel --output-dir wheelhouse
+  else
+      tox -v
+  fi
+deploy:
+  provider: script
+  script: bash ci/pypi_upload.sh
+  on:
+    tags: true
+  skip_cleanup: true
+after_failure:
+- more .tox/log/* | cat
+- more .tox/*/log/* | cat
+notifications:
+  email:
+    on_success: never
+    on_failure: never
