@@ -1,0 +1,8 @@
+README.rst
+setup.py
+src/persis/__init__.py
+src/persis/persis.py
+src/persis.egg-info/PKG-INFO
+src/persis.egg-info/SOURCES.txt
+src/persis.egg-info/dependency_links.txt
+src/persis.egg-info/top_level.txt
