@@ -1,0 +1,31 @@
+---
+#
+# General settings
+#
+
+# Camera name. Camera id in MQTT topic
+rpiname: "backyard"
+
+# Set logging level to one of:
+# CRITICAL, ERROR, WARNING, INFO, DEBUG
+logging:
+  level: ERROR
+  file: './rpi-cam-mqtt.log'
+
+#
+# MQTT settings
+#
+
+# Ensure server and user/pw are set
+mqtt:
+  server: ""
+  port: 1883
+  keepalive: 60
+  user: ''
+  pw: ''
+  qos: 1
+  topic:
+    base: "rpicam/{}"
+    pantilt: "rpicam/{}/pt"
+    ptviews: "rpicam/{}/pt/views"
+    status: "rpicam/{}/status"
