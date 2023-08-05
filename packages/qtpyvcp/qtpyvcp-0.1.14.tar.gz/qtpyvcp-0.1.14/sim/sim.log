@@ -1,0 +1,182 @@
+2019-02-17 12:34:27,574 - qtpyvcp - INFO - Logging to /home/kurt/dev/cnc/qtpyvcp/sim/sim.log
+2019-02-17 12:34:27,575 - qtpyvcp - DEBUG - Command line options:
+{
+    "chooser": false, 
+    "command_line_args": null, 
+    "config_file": "/home/kurt/dev/cnc/qtpyvcp/sim/custom_config.yml", 
+    "confirm_exit": false, 
+    "fullscreen": false, 
+    "help": false, 
+    "hide_menu_bar": false, 
+    "hide_status_bar": false, 
+    "ini": "/home/kurt/dev/cnc/qtpyvcp/sim/xyz.ini", 
+    "log_file": "/home/kurt/dev/cnc/qtpyvcp/sim/sim.log", 
+    "log_level": "DEBUG", 
+    "maximize": false, 
+    "perfmon": false, 
+    "position": null, 
+    "pref_file": null, 
+    "qt_api": null, 
+    "size": null, 
+    "stylesheet": null, 
+    "theme": null, 
+    "vcp": "/home/kurt/dev/cnc/qtpyvcp/examples/tool-table.ui", 
+    "version": false
+}
+2019-02-17 12:34:27,645 - qtpyvcp.utilities.info - INFO - The machine has 3 axes and 3 joints
+2019-02-17 12:34:27,646 - qtpyvcp.utilities.info - INFO - The Axis/Joint mapping is:
+2019-02-17 12:34:27,646 - qtpyvcp.utilities.info - INFO - Axis X --> Joint 0
+2019-02-17 12:34:27,646 - qtpyvcp.utilities.info - INFO - Axis Y --> Joint 1
+2019-02-17 12:34:27,646 - qtpyvcp.utilities.info - INFO - Axis Z --> Joint 2
+2019-02-17 12:34:27,646 - qtpyvcp.vcp_launcher - DEBUG - Time: 0.000 (+0.000) - in script
+2019-02-17 12:34:27,646 - qtpyvcp.vcp_launcher - INFO - Loading VCP from UI file: /home/kurt/dev/cnc/qtpyvcp/examples/tool-table.ui
+2019-02-17 12:34:27,696 - qtpyvcp.utilities.config_loader - DEBUG - Loading config files: ['/home/kurt/dev/cnc/qtpyvcp/sim/custom_config.yml', '/home/kurt/dev/cnc/qtpyvcp/qtpyvcp/yaml_lib/default_config.yml']
+2019-02-17 12:34:27,808 - qtpyvcp.utilities.config_loader - DEBUG - Merged YAML config:
+
+default_menubar:
+- title: File
+  items:
+  - title: '&Open ...'
+    action: win.openFile
+    shortcut: ctrl+o
+  - title: '&Recent Files'
+    provider: qtpyvcp.widgets.recent_files_menu:RecentFilesMenu
+  - title: '&Reload'
+    action: null
+  - title: '&Close'
+    action: program.load:/home/kurt/dev/cnc/qtpyvcp/sim/example_gcode/blank.ngc
+  - title: Save &As
+    action: null
+  - separator
+  - title: Exit
+    action: app.exit
+    shortcut: ctrl+q
+- title: Machine
+  items:
+  - title: Toggle E-Stop
+    action: machine.estop.toggle
+    shortcut: F1
+  - title: Toggle Power
+    action: machine.power.toggle
+    shortcut: F2
+  - separator
+  - title: Run Program
+    action: program.run
+    shortcut: R
+  - title: Step
+    action: program.step
+    shortcut: T
+  - title: Pause
+    action: program.pause
+    shortcut: P
+  - title: Resume
+    action: program.resume
+    shortcut: R
+  - title: Abort
+    action: program.abort
+    shortcut: esc
+  - title: Optional Stop
+    action: program.optional_stop.toggle
+  - title: Optional Skip
+    action: program.optional_skip.toggle
+  - separator
+  - title: Homing
+    provider: qtpyvcp.widgets.menus.homing_menu:HomingMenu
+  - title: Cooling
+    items:
+    - title: Flood
+      action: coolant.flood.toggle
+      shortcut: F7
+    - title: Mist
+      action: coolant.mist.toggle
+      shortcut: F8
+  - title: Set Work Offsets
+    action: win.showDialog
+    args: set_work_offsets
+  - separator
+  - title: Override Limits
+    action: machine.override_limits
+- title: Tools
+  items:
+  - title: HAL Meter
+    action: tool.halmeter
+  - title: HAL Scope
+    action: tool.halscope
+  - title: HAL Show
+    action: tool.halshow
+  - title: LCNC Status
+    action: tool.status
+  - title: Calibration
+    action: tool.calibration
+  - title: Classicladder PLC
+    action: tool.classicladder
+  - title: Simulated Probe
+    action: tool.simulate_probe
+- title: About
+  items:
+  - title: About Mini
+  - title: About QtPyVCP
+  - title: About Qt
+    action: app.aboutQt
+vcp:
+  name: Not Set
+  version: Not Set
+  author: Not Set
+  description: No description provided.
+windows:
+  mainwindow:
+    provider: qtpyvcp.widgets.form_widgets.main_window:VCPMainWindow
+    kwargs:
+      confirm_exit: false
+data_plugins:
+  status:
+    provider: qtpyvcp.plugins.status:Status
+    kwargs:
+      cycle_time: 75
+  position:
+    provider: qtpyvcp.plugins.positions:Position
+    kwargs:
+      report_actual_pos: true
+      use_program_units: true
+  tooltable:
+    provider: qtpyvcp.plugins.tool_table:ToolTable
+dialogs:
+  open_file:
+    provider: qtpyvcp.widgets.dialogs.open_file_dialog:_OpenFileDialog
+  set_work_offsets:
+    provider: qtpyvcp.widgets.dialogs.offsets_dialog:OffsetsDialog
+  probe_sim:
+    provider: qtpyvcp.widgets.dialogs.probesim_dialog:ProbeSim
+virtual_keyboards:
+  default:
+    provider: qtpyvcp.ui_vkb_loader.UIVKBLoader
+    args: []
+    kwargs:
+      ui_file: keyboards/default_vkb.ui
+  integer:
+    provider: qtpyvcp.ui_vkb_loader.UIVKBLoader
+    args: []
+    kwargs:
+      ui_file: keyboards/integer_vkb.ui
+      frameless: true
+      modal: false
+application:
+  provider: qtpyvcp.application:VCPApplication
+  kwargs: null
+
+
+2019-02-17 12:34:27,809 - qtpyvcp.plugins - DEBUG - Loading plugin 'status' from 'qtpyvcp.plugins.status:Status'
+2019-02-17 12:34:27,814 - qtpyvcp.plugins - DEBUG - Loading plugin 'position' from 'qtpyvcp.plugins.positions:Position'
+2019-02-17 12:34:27,815 - qtpyvcp.plugins - DEBUG - Loading plugin 'tooltable' from 'qtpyvcp.plugins.tool_table:ToolTable'
+2019-02-17 12:34:27,816 - qtpyvcp.vcp_launcher - DEBUG - Time: 0.170 (+0.170) - done loading data plugins
+2019-02-17 12:34:27,861 - qtpyvcp - DEBUG - Initializing status plugin
+2019-02-17 12:34:27,861 - qtpyvcp.plugins.status - DEBUG - Starting periodic updates with 75ms cycle time.
+2019-02-17 12:34:27,861 - qtpyvcp - DEBUG - Initializing position plugin
+2019-02-17 12:34:27,861 - qtpyvcp - DEBUG - Initializing tooltable plugin
+2019-02-17 12:34:27,862 - qtpyvcp.vcp_launcher - DEBUG - Time: 0.216 (+0.046) - done initializing app
+2019-02-17 12:34:27,912 - qtpyvcp.vcp_launcher - DEBUG - Time: 0.266 (+0.050) - done loading dialogs
+2019-02-17 12:34:27,970 - qtpyvcp.vcp_launcher - DEBUG - Time: 0.323 (+0.057) - done loading windows
+2019-02-17 12:34:28,161 - qtpyvcp.actions.program_actions - DEBUG - Loading NC program: /home/kurt/dev/cnc/qtpyvcp/sim/example_gcode/qtpyvcp.ngc
+2019-02-17 12:35:11,189 - qtpyvcp - DEBUG - Terminating tooltable plugin
+2019-02-17 12:35:11,190 - qtpyvcp - DEBUG - Terminating position plugin
+2019-02-17 12:35:11,190 - qtpyvcp - DEBUG - Terminating status plugin
