@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ddlworker
+Version: 1.2.8
+Summary: cli for distributed deep learning worker
+Home-page: https://githublu.github.io/DeepLearningCluster/
+Author: YL & SW
+Author-email: nedlitex0053@gmail.com
+License: UNKNOWN
+Description: # DDL Worker
+        
+        ## Version: 1.2.8
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
