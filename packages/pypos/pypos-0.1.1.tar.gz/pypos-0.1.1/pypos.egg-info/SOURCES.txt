@@ -1,0 +1,9 @@
+README.md
+setup.py
+pypos/__init__.py
+pypos/hmm.py
+pypos/tagger.py
+pypos.egg-info/PKG-INFO
+pypos.egg-info/SOURCES.txt
+pypos.egg-info/dependency_links.txt
+pypos.egg-info/top_level.txt
