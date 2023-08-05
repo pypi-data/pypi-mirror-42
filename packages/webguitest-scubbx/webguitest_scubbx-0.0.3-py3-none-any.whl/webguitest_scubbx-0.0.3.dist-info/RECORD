@@ -1,0 +1,15 @@
+webguitest/__init__.py,sha256=zPzrtrBNrEUxDxD9Azi34upBqs7P_LvQQKVCj6YekC8,748
+webguitest/clickGraphic.py,sha256=D2PfDX1_4dlWT4_uRjvfGHo8gOfTX8Pn8O0s_XKl96Y,1558
+webguitest/clickName.py,sha256=wGydPyDIKVrtw5_HkmduAbzkF5C_Kg7Sb3rnnG_3u6M,1431
+webguitest/clickTextElement.py,sha256=vsokpIVI5Ldo-_tcK7dPB42HeZFgEoB76AwoZCN5V68,1692
+webguitest/enterValue.py,sha256=TV8dVi5uaGABp4UIkBZFnHCwTll9xaNiriXxxBQEqKc,874
+webguitest/enterValueToGraphic.py,sha256=RsTi5GH5Bf9zy9JEWgYsUOfz6GhZfZ3WtjcS-gqIy3g,1798
+webguitest/enterValueToName.py,sha256=q0wYtZHzSEuIyuwORXSpBCX0vbuKF4HP85JjtnqDB3o,1634
+webguitest/getValueFromName.py,sha256=A7NAVaLZlnMUddpPAPXFj9k3IBUrukKf489J-w1uAfg,1335
+webguitest/openBrowser.py,sha256=K0WaI9bQpOmh3YmRnphV_BqTjXTnd9sZ6W4BbefxBg0,806
+webguitest/setValueOfName.py,sha256=lmSoJkPedQi2xN90iPn6q064giZpZdz0w-r6Ke5Av0s,1522
+webguitest_scubbx-0.0.3.dist-info/LICENSE,sha256=7EI8xVBu6h_7_JlVw-yPhhOZlpY9hP8wal7kHtqKT_E,1074
+webguitest_scubbx-0.0.3.dist-info/METADATA,sha256=3VO6Y3NHMkDi6d2XwfJwUgfCJuajSIZAuopZjEQXo44,2123
+webguitest_scubbx-0.0.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+webguitest_scubbx-0.0.3.dist-info/top_level.txt,sha256=GLC7vqpTAjtMzM6tz_89-WXjIJ1LcI30hELFXKr7gS4,11
+webguitest_scubbx-0.0.3.dist-info/RECORD,,
