@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+ADRpy/__init__.py
+ADRpy/atmospheres.py
+ADRpy/constraintanalysis.py
+ADRpy/mtools4acdc.py
+ADRpy/unitconversions.py
+ADRpy/weathertools.py
+ADRpy.egg-info/PKG-INFO
+ADRpy.egg-info/SOURCES.txt
+ADRpy.egg-info/dependency_links.txt
+ADRpy.egg-info/requires.txt
+ADRpy.egg-info/top_level.txt
