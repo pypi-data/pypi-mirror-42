@@ -1,0 +1,9 @@
+matlab_connection/__init__.py,sha256=iEoBrPxgQAnvyL6rvjGxQJsrIb2B_682vdnepMIgqcE,48
+matlab_connection/matlab_connection.py,sha256=OsVSTpcmiqhEnGRRNOfoox-GlFC8Vv_HhbOMJ9IGHww,1105
+matlab_connection/mfiles/README.txt,sha256=FXWNSLfCALfE92WwoP9xTBNy4o_gd4ZQZhhmMIqN0o8,46
+matlab_connection/mfiles/function_from_python.m,sha256=ln6uJJ4WWPVCVS4mzWaL9rNgxL0zvzzv2verVGuVbSg,136
+matlab_connection/mfiles/script_from_python.m,sha256=q2cXtz3DTXQqWk5pnvCbK7vio3LusRoo_Dx2O3FZuLc,143
+matlab_connection-0.0.4.dist-info/METADATA,sha256=FgOVnxzChnIC4cwrERr5TfOM3Ng59qG-2Br-qLEE2fM,1430
+matlab_connection-0.0.4.dist-info/WHEEL,sha256=NvLheO0f8_uAcwoMijaCN7IVIIaldpzEnN1plXS6P6E,97
+matlab_connection-0.0.4.dist-info/top_level.txt,sha256=VY6WOXsS0Bo46F5D0WwfyBmjzYLSwgYmBavsfMLG7LU,18
+matlab_connection-0.0.4.dist-info/RECORD,,
