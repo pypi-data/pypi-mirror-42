@@ -1,0 +1,12 @@
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+src/oncallclient/__init__.py
+src/oncallclient/compat.py
+src/oncallclient.egg-info/PKG-INFO
+src/oncallclient.egg-info/SOURCES.txt
+src/oncallclient.egg-info/dependency_links.txt
+src/oncallclient.egg-info/requires.txt
+src/oncallclient.egg-info/top_level.txt
