@@ -1,0 +1,7 @@
+setup.py
+regs/__init__.py
+regs.egg-info/PKG-INFO
+regs.egg-info/SOURCES.txt
+regs.egg-info/dependency_links.txt
+regs.egg-info/entry_points.txt
+regs.egg-info/top_level.txt

@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: regs
+Version: 0.1
+Summary: Compare Registry
+Home-page: http://phyl.io/?page=regs.html
+Author: Philippe Kappel
+Author-email: philippe.kappel@gmail.com
+License: MIT
+Description: `regs` compares `*.reg` files.
+        
+        Dependencies
+        ------------
+        
+        * [Python](https://www.python.org) 3.6+
+        * Console with [ANSI colors](https://en.wikipedia.org/wiki/ANSI_escape_code) — *optional*
+Keywords: Registry
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
