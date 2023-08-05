@@ -1,0 +1,8 @@
+README.md
+setup.py
+prophepy/__init__.py
+prophepy/exceptions.py
+prophepy.egg-info/PKG-INFO
+prophepy.egg-info/SOURCES.txt
+prophepy.egg-info/dependency_links.txt
+prophepy.egg-info/top_level.txt
