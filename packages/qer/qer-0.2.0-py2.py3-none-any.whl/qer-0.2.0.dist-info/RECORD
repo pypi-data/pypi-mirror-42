@@ -1,0 +1,14 @@
+qer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qer/cmdline.py,sha256=1-A5UsoKhUCcE6gOBPNqr_B0n05Xe5Wn0Rru0C6u_wg,6716
+qer/compile.py,sha256=7Q9ZcJ0gx_18yPzQ6v5dGgpiureY1rCRLIReeyzLX1I,6363
+qer/dists.py,sha256=H6LrkslgjTLBVqmq07_jz7Bv_DnU_L_MjO55tcnqzpE,3768
+qer/hash.py,sha256=LLmxDM_ppyvOOuWDi9uFunBVXol2q63K4_9mE1tdOV0,865
+qer/metadata.py,sha256=9n0VbbCHjZ6jLEOn_yW7eJa5eO9ezF0Remw402Mfj70,4529
+qer/pypi.py,sha256=mK_yDzrEpxhghLqyjihE5ddbaFMGxqMYrfZCUe_hxhk,5787
+qer/utils.py,sha256=llWhY1msGHQkXN5S1XIm64TLRUVo-lh3ZHYuWTWSY6c,3640
+qer-0.2.0.dist-info/LICENSE.txt,sha256=11Cfstb7hSF61mmkZk7gCrxDLpvPOGPNIDqaWCyB1EQ,1068
+qer-0.2.0.dist-info/METADATA,sha256=8KQ-bRLKZ_kJKobdLrhkIkU5wZdazDpg0ddXXMc2Yt0,6951
+qer-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+qer-0.2.0.dist-info/entry_points.txt,sha256=gp68Ed4GHj2xFvRHZXlRLHZMIo1kS3liJxvUCQkg_fs,88
+qer-0.2.0.dist-info/top_level.txt,sha256=KhxZ1N8Ketr6Tlwm8oOqDUmRGAt6rn5-AVCrkDCqmnI,4
+qer-0.2.0.dist-info/RECORD,,
