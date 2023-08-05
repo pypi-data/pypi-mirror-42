@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: decawave-1001-rjg
+Version: 1.0
+Summary: A python module to enable a Raspberry Pi to read the Decawave 1001 UWB positioning module.
+Home-page: https://github.com/Richard-Gemmell/decawave-1001-rjg
+Author: Richard Gemmell
+Author-email: 16683467+Richard-Gemmell@users.noreply.github.com
+License: LICENSE.txt
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+Description-Content-Type: text/markdown
+Requires-Dist: spidev (>=3.2)
+
+# decawave-1001-rjg
+## Introduction
+This is a device driver enable a Raspberry Pi to use the Decawave 1001 UWB positioning module.
+
+The Decawave is a low cost UWB positioning module. A group of at least 4 modules forms a mesh network that can locate a fifth, mobile module with an accuracy of around +-0.2 meters. For more information and datasheets see [Decawave's website](https://www.decawave.com/product/dwm1001-development-board/).
+
+The DWM1001 is available as a development board about the size of a credit card.
+
+## Driver Features
+* Connects over SPI
+* Supports hardware interrupts for data ready
+* Optionally enables high priority thread scheduling
+
+## Limitations
+* Requires python 3.7
+
+## Examples
+Examples are available on [Github](https://github.com/Richard-Gemmell/decawave-1001-rjg/tree/master/examples).
+
+
