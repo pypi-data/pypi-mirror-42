@@ -1,0 +1,6 @@
+lmfit<1.0,>=0.9.12
+requests<3,>=2.21.0
+colorama<1,>=0.4.1
+pandas<1,>=0.22
+six
+piradon
