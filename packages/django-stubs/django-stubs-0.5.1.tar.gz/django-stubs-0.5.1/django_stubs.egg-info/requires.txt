@@ -1,0 +1,4 @@
+Django
+mypy>=0.670
+typing-extensions
+dataclasses
