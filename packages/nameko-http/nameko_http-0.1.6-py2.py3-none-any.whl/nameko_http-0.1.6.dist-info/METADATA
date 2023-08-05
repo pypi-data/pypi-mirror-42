@@ -1,0 +1,156 @@
+Metadata-Version: 2.1
+Name: nameko-http
+Version: 0.1.6
+Summary: Http utilities for Nameko built-in HTTP extension
+Home-page: https://github.com/tyler46/nameko_http
+Author: Spyros Markopoulos
+Author-email: mail.doctor46@gmail.com
+License: UNKNOWN
+Keywords: nameko_http
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: nameko (>=2.11.0)
+Requires-Dist: python-mimeparse (>=1.6.0)
+Provides-Extra: dev
+Requires-Dist: pip (==18.1); extra == 'dev'
+Requires-Dist: bumpversion (==0.5.3); extra == 'dev'
+Requires-Dist: wheel (==0.32.2); extra == 'dev'
+Requires-Dist: watchdog (==0.9.0); extra == 'dev'
+Requires-Dist: flake8 (==3.5.0); extra == 'dev'
+Requires-Dist: pylint (>=1.9.3); extra == 'dev'
+Requires-Dist: tox (==3.5.2); extra == 'dev'
+Requires-Dist: coverage (==4.5.1); extra == 'dev'
+Requires-Dist: twine (==1.12.1); extra == 'dev'
+
+nameko-http
+===========
+
+Http utilities for Nameko built-in HTTP extension
+
+Quickstart
+----------
+
+Install from Vermantia pypi:
+
+```bash
+  $ pip install --extra-index-url https://pypi.vermantiagaming.com/simple nameko-http
+```
+
+Example:
+
+```python
+# helloworld.py
+import json
+
+from werkzeug.wrappers import Response
+
+from nameko_http import api
+from nameko_http.exceptions import HttpError
+
+
+class HttpForbidden(HttpError):
+    # Any Http Exceptions that are going to be raised need to inherit
+    # from base exception class: HttpError.
+    error_code = 'FORBIDDEN'
+    status_code = 403
+
+
+class ExampleService:
+    name = "exampleservice"
+
+    @api('GET', '/privileged')
+    def forbidden(self, request):
+      raise HttpForbidden('You shall not access')
+
+    @api('GET', '/foo', cors_enabled=True)
+    def get_foo(self, request):
+        return Response(
+            json.dumps({'value': 'foo'}),
+            status=200,
+            mimetype='application/json'
+        )
+```
+
+```bash
+$ nameko run helloworld
+starting services: exampleservice
+```
+
+```bash
+$ curl -i localhost:8000/privileged
+HTTP/1.1 403 FORBIDDEN
+Content-Type: application/json
+Content-Lentgh: 61
+Date: Thu, 01 Nov 2018 14:21:14 GMT
+
+{"error_code": "FORBIDDEN", "reason": "You shall not access"}
+```
+
+```bash 
+curl -i localhost:8000/foo
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 16
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Authorization, Content-Type, Accept
+Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, PATCH, DELETE
+Access-Control-Allow-Credentials: false
+Date: Thu, 01 Nov 2018 14:23:21 GMT
+
+{"value": "foo"}
+```
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+History
+=======
+
+0.1.5 (2018-11-29)
+------------------
+
+* Fix for empty request body when request method POST, PUT or PATCH.
+
+0.1.4 (2018-11-20)
+------------------
+
+* Fix for https://discourse.nameko.io/t/webserver-can-be-subclassed-but-is-not-work-for-me/266
+
+0.1.3 (2018-11-05)
+------------------
+
+* fix bumping issue
+
+0.1.2 (2018-11-05)
+------------------
+
+* Pass cors headers when exceptions
+* Added handling for expected exceptions
+
+0.1.1 (2018-11-01)
+------------------
+
+* Added utility method for making responses
+* README.md update with example usage
+* Drop support for python:2.7
+
+0.1.0 (2018-10-31)
+------------------
+
+* First release.
+
+

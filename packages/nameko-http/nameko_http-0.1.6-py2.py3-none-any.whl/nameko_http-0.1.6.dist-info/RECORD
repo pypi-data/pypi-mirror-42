@@ -1,0 +1,10 @@
+nameko_http/__init__.py,sha256=TdvxToKVeeAucoUZcxvTauhnYaNEpLHYdD2CwUWwYpY,198
+nameko_http/constants.py,sha256=n7mpL21BoXRSQJ5YxeUdL2oPdzreElPLKvFVolRigpk,255
+nameko_http/exceptions.py,sha256=yZQ65jHxRRZ6H1-wchiI3wWXpviQfAMAYz5-DM_GYNA,436
+nameko_http/http_api.py,sha256=mKO2_5W25qK1MIXAeUsxqJ3XpKSQgpENjADXtKy_0aI,4663
+nameko_http/server.py,sha256=Ky6pbsoV48fIrJn7PmKs3-6jyqQ-XSgqJwpfKiLnvQg,695
+nameko_http/utils.py,sha256=TdnKIoDKA1zgT0ddtJ802dPK0olmWKV0IOLWKCsTWu4,2516
+nameko_http-0.1.6.dist-info/METADATA,sha256=tesCIkq5A58K7hgf0wEztSueajYnFHuaXzNq8OS4zRs,3795
+nameko_http-0.1.6.dist-info/WHEEL,sha256=CihQvCnsGZQBGAHLEUMf0IdA4fRduS_NBUTMgCTtvPM,110
+nameko_http-0.1.6.dist-info/top_level.txt,sha256=EZlqyn6Nyu78IiqvDhw5vEzrvty9-8nzk8wC-40CQa0,12
+nameko_http-0.1.6.dist-info/RECORD,,
