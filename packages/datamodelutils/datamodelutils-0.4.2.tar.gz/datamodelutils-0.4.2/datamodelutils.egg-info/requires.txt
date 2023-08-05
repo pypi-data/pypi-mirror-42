@@ -1,0 +1,5 @@
+cdisutils
+psqlgraph>=1.2.0
+dictionaryutils>=1.2.0
+gdcdictionary>=0.1.1
+gdcdatamodel>=1.1.0
