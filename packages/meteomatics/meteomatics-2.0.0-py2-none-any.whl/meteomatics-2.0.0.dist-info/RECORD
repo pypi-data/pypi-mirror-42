@@ -1,0 +1,10 @@
+meteomatics/__init__.py,sha256=nOhdSpur6HpJLCNRYE3tImF0N2oX3PRC-CDp5whyfPM,35
+meteomatics/__version__.py,sha256=zDBhPUu5uHcoFnyI6vjImXiI_wRqHE47mwoLjxOQi0o,47
+meteomatics/api.py,sha256=UFqm3eeM3WM8TWzvJ61kgrOcZx-FKAit_BV8EgylZg8,37482
+meteomatics/binary_reader.py,sha256=H_3qqD_RXURQKl46S88T8vMHvUAyx22_-3lnivyj-xA,2910
+meteomatics/rounding.py,sha256=hf77RCxZ1mse-zNzfDSwCekxKecg3LIwilX1nbrY2iQ,3390
+meteomatics-2.0.0.dist-info/LICENSE,sha256=xZRBhNGl1XnqsPLnAyxmXT5PrnnUBUpw4GvchhM_tqs,1070
+meteomatics-2.0.0.dist-info/METADATA,sha256=kqtPO2EprYTPOyEZ8ojuyvQ-THxvnRpL-xhCAIO5pw8,1557
+meteomatics-2.0.0.dist-info/WHEEL,sha256=ZvfnntGaZglpRLAKVkx18HrxfMwCXrA0b-ARJVnnMrw,92
+meteomatics-2.0.0.dist-info/top_level.txt,sha256=BKuZ2B289doZdw3LlFdP9wRAoTO1ML4vDFluZ2--Z0U,12
+meteomatics-2.0.0.dist-info/RECORD,,
