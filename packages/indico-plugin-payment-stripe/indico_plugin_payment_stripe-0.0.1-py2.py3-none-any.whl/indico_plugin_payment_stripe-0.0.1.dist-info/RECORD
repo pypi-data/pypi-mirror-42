@@ -1,0 +1,13 @@
+indico_payment_stripe/__init__.py,sha256=EH21Xu6hN3P-fyjA-U6IKtawvmzgsvaPW30yXqUU1oQ,379
+indico_payment_stripe/blueprint.py,sha256=BWzo1tTEEcw-sx47qFuvEiSecVGXSGZpoZhUXNi1mcQ,549
+indico_payment_stripe/controllers.py,sha256=kGuy5M_K8xfEWR_2xMQH-SKCAznfDkAA78-HeM3v0Zs,6201
+indico_payment_stripe/plugin.py,sha256=81jbvEFLWhySvncvHeiDrvq5l2YCI6cKd49GbOMdRUM,4751
+indico_payment_stripe/utils.py,sha256=TpthnEMCyBAdphgwkIrDYqfxfr6EKUcaxxAV2k4syS0,2272
+indico_payment_stripe/static/images/logo.png,sha256=sEwBI6RtoKrVTEWvR1-6-GRyEuCpvMTz8lIuOVDikmM,25430
+indico_payment_stripe/templates/event_payment_form.html,sha256=MT9KLXE491RJaPUaKR2LBIfgEbHbkkhoQPiPNpAD430,1177
+indico_plugin_payment_stripe-0.0.1.dist-info/LICENSE,sha256=3wGldL64eC5Y2tJHKGgluPvjT8IEth2FZSnJ-bgwedY,1115
+indico_plugin_payment_stripe-0.0.1.dist-info/METADATA,sha256=XkoSOeXy_juFceyCXID5_Ska7f3ZPQVcG2C23Yy2r9g,4098
+indico_plugin_payment_stripe-0.0.1.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+indico_plugin_payment_stripe-0.0.1.dist-info/entry_points.txt,sha256=8q7DI21jQgmzHzvxCYi6PX0ONHUw1Gt0uqCB49aX_Qo,84
+indico_plugin_payment_stripe-0.0.1.dist-info/top_level.txt,sha256=5U3Do-AgEviEQxgQewGucvrR3jaC8MhWb6Mjk_NG0CM,22
+indico_plugin_payment_stripe-0.0.1.dist-info/RECORD,,
