@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: python-nhc
+Version: 0.1.0
+Summary: Python controller for a Niko Home Control installation
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: gawood
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: nclib
