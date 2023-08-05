@@ -1,0 +1,9 @@
+README.md
+setup.py
+bitcoin/__init__.py
+bitcoin/bitcoin.py
+bitcoin_requests.egg-info/PKG-INFO
+bitcoin_requests.egg-info/SOURCES.txt
+bitcoin_requests.egg-info/dependency_links.txt
+bitcoin_requests.egg-info/requires.txt
+bitcoin_requests.egg-info/top_level.txt
