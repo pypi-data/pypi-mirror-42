@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+ldrpyutils/__init__.py
+ldrpyutils/core.py
+ldrpyutils.egg-info/PKG-INFO
+ldrpyutils.egg-info/SOURCES.txt
+ldrpyutils.egg-info/dependency_links.txt
+ldrpyutils.egg-info/entry_points.txt
+ldrpyutils.egg-info/requires.txt
+ldrpyutils.egg-info/top_level.txt
+ldrpyutils/data/prefixes.ttl
+ldrpyutils/test/data/multi-register.xlsx
+ldrpyutils/test/data/simple.xlsx
