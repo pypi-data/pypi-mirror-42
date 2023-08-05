@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: env2fs
+Version: 0.2.0
+Summary: write env vars to filesystem (CI tool)
+Home-page: https://yourlabs.io/oss/env2fs
+License: UNKNOWN
+Description: env2fs: write env vars to filesystem (CI tool)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        Write a file with an env var content or a set of env vars.
+        
+        Usage example::
+        
+            env2fs ~/.ssh/id_rsa SSH_KEY fmod=600 dmod=700
+        
+        Note that the missing dollar sign is intendent to prevent evaluation from
+        the parent shell itself.
+        
+        The above example writes the contents of the ``$SSH_KEY`` environment variable
+        into ``~/.ssh/id_rsa``, with a mode of 600 and 700 for any parent directory
+        that will be automatically created if necessary.
+        
+        To write an env file, pass a variable name that ends with underscore, ie::
+        
+            export staging_pgpass=foo
+            env2fs staging.env staging_
+        
+        Will write staging.env with contents::
+        
+            pgpass=foo
+        
+        Extra CLI options::
+        
+          --dryrun       Do not actually touch the fs
+          --verbose,-v      Verbose output
+Keywords: automation cli
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development
+Classifier: Topic :: System
+Classifier: Topic :: Terminals
+Requires-Python: >=3
+Description-Content-Type: text/x-rst
