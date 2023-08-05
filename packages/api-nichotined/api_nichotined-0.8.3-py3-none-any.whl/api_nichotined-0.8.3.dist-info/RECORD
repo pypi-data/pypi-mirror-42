@@ -1,0 +1,17 @@
+API/__init__.py,sha256=39z7taBON8ZZ5M-xp9IkK_unj6wRml-xxfNBSGPUiwg,211
+API/modules/__init__.py,sha256=bHjqlg4nS-KSwMrM2qMmkRLD-b2awLHYogiM3HR0Fms,295
+API/modules/baseApi.py,sha256=u0XoIaASvfSEPprVn3DIGcnEVZVVmKMt2FJaNVZL-p8,3097
+API/modules/delete.py,sha256=5pqjJab4RIbf541pltQ1o6oTpc9dvOL1Mol_Kb8B2Bs,684
+API/modules/get.py,sha256=-F8zrCSdbqQZieRezicq15yuxMpYWUUBMZ33IXuQ4NE,663
+API/modules/patch.py,sha256=PFJJkLHfNnkqvOdI8OcfTyV1CU0CIB-nSiNauGuL_Gc,677
+API/modules/post.py,sha256=gd0LQsbKrWpg5ZrMJg78NkRpV4tXYf7lfSv1FSsxx_o,670
+API/modules/put.py,sha256=QQQ8vbViju7Mjm8Kki9olOD2pkMNQCAGd15Hky8jVSY,663
+API/modules/redis_py/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+API/modules/redis_py/redis.py,sha256=424OHxCEltQYTYALSPEaOW8l5mgF2BKjoG7eohG2QMo,1567
+API/unittest/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+API/unittest/test_unittest.py,sha256=zkOeXNWafBb16KVMevUQ9eKjfMJu1l-pTNeuupLiQd4,399
+api_nichotined-0.8.3.dist-info/LICENSE,sha256=y3HCNk1R3AlKkh075L3Jx7Ey8FjQS6xRWmcDbyONiQ0,1075
+api_nichotined-0.8.3.dist-info/METADATA,sha256=5FEOypBUQ2WXCbDKtexnpHfK1mzsO1KqYBg_O1QaUTA,618
+api_nichotined-0.8.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+api_nichotined-0.8.3.dist-info/top_level.txt,sha256=DVLuyEO0fAvFevqxb-MWIMiKsJ7yKONUM6mVTebGEVE,4
+api_nichotined-0.8.3.dist-info/RECORD,,
