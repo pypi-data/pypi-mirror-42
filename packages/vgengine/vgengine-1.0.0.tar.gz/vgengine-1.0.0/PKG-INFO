@@ -1,0 +1,37 @@
+Metadata-Version: 1.1
+Name: vgengine
+Version: 1.0.0
+Summary: A general purpose game engine using the pygame graphics API and pymunk's physics engine.
+Home-page: https://github.com/jrburga/VGEngine
+Author: Jake Burga
+Author-email: jrburga@mit.edu
+License: MIT
+Description: # Python Video Game Engine
+        
+        A Python Video Game Engine powered by Pygame and Pymunk.
+        
+        Make sure to run `python setup.py install`.
+        
+        A game engine is essentially an SDL wrapper with a Physics Engine tied together with a robuts API of generalized Game Objects and Components.
+        
+        Because of this, the component/system implementation of this engine resulted in three main systems:
+        
+        * Physics
+        * Graphics
+        * Control
+        
+        Coincidentally, this is essentially 
+        
+        * Model
+        * View
+        * Control
+        
+        the `examples` directory contains a working example of how to use the game engine, the components, and ultimately playing a rendering a simple scene that uses physics and graphics.
+        
+Keywords: game engine
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Operating System :: OS Independent
