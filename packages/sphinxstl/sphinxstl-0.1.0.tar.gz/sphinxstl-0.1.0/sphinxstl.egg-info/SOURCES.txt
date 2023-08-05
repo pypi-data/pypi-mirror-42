@@ -1,0 +1,9 @@
+README.rst
+setup.py
+sphinxstl/__init__.py
+sphinxstl/sphinxstl.py
+sphinxstl.egg-info/PKG-INFO
+sphinxstl.egg-info/SOURCES.txt
+sphinxstl.egg-info/dependency_links.txt
+sphinxstl.egg-info/requires.txt
+sphinxstl.egg-info/top_level.txt
