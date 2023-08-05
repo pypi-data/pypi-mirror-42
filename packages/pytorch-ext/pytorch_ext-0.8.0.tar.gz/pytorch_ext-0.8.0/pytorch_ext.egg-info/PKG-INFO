@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pytorch-ext
+Version: 0.8.0
+Summary: Extension modules for Pytorch
+Home-page: https://github.com/AlbertoCenzato/pytorch_ext
+Author: Alberto Cenzato
+Author-email: alberto.cenzato@outlook.it
+License: UNKNOWN
+Description: # pytorch_ext
+        A bunch of utility modules to simplify PyTorch model training
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Description-Content-Type: text/markdown
