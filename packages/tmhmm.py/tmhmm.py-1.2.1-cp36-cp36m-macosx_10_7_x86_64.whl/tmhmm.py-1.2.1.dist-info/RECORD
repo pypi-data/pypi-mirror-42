@@ -1,0 +1,14 @@
+tmhmm/TMHMM2.0.model,sha256=qlcway9gAO4wUYXYxYYDx_ZGPstByY0W0d_YAwL_qb4,22262
+tmhmm/__init__.py,sha256=A5LyTT0poQ5fkDmwOqgOPBe9ZNzFr3YI1f_rdS_XmYY,53
+tmhmm/api.py,sha256=OLXJqkVjXzbn4u1uq4ojVa_9Is0RdJD2bnxyNR_KR5g,1197
+tmhmm/cli.py,sha256=Khr77F_DEDnW1NcYbUp6Jux5aVJAeRFcLA9_XO5kfKs,3167
+tmhmm/hmm.cpython-36m-darwin.so,sha256=MA-7HbZggsWWlXwmu0p3ZbQNkvsqGjlEt9ktf5LMhbs,110404
+tmhmm/model.py,sha256=tdY3rp02dGyypQwkKYSyVAOW7XWQcNt03wsKfhqxduM,5191
+tmhmm/utils.py,sha256=mWEWeNJ0uH6aLNilcXI59qZe6DR9oJoL6wlRYQIJ2AU,1728
+tmhmm.py-1.2.1.dist-info/DESCRIPTION.rst,sha256=PAxFkL0d1_bmsE6yIva75oAdAyfr50aUIbsqcwPu9bA,5890
+tmhmm.py-1.2.1.dist-info/METADATA,sha256=OLz0qUon6fE8zLQGbk1QZYrwBHtlUJJ6sQtodYtozYg,6261
+tmhmm.py-1.2.1.dist-info/RECORD,,
+tmhmm.py-1.2.1.dist-info/WHEEL,sha256=RJD_A_4jff0dWm6DAO2W1nL43KuV4PLwx8dZqf5BC7w,110
+tmhmm.py-1.2.1.dist-info/entry_points.txt,sha256=KLbIPcpZrcSx9DZQjy8PjS63XE4NNotgw75q6quqddQ,41
+tmhmm.py-1.2.1.dist-info/metadata.json,sha256=CavnRRm2WfACYp6Z9fDHp0UPYXijojnyfd9wTeM-jfs,701
+tmhmm.py-1.2.1.dist-info/top_level.txt,sha256=o6bRZqpq-LQJiH1zr5UvXJLkcNHcPmOnma6W4hbdlqY,6

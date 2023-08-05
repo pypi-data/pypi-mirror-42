@@ -1,0 +1,3 @@
+[console_scripts]
+tmhmm = tmhmm.cli:cli
+
