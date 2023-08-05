@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: suitcase-jsonl
+Version: 0.1.0b2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: BSD (3-clause)
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: event-model (>=1.8.0rc1)
+Requires-Dist: suitcase-utils
+
+# suitcase.jsonl
+
+This is a suitcase subpackage for reading a particular file format.
+
+## Installation
+
+```
+pip install suitcase-jsonl
+```
+
+
