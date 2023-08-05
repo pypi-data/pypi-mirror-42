@@ -1,0 +1,9 @@
+{
+    "package-name": "aldryn-forms",
+    "installed-apps": [
+        "emailit",
+        "captcha",
+        "aldryn_forms",
+        "aldryn_forms.contrib.email_notifications"
+    ]
+}
