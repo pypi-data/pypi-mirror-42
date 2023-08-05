@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+version.txt
+hs_build_tools/__init__.py
+hs_build_tools/nose.py
+hs_build_tools/setup.py
+hs_build_tools.egg-info/PKG-INFO
+hs_build_tools.egg-info/SOURCES.txt
+hs_build_tools.egg-info/dependency_links.txt
+hs_build_tools.egg-info/requires.txt
+hs_build_tools.egg-info/top_level.txt
+hs_build_tools.egg-info/zip-safe
