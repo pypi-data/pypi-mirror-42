@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyfastq-reader
+Version: 1.2.0
+Summary: FASTQ file reader
+Home-page: https://github.com/ahcm/pyfastq_reader
+Author: Andy Hauser
+Author-email: Andreas.Hauser@LMU.de
+License: LICENSE
+Description: Pure python reader for the FASTQ format used in sequencing
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent

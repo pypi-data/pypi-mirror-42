@@ -1,0 +1,3 @@
+[console_scripts]
+pyfastq_reader = pyfastq_reader:main
+
