@@ -1,0 +1,4 @@
+[console_scripts]
+slither = slither.__main__:main
+slither-check-upgradability = utils.upgradability.__main__:main
+
