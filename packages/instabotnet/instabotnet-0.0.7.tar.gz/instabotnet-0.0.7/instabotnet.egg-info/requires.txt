@@ -1,0 +1,9 @@
+colorlog
+colorama
+dataset>=1.1.2
+tqdm>=4.30.0
+requests-toolbelt>=0.8.0
+pyyaml
+requests>=2.21.0
+funcy
+click
