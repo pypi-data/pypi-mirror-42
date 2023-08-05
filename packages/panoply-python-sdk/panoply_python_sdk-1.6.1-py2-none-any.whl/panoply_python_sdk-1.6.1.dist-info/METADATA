@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: panoply-python-sdk
+Version: 1.6.1
+Summary: UNKNOWN
+Home-page: https://github.com/panoplyio/panoply-python-sdk
+Author: Panoply.io
+Author-email: support@panoply.io
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: requests (==2.3.0)
+Requires-Dist: oauth2client (==4.1.1)
+Provides-Extra: test
+Requires-Dist: pep8 (==1.7.0) ; extra == 'test'
+Requires-Dist: coverage (==4.3.4) ; extra == 'test'
+
+UNKNOWN
+
+

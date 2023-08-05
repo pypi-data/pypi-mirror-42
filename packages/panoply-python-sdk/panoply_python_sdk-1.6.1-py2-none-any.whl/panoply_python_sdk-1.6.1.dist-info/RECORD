@@ -1,0 +1,11 @@
+panoply/__init__.py,sha256=cG9VjvFMzikmWBmogk4BMt39hcK2mnj8U2L8tqJhha4,43
+panoply/constants.py,sha256=fFH496mjGg7yAVWzUoUEiykfnJQUevePJ9yky9pnOqc,62
+panoply/datasource.py,sha256=sNy5nQaWTJc90hO-NZULy8LUQG-P4i2Z3LOagfjnbCQ,4791
+panoply/errors.py,sha256=w24zXtfTUTe6NIUdT2GPD6E-MLfceL4C8p-yVJ62elo,174
+panoply/events.py,sha256=Pvu26vgzv8aQv4F4GtvDcBk4WC0wAgEcqOWBPTJpowg,401
+panoply/sdk.py,sha256=5r3H6gxuj7sDavn3DX2HYy0Q8h2P4rE1-fSNKLhHV4w,3515
+panoply_python_sdk-1.6.1.dist-info/LICENSE,sha256=07ksa7WSGT_sjrzTNowE3T0cn4WsfFER8SwnwIY7pIM,1075
+panoply_python_sdk-1.6.1.dist-info/METADATA,sha256=D8Jj_Z2c89CEL3U8dP-DzErjtfczdyRFbwY9tE5Inkw,429
+panoply_python_sdk-1.6.1.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+panoply_python_sdk-1.6.1.dist-info/top_level.txt,sha256=InFhh4jUgolKQ5AneBiNl6PmUox7MOT9l7JT5JnRsyY,8
+panoply_python_sdk-1.6.1.dist-info/RECORD,,
