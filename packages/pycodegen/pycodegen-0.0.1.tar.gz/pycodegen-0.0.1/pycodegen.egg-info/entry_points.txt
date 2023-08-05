@@ -1,0 +1,3 @@
+[console_scripts]
+pycodegen = pycodegen.cli:main
+
