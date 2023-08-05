@@ -1,0 +1,15 @@
+prince/__init__.py,sha256=SxM3CvUPicAYuPKhIf67_f-8s0--08N_rfQ_AC_OGHQ,142
+prince/__version__.py,sha256=dqbQotwQcVbD-cpseHkLIHAodxgYHUC9SK5ZvGfSjcc,63
+prince/ca.py,sha256=pdvi4z7bWudsjO2pCWblPOmCPq874RHSAiV0F0hfoD8,6207
+prince/famd.py,sha256=8lsohzKWzTmTHXuEzrJPWLIaY64PWjvv2NvurVJTXU8,1443
+prince/mca.py,sha256=eWPvpP_YFt--5i2iHTua8JBORwPtM3AfOlEO4ncTDQ4,4591
+prince/mfa.py,sha256=Ml5teoazMBmF8ONWv95HtX-MdBbAmSxp4C8nB-TlhfE,8572
+prince/one_hot.py,sha256=9Dq1Jl-AHieegbyOlLjZ4ZP2Hg437RUJQwdOnZjWU00,1092
+prince/pca.py,sha256=HNKbGrMRZdZFXMDxIV98y90GrmQKBm9hBW7gC7At2nk,8473
+prince/plot.py,sha256=_GRiZ-3iDt7-fnEuzOUerc8w0nZB83FtKFw4nO0GlZQ,1322
+prince/svd.py,sha256=PAl8a9J5bTlDQyYOeRz4-U-WE8ghVsrBXTt7I15qHzs,975
+prince/util.py,sha256=IBkrMFG7hJzVuOEVUxDI-K5fmRnrLWxbu6-P71JxXuw,504
+prince-0.6.1.dist-info/METADATA,sha256=1ino6ZkcMDawkzixkfrbEu7bS3pgAXFGRlRXGU27ntQ,23561
+prince-0.6.1.dist-info/RECORD,,
+prince-0.6.1.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+prince-0.6.1.dist-info/top_level.txt,sha256=dFmLnACCTKSBQ4IgtGqLk-m1hOGdfjCGhD9TYKeI1oE,7
