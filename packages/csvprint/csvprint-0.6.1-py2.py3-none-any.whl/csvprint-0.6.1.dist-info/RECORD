@@ -1,0 +1,10 @@
+csvprint/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+csvprint/parse_types.py,sha256=tlmjabim1TW8hvaiayFZmRDlN52CUDgLJcgUAUptMLE,1942
+csvprint/parser.py,sha256=R94C4IASETDVEoushqBa_Sc70S8aAxV6U0KtFXqDqAA,4872
+csvprint/printer.py,sha256=ktOvbnKMM_imgnt8_FAje6pRC8bYbAGMN78Ll1zgFT0,6109
+csvprint-0.6.1.data/scripts/csvprint,sha256=-8TLUFhgeovIa_MdiKV0MBsMzWLxAxHH1sWC8_y11h8,434
+csvprint-0.6.1.dist-info/LICENSE,sha256=0gGuSNWo_n37iDiQXjm1TsfuMJqVHITGznK3gp-a_V4,1059
+csvprint-0.6.1.dist-info/METADATA,sha256=jTLX7z3L7gA8DNyPd9L_tSJ691LfqXb7i9zIUQSZPac,4493
+csvprint-0.6.1.dist-info/WHEEL,sha256=8T8fxefr_r-A79qbOJ9d_AaEgkpCGmEPHc-gpCq5BRg,110
+csvprint-0.6.1.dist-info/top_level.txt,sha256=j5EdX6fOdop_aNT4mIDKCkGcrrGIYQlDDW5WKAG55Gg,9
+csvprint-0.6.1.dist-info/RECORD,,
