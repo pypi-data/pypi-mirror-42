@@ -1,0 +1,12 @@
+cranium/__init__.py,sha256=d8qUTXeYQEubtFLxLOtwQlJtqyTle6J_EttDuxX5syg,8943
+deltascope/__init__.py,sha256=kBwk59PA9DptUGStGZ121mfKNoL2bWoyQIlnrSzcPRs,67480
+deltascope/alignment.py,sha256=JrDJ91wsEP54L1SprzjGxDhyllbDK246o0DY7XOs630,13684
+deltascope/mpTransformation.py,sha256=4UB9EqpLVV29yoUua1VJ7Q4hhWbE_WBXNvXB1z3H3fI,8026
+deltascope/new.py,sha256=9wfahqnTiCLbvBNZYux04119jEQV_VpJsUvzZ77ZzVY,18625
+deltascope/process_after_gui.py,sha256=rh0NpXeDo0Fw14MvkACdks7zyfbEgWcNHOj7maj-uIo,1599
+deltascope/test_transform.py,sha256=Fusez4b6EBATg5VMw5O8yKfEIBJv6TDo0M1bL5S4eZs,1615
+deltascope-0.2.5.dist-info/LICENSE.md,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+deltascope-0.2.5.dist-info/METADATA,sha256=iBTbGsgnw7yHIJdOcq5gnqMmm9wUQGGA0VYekpZnVfY,1807
+deltascope-0.2.5.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+deltascope-0.2.5.dist-info/top_level.txt,sha256=-eSA4lU7i6yyOxNawBBoyMVhwPAEH0tmkK7QkSmM_cQ,11
+deltascope-0.2.5.dist-info/RECORD,,
