@@ -1,0 +1,13 @@
+pypersist/__init__.py,sha256=O0wdHNpRYOZeS2u2y2rXAcm4fSCzyleoJr0ES_4aoyE,6906
+pypersist/commoncache.py,sha256=m_RzUGzWWJ726gJ64zZ36NLnIxFDz0Ei4V687foROxk,108
+pypersist/diskcache.py,sha256=POYZUXeRGFRDQBAmbhRIcTJQwon1kcnBrPGgPz_1-jU,5685
+pypersist/hashing.py,sha256=DovRfAY8rzjrsbWAltZJG_Zz8i-qToCcd2ZtzkjX8ck,1239
+pypersist/mongodbcache.py,sha256=gHEvf2r8nSJVRYe_tmMGYAwUkzPPjuu5lRn_jM3yubw,6905
+pypersist/pickling.py,sha256=uX1zUWq4f9a3jSaEaq7srLyb4wKymApOyzDtLzkPdRM,1522
+pypersist/preprocessing.py,sha256=Uwnvk-fjQa5PDoZNfBBnUGX1FA_eGh6znf9AYacxpnY,3180
+pypersist-0.5.dist-info/DESCRIPTION.rst,sha256=JUbG2-8d1u4dQcujn9oSOVsjv4d9dRL7hYUgprT2eOs,2445
+pypersist-0.5.dist-info/METADATA,sha256=E-ik4N_OiH8AUZ4Ugy51sRiC_m9SJ-f7GmmathFFPiw,2930
+pypersist-0.5.dist-info/RECORD,,
+pypersist-0.5.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+pypersist-0.5.dist-info/metadata.json,sha256=9kQ7vcrozaKb-onZuL71snE4QdOjCo55ZvA77BiEvNE,688
+pypersist-0.5.dist-info/top_level.txt,sha256=RCEoed-NCeXfj_cFzLXKhpVbFCufidEO6H3Lt2C7Tdw,10
