@@ -1,0 +1,4 @@
+nó(
+  inicializar:
+    imprimir("Olá mundo!")
+)
