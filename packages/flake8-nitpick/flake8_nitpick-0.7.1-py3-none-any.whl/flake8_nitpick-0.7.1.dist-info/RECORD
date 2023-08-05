@@ -1,0 +1,8 @@
+flake8_nitpick/__init__.py,sha256=uLZXaKfHXSqGj13VMlnLKFir-dj5e6in3MQsnz-Civs,18966
+flake8_nitpick/__version__.py,sha256=bY7J1fzIGUnSqA1guQ_CAce34nnjZ5vTG6XpcH13C6c,45
+flake8_nitpick/generic.py,sha256=MB6uHRYxlOqgz77IkFlVyVJF_x8pCXqgJJwZxa90CGQ,2100
+flake8_nitpick-0.7.1.dist-info/entry_points.txt,sha256=nIVHJ3G-skjrM9bDkEBxRddd4-S410JBVCOSv-5td5s,54
+flake8_nitpick-0.7.1.dist-info/LICENSE,sha256=YM2R_XkylxF8dqXGZChBivDSTc_sUBpx5Xm-y-0t-oA,1080
+flake8_nitpick-0.7.1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+flake8_nitpick-0.7.1.dist-info/METADATA,sha256=4nkqvuf8aeG5Likig_BJ8k0j-avxZ3rtRD0QMdgjb40,5642
+flake8_nitpick-0.7.1.dist-info/RECORD,,
