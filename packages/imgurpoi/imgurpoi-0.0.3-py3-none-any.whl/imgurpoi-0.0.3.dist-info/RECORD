@@ -1,0 +1,11 @@
+imgurpoi/__init__.py,sha256=Aweo_V6VlNwx_HG4qpWrGvkJGUt9TbJI6Yow1TqSbNE,45
+imgurpoi/cli_upload.py,sha256=5J_sqq25h2SWEh0IxRE-UhhkzFyp5VxifD3m58keLVs,898
+imgurpoi/get_config.py,sha256=jpNaCvwvgzRYmtoXdKxaC_t3zlCXvQ2J3EyBUFG9Elo,906
+imgurpoi/imgurpoi.py,sha256=auLvVKXWFW8Ydr54aYr-5i1YoNfDovdUHYr6lc1_gss,664
+imgurpoi/setup.py,sha256=de6HXwOiagduWw9eq3yIEzBd4wzfxoUkpKyw5t-6YQQ,605
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+imgurpoi-0.0.3.dist-info/LICENSE,sha256=2jRD6FUOH3Cnz9s_Tt6dCr_yxEyRMARx-APObmWdWlk,1070
+imgurpoi-0.0.3.dist-info/METADATA,sha256=NBpdJyFiQh-7ccqmN_fwFTyij8REqYLuNRrkiXETxXA,1664
+imgurpoi-0.0.3.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+imgurpoi-0.0.3.dist-info/top_level.txt,sha256=wySzSjzatHYWnJB8E-j-k4Of8qXrFKUw9V7gRSuaey4,15
+imgurpoi-0.0.3.dist-info/RECORD,,
