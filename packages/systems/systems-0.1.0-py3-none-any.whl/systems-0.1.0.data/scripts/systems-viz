@@ -1,0 +1,4 @@
+#!python
+
+import systems.viz
+systems.viz.main()

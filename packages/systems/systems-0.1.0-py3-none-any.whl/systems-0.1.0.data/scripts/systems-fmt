@@ -1,0 +1,4 @@
+#!python
+
+import systems.format
+systems.format.main()
