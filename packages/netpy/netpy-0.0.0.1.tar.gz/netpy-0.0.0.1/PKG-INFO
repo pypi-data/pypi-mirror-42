@@ -1,0 +1,233 @@
+Metadata-Version: 1.0
+Name: netpy
+Version: 0.0.0.1
+Summary: Library for ML
+Home-page: UNKNOWN
+Author: nethub
+Author-email: nethub@yandex.ru
+License: UNKNOWN
+Description: # NetPy
+        
+        [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/maclinchy/netpy/blob/master/LICENSE)
+        
+        ## Installation
+        
+        ### We recommended to install NetPy in virtual env.
+        To get started, you should install ```virtualenv``` tool with ```pip```.
+        
+        ```sh
+        pip install virtualenv
+        ```
+        New directory to work with:
+        ```sh
+        mkdir python-virtual-environments && cd python-virtual-environments
+        ```
+        Create a new virtual environment inside the directory:
+        ```sh
+        python -m venv netpy_env
+        ```
+        You need to "activate" it.
+        ```sh
+        source netpy_env/bin/activate
+        ```
+        If your system is windows:
+        ```sh
+        netpy_env\Scripts\activate
+        ```
+        
+        Then you need to install NetPy. There is two ways to install:
+        
+        - **Install NetPy from PyPI (recommended):**
+        
+        ```sh
+        sudo pip install netpy
+        ```
+        
+        - **Install NetPy from GitHub source:**
+        
+        ```sh
+        git clone https://github.com/maclinchy/netpy.git
+        cd netpy
+        sudo python setup.py install
+        ```
+        
+        ------------------
+        ## Getting started
+        
+        Let's create the net:
+        ```sh
+        nhm newnet myFirstNet
+        ```
+        
+        `netpy-manager` will create folder `myFirstNet`, which contains a directory structure similar to this:
+        
+        ```sh
+        ├── data_set
+        │   ├── data_X.txt
+        │   └── data_Y.txt
+        ├── net_data
+        │   └── arch.json
+        ├── conf.json
+        ├── network.py
+        ├── test.py
+        └── train.py
+        
+        ```
+        
+        `data_set` is folder which contains data for learning.
+        
+        `net_data` is folder which contains data about our net.
+        
+        `conf.json` is file with settings.
+        
+        `network.py` is main file for init the net.
+        
+        `train.py` is file for train the net
+        
+        `test.py` is file for test the net. 
+        
+        Let's create net with 3 layers.
+        ------------------
+        `network.py`
+        ```python
+        from netpy.nets import FeedForwardNet
+        from netpy.modules import LinearLayer,SigmoidLayer, FullRelation
+        from netpy.teachers import BackPropTeacher
+        import numpy as np
+        
+        # Import file with settings
+        import conf
+        
+        net = FeedForwardNet()
+        
+        # Add your layers here
+        input_layer = LinearLayer()
+        hidden_layer = SigmoidLayer()
+        output_layer = SigmoidLayer()
+        
+        # Add your layers to the net here
+        net.add_Input_Layer(input_layer)
+        net.add_Layer(hidden_layer)
+        net.add_Output_Layer(output_layer)
+        
+        # Add your connections here
+        rel_in_hid = FullRelation(input_layer, hidden_layer)
+        rel_hid_out = FullRelation(hidden_layer, output_layer)
+        
+        # Add your connections to the net here
+        net.add_Relation(rel_in_hid)
+        net.add_Relation(rel_hid_out)
+        ```
+        
+        `train.py`
+        ```python
+        from netpy.teachers import BackPropTeacher
+        from network import net
+        import numpy as np
+        import conf
+        
+        num_of_epoch = 8
+        
+        # Your data set
+        train_X = np.loadtxt(conf.data_set_dir_X)
+        train_Y = np.loadtxt(conf.data_set_dir_Y)
+        
+        # Config your teacher
+        teacher = BackPropTeacher(net,
+                                  error = 'MSE',
+                                  learning_rate = 1e-5,
+                                  alpha = 0.0001)
+        
+        
+        # Teach your net here
+        teacher.train(X, Y, num_of_epoch, load_data = False)
+        ```
+        
+        `test.py`
+        ```python
+        
+        from network import net
+        
+        test = []
+        
+        net.load()
+        
+        print(net.forward(test))
+        ```
+        
+        We need to add neurons to the net:
+        ```python
+        input_layer = LinearLayer(3)
+        hidden_layer = SigmoidLayer(20)
+        output_layer = SigmoidLayer(1)
+        ```
+        
+        Then we need to add the data:
+        `data_X.txt`
+        ```sh
+        0 0 0
+        0 0 1
+        0 1 0
+        0 1 1
+        1 0 0
+        1 0 1
+        1 1 0
+        1 1 1
+        ```
+        `data_Y.txt`
+        ```sh
+        0
+        0
+        0
+        1
+        0
+        1
+        1
+        1
+        ```
+        
+        Let's train the net!
+        ```sh
+        python train.py
+        ```
+        
+        In `net_data` two files - `weights.h5` and `arch.json`.
+        
+        - In `weights.h5` we have save our weights.
+        - In `arch.json` we have save data about the net.
+        - In `myFirstNet.log` we have history of net's actions.
+        
+        If you want to continue learning you should change parameter of train function:
+        ```python
+        teacher.train(X, Y, 100, load_data = True)
+        ```
+        
+        Let's test the net!
+        
+        ```sh
+        python test.py
+        ```
+        
+        `test.py`
+        ```python
+        
+        from network import net
+        
+        test = [0,0,0]
+        
+        net.load()
+        
+        print(net.forward(test))
+        ```
+        
+        You can fork your net:
+        ```sh
+        nhm fork myFirstNet mySecondNet
+        ```
+        
+        You can rename your net:
+        ```sh
+        nhm rename mySecondNet myAwesomeNet
+        ```
+        
+Platform: UNKNOWN

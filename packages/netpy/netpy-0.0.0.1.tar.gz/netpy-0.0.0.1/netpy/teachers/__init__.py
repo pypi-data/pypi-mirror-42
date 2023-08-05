@@ -1,0 +1,3 @@
+from netpy.teachers.BackPropTeacher import BackPropTeacher
+from netpy.teachers.BackPropTeacherTest import BackPropTeacherTest
+from netpy.teachers.BackPropTeacher_DVR import BackPropTeacher_DVR
