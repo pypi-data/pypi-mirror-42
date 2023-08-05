@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+pandocattrs.py
+setup.py
+pandoc_attrs.egg-info/PKG-INFO
+pandoc_attrs.egg-info/SOURCES.txt
+pandoc_attrs.egg-info/dependency_links.txt
+pandoc_attrs.egg-info/requires.txt
+pandoc_attrs.egg-info/top_level.txt
