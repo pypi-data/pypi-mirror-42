@@ -1,0 +1,10 @@
+README.md
+setup.py
+bits/__init__.py
+bits/netbox/__init__.py
+bits_netbox.egg-info/PKG-INFO
+bits_netbox.egg-info/SOURCES.txt
+bits_netbox.egg-info/dependency_links.txt
+bits_netbox.egg-info/not-zip-safe
+bits_netbox.egg-info/requires.txt
+bits_netbox.egg-info/top_level.txt
