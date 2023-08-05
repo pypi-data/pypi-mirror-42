@@ -1,0 +1,10 @@
+dimtools/__init__.py,sha256=wT2Yk809k23pBpmmJudNpBlBzELFBVaFomLPNxoxD6k,447
+dimtools/cls_readconf.py,sha256=sVbemlVUtox6oU1V6SRrv27Tu_87CjTaZNWfsJCxNtw,1764
+dimtools/fnc_mkdir.py,sha256=o9kMbSoDnqPvT-GLBfm_Eku7wGSyJnhiIE3kFkVKszM,159
+dimtools/fnc_readargs.py,sha256=IvEZi7QNN5cuUIepbJ2LcrJVg7Ho8memI-sNg93-R8s,1236
+dimtools/fnc_walker.py,sha256=PUw9IJ_Hajri7OVh-CojKUKnos1HraEr7Mh8pKThJww,239
+dim_tools-3.0.1b0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+dim_tools-3.0.1b0.dist-info/METADATA,sha256=9MySZcsPE3lY_Y7zJx9RHuvyECSEuwiRD4myWR6aDA0,518
+dim_tools-3.0.1b0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+dim_tools-3.0.1b0.dist-info/top_level.txt,sha256=bes0Kf9svrTSQSUxAtpnCmAc1jtny9_2kYrC9iLjH6I,9
+dim_tools-3.0.1b0.dist-info/RECORD,,
