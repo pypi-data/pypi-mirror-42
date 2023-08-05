@@ -1,0 +1,13 @@
+confusables/__init__.py,sha256=Wt_TvZP4TDkR6wDudwFoehiCUFIRNOcc9c6cYzWwsDk,2769
+confusables/config.py,sha256=mOO4AS0LDhV3dCu0KJL2H8tJe68ufb4WOi9IcLo1RrI,216
+confusables/confusable.py,sha256=AtcEZsDwjsYSmspPjYsWqI4jgNkrDJ--m9kbdMcSZr4,1505
+confusables/parse.py,sha256=6kMVDng3H4ncqlR69-oxguJk_8_CYf8TsMYt0hQ0Ig0,4153
+confusables/utils.py,sha256=ubs_Cb8XmBSgEcUmvlXC53Wfz_ids7HraRY8cgvO0Q0,116
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/confusables/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/confusables/test_confusables.py,sha256=sxDIjd7sJcA89GxKn0G7QSvHkE_OuN-htWxvjUs-nkQ,3371
+confusables-0.1.1.dist-info/LICENSE,sha256=tNOI17SNgdSemZOdVklocz6ZwxZiWipk5qgQPKWaxZY,1070
+confusables-0.1.1.dist-info/METADATA,sha256=7Iz4OiR8LAIXSoYzksRmlokSgk3LlUBSzksXyfrlPNA,4956
+confusables-0.1.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+confusables-0.1.1.dist-info/top_level.txt,sha256=D3e_2er1UWPC8FNDwtp5nASBOUkA97XeDGVda72pFUk,18
+confusables-0.1.1.dist-info/RECORD,,
