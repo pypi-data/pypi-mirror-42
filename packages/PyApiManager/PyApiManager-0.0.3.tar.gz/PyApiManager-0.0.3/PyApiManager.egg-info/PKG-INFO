@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: PyApiManager
+Version: 0.0.3
+Summary: This is a usefull api manager.
+Home-page: https://github.com/pebbrian/PyApiManager
+Author: Brian Pierre-Emmanuel
+Author-email: pebrian@outlook.fr
+License: UNKNOWN
+Description: This is a usefull api manager.
+        
+        How to use: **from PyApiManager.apimanager import API_Manager**
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
