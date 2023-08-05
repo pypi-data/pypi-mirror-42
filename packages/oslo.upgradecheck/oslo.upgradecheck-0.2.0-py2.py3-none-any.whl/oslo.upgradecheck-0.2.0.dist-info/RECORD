@@ -1,0 +1,12 @@
+oslo_upgradecheck/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oslo_upgradecheck/_i18n.py,sha256=O0n7n87cEsHVrMeoMHxSr9dTWusYd2TWvezE_fKYvG8,1097
+oslo_upgradecheck/upgradecheck.py,sha256=4FBPSVPVjj_FTBdrDPYHVuvJT7ltE2abVj4wprEFIMQ,7597
+oslo_upgradecheck/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oslo_upgradecheck/tests/test_upgradecheck.py,sha256=4-arZneIbjrfcGX09-VMUFrepbSJq6-5oFphm9xZirg,3421
+oslo.upgradecheck-0.2.0.dist-info/AUTHORS,sha256=G5Wqr5JbBHueq2s1zuke4YhhKNrkmpaS1atkTU3I9l8,287
+oslo.upgradecheck-0.2.0.dist-info/LICENSE,sha256=XfKg2H1sVi8OoRxoisUlMqoo10TKvHmU_wU39ks7MyA,10143
+oslo.upgradecheck-0.2.0.dist-info/METADATA,sha256=gydSj4FNIQvuf7I99PX8n7fwwejE9abHOLycfrmCl_0,1694
+oslo.upgradecheck-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+oslo.upgradecheck-0.2.0.dist-info/pbr.json,sha256=tjCHjtmmh_M_nEcDMZC-mjHi8dORGPaGdmE4W8aQOlM,46
+oslo.upgradecheck-0.2.0.dist-info/top_level.txt,sha256=65BzdgYK12XEUHzxGx5_0aL4Kqbe8Mw6NbpyC_gKWZE,18
+oslo.upgradecheck-0.2.0.dist-info/RECORD,,
