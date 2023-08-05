@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: itk-cuberille
+Version: 2.0.0
+Summary: This module implements cuberille implicit surface polygonization for ITK.
+Home-page: https://itk.org/
+Author: Dan Mueller
+Author-email: itk+community@discourse.itk.org
+License: Apache
+Download-URL: https://github.com/InsightSoftwareConsortium/ITKCuberille
+Keywords: ITK InsightToolkit
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: C++
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Operating System :: Android
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Requires-Dist: itk (>=5.0rc01)
+
+This method operates by dividing the surface into a number of small cubes called cuberilles. Each cuberille is centered at a pixel lying on the iso-surface and then quadrilaterals are generated for each face. The original approach is improved by projecting the vertices of each cuberille onto the implicit surface, smoothing the typical block-like resultant mesh.
+
+
