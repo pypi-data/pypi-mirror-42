@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: xadix-cloudflare
+Version: 0.1.0
+Summary: CLI for cloudflare api
+Home-page: https://github.com/xadix/cloudflare-api-py
+License: UNKNOWN
+Keywords: cloudflare
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Requires-Python: >=2.7, <3
+Requires-Dist: requests (>=2.18.4)
+Requires-Dist: tabulate (>=0.8.2)
+Requires-Dist: dnspython (>=1.15.0)
+Requires-Dist: cloudflare (>=2.1.0)
+
+UNKNOWN
+
+

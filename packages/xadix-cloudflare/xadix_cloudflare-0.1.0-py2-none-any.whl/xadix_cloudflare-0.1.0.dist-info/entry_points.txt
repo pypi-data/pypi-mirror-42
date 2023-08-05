@@ -1,0 +1,3 @@
+[console_scripts]
+xdx-cloudflare = xadix.cloudflare.cli:main
+
