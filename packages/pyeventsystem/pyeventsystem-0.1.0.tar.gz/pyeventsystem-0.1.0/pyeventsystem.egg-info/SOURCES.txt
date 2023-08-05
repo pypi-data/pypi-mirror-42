@@ -1,0 +1,15 @@
+README.rst
+setup.cfg
+setup.py
+pyeventsystem/__init__.py
+pyeventsystem/events.py
+pyeventsystem/interfaces.py
+pyeventsystem/middleware.py
+pyeventsystem.egg-info/PKG-INFO
+pyeventsystem.egg-info/SOURCES.txt
+pyeventsystem.egg-info/dependency_links.txt
+pyeventsystem.egg-info/requires.txt
+pyeventsystem.egg-info/top_level.txt
+tests/__init__.py
+tests/test_event_system.py
+tests/test_middleware_system.py

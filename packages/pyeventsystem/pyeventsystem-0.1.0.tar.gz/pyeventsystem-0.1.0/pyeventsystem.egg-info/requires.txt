@@ -1,0 +1,7 @@
+
+[dev]
+tox
+pydevd
+sphinx
+flake8
+flake8-import-order
