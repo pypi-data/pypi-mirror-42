@@ -1,0 +1,11 @@
+nameko
+h2>=3
+
+[dev]
+pytest
+grpcio
+grpcio-tools
+googleapis-common-protos
+pre-commit
+wrapt
+zmq
