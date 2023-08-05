@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pw
+Version: 0.11.0
+Summary: Search in GPG-encrypted password file.
+Home-page: https://github.com/catch22/pw
+Author: Michael Walter
+Author-email: michael.walter@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: colorama (>=0.4.1,<0.5.0)
+Requires-Dist: pyperclip (>=1.7,<2.0)
