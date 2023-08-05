@@ -1,0 +1,7 @@
+setup.py
+simail/__init__.py
+simail/simail.py
+simail.egg-info/PKG-INFO
+simail.egg-info/SOURCES.txt
+simail.egg-info/dependency_links.txt
+simail.egg-info/top_level.txt

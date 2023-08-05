@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: simail
+Version: 0.0.1
+Summary: A small mail package
+Home-page: https://github.com/AmitabhPathak/simail
+Author: Amitabh Kumar
+Author-email: amitabhkumarpathak@gmail.com
+License: UNKNOWN
+Description: A tool to send emails
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
