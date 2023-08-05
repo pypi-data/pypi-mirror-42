@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+pyee2/__init__.py
+pyee2/eventemitter.py
+pyee2.egg-info/PKG-INFO
+pyee2.egg-info/SOURCES.txt
+pyee2.egg-info/dependency_links.txt
+pyee2.egg-info/top_level.txt
