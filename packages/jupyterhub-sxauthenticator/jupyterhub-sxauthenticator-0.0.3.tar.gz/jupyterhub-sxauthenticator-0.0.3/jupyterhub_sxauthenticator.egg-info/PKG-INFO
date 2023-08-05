@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: jupyterhub-sxauthenticator
+Version: 0.0.3
+Summary: JupyterHub authenticator that hands out temporary accounts for everyone
+Home-page: https://github.com/jupyterhub/sxauthenticator
+Author: Yuan Xiao
+Author-email: yuan.tu.xiao@gmail.com
+License: 3 Clause BSD
+Description: UNKNOWN
+Platform: UNKNOWN

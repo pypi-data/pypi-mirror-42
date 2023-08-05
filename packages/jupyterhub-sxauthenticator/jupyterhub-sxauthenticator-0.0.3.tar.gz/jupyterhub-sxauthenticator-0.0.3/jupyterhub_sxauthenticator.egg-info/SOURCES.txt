@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+jupyterhub_sxauthenticator.egg-info/PKG-INFO
+jupyterhub_sxauthenticator.egg-info/SOURCES.txt
+jupyterhub_sxauthenticator.egg-info/dependency_links.txt
+jupyterhub_sxauthenticator.egg-info/top_level.txt
+sxauthenticator/__init__.py
