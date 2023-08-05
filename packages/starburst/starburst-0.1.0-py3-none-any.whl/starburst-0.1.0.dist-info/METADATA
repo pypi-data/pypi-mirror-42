@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: starburst
+Version: 0.1.0
+Summary: identify and measure pupil using starburst algorithm
+Home-page: https://github.com/Palpatineli/starburst
+Author: Keji Li
+Author-email: mail@keji.li
+License: GPLv3
+Download-URL: https://github.com/Palpatineli/starburst/archive/0.1.0.tar.gz
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: numpy
+Requires-Dist: opencv-python (>=3.0)
+Requires-Dist: scipy
+Requires-Dist: tiffreader
+Requires-Dist: tqdm
+Requires-Dist: uifunc
+
+Starburst pupil tracking algorithm
+==================================
+
+Follows the algorithm of http://bit.ly/2GmqlG7, runs offline (2Hz for
+512x512)
+
+Provides an executive “starburst”, where you can select the tiff file to
+track. Saves the pupil radii in a numpy npy file in the same folder.
+
+

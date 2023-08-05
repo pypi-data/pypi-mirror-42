@@ -1,0 +1,3 @@
+[gui_scripts]
+starburst = starburst.main:main
+
