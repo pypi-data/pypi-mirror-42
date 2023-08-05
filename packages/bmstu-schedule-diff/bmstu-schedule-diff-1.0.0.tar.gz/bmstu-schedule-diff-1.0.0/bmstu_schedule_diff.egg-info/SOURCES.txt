@@ -1,0 +1,13 @@
+README.md
+setup.py
+bmstu_schedule_diff/__init__.py
+bmstu_schedule_diff/__main__.py
+bmstu_schedule_diff/diff.py
+bmstu_schedule_diff/parser.py
+bmstu_schedule_diff/patch.py
+bmstu_schedule_diff.egg-info/PKG-INFO
+bmstu_schedule_diff.egg-info/SOURCES.txt
+bmstu_schedule_diff.egg-info/dependency_links.txt
+bmstu_schedule_diff.egg-info/entry_points.txt
+bmstu_schedule_diff.egg-info/requires.txt
+bmstu_schedule_diff.egg-info/top_level.txt
