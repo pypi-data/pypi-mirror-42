@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: ecasb2share
+Version: 0.0.1b11
+Summary: ecasb2share provides a python library to interact with B2SHARE REST API.
+Home-page: https://github.com/SofianeB/ECAS-B2SHARE
+Author: Sofiane Bendoukha
+Author-email: bendoukha@dkrz.de
+License: mit
+Keywords: ecas rest python eosc-hub b2share
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Bug Tracking
+Requires-Dist: requests (>=1.0)
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+============
+ECAS B2SHARE
+============
+
+
+Python module to talk to B2SHARE HTTP REST API!
+
+.. note:: This module is not a B2SHARE client and is related to the ECAS use case.
+
+
+How to install
+==============
+
+Using pip
+::
+
+   pip install ecasb2share
+
+
+How to use
+==========
+
+Create a client
+::
+
+   from ecasb2share.ecasb2shareclient import EcasShare as Client
+   client = Client()
+
+
+Create a draft record
+::
+
+   client.create_draft_record(community_id, title)
+
+
+============
+Contributors
+============
+
+* Sofiane Bendoukha <bendoukha@dkrz.de>
+
+=========
+Changelog
+=========
+
+
+
+Version 0.0.1b5 2019-02-14
+==========================
+
+- Update README
+- Fix uploading token
+- Fix creating new drafts records (filebucketid)
+
+Version 0.0.1b4 2019-02-12
+==========================
+
+- Fixed bug in adding files to records
+
+Version 0.0.1-a0
+================
+
+- Added first basic methods
+
+
+
