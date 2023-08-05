@@ -1,0 +1,7 @@
+simple_elastic/__init__.py,sha256=HB46evr7_cBYxcdzLQdvNIfzWKn_JQkDrW7t-lOIDmo,97
+simple_elastic/cluster.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simple_elastic/index.py,sha256=qDf71F0FVAp-6i3jBDR8Cmi1V2LAqx2fYG0kM82aRko,10924
+simple_elastic-1.2.1.dist-info/METADATA,sha256=AOlA_C6NqJ6bLrFdDdS4P2LXd1RRAl7GRER1l7O7cc4,560
+simple_elastic-1.2.1.dist-info/RECORD,,
+simple_elastic-1.2.1.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+simple_elastic-1.2.1.dist-info/top_level.txt,sha256=SgoCM3FndRaI5PAL2bFUzQLE7pVjMs35dEKegDwptrg,15
