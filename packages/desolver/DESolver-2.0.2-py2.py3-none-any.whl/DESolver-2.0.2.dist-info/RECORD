@@ -1,0 +1,14 @@
+desolver/__init__.py,sha256=T7lj90iP2BwIPfn2UQdmPMNoYNKyIX7UC_1P9wAE9Wg,164
+desolver/differentialsystem.py,sha256=_BP1GHcjH9DLc00zHawdL7XbXKfH1UL_BsT7ohTjOGU,22681
+desolver/exceptiontypes/__init__.py,sha256=IQFaIrtPm2OpZtRMpCuLIBszf61AO4zwOY4emurivQM,119
+desolver/exceptiontypes/exceptiontypes.py,sha256=Y7oGgJJZh07PBTXJGyRmm1V2xgF5slPMaEuJO64O5y4,1728
+desolver/integrationschemes/__init__.py,sha256=ZffP392OXIh1S342sVFkz-q8C0dQIhue4NjUJOXbPP4,119
+desolver/integrationschemes/integrationschemes.py,sha256=nHYmTazcv0wCiEsTTZgnegKiyr8fCvxPSKyR6cx00WA,8008
+desolver/integrationschemes/integrator_template.py,sha256=2qQ96IVRJsd38BTk-B8YGjwNUAcvhikEEY7d08-ZOYI,5269
+desolver/utilities/__init__.py,sha256=UoM-0jYkB6ZK4cexwjWY5eAbQiqvkvs9zdbTF0s_46s,112
+desolver/utilities/utilities.py,sha256=s8b5QFoHEXdTM-AR232oVMuq1Vns8aRPlVZ5Vy7tnJc,4947
+DESolver-2.0.2.dist-info/LICENSE,sha256=Nazup8MvudKTnvnnWemTmZP3W0RwpX_FYnu9DBrBGC8,1110
+DESolver-2.0.2.dist-info/METADATA,sha256=4f3_9Rldo1cx6LarG4Fa_If8JbHjQqGT0OBUld_o5ks,1089
+DESolver-2.0.2.dist-info/WHEEL,sha256=GP9ACJkAJDyZNf-YPXDAJ8MdtRSNk4H2JK7vR-x05CE,116
+DESolver-2.0.2.dist-info/top_level.txt,sha256=nhVSDFLTFE6B7ONMiPB4LhZiUdmwfF8wVE9_qmBGFmg,9
+DESolver-2.0.2.dist-info/RECORD,,
