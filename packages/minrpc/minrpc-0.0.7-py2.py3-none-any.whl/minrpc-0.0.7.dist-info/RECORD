@@ -1,0 +1,16 @@
+minrpc/COPYING.txt,sha256=4Gc7A-ugtoIrte5cy2xGNq2QKfYkCFpyBKXiFTDJAOk,646
+minrpc/__init__.py,sha256=pZuD-rzYXdnM_FmCwpVJXH2QJ_V-DuBblHcSS-hnJlU,1129
+minrpc/client.py,sha256=gGgI9sVkD-GpZfP0peBFRYLOtwaWZ6KsNiGLsxblE6s,4421
+minrpc/connection.py,sha256=iYevYM9fxlITaRMANAWUFbWsTfmpo7EBGvXhBa8vFEo,2013
+minrpc/file_monitor.py,sha256=6j2TQGfPOQ2SUAHBzpYnC7SHnpWJRtHbCszD3OPkeJs,1128
+minrpc/ipc.py,sha256=NU6loawVnLaqfITyoaxls3r-a3s-e60jgBBu5y05djQ,4214
+minrpc/posix.py,sha256=1-t10id5fKtGgGKHjkhlczjTwHkQxP7mhfxJnXR_Dws,1928
+minrpc/service.py,sha256=2HXHb9d2dcFeFCY00M5ll6Lm2-ISwf0NQTdpXCAGeHc,3426
+minrpc/util.py,sha256=bgVpF9XaAZ0SF9lnREW341KzRxxPUQ8f875vVGWKNqA,1290
+minrpc/windows.py,sha256=CKo22XPv5oMm0lnaHtDTPByVimSMZZoVhR3uk_CvtKU,3079
+minrpc-0.0.7.dist-info/COPYING.GPLv3.txt,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+minrpc-0.0.7.dist-info/COPYING.rst,sha256=fLxW-a67lhastY3ee9QMjJ0ZSUzGkpvYsuPz-Vj05bg,731
+minrpc-0.0.7.dist-info/METADATA,sha256=GNcUzkPNn5SwEzs3pOECiMFTqqcS6jF2-P18osrJTK8,3389
+minrpc-0.0.7.dist-info/WHEEL,sha256=CihQvCnsGZQBGAHLEUMf0IdA4fRduS_NBUTMgCTtvPM,110
+minrpc-0.0.7.dist-info/top_level.txt,sha256=eZoz6Fis85ePIhd4qMT185WUGTRgtmYhhYuc11Tox_0,7
+minrpc-0.0.7.dist-info/RECORD,,
