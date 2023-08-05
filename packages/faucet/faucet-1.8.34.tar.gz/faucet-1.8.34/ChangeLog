@@ -1,0 +1,185 @@
+CHANGES
+=======
+
+1.8.34
+------
+
+* Upgrade to sphinx 1.8.4
+* README 1.8.34
+* Update debian/control for new Prometheus
+* Upgrade prometheus\_client to 0.5.0
+* Consistently use correct tcpdump output string
+* CDP and friends should not be flooded
+* Rename to faucet\_config\_load\_error
+* Implement error signal in Prometheus for invalid config
+* Placate pytype
+* Remove redundant Valve name in log message
+* Fix specification of table config for tunnelling ACLs. Validate set\_fields and match\_types on table configs to prevent this kind of bug in future
+* \_configure\_tables() should be last step
+* Tunnel tests missing hw\_dpid arg to build\_net, so wrong vendor is selected
+* Convert RST images to figures
+* Improve documentation for running hardware test suite
+* Update architecture diagram
+
+1.8.33
+------
+
+* Preversion 1.8.34
+* Bump README version to 1.8.33
+* Relax OF counter synchronization window pending better method
+* Downgrade python-debian to make packaging unit tests pass again
+* Fix code that reads debian/control
+* Need more patience for hw based tests
+* Update chewie to 0.0.13 in debian/control
+* Upgrade to Chewie 0.0.13
+* Consistently consider port status when calculating flooding rules
+* Handle LACP peer signaling 1->0 synchronization
+* Handle LACP actor state transition 1 to 0
+* Missing flowdel return
+* pytype 2019.1.30
+* Fix LACP expiry case
+* Hardware LACP test needs much longer timeout for port recovery
+* Fix Prometheus tests for hardware
+* Test might miss cold start counter increment if DP happens to be down
+* Ensure DP status 1 at end of reload in case restart count incremented multiply
+* Need to retry change counter
+* Reload tests need to be smarter for new potentially double cold starts
+* Force switch OF reconnection on a cold start. This ensures that FAUCET and the switch have the same list of ports. Previously we could be desynchronized (e.g. adding a port, but we don't know its oper status). Add internal API change to allow a Valve to request a switch OF reconnection
+* s/ebt/ebtables/
+* Need ebt module as well
+* Need to retry host retry check
+* Some dockers need --cap-add=NET\_ADMIN for ebtables to work
+* port can be None
+* Skip null nexthops
+* test\_port\_down\_flow\_gone should be in separate test
+* Expire nexthops on port down event
+* Test that eth dst flows are garbage collected when port goes down
+* Use tunnel\_type for consistency
+* pytype
+* pylint
+* pylint false trigger on comment
+* parallel in test image is 2014 era so needs different halt flag
+* Scapy >2.4.0 broken
+* Fix coverage holes for LACP active/flap cases. Ensure remaining event handlers can return ofmsgs for multiple valves. Refactor to allow setting loop protection field
+* External loop protection + stacking needs to set loop protect field in VLAN table
+* Fix LACP active test for hardware
+* Allow setting of loop protect field on output
+* Explicitly dedupe action list for flooding rules
+* Use ebtables to block traffic from test host interface to switch
+* Adding port up check
+* Don't check non-harpin ports
+* make a port's lacp state up before rebuilding flood rules
+* test should wait for lacp port to come up
+* Need to merge ofmsgs from previous Valve service call
+* fix incorrect logging on LAG port
+* test to confirm lacp to reprogram flood rules when port fails
+* lacp should pick a working member with lowest port\_no for broadcast
+* remove unused method
+* Valve services functions can return ofmsgs for multiple Valves
+* Port status handler and packet in handler can return flows for multiple Valves
+* Upgrade to prometheus:v2.6.1 and grafana:5.4.3
+* Automatically lookup ubuntu/debian releases for CI package push
+* Kill even unhealthy controllers
+* Ensure \_start\_faucet() not multiply called
+* unintended array copy can cause hardware tests for stacking to fail due to using the wrong hardware ports
+* check\_config\_file should handle no file
+* Log print enhancement. 1.yaml format; 2.involve skipped cases; 3.involve sanity test results
+* ftctl should andle bad URL or content
+* Make ValvePipeline aware of hairpinning flag
+* Move port status handler to ValvesManager
+* Split up packet receive handler
+* update pika version; use alpine image for management
+* Upgrade to pytype 2019.1.18
+* Lack of explicit LACP down messages is confusing. Explicitly test flapping LACP
+* More tutorial tidyups
+* Add svg2pdfconverter so that SVGs can be rendered in LaTeX
+* Update faucet tutorial series for LCA2019
+* pylint
+* VLAN internal reservation
+* Valve tests with fakeOFtable
+* tunnel acl flowmods created by acl manager
+* pylint
+* Add Faucet port tunnel ACL implementation, packets from a port can be sent to a port on another DP via the tunnel path
+
+1.8.32
+------
+
+* Preversion 1.8.33
+* README 1.8.32
+* Test that flows for newly added port are sent
+* Need to track op status for all ports the DP reports, even if they are not configured currently. The user might configure them later and we need their opstatus to decide whether to program flows for new ports
+* ping -> macvlan\_ping
+* Wrap net.ping() and net.pingAll() so they have reasonable timeouts (decrease test run time)
+* sphinx==1.8.3
+* Control dot1x acls using acl manager
+* Use acl\_manager to add and remove authed\_mac addresses
+* Include acl\_manager in valve members
+* use manager to install port acls
+* Use acl manager to install vlan acls
+* Create acl manager and use it to install dp acls
+* pytype upgrade to 2018.12.21
+* Explicitly explain that running hardware tests under virtualization is not supported
+* Use pipeline for accept instructions in acls
+
+1.8.31
+------
+
+* Missed .orig
+* Implement external switch loop protection (standalone and stacking). Also fixes non hardware ports 1-4 tests and decline in test coverage due to dot1x
+* Add LACP to mismatch message
+* Better regexp for LACP mismatch
+* Detect and log remote LACP actor system ID mismatch
+* Preversion 1.8.32
+* Bump README
+* Flood table needs more flows after bug fix for double-mirroring of flooded packets
+* Guard against missing config file
+* Remove references to eth\_src table from flood manager
+* include priority offsets for filter and select
+* Unit test that overlapping entries are never added to flow table
+* dbuilder image is now based on debian stretch
+* Run unittests on debian package build
+* Explicitly test config content\_changed()
+* Do not pass target table when filtering packets
+* Use priority values from valve\_manager\_base
+* Include unit test to catch faulty instructions
+* change formatter for ports < 65535
+* Generate prometheus metric tables better
+* Need sphinx 1.8
+* Import new apidoc main()
+* Fix table overflow/wrapping issue in rtd theme with CSS
+* Use more appropriate table column sizes
+
+1.8.30
+------
+
+* Upgrade to chewie 0.0.12
+* Preversion 1.8.31
+* README 1.8.30
+* allow dot1x to run on < 65535 ports per dp
+* pylint
+* Remove unnecessary 2to3 list() syntax
+* Update interface mirroring documentation interaction with ACL mirroring
+* handle removal of permanent learn flows with ValveHostManager
+* Add method for the removal of filters from classification table
+* Re-enable groups for stacking. Don't send group with same actions but different ID for unicast flooding (may cause hash collision). Add more port flap tests to stacking
+* remove no-op deletes
+* make valve\_pipeline responsible for deleting flows from egress\_table
+* Add del\_port and del\_vlan commands to ValveManagers
+
+1.8.29
+------
+
+* fix indentation
+* groups silently disabled when stacking until better tested
+* remove no longer needed references to tables
+* Preversion 1.8.30
+* README 1.8.29
+* Upgrade to chewie 0.0.11
+* use pipeline for building goto instructions
+* add accept\_to\_classification function to ValvePipeline
+* Test VLAN PCP match and set
+* Upgrade docker images
+* Remove more Zodiac references
+* Prometheus metrics of type counter now end with \_total
+* Update packaging metadata
+* Remove ZodiacFX tests, which were never really used (and Zodiac switches now not commercially supported)
