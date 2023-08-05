@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: blkinfo
+Version: 0.0.2
+Summary: Library for listing all block devices available in the system using additional filters
+Home-page: https://github.com/grinrag/disk_enumeration_poc
+Author: Gennadii Altukhov
+Author-email: galt@redhat.com
+License: GPLv3
+Description: UNKNOWN
+Keywords: lsblk disk blockdevice blockinfo blkinfo
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
