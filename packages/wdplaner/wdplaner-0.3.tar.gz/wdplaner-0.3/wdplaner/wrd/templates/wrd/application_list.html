@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<nav class="breadcrumb-header" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" href="{% url 'home' %}">Home</li>
+        <li class="breadcrumb-item active" aria-current="page">Meine Anmeldungen</li>
+    </ol>
+</nav>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-5">Meine Anmeldungen</h1>
+<ul class="list-group">
+    {% for object in object_list %}
+
+        <li class="list-group-item">
+            <h5 class="mt-0">{{ object.episode }}</h5>
+            <p>Von {{ object.arrival }} bis {{ object.departure }}.</p>
+            <a class="btn btn-primary" href="{% url 'application-detail' object.pk %}">Details</a>
+        </li>
+
+        {% empty %}
+        <li class="list-group-item"> <p>Es liegen noch keine Anmeldungen vor.</p></li>
+  {% endfor %}
+</ul>
+  </div>
+
+{% endblock %}

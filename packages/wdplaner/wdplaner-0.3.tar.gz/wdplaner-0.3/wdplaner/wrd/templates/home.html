@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h1 class="mt-5">Wachdienst Planer</h1>
+
+        {% if user.is_authenticated %}
+            <ul class="nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'application-list' %}">Meine Anmeldungen</a>
+                </li>
+            </ul>
+        {% endif %}
+
+        {% if user.is_staff %}
+            <h3 class="mt-5">Planungsbereich</h3>
+
+            <div class="row">
+            <ul class="list-group col-lg-4">
+                {% for ep in episodes %}
+                <a class="list-group-item list-group-item-action" href="{% url 'episode-detail' ep.pk %}">
+                    <h5>{{ ep }}</h5>
+                    <span>{{ ep.begin|date:"D, d.m." }} bis {{ ep.end|date:"D, d.m.Y" }}</span>
+                </a>
+                {% endfor %}
+            </ul>
+            </div>
+
+
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block breadcrumb %}
+    <nav class="breadcrumb-header" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+            <a class="breadcrumb-item" href="{% url 'episode-detail' object.episode.pk %}">{{ object.episode }}</a>
+            <a class="breadcrumb-item active" aria-current="page">{{ object.user.name }}</a>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-12">
+
+        <h3>Anmeldungsdetails</h3>
+        <table class="table col-lg-4 mt-4">
+            <tbody>
+            <tr>
+                <th scope="row">Name</th>
+                <td>{{ object.user.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Zeitraum</th>
+                <td>{{ object.arrival|date:"D, d.m." }} bis {{ object.departure|date:"D, d.m." }} <br>
+                    <small>{{ object.days }} Tage</small>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Einsatz als</th>
+                <td>{{ object.get_role_display }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Anmeldungsstatus</th>
+                <td>{{ object.get_application_status_display }}</td>
+            </tr>
+            <tr>
+                <th scope="row">DRSA-Nachweis</th>
+                <td>{% if object.drsa_ok %}✅{% else %}❌{% endif %}</td>
+            </tr>
+            <tr>
+                <th scope="row">EH-Nachweis</th>
+                <td>{% if object.eh_ok %}✅{% else %}❌{% endif %}</td>
+            </tr>
+            <tr>
+                <th scope="row">Kommentar</th>
+                <td>{% if object.comment %}{{ object.comment }}{% else %}-/-{% endif %}</td>
+            </tr>
+
+            </tbody>
+        </table>
+        {% if user.is_staff %}
+            <a class="btn btn-primary" href="{% url 'application-edit' object.pk %}">Bearbeiten</a>
+        {% endif %}
+
+        <h3 class="mt-5">Dokumente</h3>
+
+        <ul class="list-group col-lg-6">
+            {% for att in object.attachments.all %}
+                <a class="list-group-item list-group-item-action" href="{% url 'download-attachment' att.pk %}">
+                    {{ att.dropbox_file }}
+                </a>
+            {% empty %}
+                <li class="list-group-item">
+                    Es liegen noch keine Dokumente vor.
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+
+{% endblock %}

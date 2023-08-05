@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block breadcrumb %}
+    <nav class="breadcrumb-header" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+            <a class="breadcrumb-item active" aria-current="page">{{ object }}</a>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-12">
+
+        <h1>{{ object }}</h1>
+
+        <table class="table table-striped text-nowrap">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Kontakt</th>
+                <th>Status</th>
+                <th>DRSA/EH</th>
+                {% for d in days %}
+                    <th>{{ d|date:"D" }}<br>{{ d|date:"d.m." }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in episode.applications.all %}
+                {% with dl=a.day_list %}
+                    <tr class="{% cycle 'row1' 'row2' %}">
+                        <td>
+                            <a href="{% url 'application-detail' a.pk %}">{{ a.user.name }}</a>
+                        </td>
+                        <td>
+                            <a href="mailto:{{ a.user.email }}?subject={{ episode }}&body=Moin {{ a.user.get_short_name }}, ">📧</a>
+                            {% if a.user.get_whatsapp_url %}
+                                &nbsp;<a href="{{ a.user.get_whatsapp_url }}"><img width="16"
+                                                                                   src="{% static 'img/whatsapp.png' %}"></a>
+                            {% endif %}
+                        </td>
+                        <td {% if a.comment %}title="{{ a.comment }}"{% endif %}>
+                            <small>{{ a.get_application_status_display }}
+                                {% if a.comment %}
+                                    &nbsp;📝
+                                {% endif %}
+                            </small>
+                            <small>
+                                {{ a.application_attachments.count }}&nbsp;/&nbsp;
+                                {{ a.guard_order_attachments.count }}
+                            </small>
+                        </td>
+                        {% if a.eh_ok %}
+                            {% if a.drsa_ok %}
+                                <td title="Gültige DRSA- und EH-Nachweise liegen vor">📗
+                            {% else %}
+                                <td title="DRSA-Nachweis fehlt, gültiger EH-Nachweis liegt vor">📒
+                            {% endif %}
+                        {% else %}
+                            {% if a.drsa_ok %}
+                                <td title="Gültiger DRSA-Nachweis liegt vor, EH-Nachweis fehlt">📒
+                            {% else %}
+                                <td title="DRSA- und EH-Nachweise liegen nicht vor">📕
+                            {% endif %}
+                        {% endif %}
+                        <small>{{ a.certificate_attachments.count }}</small>
+                        </td>
+                        {% for d in days %}
+                            <td>{% if d in dl %}
+                                <span
+                                        {% if a.application_status == 0 %}
+                                            class="quiet"
+                                        {% endif %}
+                                >
+                                {{ a.role }}
+                                    </span>
+                            {% else %}
+                            {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endwith %}
+            {% empty %}
+                <tr>
+                    <td colspan="5"></td>
+                    <th colspan="{{ episode.days }}">
+                        <span class="align-center">Es liegen keine Anmeldungen vor.</span>
+                    </th>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="4">Anzahl</th>
+                {% for d in dayct %}
+                    <th>{{ d.1 }}</th>
+                {% endfor %}
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+{% endblock %}

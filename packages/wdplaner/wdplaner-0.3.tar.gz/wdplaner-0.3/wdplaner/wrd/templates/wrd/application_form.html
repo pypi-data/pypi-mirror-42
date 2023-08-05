@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block breadcrumb %}
+    <nav class="breadcrumb-header" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
+            <a class="breadcrumb-item" href="{% url 'episode-detail' object.episode.pk %}">{{ object.episode }}</a>
+            <a class="breadcrumb-item" href="{% url 'application-detail' object.pk %}">{{ object.user.name }}</a>
+            <a class="breadcrumb-item active" aria-current="page">Bearbeiten</a>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="col-12">
+        {% crispy form %}
+</div>
+
+{% endblock %}
