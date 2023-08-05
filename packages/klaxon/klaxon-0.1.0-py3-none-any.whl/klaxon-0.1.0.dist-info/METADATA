@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: klaxon
+Version: 0.1.0
+Summary: Use osascript to send notifications.
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Stephan Fitzpatrick
+Author-email: knowsuchagency@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
