@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: tadasets
+Version: 0.0.4
+Summary: Great data sets for Topological Data Analysis.
+Home-page: https://tadasets.scikit-tda.org
+Author: Nathaniel Saul
+Author-email: nathaniel.saul@wsu.edu
+License: MIT
+Keywords: topological data analysis,data sets,test data
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=2.7,!=3.1,!=3.2,!=3.3
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: nbsphinx ; extra == 'docs'
+Requires-Dist: sphinx-better-theme ; extra == 'docs'
+Requires-Dist: sphinxcontrib-fulltoc ; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: scipy ; extra == 'testing'
+
+[![PyPI version](https://badge.fury.io/py/tadasets.svg)](https://badge.fury.io/py/tadasets)
+[![Build Status](https://travis-ci.org/scikit-tda/tadasets.svg?branch=master)](https://travis-ci.org/scikit-tda/tadasets)
+[![Codecov](https://codecov.io/gh/scikit-tda/tadasets/branch/master/graph/badge.svg)](https://codecov.io/gh/scikit-tda/tadasets)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+# TaDAsets
+Data sets apt for Topological Data Analysis. This project is a part of scikit-tda.
+
+## Motivation
+
+At SoCG 2018, there was discussion about the need for data sets for two main purposes
+- Benchmarking new algorithms
+- Demonstrating benefits of TDA
+
+## Data generation
+
+We provide constructors for some synthetic data sets that are popular in development and testing of TDA techniques.
+
+* Torus
+* Klein Bottle
+* Swiss Roll
+
+## Setup and Usage
+
+You can install from Pypi
+```
+pip install tadasets
+```
+
+or from source
+
+```
+git clone https://github.com/scikit-tda/tadasets
+cd tadasets
+pip install -e .
+```
+
+Examples of usage is
+
+```
+import tadasets
+data = tadasets.sphere(n=1000, r=10)
+tadasets.plot3d(data)
+```
+
+or 
+
+```
+import tadasets
+data = tadasets.swiss_roll(n=1000, r=10)
+tadasets.plot3d(data)
+```
+
+## Contributions
+
+This package is in the very early stages of development. As I think of shapes and data sets, I add them.  If you have ideas, please do suggest them in an issue and submit a pull request! All contributions are welcome.
+
+
