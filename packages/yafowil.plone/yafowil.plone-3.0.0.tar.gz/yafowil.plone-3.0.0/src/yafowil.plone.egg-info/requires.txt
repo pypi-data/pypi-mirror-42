@@ -1,0 +1,4 @@
+setuptools
+Products.CMFPlone
+yafowil>=2.1.99
+yafowil.yaml>=1.0.4
