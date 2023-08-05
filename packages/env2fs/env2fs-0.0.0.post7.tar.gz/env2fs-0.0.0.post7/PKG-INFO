@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: env2fs
+Version: 0.0.0.post7
+Summary: write env vars to filesystem (CI tool)
+Home-page: https://yourlabs.io/oss/env2fs
+License: UNKNOWN
+Description: env2fs: write env vars to filesystem (CI tool)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        env2fs is a quick CLI to write environment variables content to the file
+        system.
+        
+        Example usage::
+        
+           env2fs write SSH_PRIVATE_KEY $HOME/.ssh/id_ed25519 mode=0600
+        
+        This will write the content of the ``$SSH_PRIVATE_KEY`` env var into
+        ``$HOME/.ssh/id_ed2551`` and set the access permission to ``0600``.
+        
+        Any parent directory it would have to create, such as ``$HOME/.ssh`` in a CI
+        environment, will be created with the same permissions, except with the execute
+        bit in addition to every read bit, to allow directory traversal.
+        
+        That's it ! Run ``env2fs`` to get help for all commands.
+Keywords: automation cli
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development
+Classifier: Topic :: System
+Classifier: Topic :: Terminals
+Requires-Python: >=3
+Description-Content-Type: text/x-rst
