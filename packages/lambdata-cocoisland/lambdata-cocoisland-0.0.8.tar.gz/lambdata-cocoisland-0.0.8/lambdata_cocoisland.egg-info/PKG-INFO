@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: lambdata-cocoisland
+Version: 0.0.8
+Summary: A collection of Data Science helper functions
+Home-page: https://github.com/cocoisland
+Author: cocoisland
+License: UNKNOWN
+Description: ### Readme 
+        
+        This is a development package of python helper library.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
