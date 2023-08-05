@@ -1,0 +1,11 @@
+README.md
+copydeps.py
+setup.cfg
+setup.py
+copydeps.egg-info/PKG-INFO
+copydeps.egg-info/SOURCES.txt
+copydeps.egg-info/dependency_links.txt
+copydeps.egg-info/entry_points.txt
+copydeps.egg-info/requires.txt
+copydeps.egg-info/top_level.txt
+copydeps.egg-info/zip-safe
