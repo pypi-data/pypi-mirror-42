@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+bin/hashpipe
+hashpipe/__init__.py
+hashpipe/__main__.py
+hashpipe/py.typed
+hashpipe.egg-info/PKG-INFO
+hashpipe.egg-info/SOURCES.txt
+hashpipe.egg-info/dependency_links.txt
+hashpipe.egg-info/requires.txt
+hashpipe.egg-info/top_level.txt
