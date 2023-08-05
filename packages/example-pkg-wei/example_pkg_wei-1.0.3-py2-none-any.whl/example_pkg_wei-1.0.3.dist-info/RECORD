@@ -1,0 +1,11 @@
+example_pkg/__init__.py,sha256=idSi8KHw42S0uXy3F1H8wpnaSXysE-RGJnl9-ASgUK0,25
+example_pkg/command_line.py,sha256=iuCkx4HsU7uZOnbftnhIOhAKj7ENa2OJWzyjakXFK1U,272
+example_pkg_wei/__init__.py,sha256=idSi8KHw42S0uXy3F1H8wpnaSXysE-RGJnl9-ASgUK0,25
+example_pkg_wei/command_line.py,sha256=iuCkx4HsU7uZOnbftnhIOhAKj7ENa2OJWzyjakXFK1U,272
+example_pkg_wei-1.0.3.data/scripts/hello-joke,sha256=U74cXYr37MYe0lYpIYMn5hrJkYV4Tasrfsx92Z8eq0Y,228
+example_pkg_wei-1.0.3.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+example_pkg_wei-1.0.3.dist-info/METADATA,sha256=h_9G1R89OSyZ26kTIxpysgdZAXnAan2l8FYHC3EFosY,586
+example_pkg_wei-1.0.3.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+example_pkg_wei-1.0.3.dist-info/entry_points.txt,sha256=tIyRoTmuWo8qcNwA1Z2-5G1QM5DH1-U0dC8iq8O3s2A,66
+example_pkg_wei-1.0.3.dist-info/top_level.txt,sha256=3Y0tb8z801DrxXvYxIJVaORc40wm_2bgVTir2ukp0r4,16
+example_pkg_wei-1.0.3.dist-info/RECORD,,
