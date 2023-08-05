@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: giturl
+Version: 0.1.0
+Summary: Parsing and validating git urls.
+Home-page: https://github.com/divio
+Author: Divio AG
+Author-email: dennisschwertel@gmail.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: pyparsing (==2.3.1)
+Requires-Dist: attrs (==18.2.0)
+
+# git-url
+
+Parsing git urls.
+
+## Usage
+```
+from giturl import GitURL
+GitURL.parse("ssh://github.com/divio/somerepository)
+```
+
+
