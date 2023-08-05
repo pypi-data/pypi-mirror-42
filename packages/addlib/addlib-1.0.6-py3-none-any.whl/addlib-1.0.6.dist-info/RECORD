@@ -1,0 +1,15 @@
+addlib/__init__.py,sha256=GsLCWqjfzdx-mfYmctFdJaB5EZiha_GVfk5Bd-vPSMY,48
+addlib/addlib-linux.so,sha256=Aq3PJTJ3iDCWPxYY6Q7p4XskNO0Xdu0TeZnWZWk1yO4,2840913
+addlib/addlib-win.so,sha256=BYIhYGKup-j2KSYg94q1tUgSCNbwSuNxeLjoyUuwhFk,2660488
+addlib/gomethods.py,sha256=dUCua1UASNSI0sTJ3SWJRdbdlYn3WhOBJgRb4MFmLsQ,2485
+addlib/pywrap.py,sha256=KQCyf5PuhXJKk4EoBI1ZxEEdusNekPcyfoVhs0HTLS4,2288
+addlib/lib.add/cities.data,sha256=X31f6jbL64mI52XRQ47wV9cLa0dDpuKJVcjWiCSBuc4,13518
+addlib/lib.add/districts.data,sha256=ATo4TU_1AP6FL8-sFE-2CHBEJlyPYNdIDxgkZkNVGBo,123021
+addlib/lib.add/provinces.data,sha256=ntdQwebg_bG4vyG5vagqaRpN_8NOfBxbxWexhoU6gRY,861
+addlib-1.0.6.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+addlib-1.0.6.dist-info/METADATA,sha256=s519Y6TIU0bi-LBzRpLPqle17xeHL4pklNc7KeFsjOQ,452
+addlib-1.0.6.dist-info/RECORD,,
+addlib-1.0.6.dist-info/WHEEL,sha256=Vlaj2XNMTTJ893zWX-JvKeZUIs7q5E7d7Gise2Vouzc,97
+addlib-1.0.6.dist-info/metadata.json,sha256=ioprsA57DuqXXefbfLMazxI5b3-8_Eq49qZ-s_iXG14,563
+addlib-1.0.6.dist-info/top_level.txt,sha256=5fgsRK4LmCN1ekJjPDTgUN4BpVITMuqvWg7aBDGf9N8,7
+addlib-1.0.6.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
