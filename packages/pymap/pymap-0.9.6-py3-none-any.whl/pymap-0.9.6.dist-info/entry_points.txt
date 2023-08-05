@@ -1,0 +1,17 @@
+[console_scripts]
+pymap = pymap.main:main
+pymap-admin = pymap.admin.client:main [grpc]
+
+[pymap.backend]
+dict = pymap.backend.dict:DictBackend
+maildir = pymap.backend.maildir:MaildirBackend
+redis = pymap.backend.redis:RedisBackend [redis]
+
+[pymap.filter]
+sieve = pymap.sieve:SieveCompiler [sieve]
+
+[pymap.service]
+admin = pymap.admin:AdminService [grpc]
+imap = pymap.imap:IMAPService
+managesieve = pymap.sieve.manage:ManageSieveService [sieve]
+
