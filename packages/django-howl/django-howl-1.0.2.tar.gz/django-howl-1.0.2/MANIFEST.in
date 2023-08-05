@@ -1,0 +1,10 @@
+include README.rst
+include CHANGELOG.rst
+include LICENSE.rst
+include setup.cfg
+exlude howl/settings.py
+
+recursive-include howl *.py
+recursive-include howl/locale *
+recursive-exclude tests *
+recursive-exclude build/ *
