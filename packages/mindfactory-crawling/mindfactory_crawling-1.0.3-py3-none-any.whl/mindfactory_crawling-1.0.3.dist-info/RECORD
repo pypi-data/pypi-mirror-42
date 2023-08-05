@@ -1,0 +1,16 @@
+mindfactory/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mindfactory/items.py,sha256=dknzwqeUS5ryhZ1UHq7YBnmuFUrbtQj6UbyeR1qT7ds,747
+mindfactory/middlewares.py,sha256=PDud5TkRN7ojNV2Q9uJRE9glIv1VsKUYt8VnN0j8Wa0,3607
+mindfactory/settings.py,sha256=MACHqeDEJ1I5kHlTlCKKItKh0KQSx1_MsB3kimVg1pA,3387
+mindfactory/pipelines/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mindfactory/pipelines/database_pipeline.py,sha256=aHXg-hH4yUs-Ur8wLT-xZ8f4hsRgmPS5L14VnBg2h7g,3221
+mindfactory/pipelines/duplicates_pipeline.py,sha256=4g_ykT_spcskLfQymO89YlNzCAt3G085RihWW-SwccA,465
+mindfactory/pipelines/rating_pipeline.py,sha256=jMp7nHX1LdFwpqznF4OHGjbasZuUtyUDHFbdPfcw7kk,402
+mindfactory/spiders/__init__.py,sha256=ULwecZkx3_NTphkz7y_qiazBeUoHFnCCWnKSjoDCZj0,161
+mindfactory/spiders/product_spider.py,sha256=Y5QbbykEtLkK-JYXJFnSCsWdIiyYCZVBw9My9wRTZk4,7476
+mindfactory_crawling-1.0.3.dist-info/LICENSE,sha256=j3KL8KrrHOA0Jq3eYbOWrNP0f4IBehoJl57sKKJ4b-w,1092
+mindfactory_crawling-1.0.3.dist-info/METADATA,sha256=zpD9GrJzrCQqbLGM3rIlBlEzs0vy65ZEuDQ3AIdbvG4,1702
+mindfactory_crawling-1.0.3.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+mindfactory_crawling-1.0.3.dist-info/entry_points.txt,sha256=Re_U-pmDeCFmJJxC7QbKTPCi7GIW6BM4MNgS8Pe6vIA,42
+mindfactory_crawling-1.0.3.dist-info/top_level.txt,sha256=YsrKTW4J92uF9o3tHjnB7LpfO7ZSWMacdkFOqd_v5tE,12
+mindfactory_crawling-1.0.3.dist-info/RECORD,,
