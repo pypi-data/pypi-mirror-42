@@ -1,0 +1,27 @@
+Metadata-Version: 1.2
+Name: fedora-messaging-the-new-hotness-schema
+Version: 1.0.0
+Summary: JSON schema definitions for messages published by the-new-hotness
+Home-page: https://github.com/fedora-infra/the-new-hotness
+Maintainer: Fedora Infrastructure Team
+Maintainer-email: infrastructure@lists.fedoraproject.org
+License: GPLv2+
+Description: the-new-hotness Message Schema
+        ==============================
+        
+        JSON schema definitions for messages published by the-new-hotness.
+        
+        See http://json-schema.org/ for documentation on the schema format. See
+        https://fedora-messaging.readthedocs.io/en/latest/messages.html for
+        documentation on fedora-messaging.
+        
+Keywords: fedora
+Platform: Fedora
+Platform: GNU/Linux
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
