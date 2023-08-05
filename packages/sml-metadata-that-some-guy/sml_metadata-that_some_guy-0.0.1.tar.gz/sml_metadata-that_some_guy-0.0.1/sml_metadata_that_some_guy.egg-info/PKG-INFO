@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: sml-metadata-that-some-guy
+Version: 0.0.1
+Summary: a python script to be imported in ball_tracking.py,               a script that creates some random players in json format
+Home-page: UNKNOWN
+Author: Walid Khalladi
+Author-email: walid.khalladi@hotmail.com
+License: UNKNOWN
+Description: # SML METADATA
+        
+        A python script to be imported in ball_tracking.py,
+        some script that creates some random players in json format
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
