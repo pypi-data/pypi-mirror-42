@@ -1,0 +1,7 @@
+cement==3.0.0
+pyyaml
+colorlog
+urllib3
+tabulate
+jinja2
+tetpyclient==1.0.7
