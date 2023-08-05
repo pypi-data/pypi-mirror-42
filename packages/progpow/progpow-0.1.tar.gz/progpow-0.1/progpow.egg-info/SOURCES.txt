@@ -1,0 +1,9 @@
+libprogpow.so
+setup.py
+progpow/__init__.py
+progpow.egg-info/PKG-INFO
+progpow.egg-info/SOURCES.txt
+progpow.egg-info/dependency_links.txt
+progpow.egg-info/not-zip-safe
+progpow.egg-info/requires.txt
+progpow.egg-info/top_level.txt
