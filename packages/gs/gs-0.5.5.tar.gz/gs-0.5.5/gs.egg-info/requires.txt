@@ -1,0 +1,10 @@
+tweak<2,>=1.0.0
+pyjwt<2,>=1.6.4
+requests<3,>=2.18.4
+click<8,>=6.7
+cryptography<3,>=2.1.4
+python-dateutil<3,>=2.6.1
+crc32c==1.5
+
+[:python_version == "2.7"]
+futures
