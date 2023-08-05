@@ -1,0 +1,46 @@
+# The year refers to the calendar year in which the end of the tax year falls
+# e.g. 2019 refers to the tax year April 2018 - March 2019
+2019:
+  employees_ni:
+    - threshold: 6032
+      limit: 8424
+      rate: 0
+    - threshold: 8424
+      limit: 46350
+      rate: 0.12
+    - threshold: 46350
+      limit: .inf
+      rate: 0.02
+
+  employers_ni:
+    - threshold: 6032
+      limit: 8424
+      rate: 0
+    - threshold: 8424
+      limit: .inf
+      rate: 0.138
+
+  income_tax_earnings:
+    - threshold: 0
+      limit: 11850
+      rate: 0
+    - threshold: 11850
+      limit: 46350
+      rate: 0.2
+    - threshold: 46350
+      limit: 150000
+      rate: 0.4
+    - threshold: 150000
+      limit: .inf
+      rate: 0.45
+
+  income_tax_dividend:
+    threshold: 2000
+    # These refer to the income tax earnings bands
+    rates:
+      - 0.075
+      - 0.075
+      - 0.325
+      - 0.381
+
+  corporation_tax: 0.19
