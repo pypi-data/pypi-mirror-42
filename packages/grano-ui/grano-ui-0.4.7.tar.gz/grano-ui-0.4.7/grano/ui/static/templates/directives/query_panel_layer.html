@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="pull-right" ng-show="!layer.root">
+      <a href ng-click="remove({'layer': layer})"><i class="fa fa-times"></i></a>
+    </div>
+
+    <span class="dropdown">
+      {{actionLabel()}}
+      <strong><a href class="dropdown-toggle">
+          {{getSchemaLabel()}} <i class="fa fa-caret-square-o-down"></i>
+      </a></strong>
+      <ul class="dropdown-menu">
+        <li ng-repeat="schema in visibleSchemata">
+          <a href dropdown-toggle ng-click="setSchema(schema)">
+            {{schema.meta.plural || schema.label}}
+          </a>
+        </li>
+      </ul>
+    </span>
+  </div>
+  <!--div class="panel-body">
+  </div-->
+</div>

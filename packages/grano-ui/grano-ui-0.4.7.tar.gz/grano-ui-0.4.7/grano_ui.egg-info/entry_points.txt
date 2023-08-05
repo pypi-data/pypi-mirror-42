@@ -1,0 +1,3 @@
+[grano.startup]
+ui = grano.ui.base:Installer
+

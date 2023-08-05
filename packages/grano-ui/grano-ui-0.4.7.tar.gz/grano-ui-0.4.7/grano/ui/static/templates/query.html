@@ -1,0 +1,43 @@
+
+<div class="">
+  <div class="pull-right">
+    <button type="button" class="btn btn-default"
+        ng-class="{'active': showPanel}" ng-click="showPanel = !showPanel"><i class="fa fa-filter"></i> Show filters</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default"
+        ng-class="{'active': mode == 'graph'}" ng-click="setMode('graph')"><i class="fa fa-sitemap"></i> Network diagram</button>
+      <button type="button" class="btn btn-default"
+        ng-class="{'active': mode == 'table'}" ng-click="setMode('table')"><i class="fa fa-th"></i> Table</button>
+    </div>
+  </div>
+  <h1 class="unboxed">Query Tool</h1>
+</div>
+
+<div class="query-tool">
+  <div class="loading-bay">
+    <div class="alert alert-warning" role="alert"
+      ng-show="loading">
+      <strong>Loading data from the server...</strong>
+    </div>
+  </div>
+
+  <div class="row" ng-show="mode == 'graph'">
+    <div class="col-sm-12 graph-area">
+      <div class="floating col-md-4" ng-show="showPanel">
+        <gn-query-panel project="project"></gn-query-panel>
+      </div>
+      <div gn-query-graph class="network-graph" project="project"></div>
+    </div>
+  </div>
+
+  <div class="row" ng-show="mode == 'table'">
+    <div ng-class="{'col-md-8': showPanel, 'col-md-12': !showPanel}">
+      <div class="box">
+        <gn-query-table project="project"></gn-query-table>
+      </div>
+    </div>
+    <div ng-show="showPanel" class="col-md-4" style="overflow-z: scroll">
+      <gn-query-panel project="project"></gn-query-panel>
+    </div>
+  </div>
+</div>

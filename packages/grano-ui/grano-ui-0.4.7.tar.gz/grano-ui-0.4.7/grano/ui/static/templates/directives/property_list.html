@@ -1,0 +1,26 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Properties</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="property in getProperties()">
+            <th width="25%">
+                {{attributes[property.name].label}}
+            </th>
+            <td class="value-col">
+                <gn-property-view property="property" attribute="attributes[property.name]"></gn-prop-value>
+            </td>
+            <td class="icon-col">
+                <div class="pull-right">
+                    <a class="btn btn-xs btn-default" href="{{property.source_url}}"
+                        tooltip-placement="bottom" tooltip="Source"
+                        ng-show="property.source_url" target="_blank"><i class="fa fa-link"></i></a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
