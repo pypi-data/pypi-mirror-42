@@ -1,0 +1,11 @@
+mds_sqlextension-0.1.8.dist-info/DESCRIPTION.rst,sha256=Bqrer2zmDClm9BHDARn6lLE7j7Qjlf1_bKOPQOotOD8,1468
+mds_sqlextension-0.1.8.dist-info/METADATA,sha256=nnvHFp_8H6IQBH5GfQFoDxZOloQfV-IPcsHZNV1BIdk,2291
+mds_sqlextension-0.1.8.dist-info/RECORD,,
+mds_sqlextension-0.1.8.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+mds_sqlextension-0.1.8.dist-info/metadata.json,sha256=JSGzdkYN6izpL2OFsDzQiOlY4Ph7xT0kHfOSLh5VNkQ,973
+mds_sqlextension-0.1.8.dist-info/top_level.txt,sha256=wHSBG5xthkrITFKU57gaksvuTTwwTEFuNi_1tCKIvl8,13
+sqlextension/__init__.py,sha256=txf9kIiWmjgzwpSYKJndxt-vU1WWUScvv1Ogg6XJlWI,319
+sqlextension/expression.py,sha256=y7LvC_kcrySZBMlokwW-aqmJt1NdEDyNAESmYMdCz7E,1698
+sqlextension/operators.py,sha256=sMV5zr-YU2oKya57zg7EFm2Tvl3wPSNGzk49Wi3zFGQ,741
+sqlextension/sqlaggregat.py,sha256=f3NeZlvsNN_m8F1cdcNveDk61XO-ZBiRKT5ev_v5NXw,1326
+sqlextension/sqlfunction.py,sha256=fxTGuJkhNjV7-XpPwE66sJQB8S5nJ7qOuVVpbNsp4IM,3060
