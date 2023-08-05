@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: gmem
+Version: 0.20181221.1507
+Summary: Completely General Mixed Effects Models
+Home-page: https://github.com/arose13/GMEM
+Author: Stephen Rose
+Author-email: me@stephenro.se
+License: BSD
+Download-URL: https://github.com/arose13/GMEM/tarball/0.20181221.1507
+Description: GMEM
+        ===============================
+        
+        Author: Stephen Anthony Rose
+        Fork of MERF
+        
+        Overview
+        --------
+        
+        Random Effects models for _any ML model_.
+        This is a generalisation of a Mixed Effects Random Forest model
+        
+        Installation / Usage
+        --------------------
+        
+        To install use pip:
+        
+            $ pip install gmem
+        
+        
+        Or clone the repo:
+        
+            $ git clone https://github.com/arose13/gmem.git
+            $ python setup.py install
+            
+        Contributing
+        ------------
+        
+        Me (Stephen Anthony Rose)
+        
+        Example
+        -------
+        
+        To be announced.
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence

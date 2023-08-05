@@ -1,0 +1,9 @@
+setup.py
+gmem/__init__.py
+gmem/gmem.py
+gmem.egg-info/PKG-INFO
+gmem.egg-info/SOURCES.txt
+gmem.egg-info/dependency_links.txt
+gmem.egg-info/not-zip-safe
+gmem.egg-info/requires.txt
+gmem.egg-info/top_level.txt
