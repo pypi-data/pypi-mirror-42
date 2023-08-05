@@ -1,0 +1,9 @@
+warden/WardenConfiguration.py,sha256=5_mlQ-J_qyCgZmexSeq8cNCJQZMzVGGNR3nUpTeiXUc,3488
+warden/__init__.py,sha256=UX_jLWmfewvcVLm_howMRTB9uQBpIgawhvVSFx4fi6g,807
+warden/enforce_readme_presence.py,sha256=VGEOvsrvAWHom9bPFo2k9vtecTkMbJzZWvgxPB6NeCc,8639
+warden/version.py,sha256=76rw3Isk4beFNHW4F_LCcO_fvITe8z627sSaT_CNLZA,18
+doc_warden-0.1.0.dist-info/METADATA,sha256=dLgcSg4ziaH4LrphArL6lgDERs0kqx8oIUz4pBBl_k8,6014
+doc_warden-0.1.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+doc_warden-0.1.0.dist-info/entry_points.txt,sha256=BktBW0nrhT8Qds7TxIHbYBkltHO8onc1UJ5kLnhmFcs,53
+doc_warden-0.1.0.dist-info/top_level.txt,sha256=0_Rg54YGgA6iVRtUkY23lHEVTLGFGaZwoB7xuH6kd8Q,7
+doc_warden-0.1.0.dist-info/RECORD,,
