@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pinotdb
+Version: 0.2.1
+Summary: Python DB-API and SQLAlchemy dialect for Pinot.
+Home-page: https://github.com/python-pinot-dbapi/pinot-dbapi
+Author: Beto Dealmeida, Devesh Agrawal
+Author-email: beto@dealmeida.net, devesh.agrawal@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Provides-Extra: dev
+Provides-Extra: sqlalchemy
