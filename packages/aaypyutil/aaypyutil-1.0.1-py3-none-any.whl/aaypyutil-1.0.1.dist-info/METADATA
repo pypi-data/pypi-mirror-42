@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: aaypyutil
+Version: 1.0.1
+Summary: Common python util functions
+Home-page: https://github.com/aayushuppal/aaypyutil
+Author: Aayush Uppal
+Author-email: aayuppal@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+[![Version](https://img.shields.io/pypi/v/aaypyutil.svg)](https://pypi.python.org/pypi/aaypyutil)
+[![License](https://img.shields.io/pypi/l/aaypyutil.svg)](https://pypi.python.org/pypi/aaypyutil)
+[![Downloads](https://img.shields.io/pypi/dm/aaypyutil.svg)](https://pypi.python.org/pypi/aaypyutil)
+
+
+# AAYPYUTIL
+
+Common python util functions
+
+
+## Installation
+
+    pip install aaypyutil
+
+
+## Info
+
+- `log_util`
+    - `set_root_logger_stdout`
+- `func_util`
+    - `retry_on_exception` decorator
+
+
+## Maintainer
+
+ⓘ [Aayush Uppal](https://aayushuppal.github.io)
+
+
