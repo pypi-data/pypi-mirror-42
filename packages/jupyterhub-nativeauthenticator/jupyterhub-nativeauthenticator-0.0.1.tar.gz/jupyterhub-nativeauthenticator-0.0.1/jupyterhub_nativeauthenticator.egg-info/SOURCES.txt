@@ -1,0 +1,15 @@
+README.md
+setup.py
+jupyterhub_nativeauthenticator.egg-info/PKG-INFO
+jupyterhub_nativeauthenticator.egg-info/SOURCES.txt
+jupyterhub_nativeauthenticator.egg-info/dependency_links.txt
+jupyterhub_nativeauthenticator.egg-info/requires.txt
+jupyterhub_nativeauthenticator.egg-info/top_level.txt
+nativeauthenticator/__init__.py
+nativeauthenticator/common-credentials.txt
+nativeauthenticator/handlers.py
+nativeauthenticator/nativeauthenticator.py
+nativeauthenticator/orm.py
+nativeauthenticator/tests/__init__.py
+nativeauthenticator/tests/test_authenticator.py
+nativeauthenticator/tests/test_orm.py
