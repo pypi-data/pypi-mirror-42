@@ -1,0 +1,3 @@
+[textx_commands]
+autodoc = textx_dsldoc.textx_integration:autodoc
+
