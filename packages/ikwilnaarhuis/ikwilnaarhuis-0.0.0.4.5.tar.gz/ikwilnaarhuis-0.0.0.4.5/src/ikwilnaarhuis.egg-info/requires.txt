@@ -1,0 +1,7 @@
+numpy
+scipy
+pyinsults
+
+[testing]
+pytest
+pytest-cov
