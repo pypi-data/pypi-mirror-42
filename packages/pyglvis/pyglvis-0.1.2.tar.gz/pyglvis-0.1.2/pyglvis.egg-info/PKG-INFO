@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: pyglvis
+Version: 0.1.2
+Summary: Jupyter Widget for GLVis
+Home-page: https://github.com/glvis/pyglvis
+Author: glvis
+Author-email: glvis@llnl.gov
+License: UNKNOWN
+Description: Jupyter Widget for GLVis
+Keywords: ipython,jupyter,widgets,glvis,mfem
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
