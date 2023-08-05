@@ -1,0 +1,6 @@
+matplotlib
+numpy
+astropy<3
+pyspeckit
+dustmaps
+extinction
