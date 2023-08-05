@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: twitchbot
+Version: 0.1.0.dev23
+Summary: A bot for twitch streamers making use of Twitch IRC and Twitch API
+Home-page: https://github.com/Qlii256/twitchbot
+Author: Qlii256
+Author-email: me@rubenportier.be
+License: UNKNOWN
+Description: # twitch.py
+        A twitch chat bot written in Python.
+        
+        # Install
+            pip install twitchbot
+        **Note that no dot is used between twitch and py!**
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
