@@ -1,0 +1,4 @@
+[console_scripts]
+get_a_shell = get_a_shell.get_a_shell:main_with_args
+getashell = get_a_shell.get_a_shell:main_with_args
+
