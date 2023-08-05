@@ -1,0 +1,7 @@
+setup.py
+packagemaketest/__init__.py
+packagemaketest.egg-info/PKG-INFO
+packagemaketest.egg-info/SOURCES.txt
+packagemaketest.egg-info/dependency_links.txt
+packagemaketest.egg-info/not-zip-safe
+packagemaketest.egg-info/top_level.txt
