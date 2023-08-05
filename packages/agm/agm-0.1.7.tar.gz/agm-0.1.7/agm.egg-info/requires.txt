@@ -1,0 +1,6 @@
+requests
+requests-cache
+google-api-python-client
+tqdm
+colorful
+oauth2client
