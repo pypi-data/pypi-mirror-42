@@ -1,0 +1,9 @@
+cipcore/__init__.py,sha256=tlDOofiVWsl6d0aWTi4_v0TC9bSS8hM3JmLvrExi77Q,152
+cipcore/delivery_ef.py,sha256=4RDs_RupODZzjV89dJdfNdVOZYAp2TS6_h3BR4-xMg0,2250
+cipcore/file_copy.py,sha256=lxrnCiP2n_HAwSb-YPrZaiTBh4X1ZgFxh7GCNFbDduc,1634
+cipcore/ftp_service.py,sha256=d-cOb44Wbq0iZR-ctZ8blays4rBmXksPmnvVRzErows,2971
+cipcore/mailer.py,sha256=6DFcCOmjZBoZpDJK0z2cTTnYBBL_EDkQQ7LlGri5ZsQ,1476
+cipcore-1.0.3.dist-info/METADATA,sha256=yWhgiVCSw2Wa9-Ms94vjrcFxVvjae3N3aN-aSupJ3dI,402
+cipcore-1.0.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+cipcore-1.0.3.dist-info/top_level.txt,sha256=wF4zQAqXpZVAxR1FB-QuzKVluNswiS_QemvXOWOFLI8,8
+cipcore-1.0.3.dist-info/RECORD,,
