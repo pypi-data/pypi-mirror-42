@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: suitcase-utils
+Version: 0.1.0rc1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: BSD (3-clause)
+Description: # suitcase.utils
+        
+        This is a suitcase subpackage for reading a particular file format.
+        
+        ## Installation
+        
+        ```
+        pip install suitcase-utils
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Provides-Extra: complete
+Provides-Extra: test_fixtures

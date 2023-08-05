@@ -1,0 +1,14 @@
+
+[complete]
+attrs>=18.1.0
+caproto
+curio
+pytest>=3.9
+trio
+
+[test_fixtures]
+attrs>=18.1.0
+caproto
+curio
+pytest>=3.9
+trio
