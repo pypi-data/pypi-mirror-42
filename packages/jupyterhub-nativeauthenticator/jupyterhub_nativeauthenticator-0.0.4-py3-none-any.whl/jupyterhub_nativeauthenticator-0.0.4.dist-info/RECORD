@@ -1,0 +1,16 @@
+nativeauthenticator/__init__.py,sha256=mg5y8y8NGfPISDLSmKn00RIsLlnth7mvUAhZ-aFuniw,117
+nativeauthenticator/common-credentials.txt,sha256=Anng59hU3EBGDbGKfPLgn7Zhg33Arn07jcbng7pdhLQ,76508
+nativeauthenticator/handlers.py,sha256=De4eTCXhg2lajDmLBsH0FygeXfw184CS-FrdTl6GoKI,3869
+nativeauthenticator/nativeauthenticator.py,sha256=AatcBk-YJfcXZupBuQVSWLz2aDzeOpv9Hl9MK4gkBi8,5882
+nativeauthenticator/orm.py,sha256=kxZGjJcEznn9JvIr9TAU78F_sDIW0at5h4sTyEtTVXM,1368
+nativeauthenticator/templates/autorization-area.html,sha256=F7WkpdX7yNjbQs7FuugWS0rB-WZeHZ6-AhvdGGV6S-0,1220
+nativeauthenticator/templates/change-password.html,sha256=U6k_nnY6FvH4-TlCl4Q_svBg5ezUyxpwQtzKwUodyLQ,1608
+nativeauthenticator/templates/signup.html,sha256=mKjnuIk5UcKoauPnFNbe4IflVmb8geMAznaPhJ0C2ZM,2035
+nativeauthenticator/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nativeauthenticator/tests/test_authenticator.py,sha256=RL3krkOupVA3lxYaWORuFj1LBtM9oTp-M4-0RFrkYCM,5509
+nativeauthenticator/tests/test_orm.py,sha256=Fobn8VzQoR_g5nCJBwJMVtptFuw3QDANQUWB741p5U4,906
+jupyterhub_nativeauthenticator-0.0.4.dist-info/LICENSE,sha256=uhqQGfZF64cmuxUV-0KiauKYq7oTJvMicdY_U-yOL5o,1510
+jupyterhub_nativeauthenticator-0.0.4.dist-info/METADATA,sha256=p-rXVYIhx85qSevrl2BiImwyvr5X1ClOQx0v1czJPok,1492
+jupyterhub_nativeauthenticator-0.0.4.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+jupyterhub_nativeauthenticator-0.0.4.dist-info/top_level.txt,sha256=vsbCTKE6PMOjQRy3ix8SGATCPJpxzJpG3xIs7RsoZA4,20
+jupyterhub_nativeauthenticator-0.0.4.dist-info/RECORD,,
