@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+visionmadeeasy/__init__.py
+visionmadeeasy.egg-info/PKG-INFO
+visionmadeeasy.egg-info/SOURCES.txt
+visionmadeeasy.egg-info/dependency_links.txt
+visionmadeeasy.egg-info/requires.txt
+visionmadeeasy.egg-info/top_level.txt
