@@ -1,0 +1,3 @@
+[console_scripts]
+pysamloader-gui = pysamloader_gui.app:main
+
