@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: invoker
+Version: 1.0.2
+Summary: Invoker utility for DI(Injector) and context configuration.
+Home-page: https://github.com/636/python3_invoker
+Author: 636
+Author-email: zx6r.636a1@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6

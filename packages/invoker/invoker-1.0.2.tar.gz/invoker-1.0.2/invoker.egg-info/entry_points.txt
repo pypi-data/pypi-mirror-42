@@ -1,0 +1,3 @@
+[console_scripts]
+invoker = invoker.cmd:execute
+
