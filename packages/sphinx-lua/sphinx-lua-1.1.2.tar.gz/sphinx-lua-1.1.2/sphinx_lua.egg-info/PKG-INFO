@@ -1,0 +1,61 @@
+Metadata-Version: 1.1
+Name: sphinx-lua
+Version: 1.1.2
+Summary: Support for using Sphinx on Luadoc-documented Lua code
+Home-page: UNKNOWN
+Author: Eliott Dumeix
+Author-email: eliott.dumeix@gmail.com
+License: MIT
+Description: sphinx-lua
+        ===============================================================================
+        
+        .. image:: https://img.shields.io/pypi/v/sphinx-lua.svg
+            :target: https://pypi.python.org/pypi/sphinx-lua/
+        .. image:: https://img.shields.io/pypi/pyversions/sphinx-lua.svg
+            :target: https://pypi.python.org/pypi/sphinx-lua/
+        
+        A lua-autodoc tool for Sphinx.
+        Generate a beautiful sphinx doc using lua doc comment.
+        
+        It use `emmylua <https://emmylua.github.io/annotations/class.html>`_ as primary doc syntax but it is also
+        compatible with some `ldoc <https://stevedonovan.github.io/ldoc/manual/doc.md.html>`_ tags.
+        
+        
+        Installation
+        -------------------------------------------------------------------------------
+        
+        .. code-block:: bash
+        
+            $ pip install sphinx-lua
+        
+        
+        Sphinx integration
+        -------------------------------------------------------------------------------
+        
+        Add the following to your conf.py:
+        
+        .. code-block:: python
+        
+            extensions = ['sphinx_lua']
+        
+        Available sphinx directives
+        -------------------------------------------------------------------------------
+        
+        The following directives are available:
+        
+        .. code-block:: rst
+        
+            .. lua:autoclass:: pl.List
+        
+            .. lua:automodule:: pl.stringx
+        
+Keywords: sphinx,documentation,docs,lua,luadoc,restructured
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Software Development :: Documentation
