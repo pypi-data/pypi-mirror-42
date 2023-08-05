@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: vtiger-cloudsdk-restapi
+Version: 0.0.0
+Summary: Vtiger Cloud RestApi
+Home-page: UNKNOWN
+Author: Vtiger
+Author-email: info@vtiger.com
+License: VPL
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
