@@ -1,0 +1,10 @@
+[console_scripts]
+vs-add = virtualenv_switcher:vs_add
+vs-bash-complete = virtualenv_switcher:vs_bash_complete
+vs-bash-hook = virtualenv_switcher:vs_bash_hook
+vs-del = virtualenv_switcher:vs_del
+vs-expose = virtualenv_switcher:vs_expose
+vs-install = virtualenv_switcher:vs_install
+vs-list = virtualenv_switcher:vs_list
+vs-path = virtualenv_switcher:vs_path
+
