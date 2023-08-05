@@ -1,0 +1,56 @@
+# This file exists so you can easily regenerate your project.
+#
+# `cookiepatcher` is a convenient shim around `cookiecutter`
+# for regenerating projects (it will generate a .cookiecutterrc
+# automatically for any template). To use it:
+#
+#    pip install cookiepatcher
+#    cookiepatcher gh:ionelmc/cookiecutter-pylibrary project-path
+#
+# See:
+#    https://pypi.org/project/cookiepatcher
+#
+# Alternatively, you can run:
+#
+#    cookiecutter --overwrite-if-exists --config-file=project-path/.cookiecutterrc gh:ionelmc/cookiecutter-pylibrary
+
+default_context:
+
+    _extensions:               ['jinja2_time.TimeExtension']
+    _template:                 'gh:ionelmc/cookiecutter-pylibrary'
+    appveyor:                  'no'
+    c_extension_function:      '_compare_reads'
+    c_extension_module:        '_compare_reads'
+    c_extension_optional:      'no'
+    c_extension_support:       'cython'
+    codacy:                    'no'
+    codeclimate:               'no'
+    codecov:                   'no'
+    command_line_interface:    'no'
+    command_line_interface_bin_name: 'compare-reads'
+    coveralls:                 'yes'
+    distribution_name:         'compare-reads'
+    email:                     'm.vandenbeek@gmail.com'
+    full_name:                 'Marius van den Beek'
+    github_username:           'mvdbeek'
+    landscape:                 'no'
+    license:                   'MIT license'
+    linter:                    'flake8'
+    package_name:              'compare_reads'
+    project_name:              'compare-reads'
+    project_short_description: 'cythonized function to compare reads by name'
+    release_date:              'today'
+    repo_name:                 'pysam-compare-reads'
+    requiresio:                'no'
+    scrutinizer:               'no'
+    sphinx_docs:               'yes'
+    sphinx_doctest:            'yes'
+    sphinx_theme:              'sphinx-rtd-theme'
+    test_matrix_configurator:  'yes'
+    test_matrix_separate_coverage: 'no'
+    test_runner:               'pytest'
+    travis:                    'yes'
+    version:                   '0.0.0'
+    website:                   'https://github.com/mvdbeek'
+    year_from:                 '2019'
+    year_to:                   '2019'
