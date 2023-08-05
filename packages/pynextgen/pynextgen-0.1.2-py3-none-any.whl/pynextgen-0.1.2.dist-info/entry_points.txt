@@ -1,0 +1,3 @@
+[console_scripts]
+divergent_transcription = pynextgen.scripts.divergent_transcription:main
+
