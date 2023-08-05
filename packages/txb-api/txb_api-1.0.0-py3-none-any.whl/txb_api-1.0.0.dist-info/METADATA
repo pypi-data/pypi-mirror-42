@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: txb-api
+Version: 1.0.0
+Summary: Python wrapper for 3xBit API
+Home-page: https://github.com/3xbit/python-txb-api
+Author: 3xBit
+Author-email: drodrigues@3xbit.com.br
+License: MIT License
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
