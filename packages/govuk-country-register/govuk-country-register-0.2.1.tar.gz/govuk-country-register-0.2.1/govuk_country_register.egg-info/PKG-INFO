@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: govuk-country-register
+Version: 0.2.1
+Summary: Jinja2 filter to look up country codes using the GOV.UK country and territory registers
+Home-page: https://github.com/lfdebrux/govuk-country-register-python
+Author: Laurence de Bruxelles
+Author-email: laurence.debruxelles@digital.cabinet-office.gov.uk
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
