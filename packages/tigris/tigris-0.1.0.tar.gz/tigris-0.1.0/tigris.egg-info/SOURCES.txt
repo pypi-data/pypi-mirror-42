@@ -1,0 +1,12 @@
+README.rst
+setup.py
+tigris/__init__.py
+tigris/tigris.py
+tigris/version.py
+tigris.egg-info/PKG-INFO
+tigris.egg-info/SOURCES.txt
+tigris.egg-info/dependency_links.txt
+tigris.egg-info/entry_points.txt
+tigris.egg-info/requires.txt
+tigris.egg-info/top_level.txt
+tigris.egg-info/zip-safe

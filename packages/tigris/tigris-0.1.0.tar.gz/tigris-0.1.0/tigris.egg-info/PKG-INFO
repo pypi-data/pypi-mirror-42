@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: tigris
+Version: 0.1.0
+Summary: Automating things with Python
+Home-page: https://github.com/rdempsey/tigris
+Author: Robert Dempsey
+Author-email: robertonrails@gmail.com
+License: MIT
+Description: ***************************
+        Tigris - Automation Awesome
+        ***************************
+        
+        **Tigris** is a tool that automates a lot of those tedious little things.
+Keywords: python,automation
+Platform: UNKNOWN
+Provides-Extra: test
+Provides-Extra: docs
+Provides-Extra: all
+Provides-Extra: lint
