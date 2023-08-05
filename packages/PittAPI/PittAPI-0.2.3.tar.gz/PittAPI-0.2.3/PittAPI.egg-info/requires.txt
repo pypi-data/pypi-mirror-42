@@ -1,0 +1,11 @@
+BeautifulSoup4
+Requests
+grequests
+lxml
+virtualenv
+
+[test]
+timeout-decorator
+nose
+nose-cov
+nose-timer
