@@ -1,0 +1,7 @@
+setuptools
+attrs==18.1.0
+cattrs==0.8.0
+inflection==0.3.1
+
+[reST]
+Sphinx

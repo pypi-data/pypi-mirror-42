@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: jast
+Version: 1.0.0b1
+Summary: Construct javascript AST structures using python objects.
+Home-page: https://github.com/grnet/jast
+Author: Kostas Papadimitriou
+Author-email: kpap@grnet.gr
+License: UNKNOWN
+Description: ========
+         jast
+        ========
+        
+        Construct javascript AST structures using python objects.
+        
+        Requirements
+        ============
+        
+        * Python 2.7
+        
+        Setup
+        =====
+        
+        ::
+        
+          $ python -m pip install --user jast
+          or
+          (venv)$ python -m pip install jast
+        
+        Usage
+        =====
+        
+        ::
+        
+          $ python
+          >>> import jast
+          >>> jast.Object({"a": 1, "b": 2}).ast()
+          '{
+            "type": "ObjectExpression",
+            "properties": [
+                {
+                    "type": "ObjectProperty",
+                    "method": false,
+                    "key": {
+                        "type": "Identifier",
+                        "name": "a",
+                        "definition": null
+                    },
+                    "computed": false,
+                    "shorthand": false,
+                    "value": {
+                        "type": "NumericLiteral",
+                        "value": 1,
+                        "extra": {
+                            "rawValue": 1,
+                            "raw": "1"
+                        }
+                    }
+                },
+                {
+                    "type": "ObjectProperty",
+                    "method": false,
+                    "key": {
+                        "type": "Identifier",
+                        "name": "b",
+                        "definition": null
+                    },
+                    "computed": false,
+                    "shorthand": false,
+                    "value": {
+                        "type": "StringLiteral",
+                        "value": "2",
+                        "extra": {
+                            "rawValue": "2",
+                            "raw": "\"2\""
+                        }
+                    }
+                }
+            ]
+           }'
+        
+        ChangeLog
+        =========
+        
+        1.0.0-beta (2019-02-07)
+        -----------------------
+        
+        * Initial release.
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Description-Content-Type: text/x-rst
+Provides-Extra: reST
