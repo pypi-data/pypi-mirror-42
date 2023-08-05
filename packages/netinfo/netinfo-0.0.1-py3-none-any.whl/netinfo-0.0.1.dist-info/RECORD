@@ -1,0 +1,11 @@
+netinfo/__init__.py,sha256=irxY4owDQJjHrgNll76z5uwf_sydRb52CQs1pvpOoa0,2092
+netinfo/cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+netinfo/cli/client.py,sha256=n-io3Ash852FengAq6N47GzZECGfM2nxGXQfK_i8FF0,1140
+netinfo/utils/__init__.py,sha256=scOAjbyBKhf5qmo6KPQUlstakaO7jlvc-veiU9mwlwI,1376
+netinfo-0.0.1.dist-info/DESCRIPTION.rst,sha256=ngyTQvU2xWnbD5hb52cUHVU8MBwTJlST5HCoytok3GE,1024
+netinfo-0.0.1.dist-info/METADATA,sha256=lJwQQP63IXnac12IMMfiST7dMj-z8Q_5VE41jKsJEpc,1629
+netinfo-0.0.1.dist-info/RECORD,,
+netinfo-0.0.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+netinfo-0.0.1.dist-info/entry_points.txt,sha256=kwqubTSwZlJjbdkpVxNrrV3mjyMhFnRouhlcz9ZTkMI,53
+netinfo-0.0.1.dist-info/metadata.json,sha256=xukS8lROAKKZGnDATTAkSmBu4AlB77saiJ-tsMmnQLs,919
+netinfo-0.0.1.dist-info/top_level.txt,sha256=UC8XQLklEdgm6hcBnEF9m8b-ThPW2byiv2xhSa787pw,8
