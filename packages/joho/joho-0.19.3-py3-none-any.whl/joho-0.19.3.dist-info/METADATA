@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: joho
+Version: 0.19.3
+Summary: HTML and SVG module to create lecture materials for 情報処理及び実習 TAC101  at University of Yamanashi (山梨大学).
+Home-page: UNKNOWN
+Author: CHEN, Lee Chuin
+Author-email: leechuin@yamanashi.ac.jp
+License: MIT
+Keywords: html svg joho
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=2
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+
+=====
+joho
+=====
+
+Description:
+~~~~~~~~~~~~
+* HTML and SVG module to create lecture materials for 情報処理及び実習 TAC101
+  at the University of Yamanashi (山梨大学).
+
+* Output file: html.
+
+
+Example:
+--------
+::
+
+    #!python
+    ## -*- coding: utf-8 -*-
+    import joho as j
+    # create html output file and
+    # load the default web browser to open the file
+    j.title("Topic 12: Python: HTML SGV ")
+    j.insert_horizontal_line()
+    j.heading2("パイソンによる HTML")
+    j.write("Hello world")
+    j.heading2("パイソンによる図形、アニメションの作成")
+    Face =  j.line(0, 0, 100, 100) +\
+            j.circle(100, 100, 50, fillcolor="none") + \
+            j.polygon([200, 400, 400],[100,100,300])
+    j.draw(Face + j.grid(100))
+    j.MakeTableContent()
+    j.show()
+
+
+Installation
+~~~~~~~~~~~~
+    pip install joho
+
+
