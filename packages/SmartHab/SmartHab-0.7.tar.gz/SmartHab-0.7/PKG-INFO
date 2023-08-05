@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: SmartHab
+Version: 0.7
+Summary: This package allows controlling devices in a SmartHab-powered home.
+Home-page: https://gitlab.com/outadoc/python-smarthab/
+Author: Baptiste Candellier
+Author-email: outadoc@gmail.com
+License: UNKNOWN
+Description: # python-smarthab
+        This Python library allows you to programmatically control your SmartHab-powered
+        home.
+        
+        ## What is SmartHab?
+        [SmartHab](http://www.smarthab.fr) is a company that installs their home 
+        automation solution in new buildings, and offers a mobile application for 
+        home owners or renters to control their home over the Internet.
+        
+            Mobile App -> API -> SmartHab box (1 at each floor) -> Z-Wave devices
+        
+        ## What is this?
+        `python-smarthab` connects to the SmartHab API and allows you to automate your
+        home without having to use the mobile application.
+        
+        It might prove particularly useful if integrated into a home automation box or
+        software. Feel free to use it, it's under the GPL!
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
