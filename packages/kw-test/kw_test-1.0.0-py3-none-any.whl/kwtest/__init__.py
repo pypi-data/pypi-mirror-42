@@ -1,0 +1,2 @@
+def kwtest():
+    return 'Test'
