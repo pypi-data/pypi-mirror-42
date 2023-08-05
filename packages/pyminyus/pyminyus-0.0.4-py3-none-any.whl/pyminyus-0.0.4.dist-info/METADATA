@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pyminyus
+Version: 0.0.4
+Summary: Python utility.
+Home-page: https://github.com/Minyus/pyminyus
+Author: Yusuke Minami
+Author-email: me@minyus.github.com
+License: MIT
+Keywords: minyus
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: OS Independent
+
+UNKNOWN
+
+
