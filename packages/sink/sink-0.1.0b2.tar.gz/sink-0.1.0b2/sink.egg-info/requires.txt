@@ -1,0 +1,7 @@
+coloredlogs>=10.0
+requests>=2.20.0
+semantic-version>=2.6.0
+
+[dev]
+wheel>=0.32.3
+twine>=1.12.1
