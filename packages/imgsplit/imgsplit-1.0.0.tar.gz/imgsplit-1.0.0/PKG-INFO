@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: imgsplit
+Version: 1.0.0
+Summary: Split an image file into multiple segments by removing runs of null or zero bytes.
+Home-page: https://github.com/drbild/imgsplit
+Author: David R. Bild
+Author-email: david@davidbild.org
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: image embedded firmware binary
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python

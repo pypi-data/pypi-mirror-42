@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+bin/imgsplit
+imgsplit.egg-info/PKG-INFO
+imgsplit.egg-info/SOURCES.txt
+imgsplit.egg-info/dependency_links.txt
+imgsplit.egg-info/requires.txt
+imgsplit.egg-info/top_level.txt
