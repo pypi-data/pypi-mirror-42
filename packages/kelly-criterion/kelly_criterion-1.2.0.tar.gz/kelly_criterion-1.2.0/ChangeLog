@@ -1,0 +1,27 @@
+CHANGES
+=======
+
+1.2
+---
+
+* FIX: Remove self reference from requirements.txt
+* ENH: Freeze packages
+
+1.1
+---
+
+* ENH: Add Dockerfile
+* ENH: Add tox configuration for tests & linting
+* FIX: pylint line length fix
+* ENH: Move to Python 3.7
+* FIX: Use IEX Finance as Pandas Web reader is deprecated
+* ENH: Move to PBR based versioning
+* Add description and long\_description to setup.py
+* Change license, description, keywords in setup.py
+* Use setuptools to install the package
+* Rename kelly-criterion.py to kelly\_criterion.py
+* Update LICENSE to completely match with BSD-3
+* PEP8 style changes
+* Add requirements.txt
+* Initial add of kelly-criterion.py and README.md files
+* Initial commit
