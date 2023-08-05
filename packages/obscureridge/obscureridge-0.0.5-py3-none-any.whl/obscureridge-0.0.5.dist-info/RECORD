@@ -1,0 +1,12 @@
+obscureridge/__init__.py,sha256=ITb-52PPikBH0VF5TFtzRqNicsZZEDwsHrlzeEn8p8s,263
+obscureridge/__main__.py,sha256=iCQitw212qlE_-clnJtRz-G_0jit4N8QUEE7YosMLpY,318
+obscureridge/chatbot.py,sha256=m_N97UbpNoky6MEZ7YL2gL_uv4p9Gzae4k6wQ0Y1JI8,7070
+obscureridge/lichess.py,sha256=zMwzPN6X6yWLfqk9pEokAoF-cyZj8DM-HrnmLyQ2Uf8,2471
+obscureridge/urllibutils.py,sha256=qL2mP7cSlr6WKwt7gePlEIeL8BelnBBUqoxcFHuuopY,873
+obscureridge/watchtourney.py,sha256=w7Uhf7-35E3M4MPRuhSXPwnSDOXgwDuu46Kl4vCQOHY,3694
+obscureridge-0.0.5.dist-info/LICENSE,sha256=nk5yhuey0pjD_3KmEmGo6rc8jRY86vBpgv0D2J4yi50,1092
+obscureridge-0.0.5.dist-info/METADATA,sha256=ABBtOLKpRoLNdw3_cribagc5z4ay7q8YEmk9960qBxQ,567
+obscureridge-0.0.5.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+obscureridge-0.0.5.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+obscureridge-0.0.5.dist-info/top_level.txt,sha256=q1eCCTlOhOO-NUoCMO_wA1_uKQm6TzuH8QqTNwYNmYQ,13
+obscureridge-0.0.5.dist-info/RECORD,,
