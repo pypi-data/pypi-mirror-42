@@ -1,0 +1,9 @@
+README.md
+setup.py
+PyGui/__init__.py
+PyGui/widgets.py
+pyguix.egg-info/PKG-INFO
+pyguix.egg-info/SOURCES.txt
+pyguix.egg-info/dependency_links.txt
+pyguix.egg-info/requires.txt
+pyguix.egg-info/top_level.txt
