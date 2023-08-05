@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+pycoolmasternet/__init__.py
+pycoolmasternet.egg-info/PKG-INFO
+pycoolmasternet.egg-info/SOURCES.txt
+pycoolmasternet.egg-info/dependency_links.txt
+pycoolmasternet.egg-info/top_level.txt
+pycoolmasternet.egg-info/zip-safe
