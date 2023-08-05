@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: bits-netbox
+Version: 1.3.2
+Summary: BITS Netbox
+Home-page: UNKNOWN
+Author: Lukas Karlsson
+Author-email: karlsson@broadinstitute.org
+License: Apache Software License
+Platform: UNKNOWN
+Requires-Dist: netaddr
+Requires-Dist: pynetbox
+
+UNKNOWN
+
+
