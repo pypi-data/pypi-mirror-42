@@ -1,0 +1,1 @@
+confluent_kafka @ git+https://github.com/confluentinc/confluent-kafka-python.git@serde
