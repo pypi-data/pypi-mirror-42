@@ -1,0 +1,14 @@
+bing_website_finder/__init__.py,sha256=ib41rM8Npn4o8qQY3YL6PZkkBnVh40NHxT9i7sXZyU0,12
+bing_website_finder/__main__.py,sha256=paU1mJ78nqxo1TOQnIiAZuFX_dPhtSDR7jNMzzGeqQE,2242
+bing_website_finder/config.py,sha256=N0Z8WHSMQUblO1_agcFJ6UB5-Uq8Qlw1dBum0Bnr8lA,348
+bing_website_finder/get_websites.py,sha256=YieVZL7wvnvZnDl--A_iiqR90EXwY4vSSabvWMtKXPQ,1278
+bing_website_finder/obj.py,sha256=TumfhgMlhyJmIAIVWLqw6d9eI_ckZ4JvWKerumsFy_U,4507
+bing_website_finder/util.py,sha256=fmkW0vE9rl48ejcwOrx56wcgEOK8xP7sXtjAWNpL93I,1730
+bing_website_finder/data/example_input_website_finder.csv,sha256=_jdrAUuv_7PBzWPuhEMnAOl4QSmKzGil9AaXyKqgotw,22507
+bing_website_finder/data/example_output_with_websites.csv,sha256=yrrEJhzXSGOb6oDwk8Pho0lRQjgwt_rsCN_GJPwRATI,53052
+bwf-0.0.1.dist-info/LICENSE,sha256=RiNdjccunt_8pMgimovQ5BS5h1ogp5-OIugQBZzq7dY,1696
+bwf-0.0.1.dist-info/METADATA,sha256=9QwgYj04Bxu15Er6_JdCLRsrzvHilGYIZU1moUSDZpU,4323
+bwf-0.0.1.dist-info/WHEEL,sha256=UpB-bp5SQQdekLv3_zfFAhrQBtaQjJZABvUiavkhjZ0,97
+bwf-0.0.1.dist-info/entry_points.txt,sha256=kQ4RwJsoEE2y-FnFCiiWbOpTx94X5pzfrfQdVmtmGdQ,115
+bwf-0.0.1.dist-info/top_level.txt,sha256=_r6DhtO1WOVfF6aXH7pYg-UurxO5V4qUPsUFoJtwPRE,20
+bwf-0.0.1.dist-info/RECORD,,

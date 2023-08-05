@@ -1,0 +1,4 @@
+[console_scripts]
+bing_website_finder = bing_website_finder.__main__:main
+bwf = bing_website_finder.__main__:main
+
