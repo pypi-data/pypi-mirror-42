@@ -1,0 +1,11 @@
+LICENSE,sha256=VTfU0Qt2uBtujf2LZESApLHvozL7sM22ESbFvnge97Q,6554
+_softfloat.cp36-win_amd64.pyd,sha256=7KxDV7Jfr-9aIgfiVd_vcaG-lmfJow4qZjhWKV6xgQc,237056
+_softfloat.py,sha256=L5yk7t39g8zy5421V30o7W1Aau-oW_WmciYNoXjzY3E,309
+softfloat.py,sha256=fVOFiWqHBBkbKZceN56XmoNQB5RQHHy7J4NnYVqNhNk,64341
+__pycache__/_softfloat.cpython-36.pyc,sha256=MKgSbF79DBe40O3d0uGUOE9njvslRaPuWE6gIwh1iiU,433
+__pycache__/softfloat.cpython-36.pyc,sha256=t-PRRh6I4H9oRqZi5yq1udQzHIcUOcNKj_lc1pJTlX8,65869
+softfloat-0.1.4.dist-info/METADATA,sha256=VvE0SVP3WpWmaBVLiAfig4JTmVg30DVgpI54stoZ71A,469
+softfloat-0.1.4.dist-info/RECORD,,
+softfloat-0.1.4.dist-info/WHEEL,sha256=gUfKQBK6yXV1x4hU0n6qb0IqvpflP67EgPChtzSc2wA,94
+softfloat-0.1.4.dist-info/native_libs.txt,sha256=8kHLwmhIS8JzIBuxECFqVuposnFhonB9ioR4uy0qkyQ,31
+softfloat-0.1.4.dist-info/top_level.txt,sha256=VDo7vCIlKYHnBAO8Xh8G8ub5W9yw47IPncoyXcMlWuU,21
