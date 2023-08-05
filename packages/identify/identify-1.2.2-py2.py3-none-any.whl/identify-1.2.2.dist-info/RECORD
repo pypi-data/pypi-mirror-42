@@ -1,0 +1,11 @@
+identify/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+identify/cli.py,sha256=Ku3RbquovSa_14GM-1G0kkxuypovCO-_OYpCnSqzBaw,727
+identify/extensions.py,sha256=_EMgUgSRmzIx3NCYeTX-iswuEd520bL0NXJ2_6pFpa4,6196
+identify/identify.py,sha256=C7zwLa2sb1xtNn3A65Hc2dN1xi3ZtOazkKN6myMk-zM,4790
+identify/interpreters.py,sha256=oU3NWMWM9CIpge1IfVY-_IM7FLyDUASPgfiXzLHAaYU,476
+identify-1.2.2.dist-info/LICENSE,sha256=7bwq07cIT6yHPhsbRQ_TcNkU65f38xJjtP9l9H3BDEM,1072
+identify-1.2.2.dist-info/METADATA,sha256=lgdnMW2fJaGIGQS7hraAAoarOgAYdRqYEP2H-EE9I2Q,692
+identify-1.2.2.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+identify-1.2.2.dist-info/entry_points.txt,sha256=r4kj3kHUeFIRM1eWxt75VpJAH8_3YjZOdFR_X36VSzI,52
+identify-1.2.2.dist-info/top_level.txt,sha256=Rlt8stwsb21b0aSlWbp_2EuNfX8sdPOvAEF0-FxGGVs,9
+identify-1.2.2.dist-info/RECORD,,
