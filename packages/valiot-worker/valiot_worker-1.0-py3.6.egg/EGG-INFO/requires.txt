@@ -1,0 +1,5 @@
+valiot_worker
+python-dotenv
+requests
+colorama
+termcolor
