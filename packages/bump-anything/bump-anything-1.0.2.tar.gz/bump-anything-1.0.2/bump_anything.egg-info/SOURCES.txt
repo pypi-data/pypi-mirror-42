@@ -1,0 +1,9 @@
+README.md
+bump.py
+setup.py
+bump_anything.egg-info/PKG-INFO
+bump_anything.egg-info/SOURCES.txt
+bump_anything.egg-info/dependency_links.txt
+bump_anything.egg-info/entry_points.txt
+bump_anything.egg-info/requires.txt
+bump_anything.egg-info/top_level.txt
