@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: planetrl
+Version: 1.0.0
+Summary: Open source implementation of the Deep Planning Networkreinforcement learning agent.
+Home-page: http://github.com/google-research/planet
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Intended Audience :: Science/Research

@@ -1,0 +1,8 @@
+dm_control
+gym
+mujoco_py
+ruamel.yaml
+scikit-image
+scipy
+tensorflow-gpu
+tensorflow_probability
