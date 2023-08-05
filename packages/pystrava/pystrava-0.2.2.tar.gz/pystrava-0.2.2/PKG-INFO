@@ -1,0 +1,73 @@
+Metadata-Version: 1.1
+Name: pystrava
+Version: 0.2.2
+Summary: Transparent authentication for Strava API
+Home-page: https://github.com/wefner/pystrava
+Author: Oriol Fabregas
+Author-email: fabregas.oriol@gmail.com
+License: MIT
+Description: ============
+        Introduction
+        ============
+        
+        Transparent authentication for Strava API. This library has been inspired by
+        `spotifylib <https://github.com/wefner/spotifylib/>`_ as it uses a very similar
+        authentication flow.
+        
+        The idea is to use all features and methods from `stravalib <https://github.com/hozn/stravalib>`_
+        but handling the authentication transparently just by providing all required
+        details.
+        
+        It's currently written for Strava V3 API
+        
+        Read more on `USAGE.rst <https://github.com/wefner/pystrava/blob/master/USAGE.rst>`_
+        or `Read the docs <http://pystrava.readthedocs.io/en/latest/>`_
+        or check the code for substantial docstrings.
+        
+        Features
+        --------
+        
+        * Same features as Stravalib's library but with transparent authentication
+        * Renew's the token transparently
+        
+        
+        
+        
+        History
+        -------
+        
+        0.2.2 (2019-02-17)
+        ------------------
+        
+        * Fixed bug that gets `redirects_uri`
+        * Fixed bug about relative imports
+        
+        0.2.1 (2019-02-12)
+        ------------------
+        
+        * Retrieve new access token if expired transparently
+        * Logging
+        * Docs
+        
+        0.2.0 (2019-02-08)
+        ------------------
+        
+        * V3 API with refresh token
+        
+        0.1.2 (2018-08-22)
+        ------------------
+        
+        * Parsing code query string with built-in methods
+        
+        0.1.1 (2018-08-22)
+        ------------------
+        
+        * First release
+        
+Keywords: pystrava strava auth
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3 :: Only
