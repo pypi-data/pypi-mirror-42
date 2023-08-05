@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: auto-mode
+Version: 1.0.2
+Summary: Auto mode
+Home-page: https://github.com/paul-nameless/auto-mode
+License: UNKNOWN
+Author: Paul Nameless
+Author-email: paul.nameless@icloud.com
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: pyobjc-framework-CoreLocation
+Requires-Dist: python-dateutil
+
+# Auto mode
+
+Automatically switch macOS dark / light mode based on sunrise / sunset
+
