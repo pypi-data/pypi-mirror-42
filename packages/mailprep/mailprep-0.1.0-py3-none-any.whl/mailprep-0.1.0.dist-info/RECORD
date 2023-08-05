@@ -1,0 +1,14 @@
+mailprep/__init__.py,sha256=tY6PB43kYn0gs9rgsw8_c8DORgmNm0kA2ADC3jaRJ-0,146
+mailprep/__main__.py,sha256=tnB7QP6NkZBRz1wmgISOpXdpmO2WuAEfPR9i1WrPU2k,66
+mailprep/cli.py,sha256=blAfIw8WLW_r9V8elqvyGFBHVUD9Xktjh9ffdRr6X0o,2343
+mailprep/template.svg,sha256=cmBRQkn3rWsvW4J6jj75472LtWb0Alda2G6Xr8swUfw,6845
+mailprep/__pycache__/__init__.cpython-37.pyc,sha256=pze4oE6Ww0nb99Zz6OLlKENNyvh0_clvgH4OX-GMNUQ,291
+mailprep/__pycache__/cli.cpython-37.pyc,sha256=DSg79P_qw3pk6Uxflm1iI9dOB9KBVJxhgNRTTYRZLoE,2068
+mailprep-0.1.0.dist-info/LICENSE-APACHE,sha256=uKBOOa_6pm928Xm026ohd8fJZAA7YP82OwvTdEQtC7Y,9753
+mailprep-0.1.0.dist-info/LICENSE-MIT,sha256=R-e3076ztwbiZt7sfmvKaffARfbZeBVQiVrNwncB4Mo,1070
+mailprep-0.1.0.dist-info/METADATA,sha256=vz2y92T_5DEYteYIvyTsN1v3lUZ_GFfU7YhK1BdIdjo,3893
+mailprep-0.1.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+mailprep-0.1.0.dist-info/eager_resources.txt,sha256=qQWUr_3u6Z_zyr3S7xdvoSmy39Vqn365KV4YGxtUGY8,22
+mailprep-0.1.0.dist-info/entry_points.txt,sha256=64HYCcCqnK90JJaoMxfovUwgFjCwP8pR5aZ_GwI0YUY,52
+mailprep-0.1.0.dist-info/top_level.txt,sha256=qKpXc5S07Mnb6A1ahVtdNzZpQFbwp8f94NOd7b4obY8,9
+mailprep-0.1.0.dist-info/RECORD,,
