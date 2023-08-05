@@ -1,0 +1,26 @@
+#!python
+
+import sys
+from parser import HttpRequest
+from renderers import ACTIONS
+
+
+def unknown_args(_=None):
+    sys.stdout.write("strut {%s} filename.http\n" % "|".join(ACTIONS.keys()))
+    quit()
+
+
+if __name__ == "__main__":
+
+  if len(sys.argv) < 2:
+      unknown_args()
+
+  action = sys.argv[1]
+  filename = sys.argv[2]
+
+  func = ACTIONS.get(action, unknown_args)
+
+  requests = HttpRequest.parse_file(filename)
+
+  sys.stdout.write(func(requests))
+
