@@ -1,0 +1,10 @@
+README.md
+setup.py
+ivrc2country/__init__.py
+ivrc2country.egg-info/PKG-INFO
+ivrc2country.egg-info/SOURCES.txt
+ivrc2country.egg-info/dependency_links.txt
+ivrc2country.egg-info/top_level.txt
+tests/__init__.py
+tests/test_lists.py
+tests/test_lookup.py
