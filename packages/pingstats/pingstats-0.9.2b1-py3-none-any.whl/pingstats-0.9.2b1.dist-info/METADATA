@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: pingstats
+Version: 0.9.2b1
+Summary: Simple ping visualization on the CLI
+Home-page: http://gitlab.com/eclectickmediasolutions/pingstats
+Author: Ariana Giroux
+Author-email: ariana.giroux@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Topic :: Utilities
+Requires-Dist: hipsterplot
+
+UNKNOWN
+
+
