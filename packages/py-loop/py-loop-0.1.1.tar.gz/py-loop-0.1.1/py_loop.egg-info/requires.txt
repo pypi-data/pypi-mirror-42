@@ -1,0 +1,6 @@
+cli-ui
+
+[dev]
+flake8
+mypy
+pytest
