@@ -1,0 +1,13 @@
+sink/__init__.py,sha256=mVD1HgXpXx35X3aaiqsP49hiRK4axMdHPHoUiDWWQJA,249
+sink/arch.py,sha256=Syt_uOQeC4Bi915juamSz7Ov1KFDm2QFr9xBVyVv7No,1632
+sink/aur.py,sha256=oSXDtkWbCc3UUw_1ZHWiiruF-EqZ0asP7oK7ZPb6ZpU,7288
+sink/cli.py,sha256=2JctYE0Sy3-_4n6_IkcpJoM7QidZlc_YxNSO2BBY8Pc,1951
+sink/const.py,sha256=8lTvGzrO0vIjqT3vdiVgM7cdLqhhwaKWHRR7f0LAanM,1494
+sink/logger.py,sha256=mSeR9mxTlW_wauwzNzMrYUVmXMvMJP4ya4dhtHsAldA,505
+sink/package.py,sha256=f1cjs627n_GVmBYHNLO2bJWlb2Y5B5LkGJwX8GTR0rs,1308
+sink-0.1.0b2.data/data/README.md,sha256=0HWU0skl1p6HDO-UrvhfJeND7Xku_94zRGsiJ7pgVuo,704
+sink-0.1.0b2.dist-info/METADATA,sha256=0OYrA_fNyO-u29FREWd7Hr0JBFRMD1iUYEBuDM8o_Ak,1598
+sink-0.1.0b2.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+sink-0.1.0b2.dist-info/entry_points.txt,sha256=APwNNodB76xFZbNtfqBJKS4Vx2uemcuaKD1VJhkR6Ok,40
+sink-0.1.0b2.dist-info/top_level.txt,sha256=vL0gcp2j9uauIvCQrcv9KpPLM0iLeRFetv0afUJTK64,5
+sink-0.1.0b2.dist-info/RECORD,,
