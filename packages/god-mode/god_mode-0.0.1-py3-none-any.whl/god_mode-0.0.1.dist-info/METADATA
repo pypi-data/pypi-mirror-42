@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: god-mode
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Nicolas Lettiere
+Author-email: braum.exe@gmail.com
+License: UNKNOWN
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: pyAesCrypt (==0.4.2)
+Requires-Dist: colorama (==0.4.1)
+Requires-Dist: PyYAML (==3.13)
+
+UNKNOWN
+
+
