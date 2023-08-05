@@ -1,0 +1,3 @@
+[sphinx.html_themes]
+sphinx_celery = sphinx_celery:get_html_theme_path
+
