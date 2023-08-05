@@ -1,0 +1,7 @@
+setup.py
+sphinx_runner.py
+sphinx_runner.egg-info/PKG-INFO
+sphinx_runner.egg-info/SOURCES.txt
+sphinx_runner.egg-info/dependency_links.txt
+sphinx_runner.egg-info/requires.txt
+sphinx_runner.egg-info/top_level.txt

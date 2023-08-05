@@ -1,0 +1,1 @@
+from sphinx.setup_command import BuildDoc
