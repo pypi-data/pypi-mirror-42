@@ -1,0 +1,8 @@
+README.md
+setup.py
+nagini/__init__.py
+nagini/app.py
+naginirest.egg-info/PKG-INFO
+naginirest.egg-info/SOURCES.txt
+naginirest.egg-info/dependency_links.txt
+naginirest.egg-info/top_level.txt
