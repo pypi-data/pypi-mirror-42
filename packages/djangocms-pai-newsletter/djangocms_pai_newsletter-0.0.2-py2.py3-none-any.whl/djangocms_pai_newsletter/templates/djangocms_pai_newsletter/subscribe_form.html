@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<h2>{% trans 'Get the lastest news!' %}</h2>
+<form id="subscribe" class="subscribe-form" role="subscribe" action="{% url 'subscribe_to_newsletter' %}">{% csrf_token %}
+    <div class="input-group">
+        <input name ="email" type="email" class="form-control" placeholder="email">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">{% trans "Go" %}</button>
+        </span>
+    </div>
+</form>
