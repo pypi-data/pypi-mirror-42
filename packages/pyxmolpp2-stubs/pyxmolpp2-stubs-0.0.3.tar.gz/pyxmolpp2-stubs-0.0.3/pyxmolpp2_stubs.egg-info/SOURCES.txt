@@ -1,0 +1,9 @@
+MANIFEST.in
+setup.py
+external/pybind11-stubgen/README.rst
+external/pybind11-stubgen/pybind11_stubgen.py
+pyxmolpp2_stubs.egg-info/PKG-INFO
+pyxmolpp2_stubs.egg-info/SOURCES.txt
+pyxmolpp2_stubs.egg-info/dependency_links.txt
+pyxmolpp2_stubs.egg-info/requires.txt
+pyxmolpp2_stubs.egg-info/top_level.txt
