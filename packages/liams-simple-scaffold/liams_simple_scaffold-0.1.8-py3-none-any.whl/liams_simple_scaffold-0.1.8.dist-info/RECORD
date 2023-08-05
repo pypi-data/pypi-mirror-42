@@ -1,0 +1,15 @@
+liams_simple_scaffold-0.1.8.data/scripts/make_scaffold.py,sha256=77dvUN0yJLbaAnDy_5Po46zwkwmzTDw2LwshNQbZa0s,1354
+liams_simple_scaffold_pkg/__init__.py,sha256=n1bnYdeb_bNDBKASWGywTRa0Ne9hMAkal3AuVZJgovI,5
+liams_simple_scaffold_pkg/prefil/LICENSE_template,sha256=03Gy0P56S6N2_b-WI15akk9RPnUSXJxRMseoA-ZoHnE,1057
+liams_simple_scaffold_pkg/prefil/MANIFEST_template.in,sha256=Lvxpq3tHpDl0hIDycjbuU-dhyEHBAM2lfbHg883qAPk,40
+liams_simple_scaffold_pkg/prefil/README_template.md,sha256=U-gqXmRWbpDh-zvvvVfTSVGwPDL9g4PSRLL9mjy7uJQ,545
+liams_simple_scaffold_pkg/prefil/__init__.py,sha256=n1bnYdeb_bNDBKASWGywTRa0Ne9hMAkal3AuVZJgovI,5
+liams_simple_scaffold_pkg/prefil/gitignore_template,sha256=BCSGnyZ9_poKk7ZG-XyCGotUJ5oac4p_MkA_Wb1sZt8,156
+liams_simple_scaffold_pkg/prefil/main_template.py,sha256=9c0ilE_dLUFkWypG6pirDbIFgFHu73F3JM2YMnx2Wzw,884
+liams_simple_scaffold_pkg/prefil/prefil_files.py,sha256=Elk3QBuofLXIHZ7Hf7tWePSckR7sVF-1QgwX9iyly5w,1351
+liams_simple_scaffold_pkg/prefil/setup_template.py,sha256=oGxJXSyo8QpchZYVcO2U9kRMhbjJBxb4rDDa-N1JMso,1004
+liams_simple_scaffold-0.1.8.dist-info/LICENSE,sha256=03Gy0P56S6N2_b-WI15akk9RPnUSXJxRMseoA-ZoHnE,1057
+liams_simple_scaffold-0.1.8.dist-info/METADATA,sha256=kMJl3XjlzDzX4ikW5N6sP9FGCsNmvmJum85z2KmdIt4,995
+liams_simple_scaffold-0.1.8.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+liams_simple_scaffold-0.1.8.dist-info/top_level.txt,sha256=Zq5K7sKpFgtXV6hKwX7ie9OzLvhwU3QZCrA-G213HNw,26
+liams_simple_scaffold-0.1.8.dist-info/RECORD,,
