@@ -1,0 +1,6 @@
+pyinsults
+colorama
+
+[testing]
+pytest>=4.2.1
+pytest-cov
