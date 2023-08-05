@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: PyDSWS-Wrapper
+Version: 0.2.0
+Summary: Python package for Thomson Reuters Datastream Webservices (DSWS)
+Home-page: https://github.com/VidyaDinesh11/PyDSWS_Wrapper
+Author: Vidya Dinesh
+Author-email: vidya.dinesh@thomsonreuters.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: datetime
+Requires-Dist: DS-Requests
+
+Python package for Thomson Reuters Datastream Webservices (DSWS)
+
+
