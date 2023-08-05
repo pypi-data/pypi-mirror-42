@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: gitgud2
+Version: 2.0
+Summary: Git Gud - a utility for when you are told to 'get good'
+Home-page: https://github.com/kaeptmblaubaer1000/gitgud2
+Author: Kaeptm Blaubaer
+Author-email: kaeptmblaubaer1000@gmail.com
+License: Public domain
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Provides: gitgud
+Description-Content-Type: text/markdown
+Requires-Dist: argparse
+Requires-Dist: pyfiglet
+
+git gud m8!
+===========
+
+> alternatively, git #rekt, git job
+
+Ever been told to "git gud", "git rekt", "git job", or even "git spooked" but
+you only ever get an error when you try?
+
+    fsufitch@boring:~$ git gud
+    git: 'gud' is not a git command. See 'git --help'.
+    fsufitch@boring:~$ git job
+    git: 'job' is not a git command. See 'git --help'.
+    fsufitch@boring:~$ git rekt
+    git: 'rekt' is not a git command. See 'git --help'.
+    fsufitch@boring:~$ git spooked
+    git: 'spooked' is not a git command. See 'git --help'.
+
+You don't have to suffer anymore!
+
+    $ pip install gitgud
+
+This package adds functionality to git so these commands do not fail
+anymore.
+
+    fsufitch@awesome:~$ git gud
+    You are now so gud!
+    fsufitch@awesome:~$ git rekt
+    You got #rekt!
+
+Your life has officially been improved 100%.
+
+Personalization
+---------------
+
+If you're not the one gitting gud or rekt, you can specify the name of
+the one who is the target of the gitting. Just add an argument:
+
+    fsufitch@awesome:~$ git gud Filip
+    Filip is now so gud!
+    fsufitch@awesome:~$ git rekt Ted
+    Ted got #rekt!
+
+Super gud / super #rekt
+-----------------------
+
+Want to improve your life 101% and be even more gud, or more rekt?
+Just add the `--super` argument to add more awesome.
+
+    fsufitch@awesome:~$ git gud Filip --super
+     _____ _ _ _         _                                                                         _ _ 
+    |  ___(_) (_)_ __   (_)___   _ __   _____      __  ___ _   _ _ __   ___ _ __    __ _ _   _  __| | |
+    | |_  | | | | '_ \  | / __| | '_ \ / _ \ \ /\ / / / __| | | | '_ \ / _ \ '__|  / _` | | | |/ _` | |
+    |  _| | | | | |_) | | \__ \ | | | | (_) \ V  V /  \__ \ |_| | |_) |  __/ |    | (_| | |_| | (_| |_|
+    |_|   |_|_|_| .__/  |_|___/ |_| |_|\___/ \_/\_/   |___/\__,_| .__/ \___|_|     \__, |\__,_|\__,_(_)
+                |_|                                             |_|                |___/               
+    fsufitch@awesome:~$ git rekt Ted --super
+     _____        _               _                                   _  _            _    _   _ 
+    |_   _|__  __| |   __ _  ___ | |_   ___ _   _ _ __   ___ _ __   _| || |_ _ __ ___| | _| |_| |
+      | |/ _ \/ _` |  / _` |/ _ \| __| / __| | | | '_ \ / _ \ '__| |_  ..  _| '__/ _ \ |/ / __| |
+      | |  __/ (_| | | (_| | (_) | |_  \__ \ |_| | |_) |  __/ |    |_      _| | |  __/   <| |_|_|
+      |_|\___|\__,_|  \__, |\___/ \__| |___/\__,_| .__/ \___|_|      |_||_| |_|  \___|_|\_\\__(_)
+                      |___/                      |_|                                             
+
+> **Warning:** The writer is not responsible for side effects of
+    gitting gud or gitting rekt.
+
+This is a fork of [fsufitch/git-gud](https://github.com/fsufitch/git-gud).
+
+
