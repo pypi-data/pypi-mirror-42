@@ -1,0 +1,42 @@
+{
+	"sphinx":{
+		"name":"Sphinx",
+		"optional":false,
+		"url":"http://sphinx-doc.org",
+		"cat":["docs", "rtd"],
+		"ver":">=1.6.6",
+		"pos":1
+	},
+	"sphinxcontrib-inlinesyntaxhighlight":{
+		"name":"Inline Syntax Highlight Sphinx Extension",
+		"optional":false,
+		"url":"https://bitbucket.org/klorenz/sphinxcontrib-inlinesyntaxhighlight",
+		"cat":["docs", "rtd"],
+		"ver":">=0.2",
+		"pos":2
+	},
+	"sphinxcontrib-shellcheck":{
+		"name":"Shellcheck Linter Sphinx Extension",
+		"optional":false,
+		"url":"https://pypi.org/project/sphinxcontrib-shellcheck",
+		"cat":["docs"],
+		"ver":">=1.0.5",
+		"pos":3
+	},
+	"sphinx_rtd_theme":{
+		"name":"ReadTheDocs Sphinx theme",
+		"optional":false,
+		"url":"https://github.com/snide/sphinx_rtd_theme",
+		"cat":["docs"],
+		"ver":">=0.1.9",
+		"pos":4
+	},
+	"pmisc":{
+		"name":"Pmisc",
+		"optional":false,
+		"url":"http://pmisc.readthedocs.org",
+		"cat":["main", "rtd"],
+		"ver":">=1.5.2",
+		"pos":5
+	}
+}
