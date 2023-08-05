@@ -1,0 +1,6 @@
+natsort
+numpy
+opencv-python
+SimpleITK
+tqdm
+visdom
