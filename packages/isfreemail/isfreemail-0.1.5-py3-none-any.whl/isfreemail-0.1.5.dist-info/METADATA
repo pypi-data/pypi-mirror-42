@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: isfreemail
+Version: 0.1.5
+Summary: Cheks if email address is on a free mail service
+Home-page: https://github.com/fleio/isfreemail
+Author: Fleio
+Author-email: adrian@fleio.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+
+# isfreemail
+
+isfreemail Python module checks if an email address is from a free mailbox provider.
+
+
+## Installation
+
+    pip install isfreemail
+
+
+## Contribute
+
+If you want to add free mail service providers, edit `freeservers.py` and submit pull requests on
+https://github.com/fleio/isfreemail.
+
+Keep mail server list ordered alphabetically. 
+
+
+## License information
+
+isfreemail is licensed under BSD License. See the "LICENSE" file for more information.
+
+

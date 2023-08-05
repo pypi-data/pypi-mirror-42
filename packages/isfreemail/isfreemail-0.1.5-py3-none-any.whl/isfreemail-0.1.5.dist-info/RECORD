@@ -1,0 +1,10 @@
+isfreemail/__init__.py,sha256=WWJItZjhIDCXA-C8WqOCocpMpAy9-8Zb-U6B52ru8ZQ,75
+isfreemail/check.py,sha256=5X9CBEJ9l_w2i_BrxgBy7-fp_Ys_G44UOogvNmkbZPs,626
+isfreemail/freeservers.py,sha256=253xZUSnF4Z9LnFHpZiWsrzPOzPS_DAXOCgQ5Q7s8zY,80503
+isfreemail/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+isfreemail/tests/test_isfreemail.py,sha256=QCtYT2Ys10qBp7cMHCe38Sagszir0TOorNIa3Kw6H6o,1253
+isfreemail-0.1.5.dist-info/LICENSE,sha256=rm3XTgP_oOFyXsi5UEkrYJxmzhFbth4td0gf-mgZAV0,1505
+isfreemail-0.1.5.dist-info/METADATA,sha256=RkKVfCrXlZzdR8awDOUpVRj6Gk89wFmt-iar7YNj-q4,1407
+isfreemail-0.1.5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+isfreemail-0.1.5.dist-info/top_level.txt,sha256=dMsy5jxw-7iHcCzL1agQez-Eb488L69iuqDt78DcoT8,11
+isfreemail-0.1.5.dist-info/RECORD,,
