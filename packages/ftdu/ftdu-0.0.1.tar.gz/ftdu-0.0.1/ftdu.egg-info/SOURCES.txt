@@ -1,0 +1,13 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.rst
+ftdu.py
+requirements.txt
+setup.cfg
+setup.py
+ftdu.egg-info/PKG-INFO
+ftdu.egg-info/SOURCES.txt
+ftdu.egg-info/dependency_links.txt
+ftdu.egg-info/requires.txt
+ftdu.egg-info/top_level.txt

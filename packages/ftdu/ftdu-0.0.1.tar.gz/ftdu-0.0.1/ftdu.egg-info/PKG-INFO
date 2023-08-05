@@ -1,0 +1,63 @@
+Metadata-Version: 1.1
+Name: ftdu
+Version: 0.0.1
+Summary: Client to talk with ftDuino via USB 
+Home-page: https://github.com/heuer/ftdu/
+Author: Lars Heuer
+Author-email: heuer@semagia.com
+License: BSD
+Description: ftdu - Talk to ftDuino via Python
+        =================================
+        
+        ftdu can be used as client for the ```ftduino_direct``` sketch.
+        
+        It provides a more pythonic API to communicate with a ftDuino.
+        
+        
+        Installation
+        ------------
+        Install the ftduino_direct sketch, see <https://github.com/PeterDHabermehl/ftduino_direct#installation>
+        
+        
+        Use ``pip`` to install ftdu::
+        
+            $ pip install ftdu
+        
+        
+        Usage
+        -----
+        
+        Library
+        ^^^^^^^
+        
+        .. code-block:: python
+        
+            >>> import ftdu
+            >>> ftd = ftdu.FtDuino()
+            >>> ftd.led = True  # Switch the LED on
+            >>> ftd.o1 = True  # Enable O1
+            >>> ftd.i1  # Ask value of input port I1
+            0
+            >>> ftd.close()
+        
+        
+        Changes
+        =======
+        
+        0.0.1 -- 2018-02-16
+        -------------------
+        * Initial release
+        
+Keywords: fischertechnik,ftduino
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
