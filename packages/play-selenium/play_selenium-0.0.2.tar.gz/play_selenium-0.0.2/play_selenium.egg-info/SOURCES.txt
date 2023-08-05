@@ -1,0 +1,15 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+play_selenium/__init__.py
+play_selenium.egg-info/PKG-INFO
+play_selenium.egg-info/SOURCES.txt
+play_selenium.egg-info/dependency_links.txt
+play_selenium.egg-info/entry_points.txt
+play_selenium.egg-info/not-zip-safe
+play_selenium.egg-info/requires.txt
+play_selenium.egg-info/top_level.txt
+play_selenium/providers/__init__.py
+play_selenium/providers/selenium.py

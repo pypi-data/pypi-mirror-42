@@ -1,0 +1,15 @@
+pytest-play>=2.0
+pytest>=3.0.7
+pytest-variables[yaml]
+pytest-pypom-navigation
+pytest-splinter
+
+[docs]
+Sphinx
+sphinx_rtd_theme
+
+[tests]
+pytest
+pytest-cov
+mock
+zope.interface
