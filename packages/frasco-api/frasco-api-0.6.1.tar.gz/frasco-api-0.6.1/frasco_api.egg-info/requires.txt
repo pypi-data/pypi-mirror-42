@@ -1,0 +1,4 @@
+frasco-models>=0.4
+frasco-users
+apispec<1.0.0
+flask-cors
