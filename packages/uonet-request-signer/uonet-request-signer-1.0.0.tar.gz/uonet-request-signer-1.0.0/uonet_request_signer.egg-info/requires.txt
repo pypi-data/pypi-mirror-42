@@ -1,0 +1,4 @@
+pyopenssl
+
+[testing]
+pytest
