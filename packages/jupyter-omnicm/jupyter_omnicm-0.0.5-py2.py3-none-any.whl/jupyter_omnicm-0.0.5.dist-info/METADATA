@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: jupyter-omnicm
+Version: 0.0.5
+Summary: jupyter-omnicm is a flexible content manager system for Jupyter notebooks.
+Home-page: https://github.com/remysaissy/jupyter-omnicm
+Author: Rémy Saissy
+Author-email: remy.saissy@gmail.com
+License: Apache Software License 2.0
+Project-URL: Documentation, https://jupyter-omnicm.readthedocs.io/
+Project-URL: Changelog, https://jupyter-omnicm.readthedocs.io/en/latest/changelog.html
+Project-URL: Issue Tracker, https://github.com/remysaissy/jupyter-omnicm/issues
+Keywords: hdfs,jupyter
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Requires-Dist: tornado
+Requires-Dist: traitlets
+Requires-Dist: notebook
+Requires-Dist: ipython-genutils
+Requires-Dist: nbformat
+Requires-Dist: pyarrow
+
+========
+Overview
+========
+
+
+
+jupyter-omnicm is a flexible content manager system for Jupyter notebooks.
+
+* Free software: Apache Software License 2.0
+
+It currently supports the HDFS Content Manager.
+
+Installation
+============
+
+::
+
+    pip install jupyter-omnicm
+
+Documentation
+=============
+
+
+https://jupyter-omnicm.readthedocs.io/
+
+
+Development
+===========
+
+To run the all tests run::
+
+    tox
+
+Note, to combine the coverage data from all the tox environments run:
+
+.. list-table::
+    :widths: 10 90
+    :stub-columns: 1
+
+    - - Windows
+      - ::
+
+            set PYTEST_ADDOPTS=--cov-append
+            tox
+
+    - - Other
+      - ::
+
+            PYTEST_ADDOPTS=--cov-append tox
+
+
+Changelog
+=========
+
+

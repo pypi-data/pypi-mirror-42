@@ -1,0 +1,12 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jupyter_omnicm/__init__.py,sha256=eB5tEg_BNHHsJgQexgmpZJr4c2VbfooQZMXAWuDHoIg,22
+jupyter_omnicm/hdfs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jupyter_omnicm/hdfs/hdfs_checkpoints.py,sha256=heNpDaFTCuoHlOog3XFceLDnVeGWkqYE-1kS595Ie4s,5017
+jupyter_omnicm/hdfs/hdfs_io.py,sha256=rVDwZZgIuYzEKZTVtcToRXgd3CQ4ffsAPepL60diuzY,8667
+jupyter_omnicm/hdfs/hdfs_manager.py,sha256=BunScDzuhMi9UKvh_sBFklwfhM5dAcvb0WMT45FGjm8,11225
+jupyter_omnicm-0.0.5.dist-info/AUTHORS.rst,sha256=jvGh26JyQs8ZvmZj-8CeJEV99YWWNxwfhOWXEYztaak,65
+jupyter_omnicm-0.0.5.dist-info/LICENSE,sha256=jfGe2901miUy0BiAcF49UUWB9Jk-eKiWS9hJNYb1FZ8,582
+jupyter_omnicm-0.0.5.dist-info/METADATA,sha256=aPKG62cnNZj9jzTKj3-jXqfVj-iJyfa-JgtFElxZSWY,1827
+jupyter_omnicm-0.0.5.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+jupyter_omnicm-0.0.5.dist-info/top_level.txt,sha256=U0jSke6glceGWkPntHEiUXW-RELnlYKMgNUhwXXIdGk,24
+jupyter_omnicm-0.0.5.dist-info/RECORD,,
