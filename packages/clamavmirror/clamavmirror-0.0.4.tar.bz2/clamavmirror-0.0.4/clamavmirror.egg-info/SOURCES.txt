@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+clamavmirror.egg-info/PKG-INFO
+clamavmirror.egg-info/SOURCES.txt
+clamavmirror.egg-info/dependency_links.txt
+clamavmirror.egg-info/entry_points.txt
+clamavmirror.egg-info/not-zip-safe
+clamavmirror.egg-info/requires.txt
+clamavmirror.egg-info/top_level.txt
