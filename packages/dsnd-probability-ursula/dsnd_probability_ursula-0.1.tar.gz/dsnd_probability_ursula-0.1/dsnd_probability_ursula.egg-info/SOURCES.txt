@@ -1,0 +1,10 @@
+setup.py
+dsnd_probability_ursula/Binomialdistribution.py
+dsnd_probability_ursula/Gaussiandistribution.py
+dsnd_probability_ursula/Generaldistribution.py
+dsnd_probability_ursula/__init__.py
+dsnd_probability_ursula.egg-info/PKG-INFO
+dsnd_probability_ursula.egg-info/SOURCES.txt
+dsnd_probability_ursula.egg-info/dependency_links.txt
+dsnd_probability_ursula.egg-info/not-zip-safe
+dsnd_probability_ursula.egg-info/top_level.txt
