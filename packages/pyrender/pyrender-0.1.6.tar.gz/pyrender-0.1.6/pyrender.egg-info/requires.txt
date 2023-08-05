@@ -1,0 +1,15 @@
+freetype-py
+imageio
+networkx
+numpy
+Pillow
+pyglet==1.4.0a1
+PyOpenGL
+PyOpenGL_accelerate
+six
+trimesh
+
+[docs]
+sphinx
+sphinxcontrib-napoleon
+sphinx_rtd_theme
