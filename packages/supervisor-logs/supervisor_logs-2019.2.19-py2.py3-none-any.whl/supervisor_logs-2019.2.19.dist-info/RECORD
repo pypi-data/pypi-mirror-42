@@ -1,0 +1,8 @@
+supervisor_logs/__init__.py,sha256=k8bSU7fGy4abvr6mPbLtTjycRuoCSo1bu1OQIA7cwyE,2442
+supervisor_logs/add.py,sha256=Gwesf3-Ib4lq_xlnHnomzIHOir4XiSZ5O8tyyeMw-xg,458
+supervisor_logs/clear.py,sha256=QFLQdmNaYgOQYuKrwaDzkfvyuPBnvnuwBLnL6tgGRQE,410
+supervisor_logs/mkdir.py,sha256=vZVeHD13giLDmL19IhH9_MKIAvt2R-DxtZnFGVlx-_0,440
+supervisor_logs-2019.2.19.dist-info/METADATA,sha256=FvSS7opQ7mAMpFQl3s1NPZ_aQKtrsibH-wHOT7d-J-g,2163
+supervisor_logs-2019.2.19.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+supervisor_logs-2019.2.19.dist-info/top_level.txt,sha256=ALWG516jbH28Az4klbRukL8ZWprTcMHBeN-aIRKnX5U,16
+supervisor_logs-2019.2.19.dist-info/RECORD,,
