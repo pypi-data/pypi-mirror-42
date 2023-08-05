@@ -1,0 +1,15 @@
+spry/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spry/__main__.py,sha256=Pq0Q7RQ94sqqnjZ1LNE2W9L-IssX0gk-utKP8B8Y9pI,129
+spry/spry.py,sha256=6XkHAQY3YIhUtW5FdPiyBZwb1fUR4XFKMfwqnfgru4Q,9528
+spry/modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spry/modules/core.py,sha256=lMxbJl2cxDDmxO7GsCSP8_sqVekgcryDcpTim-FPcWI,958
+spry/modules/pdf_maker.py,sha256=_uKBKFemSCEB2bVNmEnDgJWg0laK8dEtuxLt3ifCHds,1107
+spry/modules/spinner.py,sha256=-vZS43JkiVzHk7PzPDqf4DQ2OnEfes3w0NnWc2ajilQ,354
+spry/modules/stuff.py,sha256=DmhDYhJ8azVnw3YBT7E4LZR5RvMK6eE1VH5gd9hY_Ls,119
+spry/modules/useragents.py,sha256=htLKl-NlSoSiiw0bv6zt1dEmSkgUpkwpjbUgqw39YLM,903284
+spry-0.5.5.dist-info/LICENSE,sha256=WJ7YI-moTFb-uVrFjnzzhGJrnL9P2iqQe8NuED3hutI,35141
+spry-0.5.5.dist-info/METADATA,sha256=Z-EBc6xRkFMKxRd-LgOd6rf6CHmEXGEm-kQXHImX608,2580
+spry-0.5.5.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+spry-0.5.5.dist-info/entry_points.txt,sha256=8MFgzK-TRlwT2vM98dsb__ATqXqpsdFSORbIXgAgyOU,41
+spry-0.5.5.dist-info/top_level.txt,sha256=TkmRqcA2EMV4E2MEfeWy1bO3aY_NCmM40q4OHzqn8Qk,5
+spry-0.5.5.dist-info/RECORD,,
