@@ -1,0 +1,28 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-variables = "*"
+pillow = "*"
+uiautomator2 = "*"
+
+[packages]
+setuptools = "*"
+wheel = "*"
+twine = "*"
+cookiecutter = "*"
+setuptools-scm = "*"
+setuptools-scm-git-archive = "*"
+uiautomator2 = "*"
+requests-download = "*"
+retry = "*"
+progressbar2 = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
