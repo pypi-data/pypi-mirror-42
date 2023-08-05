@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: sosw
+Version: 0.3.17
+Summary: Serverless Orchestrator of Serverless Workers
+Home-page: http://github.com/bimpression/sosw
+Author: Nikolay Grishchenko
+Author-email: nikolay@bimpression.com
+License: MIT
+Description: # sosw
+        Serverless Orchestrator of Serverless Workers for AWS - Worker
+        [![Build Status](https://travis-ci.org/bimpression/sosw.svg?branch=master)](https://travis-ci.org/bimpression/sosw)
+        
+        Documentation can be found in [sosw.rtfd.io](https://sosw.rtfd.io/latest)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: Other OS
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
