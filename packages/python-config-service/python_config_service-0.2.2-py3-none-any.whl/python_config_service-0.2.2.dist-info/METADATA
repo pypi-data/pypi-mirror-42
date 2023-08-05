@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: python-config-service
+Version: 0.2.2
+Summary: Python package to communicate with the config service
+Home-page: https://gitlab.host-h.net/DanieCilliers/python-config-service
+Author: Danie Cilliers
+Author-email: daniel.cilliers@hetzner.co.za
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+
+Dependencies
+============
+- Python
+- requests
+
+
