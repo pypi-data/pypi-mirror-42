@@ -1,0 +1,9 @@
+exclude .gitignore
+include README.rst
+include awsdatapipe/data/*.json
+prune .cache
+prune .git
+prune build
+prune dist
+recursive-exclude *.egg-info *
+recursive-include tests *

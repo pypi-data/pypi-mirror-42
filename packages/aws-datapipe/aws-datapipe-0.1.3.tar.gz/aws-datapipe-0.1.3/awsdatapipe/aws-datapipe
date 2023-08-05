@@ -1,0 +1,138 @@
+#!/usr/bin/env python
+
+import json
+import argparse
+import sys
+import subprocess
+import pkg_resources
+from pyfiglet import Figlet
+from awsdatapipe import __version__
+
+t = Figlet(font='slant')
+print(t.renderText('AWS Datapipe'))
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+class Namespace:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
+class userinput:
+    @staticmethod
+    def interactive():
+        print("Please insert the required information bellow")
+        name = input(bcolors.WARNING + "New Pipeline name: " + bcolors.ENDC)
+        unique = input(bcolors.WARNING + "Pipeline unique id: " + bcolors.ENDC) or "anyspecialuniqueid"
+        table = input(bcolors.WARNING + "DynamoDB table: " + bcolors.ENDC)
+        bucket = input(bcolors.WARNING + "Output S3 folder: " + bcolors.ENDC)
+        region = input(bcolors.WARNING + "DynamoDB table region: (Default: eu-west-1) " + bcolors.ENDC) or "eu-west-1"
+        ratio = input(bcolors.WARNING + "DynamoDB read throughput ratio: (Default: 0.25) " + bcolors.ENDC) or "0.25"
+        args = Namespace(name=name, table=table, bucket=bucket, region=region, ratio=ratio, uniqueid=unique)
+        return args
+
+    @staticmethod
+    def parse_aruments():
+        parser = argparse.ArgumentParser(
+            description="Automated script for creating AWS data pipeline to export data from any DynamoDB table to S3 bucket")
+
+        parser.add_argument('-n', '--name', nargs='?', dest='name', required=True,
+                            help="""The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, 
+                            because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.""")
+        parser.add_argument('-t', '--table', nargs='?', dest='table', required=True,
+                            help='DynamoDB table')
+        parser.add_argument('-r', '--region', nargs='?', dest='region', default="eu-west-1",
+                            help='DynamoDB table region (Default: eu-west-1)')
+        parser.add_argument('-o', '--ratio', nargs='?', dest='ratio', default=0.25,
+                            help='DynamoDB read throughput ratio (Default: 0.25)')
+        parser.add_argument('-b', '--bucket', nargs='?', dest='bucket', required=True,
+                            help="Output S3 folder full path (Ex: s3://test-bucket-name/)")
+        parser.add_argument('-u', '--unique', nargs='?', dest='uniqueid', default="anyspecialuniqueid",
+                            help="""A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. 
+                            You are responsible for defining the format and ensuring the uniqueness of this identifier. 
+                            The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.
+                            (Default: anyspecialuniqueid)""")
+        parser.add_argument('--version', action="version", help='Display the version of the aws-datapipe',
+                            version='%(prog)s {version}'.format(version=__version__))
+
+        args = parser.parse_args()
+        return args
+
+
+def pipeline_properties(args):
+    
+    DATA_PATH = pkg_resources.resource_filename('awsdatapipe', 'data/exportdynamo2s3.json')
+    with open(DATA_PATH) as f:
+        data = json.load(f)
+
+    data['values']['myDDBRegion'] = args.region
+    data['values']['myDDBTableName'] = args.table
+    data['values']['myDDBReadThroughputRatio'] = args.ratio
+    data['values']['myOutputS3Loc'] = args.bucket
+
+    jsonfile = args.name + '.json'
+    with open(jsonfile, 'w') as outfile:
+        json.dump(data, outfile, indent=4)
+    return jsonfile
+
+def create_pipeline(pipeline_name, properties_filename, special_id):
+    create_cmd = 'aws datapipeline create-pipeline --name ' + pipeline_name + ' --unique-id ' + special_id
+    output = subprocess.Popen(create_cmd,  shell=True, stdout=subprocess.PIPE)
+    jsonS,_ = output.communicate()
+    pipeline_id = json.loads(jsonS)
+    return pipeline_id['pipelineId']
+
+def populate_pipeline(aws_uniqueid, definition_file):
+    add_definition_cmd = 'aws datapipeline put-pipeline-definition --pipeline-id ' + aws_uniqueid + ' --pipeline-definition file://' + definition_file
+    cmd = subprocess.Popen(add_definition_cmd,  shell=True, stdout=subprocess.PIPE)
+    _, error = cmd.communicate()
+    if cmd.returncode == 0:
+        print(bcolors.OKGREEN + """Pipeline has been successfully created and configured. 
+            Definition of the pipeline is saved in """ + definition_file + bcolors.ENDC)
+    else:
+        print(bcolors.FAIL + error + bcolors.ENDC)
+    pass
+
+def activate_pipeline(aws_uniqueid):
+    activate_cmd = 'aws datapipeline activate-pipeline --pipeline-id ' + aws_uniqueid
+    cmd = subprocess.Popen(activate_cmd,  shell=True, stdout=subprocess.PIPE)
+    _, error = cmd.communicate()
+    if cmd.returncode == 0:
+        print(bcolors.OKGREEN + "Pipeline has been successfully activated" + bcolors.ENDC)
+    else:
+        print(bcolors.FAIL + error + bcolors.ENDC)
+    pass
+
+def main():
+    try:
+        if len(sys.argv) <= 1: 
+            args = userinput.interactive()
+        else: 
+            args = userinput.parse_aruments()
+    
+        properties_file = pipeline_properties(args)
+        new_pipeline_id = create_pipeline(args.name, properties_file, args.uniqueid)
+        populate_pipeline(new_pipeline_id, properties_file)  # Adds tasks, schedules, and preconditions to the specified pipeline.
+        activate = input(bcolors.WARNING + "Would you like to activate the pipeline now? [y/n] " + bcolors.ENDC)
+        if activate == 'y':
+            activate_pipeline(new_pipeline_id)
+            print(bcolors.BOLD + "Thanks for using aws-datapipe." + bcolors.ENDC)
+        else:
+            print("You can manually activate the pipeline later whenever you want from the AWS Console")
+            print(bcolors.BOLD + "Thanks for using aws-datapipe." + bcolors.ENDC)
+
+    except KeyboardInterrupt:
+        print()
+        # If the user hits Ctrl+C, we don't want to print
+        # a traceback to the user.
+        pass
+
+if __name__ == '__main__':
+    main()
