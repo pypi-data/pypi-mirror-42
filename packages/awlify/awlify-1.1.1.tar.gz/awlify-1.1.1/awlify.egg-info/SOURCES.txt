@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+awlify/__init__.py
+awlify/check_sentence.py
+awlify.egg-info/PKG-INFO
+awlify.egg-info/SOURCES.txt
+awlify.egg-info/dependency_links.txt
+awlify.egg-info/requires.txt
+awlify.egg-info/top_level.txt
+awlify/utils/__init__.py
+awlify/utils/awl_full_results.py
+awlify/utils/check_word.py
