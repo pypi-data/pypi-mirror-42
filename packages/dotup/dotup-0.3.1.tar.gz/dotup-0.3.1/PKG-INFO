@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: dotup
+Version: 0.3.1
+Summary: Symlink your dotfiles with ease.
+Home-page: https://github.com/audiolion/dotup
+Author: Ryan Castner
+Author-email: castner.rr@gmail.com
+Keywords: dotfiles,cli,symlink,updater,update
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: crayons (>=0.1.2,<0.2.0)
+Project-URL: Repository, https://github.com/audiolion/dotup
