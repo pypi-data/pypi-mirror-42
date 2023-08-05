@@ -1,0 +1,17 @@
+pyairvisual/__init__.py,sha256=8rI65rXLHfH6TfW0Vc7gS26lYUJBNIfSO1RYnf3TjOM,76
+pyairvisual/__version__.py,sha256=Nr0bNcNXJdF9a26EcE2d1H90KfVlCyZ9_TU-EoerwUw,56
+pyairvisual/api.py,sha256=V1Bd7GCrbJnS0SX3JtZzE1RvcYja1RXs5eGzR-thTuI,2563
+pyairvisual/client.py,sha256=rcfXpelOGjqRJs35hX7m30SgcV2F0jGCmRGozOTks78,1727
+pyairvisual/const.py,sha256=pUkI-dNklnvN69Lizts548sVWtD6GSrOmAHeyx5nAFU,142
+pyairvisual/errors.py,sha256=ESqt65cref-cT1ZU768fs0SUsHoYQjxeCBvP0pyNHV8,1485
+pyairvisual/supported.py,sha256=p4yFO4wQRIRnpWqmCyMU_PvtwO03jKYexK7zCaxtzIY,1501
+tests/fixtures/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/fixtures/api.py,sha256=T6QPjh6_HOTRo2-dyy7TdDJlWS7LgM1lPu2y9sA30yk,8445
+tests/fixtures/errors.py,sha256=abm2cxKa1hurCQfrbLsyrnZefxWIpO7yfdWkb6hY4kc,1448
+tests/fixtures/supported.py,sha256=_bhgt9pshAIHPURJZy8HaiqD8QCBuSdhFdhZ-ossE3E,7293
+pyairvisual-3.0.0.dist-info/AUTHORS.md,sha256=4FNgm2q4vUOxC85f_nZUW07AYs2l68LanMabGzJwa1w,86
+pyairvisual-3.0.0.dist-info/LICENSE,sha256=a4_m0OxNf3KMxo56hmdSsZqBmGQOGzDRAzl6qyLllQw,1077
+pyairvisual-3.0.0.dist-info/METADATA,sha256=fBVgLKgtbQ6reFICgrfkNun3AlfIQdQgnj8WuMwbhZ4,6312
+pyairvisual-3.0.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+pyairvisual-3.0.0.dist-info/top_level.txt,sha256=PzlOGOses8Czzmyy4w7Ydk6yeH8ydkw-bDHjCRd6UWQ,18
+pyairvisual-3.0.0.dist-info/RECORD,,
