@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: graphql-ws-django
+Version: 0.3
+Summary: Websocket server for grapqh with django channels 2
+Home-page: https://github.com/Manviel/graphql-ws
+Author: Manviel
+Author-email: Mihaylo.Merezhko@kname.edu.ua
+License: UNKNOWN
+Download-URL: https://github.com/Manviel/graphql-ws/archive/pypi-0_1_3.tar.gz
+Description: UNKNOWN
+Keywords: graphql,channels
+Platform: UNKNOWN
