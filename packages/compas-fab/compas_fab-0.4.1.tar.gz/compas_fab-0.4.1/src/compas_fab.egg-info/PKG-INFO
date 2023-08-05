@@ -1,0 +1,193 @@
+Metadata-Version: 1.1
+Name: compas-fab
+Version: 0.4.1
+Summary: Robotic fabrication package for the COMPAS Framework
+Home-page: https://github.com/gramaziokohler/compas_fab
+Author: Gramazio Kohler Research
+Author-email: gramaziokohler@arch.ethz.ch
+License: MIT license
+Description: ============================================================
+        compas_fab: Robotic Fabrication for COMPAS
+        ============================================================
+        
+        
+        
+        **Robotic fabrication package for the COMPAS Framework** that facilitates the planning and execution of robotic fabrication processes.
+        It provides interfaces to existing software libraries and tools available in the field of robotics (e.g. OMPL, ROS) and makes them
+        accessible from within the parametric design environment. The package builds upon `COMPAS <https://compas-dev.github.io/>`_,
+        an open-source Python-based framework for collaboration and research in architecture, engineering and digital fabrication.
+        
+        
+        Main features
+        -------------
+        
+        * Multiple backends for simulation and execution (e.g. `ROS: Robot Operating System <https://ros.org>`_)
+        * Planning tools: kinematic solvers, path planning, etc.
+        * Execution tools: feedback loops, robot control, etc.
+        
+        **compas_fab** runs on Python 2.x, 3.x and IronPython 2.7.
+        
+        
+        Getting Started
+        ---------------
+        
+        The recommended way to install **compas_fab** is to use `Anaconda/conda <https://conda.io/docs/>`_:
+        
+        ::
+        
+            conda config --add channels conda-forge
+            conda install compas_fab
+        
+        But it can also be installed using ``pip``:
+        
+        ::
+        
+            pip install compas_fab
+        
+        
+        Once installed, you can verify your setup. Start Python from the command prompt and run the following:
+        
+        .. code-block:: python
+        
+            >>> import compas_fab
+        
+        
+        First Steps
+        -----------
+        
+        * `Documentation <https://gramaziokohler.github.io/compas_fab/>`_
+        * `Examples <https://gramaziokohler.github.io/compas_fab/latest/examples.html>`_
+        * `API Reference <https://gramaziokohler.github.io/compas_fab/latest/reference.html>`_
+        * `COMPAS Examples <https://compas-dev.github.io/main/examples.html>`_
+        * `COMPAS API Reference <https://compas-dev.github.io/main/api.html>`_
+        
+        
+        Questions and feedback
+        ----------------------
+        
+        We encourage the use of the `COMPAS framework forum <https://forum.compas-framework.org/>`_
+        for questions and discussions.
+        
+        
+        Contributing
+        ------------
+        
+        We love contributions!
+        
+        Check the `Contributor's Guide <https://github.com/gramaziokohler/compas_fab/blob/master/CONTRIBUTING.rst>`_
+        for more details.
+        
+        
+        Releasing this project
+        ----------------------
+        
+        Ready to release a new version of **compas_fab**? Here's how to do it:
+        
+        * We use `semver <https://semver.org/>`_, i.e. we bump versions as follows:
+        
+          * ``patch``: bugfixes.
+          * ``minor``: backwards-compatible features added.
+          * ``major``: backwards-incompatible changes.
+        
+        * Update the ``CHANGELOG.rst`` with all novelty!
+        * Ready? Release everything in one command:
+        
+        ::
+        
+            invoke release [patch|minor|major]
+        
+        * Celebrate! 💃
+        
+        Credits
+        -------
+        
+        This package is maintained by Gramazio Kohler Research `@gramaziokohler <https://github.com/gramaziokohler>`_
+        and a long list of `contributors <https://github.com/gramaziokohler/compas_fab/blob/master/AUTHORS.rst>`_
+        
+        
+        Changelog
+        =========
+        
+        All notable changes to this project will be documented in this file.
+        
+        The format is based on `Keep a Changelog <http://keepachangelog.com/en/1.0.0/>`_
+        and this project adheres to `Semantic Versioning <http://semver.org/spec/v2.0.0.html>`_.
+        
+        0.4.1
+        ----------
+        
+        **Fixed**
+        
+        * Fixed missing library for V-REP on macOS
+        
+        **Deprecated**
+        
+        * The aliases for ``Frame`` and ``Transformation`` will be removed, in the future, import directly from `compas` core.
+        
+        0.4.0
+        ----------
+        
+        **Added**
+        
+        * Color parameter to Rhino robot artist
+        
+        **Changed**
+        
+        * Updated to COMPAS 0.4.10
+        
+        0.3.0
+        ----------
+        
+        **Added**
+        
+        * Deeper integration with MoveIt! motion planning services
+        * Added sync and async versions of many ROS service calls
+        * Added support for cancellable tasks/actions
+        
+        **Changed**
+        
+        * Renamed ``UrdfImporter`` to ``RosFileServerLoader``
+        * Updated to COMPAS 0.4.8
+        
+        0.2.1
+        ----------
+        
+        **Added**
+        
+        * Robot artist for Blender
+        
+        0.2.0
+        -----
+        
+        **Added**
+        
+        * First open source release!
+        * V-REP and ROS clients
+        * Updated to COMPAS 0.3.2
+        
+        0.1.0
+        -----
+        
+        **Added**
+        
+        * Initial version
+        
+Keywords: robotic fabrication,digital fabrication,architecture,robotics,ros
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: IronPython
+Classifier: Topic :: Scientific/Engineering
