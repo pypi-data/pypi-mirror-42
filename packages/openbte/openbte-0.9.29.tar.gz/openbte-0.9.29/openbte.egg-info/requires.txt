@@ -1,0 +1,15 @@
+alabaster
+deepdish
+future
+grin
+matplotlib
+mpi4py
+networkx
+numpy
+pyvtk
+scipy
+shapely
+sparse
+termcolor
+twisted
+unittest2
