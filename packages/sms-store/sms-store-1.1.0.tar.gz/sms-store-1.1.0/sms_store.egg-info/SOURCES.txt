@@ -1,0 +1,10 @@
+README.md
+setup.py
+sms_store/__init__.py
+sms_store/errors.py
+sms_store/kma.py
+sms_store.egg-info/PKG-INFO
+sms_store.egg-info/SOURCES.txt
+sms_store.egg-info/dependency_links.txt
+sms_store.egg-info/requires.txt
+sms_store.egg-info/top_level.txt
