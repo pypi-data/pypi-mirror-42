@@ -1,0 +1,3 @@
+[console_scripts]
+yks = yks:console_run
+
