@@ -1,0 +1,9 @@
+iosautomationdriver/__init__.py,sha256=c9cLSfr2hvUQqWSVIU31YvXBCLJPh2rlAhIc30ynvTA,31
+iosautomationdriver/usbdevicedetector.py,sha256=1-TQwCKslPNCpRxuVhrXXgH5rMe00VSqCf4s-ofzihE,1092
+iosautomationdriver/utils.py,sha256=ZXfAt123nBwVDki5HLAkiZ-v6gcmw3KvHI1rgRyrC_4,1648
+iosautomationdriver/webdriveragent.py,sha256=2r7r_bzzDXzdHtRzj0I2RUeDVmH4BXLUaFycLjC36fc,10442
+iosautomationdrivercli-0.1.data/scripts/iosautomationdrivercli,sha256=TUwuEl80DCgIGGl_dSnO4cRGv1Ol9NrZoZbVuSGTLko,4032
+iosautomationdrivercli-0.1.dist-info/METADATA,sha256=KvMkB2Pek2pMKODGERf57IPx1TFSOO-6WQNsYFBVc4A,511
+iosautomationdrivercli-0.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+iosautomationdrivercli-0.1.dist-info/top_level.txt,sha256=t3RuqK6zxiTrc54RCYVSmv-k-mTNhPJrGb_fMHGK4_w,20
+iosautomationdrivercli-0.1.dist-info/RECORD,,

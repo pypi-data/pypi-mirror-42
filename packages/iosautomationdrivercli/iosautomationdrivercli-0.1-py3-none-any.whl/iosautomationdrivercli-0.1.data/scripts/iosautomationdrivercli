@@ -1,0 +1,66 @@
+from iosautomationdriver.webdriveragent import *
+from iosautomationdriver.usbdevicedetector import *
+
+def device_state_change(device, newState, oldState):
+    pass
+
+
+command_callbacks = {}
+command_help_info = {}
+def register_command(cmd, cb, help_info):
+    global command_callbacks
+    global command_help_info
+    command_callbacks[cmd] = cb
+    command_help_info[cmd] = help_info
+
+
+def execute_command(cmdline):
+    args = cmdline.split(' ')
+    cmd = args[0]
+    global command_callbacks
+    for cmd_name in command_callbacks:
+        if cmd == cmd_name:
+            command_callbacks[cmd](args)
+
+
+def print_help_info():
+    global command_help_info
+    for cmd in command_help_info:
+        print("{0}\t\t\t{1}".format(cmd, command_help_info[cmd]))
+
+
+if __name__ == '__main__':
+    test_agent = WebDriverAgent()
+    test_agent.device_events.on_change += device_state_change
+
+    # register cmd
+    # cmd line app
+    register_command('q', lambda args: (test_agent.clear(), exit(0)), '退出命令行')
+    register_command('h', lambda args: print_help_info(), '显示帮助文档')
+    # device manage
+    register_command('dmsim', lambda args: test_agent.run_test_on_sim(), '启动模拟器并开启WDA')
+    register_command('dmclear', lambda args: test_agent.clear(), '强制关闭所有设备')
+    register_command('dmauto', lambda args: test_agent.enable_device_auto_start(), '开启真机设备连接后自动启动WDA')
+    register_command('dmls', lambda args: test_agent.print_desc(), '列出当前正在运行WDA的设备')
+    # wda commands
+    register_command('wdalaunch', lambda args: test_agent.any_device().launch_app(args[1]), '启动默认设备的指定App，e.g. wdalaunch com.gemd.iting')
+    register_command('wdahome', lambda args: test_agent.any_device().tap_home_button(), '点击默认设备的home键')
+    register_command('wdaquitapp', lambda args: test_agent.any_device().quit_current_app(), '退出默认设备当前App')
+    register_command('wdadeapp', lambda args: test_agent.any_device().deactive_app(int(args[1])), '')
+    register_command('wdass', lambda args: show_base64_img(test_agent.any_device().screenshot()), '获取默认设备的截图并显示')
+    register_command('wdast', lambda args: print(test_agent.any_device().fetch_source_tree()), '获取默认设备的UI树')
+    register_command('wdaquerylt', lambda args: print(test_agent.any_device().query_link_text(args[1])), '查询可点击文字，e.g. wdaquerylt close')
+    register_command('wdaquery', lambda args: print(test_agent.any_device().query_element(args[1], args[2])), '查询元素')
+    register_command('wdaqueryattr', lambda args: print(test_agent.any_device().query_element_attr(args[1], args[2])), '查询UI元素属性，e.g. wdaqueryattr 5 displayed')
+    register_command('wdatapele', lambda args: test_agent.any_device().tap_element(args[1]), '点击元素， e.g. wdatapele 5')
+    register_command('wdainputele', lambda args: test_agent.any_device().input_element(args[1], args[2]), '给指定UI元素输入文字， e.g. wdainputele 5 helloworld')
+    register_command('wdadrag', lambda args: test_agent.any_device().do_drag(float(args[1]), float(args[2]), float(args[3]), float(args[4]), float(args[5])), '拖拽手势，e.g. wdadrag 0 0 100 100 2')
+    register_command('wdatap', lambda args: test_agent.any_device().do_tap(float(args[1]), float(args[2])), '点击手势, e.g. wdatap 100 200')
+    register_command('wdaalertget', lambda args: print(test_agent.any_device().get_alert()), '获取当前alert弹窗')
+    register_command('wdaalertaccept', lambda args: print(test_agent.any_device().accept_alert()), '接受当前alert弹窗')
+    register_command('wdaalertdismiss', lambda args: print(test_agent.any_device().dismiss_alert()), '当前alert弹窗消失')
+    register_command('wdatouchid', lambda args: print(test_agent.any_device().match_touchid(int(args[1]))), '触发touchid检测，e.g. wdatouchid 1')
+
+    while True:
+        cmdline = input("")
+        execute_command(cmdline)
