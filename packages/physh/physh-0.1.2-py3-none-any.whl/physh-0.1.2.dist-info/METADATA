@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: physh
+Version: 0.1.2
+Summary: run shell commands with this thin wrapper around the subprocess module
+Home-page: https://github.com/CoinBR/physh/tree/master
+Author: Pedro 'Coin' Duarte
+Author-email: coinbr@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/markdown
+
+# physh
+
+Run shell commands with this thin wrapper around the Python subprocess module
+
+### [](https://github.com/CoinBR/physh/blob/master/README.md#some-info-for-me)Refences (for me):
+I followed these tutorials to:
+ - Create a Package:   https://python-packaging.readthedocs.io/en/latest/minimal.html
+- Publish do pip: https://python-packaging.readthedocs.io/en/latest/minimal.html
+
+
+
