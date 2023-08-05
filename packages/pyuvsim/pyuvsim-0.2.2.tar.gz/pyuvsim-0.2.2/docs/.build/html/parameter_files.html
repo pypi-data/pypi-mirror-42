@@ -1,0 +1,302 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parameter and configuration Files &#8212; pyuvsim  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Full class list and documentation" href="classes.html" />
+    <link rel="prev" title="Running a simulation" href="usage.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="classes.html" title="Full class list and documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Running a simulation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyuvsim  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parameter-and-configuration-files">
+<h1>Parameter and configuration Files<a class="headerlink" href="#parameter-and-configuration-files" title="Permalink to this headline">¶</a></h1>
+<p>When running simulations from yaml and csv files, there are four configuration files that must be used.</p>
+<p>The outermost parameter file is the <cite>obsparam_*.yaml</cite>, which is parsed by <code class="docutils literal notranslate"><span class="pre">initialize_uvdata_from_params</span></code> into a uvdata object, a source list, a beam dictionary, and a beam list.</p>
+<p>The antenna layout and telescope config yaml files determine the full properties of the array, including location, beam models, layout, and naming.</p>
+<p>The catalog text files give point source lists</p>
+<p>These files contain overall simulation parameters.
+Passed into <code class="docutils literal notranslate"><span class="pre">``run_param_pyuvsim.py``</span></code></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Example obsparam yaml file</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">filing</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">outdir</span><span class="p p-Indicator">:</span> <span class="s">&#39;.&#39;</span>   <span class="c1">#Output file directory</span>
+  <span class="l l-Scalar l-Scalar-Plain">outfile_prefix</span><span class="p p-Indicator">:</span> <span class="s">&#39;sim_&#39;</span> <span class="c1"># Prefix for the output uvfits file.</span>
+<span class="l l-Scalar l-Scalar-Plain">freq</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">Nfreqs</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>    <span class="c1"># Number of frequencies</span>
+  <span class="l l-Scalar l-Scalar-Plain">channel_width</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80000.0</span>    <span class="c1"># Frequency channel width</span>
+  <span class="l l-Scalar l-Scalar-Plain">end_freq</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100800000.0</span>     <span class="c1"># Start and end frequencies (Hz)</span>
+  <span class="l l-Scalar l-Scalar-Plain">start_freq</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">100000000.0</span>
+  <span class="l l-Scalar l-Scalar-Plain">freq_array</span> <span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">1.0000e+08</span><span class="p p-Indicator">,</span>   <span class="nv">1.0008e+08</span><span class="p p-Indicator">,</span>   <span class="nv">1.0016e+08</span><span class="p p-Indicator">,</span> <span class="nv">1.0024e+08</span><span class="p p-Indicator">,</span>
+      <span class="nv">1.0032e+08</span><span class="p p-Indicator">,</span>   <span class="nv">1.0040e+08</span><span class="p p-Indicator">,</span>   <span class="nv">1.0048e+08</span><span class="p p-Indicator">,</span> <span class="nv">1.0056e+08</span><span class="p p-Indicator">,</span>
+      <span class="nv">1.0064e+08</span><span class="p p-Indicator">,</span> <span class="nv">1.0072e+08</span><span class="p p-Indicator">]</span>
+  <span class="l l-Scalar l-Scalar-Plain">bandwidth</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">800000.0</span>
+<span class="l l-Scalar l-Scalar-Plain">sources</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">catalog</span><span class="p p-Indicator">:</span> <span class="s">&#39;mock&#39;</span>       <span class="c1">#Choice of catalog file name (or specify mock to use builtin catalogs).</span>
+  <span class="l l-Scalar l-Scalar-Plain">mock_arrangement</span><span class="p p-Indicator">:</span> <span class="s">&#39;zenith&#39;</span>    <span class="c1"># Choosing a mock layout</span>
+<span class="l l-Scalar l-Scalar-Plain">telescope</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">array_layout</span><span class="p p-Indicator">:</span> <span class="s">&#39;triangle_bl_layout.csv&#39;</span>    <span class="c1"># Antenna layout csv file</span>
+  <span class="l l-Scalar l-Scalar-Plain">telescope_config_name</span><span class="p p-Indicator">:</span> <span class="s">&#39;28m_triangle_10time_10chan.yaml&#39;</span>  <span class="c1"># Telescope metadata file.</span>
+<span class="l l-Scalar l-Scalar-Plain">time</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">Ntimes</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>        <span class="c1"># Number of times.</span>
+  <span class="l l-Scalar l-Scalar-Plain">integration_time</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">11.0</span>  <span class="c1"># Time step size  (seconds)</span>
+  <span class="l l-Scalar l-Scalar-Plain">start_time</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2457458.1738949567</span>    <span class="c1"># Start and end times (Julian date)</span>
+  <span class="l l-Scalar l-Scalar-Plain">end_time</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2457458.175168105</span>
+  <span class="l l-Scalar l-Scalar-Plain">duration_hours</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0276</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note</strong> The example above is shown with all allowed keywords, but many of these are redundant. This will be further explained below.</p>
+<div class="section" id="time-and-frequency">
+<h2>Time and frequency<a class="headerlink" href="#time-and-frequency" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Time and frequency structure may be defined with different combinations of keywords to suit the user’s purposes. The user must specify sufficient information for the frequency and time arrays to be defined.</p>
+<dl class="docutils">
+<dt>Minimum frequency requirements:</dt>
+<dd><dl class="first last docutils">
+<dt>specify bandwidth via one of the following combinations:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">start_freq</span></code>, <code class="docutils literal notranslate"><span class="pre">end_freq</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">channel_width</span></code>, <code class="docutils literal notranslate"><span class="pre">Nfreqs</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">bandwidth</span></code>)</li>
+</ul>
+</dd>
+<dt>specify channel width via:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">bandwidth</span></code>, <code class="docutils literal notranslate"><span class="pre">Nfreqs</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">channel</span> <span class="pre">width</span></code>)</li>
+</ul>
+</dd>
+<dt>specify a reference frequency via:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">start_freq</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">end_freq</span></code>)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>As long as one of the sets from each category above is met by the supplied keywords, the frequency array will be successfully built.
+Likewise for the time array:</p>
+<dl class="docutils">
+<dt>Minimum time requirements:</dt>
+<dd><dl class="first last docutils">
+<dt>Total time:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">start_time</span></code>, <code class="docutils literal notranslate"><span class="pre">end_time</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">integration_time</span></code>, <code class="docutils literal notranslate"><span class="pre">Ntimes</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">duration_hours</span></code>) or (<code class="docutils literal notranslate"><span class="pre">duration_days</span></code>)</li>
+</ul>
+</dd>
+<dt>Time step:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">duration_hours</span></code> or <code class="docutils literal notranslate"><span class="pre">duration_days</span></code>, <code class="docutils literal notranslate"><span class="pre">Ntimes</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">integration_time</span></code>)</li>
+</ul>
+</dd>
+<dt>Reference time:</dt>
+<dd><ul class="first last simple">
+<li>(<code class="docutils literal notranslate"><span class="pre">start_time</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">end_time</span></code>)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>You can also just give an explicit <code class="docutils literal notranslate"><span class="pre">time_array</span></code> or <code class="docutils literal notranslate"><span class="pre">freq_array</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="telescope-configuration">
+<h2>Telescope Configuration<a class="headerlink" href="#telescope-configuration" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Under the telescope section, the keywords <code class="docutils literal notranslate"><span class="pre">array_layout</span></code> and <code class="docutils literal notranslate"><span class="pre">telescope_config_name</span></code> give paths to, respectively, the array layout text file and the telescope metadata configuration yaml file. If the full path is not specified, pyuvsim will look in the same directory as the obsparam file.</p>
+<p>Example array layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span> <span class="n">Number</span>   <span class="n">BeamID</span>   <span class="n">E</span>          <span class="n">N</span>          <span class="n">U</span>
+
+<span class="n">ANT1</span>        <span class="mi">0</span>        <span class="mi">0</span>    <span class="o">-</span><span class="mf">8.2011</span>    <span class="o">-</span><span class="mf">0.0000</span>     <span class="mf">0.0000</span>
+<span class="n">ANT2</span>        <span class="mi">1</span>        <span class="mi">1</span>    <span class="mf">19.7989</span>     <span class="mf">0.0000</span>     <span class="mf">0.0000</span>
+</pre></div>
+</div>
+<p>Columns here provide, in order from left to right, the antenna name, antenna number, a beam ID number, and the antenna positions relative to the array center in eastings/northings/up-ings in meters. The layout file has a corresponding telescope metadata file, shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beam_paths</span><span class="p">:</span>
+  <span class="mi">0</span><span class="p">:</span> <span class="n">HERA_NicCST</span><span class="o">.</span><span class="n">uvbeam</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;uniform&#39;</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;gaussian&#39;</span>
+</pre></div>
+</div>
+<p>This yaml file provides the telescope name, location in lat/lon/alt degrees, and the <cite>beam dictionary</cite>.</p>
+<p>The beam dictionary, along with the beam IDs in the layout file, allow one to specify different beam models be used for different antennas. The <code class="docutils literal notranslate"><span class="pre">beam_paths</span></code> section of the telescope param file pairs each beam ID present in the layout with either the path to a beamfits file or a keyword specifying an existing analytic beam. Right now, only uniform and gaussian beams are supported. If the gaussian beam is used, the <code class="docutils literal notranslate"><span class="pre">sigma</span></code> keyword must also be given, which specifies the beam width in radians. (see documentation of the AnalyticBeam class for details).</p>
+</div></blockquote>
+</div>
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Specify the path to a text catalog file via <code class="docutils literal notranslate"><span class="pre">catalog</span></code>.</p>
+<p>An example catalog file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SOURCE_ID</span>	<span class="n">RA_J2000</span> <span class="p">[</span><span class="n">deg</span><span class="p">]</span>	<span class="n">Dec_J2000</span> <span class="p">[</span><span class="n">deg</span><span class="p">]</span>	<span class="n">Flux</span> <span class="p">[</span><span class="n">Jy</span><span class="p">]</span>	<span class="n">Frequency</span> <span class="p">[</span><span class="n">Hz</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>The columns are:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">SOURCE_ID</span></code> : Identifying code for the source</li>
+<li><code class="docutils literal notranslate"><span class="pre">RA_J2000</span></code> : Right ascension of source at J2000 epoch, in decimal hours.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DEC_J2000</span></code> : Declination of source at J2000 epoch, in decimal degrees.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FLUX</span></code>: Source stokes I brightness in Janskies.  (Currently only point sources are supported).</li>
+<li><code class="docutils literal notranslate"><span class="pre">Frequency</span></code>: A reference frequency for the given flux. This will be used for spectral modeling.</li>
+</ul>
+</dd>
+</dl>
+<p>Alternatively, you can specify a <code class="docutils literal notranslate"><span class="pre">mock</span></code> and provide the <code class="docutils literal notranslate"><span class="pre">mock_arrangement</span></code> keyword to specify which mock catalog to generate. Available options are shown in the <code class="docutils literal notranslate"><span class="pre">create_mock_catalog</span></code> doctstring:</p>
+<span class="target" id="module-pyuvsim"></span><dl class="function">
+<dt id="pyuvsim.create_mock_catalog">
+<code class="descclassname">pyuvsim.</code><code class="descname">create_mock_catalog</code><span class="sig-paren">(</span><em>time</em>, <em>arrangement='zenith'</em>, <em>array_location=None</em>, <em>Nsrcs=None</em>, <em>alt=None</em>, <em>save=False</em>, <em>min_alt=None</em>, <em>rseed=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyuvsim/simsetup.html#create_mock_catalog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyuvsim.create_mock_catalog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a mock catalog.</p>
+<p>Sources are defined in an AltAz frame at the given time, then returned in
+ICRS ra/dec coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>time</strong> (<em>float</em><em> or </em><em>astropy Time object</em>) – Julian date</li>
+<li><strong>arrangement</strong> (<em>str</em>) – <p>Point source pattern (default = 1 source at zenith).
+Accepted arrangements:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><cite>triangle</cite>:  Three point sources forming a triangle around the zenith</div>
+<div class="line"><cite>cross</cite>: An asymmetric cross</div>
+<div class="line"><cite>zenith</cite>: Some number of sources placed at the zenith.</div>
+<div class="line"><cite>off-zenith</cite>:  A single source off zenith</div>
+<div class="line"><cite>long-line</cite>:  Horizon to horizon line of point sources</div>
+<div class="line"><cite>hera_text</cite>:  Spell out HERA around the zenith</div>
+<div class="line"><cite>random</cite>:  Randomly distributed point sources near zenith</div>
+</div>
+</div></blockquote>
+</li>
+<li><strong>Nsrcs</strong> (<em>int</em>) – Number of sources to put at zenith</li>
+<li><strong>array_location</strong> (<em>EarthLocation object</em>) – [Default = HERA site]</li>
+<li><strong>alt</strong> (<em>float</em>) – For off-zenith and triangle arrangements, altitude to place sources. (deg)</li>
+<li><strong>save</strong> (<em>bool</em>) – Save mock catalog as npz file.</li>
+<li><strong>rseed</strong> (<em>int</em>) – If using the random configuration, pass in a RandomState seed.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">List of pyuvsim.Source objects
+mock_kwds: (dictionary) The keywords defining this source catalog</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">catalog</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Parameter and configuration Files</a><ul>
+<li><a class="reference internal" href="#time-and-frequency">Time and frequency</a></li>
+<li><a class="reference internal" href="#telescope-configuration">Telescope Configuration</a></li>
+<li><a class="reference internal" href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="previous chapter">Running a simulation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="classes.html"
+                        title="next chapter">Full class list and documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/parameter_files.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="classes.html" title="Full class list and documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Running a simulation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyuvsim  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Radio Astronomy Software Group.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,611 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyuvsim.uvsim &#8212; pyuvsim  documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pyuvsim  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyuvsim.uvsim</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- mode: python; coding: utf-8 -*</span>
+<span class="c1"># Copyright (c) 2018 Radio Astronomy Software Group</span>
+<span class="c1"># Licensed under the 3-clause BSD License</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">six</span>
+<span class="kn">from</span> <span class="nn">six.moves</span> <span class="k">import</span> <span class="nb">map</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="nb">zip</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">astropy.constants</span> <span class="k">as</span> <span class="nn">const</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">units</span>
+<span class="kn">from</span> <span class="nn">astropy.units</span> <span class="k">import</span> <span class="n">Quantity</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="k">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">EarthLocation</span>
+
+<span class="kn">from</span> <span class="nn">pyuvdata</span> <span class="k">import</span> <span class="n">UVData</span><span class="p">,</span> <span class="n">UVBeam</span>
+<span class="kn">import</span> <span class="nn">pyuvdata.utils</span> <span class="k">as</span> <span class="nn">uvutils</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">profiling</span>
+<span class="kn">from</span> <span class="nn">.antenna</span> <span class="k">import</span> <span class="n">Antenna</span>
+<span class="kn">from</span> <span class="nn">.baseline</span> <span class="k">import</span> <span class="n">Baseline</span>
+<span class="kn">from</span> <span class="nn">.telescope</span> <span class="k">import</span> <span class="n">Telescope</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">utils</span> <span class="k">as</span> <span class="n">simutils</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">simsetup</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">mpi</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UVTask&#39;</span><span class="p">,</span> <span class="s1">&#39;UVEngine&#39;</span><span class="p">,</span> <span class="s1">&#39;uvdata_to_task_list&#39;</span><span class="p">,</span> <span class="s1">&#39;run_uvsim&#39;</span><span class="p">,</span> <span class="s1">&#39;initialize_uvdata&#39;</span><span class="p">,</span> <span class="s1">&#39;serial_gather&#39;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">UVTask</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c1"># holds all the information necessary to calculate a single src, t, f, bl, array</span>
+    <span class="c1"># need the array because we need an array location for mapping to local alt/az</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">baseline</span><span class="p">,</span> <span class="n">telescope</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">baseline</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">telescope</span> <span class="o">=</span> <span class="n">telescope</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">visibility_vector</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uvdata_index</span> <span class="o">=</span> <span class="kc">None</span>        <span class="c1"># Where to add the visibility in the uvdata object.</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">baseline</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">visibility_vector</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">visibility_vector</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uvdata_index</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">uvdata_index</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">telescope</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">telescope</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">blti0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">fi0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uvdata_index</span>
+        <span class="n">blti1</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">fi1</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">uvdata_index</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">baseline</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">fi0</span> <span class="o">==</span> <span class="n">fi1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">blti0</span> <span class="o">&gt;</span> <span class="n">blti1</span>
+            <span class="k">return</span> <span class="n">fi0</span> <span class="o">&gt;</span> <span class="n">fi1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">baseline</span>
+
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">blti0</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">fi0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uvdata_index</span>
+        <span class="n">blti1</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">fi1</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">uvdata_index</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">baseline</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">fi0</span> <span class="o">==</span> <span class="n">fi1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">blti0</span> <span class="o">&gt;=</span> <span class="n">blti1</span>
+            <span class="k">return</span> <span class="n">fi0</span> <span class="o">&gt;=</span> <span class="n">fi1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">baseline</span> <span class="o">&gt;=</span> <span class="n">other</span><span class="o">.</span><span class="n">baseline</span>
+
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__ge__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__gt__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">UVEngine</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>   <span class="c1"># task_array  = list of tuples (source,time,freq,uvw)</span>
+        <span class="c1"># self.rank</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">task</span>
+        <span class="c1"># Time and freq are scattered as floats.</span>
+        <span class="c1"># Convert them to astropy Quantities</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jd&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">Hz</span>
+
+    <span class="nd">@profile</span>
+    <span class="k">def</span> <span class="nf">apply_beam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Get apparent coherency from jones matrices and source coherency. &quot;&quot;&quot;</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">source</span>
+        <span class="c1"># coherency is a 2x2 matrix</span>
+        <span class="c1"># [ |Ex|^2, Ex* Ey, Ey* Ex |Ey|^2 ]</span>
+        <span class="c1"># where x and y vectors along the local alt/az axes.</span>
+
+        <span class="c1"># Apparent coherency gives the direction and polarization dependent baseline response to a source.</span>
+        <span class="n">beam1_jones</span> <span class="o">=</span> <span class="n">baseline</span><span class="o">.</span><span class="n">antenna1</span><span class="o">.</span><span class="n">get_beam_jones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="p">,</span>
+                                                       <span class="n">source</span><span class="o">.</span><span class="n">alt_az_calc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+                                                                          <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">location</span><span class="p">),</span>
+                                                       <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="p">)</span>
+        <span class="n">beam2_jones</span> <span class="o">=</span> <span class="n">baseline</span><span class="o">.</span><span class="n">antenna2</span><span class="o">.</span><span class="n">get_beam_jones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="p">,</span>
+                                                       <span class="n">source</span><span class="o">.</span><span class="n">alt_az_calc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+                                                                          <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">location</span><span class="p">),</span>
+                                                       <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="p">)</span>
+        <span class="n">this_apparent_coherency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">beam1_jones</span><span class="p">,</span>
+                                         <span class="n">source</span><span class="o">.</span><span class="n">coherency_calc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+                                                               <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">location</span><span class="p">))</span>
+        <span class="n">this_apparent_coherency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">this_apparent_coherency</span><span class="p">,</span>
+                                         <span class="p">(</span><span class="n">beam2_jones</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">apparent_coherency</span> <span class="o">=</span> <span class="n">this_apparent_coherency</span>
+
+    <span class="nd">@profile</span>
+    <span class="k">def</span> <span class="nf">make_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Visibility contribution from a single source &quot;&quot;&quot;</span>
+        <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="p">,</span> <span class="n">Quantity</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_beam</span><span class="p">()</span>
+
+        <span class="n">pos_lmn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">pos_lmn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">location</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pos_lmn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
+
+        <span class="c1"># need to convert uvws from meters to wavelengths</span>
+        <span class="n">uvw_wavelength</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">uvw</span> <span class="o">/</span> <span class="n">const</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;1/s&#39;</span><span class="p">)</span>
+        <span class="n">fringe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">uvw_wavelength</span><span class="p">,</span> <span class="n">pos_lmn</span><span class="p">))</span>
+        <span class="n">vij</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apparent_coherency</span> <span class="o">*</span> <span class="n">fringe</span>
+
+        <span class="c1"># Reshape to be [xx, yy, xy, yx]</span>
+        <span class="n">vis_vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">vij</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">vij</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">vij</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">vij</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vis_vector</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="uvdata_to_task_list"><a class="viewcode-back" href="../../classes.html#pyuvsim.uvsim.uvdata_to_task_list">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">uvdata_to_task_list</span><span class="p">(</span><span class="n">input_uv</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">beam_list</span><span class="p">,</span> <span class="n">beam_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create task list from pyuvdata compatible input file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_uv (UVData): UVData object to use</span>
+<span class="sd">        sources: array of Source objects</span>
+<span class="sd">        beam_list: (list of UVBeam or AnalyticBeam objects</span>
+<span class="sd">        beam_dict (dict, optional): dict mapping antenna number to beam index in beam_list</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of task parameters to be send to UVEngines with the task</span>
+<span class="sd">        parameters defined in UVTask objectself.</span>
+<span class="sd">        This function extracts time, freq, Antenna1, Antenna2.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_uv</span><span class="p">,</span> <span class="n">UVData</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;input_uv must be UVData object&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;sources must be a numpy array&quot;</span><span class="p">)</span>
+
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">freq_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># units.Hz</span>
+
+    <span class="n">telescope</span> <span class="o">=</span> <span class="n">Telescope</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">telescope_name</span><span class="p">,</span>
+                          <span class="n">EarthLocation</span><span class="o">.</span><span class="n">from_geocentric</span><span class="p">(</span><span class="o">*</span><span class="n">input_uv</span><span class="o">.</span><span class="n">telescope_location</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">),</span>
+                          <span class="n">beam_list</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">beam_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">beam_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;beam_dict must be supplied if beam_list has more than one element.&#39;</span><span class="p">)</span>
+
+    <span class="n">times</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">time_array</span>
+
+    <span class="n">antpos_ENU</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">get_ENU_antpos</span><span class="p">()</span>
+
+    <span class="n">antenna_names</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">antenna_names</span>
+    <span class="n">antennas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">antname</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">antenna_names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">beam_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">beam_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">beam_id</span> <span class="o">=</span> <span class="n">beam_dict</span><span class="p">[</span><span class="n">antname</span><span class="p">]</span>
+        <span class="n">antennas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Antenna</span><span class="p">(</span><span class="n">antname</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">antpos_ENU</span><span class="p">[</span><span class="n">num</span><span class="p">],</span> <span class="n">beam_id</span><span class="p">))</span>
+
+    <span class="n">baselines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generating Baselines&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">antnum1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">ant_1_array</span><span class="p">):</span>
+        <span class="n">antnum2</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">ant_2_array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
+        <span class="n">index1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">antenna_numbers</span> <span class="o">==</span> <span class="n">antnum1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">index2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">antenna_numbers</span> <span class="o">==</span> <span class="n">antnum2</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">baselines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Baseline</span><span class="p">(</span><span class="n">antennas</span><span class="p">[</span><span class="n">index1</span><span class="p">],</span> <span class="n">antennas</span><span class="p">[</span><span class="n">index2</span><span class="p">]))</span>
+
+    <span class="n">baselines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">baselines</span><span class="p">)</span>
+
+    <span class="n">blts_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">Nblts</span><span class="p">)</span>
+    <span class="n">frequency_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">input_uv</span><span class="o">.</span><span class="n">Nfreqs</span><span class="p">)</span>
+    <span class="n">source_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Making Meshgrid&#39;</span><span class="p">)</span>
+    <span class="n">blts_ind</span><span class="p">,</span> <span class="n">freq_ind</span><span class="p">,</span> <span class="n">source_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">blts_index</span><span class="p">,</span> <span class="n">frequency_index</span><span class="p">,</span> <span class="n">source_index</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Raveling&#39;</span><span class="p">)</span>
+    <span class="n">blts_ind</span> <span class="o">=</span> <span class="n">blts_ind</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">freq_ind</span> <span class="o">=</span> <span class="n">freq_ind</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="n">source_ind</span> <span class="o">=</span> <span class="n">source_ind</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+
+    <span class="n">uvtask_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Making Tasks&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of tasks:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">blts_ind</span><span class="p">))</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">blts_ind</span><span class="p">)</span>
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">simutils</span><span class="o">.</span><span class="n">progsteps</span><span class="p">(</span><span class="n">maxval</span><span class="o">=</span><span class="n">tot</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">bl</span><span class="p">,</span> <span class="n">freqi</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">blti</span><span class="p">,</span> <span class="n">fi</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">baselines</span><span class="p">[</span><span class="n">blts_ind</span><span class="p">],</span>
+                                                <span class="n">freq</span><span class="p">[</span><span class="n">freq_ind</span><span class="p">],</span> <span class="n">times</span><span class="p">[</span><span class="n">blts_ind</span><span class="p">],</span>
+                                                <span class="n">sources</span><span class="p">[</span><span class="n">source_ind</span><span class="p">],</span> <span class="n">blts_ind</span><span class="p">,</span>
+                                                <span class="n">freq_ind</span><span class="p">):</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="n">UVTask</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">freqi</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">telescope</span><span class="p">)</span>
+        <span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">blti</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fi</span><span class="p">)</span>    <span class="c1"># 0 = spectral window index</span>
+        <span class="n">uvtask_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">uvtask_list</span></div>
+
+
+<div class="viewcode-block" id="initialize_uvdata"><a class="viewcode-back" href="../../classes.html#pyuvsim.uvsim.initialize_uvdata">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">initialize_uvdata</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">source_list_name</span><span class="p">,</span> <span class="n">uvdata_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">obs_param_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">telescope_config_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">antenna_location_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize an empty uvdata object to fill with simulation.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        uvtask_list: List of uvtasks to simulate.</span>
+<span class="sd">        source_list_name: Name of source list file or mock catalog.</span>
+<span class="sd">        uvdata_file: Name of input UVData file or None if initializing from</span>
+<span class="sd">            config files.</span>
+<span class="sd">        obs_param_file: Name of observation parameter config file or None if</span>
+<span class="sd">            initializing from a UVData file.</span>
+<span class="sd">        telescope_config_file: Name of telescope config file or None if</span>
+<span class="sd">            initializing from a UVData file.</span>
+<span class="sd">        antenna_location_file: Name of antenna location file or None if</span>
+<span class="sd">            initializing from a UVData file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source_list_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;source_list_name must be a string&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">uvdata_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uvdata_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;uvdata_file must be a string&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obs_param_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">telescope_config_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="ow">or</span> <span class="n">antenna_location_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;If initializing from a uvdata_file, none of &#39;</span>
+                             <span class="s1">&#39;obs_param_file, telescope_config_file or &#39;</span>
+                             <span class="s1">&#39;antenna_location_file can be set.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">obs_param_file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">telescope_config_file</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="n">antenna_location_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obs_param_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;obs_param_file must be a string&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">telescope_config_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;telescope_config_file must be a string&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">antenna_location_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;antenna_location_file must be a string&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;If not initializing from a uvdata_file, all of &#39;</span>
+                         <span class="s1">&#39;obs_param_file, telescope_config_file or &#39;</span>
+                         <span class="s1">&#39;antenna_location_file must be set.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Version string to add to history</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">simutils</span><span class="o">.</span><span class="n">get_version_string</span><span class="p">()</span>
+
+    <span class="n">history</span> <span class="o">+=</span> <span class="s1">&#39; Sources from source list: &#39;</span> <span class="o">+</span> <span class="n">source_list_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+
+    <span class="k">if</span> <span class="n">uvdata_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">history</span> <span class="o">+=</span> <span class="s1">&#39; Based on UVData file: &#39;</span> <span class="o">+</span> <span class="n">uvdata_file</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">history</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39; Based on config files: &#39;</span> <span class="o">+</span> <span class="n">obs_param_file</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
+                    <span class="o">+</span> <span class="n">telescope_config_file</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">antenna_location_file</span><span class="p">)</span>
+
+    <span class="n">history</span> <span class="o">+=</span> <span class="s1">&#39; Npus = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mpi</span><span class="o">.</span><span class="n">get_Npus</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+
+    <span class="n">task_freqs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_bls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_times</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_antnames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_antnums</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_antpos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_uvw</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ant_1_array</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ant_2_array</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">telescope_name</span> <span class="o">=</span> <span class="n">uvtask_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">telescope_location</span> <span class="o">=</span> <span class="n">uvtask_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">geocentric</span>
+
+    <span class="n">source_0</span> <span class="o">=</span> <span class="n">uvtask_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">source</span>
+    <span class="n">freq_0</span> <span class="o">=</span> <span class="n">uvtask_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">freq</span>
+    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">uvtask_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">task</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="n">source_0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">task_freqs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">freq</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">freq</span> <span class="o">==</span> <span class="n">freq_0</span><span class="p">:</span>
+            <span class="n">task_bls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="p">)</span>
+            <span class="n">task_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+            <span class="n">task_antnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">task_antnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna2</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">ant_1_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna1</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">ant_2_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna2</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">task_antnums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna1</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">task_antnums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna2</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">task_antpos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna1</span><span class="o">.</span><span class="n">pos_enu</span><span class="p">)</span>
+            <span class="n">task_antpos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">antenna2</span><span class="o">.</span><span class="n">pos_enu</span><span class="p">)</span>
+            <span class="n">task_uvw</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">baseline</span><span class="o">.</span><span class="n">uvw</span><span class="p">)</span>
+
+    <span class="n">antnames</span><span class="p">,</span> <span class="n">ant_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">task_antnames</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">task_antnums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">task_antnums</span><span class="p">)</span>
+    <span class="n">task_antpos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">task_antpos</span><span class="p">)</span>
+    <span class="n">antnums</span> <span class="o">=</span> <span class="n">task_antnums</span><span class="p">[</span><span class="n">ant_indices</span><span class="p">]</span>
+    <span class="n">antpos</span> <span class="o">=</span> <span class="n">task_antpos</span><span class="p">[</span><span class="n">ant_indices</span><span class="p">]</span>
+
+    <span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">task_freqs</span><span class="p">)</span>
+
+    <span class="n">uv_obj</span> <span class="o">=</span> <span class="n">UVData</span><span class="p">()</span>
+
+    <span class="c1"># add pyuvdata version info</span>
+    <span class="n">history</span> <span class="o">+=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">pyuvdata_version_str</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">telescope_name</span> <span class="o">=</span> <span class="n">telescope_name</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">telescope_location</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">tl</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">tl</span> <span class="ow">in</span> <span class="n">telescope_location</span><span class="p">])</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">instrument</span> <span class="o">=</span> <span class="n">telescope_name</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nfreqs</span> <span class="o">=</span> <span class="n">freqs</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Ntimes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">task_times</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nants_data</span> <span class="o">=</span> <span class="n">antnames</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nants_telescope</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nants_data</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nblts</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ant_1_array</span><span class="p">)</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">antenna_names</span> <span class="o">=</span> <span class="n">antnames</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">antenna_numbers</span> <span class="o">=</span> <span class="n">antnums</span>
+    <span class="n">antpos_ecef</span> <span class="o">=</span> <span class="n">uvutils</span><span class="o">.</span><span class="n">ECEF_from_ENU</span><span class="p">(</span><span class="n">antpos</span><span class="p">,</span> <span class="o">*</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">telescope_location_lat_lon_alt</span><span class="p">)</span> <span class="o">-</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">telescope_location</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">antenna_positions</span> <span class="o">=</span> <span class="n">antpos_ecef</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">ant_1_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ant_1_array</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">ant_2_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ant_2_array</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">time_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">task_times</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">uvw_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">task_uvw</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">baseline_array</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">antnums_to_baseline</span><span class="p">(</span><span class="n">ant_1_array</span><span class="p">,</span> <span class="n">ant_2_array</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nbls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">baseline_array</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
+    <span class="k">if</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nfreqs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">channel_width</span> <span class="o">=</span> <span class="mf">1.</span>  <span class="c1"># Hz</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">channel_width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">freqs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Ntimes</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">integration_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">time_array</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>  <span class="c1"># Second</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Note: currently only support a constant spacing of times</span>
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">integration_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">time_array</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+                                   <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">task_times</span><span class="p">))[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">set_lsts_from_time_array</span><span class="p">()</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">zenith_ra</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">lst_array</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">zenith_dec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">telescope_location_lat_lon_alt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nblts</span><span class="p">)</span>  <span class="c1"># Latitude</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">object_name</span> <span class="o">=</span> <span class="s1">&#39;zenith&#39;</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">set_drift</span><span class="p">()</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">vis_units</span> <span class="o">=</span> <span class="s1">&#39;Jy&#39;</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">polarization_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">spw_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">freq_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">freqs</span><span class="p">])</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nspws</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">spw_array</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Npols</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">polarization_array</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">data_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">Nblts</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nspws</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nfreqs</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Npols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">flag_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">Nblts</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nspws</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nfreqs</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Npols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">nsample_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">data_array</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">history</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">uv_obj</span></div>
+
+
+<div class="viewcode-block" id="serial_gather"><a class="viewcode-back" href="../../classes.html#pyuvsim.uvsim.serial_gather">[docs]</a><span class="k">def</span> <span class="nf">serial_gather</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">uv_out</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loop over uvtask list, acquire visibilities and add to uvdata object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">uvtask_list</span><span class="p">:</span>
+        <span class="n">blt_ind</span><span class="p">,</span> <span class="n">spw_ind</span><span class="p">,</span> <span class="n">freq_ind</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span>
+        <span class="n">uv_out</span><span class="o">.</span><span class="n">data_array</span><span class="p">[</span><span class="n">blt_ind</span><span class="p">,</span> <span class="n">spw_ind</span><span class="p">,</span> <span class="n">freq_ind</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+=</span> <span class="n">task</span><span class="o">.</span><span class="n">visibility_vector</span>
+
+    <span class="k">return</span> <span class="n">uv_out</span></div>
+
+
+<div class="viewcode-block" id="run_uvsim"><a class="viewcode-back" href="../../classes.html#pyuvsim.uvsim.run_uvsim">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">run_uvsim</span><span class="p">(</span><span class="n">input_uv</span><span class="p">,</span> <span class="n">beam_list</span><span class="p">,</span> <span class="n">beam_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">catalog_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">mock_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">uvdata_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">obs_param_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">telescope_config_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">antenna_location_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run uvsim</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        input_uv: An input UVData object, containing baseline/time/frequency information.</span>
+<span class="sd">        beam_list: A list of UVBeam and/or AnalyticBeam objects</span>
+<span class="sd">        beam_dict: Dictionary of {antenna_name : beam_ID}, where beam_id is an index in</span>
+<span class="sd">                   the beam_list. This assigns beams to antennas.</span>
+<span class="sd">                   Default: All antennas get the 0th beam in the beam_list.</span>
+<span class="sd">        catalog_file: Catalog file name.</span>
+<span class="sd">                   Default: Create a mock catalog</span>
+<span class="sd">        mock_keywords: Settings for a mock catalog (see keywords of create_mock_catalog)</span>
+<span class="sd">        uvdata_file: Name of input UVData file if running from a file.</span>
+<span class="sd">        obs_param_file: Parameter filename if running from config files.</span>
+<span class="sd">        telescope_config_file: Telescope configuration file if running from config files.</span>
+<span class="sd">        antenna_location_file: antenna_location file if running from config files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">mpi</span><span class="o">.</span><span class="n">start_mpi</span><span class="p">()</span>
+    <span class="n">rank</span> <span class="o">=</span> <span class="n">mpi</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_uv</span><span class="p">,</span> <span class="n">UVData</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;input_uv must be UVData object&quot;</span><span class="p">)</span>
+    <span class="c1"># The Head node will initialize our simulation</span>
+    <span class="c1"># Read input file and make uvtask list</span>
+    <span class="n">uvtask_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nblts:&#39;</span><span class="p">,</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">Nblts</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nfreqs:&#39;</span><span class="p">,</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">Nfreqs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">catalog_file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">catalog_file</span> <span class="o">==</span> <span class="s1">&#39;mock&#39;</span><span class="p">:</span>
+            <span class="c1"># time, arrangement, array_location, save, Nsrcs, max_za</span>
+
+            <span class="k">if</span> <span class="n">mock_keywords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">mock_keywords</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="k">if</span> <span class="s1">&#39;array_location&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mock_keywords</span><span class="p">:</span>
+                <span class="n">array_loc</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="o">.</span><span class="n">from_geocentric</span><span class="p">(</span><span class="o">*</span><span class="n">input_uv</span><span class="o">.</span><span class="n">telescope_location</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="p">)</span>
+                <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;array_location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array_loc</span>
+            <span class="k">if</span> <span class="s1">&#39;time&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mock_keywords</span><span class="p">:</span>
+                <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">time_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="s2">&quot;array_location&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mock_keywords</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Warning: No array_location given for mock catalog. Defaulting to HERA site&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;time&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mock_keywords</span><span class="p">:</span>
+                <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Warning: No julian date given for mock catalog. Defaulting to first of input_UV object&quot;</span><span class="p">)</span>
+
+            <span class="n">time</span> <span class="o">=</span> <span class="n">mock_keywords</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+            <span class="n">catalog</span><span class="p">,</span> <span class="n">mock_keywords</span> <span class="o">=</span> <span class="n">simsetup</span><span class="o">.</span><span class="n">create_mock_catalog</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">**</span><span class="n">mock_keywords</span><span class="p">)</span>
+
+            <span class="n">mock_keyvals</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">six</span><span class="o">.</span><span class="n">iteritems</span><span class="p">(</span><span class="n">mock_keywords</span><span class="p">)]</span>
+            <span class="n">source_list_name</span> <span class="o">=</span> <span class="s1">&#39;mock_&#39;</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">mock_keyvals</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">catalog_file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">source_list_name</span> <span class="o">=</span> <span class="n">catalog_file</span>
+            <span class="k">if</span> <span class="n">catalog_file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;txt&quot;</span><span class="p">):</span>
+                <span class="n">catalog</span> <span class="o">=</span> <span class="n">simsetup</span><span class="o">.</span><span class="n">read_text_catalog</span><span class="p">(</span><span class="n">catalog_file</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">catalog_file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;vot&#39;</span><span class="p">):</span>
+                <span class="n">catalog</span> <span class="o">=</span> <span class="n">simsetup</span><span class="o">.</span><span class="n">read_votable_catalog</span><span class="p">(</span><span class="n">catalog_file</span><span class="p">)</span>
+
+        <span class="n">catalog</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">catalog</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nsrcs:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">catalog</span><span class="p">))</span>
+        <span class="n">uvtask_list</span> <span class="o">=</span> <span class="n">uvdata_to_task_list</span><span class="p">(</span><span class="n">input_uv</span><span class="p">,</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">beam_list</span><span class="p">,</span> <span class="n">beam_dict</span><span class="o">=</span><span class="n">beam_dict</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s1">&#39;obs_param_file&#39;</span> <span class="ow">in</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">extra_keywords</span><span class="p">:</span>
+            <span class="n">obs_param_file</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">extra_keywords</span><span class="p">[</span><span class="s1">&#39;obs_param_file&#39;</span><span class="p">]</span>
+            <span class="n">telescope_config_file</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">extra_keywords</span><span class="p">[</span><span class="s1">&#39;telescope_config_file&#39;</span><span class="p">]</span>
+            <span class="n">antenna_location_file</span> <span class="o">=</span> <span class="n">input_uv</span><span class="o">.</span><span class="n">extra_keywords</span><span class="p">[</span><span class="s1">&#39;antenna_location_file&#39;</span><span class="p">]</span>
+            <span class="n">uvdata_file_pass</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">uvdata_file_pass</span> <span class="o">=</span> <span class="n">uvdata_file</span>
+
+        <span class="n">uv_container</span> <span class="o">=</span> <span class="n">initialize_uvdata</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">source_list_name</span><span class="p">,</span>
+                                         <span class="n">uvdata_file</span><span class="o">=</span><span class="n">uvdata_file_pass</span><span class="p">,</span>
+                                         <span class="n">obs_param_file</span><span class="o">=</span><span class="n">obs_param_file</span><span class="p">,</span>
+                                         <span class="n">telescope_config_file</span><span class="o">=</span><span class="n">telescope_config_file</span><span class="p">,</span>
+                                         <span class="n">antenna_location_file</span><span class="o">=</span><span class="n">antenna_location_file</span><span class="p">)</span>
+
+        <span class="c1"># To split into PUs make a list of lists length NPUs</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Splitting Task List&quot;</span><span class="p">)</span>
+        <span class="n">uvtask_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">mpi</span><span class="o">.</span><span class="n">get_Npus</span><span class="p">())</span>
+        <span class="n">uvtask_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">tl</span><span class="p">)</span> <span class="k">for</span> <span class="n">tl</span> <span class="ow">in</span> <span class="n">uvtask_list</span><span class="p">]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sending Tasks To Processing Units&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="c1"># Scatter the task list among all available PUs</span>
+    <span class="n">comm</span> <span class="o">=</span> <span class="n">mpi</span><span class="o">.</span><span class="n">get_comm</span><span class="p">()</span>
+    <span class="n">local_task_list</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tasks Received. Begin Calculations.&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+    <span class="c1"># UVBeam objects don&#39;t survive the scatter with prop_fget() working. This fixes it on each rank.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">local_task_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">local_task_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">beam_list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bm</span><span class="p">,</span> <span class="n">UVBeam</span><span class="p">):</span>
+                <span class="n">uvb</span> <span class="o">=</span> <span class="n">UVBeam</span><span class="p">()</span>
+                <span class="n">uvb</span> <span class="o">=</span> <span class="n">bm</span>
+                <span class="n">local_task_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">telescope</span><span class="o">.</span><span class="n">beam_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bm</span>
+
+    <span class="n">summed_task_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">tot</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">local_task_list</span><span class="p">)</span> <span class="o">*</span> <span class="n">mpi</span><span class="o">.</span><span class="n">get_Npus</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tasks: &quot;</span><span class="p">,</span> <span class="n">tot</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">simutils</span><span class="o">.</span><span class="n">progsteps</span><span class="p">(</span><span class="n">maxval</span><span class="o">=</span><span class="n">tot</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">local_task_list</span><span class="p">):</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">UVEngine</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">summed_task_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">summed_task_dict</span><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">task</span>
+        <span class="k">if</span> <span class="n">summed_task_dict</span><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span><span class="p">]</span><span class="o">.</span><span class="n">visibility_vector</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">summed_task_dict</span><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span><span class="p">]</span><span class="o">.</span><span class="n">visibility_vector</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">make_visibility</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">summed_task_dict</span><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">uvdata_index</span><span class="p">]</span><span class="o">.</span><span class="n">visibility_vector</span> <span class="o">+=</span> <span class="n">engine</span><span class="o">.</span><span class="n">make_visibility</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">count</span> <span class="o">*</span> <span class="n">mpi</span><span class="o">.</span><span class="n">get_Npus</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculations Complete.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># All the sources in this summed list are foobar-ed</span>
+    <span class="c1"># Source are summed over but only have 1 name</span>
+    <span class="c1"># Some source may be correct</span>
+    <span class="n">summed_local_task_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">summed_task_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="c1"># gather all the finished local tasks into a list of list of len NPUs</span>
+    <span class="c1"># gather is a blocking communication, have to wait for all PUs</span>
+    <span class="n">full_tasklist</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">summed_local_task_list</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Concatenate the list of lists into a flat list of tasks</span>
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">uvtask_list</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">full_tasklist</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">uvdata_out</span> <span class="o">=</span> <span class="n">serial_gather</span><span class="p">(</span><span class="n">uvtask_list</span><span class="p">,</span> <span class="n">uv_container</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">uvdata_out</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pyuvsim  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Radio Astronomy Software Group.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+numpy>=1.10
+astropy>=1.2
+scipy
+mpi4py
+pyyaml
+six>=1.10
+pyuvdata

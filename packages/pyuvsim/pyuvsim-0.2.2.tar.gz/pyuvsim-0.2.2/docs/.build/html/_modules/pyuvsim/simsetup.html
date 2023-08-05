@@ -1,0 +1,800 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pyuvsim.simsetup &#8212; pyuvsim  documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pyuvsim  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for pyuvsim.simsetup</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- mode: python; coding: utf-8 -*</span>
+<span class="c1"># Copyright (c) 2018 Radio Astronomy Software Group</span>
+<span class="c1"># Licensed under the 3-clause BSD License</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">six</span>
+<span class="kn">from</span> <span class="nn">six.moves</span> <span class="k">import</span> <span class="nb">map</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="nb">zip</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">units</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="k">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">astropy.io.votable</span> <span class="k">import</span> <span class="n">parse</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="k">import</span> <span class="n">Angle</span><span class="p">,</span> <span class="n">SkyCoord</span><span class="p">,</span> <span class="n">EarthLocation</span><span class="p">,</span> <span class="n">AltAz</span>
+
+<span class="kn">from</span> <span class="nn">pyuvdata</span> <span class="k">import</span> <span class="n">UVBeam</span><span class="p">,</span> <span class="n">UVData</span>
+<span class="kn">import</span> <span class="nn">pyuvdata.utils</span> <span class="k">as</span> <span class="nn">uvutils</span>
+
+<span class="kn">from</span> <span class="nn">.source</span> <span class="k">import</span> <span class="n">Source</span>
+<span class="kn">from</span> <span class="nn">.analyticbeam</span> <span class="k">import</span> <span class="n">AnalyticBeam</span>
+<span class="kn">from</span> <span class="nn">.mpi</span> <span class="k">import</span> <span class="n">get_rank</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">check_file_exists_and_increment</span>
+<span class="kn">from</span> <span class="nn">pyuvsim.data</span> <span class="k">import</span> <span class="n">DATA_PATH</span> <span class="k">as</span> <span class="n">SIM_DATA_PATH</span>
+
+
+<span class="k">def</span> <span class="nf">_parse_layout_csv</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Interpret the layout csv file &quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fhandle</span><span class="p">:</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="n">fhandle</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">h</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+    <span class="k">if</span> <span class="n">six</span><span class="o">.</span><span class="n">PY2</span><span class="p">:</span>
+        <span class="n">str_format_code</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">str_format_code</span> <span class="o">=</span> <span class="s1">&#39;U&#39;</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="n">str_format_code</span> <span class="o">+</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">],</span>
+                          <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;beamid&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">],</span> <span class="n">header</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">,</span> <span class="n">autostrip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                         <span class="n">dtype</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="read_votable_catalog"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.read_votable_catalog">[docs]</a><span class="k">def</span> <span class="nf">read_votable_catalog</span><span class="p">(</span><span class="n">gleam_votable</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a list of pyuvsim source objects from a votable catalog.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        gleam_votable: Path to votable catalog file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of pyuvsim.Source objects</span>
+
+<span class="sd">    Tested on: GLEAM EGC catalog, version 2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">class</span> <span class="nc">Found</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="n">resources</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">gleam_votable</span><span class="p">)</span><span class="o">.</span><span class="n">resources</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">rs</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">tab</span> <span class="ow">in</span> <span class="n">rs</span><span class="o">.</span><span class="n">tables</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;GLEAM&#39;</span> <span class="ow">in</span> <span class="n">tab</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">Found</span>
+    <span class="k">except</span> <span class="n">Found</span><span class="p">:</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">tab</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">array</span>
+
+    <span class="n">sourcelist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">Source</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;GLEAM&#39;</span><span class="p">],</span> <span class="n">Angle</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;RAJ2000&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+                        <span class="n">Angle</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;DEJ2000&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+                        <span class="n">freq</span><span class="o">=</span><span class="p">(</span><span class="mf">200e6</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">Hz</span><span class="p">),</span>
+                        <span class="n">stokes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Fintwide&#39;</span><span class="p">],</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]))</span>
+        <span class="n">sourcelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sourcelist</span></div>
+
+
+<div class="viewcode-block" id="write_catalog_to_file"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.write_catalog_to_file">[docs]</a><span class="k">def</span> <span class="nf">write_catalog_to_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">catalog</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Writes out a catalog to a text file, readable with simsetup.read_catalog_text()</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename: Path to output file (string)</span>
+<span class="sd">        catalog: List of pyuvsim.Source objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fo</span><span class="p">:</span>
+        <span class="n">fo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;SOURCE_ID</span><span class="se">\t</span><span class="s2">RA_J2000 [deg]</span><span class="se">\t</span><span class="s2">Dec_J2000 [deg]</span><span class="se">\t</span><span class="s2">Flux [Jy]</span><span class="se">\t</span><span class="s2">Frequency [Hz]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">catalog</span><span class="p">:</span>
+            <span class="n">fo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="se">\t</span><span class="si">{:f}</span><span class="se">\t</span><span class="si">{:f}</span><span class="se">\t</span><span class="si">{:0.2f}</span><span class="se">\t</span><span class="si">{:0.2f}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">stokes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">src</span><span class="o">.</span><span class="n">freq</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;Hz&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="read_text_catalog"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.read_text_catalog">[docs]</a><span class="k">def</span> <span class="nf">read_text_catalog</span><span class="p">(</span><span class="n">catalog_csv</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read in a text file of sources.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    catalog_csv: csv file with the following expected columns:</span>
+<span class="sd">        |  Source_ID: source id as a string of maximum 10 characters</span>
+<span class="sd">        |  ra_j2000: right ascension at J2000 epoch, in decimal degrees</span>
+<span class="sd">        |  dec_j2000: declination at J2000 epoch, in decimal degrees</span>
+<span class="sd">        |  flux_density_I: Stokes I flux density in Janskys</span>
+<span class="sd">        |  frequency: reference frequency (for future spectral indexing) [Hz]</span>
+<span class="sd">            For now, all sources are flat spectrum.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of pyuvsim.Source objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">catalog_csv</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">cfile</span><span class="p">:</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="n">cfile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">h</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;[&#39;</span><span class="p">]</span>  <span class="c1"># Ignore units in header</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;U10&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;f8&#39;</span><span class="p">],</span>
+                          <span class="p">[</span><span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;ra_j2000&#39;</span><span class="p">,</span> <span class="s1">&#39;dec_j2000&#39;</span><span class="p">,</span> <span class="s1">&#39;flux_density_I&#39;</span><span class="p">,</span> <span class="s1">&#39;frequency&#39;</span><span class="p">],</span> <span class="n">header</span><span class="p">)</span>
+
+    <span class="n">catalog_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="n">catalog_csv</span><span class="p">,</span> <span class="n">autostrip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                  <span class="n">dtype</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="n">catalog</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">catalog_table</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">catalog_table</span> <span class="o">=</span> <span class="n">catalog_table</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">catalog_table</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">catalog</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Source</span><span class="p">(</span><span class="n">catalog_table</span><span class="p">[</span><span class="s1">&#39;source_id&#39;</span><span class="p">][</span><span class="n">si</span><span class="p">],</span>
+                              <span class="n">Angle</span><span class="p">(</span><span class="n">catalog_table</span><span class="p">[</span><span class="s1">&#39;ra_j2000&#39;</span><span class="p">][</span><span class="n">si</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+                              <span class="n">Angle</span><span class="p">(</span><span class="n">catalog_table</span><span class="p">[</span><span class="s1">&#39;dec_j2000&#39;</span><span class="p">][</span><span class="n">si</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+                              <span class="n">catalog_table</span><span class="p">[</span><span class="s1">&#39;frequency&#39;</span><span class="p">][</span><span class="n">si</span><span class="p">]</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">Hz</span><span class="p">,</span>
+                              <span class="p">[</span><span class="n">catalog_table</span><span class="p">[</span><span class="s1">&#39;flux_density_I&#39;</span><span class="p">][</span><span class="n">si</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">return</span> <span class="n">catalog</span></div>
+
+
+<div class="viewcode-block" id="create_mock_catalog"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.create_mock_catalog">[docs]</a><span class="k">def</span> <span class="nf">create_mock_catalog</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">arrangement</span><span class="o">=</span><span class="s1">&#39;zenith&#39;</span><span class="p">,</span> <span class="n">array_location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Nsrcs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">alt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">min_alt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rseed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a mock catalog.</span>
+
+<span class="sd">    Sources are defined in an AltAz frame at the given time, then returned in</span>
+<span class="sd">    ICRS ra/dec coordinates.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        time (float or astropy Time object): Julian date</span>
+<span class="sd">        arrangement (str): Point source pattern (default = 1 source at zenith).</span>
+<span class="sd">            Accepted arrangements:</span>
+<span class="sd">                |  `triangle`:  Three point sources forming a triangle around the zenith</span>
+<span class="sd">                |  `cross`: An asymmetric cross</span>
+<span class="sd">                |  `zenith`: Some number of sources placed at the zenith.</span>
+<span class="sd">                |  `off-zenith`:  A single source off zenith</span>
+<span class="sd">                |  `long-line`:  Horizon to horizon line of point sources</span>
+<span class="sd">                |  `hera_text`:  Spell out HERA around the zenith</span>
+<span class="sd">                |  `random`:  Randomly distributed point sources near zenith</span>
+<span class="sd">        Nsrcs (int):  Number of sources to put at zenith</span>
+<span class="sd">        array_location (EarthLocation object): [Default = HERA site]</span>
+<span class="sd">        alt (float): For off-zenith and triangle arrangements, altitude to place sources. (deg)</span>
+<span class="sd">        save (bool): Save mock catalog as npz file.</span>
+<span class="sd">        rseed (int): If using the random configuration, pass in a RandomState seed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        catalog: List of pyuvsim.Source objects</span>
+<span class="sd">        mock_kwds: (dictionary) The keywords defining this source catalog</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Time</span><span class="p">):</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;utc&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jd&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">array_location</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">array_location</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="s1">&#39;-30d43m17.5s&#39;</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="s1">&#39;21d25m41.9s&#39;</span><span class="p">,</span>
+                                       <span class="n">height</span><span class="o">=</span><span class="mf">1073.</span><span class="p">)</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="p">(</span><span class="mf">150e6</span> <span class="o">*</span> <span class="n">units</span><span class="o">.</span><span class="n">Hz</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;off-zenith&#39;</span><span class="p">,</span> <span class="s1">&#39;zenith&#39;</span><span class="p">,</span> <span class="s1">&#39;cross&#39;</span><span class="p">,</span> <span class="s1">&#39;triangle&#39;</span><span class="p">,</span> <span class="s1">&#39;long-line&#39;</span><span class="p">,</span> <span class="s1">&#39;hera_text&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Invalid mock catalog arrangement: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">arrangement</span><span class="p">))</span>
+
+    <span class="n">mock_keywords</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">time</span><span class="o">.</span><span class="n">jd</span><span class="p">,</span> <span class="s1">&#39;arrangement&#39;</span><span class="p">:</span> <span class="n">arrangement</span><span class="p">,</span>
+                     <span class="s1">&#39;array_location&#39;</span><span class="p">:</span> <span class="nb">repr</span><span class="p">((</span><span class="n">array_location</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">array_location</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="n">array_location</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">value</span><span class="p">))}</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;off-zenith&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">alt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">alt</span> <span class="o">=</span> <span class="mf">85.0</span>  <span class="c1"># Degrees</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alt</span>
+        <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">alts</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="p">]</span>
+        <span class="n">azs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">90.</span><span class="p">]</span>   <span class="c1"># 0 = North pole, 90. = East pole</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;triangle&#39;</span><span class="p">:</span>
+        <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">if</span> <span class="n">alt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">alt</span> <span class="o">=</span> <span class="mf">87.0</span>  <span class="c1"># Degrees</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alt</span>
+        <span class="n">alts</span> <span class="o">=</span> <span class="p">[</span><span class="n">alt</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">alt</span><span class="p">]</span>
+        <span class="n">azs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">120.</span><span class="p">,</span> <span class="mf">240.</span><span class="p">]</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;cross&#39;</span><span class="p">:</span>
+        <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="n">alts</span> <span class="o">=</span> <span class="p">[</span><span class="mf">88.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">86.</span><span class="p">,</span> <span class="mf">82.</span><span class="p">]</span>
+        <span class="n">azs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">270.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">135.</span><span class="p">]</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;zenith&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Nsrcs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;Nsrcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Nsrcs</span>
+        <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">)</span> <span class="o">*</span> <span class="mf">90.</span>
+        <span class="n">azs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">Nsrcs</span>
+        <span class="c1"># Divide total Stokes I intensity among all sources</span>
+        <span class="c1"># Test file has Stokes I = 1 Jy</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;random&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Nsrcs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">min_alt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">min_alt</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Degrees</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;Nsrcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Nsrcs</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">rseed</span><span class="p">)</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;rseed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">get_state</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">min_alt</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">Nsrcs</span><span class="p">)</span>
+        <span class="n">azs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">Nsrcs</span><span class="p">)</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;long-line&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Nsrcs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Nsrcs</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="k">if</span> <span class="n">min_alt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">min_alt</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;Nsrcs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Nsrcs</span>
+        <span class="n">mock_keywords</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">alt</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">Nsrcs</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">-</span> <span class="n">min_alt</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="n">spacing</span> <span class="o">=</span> <span class="n">length</span> <span class="o">/</span> <span class="p">(</span><span class="n">Nsrcs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">max_alt</span> <span class="o">=</span> <span class="mf">90.</span> <span class="o">-</span> <span class="n">spacing</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_alt</span><span class="p">,</span> <span class="n">max_alt</span><span class="p">,</span> <span class="n">Nsrcs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">alts</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+            <span class="n">azs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Nsrcs</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">+</span> <span class="mf">180.</span><span class="p">,</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Nsrcs</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_alt</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="p">(</span><span class="n">Nsrcs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">alts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">alts</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+            <span class="n">azs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Nsrcs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> <span class="o">+</span> <span class="mf">180.</span><span class="p">,</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Nsrcs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">arrangement</span> <span class="o">==</span> <span class="s1">&#39;hera_text&#39;</span><span class="p">:</span>
+
+        <span class="n">azs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">254.055</span><span class="p">,</span> <span class="o">-</span><span class="mf">248.199</span><span class="p">,</span> <span class="o">-</span><span class="mf">236.310</span><span class="p">,</span> <span class="o">-</span><span class="mf">225.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">206.565</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">153.435</span><span class="p">,</span> <span class="o">-</span><span class="mf">123.690</span><span class="p">,</span> <span class="o">-</span><span class="mf">111.801</span><span class="p">,</span> <span class="o">-</span><span class="mf">105.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">261.870</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">258.690</span><span class="p">,</span> <span class="o">-</span><span class="mf">251.565</span><span class="p">,</span> <span class="o">-</span><span class="mf">135.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">116.565</span><span class="p">,</span> <span class="o">-</span><span class="mf">101.310</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">98.130</span><span class="p">,</span> <span class="mf">90.000</span><span class="p">,</span> <span class="mf">90.000</span><span class="p">,</span> <span class="mf">90.000</span><span class="p">,</span> <span class="mf">90.000</span><span class="p">,</span> <span class="mf">90.000</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">90.000</span><span class="p">,</span> <span class="mf">81.870</span><span class="p">,</span> <span class="mf">78.690</span><span class="p">,</span> <span class="mf">71.565</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.565</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">78.690</span><span class="p">,</span> <span class="o">-</span><span class="mf">81.870</span><span class="p">,</span> <span class="mf">74.055</span><span class="p">,</span> <span class="mf">68.199</span><span class="p">,</span> <span class="mf">56.310</span><span class="p">,</span> <span class="mf">45.000</span><span class="p">,</span>
+                        <span class="mf">26.565</span><span class="p">,</span> <span class="o">-</span><span class="mf">26.565</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">56.310</span><span class="p">,</span> <span class="o">-</span><span class="mf">71.565</span><span class="p">])</span>
+
+        <span class="n">zas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">7.280</span><span class="p">,</span> <span class="mf">5.385</span><span class="p">,</span> <span class="mf">3.606</span><span class="p">,</span> <span class="mf">2.828</span><span class="p">,</span> <span class="mf">2.236</span><span class="p">,</span> <span class="mf">2.236</span><span class="p">,</span> <span class="mf">3.606</span><span class="p">,</span>
+                        <span class="mf">5.385</span><span class="p">,</span> <span class="mf">7.280</span><span class="p">,</span> <span class="mf">7.071</span><span class="p">,</span> <span class="mf">5.099</span><span class="p">,</span> <span class="mf">3.162</span><span class="p">,</span> <span class="mf">1.414</span><span class="p">,</span> <span class="mf">2.236</span><span class="p">,</span>
+                        <span class="mf">5.099</span><span class="p">,</span> <span class="mf">7.071</span><span class="p">,</span> <span class="mf">7.000</span><span class="p">,</span> <span class="mf">6.000</span><span class="p">,</span> <span class="mf">5.000</span><span class="p">,</span> <span class="mf">3.000</span><span class="p">,</span> <span class="mf">2.000</span><span class="p">,</span>
+                        <span class="mf">1.000</span><span class="p">,</span> <span class="mf">2.000</span><span class="p">,</span> <span class="mf">3.000</span><span class="p">,</span> <span class="mf">5.000</span><span class="p">,</span> <span class="mf">6.000</span><span class="p">,</span> <span class="mf">7.000</span><span class="p">,</span> <span class="mf">7.071</span><span class="p">,</span>
+                        <span class="mf">5.099</span><span class="p">,</span> <span class="mf">3.162</span><span class="p">,</span> <span class="mf">1.414</span><span class="p">,</span> <span class="mf">3.162</span><span class="p">,</span> <span class="mf">5.099</span><span class="p">,</span> <span class="mf">7.071</span><span class="p">,</span> <span class="mf">7.280</span><span class="p">,</span>
+                        <span class="mf">5.385</span><span class="p">,</span> <span class="mf">3.606</span><span class="p">,</span> <span class="mf">2.828</span><span class="p">,</span> <span class="mf">2.236</span><span class="p">,</span> <span class="mf">2.236</span><span class="p">,</span> <span class="mf">2.828</span><span class="p">,</span> <span class="mf">3.606</span><span class="p">,</span> <span class="mf">6.325</span><span class="p">])</span>
+
+        <span class="n">alts</span> <span class="o">=</span> <span class="mf">90.</span> <span class="o">-</span> <span class="n">zas</span>
+        <span class="n">Nsrcs</span> <span class="o">=</span> <span class="n">alts</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">fluxes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">alts</span><span class="p">)</span>
+
+    <span class="n">catalog</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">source_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">alt</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="n">alts</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span> <span class="n">az</span><span class="o">=</span><span class="n">Angle</span><span class="p">(</span><span class="n">azs</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">),</span>
+                            <span class="n">obstime</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;altaz&#39;</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">array_location</span><span class="p">)</span>
+    <span class="n">icrs_coord</span> <span class="o">=</span> <span class="n">source_coord</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="s1">&#39;icrs&#39;</span><span class="p">)</span>
+
+    <span class="n">ra</span> <span class="o">=</span> <span class="n">icrs_coord</span><span class="o">.</span><span class="n">ra</span>
+    <span class="n">dec</span> <span class="o">=</span> <span class="n">icrs_coord</span><span class="o">.</span><span class="n">dec</span>
+    <span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nsrcs</span><span class="p">):</span>
+        <span class="n">catalog</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Source</span><span class="p">(</span><span class="s1">&#39;src&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">),</span> <span class="n">ra</span><span class="p">[</span><span class="n">si</span><span class="p">],</span> <span class="n">dec</span><span class="p">[</span><span class="n">si</span><span class="p">],</span> <span class="n">freq</span><span class="p">,</span> <span class="p">[</span><span class="n">fluxes</span><span class="p">[</span><span class="n">si</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">save</span><span class="p">:</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s1">&#39;mock_catalog_&#39;</span> <span class="o">+</span> <span class="n">arrangement</span><span class="p">,</span> <span class="n">ra</span><span class="o">=</span><span class="n">ra</span><span class="o">.</span><span class="n">rad</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="n">dec</span><span class="o">.</span><span class="n">rad</span><span class="p">,</span> <span class="n">alts</span><span class="o">=</span><span class="n">alts</span><span class="p">,</span> <span class="n">azs</span><span class="o">=</span><span class="n">azs</span><span class="p">,</span> <span class="n">fluxes</span><span class="o">=</span><span class="n">fluxes</span><span class="p">)</span>
+
+    <span class="n">catalog</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">catalog</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">mock_keywords</span></div>
+
+
+<div class="viewcode-block" id="initialize_uvdata_from_params"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.initialize_uvdata_from_params">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">initialize_uvdata_from_params</span><span class="p">(</span><span class="n">obs_params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Construct a uvdata object from parameters in a valid yaml file.</span>
+
+<span class="sd">    Sufficient information must be provided by the parameters to define time and frequency arrays</span>
+<span class="sd">    and verify the channel widths and time steps. This will error if insufficient or incompatible</span>
+<span class="sd">    parameters are defined.</span>
+
+<span class="sd">    The parameter dictionary may contain any valid UVData attributes as well.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        obs_params: Either an obs_param file name or a dictionary of parameters read in.</span>
+<span class="sd">                    Any uvdata parameters may be passed in through here.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        uv_obj, beam_list, beam_dict, beam_ids</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obs_params</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">obs_params</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pfile</span><span class="p">:</span>
+            <span class="n">param_dict</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">pfile</span><span class="p">)</span>
+
+        <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">obs_params</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">param_dict</span> <span class="o">=</span> <span class="n">obs_params</span>
+    <span class="c1"># Parse telescope parameters</span>
+    <span class="n">tele_params</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;telescope&#39;</span><span class="p">]</span>
+
+    <span class="n">telescope_config_name</span> <span class="o">=</span> <span class="n">tele_params</span><span class="p">[</span><span class="s1">&#39;telescope_config_name&#39;</span><span class="p">]</span>
+    <span class="n">layout_csv</span> <span class="o">=</span> <span class="n">tele_params</span><span class="p">[</span><span class="s1">&#39;array_layout&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">]):</span>
+        <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;config_path from yaml is not a directory&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">telescope_config_name</span><span class="p">):</span>
+        <span class="n">telescope_config_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">],</span> <span class="n">telescope_config_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">telescope_config_name</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;telescope_config_name file from yaml does not exist&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">):</span>
+        <span class="n">layout_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">],</span> <span class="n">layout_csv</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;layout_csv file from yaml does not exist&#39;</span><span class="p">)</span>
+
+    <span class="n">extra_keywords</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;obs_param_file&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;config_path&#39;</span><span class="p">]),</span>
+                      <span class="s1">&#39;telescope_config_file&#39;</span><span class="p">:</span> <span class="n">tele_params</span><span class="p">[</span><span class="s1">&#39;telescope_config_name&#39;</span><span class="p">],</span>
+                      <span class="s1">&#39;antenna_location_file&#39;</span><span class="p">:</span> <span class="n">tele_params</span><span class="p">[</span><span class="s1">&#39;array_layout&#39;</span><span class="p">]}</span>
+
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;extra_keywords&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extra_keywords</span>
+
+    <span class="n">ant_layout</span> <span class="o">=</span> <span class="n">_parse_layout_csv</span><span class="p">(</span><span class="n">layout_csv</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">telescope_config_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yf</span><span class="p">:</span>
+        <span class="n">telparam</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">yf</span><span class="p">)</span>
+        <span class="n">tloc</span> <span class="o">=</span> <span class="n">telparam</span><span class="p">[</span><span class="s1">&#39;telescope_location&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># drop parens</span>
+        <span class="n">tloc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">tloc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)))</span>
+        <span class="n">tloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span>
+        <span class="n">tloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.</span>   <span class="c1"># Convert to radians</span>
+        <span class="n">telparam</span><span class="p">[</span><span class="s1">&#39;telescope_location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uvutils</span><span class="o">.</span><span class="n">XYZ_from_LatLonAlt</span><span class="p">(</span><span class="o">*</span><span class="n">tloc</span><span class="p">)</span>
+
+    <span class="n">param_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">telparam</span><span class="p">)</span>
+    <span class="n">E</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;n&#39;</span><span class="p">],</span> <span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+    <span class="n">antnames</span> <span class="o">=</span> <span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">beam_ids</span> <span class="o">=</span> <span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;beamid&#39;</span><span class="p">]</span>
+    <span class="n">beam_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">beam_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">beamID</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">beam_ids</span><span class="p">):</span>
+        <span class="n">beam_model</span> <span class="o">=</span> <span class="n">telparam</span><span class="p">[</span><span class="s1">&#39;beam_paths&#39;</span><span class="p">][</span><span class="n">beamID</span><span class="p">]</span>
+        <span class="n">which_ants</span> <span class="o">=</span> <span class="n">antnames</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">beam_ids</span> <span class="o">==</span> <span class="n">beamID</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">which_ants</span><span class="p">:</span>
+            <span class="n">beam_dict</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">beamID</span>
+        <span class="n">uvb</span> <span class="o">=</span> <span class="n">UVBeam</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">beam_model</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gaussian&#39;</span><span class="p">,</span> <span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;airy&#39;</span><span class="p">]:</span>
+            <span class="c1"># Identify analytic beams</span>
+            <span class="k">if</span> <span class="n">beam_model</span> <span class="o">==</span> <span class="s1">&#39;gaussian&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;sigma&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">telparam</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Missing sigma for gaussian beam.&quot;</span><span class="p">)</span>
+                <span class="n">beam</span> <span class="o">=</span> <span class="n">AnalyticBeam</span><span class="p">(</span><span class="s1">&#39;gaussian&#39;</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">telparam</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">beam_model</span> <span class="o">==</span> <span class="s1">&#39;airy&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;diameter&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">telparam</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Missing diameter for airy beam&quot;</span><span class="p">)</span>
+                <span class="n">beam</span> <span class="o">=</span> <span class="n">AnalyticBeam</span><span class="p">(</span><span class="s1">&#39;airy&#39;</span><span class="p">,</span> <span class="n">diameter</span><span class="o">=</span><span class="n">telparam</span><span class="p">[</span><span class="s1">&#39;diameter&#39;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">beam</span> <span class="o">=</span> <span class="n">AnalyticBeam</span><span class="p">(</span><span class="s1">&#39;uniform&#39;</span><span class="p">)</span>
+            <span class="n">beam_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">beam</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">beam_model</span><span class="p">):</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">beam_model</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SIM_DATA_PATH</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;Could not find beam file &quot;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">beam_model</span>   <span class="c1"># beam_model = path to beamfits</span>
+        <span class="n">uvb</span><span class="o">.</span><span class="n">read_beamfits</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">beam_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">uvb</span><span class="p">)</span>
+
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nants_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">antnames</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nants_telescope&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">antnames</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;antenna_names&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">antnames</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;antenna_numbers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ant_layout</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>
+    <span class="n">antpos_enu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">E</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">U</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;antenna_positions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uvutils</span><span class="o">.</span><span class="n">ECEF_from_ENU</span><span class="p">(</span><span class="n">antpos_enu</span><span class="p">,</span> <span class="o">*</span><span class="n">tloc</span><span class="p">)</span> <span class="o">-</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;telescope_location&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Parse frequency structure</span>
+    <span class="n">freq_params</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;freq&#39;</span><span class="p">]</span>
+
+    <span class="n">freq_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;freq_array&#39;</span><span class="p">,</span> <span class="s1">&#39;start_freq&#39;</span><span class="p">,</span> <span class="s1">&#39;end_freq&#39;</span><span class="p">,</span> <span class="s1">&#39;Nfreqs&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;channel_width&#39;</span><span class="p">,</span> <span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span>
+    <span class="n">fa</span><span class="p">,</span> <span class="n">sf</span><span class="p">,</span> <span class="n">ef</span><span class="p">,</span> <span class="n">nf</span><span class="p">,</span> <span class="n">cw</span><span class="p">,</span> <span class="n">bw</span> <span class="o">=</span> <span class="p">[</span><span class="n">fk</span> <span class="ow">in</span> <span class="n">freq_params</span> <span class="k">for</span> <span class="n">fk</span> <span class="ow">in</span> <span class="n">freq_keywords</span><span class="p">]</span>
+    <span class="n">kws_used</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">freq_params</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">fa</span><span class="p">:</span>
+        <span class="n">freq_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;freq_array&#39;</span><span class="p">])</span>
+        <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_arr</span><span class="o">.</span><span class="n">size</span>
+        <span class="k">if</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">freq_arr</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="s1">&#39;channel_width&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">freq_params</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Channel width must be specified &quot;</span>
+                             <span class="s2">&quot;if freq_arr has length 1&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nf</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">cw</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either channel_width or Nfreqs &quot;</span>
+                                 <span class="s2">&quot; must be included in parameters:&quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">sf</span> <span class="ow">and</span> <span class="n">ef</span><span class="p">:</span>
+                <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;end_freq&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;start_freq&#39;</span><span class="p">]</span>
+                <span class="n">bw</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">bw</span><span class="p">:</span>
+                <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span>
+                                                     <span class="o">/</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either bandwidth or band edges &quot;</span>
+                                 <span class="s2">&quot;must be specified: &quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cw</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">bw</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either bandwidth or channel width&quot;</span>
+                                 <span class="s2">&quot; must be specified: &quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+            <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span>
+                                            <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">bw</span><span class="p">:</span>
+            <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span>
+                                        <span class="o">*</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">])</span>
+            <span class="n">bw</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sf</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ef</span> <span class="ow">and</span> <span class="n">bw</span><span class="p">:</span>
+                <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;start_freq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;end_freq&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ef</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">sf</span> <span class="ow">and</span> <span class="n">bw</span><span class="p">:</span>
+                <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;end_freq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;start_freq&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;bandwidth&#39;</span><span class="p">]</span>
+
+        <span class="n">freq_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;start_freq&#39;</span><span class="p">],</span>
+                               <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;end_freq&#39;</span><span class="p">],</span>
+                               <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">freq_arr</span><span class="p">),</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">freq_params</span><span class="p">[</span><span class="s2">&quot;Nfreqs&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># 1 Hz</span>
+
+    <span class="n">Nspws</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="s1">&#39;Nspws&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">freq_params</span> <span class="k">else</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nspws&#39;</span><span class="p">]</span>
+    <span class="n">freq_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">freq_arr</span><span class="p">,</span> <span class="n">Nspws</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Nspws</span><span class="p">,</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">])</span>
+
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;channel_width&#39;</span><span class="p">]</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;freq_array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_arr</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">freq_params</span><span class="p">[</span><span class="s1">&#39;Nfreqs&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Parse time structure</span>
+    <span class="n">time_params</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+
+    <span class="n">time_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">,</span> <span class="s1">&#39;end_time&#39;</span><span class="p">,</span> <span class="s1">&#39;Ntimes&#39;</span><span class="p">,</span> <span class="s1">&#39;integration_time&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;duration_hours&#39;</span><span class="p">,</span> <span class="s1">&#39;duration_days&#39;</span><span class="p">]</span>
+    <span class="n">st</span><span class="p">,</span> <span class="n">et</span><span class="p">,</span> <span class="n">nt</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">dh</span><span class="p">,</span> <span class="n">dd</span> <span class="o">=</span> <span class="p">[</span><span class="n">tk</span> <span class="ow">in</span> <span class="n">time_params</span> <span class="k">for</span> <span class="n">tk</span> <span class="ow">in</span> <span class="n">time_keywords</span><span class="p">]</span>
+    <span class="n">kws_used</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">time_params</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">daysperhour</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">24.</span>
+    <span class="n">hourspersec</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mf">60.</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">dayspersec</span> <span class="o">=</span> <span class="n">daysperhour</span> <span class="o">*</span> <span class="n">hourspersec</span>
+
+    <span class="k">if</span> <span class="n">dh</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dd</span><span class="p">:</span>
+        <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration_hours&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">daysperhour</span>
+        <span class="n">dd</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">dd</span><span class="p">:</span>
+        <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration_days&#39;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nt</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">it</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either integration_time or Ntimes must be &quot;</span>
+                             <span class="s2">&quot;included in parameters:&quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">st</span> <span class="ow">and</span> <span class="n">et</span><span class="p">:</span>
+            <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">]</span>
+            <span class="n">dd</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">dd</span><span class="p">:</span>
+            <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+                                                 <span class="o">/</span> <span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;integration_time&#39;</span><span class="p">]</span>
+                                                    <span class="o">*</span> <span class="n">dayspersec</span><span class="p">)))</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either duration or time bounds must be specified: &quot;</span>
+                             <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">it</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dd</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either duration or integration time &quot;</span>
+                             <span class="s2">&quot;must be specified: &quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+        <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;integration_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+                                           <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">]))</span>
+
+    <span class="n">inttime_days</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;integration_time&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">24.</span> <span class="o">*</span> <span class="mf">3600.</span><span class="p">)</span>
+    <span class="n">inttime_days</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">inttime_days</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">24.</span> <span class="o">*</span> <span class="mf">3600.</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dd</span><span class="p">:</span>
+        <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inttime_days</span> <span class="o">*</span> <span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">])</span>
+        <span class="n">dd</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">st</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">et</span> <span class="ow">and</span> <span class="n">dd</span><span class="p">:</span>
+            <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">et</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">st</span> <span class="ow">and</span> <span class="n">dd</span><span class="p">:</span>
+            <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">st</span> <span class="ow">or</span> <span class="n">et</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either a start or end time must be specified: &quot;</span> <span class="o">+</span> <span class="n">kws_used</span><span class="p">)</span>
+
+    <span class="n">time_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">],</span>
+                           <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">],</span>
+                           <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">],</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time_arr</span><span class="p">),</span> <span class="n">inttime_days</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">time_params</span><span class="p">[</span><span class="s2">&quot;Ntimes&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>   <span class="c1"># To nearest second</span>
+
+    <span class="n">Nbl</span> <span class="o">=</span> <span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nants_data&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nants_data&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">time_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">time_arr</span><span class="p">,</span> <span class="n">Nbl</span><span class="p">))</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;integration_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">time_arr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+                                      <span class="o">*</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;integration_time&#39;</span><span class="p">])</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;time_array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_arr</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_params</span><span class="p">[</span><span class="s1">&#39;Ntimes&#39;</span><span class="p">]</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Nspws&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;Npols&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="c1"># Now make a UVData object with these settings built in.</span>
+    <span class="c1"># The syntax below allows for other valid uvdata keywords to be passed</span>
+    <span class="c1">#  without explicitly setting them here.</span>
+
+    <span class="n">uv_obj</span> <span class="o">=</span> <span class="n">UVData</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">uv_obj</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">uv_obj</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+    <span class="n">bls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">antnums_to_baseline</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">antenna_numbers</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">antenna_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nants_data</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nants_data</span><span class="p">)])</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">baseline_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">bls</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Ntimes</span><span class="p">)</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nbls</span> <span class="o">=</span> <span class="n">bls</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nblts</span> <span class="o">=</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Nbls</span> <span class="o">*</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">Ntimes</span>
+
+    <span class="n">uv_obj</span><span class="o">.</span><span class="n">ant_1_array</span><span class="p">,</span> <span class="n">uv_obj</span><span class="o">.</span><span class="n">ant_2_array</span> <span class="o">=</span> \
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">baseline_to_antnums</span><span class="p">(</span><span class="n">uv_obj</span><span class="o">.</span><span class="n">baseline_array</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">uv_obj</span><span class="p">,</span> <span class="n">beam_list</span><span class="p">,</span> <span class="n">beam_dict</span><span class="p">,</span> <span class="n">beam_ids</span></div>
+
+
+<div class="viewcode-block" id="uvdata_to_telescope_config"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.uvdata_to_telescope_config">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">uvdata_to_telescope_config</span><span class="p">(</span><span class="n">uvdata_in</span><span class="p">,</span> <span class="n">beam_filepath</span><span class="p">,</span> <span class="n">layout_csv_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                               <span class="n">telescope_config_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                               <span class="n">return_names</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">path_out</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    From a uvfits file, generate telescope parameters files.</span>
+
+<span class="sd">    Output config files are written to the current directory, unless keep_path is set.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        uvdata_in (UVData): object to process</span>
+<span class="sd">        path_out (str): Target directory for the config file.</span>
+<span class="sd">        beam_filepath (str): Path to a beamfits file.</span>
+<span class="sd">        layout_csv_name (str, optional): The name for the antenna positions</span>
+<span class="sd">            csv file (Default &lt;telescope_name&gt;_layout.csv)</span>
+<span class="sd">        telescope_config_name (str, optional): The name for the telescope config file</span>
+<span class="sd">            (Default teleconfig_#number.yaml)</span>
+<span class="sd">        return_names (bool, optional): Return the file names for loopback tests.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        if return_names, returns tuple (path, telescope_config_name, layout_csv_name)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">telescope_config_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">telescope_config_path</span> <span class="o">=</span> \
+            <span class="n">check_file_exists_and_increment</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="s1">&#39;telescope_config_&#39;</span>
+                                                         <span class="o">+</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">telescope_name</span>
+                                                         <span class="o">+</span> <span class="s1">&#39;.yaml&#39;</span><span class="p">))</span>
+        <span class="n">telescope_config_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">telescope_config_path</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">layout_csv_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">layout_csv_path</span> <span class="o">=</span> <span class="n">check_file_exists_and_increment</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">telescope_name</span> <span class="o">+</span> <span class="s2">&quot;_layout.csv&quot;</span><span class="p">))</span>
+        <span class="n">layout_csv_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">layout_csv_path</span><span class="p">)</span>
+
+    <span class="n">antpos_enu</span><span class="p">,</span> <span class="n">antenna_numbers</span> <span class="o">=</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">get_ENU_antpos</span><span class="p">()</span>
+
+    <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">antpos_enu</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">beam_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">col_width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">antenna_names</span><span class="p">])</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;{:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_width</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;} </span><span class="si">{:8}</span><span class="s2"> </span><span class="si">{:8}</span><span class="s2"> </span><span class="si">{:10}</span><span class="s2"> </span><span class="si">{:10}</span><span class="s2"> </span><span class="si">{:10}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Number&quot;</span><span class="p">,</span> <span class="s2">&quot;BeamID&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;U&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="n">layout_csv_name</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">lfile</span><span class="p">:</span>
+        <span class="n">lfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">header</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">beam_ids</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">antpos_enu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">beam_id</span> <span class="o">=</span> <span class="n">beam_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">antenna_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">antenna_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;{:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_width</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;} </span><span class="si">{:8d}</span><span class="s2"> </span><span class="si">{:8d}</span><span class="s2"> </span><span class="si">{:10.4f}</span><span class="s2"> </span><span class="si">{:10.4f}</span><span class="s2"> </span><span class="si">{:10.4f}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">beam_id</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+            <span class="n">lfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="c1"># Write the rest to a yaml file.</span>
+    <span class="n">yaml_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">telescope_name</span><span class="o">=</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">telescope_name</span><span class="p">,</span>
+        <span class="n">telescope_location</span><span class="o">=</span><span class="nb">repr</span><span class="p">(</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">telescope_location_lat_lon_alt_degrees</span><span class="p">),</span>
+        <span class="n">Nants</span><span class="o">=</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">Nants_telescope</span><span class="p">,</span>
+        <span class="n">beam_paths</span><span class="o">=</span><span class="p">{</span>
+            <span class="mi">0</span><span class="p">:</span> <span class="n">beam_filepath</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="n">telescope_config_name</span><span class="p">),</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yfile</span><span class="p">:</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">yaml_dict</span><span class="p">,</span> <span class="n">yfile</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Path: </span><span class="si">{}</span><span class="s1">, telescope_config: </span><span class="si">{}</span><span class="s1">, layout: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="n">telescope_config_name</span><span class="p">,</span>
+                                                              <span class="n">layout_csv_name</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">return_names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">path_out</span><span class="p">,</span> <span class="n">telescope_config_name</span><span class="p">,</span> <span class="n">layout_csv_name</span></div>
+
+
+<div class="viewcode-block" id="uvdata_to_config_file"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.uvdata_to_config_file">[docs]</a><span class="nd">@profile</span>
+<span class="k">def</span> <span class="nf">uvdata_to_config_file</span><span class="p">(</span><span class="n">uvdata_in</span><span class="p">,</span> <span class="n">param_filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">telescope_config_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                          <span class="n">layout_csv_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">catalog</span><span class="o">=</span><span class="s1">&#39;mock&#39;</span><span class="p">,</span> <span class="n">path_out</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract simulation configuration settings from uvfits.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        uvdata_in (UVData): uvdata object.</span>
+
+<span class="sd">    Keywords:</span>
+<span class="sd">        param_filename (str, optional): output param file name, defaults to obsparam_#.yaml.</span>
+<span class="sd">        telescope_config_name (str, optional): Name of yaml file file. Defaults to blank string.</span>
+<span class="sd">        layout_csv_name (str, optional): Name of layout csv file. Defaults to blank string.</span>
+<span class="sd">        catalog (str, optional): Path to catalog file, defaults to &#39;mock&#39;.</span>
+<span class="sd">        path_out (str, optional): Where to put config files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">param_filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">param_filename</span> <span class="o">=</span> <span class="n">check_file_exists_and_increment</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="s1">&#39;obsparam.yaml&#39;</span><span class="p">))</span>
+        <span class="n">param_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">param_filename</span><span class="p">)</span>
+
+    <span class="n">freq_array</span> <span class="o">=</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">freq_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">time_array</span> <span class="o">=</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">time_array</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">integration_time_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">integration_time</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">integration_time_array</span><span class="p">)</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">integration_time_array</span><span class="p">):</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The integration time is not constant. Using the shortest integration time&#39;</span><span class="p">)</span>
+    <span class="n">integration_time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">integration_time_array</span><span class="p">))</span>
+    <span class="n">param_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">time</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">start_time</span><span class="o">=</span><span class="n">time_array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">end_time</span><span class="o">=</span><span class="n">time_array</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">Ntimes</span><span class="o">=</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">Ntimes</span><span class="p">,</span>
+            <span class="n">integration_time</span><span class="o">=</span><span class="n">integration_time</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">freq</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">start_freq</span><span class="o">=</span><span class="n">freq_array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">end_freq</span><span class="o">=</span><span class="n">freq_array</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">uvdata_in</span><span class="o">.</span><span class="n">channel_width</span><span class="p">,</span>
+            <span class="n">channel_width</span><span class="o">=</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">channel_width</span><span class="p">,</span>
+            <span class="n">Nfreqs</span><span class="o">=</span><span class="n">uvdata_in</span><span class="o">.</span><span class="n">Nfreqs</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">sources</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">catalog</span><span class="o">=</span><span class="n">catalog</span>
+        <span class="p">),</span>
+
+        <span class="n">telescope</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">telescope_config_name</span><span class="o">=</span><span class="n">telescope_config_name</span><span class="p">,</span>
+            <span class="n">array_layout</span><span class="o">=</span><span class="n">layout_csv_name</span>
+        <span class="p">),</span>
+
+        <span class="n">filing</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span>
+            <span class="n">outfile_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="n">outfile_prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">catalog</span> <span class="o">==</span> <span class="s1">&#39;mock&#39;</span><span class="p">:</span>
+        <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">][</span><span class="s1">&#39;mock_arrangement&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;zenith&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_out</span><span class="p">,</span> <span class="n">param_filename</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">yfile</span><span class="p">:</span>
+        <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">param_dict</span><span class="p">,</span> <span class="n">yfile</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="write_uvfits"><a class="viewcode-back" href="../../classes.html#pyuvsim.simsetup.write_uvfits">[docs]</a><span class="k">def</span> <span class="nf">write_uvfits</span><span class="p">(</span><span class="n">uv_obj</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">,</span> <span class="n">return_filename</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dryrun</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse output file information from parameters and write uvfits to file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        uv_obj: UVData object to write out.</span>
+<span class="sd">        param_dict: parameter dictionary defining output path, filename, and</span>
+<span class="sd">                    whether or not to clobber.</span>
+<span class="sd">        return_filename: (Default false) Return the file path</span>
+<span class="sd">        dryrun: (Default false) Don&#39;t write to file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        File path, if return_filename is True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s1">&#39;filing&#39;</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">param_dict</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;filing&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;outdir&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="p">:</span>
+        <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outdir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+    <span class="k">if</span> <span class="s1">&#39;outfile_name&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">param_dict</span> <span class="ow">or</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outfile_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">outfile_prefix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">outfile_suffix</span> <span class="o">=</span> <span class="s2">&quot;results&quot;</span>
+        <span class="k">if</span> <span class="s1">&#39;outfile_prefix&#39;</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="p">:</span>
+            <span class="n">outfile_prefix</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outfile_prefix&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s1">&#39;outfile_suffix&#39;</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="p">:</span>
+            <span class="n">outfile_suffix</span> <span class="o">=</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outfile_suffix&#39;</span><span class="p">]</span>
+        <span class="n">outfile_name</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">outfile_prefix</span><span class="p">,</span> <span class="n">outfile_suffix</span><span class="p">])</span>
+        <span class="n">outfile_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outdir&#39;</span><span class="p">],</span> <span class="n">outfile_name</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">outfile_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outdir&#39;</span><span class="p">],</span> <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outfile_name&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outfile path: &#39;</span><span class="p">,</span> <span class="n">outfile_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outfile_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.uvfits&quot;</span><span class="p">):</span>
+        <span class="n">outfile_name</span> <span class="o">=</span> <span class="n">outfile_name</span> <span class="o">+</span> <span class="s2">&quot;.uvfits&quot;</span>
+
+    <span class="k">if</span> <span class="s1">&#39;clobber&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="p">:</span>
+        <span class="n">outfile_name</span> <span class="o">=</span> <span class="n">check_file_exists_and_increment</span><span class="p">(</span><span class="n">outfile_name</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outdir&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;outdir&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dryrun</span><span class="p">:</span>
+        <span class="n">uv_obj</span><span class="o">.</span><span class="n">write_uvfits</span><span class="p">(</span><span class="n">outfile_name</span><span class="p">,</span> <span class="n">force_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">spoof_nonessential</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_filename</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">outfile_name</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">pyuvsim  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Radio Astronomy Software Group.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
