@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: bonobo-trans
+Version: 0.0.3
+Summary: ETL transformations
+Home-page: https://github.com/Sjoerd82/bonobo_trans
+Author: S.R.G. Venema
+Author-email: srg.venema@gmail.com
+License: UNKNOWN
+Description: # bonobo-trans
+        Set of ETL transformations for the Python Bonobo ETL tool.
+        
+        ## Documentation
+        https://bonobo-trans.readthedocs.io/en/latest/
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
