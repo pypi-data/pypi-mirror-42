@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: pylabutils
+Version: 1.0rc2
+Summary: Some utils for working with python in a simple lab-like environment
+Home-page: https://github.com/mariogarcc/pylabutils
+Author: Mario García
+Author-email: mariogarcc@gmail.com
+License: MIT
+Description: # pylabutils
+        
+        Simple single module with some useful functions for a science student's way of
+        working with Python.
+        
+        ### Dependencies:
+        
+        + `ipython`
+        + `numpy`
+        + `matplotlib`
+        + `scipy`
+        + `uncertainties`
+        
+        **Reminder**: use `help(<item>)` for help/a description of the item, when
+        in doubt (specially for the main methods).
+        
+        #### Useful functions:
+        
+        + fit
+        + tex_table
+        + read_data
+        + wdir
+        + multisort
+        
+        All of these have thorough descriptions, be sure to read them.
+Keywords: laboratory utils tools
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
