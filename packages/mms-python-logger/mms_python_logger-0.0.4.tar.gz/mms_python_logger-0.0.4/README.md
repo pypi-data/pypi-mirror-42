@@ -1,0 +1,89 @@
+# mms-alice-python-logger
+
+## Log Module for MMS/Alice standarzised log purposes
+
+This is a package for writing logs to GCP App Engine.
+
+
+
+## How to use:
+
+
+### 1. Import module:
+
+```python
+from mms_alice_python_logger_pkg.alice_log_handler import Logger
+```
+
+Please also add the following to the requirements.txt or install the pip packages on your VM:
+
+```
+google-cloud-logging==1.8.0
+mms-python-logger>=0.0.2
+
+```
+
+
+### 2. Initalize the logger:
+
+```python
+Cloud Function Logging:
+
+logger = Logger(run_id, project_id, function_name, resource_type)
+logger = Logger(run_id='lksjdf2', project_id='my-project-id', function_name='ppx-price-updates-de-gcs-bq', resource_type='cloud_function')
+
+App Engine Logging:
+
+logger = Logger(run_id, project_id, module_id, version_id, resource_type)
+logger = Logger(run_id='lksjdfl98', project_id='v135-5683-alice-ksk-explore', module_id='app-flex-sample-service', version_id='v0.0.1', resource_type='gae_app')
+
+Compute Engine:
+
+logger = Logger(run_id, project_id, resource_type)
+logger = Logger(run_id='lksjdfl98', project_id='v135-5683-alice-ksk-explore', resource_type='gce_instance')
+
+```
+
+The following resource_types are supported:
+
+Cloud Function: 'cloud_function'
+App Engine: 'gae_app'
+Compute Engine: 'gce_instance'
+
+When resource type is unrecoginzable logs will be processed to 'Global'
+
+
+### 3. Use the logger:
+
+```python
+logger.info('your message')
+logger.warning('your message')
+logger.error('your message')
+logger.critical('your message')
+logger.debug('your message')
+
+```
+
+
+
+The logs are visible in Stackdriver Logging via GAE Application -> Module_id -> Version_id for App Engine.
+Or under Cloudfunctions -> Function_id
+Or under GCE VM Instance -> Instance_id
+
+
+
+## Important
+
+This log tool only works in App Engine Standard/Flexible, Cloud Function and Compute Engine environment.
+
+For local testing do not initialize the logger as it would ran into errors because of the missing GCP context.
+
+
+
+## How we log
+
+We initialize the logger only in the "app.py" file. From there every log entry will be written - Modules used within app.py need to return the exceptions to the caller so
+error etc. get logged at one central point within app.py.
+
+
+
