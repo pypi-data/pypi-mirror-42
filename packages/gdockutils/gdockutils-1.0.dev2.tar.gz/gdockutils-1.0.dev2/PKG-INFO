@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: gdockutils
+Version: 1.0.dev2
+Summary: Galaktika Solutions - Docker Utilities
+Home-page: https://github.com/galaktika-solutions/gDockUtils
+Author: Richard Bann
+Author-email: richardbann@gmail.com
+License: MIT
+Description: 
+        # gDockUtils
+        
+        Docker helper command line utilities for a postgres-django-nginx single-host
+        application.
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 1 - Planning
+Description-Content-Type: text/markdown
+Provides-Extra: dev
