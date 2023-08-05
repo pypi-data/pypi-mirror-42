@@ -1,0 +1,11 @@
+numpy
+matplotlib>=2.0
+dill
+pytest
+twine>=1.11.0
+setuptools>=38.6.0
+wheel>=0.31.0
+scipy
+backports.functools_lru_cache; python_version<'3.3'
+tox
+
