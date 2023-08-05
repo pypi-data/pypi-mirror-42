@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: Docify
+Version: 0.4
+Summary: Simple, flexible python document generator
+Home-page: https://github.com/rapidstack/docify
+Author: Arijit Basu
+Author-email: sayanarijit@gmail.com
+License: MIT
+Description: Docify
+        ===============
+        
+        Simple, flexible python document generator
+        
+        [![PyPI version](https://img.shields.io/pypi/v/Docify.svg)](https://pypi.org/project/Docify) [![Build Status](https://travis-ci.org/rapidstack/Docify.svg?branch=master)](https://travis-ci.org/rapidstack/Docify) [![Documentation Status](https://readthedocs.org/projects/docify/badge/?version=latest)](https://docify.readthedocs.io/en/latest/?badge=latest)
+        
+        
+        
+         
+        
+        Introduction
+        ---------------
+        
+        Docify helps you write documents in different formats from a **Python object.**
+        
+        > **Note:** It's not a document *converter*, neither a *documentation* generator, nor a document *parser*
+        
+        
+        
+         
+        
+        Installation
+        ---------------
+        
+        ```
+        pip install docify
+        ```
+        
+        
+        
+         
+        
+        Usage & Examples
+        ---------------
+        
+        **[Read API documentation on Read the Docs](https://docify.readthedocs.io)**
+        
+        
+        
+        **[Find quickstart and more examples here](https://github.com/rapidstack/docify/tree/master/examples)**
+        
+        **Try examples like this**
+        
+        ```
+        python doc.py markdown
+        python doc.py htmlbootstrap
+        ```
+        
+        
+        
+        --------------------
+        
+        *This document was generated with [Docify](https://github.com/rapidstack/Docify).*
+        
+        
+        
+        
+        
+Keywords: documents generator writer
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Other Audience
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft
+Description-Content-Type: text/markdown
