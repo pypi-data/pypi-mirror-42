@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pyleetcode
+Version: 1.0.10
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Click
+Requires-Dist: bs4
+Requires-Dist: requests
+Requires-Dist: colorama
+
+UNKNOWN
+
+
