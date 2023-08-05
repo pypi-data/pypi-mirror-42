@@ -1,0 +1,3 @@
+[console_scripts]
+sink = sink.cli:main
+
