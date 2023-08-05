@@ -1,0 +1,11 @@
+README.md
+setup.py
+hand_detection_v7/__init__.py
+hand_detection_v7/hand_detection.py
+hand_detection_v7.egg-info/PKG-INFO
+hand_detection_v7.egg-info/SOURCES.txt
+hand_detection_v7.egg-info/dependency_links.txt
+hand_detection_v7.egg-info/top_level.txt
+hand_detection_v7/data/hand_label_map.pbtxt
+hand_detection_v7/data/101968001/101968001_roleid_1_1532946600_out-video-jzccda1caa6f5544519191477b40c3030f_f_1532946591547_t_1532948297067.flv_01703.png
+hand_detection_v7/models/frozen_inference_graph.pb
