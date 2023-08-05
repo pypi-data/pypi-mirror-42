@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: mehrp
+Version: 0.0.1
+Summary: Easy beeping (merhp) from the terminal.
+Home-page: https://github.com/c0yote/mehrp
+Author: U.G. Wilson
+Author-email: ugwilson@gmail.com
+License: UNKNOWN
+Description: # mehrp
+        
+        The `mehrp` package allows you to easily play the ["mehrp" heard from Boris's terminal](https://youtu.be/mIq9jFdEfZo?t=88) in the classic action film [Golden Eye](https://www.imdb.com/title/tt0113189/).
+        
+        Times you might wish for your terminal to "merhp" at you include:
+        
+         * When a long process finishes.
+         * When an error occurs.
+         * When important input is required.
+         * To dramatically notify you that you're "in".
+        
+        ### Try the Demo
+        
+            > pip install mehrp
+            > mehrp
+        
+        ### Example Usage
+        
+        Play a number of merhps while blocking:
+        
+            mehrp(3)
+            # merhp sounds 3 times
+        
+        Play mehrps during an `input()` builtin call:
+        
+            value = mehrp_until_input()
+            # merhps until user input
+        
+            value = mehrp_until_input('>')
+            # same as above, but with a prompt
+        
+Keywords: beep notification
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators 
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
