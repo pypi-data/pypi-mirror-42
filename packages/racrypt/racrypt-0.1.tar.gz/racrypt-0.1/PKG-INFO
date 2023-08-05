@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: racrypt
+Version: 0.1
+Summary: use c-code crypto in python
+Home-page: https://github.com/rasmartguy/racrypt
+Author: Rasmart team
+Author-email: rasmarutil@gmail.com
+License: UNKNOWN
+Description: # racrypt
+        small extensions for using crypto libs on C in Python
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
