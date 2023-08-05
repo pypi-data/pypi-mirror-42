@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: ndrop
+Version: 1.0.1
+Summary: a File Transfer Tool. Support "Dukto"
+Home-page: https://github.com/liuyug/ndrop.git
+Author-email: liuyug@gmail.com
+License: GPLv2
+Platform: noarch
+Requires-Python: >=3
+Requires-Dist: tqdm
+
+=====
+NDrop
+=====
+a File Transfer Tool
+
+Feature
+=======
++   Support "Dukto"
++   only CLI mode and may send File/Directory/TEXT to "Dukto"
+
+Install
+=======
+
+.. code::
+
+    # from pypi
+    pip3 install ndrop
+
+    # from source code
+    python3 setup.py install
+
+
