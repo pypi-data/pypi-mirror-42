@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pyqrcodec
+Version: 0.2.1
+Summary: pyqrcodec 是一个用于探索QR码生成原理而编写的python包。它实现了QR码生成过程中的底层逻辑，以0、1序列的字符串代表待编码数据，更直观、更加方便理解。
+Home-page: https://github.com/Cosimzhou/pyqrcode
+Author: cosimzhou
+Author-email: cosimzhou@hotmail.com
+License: MIT
+Description: pyqrcodec 是一个用于探索QR码生成原理而编写的python包。它实现了QR码生成过程中的底层逻辑，以0、1序列的字符串代表待编码数据，更直观、更加方便理解。
+Platform: UNKNOWN
