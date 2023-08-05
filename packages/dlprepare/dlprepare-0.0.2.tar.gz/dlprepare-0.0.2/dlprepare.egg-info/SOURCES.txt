@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+dlprepare/__init__.py
+dlprepare/csv_utils.py
+dlprepare/tpu.py
+dlprepare.egg-info/PKG-INFO
+dlprepare.egg-info/SOURCES.txt
+dlprepare.egg-info/dependency_links.txt
+dlprepare.egg-info/requires.txt
+dlprepare.egg-info/top_level.txt
