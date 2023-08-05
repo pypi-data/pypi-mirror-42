@@ -1,0 +1,10 @@
+README.md
+setup.py
+linestar/__init__.py
+linestar/helpers.py
+linestar/standard.py
+linestar/static/date_ids.json
+linestar_scrape.egg-info/PKG-INFO
+linestar_scrape.egg-info/SOURCES.txt
+linestar_scrape.egg-info/dependency_links.txt
+linestar_scrape.egg-info/top_level.txt
