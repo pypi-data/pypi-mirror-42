@@ -1,0 +1,9 @@
+asyncframes/__init__.py,sha256=I8YPDjcmG7m5UVKoB_nbHQnCYz_6KrcXToN1j-MDrE0,49795
+asyncframes/asyncio_eventloop.py,sha256=uKIY2KSp58-lz05wIqEqBf7GkBQi36TAQSAnoytCeVk,1633
+asyncframes/glib_eventloop.py,sha256=gVzQdtgFDTogmLxtM6zL6IPKkC8V0BOKcIdDgTk0in4,1684
+asyncframes/pyqt5_eventloop.py,sha256=-HfK7VVOpgdR5SjSaPns47Qqq4VE5HnbbaRSKCjZb5M,2839
+asyncframes-2.2.0.dist-info/LICENSE,sha256=-jZr_ZMyDqFo4yrPjneX6IM8vgWea_KuXFsIh4Puy2M,1075
+asyncframes-2.2.0.dist-info/METADATA,sha256=AcnBIIQYLQI8J6LlmgYSgwReGDIit10ZQToNoaMI2vA,5872
+asyncframes-2.2.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+asyncframes-2.2.0.dist-info/top_level.txt,sha256=SvKxnQDnKfWARLX9pJrYDuHtYqCz4m2guTHIzgmu9jc,12
+asyncframes-2.2.0.dist-info/RECORD,,
