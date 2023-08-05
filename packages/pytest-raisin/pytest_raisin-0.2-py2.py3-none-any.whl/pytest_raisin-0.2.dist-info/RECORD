@@ -1,0 +1,8 @@
+pytest_raisin/__init__.py,sha256=vv0Ui4seeLJRAHJXKvd0kJeU1tjA4tRu1RMrp2cRlmM,3721
+pytest_raisin/comparison_py2.py,sha256=layac0bqXgwB8xBXgghh59ghhBqraxRWIJ8yu9BSs_E,402
+pytest_raisin/comparison_py3.py,sha256=1mxLdzwxqjDOMUvawmfM7aGWxc41atMNirWAQ10h3Bw,424
+pytest_raisin/compat.py,sha256=qvzFVbd0_izgBzVLvpJo5ZKSzXzn9B-WOShEgkuKSHU,168
+pytest_raisin-0.2.dist-info/entry_points.txt,sha256=xiV-Qcu7jeL-nQBw3M7ZzD9SXdenf_hCJ6Apt3OVJjs,40
+pytest_raisin-0.2.dist-info/WHEEL,sha256=RFGpeSWy2MhnOH7MbIZmX9ZR0evWl2eJvsMO-yF-tDc,97
+pytest_raisin-0.2.dist-info/METADATA,sha256=_UEfL3yXR8BOuHw5Dbwyeden1hHv5R8ajyRrAXynTB4,3998
+pytest_raisin-0.2.dist-info/RECORD,,
