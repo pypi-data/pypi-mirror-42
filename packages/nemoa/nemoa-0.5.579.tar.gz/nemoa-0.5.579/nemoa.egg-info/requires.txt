@@ -1,0 +1,14 @@
+ipython>=7.1
+matplotlib>=3.0
+networkx>=2.1
+numpy>=1.15
+flib-errors>=0.0.4
+flib-base>=0.1.18
+flib-io>=0.1.6
+pandb>=0.1.6
+
+[gene]
+rpy2
+
+[gui]
+pyside
