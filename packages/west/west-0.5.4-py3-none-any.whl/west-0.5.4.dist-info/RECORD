@@ -1,0 +1,9 @@
+west/_bootstrap/__init__.py,sha256=rs8oCLoktFSu_CfDonWKWAwCVes9H2GF1c58q4hCYDo,103
+west/_bootstrap/main.py,sha256=nbZYOTI_RLh54s9gCWJSrOVGknyWF_JxL7-okev_NMA,16173
+west/_bootstrap/version.py,sha256=U1_iBSJGu2T2KqxJCcG8QX8KmCq7SVfKaSNTDgnnUGo,205
+west/_bootstrap/west-schema.yml,sha256=1Oj0LlKF2dlhPFU3sRHylFIpPTxbBqda2lprC55zwGI,489
+west-0.5.4.dist-info/METADATA,sha256=DOjCNkK8D9ZgW3d2XkRcb2flKRqu4u3g8fzOIOQjB5k,5512
+west-0.5.4.dist-info/RECORD,,
+west-0.5.4.dist-info/WHEEL,sha256=FRuHuBX28RTgsOL603qIpbSc2WeDgbsFBWKj9XFOCpg,92
+west-0.5.4.dist-info/entry_points.txt,sha256=uWqXXXCZ9EAvL6APsrGEm8jpHz43F2h_XIC2z1K2-bQ,52
+west-0.5.4.dist-info/top_level.txt,sha256=5HYzGS6Np__xqpHBWSCQPrXJ1jAewm63cYMBaY1w5s4,5
