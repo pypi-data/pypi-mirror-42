@@ -1,0 +1,11 @@
+README.rst
+setup.py
+cfg/__init__.py
+cfg/cfg.py
+cfg/utils.py
+cfg_manager.egg-info/PKG-INFO
+cfg_manager.egg-info/SOURCES.txt
+cfg_manager.egg-info/dependency_links.txt
+cfg_manager.egg-info/entry_points.txt
+cfg_manager.egg-info/requires.txt
+cfg_manager.egg-info/top_level.txt
