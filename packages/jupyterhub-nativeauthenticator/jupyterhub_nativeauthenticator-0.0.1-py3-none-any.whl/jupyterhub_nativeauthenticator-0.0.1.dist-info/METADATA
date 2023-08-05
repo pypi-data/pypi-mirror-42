@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: jupyterhub-nativeauthenticator
+Version: 0.0.1
+Summary: JupyterHub Native Authenticator
+Home-page: https://github.com/jupyterhub/nativeauthenticator
+Author: Leticia Portella
+Author-email: leportella@protonmail.com
+License: 3 Clause BSD
+Platform: UNKNOWN
+Requires-Dist: jupyterhub (>=0.8)
+Requires-Dist: bcrypt
+
+UNKNOWN
+
+
