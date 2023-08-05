@@ -1,0 +1,10 @@
+README.md
+setup.py
+hros/__init__.py
+hros/__main__.py
+hros.egg-info/PKG-INFO
+hros.egg-info/SOURCES.txt
+hros.egg-info/dependency_links.txt
+hros.egg-info/entry_points.txt
+hros.egg-info/requires.txt
+hros.egg-info/top_level.txt

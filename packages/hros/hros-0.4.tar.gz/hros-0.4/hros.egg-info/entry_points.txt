@@ -1,0 +1,3 @@
+[console_scripts]
+hros = hros.__main__:main
+
