@@ -1,0 +1,10 @@
+jsons/__init__.py,sha256=Yacr2vqKwBdEfE5wdv5gwZbekuw4yp2CYB4fKFw8uH4,4403
+jsons/_common_impl.py,sha256=tq8v19C4LT-BnjfVdD09FvgRWi8mE2UxRz0LS-vXiwE,20407
+jsons/decorators.py,sha256=yx_AoRohEnoZzCKkaWC0jWJOrvDBQFT5t4kqCuRAWe8,5755
+jsons/deserializers.py,sha256=Akfx26nlTth5M2Al_XdpuXytYwiAyyns9ofiehQIFng,9692
+jsons/serializers.py,sha256=8rnaM7sddiO5oX3RE28RLiDUZ2fni2Sv88DtqivdFxU,8735
+jsons-0.6.0.dist-info/LICENSE,sha256=h9a5HrBKMKOueBAbxIL_YCAsjYKpABdgdhw1S1trW30,1093
+jsons-0.6.0.dist-info/METADATA,sha256=o_ljpzYKqWMz-N4bL5hDt20g0UeTNvGKv2cFgJjahTk,13931
+jsons-0.6.0.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+jsons-0.6.0.dist-info/top_level.txt,sha256=3R2GSS0fqjCHgxWHUHiKkSX-diMLB0zpWOD5Ic_aV9w,6
+jsons-0.6.0.dist-info/RECORD,,
