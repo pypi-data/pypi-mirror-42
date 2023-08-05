@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: odoo12-addons-oca-product-attribute
+Version: 12.0.20190214.0
+Summary: Meta package for oca-product-attribute Odoo addons
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Requires-Dist: odoo12-addon-product-brand
+Requires-Dist: odoo12-addon-product-code-unique
+Requires-Dist: odoo12-addon-product-manufacturer
+Requires-Dist: odoo12-addon-stock-production-lot-firmware-version
+
+UNKNOWN
+
+
