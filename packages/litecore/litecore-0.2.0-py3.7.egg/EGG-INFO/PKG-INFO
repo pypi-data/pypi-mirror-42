@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: litecore
+Version: 0.2.0
+Summary: Light-weight utility classes and functions for Python 3.6 and higher
+Home-page: https://github.com/practicallypredictable/litecore
+Author: Practically Predictable
+Author-email: practicallypredictable@practicallypredictable.com
+License: UNKNOWN
+Description: # litecore
+        Light-weight utility classes and functions for Python 3.6 and higher
+        
+Keywords: python,python-3,utilities,functools,itertools,json,serialization,sentinel
+Platform: any
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Requires-Python: >=3.6
+Provides-Extra: test

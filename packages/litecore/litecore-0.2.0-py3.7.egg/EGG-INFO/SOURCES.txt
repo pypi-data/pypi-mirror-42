@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/litecore/__init__.py
+src/litecore.egg-info/PKG-INFO
+src/litecore.egg-info/SOURCES.txt
+src/litecore.egg-info/dependency_links.txt
+src/litecore.egg-info/not-zip-safe
+src/litecore.egg-info/requires.txt
+src/litecore.egg-info/top_level.txt
+src/litecore/__pycache__/__init__.cpython-37.pyc
