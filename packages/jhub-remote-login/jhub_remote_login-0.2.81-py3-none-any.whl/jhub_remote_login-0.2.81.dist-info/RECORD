@@ -1,0 +1,8 @@
+jhub_remote_login/__init__.py,sha256=hvoimpdOnPqSwIotm-zjOLgDi1vijhlR_DrsmUX02hc,60
+jhub_remote_login/_dummy_auth.py,sha256=wXlnDA1j_IoYqLSRGeFFaAvlxC6KlbDVePOC4UEEQis,546
+jhub_remote_login/_jhub_remote_auth.py,sha256=kR3tEv1iZ-2Olzj-id1W07GKRQnJRQAm4ZTLyrmIZ-g,8512
+jhub_remote_login/encryption.py,sha256=-srQYnQBpO8D38FdFAIcK0UCQ3rzYJjuXsskbtJEErc,3334
+jhub_remote_login-0.2.81.dist-info/METADATA,sha256=1P51hinVOZPgQ52-pEy7OxurXm0FCNM5U8xFEt2r_rg,5345
+jhub_remote_login-0.2.81.dist-info/RECORD,,
+jhub_remote_login-0.2.81.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+jhub_remote_login-0.2.81.dist-info/top_level.txt,sha256=R3aSh9LkBFtVxutfagF5Is8doaCE7fzPPsIbiwW-SeA,18
