@@ -1,0 +1,8 @@
+memcache_lock/__init__.py,sha256=H4Nmo5HU22GKZy71MlePT0UYCP7Zh9XuhQc4QP0BqtM,81
+memcache_lock/exceptions.py,sha256=FJiPqRzXTBEWA_FOFC-eLE79IaXNCJioG1uuroxb0_E,127
+memcache_lock/uuid_lock.py,sha256=8gom5IWnK8DNvbi11_oCJ8bP4wx3zwvuZo0BZ76oGkA,1445
+memcache_lock-0.0.5.dist-info/LICENSE,sha256=SwnQn4QoBMeC_By6dy2fYIK-5O2byTAyndhqvMbGZm4,1069
+memcache_lock-0.0.5.dist-info/METADATA,sha256=T7FbdR8b1NqosaVTf_OIX9OAySta1fvaSHmXB1r24JQ,1594
+memcache_lock-0.0.5.dist-info/WHEEL,sha256=ZvfnntGaZglpRLAKVkx18HrxfMwCXrA0b-ARJVnnMrw,92
+memcache_lock-0.0.5.dist-info/top_level.txt,sha256=aK672hMPisV_PVhZiJwKpPGbJw0ELHhOn51lUJvhsK0,14
+memcache_lock-0.0.5.dist-info/RECORD,,
