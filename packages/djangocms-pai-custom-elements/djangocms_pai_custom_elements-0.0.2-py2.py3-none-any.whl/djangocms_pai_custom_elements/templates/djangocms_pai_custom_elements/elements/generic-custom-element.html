@@ -1,0 +1,12 @@
+{% load cms_tags sekizai_tags %}{% include "djangocms_pai_custom_elements/elements/base.html" %}
+{% addtoblock "js" %}
+{% if instance.js_asset %}<script src="{{ instance.js_asset.url }}"{% if instance.async_load %} async {% endif %}></script>{% endif %}
+<script type="text/javascript">
+    (function(){
+        // console.log('Generic Custom Element loaded', document.getElementById('{{instance.id_name}}'));
+    })();
+</script>
+{% endaddtoblock %}
+{% addtoblock "css" %}
+{% if instance.js_asset %}<link href="{{ instance.css_asset.url }}" rel="stylesheet">{% endif %}
+{% endaddtoblock %}
