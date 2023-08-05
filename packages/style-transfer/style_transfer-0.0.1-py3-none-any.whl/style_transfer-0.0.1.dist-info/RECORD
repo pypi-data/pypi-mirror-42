@@ -1,0 +1,15 @@
+style_transfer/__init__.py,sha256=1gdUqEP7Kdo-Avvq4L8V_yAhX_YZZYxp2wMWs0Smd6c,274
+style_transfer/stylize.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+style_transfer/cyclegan/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+style_transfer/gatys/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+style_transfer/gatys/neural_style.py,sha256=d6jn86cOTZJyJJxhjCAv4bLSq0yBrOP7lxjVbZF2O4c,3469
+style_transfer/gatys/neural_style_upload.py,sha256=oLfeJydlEur7GLykEq3AU8eGyB2cB1BOnJN9hRQbztU,1580
+style_transfer/gatys/neural_style_wrapper.py,sha256=JhH04XP8VGLNVgnKeuhai_e6Tqf8O4deYlaGjEpdRxU,4613
+style_transfer/gatys/nst.py,sha256=YPzzoaxrnpgF9huAtRBpSX_mdFsHYmEOTjdOxSUF5Ck,2040
+style_transfer/gatys/nst_utils2.py,sha256=lJ6FX-XbHA-uasN9dBakSCX18PP57X_Rx2lfw7wsqyc,7203
+style_transfer/gatys/rough.py,sha256=KVk4LIHnxEzitu6zSnfgrvaNGFgI3wChbQ1dCAj0gEI,570
+style_transfer-0.0.1.dist-info/LICENSE,sha256=548oOCrCNqQty8Fsqqry522lXdxnBTqLyzqr38ct-cw,1040
+style_transfer-0.0.1.dist-info/METADATA,sha256=8RKSK7DM4g_UJOt7AXcjZY4zB2nsDV0B5VXo9Us987s,2277
+style_transfer-0.0.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+style_transfer-0.0.1.dist-info/top_level.txt,sha256=3wghttgVSOJ0hoo62ShtzhfVuFLAuwfRATDxW8CCRUg,15
+style_transfer-0.0.1.dist-info/RECORD,,
