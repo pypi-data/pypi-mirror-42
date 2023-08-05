@@ -1,0 +1,10 @@
+README.md
+setup.py
+auto_mode/__init__.py
+auto_mode/main.py
+auto_mode.egg-info/PKG-INFO
+auto_mode.egg-info/SOURCES.txt
+auto_mode.egg-info/dependency_links.txt
+auto_mode.egg-info/entry_points.txt
+auto_mode.egg-info/requires.txt
+auto_mode.egg-info/top_level.txt

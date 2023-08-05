@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: auto-mode
+Version: 1.0.0
+Summary: Automatically switch macOS dark / light mode on sunrise / sunset
+Home-page: https://github.com/paul-nameless/auto-mode
+Author: Paul Nameless
+Author-email: paul.nameless@icloud.com
+License: UNKNOWN
+Description: # Auto mode
+        
+        Automatically switch macOS dark / light mode based on sunrise / sunset
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
