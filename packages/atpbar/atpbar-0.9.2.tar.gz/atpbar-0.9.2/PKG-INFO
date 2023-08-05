@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: atpbar
+Version: 0.9.2
+Summary: Progress bars for threading and multiprocessing tasks
+Home-page: https://github.com/alphatwirl/atpbar
+Author: Tai Sakuma
+Author-email: tai.sakuma@gmail.com
+License: UNKNOWN
+Description: 
+        atpbar
+        ------
+        
+        Progress bars for threading and multiprocessing tasks on terminal and
+        Jupyter Notebook.
+        
+        The code in *atpbar* started its development in 2015 as part of
+        `alphatwirl <https://github.com/alphatwirl/alphatwirl>`__. It has been a
+        sub-package, *progressbar*, of alphatwirl. It became an independent
+        package in February 2019. *atpbar* can display multiple progress bars
+        simultaneously growing to show the progresses of iterations of loops
+        in `threading <https://docs.python.org/3/library/threading.html>`__ or
+        `multiprocessing <https://docs.python.org/3/library/multiprocessing.html>`__
+        tasks. *atpbar* can display progress bars on terminal and `Jupyter
+        Notebook <https://jupyter.org/>`__.
+        
+        - How to use atpbar is explained at https://github.com/alphatwirl/atpbar.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
