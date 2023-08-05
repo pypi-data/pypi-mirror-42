@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: pyrc522
+Version: 0.1.2
+Summary: Python library for SPI RFID RC522 module
+Home-page: https://github.com/fladi/pyrc522
+Author: Michael Fladischer
+Author-email: michael@fladi.at
+License: MIT
+Description: Raspberry Pi Python library for SPI RFID RC522 module.
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 3

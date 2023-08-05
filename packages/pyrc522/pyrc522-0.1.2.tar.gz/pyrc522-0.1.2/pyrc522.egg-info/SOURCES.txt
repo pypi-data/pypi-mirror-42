@@ -1,0 +1,14 @@
+.bumpversion.cfg
+.gitattributes
+.gitignore
+LICENSE.md
+MANIFEST.in
+README.md
+setup.py
+pyrc522/__init__.py
+pyrc522/rfid.py
+pyrc522.egg-info/PKG-INFO
+pyrc522.egg-info/SOURCES.txt
+pyrc522.egg-info/dependency_links.txt
+pyrc522.egg-info/requires.txt
+pyrc522.egg-info/top_level.txt
