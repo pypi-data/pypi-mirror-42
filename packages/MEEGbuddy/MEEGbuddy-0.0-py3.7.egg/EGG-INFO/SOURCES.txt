@@ -1,0 +1,9 @@
+README.md
+setup.py
+MEEGbuddy/gif_combine.py
+MEEGbuddy/meeg.py
+MEEGbuddy/transfer_MRI.py
+MEEGbuddy.egg-info/PKG-INFO
+MEEGbuddy.egg-info/SOURCES.txt
+MEEGbuddy.egg-info/dependency_links.txt
+MEEGbuddy.egg-info/top_level.txt
