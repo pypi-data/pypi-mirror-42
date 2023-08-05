@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+tox.ini
+vmbox/__init__.py
+vmbox/cloud_images.py
+vmbox/repositories.yaml
+vmbox/vmbox.py
+vmbox.egg-info/PKG-INFO
+vmbox.egg-info/SOURCES.txt
+vmbox.egg-info/dependency_links.txt
+vmbox.egg-info/entry_points.txt
+vmbox.egg-info/not-zip-safe
+vmbox.egg-info/requires.txt
+vmbox.egg-info/top_level.txt

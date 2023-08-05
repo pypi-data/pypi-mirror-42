@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: vmbox
+Version: 0.1.1
+Summary: Manage Virtual Machines with Cloud Images
+Home-page: https://gitlab.com/digitronik/miqbox
+Author: Nikhil Dhandre
+Author-email: nik.digitronik@live.com
+License: GPLv2
+Description: # vmbox
+Keywords: vmbox
+Platform: any
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
