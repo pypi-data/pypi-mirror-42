@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: django-admin-display
+Version: 1.1.0
+Summary: Simplifies the use of function attributes for the django admin and makes mypy happy
+Home-page: https://github.com/escaped/django-admin-display
+Author: Alexander Frenzel
+Author-email: alex@relatedworks.com
+Requires-Python: >=3.6
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Project-URL: Documentation, https://github.com/escaped/django-admin-display/blob/master/README.md
+Project-URL: Repository, https://github.com/escaped/django-admin-display
