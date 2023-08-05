@@ -1,0 +1,35 @@
+Metadata-Version: 2.0
+Name: file-search
+Version: 0.0.3
+Summary: search file more easily
+Home-page: https://github.com/ismaan1998/file_search
+Author: Indrajeet Singh
+Author-email: indrajeetsinghmaan@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# file_search
+python package to search any file having a string.
+file search module will help you to find out the location of any file using a string.
+
+Example -
+
+import file_search
+
+file_search.set_root('D:\\')      
+files = file_search.searchFile('library management')
+
+
+
+in files, searchFile() function will return a list of filenames with their respective locations.
+in above example, we're setting root as 'D:\\' , so the searching of file will be start from D:\\.
+then we're passing 'library' inside the function, so it will return all the files that are having 'library' and 'management' keyword in its name.
+
+
+
+
+
+
