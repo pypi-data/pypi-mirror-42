@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        cluster_funk = cluster_funk.main:main
+    
