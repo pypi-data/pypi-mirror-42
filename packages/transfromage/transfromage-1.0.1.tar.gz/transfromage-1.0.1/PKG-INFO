@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: transfromage
+Version: 1.0.1
+Summary: Client library for the Transformice game
+Home-page: https://github.com/Tocutoeltuco/transfromage
+Author: Tocutoeltuco - Turkitutu
+Author-email: tocutoeltuco@gmail.com
+License: MIT
+Download-URL: https://github.com/Tocutoeltuco/transfromage/archive/v1_0_1.tar.gz
+Description: UNKNOWN
+Keywords: TRANFORMICE,CLIENT,THREADING,ATELIER801,EVENT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
