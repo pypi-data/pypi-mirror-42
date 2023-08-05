@@ -1,0 +1,9 @@
+scrapy
+scrapy-redis
+pymongo
+apscheduler
+selenium
+elogger
+DBService
+sqlalchemy
+BeautifulSoup4
