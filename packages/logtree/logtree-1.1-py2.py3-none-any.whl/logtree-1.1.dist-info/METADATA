@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: logtree
+Version: 1.1
+Summary: Developer-friendly tree-structured command-line script tool
+Home-page: https://github.com/klira/pylogtree
+License: UNKNOWN
+Author: Mikael Brockman
+Author-email: mikael@brockman.se
+Classifier: License :: OSI Approved :: MIT License
