@@ -1,0 +1,10 @@
+README.md
+setup.py
+amuse_masc/__init__.py
+amuse_masc/binaries.py
+amuse_masc/make_a_star_cluster.py
+amuse_masc/ui.py
+amuse_masc.egg-info/PKG-INFO
+amuse_masc.egg-info/SOURCES.txt
+amuse_masc.egg-info/dependency_links.txt
+amuse_masc.egg-info/top_level.txt
