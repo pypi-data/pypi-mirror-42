@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: nobrainer
+Version: 0.0.1a1
+Summary: A framework for developing neural network models for 3D image processing.
+Home-page: https://github.com/kaczmarj/nobrainer-tf2
+Author: Nobrainer Developers
+Author-email: jakub.kaczmarzyk@gmail.com
+License: Apache License, 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.5
+Requires-Dist: nibabel
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: yapf ; extra == 'dev'
+
+UNKNOWN
+
+
