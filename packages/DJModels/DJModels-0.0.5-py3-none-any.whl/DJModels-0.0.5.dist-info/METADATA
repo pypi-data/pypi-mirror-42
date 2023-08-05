@@ -1,0 +1,138 @@
+Metadata-Version: 2.1
+Name: DJModels
+Version: 0.0.5
+Summary: Use Django Models in any Python Web Framework
+Home-page: https://github.com/iMerica/dj-models
+Author: @iMerica
+License: BSD
+Project-URL: Documentation, https://github.com/iMerica/dj-models
+Project-URL: Source, https://github.com/iMerica/dj-models
+Project-URL: Tracker, https://github.com/iMerica/dj-models
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database :: Database Engines/Servers
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Requires-Dist: pytz
+Requires-Dist: psycopg2
+Provides-Extra: argon2
+Requires-Dist: argon2-cffi (>=16.1.0) ; extra == 'argon2'
+Provides-Extra: bcrypt
+Requires-Dist: bcrypt ; extra == 'bcrypt'
+
+# DJ Models
+
+Use the Django ORM in any Python web framework.
+
+## Install
+
+    pip3 install djmodels
+
+
+## Getting Started
+
+Create an app directory for your models and settings (DB connection details).
+
+    mkdir -p project/base
+    touch project/base/{__init__.py,models.py}
+    touch settings.py
+
+
+Add your database settings to the settings module. See Django's docs on this for more info.
+
+```python
+SECRET_KEY = '<ACTUAL SECRET KEY>'
+DATABASES = {
+    'default': {
+        'ENGINE': 'djmodels.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'mysecretpassword',
+        'HOST': '0.0.0.0',
+        'PORT': '5432',
+    }
+}
+
+INSTALLED_APPS = ['base']
+
+```
+
+
+Add a model to `app/models.py`
+
+```python
+from djmodels.db import models
+
+class Person(models.Model):
+    name = models.CharField()
+    age = models.PositiveIntegerField()
+
+```
+Export your settings module
+
+    export DJMODELS_SETTINGS_MODULE=app.settings
+
+
+Create migrations
+
+    $ /manage.py makemigrations base
+    # Migrations for 'app':
+    #   - Create model Person 
+
+
+Run Migrate
+
+    $ /manage.py makemigrations base
+    # Operations to perform:
+    #   Apply all migrations: base
+    #   Running migrations:
+    #       Applying base.0001_initial... OK
+
+
+Import the model into any webframework and make queries. For example, Flask.
+
+```python
+
+from flask import Flask
+import djmodels
+
+djmodels.setup()
+from app.models import Person
+app = Flask(__name__)
+
+@app.route("/person/")
+def get_random_person():
+    person = Person.objects.order_by('?').first()
+    return '{}'.format(person.name)
+
+``` 
+
+### Example Apps
+
+- [Flask + DjModels](https://github.com/iMerica/dj-models-demo)
+
+## Gotchas
+
+- Make sure to set DJMODELS_SETTINGS_MODULE is set!
+
+
+## LICENSE
+MIT 
+
+

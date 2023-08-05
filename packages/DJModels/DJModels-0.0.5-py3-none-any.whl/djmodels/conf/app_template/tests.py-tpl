@@ -1,0 +1,3 @@
+from djmodels.test import TestCase
+
+# Create your tests here.
