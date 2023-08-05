@@ -1,0 +1,14 @@
+wmt/__init__.py,sha256=UtLyYHIX2ssqQxL5rig2Sdl-tOY_pXSnIfOGI6GQKfE,54
+wmt/__main__.py,sha256=qH0GCb7vc_bkQ3URg_O8Dtw1rJz5sWQ8Az0zAmJZNGQ,30
+wmt/common.py,sha256=EqLpWkFXllKs50TAgbO1Yjf36dz5SA-b85DJ7wJqV94,201
+wmt/db.py,sha256=rGpiAugAeLxwfRfAOsmfvF6RvGsZD4g0bLPnexAQCqc,5496
+wmt/onedrivedb.py,sha256=e18JIok0xtDA61hWrUQYz0yTXgineLddJ5eE5aqIReg,2210
+wmt/settings.py,sha256=lLx7wDKBoGfgJg6jJj4wNeXhLlZvkM4SaOrSE1ZzGes,101
+wmt/wmt.py,sha256=lPcW-pQ1uKAW1-AAqkMLW_ZayD8VvF-wY9DAuJPFcGg,10695
+wmt-0.0.4.dist-info/DESCRIPTION.rst,sha256=8CTjThCu0RJtWgcdK2jzYxbxf5U3f-dXE8WC0_Ki6Lk,903
+wmt-0.0.4.dist-info/METADATA,sha256=15PbfhGM6Kl8Lt0XjH9YeCLysDr302y1J--Mx-ULdyk,1349
+wmt-0.0.4.dist-info/RECORD,,
+wmt-0.0.4.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+wmt-0.0.4.dist-info/entry_points.txt,sha256=_UfZNoLfhtIz3bxeKwEtk5RaAMCBnnlGSAUbKRMQh2A,38
+wmt-0.0.4.dist-info/metadata.json,sha256=C8YSpmamNPkSBhmu1Ca6gkl2pgrZP0hbitR8Jefd4CA,755
+wmt-0.0.4.dist-info/top_level.txt,sha256=tDJ2ye9Trz8gBWexXKpM4HNCexUUNqxWuuyBTdTxnnY,4
