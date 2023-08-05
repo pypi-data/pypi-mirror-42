@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/codepod
+codepod/__init__.py
+codepod/codepod_init_in_container.py
+codepod/impl.py
+codepod.egg-info/PKG-INFO
+codepod.egg-info/SOURCES.txt
+codepod.egg-info/dependency_links.txt
+codepod.egg-info/requires.txt
+codepod.egg-info/top_level.txt
