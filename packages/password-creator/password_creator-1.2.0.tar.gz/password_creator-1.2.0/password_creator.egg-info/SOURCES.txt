@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+password_creator/__init__.py
+password_creator/__main__.py
+password_creator/password_creator.py
+password_creator/stuff.py
+password_creator.egg-info/PKG-INFO
+password_creator.egg-info/SOURCES.txt
+password_creator.egg-info/dependency_links.txt
+password_creator.egg-info/entry_points.txt
+password_creator.egg-info/top_level.txt
