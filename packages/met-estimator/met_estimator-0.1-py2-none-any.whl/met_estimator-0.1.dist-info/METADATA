@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: met-estimator
+Version: 0.1
+Summary: Estimate and classify activity based on accelerometer input
+Home-page: http://github.com/ms2300/met_estimator
+Author: ms2300
+Author-email: matt.sewall@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: numpy
+
+UNKNOWN
+
+
