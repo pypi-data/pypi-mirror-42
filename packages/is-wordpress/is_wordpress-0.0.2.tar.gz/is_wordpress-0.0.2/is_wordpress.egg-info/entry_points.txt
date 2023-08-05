@@ -1,0 +1,3 @@
+[console_scripts]
+is_wordpress = is_wordpress.cli:main
+
