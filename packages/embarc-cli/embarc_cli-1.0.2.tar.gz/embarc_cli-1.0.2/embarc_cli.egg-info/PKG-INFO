@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: embarc-cli
+Version: 1.0.2
+Summary: This is a tool for Embedded Development with embARC
+Home-page: UNKNOWN
+Author: Jingru
+Author-email: 1961295051@qq.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: embARC
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7.10,!=3.0.*,!=3.1.*,<4
