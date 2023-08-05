@@ -1,0 +1,12 @@
+truncated_famd/__init__.py,sha256=7m77l8yxKUd7tB-k3kjX2_VVIKb9Zi85Xo_BBfKXCFk,265
+truncated_famd/base.py,sha256=ax0Zp7iJsX9WPo4W7GEpCbbK32MHqzhW4dBYdYlq_wc,4069
+truncated_famd/fast_FAMD.py,sha256=VSsk0IZ1Nir9ySe2n1eO8mCeD9I5hjsiM85u0R8nB5c,1206
+truncated_famd/fast_MCA.py,sha256=99r74xpC3m1gdPgG4bZ_MSBfFycRfzBNLmbQg1HNttM,4196
+truncated_famd/fast_MFA.py,sha256=_NxGnNC6eWRBIDQy9tNT4cw1wTJRWyym3v_FoOpU7oQ,4530
+truncated_famd/fast_PCA.py,sha256=scMz80hWq1q3B3rWDnk1zu4y2jI-wB_dioZrc7ab_8E,16892
+truncated_famd/outils.py,sha256=rZ0-W40lIh7xMpTs9HRdjlEmlthXH9rFWmziN-Ca2aM,973
+truncated_famd-0.0.1.dist-info/LICENSE,sha256=muRpuNGm7nspdfhaO9O8_PSVwpMKIciCYFczgDqx9Hw,1319
+truncated_famd-0.0.1.dist-info/METADATA,sha256=oKAiZ8ZNv8H1bOKXRlGl6v53XCivvMR9KYUS8h6y2ck,13764
+truncated_famd-0.0.1.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+truncated_famd-0.0.1.dist-info/top_level.txt,sha256=HDqH8gRpFXcbezdtqobUwBx0cggrTj9n0p3YiR9N-oM,32
+truncated_famd-0.0.1.dist-info/RECORD,,
