@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: phasepy
+Version: 0.0.1
+Summary: Multiphase multicomponent Equilibria
+Home-page: https://github.com/gustavochm/phasepy
+Author: Gustavo Chaparro Maldonado, Andrés Mejía Matallana
+Author-email: gustavochaparro@udec.cl
+License: MIT
+Download-URL: https://github.com/gustavochm/phasepy.git
+Description: UNKNOWN
+Keywords: Phase Equilibrium,Cubic EOS,QMR,MHV,NRTL,Wilson,UNIFAC,Flash,LVE,LLE,LLVE
+Platform: Windows
+Platform: Linux
+Platform: Mac OS
+Platform: Unix
