@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+dicebag.py
+mytest.py
+setup.cfg
+setup.py
+dicebag.egg-info/PKG-INFO
+dicebag.egg-info/SOURCES.txt
+dicebag.egg-info/dependency_links.txt
+dicebag.egg-info/top_level.txt
