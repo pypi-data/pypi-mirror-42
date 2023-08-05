@@ -1,0 +1,17 @@
+MANIFEST.in
+README.mkd
+setup.cfg
+setup.py
+textx_dsldoc/__init__.py
+textx_dsldoc/converters.py
+textx_dsldoc/render_arpeggio.py
+textx_dsldoc/render_metamodel.py
+textx_dsldoc/render_utils.py
+textx_dsldoc/textx_integration.py
+textx_dsldoc.egg-info/PKG-INFO
+textx_dsldoc.egg-info/SOURCES.txt
+textx_dsldoc.egg-info/dependency_links.txt
+textx_dsldoc.egg-info/entry_points.txt
+textx_dsldoc.egg-info/not-zip-safe
+textx_dsldoc.egg-info/requires.txt
+textx_dsldoc.egg-info/top_level.txt
