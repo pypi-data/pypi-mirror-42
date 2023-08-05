@@ -1,0 +1,11 @@
+README.md
+setup.py
+isfreemail/__init__.py
+isfreemail/check.py
+isfreemail/freeservers.py
+isfreemail.egg-info/PKG-INFO
+isfreemail.egg-info/SOURCES.txt
+isfreemail.egg-info/dependency_links.txt
+isfreemail.egg-info/top_level.txt
+isfreemail/tests/__init__.py
+isfreemail/tests/test_isfreemail.py
