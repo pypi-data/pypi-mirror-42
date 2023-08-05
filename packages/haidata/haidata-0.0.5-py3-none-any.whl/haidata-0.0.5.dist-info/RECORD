@@ -1,0 +1,17 @@
+haidata/__init__.py,sha256=BG-SlV9eujSxpj0ygnL3l7Pu3ULhLyBWtmmXcSFmNXw,414
+haidata/drop_cols.py,sha256=Dt3dE_10o3G1SWX_dc5sir0jjdKuw-tbgeRyS2F86j0,351
+haidata/fix_colnames.py,sha256=Kz9__1IxJV2mp787pHtlg00tRXdBtvf9k--iVLI0k3Y,970
+haidata/fix_empty_cols.py,sha256=9mRrCfXHyjTSvcCHpFlU2bNJc0guZT0n_w2RhurU5ks,617
+haidata/fix_empty_rows.py,sha256=RxmDXW6md4Xsq4ohi1sGkJYm1tqOd_Shqnwcbm58nQ4,864
+haidata/fix_encode.py,sha256=gPY_VKi49rqVOO_Tc0ccA4YadMh-2iDeMVuwgKzkRkg,1932
+haidata/fix_excess_stdev.py,sha256=5ezsxfvLxJaX_7cnysq90GNsQCcbqCQXyy9P9SLLiNE,4354
+haidata/haidatacfg.py,sha256=9-LW9zwghVK1Y2_Gusz3pgFJvhVMQ9g_E7ncWGuANuI,13540
+haidata/haidatautils.py,sha256=rPu7IQU6MrAxbHLuOV18CnFdyrp3OkRuJw94qEP_n4o,6870
+haidata/to_datetime.py,sha256=CLoFWJTbEyx2fCRFI239JsaSvKcDWQ28xYnbAZWUSxA,1497
+haidata/turn_to_int.py,sha256=rkguWzDxJFDbgEbZZoZN1cm3WQwDiETL6rBCL-j4ibo,182
+haidata-0.0.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+haidata-0.0.5.dist-info/METADATA,sha256=5UODl0bGw7uDoIFn-47ImcXYJiRCKb8bcWLucmkQd7Q,491
+haidata-0.0.5.dist-info/RECORD,,
+haidata-0.0.5.dist-info/WHEEL,sha256=Vlaj2XNMTTJ893zWX-JvKeZUIs7q5E7d7Gise2Vouzc,97
+haidata-0.0.5.dist-info/metadata.json,sha256=0IqdwxXkNtDFqnnmhA_nt37POs7UFDgEOkKg1hFPXfE,660
+haidata-0.0.5.dist-info/top_level.txt,sha256=TgbOwe4sXO_yO9Vqgob8IgjcxJleWMXcIMEPtN7tYD4,8

@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: haidata
+Version: 0.0.5
+Summary: Configurable chainable modules for pandas DataFrame cleaning with persistance
+Home-page: https://github.com/hraoyama/haidata
+Author: Hans Roggeman
+Author-email: hansroggeman2@gmail.com
+License: BSD 3-Clause License
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.14)
+Requires-Dist: pandas (>=0.20)
+Requires-Dist: pytest (>=3.0)
+Requires-Dist: jsonpickle (>=1.0)
+Requires-Dist: ftfy (>=5.0)
+
+UNKNOWN
+
+
