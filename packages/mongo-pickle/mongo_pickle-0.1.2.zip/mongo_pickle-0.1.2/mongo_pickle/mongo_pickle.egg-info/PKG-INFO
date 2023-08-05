@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mongo-pickle
+Version: 0.1.2
+Summary: Schema-less Pythonic Mongo ORM
+Home-page: UNKNOWN
+Author: 111yoav
+Author-email: 111yoav@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
