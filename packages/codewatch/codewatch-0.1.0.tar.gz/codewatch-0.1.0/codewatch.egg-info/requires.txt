@@ -1,0 +1,6 @@
+
+[:python_version < "3"]
+astroid==1.6.4
+
+[:python_version >= "3"]
+astroid==2.0.4
