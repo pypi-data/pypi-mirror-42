@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: lolP
+Version: 0.0.4
+Summary: Linear Optimal Low Rank Projection
+Home-page: https://github.com/neurodata/lollipop
+Author: Jaewon Chung
+Author-email: j1c@jhu.edu
+License: Apache License 2.0
+Description: UNKNOWN
+Keywords: dimensionality reduction
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
