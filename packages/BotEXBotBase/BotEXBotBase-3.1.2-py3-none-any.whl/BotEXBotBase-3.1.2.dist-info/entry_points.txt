@@ -1,0 +1,8 @@
+[console_scripts]
+botbase = redbot.__main__:main
+botbase-launcher = redbot.launcher:main
+botbase-setup = redbot.setup:main
+
+[pytest11]
+red-discordbot = redbot.pytest
+
