@@ -1,0 +1,8 @@
+README.md
+setup.py
+bin/hello-joke
+example_pkg/__init__.py
+example_pkg_wei.egg-info/PKG-INFO
+example_pkg_wei.egg-info/SOURCES.txt
+example_pkg_wei.egg-info/dependency_links.txt
+example_pkg_wei.egg-info/top_level.txt
