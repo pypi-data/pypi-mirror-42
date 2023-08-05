@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: adabound
+Version: 0.0.2
+Summary: AdaBound optimization algorithm, build on PyTorch.
+Home-page: https://github.com/Luolc/AdaBound
+Author: Liangchen Luo
+Author-email: luolc.witty@gmail.com
+License: Apache
+Keywords: machine learning deep learning
+Platform: UNKNOWN
+Requires-Python: >=3.6.0
+Requires-Dist: torch (>=0.4.0)
+
+UNKNOWN
+
+
