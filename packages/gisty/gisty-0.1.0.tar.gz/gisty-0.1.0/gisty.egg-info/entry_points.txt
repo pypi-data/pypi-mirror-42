@@ -1,0 +1,3 @@
+[console_scripts]
+gisty = gisty.gists:main
+
