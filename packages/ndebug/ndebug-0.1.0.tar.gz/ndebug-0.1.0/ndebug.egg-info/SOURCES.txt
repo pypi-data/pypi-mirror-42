@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+ndebug/__init__.py
+ndebug/env_helpers.py
+ndebug/lib.py
+ndebug.egg-info/PKG-INFO
+ndebug.egg-info/SOURCES.txt
+ndebug.egg-info/dependency_links.txt
+ndebug.egg-info/requires.txt
+ndebug.egg-info/top_level.txt
+requirements/base.txt
