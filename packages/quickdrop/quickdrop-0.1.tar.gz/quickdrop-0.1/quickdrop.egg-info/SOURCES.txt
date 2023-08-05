@@ -1,0 +1,10 @@
+README.md
+setup.py
+quickdrop/__init__.py
+quickdrop/quickdrop.py
+quickdrop.egg-info/PKG-INFO
+quickdrop.egg-info/SOURCES.txt
+quickdrop.egg-info/dependency_links.txt
+quickdrop.egg-info/entry_points.txt
+quickdrop.egg-info/requires.txt
+quickdrop.egg-info/top_level.txt
