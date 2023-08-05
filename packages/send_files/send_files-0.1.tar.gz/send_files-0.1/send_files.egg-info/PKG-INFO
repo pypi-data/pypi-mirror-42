@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: send-files
+Version: 0.1
+Summary: Copy files between computers.
+Home-page: https://fritz.ftp.sh/fossil/send_files
+Author: Fischers Fritz
+Author-email: fischersfritz@sent.at
+License: AGPL
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6

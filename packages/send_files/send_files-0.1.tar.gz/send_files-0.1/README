@@ -1,0 +1,39 @@
+send_files: Copying files between computers
+===========================================
+send_files shares a directory by HTTP or receives file uploads into a directory
+by HTTP. It starts the web server on the computer that you run it on, and tells
+you what URLs you need to open on the other computer. You can configure some
+security settings.
+
+Usage
+---------
+Install ::
+
+  pip install .
+
+Then use the help flag to check documentation. ::
+
+  python -m send_files send -help
+  python -m send_files receive -help
+
+Non-features
+------------
+TLS encryption (HTTPS) is not provided. My reasoning: If you need to use
+send_files, you probably want self-signed certificate, and you will
+likely only ever transfer files one time between any particular pair of
+computers. The certificate will provide only a small security benefit,
+and, more importantly, web browsers will give unreasonably scary
+warnings about using the certificate.
+
+If you want encryption, encrypt and rename the files before transferring
+them.
+
+Ambitions
+---------
+Perhaps some day this will be a context menu
+
+1. Right-click on a selection in the popular GNOME/KDE file managers.
+2. Click on "Publish directory" or "Receive files"
+3. Start a web server that hosts the directory or receives files into
+   the directory.
+4. Provide the links that the recipients can use to access the files.
