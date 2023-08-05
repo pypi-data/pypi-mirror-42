@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+justmerge.egg-info/PKG-INFO
+justmerge.egg-info/SOURCES.txt
+justmerge.egg-info/dependency_links.txt
+justmerge.egg-info/entry_points.txt
+justmerge.egg-info/not-zip-safe
+justmerge.egg-info/requires.txt
+justmerge.egg-info/top_level.txt

@@ -1,0 +1,11 @@
+requests
+python-decouple
+toml
+click
+
+[dev]
+tox
+twine
+therapist
+black
+flake8
