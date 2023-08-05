@@ -1,0 +1,58 @@
+{% block menu %}
+
+<ul class="collapsible">
+  <li>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required />
+          <label class="label-icon" for="search"
+            ><i class="material-icons">search</i></label
+          >
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">chevron_right</i>Query
+    </div>
+    {% for type in schema.queryType.fields %}
+    <div class="collapsible-body">
+      <span>
+        <a class="collection-item" href="{%url 'graphqldoc:detail' type.name %}">
+          {{ type.name }}
+        </a>
+      </span>
+    </div>
+    {% endfor %}
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">chevron_right</i>Mutation
+    </div>
+    {% for type in schema.mutationType.fields %}
+    <div class="collapsible-body">
+      <span>
+        <a class="collection-item" href="{%url 'graphqldoc:detail' type.name %}">{{ type.name }}</a>
+      </span>
+    </div>
+    {% endfor %}
+  </li>
+  {% for key, value in menu.items %}
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">chevron_right</i>{{ key | lower | capfirst }}
+    </div>
+    {% for item in value %}
+    <div class="collapsible-body">
+      <span>
+        <a href="{%url 'graphqldoc:detail' item %}">{{ item }}</a>
+      </span>
+    </div>
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
