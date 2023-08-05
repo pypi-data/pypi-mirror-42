@@ -1,0 +1,16 @@
+README.md
+setup.py
+image_file_name_fixer/__init__.py
+image_file_name_fixer/__main__.py
+image_file_name_fixer/app_config.py
+image_file_name_fixer/argument_processor.py
+image_file_name_fixer/file_utils.py
+image_file_name_fixer/format_mapper.py
+image_file_name_fixer/image_details.py
+image_file_name_fixer/image_resolution.py
+image_file_name_fixer/name_fixer.py
+image_file_name_fixer.egg-info/PKG-INFO
+image_file_name_fixer.egg-info/SOURCES.txt
+image_file_name_fixer.egg-info/dependency_links.txt
+image_file_name_fixer.egg-info/entry_points.txt
+image_file_name_fixer.egg-info/top_level.txt
