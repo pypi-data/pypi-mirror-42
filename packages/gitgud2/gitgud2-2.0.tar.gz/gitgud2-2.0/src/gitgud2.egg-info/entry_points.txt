@@ -1,0 +1,7 @@
+[console_scripts]
+git-gud = gitgud.gitgud:git.gud
+git-job = gitgud.gitgud:git.job
+git-money = gitgud.gitgud:git.money
+git-rekt = gitgud.gitgud:git.rekt
+git-spooked = gitgud.gitgud:git.spooked
+

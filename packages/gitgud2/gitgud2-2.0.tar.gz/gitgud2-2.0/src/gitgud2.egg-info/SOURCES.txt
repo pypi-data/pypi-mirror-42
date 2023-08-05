@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+src/gitgud/__init__.py
+src/gitgud/gitgud.py
+src/gitgud2.egg-info/PKG-INFO
+src/gitgud2.egg-info/SOURCES.txt
+src/gitgud2.egg-info/dependency_links.txt
+src/gitgud2.egg-info/entry_points.txt
+src/gitgud2.egg-info/requires.txt
+src/gitgud2.egg-info/top_level.txt
+src/gitgud2.egg-info/zip-safe
