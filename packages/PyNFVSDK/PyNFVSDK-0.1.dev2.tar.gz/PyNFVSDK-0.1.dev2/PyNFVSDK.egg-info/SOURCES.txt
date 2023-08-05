@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+PyNFVSDK/__init__.py
+PyNFVSDK.egg-info/PKG-INFO
+PyNFVSDK.egg-info/SOURCES.txt
+PyNFVSDK.egg-info/dependency_links.txt
+PyNFVSDK.egg-info/requires.txt
+PyNFVSDK.egg-info/top_level.txt
