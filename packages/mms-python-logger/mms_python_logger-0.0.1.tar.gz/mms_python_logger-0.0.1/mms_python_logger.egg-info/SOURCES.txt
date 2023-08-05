@@ -1,0 +1,8 @@
+README.md
+setup.py
+mms_alice_python_logger_pkg/__init__.py
+mms_alice_python_logger_pkg/alice_log_handler.py
+mms_python_logger.egg-info/PKG-INFO
+mms_python_logger.egg-info/SOURCES.txt
+mms_python_logger.egg-info/dependency_links.txt
+mms_python_logger.egg-info/top_level.txt

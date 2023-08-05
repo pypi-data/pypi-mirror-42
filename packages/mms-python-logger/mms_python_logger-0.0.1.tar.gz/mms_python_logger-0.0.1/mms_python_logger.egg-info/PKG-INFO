@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: mms-python-logger
+Version: 0.0.1
+Summary: A custom MMS/Alice log module for python
+Home-page: https://github.com/EastOfGondor/mms-alice-python-logger
+Author: Tobias hoke
+Author-email: hoke@mediamarktsaturn.com
+License: UNKNOWN
+Description: # mms-alice-python-logger
+        
+        ## Log Module for MMS/Alice standarzised log purposes
+        
+        This is a package for writing logs to GCP App Engine. Detailed documentation given at:
+        [Github-flavored Markdown](https://github.com/EastOfGondor/mms-alice-python-logger)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
