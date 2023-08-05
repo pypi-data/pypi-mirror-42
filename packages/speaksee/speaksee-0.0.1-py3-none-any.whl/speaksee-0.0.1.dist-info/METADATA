@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: speaksee
+Version: 0.0.1
+Summary: PyTorch utilities and models for Visual-Semantic tasks
+Home-page: http://github.com/aimagelab/speaksee
+Author: Lorenzo Baraldi, Marcella Cornia
+Author-email: lorenzo.baraldi@unimore.it
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Dist: torch (>=0.4.0)
+Requires-Dist: torchvision
+Requires-Dist: numpy
+Requires-Dist: h5py
+Requires-Dist: tqdm
+Requires-Dist: requests
+Requires-Dist: pycocotools
+Requires-Dist: matplotlib
+Requires-Dist: pathos
+
+UNKNOWN
+
+
