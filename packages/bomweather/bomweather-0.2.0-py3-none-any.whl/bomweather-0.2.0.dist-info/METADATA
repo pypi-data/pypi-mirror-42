@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: bomweather
+Version: 0.2.0
+Summary: Load weather data from the Australian Bureau of Meteorology (BOM) website
+Home-page: https://github.com/aguinane/bomweather
+Author: Alex Guinane
+Author-email: alexguinane@gmail.com
+License: MIT
+Requires-Dist: requests
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+
+# bomweather
+
+

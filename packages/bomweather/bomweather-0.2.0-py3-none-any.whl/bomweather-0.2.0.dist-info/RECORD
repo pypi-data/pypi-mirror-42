@@ -1,0 +1,11 @@
+bomweather/__init__.py,sha256=UIrMunhtQJxmILYELQLrhvWjMa-jkdt96WRDzFrkiOQ,624
+bomweather/forecast_stations.json,sha256=xH-8KEMnjyLaWzgzNOKuPShsoMwpAXmVuCPLxJ4JYJQ,27434
+bomweather/forecasts.py,sha256=XUPDEPlEKpaSpds0-y5hdeksunNx7zaz2q8YvCU6Ybo,4716
+bomweather/obs_stations.json,sha256=TbMez4e8Qfl5P5pra8_HCbY3NQwEKQA46tthduMxMiw,130566
+bomweather/observations.py,sha256=CWqPy6O8ZC_WbN73Z7v9exfWYlfJh85fiyupbEkdeA4,4110
+bomweather/stations.py,sha256=_bzUzRWqc9-3hE7dM0r4n-BGEiCLnU-BKz1MZ4E0ilA,9289
+bomweather-0.2.0.dist-info/LICENSE,sha256=b-6s9BpSUF2f2t1Fq21xasc7TxhiRSFVbPTLmNL9dsU,1090
+bomweather-0.2.0.dist-info/METADATA,sha256=RAsEvuHPQkN_Acq_C_DUmRdvIfEmj83xetEqaTrl4Qs,348
+bomweather-0.2.0.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+bomweather-0.2.0.dist-info/top_level.txt,sha256=paTySgYan2FUKT_cRocLs9OWJEEqWvJENLB0fduFjjA,11
+bomweather-0.2.0.dist-info/RECORD,,
