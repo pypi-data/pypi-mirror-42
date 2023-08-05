@@ -1,0 +1,8 @@
+README.md
+setup.py
+hand_detection_v1/__init__.py
+hand_detection_v1/hand_detection.py
+hand_detection_v1.egg-info/PKG-INFO
+hand_detection_v1.egg-info/SOURCES.txt
+hand_detection_v1.egg-info/dependency_links.txt
+hand_detection_v1.egg-info/top_level.txt
