@@ -1,0 +1,7 @@
+configparser
+numpy
+pandas
+python-levenshtein
+requests
+unidecode
+xlrd
