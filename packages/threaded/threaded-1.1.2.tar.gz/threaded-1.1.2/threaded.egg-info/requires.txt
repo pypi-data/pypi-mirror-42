@@ -1,0 +1,7 @@
+six>=1.10.0
+
+[:python_version < "3.7"]
+typing>=3.6
+
+[:python_version == "2.7"]
+futures>=3.1
