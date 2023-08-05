@@ -1,0 +1,15 @@
+README.md
+setup.py
+coinceres/__init__.py
+coinceres/api.py
+coinceres/exceptions.py
+coinceres/http_client.py
+coinceres/sign.py
+coinceres/version.py
+coinceres.egg-info/PKG-INFO
+coinceres.egg-info/SOURCES.txt
+coinceres.egg-info/dependency_links.txt
+coinceres.egg-info/requires.txt
+coinceres.egg-info/top_level.txt
+tests/__init__.py
+tests/tests.py
