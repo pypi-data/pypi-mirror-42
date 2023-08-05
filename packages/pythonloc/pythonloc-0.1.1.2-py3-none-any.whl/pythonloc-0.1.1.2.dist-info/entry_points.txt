@@ -1,0 +1,5 @@
+[console_scripts]
+pipfreezeloc = pythonloc.pythonloc:pipfreezeloc
+piploc = pythonloc.pythonloc:piploc
+pythonloc = pythonloc.pythonloc:pythonloc
+
