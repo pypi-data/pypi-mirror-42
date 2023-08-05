@@ -1,0 +1,49 @@
+CHANGES
+=======
+
+0.2.1
+-----
+
+* added setup.cfg for PBR
+* removed version from setup.py and changed tag to follow travis ci regex for version names
+* added 'skip\_existing: true'
+* added 'skip\_cleanup: true'
+* added \_\_pychache\_\_ and py[cod] to gitignore
+* added travis deply to pypi on tag configuration
+* renamed strictargs to pytsa and removed all format string literals so Python 3.5 and lower can use this library
+* Added badges and Travis CI build status
+* removed python 3.8 and 3.3 from test versions
+* added dist xenial
+* added test dir
+* replaced pytest with python unittest
+* renamed travis.yml to .travis.yml
+* added travis.yml
+* Added setup.py for distribution
+* Update README.md
+* Update README.md
+* Create LICENSE
+* Added regex rule for string
+* Added multiple rule test cases to sa\_string. Fixed is upper and is lower when there is no character of the other set present
+* reformatted codebase
+* added multiple rules tests for int
+* added starts with, contains, is lower, and is upper rules to string
+* added string ends with rule
+* added sa\_string with not\_empty and not\_blank rules
+* Moved type testing into Base class tests
+* Added sa\_bool which fixed tests for sa\_int and sa\_float
+* Updated sa\_float to support the rules. Fixed bug caused by the fact that bool is subtype of int. fixed non\_zero taking int as argument instead of bool
+* updated sa\_float tests
+* Improved readme with rule descriptions and expected behaviour and added mod rule
+* removed debug print statements
+* Cleaned up sa\_int test file
+* Added tests to ensure the parameters for decorators only accept the right type
+* added readme
+* added parameter validation
+* fixed non\_zero rule
+* added failing non\_zero tests for True and False
+* expanded int ruleset
+* put rules into separate files
+* added float decorator
+* updated todos
+* renamed number to int
+* initial commit
