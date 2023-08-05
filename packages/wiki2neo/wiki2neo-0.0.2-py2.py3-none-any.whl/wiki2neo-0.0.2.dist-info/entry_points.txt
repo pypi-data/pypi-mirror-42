@@ -1,0 +1,3 @@
+[console_scripts]
+wiki2neo = wiki2neo:main
+
