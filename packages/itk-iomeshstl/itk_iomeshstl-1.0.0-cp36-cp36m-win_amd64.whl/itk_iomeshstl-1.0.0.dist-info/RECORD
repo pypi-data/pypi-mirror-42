@@ -1,0 +1,9 @@
+itk/IOMeshSTLPython.py,sha256=_UhGlI8qyCQ5iD2hEkvcULEDmPU7_kPKFSMpdhsdMtw,3211
+itk/_IOMeshSTLPython.pyd,sha256=iKzTipDTk0LjkvMV0Ug_AUEvWS7XYwprlD-ewrnY6KQ,223744
+itk/itkSTLMeshIOPython.py,sha256=Lfkx1sPZe74oscc1-fzI1xkuI4T-b4hVEFJF4JOfj2U,9120
+itk/Configuration/IOMeshSTLConfig.py,sha256=RV6Lt_Y5K0NIy75u6qAO4IJ6BtsqQK4RHsBfR9bm8XU,239
+itk_iomeshstl-1.0.0.dist-info/LICENSE,sha256=Pd-b5cKP4n2tFDpdx27qJSIq0d1ok0oEcGTlbtL6QMU,11560
+itk_iomeshstl-1.0.0.dist-info/METADATA,sha256=cVhpm9L1HT61t1-K9f4fdUw0zA9p52_2jls4QKITKiU,1464
+itk_iomeshstl-1.0.0.dist-info/WHEEL,sha256=tsrWNVzy_oVY11mGSwRmxQKn96ESuFDVMfR3oica3Wc,99
+itk_iomeshstl-1.0.0.dist-info/top_level.txt,sha256=K3Bo2NX2FvAd7ExrYg0rKrdBucaB6n6elW5QBc_g8FA,4
+itk_iomeshstl-1.0.0.dist-info/RECORD,,
