@@ -1,0 +1,4 @@
+[console_scripts]
+ciq_config = cityiq.cli.config:run
+ciq_events = cityiq.cli.events:run
+
