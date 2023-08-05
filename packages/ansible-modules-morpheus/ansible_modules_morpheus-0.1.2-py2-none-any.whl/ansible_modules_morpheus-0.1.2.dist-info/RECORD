@@ -1,0 +1,10 @@
+ansible/module_utils/morpheus.py,sha256=7CKZnKZJEKJ7MSZ1RiJuH-ob3VNKssea6NBRGhLHbI4,2940
+ansible/modules/morpheus/__init__.py,sha256=652lQVq8WeFiT1UsQSagQhixobIyDNfYcMzqauDs8fw,22
+ansible/modules/morpheus/morph_cypher.py,sha256=2YYwkBPa30xb6VeK8ndtmrXazwi_lGE59W3EeBoojIQ,3053
+ansible/plugins/lookup/morph_cypher.py,sha256=z0EBrXwzdjeugSeSMiygysmzqFcERY0qAqtxvdqlvJw,4367
+ansible_modules_morpheus-0.1.2.dist-info/AUTHORS,sha256=h77HjFvrlqUNj42fMdCOUlk6ULRBOhdDM0WUhDJ1tAs,37
+ansible_modules_morpheus-0.1.2.dist-info/LICENSE,sha256=hRemk2ySbSwKngoSeBg3egPYD4acar0kGCnl0iQu8vc,1078
+ansible_modules_morpheus-0.1.2.dist-info/METADATA,sha256=5_yyHkIlgsGEoVupIqqgJdjzWOd8xeCvsEZHv2kWg9s,3423
+ansible_modules_morpheus-0.1.2.dist-info/WHEEL,sha256=ZvfnntGaZglpRLAKVkx18HrxfMwCXrA0b-ARJVnnMrw,92
+ansible_modules_morpheus-0.1.2.dist-info/top_level.txt,sha256=gguHuET5RNq9rdUwm0niJIVA_NAvWVDL64RceP14UuQ,91
+ansible_modules_morpheus-0.1.2.dist-info/RECORD,,
