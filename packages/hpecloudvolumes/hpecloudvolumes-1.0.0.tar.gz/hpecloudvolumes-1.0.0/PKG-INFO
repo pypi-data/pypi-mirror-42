@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: hpecloudvolumes
+Version: 1.0.0
+Summary: HPE CloudVolumes Python Library
+Home-page: https://cloudvolumes.hpe.com
+Author: HPE CloudVolumes
+License: MIT
+Project-URL: Source, https://github.com/nimblestorage/hpecloudvolumes
+Description: [HPE Cloud Volumes](https://cloudvolumes.hpe.com) is an enterprise-based cloud storage service that provides block storage as a service for use with AWS and Azure cloud services. You can add volumes to your cloud virtual machines on an as-needed basis and at the size and performance level that best fits the needs of your company. For each volume that you add, you can also create snapshots, create clones, encrypt data, add users, and monitor performance. In addition, HPE Cloud Volumes enables you to replicate data between on-premises HPE Nimble Storage arrays and the public cloud without incurring the typical ingress costs.
+        
+        This library provides a pythonic interface to the HPE Cloud Volumes REST API. The code abstracts the lower-level API calls into python objects that you can easily incorporate into any automation or devops workflows. Use it to create, modify and delete most resources, as well as perform other tasks like snapshotting, cloning, restoring data, etc.
+        
+        
+        ## Requirements
+        * Python **3.6+**.
+        * Valid HPE Cloud Volumes account.
+        
+        
+        ## Installation
+        * Make a new python virtual environment with your tool of choice.
+        * `pip install hpecloudvolumes` and you can now import the module and use it in any python script.
+        
+        
+        ## Getting Started
+        The HPE Cloud Volumes service is available in several regions around the world. These regions are grouped into geographies that contain the REST API servers we want to communicate with. You need to know which geo to talk to when instantiating the client. For example, if you have resources in `us-east`, then you need to connect with endpoints in the `us` geo.
+        
+        To instantiate a client, run the following:
+        
+        ```python
+        >>> from cloudvolumes.client import CloudVolumesClient
+        >>> client = CloudVolumesClient(GEO, access_key=YOUR_ACCESS_KEY, access_secret=YOUR_ACCESS_SECRET)
+        ```
+        
+        The `access_key` and `access_secret` parameters don't need to be provided with the function call. You can use the `CLOUDVOLUMES_ACCESS_KEY` and `CLOUDVOLUMES_ACCESS_SECRET` environment variables instead. If you don't have an access key and secret, or simply misplaced them, you can visit the User Settings section of the Cloud Volumes portal to generate new ones.
+        
+        
+        ## Working with Resources
+        Every resource type available in the portal is accessible as property of the base `CloudVolumesClient` instance. Currently, that includes the following:
+        * `client.cloud_volumes` - Block storage volumes with the networking in place that makes them available for use by cloud virtual machines.
+        * `client.replication_stores` - Storage buckets that serve as replication targets.
+        * `client.onprem_replication_partners` - The on-premises Nimble arrays that can serve as replication partners.
+        * `client.replication_partnerships` - Currently established links between On-Premises arrays and Replication Stores.
+        * `client.replica_volumes` - Block storage volumes that replicated to the service, but do not have the network configured for use by cloud virtual machines. They are located inside Replication Stores, and came from On-Premises Replication Partners through a Replication Partnership.
+        
+        Each resource type has a `list()` method that retrieves a list of resources, and a `get()` method to grab a specific one. The object returned will have all of its attributes available under a `.attrs` property and a number of methods that map to resource-specific actions (like clone).
+        
+        ```python
+        >>> client.cloud_volumes.list()
+        [<CloudVolume(id=3214235, name=CloudVolumeTest)>]
+        >>> cv = client.cloud_volumes.get(3214235)
+        >>> cv.attrs
+        {'assigned_initiators': [], 'cloud_accounts': [{'href': 'https://us.hpecloudvolumes.com/api/v2/session/cloud_accounts/ahewwetyriguy23hr',
+        'id': 'ChYuNqkZCRBctJltRM1qErUEVgqSiaHL81fpFZ1C'}], 'cv_region': {'href': 'https://us.hpecloudvolumes.com/api/v2/cv_regions/3', 'id': 3,
+        'name': 'us-test'}, 'limit_iops': 300, 'limit_mbps': 3, 'marked_for_deletion': False, 'name': 'test-cloud-account-clone.docker',
+        'perf_policy': 'Other Workloads', 'private_cloud': {'aws': {'vpc': 'vpc-1f354a7b'}}, 'size': 1024, 'sn': 'wekrq43hbklsrt4', 'subnet':
+        '192.168.0.0/16', 'user': {'id': 'wertuih2io345yhjk'}, 'volume_type': 'GPF'}
+        >>> help(cv)
+        Help on CloudVolume in module cloudvolumes.cloud_volumes object:
+        
+        class CloudVolume(cloudvolumes.resource.Resource)
+         |  CloudVolume(id, attrs=None, client=None, collection=None)
+         |
+         |  Method resolution order:
+         |      CloudVolume
+         |      cloudvolumes.resource.Resource
+         |      builtins.object
+         |
+         |  Methods defined here:
+         |
+         |  attach(self, initiator_ip)
+         |
+         |  convert(self, replication_store, replica_volume_collection)
+         |
+         |  create(self, name, region, size, iops, perf_policy, schedule, retention, private_cloud, existing_cloud_subnet, encryption, volume_type, private_cloud_resource_group=None, cloud_account_id=None)
+         |
+         |  delete(self, force=False)
+         |
+         |  detach(self, initiator_ip)
+         |
+         |  replicate(self, replication_store=None, replica_volume_collection=None, schedule=None, retention=None)
+         |
+         |  take_snapshot(self, name, description=None)
+         |
+         |  update(self, name=None, size=None, iops=None, schedule=None, retention=None, multi_initiator=None)
+         |
+         ...
+        ```
+        
+        ### Errors
+        All errors inherit from a base `CloudVolumesError` exception.
+        * `ConnectionError` maps to issues attempting to contact CloudVolumes.
+        * `AuthenticationError` is raised for response status codes of `401` or `403`. These indicate that the login token expired or that you're accessing a restricted resource.
+        * `InternalError` for any `500`+ status codes.
+        * `APIError` covers everything else.
+        
+        
+        ## Command Line Interface
+        This module will install the `./cloudvolumes` shell script. Use `./cloudvolumes --help` for more information on the available commands.
+        
+Keywords: cloud volumes storage nimble hpe
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

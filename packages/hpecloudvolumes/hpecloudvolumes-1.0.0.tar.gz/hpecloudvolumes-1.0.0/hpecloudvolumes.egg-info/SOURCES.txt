@@ -1,0 +1,15 @@
+README.md
+setup.py
+bin/cloudvolumes
+cloudvolumes/__init__.py
+cloudvolumes/client.py
+cloudvolumes/cloud_volumes.py
+cloudvolumes/exceptions.py
+cloudvolumes/regions.py
+cloudvolumes/replication.py
+cloudvolumes/resource.py
+hpecloudvolumes.egg-info/PKG-INFO
+hpecloudvolumes.egg-info/SOURCES.txt
+hpecloudvolumes.egg-info/dependency_links.txt
+hpecloudvolumes.egg-info/requires.txt
+hpecloudvolumes.egg-info/top_level.txt
