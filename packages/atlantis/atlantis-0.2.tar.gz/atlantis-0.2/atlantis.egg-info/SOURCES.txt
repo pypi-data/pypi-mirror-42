@@ -1,0 +1,12 @@
+README.md
+setup.py
+atlantis/Document.py
+atlantis/DocumentObject.py
+atlantis/Token.py
+atlantis/__init__.py
+atlantis.egg-info/PKG-INFO
+atlantis.egg-info/SOURCES.txt
+atlantis.egg-info/dependency_links.txt
+atlantis.egg-info/not-zip-safe
+atlantis.egg-info/requires.txt
+atlantis.egg-info/top_level.txt
