@@ -1,0 +1,10 @@
+mongodbshell/__init__.py,sha256=J_JfZa4baSnGbnCpkIikH3rxhKUDcZid_-hbZiiUtQk,11203
+mongodbshell/demo_exists.py,sha256=MyKIm339cMj-SQDQTuYQZsbxiaNk3-DQYCypEK9gzs0,1120
+mongodbshell/mongodb.py,sha256=5QdRMxJKyu_XS4uYpvvB9IGtp2xSkixbNwgcKa7t0kY,1768
+mongodbshell/mping.py,sha256=vwk_Gb8ibDZvoHetztvT4LrT9fIx43c-WhtUUfxOu9E,834
+mongodbshell/smping.py,sha256=vCqImsZCSsqQfFDc7B9g31Xi2Xt2pq2N80Gedfro-Aw,220
+mongodbshell-0.0.3a1.dist-info/LICENSE,sha256=tAkwu8-AdEyGxGoSvJ2gVmQdcicWw3j1ZZueVV74M-E,11357
+mongodbshell-0.0.3a1.dist-info/METADATA,sha256=2tWHz-BacuEqtNv0l2z6ZXcWFYjNQeflzmK6V5mkNhg,12192
+mongodbshell-0.0.3a1.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+mongodbshell-0.0.3a1.dist-info/top_level.txt,sha256=5s_k9SibuKs0njVzRHoiLcASrDAtfsxsI23y0rmee-M,13
+mongodbshell-0.0.3a1.dist-info/RECORD,,
