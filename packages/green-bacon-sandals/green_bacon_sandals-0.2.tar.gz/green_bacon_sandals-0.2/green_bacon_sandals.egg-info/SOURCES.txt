@@ -1,0 +1,9 @@
+README.md
+setup.py
+green_bacon_sandals/__init__.py
+green_bacon_sandals/green_bacon_sandals.py
+green_bacon_sandals.egg-info/PKG-INFO
+green_bacon_sandals.egg-info/SOURCES.txt
+green_bacon_sandals.egg-info/dependency_links.txt
+green_bacon_sandals.egg-info/requires.txt
+green_bacon_sandals.egg-info/top_level.txt
