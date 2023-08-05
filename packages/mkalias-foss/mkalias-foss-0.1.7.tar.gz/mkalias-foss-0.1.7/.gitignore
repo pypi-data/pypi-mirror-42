@@ -1,0 +1,10 @@
+/.idea/
+/venv/
+/test/
+/.eggs/
+/build/
+/dist/
+/mkalias.egg-info/
+*.DS_Store
+/mkalias_foss.egg-info/
+/.pytest_cache/
