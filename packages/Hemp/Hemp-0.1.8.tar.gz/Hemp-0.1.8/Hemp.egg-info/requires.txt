@@ -1,0 +1,5 @@
+GitPython>=2.0.9
+fabric<2.0,>=1.12
+natsort>=5.0.1
+pyyaml>=3.12
+semver>=2.6.0
