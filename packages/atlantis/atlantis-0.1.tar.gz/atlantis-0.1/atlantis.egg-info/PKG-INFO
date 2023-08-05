@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: atlantis
+Version: 0.1
+Summary: Python library for natural language processingpython setup.py sdist bdist_wheel
+Home-page: https://github.com/idin/atlantis
+Author: Idin
+Author-email: py@idin.ca
+License: MIT
+Description: # atlantis
+        Python library for natural language processing
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
