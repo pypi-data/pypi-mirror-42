@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: pgsignals
+Version: 0.3.3
+Summary: Allows handle PostgreSQL notifies via listener as regular Django signal.
+Home-page: https://github.com/gtors/django-pgsignals/
+Author: gtors
+Author-email: andrey.torsunov@gmail.com
+License: mit
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7
+Requires-Dist: psycopg2-binary
+Requires-Dist: django-appconf
+
+# Django PostgreSQL Signals
+
+This django app allows you to pass events about database changes directly into Djano as regular signal.
+
+
+# Install
+
+## Pypi
+
+```
+pip install pgsignals
+```
+
+# Usage
+
+**settings.py**
+```
+INSTALLED_APPS = [
+    "pgsignals",
+    ...
+]
+
+PGSIGNALS_OBSERVABLE_MODELS = [
+    "myapp.ModelA",
+    "myapp.ModelB",
+]
+```
+
+**apps.py**
+```
+from pgsignals.signals import pgsignals_event
+
+class MyAppConf(AppConf):
+
+    def ready():
+        pgsignals_event.connect(on_pg_event)
+
+
+def on_pg_event(*args, **kwargs):
+    event = kwargs['event']
+    model = kwargs['sender']
+    # Do some useful stuff here
+```
+
+
