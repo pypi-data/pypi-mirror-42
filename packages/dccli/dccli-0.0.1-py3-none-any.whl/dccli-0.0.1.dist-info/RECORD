@@ -1,0 +1,13 @@
+dccli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dccli/cli.py,sha256=aYNXrPl8EM7Qf2Aovhwdi_W1Exnvn0M6ZMtT6v_nKEU,1059
+dccli/constants.py,sha256=eDzm-kbkjn14274Mk0hoznanLdeVP4KeNJl6c5I_v1Q,358
+dccli/error_codes.py,sha256=ZvGOlUpezo004hwnfgUdWD347dhiQJHrtC4Je8ygquo,80
+dccli/job.py,sha256=6So9_cgsQlb0K001J4KJ0cvcF1Qa4NoNtFAiRjdYiKM,13543
+dccli/s3_util.py,sha256=NcCYHRzDupu9R6oSzbD61sNBFfaHh9XBdp5S3ima0PM,5333
+dccli/user.py,sha256=7MLd7DsKdSO4a8KggDcHhyBuCIV1_WHFGLPNQCkT9Tc,4767
+dccli/utils.py,sha256=wnysGzt8QHADi3Vc2OLDbDRSdZQaiP-emnbESv4kmkI,1915
+dccli-0.0.1.dist-info/METADATA,sha256=zqE-jfoJsg3aKf6MBUpUZoypiqFt2uIBSaIVPVmRv2U,506
+dccli-0.0.1.dist-info/RECORD,,
+dccli-0.0.1.dist-info/WHEEL,sha256=cScVKDQXc_cp1jHmxFDq9fIOIg17a2BsmfS6J39H6Eo,97
+dccli-0.0.1.dist-info/entry_points.txt,sha256=1O9XNKvBeawJZYXoyrDUNRRncm-yvzDnTe4QhEmRUTg,42
+dccli-0.0.1.dist-info/top_level.txt,sha256=Cm3G7zNAsVUObPTJHrpRn0G-vhhnVeyQlk48wymOIDM,6
