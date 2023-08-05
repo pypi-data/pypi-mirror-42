@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: LineNotice
+Version: 1.0.1
+Summary: Notice to LINE.
+Home-page: UNKNOWN
+Author: yoshida
+Author-email: syukatsu_chubu@yahoo.co.jp
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
