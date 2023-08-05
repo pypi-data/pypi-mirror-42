@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: style_transfer
+Version: 0.0.4
+Summary: A library for style transfer
+Home-page: https://github.com/pypa/sampleproject
+Author: Piyush Singh
+Author-email: piyushsinghkgpian@gmail.com
+License: UNKNOWN
+Description: 
+        ### Intro
+        This is the Intro
+        
+        ### Usage
+        This is the Usage
+        ```
+        Code Block
+        ```
+        ### Help
+        This is the Help
+        Issue Guidelines
+        
+        ### Contribute
+        This is the Contribute
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
