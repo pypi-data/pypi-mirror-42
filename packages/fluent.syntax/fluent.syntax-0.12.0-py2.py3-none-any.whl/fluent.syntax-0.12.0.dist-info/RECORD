@@ -1,0 +1,11 @@
+fluent/__init__.py,sha256=jv2YF__bseklT3OWEzlqJ5qE24c4aWd5F4r0TTjOrWQ,65
+fluent/syntax/__init__.py,sha256=UFxMmp9Nzna_0yEUxDNsBl_ZGpjgnOzKqNytbE3vDBQ,296
+fluent/syntax/ast.py,sha256=dJKckE7M732hvXSfO6mICs219zP5uq2eq6noMK7WCL0,12926
+fluent/syntax/errors.py,sha256=7FKz9U4c56uNlrR0a1b1PUKG3cAVPO4gkqPn0IuiJMw,2488
+fluent/syntax/parser.py,sha256=zJJ_ZwslxLWXOuQMZapMEGNsuqsCzFPeeDqBzrArujE,24638
+fluent/syntax/serializer.py,sha256=VGuGyaWlv8okjZoqYER4cfIFZNiTDnC68T80BxnkU9U,7752
+fluent/syntax/stream.py,sha256=LrQCHVdc6rEiYo9kGRMbiV7qzpO7e5sgxM4_UqC-RVc,8281
+fluent.syntax-0.12.0.dist-info/METADATA,sha256=VjlFQOSDU8V1PFtgBFjKBtIodNe9KEwdLD_waOk058s,619
+fluent.syntax-0.12.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+fluent.syntax-0.12.0.dist-info/top_level.txt,sha256=E6y0EXb_8ntRq2470rEss448Ec6wP_-DI3zVECukrn0,7
+fluent.syntax-0.12.0.dist-info/RECORD,,
