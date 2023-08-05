@@ -1,0 +1,8 @@
+README.md
+setup.py
+smashggAPI/__init__.py
+smashggAPI/client.py
+smashggAPI.egg-info/PKG-INFO
+smashggAPI.egg-info/SOURCES.txt
+smashggAPI.egg-info/dependency_links.txt
+smashggAPI.egg-info/top_level.txt
