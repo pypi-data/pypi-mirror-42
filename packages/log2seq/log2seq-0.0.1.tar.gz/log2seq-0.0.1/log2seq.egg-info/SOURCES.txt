@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+log2seq/__init__.py
+log2seq/default_script.py
+log2seq/load.py
+log2seq/parse.py
+log2seq.egg-info/PKG-INFO
+log2seq.egg-info/SOURCES.txt
+log2seq.egg-info/dependency_links.txt
+log2seq.egg-info/top_level.txt
+log2seq/data/sample.conf
