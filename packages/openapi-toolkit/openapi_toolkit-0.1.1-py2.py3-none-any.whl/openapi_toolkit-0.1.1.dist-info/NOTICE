@@ -1,0 +1,19 @@
+=========================================================================
+==  NOTICE file corresponding to the section 4 d of                    ==
+==  the Apache License, Version 2.0,                                   ==
+==  in this case for openapi-toolkit code.                             ==
+=========================================================================
+
+Unless otherwise indicated, the openapi-toolkit code is
+Copyright 2019 John Vrbanac and is released under the Apache 2.0 license
+
+
+=========================================================================
+==  NOTICE file corresponding to the section 4 d of                    ==
+==  the Apache License, Version 2.0,                                   ==
+==  in this case for the OpenAPI validation schema located at:         ==
+==  openapi_toolkit/schemas/3.0.json                                   ==
+=========================================================================
+
+This file is a part of the p1c2u/openapi-spec-validator project
+Copyright 2017 Artur Maciag, but was released under the Apache 2.0 license.
