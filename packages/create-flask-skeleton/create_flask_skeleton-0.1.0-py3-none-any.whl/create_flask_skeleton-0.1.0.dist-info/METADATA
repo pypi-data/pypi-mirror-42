@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: create-flask-skeleton
+Version: 0.1.0
+Summary: 
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Ryan Wang
+Author-email: hwwangwang@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: jinja2 (>=2.10,<3.0)
+Requires-Dist: pyyaml (>=3.13,<4.0)
