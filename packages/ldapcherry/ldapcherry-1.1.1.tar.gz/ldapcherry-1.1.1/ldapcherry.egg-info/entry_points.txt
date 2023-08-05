@@ -1,0 +1,3 @@
+[console_scripts]
+ldapcherryd = ldapcherry.cli:main
+
