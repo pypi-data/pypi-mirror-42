@@ -1,0 +1,17 @@
+cashmere/__init__.py,sha256=JOl41NviMN-qDV0Z8ZPmhNIxvgyauGGJHdB4A-8MhqM,93
+cashmere/__main__.py,sha256=ENLseuZSK_KUXlbmtQ6UtXLm-ApIfstKsx4yB_1DeAA,367
+cashmere/_version.py,sha256=_-ykE_5EtJZCLIKW4YjfwIPxqqZxGw57ACAXyqEyhwQ,52
+cashmere/autoserial.py,sha256=UmQADQWjm23e1XzobSgN-PTsLXGD4jkFomLrxnDDM-Q,1422
+cashmere/backends.py,sha256=Bm7sh5RheyjH2MAXi8Yv080oRX3Gu1G_Fsx_oF1_lDM,3071
+cashmere/cli.py,sha256=HIlPzy3tRshIcvoC8x2pa50uDfmJBRoSK-JosFWLcME,741
+cashmere/constants.py,sha256=Ob1jOPgj-V4Ru7ML6ERKlKnk0oM3ThiFnot9Lihi8Go,8
+cashmere/core.py,sha256=1Gym_Kz5O5TlebmyyFT2NkC6VSfRqfqjHJAX5crY5KM,1451
+cashmere/serializers.py,sha256=t-boPgH0Fg-1NN5bOLIquAAsviuYjezr2cQ44KVThhQ,3678
+cashmere/utils.py,sha256=tLMApdtogr2nnRkBb_7wDH7I3AwZZOglfVVyglhZcUY,2115
+cashmere-0.1.8.dist-info/AUTHORS.rst,sha256=fodKbJcVkvBSYrv4UisM1fJBcq9iSNx0a_tpK9sZIWw,56
+cashmere-0.1.8.dist-info/LICENSE,sha256=g8lPAESnp7WhQqFFC2B6KGPeeTdG3_81IEect-O0-lU,1312
+cashmere-0.1.8.dist-info/METADATA,sha256=uicgs_UpTsiy2GtnfAkobwbP4CnxrMq-y_TW1lxDHEM,1812
+cashmere-0.1.8.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+cashmere-0.1.8.dist-info/entry_points.txt,sha256=Y44cO1DalteRoRoey7cFnjaBm4_kv8AIv0FjCime1Rc,48
+cashmere-0.1.8.dist-info/top_level.txt,sha256=jpxvPTJw1DL6lwuZbaDlcz8AGCZcbJ4gsYmttymQCb0,9
+cashmere-0.1.8.dist-info/RECORD,,
