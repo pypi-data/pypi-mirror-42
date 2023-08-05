@@ -1,0 +1,26 @@
+[bdt.ci.cli]
+base-build = bob.devtools.scripts.ci:base_build
+base-deploy = bob.devtools.scripts.ci:base_deploy
+build = bob.devtools.scripts.ci:build
+clean = bob.devtools.scripts.ci:clean
+deploy = bob.devtools.scripts.ci:deploy
+pypi = bob.devtools.scripts.ci:pypi
+readme = bob.devtools.scripts.ci:readme
+
+[bdt.cli]
+build = bob.devtools.scripts.build:build
+caupdate = bob.devtools.scripts.caupdate:caupdate
+changelog = bob.devtools.scripts.changelog:changelog
+ci = bob.devtools.scripts.ci:ci
+commitfile = bob.devtools.scripts.commitfile:commitfile
+create = bob.devtools.scripts.create:create
+dumpsphinx = bob.devtools.scripts.dumpsphinx:dumpsphinx
+getpath = bob.devtools.scripts.getpath:getpath
+lasttag = bob.devtools.scripts.lasttag:lasttag
+new = bob.devtools.scripts.new:new
+release = bob.devtools.scripts.release:release
+visibility = bob.devtools.scripts.visibility:visibility
+
+[console_scripts]
+bdt = bob.devtools.scripts.bdt:main
+
