@@ -1,0 +1,13 @@
+numpy
+pymc3
+scikit-learn
+scipy
+
+[test]
+Sphinx
+hypothesis[numpy]
+pytest
+pytest-cov<2.6,>=2.4.0
+sphinx_rtd_theme
+tabulate
+uncertainties
