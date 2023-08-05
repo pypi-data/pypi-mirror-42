@@ -1,0 +1,6 @@
+include liams_simple_scaffold_pkg/prefil/gitignore_template
+include liams_simple_scaffold_pkg/prefil/LICENSE_template
+include liams_simple_scaffold_pkg/prefil/README_template.md
+include liams_simple_scaffold_pkg/prefil/main_template.py
+include liams_simple_scaffold_pkg/prefil/setup_template.py
+include liams_simple_scaffold_pkg/prefil/MANIFEST_template.in
