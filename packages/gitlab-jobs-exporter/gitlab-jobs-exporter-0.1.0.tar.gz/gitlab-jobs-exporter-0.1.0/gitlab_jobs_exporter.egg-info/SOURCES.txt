@@ -1,0 +1,10 @@
+README.md
+setup.py
+bin/gitlab_jobs_exporter
+gitlab_jobs_exporter/__init__.py
+gitlab_jobs_exporter.egg-info/PKG-INFO
+gitlab_jobs_exporter.egg-info/SOURCES.txt
+gitlab_jobs_exporter.egg-info/dependency_links.txt
+gitlab_jobs_exporter.egg-info/not-zip-safe
+gitlab_jobs_exporter.egg-info/requires.txt
+gitlab_jobs_exporter.egg-info/top_level.txt
