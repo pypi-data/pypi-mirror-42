@@ -1,0 +1,6 @@
+graphene>=2.0
+
+[test]
+pytest
+pylint
+flake8

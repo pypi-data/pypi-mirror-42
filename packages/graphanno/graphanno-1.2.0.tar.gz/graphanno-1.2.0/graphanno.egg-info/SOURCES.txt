@@ -1,0 +1,15 @@
+README.md
+setup.py
+graphanno/__init__.py
+graphanno/graphanno.py
+graphanno.egg-info/PKG-INFO
+graphanno.egg-info/SOURCES.txt
+graphanno.egg-info/dependency_links.txt
+graphanno.egg-info/requires.txt
+graphanno.egg-info/top_level.txt
+tests/test_objects/__init__.py
+tests/test_objects/advanced.py
+tests/test_objects/basic.py
+tests/test_objects/duplicated.py
+tests/test_objects/full_example.py
+tests/test_objects/nested.py
