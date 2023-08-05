@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: paypay
+Version: 0.1.0
+Summary: 
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Junyu Mu
+Author-email: me@mujunyu.com
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: paypalrestsdk (>=1.13,<2.0)
+Requires-Dist: python-alipay-sdk (>=1.9,<2.0)
+Requires-Dist: wechatpy[cryptography] (>=1.7,<2.0)
