@@ -1,0 +1,9 @@
+README.md
+setup.py
+NarrowBand.egg-info/PKG-INFO
+NarrowBand.egg-info/SOURCES.txt
+NarrowBand.egg-info/dependency_links.txt
+NarrowBand.egg-info/requires.txt
+NarrowBand.egg-info/top_level.txt
+narrowband/__init__.py
+narrowband/narrowbandcore.py
