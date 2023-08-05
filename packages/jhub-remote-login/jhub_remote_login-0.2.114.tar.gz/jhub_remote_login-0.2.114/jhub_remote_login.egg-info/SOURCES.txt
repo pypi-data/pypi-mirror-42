@@ -1,0 +1,10 @@
+README.rst
+setup.py
+jhub_remote_login/__init__.py
+jhub_remote_login/_dummy_auth.py
+jhub_remote_login/_jhub_remote_auth.py
+jhub_remote_login.egg-info/PKG-INFO
+jhub_remote_login.egg-info/SOURCES.txt
+jhub_remote_login.egg-info/dependency_links.txt
+jhub_remote_login.egg-info/requires.txt
+jhub_remote_login.egg-info/top_level.txt
