@@ -1,0 +1,3 @@
+[console_scripts]
+solotool=solo.solotool:main_main
+
