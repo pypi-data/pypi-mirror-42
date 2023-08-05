@@ -1,0 +1,105 @@
+{% extends "djangocms_pai_material_components_web/mdc-top-app-bar.html" %}
+{% load cms_tags static %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block css %}
+{{block.super}}
+<style>
+#closeDrawerButton {
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+#mainContent {
+  flex: auto;
+  overflow: auto;
+  background: #fff;
+}
+/* drawer */
+#drawer {
+border: 0;
+}
+</style>
+{% endblock css %}
+
+
+{% block extracss %}
+{{block.super}}
+
+<link rel="stylesheet" type="text/css" href="{% static 'djangocms_pai_material_components_web/node_modules/@material/drawer/dist/mdc.drawer.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'djangocms_pai_material_components_web/node_modules/@material/list/dist/mdc.list.min.css' %}">
+{% endblock extracss %}
+
+
+
+{% block content %}
+
+<aside class="mdc-drawer mdc-drawer--modal" id="drawer">
+  <div class="mdc-drawer__header">
+    {% block drawer-header %}
+      {% placeholder "drawer-header" %}
+    {% endblock %}
+  </div>
+  <div class="mdc-drawer__content">
+    {% block drawer-content %}
+      <nav class="mdc-list">
+        <div class="mdc-list-item" href="#" aria-selected="true" tabindex="0" id="closeDrawerButton">
+          <i class="material-icons">arrow_left</i>
+        </div>
+      </nav>
+      {% placeholder "drawer-content" %}
+    {% endblock %}
+  </div>
+</aside>
+<div class="mdc-drawer-scrim" id="drawerScrim"></div>
+
+<div id="mainContent">
+  <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="mdcTopAppBar">
+    {% block top-app-bar %}
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section" role="toolbar">
+        <a href="#" class="material-icons mdc-top-app-bar__action-item open-drawer" aria-label="Menu" alt="Menu" id="menuButton">menu</a>
+        {% placeholder top-app-bar %}
+      </section>
+    </div>
+    {% endblock %}
+  </header>
+
+  <main>
+    {% block main-content %}
+      {% placeholder "content" %}
+    {% endblock %}
+  </main>
+</div>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+{{block.super}}
+
+<script type="text/javascript" src="{% static 'djangocms_pai_material_components_web/node_modules/@material/drawer/dist/mdc.drawer.js' %}"></script>
+
+<script>
+  var drawerEl = document.getElementById('drawer');
+  window.app.drawer = new mdc.drawer.MDCDrawer(drawerEl);
+  document.getElementById('menuButton').addEventListener('click', function(ev){window.app.drawer.open = true});
+  document.getElementById('mainContent').addEventListener('click', function(ev){window.app.drawer.open = false});
+  document.getElementById('drawerScrim').addEventListener('click', function(ev){window.app.drawer.open = false});
+  var closeDrawerButton = document.getElementById('closeDrawerButton');
+  if (closeDrawerButton) {
+    closeDrawerButton.addEventListener('click', function(ev){window.app.drawer.open = false});
+  }
+  var listEl = drawerEl.querySelector('.mdc-list');
+  listEl.addEventListener('click', function(event) {
+    window.app.drawer.open = false;
+    console.log('selected', event.target.lastChild.textContent);
+  });
+</script>
+
+{% endblock extrajs %}
+
+{% block jsready %}
+{{block.super}}
+{% endblock jsready%}
