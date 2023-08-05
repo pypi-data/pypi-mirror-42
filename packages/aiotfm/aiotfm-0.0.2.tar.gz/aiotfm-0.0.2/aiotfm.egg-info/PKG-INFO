@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: aiotfm
+Version: 0.0.2
+Summary: An asynchronous event based client for Transformice.
+Home-page: https://github.com/Athesdrake/aiotfm
+Author: Athesdrake
+License: UNKNOWN
+Description: # aiotfm
+        
+        I'll make this readme another time.
+        
+        Look at this [readme](https://github.com/Tocutoeltuco/transfromage#readme), it's basically the same but with theads.
+Keywords: TRANFORMICE,CLIENT,ASYNC,ATELIER801,EVENT
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.5.3
+Description-Content-Type: text/markdown
