@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/xiax/__init__.py
+src/xiax/__version__.py
+src/xiax/xiax.py
+xiax.egg-info/PKG-INFO
+xiax.egg-info/SOURCES.txt
+xiax.egg-info/dependency_links.txt
+xiax.egg-info/entry_points.txt
+xiax.egg-info/requires.txt
+xiax.egg-info/top_level.txt
