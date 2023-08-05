@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: django-saml2-framework
+Version: 0.0.0b10
+Summary: A framework for using SAML2 with Django.
+Home-page: https://gitlab.com/hybridlogic/django-saml2-framework/
+Author: Kevin Clark
+Author-email: UNKNOWN
+License: Apache Software License
+Keywords: django,sso,saml,saml2
+Platform: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.11
+Classifier: Framework :: Django :: 2.0
+Classifier: Framework :: Django :: 2.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+
+django-saml2-framework
+======================
+
+SAML2 IDP and SP plugins for Django
+
+
