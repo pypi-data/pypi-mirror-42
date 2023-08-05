@@ -1,0 +1,6 @@
+click>=7.0
+colorama>=0.4.1
+future>=0.17.1
+paramiko>=2.4.2
+progressbar2>=3.39.2
+python-hostlist==1.18
