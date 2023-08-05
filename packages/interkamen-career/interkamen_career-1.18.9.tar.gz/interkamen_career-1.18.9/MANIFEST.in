@@ -1,0 +1,6 @@
+include README.md LICENSE
+recursive-include readme_screenshots *
+recursive-include interkamen_career/exl_blancs *
+recursive-include interkamen_career/html_blancs *
+recursive-include interkamen_career/support_img *
+recursive-include interkamen_career/news *
