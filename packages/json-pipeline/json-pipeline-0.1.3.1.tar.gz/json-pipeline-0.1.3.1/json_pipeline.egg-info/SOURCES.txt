@@ -1,0 +1,9 @@
+README.md
+setup.py
+json_pipeline/__init__.py
+json_pipeline/transform.py
+json_pipeline/utils.py
+json_pipeline.egg-info/PKG-INFO
+json_pipeline.egg-info/SOURCES.txt
+json_pipeline.egg-info/dependency_links.txt
+json_pipeline.egg-info/top_level.txt
