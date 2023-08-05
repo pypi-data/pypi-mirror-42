@@ -1,0 +1,28 @@
+Maintaining a Python Package
+- Update version in setup.py
+- Delete the files in the Dist\ Folder
+1. Check that you are within the Package Folder
+2. Run in terminal -> (python3 setup.py sdist bdist_wheel)
+3. Run in terminal -> (twine upload dist/*)
+
+- To test the package
+1. Run -> (pip install -e .)
+
+Starting from Scratch
+
+Internal File Setup:
+1. Create a README.md or README.rst
+2. Create a setup.py
+3. Emulate the setup.py file in this package
+4. Create a .gitignore folder
+5. Create a License (www.createalicense.com)
+
+Setup Pipenv & Wheel:
+1. Run in terminal -> (pip install pipenv)
+2. Run in terminal -> (pip install wheel)
+3. Run in terminal -> (pipenv install -e .)
+4. Run in terminal -> (pipenv install --dev 'pytest>=3.7')
+    - Use this to install all of the required dependencies
+    (pipenv install <dependency>)
+5. Run in terminal -> (pipenv shell)
+6. Run in terminal -> (python3 setup.py sdist bdist_wheel)
