@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: sqla-wrapper
+Version: 2.0.1
+Summary: A framework-independent wrapper for SQLAlchemy that makes it really easy to use.
+Home-page: https://jpscaletti.com/sqla-wrapper/
+Author: Juan-Pablo Scaletti
+Author-email: juanpablo@jpscaletti.com
+Keywords: sqlalchemy,wrapper
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: inflection
+Requires-Dist: sqlalchemy (>=1.0,<2.0)
+Project-URL: Documentation, https://jpscaletti.com/sqla-wrapper/
+Project-URL: Repository, https://github.com/jpscaletti/sqla-wrapper
