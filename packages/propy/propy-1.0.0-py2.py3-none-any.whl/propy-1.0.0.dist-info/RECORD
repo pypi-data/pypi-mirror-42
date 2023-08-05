@@ -1,0 +1,11 @@
+propy/__init__.py,sha256=_j_pcNLkdUyu4PWG8ZydcHczI1-D87DSp_C6A0cSKKc,509
+propy/wrappers/__init__.py,sha256=ur7AQtJC9CGjMXpYjbZtCbmtP6KV0RRZdYvLUMxCaYg,49
+propy/wrappers/methods.py,sha256=2BvmuQdIO4zM0CCMQONsQIGGzekw7FeUFO8jkousoTs,901
+propy/wrappers/methods_test.py,sha256=9FrEuAzSGM3C1o-W_sInagKALNO_cefy54KF5RBnhVY,501
+propy/wrappers/properties.py,sha256=wuLtJsEi9bKhBbOg8hiQ1wSShoHkrDBdd6-f5nP99cA,8832
+propy/wrappers/properties_test.py,sha256=RwkgOwntMRlK-FZjFol7J9dlx5Nm9zhxA7zsfND_P4Y,3428
+propy-1.0.0.dist-info/LICENSE.txt,sha256=JmQcWrB9xHSa--mPjoICwjuKoJHw2Wmyd4jdWTRH-Yk,1511
+propy-1.0.0.dist-info/METADATA,sha256=S5ET4kYRp6Ynnd41boofnu8_fXVq4OPzmLgl2NEE49M,2979
+propy-1.0.0.dist-info/RECORD,,
+propy-1.0.0.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+propy-1.0.0.dist-info/top_level.txt,sha256=9Dcu7OKHUFUTNn44PwGt-FMj4_B_UzoMROSo81_OVYM,6
