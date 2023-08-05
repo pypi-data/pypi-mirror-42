@@ -1,0 +1,35 @@
+Metadata-Version: 1.2
+Name: samply
+Version: 0.0.1
+Summary: A library for computing samplings in arbitrary dimensions
+Home-page: https://github.com/maljovec/samply
+Author: Dan Maljovec
+Author-email: maljovec002@gmail.com
+License: BSD
+Download-URL: https://github.com/maljovec/samply/archive/0.0.1.tar.gz
+Description: 
+        A Collection of Space-filling Sampling Designs for Arbitrary Dimensions.
+        
+        Including:
+         * Uniform sampling of a n-dimensional ball
+         * Uniform sampling of the directions on an n-dimensional sphere
+         * Sampling the Grassmannian Atlas
+         * An approximate Centroidal Voronoi Tessellation using a Probabilistic
+           Lloyd's Algorithm
+         * An approximate Constrained Centroidal Voronoi Tessellation on an
+           n-sphere
+        
+        The python CVT code is adapted from a C++ implementation provided by
+        Carlos Correa. The Grassmannian sampler is adapted from code from Shusen
+        Liu.
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=2.7, <4
