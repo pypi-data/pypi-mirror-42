@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hros
+Version: 0.4
+Summary: H-ROS command line utility
+Home-page: https://github.com/acutronicrobitcs/h-ros-cli
+Author: Acutronic Robotics
+Author-email: contact@acutronicrobitcs.com
+License: GPLv3
+Keywords: H-ROS,modular,ros2,robot operating system
+Platform: UNKNOWN
+Requires-Dist: nmap
+Requires-Dist: netifaces
+
+
+This tool will help you to communicate and configure the H-ROS SoM. Each H-ROS SoM will integrate an API interface to customize some critical aspects, such as security or ros_domain_id.
+
+
