@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: instabotnet
+Version: 0.0.32
+Summary: Instagram readable yaml rpc api for easy instagram scheduling and promotion
+Home-page: https://github.com/rpc-botnets/instagram-botnet
+Author: Tommaso De Rossi
+Author-email: daer.tommy@gmail.com
+License: Apache Software License 2.0
+Keywords: instagram,bot,api,botnet
+Platform: UNKNOWN
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: colorama
+Requires-Dist: requests (>=2.21.0)
+Requires-Dist: dataset (>=1.1.2)
+Requires-Dist: funcy
+Requires-Dist: colorlog
+Requires-Dist: Pillow
+Requires-Dist: tqdm (>=4.30.0)
+Requires-Dist: requests-toolbelt (>=0.8.0)
+Requires-Dist: click
+Requires-Dist: ruamel.yaml
+
+# instagram-bot
+Write readable declarative yaml files to control your botnet
+---
+
+## Shell usage
+
+The main module works on yaml script like these:
+```yaml
+
+name:                     test_comment
+
+bots:
+    -
+        username:         username
+        password:         password
+
+actions:
+    -
+        name: comment on 10 posts from @kimkardashian
+        nodes:
+            - kimkardashian
+        edges:
+            - user_feed:
+                amount: 10
+            - comment:
+                max:      1
+                comments:
+                    - ["hello {author}!!!"] 
+                    - ["come stai?", "come va?"]
+                    - ["url works too! http://instagram.com"]
+
+```
+
+To execute the above `test_comment.yaml` run:
+```
+python3 -m instabotnet test_comment.yaml
+```
+
+## Python API usage
+
+To use inside python modules:
+```python
+from instabotnet import execute
+
+with open('test_comment.yaml') as file:
+    template = yaml.loads(file.read())
+
+execute(template)
+```
+
+
