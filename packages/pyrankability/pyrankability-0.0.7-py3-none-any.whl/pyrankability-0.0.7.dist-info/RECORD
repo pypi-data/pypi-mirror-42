@@ -1,0 +1,16 @@
+pyrankability/__init__.py,sha256=Pzu2vlFNKURpdBdSZ0oHEKhfNs5TuJkdG-iHfo6Wsl0,276
+pyrankability/analysis.py,sha256=sjhKKHUJ9XRdvV-O40KrRHEQ8ljMahgVCz9hO2V_D8M,746
+pyrankability/approximate.py,sha256=U3gXsdoJol5MN0NXw0vLTcYbsSZUX-cqDZGKdZtwlBw,6262
+pyrankability/bilp.py,sha256=9SAPGJS5ysgK9_4AbBaEomOeimJwQtemMGCJ4mEnMos,8480
+pyrankability/common.py,sha256=sCny0oeXCEsGGHWnK1cASIGMleWODtHHtDQqQsAx7Ww,2966
+pyrankability/exact.py,sha256=4lmn79tO8d-2Enlw0PlM2SBNrT_2iWiaJ52FyNbsuZo,5614
+pyrankability/lp.py,sha256=mihdxCxiYh-GF0iktrq7usF50DadUgnMT7EHdkMy_VM,7415
+pyrankability/pruning.py,sha256=rAGzgJ416Hs329tNzRZ_XRHg8PLcduE03ZRrvnRvcFQ,8432
+pyrankability/pruning_paper.py,sha256=y1-dkHtCevWmAN1hR1kvi_EbLPSkjCOvFGqARmPvP6Y,7201
+pyrankability/pruning_paper_dask.py,sha256=eQhM93rLn2-9DaqdnSdPc2PG7okapve7OFLu6jnzpqU,5577
+pyrankability/pruning_paper_dask2.py,sha256=G6dYFBfQ2XxZbzWnyEg3g1DJdDsh1AFBfyjUs5BLEoc,12588
+pyrankability/pruning_paper_dask3.py,sha256=XUvhZogANYiU9OpszUrXzm7zx-RX2or_r6zgSkRsH1g,14198
+pyrankability-0.0.7.dist-info/METADATA,sha256=BY5eXAiRh-I6CDKcYmXBFL94XASczO55dcvHylEB6aI,1079
+pyrankability-0.0.7.dist-info/RECORD,,
+pyrankability-0.0.7.dist-info/WHEEL,sha256=FRuHuBX28RTgsOL603qIpbSc2WeDgbsFBWKj9XFOCpg,92
+pyrankability-0.0.7.dist-info/top_level.txt,sha256=PeD61u4uW-3slQC22XMkik62afb6xa5TwXab_TR8IRw,14
