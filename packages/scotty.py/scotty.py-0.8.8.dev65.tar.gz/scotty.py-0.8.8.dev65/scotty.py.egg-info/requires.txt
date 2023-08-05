@@ -1,0 +1,9 @@
+setuptools
+pbr!=2.1.0,>=2.0.0
+pyyaml
+appdirs
+GitPython
+python_heatclient<1.16.0,>=1.15.0
+keystoneauth1
+python_keystoneclient<3.17.0,>=3.16.0
+python_novaclient<10.3.0,>=10.2.0
