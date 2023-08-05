@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: uonet-request-signer
+Version: 1.0.0
+Summary: Uonet+ request signer for Python
+Home-page: https://github.com/wulkanowy/uonet-request-signer
+Author: Wulkanowy
+Author-email: wulkanowyinc@gmail.com
+Maintainer: Kacper Ziubryniewicz
+Maintainer-email: kapi2289@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: Education
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Requires-Dist: pyopenssl
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+
+# Uonet+ request signer for Python
+
+[![pypi](https://img.shields.io/pypi/v/uonet-request-signer.svg?style=flat-square)](https://pypi.org/project/uonet-request-signer/)
+
+## Installation
+
+```console
+$ pip install -U uonet-request-signer
+```
+
+## Usage
+
+```python
+from uonet_request_signer import sign_content
+
+signed = sign_content(password, certificate, content)
+```
+
+## Tests
+
+```console
+$ python -m pytest .
+```
+
+
