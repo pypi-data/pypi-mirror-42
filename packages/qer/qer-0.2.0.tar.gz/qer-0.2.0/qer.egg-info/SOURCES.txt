@@ -1,0 +1,17 @@
+README.rst
+setup.cfg
+setup.py
+qer/__init__.py
+qer/cmdline.py
+qer/compile.py
+qer/dists.py
+qer/hash.py
+qer/metadata.py
+qer/pypi.py
+qer/utils.py
+qer.egg-info/PKG-INFO
+qer.egg-info/SOURCES.txt
+qer.egg-info/dependency_links.txt
+qer.egg-info/entry_points.txt
+qer.egg-info/requires.txt
+qer.egg-info/top_level.txt
