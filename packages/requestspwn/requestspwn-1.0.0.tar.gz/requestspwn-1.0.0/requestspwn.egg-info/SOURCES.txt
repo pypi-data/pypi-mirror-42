@@ -1,0 +1,14 @@
+README.md
+setup.cfg
+setup.py
+requestspwn/__init__.py
+requestspwn/requestspwn.py
+requestspwn.egg-info/PKG-INFO
+requestspwn.egg-info/SOURCES.txt
+requestspwn.egg-info/dependency_links.txt
+requestspwn.egg-info/requires.txt
+requestspwn.egg-info/top_level.txt
+requestspwn/data/latest
+requestspwn/data/ructf2018
+requestspwn/data/ructfe2017
+requestspwn/data/ructfe2018
