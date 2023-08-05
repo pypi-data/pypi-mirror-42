@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: ganesh
+Version: 1.0
+Summary: trying to upload it to pypi
+Home-page: http://www.foopackage.com/
+Author: ganesh
+Author-email: ganesh@server.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
