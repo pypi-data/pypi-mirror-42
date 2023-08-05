@@ -1,0 +1,98 @@
+# Funstrat
+
+This is the strategy preprocessing library. Use to preprocess everything regarding price bar data. We can put other things into it as well.
+
+# NOTE! 
+## MOST OF THIS WILL BE SETUP TIME AND READING DOCUMENTATIONS!
+
+Most of this assignment won't be something extremelt new. It'll be a rehash of the code previously written. However, you'll be integrating the previously written code with our code base. It'll simplify everything for us, and perhaps give you new assets to use.
+
+
+# Installation and Setup:
+After reviewing some of your code, I've inferred that you use Windows and possibly pycharm. To ensure you have the best experience possible, we're going to have you install Ubuntu on Windows. Prior to following the rest of the document, please read and follow:
+
+> https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows#0
+
+After you follow that tutorial, please follow this tutorial to install all of python/python3:
+> http://timmyreilly.azurewebsites.net/python-with-ubuntu-on-windows/
+
+## Installing Pip3 and pipenv
+I use `pipenv` to ensure all of this code works properly. Before continuing. Open `Ubuntu on Windows` and begin with installing the following commands:
+
+**This upgrades your system**
+```bash
+sudo apt-get update
+sudo apt-get -y upgrade
+```
+
+**This installs everything necessary**
+
+```
+sudo apt-get install -y python3-pip
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+```
+
+**Try testing to see if that worked by running a simple numpy operation**
+
+```
+pip3 install numpy
+python3
+```
+
+You should enter into a shell and be able to run python code.
+
+
+Now install pipenv:
+
+>`pip install --user --upgrade pipenv`
+
+### Installing MongoDB Ubuntu
+We use mongodb to manage timeseries data. Make sure to install. 
+Run these from the site given:
+> https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+```
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+```
+
+```
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+```
+
+```
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+```
+
+#### Run it:
+```
+sudo service mongod start
+```
+
+```
+sudo service mongod stop # To stop
+sudo service mongod restart # To restart
+```
+
+
+## Accessing Your Files In Ubuntu On Windows 10
+
+Please follow the tutorial for accessing your files:
+
+> https://www.howtogeek.com/261383/how-to-access-your-ubuntu-bash-files-in-windows-and-your-windows-system-drive-in-bash/
+
+
+## Finishing Setup
+Now enter into the folder containing `setup.py`. Downloaded from the funsuite repo.
+
+To install all of the dependencies: **Run:** 
+
+```
+pipenv install -e .
+```
+
+This installs all of the main dependencies for the project. Follow that with: `pipenv shell` in the main directory to enter into the project's virtual environment.
+
+
+# Documentation
+Here we begin the documentation of the code. If you look through the files, you'll see a lot work done. All of the work for the trading bot is routed through here, as well as some prototype. `Funsuite` is a testing suite for new additions to the app. Here we create and test new additions to the application. Well separate documentation by `objective > libraries/files > functions`. That way you'll easily be able to jump into the code and process through everything you need. 
