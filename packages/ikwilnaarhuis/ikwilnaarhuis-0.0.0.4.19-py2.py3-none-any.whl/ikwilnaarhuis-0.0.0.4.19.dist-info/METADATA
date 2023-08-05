@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: ikwilnaarhuis
+Version: 0.0.0.4.19
+Summary: testing!
+Home-page: https://pyscaffold.org/
+Author: Lucas Selfslagh
+Author-email: lucas.selfslagh@gmail.com
+License: mit
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Provides-Extra: testing
+Requires-Dist: pyinsults
+Requires-Dist: colorama
+Requires-Dist: termcolor
+Provides-Extra: testing
+Requires-Dist: pytest (>=4.2.1); extra == 'testing'
+Requires-Dist: pytest-cov; extra == 'testing'
+
+=============
+ikwilnaarhuis
+=============
+
+
+Add a short description here!
+
+
+Description
+===========
+
+A longer description of your project goes here...
+
+
+Note
+====
+
+This project has been set up using PyScaffold 3.1. For details and usage
+information on PyScaffold see https://pyscaffold.org/.
+
+
