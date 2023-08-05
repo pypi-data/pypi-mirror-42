@@ -1,0 +1,15 @@
+json_syntax/__init__.py,sha256=V-HjTqnro5RPkA66oumlr9Fj2tUdybRKas95Xgv8UWY,1352
+json_syntax/action_v1.py,sha256=GAVNyEcZ6GGnll5KoYHODna7WwaUBL6PvQZOJTSqLkU,3718
+json_syntax/attrs.py,sha256=A5E9mppijvQJei8PgOVluJyo_OMXm7Os84LfN2_h5NY,4400
+json_syntax/cache.py,sha256=AC8f0k4GGl7tpm7qgIqq2CuPHsqJTnxNRhTxStdOeo4,3098
+json_syntax/examples/README.md,sha256=CUmIcYiaiZ9OFF9V_NbIomgMhbZTN_ryqzTJHfgQL2E,377
+json_syntax/examples/__init__.py,sha256=VJScDOvVHqC3jenHoenHAlWVggq40HFeYvKuRCHu9yY,60
+json_syntax/examples/flags.py,sha256=-CWjn6d12FFGEsz_Pv8XpRbjTZ49spsiqAlztbymji4,2517
+json_syntax/helpers.py,sha256=GFObaoPWBYYm09OtrzOftqgW1aKLRujdQF87RNBVyWU,4770
+json_syntax/ruleset.py,sha256=H5tE506bzHi9nMbXkBrL5jc9GsS70byHpQTGsVdI1sE,1589
+json_syntax/std.py,sha256=48rDayrge1m1i_LZ3yPmkmLlI54lEaExTf5W_o77z8s,9261
+json_syntax/unions.py,sha256=dGlsBSm95Gu1jCCv-EDo5jl-dXGTTXzHOXYi1YagmWc,1689
+json_syntax-0.1.1.dist-info/LICENSE,sha256=e15fO-Oua9SSbIheeIMi4Yzs4ImQZX4YdCzkITOPBh8,1067
+json_syntax-0.1.1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+json_syntax-0.1.1.dist-info/METADATA,sha256=xSP6DOI2q-h6JyGgu64OpQyru0mImShuGR5XvcbNhJE,13088
+json_syntax-0.1.1.dist-info/RECORD,,
