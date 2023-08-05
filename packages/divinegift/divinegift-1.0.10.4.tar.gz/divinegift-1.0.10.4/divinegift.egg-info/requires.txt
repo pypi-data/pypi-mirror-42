@@ -1,0 +1,7 @@
+sqlalchemy
+requests
+mailer
+xlutils
+xlsxwriter
+transliterate
+cryptography
