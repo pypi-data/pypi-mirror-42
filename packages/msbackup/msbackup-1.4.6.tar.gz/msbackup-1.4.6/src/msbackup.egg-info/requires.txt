@@ -1,0 +1,15 @@
+python-dateutil
+six
+
+[dev]
+check-manifest
+coverage
+doc8
+docutils
+flake8
+ipdb
+pep8
+pylint
+twine
+unittest-xml-reporting
+wheel
