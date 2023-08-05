@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: ezapi_yelp
+Version: 0.4.0
+Summary: A Python wrapper for Yelp API
+Home-page: https://github.com/zehengl/ezapi-yelp
+Author: Zeheng Li
+Author-email: imzehengl@gmail.com
+Maintainer: Zeheng Li
+Maintainer-email: imzehengl@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: Yelp Fusion
+Platform: UNKNOWN
