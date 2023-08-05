@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: dotenver
+Version: 0.7.1
+Summary: Automatically generate .env files from .env.example template files
+Home-page: https://github.com/jmfederico/dotenver
+Author: Federico Jaramillo Martínez
+Author-email: federicojaramillom@gmail.com
+Keywords: dotenv,template
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: colorama (>=0.4.1,<0.5.0)
+Requires-Dist: faker (>=1.0,<2.0)
+Requires-Dist: jinja2 (>=2.10,<3.0)
+Project-URL: Repository, https://github.com/jmfederico/dotenver
