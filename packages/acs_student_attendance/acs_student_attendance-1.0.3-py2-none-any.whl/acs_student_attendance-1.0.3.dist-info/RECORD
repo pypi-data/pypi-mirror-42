@@ -1,0 +1,11 @@
+acs_student_attendance/__init__.py,sha256=3pbkfvL5BgmGmWV7g0cu2FHgTRgjpnO3ee5hVt5tgIE,54
+acs_student_attendance/analysis.py,sha256=qSlxqXBZ4ywUah7h8ojIuZL_JQMK5CjvGJCtKuvAo8g,11925
+acs_student_attendance/log_parser.py,sha256=d9SnphgEw-v4cwgpjnQhWdJmaccgelrcC-okUBz5S1Y,3255
+acs_student_attendance/shell.py,sha256=wjf3UuZ-xsu6u9jj4WEIfTUzVkwHUsNQnH5bpYDYb0Y,1408
+acs_student_attendance-1.0.3.dist-info/AUTHORS,sha256=9cW3Wsl3ZvWdXCItEsb4HyatHmiUyXJpwL-LazT6E64,37
+acs_student_attendance-1.0.3.dist-info/LICENSE,sha256=Pw4YRML0KpM5lES-lnseDnEbUzBkpNfBYHolDwf_ioI,1550
+acs_student_attendance-1.0.3.dist-info/METADATA,sha256=Q0QCvvMHOFGOhwh_CsQgXCe1AkgdLuCy--xrWMFCWk8,1991
+acs_student_attendance-1.0.3.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+acs_student_attendance-1.0.3.dist-info/entry_points.txt,sha256=bx1wQ85dY2fOFT4AhGiu1LBhQYnoG5ezLM1u9XMbINg,78
+acs_student_attendance-1.0.3.dist-info/top_level.txt,sha256=2ndoMqQYEpY-rgCgt-Eh3M7AzYevY1XqXraCdOv_tSA,23
+acs_student_attendance-1.0.3.dist-info/RECORD,,
