@@ -1,0 +1,12 @@
+README.md
+setup.py
+FolderAnalyse/__init__.py
+FolderAnalyse/fileparser.py
+FolderAnalyse/process.py
+FolderAnalyse/script.py
+FolderAnalyse.egg-info/PKG-INFO
+FolderAnalyse.egg-info/SOURCES.txt
+FolderAnalyse.egg-info/dependency_links.txt
+FolderAnalyse.egg-info/entry_points.txt
+FolderAnalyse.egg-info/requires.txt
+FolderAnalyse.egg-info/top_level.txt
