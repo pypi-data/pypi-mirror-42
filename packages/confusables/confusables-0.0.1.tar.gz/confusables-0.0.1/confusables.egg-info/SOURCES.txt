@@ -1,0 +1,11 @@
+setup.py
+confusables/__init__.py
+confusables/config.py
+confusables/parse.py
+confusables.egg-info/PKG-INFO
+confusables.egg-info/SOURCES.txt
+confusables.egg-info/dependency_links.txt
+confusables.egg-info/top_level.txt
+tests/__init__.py
+tests/confusables/__init__.py
+tests/confusables/test_confusables.py
