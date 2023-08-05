@@ -1,0 +1,11 @@
+README.md
+setup.py
+find-macho-linkmap/__init__.py
+find-macho-linkmap/find_macho_linkmap_and_output_otool_sections.py
+find-macho-linkmap/utils/__init__.py
+find-macho-linkmap/utils/print_with_color.py
+find-macho-linkmap/utils/time_profile.py
+find_macho_linkmap.egg-info/PKG-INFO
+find_macho_linkmap.egg-info/SOURCES.txt
+find_macho_linkmap.egg-info/dependency_links.txt
+find_macho_linkmap.egg-info/top_level.txt
