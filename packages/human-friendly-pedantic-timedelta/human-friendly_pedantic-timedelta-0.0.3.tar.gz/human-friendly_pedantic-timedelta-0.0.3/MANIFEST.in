@@ -1,0 +1,29 @@
+include Makefile
+
+include LICENSE
+include *.rst
+
+# Skipping:
+#   include .coveragerc
+#   include .editorconfig
+#   include .gitignore
+#   include .ignore
+#   include .travis.yml
+#   include MANIFEST.in
+#   include tox.ini
+
+recursive-include requirements *.pip
+
+# Both `recursive-include` and `include` can behave similarly:
+#   recursive-include tests *.py
+#   include tests*/*.py
+include tests/*.py
+
+include docs/*.bat
+include docs/*.png
+include docs/*.py
+include docs/*.rst
+include docs/Makefile
+include docs/assets/*.png
+recursive-include docs/docs/assets *.png
+
