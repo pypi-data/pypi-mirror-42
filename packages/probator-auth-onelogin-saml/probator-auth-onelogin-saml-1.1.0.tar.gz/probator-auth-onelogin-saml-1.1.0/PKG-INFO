@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: probator-auth-onelogin-saml
+Version: 1.1.0
+Summary: OneLogin SAML based user authentication
+Home-page: https://github.com/bunjiboys/probator-auth-onelogin-saml/
+Author: Asbjorn Kjaer
+Author-email: bunjiboys+probator@gmail.com
+License: License :: OSI Approved :: Apache Software License
+Description: # probator-auth-onelogin-saml
+        
+        Please open issues in the [Probator](https://gitlab.com/probator/probator/issues/new?labels=auth-onelogin-saml) repository
+        
+        ## Description
+        
+        This code enables the OneLogin service for SAML based SSO authentication for the Probator web interface.
+        
+        ## Configuration Options
+        
+        | Option name       | Default Value                 | Type      | Description                                           |
+        |-------------------|-------------------------------|-----------|-------------------------------------------------------|
+        | strict            | True                          | bool      | Strict validation of SAML responses                   |
+        | debug             | False                         | bool      | Service Provider Entity ID                            |
+        | sp\_entity\_id    | Service Provider Entity ID    | string    | Service Provider Entity ID                            |
+        | sp\_acs           | *None*                        | string    | Assertion Consumer endpoint                           |
+        | sp\_sls           | *None*                        | string    | Single Logout Service endpoint                        |
+        | idp\_entity\_id   | *None*                        | string    | Identity Provider Entity ID                           |
+        | idp\_ssos         | *None*                        | string    | Single Sign-On Service endpoint                       |
+        | idp\_sls          | *None*                        | string    | Single Logout Service endpoint                        |
+        | idp\_x509cert     | *None*                        | string    | Base64 encoded x509 certificate for SAML validation   |
+        
+        This project is based on the work for [Cloud Inquisitor](https://github.com/RiotGames/cloud-inquisitor) by Riot Games
+        
+Keywords: cloud security
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Framework :: Flask
+Classifier: Framework :: Sphinx
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Environment :: Console
+Classifier: Natural Language :: English
+Classifier: Topic :: Security
+Classifier: Topic :: Utilities
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: dev

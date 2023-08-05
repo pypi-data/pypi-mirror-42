@@ -1,0 +1,7 @@
+probator~=1.0
+python3-saml~=1.4
+flask
+
+[dev]
+
+[test]

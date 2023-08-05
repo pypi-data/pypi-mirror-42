@@ -1,0 +1,6 @@
+[probator.plugins.auth]
+auth_onelogin_saml = probator_auth_onelogin_saml:OneLoginSAMLAuth
+
+[probator.plugins.commands]
+import-saml = probator_auth_onelogin_saml.commands:ImportSAML
+

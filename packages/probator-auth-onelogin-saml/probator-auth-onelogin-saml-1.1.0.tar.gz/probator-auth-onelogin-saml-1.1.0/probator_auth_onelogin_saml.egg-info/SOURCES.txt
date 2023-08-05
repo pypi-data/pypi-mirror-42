@@ -1,0 +1,13 @@
+.gitignore
+.gitlab-ci.yml
+README.md
+setup.cfg
+setup.py
+probator_auth_onelogin_saml/__init__.py
+probator_auth_onelogin_saml/commands.py
+probator_auth_onelogin_saml.egg-info/PKG-INFO
+probator_auth_onelogin_saml.egg-info/SOURCES.txt
+probator_auth_onelogin_saml.egg-info/dependency_links.txt
+probator_auth_onelogin_saml.egg-info/entry_points.txt
+probator_auth_onelogin_saml.egg-info/requires.txt
+probator_auth_onelogin_saml.egg-info/top_level.txt
