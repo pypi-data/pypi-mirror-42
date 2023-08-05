@@ -1,0 +1,11 @@
+async_vk_api/__init__.py,sha256=5jm47Z6SqsanRKDknRCDE8g1GnAb2kkp4KFiqjk39-g,94
+async_vk_api/api.py,sha256=poNGDg_DXzSMfvgfXyYyye5Zo239P37S4eysU4E_w6I,1665
+async_vk_api/errors.py,sha256=UdaZc57dfLorxjAidQI8zFipML8vFwOC03P_6Clshtw,57
+async_vk_api/factories.py,sha256=Q6-MOnT1b3ehFKTvC2vJXRRd3PoWzxH60iu9fqdxPdQ,1163
+async_vk_api/namespace.py,sha256=jHOfBjgzJDwyADUrvNmmDzTLoS760jAAau4LAGwpd28,875
+async_vk_api/retry.py,sha256=AYfQBHG4TdUrWm0VpMyYV1jQGd5euocpDaY4CnL8nWM,554
+async_vk_api/throttler.py,sha256=zOgP592CJjRGj34zHi8WrMhYIQeV0pHKvJlp84yksbY,921
+async_vk_api-0.6.0.dist-info/METADATA,sha256=ptZv7Q_jV35RPNkD2yVs-nkPSWZG8rMq-pLfC514iTE,305
+async_vk_api-0.6.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+async_vk_api-0.6.0.dist-info/top_level.txt,sha256=jXOPBWrz4i5vm2fuPpKqS494fkP3zJ_4oP_sXXpoM7U,13
+async_vk_api-0.6.0.dist-info/RECORD,,
