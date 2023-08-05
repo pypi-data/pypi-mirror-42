@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: dragonfly-sync-lib
+Version: 0.2.0
+Summary: A library that facilitates transporting data around.
+Home-page: https://github.com/flowef/dragonfly-sync-lib
+Author: Stephan Chang
+Author-email: stephan.chang@flowef.com
+License: UNKNOWN
+Description: # :dragon_face: Dragonfly - A Python Data Synchronization Library
+        
+        A library that facilitates transporting data around.
+        
+        ## Changelog
+        
+        ### v0.2.0
+        
+        - Added "delete_flag" configuration parameter to flexibilize deletion detection in DefaultDataWriter
+        - Added method hints
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
