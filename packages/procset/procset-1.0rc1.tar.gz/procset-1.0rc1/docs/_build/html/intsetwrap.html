@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Migrating interval_set &#8212; procset 1.0rc1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tips &amp; Tricks" href="tips.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="migrating-interval-set">
+<h1>Migrating <code class="xref py py-mod docutils literal notranslate"><span class="pre">interval_set</span></code><a class="headerlink" href="#migrating-interval-set" title="Permalink to this headline">¶</a></h1>
+<p>The module <code class="xref py py-mod docutils literal notranslate"><span class="pre">interval_set</span></code> provided a crude API to manipulate interval
+sets.
+To ease the transition, the <code class="xref py py-mod docutils literal notranslate"><span class="pre">intsetwrap</span></code> module is provided as a drop in
+wrapper of the new <code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The focus of the wrapper is to keep the same semantic.
+As every call transforms the interval set to a ProcSet before converting it
+back, the performances may drastically drop.</p>
+</div>
+<p>As a first migration step, it’s as simple as replacing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">interval_set</span></code>
+by <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">intsetwrap</span> <span class="pre">as</span> <span class="pre">interval_set</span></code>.</p>
+<p>The following table shows how <code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> API may be used when migrating.
+<code class="docutils literal notranslate"><span class="pre">pset</span></code> represents a <a class="reference internal" href="api.html#procset.ProcSet" title="procset.ProcSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcSet</span></code></a> object.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><code class="xref py py-mod docutils literal notranslate"><span class="pre">interval_set</span></code> API</th>
+<th class="head"><code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> API</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">aggregate(itvs)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">pset.aggregate()</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">difference(itvs1,</span> <span class="pre">itvs2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">pset1</span> <span class="pre">-</span> <span class="pre">pset2</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">equals(itvs1,</span> <span class="pre">itvs2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">pset1</span> <span class="pre">==</span> <span class="pre">pset2</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">id_list_to_iterval_set(idlist)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ProcSet(*idlist)</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">intersection(itvs1,</span> <span class="pre">itvs2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">pset1</span> <span class="pre">&amp;</span> <span class="pre">pset2</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">interval_set_to_id_list(itvs)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">list(pset)</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">interval_set_to_set(itvs)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">set(pset)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">interval_set_to_string(itvs)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">str(pset)</span></code>, <code class="docutils literal notranslate"><span class="pre">format(pset)</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">set_to_interval_set(idset)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ProcSet(*idset)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">string_to_interval_set(string)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">ProcSet.from_str(string)</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">total(itvs)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">len(pset)</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">union(itvs1,</span> <span class="pre">itvs2)</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">pset1</span> <span class="pre">|</span> <span class="pre">pset2</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">procset</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">ProcSet API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Migrating <code class="docutils literal notranslate"><span class="pre">interval_set</span></code></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="tips.html" title="previous chapter">Tips &amp; Tricks</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Raphaël Bleuse.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/intsetwrap.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

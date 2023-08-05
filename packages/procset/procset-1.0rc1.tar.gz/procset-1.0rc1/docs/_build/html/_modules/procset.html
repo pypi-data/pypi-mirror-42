@@ -1,0 +1,799 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>procset &#8212; procset 1.0rc1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for procset</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># Copyright © 2017—2019</span>
+<span class="c1"># Contributed by Raphaël Bleuse &lt;cs@research.bleuse.net&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># This file is part of procset.py, a pure python module to manage sets of</span>
+<span class="c1"># closed intervals.</span>
+<span class="c1">#</span>
+<span class="c1">#   procset.py is free software: you can redistribute it and/or modify it</span>
+<span class="c1">#   under the terms of the GNU Lesser General Public License version 3 only</span>
+<span class="c1">#   as published by the Free Software Foundation.</span>
+<span class="c1">#</span>
+<span class="c1">#   procset.py is distributed in the hope that it will be useful,</span>
+<span class="c1">#   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1">#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1">#   GNU Lesser General Public License version 3 for more details.</span>
+<span class="c1">#</span>
+<span class="c1">#   You should have received a copy of the GNU Lesser General Public</span>
+<span class="c1">#   License version 3 along with this program.  If not, see</span>
+<span class="c1">#   &lt;https://www.gnu.org/licenses/&gt;.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Toolkit to manage sets of closed intervals.</span>
+
+<span class="sd">This implementation requires intervals bounds to be non-negative integers. This</span>
+<span class="sd">design choice has been made as procset aims at managing resources for</span>
+<span class="sd">scheduling. Hence, the manipulated intervals can be represented as indexes.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">operator</span> <span class="k">as</span> <span class="nn">_operator</span>
+
+
+<span class="k">class</span> <span class="nc">ProcInt</span><span class="p">(</span><span class="nb">tuple</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A ProcInt is a closed interval of non-negative integers.&quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="n">__NEW_SENTINEL</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>  <span class="c1"># sentinel for optional sup</span>
+
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">inf</span><span class="p">,</span> <span class="n">sup</span><span class="o">=</span><span class="n">__NEW_SENTINEL</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create new instance of ProcInt(inf, sup).&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">() argument inf must be int&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">sup</span> <span class="ow">is</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__NEW_SENTINEL</span><span class="p">:</span>
+            <span class="n">sup</span> <span class="o">=</span> <span class="n">inf</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">() argument sup must be int&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">inf</span> <span class="o">&gt;</span> <span class="n">sup</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid interval bounds&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">inf</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid negative bound(s)&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">sup</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__getnewargs__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a nicely formatted representation string.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">(inf=</span><span class="si">{!r}</span><span class="s1">, sup=</span><span class="si">{!r}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_spec</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">inf</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">sup</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">format_spec</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid format specifier&#39;</span><span class="p">)</span>
+            <span class="n">insep</span> <span class="o">=</span> <span class="n">format_spec</span> <span class="ow">or</span> <span class="s1">&#39;-&#39;</span>
+            <span class="k">return</span> <span class="n">insep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sup</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">inf</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inf</span> <span class="o">&lt;=</span> <span class="n">item</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sup</span>
+
+    <span class="n">inf</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Alias for field number 0&#39;</span><span class="p">)</span>
+
+    <span class="n">sup</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Alias for field number 1&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">_Sentinel</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Helper class whose instances are greater than any object.&quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="ow">is</span> <span class="n">other</span>
+
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="fm">__le__</span> <span class="o">=</span> <span class="fm">__eq__</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="fm">__ge__</span> <span class="o">=</span> <span class="fm">__gt__</span>
+
+
+<div class="viewcode-block" id="ProcSet"><a class="viewcode-back" href="../api.html#procset.ProcSet">[docs]</a><span class="k">class</span> <span class="nc">ProcSet</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Set of non-overlapping (i.e., disjoint) non-negative integer intervals.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_itvs&#39;</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">intervals</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A ProcSet can be initialized with either nothing (empty set), any</span>
+<span class="sd">        number of non-negative integer, any number of :class:`ProcInt`-compatible</span>
+<span class="sd">        iterable (iterable of exactly two :class:`int`), any number of ProcSet,</span>
+<span class="sd">        or any combination of such objects.</span>
+
+<span class="sd">        The resulting ProcSet is the union of all the intervals passed to the</span>
+<span class="sd">        constructor.</span>
+<span class="sd">        There is no restriction on the domains of the intervals passed to the</span>
+<span class="sd">        constructor: the domains may overlap.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list of disjoint intervals, in increasing order</span>
+        <span class="k">for</span> <span class="n">new_itvs</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">intervals</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">new_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">or_</span><span class="p">))</span>
+
+<div class="viewcode-block" id="ProcSet.from_str"><a class="viewcode-back" href="../api.html#procset.ProcSet.from_str">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_str</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">insep</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">outsep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Build a ProcSet from a string representation of an interval set.</span>
+<span class="sd">        The parsed string need not to be in canonical form.</span>
+
+<span class="sd">        :param str string: \</span>
+<span class="sd">            string representation to parse</span>
+<span class="sd">        :param str insep: \</span>
+<span class="sd">            delimiter character between the boundaries of a single interval</span>
+<span class="sd">            (defaults to ``-``, ascii dash symbol ``0x2d``)</span>
+<span class="sd">        :param str outsep: \</span>
+<span class="sd">            delimiter character between two intervals</span>
+<span class="sd">            (defaults to ``␣``, ascii space symbol ``0x20``)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s1">&#39;from_str() argument 2 must be str, not </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="c1"># empty string is parsed as empty ProcSet</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">string</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">raw_bounds</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">itv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="n">insep</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="n">outsep</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">intervals</span> <span class="o">=</span> <span class="p">(</span><span class="n">ProcInt</span><span class="p">(</span><span class="o">*</span><span class="n">bounds</span><span class="p">)</span> <span class="k">for</span> <span class="n">bounds</span> <span class="ow">in</span> <span class="n">raw_bounds</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">intervals</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s1">&#39;Invalid interval format, parsed string is: </span><span class="se">\&#39;</span><span class="si">{}</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+            <span class="p">)</span> <span class="kn">from</span> <span class="nn">None</span></div>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_spec</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">format_spec</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">insep</span><span class="p">,</span> <span class="n">outsep</span> <span class="o">=</span> <span class="n">format_spec</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid format specifier&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">insep</span><span class="p">,</span> <span class="n">outsep</span> <span class="o">=</span> <span class="s1">&#39;- &#39;</span>
+
+        <span class="k">return</span> <span class="n">outsep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">itv</span><span class="p">,</span> <span class="n">insep</span><span class="p">)</span> <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">compact</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">itv</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">itv</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">itv</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">compact</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span> <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Iterate over the processors in the ProcSet by increasing order.&quot;&quot;&quot;</span>
+        <span class="c1"># as self._itvs is sorted by increasing order, we can directly yield</span>
+        <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="nb">range</span><span class="p">(</span><span class="n">itv</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">itv</span><span class="o">.</span><span class="n">sup</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__reversed__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Iterate over the processors in the ProcSet by decreasing order.&quot;&quot;&quot;</span>
+        <span class="c1"># as self._itvs is sorted in increasing order, we yield from the</span>
+        <span class="c1"># reversed iterator</span>
+        <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">):</span>
+            <span class="k">yield from</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">itv</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">itv</span><span class="o">.</span><span class="n">sup</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if item is in the ProcSet.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">:</span>
+            <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="p">:</span>
+                <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+                <span class="k">elif</span> <span class="n">item</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="o">.</span><span class="n">inf</span><span class="p">:</span>
+                    <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span>
+
+    <span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of processors contained in the ProcSet.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span> <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ProcSet.count"><a class="viewcode-back" href="../api.html#procset.ProcSet.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of disjoint intervals in the ProcSet.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ProcSet.iscontiguous"><a class="viewcode-back" href="../api.html#procset.ProcSet.iscontiguous">[docs]</a>    <span class="k">def</span> <span class="nf">iscontiguous</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return ``True`` if the ProcSet is made of a unique interval.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="ProcSet.isdisjoint"><a class="viewcode-back" href="../api.html#procset.ProcSet.isdisjoint">[docs]</a>    <span class="k">def</span> <span class="nf">isdisjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return ``True`` if the ProcSet has no processor in common with *other*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">other</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># A naive implementation would test the truthiness of the intersection</span>
+        <span class="c1"># set.  However, one does not care about the intersection set.  It is</span>
+        <span class="c1"># sufficient to test if the generator returned by _merge is empty.</span>
+        <span class="n">_sentinel</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">_first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">and_</span><span class="p">),</span> <span class="n">_sentinel</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_first</span> <span class="ow">is</span> <span class="n">_sentinel</span></div>
+
+    <span class="k">def</span> <span class="nf">_issubset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">&amp;</span> <span class="n">other</span> <span class="o">==</span> <span class="bp">self</span>
+
+<div class="viewcode-block" id="ProcSet.issubset"><a class="viewcode-back" href="../api.html#procset.ProcSet.issubset">[docs]</a>    <span class="k">def</span> <span class="nf">issubset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether every element in the ProcSet is in *other*.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">other</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether every element in the ProcSet is in *other*.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test whether the ProcSet is a proper subset of *other*, that is</span>
+<span class="sd">        ``self &lt;= other`` and ``self != other``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span> <span class="o">!=</span> <span class="n">other</span>
+
+<div class="viewcode-block" id="ProcSet.issuperset"><a class="viewcode-back" href="../api.html#procset.ProcSet.issuperset">[docs]</a>    <span class="k">def</span> <span class="nf">issuperset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether every element in *other* is in the ProcSet.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">other</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">other</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether every element in *other* is in the ProcSet.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test whether the ProcSet is a proper superset of *other*, that is</span>
+<span class="sd">        ``self &gt;= other`` and ``self != other``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="k">return</span> <span class="n">other</span><span class="o">.</span><span class="n">_issubset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span> <span class="o">!=</span> <span class="n">other</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_flatten</span><span class="p">(</span><span class="n">itvs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Generate the (flat) list of interval bounds contained in itvs.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="n">itvs</span><span class="p">:</span>
+            <span class="c1"># use inf as is</span>
+            <span class="k">yield</span> <span class="kc">False</span><span class="p">,</span> <span class="n">itv</span><span class="o">.</span><span class="n">inf</span>
+            <span class="c1"># convert sup, as merging operations are made with half-open</span>
+            <span class="c1"># intervals</span>
+            <span class="k">yield</span> <span class="kc">True</span><span class="p">,</span> <span class="n">itv</span><span class="o">.</span><span class="n">sup</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_merge_core</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">left_itvs</span><span class="p">,</span> <span class="n">right_itvs</span><span class="p">,</span> <span class="n">keeppredicate</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the (flat) list of interval bounds of the requested merge.</span>
+
+<span class="sd">        The implementation is inspired by https://stackoverflow.com/a/20062829.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">endbound</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">sentinel</span> <span class="o">=</span> <span class="n">_Sentinel</span><span class="p">()</span>
+
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">lflat</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_flatten</span><span class="p">(</span><span class="n">left_itvs</span><span class="p">)</span>
+        <span class="n">rflat</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_flatten</span><span class="p">(</span><span class="n">right_itvs</span><span class="p">)</span>
+        <span class="n">lend</span><span class="p">,</span> <span class="n">lhead</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">lflat</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">))</span>
+        <span class="n">rend</span><span class="p">,</span> <span class="n">rhead</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">rflat</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">))</span>
+
+        <span class="n">head</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lhead</span><span class="p">,</span> <span class="n">rhead</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">head</span> <span class="o">&lt;</span> <span class="n">sentinel</span><span class="p">:</span>
+            <span class="n">inleft</span> <span class="o">=</span> <span class="p">(</span><span class="n">head</span> <span class="o">&lt;</span> <span class="n">lhead</span><span class="p">)</span> <span class="o">==</span> <span class="n">lend</span>
+            <span class="n">inright</span> <span class="o">=</span> <span class="p">(</span><span class="n">head</span> <span class="o">&lt;</span> <span class="n">rhead</span><span class="p">)</span> <span class="o">==</span> <span class="n">rend</span>
+            <span class="n">keep</span> <span class="o">=</span> <span class="n">keeppredicate</span><span class="p">(</span><span class="n">inleft</span><span class="p">,</span> <span class="n">inright</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">keep</span> <span class="o">^</span> <span class="n">endbound</span><span class="p">:</span>
+                <span class="n">endbound</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">endbound</span>
+                <span class="k">yield</span> <span class="n">head</span>
+            <span class="k">if</span> <span class="n">head</span> <span class="o">==</span> <span class="n">lhead</span><span class="p">:</span>
+                <span class="n">lend</span><span class="p">,</span> <span class="n">lhead</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">lflat</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">head</span> <span class="o">==</span> <span class="n">rhead</span><span class="p">:</span>
+                <span class="n">rend</span><span class="p">,</span> <span class="n">rhead</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">rflat</span><span class="p">,</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">))</span>
+
+            <span class="n">head</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">lhead</span><span class="p">,</span> <span class="n">rhead</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_merge</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">left_itvs</span><span class="p">,</span> <span class="n">right_itvs</span><span class="p">,</span> <span class="n">keeppredicate</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the ProcInt list of the requested merge.</span>
+
+<span class="sd">        The returned iterator is supposed to be assigned to the _itvs attribute</span>
+<span class="sd">        of the result ProcSet.</span>
+<span class="sd">        See the difference(), intersection(), symmetric_difference(), and</span>
+<span class="sd">        union() methods for an usage example.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">flat_merge</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_merge_core</span><span class="p">(</span><span class="n">left_itvs</span><span class="p">,</span> <span class="n">right_itvs</span><span class="p">,</span> <span class="n">keeppredicate</span><span class="p">)</span>
+
+        <span class="c1"># Note that we are feeding the same iterable twice to zip.</span>
+        <span class="c1"># The iterated bounds are hence grouped by pairs (lower and upper</span>
+        <span class="c1"># bounds of the intervals).</span>
+        <span class="c1"># As zip() stops on the shortest iterable, it won&#39;t consider the</span>
+        <span class="c1"># optional terminating sentinel (the sentinel would be the last</span>
+        <span class="c1"># element, and would have an odd index).</span>
+        <span class="k">for</span> <span class="n">inf</span><span class="p">,</span> <span class="n">sup</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">flat_merge</span><span class="p">,</span> <span class="n">flat_merge</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">ProcInt</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">sup</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># convert back to closed intervals</span>
+
+<div class="viewcode-block" id="ProcSet.union"><a class="viewcode-back" href="../api.html#procset.ProcSet.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a new ProcSet with elements from the ProcSet and all others.&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="c1"># pylint: disable=protected-access</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">or_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    <span class="k">def</span> <span class="nf">__or__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a new ProcSet with elements from the ProcSet and *other*.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># We directly assign result._itvs as self._merge(…) returns a valid</span>
+        <span class="c1"># _itvs list. This is the same as ProcSet(*self._merge(…)), minus the</span>
+        <span class="c1"># input validation step.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">or_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="ProcSet.intersection"><a class="viewcode-back" href="../api.html#procset.ProcSet.intersection">[docs]</a>    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements common to the ProcSet and all</span>
+<span class="sd">        others.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="c1"># pylint: disable=protected-access</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">and_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    <span class="k">def</span> <span class="nf">__and__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements common to the ProcSet and *other*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># We directly assign result._itvs as self._merge(…) returns a valid</span>
+        <span class="c1"># _itvs list. This is the same as ProcSet(*self._merge(…)), minus the</span>
+        <span class="c1"># input validation step.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">and_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_difference_operator</span><span class="p">(</span><span class="n">inleft</span><span class="p">,</span> <span class="n">inright</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">inleft</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">inright</span>
+
+<div class="viewcode-block" id="ProcSet.difference"><a class="viewcode-back" href="../api.html#procset.ProcSet.difference">[docs]</a>    <span class="k">def</span> <span class="nf">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements in the ProcSet that are not in the</span>
+<span class="sd">        others.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="c1"># pylint: disable=protected-access</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difference_operator</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    <span class="k">def</span> <span class="nf">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements in the ProcSet that are not in *other*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># We directly assign result._itvs as self._merge(…) returns a valid</span>
+        <span class="c1"># _itvs list. This is the same as ProcSet(*self._merge(…)), minus the</span>
+        <span class="c1"># input validation step.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difference_operator</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="ProcSet.symmetric_difference"><a class="viewcode-back" href="../api.html#procset.ProcSet.symmetric_difference">[docs]</a>    <span class="k">def</span> <span class="nf">symmetric_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements in either the ProcSet or *other*,</span>
+<span class="sd">        but not in both.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">(</span><span class="n">other</span><span class="p">),</span> <span class="n">_operator</span><span class="o">.</span><span class="n">xor</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    <span class="k">def</span> <span class="nf">__xor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet with elements in either the ProcSet or *other*,</span>
+<span class="sd">        but not in both.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># We directly assign result._itvs as self._merge(…) returns a valid</span>
+        <span class="c1"># _itvs list. This is the same as ProcSet(*self._merge(…)), minus the</span>
+        <span class="c1"># input validation step.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">xor</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="ProcSet.copy"><a class="viewcode-back" href="../api.html#procset.ProcSet.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a new ProcSet with a shallow copy of the ProcSet.&quot;&quot;&quot;</span>
+        <span class="c1"># We directly assign result._itvs as self._itvs is a valid list.  Note</span>
+        <span class="c1"># that a ProcSet is nothing more than a container with some extra</span>
+        <span class="c1"># methods, and a given structure.  As the current implementation relies</span>
+        <span class="c1"># on the _itvs list, copying a ProcSet is the same as copying the _itvs</span>
+        <span class="c1"># list.  Hence, we need to ensure a new _itvs list is created (and not</span>
+        <span class="c1"># just a reference to self._itvs).  As _itvs is a list of ProcInt, a</span>
+        <span class="c1"># shallow copy is the same as a deep copy.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span>
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    <span class="n">__copy__</span> <span class="o">=</span> <span class="n">copy</span>  <span class="c1"># ensure compatibility with standard module copy</span>
+
+    <span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="p">):</span>
+        <span class="c1"># Optimized version of __deepcopy__ for ProcSet.</span>
+        <span class="c1"># /!\ This optimization is implementation specific /!\</span>
+        <span class="c1"># The classic __deepcopy__ implementation can be bypassed because a</span>
+        <span class="c1"># ProcInt is an immutable structure: there is no need to use the</span>
+        <span class="c1"># generic and complex implementation of deepcopy for tuples that may</span>
+        <span class="c1"># contain mutables.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ProcSet.update"><a class="viewcode-back" href="../api.html#procset.ProcSet.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the ProcSet, adding elements from all others.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">or_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="n">insert</span> <span class="o">=</span> <span class="n">update</span>  <span class="c1"># backward compatibility alias</span>
+
+    <span class="k">def</span> <span class="nf">__ior__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the ProcSet, adding elements from *other*.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">or_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<div class="viewcode-block" id="ProcSet.intersection_update"><a class="viewcode-back" href="../api.html#procset.ProcSet.intersection_update">[docs]</a>    <span class="k">def</span> <span class="nf">intersection_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the ProcSet, keeping only elements found in the ProcSet and all</span>
+<span class="sd">        others.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">and_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="k">def</span> <span class="nf">__iand__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the ProcSet, keeping only elements found in the ProcSet and *other*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">and_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<div class="viewcode-block" id="ProcSet.difference_update"><a class="viewcode-back" href="../api.html#procset.ProcSet.difference_update">[docs]</a>    <span class="k">def</span> <span class="nf">difference_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the ProcSet, removing elements found in others.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difference_operator</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="n">discard</span> <span class="o">=</span> <span class="n">difference_update</span>  <span class="c1"># convenience alias</span>
+
+    <span class="k">def</span> <span class="nf">__isub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the ProcSet, removing elements found in *other*.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difference_operator</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<div class="viewcode-block" id="ProcSet.symmetric_difference_update"><a class="viewcode-back" href="../api.html#procset.ProcSet.symmetric_difference_update">[docs]</a>    <span class="k">def</span> <span class="nf">symmetric_difference_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the ProcSet, keeping only elements found in either the ProcSet</span>
+<span class="sd">        or *other*, but not in both.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_as_itvs</span><span class="p">(</span><span class="n">other</span><span class="p">),</span> <span class="n">_operator</span><span class="o">.</span><span class="n">xor</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="k">def</span> <span class="nf">__ixor__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the ProcSet, keeping only elements found in either the ProcSet</span>
+<span class="sd">        or *other*, but not in both.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+        <span class="c1"># pylint: disable=protected-access</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_merge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span><span class="p">,</span> <span class="n">_operator</span><span class="o">.</span><span class="n">xor</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+<div class="viewcode-block" id="ProcSet.clear"><a class="viewcode-back" href="../api.html#procset.ProcSet.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Empty the ProcSet, removing all elements from it.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+    <span class="k">def</span> <span class="nf">__getitem_int</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="k">if</span> <span class="n">cur</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">cur</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">itv</span><span class="o">.</span><span class="n">inf</span> <span class="o">+</span> <span class="n">cur</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">cur</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">cur</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">itv</span><span class="o">.</span><span class="n">sup</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">cur</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">cur</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> index out of range&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__getitem_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span>
+        <span class="n">cur</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">stop</span> <span class="o">&lt;=</span> <span class="n">cur</span><span class="p">:</span>  <span class="c1"># early termination: no more matching items</span>
+                    <span class="k">break</span>
+                <span class="k">while</span> <span class="n">cur</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cur</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">:</span>  <span class="c1"># exhaust current itv</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">itv</span><span class="o">.</span><span class="n">inf</span> <span class="o">+</span> <span class="n">cur</span><span class="p">)</span>
+                    <span class="n">cur</span> <span class="o">+=</span> <span class="n">step</span>
+                <span class="c1"># switch to new itv</span>
+                <span class="n">cur</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+                <span class="n">stop</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># work from end when step is negative</span>
+            <span class="n">cur</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">stop</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">itv</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">stop</span> <span class="o">&gt;=</span> <span class="n">cur</span><span class="p">:</span>  <span class="c1"># early termination: no more matching items</span>
+                    <span class="k">break</span>
+                <span class="c1"># account for current itv shift</span>
+                <span class="n">cur</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+                <span class="n">stop</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">itv</span><span class="p">)</span>
+                <span class="k">while</span> <span class="n">cur</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">cur</span> <span class="o">&gt;</span> <span class="n">stop</span><span class="p">:</span>  <span class="c1"># exhaust current itv</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">itv</span><span class="o">.</span><span class="n">inf</span> <span class="o">+</span> <span class="n">cur</span><span class="p">)</span>
+                    <span class="n">cur</span> <span class="o">+=</span> <span class="n">step</span>  <span class="c1"># step is negative</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__getitem_int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__getitem_slice</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> indices must be integers or slices, not </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="fm">__setitem__</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># it makes no sense to &#39;modify&#39; a processor</span>
+
+    <span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+<div class="viewcode-block" id="ProcSet.aggregate"><a class="viewcode-back" href="../api.html#procset.ProcSet.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a new ProcSet that is the convex hull of the ProcSet.</span>
+
+<span class="sd">        The convex hull of an empty ProcSet is the empty ProcSet.</span>
+
+<span class="sd">        The convex hull of a non-empty ProcSet is the contiguous ProcSet made</span>
+<span class="sd">        of the smallest unique interval containing all intervals from the</span>
+<span class="sd">        non-empty ProcSet.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">ProcInt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)()</span></div>
+
+<div class="viewcode-block" id="ProcSet.intervals"><a class="viewcode-back" href="../api.html#procset.ProcSet.intervals">[docs]</a>    <span class="k">def</span> <span class="nf">intervals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return an iterator over the intervals of the ProcSet in increasing order.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The first processor in the ProcSet (in increasing order).&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">inf</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Empty ProcSet&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The last processor in the ProcSet (in increasing order).&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_itvs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sup</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Empty ProcSet&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">None</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_as_procint</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Yield elem as a ProcInt.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>  <span class="c1"># ProcInt-compatible (iterable of exactly 2 int)</span>
+            <span class="n">inf</span><span class="p">,</span> <span class="n">sup</span> <span class="o">=</span> <span class="n">elem</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                <span class="s1">&#39;Incompatible iterable, expected an iterable of exactly 2 int&#39;</span>
+            <span class="p">)</span> <span class="kn">from</span> <span class="nn">None</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>  <span class="c1"># single point (non-negative int)</span>
+            <span class="n">inf</span><span class="p">,</span> <span class="n">sup</span> <span class="o">=</span> <span class="n">elem</span><span class="p">,</span> <span class="n">elem</span>
+
+        <span class="k">yield</span> <span class="n">ProcInt</span><span class="p">(</span><span class="n">inf</span><span class="p">,</span> <span class="n">sup</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_as_itvs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Iterate over other as an _itvs list.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+            <span class="c1"># pylint: disable=protected-access</span>
+            <span class="k">yield from</span> <span class="n">other</span><span class="o">.</span><span class="n">_itvs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_as_procint</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">procset</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">ProcSet API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intsetwrap.html">Migrating <code class="docutils literal notranslate"><span class="pre">interval_set</span></code></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Raphaël Bleuse.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

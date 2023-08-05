@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>procset &#8212; procset 1.0rc1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ProcSet API" href="api.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="procset">
+<h1>procset<a class="headerlink" href="#procset" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>This package implements for Python a memory-efficient representation of
+closed-interval sets.</p>
+<dl class="docutils">
+<dt>The package provides two modules: <code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">intsetwrap</span></code>:</dt>
+<dd><ul class="first last simple">
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> is an implementation aiming at providing a pythonic
+experience: it should be the preferred module for any new project.</li>
+<li><code class="xref py py-mod docutils literal notranslate"><span class="pre">intsetwrap</span></code> is a wrapper around <code class="xref py py-mod docutils literal notranslate"><span class="pre">procset</span></code> providing the old API
+of <code class="xref py py-mod docutils literal notranslate"><span class="pre">interval_set</span></code>: do not use in any new project.</li>
+</ul>
+</dd>
+</dl>
+<p>A <a class="reference internal" href="api.html#procset.ProcSet" title="procset.ProcSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcSet</span></code></a> is an hybrid between a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> and a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> of
+indexes.
+More precisely, a <a class="reference internal" href="api.html#procset.ProcSet" title="procset.ProcSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcSet</span></code></a> object is an ordered collection of
+unique non-negative <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.
+It supports most of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a> operations: notably membership testing,
+mathematical operations such as intersection, union, and (symmetric)
+difference; with the additional ability to access its elements by position.</p>
+<p>The <a class="reference internal" href="api.html#procset.ProcSet" title="procset.ProcSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcSet</span></code></a> type is mutable, as its content can be modified using
+methods such as <a class="reference internal" href="api.html#procset.ProcSet.insert" title="procset.ProcSet.insert"><code class="xref py py-meth docutils literal notranslate"><span class="pre">insert()</span></code></a>.
+Since it is mutable, it has no hash value and cannot be used as either a
+dictionary key or as an element of another set.</p>
+<div class="section" id="string-representation-of-interval-sets">
+<h2>String representation of interval sets<a class="headerlink" href="#string-representation-of-interval-sets" title="Permalink to this headline">¶</a></h2>
+<p>In the scheduling community, interval sets often are encoded as strings where
+the string <code class="docutils literal notranslate"><span class="pre">'a-b'</span></code> (middle symbol is a dash, ascii&nbsp;<code class="docutils literal notranslate"><span class="pre">0x2d</span></code>) represents the
+integer interval <span class="math notranslate nohighlight">\([a, b]\)</span>, with the convention that the string <code class="docutils literal notranslate"><span class="pre">a</span></code>
+represents the degenerate case of the singleton&nbsp;<span class="math notranslate nohighlight">\(\{a\}\)</span>.
+An interval set with many disjoint intervals is encoded by joining interval
+representations with a space (ascii&nbsp;<code class="docutils literal notranslate"><span class="pre">0x20</span></code>): for example <code class="docutils literal notranslate"><span class="pre">a-b</span> <span class="pre">c</span> <span class="pre">d-e</span></code>
+represents <span class="math notranslate nohighlight">\([a, b] \cup \{c\} \cup [d, e]\)</span>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">There are many different strings representing the same interval set.
+For the description of a canonical representation, please refer to the
+<a class="reference external" href="https://batsim.readthedocs.io/en/latest/interval-set.html#canonical-string-representation">documentation of Batsim</a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">procset</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">ProcSet API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intsetwrap.html">Migrating <code class="docutils literal notranslate"><span class="pre">interval_set</span></code></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="api.html" title="next chapter">ProcSet API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Raphaël Bleuse.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
