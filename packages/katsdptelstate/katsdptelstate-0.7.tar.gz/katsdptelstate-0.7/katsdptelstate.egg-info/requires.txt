@@ -1,0 +1,10 @@
+redis>=2.10.5
+fakeredis<1.0,>=0.10.2
+netifaces
+ipaddress
+msgpack
+numpy
+
+[rdb]
+rdbtools
+python-lzf
