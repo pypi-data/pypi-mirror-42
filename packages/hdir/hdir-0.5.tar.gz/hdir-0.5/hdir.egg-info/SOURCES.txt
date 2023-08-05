@@ -1,0 +1,7 @@
+setup.py
+hdir/__init__.py
+hdir.egg-info/PKG-INFO
+hdir.egg-info/SOURCES.txt
+hdir.egg-info/dependency_links.txt
+hdir.egg-info/requires.txt
+hdir.egg-info/top_level.txt

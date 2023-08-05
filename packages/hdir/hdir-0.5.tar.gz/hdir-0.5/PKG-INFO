@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: hdir
+Version: 0.5
+Summary: Highlight dir
+Home-page: http://phyl.io/?page=hdir.html
+Author: Philippe Kappel
+Author-email: philippe.kappel@gmail.com
+License: MIT
+Description: `hdir()` is a highlighted version of the `dir()` function.
+        
+        Dependencies
+        ------------
+        
+        * [Python](https://www.python.org) 3.6+
+        * Console with [ANSI colors](https://en.wikipedia.org/wiki/ANSI_escape_code)
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
