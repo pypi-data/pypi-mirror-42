@@ -1,0 +1,11 @@
+click>=6.0
+rabird.core
+selenium
+selenium-requests
+six>=1.10.0
+whichcraft
+arrow
+Pillow
+docker
+lxml
+attrdict

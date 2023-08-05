@@ -1,0 +1,3 @@
+[console_scripts]
+rabird.selenium = rabird.selenium.__main__:main
+
