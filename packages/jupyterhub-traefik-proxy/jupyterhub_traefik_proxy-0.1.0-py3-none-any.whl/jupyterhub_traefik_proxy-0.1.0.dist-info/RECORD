@@ -1,0 +1,13 @@
+jupyterhub_traefik_proxy/__init__.py,sha256=1hozH8LAKMV3MSBxtP-SI7GrQm3jfNON3Kva-JiSpFg,262
+jupyterhub_traefik_proxy/_version.py,sha256=Lb0KrmQaM6WO6No93-CNaaY6OoyhmccKoR_66pSnzVo,18469
+jupyterhub_traefik_proxy/etcd.py,sha256=7TnL8GyFae11tSmdW5C_c6-TNy2bD6Z709p4IPrufxs,11365
+jupyterhub_traefik_proxy/install.py,sha256=Z4AUHyY70fCnhQNt0D8tEnhEPFLRly0FdAyCuQptgBc,8714
+jupyterhub_traefik_proxy/proxy.py,sha256=hAle-bw163y0cx9O6FH8tVcQJsqp_tFB1ka08nL9K94,9346
+jupyterhub_traefik_proxy/toml.py,sha256=GX0Lkxnp-YwGf2QpvaD4DOMcs3nLfj9naCa4NMUAWnA,9365
+jupyterhub_traefik_proxy/traefik_utils.py,sha256=_v6mfuss40s1sUeBbyE1G9uIc1cp-o0itM0XIccQRmI,4402
+jupyterhub_traefik_proxy-0.1.0.dist-info/LICENSE,sha256=uhqQGfZF64cmuxUV-0KiauKYq7oTJvMicdY_U-yOL5o,1510
+jupyterhub_traefik_proxy-0.1.0.dist-info/METADATA,sha256=aQ9pYSLMTtijsQ7iu22S-7X3nra1UqQjzTtOECuP6aU,2566
+jupyterhub_traefik_proxy-0.1.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+jupyterhub_traefik_proxy-0.1.0.dist-info/entry_points.txt,sha256=dIH7nBx0HINbzSKEHgJnNC88Xs1ZMGyqbIX_xzksWa4,136
+jupyterhub_traefik_proxy-0.1.0.dist-info/top_level.txt,sha256=DjbBdViWfFHRQcnz_q6lssBdWz-kmKh19p84uA2CCKQ,25
+jupyterhub_traefik_proxy-0.1.0.dist-info/RECORD,,
