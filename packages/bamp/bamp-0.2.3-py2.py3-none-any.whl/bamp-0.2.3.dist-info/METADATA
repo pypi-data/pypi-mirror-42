@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: bamp
+Version: 0.2.3
+Summary: Bamp version according to semantic versioning
+Home-page: https://github.com/inirudebwoy/bamp
+Author: Michał Klich
+Author-email: michal@michalklich.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Dist: Click
+Requires-Dist: dulwich
+Requires-Dist: six
+
+Bamp version of your packages according to semantic versioning. Automagically create commits and tags.
+
+
