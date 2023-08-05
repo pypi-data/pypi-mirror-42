@@ -1,0 +1,102 @@
+{
+  "addSlice.css": "/static/assets/dist/addSlice.8a57922077b4728626e3.entry.css",
+  "addSlice.js": "/static/assets/dist/addSlice.8a57922077b4728626e3.entry.js",
+  "dashboard.css": "/static/assets/dist/dashboard.e3169eab5feddb343794.entry.css",
+  "dashboard.js": "/static/assets/dist/dashboard.e3169eab5feddb343794.entry.js",
+  "entrypoints": {
+    "theme": {
+      "css": [
+        "/static/assets/dist/theme.bbcbef330cdba38b49b5.entry.css"
+      ],
+      "js": [
+        "/static/assets/dist/theme.bbcbef330cdba38b49b5.entry.js"
+      ]
+    },
+    "preamble": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/vendors-addSlice-preamble.ac26913c5af0c617bb23.chunk.js",
+        "/static/assets/dist/preamble.ae7f43dbf47c9d0e2526.entry.js"
+      ]
+    },
+    "addSlice": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/vendors-addSlice-preamble.ac26913c5af0c617bb23.chunk.js",
+        "/static/assets/dist/addSlice.8a57922077b4728626e3.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/addSlice.8a57922077b4728626e3.entry.css"
+      ]
+    },
+    "explore": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/0.be3ddad18e2248405c39.chunk.js",
+        "/static/assets/dist/explore.a16ebbe2184faf5e1946.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/explore.a16ebbe2184faf5e1946.entry.css"
+      ]
+    },
+    "dashboard": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/0.be3ddad18e2248405c39.chunk.js",
+        "/static/assets/dist/dashboard.e3169eab5feddb343794.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/dashboard.e3169eab5feddb343794.entry.css"
+      ]
+    },
+    "sqllab": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/0.be3ddad18e2248405c39.chunk.js",
+        "/static/assets/dist/sqllab.96813f335abbd26d838d.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/sqllab.96813f335abbd26d838d.entry.css"
+      ]
+    },
+    "welcome": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/0.be3ddad18e2248405c39.chunk.js",
+        "/static/assets/dist/welcome.537ac017d20a7b0db020.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/welcome.537ac017d20a7b0db020.entry.css"
+      ]
+    },
+    "profile": {
+      "js": [
+        "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+        "/static/assets/dist/0.be3ddad18e2248405c39.chunk.js",
+        "/static/assets/dist/profile.c8682efa1ce97ac9f3c2.entry.js"
+      ],
+      "css": [
+        "/static/assets/dist/profile.c8682efa1ce97ac9f3c2.entry.css"
+      ]
+    }
+  },
+  "explore.css": "/static/assets/dist/explore.a16ebbe2184faf5e1946.entry.css",
+  "explore.js": "/static/assets/dist/explore.a16ebbe2184faf5e1946.entry.js",
+  "glyphicons-halflings-regular.eot": "/static/assets/dist/f4769f9bdb7466be65088239c12046d1.eot",
+  "glyphicons-halflings-regular.svg": "/static/assets/dist/89889688147bd7575d6327160d64e760.svg",
+  "glyphicons-halflings-regular.ttf": "/static/assets/dist/e18bbf611f2a2e43afc071aa2f4e1512.ttf",
+  "glyphicons-halflings-regular.woff": "/static/assets/dist/fa2772327f55d8198301fdb8bcfc8158.woff",
+  "glyphicons-halflings-regular.woff2": "/static/assets/dist/448c34a56d699c29117adc64c43affeb.woff2",
+  "preamble.js": "/static/assets/dist/preamble.ae7f43dbf47c9d0e2526.entry.js",
+  "profile.css": "/static/assets/dist/profile.c8682efa1ce97ac9f3c2.entry.css",
+  "profile.js": "/static/assets/dist/profile.c8682efa1ce97ac9f3c2.entry.js",
+  "sqllab.css": "/static/assets/dist/sqllab.96813f335abbd26d838d.entry.css",
+  "sqllab.js": "/static/assets/dist/sqllab.96813f335abbd26d838d.entry.js",
+  "theme.css": "/static/assets/dist/theme.bbcbef330cdba38b49b5.entry.css",
+  "theme.js": "/static/assets/dist/theme.bbcbef330cdba38b49b5.entry.js",
+  "thumbnail.png": "/static/assets/dist/thumbnail.a38f8f0e.png",
+  "vendors-addSlice-preamble.js": "/static/assets/dist/vendors-addSlice-preamble.ac26913c5af0c617bb23.chunk.js",
+  "vendors-major.js": "/static/assets/dist/vendors-major.e9d02b001b0b6b932b6b.chunk.js",
+  "welcome.css": "/static/assets/dist/welcome.537ac017d20a7b0db020.entry.css",
+  "welcome.js": "/static/assets/dist/welcome.537ac017d20a7b0db020.entry.js"
+}
