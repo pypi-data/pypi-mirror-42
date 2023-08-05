@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: alfacoins
+Version: 0.1.0a1
+Summary: ALFACoins API library
+Home-page: https://github.com/Carrene/owl.git://github.com/ArashFatahzade/alfacoins
+Author: Arash Fatahzadea
+Author-email: arash.fattahzade@carrene.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Customer Service
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
