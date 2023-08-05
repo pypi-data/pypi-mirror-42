@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: romanify
+Version: 0.0.3
+Summary:  Roman numbers converting library 
+Home-page: https://github.com/JaneTurueva/py-romanify
+Author: Evgenia Turueva
+Author-email: tindomirel1994@gmail.com
+License: MIT
+Description: Roman numbers converting library
+Platform: all
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >3.4.*, <4
+Provides-Extra: develop
