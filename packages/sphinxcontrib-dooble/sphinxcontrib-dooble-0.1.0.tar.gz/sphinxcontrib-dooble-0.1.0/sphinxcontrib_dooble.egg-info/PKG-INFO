@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: sphinxcontrib-dooble
+Version: 0.1.0
+Summary: A sphinx extansion for dooble
+Home-page: https://github.com/mainro/sphinxcontrib-dooble
+Author: Romain Picard
+Author-email: romain.picard@oakbits.com
+License: MIT license
+Description: ====================
+        sphinxcontrib-dooble
+        ====================
+        
+        .. image:: https://travis-ci.org/mainro/sphinxcontrib-dooble.svg?branch=master
+            :target: https://travis-ci.org/mainro/sphinxcontrib-dooble
+        
+        A sphinx extension for dooble
+        
+        Overview
+        --------
+        
+        Add a longer description here.
+        
+        Links
+        -----
+        
+        - Source: https://github.com/mainro/sphinxcontrib-dooble
+        - Bugs: https://github.com/mainro/sphinxcontrib-dooble/issues
+        
+Keywords: dooble,sphinx
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
