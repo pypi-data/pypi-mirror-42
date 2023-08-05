@@ -1,0 +1,3 @@
+[pytest11]
+django-model = pytest_django_model.plugin
+
