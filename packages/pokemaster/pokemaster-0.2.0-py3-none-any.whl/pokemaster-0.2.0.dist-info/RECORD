@@ -1,0 +1,10 @@
+pokemaster/__init__.py,sha256=3L1iXNhHJLboXQReQIGfdz4_RJU9bLEVZ4QQ_MTT5bc,197
+pokemaster/_database.py,sha256=DQEMEnAj5FSiAuotv7aNAlstXDdwZhsAgD0HLP5XBBA,10776
+pokemaster/game_version.py,sha256=mwhAOzdHSQvoyKCL62C_rYu2KvNDLG9lYe4ZIpBLSLM,2224
+pokemaster/pokemon.py,sha256=uQIzK6XxyHPU0ZHPxckF8G9JpQBiNkUeS1RFraDFsyU,15241
+pokemaster/prng.py,sha256=VcHeBeeM0KKemhhSj8HNpiYiLKwDHVaJGQXsurG_-ww,3107
+pokemaster/stats.py,sha256=zfgJdanGo4v33JQF0j0Q-YyQoDpoAnJt1eT-GKJoB9M,6441
+pokemaster/weather.py,sha256=7AOk0Ep_2mCeoYXfxv37tPgBmqN7V3rzeq_BoJY0M9k,8081
+pokemaster-0.2.0.dist-info/WHEEL,sha256=qtAdCj-IU6QldWlMjaadKoVfLWgvJaW3ljh8ILtCNHs,85
+pokemaster-0.2.0.dist-info/METADATA,sha256=74w9vsqDdkH9GQEKpvw8wGnQ0Av7pcjwHofYhf8rwRM,4249
+pokemaster-0.2.0.dist-info/RECORD,,
