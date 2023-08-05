@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: base-aios
+Version: 0.0.2
+Summary: base class package
+Home-page: UNKNOWN
+Author: duke.lv
+Author-email: jian.lv@hotmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# base package
+
+This is the common base classes to unify the api return result data format.
+
+- ResponeResult
+
+  to normal result dataformat
+
+- ResponePageResult
+
+  to page result data format
+
+- ReturnCode
+
+  to unify return code
+
+
