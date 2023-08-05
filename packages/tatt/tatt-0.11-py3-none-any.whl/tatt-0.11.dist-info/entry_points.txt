@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        transcribe=tatt.transcribe:cli
+    
