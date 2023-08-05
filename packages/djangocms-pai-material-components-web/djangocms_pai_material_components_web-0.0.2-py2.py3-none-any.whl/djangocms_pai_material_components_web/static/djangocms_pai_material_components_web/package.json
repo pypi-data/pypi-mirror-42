@@ -1,0 +1,16 @@
+{
+  "name": "djangocms_pai_material_components_web",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "paiuolo@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@material/drawer": "^0.43.0",
+    "@material/layout-grid": "^0.41.0",
+    "@material/top-app-bar": "^0.43.0"
+  }
+}
