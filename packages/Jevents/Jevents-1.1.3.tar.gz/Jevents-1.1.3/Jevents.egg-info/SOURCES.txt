@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+Jevents/__init__.py
+Jevents/events.py
+Jevents/watch.py
+Jevents/watch2.py
+Jevents.egg-info/PKG-INFO
+Jevents.egg-info/SOURCES.txt
+Jevents.egg-info/dependency_links.txt
+Jevents.egg-info/not-zip-safe
+Jevents.egg-info/top_level.txt
