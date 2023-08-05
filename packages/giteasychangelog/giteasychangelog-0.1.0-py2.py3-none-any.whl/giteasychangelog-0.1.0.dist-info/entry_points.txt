@@ -1,0 +1,3 @@
+[console_scripts]
+giteasychangelog = giteasychangelog.cli:main
+
