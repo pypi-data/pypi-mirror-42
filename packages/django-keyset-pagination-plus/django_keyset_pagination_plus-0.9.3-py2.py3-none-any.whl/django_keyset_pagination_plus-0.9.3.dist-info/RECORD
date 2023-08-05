@@ -1,0 +1,8 @@
+keyset_pagination/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+keyset_pagination/mixin.py,sha256=UAarVQ9M9IRqEo_QfWFFKUBdd0yqsNAvOAT3WBu2I00,1671
+keyset_pagination/paginator.py,sha256=OKAAgb9P0wXys9dJ-sj60NGb9Gh_9WqJZVyxp9qpNT4,7966
+django_keyset_pagination_plus-0.9.3.dist-info/LICENSE,sha256=vJI9AExJk3f_XhJEpLVdTmnnST06XtnN2NdD1K5KFSU,1459
+django_keyset_pagination_plus-0.9.3.dist-info/METADATA,sha256=B8HxHqFwuZNyBub2kENMlw7Maahry9U79pHVyPm2UjQ,3292
+django_keyset_pagination_plus-0.9.3.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+django_keyset_pagination_plus-0.9.3.dist-info/top_level.txt,sha256=KIDPSdlf71VJnL76xqeMOLctUpq31NYhNc6V1NeWryk,18
+django_keyset_pagination_plus-0.9.3.dist-info/RECORD,,
