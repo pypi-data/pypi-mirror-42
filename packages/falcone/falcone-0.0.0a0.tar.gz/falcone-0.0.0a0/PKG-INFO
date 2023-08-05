@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: falcone
+Version: 0.0.0a0
+Summary: Falcon framework tools
+Home-page: http://dgarana.com
+Author: David Garaña
+Author-email: david@dgarana.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP

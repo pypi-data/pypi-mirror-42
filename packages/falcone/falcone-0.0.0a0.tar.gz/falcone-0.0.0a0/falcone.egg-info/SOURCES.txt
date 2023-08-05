@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+falcone/__init__.py
+falcone.egg-info/PKG-INFO
+falcone.egg-info/SOURCES.txt
+falcone.egg-info/dependency_links.txt
+falcone.egg-info/top_level.txt
+requirements/dev-requirements.txt
+requirements/requirements.txt
+requirements/test-requirements.txt
