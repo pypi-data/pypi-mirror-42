@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pylinenotify
+Version: 1.1.5
+Summary: using LineNotify more easily
+Home-page: https://github.com/reud/PyLineNotify
+Author: reud
+Author-email: mail@reud.net
+License: MIT
+Project-URL: Bug Reports, https://github.com/reud/PyLineNotify/issues
+Project-URL: Source, https://github.com/reud/PyLineNotify
+Description: UNKNOWN
+Keywords: LINENotify
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
