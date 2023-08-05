@@ -1,0 +1,9 @@
+numpy
+scipy
+six
+
+[tensorflow]
+tensorflow<2
+
+[tensorflow-gpu]
+tensorflow-gpu<2
