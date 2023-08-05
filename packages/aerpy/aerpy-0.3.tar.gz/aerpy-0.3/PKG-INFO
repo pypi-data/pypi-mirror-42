@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: aerpy
+Version: 0.3
+Summary: a python library for reading ".aedat" format for event-camera logs.
+Home-page: https://github.com/gwappa/python-aerpy
+Author: Keisuke Sehara
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
