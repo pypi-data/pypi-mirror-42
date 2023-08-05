@@ -1,0 +1,1 @@
+IoT HAT orchestrates high-end components demanding in IoT scenarios. It combines sensors, relays, IO’s and an IR remote transceiver on a single board. This allows you to easily create complex scenarios without the hassle of cable clutter. Whether you are a beginner or a professional, IoT HAT will help you to develop the best in the shortest possible time.

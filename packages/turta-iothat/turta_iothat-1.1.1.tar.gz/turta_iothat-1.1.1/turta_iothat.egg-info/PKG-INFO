@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: turta-iothat
+Version: 1.1.1
+Summary: Python Libraries for Turta IoT HAT
+Home-page: https://www.turta.io/iot-hat
+Author: Turta LLC
+Author-email: support@turta.io
+License: UNKNOWN
+Project-URL: Documentation, https://docs.turta.io/raspberry-pi-hats/iot-hat
+Project-URL: Community, https://community.turta.io
+Project-URL: GitHub Repository, https://github.com/Turta-io/IoTHAT
+Description: IoT HAT orchestrates high-end components demanding in IoT scenarios. It combines sensors, relays, IO’s and an IR remote transceiver on a single board. This allows you to easily create complex scenarios without the hassle of cable clutter. Whether you are a beginner or a professional, IoT HAT will help you to develop the best in the shortest possible time.
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Topic :: System :: Hardware
+Description-Content-Type: text/markdown

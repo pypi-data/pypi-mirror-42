@@ -1,0 +1,14 @@
+README.md
+setup.py
+turta_iothat/Turta_APDS9960.py
+turta_iothat/Turta_BME280.py
+turta_iothat/Turta_BME680.py
+turta_iothat/Turta_IOPort.py
+turta_iothat/Turta_MMA8491Q.py
+turta_iothat/Turta_RelayController.py
+turta_iothat/Turta_VEML6075.py
+turta_iothat/__init__.py
+turta_iothat.egg-info/PKG-INFO
+turta_iothat.egg-info/SOURCES.txt
+turta_iothat.egg-info/dependency_links.txt
+turta_iothat.egg-info/top_level.txt
