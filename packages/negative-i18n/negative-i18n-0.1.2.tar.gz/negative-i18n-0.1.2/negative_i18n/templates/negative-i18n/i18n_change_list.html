@@ -1,0 +1,88 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static admin_list admin_urls %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/negative-i18n/negative-i18n-admin.css" media="all">
+    <style>
+      label[for=id_update_empty] {display: inline-block; padding-right: 10px;}
+    </style>
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+
+{% endblock %}
+
+{% block bodyclass %}change-list change-list-i18n{% endblock %}
+
+{% block content %}
+
+    <ul id="suit_form_tabs" class="nav nav-tabs nav-tabs-suit" data-tab-prefix="suit-tab">
+
+        <li class="active"><a href="#overview">Overview</a></li>
+        <li class=""><a href="#manual">String editor</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="suit-tab suit-tab-overview">
+
+
+            <div class="row" style="margin: 50px 10px;">
+                <div class="span3 well" style="margin-left: 40px;">
+                    <form enctype="multipart/form-data" method="post">
+
+                        <h2 style="margin: 0 0 20px 0;">Translation file import</h2>
+
+                        {% csrf_token %}
+
+                        {{ po_form.as_p }}
+
+
+                        <input type="submit" value="Import" class="btn btn-info">
+                    </form>
+                    {% if po_result %}
+                        <h4>Update result:</h4>
+                        Language: {{ po_result.lang }}<br>
+                        Strings updated: {{ po_result.strings_updated }}<br>
+                        Db entries updated: {{ po_result.model_entries_updated }}
+                    {% endif %}
+
+                </div>
+                {% for file in po_files %}
+                <div class="span2">
+                    <div class="inner-content text-center">
+
+                        <div class="c100 p{{ file.percent }} center {% if file.percent > 80 %}green{% elif file.percent < 25 %}orange{% endif %}">
+                            <span>{{ file.percent }}%</span>
+                            <div class="slice"><div class="bar"></div><div class="fill"></div></div>
+                        </div>
+
+                        <h3>{{ file.name }}</h3>
+                        <p>
+                            <em>{{ file.translated }} of {{ file.items }} translated</em>
+                            <br>
+                            <a style="text-decoration: none; line-height: 40px;" href="strings_{{ file.lang }}.po">
+                                <i class="icon-download-alt"></i> strings_{{ file.lang }}.po
+                            </a>
+
+                        </p>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+      </div>
+      <div class="suit-tab suit-tab-manual">
+        {{ block.super }}
+      </div>
+    </div>
+
+<script type="text/javascript">
+    (function ($) {
+      $(function () {
+        $('#suit_form_tabs').suit_form_tabs();
+      });
+    }(Suit.$))
+    </script>
+
+
+{% endblock %}
