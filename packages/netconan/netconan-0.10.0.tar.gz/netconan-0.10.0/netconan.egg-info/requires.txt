@@ -1,0 +1,11 @@
+configargparse
+bidict
+enum34
+ipaddress
+passlib
+regex==2019.02.18
+six
+
+[dev]
+flake8
+flake8-docstrings
