@@ -1,0 +1,5 @@
+aiohttp
+asyncio
+redis
+requests
+async-timeout
