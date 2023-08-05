@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: DBService
+Version: 1.4
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: yiTian.zhang
+Author-email: hhczy1003@163.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: scrapy
+Requires-Dist: scrapy-redis
+Requires-Dist: pymongo
+Requires-Dist: apscheduler
+Requires-Dist: selenium
+
+UNKNOWN
+
+
