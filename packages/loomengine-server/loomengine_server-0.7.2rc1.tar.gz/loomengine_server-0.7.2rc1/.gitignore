@@ -1,0 +1,5 @@
+LICENSE
+NOTICES
+README.rst
+celerybeat-schedule.db
+*.sqlite3
