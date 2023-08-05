@@ -1,0 +1,13 @@
+language: python
+python:
+- '3.5'
+- '3.6'
+install:
+- pip install nltk
+- python -m nltk.downloader punkt
+- pip install coveralls tox-travis 
+script: tox
+after_success: coveralls
+notifications:
+  slack:
+    secure: SxnVL4AOA8eNbDbVo3kgjicZu95SsH9ReO2A7n1AWlAWdm2vhDKA+igZt0UZUZmW+H6ssjAZl4tO1P9GcdBEe0YrviAsx+dh/ldmhdxMmFHtjFVe/luHn6V0PB9dD1FUDBq2fwLAtzbyoP0dGedkD1hIKJ27Qf5e7jULJbAcW/0=
