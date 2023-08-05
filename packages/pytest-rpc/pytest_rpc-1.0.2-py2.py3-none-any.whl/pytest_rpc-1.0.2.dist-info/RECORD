@@ -1,0 +1,9 @@
+pytest_rpc/__init__.py,sha256=MGtNzXVYdh57_FRVrX7bEAqFhsfuJ5PhG3i1UouMQ10,436
+pytest_rpc/fixtures.py,sha256=S6IuTuOgDzKKVBbbmhTBsE8DYapIiVMrJN8NGiI2IFw,20085
+pytest_rpc/helpers.py,sha256=CBqU88EjkblQyx-znepVI7p45xlEJ8ETeapG6nLaUDI,9180
+pytest_rpc-1.0.2.dist-info/LICENSE,sha256=CUvt2ilcBwKAfRAnoA4RNPTLcdUj3En21LPK9YkFMGg,11358
+pytest_rpc-1.0.2.dist-info/METADATA,sha256=x2bEH9R1HgSuqr6y1l-6BybxhBpDV-AAteVU0ffebLM,2775
+pytest_rpc-1.0.2.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+pytest_rpc-1.0.2.dist-info/entry_points.txt,sha256=wx3ClxJch2unin3kqw7fZOJK0vfMmJ47mFwvKYZM9lY,29
+pytest_rpc-1.0.2.dist-info/top_level.txt,sha256=ibff9j5-TpD4Sb_pslAydHvcPl00muhlJGi6PbTHVJk,11
+pytest_rpc-1.0.2.dist-info/RECORD,,
