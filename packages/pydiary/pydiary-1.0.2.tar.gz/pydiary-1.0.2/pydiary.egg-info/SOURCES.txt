@@ -1,0 +1,7 @@
+README.md
+setup.py
+pydiary/__init__.py
+pydiary.egg-info/PKG-INFO
+pydiary.egg-info/SOURCES.txt
+pydiary.egg-info/dependency_links.txt
+pydiary.egg-info/top_level.txt
