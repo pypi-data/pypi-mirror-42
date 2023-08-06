@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: semcluster
+Version: 0.0.1
+Summary: Unsupervised automatic keyphrase extraction
+Home-page: UNKNOWN
+Author: Palle Klewitz
+License: UNKNOWN
+Description: # SemCluster
+         Unsupervised Automatic Keyphrase Extraction Using Affinity Propagation
+        
+        ### Installation
+        
+        1. Clone this Repo and its submodules using
+            ```bash
+            git clone --recurse-submodules git@code.siemens.com:palle.klewitz/semcluster.git
+            ```
+            
+        2. Install esa-wiki
+            ```bash
+            cd ESA-Wiki
+            python3 setup.py sdist bdist_wheel
+            pip3 install dist/wiki_esa-0.0.1-py3-none-any.whl
+            cd ..
+            ```
+            
+        3. Install semcluster
+            ```bash
+            python3 setup.py sdist bdist_wheel
+            pip3 install dist/semcluster-0.0.1-py3-none-any.whl
+            ```
+            
+        ### Usage
+        
+        ```python
+        from semcluster import SemClusterKeywordExtractor
+        
+        text = "The quick brown fox jumps over the lazy dog."
+        
+        # Instantiate extractor
+        e = SemClusterKeywordExtractor()
+        
+        # Extract phrases
+        keyphrases = e.extract_keyphrases(text, seed_threshold=0.7, verbose=True)
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
