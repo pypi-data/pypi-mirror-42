@@ -1,0 +1,7 @@
+setup.py
+write2file/__init__.py
+write2file.egg-info/PKG-INFO
+write2file.egg-info/SOURCES.txt
+write2file.egg-info/dependency_links.txt
+write2file.egg-info/not-zip-safe
+write2file.egg-info/top_level.txt
