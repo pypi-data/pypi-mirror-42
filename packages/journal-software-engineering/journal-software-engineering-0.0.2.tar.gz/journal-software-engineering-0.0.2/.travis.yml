@@ -1,0 +1,18 @@
+language: python
+python:
+  - 2.7
+install:
+- pip install tox-travis
+- pip install codecov
+script:
+ - tox -v -e py
+after_success:
+ - codecov
+deploy:
+  provider: pypi
+  user: sagersmith8
+  password: $PYPI_PW
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    python: 2.7
