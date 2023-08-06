@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Shop
+{% endblock %}
+
+{% block nav_left %}
+{% include 'shop/navleft.html' %}
+{% endblock %}
+
+{% block nav_right %}
+<form class="form-inline mt-2 mt-md-0" action="{{ url_for('shop.search') }}">
+    <input class="form-control mr-sm-2" type="search" placeholder="商品搜索" name="search_name" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">搜索</button>
+</form>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <ul class="nav">
+        <li class="nav-item">
+            {%if search==False %}
+            <a class="nav-link" href="/shop/">全部分类</a>
+            {% else %}
+            <a class="nav-link"
+                href="/shop/search?search_name={{search_name}}">全部分类</a>
+            {% endif %}
+        </li>
+        {%for category in categories%}
+        <li class="nav-item">
+            {%if search==False %}
+            <a class="nav-link" href="/shop/?category={{category['name']}}">{{category['name']}}</a>
+            {% else %}
+            <a class="nav-link"
+                href="/shop/search?search_name={{search_name}}&category={{category['name']}}">{{category['name']}}</a>
+            {% endif %}
+        </li>
+        {%endfor%}
+    </ul>
+</nav>
+
+<style>
+    .card-custom {
+        max-width: 256px;
+        min-width: 256px;
+    }
+</style>
+
+<div class="row smrow mt-5 justify-content-center">
+    {% for i in goods %}
+    <div class="card card-custom mx-2 mb-3">
+        <img src="/shop/getpic/{{i['id']}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{i['name']}}</h5>
+            <p class="card-text">{{i['value']}}人民币</p>
+            <p class="card-text">{{i['type']}}</p>
+        </div>
+        <div class="card-footer">
+            <form class="btn smrmpadding" action="/shop/buy/{{i['id']}}" method="post">
+                {% if i['amount']!='' and i['amount']|int == 0 %}
+                <button class="btn btn-primary" type="submit" disabled>缺货</button>
+                {% else %}
+                <button class="btn btn-primary" type="submit">购买</button>
+                {% endif %}
+            </form>
+            <a class="btn btn-secondary" href="/shop/detail/{{i['id']}}">详情</a>
+        </div>
+        {% if g.shopuser and g.shopuser['isadmin'] %}
+        <div class="card-footer">
+            <a class="btn btn-dark" href="/shop/amendgood/{{i['id']}}">修改</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#I{{i['id']}}ModalCenter">
+                删除
+            </button>
+        </div>
+        {% endif %}
+    </div>
+    {% if g.shopuser and g.shopuser['isadmin'] %}
+    <!-- Modal -->
+    <div class="modal fade" id="I{{i['id']}}ModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="I{{i['id']}}ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="I{{i['id']}}ModalCenterTitle">删除确认</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    你是否确认要删除{{i['name']}}？
+                </div>
+                <div class="modal-footer">
+                    <form action="/shop/deletegood/{{i['id']}}" method="post">
+                        <button class="btn btn-danger" type="submit">确认删除</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
