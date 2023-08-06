@@ -1,0 +1,17 @@
+click
+ipykernel
+nbformat
+nbconvert
+markdown
+
+[develop]
+mkdocs
+pytest
+pytest-cov
+matplotlib
+bokeh
+holoviews
+pandas
+sympy
+selenium
+flake8
