@@ -1,0 +1,11 @@
+hookit/__init__.py,sha256=Jiyx_IXNw0_q3Pfjpg8cpj2UuMm6Nm0HjkXofzuuQTc,70
+hookit/config.py,sha256=C7ErfQmt9Lqu6qOeE3AqOuur1i6Y3YFpQw3pLW4ImWc,380
+hookit/exc.py,sha256=CL5ZRFbvDOcdt_oRaKsFI2SjZ-m99b3jkhwG-2fcUz8,136
+hookit/hookit.py,sha256=Z4nL64fCwnKtm5gu48G8pU8QJucedpSVZxsir8p0ie4,10124
+hookit/http.py,sha256=ILVKFqxOSVDyQGaNNTuMutJuWzch_E9xLyRmHiIIcNM,1741
+hookit/log.py,sha256=-zbCGS8N9l_v41_6XKnNcYfv1ilBXK3nYCb456skdOA,74
+hookit_python-1.0.0.dist-info/LICENSE,sha256=ZX9eUrwI7p3k0TdF_4qrS57G8tWnuQGLPIk49KL8Pg4,1317
+hookit_python-1.0.0.dist-info/METADATA,sha256=VGzZ_gnOtg3uFs5Efg9EgaxhCSrwlQigIRS1u5rl2GQ,349
+hookit_python-1.0.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+hookit_python-1.0.0.dist-info/top_level.txt,sha256=BIe3eKB8DyaqRopFEifSLC9KBcQ0mCZnmbn5dFY4-Lk,7
+hookit_python-1.0.0.dist-info/RECORD,,
