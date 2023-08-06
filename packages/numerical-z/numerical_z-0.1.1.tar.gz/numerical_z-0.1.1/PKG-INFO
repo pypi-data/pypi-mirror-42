@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: numerical_z
+Version: 0.1.1
+Summary: Compute the plasma equation Z from any EVDF
+Home-page: https://hephaistos.lpp.polytechnique.fr/rhodecode/GIT_REPOSITORIES/LPP/Users/Tavant/DevCalcul/Numerical_Z
+Author: Antoine Tavant
+Author-email: antoinetavant@hotmail.fr
+License: GNU General Public License v3
+Description: 
+        
+        
+Keywords: numerical_z
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
