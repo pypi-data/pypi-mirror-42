@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
+import os
+import sys
+import abc
+import zcommand
+import itertools
+from search_engine_spider import SearchEngineManager
+
+
+class SearchEngineSpider(zcommand.RunCommand):
+    def __init__(self):
+        super(SearchEngineSpider, self).__init__("help")
+        self.mgr = SearchEngineManager()
+        self.command.add('list', self.mgr.print_search_engine, 0, 0,
+                         "list", self.mgr.print_search_engine.__doc__)
+        self.command.add('product-urls', self.mgr.product_urls, 2, 100,
+                         "product-urls engine_name word_file1 [word_file2]...",
+                         self.mgr.product_urls.__doc__)
+        self.command.add('product-query', self.mgr.product_query, 1, 100,
+                         "product-query word_file1 [word_file2]...",
+                         self.mgr.product_urls.__doc__)
+        self.command.add('extract-html', self.mgr.print_extract_html, 2, 3,
+                         "extract-html engine_name html_path [max_num=10000]",
+                         self.mgr.print_extract_html.__doc__)
+        self.command.add('extract-json', self.mgr.print_extract_json, 2, 3,
+                         "extract-json engine_name json_path [max_num=10000]",
+                         self.mgr.print_extract_json.__doc__)
+        self.command.add('recovery', self.mgr.recovery_rate, 2, 3,
+                         "recovery local_site_file json_result_path [max_num=10000]",
+                         self.mgr.recovery_rate.__doc__)
+        self.command.add('seed-value', self.mgr.seed_value, 5, 100,
+                         "seed-value seed_calc_type json_result_path max_num output_dir [end_exclude_word_file...]",
+                         self.mgr.seed_value.__doc__)
+        self.command.add('site-value', self.mgr.site_value, 5, 100,
+                         "site-value calc_type seed_calc_type json_result_path max_num output_dir [end_exclude_word_file...]",
+                         self.mgr.site_value.__doc__)
+        self.command.add('filter', self.mgr.filter_key, 3, 100,
+                         "filter json_result_file max_num key_file [key_file2]...",
+                         self.mgr.filter_key.__doc__)
+
+if __name__=="__main__":
+    spider = SearchEngineSpider()
+    spider.run(sys.argv[1:])
