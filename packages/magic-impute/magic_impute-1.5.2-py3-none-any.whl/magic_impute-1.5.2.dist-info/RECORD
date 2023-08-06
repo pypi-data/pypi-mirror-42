@@ -1,0 +1,16 @@
+desktop.ini,sha256=jOW55Fdq6g4jS7ho9cxEpi0vbGDiTBVqXlJhNYodkR0,136
+magic/__init__.py,sha256=j_odhmQgzeJpkM0B8KYoa_ncBwqu2OqNTzYnjCfoYcg,168
+magic/desktop.ini,sha256=jOW55Fdq6g4jS7ho9cxEpi0vbGDiTBVqXlJhNYodkR0,136
+magic/io.py,sha256=MLSFm2hrRSyw-FxnU8kETz8mTHUJRFafJR47bewVzGQ,10995
+magic/logging.py,sha256=iE1LepAWrdhyb5VepBd0S0M2BbN3yoJv5qUU9P-e5Q8,4103
+magic/magic.py,sha256=FVG69bLI70Fr6L7KSa5sIrwX-GFA-Z7aiP-fxMWb3fA,31057
+magic/plot.py,sha256=E1SpGkQw4AvBXqtTGIyICcLWt1peX9210IW4Nccz7vw,5943
+magic/preprocessing.py,sha256=P0EMUAORs-qpnew9aabrJPsm5TCY8VuHI1kvJq9g0cM,1083
+magic/test.py,sha256=S807McqvYwCjDkZYw7iBsUVTlghzzCaERiHzo6qMW8M,1158
+magic/utils.py,sha256=4qDqKmmqke-DKyMtZ-clPIPezNDRGWZ11_x6M2SgvLc,5549
+magic/version.py,sha256=HLKGz3QW3PfV49GVyxxNlv4gLi0XCqwRU0-GU-SVUpc,23
+magic_impute-1.5.2.dist-info/METADATA,sha256=_j8w5lISYfaG310eh8Ey8SYai0g4zJNihphi9zDoOuQ,5593
+magic_impute-1.5.2.dist-info/RECORD,,
+magic_impute-1.5.2.dist-info/WHEEL,sha256=pZyAqgNAylOf0KG_hPHMtuuY08rV3WzWwZu2OTsNnnw,97
+magic_impute-1.5.2.dist-info/desktop.ini,sha256=jOW55Fdq6g4jS7ho9cxEpi0vbGDiTBVqXlJhNYodkR0,136
+magic_impute-1.5.2.dist-info/top_level.txt,sha256=MDDOZCPmPBiPXW10LHC6RzAJaGX08WaDj_oOOo7sQRc,6
