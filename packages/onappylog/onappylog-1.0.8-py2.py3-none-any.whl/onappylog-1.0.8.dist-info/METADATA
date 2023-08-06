@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: onappylog
+Version: 1.0.8
+Summary: onap python logging library
+Home-page: https://github.com/onap/logging-analytics/tree/master/pylog
+Author: ke liang
+Author-email: lokyse@163.com
+License: Apache 2.0
+Keywords: yaml,logging,mdc,onap
+Platform: all
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: PyYAML (>=3.10)
+Requires-Dist: watchdog (>=0.8.3)
+
+python-package onappylog could be used in any pythonproject to record MDC information and reload loggingat runtime
+
+
