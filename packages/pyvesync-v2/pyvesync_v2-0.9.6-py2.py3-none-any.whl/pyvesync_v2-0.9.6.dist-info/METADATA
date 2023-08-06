@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pyvesync-v2
+Version: 0.9.6
+Summary: Python library for vesync API for Etekcity Smart Outlets & switches
+Home-page: https://github.com/webdjoe/pyvesync_v2
+Author: Joseph Trabulsy
+Author-email: webdjoe@gmail.com
+License: MIT
+Keywords: iot,vesync,etekcity,smart plug,smart switch
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.0
+Requires-Dist: requests (>=2.20.0)
+
+Python library for vesync API to control etekcity 7A and 15A wifi smart outlets (round and rectangular) and wifi smart switches.  See the github page for further documentation: https://github.com/webdjoe/pyvesync_v2
+
+
