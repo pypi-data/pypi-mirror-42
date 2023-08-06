@@ -1,0 +1,812 @@
+import os
+import string
+import numpy as np
+import matplotlib.pyplot as plt
+
+from tqdm import tqdm
+from scipy import stats
+from scipy.optimize.minpack import leastsq
+from diffpy.Structure import loadStructure, Structure
+from diffpy.srreal.pdfcalculator import PDFCalculator, DebyePDFCalculator
+from pyobjcryst import loadCrystal
+from diffpy.srfit.fitbase import Profile, FitResults, initializeRecipe, FitContribution, FitRecipe
+from diffpy.srfit.pdf.characteristicfunctions import sphericalCF
+from diffpy.srfit.pdf import PDFParser, PDFGenerator, PDFContribution
+
+
+def scipyOptimize(recipe):
+    """
+    Fitting with scipy stats' leastsq function.
+
+    Parameter
+    ---------
+    	recipe : recipe from diffpy.
+
+    Return
+    ------
+    	None.
+    """
+
+    leastsq(recipe.residual, recipe.getValues())
+    return
+
+
+def plotRecipe(recipe):
+    """
+    Used for plotting recipe.
+
+    Parameter
+    ---------
+    	recipe : recipe from diffpy.
+
+    Return
+    ------
+    	None.
+    """
+
+    r = recipe.pdf.profile.x
+    g = recipe.pdf.profile.y
+    gcalc = recipe.pdf.evaluate()
+    diffzero = -0.8 * max(g) * np.ones_like(g)
+    diff = g - gcalc + diffzero
+    plt.plot(r,g,'bo',label="G(r) Data")
+    plt.plot(r, gcalc,'r-',label="G(r) Fit")
+    plt.plot(r,diff,'g-',label="G(r) diff")
+    plt.plot(r, diffzero,'k-')
+    plt.xlabel("$r (\AA)$")
+    plt.ylabel("$G (\AA^{-2})$")
+    plt.legend(loc=1)
+
+
+class pearsonFitting:
+    """
+    Pearson Fitting Class for Pair Distribution Function analysis.
+    
+    Parameter
+    ---------
+        None.
+
+    Return
+    ------
+        None.
+    """
+
+
+    def __init__(self):
+        """
+        Creates an object. 
+        """
+
+        self.qdamp    = 0.04
+        self.delta2   = 2.0
+        self.qmin     = 0.0
+        self.qmax     = 20.0
+        self.psize    = 20.0
+        self.atomBiso = ['']
+        self.Biso     = [0.005]
+
+        self._wrFiles   = 7
+        self._wrNames   = 20
+        self._wrDecimal = 5
+        self.__params   = False
+
+
+    def __create_array(self, arr, fields):
+        """
+        Creating and exstending an numpy array.
+
+        Parameter
+        ---------
+            arr : an numpy array.
+
+            fields : an array containing strings e.g. ['x', 'y', 'z'].
+
+        Return
+        ------
+            None.
+        """
+
+        dtype2 = np.dtype({name:arr.dtype.fields[name] for name in fields})
+        return np.ndarray(arr.shape, dtype2, arr, 0, arr.strides)
+
+
+
+
+    def loadDataPDF(self, dataDir):
+        """
+        Load G(r) of measured data.
+
+        Parameter
+        ---------
+            dataDir : The directory where the datafiles should be imported.
+
+        Return
+        ------
+            None.
+        """
+
+        self.dataDir = dataDir
+        os.chdir(self.dataDir)
+        self.allData = sorted(os.listdir(self.dataDir))
+        self.PDFfiles = []
+        for i in self.allData:
+            self.PDFfiles.append(np.loadtxt(i, dtype={'names': ('r_val', 'int_val'), 
+                                                      'formats': ('f4', 'f4')}))
+    
+
+    def loadCIF(self, CIFdir):
+        """
+        Simple function that gets the names of all files within a folder.
+        There can not be subfolders within this folder! Load Data.
+
+        Parameter
+        ---------
+            CIFdir : Desired directory.
+
+        Return
+        ------
+            None.
+        """
+
+        self.CIFdir = CIFdir
+        os.chdir(self.CIFdir)
+        self.allCIF = sorted(os.listdir(self.CIFdir))
+
+           
+    def setPDF(self, rmin=None, rmax=None, qmin=None, qmax=None, qdamp=None, delta2=None, psize=None, atomBiso=None, Biso=None):
+        """
+        Used for changing the standart parameters when generating the PDFs.
+        All PDFs will be calculated using the same parameters.
+
+        Parameter
+        ---------
+            rmin : Takes float as input. If none is given rmin is set to data sets starting value.
+
+            rmax : Takes float as input. If none is given rmax is set to data sets ending value.
+
+			qmin : Takes float as input. If none is given qmin is set to 0.0.
+
+			qmax : Takes float as input. If none is given qmax is set to 20.0.
+
+            qdamp : Takes float as input. If none is given qdamp is set to 0.04.
+            
+            delta2 : Takes float as input. If none is given delta2 is set to 2.0.
+
+            psize : Takes float as input. If none is given psize is set to 20.0.
+
+            atomBiso : Takes a list a atom names e.g. ['W', 'O']. Atoms will have their Biso set to corresponding index of Bios.
+            		   If no input is given all atoms Biso is changed.
+
+            Biso : Takes a list of floats, must have same length as atomBios e.g. [0.005, 0.003].
+                   If no value is given all atoms Biso i set to 0.005. 
+
+        Return
+        ------
+            None
+        """
+        if rmin!=None:
+            self.rmin = rmin
+        if rmax!=None:
+            self.rmax = rmax
+        if qdamp!=None:
+            self.qdamp = qdamp
+        if qmin!=None:
+            self.qmin = qmin
+        if qmax!=None:
+            self.qmax = qmax
+        if delta2!=None:
+            self.delta2 = delta2
+        if psize!=None:
+            self.psize = psize
+        if atomBiso!=None:
+            self.atomBiso = atomBiso
+        if Biso!=None:
+            self.Biso = Biso
+     
+
+    def setSaveDir(self, saveDir):
+    	"""
+    	Parameter
+    	---------
+			saveDir : Directory where files will be stored 
+
+    	Return
+    	------
+    		None.
+    	"""
+        self.saveDir = saveDir
+
+
+    def genClusterPDF(self, inputData=None, inputCIF=None, idSettings=True, savePDF=False, saveDir=''):
+        if inputData != None and inputCIF !=None: 
+            dataFile = inputData
+            structureFile = inputCIF
+
+            pdfcontribution = PDFContribution("pdf")
+            os.chdir(self.dataDir)
+            pdfcontribution.loadData(dataFile)
+            #pdfcontribution.setCalculationRange(xmin=3.15, xmax=13, dx=0.01)
+            os.chdir(self.CIFdir)
+            structure = loadStructure(structureFile)
+            pdfcontribution.addStructure("Cluster", structure, periodic=False)
+
+            pdfcontribution.Cluster.setQmin(self.qmin)
+            pdfcontribution.Cluster.setQmax(self.qmax)
+
+            recipe = FitRecipe()
+
+            recipe.addContribution(pdfcontribution)
+
+            recipe.addVar(pdfcontribution.qdamp, self.qdamp, fixed=True)
+            recipe.addVar(pdfcontribution.scale, 1)
+            recipe.addVar(pdfcontribution.Cluster.delta2, self.delta2, tag='delta2')
+            #recipe.restrain(pdfcontribution.Cluster.delta2, lb=0.0, ub=7, sig=0.001)
+            BiBiso = recipe.newVar("Atom_Biso", value=self.Biso[0], tag='Atom_iso')
+            atoms = pdfcontribution.Cluster.phase.getScatterers()
+            for atom in atoms:
+                if atom.element != 'XXX':
+                    recipe.constrain(atom.Biso, BiBiso)
+
+            recipe.fix('all')
+            recipe.free('scale')
+
+            recipe.clearFitHooks()
+            return recipe 
+
+        else:
+            files = len(self.allData)
+            if idSettings==True:
+                files = 1
+            else:
+                pass
+            PDF = []
+            for i in range(files):
+                for j in range(len(self.allCIF)):
+                    
+                    pdfcontribution = PDFContribution("pdf")
+                    os.chdir(self.dataDir)
+                    pdfcontribution.loadData(self.allData[i])
+                    #pdfcontribution.setCalculationRange(xmin=3.15, xmax=13, dx=0.01)
+                    os.chdir(self.CIFdir)
+                    structure = loadStructure(self.allCIF[j])
+                    pdfcontribution.addStructure("Cluster", structure, periodic=False)
+
+                    pdfcontribution.Cluster.setQmin(self.qmin)
+                    pdfcontribution.Cluster.setQmax(self.qmax)
+
+                    recipe = FitRecipe()
+
+                    recipe.addContribution(pdfcontribution)
+
+                    recipe.addVar(pdfcontribution.qdamp, self.qdamp, fixed=True)
+                    recipe.addVar(pdfcontribution.scale, 1)
+                    recipe.addVar(pdfcontribution.Cluster.delta2, self.delta2, tag='delta2')
+                    #recipe.restrain(pdfcontribution.Cluster.delta2, lb=0.0, ub=7, sig=0.001)
+                    BiBiso = recipe.newVar("Atom_Biso", value=self.Biso[0], tag='Atom_iso')
+                    atoms = pdfcontribution.Cluster.phase.getScatterers()
+                    for atom in atoms:
+                        if atom.element != 'XXX':
+                            recipe.constrain(atom.Biso, BiBiso)
+
+                    recipe.fix('all')
+                    recipe.free('scale')
+
+                    recipe.clearFitHooks()
+            
+                    PDF.append(recipe.pdf.evaluate())
+                self.PDF = PDF
+
+        
+    def genPDF(self, data=None, CIF=None, idSettings=True, savePDF=False, saveDir=''):
+        """
+        Generates and saves the PDFs of the CIFs.
+
+        Parameter
+        ---------
+			data : Name of data file the CIF should be generated from.
+				   If none is defined all data files will be used.
+
+			CIF : Name of CIF files that should be used to generate PDF.
+				  If none is defined all CIFs will be calculated.
+
+            savePDF : Takes in a boolean. If 'True' calculated PDFs will be saved. 
+
+            saveDir : Directory for where the PDFs should be saved. 
+                      Only used if savePDF is set to 'True'.
+
+        Return
+        ------
+            None.
+        """
+
+        if data!=None or CIF!=None:
+            os.chdir(self.dataDir)
+            pdf_file = np.loadtxt(data, dtype={'names': ('r_val', 'int_val'), 
+                                               'formats': ('f4', 'f4')})
+            pdfprofile = Profile()
+            pdfparser = PDFParser()
+            pdfparser.parseFile(data)
+            pdfprofile.loadParsedData(pdfparser)
+
+            if self.rmin == None and self.rmax ==None:
+                pass
+            elif self.rmin == None:
+                pdfprofile.setCalculationRange(xmax = self.rmax)
+            elif self.rmax == None:
+                pdfprofile.setCalculationRange(xmin = self.rmin)
+            else: 
+                pdfprofile.setCalculationRange(xmin = self.rmin, xmax = self.rmax)
+
+            os.chdir(self.CIFdir)
+            pdfgenerator = PDFGenerator("G1")
+            pdfgenerator.qdamp.value = self.qdamp
+            pdfgenerator.delta2.value = self.delta2
+            pdfgenerator.setQmin(self.qmin)
+            pdfgenerator.setQmax(self.qmax)
+            pdfgenerator._calc.evaluatortype = 'OPTIMIZED'
+
+            structure_crystal = loadCrystal(CIF)
+            pdfgenerator.setStructure(structure_crystal, periodic = True)
+            pdfcontribution = FitContribution("pdf")
+            pdfcontribution.setProfile(pdfprofile, xname="r")
+            pdfcontribution.addProfileGenerator(pdfgenerator)
+            pdfcontribution.registerFunction(sphericalCF, name = "f")
+            pdfcontribution.setEquation('mc1*G1*f')
+            pdfcontribution.psize.value = self.psize
+
+            recipe = FitRecipe()
+            recipe.addContribution(pdfcontribution)
+            recipe.clearFitHooks()
+
+            recipe.addVar(pdfgenerator.delta2, tag = "delta2")
+            recipe.addVar(pdfcontribution.psize, tag = "psize")
+            recipe.addVar(pdfcontribution.mc1, 1, tag = "scale")
+
+            if self.atomBiso[0] == '':
+                for atom in pdfgenerator.phase.getScatterers():
+                    try:
+                        recipe.newVar("Atom_Biso", self.Biso, tag = 'adp_atom')
+                        recipe.constrain(atom.Biso, self.Biso)                      
+                    except:
+                        pass
+            else:
+                d = {}
+                for atom in pdfgenerator.phase.getScatterers():
+                    for i in range(len(Atoms)): 
+                        if atom.element.title().startswith(Atoms[i]) == True:
+                            try:
+                                d[str(Atoms[i])+"_Biso"] = recipe.newVar(str(Atoms[i])+"_Biso", BISO[i], tag = 'adp_'+str(Atoms[i]))
+                                recipe.constrain(atom.Biso, d.values()[i])                      
+                            except:
+                                pass
+
+            for par in pdfgenerator.phase.sgpars.latpars:
+                recipe.addVar(par, tag='cell')
+
+            for par in pdfgenerator.phase.sgpars.xyzpars:
+                lclabel = par.par.obj.GetName().lower()
+                lcsymbol = lclabel.rstrip(string.digits)
+                name="{}_{}".format(par.par.name, lclabel)
+                tags = ['xyz', 'xyz_' + lclabel, 'xyz_' + lcsymbol]
+                try:
+                    recipe.addVar(par, name=name, tags=tags)
+                except:
+                    pass
+                
+            if savePDF == False:
+                pass
+            else:
+                os.chdir(saveDir)
+                for i in range(len(self.allCIF)):
+                    np.savetxt(str(name[i][:-4])+'.gr', pdfsave[i])
+            return recipe
+
+        else:
+            PDF = []
+            files = len(self.allData)
+            if idSettings==True:
+                files = 1
+            else:
+                pass
+            print '\nGenerating PDFs:'
+            for i in tqdm(range(files), desc='Data Files', leave=True):
+                for j in tqdm(range(len(self.allCIF)), desc='CIFs tested', leave=False):
+                    os.chdir(self.dataDir)
+                    pdf_file = np.loadtxt(self.allData[i], dtype={'names': ('r_val', 'int_val'), 
+                                                       'formats': ('f4', 'f4')})
+                    pdfprofile = Profile()
+                    pdfparser = PDFParser()
+                    pdfparser.parseFile(self.allData[i])
+                    pdfprofile.loadParsedData(pdfparser)
+
+                    if self.rmin == None and self.rmax ==None:
+                        pass
+                    elif self.rmin == None:
+                        pdfprofile.setCalculationRange(xmax = self.rmax)
+                    elif self.rmax == None:
+                        pdfprofile.setCalculationRange(xmin = self.rmin)
+                    else: 
+                        pdfprofile.setCalculationRange(xmin = self.rmin, xmax = self.rmax)
+                    
+                    os.chdir(self.CIFdir)
+                    pdfgenerator = PDFGenerator("G1")
+                    pdfgenerator.qdamp.value = self.qdamp
+                    pdfgenerator.delta2.value = self.delta2
+                    pdfgenerator.setQmin(self.qmin)
+                    pdfgenerator.setQmax(self.qmax)
+                    pdfgenerator._calc.evaluatortype = 'OPTIMIZED'
+
+                    structure_crystal = loadCrystal(self.allCIF[j])
+                    pdfgenerator.setStructure(structure_crystal, periodic = True)
+                    pdfcontribution = FitContribution("pdf")
+                    pdfcontribution.setProfile(pdfprofile, xname="r")
+                    pdfcontribution.addProfileGenerator(pdfgenerator)
+                    pdfcontribution.registerFunction(sphericalCF, name = "f")
+                    pdfcontribution.setEquation('mc1*G1*f')
+                    pdfcontribution.psize.value = self.psize
+
+                    recipe = FitRecipe()
+                    recipe.addContribution(pdfcontribution)
+                    recipe.clearFitHooks()
+
+                    recipe.addVar(pdfgenerator.delta2, tag = "delta2")
+                    recipe.addVar(pdfcontribution.psize, tag = "psize")
+                    recipe.addVar(pdfcontribution.mc1, 1, tag = "scale")
+
+                    if self.atomBiso[0] == '':
+                        for atom in pdfgenerator.phase.getScatterers():
+                            try:
+                                recipe.newVar("Atom_Biso", self.Biso, tag = 'adp_atom')
+                                recipe.constrain(atom.Biso, self.Biso)                      
+                            except:
+                                pass
+                    else:
+                        d = {}
+                        for atom in pdfgenerator.phase.getScatterers():
+                            for i in range(len(Atoms)): 
+                                if atom.element.title().startswith(Atoms[i]) == True:
+                                    try:
+                                        d[str(Atoms[i])+"_Biso"] = recipe.newVar(str(Atoms[i])+"_Biso", BISO[i], tag = 'adp_'+str(Atoms[i]))
+                                        recipe.constrain(atom.Biso, d.values()[i])                      
+                                    except:
+                                        pass
+                    PDF.append(recipe.pdf.evaluate())
+            self.PDF = PDF
+       
+
+    def calcPear(self):
+		"""
+		Calculates the Pearson correlation between CIF files and measured data.
+
+		Parameter
+		---------
+			None.
+
+		Return
+		------
+			pearlist : Structured array with data file, CIF file, Pearson and P-value.
+		"""
+
+		print '\nCalculating Pearson:'      
+		self.pearlist = []
+		self.rankList = []
+		for i in tqdm(range(len(self.allData)), desc='Data Files', leave=True):
+		    data_info = np.zeros(len(self.allCIF), dtype=[('Data file', np.unicode_, 32),
+		                                                  ('Cif file', np.unicode_, 64),
+		                                                  ('Pearson', float),
+		                                                  ('p-value', float)])
+		    for j in tqdm(range(len(self.allCIF)), desc='CIFs tested', leave=False):
+		        pear_coef = stats.pearsonr(self.PDFfiles[i]['int_val'], self.PDF[j])  
+		        v1 = self.__create_array(data_info, ['Data file','Cif file', 'Pearson', 'p-value'])
+		        v1[j] = str(self.allData[i]), str(self.allCIF[j]), pear_coef[0], pear_coef[1]
+		    data_info.sort(order='Pearson')
+		    data_info = data_info[::-1]                 
+		    self.pearlist.append(data_info)
+		    self.rankList.append(data_info['Cif file'])
+		return self.pearlist
+
+    def printPearson(self):
+    	"""
+		Prints Pearson.
+
+    	Parameter
+    	---------
+			None.
+
+    	Return
+    	------
+    		None.
+    	"""
+        for i in range(len(self.pearlist)):
+            print self.pearlist[i][0]['Data file']+str(':')
+            print "\t{0:>{1}.{1}}) {2:{3}.{3}} - {4:{5}.{5}}\n".format('#', self._wrFiles, 'CIF', self._wrNames, 'Pearson', self._wrDecimal+2)
+            for j in range(len(self.pearlist[i])):
+                print "\t{0:{1}}) {2:{3}.{3}} - {4:+{5}.{6}f}\n".format(j, self._wrFiles, self.pearlist[i][j]['Cif file'], self._wrNames, self.pearlist[i][j]['Pearson'], self._wrDecimal+2, self._wrDecimal)
+            print ''
+    
+
+    def savePearson(self):
+    	"""
+		Saves Pearson in saveDir.
+
+    	Parameter
+    	---------
+			None.
+
+    	Return
+    	------
+    		None.
+    	"""
+        os.chdir(self.saveDir)
+        f= open("PearCor.txt","w+")    
+        for i in range(len(self.pearlist)):
+            f.write(self.pearlist[i][0]['Data file']+str(':\n'))
+            f.write("\t{0:>{1}.{1}}) {2:{3}.{3}} - {4:{5}.{5}}\n".format('#', self._wrFiles, 'CIF', self._wrNames, 'Pearson', self._wrDecimal+2))
+            for j in range(len(self.pearlist[i])):
+                f.write("\t{0:{1}}) {2:{3}.{3}} - {4:+{5}.{6}f}\n".format(j, self._wrFiles, self.pearlist[i][j]['Cif file'], self._wrNames, self.pearlist[i][j]['Pearson'], self._wrDecimal+2, self._wrDecimal))
+            f.write('\n')
+        f.close()    
+
+
+    def fitClusterScale(self, rank='all', save=False):
+        """
+        Fits PDFs scaling factor.
+
+        Parameter
+        ---------
+            rank : Takes an integer. If not defined all PDFs will be fitted. 
+                   If an integer is given only top models will be fitted. 
+                   Top models are determined from Pearson. 
+
+            save : Takes a boolean. False as default. If True files will be saved in saveDir. 
+
+        Return
+        ------
+            rwList : Structured array containing Data files, CIFs, Rw and Scale.
+        """
+
+        print '\nFitting Scale:'
+        if rank == 'all':
+            rank = len(self.allCIF)
+        elif rank > len(self.allCIF):
+            rank = len(self.allCIF)
+            print 'Rank is larger than number of CIFs!'
+        else:
+            pass
+
+        rwList = []
+        rankList_ph = []
+        for i in tqdm(range(len(self.allData)), desc='Data Files', leave=True):
+            data_info = np.zeros(len(self.rankList[i][:rank]), dtype=[('Data file', np.unicode_, 32),
+                                                      ('Cif file', np.unicode_, 64),
+                                                      ('Rw', float),
+                                                      ('Scale', float)])
+            for j in tqdm(range(len(self.rankList[i][:rank])), desc='CIFs tested', leave=False):
+                recipe = self.genClusterPDF(self.allData[i], self.rankList[i][j])
+                recipe.fix('all')
+                recipe.free('scale')
+                scipyOptimize(recipe)
+                #print FitResults(recipe).rw
+
+                v1 = self.__create_array(data_info, ['Data file','Cif file', 'Rw', 'Scale'])
+                v1[j] = self.allData[i], self.rankList[i][j], FitResults(recipe).rw, recipe.getValues()
+            data_info.sort(order='Rw')
+            rwList.append(data_info)
+            rankList_ph.append(data_info['Cif file'])
+
+        if save==True:
+            os.chdir(self.saveDir)
+            f=open("RwScale.txt","w+")    
+            for i in range(len(rwList)):
+                f.write(rwList[i][0]['Data file']+str(':\n'))
+                f.write("\t{0:>{1}.{1}}) {2:{3}.{3}} - {4:{5}.{5}} - {6:{7}.{7}}\n".format('#', self._wrFiles, 'CIF', self._wrNames, 'Rw', self._wrDecimal+2, 'Scale', self._wrDecimal+5))
+                for j in range(len(rwList[i])):
+                    f.write("\t{0:{1}}) {2:{3}.{3}} - {4:{5}.{6}f} - {7:{8}.{6}f}\n".format(j, self._wrFiles, rwList[i][j]['Cif file'], self._wrNames, 
+                                                                                       rwList[i][j]['Rw'], self._wrDecimal+2, self._wrDecimal, rwList[i][j]['Scale'], self._wrDecimal+5))
+                f.write('\n')
+            f.close()                  
+        return rwList
+
+
+    def fitScale(self, rank='all', save=False):
+        """
+        Fits PDFs scaling factor.
+
+        Parameter
+        ---------
+            rank : Takes an integer. If not defined all PDFs will be fitted. 
+                   If an integer is given only top models will be fitted. 
+                   Top models are determined from Pearson. 
+
+            save : Takes a boolean. False as default. If True files will be saved in saveDir. 
+
+        Return
+        ------
+            rwList : Structured array containing Data files, CIFs, Rw and Scale.
+        """
+
+        print '\nFitting Scale:'
+        if rank == 'all':
+            rank = len(self.allCIF)
+        elif rank > len(self.allCIF):
+            rank = len(self.allCIF)
+            print 'Rank is larger than number of CIFs!'
+        else:
+            pass
+
+        rwList = []
+        rankList_ph = []
+        for i in tqdm(range(len(self.allData)), desc='Data Files', leave=True):
+            data_info = np.zeros(len(self.rankList[i][:rank]), dtype=[('Data file', np.unicode_, 32),
+                                                      ('Cif file', np.unicode_, 64),
+                                                      ('Rw', float),
+                                                      ('Scale', float)])
+            for j in tqdm(range(len(self.rankList[i][:rank])), desc='CIFs tested', leave=False):
+                recipe = self.genPDF(self.allData[i], self.rankList[i][j])
+                recipe.fix('all')
+                recipe.free('mc1')
+                scipyOptimize(recipe)
+                #print FitResults(recipe).rw
+
+                v1 = self.__create_array(data_info, ['Data file','Cif file', 'Rw', 'Scale'])
+                v1[j] = self.allData[i], self.rankList[i][j], FitResults(recipe).rw, recipe.getValues()
+            data_info.sort(order='Rw')
+            rwList.append(data_info)
+            rankList_ph.append(data_info['Cif file'])
+
+        if save==True:
+            os.chdir(self.saveDir)
+            f=open("RwScale.txt","w+")    
+            for i in range(len(rwList)):
+                f.write(rwList[i][0]['Data file']+str(':\n'))
+                f.write("\t{0:>{1}.{1}}) {2:{3}.{3}} - {4:{5}.{5}} - {6:{7}.{7}}\n".format('#', self._wrFiles, 'CIF', self._wrNames, 'Rw', self._wrDecimal+2, 'Scale', self._wrDecimal+5))
+                for j in range(len(rwList[i])):
+                    f.write("\t{0:{1}}) {2:{3}.{3}} - {4:{5}.{6}f} - {7:{8}.{6}f}\n".format(j, self._wrFiles, rwList[i][j]['Cif file'], self._wrNames, 
+                                                                                       rwList[i][j]['Rw'], self._wrDecimal+2, self._wrDecimal, rwList[i][j]['Scale'], self._wrDecimal+5))
+                f.write('\n')
+            f.close()                  
+        return rwList
+
+
+    def fitCell(self, rank='All', save=False):
+        """
+        Fits PDFs scaling factor and unit cell.
+
+        Parameter
+        ---------
+            rank : Takes an integer. If not defined all PDFs will be fitted. 
+                   If an integer is given only top models will be fitted. 
+                   Top models are determined from Pearson. 
+
+            save : Takes a boolean. False as default. If True files will be saved in saveDir. 
+
+        Return
+        ------
+            rwList : Structured array containing Data files, CIFs, Rw, Scale, a, b and c.
+        """
+
+        print '\nFitting Cell:'
+        if rank == 'all':
+            rank = len(self.allCIF)
+        elif rank > len(self.allCIF):
+            rank = len(self.allCIF)
+            print 'Rank is larger than number of CIFs!'
+        else:
+            pass
+
+        rwList = []
+        for i in tqdm(range(len(self.allData)), desc='Data Files', leave=True):
+            data_info = np.zeros(len(self.rankList[i][:rank]), dtype=[('Data file', np.unicode_, 32),
+                                                      ('Cif file', np.unicode_, 64),
+                                                      ('Rw', float),
+                                                      ('Scale', float),
+                                                      ('a', float),
+                                                      ('b', float),
+                                                      ('c', float)])
+            for j in tqdm(range(len(self.rankList[i][:rank])), desc='CIFs tested', leave=False):
+                recipe = self.genPDF(self.allData[i], self.rankList[i][j])
+                recipe.fix('all')
+                recipe.free('mc1')
+                scipyOptimize(recipe)
+                recipe.free('cell')
+                scipyOptimize(recipe)
+
+                v1 = self.__create_array(data_info, ['Data file','Cif file', 'Rw', 'Scale','a','b','c'])
+                values = recipe.getValues()
+                names  = recipe.getNames()
+                a = -1
+                b = -1
+                c = -1
+                if len(values) == 4:
+                	scaling = values[0]
+                	a = values[1] 
+                	b = values[2]
+                	c = values[3]
+                elif len(values) == 3:
+                	scaling = values[0]
+                	if names[1] == 'a':
+                		a = values[1]
+                	elif names[1] == 'b':
+                		b = values[1]
+                	if names[2] == 'b':
+                		b = values[2]
+                	elif names[2] == 'c':
+                		c = values[2]
+                else:
+                	if names[1] == 'a':
+                		a = values[1]
+                	if names[1] == 'b':
+                		b = values[1]
+                	if names[1] == 'c':
+                		c = values[1]
+
+                v1[j] = self.allData[i], self.rankList[i][j], FitResults(recipe).rw, scaling, a,b,c
+            data_info.sort(order='Rw')
+            rwList.append(data_info)
+
+        if save==True:
+            os.chdir(self.saveDir)
+            f=open("RwCell.txt","w+")    
+            for i in range(len(rwList)):
+                f.write(rwList[i][0]['Data file']+str(':\n'))
+                f.write("\t{0:>{7}.{7}}) {1:{8}.{8}} - {2:{9}.{9}} - {3:{10}.{10}} - {4:{10}.{10}} - {5:{10}.{10}} - {6:{10}.{10}}\n".format('#', 'CIF', 'Rw', 'Scale', 'a', 'b', 'c', 
+                                                                                                                           self._wrFiles, self._wrNames, self._wrDecimal+2, self._wrDecimal+5))
+                for j in range(len(rwList[i])):
+                    f.write("\t{0:{7}}) {1:{8}.{8}} - {2:{9}.{10}f} - {3:{11}.{10}f} - {4:{11}.{10}f} - {5:{11}.{10}f} - {6:{11}.{10}f}\n".format(j, rwList[i][j]['Cif file'], rwList[i][j]['Rw'], rwList[i][j]['Scale'],rwList[i][j]['a'],rwList[i][j]['b'],rwList[i][j]['c'],
+                                                                                                                 self._wrFiles, self._wrNames, self._wrDecimal+2, self._wrDecimal, self._wrDecimal+5))
+                f.write('\n')
+            f.close()   
+        return rwList
+
+### Testing ###
+
+if __name__ == '__main__':
+    models = ['/media/emilkjaer/Seagate Expansion Drive/XYZ', '/media/emilkjaer/Seagate Expansion Drive/XYZ']
+    datas = '/media/emilkjaer/Seagate Expansion Drive/dataXYZ'
+
+    saveDirs = ['/media/emilkjaer/Seagate Expansion Drive','/media/emilkjaer/Seagate Expansion Drive']
+
+    for model, saveDir in zip(models, saveDirs):
+
+        obj = pearsonFitting()
+        obj.setSaveDir(saveDir)
+        obj.loadCIF(model)
+        obj.loadDataPDF(datas)
+        obj.setPDF()
+        obj.genClusterPDF()
+        obj.calcPear()
+        obj.savePearson()
+        obj.fitClusterScale(save=True)
+
+#	directs = ['/home/emilskaaning/School/MSc/Data/OverSampSeq',
+#	           '/home/emilskaaning/School/MSc/Data/OverSamp', 
+#	           '/home/emilskaaning/School/MSc/Data/Nyquist']
+#
+#	saveDirects = ['/home/emilskaaning/School/MSc/SaveDir/OverSampSeq', 
+#	               '/home/emilskaaning/School/MSc/SaveDir/OverSamp', 
+#	               '/home/emilskaaning/School/MSc/SaveDir/Nyquist']
+#
+#	dirEx = ['/WOEtH240', 
+#	         '/WOPr240',
+#             '/WOEtH160',
+#             '/WOPr160',
+#             '/WOEtH200',
+#             '/WOPr200']
+#
+#	cifDir = '/home/emilskaaning/School/MSc/CIF_Collection_CC'
+#
+#
+#	for loadDir, saveDir in zip(directs, saveDirects):
+#	    for folder in dirEx:
+#	    	print loadDir+folder
+#	        obj = pearsonFitting()
+#	        obj.setSaveDir(str(saveDir+folder))
+#	        obj.loadCIF(cifDir)
+#	        obj.loadDataPDF(str(loadDir+folder))
+#	        #obj.setPDF(rmin=1, rmax=15)
+#	        obj.genPDF()
+#	        obj.calcPear()
+#	        obj.savePearson()
+#	        obj.fitScale(rank=25, save=True)
+#	        #obj.fitCell(rank=3, save=True)
+
