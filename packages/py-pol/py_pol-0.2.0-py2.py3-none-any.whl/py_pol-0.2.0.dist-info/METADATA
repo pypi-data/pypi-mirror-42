@@ -1,0 +1,402 @@
+Metadata-Version: 2.1
+Name: py-pol
+Version: 0.2.0
+Summary: Jones and Mueller polarization - Optics
+Home-page: https://bitbucket.org/optbrea/py_pol/src/master/
+Author: Luis Miguel Sanchez Brea / Jesus del Hoyo Munoz
+Author-email: optbrea@ucm.es
+License: MIT license
+Keywords: py_pol,optics,polarization,Jones,Stokes,Mueller
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: Click (>=6.0)
+
+========================
+Python polarization
+========================
+
+
+.. image:: https://img.shields.io/pypi/v/py_pol.svg
+        :target: https://pypi.org/project/py-pol/
+
+.. image:: https://img.shields.io/travis/optbrea/py_pol.svg
+        :target: https://bitbucket.org/optbrea/py_pol/src/master/
+
+.. image:: https://readthedocs.org/projects/py-pol/badge/?version=latest
+        :target: https://py-pol.readthedocs.io/en/latest/
+        :alt: Documentation Status
+
+
+
+* Free software: MIT license
+* Documentation: https://py-pol.readthedocs.io/en/latest/
+
+.. image:: logo.png
+   :width: 75
+   :align: right
+
+
+
+Features
+----------------
+Py-pol is a Python library for Jones and Stokes-Mueller polarization optics. It has 4 main module:
+
+    * jones_vector - for generation of polarization states in 2x1 Jones formalism.
+
+    * jones_matrix - for generation of 2x2 matrix polarizers.
+
+    * stokes - for generation of polarization states in 2x2 Stokes formalism.
+
+    * mueller - for generation of 4x4 matrix polarizers.
+
+
+Each one has its own class, with multiple methods for generation, operation and parameters extraction.
+
+Examples
+-----------
+
+Jones formalism
+=================
+
+Generating Jones vectors and Matrices
+
+.. code-block:: python
+
+    from py_pol.jones_vector import Jones_vector
+    from py_pol.jones_matrix import Jones_matrix
+    from py_pol.utils import degrees
+
+    j0 = Jones_vector("j0")
+    j0.linear_light(angle=45*degrees)
+
+    m0 = Jones_matrix("m0")
+    m0.diattenuator_linear( p1=0.75, p2=0.25, angle=45*degrees)
+
+    m1 = Jones_matrix("m1")
+    m1.quarter_wave(angle=0 * degrees)
+
+    j1=m1*m0*j0
+
+Extracting information form Jones Vector.
+
+.. code-block:: python
+
+    print(j0,'\n')
+    print(j0.parameters)
+
+.. code-block:: python
+
+    j0 = [+0.707; +0.707]'
+
+    parameters of j0:
+        intensity        : 1.000 arb.u
+        alpha            : 45.000Âº
+        delay            : 0.000Âº
+        azimuth          : 45.000Âº
+        ellipticity angle: 0.000Âº
+        a, b             : 1.000  0.000
+
+.. code-block:: python
+
+    print(j1,'\n')
+    print(j1.parameters)
+
+.. code-block:: python
+
+        m1 * m0 @45.00Âº * j0 = [+0.530+0.000j; +0.000+0.530j]'
+
+        parameters of m1 * m0 @45.00Âº * j0:
+            intensity        : 0.562 arb.u
+            alpha            : 45.000Âº
+            delay            : 90.000Âº
+            azimuth          : 8.618Âº
+            ellipticity angle: -45.000Âº
+            a, b             : 0.530  0.530
+
+
+Extracting information form Jones Matrices.
+
+.. code-block:: python
+
+    print(m0,'\n')
+    print(m0.parameters)
+
+.. code-block:: python
+
+        m0 @45.00Âº =
+              [+0.500, +0.250]
+              [+0.250, +0.500]
+
+        parameters of m0 @45.00Âº:
+            is_homogeneous: True
+            delay:          0.000Âª
+            diattenuation:  0.800
+
+
+.. code-block:: python
+
+
+    print(m1,'\n')
+    print(m1.parameters)
+
+
+.. code-block:: python
+
+
+        m1 =
+              [+1+0j, +0+0j]
+              [+0+0j, +0+1j]
+
+        parameters of m1:
+            is_homogeneous: True
+            delay:          90.000Âª
+            diattenuation:  0.000
+
+
+
+
+Stokes-Mueller formalism
+==================================
+
+Generating Stokes vectors and Mueller matrices.
+
+
+.. code-block:: python
+
+
+    from py_pol.stokes import Stokes
+    from py_pol.mueller import Mueller
+    from py_pol.utils import degrees
+
+    j0 = Stokes("j0")
+    j0.linear_light(angle=45*degrees)
+
+    m1 = Mueller("m1")
+    m1.diattenuator_linear(p1=1, p2=0, angle=0*degrees)
+
+    j1=m1*j0
+
+
+Extracting information from Stokes vectors.
+
+Determining the intensity of a Stokes vector:
+
+.. code-block:: python
+
+    i1=j0.parameters.intensity()
+    print("intensity = {:4.3f} arb. u.".format(i1))
+
+
+.. code-block:: python
+
+        intensity = 1.250 arb. u.
+
+Determining all the parameters of a Stokes vector:
+
+.. code-block:: python
+
+
+    print(j0,'\n')
+    print(j0.parameters)
+
+.. code-block:: python
+
+
+        j0 = [+1.250; +0.530; -0.562; +0.530]
+
+        parameters of j0:
+            intensity             : 1.250 arb. u.
+            degree polarization   : 0.750
+            degree linear pol.    : 0.618
+            degree   circular pol.: 0.424
+            alpha                 : 27.775Âº
+            delay                 : 43.314Âº
+            azimuth               : 23.343Âº
+            ellipticity  angle    : 17.225Âº
+            ellipticity  param    : 0.310
+            eccentricity          : 0.951
+            polarized vector      : [+0.938; +0.530; -0.562; +0.530]'
+            unpolarized vector    : [+0.312; +0.000; +0.000; +0.000]'
+
+
+Extracting information from Mueller matrices.
+
+.. code-block:: python
+
+    print(m1,'\n')
+    print(m1.parameters)
+
+.. code-block:: python
+
+        m1 =
+          [+0.531, +0.469, +0.000, +0.000]
+          [+0.469, +0.531, +0.000, +0.000]
+          [+0.000, +0.000, +0.250, +0.000]
+          [+0.000, +0.000, +0.000, +0.250]
+
+.. code-block:: python
+
+    print(j1)
+    print(j1.parameters)
+
+.. code-block:: python
+
+        m1 * j0 = [+0.913; +0.868; -0.141; +0.133]
+
+        parameters of m1 * j0:
+            intensity             : 0.913 arb. u.
+            degree polarization   : 0.974
+            degree linear pol.    : 0.963
+            degree   circular pol.: 0.145
+            alpha                 : 6.279Âº
+            delay                 : 43.314Âº
+            azimuth               : 4.603Âº
+            ellipticity  angle    : 4.289Âº
+            ellipticity  param    : 0.075
+            eccentricity          : 0.997
+            polarized vector      : [+0.889; +0.868; -0.141; +0.133]'
+            unpolarized vector    : [+0.024; +0.000; +0.000; +0.000]'
+
+Drawings
+===========
+
+The modules also allows to obtain graphical representation of polarization.
+
+Drawing polarization ellipse for Jones vectors.
+
+.. image:: ellipse_Jones_1.png
+   :width: 600
+
+.. image:: ellipse_Jones_3.png
+   :width: 600
+
+
+Drawing polarization ellipse for Stokes vectors with random distribution due to unpolarized part of light.
+
+.. image:: ellipse_Stokes_1.png
+   :width: 600
+
+.. image:: ellipse_Stokes_2.png
+   :width: 600
+
+Drawing Stokes vectors in PoincarÃ© sphere.
+
+.. image:: poincare2.png
+   :width: 600
+
+.. image:: poincare3.png
+   :width: 600
+
+.. image:: poincare4.png
+   :width: 600
+
+Authors
+----------------
+
+* Luis Miguel Sanchez Brea <optbrea@ucm.es>
+* Jesus del Hoyo <jhoyo@ucm.es>
+
+    **Universidad Complutense de Madrid**,
+    Faculty of Physical Sciences,
+    Department of Optics
+    Plaza de las ciencias 1,
+    ES-28040 Madrid (Spain)
+
+.. image:: logoUCM.png
+   :width: 125
+   :align: right
+
+Citing
+----------------
+L.M. Sanchez Brea, J. del Hoyo "py-pol, python module for polarization optics", https://pypi.org/project/py-pol/ (2019)
+
+References
+------------
+
+* D Goldstein "Polarized light" 2nd edition, Marcel Dekker (1993).
+
+* JJ Gil, R. Ossikovsky "Polarized light and the Mueller Matrix approach", CRC Press (2016).
+
+* C Brosseau "Fundamentals of Polarized Light" Wiley (1998).
+
+* R Martinez-Herrero, P.M. Mejias, G.Piquero "Characterization of partially polarized light fields" Springer series in Optical sciences (2009).
+
+* JM Bennet "Handbook of Optics 1" Chapter 5 'Polarization'.
+
+* RA Chipman "Handbook of Optics 2" Chapter 2 'Polarimetry'.
+
+* SY Lu and RA Chipman, "Homogeneous and inhomogeneous Jones matrices",  J. Opt. Soc. Am. A 11(2) 766 (1994).
+
+
+Credits
+---------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.1 (2018-12-22)
+------------------
+
+* First release on PyPI in pre-alpha state.
+
+
+0.1.3 (2019-01-22)
+------------------
+
+alpha state
+
+* Jones_vector, Jones_matrix, Stokes works.
+* Mueller is in progress.
+* Functions = 9/10
+* Documentation = 8/10
+* Tutorial = 7/10.
+* Examples = 6/10.
+* Drawing = 0/10.
+
+
+0.1.4 (2019-02-03)
+------------------
+
+alpha state
+
+* Jones_vector, Jones_matrix, Stokes works.
+* Mueller is in progress.
+* Functions = 9/10
+* Documentation = 8/10
+* Tutorial = 8/10.
+* Examples = 8/10.
+* Tests = 8/10
+* Drawing = 10/10. Finished. Polarization ellipse for Jones and Stokes (partially random). Stokes on PoincarÃ© sphere.
+
+
+0.2.0 (2019-02-22)
+------------------
+
+beta state
+
+* Jones_vector, Jones_matrix, Stokes and Mueller works.
+
+Future:
+
+* Develop Parameters_Jones_Matrix.
+* Introduce give_object option in most methods.
+* Introduce keep option in most manipulation methods.
+
+
