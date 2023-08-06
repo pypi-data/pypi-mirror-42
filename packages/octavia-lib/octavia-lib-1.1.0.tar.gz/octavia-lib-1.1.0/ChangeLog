@@ -1,0 +1,17 @@
+CHANGES
+=======
+
+1.1.0
+-----
+
+* Fix some driver library bugs
+* Add FLAVOR as a constant
+* Add missing libraries to requirement files
+
+1.0.0
+-----
+
+* Change openstack-dev to openstack-discuss
+* Initial provider driver library checkin
+* Initial cookie-cutter commit for octavia-lib
+* Added .gitreview
