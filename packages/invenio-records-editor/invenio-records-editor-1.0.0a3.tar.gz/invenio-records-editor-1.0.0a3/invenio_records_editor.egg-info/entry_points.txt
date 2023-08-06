@@ -1,0 +1,9 @@
+[invenio_base.api_apps]
+invenio_records_editor = invenio_records_editor.ext:InvenioRecordsEditor
+
+[invenio_base.apps]
+invenio_records_editor = invenio_records_editor.ext:InvenioRecordsEditor
+
+[invenio_base.blueprints]
+invenio_records_editor = invenio_records_editor.views:create_editor_blueprint
+
