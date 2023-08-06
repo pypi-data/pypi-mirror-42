@@ -1,0 +1,3 @@
+[console_scripts]
+onevox = onevox.cli:main
+
