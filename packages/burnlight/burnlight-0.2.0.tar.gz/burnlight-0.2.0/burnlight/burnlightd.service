@@ -1,0 +1,9 @@
+[Unit]
+Description=burnlightd - A Raspberry Pi GPIO scheduler
+
+[Service]
+ExecStart=/usr/bin/python burnlightd
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

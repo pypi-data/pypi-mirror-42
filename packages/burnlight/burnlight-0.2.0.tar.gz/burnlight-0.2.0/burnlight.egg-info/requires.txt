@@ -1,0 +1,6 @@
+flask>=1.0.0
+lark-parser
+gevent
+click
+gpiozero
+requests
