@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: dict-deep
+Version: 1.2.2
+Summary: Very simple deep_set and deep_get functions to access nested dicts using 'dotted strings' as key.
+Home-page: https://github.com/mbello/dict-deep
+Author: mbello
+Author-email: mbello@users.noreply.github.com
+Keywords: dict dotted keys,deep dict access,nested dict access
+Requires-Python: >=3.5,<4.0
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Project-URL: Repository, https://github.com/mbello/dict-deep
