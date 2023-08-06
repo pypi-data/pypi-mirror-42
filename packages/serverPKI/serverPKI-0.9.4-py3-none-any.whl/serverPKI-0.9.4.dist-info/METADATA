@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: serverPKI
+Version: 0.9.4
+Summary: PKI for internet server infrastructure
+Home-page: https://serverpki.readthedocs.io
+Author: Axel Rau
+Author-email: axel.rau@chaos1.de
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Internet
+Classifier: Topic :: Security :: Cryptography
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Natural Language :: English
+Requires-Dist: cryptography (>=2.5)
+Requires-Dist: manuale (>=1.1.0)
+Requires-Dist: py-postgresql (>=1.2.1)
+Requires-Dist: paramiko (>=2.4.2)
+Requires-Dist: prettytable (>=0.7.2)
+Requires-Dist: iso8601
+
+
+serverPKI is a tool to issue and distribute SSL certificates for internet
+servers. Distribution to target hosts and reloading of server configuration
+is done via ssh/sftp. Configuration and cert/key data is stored in a relational
+database.
+
+serverPKI includes support for
+- local CA
+- LetsEncrypt CA
+- FreeBSD jails
+- publishing of DANE RR in DNS, using TLSA key rollover
+- unattended operation via cronjob
+- extensive logging
+- alerting via mail
+
+Required packages:
+    PostgreSQL
+
+Required Python3 packages:
+
+    cryptography>=2.5
+    manuale>=1.1.0
+    py-postgresql>=1.2.1
+    paramiko>=2.4.2
+    prettytable>=0.7.2
+    iso8601
+
+To install the development version, ``pip install -e
+git+https://github.com/mc3/serverPKI/#egg=serverPKI``.
+
+
