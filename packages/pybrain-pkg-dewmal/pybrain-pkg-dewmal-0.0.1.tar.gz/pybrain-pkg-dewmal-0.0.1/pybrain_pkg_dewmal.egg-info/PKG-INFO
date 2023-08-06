@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pybrain-pkg-dewmal
+Version: 0.0.1
+Summary: Brain
+Home-page: https://github.com/dewmal/pybrain
+Author: Dewmal Nilanka
+Author-email: dewmal@egreen.io
+License: UNKNOWN
+Description: Py Brain.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
