@@ -1,0 +1,14 @@
+matterbabble/__init__.py,sha256=Wf7gzIHgk9riFSA9Ain2ciGbHduatMlWAGIEKIGbZzw,39
+matterbabble/__main__.py,sha256=B9hNFzRRnc7eQf1Nl-UEGCKhlGGsFlmfZU58z041Hho,642
+matterbabble/application.py,sha256=b7zDkREtp4zCtOgKrKUG32VruWR0pGyv5hm_l3gG-3E,1172
+matterbabble/consts.py,sha256=vSE1Gxwq0i6D95b8Zq4ghtBFJpMhrCgcknLDCDvWtFs,249
+matterbabble/discourse.py,sha256=BPvYpdFjoYAxEsQD9dL5FY0K-xCccBRgdrl-WqoxfPE,2945
+matterbabble/images.py,sha256=p6r0Mc8skUC5IgOphtXbNlLUXK-qn91wLGwaXW2Kw54,1009
+matterbabble/matterbridge.py,sha256=8Ss0QgMhVemcMUI0Jp3GbBd4v905zniEky4SYVEowXQ,800
+matterbabble/service.py,sha256=uDqelFnJaS5YXkIDGHOssqVdpDA-AyfUuD-hwcbCRXM,735
+matterbabble-1.0.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+matterbabble-1.0.1.dist-info/METADATA,sha256=L6JMz10Vn9fsEzMWQsb_VImU69a0NgqJ2Y-lzWO-qEY,3214
+matterbabble-1.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+matterbabble-1.0.1.dist-info/entry_points.txt,sha256=AC8EjoTYjxUJkZzMvs19fN0QQGlLDRd5Oozfe7q4c4g,61
+matterbabble-1.0.1.dist-info/top_level.txt,sha256=gyrtDzhb6ZVSgSj1vxGjovPJP4PfrbAvCxaOX7QI3AE,13
+matterbabble-1.0.1.dist-info/RECORD,,
