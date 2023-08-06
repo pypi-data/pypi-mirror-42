@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: katie
+Version: 0.1.0
+Summary: Kubernetes utilities
+Home-page: UNKNOWN
+License: UNKNOWN
+Description: Katie
+        =====
+        
+        A user-friendly wrapper around `kubectl` for interacting with pods.
+        
+        Commands
+        --------
+        
+        * `kubectl pods <selector`
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
