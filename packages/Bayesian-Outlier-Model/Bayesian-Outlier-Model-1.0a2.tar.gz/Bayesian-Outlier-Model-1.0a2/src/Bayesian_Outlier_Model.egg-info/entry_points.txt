@@ -1,0 +1,4 @@
+
+            [console_scripts]
+            outlier-model=outlier_model.main:cli
+      
