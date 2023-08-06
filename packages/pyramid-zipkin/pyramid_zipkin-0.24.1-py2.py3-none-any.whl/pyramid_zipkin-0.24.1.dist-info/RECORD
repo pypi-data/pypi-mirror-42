@@ -1,0 +1,9 @@
+pyramid_zipkin/__init__.py,sha256=fRHoeehJJO4G2IXtTXFqugBXzhB0IZ2dSrNBzCUUDfk,247
+pyramid_zipkin/request_helper.py,sha256=IepNuh6O1EiJhrORZ-WlvuE11T5XQJnypZ-my2ZwLDE,6372
+pyramid_zipkin/tween.py,sha256=akN5lwOnPYJX4M3jVsNW9XvHAF-UBCmaayVilRfXRg8,7574
+pyramid_zipkin/zipkin.py,sha256=ftnQ5iWqtXtfHEpzKAzVaw_wmV35tAEeqV1mGjuH0es,261
+pyramid_zipkin-0.24.1.dist-info/LICENSE.txt,sha256=e3aCf9SS87la8zfRH6gjfLefR-NiOr2O7xUQBoT5AN0,10831
+pyramid_zipkin-0.24.1.dist-info/METADATA,sha256=3fLf67hxwJXwOlqCdjmMqEsjow3j0OWC24QO62hZYXQ,880
+pyramid_zipkin-0.24.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+pyramid_zipkin-0.24.1.dist-info/top_level.txt,sha256=9-TYeRQd-9TNubZvZJicaNqhcNodOR8B3KfJQ1brNv0,15
+pyramid_zipkin-0.24.1.dist-info/RECORD,,
