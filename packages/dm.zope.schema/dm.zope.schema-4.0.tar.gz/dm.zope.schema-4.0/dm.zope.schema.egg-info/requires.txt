@@ -1,0 +1,4 @@
+zope.schema>=4
+dm.reuse>=2.1.1
+decorator
+six
