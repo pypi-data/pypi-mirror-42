@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: dj-static-revision
+Version: 0.1.4
+Summary: Revision info for Django static file
+Home-page: https://bitbucket.org/hongquan/dj-static-revision/
+Author: Nguyễn Hồng Quân
+Author-email: ng.hong.quan@gmail.com
+Keywords: django,static,version,cache
+Requires-Python: >=3.5,<4.0
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: Django (>=2.0,<3.0)
+Requires-Dist: dulwich (>=0.19.11,<0.20.0)
+Project-URL: Repository, https://bitbucket.org/hongquan/dj-static-revision.git
