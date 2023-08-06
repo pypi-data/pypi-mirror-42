@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: example-pkg-eischaefer
+Version: 0.0.11
+Summary: A small example package
+Home-page: https://github.com/pypa/sampleproject
+Author: Example Author
+Author-email: author@example.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Scientific/Engineering :: GIS
+Requires-Dist: scipy (>=0.19)
+Requires-Dist: numpy (>=1.13.3)
+Requires-Dist: bottleneck (>=1.2.1)
+Requires-Dist: psutil (>=3.3.0)
+Requires-Dist: gdal (>=2.1.3)
+
+# Example Package
+
+*Note: This file is best viewed with support for the Markdown markup language.*
+
+This is a simple package. I can use **bold**, *italics*, and <u>underscore</u>.
+
+1. Abc
+2. def
+   1. ghi
+   2. jkl
+
+
+
