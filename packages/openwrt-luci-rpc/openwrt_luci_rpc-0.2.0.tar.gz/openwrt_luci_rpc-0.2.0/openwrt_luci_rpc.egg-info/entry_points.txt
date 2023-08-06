@@ -1,0 +1,3 @@
+[console_scripts]
+openwrt_luci_rpc = openwrt_luci_rpc.cli:main
+
