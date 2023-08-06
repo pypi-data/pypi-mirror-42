@@ -1,0 +1,3 @@
+This package provides animated GIF images of weather-radar imagery derived the Australian Bureau of Meteorology (http://www.bom.gov.au/australia/radar/).
+
+

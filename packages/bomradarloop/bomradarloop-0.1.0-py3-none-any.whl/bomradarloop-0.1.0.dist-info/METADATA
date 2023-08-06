@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: bomradarloop
+Version: 0.1.0
+Summary: Create animated GIFs from BOM radar imagery
+Home-page: https://github.com/maddenp/bomradarloop
+Author: Paul Madden
+Author-email: maddenp@colorado.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Dist: Pillow
+Requires-Dist: requests
+
+This package provides animated GIF images of weather-radar imagery derived the Australian Bureau of Meteorology (http://www.bom.gov.au/australia/radar/).
+
+
