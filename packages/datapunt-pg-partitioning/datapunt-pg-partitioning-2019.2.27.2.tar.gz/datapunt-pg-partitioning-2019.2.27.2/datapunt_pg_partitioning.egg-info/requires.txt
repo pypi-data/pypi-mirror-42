@@ -1,0 +1,13 @@
+psycopg2-binary
+python-dateutil
+
+[dev]
+pytest
+pytest-cov
+pylint
+twine
+
+[docs]
+sphinx
+sphinx-autobuild
+sphinx-rtd-theme
