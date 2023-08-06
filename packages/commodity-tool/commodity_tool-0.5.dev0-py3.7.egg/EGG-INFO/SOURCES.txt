@@ -1,0 +1,15 @@
+README.md
+setup.py
+commodity_project_ir/__init__.py
+commodity_project_ir/command_line.py
+commodity_project_ir/package1/__init__.py
+commodity_project_ir/package1/commodity_tool.py
+commodity_project_ir/package2/__init__.py
+commodity_project_ir/package2/hello_world.py
+commodity_project_ir/tests/__init__.py
+commodity_tool.egg-info/PKG-INFO
+commodity_tool.egg-info/SOURCES.txt
+commodity_tool.egg-info/dependency_links.txt
+commodity_tool.egg-info/entry_points.txt
+commodity_tool.egg-info/requires.txt
+commodity_tool.egg-info/top_level.txt
