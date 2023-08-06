@@ -1,0 +1,12 @@
+README.md
+setup.py
+smamp/__init__.py
+smamp/average_cost.py
+smamp/charges_to_rft.py
+smamp/convert_UA_to_AA.py
+smamp/insertHbyList.py
+smamp/tools.py
+smamp.egg-info/PKG-INFO
+smamp.egg-info/SOURCES.txt
+smamp.egg-info/dependency_links.txt
+smamp.egg-info/top_level.txt
