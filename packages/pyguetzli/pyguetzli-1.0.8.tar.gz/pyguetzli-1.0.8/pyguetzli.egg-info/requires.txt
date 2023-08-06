@@ -1,0 +1,10 @@
+cffi>=1.0.0
+
+[PIL]
+pillow
+
+[dev]
+flake8
+Sphinx
+sphinx-rtd-theme
+pytest
