@@ -1,0 +1,10 @@
+bayesian-optimization
+clustergrammer
+numpy
+pandas
+requests
+scikit-learn
+scipy
+statsmodels
+twobitreader
+tqdm
