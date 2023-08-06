@@ -1,0 +1,12 @@
+shapely
+pytz
+voluptuous
+
+[dev]
+flake8
+
+[test]
+pytest
+pytest-runner
+pytest-cov
+pytest-pep8
