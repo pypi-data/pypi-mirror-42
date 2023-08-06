@@ -1,0 +1,15 @@
+appdirs
+colored
+configparser>=3.5.0b2
+dateparser
+future
+human-friendly_pedantic-timedelta>=0.0.5
+icalendar
+iso8601
+lazy_import
+pytz
+regex==2019.02.18
+six
+sqlalchemy
+sqlalchemy-migrate
+tzlocal
