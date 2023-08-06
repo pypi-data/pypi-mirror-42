@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: distrib_val
+Version: 0.1.0
+Summary: Распределитель числового значения.
+Home-page: https://github.com/gusenov/distributor-of-numerical-value-py
+Author: Аббас Гусенов
+Author-email: gusenov@live.ru
+License: MIT
+Download-URL: https://github.com/gusenov/distributor-of-numerical-value-py/archive/v0.1.0.tar.gz
+Description: UNKNOWN
+Keywords: division
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
