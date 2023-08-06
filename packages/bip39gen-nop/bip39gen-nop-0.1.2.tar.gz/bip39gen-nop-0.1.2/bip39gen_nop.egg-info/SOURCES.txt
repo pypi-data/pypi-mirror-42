@@ -1,0 +1,11 @@
+README.md
+setup.py
+bip39gen/__init__.py
+bip39gen/__main__.py
+bip39gen/bip39-words.en.txt
+bip39gen/bip39gen.py
+bip39gen_nop.egg-info/PKG-INFO
+bip39gen_nop.egg-info/SOURCES.txt
+bip39gen_nop.egg-info/dependency_links.txt
+bip39gen_nop.egg-info/entry_points.txt
+bip39gen_nop.egg-info/top_level.txt
