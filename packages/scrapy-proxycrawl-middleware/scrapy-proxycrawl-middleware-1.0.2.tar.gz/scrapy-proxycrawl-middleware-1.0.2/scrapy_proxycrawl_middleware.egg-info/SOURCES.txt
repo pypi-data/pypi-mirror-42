@@ -1,0 +1,8 @@
+README.md
+setup.py
+scrapy_proxycrawl/__init__.py
+scrapy_proxycrawl/proxycrawl.py
+scrapy_proxycrawl_middleware.egg-info/PKG-INFO
+scrapy_proxycrawl_middleware.egg-info/SOURCES.txt
+scrapy_proxycrawl_middleware.egg-info/dependency_links.txt
+scrapy_proxycrawl_middleware.egg-info/top_level.txt
