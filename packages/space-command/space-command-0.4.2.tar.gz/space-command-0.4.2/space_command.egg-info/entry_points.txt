@@ -1,0 +1,15 @@
+[console_scripts]
+space = space.__main__:main
+
+[space.commands]
+clock = space.clock:space_clock
+config = space.config:space_config
+events = space.events:space_events
+log = space.config:space_log
+map = space.map:space_map
+passes = space.passes:space_passes
+phase = space.phase:space_phase
+planets = space.planets:space_planets
+stations = space.stations:space_stations
+tle = space.tle:space_tle
+
