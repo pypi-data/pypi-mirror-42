@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: rwords
+Version: 0.0.0rc102
+Summary: Rwords
+Home-page: UNKNOWN
+Author: endlex
+Author-email: endlex@aliyun.com
+License: MIT
+Description: A command line tool to help you remember words faster.
+Platform: UNKNOWN
+Requires-Python: >=3.4,
