@@ -1,0 +1,3 @@
+[console_scripts]
+nart = nart.main:main
+
