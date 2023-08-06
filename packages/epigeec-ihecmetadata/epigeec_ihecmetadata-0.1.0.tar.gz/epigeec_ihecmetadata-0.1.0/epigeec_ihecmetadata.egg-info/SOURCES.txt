@@ -1,0 +1,15 @@
+README.md
+setup.py
+epigeec_ihecmetadata/__init__.py
+epigeec_ihecmetadata/ihecmetadata.py
+epigeec_ihecmetadata.egg-info/PKG-INFO
+epigeec_ihecmetadata.egg-info/SOURCES.txt
+epigeec_ihecmetadata.egg-info/dependency_links.txt
+epigeec_ihecmetadata.egg-info/top_level.txt
+epigeec_ihecmetadata/converter/__init__.py
+epigeec_ihecmetadata/converter/legacyconverter.py
+epigeec_ihecmetadata/filter/__init__.py
+epigeec_ihecmetadata/filter/browserfilter.py
+epigeec_ihecmetadata/ihecjson/__init__.py
+epigeec_ihecmetadata/ihecjson/decoder.py
+epigeec_ihecmetadata/ihecjson/encoder.py
