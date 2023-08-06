@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: jiratools
+Version: 1.2.0
+Summary: Simple helpers to interface to JIRA from an API or command line.
+Home-page: https://github.com/bradsbrown/jiratools
+Author: Brad Brown
+Author-email: brad@bradsbrown.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: jira
+Requires-Dist: configparser ; python_version < "3.5"
+
+UNKNOWN
+
+

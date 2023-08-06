@@ -1,0 +1,6 @@
+[console_scripts]
+jira-add-comment = jiratools:_cli_add_comment
+jira-example-config = jiratools:_example_config_install
+jira-search-issues=jiratools:_cli_searchjira-link-issues = jiratools._link_jiras
+jira-test-story = jiratools:_create_test_jira_from
+
