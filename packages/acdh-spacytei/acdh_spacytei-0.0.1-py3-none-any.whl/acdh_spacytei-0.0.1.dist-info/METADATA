@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: acdh-spacytei
+Version: 0.0.1
+Summary: A package to ease processing (not only) TEI documents with spaCy
+Home-page: https://github.com/acdh-oeaw/acdh-spacytei
+Author: Peter Andorfer
+Author-email: peter.andorfer@oeaw.ac.at
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: spacy (>=2.0.18)
+Requires-Dist: gensim (>=3.7.1)
+Requires-Dist: lxml (>=4.1.1)
+Requires-Dist: pandas (>=0.23.3)
+Requires-Dist: requests (==2.20.1)
+
+Readme
+======
+
+The APIS_ project intents to semantically annotate the Austrian Bibliography Lexicon (Ã–BL_). To achieve this goal
+we develop(ed) this web-app. It is based on a 5 entities (person, place, institution, event, work) data model.
+All 5 entities are connected to each other. Entities, as well as relations between them, can be typed with vocabularies
+similar to the Simple Knowledge Organization System (SKOS_).
+
+APIS comes with a built in system of autocompletes that allows researchers to import meta-data of entities with just a
+single click. Out of the box APIS supports Stanbol_ as a backend for the autocompletes, but the system is rather easy to
+adapt to any Restfull API. APIS also supports the parsing of RDFs_ describing entities into an entity. The parsing is
+configured in a settings file.
+
+APIS comes also with a built in highlighter. The highlighter is configured via the built in admin backend and allows
+to annotate texts with entities and/or relations between entities.
+
+For a demo of the application please refer to apisdev_.
+
+
+Installation
+------------
+
+The installation process is described in the apis-core docs_.
+
+
+Licensing
+---------
+
+All code unless otherwise noted is licensed under the terms of the MIT License (MIT). Please refer to the file LICENSE in the root directory of this repository.
+
+
+Install the package
+------------
+
+`pip install acdh-spacy-tei`
+
+
+
+
+History
+-------
+
+0.1.0 (2019-02-25)
+++++++++++++++++++
+
+* First version
+
+
