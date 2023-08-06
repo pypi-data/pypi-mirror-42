@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: phytools
+Version: 0.1.0
+Summary: Tools for physicists
+Home-page: https://github.com/kricki/phytools
+Author: 
+Author-email: euphiment@gmx.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: scipy
+
+# phytools
+Useful tools for physicists
+
+## Installation
+Download or clone repository and:
+````
+python setup.py install
+````
+Or via pip:
+````
+pip install https://github.com/kricki/phytools/archive/master.zip
+````
+
