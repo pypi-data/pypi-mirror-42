@@ -1,0 +1,14 @@
+setup.py
+MITgcm_recipes/__init__.py
+MITgcm_recipes/data_organization.py
+MITgcm_recipes/monitoring.py
+MITgcm_recipes/open_boundary.py
+MITgcm_recipes/plotting.py
+MITgcm_recipes/regridding.py
+MITgcm_recipes/spatial.py
+MITgcm_recipes.egg-info/PKG-INFO
+MITgcm_recipes.egg-info/SOURCES.txt
+MITgcm_recipes.egg-info/dependency_links.txt
+MITgcm_recipes.egg-info/top_level.txt
+MITgcm_recipes/f90/mod_akima_1d.f90
+MITgcm_recipes/f90/mod_drown_sosie.f90
