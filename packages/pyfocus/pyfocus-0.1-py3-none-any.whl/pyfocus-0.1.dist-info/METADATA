@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pyfocus
+Version: 0.1
+Summary: Fine-map transcriptome-wide association studies
+Home-page: https://github.com/bogdanlab/focus
+Author: Nicholas Mancuso, Ruth Johnson
+Author-email: nick.mancuso@gmail.com, ruthjohnson@ucla.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: sqlalchemy
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: numpy-sugar
+Requires-Dist: pandas (>=0.23.0)
+Requires-Dist: pandas-plink
+Requires-Dist: glimix-core (>=2.0.0)
+Requires-Dist: limix (>=2.0.0)
+Requires-Dist: scikit-learn
+
+FOCUS
+=====
+
+TBD
+
+Installing
+----------
+TBD
+
+
+Example
+-------
+TBD
+
+Notes
+-----
+TBD
+
+
