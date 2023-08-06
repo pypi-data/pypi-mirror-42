@@ -1,0 +1,11 @@
+numpy
+protobuf
+requests
+torch
+tqdm
+
+[dev]
+check-manifest
+
+[test]
+coverage
