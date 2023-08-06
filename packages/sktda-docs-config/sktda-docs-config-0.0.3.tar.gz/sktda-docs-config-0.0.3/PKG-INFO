@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: sktda-docs-config
+Version: 0.0.3
+Summary: Custom configuration for the Scikit-TDA documentation
+Home-page: https://github.com/scikit-tda/sktda-docs-config
+Author: Nathaniel Saul
+Author-email: nat@riverasaul.com
+License: MIT
+Description: # sktda-docs-config
+        Settings common across all scikit-tda doc sites
+        
+        *first* make sure your pip version is `>=18.1`:
+        ```
+        pip install --upgrade pip
+        ```
+        
+        (soon) Install with 
+        
+        ```
+        pip install sktda_docs_config
+        ```
+        
+        or from source
+        
+        ```
+        pip install git+https://github.com/scikit-tda/sktda-docs-config
+        ```
+        
+        In the docs `conf.py` file, add the line 
+        
+        ```
+        from sktda_docs_config import *
+        ```
+        
+Platform: UNKNOWN
+Requires-Python: >3.3
+Description-Content-Type: text/markdown
