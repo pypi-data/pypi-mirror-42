@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: lambda-warmer-py
+Version: 0.1.0
+Summary: keep lambdas warm and monitor cold starts with a simple decorator
+Home-page: https://github.com/robhowley/lambda-warmer-py
+Author: Rob Howley
+Author-email: howley.robert@gmail.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: futures; python_version == "2.7"
+
+UNKNOWN
+
+
