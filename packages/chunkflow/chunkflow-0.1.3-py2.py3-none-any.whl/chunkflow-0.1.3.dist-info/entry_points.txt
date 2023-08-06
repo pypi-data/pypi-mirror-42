@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        chunkflow=chunkflow.consume_tasks:cli
+    
