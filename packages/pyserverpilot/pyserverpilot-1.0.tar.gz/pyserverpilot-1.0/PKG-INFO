@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pyserverpilot
+Version: 1.0
+Summary: Python wrapper for the ServerPilot API.
+Home-page: https://github.com/opper/pyserverpilot
+Author: opper
+Author-email: alex@opper.nl
+License: UNKNOWN
+Description: ### py-serverpilot
+        
+        Python wrapper for the ServerPilot API.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
