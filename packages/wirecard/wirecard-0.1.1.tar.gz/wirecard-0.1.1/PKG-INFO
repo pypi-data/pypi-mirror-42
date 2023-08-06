@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: wirecard
+Version: 0.1.1
+Summary: 
+Home-page: https://github.com/Flickswitch/wirecard
+Author: Jonatas Baldin
+Author-email: jonatas.baldin@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: glom (>=19.2,<20.0)
+Requires-Dist: requests (>=2.21,<3.0)
+Project-URL: Repository, https://github.com/Flickswitch/wirecard

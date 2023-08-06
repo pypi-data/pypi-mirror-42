@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "wirecard"
+version = "0.1.1"
+description = ""
+authors = ["Jonatas Baldin <jonatas.baldin@gmail.com>"]
+readme = "README.MD"
+repository = "https://github.com/Flickswitch/wirecard"
+homepage = "https://github.com/Flickswitch/wirecard"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+glom = "^19.2"
+requests = "^2.21"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
