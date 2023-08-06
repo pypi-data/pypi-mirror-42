@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: heiafr.isc.se.tpchecker
+Version: 1.0.6
+Summary: Checker for Embedded System assignments
+Home-page: https://gitlab.forge.hefr.ch/jacques.supcik/se12-checker
+Author: Jacques Supcik
+Author-email: jacques.supcik@hefr.ch
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Education
+Description-Content-Type: text/markdown
+Requires-Dist: Click
+Requires-Dist: jinja2
+Requires-Dist: weasyprint
+
+# Checker for Embedded Systems assignments
+
+
