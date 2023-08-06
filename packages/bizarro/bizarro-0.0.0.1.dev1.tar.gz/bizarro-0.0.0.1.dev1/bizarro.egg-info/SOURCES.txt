@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+bizarro.egg-info/PKG-INFO
+bizarro.egg-info/SOURCES.txt
+bizarro.egg-info/dependency_links.txt
+bizarro.egg-info/entry_points.txt
+bizarro.egg-info/not-zip-safe
+bizarro.egg-info/requires.txt
+bizarro.egg-info/top_level.txt
+bizarro_lib/__init__.py
+bizarro_lib/bizarro.py
