@@ -1,0 +1,15 @@
+qsharp/__init__.py,sha256=zRP98q_bsqQ_cdYshoQnFpEENFfdCyQlCNsf5rgQS0c,3056
+qsharp/loader.py,sha256=tZXklm57UDn2e22fFUWBZfPxwu7VXr2Ik8pouprSnEI,3474
+qsharp/packages.py,sha256=73q8QMJpsaOsP-oxYQFN2aVFZBCI7bC9QBLi48oeOIQ,1243
+qsharp/serialization.py,sha256=c5uQFEs4J96D0SUTTi2Ve_IopX3XsJc1sBFkh2dNLaY,2058
+qsharp/tomography.py,sha256=eubaL5aTxKSP1v0ThVS2F0TjIVEyf6coUgBm24CT5G0,1960
+qsharp/utils.py,sha256=omtupwmMY-MoKHoBa_61qg2X0pj8QD_RyrUno2WHA0Q,466
+qsharp/version.py,sha256=qymEHrSnOFMEi06QjDY5broPnlu-c1u2ffWqPZ5m_PQ,235
+qsharp/clients/__init__.py,sha256=ozvgPFUIhqc7qI4bwBZtZCId6tTxuLxX63MgaN9hQTE,1064
+qsharp/clients/iqsharp.py,sha256=RwPpQo_hW6hh1w-3sm0DtsRsY4pqvhyExy351oYvIog,4300
+qsharp/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qsharp/tests/test_serialization.py,sha256=WAzBjelVq6J9PW19SmjpYtM6Z6n1vUWrxZg2bw_mgw0,2038
+qsharp-0.5.1902.2802.dist-info/METADATA,sha256=4y5UrVlwEKr5ygApcWPqBnM-BvL6GIcoozyMIi2nIPE,1800
+qsharp-0.5.1902.2802.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+qsharp-0.5.1902.2802.dist-info/top_level.txt,sha256=gRwxwlDQF9zt-WdPz_V1BJfEH8mt4BuKO_FUrYlvOJI,7
+qsharp-0.5.1902.2802.dist-info/RECORD,,
