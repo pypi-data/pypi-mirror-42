@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: compressing
+Version: 0.0.8
+Summary: Compressao de provas
+Home-page: http://github.com/flavio-barros/compressing
+Author: Flavio Barros
+Author-email: juniorbarros3@gmail.com
+License: UNKNOWN
+Description: Compressao de provas...
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
