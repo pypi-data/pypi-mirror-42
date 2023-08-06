@@ -1,0 +1,16 @@
+docutils
+flake8
+futures
+gitpython
+knack~=0.5.1
+mock
+pytest>=3.6.0
+pytest-xdist
+requests
+tox
+
+[:python_version<'3.0']
+pylint~=1.9.2
+
+[:python_version>='3.0']
+pylint~=2.0.0
