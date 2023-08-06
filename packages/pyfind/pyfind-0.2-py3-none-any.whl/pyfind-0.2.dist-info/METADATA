@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pyfind
+Version: 0.2
+Summary: A python import util for traversing directories
+Home-page: UNKNOWN
+Author: Alexander Angelidis
+Author-email: alex.m.angelidis@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+# pyFind
+A simple python import that will allow you to traverse local directories and sub-folders returning lists of files in folders.
+
+
