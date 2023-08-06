@@ -1,0 +1,11 @@
+id4me_rp_client/__init__.py,sha256=EHS1lSwkflbsiBdJCMb3jCarRPrlgClcizG_4vlmigk,413
+id4me_rp_client/id4me_constants.py,sha256=7TQvkvRbssMEE5ggGQbxqUVPLwm1wpTknvQY5yCsrkE,1735
+id4me_rp_client/id4me_exceptions.py,sha256=Qzqhmnh7Nv8sHhQHDkJ2edvwTIiVGYn2cxJKV1KNzaU,802
+id4me_rp_client/id4me_rp_client.py,sha256=zTLuPO4HDNBWNm2Zjf8GCi7N-kcLgBYUeEI9Q-Pu1Xo,37244
+id4me_rp_client/network.py,sha256=d1fm2nCyKPuf7ebhJrJcXIq8ayOeEu4yeXu_97jXN5U,8640
+id4me_rp_client/stringify_keys.py,sha256=xRzMJTw8u7Bp4ahAezGd-Ddp9Y57DdiuXeDPFpPTWHg,1220
+id4me_rp_client-0.0.11.dist-info/LICENSE,sha256=3s0hWTS0y_oSRI7_jWQMj4F98CMmLY_a2T1kQmaYdkg,1090
+id4me_rp_client-0.0.11.dist-info/METADATA,sha256=A2bR7HDEvJxvxTcbVf1FgTMTT4Sgc0gJgVrCawccV7E,5575
+id4me_rp_client-0.0.11.dist-info/WHEEL,sha256=7cxsCAdV52i0emUNaVXkD_LyuggvPHpz0AyJu_tA0ZQ,116
+id4me_rp_client-0.0.11.dist-info/top_level.txt,sha256=jCscIpJoxWexKmjXv1njgmHoUQAttP41QafpxKHxL6U,16
+id4me_rp_client-0.0.11.dist-info/RECORD,,
