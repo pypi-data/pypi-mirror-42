@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: lair3
+Version: 0.2.4
+Summary: AmmuNation Networking Library
+Home-page: https://github.com/munshigroup/lair3
+Author: The Munshi Group
+Author-email: support@munshigroup.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: amncore
+Requires-Dist: bombfuse
+Requires-Dist: bs4
+Requires-Dist: kthread
+Requires-Dist: paynspray
+Requires-Dist: pyopenssl
+
+# lair3
+Networking libraries for use with the AmmuNation framework
+
+## Installation
+
+Run the following command:
+
+    $ pip install lair3
+
