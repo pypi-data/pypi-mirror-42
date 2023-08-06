@@ -1,0 +1,16 @@
+README.rst
+setup.py
+cyberspacy/__init__.py
+cyberspacy/about.py
+cyberspacy/detections.py
+cyberspacy/expressions.py
+cyberspacy/lemmatizer.py
+cyberspacy/symbols.py
+cyberspacy.egg-info/PKG-INFO
+cyberspacy.egg-info/SOURCES.txt
+cyberspacy.egg-info/dependency_links.txt
+cyberspacy.egg-info/not-zip-safe
+cyberspacy.egg-info/requires.txt
+cyberspacy.egg-info/top_level.txt
+tests/__init__.py
+tests/test_detections.py
