@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: ghstack
+Version: 0.0.2
+Summary: Stack diff support for GitHub
+Home-page: https://github.com/pypa/ghexport
+Author: Edward Z. Yang
+Author-email: ezyang@mit.edu
+License: UNKNOWN
+Description: # ghstack
+        
+        Conveniently submit stacks of diffs to GitHub as separate pull requests.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
