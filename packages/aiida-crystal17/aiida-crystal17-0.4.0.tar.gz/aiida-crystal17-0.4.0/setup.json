@@ -1,0 +1,71 @@
+{
+    "name": "aiida-crystal17",
+    "author": "Chris Sewell",
+    "author_email": "chrisj_sewell@hotmail.com",
+    "description": "AiiDA plugin for running the CRYSTAL17 code",
+    "url": "https://github.com/chrisjsewell/aiida-crystal17",
+    "license": "MIT",
+    "classifiers": [
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.7",
+        "Topic :: Scientific/Engineering :: Chemistry",
+        "Topic :: Scientific/Engineering :: Physics"
+    ],
+    "version": "0.4.0",
+    "entry_points": {
+        "console_scripts": [
+            "mock_runcry17 = aiida_crystal17.tests.mock_runcry17:main"
+        ],
+        "aiida.data": [
+            "crystal17.basisset = aiida_crystal17.data.basis_set:BasisSetData",
+            "crystal17.structsettings = aiida_crystal17.data.struct_settings:StructSettingsData"
+        ],
+        "aiida.calculations": [
+            "crystal17.basic = aiida_crystal17.calculations.cry_basic:CryBasicCalculation",
+            "crystal17.main = aiida_crystal17.calculations.cry_main:CryMainCalculation",
+            "crystal17.immigrant = aiida_crystal17.calculations.cry_main_immigrant:CryMainImmigrantCalculation"
+        ],
+        "aiida.parsers": [
+            "crystal17.basic = aiida_crystal17.parsers.cry_basic:CryBasicParser"
+        ],
+        "aiida.workflows": [
+            "crystal17.sym3d = aiida_crystal17.workflows.symmetrise_3d_struct:Symmetrise3DStructure"
+        ],
+        "aiida.cmdline.data": [
+            "cry17-settings = aiida_crystal17.cmndline.structsettings:structsettings",
+            "cry17-basis = aiida_crystal17.cmndline.basis_set:basisset"
+        ]
+    },
+    "include_package_data": true,
+    "setup_requires": ["reentry"],
+    "reentry_register": true,
+    "install_requires": [
+        "aiida-core==0.12.2",
+        "ejplugins>=0.9.7",
+        "packaging==19.0",
+        "spglib==1.10.3.65",
+        "ase==3.12.0"
+    ],
+    "extras_require": {
+        "testing": [
+            "mock==2.0.0",
+            "pgtest==1.1.0",
+            "sqlalchemy-diff==0.1.3",
+            "pytest==3.6.3",
+            "wheel>=0.31",
+            "coverage",
+            "pytest-cov",
+            "pytest-timeout",
+            "jsonextended"
+        ],
+        "pre-commit": [
+            "pre-commit==1.10.5",
+            "yapf==0.22.0",
+            "prospector==1.1.2",
+            "pylint==1.8.4"
+        ],
+        "docs": [
+            "sphinx>=1.6"
+        ]
+    }
+}
