@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+Sanic_Session_SPF.egg-info/PKG-INFO
+Sanic_Session_SPF.egg-info/SOURCES.txt
+Sanic_Session_SPF.egg-info/dependency_links.txt
+Sanic_Session_SPF.egg-info/not-zip-safe
+Sanic_Session_SPF.egg-info/requires.txt
+Sanic_Session_SPF.egg-info/top_level.txt
+sanic_session_spf/__init__.py
+sanic_session_spf/plugin.py
