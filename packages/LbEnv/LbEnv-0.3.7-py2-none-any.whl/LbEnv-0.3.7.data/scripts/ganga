@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# if the first command line option is --ganga-version use the version of
+# Ganga specified as argument
+GANGA_VERSION=LATEST
+while [ $# -ne 0 ] ; do
+    case $1 in
+        --ganga-version)
+          shift
+          GANGA_VERSION=$1
+          shift
+          ;;
+        *) break ;;
+    esac
+done
+
+export GANGA_CONFIG_PATH=${GANGA_CONFIG_PATH:-GangaLHCb/LHCb.ini}
+export GANGA_SITE_CONFIG_AREA=${GANGA_SITE_CONFIG_AREA:-/cvmfs/lhcb.cern.ch/lib/GangaConfig/config}
+exec /cvmfs/ganga.cern.ch/Ganga/install/${GANGA_VERSION}/bin/ganga "$@"
