@@ -1,0 +1,15 @@
+jsonschema>=2.5.1
+strict_rfc3339>=0.7
+azure-functions==1.0.0b3
+werkzeug>=0.14.1
+
+[test]
+coverage==4.1
+pyyaml==4.2b4
+pytest==4.2.1
+mock>=2.0.0
+prospector==1.1.6.2
+jsonschema>=2.5.1
+strict_rfc3339>=0.7
+azure-functions==1.0.0b3
+werkzeug>=0.14.1

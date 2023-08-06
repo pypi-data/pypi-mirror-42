@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+functionapprest/__init__.py
+functionapprest/__version__.py
+functionapprest.egg-info/PKG-INFO
+functionapprest.egg-info/SOURCES.txt
+functionapprest.egg-info/dependency_links.txt
+functionapprest.egg-info/not-zip-safe
+functionapprest.egg-info/requires.txt
+functionapprest.egg-info/top_level.txt
+tests/__init__.py
+tests/test_functionapprest.py
