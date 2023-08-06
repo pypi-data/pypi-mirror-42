@@ -1,0 +1,14 @@
+
+CHANGES
+=======
+
+1.0.0 (2019-02-27)
+------------------
+
+- BLUE-2855 Update to Trix 1.0.0.
+
+
+0.9.5 (2016-03-18)
+------------------
+
+- Initial packaging of trix as a fanstatic package.
