@@ -1,0 +1,13 @@
+octicons/__init__.py,sha256=7PfqD3cGHGeX6HQuW-H-Vw2qdqwTbbVRat8UP_T2RPg,53
+octicons/_escape_utils.py,sha256=bxL1UkdBPnKpL_yIkH8kDCAeoimi6Ux_dCHkfvgH5CE,1238
+octicons/apps.py,sha256=C5ufAhBaBnH3bAD8s51lO1AoH6dVQSUyXZYonTyf7ko,92
+octicons/data.json,sha256=iao5D8V1NqBgUXyv3-bK0JTm6S0c-mY1zKTZulo7o5k,86416
+octicons/octicons.py,sha256=vd3vwvaPYazhrXFzPj5q6y7io_HkPDTLGr3t9rYvDAI,4218
+octicons/store.py,sha256=ZV2H9QBiK4GuoXEGMjx9aRNcdUh57k2CbAJElxJ1ApQ,217
+octicons/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+octicons/templatetags/octicons.py,sha256=yAhZl34llHH_Eh71N_dW-Fm-N73d61nYguLbhwzOhjo,248
+octicons/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+octicons-1.4.2.dist-info/METADATA,sha256=F600VxQqKCi-K2E_h6A4GInmCX90nA8rNAN-7Y7xlek,6700
+octicons-1.4.2.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+octicons-1.4.2.dist-info/top_level.txt,sha256=cOiWxvte0dsp8Z5_pMIW8hVIe4nnvo29rn8PGp0k5JI,9
+octicons-1.4.2.dist-info/RECORD,,
