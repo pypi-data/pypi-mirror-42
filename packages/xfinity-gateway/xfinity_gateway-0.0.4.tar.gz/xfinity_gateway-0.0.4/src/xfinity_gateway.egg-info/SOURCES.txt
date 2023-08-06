@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+Pipfile
+Pipfile.lock
+README.md
+requirements.txt
+setup.py
+src/xfinity_gateway.py
+src/xfinity_gateway.egg-info/PKG-INFO
+src/xfinity_gateway.egg-info/SOURCES.txt
+src/xfinity_gateway.egg-info/dependency_links.txt
+src/xfinity_gateway.egg-info/requires.txt
+src/xfinity_gateway.egg-info/top_level.txt
+tests/basic_test.py
