@@ -1,0 +1,47 @@
+cluster:
+  type: "kubernetes"
+  version: "v1.12.1"
+  db_config: &db_base_config
+    - REANA_SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://reana:reana@db:5432/reana"
+  root_path: "/var/reana"
+  shared_volume_path: "/var/reana"
+  reana_url: "reana-dev.cern.ch"
+  cephfs_volume_size: 200
+  #  cephfs_monitors:
+  #    - 188.184.86.25:6790
+  #    - 188.184.94.56:6790
+  #    - 188.185.66.208:6790
+  db_persistence_path: "/var/reana/db"
+
+components:
+  reana-workflow-controller:
+    type: "docker"
+    image: "reanahub/reana-workflow-controller:v0.4.0-52-g31ece9b"
+    environment:
+      - <<: *db_base_config
+      - ORGANIZATIONS: "default,alice,atlas,cms,lhcb"
+      - REANA_WORKFLOW_ENGINE_IMAGE_CWL: "reanahub/reana-workflow-engine-cwl:v0.4.0-20-g065377c"
+      - REANA_WORKFLOW_ENGINE_IMAGE_YADAGE: "reanahub/reana-workflow-engine-yadage:v0.4.0-15-g4b198e0"
+      - REANA_WORKFLOW_ENGINE_IMAGE_SERIAL: "reanahub/reana-workflow-engine-serial:v0.4.0-18-g6e7b2b2"
+
+  reana-job-controller:
+    type: "docker"
+    image: "reanahub/reana-job-controller:v0.4.0-15-gf3855fe"
+    environment:
+      - <<: *db_base_config
+
+  reana-server:
+    type: "docker"
+    image: "reanahub/reana-server:v0.4.0-21-g202e7f3"
+    environment:
+      - <<: *db_base_config
+
+  reana-message-broker:
+    type: "docker"
+    image: "reanahub/reana-message-broker:0.4.0"
+
+  reana-workflow-monitor:
+    type: "docker"
+    image: "reanahub/reana-workflow-monitor:0.4.0"
+    environment:
+      - ZMQ_PROXY_CONNECT: "tcp://zeromq-msg-proxy.default.svc.cluster.local:8667"
