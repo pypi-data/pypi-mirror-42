@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+src/EZCal.egg-info/PKG-INFO
+src/EZCal.egg-info/SOURCES.txt
+src/EZCal.egg-info/dependency_links.txt
+src/EZCal.egg-info/top_level.txt
+src/ezcal/__init__.py
+src/ezcal/__main__.py
