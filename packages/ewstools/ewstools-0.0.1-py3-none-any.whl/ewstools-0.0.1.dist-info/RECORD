@@ -1,0 +1,11 @@
+ewstools/__init__.py,sha256=EWzmOXNN_sukRCjLn9r3MBS9wIYHzA4qwLLjoK9A5Ks,19
+ewstools/ews_compute.py,sha256=7YTVDbTEAHxqIuTtIr3tXetmJtDroJWmryl8w7XI8u4,13543
+ewstools/ews_compute_run.py,sha256=PUGKin8fQCy9n_KmtftDt56n3K3CRqXu5VJJcpzZkYo,5519
+ewstools/ews_compute_runMulti.py,sha256=14vaHvIbDQ5u3-js_PQBK8u9uvDJmDd1sNnPADL4eOg,5140
+ewstools/ews_spec.py,sha256=hfdFcMx0C_ZhhVD9Gu4WPWWPXWe9uU6KPT8rayD16kg,17771
+ewstools/ews_spec_test.py,sha256=6rfXl74mk7uDwfQaoos7H-T_VXGa_HkIgTMtFQ6EtJc,1919
+ewstools-0.0.1.dist-info/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+ewstools-0.0.1.dist-info/METADATA,sha256=OMXHCxmse3stjZd21Vq6CxZ3_fOYCljKLHgqCcAYB-o,2388
+ewstools-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+ewstools-0.0.1.dist-info/top_level.txt,sha256=dGxxmcwJCFJnO-zo9KfCU50Ub7IcsXk1HM608e3E-RU,9
+ewstools-0.0.1.dist-info/RECORD,,
