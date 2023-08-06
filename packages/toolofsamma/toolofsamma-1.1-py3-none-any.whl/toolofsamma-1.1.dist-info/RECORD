@@ -1,0 +1,10 @@
+mydecorate/__init__.py,sha256=N6GJeAEHkfD1tphdBd6bDLs-NLvOurYy-GFZaztsMkQ,160
+src/__init__.py,sha256=HltysI0UxiDjNlUMux-v7R2sgmf6EYqiEJnVtidGTzE,160
+src/mydecorate/__init__.py,sha256=NFVlqyCCRdxG8e9MUsQ16mz73wis2BhmkD1Ifb5Gtho,181
+src/mydecorate/clockdeco.py,sha256=au-jqOvgL75DHxBS50hFyEUlJu4h4tjr7ATjB2iRaxk,585
+src/mydecorate/debugdeco.py,sha256=snebg_9XJISX3D7VuovPXMDOHXF9qxofCX1i4noXlKo,423
+src/mydecorate/fileiterdeco.py,sha256=TzMd3z_4devg8WfZYVOqbB3gPY8mOW2PgN4I-S_80vw,715
+toolofsamma-1.1.dist-info/METADATA,sha256=OeyA-oprix4iZyvLu8a_UKFLg_N3_8Xgn35IVmreHLY,454
+toolofsamma-1.1.dist-info/RECORD,,
+toolofsamma-1.1.dist-info/WHEEL,sha256=cScVKDQXc_cp1jHmxFDq9fIOIg17a2BsmfS6J39H6Eo,97
+toolofsamma-1.1.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
