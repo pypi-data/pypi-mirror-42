@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: winot
+Version: 0.8.7
+Summary: WiNoT Wrappers
+Home-page: https://www.qantom.com/winot_trainer.html
+Author: Qantom Software Private Limited
+Author-email: info@qantom.com
+License: GNU General Public License v3 (GPLv3)
+Description: #WiNoT®
+        
+        WiNoT® is a range of products from Qantom Software Private Limited that makes it easy for IOT implementors to create wireless enabled IOT solutions without the need for complex embedded or socket programming knowledge. 
+        The core principles of WiNoT® products are
+        It must be easy for people who are not electronic engineers or computer science specialists to be able to create IOT solutions
+        Must follow the 3-Easy-C principle - Easy to a)Create, b)Configure and c)Customize
+        Wireless intelligence must be built into the product. Any developer who wants to create customized sensors and output devices must be able to do so in easy steps
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
