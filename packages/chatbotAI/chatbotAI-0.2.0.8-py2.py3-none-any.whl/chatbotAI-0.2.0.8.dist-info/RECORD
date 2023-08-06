@@ -1,0 +1,11 @@
+chatbot/DefaultSubs.py,sha256=ycfbdM1k5wo0kUximoPluRLYizDWMrodXjrIxgO5LEI,4424
+chatbot/__init__.py,sha256=q7Tvun9o_0aDC76Ti6Q2F1IIkwjNHNt6qF8qnMTlRws,36516
+chatbot/default.template,sha256=Oydx5WIL07DdoI0p3enZGus0Cw60gX0bo0IZL5Jwtgo,12433
+chatbot/learn.py,sha256=ByQ99z8SyoVjQ4fWC8YfwLrTXa85uNkPIpdhVrJRL08,476
+chatbot/spellcheck/__init__.py,sha256=a1IOVkenRIQn8pfhwutYCMZBxffG5hLOcK4iE9LPm_w,1623
+chatbot/spellcheck/words.txt,sha256=c9ITbVTUk2nFBMsr6x27cF_4UfP9Cb8zdv-LCx9-3Ok,11903269
+chatbotAI-0.2.0.8.dist-info/LICENSE,sha256=zQ0K0KHh6bh0SvBuVJ95YApecyN4JEZext6l7kQdB64,1073
+chatbotAI-0.2.0.8.dist-info/METADATA,sha256=JP7hOKewaZmBVU54Y6L7ZEha3Za0kYkRQI11qbaXLtg,7415
+chatbotAI-0.2.0.8.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+chatbotAI-0.2.0.8.dist-info/top_level.txt,sha256=z_gsx4Nl1MmzEbC8hsVurkplJ5cAdtIqrt84F9-aR9s,8
+chatbotAI-0.2.0.8.dist-info/RECORD,,
