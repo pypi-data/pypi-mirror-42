@@ -1,0 +1,17 @@
+README.md
+setup.py
+fever_allennlp.egg-info/PKG-INFO
+fever_allennlp.egg-info/SOURCES.txt
+fever_allennlp.egg-info/dependency_links.txt
+fever_allennlp.egg-info/requires.txt
+fever_allennlp.egg-info/top_level.txt
+src/fever/__init__.py
+src/fever/evidence/__init__.py
+src/fever/evidence/negative_sample_nearest.py
+src/fever/evidence/negative_sample_random.py
+src/fever/evidence/retrieve.py
+src/fever/evidence/retrieval_methods/__init__.py
+src/fever/evidence/retrieval_methods/retrieval_method.py
+src/fever/evidence/retrieval_methods/top_docs.py
+src/fever/submission/__init__.py
+src/fever/submission/prepare.py
