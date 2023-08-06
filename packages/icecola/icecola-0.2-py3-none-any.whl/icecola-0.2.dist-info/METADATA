@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: icecola
+Version: 0.2
+Summary: A  util package for python
+Home-page: https://github.com/Colaplusice/icecola
+Author: Colaplusice
+Author-email: fjl2401@163.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Requires-Dist: pymongo (>=3.7.2)
+Requires-Dist: pendulum (>=2.0.3)
+
+## fjl的 python 工具包
+
+### 安装 setuptools wheel， 安装twine
+
+- python3 -m pip install --user --upgrade setuptools wheel
+- python3 -m pip install --user --upgrade twine
+
+### 打包发布
+
+- python3 setup.py sdist bdist_wheel
+- 测试服 python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+- pypi: python3 -m twine upload dist/*
+
+## 运行后生成
+
+python_utils.egg-info
+build
+dist
+
+## 安装方法
+
+- pip install -i https://test.pypi.org/simple/ icecola
+
+## 使用
+
+- import crawler_utils
+
+
+
