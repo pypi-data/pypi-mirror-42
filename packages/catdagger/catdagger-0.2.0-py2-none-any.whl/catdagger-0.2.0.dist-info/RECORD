@@ -1,0 +1,15 @@
+catdagger/ModColor.py,sha256=w9MbvBoXyGJa8SUsrTdHzy5NNA_UTsrUAONGHqQj04w,1422
+catdagger/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+catdagger/__main__.py,sha256=UsX4bqdHyc2huTMjggblCca_u828iKRVu3UA0Y14s8Q,9815
+catdagger/filters.py,sha256=FExCjbGs63Mx_U9TdS80q1Pk1ND6BGpGMJ_E49jHC3E,3641
+catdagger/fits_tools.py,sha256=QovR5iSPwZO0eP1x2NHTgm8BlnBm38es6ec9HPO2dTE,11553
+catdagger/gauss2.py,sha256=DLlmXREmIE6nMy26_YgX-0hXvaFU8KIlvfJUAsVDcu0,7838
+catdagger/geometry.py,sha256=OhhJVZ5sOXDr48UtJByQHt1Z_d0Qaqzc9kd7d4Up32k,8365
+catdagger/logger.py,sha256=z9DVfpO8evyDiCnpIf_OU8ixN_gEqJIEL0ZMC2FZV2E,12670
+catdagger/lsm_tools.py,sha256=h4dLb7bqOy8eu0Sl2jHWA8mQW0W2lIk7tdiEt3RP-JM,3445
+catdagger/tiled_tesselator.py,sha256=Kd3OIsc2tldgdCzzrBxQuswOoxdcSFSk7c7CXRZMOT8,5819
+catdagger-0.2.0.data/scripts/dagger,sha256=g1kPvabapuJs3SQa4VX-Dg8yfHjHy-sDgm2so2cvYtU,65
+catdagger-0.2.0.dist-info/METADATA,sha256=ATXkZXMA_9eydgNrk7x8eKmxMz7xZtZBnMqWJojCwMs,6786
+catdagger-0.2.0.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+catdagger-0.2.0.dist-info/top_level.txt,sha256=znK_nOvUMb-BrdhWAG7tJZ6LTw5zKG8wTuOGwVIuUaI,10
+catdagger-0.2.0.dist-info/RECORD,,
