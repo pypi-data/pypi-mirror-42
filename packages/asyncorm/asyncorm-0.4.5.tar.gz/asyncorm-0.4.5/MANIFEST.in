@@ -1,0 +1,24 @@
+
+include AUTHORS.rst
+
+include CONTRIBUTING.rst
+include HISTORY.rst
+include LICENSE
+include README.rst
+
+recursive-include asyncorm/application *
+recursive-include asyncorm/application/commands *
+recursive-include asyncorm/apps *
+recursive-include asyncorm/database *
+recursive-include asyncorm/log *
+recursive-include asyncorm/manager *
+recursive-include asyncorm/migrations *
+recursive-include asyncorm/migrations/migrations *
+recursive-include asyncorm/models *
+recursive-include asyncorm/orm_migrations *
+recursive-include asyncorm/serializers *
+recursive-exclude examples *
+recursive-exclude docs *
+recursive-exclude tests *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
