@@ -1,0 +1,3 @@
+[console_scripts]
+filesender = filesender.filesender:main_with_args
+
