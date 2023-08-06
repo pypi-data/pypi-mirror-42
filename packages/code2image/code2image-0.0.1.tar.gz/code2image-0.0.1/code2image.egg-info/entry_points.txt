@@ -1,0 +1,3 @@
+[console_scripts]
+code2image = code2image.cli:main
+
