@@ -1,0 +1,17 @@
+d6tflow/__init__.py,sha256=z9GOQAUcJrS70EVfPcr1lcNB29CRhq9oSDSo69ipiSY,6547
+d6tflow/cache.py,sha256=q6mjbSKd5qBw6UJJYC14H2WuFp1RMb23XxUUUVzlAaU,63
+d6tflow/pipes.py,sha256=7B5ej0O7ABPahMOVGlxJxm8VElpMIn5B9OfLCext43w,4290
+d6tflow/settings.py,sha256=hY0CJMdw37hdsCOxjvhwxpgltyty2tDlXfRn1QEqpFo,356
+d6tflow/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+d6tflow/targets/__init__.py,sha256=zVQscqlbgBBBzwqn5GpzRkcLEHzupmAQyvOOuXwmPw8,6441
+d6tflow/targets/dask.py,sha256=13E6fml9Y7zJZtEHEWhc3vOkhckslhZrVYhaVht2FF0,1661
+d6tflow/targets/dt.py,sha256=q2pIrPwx9p9v7LLXZSbv6o0YrHS4eBewh1IuwKc_Wi0,355
+d6tflow/targets/h5.py,sha256=xEniWAs2BCebXwGkzAUsoS-XW9Pxv0ThDO34_8DYp6I,381
+d6tflow/tasks/__init__.py,sha256=LuxD6XocrRAdMrKuBy6opXucdpm_o9cOx0cOJPxiNQQ,5657
+d6tflow/tasks/dask.py,sha256=83BCW-HobTUyBWP195MijNfSyoaEDRlWZRaLbWJMAWU,373
+d6tflow/tasks/dt.py,sha256=6MDJuC6PDO6_CA3xVHIub4f3Vjut7Llhhf-US3CeC5g,238
+d6tflow/tasks/h5.py,sha256=l5-Fg3rumh7tU6tCSw9tiud3aIq7WIsg5LKW4O_46RA,226
+d6tflow-0.1.3.dist-info/METADATA,sha256=FTLrqEMnkWQbhr92pBrgCBKhRC7jUepQxJz9Uz52-zM,684
+d6tflow-0.1.3.dist-info/RECORD,,
+d6tflow-0.1.3.dist-info/WHEEL,sha256=cScVKDQXc_cp1jHmxFDq9fIOIg17a2BsmfS6J39H6Eo,97
+d6tflow-0.1.3.dist-info/top_level.txt,sha256=kn40TZ8-Sj5Sn8h3aoSq2NUmfc9LGY_izNxhlmTDk3Q,8
