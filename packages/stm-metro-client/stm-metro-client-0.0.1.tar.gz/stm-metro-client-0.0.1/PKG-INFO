@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: stm-metro-client
+Version: 0.0.1
+Summary: A python client for Montreal's STM metro line status
+Home-page: https://github.com/kkr16/stm-metro-client
+Author: Karim Roukoz
+Author-email: roukoz@gmail.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Description: # stm-metro-client
+Keywords: montreal,transit,metro,subway,quebec
+Platform: UNKNOWN
