@@ -1,0 +1,16 @@
+ipyevents/__init__.py,sha256=5fju_UQG3oz66N4syskECRKDPN3ZMoURWW59Jepj2t8,253
+ipyevents/_version.py,sha256=T092YiLYsd-6f2wKaj-COeoESkMMFBSVGU3ReG7p5C0,701
+ipyevents/events.py,sha256=SWu7AniHzI07UmUaGSigGsxg83rvplHcj7e3U9E91kk,3823
+ipyevents/static/extension.js,sha256=6c78DNv9acX2jc63JRfwl6DLsVHXBM4MYE-4CyHT27U,3021
+ipyevents/static/index.js,sha256=qEqWD0F6Om0FFr1lOGEzvcHkhjqJq6uzPTQYV2NwtAw,81753
+ipyevents/static/index.js.map,sha256=cfs20wxLsYBswk5SUSu9K7sZcw5WnleAkom1uCIuXBg,95764
+ipyevents-0.4.1.data/data/etc/jupyter/nbconfig/notebook.d/ipyevents.json,sha256=TA416V3YxUA3xcphT5EtfGViiRLIlsPcCcnydSXlPBg,63
+ipyevents-0.4.1.data/data/share/jupyter/nbextensions/ipyevents/extension.js,sha256=6c78DNv9acX2jc63JRfwl6DLsVHXBM4MYE-4CyHT27U,3021
+ipyevents-0.4.1.data/data/share/jupyter/nbextensions/ipyevents/index.js,sha256=qEqWD0F6Om0FFr1lOGEzvcHkhjqJq6uzPTQYV2NwtAw,81753
+ipyevents-0.4.1.data/data/share/jupyter/nbextensions/ipyevents/index.js.map,sha256=cfs20wxLsYBswk5SUSu9K7sZcw5WnleAkom1uCIuXBg,95764
+ipyevents-0.4.1.dist-info/DESCRIPTION.rst,sha256=M2lFXOdz8qz3QVBPDK7-xz6FHgejTc0R8bmqtsJutWE,68
+ipyevents-0.4.1.dist-info/METADATA,sha256=3HEIwsXj86Ufs7dtOrLibEK-wzXI2G_iKwP5q2GHldY,821
+ipyevents-0.4.1.dist-info/RECORD,,
+ipyevents-0.4.1.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+ipyevents-0.4.1.dist-info/metadata.json,sha256=ckDces7cXH_0EYcBBEa7_LAMneWp2SIEgWgIMnc14fU,924
+ipyevents-0.4.1.dist-info/top_level.txt,sha256=YEMhaU5bhnzJU44Q0aI0grvK-Fl-utYsfutovxS-j9U,10
