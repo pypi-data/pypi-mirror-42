@@ -1,0 +1,8 @@
+attrs
+
+[dev]
+coverage
+gitignoreio
+pytest
+pytest-cov
+tox
