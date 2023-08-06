@@ -1,0 +1,4 @@
+[console_scripts]
+run_service = VestaRestPackage.run_process:main
+vrp_default_config = VestaRestPackage.print_example_configuration:main
+
