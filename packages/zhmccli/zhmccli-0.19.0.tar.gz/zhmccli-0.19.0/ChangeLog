@@ -1,0 +1,50 @@
+CHANGES
+=======
+
+0.19.0
+------
+
+* Updated change log for 0.19.0 release
+* Updated Copyright to 2019
+* Made check for using readline vs pyreadline consistent
+* Fixed new flake8 issues in zhmccli.py
+* Adjusted test case in test\_info.py to accomodate click 7.0
+* Fixed pytest-cov issue with python-coveralls downgrading coverage
+* Improved error handling in determination of package version in Makefile
+* Added debug info for package version issue to Sphinx build
+* Docs: Fixed info about syslog destination
+* Fixed Git rebase in Appveyor CI
+* Build changes for consistency with zhmcclient
+* Some more fixes before the release
+* Added debug info for package version issue to Sphinx build
+* Some more fixes before the release
+* Dev: Changed 'make install' to install zhmccli package as editable
+* Ignoring .pytest\_cache directory for git
+* Multiple fixes to get tests going again
+* Add support for CPC energy management operations
+* Fixed Flake8 failures due to new checks in its 3.5.0
+* Fixed syntax error in Travis control file from last commit
+* Disabled coveralls in manual-ci-run
+* Updated requirements.txt to no longer reference topic branch for zhmcclient
+
+0.18.0
+------
+
+* Added support for force+act.profile in LPAR ops
+* Improved table output for complex resource properties
+* Added concept for function testing zhmccli + first testcases
+* Fixes and improvements in Makefile
+* Enabled Travis and Appveyor for manual-ci-run
+* Started 0.19.0
+* Released 0.18.0
+* Added the zhmcclient version to the output of 'zhmc --version'
+* Fixed that CONSOLE\_LOGGER\_NAME was not migrated from zhmcclient
+* Fix build\_clib issue on Travis by removing duplicate setuptools
+* Select zhmcclient version from repo master branch
+* Disabled OS-X and pypy on Travis for the time being
+* Fixed issue with no readline module on Windows
+* Circumvented Travis issue with build\_clib
+* Add CLI support for mount and unmount an ISO
+* Improved the change log description
+* Renamed repo to zhmccli
+* Initial version of zhmccli
