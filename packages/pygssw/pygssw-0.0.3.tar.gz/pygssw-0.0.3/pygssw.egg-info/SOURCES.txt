@@ -1,0 +1,10 @@
+README.md
+setup.py
+pygssw/gssw.c
+pygssw/gssw.h
+pygssw/gssw_wrap.c
+pygssw.egg-info/PKG-INFO
+pygssw.egg-info/SOURCES.txt
+pygssw.egg-info/dependency_links.txt
+pygssw.egg-info/not-zip-safe
+pygssw.egg-info/top_level.txt
