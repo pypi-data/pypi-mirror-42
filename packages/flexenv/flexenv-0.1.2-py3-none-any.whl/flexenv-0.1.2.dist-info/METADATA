@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: flexenv
+Version: 0.1.2
+Summary: an environ-compatible tool for reading config as envvars
+Home-page: https://github.com/WaggleNet/flexenv
+Author: Jimmy He
+Author-email: jimmy.xrail@me.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: University of Illinois/NCSA Open Source License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml
+
+# FlexEnv
+
+FlexEnv extends the environment variables by allowing ingestion of configuration files and (in future) other data sources, and provides a unified environment variable interface identical to `os.environ`.
+
