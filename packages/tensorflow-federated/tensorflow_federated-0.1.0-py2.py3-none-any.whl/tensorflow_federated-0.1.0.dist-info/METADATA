@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: tensorflow-federated
+Version: 0.1.0
+Summary: TensorFlow Federated is an open-source federated learning framework.
+Home-page: http://tensorflow.org/federated
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Download-URL: https://github.com/tensorflow/federated/tags
+Keywords: tensorflow federated machine learning
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/plain
+Requires-Dist: h5py
+Requires-Dist: numpy
+Requires-Dist: six
+Requires-Dist: tensorflow (>=1.13.0rc2)
+
+TensorFlow Federated (TFF) is an open-source framework for collaborative
+computations on distributed data that does not require collecting data at a
+centralized location.
+
+The framework has initially been developed to facilitate open research and
+experimentation with
+[Federated Learning](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html),
+a technology that enables devices owned by end users to collaboratively learn a
+shared prediction model while keeping potentially sensitive training data on the
+devices, thus decoupling the ability to do machine learning from the need to
+collect and store the data in the cloud.
+
+With the interfaces provided by TFF, developers can test existing federated
+learning algorithms on their models and data, or design new experimental
+algorithms and run them on existing models and data, all within the same open
+source environment. The framework has been designed with compositionality in
+mind, and can be used to combine independently-developed techniques and
+components that offer complementary capabilities into larger systems.
+
+
