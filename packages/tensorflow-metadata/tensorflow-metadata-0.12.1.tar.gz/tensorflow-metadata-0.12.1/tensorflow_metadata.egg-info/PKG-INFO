@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: tensorflow-metadata
+Version: 0.12.1
+Summary: Library and standards for schema and statistics.
+Home-page: UNKNOWN
+Author: Google Inc.
+Author-email: tf-metadata-feedback@google.com
+License: Apache 2.0
+Download-URL: https://pypi.org/project/tensorflow-metadata
+Description: # TensorFlow Metadata
+        
+        [![Python](https://img.shields.io/pypi/pyversions/tensorflow-metadata.svg?style=plastic)](https://github.com/tensorflow/metadata)
+        [![PyPI](https://badge.fury.io/py/tensorflow-metadata.svg)](https://badge.fury.io/py/tensorflow-metadata)
+        
+        TensorFlow Metadata provides standard representations for metadata that are
+        useful when training machine learning models with TensorFlow.
+        
+        The metadata serialization formats include:
+        
+        * A schema describing tabular data (e.g., tf.Examples).
+        * A collection of summary statistics over such datasets.
+        
+        The metadata may be produced by hand or automatically during input data
+        analysis, and may be consumed for data validation, exploration, and
+        transformation.
+        
+Keywords: tensorflow metadata tfx
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=2.7,<4
+Description-Content-Type: text/markdown
