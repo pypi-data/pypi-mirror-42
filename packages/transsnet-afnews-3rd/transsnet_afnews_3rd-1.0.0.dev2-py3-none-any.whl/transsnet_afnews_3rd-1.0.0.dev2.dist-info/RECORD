@@ -1,0 +1,8 @@
+transsnet_afnews_3rd/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+transsnet_afnews_3rd/comprehend/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+transsnet_afnews_3rd/comprehend/classify.py,sha256=h_sRx4_9oe76QogADlLI52LXZTaPRY_fe7-p2wFqd74,1073
+transsnet_afnews_3rd/comprehend/s3driver.py,sha256=59k2SszCVtdzGu_yVVczQ2YsJPI6AxjonfVGLYy0PYI,293
+transsnet_afnews_3rd-1.0.0.dev2.dist-info/METADATA,sha256=4mfJvH0BHaYug7G4mgI8FyfzrgQCoNB3xhiyZkBPo28,264
+transsnet_afnews_3rd-1.0.0.dev2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+transsnet_afnews_3rd-1.0.0.dev2.dist-info/top_level.txt,sha256=puumshSJly50K1FXLzz3jyDS064Y8NZLwHWsIo7p_rc,21
+transsnet_afnews_3rd-1.0.0.dev2.dist-info/RECORD,,
