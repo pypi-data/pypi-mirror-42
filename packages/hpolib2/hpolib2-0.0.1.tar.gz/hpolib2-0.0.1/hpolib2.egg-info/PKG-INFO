@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: hpolib2
+Version: 0.0.1
+Summary: Automated machine learning.
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: eggenspk@informatik.uni-freiburg.de
+License: GPLv3
+Description: UNKNOWN
+Platform: Linux
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
