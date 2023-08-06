@@ -1,0 +1,32 @@
+Katie
+=====
+
+A user-friendly kubectl wrapper for interacting with pods.
+
+Usage
+-----
+
+### Commands
+
+* `kubectl pods <selector>` - list pods.
+* `kubectl logs <selector>` - show logs from first matching pod.
+* `kubectl exec <selector> -- <command>` - exec in first matching pod.
+
+### Selectors
+
+Common labels are automatically aliased in selectors. If no pods match the
+original selector and the selector includes on of the labels on the left, katie
+will replace that label with the matching one on the right and try the search
+again.
+
+* `name` -> `app.kubernetes.io/name`
+* `instance` -> `app.kubernetes.io/instance`
+* `version` -> `app.kubernetes.io/version`
+* `component` -> `app.kubernetes.io/component`
+* `part-of` -> `app.kubernetes.io/part-of`
+* `managed-by` -> `app.kubernetes.io/managed-by`
+
+Author
+------
+
+MIT Licence, (c) 2019 [Sam Clements](https://gitlab.com/borntyping)
