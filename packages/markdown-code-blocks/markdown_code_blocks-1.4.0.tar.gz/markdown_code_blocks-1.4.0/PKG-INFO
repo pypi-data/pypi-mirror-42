@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: markdown_code_blocks
+Version: 1.4.0
+Summary: Generate html from markdown with code-block highlighting
+Home-page: https://github.com/asottile/markdown-code-blocks
+Author: Anthony Sottile
+Author-email: asottile@umich.edu
+License: MIT
+Description: [![Build Status](https://travis-ci.org/asottile/markdown-code-blocks.svg?branch=master)](https://travis-ci.org/asottile/markdown-code-blocks)
+        [![Coverage Status](https://coveralls.io/repos/github/asottile/markdown-code-blocks/badge.svg?branch=master)](https://coveralls.io/github/asottile/markdown-code-blocks?branch=master)
+        
+        markdown-code-blocks
+        ====================
+        
+        A stupid simple bit of code which combines [mistune][mistune] and
+        [pygments][pygments] to convert markdown into html.  Very similar to github
+        markdown, but for python.
+        
+        
+        ## Installation
+        
+        `pip install markdown-code-blocks`
+        
+        ## Usage
+        
+        The library provides a single function `highlight` which takes in a markdown
+        string and returns html.
+        
+        You can also use the cli `markdown-code-blocks-highlight`.  It optionally
+        takes a single filename (defaulting to stdin) and writes to stdout.
+        
+        For example:
+        
+        `markdown-code-blocks-highlight f.md > f.htm`
+        
+        
+        ## pygments css
+        
+        I'd suggest grabbing a theme file from [pygments-css][pygments-css]
+        (or any other provider of pygments themes -- if you google there's a bunch of
+        them).
+        
+        This library will use the class `.highlight` so be sure to change out whatever
+        class the theme uses with that.
+        
+        Most themes (for whatever reason) don't add styles for diff display.  I
+        usually do something like this:
+        
+        ```css
+        .highlight .gi { color: #070; }
+        .highlight .gd { color: #911; }
+        ```
+        
+        [mistune]: https://github.com/lepture/mistune
+        [pygments]: http://pygments.org/
+        [pygments-css]: https://github.com/richleland/pygments-css
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
+Description-Content-Type: text/markdown
