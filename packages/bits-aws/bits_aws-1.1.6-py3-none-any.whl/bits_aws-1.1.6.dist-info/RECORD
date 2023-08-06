@@ -1,0 +1,7 @@
+bits/__init__.py,sha256=jv2YF__bseklT3OWEzlqJ5qE24c4aWd5F4r0TTjOrWQ,65
+bits/aws/__init__.py,sha256=eoBnYxXADdfNopefSTZAxFGMUzgJQkKxt5agA3eZAMA,4567
+bits/aws/account.py,sha256=te8IYYi7YHsbVd_5GG1rRR9sDwOPtwCvDlAEo9Dyrbk,32785
+bits_aws-1.1.6.dist-info/METADATA,sha256=KelD0wZ0RbpX1bUB2dM74K7veEk0ty3fPo7eTQDCahs,251
+bits_aws-1.1.6.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+bits_aws-1.1.6.dist-info/top_level.txt,sha256=r0CPtEdvhPhtNI1RzFMKlSds-wmUFadHdR_o8lZNEOg,5
+bits_aws-1.1.6.dist-info/RECORD,,
