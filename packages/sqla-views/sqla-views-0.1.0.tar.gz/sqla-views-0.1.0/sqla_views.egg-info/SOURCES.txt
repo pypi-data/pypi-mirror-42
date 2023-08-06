@@ -1,0 +1,12 @@
+setup.py
+sqla_views/__init__.py
+sqla_views/materialized.py
+sqla_views/views.py
+sqla_views.egg-info/PKG-INFO
+sqla_views.egg-info/SOURCES.txt
+sqla_views.egg-info/dependency_links.txt
+sqla_views.egg-info/requires.txt
+sqla_views.egg-info/top_level.txt
+tests/__init__.py
+tests/materialized_views_tests.py
+tests/views_tests.py
