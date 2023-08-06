@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+wiki2neo.egg-info/PKG-INFO
+wiki2neo.egg-info/SOURCES.txt
+wiki2neo.egg-info/dependency_links.txt
+wiki2neo.egg-info/entry_points.txt
+wiki2neo.egg-info/requires.txt
+wiki2neo.egg-info/top_level.txt
