@@ -1,0 +1,14 @@
+{
+  "title": "Django Formed",
+  "name": "django-formed",
+  "description": "Front-end dependencies for Django Formed",
+  "homepage": "https://bitbucket.org/frontendr/django-formed",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/frontendr/django-formed.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.0.4"
+  }
+}

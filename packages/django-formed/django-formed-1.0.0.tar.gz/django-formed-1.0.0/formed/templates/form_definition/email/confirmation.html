@@ -1,0 +1,57 @@
+{% load definition_form_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ subject }}{% endblock %}</title>
+    {% block additional_head %}{% endblock %}
+</head>
+<body>
+{% block header %}
+<h1>{{ subject }}</h1>
+{% endblock %}
+{% block text %}
+<p>{{ text }}</p>
+{% endblock %}
+{% block submission_pages %}
+    {% if show_summary %}
+        {% definition_pages form_definition as pages %}
+
+        {% for page in pages %}
+            {% if page.name %}
+                <h2>{{ page.name }}</h2>
+            {% endif %}
+            {% for fieldset in page.fieldsets %}
+                <fieldset>
+                    {% if fieldset.legend %}
+                        <legend>{{ fieldset.legend }}</legend>
+                    {% endif %}
+                    {% for row in fieldset.rows %}
+                        <div class="form-row">
+                            {% for field in row.fields %}
+                                <div class="field-box">
+                                    <label>{{ field.label }}</label>
+                                    {% field_value field.name form_submission.submission as value %}
+                                    <p class="{{ field.type|lower }}">
+                                        {% if field.is_boolean_valued %}
+                                            {{ value|yesno }}
+                                        {% elif field.is_multi_valued %}
+                                            {# Translators: Default display value for an empty list #}
+                                            {{ value|join:', '|default:_('&lt;none&gt;') }}
+                                        {% else %}
+                                            {# Translators: Default display value for an empty value #}
+                                            {{ value|default:_('&lt;empty&gt;') }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </fieldset>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+{% block footer %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+include gulpfile.js
+include LICENSE
+include package.json
+include README.md
+recursive-include formed/private *
+recursive-include formed/templates *
+recursive-include formed/static *

@@ -1,0 +1,64 @@
+{% load definition_form_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+</head>
+<body>
+{% block summary_page %}
+<form action="{{ form_action }}" method="post" class="{% block form_classes %}form form-summary{% endblock %}"{% block form_attributes %}{% endblock %}>
+    {% csrf_token %}
+
+    {% block form_before %}{% endblock %}
+
+    {% block form_fields %}
+        {{ form.as_p }}
+
+        {% for page in form.pages %}
+            <fieldset class="fieldset">
+                {% if page.name %}
+                    <legend class="legend">{{ page.name }}</legend>
+                {% endif %}
+                {% for fieldset in page.fieldsets %}
+                    {% if fieldset.legend %}
+                        <h3 class="subtitle">{{ fieldset.legend }}</h3>
+                    {% endif %}
+                    {% for row in fieldset.rows %}
+                        <div class="form-row fields-{{ row.fields|length }}{% if row.fields|length > 0 %} has-multiple-fields{% endif %}">
+                            {% for field in row.fields %}
+                                <div class="form-field{% if field.css_classes %} {{ field.css_classes }}{% endif %}">
+                                    {% field_value field.name as value %}
+                                    <span class="label">{{ field.label }}</span>
+                                    {% if field.is_boolean_valued %}
+                                        {{ value|yesno }}
+                                    {% elif field.is_multi_valued %}
+                                        {# Translators: Default display value for an empty list #}
+                                        {{ value|join:', '|default:_('&lt;none&gt;') }}
+                                    {% else %}
+                                        {# Translators: Default display value for an empty value #}
+                                        {{ value|default:_('&lt;empty&gt;') }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </fieldset>
+        {% endfor %}
+    {% endblock %}
+
+    {% block form_submit_buttons %}
+        <p class="form-submit-buttons">
+            <input type="submit" class="button button-submit button-previous button-tertiary"
+                   name="{{ next_page_field_name }}" value="{{ _('Submit') }}" />
+            <input type="submit" class="button button-submit button-next button-tertiary"
+                   name="{{ previous_page_field_name }}" value="{{ _('Go back') }}">
+        </p>
+    {% endblock %}
+    {% block form_after %}{% endblock %}
+</form>
+{% endblock %}
+
+</body>
+</html>

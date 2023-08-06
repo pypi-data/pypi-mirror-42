@@ -1,0 +1,322 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% block field_sets %}
+    <script>
+        window.Formed = {
+            'formed_show_json_field': {{ formed_show_json_field|yesno:'true,false,false' }},
+            'i18n': {
+                'confirmDeletePage': "{% trans 'Are you sure you want to delete this page?' context 'Confirm question when deleting a form page in the form editor.' %}",
+                'confirmDeleteFieldset': "{% trans 'Are you sure you want to delete this fieldset?' context 'Confirm question when deleting a fieldset in the form editor.' %}",
+                'confirmDeleteRow': "{% trans 'Are you sure you want to delete this row?' context 'Confirm question when deleting a form row in the form editor.' %}",
+                'confirmDeleteField': "{% trans 'Are you sure you want to delete this field?' context 'Confirm question when deleting a form field in the form editor.' %}",
+                'errorFieldRequired': "{% trans 'This field is required.' context 'Message displayed when a required property of a field is not filled.' %}"
+            },
+            'fieldTypes': {{ form_fields_json }}
+        };
+    </script>
+
+    <template id="form-editor-template">
+        <div class="form-editor">
+            <template v-for="page in definition">
+                <form-page :page="page"></form-page>
+            </template>
+            <div class="editor-footer">
+                <button class="add-button" @click="addPage">+ {{ _('Add page') }}</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="form-page-template">
+        <section class="form-page">
+            <header class="page-header">
+                <h3 class="page-title">
+                    <template v-if="page.name">
+                        {% templatetag openvariable %}page.name{% templatetag closevariable %}
+                    </template>
+                    <template v-else>{{ _('[Unnamed page]') }}</template>
+                    <button class="icon-button edit-button" @click="editPage">{{ _('Edit page') }}</button>
+                    <button class="icon-button delete-button" @click="deletePage">+ {{ _('Delete page') }}</button>
+                </h3>
+                <div class="page-introduction" v-if="page.introduction">
+                    {% templatetag openvariable %}page.introduction{% templatetag closevariable %}
+                </div>
+            </header>
+            <form-fieldset :fieldset="fieldset" v-for="fieldset in page.fieldsets"></form-fieldset>
+            <footer class="page-footer">
+                <button class="add-button" @click="addFieldset">+ {{ _('Add fieldset') }}</button>
+            </footer>
+        </section>
+    </template>
+
+    <template id="form-fieldset-template">
+        <section class="form-fieldset">
+            <header class="fieldset-header">
+                <h4 class="legend" v-if="fieldset.legend">
+                    {% templatetag openvariable %} fieldset.legend {% templatetag closevariable %}
+                </h4>
+                <h4 class="legend" v-else>Unnamed fieldset</h4>
+                <button class="icon-button edit-button" @click="editFieldset">{{ _('Edit') }}</button>
+                <button class="icon-button delete-button" @click="deleteFieldset">+ {{ _('Delete fielset') }}</button>
+            </header>
+            {% spaceless %}
+                <div class="sortable-items rows"
+                     data-empty-text="{{ _("Click 'Add form row' or drag any form rows here") }}">
+                    <form-row :row="row" v-for="row in fieldset.rows"></form-row>
+                </div>
+            {% endspaceless %}
+            <footer class="fieldset-footer">
+                <button class="icon-link-button add-button" @click="addRow">
+                    + {{ _('Add form row') }}
+                </button>
+            </footer>
+        </section>
+    </template>
+
+    <template id="form-row-template">
+        <div class="form-row">
+            <span class="drag-handle row-drag-handle">: :</span>
+            <button class="icon-button delete-button row-delete-button" @click="deleteRow"
+                    title="{{ _('Delete row') }}">
+                {{ _('Delete row') }}
+            </button>
+            <button class="icon-button add-button add-field-button" @click="addField" title="{{ _('Add field') }}">
+                + {{ _('Add field') }}
+            </button>
+            {% spaceless %}
+                <div class="sortable-items fields" data-empty-text="{{ _("Click '+' or drag any form fields here") }}">
+                    <form-field :field="field" v-for="field in row"></form-field>
+                </div>
+            {% endspaceless %}
+        </div>
+    </template>
+
+    <template id="form-field-template">
+        <div class="form-field">
+            <label>{% templatetag openvariable %} field.label {% templatetag closevariable %}
+                <span class="is-optional" v-if="field.required===false">({{ _('optional') }})</span></label>
+            <button class="icon-button edit-button" @click="editField">{{ _('Edit field') }}</button>
+            <button class="icon-button delete-button" @click="deleteField">+ {{ _('Delete field') }}</button>
+            <component :is="componentName" :field="field"></component>
+            <span class="help" v-if="field.help_text">
+                {% templatetag openvariable %} field.help_text {% templatetag closevariable %}
+            </span>
+        </div>
+    </template>
+
+    <template id="text-input-template">
+        <input class="form-input" :type="inputType" :placeholder="field.widget_attributes.placeholder" />
+    </template>
+
+    <template id="text-input-template">
+        <input class="form-input" type="checkbox" />
+    </template>
+
+    <template id="textarea-input-template">
+        <textarea class="form-input textarea" cols="20" rows="2" :placeholder="field.widget_attributes.placeholder"></textarea>
+    </template>
+
+    <template id="select-input-template">
+        <select class="form-input select" :multiple="multiple">
+            <option value="{% templatetag openvariable %}choice[0]{% templatetag closevariable %}"
+                    v-for="choice in field.choices">{% templatetag openvariable %}choice[1]{% templatetag closevariable %}</option>
+        </select>
+    </template>
+
+    <template id="multiple-choice-input-template">
+        <ul class="multiple-choice-choices-list type-{% templatetag openvariable %} inputType {% templatetag closevariable %}">
+            <li v-for="choice in field.choices">
+                <label><input :name="fieldName"
+                              :type="inputType"> {% templatetag openvariable %}choice[1]{% templatetag closevariable %}
+                </label>
+            </li>
+        </ul>
+    </template>
+
+    <template id="text-row-template">
+        <div class="text-row" v-if="field.text">{% templatetag openvariable %}
+            field.text {% templatetag closevariable %}</div>
+    </template>
+
+    <template id="field-properties-template">
+        <article class="properties-pane" v-if="field" transition="appear">
+            <header>
+                <button @click="close" class="close-button">&times;</button>
+                <template v-if="field.label || field.name">
+                    <h3 class="title" v-if="field.label">{% templatetag openvariable %}
+                        field.label {% templatetag closevariable %}</h3>
+                    <h3 class="title" v-else>{% templatetag openvariable %}
+                        field.name {% templatetag closevariable %}</h3>
+                </template>
+                <h3 class="title" v-else>{{ _('Field properties') }}</h3>
+            </header>
+            <p v-if="!isValid()">
+                {% trans 'Not all fields are filled in correctly. Correct the errors and try again.' context 'Message displayed when not all fields are filled in correctly.' %}
+            </p>
+            <p v-bind:class="{'is-invalid': errors.hasOwnProperty('label') }">
+                <label>{{ _('Label') }} <input type="text" v-model="field.label" @change="preFillNameValue"
+                                               @blur="validate" /></label>
+                <span class="error-message" v-if="errors.label">
+                    {% templatetag openvariable %} errors.label {% templatetag closevariable %}
+                </span>
+            </p>
+            <p v-bind:class="{'is-invalid': errors.hasOwnProperty('name') }">
+                <label>{{ _('Name') }} <input type="text" v-model="field.name" @blur="validate" /></label>
+                <span class="error-message" v-if="errors.name">
+                    {% templatetag openvariable %} errors.name {% templatetag closevariable %}
+                </span>
+            </p>
+            <p v-bind:class="{'is-invalid': errors.hasOwnProperty('required') }">
+                <label>{{ _('Required') }} <input type="checkbox" v-model="field.required" @blur="validate" /></label>
+                <span class="error-message" v-if="errors.required">
+                    {% templatetag openvariable %} errors.required {% templatetag closevariable %}
+                </span>
+            </p>
+            {% comment %}
+            {# Todo: add ability to set the default checked state #}
+            <p v-if="field.type == 'BooleanField'">
+                <label>{{ _('Checked') }} <input type="checkbox" v-model="field.value"></label>
+            </p>
+            {% endcomment %}
+            <p v-bind:class="{'is-invalid': errors.hasOwnProperty('type') }">
+                <label>{{ _('Type') }} <select v-model="field.type" @blur="validate">
+                    <optgroup :label="category" v-for="(category, types) in fieldCategories">
+                        <option v-for="type in types" :value="type.type">
+                            {% templatetag openvariable %}type.name{% templatetag closevariable %}
+                        </option>
+                    </optgroup>
+                </select></label>
+                <span class="error-message" v-if="errors.type">
+                    {% templatetag openvariable %} errors.type {% templatetag closevariable %}
+                </span>
+                {# Specific field help texts #}
+                <em class="help-text" v-if="field.type === 'ConfirmationEmailField'">
+                    {% trans 'The confirmation E-mail field is used to send the confirmation E-mail to.' context 'Description of the Confirmation E-mail field type.' %}
+                </em>
+            </p>
+
+            <fieldset class="fieldset" v-if="fieldTypes[field.type].choices">
+                <legend>{{ _('Choices') }}</legend>
+                <ul v-if="field.choices && field.choices.length">
+                    <li v-for="choice in field.choices">
+                        {% templatetag openvariable %}choice[0]{% templatetag closevariable %}:
+                        {% templatetag openvariable %}choice[1]{% templatetag closevariable %}
+                        <button @click.prevent="removeChoice($index)">&times;</button>
+                    </li>
+                </ul>
+                <p v-bind:class="{'is-invalid': errors.hasOwnProperty('choices') }">
+                    <span class="field-column">
+                        <label for="new-choice-name">{{ _('Choice display') }}</label>
+                        <input id="new-choice-name" v-model="newChoice[1]" @change="preFillChoiceValue"
+                               @keyup.enter="addChoice">
+                    </span>
+                    <span class="field-column">
+                        <label for="new-choice-value">{{ _('Choice value') }}</label>
+                        <input id="new-choice-value" v-model="newChoice[0]" @keyup.enter="addChoice">
+                        <button @click="addChoice">+</button>
+                    </span>
+                    <span class="error-message" v-if="errors.choices">
+                        {% templatetag openvariable %} errors.choices {% templatetag closevariable %}
+                    </span>
+                </p>
+            </fieldset>
+
+            <p v-if="fieldTypes[field.type].widget_attributes.placeholder" transition="toggle-row"
+               v-bind:class="{'is-invalid': errors.hasOwnProperty('placeholder') }">
+                <label>
+                    {{ _('Placeholder') }}
+                    <input type="text" v-model="field.widget_attributes.placeholder" @blur="validate"
+                           :disabled="!fieldTypes[field.type].widget_attributes.placeholder" />
+                </label>
+                <span class="error-message" v-if="errors.placeholder">
+                    {% templatetag openvariable %} errors.placeholder {% templatetag closevariable %}
+                </span>
+            </p>
+            <p v-bind:class="{'is-invalid': errors.hasOwnProperty('help_text') }">
+                <label>{{ _('Help text') }} <input type="text" v-model="field.help_text" /></label>
+                <span class="error-message" v-if="errors.help_text">
+                    {% templatetag openvariable %} errors.help_text {% templatetag closevariable %}
+                </span>
+            </p>
+            <p v-if="fieldTypes[field.type].widget_attributes.hasOwnProperty('size')"
+               v-bind:class="{'is-invalid': errors.hasOwnProperty('size') }">
+                <label>
+                    {{ _('Size') }}
+                    <input type="number" v-model="field.widget_attributes.size" @blur="validate" />
+                </label>
+                <span class="error-message" v-if="errors.size">
+                    {% templatetag openvariable %} errors.size {% templatetag closevariable %}
+                </span>
+            </p>
+            <template
+                v-if="fieldTypes[field.type].widget_attributes.hasOwnProperty('class') && fieldTypes[field.type].widget_attributes.class !== null">
+                <p v-if="typeof fieldTypes[field.type].widget_attributes.class === 'object'"
+                   v-bind:class="{'is-invalid': errors.hasOwnProperty('class') }">
+                    <label>
+                        {{ _('Style') }}
+                        <select v-model="field.widget_attributes['class']" @blur="validate">
+                            <option></option>
+                            <option :value="$key" v-for="item in fieldTypes[field.type].widget_attributes.class">
+                                {% templatetag openvariable %}item{% templatetag closevariable %}
+                            </option>
+                        </select>
+                    </label>
+                    <span class="error-message" v-if="errors.class">
+                        {% templatetag openvariable %} errors.class {% templatetag closevariable %}
+                    </span>
+                </p>
+                <p v-if="typeof fieldTypes[field.type].widget_attributes.class === 'boolean'"
+                   v-bind:class="{'is-invalid': errors.hasOwnProperty('class') }">
+                    <label>
+                        {{ _('CSS classes') }}
+                        <input type="text" v-model="field.widget_attributes.class" @blur="validate" />
+                    </label>
+                    <span class="error-message" v-if="errors.class">
+                        {% templatetag openvariable %} errors.class {% templatetag closevariable %}
+                    </span>
+                </p>
+            </template>
+            <p>
+                <button class="save-button" @click="close">{{ _('Done') }}</button>
+            </p>
+        </article>
+    </template>
+
+    <template id="fieldset-properties-template">
+        <article class="properties-pane" v-if="fieldset" transition="appear">
+            <header>
+                <button @click="close" class="close-button">&times;</button>
+                <h3 class="title">{{ _('Fieldset properties') }}</h3>
+            </header>
+            <p>
+                <label>{{ _('Legend') }} <input type="text" v-model="fieldset.legend"></label>
+            </p>
+            <p>
+                <button class="save-button" @click="close">{{ _('Done') }}</button>
+            </p>
+        </article>
+    </template>
+
+    <template id="page-properties-template">
+        <article class="properties-pane" v-if="page" transition="appear">
+            <header>
+                <button @click="close" class="close-button">&times;</button>
+                <h3 class="title">{{ _('Page properties') }}</h3>
+            </header>
+            <p>
+                <label>{{ _('Name') }} <input type="text" v-model="page.name"></label>
+                <span class="help">{{ _('Primary title of the page.') }}</span>
+            </p>
+
+            <p>
+                <label>{{ _('Introduction') }} <textarea rows="5" v-model="page.introduction"></textarea></label>
+                <span class="help">{{ _('Short introduction at the top of the page.') }}</span>
+            </p>
+
+            <p>
+                <button class="save-button" @click="close">{{ _('Done') }}</button>
+            </p>
+        </article>
+    </template>
+
+    {{ block.super }}
+{% endblock %}

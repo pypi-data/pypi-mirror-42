@@ -1,0 +1,39 @@
+{% load definition_form_tags %}
+{% block header %}{{ subject }}{% endblock %}
+
+{% block text %}
+{{ text }}
+{% endblock %}
+
+
+{% block submission_pages %}
+{% if show_summary %}
+{% definition_pages form_definition as pages %}
+{% for page in pages %}
+{% if page.name %}
+{{ page.name }}
+
+{% endif %}
+{% for fieldset in page.fieldsets %}
+{% if fieldset.legend %}
+{{ fieldset.legend }}
+{% endif %}
+{% for row in fieldset.rows %}
+{% for field in row.fields %}
+{{ field.label }}: {% field_value field.name form_submission.submission as value %}{% spaceless %}
+{% if field.is_boolean_valued %}
+{{ value|yesno }}
+{% elif field.is_multi_valued %}
+{# Translators: Default display value for an empty list #}
+{{ value|join:', '|default:_('&lt;none&gt;') }}
+{% else %}
+{# Translators: Default display value for an empty value #}
+{{ value|default:_('&lt;empty&gt;') }}
+{% endif %}{% endspaceless %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% endblock %}
+{% block footer %}{% endblock %}
