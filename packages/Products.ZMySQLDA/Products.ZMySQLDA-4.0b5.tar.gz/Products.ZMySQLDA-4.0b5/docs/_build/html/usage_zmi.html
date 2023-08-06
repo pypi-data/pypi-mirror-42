@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Usage from the Zope ZMI &#8212; Products.ZMySQLDA 4.0b2.dev0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development" href="development.html" />
+    <link rel="prev" title="Connection Strings" href="connstring.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="Development"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="connstring.html" title="Connection Strings"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="usage-from-the-zope-zmi">
+<h1>Usage from the Zope ZMI<a class="headerlink" href="#usage-from-the-zope-zmi" title="Permalink to this headline">¶</a></h1>
+<p>The database connection object can be manipulated in the <a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a>
+<a class="reference internal" href="glossary.html#term-zmi"><span class="xref std std-term">ZMI</span></a> on a series of screens, accessible through named tabs in
+the main window.</p>
+<div class="section" id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+<p>Shows the database connection status and allows the user to open or
+close the connection.</p>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p>Edit the database connection attributes and apply any changes:</p>
+<ul class="simple">
+<li><cite>Title</cite>: An optional title that shows up in the <a class="reference internal" href="glossary.html#term-zmi"><span class="xref std std-term">ZMI</span></a>.</li>
+<li><cite>Database Connection String</cite>: A string encapsulating how to connect
+to the database. See <a class="reference internal" href="connstring.html#connection-string"><span class="std std-ref">Connection Strings</span></a> for details.</li>
+<li><cite>Connect immediately</cite>: Should the database connection be established
+immediately or when the first database query is run.</li>
+<li><cite>Unicode Support</cite>: If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, values from columns of type
+<code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> are returned as unicode strings by the
+database backend.  Combined with the hardcoded <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> character set of
+this package the setting allows you to control the character set of
+database return values better. Try enabling it if you are seeing character
+set/string encoding issues.</li>
+<li><cite>Automatically create database</cite>: If the <cite>Database Connection String</cite>
+refers to a database that does not yet exist <cite>and</cite> this setting is
+activated, the ZMySQLDA connector will attempt to create the
+database.</li>
+</ul>
+</div>
+<div class="section" id="test">
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>The Test tab can be used as long as the database connection is connected.
+You can enter SQL statements into the text field and view the results
+sent back from the database.</p>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>Change the <a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a> role to permission mappings here.</p>
+</div>
+<div class="section" id="undo">
+<h2>Undo<a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h2>
+<p>If your particular <a class="reference internal" href="glossary.html#term-zodb"><span class="xref std std-term">ZODB</span></a> flavor supports it, you can undo
+<a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a> transactions affecting the database connector object here.
+These transactions don’t reflect relational database transactions in the
+underlying MySQL or MariaDB databases, only <a class="reference internal" href="glossary.html#term-zodb"><span class="xref std std-term">ZODB</span></a> transactions.</p>
+</div>
+<div class="section" id="ownership">
+<h2>Ownership<a class="headerlink" href="#ownership" title="Permalink to this headline">¶</a></h2>
+<p>Information about the <a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a> user who owns the database connector
+object. Ownership in the <a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a> sense confers additional rights.</p>
+</div>
+<div class="section" id="interfaces">
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
+<p>View and change the <a class="reference internal" href="glossary.html#term-zope"><span class="xref std std-term">Zope</span></a> <a class="reference internal" href="glossary.html#term-interface"><span class="xref std std-term">Interface</span></a> assignments for the
+database connector object.</p>
+</div>
+<div class="section" id="browse">
+<h2>Browse<a class="headerlink" href="#browse" title="Permalink to this headline">¶</a></h2>
+<p>You can browse the database tables and columns from the relational database
+specified in the connection string.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Usage from the Zope ZMI</a><ul>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#test">Test</a></li>
+<li><a class="reference internal" href="#security">Security</a></li>
+<li><a class="reference internal" href="#undo">Undo</a></li>
+<li><a class="reference internal" href="#ownership">Ownership</a></li>
+<li><a class="reference internal" href="#interfaces">Interfaces</a></li>
+<li><a class="reference internal" href="#browse">Browse</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="connstring.html"
+                        title="previous chapter">Connection Strings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="development.html"
+                        title="next chapter">Development</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usage_zmi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="Development"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="connstring.html" title="Connection Strings"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2001-2018, Zope Foundation and Contributors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

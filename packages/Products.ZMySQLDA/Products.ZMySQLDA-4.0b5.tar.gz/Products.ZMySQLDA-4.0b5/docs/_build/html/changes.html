@@ -1,0 +1,340 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Products.ZMySQLDA change log &#8212; Products.ZMySQLDA 4.0b2.dev0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Products.ZMySQLDA.DA.Connection" href="api_da.html" />
+    <link rel="prev" title="Contributors" href="contributors.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_da.html" title="Products.ZMySQLDA.DA.Connection"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contributors.html" title="Contributors"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="products-zmysqlda-change-log">
+<h1>Products.ZMySQLDA change log<a class="headerlink" href="#products-zmysqlda-change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="b2-unreleased">
+<h2>4.0b2 (unreleased)<a class="headerlink" href="#b2-unreleased" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add some functional tests that require a running database server,
+see the documentation for how to set it up.</li>
+</ul>
+</div>
+<div class="section" id="b1-2018-06-11">
+<h2>4.0b1 (2018-06-11)<a class="headerlink" href="#b1-2018-06-11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>New maintainers: SNTL PUBLISHING / HOFFMANN+LIEBENBERG GMBH and
+Jens Vagelpohl</li>
+<li>Moved away from the unsupported <code class="docutils literal notranslate"><span class="pre">MySQLdb1</span></code> to the fork
+<code class="docutils literal notranslate"><span class="pre">mysqlclient</span></code>, which is Python 3-compatible.</li>
+<li>Added simple buildout configuration with tox integration</li>
+<li>Zope 4 and Python 3 compatibility</li>
+<li>Added unit tests</li>
+<li>Added some <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code>-based documentation and copied any useful
+items from the old <code class="docutils literal notranslate"><span class="pre">HelpSys</span></code> files.</li>
+<li>Removed the hurt system files.</li>
+<li>Improved the <code class="docutils literal notranslate"><span class="pre">Browse</span></code> tab with more table information.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>3.1.1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>#3106015: zope 2.12/plone4 compatibility fix (thanks Mark Van den Borre)</li>
+<li>#3076433: column descriptions always said NOT NULL (thanks Frank Hoffmann)</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>3.1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>#2357223: Savepoint support</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>3.0<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added <a class="reference internal" href="glossary.html#term-setuptools"><span class="xref std std-term">Setuptools</span></a> support to create an egg package thanks to
+Brett Carter.</li>
+<li>Added condition to handle connection getting “out of sync”. This can occur
+when, for instance, you get a stray semicolon in a query. When a connection
+gets in this state it is hosed and must be closed and reconnected.</li>
+<li>Made some changes to how <code class="docutils literal notranslate"><span class="pre">use_unicode</span></code> and <code class="docutils literal notranslate"><span class="pre">auto_create_db</span></code> are set to
+better allow for subclassing and extensions of the base classes.</li>
+<li>Added handling of NEWDECIMAL which was added for mysql 5.0.</li>
+<li>Added basic support for procedure calls using <code class="docutils literal notranslate"><span class="pre">CALL</span></code> query.</li>
+</ul>
+</div>
+<div class="section" id="beta1">
+<h2>3.0beta1<a class="headerlink" href="#beta1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed issue with <code class="docutils literal notranslate"><span class="pre">sql_quote__</span></code> getting called prior to connection being made.</li>
+<li>Fixed bug #1916952. Updating to API change in MySQLdb 1.2.2 ping method.</li>
+<li>Fixed backwards compatibility issue with MySQLdb versions &lt;= 1.2.1.</li>
+</ul>
+</div>
+<div class="section" id="alpha4">
+<h2>3.0alpha4<a class="headerlink" href="#alpha4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed pernicious corner case bug with joining a transaction after the
+transaction has started and been aborted.</li>
+<li>Zope dependency raised to Zope-2.8 or newer.</li>
+</ul>
+</div>
+<div class="section" id="alpha3">
+<h2>3.0alpha3<a class="headerlink" href="#alpha3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Unicode support now works!</li>
+<li>Unicode support reworked to use MySQLdb’s unicode support instead of its
+own half-baked layer.</li>
+<li>Minor cleanups and extensions to database introspection methods.</li>
+<li>Minor cleanups/fixes to dtml.</li>
+<li>Removed a few unnecessary thread locks.</li>
+<li>Changed failed query logging entries from errors to warnings.</li>
+</ul>
+</div>
+<div class="section" id="alpha2">
+<h2>3.0alpha2<a class="headerlink" href="#alpha2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Moved DBPool instantiation from factory() to connect() to better facilitate
+API backwards compatibility.</li>
+<li>Changed all default values on keyword aruments for the auto create db
+feature. They all now default to True.</li>
+<li>Left in a bit of debugging code that disabled the new create_db
+functionality. Removed it.</li>
+</ul>
+</div>
+<div class="section" id="alpha1">
+<h2>3.0alpha1<a class="headerlink" href="#alpha1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>New maintainer: John Eikenberry</li>
+<li>Note that there are some changes in the internal API. So if you have
+subclassed you should double check compatibility.</li>
+</ul>
+<div class="section" id="features">
+<h3>Features:<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Experimental Unicode support has been added. It is hardcoded to UTF-8 and
+has had limited testing at this point. Adapted from patches made by Graeme
+Mathieson.</li>
+<li>New optional feature of automatically creating the database provided in the
+connection string. The mysql <code class="docutils literal notranslate"><span class="pre">user</span></code> used for the connection must have
+CREATE permission. It defaults to on to encourage more testing.</li>
+<li>Database connection not created until first use instead of when the
+object is first loaded. Ie. connection created at <code class="docutils literal notranslate"><span class="pre">connect()</span></code> call instead
+of <code class="docutils literal notranslate"><span class="pre">__setstate__()</span></code> call. This helps conserve system resources and makes
+debugging connection issues a bit easier. It is also needed for the new
+db pool implementation (see below).</li>
+</ul>
+</div>
+<div class="section" id="bugs">
+<h3>Bugs:<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Automatically reopens connections closed by client timeouts.</li>
+<li>Fixed major deadlock causing bug that can occur with versions of Zope
+greater than 2.8. It was caused by the use of the volatile attribute
+<code class="docutils literal notranslate"><span class="pre">_v_</span></code> to keep the reference to the existing connection. Volatile
+attributes can go away mid-transaction which would cause a deadlock when
+used with a transactional engine (eg. innodb). The fix involves a fixed
+pool of adapters and db connections. This also allowed for the elimination
+of many of the locks. Adapted from patches made by Vincent Pelletier.</li>
+<li>#670137:  missing <code class="docutils literal notranslate"><span class="pre">sortKey()</span></code> fixed in Zope</li>
+<li>#814378:  infinite reconnect recursion fixed</li>
+<li>#1560557: missing import</li>
+<li>#1242842: missing <code class="docutils literal notranslate"><span class="pre">MULTI_STATEMENTS</span></code></li>
+<li>#1226690: missing <code class="docutils literal notranslate"><span class="pre">close()</span></code> method</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>2.0.9<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Allow the connection string to work without a specified database.</li>
+<li>Wrap queries with a lock to prevent multiple threads from using
+the connection simultaneously (this may or may not be happening).
+If transactional, then there is an additional transaction lock,
+acquired at the beginning of the transaction and released when
+either finished or aborted.</li>
+<li>A named lock can be specified by inserting <code class="docutils literal notranslate"><span class="pre">*LOCKNAME</span></code> at the start
+of the connection string. This is probably best used only if you
+must use non-transactional tables.</li>
+<li>Some stuff will be logged as an error when bad things happen
+during the transaction manager hooks.</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>2.0.8<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>More information about columns is available from the table
+browser. This is primarily to support SQL Blender.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DECIMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">NUMERIC</span></code> columns now returned as floating-point numbers
+(was string). This has also been fixed in MySQLdb-0.9.1, but the
+fix is included here just in case you don’t upgrade. Upgrading is
+a good idea anyway, because some memory-related bugs are fixed,
+particularly if using Zope 2.4 and Python 2.1.</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>2.0.7<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Transaction support tweaked some more. A plus (<code class="docutils literal notranslate"><span class="pre">+</span></code>) or minus (<code class="docutils literal notranslate"><span class="pre">-</span></code>)
+at the beginning of the connection string will force transactions
+on or off respectively. By default, transactions are enabled if
+the server supports them. Beware: If you are using non-TST tables
+on a server that supports transactions, you should probably force
+transactions off.</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>2.0.6<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This version finally should have all the transaction support
+working correctly. If your MySQL server supports transactions,
+i.e. it has at least one transaction-safe table (TST) handler,
+transactions are enabled automatically. If transactions are
+enabled, rollbacks (aborts) fail if any non-TST tables were
+modified.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>2.0.5<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Transactions don’t really work right in this and prior versions.</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>2.0.4<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">INT</span></code> columns, whether <code class="docutils literal notranslate"><span class="pre">UNSIGNED</span></code> or not, are returned as Python
+long integers to avoid overflows. Python-1.5.2 adds an <code class="docutils literal notranslate"><span class="pre">L</span></code> to
+the end of long integers when printing. Later versions do not.
+As a workaround, use affected columns with a format string,
+i.e. <code class="docutils literal notranslate"><span class="pre">&lt;dtml-var</span> <span class="pre">x</span> <span class="pre">fmt=&quot;%d&quot;&gt;</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>2.0.0<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This is the first version of the database adapter using MySQLdb
+for Zope.  This database adapter is based on the Z DCOracle DA
+version 2.2.0.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Products.ZMySQLDA change log</a><ul>
+<li><a class="reference internal" href="#b2-unreleased">4.0b2 (unreleased)</a></li>
+<li><a class="reference internal" href="#b1-2018-06-11">4.0b1 (2018-06-11)</a></li>
+<li><a class="reference internal" href="#id1">3.1.1</a></li>
+<li><a class="reference internal" href="#id2">3.1</a></li>
+<li><a class="reference internal" href="#id3">3.0</a></li>
+<li><a class="reference internal" href="#beta1">3.0beta1</a></li>
+<li><a class="reference internal" href="#alpha4">3.0alpha4</a></li>
+<li><a class="reference internal" href="#alpha3">3.0alpha3</a></li>
+<li><a class="reference internal" href="#alpha2">3.0alpha2</a></li>
+<li><a class="reference internal" href="#alpha1">3.0alpha1</a><ul>
+<li><a class="reference internal" href="#features">Features:</a></li>
+<li><a class="reference internal" href="#bugs">Bugs:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">2.0.9</a></li>
+<li><a class="reference internal" href="#id5">2.0.8</a></li>
+<li><a class="reference internal" href="#id6">2.0.7</a></li>
+<li><a class="reference internal" href="#id7">2.0.6</a></li>
+<li><a class="reference internal" href="#id8">2.0.5</a></li>
+<li><a class="reference internal" href="#id9">2.0.4</a></li>
+<li><a class="reference internal" href="#id10">2.0.0</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="contributors.html"
+                        title="previous chapter">Contributors</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api_da.html"
+                        title="next chapter"><code class="docutils literal notranslate"><span class="pre">Products.ZMySQLDA.DA.Connection</span></code></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/changes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api_da.html" title="Products.ZMySQLDA.DA.Connection"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contributors.html" title="Contributors"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2001-2018, Zope Foundation and Contributors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

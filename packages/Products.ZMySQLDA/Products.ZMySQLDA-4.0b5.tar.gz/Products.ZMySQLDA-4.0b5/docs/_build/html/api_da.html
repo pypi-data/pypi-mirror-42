@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Products.ZMySQLDA.DA.Connection &#8212; Products.ZMySQLDA 4.0b2.dev0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Products.ZMySQLDA change log" href="changes.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changes.html" title="Products.ZMySQLDA change log"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Products.ZMySQLDA.DA">
+<span id="products-zmysqlda-da-connection"></span><h1><code class="docutils literal notranslate"><span class="pre">Products.ZMySQLDA.DA.Connection</span></code><a class="headerlink" href="#module-Products.ZMySQLDA.DA" title="Permalink to this headline">¶</a></h1>
+<p>The ZODB-based MySQL Database Connection object</p>
+<dl class="class">
+<dt id="Products.ZMySQLDA.DA.Connection">
+<em class="property">class </em><code class="descclassname">Products.ZMySQLDA.DA.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>id</em>, <em>title</em>, <em>connection_string</em>, <em>check</em>, <em>use_unicode=None</em>, <em>auto_create_db=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Shared.DC.ZRDB.Connection.Connection</span></code></p>
+<p>Zope database adapter for MySQL/MariaDB</p>
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>id</em>, <em>title</em>, <em>connection_string</em>, <em>check</em>, <em>use_unicode=None</em>, <em>auto_create_db=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance setup. Optionally opens the connection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">id – The id of the ZMySQLDA Connection</td>
+</tr>
+<tr class="field-even field"><th class="field-name">String:</th><td class="field-body">title – The title of the ZMySQLDA Connection</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">connection_string – The connection string describes how to
+connect to the relational database.
+See the documentation for details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bool:</th><td class="field-body">check – Check if the database connection can be opened after
+instantiation.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Bool:</th><td class="field-body">use_unicode – If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, values from columns of type
+<code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> are returned
+as unicode strings by the database backend.
+Combined with the hardcoded <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> character
+set of this package the setting allows you to
+control the character set of database return 
+values better. Default: False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bool:</th><td class="field-body">auto_create_db – If the database given in <code class="docutils literal notranslate"><span class="pre">connection_string</span></code>
+does not exist, create it automatically.
+Default: False.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>conn_string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base API. Opens connection to mysql. Raises if problems.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">conn_string – The database connection string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.factory">
+<code class="descname">factory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.factory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base API. Returns factory method for DB connections.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.manage_edit">
+<code class="descname">manage_edit</code><span class="sig-paren">(</span><em>title</em>, <em>connection_string</em>, <em>check=None</em>, <em>use_unicode=None</em>, <em>auto_create_db=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.manage_edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.manage_edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edit the connection attributes through the Zope ZMI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">title – The title of the ZMySQLDA Connection</td>
+</tr>
+<tr class="field-even field"><th class="field-name">String:</th><td class="field-body">connection_string – The connection string describes how to
+connect to the relational database.
+See the documentation for details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Bool:</th><td class="field-body">check – Check if the database connection can be opened after
+instantiation. Default: False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bool:</th><td class="field-body">use_unicode – Use unicode internally. Default: False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Bool:</th><td class="field-body">auto_create_db – If the database given in <code class="docutils literal notranslate"><span class="pre">connection_string</span></code>
+does not exist, create it automatically.
+Default: False.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.sql_quote__">
+<code class="descname">sql_quote__</code><span class="sig-paren">(</span><em>sql_str</em>, <em>escapes={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.sql_quote__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.sql_quote__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base API. Used to massage SQL strings for use in queries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">sql_str – The raw SQL string to transform.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Dict:</th><td class="field-body">escapes – Additional escape transformations.
+Default: empty <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Products.ZMySQLDA.DA.Connection.tpValues">
+<code class="descname">tpValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#Connection.tpValues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.Connection.tpValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support the DTML <code class="docutils literal notranslate"><span class="pre">tree</span></code> tag</p>
+<p>Used in the Zope ZMI <code class="docutils literal notranslate"><span class="pre">Browse</span></code> tab</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="Products.ZMySQLDA.DA.manage_addZMySQLConnection">
+<code class="descclassname">Products.ZMySQLDA.DA.</code><code class="descname">manage_addZMySQLConnection</code><span class="sig-paren">(</span><em>self</em>, <em>id</em>, <em>title</em>, <em>connection_string</em>, <em>check=None</em>, <em>use_unicode=None</em>, <em>auto_create_db=None</em>, <em>REQUEST=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Products/ZMySQLDA/DA.html#manage_addZMySQLConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Products.ZMySQLDA.DA.manage_addZMySQLConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory function to add a connection object from the Zope ZMI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">id – The id of the ZMySQLDA Connection</td>
+</tr>
+<tr class="field-even field"><th class="field-name">String:</th><td class="field-body">title – The title of the ZMySQLDA Connection</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">String:</th><td class="field-body">connection_string – The connection string describes how to
+connect to the relational database.
+See the documentation for details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bool:</th><td class="field-body">check – Check if the database connection can be opened after
+instantiation. Default: False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Bool:</th><td class="field-body">use_unicode – If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, values from columns of type
+<code class="docutils literal notranslate"><span class="pre">CHAR</span></code>, <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> are returned
+as unicode strings by the database backend.
+Combined with the hardcoded <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> character
+set of this package the setting allows you to
+control the character set of database return values
+better. Default: False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Bool:</th><td class="field-body">auto_create_db – If the database given in <code class="docutils literal notranslate"><span class="pre">connection_string</span></code>
+does not exist, create it automatically.
+Default: False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Object:</th><td class="field-body">REQUEST – The currently active Zope request object.
+Default: None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="changes.html"
+                        title="previous chapter">Products.ZMySQLDA change log</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api_da.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changes.html" title="Products.ZMySQLDA change log"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Products.ZMySQLDA 4.0b2.dev0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2001-2018, Zope Foundation and Contributors.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
