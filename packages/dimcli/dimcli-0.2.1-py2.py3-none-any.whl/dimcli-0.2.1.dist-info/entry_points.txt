@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        dimcli = dimcli.cli:main_cli
+    
