@@ -1,0 +1,8 @@
+sense_text_extractor/__init__.py,sha256=Ns2grAxP7o0B1lZb-Jt05OeN0EYu_lmn7LWtojygqx4,47
+sense_text_extractor/text_extract_pb2.py,sha256=_RuADLzVYbgFjIQMeyg4Eg3QmqqnkUMFfC0MsLcX6GU,8872
+sense_text_extractor/text_extract_pb2_grpc.py,sha256=9EZ1Tl8QXWtLJt0x1gHl0fnqvdUw8KmlbWudEV_XrVI,1497
+sense_text_extractor/text_extractor.py,sha256=1oimO5QiGbJopidtORwOMw6-Jq63tYKkwaxrK_NnQCY,2148
+sense_text_extractor-0.0.3.dist-info/METADATA,sha256=bOSd4itVBxf3hpwCbuY55XdoxsEQWBV44Cxxsv3i9UU,1753
+sense_text_extractor-0.0.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+sense_text_extractor-0.0.3.dist-info/top_level.txt,sha256=wJ-UUxtfWNFBhj9fZz0mqO79bw1cDiOU9EmU8MBW9qU,21
+sense_text_extractor-0.0.3.dist-info/RECORD,,
