@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: ratneshpy
+Version: 0.1.1
+Summary: Ratnesh python package for work
+Home-page: https://github.com/imratnesh/ratneshpy
+Author: Ratnesh Kushwaha
+Author-email: rat.kush@gmail.com
+License: MIT
+Description: ratneshpy
+        =========
+        
+        .. image:: https://img.shields.io/pypi/v/ratneshpy.svg
+            :target: https://pypi.python.org/pypi/ratneshpy
+            :alt: Latest PyPI version
+        
+        .. image:: https://www.travis-ci.org/imratnesh/ratneshpy.png
+           :target: https://www.travis-ci.org/imratnesh/ratneshpy
+           :alt: Latest Travis CI build status
+        
+        Ratnesh python package for work
+        
+        Usage
+        -----
+        
+        Installation
+        ------------
+        
+        Requirements
+        ^^^^^^^^^^^^
+        
+        Compatibility
+        -------------
+        
+        Licence
+        -------
+        
+        Authors
+        -------
+        
+        `ratneshpy` was written by `Ratnesh Kushwaha <rat.kush@gmail.com>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
