@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: django-password-validation-backport
+Version: 0.1.2
+Summary: Ported password validation code from Django 1.9.
+Home-page: https://github.com/luismsgomes/django-password-validation-backport
+Author: Luis Gomes
+Author-email: luismsgomes@gmail.com
+License: MIT
+Description: django-password-validation-backport
+        ===================================
+        
+        Backport of django password validation to Django < 1.9
+        
+Keywords: backport
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7

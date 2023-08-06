@@ -1,0 +1,13 @@
+README.rst
+setup.py
+./django_password_validation/__init__.py
+./django_password_validation/middleware.py
+./django_password_validation/validators.py
+django_password_validation/__init__.py
+django_password_validation/common-passwords.txt.gz
+django_password_validation/middleware.py
+django_password_validation/validators.py
+django_password_validation_backport.egg-info/PKG-INFO
+django_password_validation_backport.egg-info/SOURCES.txt
+django_password_validation_backport.egg-info/dependency_links.txt
+django_password_validation_backport.egg-info/top_level.txt
