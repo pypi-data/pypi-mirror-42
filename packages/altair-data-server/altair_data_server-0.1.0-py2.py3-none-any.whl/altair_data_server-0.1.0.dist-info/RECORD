@@ -1,0 +1,13 @@
+altair_data_server/__init__.py,sha256=MFI_gZj7k_-KS4MTR0R-L0SXLdnAkjWgDEtzp6R4q8A,152
+altair_data_server/_altair_server.py,sha256=zEr3G0LjA4qppv-P9W02bYO9zJvkPKoDEKbT7wIrGyU,1620
+altair_data_server/_background_server.py,sha256=aZwgrv3hl6NjW9fu2RuSXegcFA4Ac74K1hW7aZdtxI0,5176
+altair_data_server/_provide.py,sha256=3WukG_N6uHDDvAmXtk2YBoCp5O2TJPcqpppi3Sk99m4,6467
+altair_data_server/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+altair_data_server/tests/test_altair_server.py,sha256=vKKTu6hNVxBt1c1oEGzP12KNlIxoTo0DE8uPaJFAO50,1035
+altair_data_server/tests/test_entrypoint.py,sha256=3nhnu76c-W3pP-cEL_3RiDrplCXohK4wt5wFYuFTewo,329
+altair_data_server-0.1.0.dist-info/LICENSE.txt,sha256=BRTG8d58fdYAYqbtu4slkPb1F0-3KXtJyy6TfjabUZA,1510
+altair_data_server-0.1.0.dist-info/METADATA,sha256=IddxjDGqKpmsOEM1kabWXzl_xepUg4pZY6O1RrQ2_ts,2910
+altair_data_server-0.1.0.dist-info/RECORD,,
+altair_data_server-0.1.0.dist-info/WHEEL,sha256=J3CsTk7Mf2JNUyhImI-mjX-fmI4oDjyiXgWT4qgZiCE,110
+altair_data_server-0.1.0.dist-info/entry_points.txt,sha256=CFAIcIaAh2lmpPwYB3_B3z-UL_-HnCfR8_QHcJWpvrw,168
+altair_data_server-0.1.0.dist-info/top_level.txt,sha256=cTtO28LFK5fBML8ISTuIYpdn0bDVwA60_BCUqXw-W68,19
