@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: cfn-deploy
+Version: 1.0.4
+Summary: Cloudformation deployment helper
+Home-page: https://bitbucket.org/snowyhydrodev/shl-cloudformation/src
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Cloudformation Deploy Helper
+
+This package combines the create and update commands in cloudformation.
+
