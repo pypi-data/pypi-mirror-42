@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: django-bi
+Version: 1.0.0
+Summary: A simple Django app to conduct business intelligence.
+Home-page: https://zhelyabuzhsky.com/
+Author: Ilya Zhelyabuzhsky
+Author-email: zhelyabuzhsky@icloud.com
+License: GPLv3 License
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+
+=====
+Business intelligence
+=====
+
+BI is a simple Django app to conduct business intelligence.
+
+Quick start
+-----------
+
+1. Add "reporting" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...
+        'reporting',
+    ]
+
+2. Include the polls URLconf in your project urls.py like this::
+
+    path('', include('reporting.urls')),
+
+3. Run `python manage.py migrate` to create the bi models.
+
+4. Start the development server.
+
+5. Visit http://127.0.0.1:8000/ to see your dashboards.
+
+
