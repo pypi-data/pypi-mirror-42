@@ -1,0 +1,10 @@
+django_url_helper/__init__.py,sha256=3iy8YK94gXHIeTAv0zXqHqpjYu2j5AMakbpfz4DCJww,50
+django_url_helper/test.py,sha256=r0NY2ssuQ0PkuW-FqL6xCbTWxwbsojhcbUdx__tCQ9w,2308
+django_url_helper/utils.py,sha256=AohQLi04JBtxeaHOBqWLUnCA_S6GeRmvPKdcQD_UiEU,1386
+django_url_helper/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_url_helper/templatetags/url_helper.py,sha256=BZXXRumDjInlD6UjADAfLvS6qQgRe1i-prEHLrdLIr8,673
+django_url_helper-0.0.1.dist-info/LICENSE,sha256=UKgrDBxtZnm5Lbc6VjpPDVIseQUvaRFQek604Exi1W0,1069
+django_url_helper-0.0.1.dist-info/METADATA,sha256=QEcQ0DzOV-O-ApLXqHmzGA_KeenG1hKpu9I3BZGew3c,540
+django_url_helper-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+django_url_helper-0.0.1.dist-info/top_level.txt,sha256=IwQaMQ4sbca1TT0prnpxLlP_4EUKX93FjzAe-H194cQ,18
+django_url_helper-0.0.1.dist-info/RECORD,,
