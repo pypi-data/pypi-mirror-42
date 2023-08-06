@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: rover-position-rjg
+Version: 0.1.5
+Summary: A python module to provide the heading and position for a small robot.
+Home-page: https://github.com/Richard-Gemmell/rover-position-rjg
+Author: Richard Gemmell
+Author-email: 16683467+Richard-Gemmell@users.noreply.github.com
+License: LICENSE.txt
+Description: # rover-position-rjg
+        
+        ## Introduction
+        Provides heading and position information for a small robot.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Embedded Systems
+Description-Content-Type: text/markdown
