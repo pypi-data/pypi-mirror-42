@@ -1,0 +1,44 @@
+#!python
+import os
+print(os.path.realpath(__file__))
+import sys
+print(sys.version)
+
+import dep2layer
+
+import argparse
+
+parser = argparse.ArgumentParser()
+subparsers = parser.add_subparsers(title='command', description=None, dest='command', help='')
+
+temp = subparsers.add_parser('download', help = 'Dowload dependencies and save to cache')
+temp.add_argument('--template-file', help = 'The path where your CloudFormation template is located.')
+temp.add_argument('--out-template-file', help = 'The path to the file where the command writes the packaged template.')
+temp.add_argument('--cache-dir', help = 'The path to the dir where the command save the dependencies zips.')
+
+temp = subparsers.add_parser('package', help = 'Download dependencies and run aws cloudformation package')
+temp.add_argument('--template-file', help = 'The path where your CloudFormation template is located.')
+temp.add_argument('--out-template-file', help = 'The path to the file where the command writes the packaged template.')
+temp.add_argument('--cache-dir', help = 'The path to the dir where the command save the dependencies zips.')
+
+temp = subparsers.add_parser('clear', help = 'Remove cache')
+temp.add_argument('--cache-dir', help = 'The path to the dir where the command save the dependencies zips.')
+
+
+#parser.add_subparsers('package', help = '')
+#parser.add_subparsers('clean', help = '')
+args = parser.parse_args()
+print('================')
+print(args)
+print(args.command)
+
+if args.command == 'download':
+  dep2layer.work(args.template_file, args.cache_dir, args.out_template_file)
+elif args.command == 'package':
+  dep2layer.work(args.template_file, args.cache_dir, args.out_template_file)
+  pass
+elif args.command == 'clear':
+  dep2layer.clear(args.cache_dir)
+else:
+  print('WHAT IS THIS COMMAND?')
+  
