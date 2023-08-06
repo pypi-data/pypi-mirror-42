@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: common-patterns
+Version: 2.0.1
+Summary: Python Common Patterns
+Home-page: https://github.com/VisionNetworkProject/python-common-patterns
+Author: Vision Network
+Author-email: michael@vision.network
+License: UNKNOWN
+Keywords: Python,Regex,Patterns
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: IPy
+
+# Python: Common Patterns
+
+[![PyPI Version](http://img.shields.io/pypi/v/common-patterns.svg)](https://pypi.python.org/pypi/common-patterns/)
+
+Common Patterns
+
+
+## Installation
+
+``` console
+$ pip3 install common-patterns
+```
+
+
+## Usage
+
+``` python
+import common-patterns
+```
+
+
+
