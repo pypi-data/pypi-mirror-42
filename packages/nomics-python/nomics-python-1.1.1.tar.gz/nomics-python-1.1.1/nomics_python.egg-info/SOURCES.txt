@@ -1,0 +1,12 @@
+README.md
+setup.py
+nomics/__init__.py
+nomics/candles.py
+nomics/currencies.py
+nomics/markets.py
+nomics/nomics.py
+nomics_python.egg-info/PKG-INFO
+nomics_python.egg-info/SOURCES.txt
+nomics_python.egg-info/dependency_links.txt
+nomics_python.egg-info/top_level.txt
+test/test_nomics.py
