@@ -1,0 +1,8 @@
+setup.py
+bin/pymulticast
+pymulticast.egg-info/PKG-INFO
+pymulticast.egg-info/SOURCES.txt
+pymulticast.egg-info/dependency_links.txt
+pymulticast.egg-info/not-zip-safe
+pymulticast.egg-info/requires.txt
+pymulticast.egg-info/top_level.txt

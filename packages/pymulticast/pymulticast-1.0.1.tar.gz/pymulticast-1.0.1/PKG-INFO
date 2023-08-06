@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: pymulticast
+Version: 1.0.1
+Summary: send or receive multicast udp
+Home-page: https://github.com/wangpeng2020/multicast.git
+Author: Peng Wang
+Author-email: wp2ypy@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: System :: Networking

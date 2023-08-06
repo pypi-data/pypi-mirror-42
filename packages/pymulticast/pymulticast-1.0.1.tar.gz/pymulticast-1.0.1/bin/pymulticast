@@ -1,0 +1,104 @@
+#!/usr/bin/env python
+# encoding: utf-8
+# author: pw
+# date: 2019/02/20
+
+"""
+Usage:
+  pymulticast receive MCAST_GRP MCAST_PORT [-i <ip>] [(-w <filepath> -t <split_time>)]
+  pymulticast -h | --help
+  pymulticast --version
+  
+Options:
+  -h --help         显示帮助
+  -i <ip>           指定监听网口, 默认为None, 即随机选取
+  -w <filepath>     接收的数据写入到文件
+  -t <split_time>   指定分片时间, 单位秒, 默认值为1800秒, 需要同时指定-w参数
+  
+Examples:
+  pymulticast receive 239.1.1.1 1234
+  pymulticast receive 239.1.1.1 1234 -i 192.168.11.48
+  pymulticast receive 239.1.1.1 1234 -i 192.168.11.48 -w /mnt/data/local-disk1/record.ts -t 1800
+"""
+
+import os
+import sys
+import signal
+import socket
+import struct
+from docopt import docopt
+from datetime import datetime
+from datetime import timedelta
+
+
+def multicast_recv(MCAST_GRP , MCAST_PORT, iface=None, filepath=None, split_time=3600):
+    #程序退出
+    signal.signal(signal.SIGINT, quit)
+    signal.signal(signal.SIGTERM, quit)
+    #创建UDP socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+    #允许组播IP和端口复用，其他实例可以绑定同样的IP和端口
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    #绑定组播地址
+    sock.bind((MCAST_GRP, int(MCAST_PORT)))
+    #封装监听网口等参数
+    mreq = struct.pack(
+        '4sl' if iface is None else '4s4s',
+        socket.inet_aton(MCAST_GRP),
+        socket.INADDR_ANY if iface is None else socket.inet_aton(iface))
+    #是组播地址则加入组播    
+    if int(MCAST_GRP.split('.')[0]) >= 224:
+        sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
+    #设置阻塞模式, 默认是该模式, 接收不到数据的是会一直等待. 如设置为非阻塞模式, 接收不到数据时会报错BlockingIOError    
+    sock.setblocking(1)
+    #总数据大小
+    totalsize = 0
+    start = datetime.now()
+    if filepath:
+        stream = open('{}_{}.ts'.format(os.path.splitext(filepath)[0], start.strftime('%Y%m%d-%H%M%S')),'wb')
+    else:
+        stream = open('/dev/null', 'wb')
+    split_time = int(split_time) if split_time else 3600
+    while True:
+        end = datetime.now()
+        #超过分片时间后
+        if end-start>=timedelta(seconds=split_time):
+            #关闭上一个文件, 调整时间, 打开新文件, 重置大小
+            start = datetime.now()
+            stream.close
+            if filepath:
+                stream = open('{}_{}.ts'.format(os.path.splitext(filepath)[0], start.strftime('%Y%m%d-%H%M%S')),'wb')
+            else:
+                stream = open('/dev/null', 'wb')
+            totalsize = 0    
+            print('')
+        #接收udp数据
+        data = sock.recv(4096)
+        #控制台输出
+        totalsize += 4
+        sys.stdout.write('\r received {} KBytes filepath:{}'.format(totalsize, stream.name))
+        sys.stdout.flush()
+        #写入文件
+        if data:
+            stream.write(data)
+
+def quit(signum, frame):
+    print('')
+    sys.exit()            
+                
+def main():
+    args = docopt(__doc__, version= "multicast.py 1.0.1")
+    #通过docopt解析命令参数
+    #print(args)
+    kwargs = {
+    'MCAST_GRP': args['MCAST_GRP'],
+    'MCAST_PORT': args['MCAST_PORT'],
+    'iface': args['-i'],
+    'filepath': args['-w'],
+    'split_time': args['-t'],
+    }
+    
+    multicast_recv(**kwargs)
+
+if __name__ == '__main__':
+    main()
