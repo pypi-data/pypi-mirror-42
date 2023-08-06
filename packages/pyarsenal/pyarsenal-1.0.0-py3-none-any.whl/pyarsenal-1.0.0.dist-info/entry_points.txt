@@ -1,0 +1,4 @@
+[console_scripts]
+arsenal = pyarsenal.tools.console:main
+arsenal-cli = pyarsenal.tools.cli:main
+
