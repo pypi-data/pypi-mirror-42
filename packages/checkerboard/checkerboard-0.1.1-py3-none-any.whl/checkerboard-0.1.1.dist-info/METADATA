@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: checkerboard
+Version: 0.1.1
+Summary: More robust checkerboard detection, similar algorithm to libcbdetect
+Home-page: https://github.com/lambdaloop/checkerboard
+Author: Pierre Karashchuk
+Author-email: krchtchk@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python
+Requires-Dist: opencv-contrib-python
+Provides-Extra: gpu
+Requires-Dist: gputools ; extra == 'gpu'
+
+# Checkerboard
+
+I could not find any libraries to find checkerboards robustly in Python, except for OpenCV.
+However, OpenCV's checkerboard tends to fail when the checkerboard is somewhat blurred or rotated.
+
+Hence, this library was born. It may be slightly slower than OpenCV, but it will **find** that checkerboard.
+
+## References
+
+The implementation of checkerboard detection is mainly based on [libcbdetect](http://www.cvlibs.net/software/libcbdetect/) 
+and accompanying paper:
+```
+@INPROCEEDINGS{Geiger2012ICRA,
+  author = {Andreas Geiger and Frank Moosmann and Oemer Car and Bernhard Schuster},
+  title = {Automatic Calibration of Range and Camera Sensors using a single Shot},
+  booktitle = {International Conference on Robotics and Automation (ICRA)},
+  year = {2012}
+} 
+```
+
+
+
