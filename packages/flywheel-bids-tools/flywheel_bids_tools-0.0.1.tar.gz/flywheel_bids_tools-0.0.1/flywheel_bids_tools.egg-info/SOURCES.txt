@@ -1,0 +1,9 @@
+README.md
+setup.py
+flywheel_bids_tools/__init__.py
+flywheel_bids_tools/query_bids.py
+flywheel_bids_tools/upload_bids.py
+flywheel_bids_tools.egg-info/PKG-INFO
+flywheel_bids_tools.egg-info/SOURCES.txt
+flywheel_bids_tools.egg-info/dependency_links.txt
+flywheel_bids_tools.egg-info/top_level.txt
