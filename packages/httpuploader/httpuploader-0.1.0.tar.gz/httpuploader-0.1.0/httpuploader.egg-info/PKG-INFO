@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: httpuploader
+Version: 0.1.0
+Summary: A directory listing server that accepts file uploads.
+Home-page: https://github.com/destrangis/httpuploader
+Author: Javier Llopis
+Author-email: javier@llopis.me
+License: UNKNOWN
+Description: An HTTP server that displays a directory listing, much like Python's
+        default http.server module, except this one allows directory creation
+        and file upload by the user.
+        
+        This can be useful anytime you want to quickly share files a directory,
+        for example in a classroom where the students need to obtain one or
+        more files from the instructor and need to upload their exercise.
+        In that case the instructor finds out their machine's IP address,
+        communicates the url ``http://ipaddress:port/`` to the students, opens
+        a command window and runs httpuploader like this::
+        
+           $ python3 httpuploader.py -p port -d directory
+        
+        and they now have a quick server.
+        
+        Httpuploader is a single file with **no dependencies** outside the
+        Python Standard Library. It is a WSGI application so that it can be
+        imported as a module (the name is ``httpuploader.ul_serve``) and run
+        in any WSGI compliant server like mod_wsgi, Rocket, uWSGI, etc.
+        
+        The client's browsers need Javascript activated. It won't work in old
+        versions of Internet Explorer though. Get the latest version or Edge.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Description-Content-Type: text/x-rst
