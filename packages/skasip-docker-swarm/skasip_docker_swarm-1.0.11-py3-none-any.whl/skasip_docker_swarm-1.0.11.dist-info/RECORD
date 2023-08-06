@@ -1,0 +1,8 @@
+sip_docker_swarm/__init__.py,sha256=A7f8e3P6M1gzl9SVQEdykgRRjAQOqh0WpKgDtkdVYOE,185
+sip_docker_swarm/docker_swarm_client.py,sha256=mbRSJjt7nzylsoO1G_A56U_Z_VxSbBcDO6uByG8dsqI,21683
+sip_docker_swarm/version.py,sha256=OTDhppueI9HIcMm4bbZIqdUeM1JFMohYhYd6uonVpPU,119
+skasip_docker_swarm-1.0.11.dist-info/LICENSE.md,sha256=h0h2J0bF_xJ-0nDsdsXG3AniRTHA2tfvgPhiYlhfYFs,1526
+skasip_docker_swarm-1.0.11.dist-info/METADATA,sha256=oFGgMXqdEcqN83DqYxJ8_TaIabsNH7i6HnqAgqR16AQ,1869
+skasip_docker_swarm-1.0.11.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+skasip_docker_swarm-1.0.11.dist-info/top_level.txt,sha256=rwuwMcZaxz5nBEwSWOtmdesTvS7IHrgLJS5smO9vG8Q,17
+skasip_docker_swarm-1.0.11.dist-info/RECORD,,
