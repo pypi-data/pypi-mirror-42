@@ -1,0 +1,6 @@
+ipython
+nvidia-ml-py3
+psutil
+
+[:platform_system == "Darwin"]
+pynvx>=1.0.0
