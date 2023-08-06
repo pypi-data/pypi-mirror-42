@@ -1,0 +1,9 @@
+README.md
+setup.py
+bin/tf_readme_validator.py
+tf_readme_validator.egg-info/PKG-INFO
+tf_readme_validator.egg-info/SOURCES.txt
+tf_readme_validator.egg-info/dependency_links.txt
+tf_readme_validator.egg-info/not-zip-safe
+tf_readme_validator.egg-info/requires.txt
+tf_readme_validator.egg-info/top_level.txt
