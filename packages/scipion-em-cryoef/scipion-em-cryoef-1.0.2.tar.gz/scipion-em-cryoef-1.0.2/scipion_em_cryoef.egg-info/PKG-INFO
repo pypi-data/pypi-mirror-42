@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: scipion-em-cryoef
+Version: 1.0.2
+Summary: Plugin to use Cryoef program within the Scipion framework
+Home-page: https://github.com/scipion-em/scipion-em-cryoef
+Author: Grigory Sharov
+Author-email: sharov.grigory@gmail.com
+License: UNKNOWN
+Description: # Cryoef plugin
+        
+        This plugin allows to use Cryoef program within the Scipion framework.
+        
+        cryoEF is a program developed by [K. Naydenova and C. Russo](https://www.mrc-lmb.cam.ac.uk/crusso/cryoEF/) for measuring the effects of particle orientation.
+        
+        Supported versions of Cryoef: 1.1.0
+        
+        ![build status](http://arquimedes.cnb.csic.es:9980/badges/cryoef_devel.svg "Build status")
+        
+Keywords: scipion electron-microscopy cryo-em structural-biology image-processing scipion-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2.7
