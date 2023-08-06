@@ -1,0 +1,4 @@
+cortexpy>=0.46.0
+pandas
+progressbar2
+pysam
