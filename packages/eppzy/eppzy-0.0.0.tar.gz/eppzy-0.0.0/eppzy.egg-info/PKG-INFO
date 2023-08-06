@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: eppzy
+Version: 0.0.0
+Summary: EPP Client Library
+Home-page: https://gitlab.com/aaisp/eppzy
+Author: David Honour
+Author-email: david@concertdaw.co.uk
+License: LGPL3
+Description: UNKNOWN
+Keywords: epp
+Platform: UNKNOWN
+Provides-Extra: test

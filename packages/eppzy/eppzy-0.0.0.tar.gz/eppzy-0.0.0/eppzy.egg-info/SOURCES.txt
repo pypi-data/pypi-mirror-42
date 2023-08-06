@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+eppzy/commands.py
+eppzy/connection.py
+eppzy/request.py
+eppzy/responses.py
+eppzy.egg-info/PKG-INFO
+eppzy.egg-info/SOURCES.txt
+eppzy.egg-info/dependency_links.txt
+eppzy.egg-info/requires.txt
+eppzy.egg-info/top_level.txt
+test/test_commands.py
+test/test_responses.py
