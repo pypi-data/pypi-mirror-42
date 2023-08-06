@@ -1,0 +1,8 @@
+pathlib_revised
+django<2.0,>=1.11
+django-tools
+tqdm
+click
+
+[:python_version=="3.3" or python_version=="3.4"]
+scandir
