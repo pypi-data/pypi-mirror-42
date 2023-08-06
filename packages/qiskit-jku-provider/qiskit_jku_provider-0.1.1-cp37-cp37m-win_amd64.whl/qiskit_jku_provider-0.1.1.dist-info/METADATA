@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: qiskit-jku-provider
+Version: 0.1.1
+Summary: Qiskit simulator whose backend is based on JKU's simulator
+Home-page: https://github.com/Qiskit/qiskit-jku-provider
+Author: Qiskit Development Team
+Author-email: qiskit@us.ibm.com
+License: Apache 2.0
+Keywords: qiskit quantum jku_simulator
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: qiskit (>=0.7)
+
+This module contains [Qiskit](https://www.qiskit.org/) simulator whose backend is written in JKU's simulator. This simulator simulate a Quantum circuit on a classical computer.
+
+
