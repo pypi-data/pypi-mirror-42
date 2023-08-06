@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+rsd-virt-for-nova/__init__.py
+rsd_virt_for_nova.egg-info/PKG-INFO
+rsd_virt_for_nova.egg-info/SOURCES.txt
+rsd_virt_for_nova.egg-info/dependency_links.txt
+rsd_virt_for_nova.egg-info/not-zip-safe
+rsd_virt_for_nova.egg-info/requires.txt
+rsd_virt_for_nova.egg-info/top_level.txt

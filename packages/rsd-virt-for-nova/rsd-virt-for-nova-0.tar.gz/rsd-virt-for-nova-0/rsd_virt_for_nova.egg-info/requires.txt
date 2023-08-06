@@ -1,0 +1,7 @@
+pbr!=2.1.0,>=2.0.0
+six>=1.10.0
+oslo.log>=3.36.0
+oslo.config>=5.2.0
+jsonschema<3.0.0,>=2.6.0
+oslo.utils>=3.33.0
+rsd-lib<=0.3.1
