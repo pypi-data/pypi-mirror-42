@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: prl
+Version: 0.9b0
+Summary: [P]reference and [R]ule [L]earning algorithm implementation
+Home-page: https://github.com/makgyver/PRL
+Author: Mirko Polato
+Author-email: mak1788@gmail.com
+License: MIT
+Download-URL: https://github.com/makgyver/PRL
+Keywords: preference-learning,game-theory,machine-learning,algorithm
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: cvxopt
+Requires-Dist: sklearn
+
+UNKNOWN
+
+
