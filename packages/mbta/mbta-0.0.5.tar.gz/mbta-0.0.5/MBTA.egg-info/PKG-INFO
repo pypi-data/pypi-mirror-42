@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: mbta
+Version: 0.0.5
+Summary: A simple, high-level Python wrapper for the MBTA API
+Home-page: https://github.com/JaredStufft/mbta
+Author: Jared Stufft
+Author-email: jared@stufft.us
+License: UNKNOWN
+Description: # mbta
+        Python wrapper for the Boston MBTA API
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Development Status :: 3 - Alpha
