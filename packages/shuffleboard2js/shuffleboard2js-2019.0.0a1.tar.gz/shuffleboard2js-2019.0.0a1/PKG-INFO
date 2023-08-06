@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: shuffleboard2js
+Version: 2019.0.0a1
+Summary: Web based HTML dashboard for FRC
+Home-page: https://github.com/robotpy/shuffleboard2js
+Author: Amory Galili
+Author-email: robotpy@googlegroups.com
+License: BSD License
+Description: # webdashboard
+        Web based HTML dashboard for FRC
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Scientific/Engineering
