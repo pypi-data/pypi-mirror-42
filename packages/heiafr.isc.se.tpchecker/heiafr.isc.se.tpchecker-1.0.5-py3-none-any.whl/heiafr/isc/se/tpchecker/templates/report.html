@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SE12 - Report</title>
+</head>
+<body>
+    <h1>SE12 - TP Check</h1>
+    {% if data.subtitle %}
+    <p>
+        {{ data.subtitle }}
+    </p>
+    {% endif %}
+
+    {% if data.doc is not none %}
+    <h2>Report : {{ 'OK' if data.doc.ok else 'ERROR' }}</h2>
+    <pre>
+{{ data.doc.out if data.doc.ok else data.doc.err }}
+    </pre>
+    {% endif %}
+    
+    {% if data.git is not none %}
+    <h2>Git : {{ 'OK' if data.git.ok else 'ERROR' }}</h2>
+    <pre>
+{{ data.git.out if data.git.ok else data.git.err }}
+    </pre>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+check.py,sha256=v-qeyli-rtWuIcYqev3_jOspSWDeMpLvPnL9mWQKWTU,1113
+heiafr/isc/se/tpchecker/__init__.py,sha256=nzGR4vJtp2ZTmN2qzcBEmAZG3uRFIfpTFyPc7bgC2T4,1717
+heiafr/isc/se/tpchecker/checkdoc.py,sha256=Ueh-ZGMCP7F1eAaNFcWf0URhILiILBzIccXHZU7vK1k,1095
+heiafr/isc/se/tpchecker/checkgit.py,sha256=71VW7cPpe1HYSJniUOGxQFgcUhQ4Aa-nHUiAPeNmalI,1153
+heiafr/isc/se/tpchecker/command.py,sha256=a0EqI1g6WKXXVEN6lhkcZLJfVy_0kjHXgbnnbgy3tjw,718
+heiafr/isc/se/tpchecker/css/materialize.css,sha256=13EKEXRsynh3cmmNF1dlW6uvoC1SZVaW94bIHZQJoMU,179245
+heiafr/isc/se/tpchecker/css/pure-nr.css,sha256=ZLYrFcL2cGDO3G1p9nMxFK6rhn6iM556Ph_IL89wUlk,29994
+heiafr/isc/se/tpchecker/css/style.css,sha256=Lu7Sv64jYSxj_21kYIqWYN3d2r6Mejp2xgQgcIJNunM,232
+heiafr/isc/se/tpchecker/templates/report.html,sha256=JwQ1XLK0WtsF9yRci-zpTT3wAoZg80xZ6oC-we9qf1g,753
+heiafr.isc.se.tpchecker-1.0.5.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+heiafr.isc.se.tpchecker-1.0.5.dist-info/METADATA,sha256=YoT71JsUDN8pKagwG4yotwpr4il7-XATBUkZbQFgJSA,11827
+heiafr.isc.se.tpchecker-1.0.5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+heiafr.isc.se.tpchecker-1.0.5.dist-info/entry_points.txt,sha256=tACwO_aRIkrdeUMXayR-8Ev2bKf2klVGGGcrAYcdXOo,66
+heiafr.isc.se.tpchecker-1.0.5.dist-info/top_level.txt,sha256=ayQfs85Ky_d2A1IlQD_hQC7SsmUsjvzPB4h2qhWI5R4,13
+heiafr.isc.se.tpchecker-1.0.5.dist-info/RECORD,,
