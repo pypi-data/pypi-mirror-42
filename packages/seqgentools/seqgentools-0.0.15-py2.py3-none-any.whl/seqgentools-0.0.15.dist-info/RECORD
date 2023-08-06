@@ -1,0 +1,13 @@
+seqgentools/__init__.py,sha256=L66piVEQOhL_E3e5cjh6lKX20rrcEDLsfaJz2syey30,614
+seqgentools/sequence.py,sha256=tu-3vsCQwF4-TkC1S3aWyqN0r-4fnpselkm2tYIM94c,10738
+seqgentools/algorithms/__init__.py,sha256=cUB37QQ6S98fLBs90wR5727TavpFA3O3EpsXNwoje8I,97
+seqgentools/algorithms/combinatorics.py,sha256=36ySumaAM4JISRQPNqkRVVBAwSq2bNzfzxQAQtyB1B4,8015
+seqgentools/algorithms/hssgen.py,sha256=KLTt4erEbKlXBZ2BvPlXYX1BSv1eAy8S4QwRZ5LwKck,319
+tests/__init__.py,sha256=pW7FygT7-ed41--GKfopDhM8CuJ2gAdsS-7Z5Fb7L7M,433
+tests/test_algorithms.py,sha256=GDu44dYwsh8O7uHWMHAYwr9fTyBM8Y3CSTq4zqUoRHU,1119
+tests/test_primitives.py,sha256=Heb2S5U6WJEe3qs_TH3HFXPCbcjvXK39WoRb97FjQYk,5076
+seqgentools-0.0.15.dist-info/LICENSE,sha256=xeLGp8RS7PZxTzt5v7iBDGEej0SL478EAndD7u3zyck,1097
+seqgentools-0.0.15.dist-info/METADATA,sha256=wYqNFU8J_z-zh9OXKy1c-1LyppKPtSN6IwoS5jU4qfs,7555
+seqgentools-0.0.15.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+seqgentools-0.0.15.dist-info/top_level.txt,sha256=Dxea24GYClG9c1vNq9NVJ6iZ8i3F64K0NMXxPeNklcM,18
+seqgentools-0.0.15.dist-info/RECORD,,
