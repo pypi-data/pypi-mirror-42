@@ -1,0 +1,9 @@
+README.md
+setup.py
+jsontab/__init__.py
+jsontab/jsontab.py
+jsontab.egg-info/PKG-INFO
+jsontab.egg-info/SOURCES.txt
+jsontab.egg-info/dependency_links.txt
+jsontab.egg-info/requires.txt
+jsontab.egg-info/top_level.txt
