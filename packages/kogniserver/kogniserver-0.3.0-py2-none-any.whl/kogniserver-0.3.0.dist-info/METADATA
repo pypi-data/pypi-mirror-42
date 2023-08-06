@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: kogniserver
+Version: 0.3.0
+Summary: Interface server of the KogniHome project
+Home-page: http://github.com/kognihome/kogniserver
+Maintainer: Alexander Neumann
+License: MIT
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Environment :: Console
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Topic :: Communications
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Topic :: System :: Networking
+Requires-Dist: six
+Requires-Dist: crossbar (<=18.4.1)
+Requires-Dist: trollius
+Requires-Dist: rsb-python
+Requires-Dist: Twisted (>=17.5.0)
+Requires-Dist: attrs (>=17.4.0)
+
+UNKNOWN
+
+
