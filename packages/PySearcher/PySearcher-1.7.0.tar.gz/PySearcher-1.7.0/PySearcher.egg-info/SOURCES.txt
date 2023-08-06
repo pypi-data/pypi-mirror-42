@@ -1,0 +1,8 @@
+README.md
+setup.py
+PySearcher/__init__.py
+PySearcher/search.py
+PySearcher.egg-info/PKG-INFO
+PySearcher.egg-info/SOURCES.txt
+PySearcher.egg-info/dependency_links.txt
+PySearcher.egg-info/top_level.txt
