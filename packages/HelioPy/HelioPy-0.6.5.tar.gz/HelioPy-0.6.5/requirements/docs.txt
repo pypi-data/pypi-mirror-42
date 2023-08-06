@@ -1,0 +1,10 @@
+-r extras.txt
+
+matplotlib
+mock
+sphinx
+sphinx-automodapi
+sphinx-bootstrap-theme
+sphinx-gallery
+sphinx-issues
+pillow

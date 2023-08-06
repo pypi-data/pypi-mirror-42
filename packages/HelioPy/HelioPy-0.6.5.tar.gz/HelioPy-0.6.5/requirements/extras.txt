@@ -1,0 +1,9 @@
+-r base.txt
+
+cdflib!=0.3.5
+pandas
+requests
+sunpy
+spiceypy
+wget
+deprecated
