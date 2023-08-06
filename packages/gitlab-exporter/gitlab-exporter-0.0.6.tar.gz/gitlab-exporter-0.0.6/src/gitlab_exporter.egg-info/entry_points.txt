@@ -1,0 +1,3 @@
+[console_scripts]
+gitlab-exporter = gitlab_exporter.api:main
+
