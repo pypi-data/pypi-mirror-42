@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+tests/__init__.py
+tests/test_layer_normalization.py
+torch_layer_normalization/__init__.py
+torch_layer_normalization/layer_normalization.py
+torch_layer_normalization.egg-info/PKG-INFO
+torch_layer_normalization.egg-info/SOURCES.txt
+torch_layer_normalization.egg-info/dependency_links.txt
+torch_layer_normalization.egg-info/requires.txt
+torch_layer_normalization.egg-info/top_level.txt
