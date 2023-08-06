@@ -1,0 +1,17 @@
+cluster: null
+serviceName: null
+taskDefinition: null
+desiredCount: null
+loadBalancers:
+  -
+    targetGroupArn: null
+    containerName: null
+    containerPort: null
+serviceRegistries: []
+clientToken: ''
+role: ''
+deploymentConfiguration:
+  maximumPercent: 200
+  minimumHealthyPercent: 80
+launchType: EC2
+schedulingStrategy: REPLICA
