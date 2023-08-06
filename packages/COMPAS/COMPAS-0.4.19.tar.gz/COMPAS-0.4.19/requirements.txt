@@ -1,0 +1,9 @@
+cython
+matplotlib
+networkx
+numba
+numpy
+pillow
+planarity
+scipy
+sympy
