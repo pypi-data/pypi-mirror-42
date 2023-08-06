@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+SHiNiNG/__init__.py
+SHiNiNG/__version__.py
+SHiNiNG/rand.py
+SHiNiNG.egg-info/PKG-INFO
+SHiNiNG.egg-info/SOURCES.txt
+SHiNiNG.egg-info/dependency_links.txt
+SHiNiNG.egg-info/requires.txt
+SHiNiNG.egg-info/top_level.txt
+SHiNiNG/models/__init__.py
+SHiNiNG/models/word2vec_mlp.py
+SHiNiNG/tokenizer/__init__.py
+SHiNiNG/tokenizer/n_gram_gen.py
+SHiNiNG/tokenizer/tokenize.py

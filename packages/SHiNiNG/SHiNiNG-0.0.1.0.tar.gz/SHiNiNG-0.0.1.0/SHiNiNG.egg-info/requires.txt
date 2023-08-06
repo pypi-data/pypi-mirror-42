@@ -1,0 +1,8 @@
+keras
+jieba
+gensim
+tensorflow
+numpy
+
+[fancy feature]
+tqdm
