@@ -1,0 +1,5 @@
+{% for item in data %}
+- {{ item.name }} + {{ item.surnames }}
+- {{ item.fullName() }}
+{% endfor %}
+
