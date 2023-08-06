@@ -1,0 +1,17 @@
+*.pyc
+*.egg
+*.eggs/
+*.egg-info/
+*.so
+*.swp
+
+.cache/
+.tox/
+.venv*/
+.mypy_cache/
+.coverage
+.DS_Store
+
+build/
+dist/
+doc/_build/
