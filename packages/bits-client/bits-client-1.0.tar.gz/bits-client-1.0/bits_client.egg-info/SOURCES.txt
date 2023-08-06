@@ -1,0 +1,13 @@
+README.md
+setup.py
+bits/__init__.py
+bits/client/__init__.py
+bits/client/baseclass.py
+bits/client/baseclient.py
+bits/client/functions.py
+bits/client/parser.py
+bits_client.egg-info/PKG-INFO
+bits_client.egg-info/SOURCES.txt
+bits_client.egg-info/dependency_links.txt
+bits_client.egg-info/not-zip-safe
+bits_client.egg-info/top_level.txt
