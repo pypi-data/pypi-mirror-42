@@ -1,0 +1,44 @@
+{% extends 'ticker.html' %}
+
+{% block title %}{{pair.upper()}} - {{frequency}}{% endblock %}
+
+{% block include_scripts %}
+<script src="/static/js/site.js"></script>
+{% endblock %}
+
+{% block body %}
+
+{% with url='ticker_pair', params=dict(pair=pair) %}
+{% include 'snippets/menu.html' %}
+{% endwith %}
+
+<br/>
+<table class="u-max-full-width">
+    <caption><h3>{{pair}} - {{frequency}}</h3></caption>
+    <thead>
+        <tr>
+            <th>Exchange</th>
+            {% for att in attributes %}
+            <th>{{att}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+{% for i in symbols_per_exchange %}
+    {% for exchange, d in i.items() %}
+    {% if d['pairs']%}
+        {% for c, r in d['pairs'] %}
+        <tr>
+            <td><a href="/ticker/{{frequency}}#{{exchange.upper()}}">{{exchange.upper()}}</a></td>
+        {% for att in attributes %}
+        <td style="text-align: right;">
+            <span id="{{exchange.lower()}}_{{c.lower()}}{{r.lower()}}_{{att.replace(' ', '_').lower()}}_{{frequency}}" style="padding: 5px;">-</span></td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    {% endif %}
+    {% endfor %}
+{% endfor %}
+{% endblock %}
+    </tbody>
+</table>
