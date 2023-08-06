@@ -1,0 +1,149 @@
+Metadata-Version: 1.0
+Name: single-factor-model
+Version: 0.3.2
+Summary: factor model
+Home-page: UNKNOWN
+Author: Yili Peng
+Author-email: yili_peng@outlook.com
+License: UNKNOWN
+Description: This programme is built for back-testing factors.
+        
+        Dependencies
+        ------------
+        
+        -  python 3.5
+        -  pandas 0.23.0
+        -  numba 0.38.0
+        -  empyrical 0.5.0
+        -  data_box
+        -  pickle
+        -  multiprocessing
+        -  joblib
+        
+        Logic
+        -----
+        
+        Basic definitions
+        -----------------
+        
+        #. v_t,s_t,c_t: total value, stock value and cash value at time t after
+           trading
+        #. v^f_t,s^f_t,c^f_t: total value, stock value and cash value at time t
+           before trading
+        #. ss,sv: suspended stock value and valid stock value
+        #. r_t: return at time t
+        #. cost_t: cost to trade at time t
+        
+        Note: s,ss,sv are all vectors while others are numbers
+        
+        Equations
+        ---------
+        
+        #. v_t = \|s_t\| + c_t
+        #. s^f_t = s_{t-1} \* (1 + r_t) = ss^f_t + sv^f_t = ss_t + sv^f_t
+        #. ss_t <- suspend, s^f_t
+        #. c_{t-1} + \|sv^f_t\| = \|sv_t\| + c_t + cost_t ( where c_t, cost_t >=
+           0 )
+        #. cost_t =|sv_t - sv^f_t\| \* costRate
+        #. weight_t <- factor_{t-1},industry_t,suspend_t ( \|weight_t\| = 1 or 0
+           if there is no valid stocks or factors or industries)
+        #. define cost^f_t = (2|sv^f_t\| + c_{t-1}) \* costRate s.t. cost^f_t >=
+           cost_t, which is greater than the maximum cost we may have during the
+           trade
+        #. define available_value^f_t = c_{t-1} + \|sv^f_t\| - cost^f_t, which
+           means the value ( = \|sv_t\| if weight_t != 0) we have in stocks
+           after trading
+        #. let sv_t = weight_t \* available_value^f_t s.t. c_t = c_{t-1} +
+           \|sv^f_t\| - \|sv_t\| - cost_t >=0
+        
+        Thus to update v_t, we would start with calculating s^f_t, ss, sv^f_t,
+        then cost^f_t, available_value^f_t, then sv_t, cost_t and c_t, and
+        finally v_t
+        
+        Example
+        -------
+        
+        Data Box: pre-process
+        ---------------------
+        
+        .. code:: python
+        
+           from data_box import data_box
+           db=data_box()\
+               .load_indestry(ind)\
+               .load_indexWeight(ind_weight)\
+               .calc_indweight()\
+               .load_suspend(sus)\
+               .load_adjPrice(price)\
+               .add_factor('factor0',factor0)\
+               .add_factor('factor1',factor1)\
+               .set_lag(freq='d',day_lag=1)\
+               .align_data()
+           # freq can be 'd' or 'm', for detail please refer to db.set_lag doc. 
+        
+        Where ``price,ind,ind_weight,sus,factor0,factor1`` are all dataframes
+        with index as date (yyyymmdd,int) and column as tickers. You can save
+        and load this data box object by ``db.save('path')`` and
+        ``db.load('path')``. You can find more in data_box project.
+        
+        Back Test
+        =========
+        
+        .. code:: python
+        
+           from single_factor_model import run_back_test
+        
+        Single processor
+        
+        .. code:: python
+        
+           Value,Turnover=run_back_test(data_box=db,back_end=None,n=5,out_path=None,double_side_cost=0.003)
+        
+        Multi processors
+        
+        .. code:: python
+        
+           Value,Turnover=run_back_test(data_box=db,back_end='loky',n=5,n_jobs=-1,out_path=None,verbose=50)
+        
+        or
+        
+        .. code:: python
+        
+           with __name__=='__main__':
+               Value,Turnover=run_back_test(data_box=db,back_end='multiprocessing',n=5,n_jobs=-1,out_path=None)
+        
+        To check detailed positions of each portfolio every day, just assign
+        ``out_path``.
+        
+        Back test for specific industries
+        
+        .. code:: python
+        
+           from single_factor_model import  run_back_test_by_industry
+           Value_list,Turnover_list=run_back_test_by_industry(db,industry_list=None,back_end='loky',n_jobs=-1,double_side_cost=0.003,verbose=50) 
+        
+        Summary and Plot
+        ================
+        
+        Calculate return including long short portfolio(and reverse)
+        
+        .. code:: python
+        
+           from single_factor_model import calc_return
+           Return = calc_return(Value,Turnover,long_short=True,double_side_cost=0.003)
+        
+        Summary
+        
+        .. code:: python
+        
+           from single_factor_model import summary
+           S=summary(Return)
+        
+        Plot
+        
+        .. code:: python
+        
+           from single_factor_model import run_plot
+           run_plot(Return,show=True)
+        
+Platform: UNKNOWN
