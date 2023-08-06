@@ -1,0 +1,19 @@
+{
+    "recording": true,
+    "recording_dir": "./recording",
+    "system_code": "ffff",
+    "devices": [
+        {
+            "name": "blinad1",
+            "id": "40ddff"
+        },
+        {
+            "name": "blind2",
+            "id": "40eebb"
+        },
+        {
+            "name": "switch1",
+            "id": "46aacc"
+        }
+    ]
+}
