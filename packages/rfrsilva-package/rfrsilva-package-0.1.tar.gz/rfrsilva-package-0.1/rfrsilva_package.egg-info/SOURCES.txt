@@ -1,0 +1,8 @@
+README.rst
+setup.py
+rfrsilva-package/__init__.py
+rfrsilva-package/rfrsilva-package.py
+rfrsilva_package.egg-info/PKG-INFO
+rfrsilva_package.egg-info/SOURCES.txt
+rfrsilva_package.egg-info/dependency_links.txt
+rfrsilva_package.egg-info/top_level.txt
