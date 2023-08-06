@@ -1,0 +1,13 @@
+cwlbrowser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cwlbrowser/browser.py,sha256=RjX1mb0hu3kL7R38WGfW9dQqCIKZfazaPuQwq7-vdvM,7380
+cwlbrowser/util.py,sha256=peTPyRPKq9fVyb7geK_sHqcnwZEBg2q8XHo-tV3_r3s,5992
+cwlbrowser/workflow.py,sha256=J2TO7NieOosxnqEmQ_qujDVkrKiczUs7Giku6khImUE,940
+cwlbrowser/test/doc/add1.cwl,sha256=-NzYKquAMSyYep_3lE3YjzoJ3WYFuF2e3t3bR7L-aPw,583
+cwlbrowser/test/doc/arithmeticfunction1.cwl,sha256=FGoHe55C6lwUGSG09NIgpLQorT4tAfyJoiUkWE-BvvY,645
+cwlbrowser/test/doc/lobSTR.cwl,sha256=zLWiKnP72LS6hMdIzlrgEn46-KMdDjyQxGzt-mmisMw,1928
+cwlbrowser/test/doc/lobSTR_expected_inputs.txt,sha256=Xo4BvtWFzW6ZKRpDGdK-Bc_NCc0ENTPa--bt9G2ur7s,67
+cwlbrowser/test/doc/subtract1.cwl,sha256=58bn6WBOJ5RHKh8_858YuuFX1jfoRbh1d22-MNpFtrM,605
+cwlbrowser-2.5.dist-info/METADATA,sha256=_vrVnhl9ElXS1-r6x9u-U4UWgzFC3TyfamffWRJyblY,370
+cwlbrowser-2.5.dist-info/RECORD,,
+cwlbrowser-2.5.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+cwlbrowser-2.5.dist-info/top_level.txt,sha256=dkCGktxdulPwXg_--4nOR3IU5V-8_Q27CEGIjztbzvg,11
