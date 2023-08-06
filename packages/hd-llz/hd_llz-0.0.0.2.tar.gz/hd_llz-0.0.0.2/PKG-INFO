@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: hd_llz
+Version: 0.0.0.2
+Summary: This is an installation package that detects the hand of the video.
+Home-page: UNKNOWN
+Author: llz
+Author-email: hero1153@sina.com
+License: MIT
+Description: Info
+        ====
+        `hd_llz 2019-02-26`
+        
+        `Author: Liu lizhen <hero1153@sina.com>`
+        
+        `Copyright: This module has been placed in the public domain.`
+        
+        `version:0.0.0.1`
+        
+        Classes:
+        - `hand_detector`: detect the hand in the image
+        
+        Functions:
+        
+        - `test()`: test function
+        - `hand_detector()`:  a class
+        - `hand_detector.detect_hand_predict(image)`: return the number of hand, hand position,and the confidense
+        
+        How To Use This Module
+        ======================
+        .. image:: funny.gif
+           :height: 100px
+           :width: 100px
+           :alt: funny cat picture
+           :align: center
+        
+        1. example code:
+        
+        sudo pip install tensorflow==1.5.0
+        .. code:: python
+        from hd_llz import hand_detector as hd
+        import cv2
+        
+        hd1=hd.hand_detector()
+        
+        hd1.test()
+        hd3=hand_detector()
+        imf=os.path.join(self.site_package_path,'test.jpg')
+        print imf
+        image=cv2.imread(imf)
+        print(hd3.detect_hand_predict(image))
+        
+        
+        Refresh
+        ========
+        
+        
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
