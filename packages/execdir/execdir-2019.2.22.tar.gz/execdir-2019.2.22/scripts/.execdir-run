@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0) list args ..."
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME-$HOME/.config}"
+EXECDIR="${EXECDIR-$XDG_CONFIG_HOME/execdir}"
+! [ -d "$EXECDIR" ] && { mkdir -p "$EXECDIR" || exit; }
+
+path="$EXECDIR/$1".txt
+
+IFS=
+repos="$(cat "$path")" || exit
+count=$(echo "$repos" | wc -l | tr -d ' ')
+repo_i=1
+
+[[ -z "$repos" ]] && echo "SKIP: $path EMPTY" && exit
+[[ -n "$repos" ]] && while IFS= read repo; do
+    echo "$repo_i/$count ${repo/$HOME/~}" 1>&2
+    cd "$repo" || exit
+    ( set -x; "${@:2}" ) || exit
+    echo
+    ((repo_i++))
+done <<< "$repos";:

@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: execdir
+Version: 2019.2.22
+Summary: run command from multiple directories
+Home-page: https://github.com/looking-for-a-job/execdir
+License: UNKNOWN
+Description: [![](https://img.shields.io/badge/OS-Unix-blue.svg?longCache=True)]()
+        
+        <b>run command from multiple directories</b>
+        
+        #### Install
+        ```bash
+        $ [sudo] pip install execdir
+        ```
+        
+        #### How it works
+        1.  create list of directories
+        2.  run command
+        
+        #### Config
+        `$XDG_CONFIG_HOME/execdir` by default - `~/.config/execdir`
+        
+        ```bash
+        $ export EXECDIR=~/Library/execdir
+        ```
+        
+        #### CLI
+        ```bash
+        usage: execdir command [args]
+        
+        Available commands:
+            add                     add directories to list
+            get                     print directories
+            set                     set list directories
+            run                     run command from list directories
+            rm                      remove directories from list
+        
+        run `execdir COMMAND --help` for more infos
+        ```
+        
+        #### Examples
+        set directories
+        ```bash
+        # ~/git/owner/repo
+        $ execdir set all "$(find ~/git -type d -maxdepth 2)"
+        $ execdir set pypi "$(find ~/git -name "setup.py" -maxdepth 3 | sed 's#/[^/]*$##')"
+        $ execdir set npmjs "$(find ~/git -name "package.json" -maxdepth 3 | sed 's#/[^/]*$##')"
+        $ execdir set travis "$(find ~/git -name ".travis.yml" -maxdepth 3 | sed 's#/[^/]*$##')"
+        ```
+        
+        run command
+        ```bash
+        $ execdir run pypi python setup.py sdist upload
+        $ execdir run npmjs npm publish
+        ```
+        
+        <p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+Keywords: execdir
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: Unix
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
