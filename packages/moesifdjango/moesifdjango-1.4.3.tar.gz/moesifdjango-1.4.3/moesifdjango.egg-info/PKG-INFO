@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: moesifdjango
+Version: 1.4.3
+Summary: Moesif Middleware for Python Django
+Home-page: https://www.moesif.com/docs/server-integration/django/
+Author: Moesif, Inc
+Author-email: derric@moesif.com
+License: Apache Software License
+Description: UNKNOWN
+Keywords: log analysis restful api development debug
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Internet :: Log Analysis
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Provides-Extra: test
+Provides-Extra: dev
