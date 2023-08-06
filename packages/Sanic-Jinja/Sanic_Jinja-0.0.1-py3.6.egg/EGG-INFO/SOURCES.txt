@@ -1,0 +1,9 @@
+README.md
+setup.py
+Sanic_Jinja.egg-info/PKG-INFO
+Sanic_Jinja.egg-info/SOURCES.txt
+Sanic_Jinja.egg-info/dependency_links.txt
+Sanic_Jinja.egg-info/not-zip-safe
+Sanic_Jinja.egg-info/requires.txt
+Sanic_Jinja.egg-info/top_level.txt
+sanic_jinja/__init__.py
