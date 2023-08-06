@@ -1,0 +1,3 @@
+[pytest11]
+tomato = pytest_tomato.plugin
+
