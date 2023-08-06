@@ -1,0 +1,7 @@
+python-magic
+piexif
+urllib3
+appdirs
+requests
+requests_oauthlib
+PyYaml
