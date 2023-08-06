@@ -1,0 +1,3 @@
+[console_scripts]
+minepkg = minepkg.__init__:main
+
