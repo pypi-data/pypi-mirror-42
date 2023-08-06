@@ -1,0 +1,14 @@
+opticalglass
+numpy>=1.15.0
+scipy>=1.1.0
+matplotlib>=2.2.3
+json_tricks>=3.12.1
+pandas>=0.23.4
+attrs>=18.1.0
+transforms3d>=0.3.1
+traitlets
+qtconsole
+
+[testing]
+pytest
+pytest-cov
