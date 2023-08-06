@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: awsrotatekey
+Version: 5.0
+Summary: Rotate AWS keys for any user.
+Home-page: UNKNOWN
+Author: Kanishk Saxena
+Author-email: kanishk.saxena@cred.club
+License: MIT
+Description: As a security best practice, AWS recommends that users periodically regenerate their AWS access keys. This tool simplifies the rotation of access keys for any user. 
+         
+         INSTRUCTIONS:
+         1) Before running, create text files and list the user names that have to be blacklisted and whitelisted respectively.
+         2) Type "awsrotate" to run the script.
+        
+Keywords: AWS,Rotate,Keys
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Description-Content-Type: text/markdown
