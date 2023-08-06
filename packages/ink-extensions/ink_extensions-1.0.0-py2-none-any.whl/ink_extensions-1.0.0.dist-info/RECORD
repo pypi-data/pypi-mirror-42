@@ -1,0 +1,14 @@
+ink_extensions/__init__.py,sha256=xRS13IHgxtvRfFVX7oUsWWZeoCgZ7yNUNbL0Q6JzR4o,245
+ink_extensions/bezmisc.py,sha256=aPzdS4NkO-rl57-4bQM4tOSCVFRmM7KwUsa3XqMz7VQ,9004
+ink_extensions/cspsubdiv.py,sha256=wJtf79q2oKXJu_LdiD291J6OBjShccNGmlNXSJHOQgw,908
+ink_extensions/cubicsuperpath.py,sha256=juuwKH6Rh4xORHtTa3bOMy0Unw56nwihNqz4FfwY2xY,5234
+ink_extensions/ffgeom.py,sha256=1Pmc_hnHjOD0DG7jzTNpnrrc6Aeop9OR0IHRCrdWOkA,4716
+ink_extensions/inkex.py,sha256=fkA4os3VFF-aqAZsBzVhzDpQLe9SoYM_c_mOMuCL_kI,15262
+ink_extensions/simplepath.py,sha256=XzoQXzCjIyWPk8VSqH5szubwaltvH1wSg-P9POxNIGE,7052
+ink_extensions/simplestyle.py,sha256=J5rHobzvwjv84W2gGCYYIODvzg2pYqm8eDM8OkDxnFg,7204
+ink_extensions/simpletransform.py,sha256=APeSlEMtTIiGkjNZBU3hnZrH42WfV8k2PNggc51s8g8,9639
+ink_extensions-1.0.0.dist-info/LICENSE,sha256=gXf5dRMhNSbfLPYYTY_5hsZ1r7UU1OaKQEAQUhuIBkM,18092
+ink_extensions-1.0.0.dist-info/METADATA,sha256=YDM0NDeC2bJsd1Kj4SKjk975dqKSFbcFnjIGgwbCU1g,532
+ink_extensions-1.0.0.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+ink_extensions-1.0.0.dist-info/top_level.txt,sha256=QORY5Bf62RH6l5xM8aoGUgQ_slF3Y5q1f35nX7Zh4Eo,15
+ink_extensions-1.0.0.dist-info/RECORD,,
