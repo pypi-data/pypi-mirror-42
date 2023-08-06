@@ -1,0 +1,12 @@
+SHiNiNG/__init__.py,sha256=PKcruXYWKuU-vQSOUQn0QNFntIH-GzpX2nSeBzcDPJw,6447
+SHiNiNG/__version__.py,sha256=sfZCwh5gEeXGg8N_EmztONNihYyAo-uU89CVztFzyC8,482
+SHiNiNG/rand.py,sha256=ViDSCnyzi06IJz9azyRXRFrawBxHMAJwys6cI9tGf64,711
+SHiNiNG/models/__init__.py,sha256=hE8zFkMqu22sfmaZBuFXFj_nECWImm5exFNHqv4M46I,359
+SHiNiNG/models/word2vec_mlp.py,sha256=UXCzE91n6YGx5DSBV11kG-MbvdYES-11Mr60fyC80DQ,16835
+SHiNiNG/tokenizer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+SHiNiNG/tokenizer/n_gram_gen.py,sha256=X6fjIIMztwQDMnNgNlhKKZo5uS88Rg7y7cEGDYeEtKs,182
+SHiNiNG/tokenizer/tokenize.py,sha256=aPzFsJ6PwN6AT0JPp8hCpY0TUDBuxGlbrfu5WM3Ac1Q,91
+SHiNiNG-0.0.1.0.dist-info/METADATA,sha256=s_H4z5PqZ1GXZQB_oPoKdQjTJeS5-cu1_eEAUh8USTI,1950
+SHiNiNG-0.0.1.0.dist-info/RECORD,,
+SHiNiNG-0.0.1.0.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+SHiNiNG-0.0.1.0.dist-info/top_level.txt,sha256=ymynkGN_IjB_eW4AnEz7vAzF2eMSRXNSZYLHBCclETs,8
