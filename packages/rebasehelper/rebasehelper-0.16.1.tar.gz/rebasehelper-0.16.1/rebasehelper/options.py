@@ -1,0 +1,287 @@
+# -*- coding: utf-8 -*-
+#
+# This tool helps you to rebase package to the latest version
+# Copyright (C) 2013-2014 Red Hat, Inc.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+# Authors: Petr Hracek <phracek@redhat.com>
+#          Tomas Hozza <thozza@redhat.com>
+
+import os
+
+from rebasehelper.build_helper import build_helper, srpm_build_helper
+from rebasehelper.checker import checkers_runner
+from rebasehelper.output_tool import output_tools_runner
+from rebasehelper.versioneer import versioneers_runner
+from rebasehelper.specfile import spec_hooks_runner
+from rebasehelper.build_log_hook import build_log_hook_runner
+from rebasehelper.constants import CONFIG_PATH, CONFIG_FILENAME
+
+
+OPTIONS = [
+    # basic
+    {
+        "name": ["--version"],
+        "default": False,
+        "switch": True,
+        "help": "show rebase-helper version and exit",
+    },
+    # output control
+    {
+        "name": ["-v", "--verbose"],
+        "default": 0,
+        "counter": True,
+        "help": "be more verbose",
+    },
+    {
+        "name": ["--color"],
+        "choices": ["always", "never", "auto"],
+        "default": "auto",
+        "help": "colorize the output, defaults to %(default)s",
+    },
+    {
+        "name": ["--background"],
+        "choices": ["dark", "light", "auto"],
+        "default": "auto",
+        "help": "use color scheme for the given background, defaults to %(default)s",
+    },
+    {
+        "name": ["--results-dir"],
+        "help": "directory where rebase-helper output will be stored",
+    },
+    # action control
+    [
+        {
+            "name": ["-p", "--patch-only"],
+            "default": False,
+            "switch": True,
+            "help": "only apply patches",
+        },
+        {
+            "name": ["-b", "--build-only"],
+            "default": False,
+            "switch": True,
+            "help": "only build SRPMs and RPMs",
+        },
+        {
+            "name": ["--comparepkgs-only"],
+            "default": False,
+            "dest": "comparepkgs",
+            "metavar": "COMPAREPKGS_DIR",
+            "help": "compare already built packages, %(metavar)s must be a directory "
+                    "with the following structure: <dir_name>/{old,new}/RPM",
+        },
+    ],
+    {
+        "name": ["-c", "--continue"],
+        "default": False,
+        "switch": True,
+        "dest": "cont",
+        "help": "continue previously interrupted rebase",
+    },
+    # tool selection
+    {
+        "name": ["--buildtool"],
+        "choices": build_helper.get_all_tools(),
+        "available_choices": build_helper.get_supported_tools(),
+        "default": build_helper.get_default_tool(),
+        "help": "build tool to use, defaults to %(default)s",
+    },
+    {
+        "name": ["--srpm-buildtool"],
+        "choices": srpm_build_helper.get_all_tools(),
+        "available_choices": srpm_build_helper.get_supported_tools(),
+        "default": srpm_build_helper.get_default_tool(),
+        "help": "SRPM build tool to use, defaults to %(default)s",
+    },
+    {
+        "name": ["--pkgcomparetool"],
+        "choices": checkers_runner.get_all_tools(),
+        "available_choices": checkers_runner.get_supported_tools(),
+        "default": checkers_runner.get_default_tools(),
+        "type": lambda s: s.split(','),
+        "help": "set of tools to use for package comparison, defaults to "
+                "%(default)s if available",
+    },
+    {
+        "name": ["--outputtool"],
+        "choices": output_tools_runner.get_all_tools(),
+        "available_choices": output_tools_runner.get_supported_tools(),
+        "default": output_tools_runner.get_default_tool(),
+        "help": "tool to use for formatting rebase output, defaults to %(default)s",
+    },
+    {
+        "name": ["--versioneer"],
+        "choices": versioneers_runner.get_all_versioneers(),
+        "available_choices": versioneers_runner.get_available_versioneers(),
+        "default": None,
+        "help": "tool to use for determining latest upstream version",
+    },
+    # blacklists
+    {
+        "name": ["--versioneer-blacklist"],
+        "choices": versioneers_runner.get_all_versioneers(),
+        "available_choices": versioneers_runner.get_available_versioneers(),
+        "default": [],
+        "type": lambda s: s.split(","),
+        "help": "prevent specified versioneers from being run",
+    },
+    {
+        "name": ["--spec-hook-blacklist"],
+        "choices": spec_hooks_runner.get_all_spec_hooks(),
+        "available_choices": spec_hooks_runner.get_available_spec_hooks(),
+        "default": [],
+        "type": lambda s: s.split(","),
+        "help": "prevent specified spec hooks from being run",
+    },
+    {
+        "name": ["--build-log-hook-blacklist"],
+        "choices": build_log_hook_runner.get_all_tools(),
+        "available_choices": build_log_hook_runner.get_supported_tools(),
+        "default": [],
+        "type": lambda s: s.split(","),
+        "help": "prevent specified build log hooks from being run"
+    },
+    # behavior control
+    {
+        "name": ["--non-interactive"],
+        "default": False,
+        "switch": True,
+        "dest": "non_interactive",
+        "help": "do not interact with user",
+    },
+    {
+        "name": ["--favor-on-conflict"],
+        "choices": ["downstream", "upstream", "off"],
+        "default": "off",
+        "dest": "favor_on_conflict",
+        "help": "favor downstream or upstream changes when conflicts appear",
+    },
+    {
+        "name": ["--not-download-sources"],
+        "default": False,
+        "switch": True,
+        "help": "do not download sources",
+    },
+    {
+        "name": ["-w", "--keep-workspace"],
+        "default": False,
+        "switch": True,
+        "help": "do not remove workspace directory after finishing",
+    },
+    {
+        "name": ["--apply-changes"],
+        "default": False,
+        "switch": True,
+        "help": "apply changes.patch after a successful rebase",
+    },
+    {
+        "name": ["--disable-inapplicable-patches"],
+        "default": False,
+        "switch": True,
+        "dest": "disable_inapplicable_patches",
+        "help": "disable inapplicable patches in rebased SPEC file",
+    },
+    {
+        "name": ["--get-old-build-from-koji"],
+        "default": False,
+        "switch": True,
+        "help": "do not build old sources, download latest build from Koji instead",
+    },
+    {
+        "name": ["--skip-version-check"],
+        "default": False,
+        "switch": True,
+        "help": "force rebase even if current version is newer than requested version",
+    },
+    {
+        "name": ["--update-sources"],
+        "default": False,
+        "switch": True,
+        "help": "update \"sources\" file and upload new sources to lookaside cache",
+    },
+    {
+        "name": ["--skip-upload"],
+        "default": False,
+        "switch": True,
+        "help": "skip uploading new sources to lookaside cache",
+    },
+    {
+        "name": ["--force-build-log-hooks"],
+        "default": False,
+        "switch": True,
+        "help": "enforce running of build log hooks (even in non-interactive mode)",
+    },
+    # remote builder options
+    {
+        "name": ["--builds-nowait"],
+        "default": False,
+        "switch": True,
+        "help": "do not wait for remote builds to finish",
+    },
+    {
+        "name": ["--build-tasks"],
+        "dest": "build_tasks",
+        "metavar": "OLD_TASK,NEW_TASK",
+        "type": lambda s: s.split(','),
+        "help": "comma-separated remote build task ids",
+    },
+    # additional local builder options
+    {
+        "name": ["--builder-options"],
+        "default": None,
+        "metavar": "BUILDER_OPTIONS",
+        "help": "enable arbitrary local builder option(s), enclose %(metavar)s in quotes "
+                "to pass more than one",
+    },
+    {
+        "name": ["--srpm-builder-options"],
+        "default": None,
+        "metavar": "SRPM_BUILDER_OPTIONS",
+        "help": "enable arbitrary local srpm builder option(s), enclose %(metavar)s in quotes "
+                "to pass more than one",
+    },
+    # misc
+    {
+        "name": ["--changelog-entry"],
+        "default": "- New upstream release %{version}",
+        "help": "text to use as changelog entry, can contain RPM macros, which will be expanded",
+    },
+    {
+        "name": ["--config-file"],
+        "default": os.path.join(CONFIG_PATH, CONFIG_FILENAME),
+        "help": "path to a configuration file, defaults to %(default)s",
+    },
+    # sources
+    {
+        "name": ["sources"],
+        "metavar": "SOURCES",
+        "nargs": "?",
+        "default": None,
+        "help": "version number or filename of the new source archive",
+    },
+]
+
+
+def traverse_options(options):
+    group_index = 0
+    for opt in options:
+        if isinstance(opt, list):
+            for inner_opt in opt:
+                yield dict(group=group_index, **inner_opt)
+            group_index += 1
+        else:
+            yield opt

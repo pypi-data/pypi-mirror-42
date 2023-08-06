@@ -1,0 +1,43 @@
+[console_scripts]
+rebase-helper = rebasehelper.cli:CliHelper.run
+
+[rebasehelper.build_log_hooks]
+files = rebasehelper.build_log_hooks.files_build_log_hook:FilesBuildLogHook
+
+[rebasehelper.build_tools]
+copr = rebasehelper.build_tools.copr_tool:CoprBuildTool
+koji = rebasehelper.build_tools.koji_tool:KojiBuildTool
+mock = rebasehelper.build_tools.mock_tool:MockBuildTool
+rpmbuild = rebasehelper.build_tools.rpmbuild_tool:RpmbuildBuildTool
+
+[rebasehelper.checkers]
+abipkgdiff = rebasehelper.checkers.abipkgdiff_tool:AbiCheckerTool
+csmock = rebasehelper.checkers.csmock_tool:CsmockTool
+licensecheck = rebasehelper.checkers.licensecheck_tool:LicenseCheckTool
+pkgdiff = rebasehelper.checkers.pkgdiff_tool:PkgDiffTool
+rpmdiff = rebasehelper.checkers.rpmdiff_tool:RpmDiffTool
+
+[rebasehelper.output_tools]
+json = rebasehelper.output_tools.json_output_tool:JSONOutputTool
+text = rebasehelper.output_tools.text_output_tool:TextOutputTool
+
+[rebasehelper.spec_hooks]
+commit-hash-updater = rebasehelper.spec_hooks.commit_hash_updater:CommitHashUpdaterHook
+escape-macros = rebasehelper.spec_hooks.escape_macros:EscapeMacrosHook
+paths-to-rpm-macros = rebasehelper.spec_hooks.paths_to_rpm_macros:PathsToRPMMacrosHook
+pypi-url-fix = rebasehelper.spec_hooks.pypi_url_fix:PyPIURLFixHook
+ruby-helper = rebasehelper.spec_hooks.ruby_helper:RubyHelperHook
+typo-fix = rebasehelper.spec_hooks.typo_fix:TypoFixHook
+
+[rebasehelper.srpm_build_tools]
+mock = rebasehelper.srpm_build_tools.mock_tool:MockSRPMBuildTool
+rpmbuild = rebasehelper.srpm_build_tools.rpmbuild_tool:RpmbuildSRPMBuildTool
+
+[rebasehelper.versioneers]
+anitya = rebasehelper.versioneers.anitya_versioneer:AnityaVersioneer
+cpan = rebasehelper.versioneers.cpan_versioneer:CPANVersioneer
+hackage = rebasehelper.versioneers.hackage_versioneer:HackageVersioneer
+npmjs = rebasehelper.versioneers.npmjs_versioneer:NPMJSVersioneer
+pypi = rebasehelper.versioneers.pypi_versioneer:PyPIVersioneer
+rubygems = rebasehelper.versioneers.rubygems_versioneer:RubyGemsVersioneer
+
