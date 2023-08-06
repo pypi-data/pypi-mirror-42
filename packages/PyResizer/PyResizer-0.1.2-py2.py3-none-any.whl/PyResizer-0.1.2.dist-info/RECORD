@@ -1,0 +1,12 @@
+pyresizer/__init__.py,sha256=9wo2mzuc9bndmpLDk92x_sx0TzdIpA6wXIaJFA68z4E,172
+pyresizer/__main__.py,sha256=fIEA5GY2KVJKsJPRQQ7ZpuRDRCkgRvZqyqBcyTUIeh4,128
+pyresizer/constants.py,sha256=dww1_k3qNwD-FEFGJZ4uGzxrJl0kCgXL7QffyqKL7eQ,1434
+pyresizer/gui.py,sha256=_4zEQEaN05DnpQmzXz7T35f_zLJw4KRg-KL49TsTW7M,15134
+pyresizer/image.py,sha256=wANovTh56TdwWDhpJJiSC6il8BqzLTXyePjn0YsnJ9A,3921
+PyResizer-0.1.2.dist-info/AUTHORS,sha256=HLaVCcuwArtsAcnShkki1tULoN6REmOZAxj_0VpVPJY,361
+PyResizer-0.1.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+PyResizer-0.1.2.dist-info/METADATA,sha256=Eb_Fksn4YPbe6s1qcTjIO-LRUgiCee-3BS0eDj-WLDY,1422
+PyResizer-0.1.2.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+PyResizer-0.1.2.dist-info/entry_points.txt,sha256=jtIM0-3ipUdd1EhwcC52FuON6C-4EXPjl6J0MfCUQCM,50
+PyResizer-0.1.2.dist-info/top_level.txt,sha256=Xg3JCgAaZxLN3ZLSAVNneXYDfr2Xg5BgehSPuZDc-vI,10
+PyResizer-0.1.2.dist-info/RECORD,,
