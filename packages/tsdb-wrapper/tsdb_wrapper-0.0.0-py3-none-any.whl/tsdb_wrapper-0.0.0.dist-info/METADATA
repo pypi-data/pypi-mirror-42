@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: tsdb-wrapper
+Version: 0.0.0
+Summary: A Wrapper for Timeseries Database Python Library
+Home-page: https://github.com/insight-technology/tsdb-wrapper
+Author: yszkst
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.5
+Requires-Dist: influxdb
+Provides-Extra: dev
+Requires-Dist: docutils ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: mypy ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-runner ; extra == 'test'
+Requires-Dist: tox ; extra == 'test'
+
+tsdb wrapper
+============
+
+A Wrapper for Timeseries Database Python Library
+
+Currently, only for InfluxDB.
+
+Test
+----
+
+1. Prepare InfluxDB root:root@localhost:8086/tsdb_test
+2. $ python setup.py test
+
+LICENSE
+-------
+MIT
+
+
