@@ -1,0 +1,4 @@
+[console_scripts]
+balkhash = balkhash.cli:cli
+ftm-store = balkhash.cli:cli
+
