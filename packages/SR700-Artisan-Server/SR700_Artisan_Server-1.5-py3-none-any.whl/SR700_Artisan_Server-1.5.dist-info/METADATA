@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: SR700-Artisan-Server
+Version: 1.5
+Summary: Extension of the SR700-Artisan-PDServer (https://github.com/infinigrove/SR700-Artisan-PDServer) to use with the Phidget
+Home-page: https://github.com/lucapinello/SR700-Artisan-Server
+Author: Luca Pinello
+Author-email: UNKNOWN
+License: GPLv3
+Platform: UNKNOWN
+Requires-Dist: freshroastsr700-phidget (>=1.0)
+Requires-Dist: Pyro4
+Requires-Dist: datetime
+
+UNKNOWN
+
+
