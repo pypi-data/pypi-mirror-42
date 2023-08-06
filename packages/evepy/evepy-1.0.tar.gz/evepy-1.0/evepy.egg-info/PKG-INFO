@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: evepy
+Version: 1.0
+Summary: Simple lightweight data-interchange format, written in Python
+Home-page: https://github.com/Dmunch04/EVE
+Author: Munchii
+Author-email: bocongyin@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: simple data interchange format python
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
