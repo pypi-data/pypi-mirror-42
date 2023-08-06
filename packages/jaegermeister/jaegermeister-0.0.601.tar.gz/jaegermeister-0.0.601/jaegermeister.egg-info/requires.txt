@@ -1,0 +1,67 @@
+opentracing<2.1,>=2.0
+wrapt
+autowrapt>=1.0
+
+[dbapi]
+dbapi-opentracing
+
+[django]
+django-opentracing@ git+https://github.com/signalfx/python-django.git@django_2_ot_2_jaeger#egg=django-opentracing-999999999
+
+[elasticsearch]
+elasticsearch-opentracing@ git+https://github.com/signalfx/python-elasticsearch.git@2.0_support_multiple_versions#egg=elasticsearch-opentracing-999999999
+
+[flask]
+flask_opentracing@ git+https://github.com/signalfx/python-flask.git@adopt_scope_manager#egg=flask_opentracing-999999999
+
+[instrumentation_tests]
+django
+docker
+elasticsearch
+flake8
+mock
+mockupdb
+psycopg2
+pymongo
+pymysql
+pytest
+pytest-django
+redis
+requests
+six
+tornado
+dbapi-opentracing
+django-opentracing@ git+https://github.com/signalfx/python-django.git@django_2_ot_2_jaeger#egg=django-opentracing-999999999
+elasticsearch-opentracing@ git+https://github.com/signalfx/python-elasticsearch.git@2.0_support_multiple_versions#egg=elasticsearch-opentracing-999999999
+flask_opentracing@ git+https://github.com/signalfx/python-flask.git@adopt_scope_manager#egg=flask_opentracing-999999999
+jaeger-client@ git+https://github.com/signalfx/jaeger-client-python.git@ot_20_http_sender_no_tornado#egg=jaeger-client-999999999
+pymongo-opentracing
+redis-opentracing@ git+https://github.com/opentracing-contrib/python-redis.git@v1.0.0#egg=redis-opentracing-999999999
+requests-opentracing
+tornado_opentracing>=1.0.1
+
+[jaeger]
+jaeger-client@ git+https://github.com/signalfx/jaeger-client-python.git@ot_20_http_sender_no_tornado#egg=jaeger-client-999999999
+
+[psycopg2]
+dbapi-opentracing
+
+[pymongo]
+pymongo-opentracing
+
+[pymysql]
+dbapi-opentracing
+
+[redis]
+redis-opentracing@ git+https://github.com/opentracing-contrib/python-redis.git@v1.0.0#egg=redis-opentracing-999999999
+
+[requests]
+requests-opentracing
+
+[tornado]
+tornado_opentracing>=1.0.1
+
+[unit_tests]
+mock
+pytest
+six
