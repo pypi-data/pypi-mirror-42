@@ -1,0 +1,12 @@
+README.md
+setup.py
+pyEstradasPT/__init__.py
+pyEstradasPT/api.py
+pyEstradasPT/cameras.py
+pyEstradasPT/consts.py
+pyEstradasPT.egg-info/PKG-INFO
+pyEstradasPT.egg-info/SOURCES.txt
+pyEstradasPT.egg-info/dependency_links.txt
+pyEstradasPT.egg-info/requires.txt
+pyEstradasPT.egg-info/top_level.txt
+pyEstradasPT.egg-info/zip-safe
