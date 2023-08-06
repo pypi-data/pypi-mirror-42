@@ -1,0 +1,3 @@
+[console_scripts]
+tomato = tomato_lib:cli
+
