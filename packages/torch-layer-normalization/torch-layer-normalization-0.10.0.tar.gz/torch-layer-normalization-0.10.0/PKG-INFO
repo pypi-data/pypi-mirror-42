@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: torch-layer-normalization
+Version: 0.10.0
+Summary: Layer normalization implemented in PyTorch
+Home-page: https://github.com/CyberZHG/torch-layer-normalization
+Author: CyberZHG
+Author-email: CyberZHG@gmail.com
+License: MIT
+Description: # PyTorch Layer Normalization
+        
+        [![Travis](https://travis-ci.org/CyberZHG/torch-layer-normalization.svg)](https://travis-ci.org/CyberZHG/torch-layer-normalization)
+        [![Coverage](https://coveralls.io/repos/github/CyberZHG/torch-layer-normalization/badge.svg?branch=master)](https://coveralls.io/github/CyberZHG/torch-layer-normalization)
+        
+        Implementation of the paper: [Layer Normalization](https://arxiv.org/pdf/1607.06450.pdf)
+        
+        ## Install
+        
+        ```bash
+        pip install torch-layer-normalization
+        ```
+        
+        ## Usage
+        
+        ```python
+        from torch_layer_normalization import LayerNormalization
+        
+        LayerNormalization(normal_shape=normal_shape)
+        # The `normal_shape` could be the last dimension of the input tensor or the shape of the input tensor.
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
