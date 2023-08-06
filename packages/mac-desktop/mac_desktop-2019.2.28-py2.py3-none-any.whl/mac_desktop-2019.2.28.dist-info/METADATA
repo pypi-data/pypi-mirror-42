@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: mac-desktop
+Version: 2019.2.28
+Summary: show/hide MacOS desktop
+Home-page: https://github.com/looking-for-a-job/mac-desktop.py
+License: UNKNOWN
+Keywords: desktop
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: Pillow
+Requires-Dist: applescript
+Requires-Dist: public
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/badge/OS-MacOS-blue.svg?longCache=True)]()
+[![](https://img.shields.io/pypi/pyversions/mac-desktop.svg?longCache=True)](https://pypi.org/project/mac-desktop/)
+
+#### Install
+```bash
+$ [sudo] pip install mac-desktop
+```
+
+#### Functions
+function|`__doc__`
+-|-
+`mac_desktop.toggle()`|toggle Desktop (show/hide)
+`mac_desktop.visibility()`|return Desktop visibility percentage (0..1)
+
+#### CLI
+usage|`__doc__`
+-|-
+`python -m mac_desktop.toggle`|toggle Desktop (show/hide)
+`python -m mac_desktop.visibility`|print Desktop visibility percentage (0..1)
+
+#### Examples
+```python
+>>> import mac_desktop
+>>> if mac_desktop.visibility()<0.7:    # Desktop hidden?
+...     mac_desktop.toggle()            # show Desktop
+```
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
