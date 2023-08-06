@@ -1,0 +1,14 @@
+gtsocket/__init__.py,sha256=NYiyEAkyP0hZTRdR2IxK5_8Aek8RbMKDetj7yyYkIbE,132
+gtsocket/gtsocket.cfg,sha256=ViaJd2NHnmqNcxJD7tbIdypf4Uq5ozKNGxqgDUoI3Ro,2899
+gtsocket/gtsocket.py,sha256=VsklMheCX1bx2KTybV-bEPclRmqzv9HnEKGeKkQ2dNY,20676
+gtsocket/tests/__init__.py,sha256=BDiBOSb1bK6i5-hq1Z_x5-9nbkIIelgwVWM_6Wy0pEI,170
+gtsocket/tests/test_encoding.py,sha256=VP_YAqg2jgQWETag4cDYpfKM-RS86lYGDpOu6tu_yKU,2578
+gtsocket/tests/test_socket.py,sha256=gwS53RalH1NmEZXYDiyhBqHJ5W_gyNNFQ2ldej5VfmI,2976
+gtsocket-0.1.data/scripts/gtsocket-setup,sha256=kKNv9qVkd_B7kmG6spJZgCrIiMjLHR6_PioPvuzimsc,20960
+gtsocket-0.1.data/scripts/gtsocket-test,sha256=6EIdtu7xfjFJP34SRCHCTuPNRp1zYw9pnDvP5iVidZg,4288
+gtsocket-0.1.dist-info/DESCRIPTION.rst,sha256=2_liKD6qFIP9xMFw8y2KV5lvoBaYRMu89QhW-JAI_Ug,19881
+gtsocket-0.1.dist-info/METADATA,sha256=Gx5b7VF5N9lysu3ysxvDatbE8KQzZSnZs6mvSlTJXfE,20742
+gtsocket-0.1.dist-info/RECORD,,
+gtsocket-0.1.dist-info/WHEEL,sha256=hZvi-8L6mc2COqhOUWREM_h2lvnJbaHycZt8eohtmso,92
+gtsocket-0.1.dist-info/metadata.json,sha256=qnnG5h7FpV-NjqDKcerWFRNnxuodf-1Rtyjp61n3_BU,1048
+gtsocket-0.1.dist-info/top_level.txt,sha256=itDgf9RF6MPyoZtXbUPDO281fUjBbPWNHh5zpiAIyx4,9
