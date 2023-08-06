@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: simfcs
+Version: 2019.2.22
+Summary: Install requirements for the SimFCS software
+Home-page: https://www.lfd.uci.edu/globals/
+Author: Laboratory for Fluorescence Dynamics
+Author-email: lfd@uci.edu
+License: BSD
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.5
+Requires-Dist: numpy (>=1.14.6)
+Requires-Dist: matplotlib (>=2.2)
+Requires-Dist: tifffile (>=2019.1.30)
+Requires-Dist: czifile (>=2019.1.26)
+Requires-Dist: cmapfile (>=2019.1.1)
+Requires-Dist: oiffile (>=2019.1.1)
+Requires-Dist: lfdfiles (>=2019.1.24)
+Requires-Dist: imagecodecs (>=2019.1.20)
+
+
+Simfcs is a meta-package that installs all Python libraries and scripts
+required by the SimFCS a.k.a.
+`Globals for Images <https://www.lfd.uci.edu/globals/>`_ software:
+
+* `numpy <https://pypi.org/project/numpy/>`_
+* `matplotlib <https://pypi.org/project/matplotlib/>`_
+* `tifffile <https://pypi.org/project/tifffile/>`_
+* `czifile <https://pypi.org/project/czifile/>`_
+* `cmapfile <https://pypi.org/project/cmapfile/>`_
+* `oiffile <https://pypi.org/project/oiffile/>`_
+* `lfdfiles <https://pypi.org/project/lfdfiles/>`_
+* `imagecodecs <https://pypi.org/project/imagecodecs/>`_
+
+
