@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scout Suite Report</title>
+
+    <!--NCC favicon as base64-->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD9/f4B09HuQqWf3oFfU8THQDO46jUotPBMP7zbhn/Tn9HO7kL19fsO////AP///wD///8A////AP///wDs6/gVnJfbhz0yt+MZCqr3HQ2s/SMTr/8mFq//IxOv/yITrvhOQr7Vo53dg+vq9xz///8A////AP///wDx8PoYfXPPkzIltPMYCan/Khuw/ykasP8oGbD/KBmw/ycXsP8kFK7/GQqr/xkLq/+EfdGc6+r3HP///wD8/P0Gsq3ifA4KpfUXB6v/Jxmw/ygZsP8mF6//KBiw/ygZsP8oGrD/Khuw/yscsf8cD63/DwSn/5yW2o35+PwK4uD0PlVLwdsWC6n4RDi53ko+vN1OQ77eNSe07hcFqv8kFK7/Khux/ygZsP8oGbD/Jxew/xYIqv8tKLHt0M3tSqWg3ZcuH7H4Y1nGx4N90at8c82xjITUmb665meVjdijHxCt9R4Prf8mF6//HAus/y0fse5ENrrnPDi31amk33lhVcTTHw+r/VtRwtmFftKtcmnLx0o9vNd1bMuz9/f8Cufl9jJEObnXKx6w6V9Txce1sORwwb3oVtDN7Tzg3fMrQja56R0MrP8tH7L6U0e/2XtzzraSi9aR19XwSOrp9yvBvehi7+75EsfG6jjh3/Qz7+75H9bT7zi7t+ZS5eP1KlJIwN4aCqv/JBWu/ycXrvopG6/1JRmv9T81uefQze1ajIXUo1NJwMnm5vUZ8/L6GG1pyLM7LrbwJxiv/6Wg3Zd4bs21Fgep+ikbsf8nGa//KBiv/ykar/8TA6n/SDy61/j3/BJ9ds+1jYbVu+Ph9DV+fs6BfnbPkYmA04nIxOpMrqngfh8PrfcmF7D/KRuw/ygZsP8pGrD/JRav/xcIq/+OhtWb8vH6FcC851fp6Pci////AP///wD///8A////AOfl9jJLP73VFgiq/yoasf8pGrD/KBmw/yscsf8lFa//Fgeq/393z6fk4vQq29nxM9TR7kjV0+9E6+r3Hv39/gH+/f4BsazidRsOq/gXCKr/KRuw/yobsP8oGbD/Khux/yYXr/8eD63/Rzu722Vbxr9DPbnZV0/A0MG96Fb8/P0D////APTz+xKgmduJIxWu9xMEqP8kFa7/KBiw/ygZsP8pGrD/KRmw/x8Prf8QAqj/EQqo+Gxlya3X1fAz/f3+Af///wD///8A9fT7Eru35nBXTcHQIhKt+CERrf8kFK//Hg6r/yERrPorG6/zW1DC0KKb3Hz08/sO////AP///wD///8A////AP///wD5+fwK4+H1Lq+p4XFoXse5Sj283lxSw9N4b82lq6Tfcd7c8jj///8A////AP///wD///8A+B8AAOAHAADAAwAAwAEAAIABAAACAQAAAY8AAAP/AAABMAAAAJEAAIB/AACAPwAAwAMAAMADAADwDwAA/D8AAA==" rel="icon" type="image/x-icon" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="inc-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap theme -->
+    <link id="bootstrap-theme" href="inc-bootstrap/css/bootstrap-light.min.css" rel="stylesheet">
+    
+    <!-- Fontawesome CSS -->
+    <link href="inc-fontawesome/css/all.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script src="inc-jquery/jquery-3.3.1.min.js"></script>
+
+    <!-- Handlebars -->
+    <script src="inc-handlebars/handlebars-v3.0.0.js"></script>
+
+    <!-- Scout -->
+    <script src="inc-scoutsuite/scoutsuite.js"></script>
+    <script src="inc-scoutsuite/provider.js"></script>
+    <script src="inc-scoutsuite/helpers.js"></script>
+    <link href="inc-scoutsuite/css/scoutsuite.css" rel="stylesheet">
+    <link id="scout-theme" href="inc-scoutsuite/css/scoutsuite-light.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!------------------>
+    <!-- Fixed navbar -->
+    <!------------------>
+
+    <div class="navbar fixed-top navbar-expand-md bg-primary" role="navigation" id="metadata.list"></div>
+
+    <!--------------->
+    <!-- Container -->
+    <!--------------->
+
+    <div class="container theme-showcase mt-5 pt-5" id="container-user">
+
+        <!-- AWS account ID -->
+        <div class="row justify-content-center" id="aws_account_id.details">
+            <h4>
+                <div class="list-group-item-text std-size" onclick="toggle_element('scout2_display_account_id_on_all_pages_form')" >
+                    <span id="aws_account_id"></span>
+                </div>
+                <div id="scout2_display_account_id_on_all_pages_form" class="list-group-item-text center std-size" style="text-align: center; display: none">
+                    <label><input id="scout2_display_account_id_on_all_pages" type="checkbox" value="">Display account ID on all pages</label>
+                </div>
+            </h4>
+        </div>
+
+        <!-- Title section -->
+        <!--<div id="section_title-div">-->
+        <div id="section_title-div" style="display:flex;flex-direction:column;position:relative;">
+            <h2 id="section_title-h2"></h2>
+            <div id="findings_download_button" style="display:none;position:relative;margin-left:auto">
+                <button id="findings_download_csv_button" type="button" class="btn btn-secondary"><i class="fa fa-download"></i>CSV</button>
+                <button id="findings_download_json_button" type="button" class="btn btn-secondary"><i class="fa fa-download"></i>JSON</button>
+            </div>
+        </div>
+
+        <!-- One column container -->
+        <div class="row">
+            <div class="col-sm-12 w-100" id="single-column">
+            </div>
+
+            <!-- Two columns container -->
+            <div class="row w-100">
+                <div class="col-sm-4 w-100 text-overflow" id="double-column-left"></div>
+                <div class="col-sm-8 w-100 pr-0" id="double-column-right"></div>
+            </div>
+
+            <!-- Generic left-menu link partial for resources -->
+<script id="left_menu.partial" type="text/x-handlebars-template">
+  <div id="services.{{service_name}}.{{resource_type}}.list">
+    <div class="list-group" >
+      <div class="list-group-item">
+        <a href="#services.{{service_name}}.{{resource_type}}">Show all <span class="badge float-right">{{items.length}}</span></a>
+      </div>
+    </div>
+    <div class="list-group">
+      {{#each items}}
+      <div class="list-group-item" id="services.{{../service_name}}.{{../resource_type}}.{{id}}.link">
+        <a href="#services.{{../service_name}}.{{../resource_type}}.{{id}}.view">{{name}}</a>
+      </div>
+      {{/each}}
+    </div>
+</script>
+<script>
+    Handlebars.registerPartial("left_menu", $("#left_menu\\.partial").html());
+</script>
+
+
+  <!-- Generic partial for region-then-resource -->
+  <script id="details_for_region.partial" type="text/x-handlebars-template">
+    <div id="services.{{service_name}}.regions.id.{{resource_type}}.details">
+      {{#each items}}
+        {{#each (lookup . ../resource_type)}}
+          <div class="list-group" id="services.{{../../service_name}}.regions.{{@../key}}.{{../../resource_type}}.{{@key}}.view">
+            {{> (lookup ../.. 'partial_name') service_name = ../../service_name region = @../key resource_type = ../../resource_type resource_key = @key resource = this}}
+          </div>
+        {{/each}}
+      {{/each}}
+    </div>
+  </script>
+  <script>
+    Handlebars.registerPartial("details_for_region", $("#details_for_region\\.partial").html());
+  </script>
+
+
+      <!-- Dasboard partial -->
+      <script id="services.id.findings.partial" type="text/x-handlebars-template">
+        <div class="row" id="services.{{service_name}}.findings.row">
+          <div class="col-sm-12" id="services.{{service_name}}.findings.list">
+              <div class="form-group container row">
+                <div class="col-sm-4">
+                    <input class="form-control dashboard-filter" type="text" id="dashboardFilter" placeholder="Filter findings">
+                </div>
+                <div class="col-sm-2">
+                    <button class="form-control btn btn-light" id="finding-title">Show All</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="form-control btn btn-success" id="finding-title-good">Good</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="form-control btn btn-warning" id="finding-title-warning">Warning</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="form-control btn btn-danger" id="finding-title-danger">Danger</button>
+                </div>
+              </div>
+
+              <ul class="list-group accordion">
+                  {{#each_dict_as_sorted_list findings}}
+                      <div id="list-{{key}}" class="card finding_items">
+                        <div class="card-header row finding-title finding-title-{{dashboard_color level checked_items flagged_items}} plain-link">
+                            <div class="col-sm-11">
+                                <i class="fa finding-badge finding-badge-{{dashboard_color level checked_items flagged_items}}"></i>
+                                <a href="#services.{{../service_name}}.findings.{{key}}.items">{{description}}</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="finding btn fa collapsed" style="background-color:transparent" data-toggle="collapse" data-target="#item-{{key}}" aria-expanded="false" aria-controls="item-{{key}}"></button>
+                            </div>
+                        </div>
+                        <div class="collapse" id="item-{{key}}" aria-labelledby="item-{{key}}" data-parent="#list-{{key}}">
+                            <div class="card-body row">
+                                <div class="col-sm-9">
+                                    <p>{{rationale}}</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <ul>
+                                        <li>{{dashboard_name}} checked: {{checked_items}}</li>
+                                        <li>{{dashboard_name}} flagged: {{flagged_items}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  {{/each_dict_as_sorted_list}}
+              </ul>
+
+          </div>
+        </div>
+      </script>
+      <script>
+        Handlebars.registerPartial("dashboard", $("#services\\.id\\.findings\\.partial").html());
+      </script>
+      <script>
+          // Dashboard filtering
+          $(document).ready(function(){
+              // Filter by text search
+              $(".dashboard-filter").on("keyup", function() {
+                  var value = $(this).val().toLowerCase();
+                  $(".finding_items").filter(function() {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                  });
+              });
+
+              // Filter by button
+              $('.btn').click(function() {
+                  var value = $(this).attr('id');
+                  if(value.indexOf('finding-title') > -1){
+                      $(".finding_items").filter(function() {
+                          $(this).toggle($(this).find(">:first-child").attr("class").indexOf(value) > -1)
+                      });
+                  }
+                  $(".dashboard-filter").val("")
+              })
+          });
+      </script>
+
+    <!-- Generic object partial -->
+    <script id="generic_object.partial" type="text/x-handlebars-template">
+        <ul>
+            {{#each this}}
+                <li class="list-group-item-text no-margin">{{@key}}:
+                {{#ifType this 'object'}}
+                    {{> generic_object this}}
+                {{else}}
+                    {{this}}
+                {{/ifType}}
+                </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script>
+      Handlebars.registerPartial("generic_object", $("#generic_object\\.partial").html());
+    </script>
+
+<!-- Network interface partial -->
+<script id="network_interface.partial" type="text/x-handlebars-template">
+  <div class="accordion">
+    <div class="list-group-item-heading accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" href="#{{escape_dots (concat 'ec2.regions' region 'vpcs' vpc 'instances' instance_id 'network_interfaces' network_interface)}}">
+          <span class="badge float-right btn-info">Details</span>
+      </a>
+    </div>
+    <div id="{{concat 'ec2.regions' region 'vpcs' vpc 'instances' instance_id 'network_interfaces' network_interface}}" class="accordion-body item-margin">
+      <div class="accordion-inner">
+        <ul>
+          {{#if Description}}<li class="list-group-item-text no-margin">Description: {{Description}}</li>{{/if}}
+          {{#if Association}}
+              <li class="list-group-item-text no-margin">Public IP: {{Association.PublicIp}}</li>
+              {{#if Association.PublicDnsName}}<li class="list-group-item-text no-margin">Public DNS: {{Association.PublicDnsName}}</li>{{/if}}
+          {{/if}}
+          {{#if Ipv6Addresses}}
+              <li class="list-group-item-text no-margin">IPv6 addresses:</li>
+              <ul>
+              {{#each Ipv6Addresses}}
+                  <li class="list-group-item-text">{{Ipv6Address}}</li>
+              {{/each}}
+              </ul>
+          {{/if}}
+          {{#each PrivateIpAddresses}}
+              <li class="list-group-item-text no-margin">{{#if Primary}}Primary {{/if}}Private IP: {{PrivateIpAddress}}</li>
+          {{/each}}
+          <li class="list-group-item-text no-margin">Security groups:
+            <ul>
+              {{#each Groups}}
+                <li><a href="javascript:showObject('services.ec2.regions.{{../region}}.vpcs.{{../vpc}}.security_groups.{{GroupId}}')">{{GroupName}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script>
+  Handlebars.registerPartial("network_interface", $("#network_interface\\.partial").html());
+</script>
+
+<!-- Single CloudFormation stack template -->
+<script id="single_network_interface-template" type="text/x-handlebars-template">
+    {{> modal-template template='network_interface' name=network_interface}}
+</script>
+
+<script>
+  var single_ec2_network_interface_template = Handlebars.compile($("#single_network_interface-template").html());
+</script>
+<!-- Single Redshift cluster template -->
+<script id="single_redshift_cluster-template" type="text/x-handlebars-template">
+    {{> modal-template template='redshift_cluster'}}
+</script>
+<script>
+    var single_redshift_cluster_template = Handlebars.compile($("#single_redshift_cluster-template").html());
+</script>
+
+
+    <!-- IP grant -->
+    <script id="ip_grants.partial" type="text/x-handlebars-template">
+      <ul>
+        {{#each items}}
+            <li class="list-group-item-text">
+                {{#if ../span_id_prefix}}
+                    <span id="{{../../span_id_prefix}}.{{@key}}.CIDR">
+                {{/if}}
+                {{CIDR}} {{#if CIDRName}}({{CIDRName}}){{/if}}
+                {{#if ../span_id_prefix}}
+                    </span>
+                {{/if}}
+            </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script>
+        Handlebars.registerPartial("ip_grants", $("#ip_grants\\.partial").html());
+    </script>
+
+    <!-- Policy partial -->
+    <script id="accordion_policy.partial" type="text/x-handlebars-template">
+      <div class="accordion">
+        <h4 class="list-group-item-heading accordion-heading">{{name}}
+          <a class="accordion-toggle collapsed" data-toggle="collapse" href="#{{escape_dots policy_path}}">
+            <span class="badge float-right btn-info">Details</span>
+          </a>
+        </h4>
+        <div id="{{policy_path}}" class="accordion-body item-margin collapse">
+          <div class="accordion-inner">
+            {{> policy}}
+          </div>
+        </div>
+      </div>
+    </script>
+    <script>
+      Handlebars.registerPartial("accordion_policy", $("#accordion_policy\\.partial").html());
+    </script>
+<!-- Filters -->
+<script id="regions.list.template" type="text/x-handlebars-template">
+    {{#each items}}
+        {{#if regions}}
+            {{#each regions}}
+                <li id="regionfilters.{{@../key}}.regions.{{@key}}"><a class="dropdown-item" href="javascript:set_filter_url('{{@key}}');">{{@key}}</a></li>
+            {{/each}}
+        {{/if}}
+    {{/each}}
+</script>
+    <!-- Generic link to other resources -->
+    <script id="resource_link.partial" type="text/x-handlebars-template">
+        <a href="javascript:showObject('{{resource_path}}')">
+            {{get_value_at resource_path 'name'}}
+        </a>
+    </script>
+    <script>
+        Handlebars.registerPartial("resource_link", $("#resource_link\\.partial").html());
+    </script>
+  <!-- Generic partial for region-then-vpc-then-resource -->
+  <script id="details_for_vpc.partial" type="text/x-handlebars-template">
+    <div id="services.{{service_name}}.regions.id.vpcs.id.{{resource_type}}.details">
+      {{#each items}}
+        {{#each vpcs}}
+          {{#each (lookup . ../../resource_type)}}
+            <div class="list-group" id="services.{{../../../service_name}}.regions.{{@../../key}}.vpcs.{{@../key}}.{{../../../resource_type}}.{{@key}}.view">
+              {{> (lookup ../../.. 'partial_name') service_name = ../../../service_name region = @../../key vpc = @../key resource_type = ../../../resource_type resource_key = @key resource = this}}
+            </div>
+          {{/each}}
+        {{/each}}
+      {{/each}}
+    </div>
+  </script>
+  <script>
+    Handlebars.registerPartial("details_for_vpc", $("#details_for_vpc\\.partial").html());
+  </script>
+
+<!-- Filters -->
+<script id="filters.list.template" type="text/x-handlebars-template">
+  {{#each items}}
+    {{#each filters}}   
+      <li id="services.{{display_path}}.filters"><a class="dropdown-item" href="#services.{{@../key}}.filters.{{@key}}.items">{{description}}</a></li>
+    {{/each}}
+  {{/each}}
+</script>
+    <!-- Policy partial -->
+    <script id="policy.partial" type="text/x-handlebars-template">
+      {{#each document}}
+          {{#ifEqual @key "Statement"}}
+            &nbsp;&nbsp;"{{@key}}":&nbsp; [<br/>
+            {{#each this}}
+              <div class="item-margin">
+                <span id="{{../../../policy_path}}.Statement.{{@key}}">{{{displayKey @key this}}}</span>
+                {{#unless @last}},{{/unless}}
+              </div>
+            {{/each}}                  
+            &nbsp;&nbsp;]
+          {{else}}
+            &nbsp;&nbsp;"{{@key}}":&nbsp; {{{displayKey @key this}}}
+          {{/ifEqual}}
+          {{#unless @last}},{{/unless}}
+          <br/>
+      {{/each}}
+    </script>
+    <script>
+      Handlebars.registerPartial("policy", $("#policy\\.partial").html());
+    </script>
+<script id="last_run_details-template" type="text/x-handlebars-template">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Last run details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body m-3">
+                <div>
+                    <p><strong>Provider:</strong> {{provider_name}}</p>
+                    <p><strong>Time:</strong> {{format_date last_run.time}}</p>
+                    <p><strong>Command:</strong> <code>{{last_run.cmd}}</code></p>
+                    <p><strong>Report generated with</strong> Scout Suite version <samp>{{last_run.version}}</samp></p>
+                    <p><strong>Using ruleset</strong> <samp>{{last_run.ruleset_name}}</samp>:
+                    <p class="ml-4 mr-4 text-justify"><em>{{last_run.ruleset_about}}</em></p>
+                </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    var last_run_details_template = Handlebars.compile($("#last_run_details-template").html());
+</script><script id="modal-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <style>
+        .modal-dialog #resource-name { display: none; }        
+    </style>
+    {{/if}}
+
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{> (lookup . 'template') }}
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    Handlebars.registerPartial("modal-template", $("#modal-template").html());
+</script><script id="about_scoutsuite-template" type="text/x-handlebars-template">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">About Scout Suite</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row list-group-item">
+                    <p>Scout Suite is an open-source tool released by <a href="https://www.nccgroup.trust" rel="author" target="_blank">NCC Group</a>.</p>
+                    <p>Use the top navigation bar to review the configuration of the supported cloud provider services.</p>
+                    <p>
+                        For more information about Scout Suite, please check out the project's page on
+                        <a href="https://github.com/nccgroup/ScoutSuite" target="_blank">GitHub</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script>
+    var about_scoutsuite_template = Handlebars.compile($("#about_scoutsuite-template").html());
+</script>
+    <!-- Accordion partial -->
+    <script id="accordion.partial" type="text/x-handlebars-template">
+            <div class="accordion">
+                <h4 class="list-group-item-heading accordion-heading">
+                    {{#if title_partial}}
+                        {{> (lookup . 'title_partial') item = this}}
+                    {{else}}
+                        {{#if title}}
+                            {{title}}
+                        {{/if}}
+                    {{/if}}
+                    {{#if items.length}}
+                        <a class="accordion-toggle" data-toggle="collapse" href="#{{escape_dots accordion_id}}">
+                            <span class="badge float-right btn-info">{{items.length}}</span>
+                        </a>
+                    {{else}}
+                        <span class="badge float-right">0</span>
+                    {{/if}}
+                </h4>
+                <div id="{{accordion_id}}" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <ul class="no-bullet">
+                            {{#each items}}
+                                <li>
+                                    {{#if ../item_partial}}
+                                        {{> (lookup ../.. 'item_partial') region = ../../region vpc = ../../vpc item = this}}
+                                    {{else}}
+                                        {{this}}
+                                    {{/if}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </script>
+    <script>
+        Handlebars.registerPartial("accordion", $("#accordion\\.partial").html());
+    </script>
+<!-- Per Service Type navigation bar -->
+<script id="metadata.list.template" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand"><a class="text-white" href="javascript:show_main_dashboard()">Scout Suite</a></span>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                {{#each items}}
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">{{make_title @key}}</a>
+                    <ul class="dropdown-menu" role="button">
+                        {{#if summaries}}
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Summaries</a>
+                                <ul class="dropdown-menu">
+                                    {{#each summaries}}
+                                    <li><a class="dropdown-item nav-link" href="#{{path}}">{{make_title @key}}</a></li>
+                                    {{/each}}
+                                </ul>
+                                <div class="dropdown-divider"></div>
+                            </li>
+                        {{/if}} 
+
+                        {{#each this}} {{#unlessEqual @key 'summaries'}} {{#unless hidden}}
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">{{ make_title @key }}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-header">Summaries</li>
+                                    <li><a class="dropdown-item" href="#services.{{@key}}.findings">Dashboard</a></li>
+                                    {{#each summaries}} {{#if risks}}
+                                        <li class="dropdown-submenu"><a href="#{{path}}">{{make_title @key}}</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-header">Security risks</li>
+                                                {{#each risks}}
+                                                <li><a class="dropdown-item" href="#services.{{@../../key}}.findings.{{this}}.items">{{get_value_at
+                                                    'services' @../../key 'findings' this 'description'}}</a></li>
+                                                {{/each}}
+                                            </ul>
+                                        </li>
+                                    {{else}}
+                                        <li><a class="dropdown-item" href="#{{path}}">{{make_title @key}}</a></li>
+                                    {{/if}} {{/each}}
+
+                                    <li class="dropdown-divider"></li>
+                                    <li class="dropdown-header">{{make_title @key}} config</li>
+                                    {{#each resources}} {{#unless hidden}} {{#if risks}}
+                                        <li class="dropdown-submenu"><a href="#{{path}}">{{make_title @key}} ({{count}})</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-header">Security risks</li>
+                                                {{#each risks}}
+                                                <li><a class="dropdown-item" href="#services.{{@../../key}}.findings.{{this}}.items">{{get_value_at
+                                                        'services' @../../key 'findings' this 'description'}}</a></li>
+                                                {{/each}}
+                                            </ul>
+                                        </li>
+                                    {{else}} {{#if count}}
+                                        <li><a class="dropdown-item" href="#{{path}}">{{make_title @key}} ({{count}})</a></li>
+                                    {{else}}
+                                        <li class="disabled"><a class="dropdown-item disabled" href="">{{make_title @key}}</a></li>
+                                    {{/if}} {{/if}} {{/unless}} {{/each}}
+                                </ul>
+                            </li>
+                        {{/unless}} {{/unlessEqual}} {{/each}}
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Regions</a>
+                <ul class="dropdown-menu" id="regions.list">
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Filters</a>
+                <ul class="dropdown-menu" id="filters.list">
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="javascript:showLastRunDetails()">Last run details</a></li>
+                  <li><a class="dropdown-item" href="javascript:showAbout()">About Scout Suite</a></li>
+                  <li><a class="dropdown-item" href="javascript:download_exceptions()">Export exceptions</a><a id="downloadAnchorElem" style="display:none"></a></li>
+                  <li><a class="dropdown-item">Dark theme
+                    <label class="switch">
+                      <input type="checkbox" id="theme_checkbox" onclick="toggleTheme()">
+                      <span class="slider round"></span>
+                    </label></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </script>
+    <!-- EC2 grant -->
+    <script id="ec2_grants.partial" type="text/x-handlebars-template">
+      <ul>
+        {{#each items}}
+          <li class="list-group-item-text">
+            <span id="ec2.regions.{{../region}}.vpcs.{{../vpc}}.security_groups.{{../sg_id}}.rules.{{../direction}}.protocols.{{../protocol}}.ports.{{../ports}}.security_groups.{{@key}}">
+              {{#if GroupName}}
+                {{GroupName}} (<a href="javascript:findAndShowEC2Object('regions.vpcs.security_groups', '{{GroupId}}')">{{GroupId}}</a>)
+              {{else}}
+                {{GroupId}} (AWS account ID {{UserId}})
+              {{/if}}
+            </span>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script>
+        Handlebars.registerPartial("ec2_grants", $("#ec2_grants\\.partial").html());
+    </script>
+
+
+  <!-- Generic partial for resource -->
+  <script id="details.partial" type="text/x-handlebars-template">
+    <div id="services.{{service_name}}.{{resource_type}}.details">
+      {{#each items}}
+        <div class="list-group" id="services.{{../service_name}}.{{../resource_type}}.{{@key}}.view">
+          {{> (lookup .. 'partial_name') service_name = ../service_name resource_type = ../resource_type resource_key = @key resource = this}}
+        </div>
+      {{/each}}
+    </div>
+  </script>
+  <script>
+    Handlebars.registerPartial("details", $("#details\\.partial").html());
+  </script>
+
+<!-- SQL Database partial -->
+<script id="services.sqldatabase.servers.partial" type="text/x-handlebars-template">
+    <div class="list-group-item active">
+        <h4 class="list-group-item-heading">{{name}}</h4>
+    </div>
+
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">Information</h4>
+        <div class="list-group-item-text item-margin">SQL Server Name: <span id="sqldatabase.servers.{{@key}}.name">{{name}}</span></div>
+        <div class="list-group-item-text item-margin">Azure Active Directory admin configured: <span id="sqldatabase.servers.{{@key}}.ad_admin_configured">{{ad_admin_configured}}</span></div>
+    </div>
+
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">SQL Databases</h4>
+        <div class="list-group-item-text item-margin">
+        {{#each databases}}
+            {{@key}}
+            <div class="list-group-item-text item-margin">
+                <div class="list-group-item-text item-margin">Auditing: <span id="sqldatabase.servers.{{@../key}}.databases.{{@key}}.auditing_enabled">{{ convert_bool_to_enabled auditing_enabled }}</span></div>
+                <div class="list-group-item-text item-margin">Threat detection: <span id="sqldatabase.servers.{{@../key}}.databases.{{@key}}.threat_detection_enabled">{{ convert_bool_to_enabled threat_detection_enabled }}</span></div>
+                <div class="list-group-item-text item-margin">Transparent data encryption: <span id="sqldatabase.servers.{{@../key}}.databases.{{@key}}.transparent_data_encryption_enabled">{{ convert_bool_to_enabled transparent_data_encryption_enabled }}</span></div>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+
+</script>
+
+<script>
+    Handlebars.registerPartial("services.sqldatabase.servers", $("#services\\.sqldatabase\\.servers\\.partial").html());
+</script>
+
+<!-- Single SQL Database template -->
+<script id="single_sqldatabase_servers-template" type="text/x-handlebars-template">
+    <div style="text-align: right; padding-right: 10px; text-weight: bold;"><a href="javascript:hidePopup()">X</a></div>
+    {{> services.sqldatabase.servers}}
+</script>
+<script>
+    var single_sqldatabase_servers_template = Handlebars.compile($("#single_sqldatabase_servers-template").html());
+</script><!-- Storage Accounts partial -->
+<script id="services.storageaccounts.storage_accounts.partial" type="text/x-handlebars-template">
+    <div class="list-group-item active">
+        <h4 class="list-group-item-heading">{{name}}</h4>
+    </div>
+
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">Information</h4>
+        <div class="list-group-item-text item-margin">Storage Account Name: <span id="storageaccounts.storage_accounts.{{@key}}.name">{{name}}</span></div>
+        <div class="list-group-item-text item-margin">Public traffic: <span id="storageaccounts.storage_accounts.{{@key}}.public_traffic_allowed">{{ convert_bool_to_enabled public_traffic_allowed }}</span></div>
+        <div class="list-group-item-text item-margin">Access Key Rotated: <span id="monitor.activity_logs.storage_accounts.{{@key}}.access_keys_rotated">{{ get_value_at 'services' 'monitor' 'activity_logs' 'storage_accounts' @key 'access_keys_rotated' }}</span></div>
+    </div>
+
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">Blob Containers</h4>
+        <div class="list-group-item-text item-margin">
+        {{#each blob_containers}}
+            {{@key}}
+            <div class="list-group-item-text item-margin">
+            Public access: <span id="storageaccounts.storage_accounts.{{@../key}}.blob_containers.{{@key}}.public_access_allowed">{{ convert_bool_to_enabled public_access_allowed }}</span>
+            </div>
+        {{/each}}
+        </div>
+    </div>
+
+</script>
+
+<script>
+    Handlebars.registerPartial("services.storageaccounts.storage_accounts", $("#services\\.storageaccounts\\.storage_accounts\\.partial").html());
+</script>
+
+<!-- Single Storage Accounts template -->
+<script id="single_storageaccounts_storage_accounts-template" type="text/x-handlebars-template">
+    <div style="text-align: right; padding-right: 10px; text-weight: bold;"><a href="javascript:hidePopup()">X</a></div>
+    {{> services.storageaccounts.storage_accounts}}
+</script>
+<script>
+    var single_storageaccounts_storage_accounts_template = Handlebars.compile($("#single_storageaccounts_storage_accounts-template").html());
+</script><!-- Template for network attack surface -->
+<script id="service_groups.database.summaries.external_attack_surface.details.template" type="text/x-handlebars-template">
+  {{> attack_surface service = 'Database'}}
+</script>
+
+<!-- Template for network attack surface -->
+<script id="attack_surface.partial" type="text/x-handlebars-template">
+  <div class="list-group" id="services.{{service}}.attack_surface.details">
+    <div class="list-group" id="services.{{service}}.attack_surface.view">
+       <div class="list-group" id="{{service}}_attack_surfaces.list">
+         <div class="row list-group-item active">
+           <div class="col-sm-6"><h4>Public IP/DNS</h4></div>
+           <div class="col-sm-6"><h4>Open ports</h4></div>
+         </div>
+         {{#each items}}
+           <div class="row list-group-item">
+             <div class="col-sm-6">{{@key}}</div>
+             <div class="col-sm-6">
+               <ul>
+               {{#each protocols ip = @key}}
+                 <li class="list-group-item-text">{{@key}}</li>
+                 <ul>
+                 {{#each ports}}
+                   <li>{{@key}}</li>
+                   {{> ip_grants items = cidrs}}
+                 {{/each}}
+                 </ul>
+               {{/each}}
+               </ul>
+             </div>
+           </div>
+         {{/each}}
+       </div>
+    </div>
+  </div>
+</script>
+<script>
+    Handlebars.registerPartial("attack_surface", $("#attack_surface\\.partial").html());
+</script>
+
+
+
+<!-- Template for network attack surface -->
+<script id="service_groups.compute.summaries.external_attack_surface.details.template" type="text/x-handlebars-template">
+  {{> attack_surface service = 'Compute'}}
+</script>
+
+
+
+            <!-- Please wait -->
+            <div class="row" id="please_wait.details">
+                <div class="list-group">
+                    <div class="row list-group-item active">
+                        Please wait
+                    </div>
+                    <div class="row list-group-item">
+                        <p>&nbsp;</p>
+                        <p>Loading data, this may take a while...</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About-run dashboard -->
+            <script id="last_run.details.template" type="text/x-handlebars-template">
+                <h4>
+                    <div class="row std-size" id="last_run.details">
+                        <div class="list-group-item active">
+                            <div class="list-group-item-heading">Dashboard</div>
+                        </div>
+                        <div class="accordion" id="last_run">
+                            <a class="card">
+                                <div class="card-header">Service
+                                    <div class="col-sm-2 float-right" style="text-align: center">Checks</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">Findings</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">Rules</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">Resources</div>
+                                </div>
+                            </a>
+                            {{#each items.summary}}
+                            <a href="#services.{{@key}}.findings" class="card" style="color: black !important">
+                                <div class="finding-title card-header">
+                                    <i class="fa finding-badge finding-badge-{{dashboard_color max_level checked_items flagged_items}}"></i>
+                                    {{make_title @key}}
+                                    <div class="col-sm-2 float-right" style="text-align: center">{{checked_items}}</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">{{flagged_items}}</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">{{rules_count}}</div>
+                                    <div class="col-sm-2 float-right" style="text-align: center">{{resources_count}}</div>
+                                </div>
+                            </a>
+                            {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </h4>
+            </script>
+
+            <!-- Service-specific dashboards -->
+            <div class="row">
+                <div class="col-sm-12" id="services.id.findings.details">
+                    <script id="services.id.findings.details.template" type="text/x-handlebars-template">
+                        {{#each items}}
+                        {{> dashboard service_name = @key}}
+                        {{/each}}
+                    </script>
+                </div>
+            </div>
+
+        </div> <!-- /container -->
+
+        <!-- Include all AWS services configs -->
+        <script src="scoutsuite-results/scoutsuite_results-azure.js"></script>
+        <script src="scoutsuite-results/scoutsuite_exceptions-azure.js"></script>
+
+        <!-- Bootstrap core JavaScript, placed at the end of the document so the pages load faster -->
+        <script src="inc-bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Display dashbord -->
+        <script>load_metadata();</script>
+
+        <footer>
+            <div class="row" id="footer">
+                <div>
+                    <p>Scout Suite is an open-source tool released by <a href="https://www.nccgroup.trust" rel="author" target="_blank">NCC Group</a>
+                        <img src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD9/f4B09HuQqWf3oFfU8THQDO46jUotPBMP7zbhn/Tn9HO7kL19fsO////AP///wD///8A////AP///wDs6/gVnJfbhz0yt+MZCqr3HQ2s/SMTr/8mFq//IxOv/yITrvhOQr7Vo53dg+vq9xz///8A////AP///wDx8PoYfXPPkzIltPMYCan/Khuw/ykasP8oGbD/KBmw/ycXsP8kFK7/GQqr/xkLq/+EfdGc6+r3HP///wD8/P0Gsq3ifA4KpfUXB6v/Jxmw/ygZsP8mF6//KBiw/ygZsP8oGrD/Khuw/yscsf8cD63/DwSn/5yW2o35+PwK4uD0PlVLwdsWC6n4RDi53ko+vN1OQ77eNSe07hcFqv8kFK7/Khux/ygZsP8oGbD/Jxew/xYIqv8tKLHt0M3tSqWg3ZcuH7H4Y1nGx4N90at8c82xjITUmb665meVjdijHxCt9R4Prf8mF6//HAus/y0fse5ENrrnPDi31amk33lhVcTTHw+r/VtRwtmFftKtcmnLx0o9vNd1bMuz9/f8Cufl9jJEObnXKx6w6V9Txce1sORwwb3oVtDN7Tzg3fMrQja56R0MrP8tH7L6U0e/2XtzzraSi9aR19XwSOrp9yvBvehi7+75EsfG6jjh3/Qz7+75H9bT7zi7t+ZS5eP1KlJIwN4aCqv/JBWu/ycXrvopG6/1JRmv9T81uefQze1ajIXUo1NJwMnm5vUZ8/L6GG1pyLM7LrbwJxiv/6Wg3Zd4bs21Fgep+ikbsf8nGa//KBiv/ykar/8TA6n/SDy61/j3/BJ9ds+1jYbVu+Ph9DV+fs6BfnbPkYmA04nIxOpMrqngfh8PrfcmF7D/KRuw/ygZsP8pGrD/JRav/xcIq/+OhtWb8vH6FcC851fp6Pci////AP///wD///8A////AOfl9jJLP73VFgiq/yoasf8pGrD/KBmw/yscsf8lFa//Fgeq/393z6fk4vQq29nxM9TR7kjV0+9E6+r3Hv39/gH+/f4BsazidRsOq/gXCKr/KRuw/yobsP8oGbD/Khux/yYXr/8eD63/Rzu722Vbxr9DPbnZV0/A0MG96Fb8/P0D////APTz+xKgmduJIxWu9xMEqP8kFa7/KBiw/ygZsP8pGrD/KRmw/x8Prf8QAqj/EQqo+Gxlya3X1fAz/f3+Af///wD///8A9fT7Eru35nBXTcHQIhKt+CERrf8kFK//Hg6r/yERrPorG6/zW1DC0KKb3Hz08/sO////AP///wD///8A////AP///wD5+fwK4+H1Lq+p4XFoXse5Sj283lxSw9N4b82lq6Tfcd7c8jj///8A////AP///wD///8A+B8AAOAHAADAAwAAwAEAAIABAAACAQAAAY8AAAP/AAABMAAAAJEAAIB/AACAPwAAwAMAAMADAADwDwAA/D8AAA==" rel="icon" type="image/x-icon" alt="Red dot" /></p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Used by showPopup -->
+        <div id="modal-container" class="modal fade" tabindex="-1" role="dialog"></div>
+
+        <!--Always put footer at end of page-->
+        <script>
+            $(document).ready(function() {
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 0 + (docHeight - footerTop) + 'px');
+            });
+        </script>
+    </div>
+</body>
+
+</html>

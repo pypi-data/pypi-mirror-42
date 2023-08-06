@@ -1,0 +1,13 @@
+{
+    "dashboard_name": "Network",
+    "arg_names": [ "Protocol (ex: SSH, RDP, etc.)", "Protocol's port"],
+    "key": "network-security-groups-external-inbound-_ARG_0_",
+    "description": "_ARG_0_ inbound access allowed by security group",
+    "rationale": "You should not permit _ARG_0_(port _ARG_1_) inbound access to a network security group.",
+    "path": "network.network_security_groups.id",
+    "display_path": "network.network_security_groups.id",
+    "conditions": [ "and",
+        ["network.network_security_groups.id.exposed_ports", "containAtLeastOneOf", "_ARG_1_"]
+    ],
+    "id_suffix": "security_groups_external_inbound__ARG_0_"
+}
