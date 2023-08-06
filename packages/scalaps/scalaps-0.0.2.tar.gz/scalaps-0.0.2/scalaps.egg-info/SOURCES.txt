@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+scalaps/__init__.py
+scalaps.egg-info/PKG-INFO
+scalaps.egg-info/SOURCES.txt
+scalaps.egg-info/dependency_links.txt
+scalaps.egg-info/top_level.txt
