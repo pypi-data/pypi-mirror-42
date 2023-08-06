@@ -1,0 +1,13 @@
+flying_ioc/__init__.py,sha256=lPAf1yZQw8fR38e6m0m8Syby0QPCkTYw9c0eXHwtweQ,145
+flying_ioc/base_container.py,sha256=C2BFjpHufkdqSA3MPZNktaM_nlVwnoA3TiXIze2a1XE,532
+flying_ioc/class_container.py,sha256=-7vPODVT7bVIMRiyKzWb3GE6Hx7-HlXdrEw1RzfRI2E,3315
+flying_ioc/factory_container.py,sha256=g6mPIf7aCAEwbcxVVlP7wBURJDBNrUZpAASAz9daYhY,1022
+flying_ioc/ioc_decorator.py,sha256=RGThVsq9_lI0NU-U_mRhQ9fA0Dro371TB9PaR6aNZLs,364
+flying_ioc/ioc_manager.py,sha256=xIE6rnriYaLhgx3USoO_N7tsaeUUVbJZyhpAVm_cY6o,1738
+flying_ioc/singleton_container.py,sha256=7uQbwNNZusY77stHxLt1ArzUvH2_RMCzCB_LW1Onw6w,580
+flying_ioc/value_container.py,sha256=6Ote3_LB4S4fzX9IwrIRQz9tUnmBqdBZqWjbDnMj0xQ,315
+flying_ioc-1.0.3.dist-info/LICENSE,sha256=G7AynNMLB-BsRhCCxPn1M1d4Mb8lnjNqB_EN9gEV0Sw,1065
+flying_ioc-1.0.3.dist-info/METADATA,sha256=kqIqTWiRpJtwKxUuik_oYUpY6JlZOU3G2XzfRPGShGw,8412
+flying_ioc-1.0.3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+flying_ioc-1.0.3.dist-info/top_level.txt,sha256=SU22zcR4PopS1GPgl16Gqd3nDHO24Gp-ZCqWqfbn29I,11
+flying_ioc-1.0.3.dist-info/RECORD,,
