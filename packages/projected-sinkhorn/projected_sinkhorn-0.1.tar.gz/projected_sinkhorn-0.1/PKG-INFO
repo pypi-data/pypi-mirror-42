@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: projected_sinkhorn
+Version: 0.1
+Summary: A library implementing the projected sinkhorn iteration for PyTorch
+Home-page: https://github.com/locuslab/projected_sinkhorn
+Author: Eric Wong
+Author-email: ericwong@cs.cmu.edu
+License: MIT
+Description: UNKNOWN
+Platform: any

@@ -1,0 +1,10 @@
+README.md
+setup.py
+projected_sinkhorn/__init__.py
+projected_sinkhorn/lambertw.py
+projected_sinkhorn/projected_sinkhorn.py
+projected_sinkhorn.egg-info/PKG-INFO
+projected_sinkhorn.egg-info/SOURCES.txt
+projected_sinkhorn.egg-info/dependency_links.txt
+projected_sinkhorn.egg-info/requires.txt
+projected_sinkhorn.egg-info/top_level.txt
