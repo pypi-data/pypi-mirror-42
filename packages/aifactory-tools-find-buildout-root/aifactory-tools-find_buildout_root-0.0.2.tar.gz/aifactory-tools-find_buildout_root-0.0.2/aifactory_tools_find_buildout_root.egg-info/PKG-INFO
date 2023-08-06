@@ -1,0 +1,17 @@
+Metadata-Version: 1.2
+Name: aifactory-tools-find-buildout-root
+Version: 0.0.2
+Summary: Simple utility to search buildout root directory
+Home-page: UNKNOWN
+Maintainer: Eugene Krokhalev
+Maintainer-email: rutsh@mlworks.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
