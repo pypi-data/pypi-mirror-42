@@ -1,0 +1,17 @@
+Metadata-Version: 1.2
+Name: gradient-statsd
+Version: 0.1
+Summary: Wrapper around the DogStatsd client
+Home-page: https://www.paperspace.com
+Author: Paperspace
+Author-email: info@paperspace.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7, >=3.4
