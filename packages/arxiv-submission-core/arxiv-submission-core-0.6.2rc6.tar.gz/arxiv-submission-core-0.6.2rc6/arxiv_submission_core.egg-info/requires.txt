@@ -1,0 +1,12 @@
+arxiv-base
+arxiv-auth
+flask
+mysqlclient
+bleach
+unidecode
+python-dateutil
+sqlalchemy
+dataclasses
+celery==4.1.0
+kombu==4.1.0
+redis==2.10.6
