@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: scrapy-plus
+Version: 1.0
+Summary: scrapy 常用爬网必备工具包
+Home-page: http://www.github.com/dotnetage/scrapy_plus
+Author: Ray
+Author-email: csharp2002@hotmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: scrapy,crawl,redis,tor
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
