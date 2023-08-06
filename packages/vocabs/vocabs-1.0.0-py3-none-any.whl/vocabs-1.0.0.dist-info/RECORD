@@ -1,0 +1,15 @@
+vocab/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vocab/lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vocab/lib/app.py,sha256=BMC6dvEy8rB2w-kO0FfvEbSChQYhzV78qUndJFOWDOk,11526
+vocab/lib/config.py,sha256=K_JnYC0l6wv9Olr16KwqfzLD9JlDm7vExAlRIGOK4fM,284
+vocab/lib/clilib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vocab/lib/clilib/charDef.py,sha256=ye66-7WvEChQq1NFr71RN1Uj3bTiuwhNy1D4oHHPtQI,892
+vocab/lib/clilib/client.py,sha256=gRabYEPNfjLBCEdmSA2MG9IOtpsMtdxe7uKLQfYfHSc,2066
+vocab/lib/clilib/utils.py,sha256=Hf7bcViDry6ebm6N3Hg2wpuX6MnE6OiON8AUYYY6XXk,2531
+vocabs-1.0.0.data/scripts/vocab,sha256=IVVtlV_7gw3Y17XYy5TxdWQzHO4EQCOm-8flgKcIDaE,1224
+vocabs-1.0.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+vocabs-1.0.0.dist-info/METADATA,sha256=Zdnuo5B0dalyFRgXKC9RiEFSGQUuNnHO2Ol03L2fO3Q,306
+vocabs-1.0.0.dist-info/RECORD,,
+vocabs-1.0.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+vocabs-1.0.0.dist-info/metadata.json,sha256=xuqo26Kd1O8EVRmK7DkZTkxIv9zQ86opRz2psyFbAWQ,481
+vocabs-1.0.0.dist-info/top_level.txt,sha256=nl6QECxplFXpA5_5AyhOBok5TdNFuxFFZwbwh5hNLrc,6

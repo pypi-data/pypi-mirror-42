@@ -1,0 +1,35 @@
+#!python
+
+from vocab.lib.app import App
+from argparse import ArgumentParser
+
+def main():
+    parser = ArgumentParser()
+    exclusive_args = parser.add_mutually_exclusive_group(required = True)
+    exclusive_args.add_argument("-m", "--mode", choices = ["edit", "query", "interactive", "dict"], help = "Select app mode.")
+    exclusive_args.add_argument("-r", "--reset", action = "store_true", help = "Reset dictionary.")
+    exclusive_args.add_argument("-f", "--file", help = "Load words from word list.")
+    exclusive_args.add_argument("-c", "--count", action = "store_true", help = "Count total words in local dictionary.")
+    exclusive_args.add_argument("-l", "--lucky", action = "store_true", help = "Word of the day.")
+    exclusive_args.add_argument("-t", "--trend", action = "store_true", help = "Trending words.")
+    args = parser.parse_args()
+
+    app = App()
+
+    if args.reset:
+        app.guard()
+    elif args.count:
+        app.wordCount()
+    elif args.lucky:
+        app.feelingLucky()
+    elif args.trend:
+        app.trendingWords()
+    elif args.file:
+        app.loadWordList(wordlist = args.file)
+    else:
+        app.launch(mode = args.mode)
+    
+    app.end()
+
+if __name__ == "__main__":
+    main()
