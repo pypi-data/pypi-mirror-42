@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# A restful HTTP API for ansible
+# Base on ansible-runner and sanic
+# Github <https://github.com/lfbear/ansible-api>
+# Author: lfbear
+
+from __future__ import (absolute_import, division, print_function)
+
+__metaclass__ = type
+
+import sys
+import os
+import getopt
+
+from ansible_api.tool import Tool
+from ansible_api.config import Config
+from ansible_api.server import Server
+from ansible_api import __version__
+
+if __name__ == "__main__":
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], 'c:dV')
+    except getopt.GetoptError:
+        print(
+            '%s -c [Configfile, Optional] -d [Daemon Mode, Optional]' % sys.argv[0])
+        sys.exit(1)
+
+    daemon_mode = False
+
+    for opt in opts:
+        if opt[0] == '-V':
+            print("Ansible API - Version %s" % __version__)
+            exit(0)
+        if opt[0] == '-c' and os.path.isfile(opt[1]):
+            Config.cfg_path = opt[1]
+            print('Info: Load config file from %s' % Config.cfg_path)
+        if opt[0] == '-d':
+            daemon_mode = True
+
+    print('\033[1;32mAnsible API is running at', end=' ')
+    if daemon_mode:
+        log_path = Config.get('log_path')
+        print('Daemon Mode')
+    else:
+        log_path = None
+        print('Debug Mode')
+    print('\033[0m')
+
+    Tool.init_logger(log_path)
+    Tool.LOGGER.info(
+        ' '.join(['Ansible API', 'Start...', '(', 'PID =', str(os.getpid()), ')']))
+
+    try:
+        Server(daemon_mode)
+    except Exception as e:
+        Tool.LOGGER.exception(e)

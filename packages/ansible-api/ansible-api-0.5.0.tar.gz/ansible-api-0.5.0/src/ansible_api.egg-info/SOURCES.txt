@@ -1,0 +1,16 @@
+README.md
+setup.py
+bin/ansible-api
+src/ansible_api/__init__.py
+src/ansible_api/callback.py
+src/ansible_api/config.py
+src/ansible_api/controller.py
+src/ansible_api/realtimemsg.py
+src/ansible_api/report.py
+src/ansible_api/server.py
+src/ansible_api/tool.py
+src/ansible_api.egg-info/PKG-INFO
+src/ansible_api.egg-info/SOURCES.txt
+src/ansible_api.egg-info/dependency_links.txt
+src/ansible_api.egg-info/requires.txt
+src/ansible_api.egg-info/top_level.txt
