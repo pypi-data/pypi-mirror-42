@@ -1,0 +1,3 @@
+[console_scripts]
+eazyserver = eazyserver.cli:cli
+
