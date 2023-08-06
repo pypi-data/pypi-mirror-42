@@ -1,0 +1,6 @@
+simdjson/__init__.py,sha256=HuJu0vNgAUmYa_HbpzjIuUyW2fU2dFe-Z8BRoUFdoR8,168
+simdjson/csimdjson.cpython-37m-x86_64-linux-gnu.so,sha256=Fdi220Ck6T0T7P0Zl9HiCZftuvR580nDhOsh18gNY3w,3224424
+pysimdjson-1.4.1.dist-info/METADATA,sha256=38BjyeQ8UaLQ19dyWi-4ZdShrXt8U2jLoMuzj7bVJ50,5831
+pysimdjson-1.4.1.dist-info/top_level.txt,sha256=T7l7dA-oP_yWttVpAyRoVM7c_mq_Tx0QPVx9oeeaWO4,9
+pysimdjson-1.4.1.dist-info/RECORD,,
+pysimdjson-1.4.1.dist-info/WHEEL,sha256=AhV6RMqZ2IDfreRJKo44QWYxYeP-0Jr0bezzBLQ1eog,109
