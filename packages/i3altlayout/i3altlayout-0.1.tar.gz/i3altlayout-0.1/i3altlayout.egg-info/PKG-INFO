@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: i3altlayout
+Version: 0.1
+Summary: i3wm automatic real estate
+Home-page: https://github.com/deadc0de6/i3altlayout
+Author: deadc0de6
+Author-email: deadc0de6@foo.bar
+License: GPLv3
+Download-URL: https://github.com/deadc0de6/i3altlayout/archive/v0.1.tar.gz
+Description: |Build Status| |License: GPL v3|
+        
+        I3ALTLAYOUT
+        ===========
+        
+        I3altlayout allows to handle more efficiently your screen real estate in
+        i3wm by auto-splitting windows on their longest side.
+        
+        If you open 4 windows, your workspace would look
+        
+        ::
+        
+                        like this                               instead of this
+        
+           +-----------------------------------+        +---------------------------------+
+           | +--------------+ +--------------+ |        | +-----+ +-----+ +-----+ +-----+ |
+           | |              | |              | |        | |     | |     | |     | |     | |
+           | |              | |      2       | |        | |     | |     | |     | |     | |
+           | |              | |              | |        | |     | |     | |     | |     | |
+           | |      1       | +--------------+ |        | |  1  | |  2  | |  3  | |  4  | |
+           | |              | +--------------+ |        | |     | |     | |     | |     | |
+           | |              | |      ||      | |        | |     | |     | |     | |     | |
+           | |              | |   3  ||  4   | |        | |     | |     | |     | |     | |
+           | +--------------+ +--------------+ |        | +-----+ +-----+ +-----+ +-----+ |
+           +-----------------------------------+        +---------------------------------+
+        
+        Installation
+        ============
+        
+        Install the dependencies:
+        
+        .. code:: bash
+        
+           $ sudo pip3 install -r requirements.txt
+        
+        Then either copy the script ``i3altlayout/i3altlayout.py`` in your PATH
+        or fully install the package with
+        
+        .. code:: bash
+        
+           $ sudo python3 setup.py install
+        
+        Usage
+        =====
+        
+        Start the script directly with i3 by adding it to your config file
+        (usually under ``~/.config/i3/config``):
+        
+        If installed with ``setup.py``
+        
+        ::
+        
+           exec --no-startup-id "i3altlayout"
+        
+        If installed as a standalone script
+        
+        ::
+        
+           exec --no-startup-id "i3altlayout.py"
+        
+        Related projects
+        ================
+        
+        This project is similar to
+        `i3-alternating-layout <https://github.com/olemartinorg/i3-alternating-layout>`__
+        but uses the `i3ipc library <https://github.com/acrisci/i3ipc-python>`__
+        instead of the unmaintained `i3-py
+        module <https://github.com/ziberna/i3-py>`__.
+        
+        Contribution
+        ============
+        
+        If you are having trouble installing or using i3altlayout, open an
+        issue.
+        
+        If you want to contribute, feel free to do a PR (please follow PEP8).
+        
+        License
+        =======
+        
+        This project is licensed under the terms of the GPLv3 license.
+        
+        .. |Build Status| image:: https://travis-ci.org/deadc0de6/i3altlayout.svg?branch=master
+           :target: https://travis-ci.org/deadc0de6/i3altlayout
+        .. |License: GPL v3| image:: https://img.shields.io/badge/License-GPL%20v3-blue.svg
+           :target: http://www.gnu.org/licenses/gpl-3.0
+        
+Keywords: i3wm
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Provides-Extra: test
+Provides-Extra: dev
