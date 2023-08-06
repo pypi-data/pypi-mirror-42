@@ -1,0 +1,295 @@
+#!/usr/bin/env python3
+
+# vim:set tabstop=8 shiftwidth=4 expandtab:
+# kate: syntax python; space-indent on; indent-width 4;
+
+# Copyright (c) 2019 Jakob Meng, <jakobmeng@web.de>
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+# NOTE: for full functionality, e.g. delay shutdown until all running
+#       instance have finished, systemd v183 or higher is required!
+
+import argparse
+import sys
+import datetime
+import signal
+import subprocess
+import logging
+import os
+from threading import Event, Thread
+import dbus
+from dbus.mainloop.glib import DBusGMainLoop
+from pywana.systemd import LoginDConnection, InhibitLock, PrepareForShutdownMonitor
+from pywana.signal import SignalHandler
+from pywana.process import PidFile, PidFileMonitor, run_live, list_processes
+from pywana.os import list_filesystems
+from pywana.snapper import backup_snapshot
+import shlex
+from contextlib import ExitStack
+
+def initial_program_setup():
+    global VERBOSITY
+    log_level = None
+    if VERBOSITY == 0:
+        log_level = logging.WARNING
+    elif VERBOSITY == 1:
+        log_level = logging.INFO
+    elif VERBOSITY >= 2:
+        log_level = logging.DEBUG
+    
+    logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=log_level)
+    
+    dbus.mainloop.glib.threads_init()
+    DBusGMainLoop(set_as_default=True)
+
+class Commands(object):
+    @staticmethod
+    def is_alive(args : argparse.Namespace):
+        logging.debug('is_alive cmd')
+        
+        running = list_processes(args.names)
+        if running:
+            sys.exit('Process(es) {} still alive.'.format(', '.join(x.name() for x in running)))
+        else:
+            sys.exit(0)
+    
+    @staticmethod
+    def backup_tar(args : argparse.Namespace):
+        logging.debug('backup tar cmd')
+        
+        archive = args.archive
+        files = args.files
+        no_preserve = args.no_preserve
+        no_compress = args.no_compress
+        
+        # TODO
+        raise
+
+    @staticmethod
+    def backup_snapper(args : argparse.Namespace):
+        logging.debug('backup snapper cmd')
+        
+        src = args.src
+        dest = args.dest
+        tag = args.tag
+        include = args.include
+        exclude = args.exclude
+        dry_run = args.dry_run
+        overwrite = args.overwrite
+        
+        backup_snapshot(src, dest, tag, include, exclude, dry_run, overwrite)
+
+    @staticmethod
+    def wait(args : argparse.Namespace):
+        logging.debug('wait cmd')
+        
+        logging.debug('Waiting until all instances of this script have stopped')
+        
+        with ExitStack() if not args.delay_shutdown else InhibitLock():
+            PidFileMonitor().wait_all()
+        
+        logging.debug('All processes have been stopped')
+    
+    @staticmethod
+    def exec(args : argparse.Namespace):
+        logging.debug('exec cmd')
+        
+        cmd = [args.cmd]
+        if args.cmd_args is not None:
+            cmd.extend(args.cmd_args)
+        
+        def run_in_shell():
+            shell_cmd = ' '.join(shlex.quote(x) for x in cmd)
+            
+            def signal_handler(signum, frame):
+                logging.debug('SIGTERM or SIGHUP received and ignored.')
+            
+            with ExitStack() if not args.ignore_terminate else SignalHandler([signal.SIGTERM,signal.SIGHUP], signal_handler):
+                p = run_live(shell_cmd, shell=True)
+            
+            assert(type(p) is subprocess.CompletedProcess)
+            sys.exit(p.returncode)
+        
+        if not args.on_terminate and not args.on_shutdown:
+            with ExitStack() as stack:
+                if args.delay_shutdown: 
+                    stack.enter_context(InhibitLock())
+                if args.use_pid: 
+                    stack.enter_context(PidFile())
+                
+                run_in_shell()
+        
+        elif args.on_terminate:
+            with ExitStack() as stack:
+                if args.delay_shutdown: 
+                    stack.enter_context(InhibitLock())
+                if args.use_pid: 
+                    stack.enter_context(PidFile())
+                
+                resume = Event()
+                def signal_handler(signum, frame):
+                    logging.debug('SIGTERM or SIGHUP received.')
+                    resume.set()
+                
+                is_keyboard_interrupt = False
+                with SignalHandler([signal.SIGTERM,signal.SIGHUP], signal_handler):
+                    try:
+                        resume.wait()
+                    except KeyboardInterrupt as e:
+                        logging.exception('Waiting for terminate aborted')
+                        is_keyboard_interrupt = True
+                
+                if not is_keyboard_interrupt:
+                    run_in_shell()
+        
+        elif args.on_shutdown:
+            with ExitStack() as stack:
+                stack.enter_context(InhibitLock()) # always inhibit lock even if args.delay_shutdown is not set
+                if args.use_pid:
+                    stack.enter_context(PidFile())
+                
+                is_keyboard_interrupt = False
+                is_abort = Event()
+                resume = Event()
+                
+                def prepare_for_shutdown_handler():
+                    resume.set()
+                
+                monitor = PrepareForShutdownMonitor(prepare_for_shutdown_handler)
+                
+                logind_props = LoginDConnection().get_properties()
+                logging.debug('systemd-logind::InhibitDelayMaxUSec  := {}'.format(logind_props.inhibit_delay_max_usec))
+                logging.debug('systemd-logind::PreparingForShutdown := {}'.format(logind_props.preparing_for_shutdown))
+                logging.debug('systemd-logind::KillUserProcesses    := {}'.format(logind_props.kill_user_processes))
+                
+                def watch_monitor():
+                    monitor.join()
+                    if monitor.is_failed:
+                        is_abort.set()
+                        resume.set()
+                
+                watchdog = Thread(target=watch_monitor)
+                
+                def stop_monitor():
+                    # Printing, e.g. by logging to stderr or stdout is not safe in signal handlers!
+                    # Ref.: https://bugs.python.org/issue24283
+                    is_abort.set()
+                    resume.set()
+                
+                with SignalHandler([signal.SIGTERM,signal.SIGHUP], lambda signum, frame: stop_monitor()):
+                    monitor.start()
+                    watchdog.start()
+                    try:
+                        resume.wait()
+                    except KeyboardInterrupt as e:
+                        logging.exception('Waiting for shutdown aborted')
+                        is_keyboard_interrupt = True
+                        is_abort.set()
+                    
+                    monitor.stop()
+                    # watchdog stops when monitor stops
+                    watchdog.join()
+                
+                if is_abort.is_set():
+                    if not monitor.is_failed and not is_keyboard_interrupt:
+                        logging.debug('SIGTERM or SIGHUP received')
+                    elif monitor.is_failed and type(monitor.error) is not KeyboardInterrupt:
+                        logging.debug(str(monitor.error))
+                    else:
+                        # KeyboardInterrupt
+                        pass
+                else:
+                    logging.debug('Preparing for shutdown')
+                    run_in_shell()
+        else:
+            assert(False)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-v', '--verbose', action='count', help='Increase logging verbosity. Can be used multiple times.')
+    parser.set_defaults(func=lambda args: parser.print_help())
+
+    subparsers = parser.add_subparsers()
+    
+    # backup
+    parser_backup = subparsers.add_parser('backup', help='Do backups in several ways')
+    parser_backup_subparsers = parser_backup.add_subparsers()
+    
+    # backup tar
+    parser_backup_tar = parser_backup_subparsers.add_parser('tar', help='Store files and folders in tar archives')
+    parser_backup_tar.set_defaults(func=Commands.backup_tar)
+    parser_backup_tar.add_argument('archive', metavar='ARCHIVE', help='tar archive name')
+    parser_backup_tar.add_argument('files', metavar='FILE', nargs='+', help='file(s) and folder(s) to archive')
+    parser_backup_tar.add_argument('--no-preserve', action='store_false',
+                                   help='do not preserve permissions, acls, xattrs, selinux, ...')
+    parser_backup_tar.add_argument('--no-compress', action='store_false',
+                                   help='do not compress archive')
+    
+    
+    # backup snapper
+    parser_backup_snapper = parser_backup_subparsers.add_parser('snapper', help='Rsync snaphots made by snapper to folder')
+    parser_backup_snapper.set_defaults(func=Commands.backup_snapper)
+    parser_backup_snapper.add_argument('src', metavar='SRC',
+                                       help='mountpoint of filesystem which is backed up')
+    parser_backup_snapper.add_argument('dest', metavar='DEST',
+                                       help='directory where backup will be created')
+    parser_backup_snapper.add_argument('--tag',
+                                       help='tag used as prefix for backup name, defaults to uuid of source filesystem')
+    parser_backup_snapper.add_argument('--include', action='append',
+                                       help='include path from backup, e.g. \'--include /home\' will include all homes')
+    parser_backup_snapper.add_argument('--exclude', action='append',
+                                       help='exclude path from backup, e.g. \'--exclude /home\' will exclude all homes')
+    parser_backup_snapper.add_argument('--dry-run', action='store_true',
+                                       help='perform a trial run with no changes made')
+    parser_backup_snapper.add_argument('--overwrite', action='store_true',
+                                       help='overwrite if a directory with backup name already exists')
+    
+    # wait
+    parser_wait = subparsers.add_parser('wait', help='Block until all instances of this script have been stopped')
+    parser_wait.set_defaults(func=Commands.wait)
+    parser_wait.add_argument('--delay-shutdown', action='store_true', help='also delay shutdown')
+    
+    # is_alive
+    parser_is_alive = subparsers.add_parser('is_alive', help='Returns if process(es) matching name(s) is still running')
+    parser_is_alive.set_defaults(func=Commands.is_alive)
+    parser_is_alive.add_argument('names', metavar='NAME', nargs='+', help='process name (as a regular expression) to look for')
+    
+    # exec
+    parser_exec = subparsers.add_parser('exec', help='Execute a command')
+    parser_exec.set_defaults(func=Commands.exec)
+    parser_exec.add_argument('cmd', metavar='CMD', help='command that\'ll be executed on shutdown')
+    parser_exec.add_argument('cmd_args', metavar='...', nargs=argparse.REMAINDER,
+                             help='additional arguments passed to command')
+    parser_exec.add_argument('--ignore-terminate', action='store_true', help='ignore SIGTERM / SIGHUP')
+    parser_exec.add_argument('--delay-shutdown', action='store_true', help='delay shutdown until command completion')
+    parser_exec.add_argument('--use-pid', action='store_true', help='create pid file and remove it afterwards')
+    parser_exec_delay = parser_exec.add_mutually_exclusive_group()
+    parser_exec_delay.add_argument('--on-shutdown', action='store_true', help='delay execution until shutdown')
+    parser_exec_delay.add_argument('--on-terminate', action='store_true', help='delay execution until SIGTERM / SIGHUP')
+    
+    
+    args = parser.parse_args()
+    
+    if args.verbose:
+        VERBOSITY = args.verbose
+    else:
+        VERBOSITY = 0
+
+    initial_program_setup()
+    
+    if args.func:
+        args.func(args)
+    

@@ -1,0 +1,2 @@
+psutil>=5.0.1
+dbus-python>=1.2.4
