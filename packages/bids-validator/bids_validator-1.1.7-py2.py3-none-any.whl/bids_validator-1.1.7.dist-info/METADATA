@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: bids-validator
+Version: 1.1.7
+Summary: Validator for the Brain Imaging Data Structure
+Home-page: https://github.com/bids-standard/bids-validator
+Author: PyBIDS developers
+Author-email: bids-discussion@googlegroups.com
+Maintainer: BIDS Developers
+Maintainer-email: bids-discussion@googlegroups.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+
+UNKNOWN
+
+
