@@ -1,0 +1,13 @@
+pywana/__init__.py,sha256=WOp6KGaopUCy9j_wc4LfXyUJZHuP8BveonV-Cjrnu6g,138
+pywana/os.py,sha256=2GAIKSQhtbshwtaPW9kx_bei_SVNbiiTumhFZXXJxXY,3655
+pywana/process.py,sha256=LNmWkwWMRFexis_glMLNl2GMPpvZONSyPY67SzT1exA,6586
+pywana/signal.py,sha256=Wc1QFcPYCydojeDWgZkG-aiqEsckIj15yvaAC3Thk4c,1843
+pywana/snapper.py,sha256=1Gr4ZL6leeog7LRSeKfjsc-jSVUXrN49vpkJrc__mPE,11347
+pywana/systemd.py,sha256=7y6mF8scHsOA3hTKiUh8e4o0U1hjjwDg7N4AQiaML84,6541
+pywana-2018.0.1.data/scripts/wana,sha256=wse8Ix0eW9Dobk7lE1XVznCPwKg643Yy339y95LyHJI,12597
+pywana-2018.0.1.dist-info/LICENSE.txt,sha256=lDO7fCBle17C8xDomgu5ALLYCwtFrOy1Atg1pK_v1Nk,661
+pywana-2018.0.1.dist-info/METADATA,sha256=4j-efRIICFDuHGvi8pwQ448XLbIEkZp9ivTwSLSZOrM,3620
+pywana-2018.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pywana-2018.0.1.dist-info/top_level.txt,sha256=Get2RGJypHcS60yYaC4zL9IKzrhmBybYq90qnBGsaAI,7
+pywana-2018.0.1.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+pywana-2018.0.1.dist-info/RECORD,,
