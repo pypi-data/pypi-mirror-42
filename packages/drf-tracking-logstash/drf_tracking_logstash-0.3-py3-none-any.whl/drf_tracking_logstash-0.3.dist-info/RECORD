@@ -1,0 +1,12 @@
+drf_tracking/__init__.py,sha256=B5gaXa_iv3KKAmR9gppWSb7F1Iaba-sVO-73URL8e70,20
+drf_tracking/base_mixins.py,sha256=MI2ug3Td93F9d4xyQZlZGVjVUD5UMxKav-MhPLW_f1c,7237
+drf_tracking/mixins.py,sha256=4XhFj09P0qsRffHWi_MqcKbgm91ZNutRuvFB1OVGyN0,743
+drf_tracking_logstash/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+drf_tracking_logstash/base_mixins.py,sha256=MI2ug3Td93F9d4xyQZlZGVjVUD5UMxKav-MhPLW_f1c,7237
+drf_tracking_logstash/mixins.py,sha256=4XhFj09P0qsRffHWi_MqcKbgm91ZNutRuvFB1OVGyN0,743
+drf_tracking_logstash-0.3.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+drf_tracking_logstash-0.3.dist-info/METADATA,sha256=KmWh6oADb-xsvLHEeqD0c2qj4FN_73Y-1TE1tILicRM,362
+drf_tracking_logstash-0.3.dist-info/RECORD,,
+drf_tracking_logstash-0.3.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+drf_tracking_logstash-0.3.dist-info/metadata.json,sha256=s5_dHPMehftG3S24PpEKfoTAGCQevSBEek3XsQzpDp0,515
+drf_tracking_logstash-0.3.dist-info/top_level.txt,sha256=awHKlepg5nCF8ht8uVf6a-U6xh6S2DgUlVARbc2KZHY,22
