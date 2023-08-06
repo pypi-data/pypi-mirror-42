@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: beeflow
+Version: 0.0.1
+Summary: BeeML
+Home-page: UNKNOWN
+Author: Dae-Won Kim
+Author-email: dwk@etri.re.kr
+License: Apache v2.0
+Description: # BeeML
+        
+        BeeML
+Platform: any
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence

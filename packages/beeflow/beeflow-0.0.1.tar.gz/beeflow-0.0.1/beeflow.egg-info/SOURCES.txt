@@ -1,0 +1,16 @@
+MANIFEST.in
+README.rst
+setup.py
+beeflow/__init__.py
+beeflow.egg-info/PKG-INFO
+beeflow.egg-info/SOURCES.txt
+beeflow.egg-info/dependency_links.txt
+beeflow.egg-info/requires.txt
+beeflow.egg-info/top_level.txt
+beeflow/visualization/__init__.py
+beeflow/visualization/tutorials/__init__.py
+beeflow/visualization/tutorials/core_components.py
+beeflow/visualization/tutorials/dcc_graph.py
+beeflow/visualization/tutorials/go_table.py
+beeflow/visualization/tutorials/hello_dash.py
+beeflow/visualization/tutorials/html_table.py
