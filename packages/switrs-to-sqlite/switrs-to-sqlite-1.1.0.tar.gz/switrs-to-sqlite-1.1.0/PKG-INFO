@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: switrs-to-sqlite
+Version: 1.1.0
+Summary: Script for converting SWITRS reports to SQLite.
+Home-page: https://github.com/agude/SWITRS-to-SQLite
+Author: Alexander Gude
+Author-email: alex.public.account@gmail.com
+License: GPLv3+
+Description: UNKNOWN
+Keywords: switrs,sqlite,data
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities
