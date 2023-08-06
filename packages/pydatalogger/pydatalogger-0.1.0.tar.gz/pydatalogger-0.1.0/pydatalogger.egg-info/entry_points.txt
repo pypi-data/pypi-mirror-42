@@ -1,0 +1,3 @@
+[console_scripts]
+pydatalogger = pydatalogger.commands:run
+

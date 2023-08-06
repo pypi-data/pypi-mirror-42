@@ -1,0 +1,125 @@
+Metadata-Version: 2.1
+Name: pydatalogger
+Version: 0.1.0
+Summary: PyDatalogger - Data logging made easy
+Home-page: https://github.com/daq-tools/PyDatalogger
+Author: The Hiveeyes Developers
+Author-email: hello@hiveeyes.org
+License: AGPL 3, EUPL 1.2
+Description: .. image:: https://img.shields.io/github/tag/daq-tools/pydatalogger.svg
+            :target: https://github.com/daq-tools/pydatalogger
+        
+        |
+        
+        ############
+        PyDatalogger
+        ############
+        
+        
+        *****
+        About
+        *****
+        Datalogger for SBC machines like BeagleBone, RaspberryPi or similar.
+        
+        
+        Supported sensor types
+        ======================
+        - BME280
+        - BMP180
+        - DHT11
+        - DS18B20
+        - SDS011
+        - HX711
+        - ABE-DELTA-SIGMA-ADC
+        
+        
+        *****
+        Setup
+        *****
+        ::
+        
+            git clone https://github.com/daq-tools/PyDatalogger.git
+            cd PyDatalogger
+        
+            virtualenv --python=python3 .venv3
+            source .venv3/bin/activate
+            python setup.py develop
+        
+        
+        *****
+        Usage
+        *****
+        ::
+        
+            $ pydatalogger --help
+        
+            Usage:
+              pydatalogger info
+              pydatalogger readings [--config=<config>] [--target=<target>]... [--dry-run] [--debug]
+              pydatalogger --version
+              pydatalogger (-h | --help)
+        
+            Options:
+              --config=<config>             Configuration file for runtime settings
+              --target=<target>             Data output target
+              --version                     Show version information
+              --dry-run                     Skip publishing to MQTT bus
+              --debug                       Enable debug messages
+              -h --help                     Show this screen
+        
+            Examples:
+        
+              # Display readings in JSON format
+              pydatalogger readings
+        
+              # Publish readings to MQTT broker on localhost
+              pydatalogger readings --target=mqtt://localhost/testdrive
+        
+              # Publish readings to MQTT broker on remote host
+              pydatalogger readings --target=mqtt://daq.example.org/testdrive
+        
+        
+        *******
+        Credits
+        *******
+        - `RPi-Beelogger`_ by Markus Hies, see `Beelogger Version 2`_
+        - `Hiverize-Sensorbeuten`_ by Hiverize_
+        - `luftdaten-python`_ for luftdaten.info sensor network
+        - BERadio_ by Hiveeyes_
+        
+        
+        .. _RPi-Beelogger: https://github.com/beelogger/RPi-Beelogger
+        .. _Beelogger Version 2: http://blog.hies.de/?p=281
+        .. _Hiverize-Sensorbeuten: https://github.com/hiveeyes/Hiverize-Sensorbeuten
+        .. _Hiverize: https://hiverize.org/
+        .. _luftdaten-python: https://github.com/corny/luftdaten-python
+        .. _BERadio: https://github.com/hiveeyes/beradio
+        .. _Hiveeyes: https://hiveeyes.org
+        
+Keywords: datalogger data logger acquisition
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: Topic :: Communications
+Classifier: Topic :: Database
+Classifier: Topic :: Internet
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Archiving
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Provides-Extra: test
