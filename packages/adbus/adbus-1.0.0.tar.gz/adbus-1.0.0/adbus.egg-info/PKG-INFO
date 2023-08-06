@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: adbus
+Version: 1.0.0
+Summary: asyncio based dbus interface
+Home-page: https://github.com/ccxtechnologies/adbus
+Author: CCX Technologies
+Author-email: charles@ccxtechnologies.com
+License: MIT
+Download-URL: https://github.com/ccxtechnologies/archive/v1.0.0.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
