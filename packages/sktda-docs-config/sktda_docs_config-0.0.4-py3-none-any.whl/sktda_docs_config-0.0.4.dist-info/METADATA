@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: sktda-docs-config
+Version: 0.0.4
+Summary: Custom configuration for the Scikit-TDA documentation
+Home-page: https://github.com/scikit-tda/sktda-docs-config
+Author: Nathaniel Saul
+Author-email: nat@riverasaul.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >3.3
+Description-Content-Type: text/markdown
+Requires-Dist: sphinx
+Requires-Dist: ipython
+Requires-Dist: nbsphinx
+Requires-Dist: sphinxcontrib-fulltoc
+
+# sktda-docs-config
+Settings common across all scikit-tda doc sites
+
+(soon) Install with 
+
+```
+pip install sktda_docs_config
+```
+
+and then add the following line to your docs' `conf.py` file:
+
+```
+from sktda_docs_config import *
+```
+
+You might also want to add the parameter to the `setup` function in your `setup.py`:
+
+```
+extras_require={
+    'docs': [ # `pip install -e ".[docs]"`
+        'sktda_docs_config'
+    ]
+},
+```
+
+this will make it so all required docs are installable with
+
+```
+pip install -e ".[docs]"    
+```
+
