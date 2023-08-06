@@ -1,0 +1,11 @@
+flask
+pygments
+sqlalchemy
+
+[dev]
+black
+flake8
+mypy
+pre-commit
+pytest
+pytest-cov
