@@ -1,0 +1,70 @@
+Metadata-Version: 2.0
+Name: BaruwaAPI
+Version: 0.0.5
+Summary: Python bindings for Baruwa REST API
+Home-page: https://github.com/baruwa-enterprise/BaruwaAPI
+Author: Andrew Colin Kissa
+Author-email: andrew@topdog.za.net
+License: MPL 2.0
+Description-Content-Type: UNKNOWN
+Keywords: baruwa api rest
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Requires-Dist: restkit
+
+BaruwaAPI
+=========
+
+Python bindings for the Baruwa REST API
+---------------------------------------
+
+|Build Status| |codecov.io| |MPLv2 License|
+
+Installation
+------------
+
+Install from PyPi
+
+::
+
+    pip install BaruwaAPI
+
+Install from Githib
+
+::
+
+    git clone https://github.com/baruwa-enterprise/BaruwaAPI.git
+    cd BaruwaAPI
+    python setup.py install
+
+Contributing
+------------
+
+1. Fork it (https://github.com/baruwa-enterprise/BaruwaAPI/fork)
+2. Create your feature branch (``git checkout -b my-new-feature``)
+3. Commit your changes (``git commit -am 'Add some feature'``)
+4. Push to the branch (``git push origin my-new-feature``)
+5. Create new Pull Request
+
+License
+-------
+
+All code is licensed under the `MPLv2
+License <https://github.com/baruwa-enterprise/BaruwaAPI/blob/master/LICENSE>`__.
+
+.. |Build Status| image:: https://travis-ci.org/baruwa-enterprise/BaruwaAPI.svg?branch=master
+   :target: https://travis-ci.org/baruwa-enterprise/BaruwaAPI
+.. |codecov.io| image:: https://codecov.io/github/baruwa-enterprise/BaruwaAPI/coverage.svg?branch=master
+   :target: https://codecov.io/github/baruwa-enterprise/BaruwaAPI?branch=master
+.. |MPLv2 License| image:: https://img.shields.io/badge/license-MPLv2-blue.svg?style=flat-square
+   :target: https://www.mozilla.org/MPL/2.0/
+
+
