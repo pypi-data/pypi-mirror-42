@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: nanolife
+Version: 1.0.0
+Summary: Conway's Game of Life implemented with PyGame.
+Home-page: https://github.com/DevDungeon/PyGameOfLife
+Author: DevDungeon
+Author-email: nanodano@devdungeon.com
+License: GPL-3.0
+Description: UNKNOWN
+Platform: UNKNOWN
