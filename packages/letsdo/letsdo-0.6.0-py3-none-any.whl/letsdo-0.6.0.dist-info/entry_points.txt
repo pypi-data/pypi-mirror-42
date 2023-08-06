@@ -1,0 +1,4 @@
+[console_scripts]
+lets = letsdo:main
+letsdo = letsdo:main
+
