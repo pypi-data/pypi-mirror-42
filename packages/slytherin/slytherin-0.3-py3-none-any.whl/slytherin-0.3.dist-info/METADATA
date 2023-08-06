@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: slytherin
+Version: 0.3
+Summary: Useful but lonely functions and classes
+Home-page: https://github.com/idin/slytherin
+Author: Idin
+Author-email: py@idin.ca
+License: MIT
+Platform: UNKNOWN
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: geopy
+Requires-Dist: jellyfish
+
+# Slytherin
+Useful but lonely functions and classes
+
+## Installation
+```bash
+pip install slytherin
+```
+
