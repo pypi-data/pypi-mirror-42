@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: hygge
+Version: 0.1.2
+Summary: A cozzy('hygge') way to get json response back asynchronously
+Home-page: https://github.com/Proteusiq/hygge
+License: UNKNOWN
+Keywords: http,requests,json,api
+Author: Prayson Wilfred Daniel
+Author-email: praysonwilfred@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: aiohttp (>=3.5,<4.0)
+Project-URL: Repository, https://github.com/Proteusiq/hygge
+Description-Content-Type: text/x-rst
+
+Hygge ('Cozzy') Response 
+=========================
+
+.. contents:: Topics
+
+.. image:: https://foobar.svg
+  :target: https://foobare
+
+Overview
+--------
+
+
+website: `hygge <https://github.com/Proteusiq/hygge>`_.
+
+.. code-block:: shell-session
+
+   # install hygge
+   pip install hygge
+   
+How to use
+
+.. code-block:: python
+
+    from hygge.get import GetResponse
+
+    url = 'https://www.trustpilot.com/businessunit/search'
+    params = {'country': 'dk', 'query': 'mate.bike'}
+
+    # passing url and parameters 
+    res = GetResponse(url).get(params=params)
+    print(res)
+
+    # passing only url
+    info_url = f'https://www.trustpilot.com/businessunit/{res["businessUnits"][0]["id"]}/companyinfobox'
+    print(GetResponse(info_url).get())
+    
+
