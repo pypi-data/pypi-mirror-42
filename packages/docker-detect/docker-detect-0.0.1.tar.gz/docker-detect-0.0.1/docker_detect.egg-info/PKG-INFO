@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: docker-detect
+Version: 0.0.1
+Summary: Detect whether the current process is running inside Docker/Kubernetes/LXC container
+Home-page: https://github.com/agmarx/docker-detect
+Author: agmarx
+Author-email: agmarx@protonmail.com
+License: UNKNOWN
+Description: ## Docker/Kubernetes/LXC container detection
+        
+        Tries to detect whether the current process is running inside Docker/Kubernetes/LXC container.
+        
+        
+        ## Installation
+        
+        ```bash
+        
+            $ pip install -U docker-detect
+        
+        ```
+        
+        
+        ## Example
+        
+        Import and call iscontainer()
+        
+        ```python
+        
+            >>> from dockerdetect import is_inside_container()
+            >>> is_inside_container()
+            True
+        
+        ```
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
