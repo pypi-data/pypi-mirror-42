@@ -1,0 +1,25 @@
+Metadata-Version: 1.2
+Name: nart
+Version: 1.0.dev2
+Summary: NART: Naver RealTime Keyword
+Home-page: https://github.com/ocworld/nart
+Author: Keunhyun Oh
+Author-email: ocworld@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: any
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Office/Business :: News/Diary
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Intended Audience :: Science/Research
+Requires-Python: >=3.6
