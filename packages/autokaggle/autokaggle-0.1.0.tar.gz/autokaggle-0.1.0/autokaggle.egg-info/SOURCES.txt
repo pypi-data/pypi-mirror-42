@@ -1,0 +1,11 @@
+README.md
+setup.py
+autokaggle/__init__.py
+autokaggle/tabular_preprocessor.py
+autokaggle/tabular_supervised.py
+autokaggle/utils.py
+autokaggle.egg-info/PKG-INFO
+autokaggle.egg-info/SOURCES.txt
+autokaggle.egg-info/dependency_links.txt
+autokaggle.egg-info/requires.txt
+autokaggle.egg-info/top_level.txt
