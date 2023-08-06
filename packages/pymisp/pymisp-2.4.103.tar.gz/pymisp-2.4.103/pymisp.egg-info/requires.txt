@@ -1,0 +1,30 @@
+six
+requests
+python-dateutil
+jsonschema
+python-dateutil
+
+[:python_version < "3.0"]
+functools32
+
+[:python_version < "3.4"]
+enum34
+
+[docs]
+sphinx-autodoc-typehints
+
+[fileobjects]
+lief>=0.8
+python-magic
+
+[neo]
+py2neo
+
+[openioc]
+beautifulsoup4
+
+[pdfexport]
+reportlab
+
+[virustotal]
+validators
