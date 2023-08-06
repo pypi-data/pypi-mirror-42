@@ -1,0 +1,3 @@
+[console_scripts]
+fast-elmo = pytorch_fast_elmo.tool.cli:main
+
