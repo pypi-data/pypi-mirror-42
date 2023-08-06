@@ -1,0 +1,11 @@
+ocredis/__init__.py,sha256=47w6QLzrX3RNPBSMh2W2uI3v2bZT0Bhc_WIV0aLEP_s,897
+ocredis/client.py,sha256=uqHAQq1RNCXjgv4o-y1iwE-2Hsumk0QFm00zEm7v2Xc,47235
+ocredis/observability.py,sha256=GARN47ScxBIPoQBnBZxRX-3TfeYckruclHsDfaMAtdc,6305
+ocredis-0.0.2.dist-info/METADATA,sha256=fFLxSnHYAmiYJGjdKPituTnLF6UVfXrPfxIxLp-Di-w,2742
+ocredis-0.0.2.dist-info/RECORD,,
+ocredis-0.0.2.dist-info/WHEEL,sha256=9xUnOISuCvrSyfu9GlFZT4i2TZ_2OLkwLNqcDvIo3zM,92
+ocredis-0.0.2.dist-info/namespace_packages.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ocredis-0.0.2.dist-info/top_level.txt,sha256=SpRWQ8tZE83i7gbPjnk6ITZWf9GlaOk0qZ-YQqWnesw,14
+tests/__init__.py,sha256=fJkUxXb6VHZs1inqt34ktoY1Tpq8fgoLb84b12l2p-8,600
+tests/test_invoke_each_method.py,sha256=HW8EtrPJ8EaCCv9y_qbeasj6LyZM8pnfo4auicfiK4E,3961
+tests/test_propagate_exceptions.py,sha256=MUYOdfGeCHbneDGDhi1lWAf1tAn8ibwFzgHryeWhXzc,6612
