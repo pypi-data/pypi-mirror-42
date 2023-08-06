@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pycorreios3"
+version = "1.2.2"
+description = "Acesso facil a todos os web services dos correios."
+authors = ["Marcelo Bello <mbello@users.noreply.github.com>"]
+license = "CC0-1.0"
+readme = "README.md"
+repository = "https://github.com/mbello/pycorreios3"
+homepage = "https://github.com/mbello/pycorreios3"
+keywords = ['ECT', 'Correios', 'SigepWeb', 'Sigep', 'rastreamento', 'CalcPrecoPrazo']
+
+
+[tool.poetry.dependencies]
+python = "^3.5"
+zeep = "^3.1"
+requests = "^2.19"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
