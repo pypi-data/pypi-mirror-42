@@ -1,0 +1,333 @@
+Metadata-Version: 2.1
+Name: hello-world-baxter2
+Version: 0.0.4
+Summary: UNKNOWN
+Home-page: https://github.com/baxter2/hello-world-baxter2
+Author: Baxter Callan
+Author-email: baxcallan@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+## Hello World Baxter2
+
+This is an example project demonstrating how to publish a python module ot PyPI.
+
+## Usage
+
+```python
+>>> say_hello()
+'Hello, World!'
+
+>>> say_hello("Baxter")
+'Hello, Baxter!'
+```
+
+## License
+MIT
+
+## Some shell commands run through out the project
+
+> #### [baxter2/hello-world-baxter2 1st Commit](https://github.com/baxter2/hello-world-baxter2/tree/a3ca442830b30b72ba6354ff01bdf56d9c5d9316) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/a3ca442830b30b72ba6354ff01bdf56d9c5d9316)
+<pre><code>
+<b>[~]$ mkdir hello-world-baxter2</b>
+
+<b>[~]$ cd hello-world-baxter2/</b>
+
+<b>[hello-world-baxter2]$ python3 -m venv ~/.virtualenvs/HelloWorldBaxter2</b>
+
+<b>[hello-world-baxter2]$ source ~/.virtualenvs/HelloWorldBaxter2/bin/activate</b>
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package    Version
+---------- -------
+pip        18.1
+setuptools 40.6.2
+You are using pip version 18.1, however version 19.0.3 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install --upgrade pip setuptools</b>
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/d8/f3/413bab4ff08e1fc4828dfc59996d721917df8e8583ea85385d51125dceff/pip-19.0.3-py2.py3-none-any.whl (1.4MB)
+    100% |████████████████████████████████| 1.4MB 1.5MB/s
+Collecting setuptools
+  Downloading https://files.pythonhosted.org/packages/d1/6a/4b2fcefd2ea0868810e92d519dacac1ddc64a2e53ba9e3422c3b62b378a6/setuptools-40.8.0-py2.py3-none-any.whl (575kB)
+    100% |████████████████████████████████| 583kB 2.6MB/s
+Installing collected packages: pip, setuptools
+  Found existing installation: pip 18.1
+    Uninstalling pip-18.1:
+      Successfully uninstalled pip-18.1
+  Found existing installation: setuptools 40.6.2
+    Uninstalling setuptools-40.6.2:
+      Successfully uninstalled setuptools-40.6.2
+Successfully installed pip-19.0.3 setuptools-40.8.0
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package    Version
+---------- -------
+pip        19.0.3
+setuptools 40.8.0
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 3rd Commit](https://github.com/baxter2/hello-world-baxter2/tree/cf7c52fa0443ca61323fb4880ca3ae89dde0e0ff) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/cf7c52fa0443ca61323fb4880ca3ae89dde0e0ff)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install wheel</b>
+Collecting wheel
+  Using cached https://files.pythonhosted.org/packages/96/ba/a4702cbb6a3a485239fbe9525443446203f00771af9ac000fa3ef2788201/wheel-0.33.1-py2.py3-none-any.whl
+Installing collected packages: wheel
+Successfully installed wheel-0.33.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package    Version
+---------- -------
+pip        19.0.3
+setuptools 40.8.0
+wheel      0.33.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python setup.py sdist bdist_wheel</b>
+bunch of crap blah blah
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 4th Commit](https://github.com/baxter2/hello-world-baxter2/tree/ad61058e0955637614edf4baea28432c676deab2) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/ad61058e0955637614edf4baea28432c676deab2)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ touch .gitignore</b>
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ git rm -r --cached build</b>
+rm 'build/lib/hello-world.py'
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ git rm -r --cached dist</b>
+rm 'dist/hello-world-baxter2-0.0.1.tar.gz'
+rm 'dist/hello_world_baxter2-0.0.1-py3-none-any.whl'
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 5th Commit](https://github.com/baxter2/hello-world-baxter2/tree/3733b8147e4ac6d0e56ab22c6946b4937ac76e48) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/3733b8147e4ac6d0e56ab22c6946b4937ac76e48)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ git rm -r --cached src/hello_world_baxter2.egg-info/</b>
+rm 'src/hello_world_baxter2.egg-info/PKG-INFO'
+rm 'src/hello_world_baxter2.egg-info/SOURCES.txt'
+rm 'src/hello_world_baxter2.egg-info/dependency_links.txt'
+rm 'src/hello_world_baxter2.egg-info/top_level.txt'
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 6th Commit](https://github.com/baxter2/hello-world-baxter2/tree/8b0926a79a12e0fb0254721ae4d9ad8627ced600) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/8b0926a79a12e0fb0254721ae4d9ad8627ced600)
+<pre><code>
+<b>$ python setup.py sdist bdist_wheel</b>
+bunch of crap blah blah
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install -e .</b>
+Obtaining file:///Users/baxter2/hello-world-baxter2
+Installing collected packages: hello-world-baxter2
+  Found existing installation: hello-world-baxter2 0.0.2
+    Uninstalling hello-world-baxter2-0.0.2:
+      Successfully uninstalled hello-world-baxter2-0.0.2
+  Running setup.py develop for hello-world-baxter2
+Successfully installed hello-world-baxter2
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package             Version Location
+------------------- ------- --------------------------------------
+hello-world-baxter2 0.0.2   /Users/baxter2/hello-world-baxter2/src
+pip                 19.0.3
+setuptools          40.8.0
+wheel               0.33.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python</b>
+Python 3.7.2 (default, Feb 12 2019, 08:15:36)
+[Clang 10.0.0 (clang-1000.11.45.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from hello_world import say_hello
+
+>>> say_hello()
+'Hello, World!'
+
+>>> say_hello("Baxter")
+'Hello, Baxter!'
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 7th Commit](https://github.com/baxter2/hello-world-baxter2/tree/15af2555bdad5ca78c497f631ec42919a19dfecc) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/15af2555bdad5ca78c497f631ec42919a19dfecc)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ git rm -r --cached src/__pycache__/</b>
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 8th Commit](https://github.com/baxter2/hello-world-baxter2/tree/da1893b589c9a4622df36b0253b36bba9f0cff91) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/da1893b589c9a4622df36b0253b36bba9f0cff91)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install pytest</b>
+Collecting pytest
+  Downloading https://files.pythonhosted.org/packages/51/b2/2fa8e8b179c792c457c2f7800f1313bfbd34f515e3a833e6083121844c14/pytest-4.3.0-py2.py3-none-any.whl (219kB)
+    100% |████████████████████████████████| 225kB 2.0MB/s
+Collecting six>=1.10.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /Users/baxter2/.virtualenvs/HelloWorldBaxter2/lib/python3.7/site-packages (from pytest) (40.8.0)
+Collecting atomicwrites>=1.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/52/90/6155aa926f43f2b2a22b01be7241be3bfd1ceaf7d0b3267213e8127d41f4/atomicwrites-1.3.0-py2.py3-none-any.whl
+Collecting attrs>=17.4.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/3a/e1/5f9023cc983f1a628a8c2fd051ad19e76ff7b142a0faf329336f9a62a514/attrs-18.2.0-py2.py3-none-any.whl
+Collecting more-itertools>=4.0.0; python_version > "2.7" (from pytest)
+  Downloading https://files.pythonhosted.org/packages/ae/d4/d6bad4844831943dd667510947712750004525c5807711982f4ec390da2b/more_itertools-6.0.0-py3-none-any.whl (52kB)
+    100% |████████████████████████████████| 61kB 2.1MB/s
+Collecting pluggy>=0.7 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/2d/60/f58d9e8197f911f9405bf7e02227b43a2acc2c2f1a8cbb1be5ecf6bfd0b8/pluggy-0.8.1-py2.py3-none-any.whl
+Collecting py>=1.5.0 (from pytest)
+  Downloading https://files.pythonhosted.org/packages/76/bc/394ad449851729244a97857ee14d7cba61ddb268dce3db538ba2f2ba1f0f/py-1.8.0-py2.py3-none-any.whl (83kB)
+    100% |████████████████████████████████| 92kB 2.3MB/s
+Installing collected packages: six, atomicwrites, attrs, more-itertools, pluggy, py, pytest
+Successfully installed atomicwrites-1.3.0 attrs-18.2.0 more-itertools-6.0.0 pluggy-0.8.1 py-1.8.0 pytest-4.3.0 six-1.12.0
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package             Version Location
+------------------- ------- --------------------------------------
+atomicwrites        1.3.0
+attrs               18.2.0
+hello-world-baxter2 0.0.2   /Users/baxter2/hello-world-baxter2/src
+more-itertools      6.0.0
+pip                 19.0.3
+pluggy              0.8.1
+py                  1.8.0
+pytest              4.3.0
+setuptools          40.8.0
+six                 1.12.0
+wheel               0.33.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pytest</b>
+==================================== test session starts ============================
+platform darwin -- Python 3.7.2, pytest-4.3.0, py-1.8.0, pluggy-0.8.1
+rootdir: /Users/baxter2/hello-world-baxter2, inifile:
+collected 2 items
+
+test_hello_world.py ..                                                         [100%]
+
+==================================== 2 passed in 0.04 seconds =======================
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 9th Commit](https://github.com/baxter2/hello-world-baxter2/tree/e3510045e0e54b315281f3a0a4684b9cf5d2f623) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/e3510045e0e54b315281f3a0a4684b9cf5d2f623)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install twine</b>
+Collecting twine
+  Downloading https://files.pythonhosted.org/packages/28/90/59eec88c0b2ac9e47fe135959007acb93a3cc9f7146366e11fecf718dd15/twine-1.13.0-py2.py3-none-any.whl
+Collecting readme-renderer>=21.0 (from twine)
+  Downloading https://files.pythonhosted.org/packages/c3/7e/d1aae793900f36b097cbfcc5e70eef82b5b56423a6c52a36dce51fedd8f0/readme_renderer-24.0-py2.py3-none-any.whl
+Collecting requests-toolbelt!=0.9.0,>=0.8.0 (from twine)
+  Downloading https://files.pythonhosted.org/packages/60/ef/7681134338fc097acef8d9b2f8abe0458e4d87559c689a8c306d0957ece5/requests_toolbelt-0.9.1-py2.py3-none-any.whl (54kB)
+    100% |████████████████████████████████| 61kB 1.2MB/s
+Requirement already satisfied: setuptools>=0.7.0 in /Users/baxter2/.virtualenvs/HelloWorldBaxter2/lib/python3.7/site-packages (from twine) (40.8.0)
+Collecting requests!=2.15,!=2.16,>=2.5.0 (from twine)
+  Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
+    100% |████████████████████████████████| 61kB 832kB/s
+Collecting tqdm>=4.14 (from twine)
+  Downloading https://files.pythonhosted.org/packages/6c/4b/c38b5144cf167c4f52288517436ccafefe9dc01b8d1c190e18a6b154cd4a/tqdm-4.31.1-py2.py3-none-any.whl (48kB)
+    100% |████████████████████████████████| 51kB 1.5MB/s
+Collecting pkginfo>=1.4.2 (from twine)
+  Downloading https://files.pythonhosted.org/packages/e6/d5/451b913307b478c49eb29084916639dc53a88489b993530fed0a66bab8b9/pkginfo-1.5.0.1-py2.py3-none-any.whl
+Collecting docutils>=0.13.1 (from readme-renderer>=21.0->twine)
+  Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
+    100% |████████████████████████████████| 552kB 956kB/s
+Requirement already satisfied: six in /Users/baxter2/.virtualenvs/HelloWorldBaxter2/lib/python3.7/site-packages (from readme-renderer>=21.0->twine) (1.12.0)
+Collecting bleach>=2.1.0 (from readme-renderer>=21.0->twine)
+  Downloading https://files.pythonhosted.org/packages/ab/05/27e1466475e816d3001efb6e0a85a819be17411420494a1e602c36f8299d/bleach-3.1.0-py2.py3-none-any.whl (157kB)
+    100% |████████████████████████████████| 163kB 1.2MB/s
+Collecting Pygments (from readme-renderer>=21.0->twine)
+  Downloading https://files.pythonhosted.org/packages/13/e5/6d710c9cf96c31ac82657bcfb441df328b22df8564d58d0c4cd62612674c/Pygments-2.3.1-py2.py3-none-any.whl (849kB)
+    100% |████████████████████████████████| 849kB 1.8MB/s
+Collecting certifi>=2017.4.17 (from requests!=2.15,!=2.16,>=2.5.0->twine)
+  Using cached https://files.pythonhosted.org/packages/9f/e0/accfc1b56b57e9750eba272e24c4dddeac86852c2bebd1236674d7887e8a/certifi-2018.11.29-py2.py3-none-any.whl
+Collecting idna<2.9,>=2.5 (from requests!=2.15,!=2.16,>=2.5.0->twine)
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+    100% |████████████████████████████████| 61kB 1.5MB/s
+Collecting chardet<3.1.0,>=3.0.2 (from requests!=2.15,!=2.16,>=2.5.0->twine)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+    100% |████████████████████████████████| 143kB 2.4MB/s
+Collecting urllib3<1.25,>=1.21.1 (from requests!=2.15,!=2.16,>=2.5.0->twine)
+  Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
+    100% |████████████████████████████████| 122kB 1.7MB/s
+Collecting webencodings (from bleach>=2.1.0->readme-renderer>=21.0->twine)
+  Downloading https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl
+Installing collected packages: docutils, webencodings, bleach, Pygments, readme-renderer, certifi, idna, chardet, urllib3, requests, requests-toolbelt, tqdm, pkginfo, twine
+Successfully installed Pygments-2.3.1 bleach-3.1.0 certifi-2018.11.29 chardet-3.0.4 docutils-0.14 idna-2.8 pkginfo-1.5.0.1 readme-renderer-24.0 requests-2.21.0 requests-toolbelt-0.9.1 tqdm-4.31.1 twine-1.13.0 urllib3-1.24.1 webencodings-0.5.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip list</b>
+Package             Version    Location
+------------------- ---------- --------------------------------------
+atomicwrites        1.3.0
+attrs               18.2.0
+bleach              3.1.0
+certifi             2018.11.29
+chardet             3.0.4
+docutils            0.14
+hello-world-baxter2 0.0.2      /Users/baxter2/hello-world-baxter2/src
+idna                2.8
+more-itertools      6.0.0
+pip                 19.0.3
+pkginfo             1.5.0.1
+pluggy              0.8.1
+py                  1.8.0
+Pygments            2.3.1
+pytest              4.3.0
+readme-renderer     24.0
+requests            2.21.0
+requests-toolbelt   0.9.1
+setuptools          40.8.0
+six                 1.12.0
+tqdm                4.31.1
+twine               1.13.0
+urllib3             1.24.1
+webencodings        0.5.1
+wheel               0.33.1
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*</b>
+Enter your username: baxter2
+Enter your password:
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading hello_world_baxter2-0.0.1-py3-none-any.whl
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 10.8k/10.8k [00:02<00:00, 5.15kB/s]
+NOTE: Try --verbose to see response content.
+HTTPError: 400 Client Error: Invalid value for classifiers. Error: 'Programming Language :: Python :: 3,7' is not a valid choice for this field for url: https://test.pypi.org/legacy/
+</pre></code>
+
+> #### [baxter2/hello-world-baxter2 11th Commit](https://github.com/baxter2/hello-world-baxter2/tree/24a10a640fe66ea953d2c0614b17a008874b0620) | [git diff](https://github.com/baxter2/hello-world-baxter2/commit/24a10a640fe66ea953d2c0614b17a008874b0620)
+<pre><code>
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install -e .</b>
+Obtaining file:///Users/baxter2/hello-world-baxter2
+Installing collected packages: hello-world-baxter2
+  Found existing installation: hello-world-baxter2 0.0.2
+    Uninstalling hello-world-baxter2-0.0.2:
+      Successfully uninstalled hello-world-baxter2-0.0.2
+  Running setup.py develop for hello-world-baxter2
+Successfully installed hello-world-baxter2
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*</b>
+Enter your username: baxter2
+Enter your password:
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading hello_world_baxter2-0.0.1-py3-none-any.whl
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 10.8k/10.8k [00:02<00:00, 5.00kB/s]
+NOTE: Try --verbose to see response content.
+HTTPError: 400 Client Error: Invalid value for classifiers. Error: 'Programming Language :: Python :: 3,7' is not a valid choice for this field for url: https://test.pypi.org/legacy/
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python setup.py sdist bdist_wheel</b>
+bunch of crap blah blah
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ pip install -e .</b>
+Obtaining file:///Users/baxter2/hello-world-baxter2
+Installing collected packages: hello-world-baxter2
+  Found existing installation: hello-world-baxter2 0.0.2
+    Uninstalling hello-world-baxter2-0.0.2:
+      Successfully uninstalled hello-world-baxter2-0.0.2
+  Running setup.py develop for hello-world-baxter2
+Successfully installed hello-world-baxter2
+
+<b>(HelloWorldBaxter2) [hello-world-baxter2]$ python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*</b>
+Enter your username: baxter2
+Enter your password:
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading hello_world_baxter2-0.0.1-py3-none-any.whl
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 10.8k/10.8k [00:01<00:00, 6.40kB/s]
+NOTE: Try --verbose to see response content.
+HTTPError: 400 Client Error: Invalid value for classifiers. Error: 'Programming Language :: Python :: 3,7' is not a valid choice for this field for url: https://test.pypi.org/legacy/
+</pre></code>
+
+
