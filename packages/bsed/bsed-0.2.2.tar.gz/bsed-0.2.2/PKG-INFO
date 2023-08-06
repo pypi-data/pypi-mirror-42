@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: bsed
+Version: 0.2.2
+Summary: Simple english syntax for stream editing.
+Home-page: https://github.com/andrewbihl/bsed
+Author: Andrew Bihl
+Author-email: andrewbihlva@gmail.com
+License: UNKNOWN
+Description: # bsed
+        Simple, english syntax on top of Perl text processing. Designed to replace simple uses of sed/grep/awk/perl.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.1.0
+Description-Content-Type: text/markdown
