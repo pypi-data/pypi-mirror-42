@@ -1,0 +1,10 @@
+easyparse/__init__.py,sha256=6bmQcG3N86Fun2cDVVUKgFodoyTTLSUi8_toukwSG14,91
+easyparse/export.py,sha256=SDvnNsIX4vwzY83yI4PR5kYYPumftRbWCxV_gVKbI3s,523
+easyparse/pkg/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+easyparse/pkg/xml_to_json_handler.py,sha256=-3GWWALNo2jdY0AnALp3iegePfyPLA_etRklBDUHLSg,5054
+easyparse/tests/fixtures/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+easyparse/tests/fixtures/import_samples.py,sha256=aMDO3aYjVhIm9kYfPky_NLvHBv2xQ5m14YgIyFsGoiI,283
+easy_parse-0.1.1.dist-info/METADATA,sha256=iue7l9jlgR8U38cmXR3i6Jp-QCpRkNPALoQ78AZGPZM,603
+easy_parse-0.1.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+easy_parse-0.1.1.dist-info/top_level.txt,sha256=c2XdncGMfOPLkjWwllKuinohN9ZztvMFkzRhDahASGU,10
+easy_parse-0.1.1.dist-info/RECORD,,
