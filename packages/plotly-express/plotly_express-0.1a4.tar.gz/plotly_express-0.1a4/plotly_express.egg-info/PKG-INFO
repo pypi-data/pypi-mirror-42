@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: plotly-express
+Version: 0.1a4
+Summary: Plotly Express: a high level wrapper for Plotly.py
+Home-page: https://github.com/plotly/plotly_express
+Author: Nicolas Kruchten
+Author-email: nicolas@plot.ly
+License: UNKNOWN
+Description: # Plotly Express
+        
+        This is alpha-quality software, under active development and available for demonstration purposes only!
+        
+        [![nbviewer badge](https://img.shields.io/badge/render-nbviewer-orange.svg)](https://nbviewer.jupyter.org/github/plotly/plotly_express/blob/master/gallery.ipynb)
+        
+        [![binder badge](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/plotly/plotly_express/master?filepath=gallery.ipynb)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
