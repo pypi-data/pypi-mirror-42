@@ -1,0 +1,15 @@
+dlutils/__init__.py,sha256=V1IyOxAcKdT1fEG828VDORqjSYUSpCgPaD52Ng27OwA,912
+dlutils/batch_provider.py,sha256=VVBQMDNo2l3XbXx0iE6KWgWf2DBlv4CsSe-ZDIGy3ck,8176
+dlutils/download.py,sha256=e7HAUsJK6-7YBUPnfe5T7TdH1TzdBwX_r1ytSJww9N0,8104
+dlutils/epoch.py,sha256=8sdJjFDzk5qIgpSSCC8hXg-3P3wbak-NrTCUCGMM9KA,2831
+dlutils/measures.py,sha256=vgEqbRVRuBiBrMhzAAkGO_Nt2Ue3xKBgFhL4aAgA1cU,3252
+dlutils/progress_bar.py,sha256=ly1zMdCm2hzUebMIez50bzkKtG2ClBRPxljpOPYx_cA,2555
+dlutils/random_rotation.py,sha256=niS_06CmM4L5_nPAlatJgFro3N7aFY8Tn0H01-RxXV4,897
+dlutils/reader.py,sha256=lrXqwEkmu1XOQHktrTh7kIy_WTtCnziut-gTG-F81dU,6469
+dlutils/shuffle.py,sha256=WRT-icuum14jCs-QsghTXUQ_lY1olkPzDebFXkEWvVI,2880
+dlutils/timer.py,sha256=xRFN8Tmr0ezy4cqyPXQhcyPb6uG1ZZWdY7Nlg1ZRbSQ,1599
+dlutils-0.0.1.dist-info/LICENSE.txt,sha256=zGC-yiIfnmlrnueOaKgNpdESD8_xL5ffq2zgkWwtgGE,11355
+dlutils-0.0.1.dist-info/METADATA,sha256=_yeW0BdazwhYwJGtzh9Jeho0YVR5YKtR_DMISsJcI4E,396
+dlutils-0.0.1.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+dlutils-0.0.1.dist-info/top_level.txt,sha256=-InPvPPzZZKY122AY_aAZ6yS6q1PBmvA_wu4AtjRs7E,8
+dlutils-0.0.1.dist-info/RECORD,,

@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: dlutils
+Version: 0.0.1
+Summary: dlutils - collection of boilerplate code, usefull primitives, helpers.
+Home-page: https://github.com/podgorskiy/dlutils
+Author: Stanislav Pidhorskyi
+Author-email: stanislav@podgorskiy.com
+License: MIT
+
+dlutils - collection of boilerplate code, usefull primitives, and helpers that might be usefull for different DL research projects.
+
+
