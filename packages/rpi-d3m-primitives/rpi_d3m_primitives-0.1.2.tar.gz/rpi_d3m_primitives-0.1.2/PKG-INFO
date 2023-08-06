@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: rpi_d3m_primitives
+Version: 0.1.2
+Summary: RPI primitives for D3M submission.
+Home-page: https://github.com/zijun-rpi/d3m-primitives.git
+Author: Andrew Soszynski, Deniz Koyuncu, Zijun Cui, Qiang Ji
+Author-email: cuiz3@rpi.edu
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: d3m_primitive
+Platform: Linux
+Platform: MacOS
