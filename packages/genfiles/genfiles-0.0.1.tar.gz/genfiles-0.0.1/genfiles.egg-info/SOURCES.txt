@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+bin/genfiles
+bin/genfiles.cmd
+genfiles.egg-info/PKG-INFO
+genfiles.egg-info/SOURCES.txt
+genfiles.egg-info/dependency_links.txt
+genfiles.egg-info/not-zip-safe
+genfiles.egg-info/requires.txt
+genfiles.egg-info/top_level.txt
