@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: terminal-palette
+Version: 0.0.4
+Summary: A library to color text in terminal
+Home-page: https://github.com/JeongUkJae/terminal-palette
+Author: Jeong Ukjae
+Author-email: jeongukjae@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
