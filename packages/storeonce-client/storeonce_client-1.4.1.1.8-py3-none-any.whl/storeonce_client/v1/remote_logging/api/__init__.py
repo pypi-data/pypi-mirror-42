@@ -1,0 +1,7 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from storeonce_client.v1.remote_logging.api.remote_logging_audit_server_resource_api import RemoteLoggingAuditServerResourceApi
+from storeonce_client.v1.remote_logging.api.remote_logging_syslog_server_resource_api import RemoteLoggingSyslogServerResourceApi

@@ -1,0 +1,25 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from storeonce_client.v1.rep.api.bandwidth_calculator_api import BandwidthCalculatorApi
+from storeonce_client.v1.rep.api.bandwidth_limit_api import BandwidthLimitApi
+from storeonce_client.v1.rep.api.bandwidth_windows_api import BandwidthWindowsApi
+from storeonce_client.v1.rep.api.blackout_now_api import BlackoutNowApi
+from storeonce_client.v1.rep.api.blackout_windows_api import BlackoutWindowsApi
+from storeonce_client.v1.rep.api.library_source_permissions_api import LibrarySourcePermissionsApi
+from storeonce_client.v1.rep.api.nas_share_mapping_files_api import NASShareMappingFilesApi
+from storeonce_client.v1.rep.api.nas_share_mappings_api import NasShareMappingsApi
+from storeonce_client.v1.rep.api.nas_share_throughput_parametrics_api import NasShareThroughputParametricsApi
+from storeonce_client.v1.rep.api.service_api import ServiceApi
+from storeonce_client.v1.rep.api.share_source_permissions_api import ShareSourcePermissionsApi
+from storeonce_client.v1.rep.api.source_appliance_api import SourceApplianceApi
+from storeonce_client.v1.rep.api.source_permissions_api import SourcePermissionsApi
+from storeonce_client.v1.rep.api.target_appliance_api import TargetApplianceApi
+from storeonce_client.v1.rep.api.target_library_api import TargetLibraryApi
+from storeonce_client.v1.rep.api.target_shares_api import TargetSharesApi
+from storeonce_client.v1.rep.api.vtl_library_mapping_slots_api import VTLLibraryMappingSlotsApi
+from storeonce_client.v1.rep.api.vtl_library_mappings_api import VTLLibraryMappingsApi
+from storeonce_client.v1.rep.api.vtl_library_throughput_parametrics_api import VtlLibraryThroughputParametricsApi
+from storeonce_client.v1.rep.api.events_api import EventsApi

@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: storeonce-client
+Version: 1.4.1.1.8
+Summary: A StoreOnce REST client SDK
+Home-page: UNKNOWN
+Author: Hewlett Packard Enterprise Development LP
+License: MIT
+Keywords: Swagger,StoreOnce,REST,SDK
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=2.7.0, !=3.0, !=3.1, !=3.2, !=3.3, <4
+Requires-Dist: urllib3 (>=1.15)
+Requires-Dist: six (>=1.10)
+Requires-Dist: certifi
+Requires-Dist: python-dateutil
+
+
+# HPE StoreOnce SDK Python Client
+
+The Python package containing an API that wraps the Hewlett Packard Enterprise StoreOnce REST interface.
+
+## Requirements
+
+* Python 2.7 and 3.4+
+
+## Installation
+
+You can install this package using the following pip command:
+
+```sh
+pip install .
+```
+
+## Documentation
+
+The documentation can be built using the command:
+
+```
+sphinx-build -b html documentation <destination path>
+```
+It should be noted that you will need to have Sphinx and the Sphinx RTD theme already installed in your environment; 
+these can be installed with the pip command:
+```
+pip install sphinx && pip install sphinx_rtd_theme
+```
+
+## Known issues
+
+Known issues are listed in the documentation [here](./documentation/issues.rst).
+
+## Contributions
+
+Please be aware that a code generator creates and manages this code as part of a product release cycle.
+
+This means it won't be possible for us to merge the pull requests you raise.
+
