@@ -1,0 +1,7 @@
+README.md
+setup.py
+Ephemera.egg-info/PKG-INFO
+Ephemera.egg-info/SOURCES.txt
+Ephemera.egg-info/dependency_links.txt
+Ephemera.egg-info/top_level.txt
+ephemera/__init__.py
