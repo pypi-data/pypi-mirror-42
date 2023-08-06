@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+filthypasswordgenerator.egg-info/PKG-INFO
+filthypasswordgenerator.egg-info/SOURCES.txt
+filthypasswordgenerator.egg-info/dependency_links.txt
+filthypasswordgenerator.egg-info/entry_points.txt
+filthypasswordgenerator.egg-info/requires.txt
+filthypasswordgenerator.egg-info/top_level.txt
+src/__init__.py
+src/__main__.py
+src/pwgenerator.py
+src/data/__init__.py
+src/data/english.py
+src/data/makeenglish.py
