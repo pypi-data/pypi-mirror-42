@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+atdict/__init__.py
+atdict/_version.py
+atdict/obj.py
+atdict.egg-info/PKG-INFO
+atdict.egg-info/SOURCES.txt
+atdict.egg-info/dependency_links.txt
+atdict.egg-info/top_level.txt
