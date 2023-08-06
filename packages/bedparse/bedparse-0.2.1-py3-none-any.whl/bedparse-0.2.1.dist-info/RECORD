@@ -1,0 +1,11 @@
+bedparse/__init__.py,sha256=_pN-d-CSTZmF3CUiX0ZWB0DQvDGqP-pc2oZVTuq-WSw,118
+bedparse/bedline.py,sha256=izVFv9rffVSF98JcvKy55z2ZWnp18zIKzB8ZMSPcrAI,18054
+bedparse/bedparse.py,sha256=luaHGoO3Kxq8TfqA8558iL92eLbCqt7NGkWiQ0XBxew,15335
+bedparse/chrnames.py,sha256=7hjJV2eI07yoAZ9jSapm2j9fKV-zS6jtbuYyvhAmF-0,35339
+bedparse/converters.py,sha256=wD0dk7eoIzTpuS4ladzfewVqnV5aqjvVtOjumDi36Jo,4182
+bedparse-0.2.1.dist-info/LICENSE.txt,sha256=ega3WJqTFU78CxzJQqIaQ-FPvbckBq30Kc4f2moe3tw,1077
+bedparse-0.2.1.dist-info/METADATA,sha256=AkhGIKTFPLTtOqIL4QTUn-YMJ5GnQQu2ke52sQ_GFq8,1717
+bedparse-0.2.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+bedparse-0.2.1.dist-info/entry_points.txt,sha256=TLnEz5Y8yNskthXso4wfzmLLpW8sttg5bsNNL0Ek5ps,53
+bedparse-0.2.1.dist-info/top_level.txt,sha256=soFOj-mvrFmy7fpJooCPNMO-8OQTYEdd7ONlI_U57Bc,9
+bedparse-0.2.1.dist-info/RECORD,,
