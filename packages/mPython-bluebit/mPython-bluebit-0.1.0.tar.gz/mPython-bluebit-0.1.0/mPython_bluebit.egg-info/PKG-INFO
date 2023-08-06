@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: mPython-bluebit
+Version: 0.1.0
+Summary: blue:bit modules library for mPython(blue:bit掌控板驱动库)
+Home-page: https://github.com/labplus-cn/mPython_bluebit
+Author: tangliufeng
+Author-email: 137513285@qq.com
+Maintainer: LabPlus Developers
+License: MIT
+Description: # blue:bit套装 掌控板驱动库
+        </br>
+        
+        ![extboard](/docs/bluebit_kit.png)
+        
+        </br>
+        </br>
+        
+        该repository提供bluebit套件的掌控板库.
+        
+        **blue:bit** http://wiki.labplus.cn/index.php?title=Bluebit
+        
+        ## 库的安装方法
+        
+        可通过以下任一方法进行安装。
+        1. 将项目中的`bluebit.py` 拷到掌控板文件系统上
+        2. 在掌控板REPL界面中，使用upip安装，步骤如下：
+            * 前置条件需要掌控板连接网络
+            * 导入upip模块，执行`import upip`
+            * 执行`upip.install('mPython-bluebit'）
+        
+        ```python
+        >>> import upip
+        >>> upip.install('mPython-bluebit')
+        ```
+        
+        
+        ## API 说明
+        
+        | 模块    | 函数    | 功能说明  | 参数      |
+        | :------ | :------  | :------ | :------ |
+        | LM35 | LM35() | 构建对象 |/|
+        |      | LM35.getTemper(pin) | 获取温度值,单位摄氏度 |`pin`:引脚|
+        |四按键| joyButton() | 构建对象 ||
+        |      | joyButton.getVal(pin) | 获取按键值 |`pin`:引脚|
+        |温湿度| SHT20(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | SHT20.temperature() | 获取温度值,单位摄氏度 |/|
+        |      | SHT20.humidity() | 获取湿度值,单位% |/|
+        |颜色  | Color(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | Color.getRGB() | 获取颜色的(r,g,b)3元组 |/|
+        |      | Color.getHSV() | 获取颜色的(h,s,v)3元组 |/|
+        |数字光线  | AmbientLight(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | AmbientLight.getLight() | 获取光线值,单位lux |/|
+        |超声波  | Ultrasonic(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | Ultrasonic.distance() | 获取测距,单位cm |/|
+        |4段数码管 | SEGdisplay(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | SEGdisplay.numbers(x) | 显示数字,范围-999~9999 |`x`:数字,-999~9999|
+        |      | SEGdisplay.Clear() | 清除 |/|
+        |点阵8x8 | Matrix(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |      | Matrix.blink_rate(rate=None) | 设置闪烁|`rate`:闪烁频率,模式不闪烁,单位秒|
+        |      | Matrix.brightness(brightness) | 设置亮度级|`brightness`:0~15|
+        |      | Matrix.fill(color) | 全部填充|`color`:1为点亮,0为熄灭|
+        |      | Matrix.bitmap(bitmap) | bitmap图案|`bitmap`:8x8的数组
+        |      | Matrix.pixel(x,y,c) | 显示像素|`x,y`:坐标: `c`:颜色,1为亮,0,为灭
+        |      | Matrix.text(s,x,y,c) | 显示英文字符|`s`:字符;`x,y`:坐标; `c`:颜色,1为亮,0,为灭;
+        |      | Matrix.show() | 显示生效,注意修改缓存后,都是使用show()才能生效||
+        |LCD1602 | LCD1602(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |        | LCD1602.Print(str) | 显示英文字符串 |`str`:文本|
+        |        | LCD1602.Clear() | 清屏 |/|
+        |        | LCD1602.setCursor(col, row) | 设置光标位置 |`col`:列;`row`:行|
+        |        | LCD1602.Cursor(show) | 光标使能 |`show`:1为显示,0为不显示|
+        |        | LCD1602.Blink(blink) | 闪烁使能 |`blink`:1为闪烁,0为不闪烁|
+        |        | LCD1602.display(enable) | 显示使能 |`enable`:1为显示,0为不显示|
+        |        | LCD1602.move_left() | 左滚动一列 |/|
+        |        | LCD1602.move_right() | 右滚动一列 |/|
+        |        | LCD1602.text_direction | 文本方向 |LCD1602.text_direction=`LEFT_TO_RIGHT` or `RIGHT_TO_LEFT`|
+        |        | LCD1602.createChar(location, charmap) | 自定义字符 |http://www.quinapalus.com/hd44780udg.html|
+        |        | LCD1602.Home() | 光标返回屏幕原点 ||
+        |电子琴 | MIDI(tx) | 构建对象 |`tx`:UART,tx引脚|
+        |       | MIDI.volume | 设置音量或返回音量 |范围0~127|
+        |       | MIDI.instrument | 设置音色或返回音色 |/|
+        |       | MIDI.note(note, on_off) | 播放音符 |`note`:音符;`on_off`:使能;|
+        |端口扩展 | extIO(i2c=i2c) | 构建对象 |`i2c`:I2C实例|
+        |       | extIO.IOInit(pin, mode) | 引脚初始化 |`pin`:引脚0~7  ;`mode`:extIO.OUTPUT、extIO.INPUT|
+        |       | extIO.readIO(pin) | 读引脚 |`pin`:引脚0~7 |
+        |       | extIO.writeIO(pin) | 写引脚 |`pin`:引脚0~7 |
+        |MP3    | MP3(tx) | 构建对象 |`tx`:UART,tx引脚|
+        |       | MP3.play_song(num) | 播放指定歌曲 |`num`:编号|
+        |       | MP3.play() | 播放 |/|
+        |       | MP3.playNext() | 播放下首 |/|
+        |       | MP3.playPrev() | 播放上首 |/|
+        |       | MP3.pause() | 暂停 |/|
+        |       | MP3.stop() | 停止 |/|
+        |       | MP3.volumeInc() | 增加音量 |/|
+        |       | MP3.volume | 设置音量或者返回音量 |/|
+        |       | MP3.loop(songNo) | 指定序号歌曲循环播放 |/|
+        |       | MP3.resetDevice() | 重启MP3 |/|
+        |OLED    | bluebit_OLED(rx,tx) | 构建对象 |`rx,tx`:UART,rx、tx引脚|
+        |       | bluebit_OLED.print(str,x,y,font=font_song16) | 显示字符串 |`str`:字符串;`x,y`:坐标;</br>`font`:font_5x7、font_song16、font_song24、font_consol32|
+        |       | bluebit_OLED.clear(x0=0,y0=0,x1=127,y1=63) | 清除,默认全屏清除 |`x0,y0`:起点坐标;`x1,y1`:终点坐标;|
+        |       | bluebit_OLED.show() | 显示生效 ||
+        |       | bluebit_OLED.Bitmap( x, y, bitmap, w, h,c) | 显示图案 |`x, y`:坐标 ;`bitmap`:图案bitmap数组 ; </br> `w, h`:图案宽高 ;`c`:颜色0/1 ;|
+        |红外接收    | IRRecv(rx) | 构建对象 |`rx`:UART,rx引脚|
+        |        | IRRecv.recv() | 红外接收 |返回一字节16进制数据|
+        |红外发送    | IRTrans(tx) | 构建对象 |`tx`:UART,tx引脚|
+        |        | IRRecv.transmit(data) | 发送 |`data`:发送一字节数据|
+        
+        ## 执照
+        
+        所有代码均在MIT许可下发布。
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
