@@ -1,0 +1,9 @@
+pymongo<4.0.0,>=2.7.2
+pytz
+six
+
+[:python_version == "2.7"]
+Django<2,>=1.11
+
+[:python_version > "3"]
+Django<3,>=1.11
