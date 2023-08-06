@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pino
+Version: 0.1.0
+Summary: Python json logger
+Home-page: https://github.com/CoorpAcademy/pino.py
+Author: Adrien Becchis @Coorpacademy
+Author-email: adriean.khisbe@live.fr
+License: MIT
+Keywords: cli terminal log logger logging json
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Logging
+Description-Content-Type: text/markdown
+
+# pino.py
+In building port of pinojs to python :snake:
+
+
