@@ -1,0 +1,9 @@
+*.pyc
+*~
+*.idea/
+#emacs autosave
+\#*\#
+build
+pybdsim.egg-info
+/.project
+.eggs*
