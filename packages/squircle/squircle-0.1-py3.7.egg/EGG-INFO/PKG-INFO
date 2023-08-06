@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: squircle
+Version: 0.1
+Summary: `squircle.py` is a Python 3 utility for stretching discs/circles into squares and squishing squares into discs/circles
+Home-page: https://github.com/verhovsky/squircle
+Author: Boris Verkhovskiy
+Author-email: boris@verhovs.ky
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
