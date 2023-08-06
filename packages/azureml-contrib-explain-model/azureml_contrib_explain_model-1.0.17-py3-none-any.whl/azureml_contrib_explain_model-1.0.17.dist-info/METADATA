@@ -1,0 +1,32 @@
+Metadata-Version: 2.0
+Name: azureml-contrib-explain-model
+Version: 1.0.17
+Summary: UNKNOWN
+Home-page: https://docs.microsoft.com/en-us/azure/machine-learning/service/
+Author: Microsoft Corp
+License: Proprietary https://aka.ms/azureml-preview-sdk-license 
+Platform: UNKNOWN
+Description-Content-Type: text/x-rst
+Provides-Extra: deep
+Provides-Extra: lime
+Provides-Extra: sample
+Provides-Extra: mimic
+Provides-Extra: han
+Requires-Dist: azureml-explain-model (==1.0.17.*)
+Provides-Extra: deep
+Requires-Dist: tensorflow; extra == 'deep'
+Provides-Extra: han
+Requires-Dist: spacy; extra == 'han'
+Requires-Dist: gensim; extra == 'han'
+Requires-Dist: tensorflow; extra == 'han'
+Provides-Extra: lime
+Requires-Dist: lime; extra == 'lime'
+Provides-Extra: mimic
+Requires-Dist: lightgbm; extra == 'mimic'
+Provides-Extra: sample
+Requires-Dist: hdbscan; extra == 'sample'
+
+
+
+
+
