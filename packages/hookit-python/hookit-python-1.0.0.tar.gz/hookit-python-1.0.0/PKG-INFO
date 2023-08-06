@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: hookit-python
+Version: 1.0.0
+Summary: Trio based semi-transparent HTTP proxy to enhance any API with hooks
+Home-page: https://github.com/xhs/hookit
+Author: Xiaohan Song
+Author-email: xiaohan.song@oracle.com
+License: BSD 2-Clause
+Description: UNKNOWN
+Platform: UNKNOWN
