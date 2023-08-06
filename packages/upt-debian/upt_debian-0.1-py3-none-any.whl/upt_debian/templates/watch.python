@@ -1,0 +1,5 @@
+{% extends 'watch' %}
+
+{% block url %}
+https://pypi.debian.net/{{ pkg.name }}/{{ pkg.name }}-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
+{% endblock %}

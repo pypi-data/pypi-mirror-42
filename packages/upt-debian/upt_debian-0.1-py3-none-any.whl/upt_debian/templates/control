@@ -1,0 +1,25 @@
+Source: {{ pkg.name }}
+Section: {{ pkg.section }}
+Priority: optional
+{% block maintainer %}
+Maintainer: XXX
+{% endblock %}
+Uploaders: XXX
+{% block build_depends %}
+Build-Depends: XXX
+{% endblock %}
+Standards-Version: XXX
+Homepage: {{ pkg.homepage }}
+{% block vcs %}
+Vcs-Git: XXX
+Vcs-Browser: XXX
+{% endblock %}
+
+Package: {{ pkg.name | debianize_name }}
+Architecture: all
+{% block depends %}
+Depends:
+  ${misc:Depends},
+{% endblock %}
+Description: {{ pkg.summary }}
+{{ pkg.description | indent(width=1, first=True) }}

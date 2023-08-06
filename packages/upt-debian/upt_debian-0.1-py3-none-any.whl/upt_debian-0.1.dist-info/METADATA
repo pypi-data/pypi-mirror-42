@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: upt-debian
+Version: 0.1
+Summary: Debian backend for upt
+Home-page: https://framagit.org/upt/upt-debian
+Author: Cyril Roelandt
+Author-email: tipecaml@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: jinja2
+Requires-Dist: upt
+Provides-Extra: test
+
+UNKNOWN
+
+
