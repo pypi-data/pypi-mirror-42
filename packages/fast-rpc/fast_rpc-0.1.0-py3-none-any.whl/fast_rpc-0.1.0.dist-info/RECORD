@@ -1,0 +1,11 @@
+fast_rpc/__init__.py,sha256=pIRcbgGeqXy1Hg8IdAS4qEcwtRFwtfJjZzVxZavGS3A,134
+fast_rpc/protocol/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fast_rpc/serialization/__init__.py,sha256=ZtvtkOiBE-l9u-WgVaIDbZg2DvsVkX9d_PsXo530lyI,350
+fast_rpc/serialization/constants.py,sha256=d2m3nwH-oqFT8W-QJq3lWy9tdP2Z-kc5Fxq673mQ9Hw,37
+fast_rpc/serialization/decoders.py,sha256=hy8aevUWYKs8iNeToA3f-2LvruzYA_Tw_Ck06cUzlhU,12254
+fast_rpc/serialization/encoders.py,sha256=e38H_wh47sej_8JhkQQ-LbtWnr7Nab1LsikfwIkJ5LY,16419
+fast_rpc/serialization/types.py,sha256=mpr7SPGV-VfGWDfMF4BkzaflcJ9Lle9jVzw9LqvNESA,1283
+fast_rpc-0.1.0.dist-info/LICENSE,sha256=GLOIEaCXVLStbn_dFXnSaBCT4Kv8MKDsAVSH03cAoNs,1067
+fast_rpc-0.1.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+fast_rpc-0.1.0.dist-info/METADATA,sha256=37_vFQkmmn0CEhJG2fZ8q99RQ2vY3dPZxNZ5kDEfvjE,392
+fast_rpc-0.1.0.dist-info/RECORD,,

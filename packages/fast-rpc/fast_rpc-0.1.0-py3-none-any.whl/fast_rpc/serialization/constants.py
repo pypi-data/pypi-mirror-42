@@ -1,0 +1,2 @@
+ENDIAN = 'little'
+YEAR_OFFSET = 1600

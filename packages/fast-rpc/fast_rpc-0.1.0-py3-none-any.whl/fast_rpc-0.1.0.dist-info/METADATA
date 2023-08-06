@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: fast-rpc
+Version: 0.1.0
+Summary: Pure python implementation of binary FastRPC format de/serialisation
+Home-page: UNKNOWN
+License: MIT
+Author: Ken Mijime
+Author-email: kenaco666@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
