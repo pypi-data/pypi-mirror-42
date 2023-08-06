@@ -1,0 +1,1 @@
+{"hash": "$sha1$9bc9ecfbb956851a003a89b7454c225c0293e1a6", "dir_levels": ["/home/alejandro/git/ML/tests/softstream_data_test", "Zarr"], "driver": "ml.data.drivers.core.Zarr", "name": "test", "size": 295, "timestamp": "2019-02-13T21:39 UTC", "author": "AGMR", "description": "description text"}
