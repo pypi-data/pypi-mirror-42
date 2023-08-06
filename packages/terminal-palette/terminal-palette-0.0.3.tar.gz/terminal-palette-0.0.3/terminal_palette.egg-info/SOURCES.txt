@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+terminal_palette.py
+terminal_palette.egg-info/PKG-INFO
+terminal_palette.egg-info/SOURCES.txt
+terminal_palette.egg-info/dependency_links.txt
+terminal_palette.egg-info/top_level.txt
