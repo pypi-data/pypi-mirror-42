@@ -1,0 +1,15 @@
+pr_publisher/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pr_publisher/cli.py,sha256=mLagtyXLuOzUDG5u2HTWcOuaWE5elJy4NvjVkDgbUqg,106
+pr_publisher/entry.py,sha256=Sl2eAtu4JaLzSwGxnaU_f-RcKj5idvFc3aCvIWwjzzI,4160
+pr_publisher/main.py,sha256=C7vcNz6kZCXoTnwuwZfL9bRYHeoQn_TCjkqen0Wqwec,5862
+pr_publisher/publishers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pr_publisher/publishers/base.py,sha256=Gj5YUC7gaSTCq58lBaoOf4zGM1sMELhkYbIWvp7Hc00,515
+pr_publisher/publishers/slack.py,sha256=IZS6WgsdJiYBJy6t3G8p7yenFnFvkz30OB97sHZu9gc,5831
+pr_publisher/publishers/table.py,sha256=BYDbWjawfFc9odOZ5mpNXWYVrRPXKoK03YJHir_IKMY,1223
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pr_publisher-0.0.1.dist-info/LICENSE,sha256=IxMbD1n6Zi8J-47I4tFG6sdPyK_4UNndsMP51InJUeM,1078
+pr_publisher-0.0.1.dist-info/METADATA,sha256=9uAWkoCp0pSmENC4C6X__b5CHwHxs2PkYldSTXm3mj0,8335
+pr_publisher-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pr_publisher-0.0.1.dist-info/entry_points.txt,sha256=jQ62sFu4y9whQA9h7T62e-5Ba7VdAD_jdI0d1IAoqVE,56
+pr_publisher-0.0.1.dist-info/top_level.txt,sha256=ZMud9XjwLprR8GbLrddg2IfrNsVtSuHR7AMnPnGHaNE,19
+pr_publisher-0.0.1.dist-info/RECORD,,
