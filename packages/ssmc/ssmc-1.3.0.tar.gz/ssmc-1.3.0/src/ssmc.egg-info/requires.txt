@@ -1,0 +1,9 @@
+certifi
+chardet
+idna
+requests
+urllib3
+
+[dev]
+sphinx
+check-manifest
