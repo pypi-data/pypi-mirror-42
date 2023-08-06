@@ -1,0 +1,8 @@
+README.md
+setup.py
+flexenv/__init__.py
+flexenv.egg-info/PKG-INFO
+flexenv.egg-info/SOURCES.txt
+flexenv.egg-info/dependency_links.txt
+flexenv.egg-info/requires.txt
+flexenv.egg-info/top_level.txt
