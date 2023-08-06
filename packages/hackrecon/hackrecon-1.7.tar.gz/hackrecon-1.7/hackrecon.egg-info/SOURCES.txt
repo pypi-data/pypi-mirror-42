@@ -1,0 +1,10 @@
+README.md
+setup.py
+hackrecon/__init__.py
+hackrecon/hackrecon.py
+hackrecon.egg-info/PKG-INFO
+hackrecon.egg-info/SOURCES.txt
+hackrecon.egg-info/dependency_links.txt
+hackrecon.egg-info/entry_points.txt
+hackrecon.egg-info/requires.txt
+hackrecon.egg-info/top_level.txt
