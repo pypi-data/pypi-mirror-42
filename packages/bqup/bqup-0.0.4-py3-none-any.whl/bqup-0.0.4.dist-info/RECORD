@@ -1,0 +1,12 @@
+bqup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bqup/dataset.py,sha256=zmO_19tC36_DyuOs53jbjbh-khg63MXS7Aw-fHyq0rA,1098
+bqup/main.py,sha256=EDF7ymbQ0z07EXOc7SK6feurHOWt206SeWa9HpP1aX8,1438
+bqup/project.py,sha256=F2Vexht5bqxvopaCG_o0NNxGRfqGHetTIOCM9QU-G1M,1179
+bqup/table.py,sha256=u4oE_KNwqITcfi7BBWxbEGauiRIpCWA4SorzEa47HPY,2339
+bqup-0.0.4.dist-info/DESCRIPTION.rst,sha256=TOuWIXp_-6rVgZ0rYZj4GwdB154GoCynG92b6e3Uhi8,4350
+bqup-0.0.4.dist-info/METADATA,sha256=61SWbC-O7k2NOHOX03i4YOqUwOfpqO2Or4HkFynH1mg,4765
+bqup-0.0.4.dist-info/RECORD,,
+bqup-0.0.4.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+bqup-0.0.4.dist-info/entry_points.txt,sha256=7JnqFNwxQ_RA08SPcIxg01Z6KHIgMP7m25CJZ8Aa1us,41
+bqup-0.0.4.dist-info/metadata.json,sha256=xxJ_rF_gWJBQi-RK06hvSblPHlBbvTuhiayK63s98r4,784
+bqup-0.0.4.dist-info/top_level.txt,sha256=jclcWXp3ooaFipeey8HVetQqPUWI1p18Q6dRIKG-f5Y,5
