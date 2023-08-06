@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: Ephemera
+Version: 0.0a0
+Summary: Ephemera Networking Toolkit
+Home-page: http://www.ephemera.net
+Author: Ryan Rock
+Author-email: r@ryanrock.co
+License: The MIT License
+Keywords: ephemera,networking,proxy,privacy,anonymity
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Provides: ephemera
+Description-Content-Type: text/markdown
+
+# Ephemera #
+
+The tokenized proxy network.
+
