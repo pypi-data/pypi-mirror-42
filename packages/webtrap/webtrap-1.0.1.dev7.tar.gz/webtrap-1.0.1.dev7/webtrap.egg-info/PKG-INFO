@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: webtrap
+Version: 1.0.1.dev7
+Summary: show http request. for debugging unknown web client
+Home-page: https://github.com/thuhak/webtrap
+Author: thuhak
+Author-email: thuhak.zhou@nio.com
+License: UNKNOWN
+Description: show http request. for debugging unknown web client
+Keywords: 'debugtool'
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
