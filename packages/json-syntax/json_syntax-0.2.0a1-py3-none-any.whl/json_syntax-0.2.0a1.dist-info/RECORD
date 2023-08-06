@@ -1,0 +1,16 @@
+json_syntax/__init__.py,sha256=AEKBMhOBlWUpOWVmfneaMCybN2eZFYgamzUFZ6D51n8,1313
+json_syntax/action_v1.py,sha256=rvXtwH8w2pwbevEMXqX53MfQitpO0eRZByGSDBebi3Y,4415
+json_syntax/attrs.py,sha256=-Vjsnc8aWBg38OjSw-pCiY0xQdSRcE2M9osp9pATczw,4589
+json_syntax/cache.py,sha256=t6eowsq2vSHzUMIaY-MGXx41dw-F2WSXiffEyDVE6tI,3213
+json_syntax/examples/README.md,sha256=CUmIcYiaiZ9OFF9V_NbIomgMhbZTN_ryqzTJHfgQL2E,377
+json_syntax/examples/__init__.py,sha256=VJScDOvVHqC3jenHoenHAlWVggq40HFeYvKuRCHu9yY,60
+json_syntax/examples/flags.py,sha256=W25JXv6qwxnXafwCW4vwD5RK_ufFvRME5LBoSlbg5yg,2581
+json_syntax/examples/loose_dates.py,sha256=m6_LWG8aTqbCb55UcIwryAlSj5VKla_68oQf0ACi9dk,1133
+json_syntax/helpers.py,sha256=eXm2fwrhz0O0Ufy6hqJQGdHOlzOotsT6O53XgtW_o0k,7253
+json_syntax/ruleset.py,sha256=pQ4celF3iKfR_s52QV_13ZglbJyoEhp92j3YDFtUskM,1853
+json_syntax/std.py,sha256=HLGHz4cx2v1A-k0sLMYh4FXss4S79zEN4_iREg-wAcs,9619
+json_syntax/unions.py,sha256=7b0kqGniMpHGKXh48DphqJj--_ZjG3kcwVQ86FO39pU,1798
+json_syntax-0.2.0a1.dist-info/LICENSE,sha256=e15fO-Oua9SSbIheeIMi4Yzs4ImQZX4YdCzkITOPBh8,1067
+json_syntax-0.2.0a1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+json_syntax-0.2.0a1.dist-info/METADATA,sha256=HSTMeajRNtdC4OOQ3UPSurCfo0JBwEQ2c7QiiOAdTWM,13704
+json_syntax-0.2.0a1.dist-info/RECORD,,
