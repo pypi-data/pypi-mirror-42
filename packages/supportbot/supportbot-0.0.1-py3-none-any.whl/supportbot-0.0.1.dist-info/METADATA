@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: supportbot
+Version: 0.0.1
+Summary: Supportbot to support questions and their answers
+Home-page: https://github.com/zhangkaizhao/supportbot
+Author: Kaizhao Zhang
+Author-email: zhangkaizhao@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: full_text_search
+Requires-Dist: jieba (>=0.39) ; extra == 'full_text_search'
+Requires-Dist: Whoosh (>=2.7.4) ; extra == 'full_text_search'
+Provides-Extra: fuzzy
+Requires-Dist: fuzzywuzzy[speedup] (>=0.17.0) ; extra == 'fuzzy'
+
+# Supportbot
+
+Supportbot to support questions and their answers.
+
+## Recipes:
+
+* Fuzzy string matching (just for small scale)
+* Full text search
+* Machine learning (TODO)
+
+### Supportbot in fuzzy string matching
+
+Just for small scale!
+
+* `fuzzywuzzy`: fuzzy string matching
+
+Notes:
+
+* Minimum unit is character but not word.
+
+### Supportbot in full text search
+
+* `jieba`: text segmentation (Chinese)
+* `Whoosh`: indexing
+
+### Supportbot in machine learning
+
+* `NLTK`
+* `scikit-learn` or `tensorflow`
+
+TODO
+
+## Usage
+
+Please see examples in source repository.
+
+
