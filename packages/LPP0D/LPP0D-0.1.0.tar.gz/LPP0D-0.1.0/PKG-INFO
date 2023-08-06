@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: LPP0D
+Version: 0.1.0
+Summary: global model
+Home-page: https://hephaistos.lpp.polytechnique.fr/rhodecode/GIT_REPOSITORIES/LPP/LPP0D
+Author: F. Marmuse & R. Lucken
+Author-email: romain.lucken@lpp.polytechnique.fr
+License: GNU General Public License v3
+Description: 
+        
+        
+Keywords: global model
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
