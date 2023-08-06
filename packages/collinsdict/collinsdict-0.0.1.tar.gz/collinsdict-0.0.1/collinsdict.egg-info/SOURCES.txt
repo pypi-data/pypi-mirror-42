@@ -1,0 +1,9 @@
+setup.py
+collinsdict/__init__.py
+collinsdict/__main__.py
+collinsdict/db.py
+collinsdict/word.py
+collinsdict.egg-info/PKG-INFO
+collinsdict.egg-info/SOURCES.txt
+collinsdict.egg-info/dependency_links.txt
+collinsdict.egg-info/top_level.txt
