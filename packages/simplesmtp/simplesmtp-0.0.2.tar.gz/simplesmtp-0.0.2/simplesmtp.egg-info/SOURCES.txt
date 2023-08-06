@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+simplesmtp/__init__.py
+simplesmtp/core.py
+simplesmtp/util.py
+simplesmtp.egg-info/PKG-INFO
+simplesmtp.egg-info/SOURCES.txt
+simplesmtp.egg-info/dependency_links.txt
+simplesmtp.egg-info/not-zip-safe
+simplesmtp.egg-info/requires.txt
+simplesmtp.egg-info/top_level.txt
