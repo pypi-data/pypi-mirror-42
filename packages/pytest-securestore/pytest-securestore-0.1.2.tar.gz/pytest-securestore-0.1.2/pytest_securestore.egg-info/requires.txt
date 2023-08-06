@@ -1,0 +1,3 @@
+pytest>=3.7.0
+PyYAML>=3.13
+pyAesCrypt>=0.4.2
