@@ -1,0 +1,17 @@
+build
+_build
+dist
+__pycache__
+*.pyc
+*.egg-info
+.cache
+_cache
+.eggs
+.tox
+.coverage
+htmlcov/
+.cagoule.db
+.pytest_cache
+.report.json
+cucumber.json
+geckodriver.log

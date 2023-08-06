@@ -1,0 +1,2 @@
+-e git+https://github.com/charbeljc/hjson-py.git@cjc#egg=hjson-3.0.2
+six

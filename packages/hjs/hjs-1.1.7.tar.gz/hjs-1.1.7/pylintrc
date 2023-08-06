@@ -1,0 +1,2 @@
+[REPORT]
+msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}"

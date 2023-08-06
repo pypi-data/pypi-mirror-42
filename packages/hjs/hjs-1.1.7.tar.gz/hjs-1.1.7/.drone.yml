@@ -1,0 +1,58 @@
+clone:
+  git:
+    image: plugins/git
+    tags: true
+
+pipeline:
+
+  deps:
+    image: pybuilder
+    commands:
+      - python -m venv .venv
+      - . .venv/bin/activate
+      - pip install -r dev-requirements.txt
+
+  test:
+    group: qa
+    image: pybuilder
+    commands:
+      - . .venv/bin/activate
+      - pytest --cov-report xml --cov=hjs --junitxml=xunit.xml
+
+  pylint:
+    group: qa
+    image: pybuilder
+    commands:
+      - . .venv/bin/activate
+      - set +e; pylint -r n > pylint-report.txt ; set -e
+
+  doc:
+    group: qa
+    image: pybuilder
+    commands:
+      - . .venv/bin/activate
+      - sphinx-build -b html doc/source doc/build
+
+  sonar:
+    image: sonar-scanner
+    commands:
+      - sonar-scanner -X
+
+  deploy:
+    image: pybuilder
+    commands:
+      - . .venv/bin/activate
+      - devpi use http://devpi:3141
+      - devpi login test --password=test
+      - devpi use test/dev
+      - devpi upload --with-docs --format sdist,bdist_wheel
+    when:
+      status: [ success ]
+
+  slack:
+    image: plugins/slack
+    webhook: "http://mattermost:8065/hooks/wqdf45cttt81mqcfrj5p1ewmdc"
+    channel: QA
+    username: drone
+    when:
+      status: [ success, failure ]
