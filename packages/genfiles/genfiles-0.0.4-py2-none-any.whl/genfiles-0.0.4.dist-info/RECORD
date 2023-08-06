@@ -1,0 +1,13 @@
+genfiles/__init__.py,sha256=zZjxn8n4_CVMUYUwgEz9HfWCvgJsEpoeaBt3lX0H51Q,38
+genfiles/genfiles.py,sha256=glot7IHEWIs-zC-QRh4i4w4I1TsQVJGSXXKi5M_AwHw,3244
+genfiles/tool.py,sha256=sNuLJp26sYKvOvYbyHbjlPU9_s5rSHyReI6IhRc-IDY,418
+genfiles-0.0.4.data/scripts/genfiles,sha256=gZ8koWaKuzRrinNwBxYUXwgWJpXb6syqWiNJZ22j-uA,47
+genfiles-0.0.4.data/scripts/genfiles.cmd,sha256=u_eS8q04RU5VvW-WmIprzA5jFZPpCRrvgbt5yzkHiiw,37
+genfiles-0.0.4.data/scripts/gf_generate,sha256=aHfc_wOMqusXSFrAqd17kABGIoon7gdCym5DpL8T98g,50
+genfiles-0.0.4.data/scripts/gf_generate.cmd,sha256=TaC7PhXC59B9lo3hbubSLdP17x2xmOs9cCbSvb3oY2o,40
+genfiles-0.0.4.dist-info/DESCRIPTION.rst,sha256=MGu2q2vzw-Y4a8XPgqdIbicoC0NP5NuvW4UMS-HQKKg,58
+genfiles-0.0.4.dist-info/METADATA,sha256=UFov4JzpVKP2SezpkT_od0YsWwT7mN1lEFQzFKTx9cE,758
+genfiles-0.0.4.dist-info/RECORD,,
+genfiles-0.0.4.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+genfiles-0.0.4.dist-info/metadata.json,sha256=le1YFPs7WwnCC0Uw4xdtVvSrPU32Xc0tcR_BmAI-pJM,929
+genfiles-0.0.4.dist-info/top_level.txt,sha256=Wjx1tNTh2BOS6z72M8XILA2GMDHoHGC3RHyQFR_OeRc,9
