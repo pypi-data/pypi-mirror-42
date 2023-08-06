@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: libgs_ops
+Version: 1.1
+Summary: Ground station operation tools library
+Home-page: UNKNOWN
+Author: Kjetil Wormnes / University of New South Wales
+Author-email: kjetil@wormnes.com
+License: UNKNOWN
+Description: libgs_ops contains the operator functionality to go with a ground station built on libgs
+        ==========================================================================================
+        
+        Requirements
+        ------------
+        
+        libgs_ops is meant to be fairly light on requirements and compatible enought to be installed system-wide.  However for the time being it requires python2.7.x. Python 3 compatability is on the roadmap and a fairly simple upgrade.
+        
+        
+        Installation
+        ------------
+        
+        ::
+        
+           pip install libgs_ops
+        
+        Documentation
+        -------------
+        
+        If you do not want to compile the spinx documentation yourself, 
+        you can find it here: https://kworm1.github.io/libgs_ops-docs/
+        
+Keywords: satellite spacecraft operations ground station predict
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: test
