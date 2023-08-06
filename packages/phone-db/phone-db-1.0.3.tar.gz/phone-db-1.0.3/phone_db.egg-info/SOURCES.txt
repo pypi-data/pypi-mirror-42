@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+phone_db/__init__.py
+phone_db/model.py
+phone_db/phone.db
+phone_db/test.py
+phone_db.egg-info/PKG-INFO
+phone_db.egg-info/SOURCES.txt
+phone_db.egg-info/dependency_links.txt
+phone_db.egg-info/not-zip-safe
+phone_db.egg-info/requires.txt
+phone_db.egg-info/top_level.txt
