@@ -1,0 +1,17 @@
+*.egg-info
+*.pyc
+*.pyo
+.DS_Store
+.cache
+.coverage
+.coveragerc
+.installed.cfg
+.mr.developer.cfg
+.pytest_cache
+.tox/
+auto-checkout-sources
+bin
+coverage.xml
+develop-eggs
+htmlcov/
+parts

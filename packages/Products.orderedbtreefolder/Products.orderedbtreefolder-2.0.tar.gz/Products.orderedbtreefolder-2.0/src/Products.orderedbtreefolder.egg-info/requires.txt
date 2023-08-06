@@ -1,0 +1,12 @@
+AccessControl
+Acquisition
+Products.BTreeFolder2>=4
+Products.ZCatalog
+ZODB
+Zope>=4.0b7
+setuptools
+six
+zExceptions
+
+[test]
+zope.testing>=3.8
