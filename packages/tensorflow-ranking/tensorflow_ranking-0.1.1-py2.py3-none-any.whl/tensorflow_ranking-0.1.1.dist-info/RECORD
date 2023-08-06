@@ -1,0 +1,16 @@
+tensorflow_ranking/__init__.py,sha256=5TZJbVsbgsnVE4uHOARwPPN3b8EeK9T-SwyhhMjR29Y,924
+tensorflow_ranking/python/__init__.py,sha256=BueHMM4POwm9yiD4zI9Y3dx4fhp3NZ1IFT3tyh7NMBo,1297
+tensorflow_ranking/python/data.py,sha256=sgdZSlVh0ZvYpp5WobiGRIpSZ1Df4w4DnZtmwpsyy7M,18130
+tensorflow_ranking/python/feature.py,sha256=hGMZ5uvSazRwH-fY3w7cyuZYWweyIFV5oRHggYrx8Xk,8067
+tensorflow_ranking/python/head.py,sha256=cn1j_QLp21dfV_D4uNi5zzboBZ61JjzvO6eaRwAbQfc,9431
+tensorflow_ranking/python/losses.py,sha256=Lgkzl2guqLdxG2Q54DveGRgHx3jgokoPYSEZY-0Vkjo,39803
+tensorflow_ranking/python/metrics.py,sha256=4HM4BLpoVbB7lTvCsBynKwOFF4aaZWkwv2ipwlsAARM,18209
+tensorflow_ranking/python/model.py,sha256=GKJuWfbnLk9w8peqkRgaFr7Y7GsDDH6gtj73qpug8mo,12585
+tensorflow_ranking/python/utils.py,sha256=FFQ1-sZMAmCZnhVCnE3YRdqmZGj8ZB6EAMdTc-py8Vw,7656
+tensorflow_ranking/python/version.py,sha256=cgniLOo0RJwKx37yDdD6UWRlNl6ipslU7tpP1uM5G8Y,1271
+tensorflow_ranking-0.1.1.dist-info/DESCRIPTION.rst,sha256=8WgDrqIahroI9RCtxsQz52Vvonnwu2jjfZnd9epw0ag,71
+tensorflow_ranking-0.1.1.dist-info/METADATA,sha256=Qw84qgtqWeb8wJhNUATyTS6lMzZ5X3COd5N3A-f3FX8,1372
+tensorflow_ranking-0.1.1.dist-info/RECORD,,
+tensorflow_ranking-0.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+tensorflow_ranking-0.1.1.dist-info/metadata.json,sha256=Zi_R33ApxLAUwVsEWy0FqDOCXPzKqq1RfB808B5PUio,1376
+tensorflow_ranking-0.1.1.dist-info/top_level.txt,sha256=gQvIU_zQ66PyLxrcPkbgj0ef3TdM_Dv0B-2Gtc5l4Sw,19
