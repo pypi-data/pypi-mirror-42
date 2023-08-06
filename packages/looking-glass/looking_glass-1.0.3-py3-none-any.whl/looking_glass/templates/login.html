@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LookingGlass Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  </head>
+  <body>
+    {% if error %}
+      <div class="isa_error">
+	<p class=error><strong>Error:</strong> {{ error }}
+      </div>
+    {% endif %}
+
+    <div class="centered-div" id="login-containter" >
+      <h1>Login</h1>
+      <form action="/login" method="post">
+	Username:
+	<input type="text" name="username" value="{{request.form.username}}">
+	Password:
+	<input type="password" name="password" value="{{request.form.password}}">
+	{{ form.csrf_token }}
+	<input type="submit" value="Login">
+      </form>
+
+      <form action="/register">
+	<input type="submit" value="Register New User"/>
+      </form>
+    </div>
+  </body>
+</html>

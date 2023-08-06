@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register New User</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  </head>
+  <body>
+    {% if error %}
+    <div class="isa_error">
+      <p class=error><strong>Error:</strong> {{ error }}
+    </div>
+    {% endif %}
+
+    <div class="centered-div" id="register-containter" >
+      <h1>Registration</h1>
+      <form action="/register" method="post">
+	<label for="username">Username:</label>
+	<input type="text" name="username" value="{{request.form.username}}">
+	<label for="password">Password:</label>
+	<input type="password" name="password" value="{{request.form.password}}">
+	<label for="confirm">Confirm Password:</label>
+	<input type="password" name="confirm" value="{{request.form.confirm}}">
+	{{ form.csrf_token }}
+	<input type="submit" value="Register">
+      </form>
+    </div>
+  </body>
+</html>
