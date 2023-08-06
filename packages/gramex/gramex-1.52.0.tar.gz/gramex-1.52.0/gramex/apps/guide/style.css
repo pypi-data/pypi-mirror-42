@@ -1,0 +1,72 @@
+@import "ui/bootstraptheme.css?primary=%235b9bd5&warning=%23ed7d31&light=%23eeeeee&h1-font-size=2rem&h2-font-size=1.5rem&h3-font-size=1.2rem";
+@import "ui/@fortawesome/fontawesome-free/css/all.min.css";
+@import "monokai.css?v=2";
+
+/* Heading color heirarchy */
+h1 { color: #5b9bd5; }
+h2 { color: #ed7d31; }
+h3 { color: #5c5c5c; }
+
+/* Tables should have borders */
+table thead th { border-bottom: 1px solid #000; }
+table tbody td { border-bottom: 1px solid #eee; }
+
+/* Style the menu */
+@media print {
+  .menu { display: none; }
+}
+.menu a:hover, .menu a:active, .menu a:focus {
+  background-color: #20186f;
+  color: #fff;
+  text-decoration: none;
+}
+.menu a {
+    display: block;
+}
+.menu li ul {
+    padding: 0.1rem 1rem;
+}
+.menu li {
+    list-style: none;
+}
+.menu li a {
+    padding: 0.25rem 1rem;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Style PRE elements They take up full width */
+.codehilite pre {
+  padding: 0.5rem 1rem;
+  margin: 0 -1rem 1rem -1rem;
+  color: #fff;
+  background-color: inherit;
+  /* On small screens, wrap code */
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
+/* Example apps */
+.example {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin: 1rem -1rem;
+
+  border: 1px solid rgba(0,0,0,.2);
+  background-color: rgba(237, 125, 55, 0.3);
+  box-shadow: 1px 1px 1px black;
+}
+.example a {
+  border: none;
+}
+.example:before {
+  content: "\25cd";
+  font-size: 4rem;
+  line-height: 0;
+  position: relative;
+  top: 01rem;
+}
+.example-src {
+  float: right;
+}
