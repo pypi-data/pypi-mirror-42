@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+django_ubuntu_deployer.egg-info/PKG-INFO
+django_ubuntu_deployer.egg-info/SOURCES.txt
+django_ubuntu_deployer.egg-info/dependency_links.txt
+django_ubuntu_deployer.egg-info/not-zip-safe
+django_ubuntu_deployer.egg-info/top_level.txt
+ubuntu_deployer/__init__.py
+ubuntu_deployer/exceptions.py
+ubuntu_deployer/utils.py
+ubuntu_deployer/configs/gunicorn_config.txt
+ubuntu_deployer/configs/nginx_config.txt
+ubuntu_deployer/management/__init__.py
+ubuntu_deployer/management/commands/__init__.py
+ubuntu_deployer/management/commands/deploy.py
