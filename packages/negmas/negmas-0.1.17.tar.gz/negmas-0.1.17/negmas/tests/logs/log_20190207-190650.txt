@@ -1,0 +1,12 @@
+2019-02-07 19:06:51,743 - DEBUG - section breaches added
+2019-02-07 19:06:51,743 - DEBUG - section stats added
+2019-02-07 19:06:51,743 - DEBUG - section settings added
+2019-02-07 19:06:51,743 - INFO - 0/10 [4e+01]: DummyWorld_312035da-0485-40ef-b770-2d31b8b15bfe: World Created
+2019-02-07 19:06:51,743 - INFO - 0/10 [4e+01]: A1 joined
+2019-02-07 19:06:51,743 - INFO - 0/10 [4e+01]: A2 joined
+2019-02-07 19:06:51,743 - INFO - 0/10 [0.1]: 0 Negotiations/1 _entities
+2019-02-07 19:06:51,743 - INFO - 1/10 [0.2]: 0 Negotiations/1 _entities
+2019-02-07 19:06:51,744 - INFO - 2/10 [0.3]: 0 Negotiations/1 _entities
+2019-02-07 19:06:51,744 - INFO - 2/10 [0.3]: A1 requested None[None] with ['A2', 'A1'] (ID c580e8a1-cf83-456d-82b0-edbb88291e60)
+2019-02-07 19:06:51,747 - INFO - 2/10 [0.3]: A1 request was accepted
+2019-02-07 19:06:51,748 - INFO - 3/10 [0.4]: 1 Negotiations/1 _entities
