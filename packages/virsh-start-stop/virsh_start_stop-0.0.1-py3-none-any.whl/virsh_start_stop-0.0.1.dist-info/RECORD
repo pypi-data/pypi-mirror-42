@@ -1,0 +1,8 @@
+virsh_start_stop/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+virsh_start_stop/virsh_start_stop.py,sha256=UeauT9UW0j70ccY0REHvOSTLJs1jhmg_qUJfBRgRW0A,3283
+virsh_start_stop-0.0.1.dist-info/LICENSE,sha256=jQetN9FdAor4wKXUTRrVqBYOK5_Qz7xzoXo-WqLdU2I,1077
+virsh_start_stop-0.0.1.dist-info/METADATA,sha256=iPvwzooeBCSOJrQ5ds_S-KD05EX6A6eEP4c_VjGsrpI,2233
+virsh_start_stop-0.0.1.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+virsh_start_stop-0.0.1.dist-info/entry_points.txt,sha256=pIjyU6zwEJYUiFYEd9NJjDAE0h3mceRx1wSwTwti5ZY,86
+virsh_start_stop-0.0.1.dist-info/top_level.txt,sha256=M64G5qZbDhNLe2CbMMVpZJUA5vGiLaZcXCaddEx05sk,17
+virsh_start_stop-0.0.1.dist-info/RECORD,,
