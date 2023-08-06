@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: Advans-ERP-Checker
+Version: 0.1.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Hugo DUPRAS
+Author-email: jabesq@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Requires-Dist: soupsieve (==1.7.3)
+Requires-Dist: beautifulsoup4 (==4.7.1)
+Requires-Dist: requests
+Requires-Dist: urllib3
+
+# Advans_ERP_Checker
+
+
+
