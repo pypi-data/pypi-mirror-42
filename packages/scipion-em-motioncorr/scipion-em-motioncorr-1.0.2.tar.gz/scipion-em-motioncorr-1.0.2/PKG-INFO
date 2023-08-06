@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: scipion-em-motioncorr
+Version: 1.0.2
+Summary: Plugin to use motioncorr programs within the Scipion framework
+Home-page: https://github.com/scipion-em/scipion-em-motioncorr
+Author: Grigory Sharov, J.M. De la Rosa Trevin
+Author-email: sharov.grigory@gmail.com, delarosatrevin@scilifelab.se
+License: UNKNOWN
+Description: # Motioncorr plugin
+        
+        This plugin allows to use motioncor2 program within the Scipion framework.
+        
+        Motioncor2 is a GPU-accelerated program for correction of electron beam-induced sample motion. It is developed by [Shawn Zheng](http://msg.ucsf.edu/em/software/motioncor2.html).
+        
+        
+        Supported version  of Motioncor2: 1.0.2, 1.0.5, 1.1.0, 1.2.1
+        
+        ![build status](http://arquimedes.cnb.csic.es:9980/badges/motioncorr_devel.svg "Build status")
+        
+Keywords: scipion electron-microscopy cryo-em structural-biology image-processing scipion-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2.7
