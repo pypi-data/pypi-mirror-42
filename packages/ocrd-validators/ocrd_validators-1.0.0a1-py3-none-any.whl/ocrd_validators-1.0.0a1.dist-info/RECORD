@@ -1,0 +1,15 @@
+ocrd_validators/__init__.py,sha256=jVboJxEmALylKZhhVDqABoeHi94C6rm8WsNxbGwlwbI,443
+ocrd_validators/bagit-profile.yml,sha256=8As3eEufripuwdJiHQewFb8w4YYox5_2cdfzQoL6T6g,1077
+ocrd_validators/constants.py,sha256=wAoZ2Fxk8ynnRJChRYnUiy6pjRFWNauQtJ0-LyXSKRg,475
+ocrd_validators/json_validator.py,sha256=75908Nq_qdNS3lWtxN56FHRphZqYPh_Xz8jpQldLp5M,1459
+ocrd_validators/ocrd_tool.schema.yml,sha256=lxyzXisUDf7mZL6IrFLA2CIKTlahRD6swELJ_jsgwiQ,4664
+ocrd_validators/ocrd_tool_validator.py,sha256=xSb2IL9WM8wrVu6SAhlQa8ATx-o608N1qizDv-HFhjA,298
+ocrd_validators/ocrd_zip_validator.py,sha256=cnhCXBBhwthKaE4mG2T_RR1k_bFzrbV8_jpSM56lnkA,4698
+ocrd_validators/page_validator.py,sha256=GLh7st5Y1hmK4lZPeA4YO9b2klFt0otULVcnYLMK2XE,6478
+ocrd_validators/parameter_validator.py,sha256=VRoBWlTKpO2mve7IzHjARinTaGzSLvth8g5MaliAh84,917
+ocrd_validators/report.py,sha256=D3aYPvLfYqzlBg9a3GKUoT2xBpnnRCwPLFzjoiD4FF4,1484
+ocrd_validators/workspace_validator.py,sha256=pskQaZAKEs_qnVosc_Si4Vdn6wMtHOVU8yF1YuwnqA4,5728
+ocrd_validators-1.0.0a1.dist-info/METADATA,sha256=Qn4Jnu_4gwyueYIp-bkO4lzzBYnWCZwTe6J8t29Ygo0,669
+ocrd_validators-1.0.0a1.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+ocrd_validators-1.0.0a1.dist-info/top_level.txt,sha256=7QUzNoFgPMzjj6oHjm6Iga_HlG677jTkGCUhnzqoFSM,16
+ocrd_validators-1.0.0a1.dist-info/RECORD,,
