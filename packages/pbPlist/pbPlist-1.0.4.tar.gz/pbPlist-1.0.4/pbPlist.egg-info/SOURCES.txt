@@ -1,0 +1,15 @@
+setup.py
+pbPlist/StrParse.py
+pbPlist/Switch.py
+pbPlist/__init__.py
+pbPlist/pbItem.py
+pbPlist/pbParser.py
+pbPlist/pbPlist.py
+pbPlist/pbRoot.py
+pbPlist/pbSerializer.py
+pbPlist.egg-info/PKG-INFO
+pbPlist.egg-info/SOURCES.txt
+pbPlist.egg-info/dependency_links.txt
+pbPlist.egg-info/not-zip-safe
+pbPlist.egg-info/requires.txt
+pbPlist.egg-info/top_level.txt
