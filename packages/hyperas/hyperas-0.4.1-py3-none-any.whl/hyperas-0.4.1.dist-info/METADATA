@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: hyperas
+Version: 0.4.1
+Summary: Simple wrapper for hyperopt to do convenient hyperparameter optimization for Keras models
+Home-page: http://github.com/maxpumperla/hyperas
+Author: Max Pumperla
+Author-email: max.pumperla@googlemail.com
+License: MIT
+Download-URL: https://github.com/maxpumperla/hyperas/tarball/0.4.1
+Platform: UNKNOWN
+Requires-Dist: keras
+Requires-Dist: hyperopt
+Requires-Dist: entrypoints
+Requires-Dist: jupyter
+Requires-Dist: nbformat
+Requires-Dist: nbconvert
+
+UNKNOWN
+
+
