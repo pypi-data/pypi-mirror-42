@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+bin/peoplefinder
+bin/peopleuploader
+peoplefinder/GetData.py
+peoplefinder/SaveData.py
+peoplefinder/TelegramUpload.py
+peoplefinder/__init__.py
+peoplefinder.egg-info/PKG-INFO
+peoplefinder.egg-info/SOURCES.txt
+peoplefinder.egg-info/dependency_links.txt
+peoplefinder.egg-info/requires.txt
+peoplefinder.egg-info/top_level.txt
