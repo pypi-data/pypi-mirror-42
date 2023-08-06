@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Low-level utilities used for or by reading pipelines (indra.tools.reading.util) &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Tools (indra.tools)" href="../index.html"/>
+        <link rel="next" title="Util (indra.util)" href="../../util/index.html"/>
+        <link rel="prev" title="High-throughput reading tools (indra.tools.reading)" href="tools.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">INDRA modules reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../statements.html">INDRA Statements (<code class="docutils literal notranslate"><span class="pre">indra.statements</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sources/index.html">Processors for knowledge input (<code class="docutils literal notranslate"><span class="pre">indra.sources</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../databases/index.html">Database clients (<code class="docutils literal notranslate"><span class="pre">indra.databases</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../literature/index.html">Literature clients (<code class="docutils literal notranslate"><span class="pre">indra.literature</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preassembler/index.html">Preassembly (<code class="docutils literal notranslate"><span class="pre">indra.preassembler</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../belief/index.html">Belief Engine (<code class="docutils literal notranslate"><span class="pre">indra.belief</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mechlinker/index.html">Mechanism Linker (<code class="docutils literal notranslate"><span class="pre">indra.mechlinker</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assemblers/index.html">Assemblers of model output (<code class="docutils literal notranslate"><span class="pre">indra.assemblers</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/index.html">Explanation (<code class="docutils literal notranslate"><span class="pre">indra.explanation</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.assemble_corpus">Run assembly components in a pipeline (<code class="docutils literal notranslate"><span class="pre">indra.tools.assemble_corpus</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.live_curation">Real-time feedback for assembly (<code class="docutils literal notranslate"><span class="pre">indra.tools.live_curation</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.gene_network">Build a network from a gene list (<code class="docutils literal notranslate"><span class="pre">indra.tools.gene_network</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.executable_subnetwork">Build an executable model from a fragment of a large network (<code class="docutils literal notranslate"><span class="pre">indra.tools.executable_subnetwork</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.incremental_model">Build a model incrementally over time (<code class="docutils literal notranslate"><span class="pre">indra.tools.incremental_model</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.machine">The RAS Machine (<code class="docutils literal notranslate"><span class="pre">indra.tools.machine</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#high-throughput-reading-tools-indra-tools-reading">High-throughput Reading Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pipelines.html">Remote Reading Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interfaces.html">High-throughput reading CLI’s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html">High-throughput reading tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Low-level utilities used for or by reading pipelines (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading.util</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../util/index.html">Util (<code class="docutils literal notranslate"><span class="pre">indra.util</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">INDRA modules reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a> &raquo;</li>
+        
+      <li>Low-level utilities used for or by reading pipelines (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading.util</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/modules/tools/reading/utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="low-level-utilities-used-for-or-by-reading-pipelines-indra-tools-reading-util">
+<h1>Low-level utilities used for or by reading pipelines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.util</span></code>)<a class="headerlink" href="#low-level-utilities-used-for-or-by-reading-pipelines-indra-tools-reading-util" title="Permalink to this headline">¶</a></h1>
+<p>General tools to help with bulk reading.</p>
+<div class="section" id="module-indra.tools.reading.util.log_analysis_tools">
+<span id="tools-to-analyze-logs-indra-tools-reading-util-log-analysis-tools"></span><h2>Tools to analyze logs (<a class="reference internal" href="#module-indra.tools.reading.util.log_analysis_tools" title="indra.tools.reading.util.log_analysis_tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.util.log_analysis_tools</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.util.log_analysis_tools" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="indra.tools.reading.util.log_analysis_tools.GetReadingStatsError">
+<em class="property">exception </em><code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">GetReadingStatsError</code><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#GetReadingStatsError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.GetReadingStatsError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.util.log_analysis_tools.analyze_db_reading">
+<code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">analyze_db_reading</code><span class="sig-paren">(</span><em>job_prefix</em>, <em>reading_queue='run_db_reading_queue'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#analyze_db_reading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.analyze_db_reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run various analysis on a particular reading job.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.util.log_analysis_tools.analyze_reach_log">
+<code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">analyze_reach_log</code><span class="sig-paren">(</span><em>log_fname=None</em>, <em>log_str=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#analyze_reach_log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.analyze_reach_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unifinished PMIDs given a log file name.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.util.log_analysis_tools.get_logs_from_db_reading">
+<code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">get_logs_from_db_reading</code><span class="sig-paren">(</span><em>job_prefix</em>, <em>reading_queue='run_db_reading_queue'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#get_logs_from_db_reading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.get_logs_from_db_reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the logs stashed on s3 for a particular reading.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.util.log_analysis_tools.get_unyielding_tcids">
+<code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">get_unyielding_tcids</code><span class="sig-paren">(</span><em>log_str</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#get_unyielding_tcids"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.get_unyielding_tcids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract the set of tcids for which no statements were created.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.util.log_analysis_tools.separate_reach_logs">
+<code class="descclassname">indra.tools.reading.util.log_analysis_tools.</code><code class="descname">separate_reach_logs</code><span class="sig-paren">(</span><em>log_str</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/log_analysis_tools.html#separate_reach_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.log_analysis_tools.separate_reach_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the list of reach logs from the overall logs.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.tools.reading.util.export_stmts_by_reach_rule">
+<span id="tools-to-export-statements-by-reach-rule-indra-tools-reading-util-export-stmts-by-reach-rule"></span><h2>Tools to export statements by reach rule (<a class="reference internal" href="#module-indra.tools.reading.util.export_stmts_by_reach_rule" title="indra.tools.reading.util.export_stmts_by_reach_rule"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.util.export_stmts_by_reach_rule</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.util.export_stmts_by_reach_rule" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-indra.tools.reading.util.reporter">
+<span id="class-for-generating-reports-on-a-batch-reading-job-indra-tools-reading-util-reporter"></span><h2>Class for generating reports on a Batch reading job (<a class="reference internal" href="#module-indra.tools.reading.util.reporter" title="indra.tools.reading.util.reporter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.util.reporter</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.util.reporter" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="indra.tools.reading.util.reporter.Reporter">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.util.reporter.</code><code class="descname">Reporter</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class to produce a simple pdf report using the reportlab package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – A name that will be the name of this file, and the title by default.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.add_image">
+<code class="descname">add_image</code><span class="sig-paren">(</span><em>image_path</em>, <em>width=None</em>, <em>height=None</em>, <em>section=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.add_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.add_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an image to the document.</p>
+<p>Images are shown on the final document in the order they are added,
+either within the given section or as part of the un-sectioned list of
+content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image_path</strong> (<em>str</em>) – A path to the image on the local file system.</li>
+<li><strong>width</strong> (<em>int</em><em> or </em><em>float</em>) – The width of the image in the document in inches.</li>
+<li><strong>height</strong> (<em>int</em><em> or </em><em>float</em>) – The height of the image in the document in incehs.</li>
+<li><strong>section</strong> (<em>str</em>) – (This must be a keyword) Select a section in which to place this
+image. Default is None, in which case the image will be simply be
+added to a default list of text and images.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.add_section">
+<code class="descname">add_section</code><span class="sig-paren">(</span><em>section_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.add_section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.add_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a section of the report, to be headed by section_name</p>
+<p>Text and images can be added by using the <cite>section</cite> argument of the
+<cite>add_text</cite> and <cite>add_image</cite> methods. Sections can also be ordered by
+using the <cite>set_section_order</cite> method.</p>
+<p>By default, text and images that have no section will be placed after
+all the sections, in the order they were added. This behavior may be
+altered using the <cite>sections_first</cite> attribute of the <cite>make_report</cite>
+method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.add_text">
+<code class="descname">add_text</code><span class="sig-paren">(</span><em>text</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.add_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.add_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add text to the document.</p>
+<p>Text is shown on the final document in the order it is added, either
+within the given section or as part of the un-sectioned list of content.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>text</strong> (<em>str</em>) – The text to be added.</li>
+<li><strong>style</strong> (<em>str</em>) – Choose the style of the text. Options include ‘Normal’, ‘Code’,
+‘Title’, ‘h1’. For others, see <cite>getSampleStyleSheet</cite> from
+<cite>reportlab.lib.styles</cite>.</li>
+<li><strong>space</strong> (<em>tuple</em><em> (</em><em>num spaces</em><em>, </em><em>font size</em><em>)</em>) – The number and size of spaces to follow this section of text.
+Default is (1, 12).</li>
+<li><strong>fontsize</strong> (<em>int</em>) – The integer font size of the text (e.g. 12 for 12 point font).
+Default is 12.</li>
+<li><strong>alignment</strong> (<em>str</em>) – The alignment of the text. Options include ‘left’, ‘right’, and
+‘center’. Default is ‘left’.</li>
+<li><strong>section</strong> (<em>str</em>) – (This must be a keyword) Select a section in which to place this
+text. Default is None, in which case the text will be simply be
+added to a default list of text and images.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.make_report">
+<code class="descname">make_report</code><span class="sig-paren">(</span><em>sections_first=True</em>, <em>section_header_params=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.make_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.make_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the pdf document with name <cite>self.name + ‘.pdf’</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sections_first</strong> (<em>bool</em>) – If True (default), text and images with sections are presented first
+and un-sectioned content is appended afterword. If False, sectioned
+text and images will be placed before the sections.</li>
+<li><strong>section_header_params</strong> (<em>dict</em><em> or </em><em>None</em>) – Optionally overwrite/extend the default formatting for the section
+headers. Default is None.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.set_section_order">
+<code class="descname">set_section_order</code><span class="sig-paren">(</span><em>section_name_list</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.set_section_order"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.set_section_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the order of the sections, which are by default unorderd.</p>
+<p>Any unlisted sections that exist will be placed at the end of the
+document in no particular order.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.util.reporter.Reporter.set_title">
+<code class="descname">set_title</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/reporter.html#Reporter.set_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.reporter.Reporter.set_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite the default title with a string title of your choosing.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.tools.reading.util.script_tools">
+<span id="tools-used-in-creating-cli-scripts-for-reading-indra-tools-reading-util-script-tools"></span><h2>Tools used in creating CLI scripts for reading (<a class="reference internal" href="#module-indra.tools.reading.util.script_tools" title="indra.tools.reading.util.script_tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.util.script_tools</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.util.script_tools" title="Permalink to this headline">¶</a></h2>
+<p>Useful tools for reading scripts.</p>
+<dl class="function">
+<dt id="indra.tools.reading.util.script_tools.get_parser">
+<code class="descclassname">indra.tools.reading.util.script_tools.</code><code class="descname">get_parser</code><span class="sig-paren">(</span><em>description</em>, <em>input_desc</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/util/script_tools.html#get_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.util.script_tools.get_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a parser that is generic to reading scripts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>description</strong> (<em>str</em>) – A description of the tool, usually about one line long.</li>
+<li><strong>input_desc</strong> (<em>str</em>) – A string describing the nature of the input file used by the reading
+tool.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>parser</strong> – An argument parser object, to which further arguments can be added.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">argparse.ArgumentParser instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../util/index.html" class="btn btn-neutral float-right" title="Util (indra.util)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tools.html" class="btn btn-neutral" title="High-throughput reading tools (indra.tools.reading)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

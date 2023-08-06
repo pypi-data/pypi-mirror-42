@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.literature.deft_tools &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="indra.literature" href="../literature.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../literature.html">indra.literature</a> &raquo;</li>
+        
+      <li>indra.literature.deft_tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.literature.deft_tools</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This file provides several functions helpful for acquiring texts for deft</span>
+<span class="sd">disambiguation.</span>
+
+<span class="sd">It offers the ability to get text content for articles containing a</span>
+<span class="sd">particular gene. This is useful for aquiring training texts for genes</span>
+<span class="sd">genes that do not appear in a defining pattern with a problematic shortform.</span>
+
+<span class="sd">General XML processing is also provided that allows for extracting</span>
+<span class="sd">text from a source that may be either of Elsevier XML, NLM XML or raw text.</span>
+<span class="sd">This is helpful because it avoids having to know in advance the source of</span>
+<span class="sd">text content from the database.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">indra.literature</span> <span class="k">import</span> <span class="n">pubmed_client</span><span class="p">,</span> <span class="n">pmc_client</span><span class="p">,</span> <span class="n">elsevier_client</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># the elsevier_client will log messages that it is safe to ignore</span>
+<span class="n">el</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;indra.literature.elsevier_client&#39;</span><span class="p">)</span>
+<span class="n">el</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_text_content_for_gene"><a class="viewcode-back" href="../../../modules/literature/index.html#indra.literature.deft_tools.get_text_content_for_gene">[docs]</a><span class="k">def</span> <span class="nf">get_text_content_for_gene</span><span class="p">(</span><span class="n">hgnc_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get articles that have been annotated to contain gene in entrez</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    hgnc_name : str</span>
+<span class="sd">       HGNC name for gene</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    text_content : list of str</span>
+<span class="sd">        xmls of fulltext if available otherwise abstracts for all articles</span>
+<span class="sd">        that haven been annotated in entrez to contain the given gene</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pmids</span> <span class="o">=</span> <span class="n">pubmed_client</span><span class="o">.</span><span class="n">get_ids_for_gene</span><span class="p">(</span><span class="n">hgnc_name</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">get_text_content_for_pmids</span><span class="p">(</span><span class="n">pmids</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_text_content_for_pmids"><a class="viewcode-back" href="../../../modules/literature/index.html#indra.literature.deft_tools.get_text_content_for_pmids">[docs]</a><span class="k">def</span> <span class="nf">get_text_content_for_pmids</span><span class="p">(</span><span class="n">pmids</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get text content for articles given a list of their pmids</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pmids : list of str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    text_content : list of str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pmc_pmids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pmc_client</span><span class="o">.</span><span class="n">filter_pmids</span><span class="p">(</span><span class="n">pmids</span><span class="p">,</span> <span class="n">source_type</span><span class="o">=</span><span class="s1">&#39;fulltext&#39;</span><span class="p">))</span>
+
+    <span class="n">pmc_ids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pmid</span> <span class="ow">in</span> <span class="n">pmc_pmids</span><span class="p">:</span>
+        <span class="n">pmc_id</span> <span class="o">=</span> <span class="n">pmc_client</span><span class="o">.</span><span class="n">id_lookup</span><span class="p">(</span><span class="n">pmid</span><span class="p">,</span> <span class="n">idtype</span><span class="o">=</span><span class="s1">&#39;pmid&#39;</span><span class="p">)[</span><span class="s1">&#39;pmcid&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">pmc_id</span><span class="p">:</span>
+            <span class="n">pmc_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pmc_id</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pmc_pmids</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">pmid</span><span class="p">)</span>
+
+    <span class="n">pmc_xmls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">failed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pmc_id</span> <span class="ow">in</span> <span class="n">pmc_ids</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pmc_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pmc_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pmc_client</span><span class="o">.</span><span class="n">get_xml</span><span class="p">(</span><span class="n">pmc_id</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">failed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pmid</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">remaining_pmids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pmids</span><span class="p">)</span> <span class="o">-</span> <span class="n">pmc_pmids</span> <span class="o">|</span> <span class="n">failed</span>
+    <span class="n">abstracts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pmid</span> <span class="ow">in</span> <span class="n">remaining_pmids</span><span class="p">:</span>
+        <span class="n">abstract</span> <span class="o">=</span> <span class="n">pubmed_client</span><span class="o">.</span><span class="n">get_abstract</span><span class="p">(</span><span class="n">pmid</span><span class="p">)</span>
+        <span class="n">abstracts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abstract</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">text_content</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="p">(</span><span class="n">pmc_xmls</span><span class="p">,</span> <span class="n">abstracts</span><span class="p">)</span></div>
+            <span class="k">for</span> <span class="n">text_content</span> <span class="ow">in</span> <span class="n">source</span> <span class="k">if</span> <span class="n">text_content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="get_plaintexts"><a class="viewcode-back" href="../../../modules/literature/index.html#indra.literature.deft_tools.get_plaintexts">[docs]</a><span class="k">def</span> <span class="nf">get_plaintexts</span><span class="p">(</span><span class="n">text_content</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a corpus of plaintexts given text content from different sources</span>
+
+<span class="sd">    Converts xml files into plaintext, leaves abstracts as they are.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sources : list of str</span>
+<span class="sd">        lists of text content. each item should either be a plaintext, an</span>
+<span class="sd">        an NLM xml or an Elsevier xml</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    plaintexts : list of str</span>
+<span class="sd">        list of plaintexts for input list of xml strings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">universal_extract_text</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">contains</span><span class="p">)</span></div>
+            <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">text_content</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="universal_extract_text"><a class="viewcode-back" href="../../../modules/literature/index.html#indra.literature.deft_tools.universal_extract_text">[docs]</a><span class="k">def</span> <span class="nf">universal_extract_text</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">contains</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extract plaintext from xml</span>
+
+<span class="sd">    First try to parse the xml as if it came from elsevier. if we do not</span>
+<span class="sd">    have valid elsevier xml this will throw an exception. the text extraction</span>
+<span class="sd">    function in the pmc client may not throw an exception when parsing elsevier</span>
+<span class="sd">    xml, silently processing the xml incorrectly</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xml : str</span>
+<span class="sd">       Either an NLM xml, Elsevier xml or plaintext</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    plaintext : str</span>
+<span class="sd">        for NLM or Elsevier xml as input, this is the extracted plaintext</span>
+<span class="sd">        otherwise the input is returned unchanged</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">plaintext</span> <span class="o">=</span> <span class="n">elsevier_client</span><span class="o">.</span><span class="n">extract_text</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">contains</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">plaintext</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">plaintext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">plaintext</span> <span class="o">=</span> <span class="n">pmc_client</span><span class="o">.</span><span class="n">extract_text</span><span class="p">(</span><span class="n">xml</span><span class="p">,</span> <span class="n">contains</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">plaintext</span> <span class="o">=</span> <span class="n">xml</span></div>
+    <span class="k">return</span> <span class="n">plaintext</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

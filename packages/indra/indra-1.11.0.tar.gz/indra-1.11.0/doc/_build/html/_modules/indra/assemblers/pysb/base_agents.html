@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.assemblers.pysb.base_agents &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.assemblers.pysb.base_agents</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.assemblers.pysb.base_agents</h1><div class="highlight"><pre>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BaseAgentSet&#39;</span><span class="p">,</span> <span class="s1">&#39;BaseAgent&#39;</span><span class="p">]</span>
+<span class="kn">from</span> <span class="nn">pysb</span> <span class="k">import</span> <span class="n">Annotation</span>
+<span class="kn">from</span> <span class="nn">indra.statements</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.common</span> <span class="k">import</span> <span class="n">_n</span>
+<span class="kn">from</span> <span class="nn">.sites</span> <span class="k">import</span> <span class="n">states</span><span class="p">,</span> <span class="n">get_binding_site_name</span><span class="p">,</span> <span class="n">get_mod_site_name</span>
+
+
+<div class="viewcode-block" id="BaseAgentSet"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgentSet">[docs]</a><span class="k">class</span> <span class="nc">BaseAgentSet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Container for a dict of BaseAgents with their names as keys.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="BaseAgentSet.get_create_base_agent"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgentSet.get_create_base_agent">[docs]</a>    <span class="k">def</span> <span class="nf">get_create_base_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return base agent with given name, creating it if needed.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">base_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">_n</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">base_agent</span> <span class="o">=</span> <span class="n">BaseAgent</span><span class="p">(</span><span class="n">_n</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">_n</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">)]</span> <span class="o">=</span> <span class="n">base_agent</span>
+
+        <span class="c1"># If it&#39;s a molecular agent</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">Agent</span><span class="p">):</span>
+            <span class="c1"># Handle bound conditions</span>
+            <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">:</span>
+                <span class="n">bound_base_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_create_base_agent</span><span class="p">(</span><span class="n">bc</span><span class="o">.</span><span class="n">agent</span><span class="p">)</span>
+                <span class="n">bound_base_agent</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="n">get_binding_site_name</span><span class="p">(</span><span class="n">agent</span><span class="p">))</span>
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="n">get_binding_site_name</span><span class="p">(</span><span class="n">bc</span><span class="o">.</span><span class="n">agent</span><span class="p">))</span>
+
+            <span class="c1"># Handle modification conditions</span>
+            <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">mods</span><span class="p">:</span>
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">create_mod_site</span><span class="p">(</span><span class="n">mc</span><span class="p">)</span>
+
+            <span class="c1"># Handle mutation conditions</span>
+            <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">mutations</span><span class="p">:</span>
+                <span class="n">res_from</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue_from</span> <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue_from</span> <span class="k">else</span> <span class="s1">&#39;mut&#39;</span>
+                <span class="n">res_to</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue_to</span> <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue_to</span> <span class="k">else</span> <span class="s1">&#39;X&#39;</span>
+                <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">mut_site_name</span> <span class="o">=</span> <span class="n">res_from</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">mut_site_name</span> <span class="o">=</span> <span class="n">res_from</span> <span class="o">+</span> <span class="n">mc</span><span class="o">.</span><span class="n">position</span>
+
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="n">mut_site_name</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;WT&#39;</span><span class="p">,</span> <span class="n">res_to</span><span class="p">])</span>
+
+            <span class="c1"># Handle location condition</span>
+            <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="s1">&#39;loc&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">_n</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">location</span><span class="p">)])</span>
+
+            <span class="c1"># Handle activity</span>
+            <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">site_name</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">activity_type</span>
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;inactive&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">])</span>
+
+        <span class="c1"># There might be overwrites here</span>
+        <span class="k">for</span> <span class="n">db_name</span><span class="p">,</span> <span class="n">db_ref</span> <span class="ow">in</span> <span class="n">agent</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">base_agent</span><span class="o">.</span><span class="n">db_refs</span><span class="p">[</span><span class="n">db_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">db_ref</span>
+</div>
+        <span class="k">return</span> <span class="n">base_agent</span>
+
+<div class="viewcode-block" id="BaseAgentSet.items"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgentSet.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return items for the set of BaseAgents that this class wraps.</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="BaseAgent"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent">[docs]</a><span class="k">class</span> <span class="nc">BaseAgent</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A BaseAgent aggregates the global properties of an Agent.</span>
+
+<span class="sd">    The BaseAgent class aggregates the name, sites, site states, active forms,</span>
+<span class="sd">    inactive forms and database references of Agents from individual INDRA</span>
+<span class="sd">    Statements. This allows the PySB Assembler to correctly assemble the</span>
+<span class="sd">    Monomer signatures in the model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sites</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">site_states</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">site_annotations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># The list of site/state configurations that lead to this agent</span>
+        <span class="c1"># being active (where the agent is currently assumed to have only</span>
+        <span class="c1"># one type of activity)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active_forms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activity_types</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inactive_forms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="BaseAgent.create_site"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent.create_site">[docs]</a>    <span class="k">def</span> <span class="nf">create_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a new site on an agent if it doesn&#39;t already exist.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">site</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sites</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">states</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">site_states</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">states</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="k">return</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_site_states</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">states</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseAgent.create_mod_site"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent.create_mod_site">[docs]</a>    <span class="k">def</span> <span class="nf">create_mod_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mc</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create modification site for the BaseAgent from a ModCondition.&quot;&quot;&quot;</span>
+        <span class="n">site_name</span> <span class="o">=</span> <span class="n">get_mod_site_name</span><span class="p">(</span><span class="n">mc</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">unmod_site_state</span><span class="p">,</span> <span class="n">mod_site_state</span><span class="p">)</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">mc</span><span class="o">.</span><span class="n">mod_type</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_site</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="p">(</span><span class="n">unmod_site_state</span><span class="p">,</span> <span class="n">mod_site_state</span><span class="p">))</span>
+        <span class="n">site_anns</span> <span class="o">=</span> <span class="p">[</span><span class="n">Annotation</span><span class="p">((</span><span class="n">site_name</span><span class="p">,</span> <span class="n">mod_site_state</span><span class="p">),</span> <span class="n">mc</span><span class="o">.</span><span class="n">mod_type</span><span class="p">,</span>
+                                <span class="s1">&#39;is_modification&#39;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue</span><span class="p">:</span>
+            <span class="n">site_anns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Annotation</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">residue</span><span class="p">,</span> <span class="s1">&#39;is_residue&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">mc</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="n">site_anns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Annotation</span><span class="p">(</span><span class="n">site_name</span><span class="p">,</span> <span class="n">mc</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="s1">&#39;is_position&#39;</span><span class="p">))</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">site_annotations</span> <span class="o">+=</span> <span class="n">site_anns</span>
+
+<div class="viewcode-block" id="BaseAgent.add_site_states"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent.add_site_states">[docs]</a>    <span class="k">def</span> <span class="nf">add_site_states</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">states</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create new states on an agent site if the state doesn&#39;t exist.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">state</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">site_states</span><span class="p">[</span><span class="n">site</span><span class="p">]:</span></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">site_states</span><span class="p">[</span><span class="n">site</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseAgent.add_activity_form"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent.add_activity_form">[docs]</a>    <span class="k">def</span> <span class="nf">add_activity_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activity_pattern</span><span class="p">,</span> <span class="n">is_active</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds the pattern as an active or inactive form to an Agent.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        activity_pattern : dict</span>
+<span class="sd">            A dictionary of site names and their states.</span>
+<span class="sd">        is_active : bool</span>
+<span class="sd">            Is True if the given pattern corresponds to an active state.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">is_active</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">activity_pattern</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_forms</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">active_forms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activity_pattern</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">activity_pattern</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inactive_forms</span><span class="p">:</span></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">inactive_forms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activity_pattern</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseAgent.add_activity_type"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.base_agents.BaseAgent.add_activity_type">[docs]</a>    <span class="k">def</span> <span class="nf">add_activity_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activity_type</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds an activity type to an Agent.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        activity_type : str</span>
+<span class="sd">            The type of activity to add such as &#39;activity&#39;, &#39;kinase&#39;,</span>
+<span class="sd">            &#39;gtpbound&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">activity_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_types</span><span class="p">:</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activity_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">activity_type</span><span class="p">)</span>
+
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

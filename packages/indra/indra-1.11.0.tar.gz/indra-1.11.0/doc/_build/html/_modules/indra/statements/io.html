@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.statements.io &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.statements.io</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.statements.io</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;stmts_from_json&#39;</span><span class="p">,</span> <span class="s1">&#39;stmts_from_json_file&#39;</span><span class="p">,</span> <span class="s1">&#39;stmts_to_json&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;stmts_to_json_file&#39;</span><span class="p">,</span> <span class="s1">&#39;draw_stmt_graph&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;UnresolvedUuidError&#39;</span><span class="p">,</span> <span class="s1">&#39;InputError&#39;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">indra.statements.statements</span> <span class="k">import</span> <span class="n">Statement</span><span class="p">,</span> <span class="n">Unresolved</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="stmts_from_json"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.stmts_from_json">[docs]</a><span class="k">def</span> <span class="nf">stmts_from_json</span><span class="p">(</span><span class="n">json_in</span><span class="p">,</span> <span class="n">on_missing_support</span><span class="o">=</span><span class="s1">&#39;handle&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get a list of Statements from Statement jsons.</span>
+
+<span class="sd">    In the case of pre-assembled Statements which have `supports` and</span>
+<span class="sd">    `supported_by` lists, the uuids will be replaced with references to</span>
+<span class="sd">    Statement objects from the json, where possible. The method of handling</span>
+<span class="sd">    missing support is controled by the `on_missing_support` key-word argument.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    json_in : iterable[dict]</span>
+<span class="sd">        A json list containing json dict representations of INDRA Statements,</span>
+<span class="sd">        as produced by the `to_json` methods of subclasses of Statement, or</span>
+<span class="sd">        equivalently by `stmts_to_json`.</span>
+<span class="sd">    on_missing_support : Optional[str]</span>
+<span class="sd">        Handles the behavior when a uuid reference in `supports` or</span>
+<span class="sd">        `supported_by` attribute cannot be resolved. This happens because uuids</span>
+<span class="sd">        can only be linked to Statements contained in the `json_in` list, and</span>
+<span class="sd">        some may be missing if only some of all the Statements from pre-</span>
+<span class="sd">        assembly are contained in the list.</span>
+
+<span class="sd">        Options:</span>
+
+<span class="sd">        - *&#39;handle&#39;* : (default) convert unresolved uuids into `Unresolved`</span>
+<span class="sd">          Statement objects.</span>
+<span class="sd">        - *&#39;ignore&#39;* : Simply omit any uuids that cannot be linked to any</span>
+<span class="sd">          Statements in the list.</span>
+<span class="sd">        - *&#39;error&#39;* : Raise an error upon hitting an un-linkable uuid.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    stmts : list[:py:class:`Statement`]</span>
+<span class="sd">        A list of INDRA Statements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">stmts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">uuid_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">json_stmt</span> <span class="ow">in</span> <span class="n">json_in</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="n">Statement</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">json_stmt</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Error creating statement: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+        <span class="n">uuid_dict</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="n">st</span>
+    <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stmts</span><span class="p">:</span>
+        <span class="n">_promote_support</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">supports</span><span class="p">,</span> <span class="n">uuid_dict</span><span class="p">,</span> <span class="n">on_missing_support</span><span class="p">)</span>
+        <span class="n">_promote_support</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">supported_by</span><span class="p">,</span> <span class="n">uuid_dict</span><span class="p">,</span> <span class="n">on_missing_support</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">stmts</span>
+
+
+<div class="viewcode-block" id="stmts_from_json_file"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.stmts_from_json_file">[docs]</a><span class="k">def</span> <span class="nf">stmts_from_json_file</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a list of statements loaded from a JSON file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fname : str</span>
+<span class="sd">        Path to the JSON file to load statements from.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list[indra.statements.Statement]</span>
+<span class="sd">        The list of INDRA Statements loaded from the JSOn file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span></div>
+        <span class="k">return</span> <span class="n">stmts_from_json</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="stmts_to_json_file"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.stmts_to_json_file">[docs]</a><span class="k">def</span> <span class="nf">stmts_to_json_file</span><span class="p">(</span><span class="n">stmts</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Serialize a list of INDRA Statements into a JSON file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stmts : list[indra.statement.Statements]</span>
+<span class="sd">        The list of INDRA Statements to serialize into the JSON file.</span>
+<span class="sd">    fname : str</span>
+<span class="sd">        Path to the JSON file to serialize Statements into.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span></div>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">stmts_to_json</span><span class="p">(</span><span class="n">stmts</span><span class="p">),</span> <span class="n">fh</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="stmts_to_json"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.stmts_to_json">[docs]</a><span class="k">def</span> <span class="nf">stmts_to_json</span><span class="p">(</span><span class="n">stmts_in</span><span class="p">,</span> <span class="n">use_sbo</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the JSON-serialized form of one or more INDRA Statements.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stmts_in : Statement or list[Statement]</span>
+<span class="sd">        A Statement or list of Statement objects to serialize into JSON.</span>
+<span class="sd">    use_sbo : Optional[bool]</span>
+<span class="sd">        If True, SBO annotations are added to each applicable element of the</span>
+<span class="sd">        JSON. Default: False</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    json_dict : dict</span>
+<span class="sd">        JSON-serialized INDRA Statements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmts_in</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">stmts_in</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">use_sbo</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">use_sbo</span><span class="p">)</span> <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stmts_in</span><span class="p">]</span></div>
+    <span class="k">return</span> <span class="n">json_dict</span>
+
+
+<span class="k">def</span> <span class="nf">_promote_support</span><span class="p">(</span><span class="n">sup_list</span><span class="p">,</span> <span class="n">uuid_dict</span><span class="p">,</span> <span class="n">on_missing</span><span class="o">=</span><span class="s1">&#39;handle&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Promote the list of support-related uuids to Statements, if possible.&quot;&quot;&quot;</span>
+    <span class="n">valid_handling_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;handle&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">on_missing</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">valid_handling_choices</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">InputError</span><span class="p">(</span><span class="s1">&#39;Invalid option for `on_missing_support`: </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;\n</span><span class="s1">&#39;</span>
+                         <span class="s1">&#39;Choices are: </span><span class="si">%s</span><span class="s1">.&#39;</span>
+                         <span class="o">%</span> <span class="p">(</span><span class="n">on_missing</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">valid_handling_choices</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sup_list</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="n">uuid_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">sup_list</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">uuid_dict</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s1">&#39;handle&#39;</span><span class="p">:</span>
+            <span class="n">sup_list</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">Unresolved</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s1">&#39;ignore&#39;</span><span class="p">:</span>
+            <span class="n">sup_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">UnresolvedUuidError</span><span class="p">(</span><span class="s2">&quot;Uuid </span><span class="si">%s</span><span class="s2"> not found in stmt jsons.&quot;</span>
+                                      <span class="o">%</span> <span class="n">uuid</span><span class="p">)</span>
+    <span class="k">return</span>
+
+
+<div class="viewcode-block" id="draw_stmt_graph"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.draw_stmt_graph">[docs]</a><span class="k">def</span> <span class="nf">draw_stmt_graph</span><span class="p">(</span><span class="n">stmts</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Render the attributes of a list of Statements as directed graphs.</span>
+
+<span class="sd">    The layout works well for a single Statement or a few Statements at a time.</span>
+<span class="sd">    This function displays the plot of the graph using plt.show().</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stmts : list[indra.statements.Statement]</span>
+<span class="sd">        A list of one or more INDRA Statements whose attribute graph should</span>
+<span class="sd">        be drawn.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">networkx</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Could not import matplotlib, not drawing graph.&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">try</span><span class="p">:</span>  <span class="c1"># This checks whether networkx has this package to work with.</span>
+        <span class="kn">import</span> <span class="nn">pygraphviz</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Could not import pygraphviz, not drawing graph.&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="kn">import</span> <span class="nn">numpy</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">networkx</span><span class="o">.</span><span class="n">compose_all</span><span class="p">([</span><span class="n">stmt</span><span class="o">.</span><span class="n">to_graph</span><span class="p">()</span> <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">stmts</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">graph</span><span class="p">[</span><span class="s1">&#39;graph&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rankdir&#39;</span><span class="p">:</span> <span class="s1">&#39;LR&#39;</span><span class="p">}</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">networkx</span><span class="o">.</span><span class="n">drawing</span><span class="o">.</span><span class="n">nx_agraph</span><span class="o">.</span><span class="n">graphviz_layout</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">()</span>
+
+    <span class="c1"># Draw nodes</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;s&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;0.5&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">nodelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+    <span class="n">xy</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">pos</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">nodelist</span><span class="p">])</span>
+    <span class="n">node_collection</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xy</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">xy</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">node_collection</span><span class="o">.</span><span class="n">set_zorder</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Draw edges</span>
+    <span class="n">networkx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="p">)</span>
+    <span class="c1"># Draw labels</span>
+    <span class="n">edge_labels</span> <span class="o">=</span> <span class="p">{(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span>
+    <span class="n">networkx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">edge_labels</span><span class="p">)</span>
+    <span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">node_labels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">:</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+            <span class="n">node_labels</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+    <span class="n">networkx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">node_labels</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="UnresolvedUuidError"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.UnresolvedUuidError">[docs]</a><span class="k">class</span> <span class="nc">UnresolvedUuidError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="InputError"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.InputError">[docs]</a><span class="k">class</span> <span class="nc">InputError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.tools.reading.util.log_analysis_tools &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.tools.reading.util.log_analysis_tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.tools.reading.util.log_analysis_tools</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">boto3</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">join</span>
+
+
+<div class="viewcode-block" id="analyze_reach_log"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.analyze_reach_log">[docs]</a><span class="k">def</span> <span class="nf">analyze_reach_log</span><span class="p">(</span><span class="n">log_fname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return unifinished PMIDs given a log file name.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="nb">bool</span><span class="p">(</span><span class="n">log_fname</span><span class="p">)</span> <span class="o">^</span> <span class="nb">bool</span><span class="p">(</span><span class="n">log_str</span><span class="p">),</span> <span class="s1">&#39;Must specify log_fname OR log_str&#39;</span>
+    <span class="n">started_patt</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Starting ([\d]+)&#39;</span><span class="p">)</span>
+    <span class="c1"># TODO: it might be interesting to get the time it took to read</span>
+    <span class="c1"># each paper here</span>
+    <span class="n">finished_patt</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Finished ([\d]+)&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_content_nums</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
+        <span class="n">pat</span> <span class="o">=</span> <span class="s1">&#39;Retrieved content for ([\d]+) / ([\d]+) papers to be read&#39;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">txt</span><span class="p">)</span>
+        <span class="n">has_content</span><span class="p">,</span> <span class="n">total</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span> <span class="k">if</span> <span class="n">res</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">has_content</span><span class="p">,</span> <span class="n">total</span>
+
+    <span class="k">if</span> <span class="n">log_fname</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">log_str</span> <span class="o">=</span> <span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="c1"># has_content, total = get_content_nums(log_str)  # unused</span>
+    <span class="n">pmids</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">pmids</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">started_patt</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+    <span class="n">pmids</span><span class="p">[</span><span class="s1">&#39;finished&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">finished_patt</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+    <span class="n">pmids</span><span class="p">[</span><span class="s1">&#39;not_done&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pmids</span><span class="p">[</span><span class="s1">&#39;started&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">pmids</span><span class="p">[</span><span class="s1">&#39;finished&#39;</span><span class="p">])</span></div>
+    <span class="k">return</span> <span class="n">pmids</span>
+
+
+<span class="c1">#==============================================================================</span>
+<span class="c1"># Functions for analyzing a db reading submission</span>
+<span class="c1">#==============================================================================</span>
+
+
+<div class="viewcode-block" id="get_logs_from_db_reading"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.get_logs_from_db_reading">[docs]</a><span class="k">def</span> <span class="nf">get_logs_from_db_reading</span><span class="p">(</span><span class="n">job_prefix</span><span class="p">,</span> <span class="n">reading_queue</span><span class="o">=</span><span class="s1">&#39;run_db_reading_queue&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the logs stashed on s3 for a particular reading.&quot;&quot;&quot;</span>
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+    <span class="n">gen_prefix</span> <span class="o">=</span> <span class="s1">&#39;reading_results/</span><span class="si">%s</span><span class="s1">/logs/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">job_prefix</span><span class="p">,</span> <span class="n">reading_queue</span><span class="p">)</span>
+    <span class="n">job_log_data</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects_v2</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s1">&#39;bigmech&#39;</span><span class="p">,</span>
+                                      <span class="n">Prefix</span><span class="o">=</span><span class="n">join</span><span class="p">(</span><span class="n">gen_prefix</span><span class="p">,</span> <span class="n">job_prefix</span><span class="p">))</span>
+    <span class="c1"># TODO: Track success/failure</span>
+    <span class="n">log_strs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fdict</span> <span class="ow">in</span> <span class="n">job_log_data</span><span class="p">[</span><span class="s1">&#39;Contents&#39;</span><span class="p">]:</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s1">&#39;bigmech&#39;</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">fdict</span><span class="p">[</span><span class="s1">&#39;Key&#39;</span><span class="p">])</span>
+        <span class="n">log_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s1">&#39;Body&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">log_strs</span>
+
+
+<div class="viewcode-block" id="separate_reach_logs"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.separate_reach_logs">[docs]</a><span class="k">def</span> <span class="nf">separate_reach_logs</span><span class="p">(</span><span class="n">log_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the list of reach logs from the overall logs.&quot;&quot;&quot;</span>
+    <span class="n">log_lines</span> <span class="o">=</span> <span class="n">log_str</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">reach_logs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">reach_lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">adding_reach_lines</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">log_lines</span><span class="p">[:]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">adding_reach_lines</span> <span class="ow">and</span> <span class="s1">&#39;Beginning reach&#39;</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+            <span class="n">adding_reach_lines</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">adding_reach_lines</span> <span class="ow">and</span> <span class="s1">&#39;Reach finished&#39;</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+            <span class="n">adding_reach_lines</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">reach_logs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">reach_lines</span><span class="p">)))</span>
+            <span class="n">reach_lines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="n">adding_reach_lines</span><span class="p">:</span>
+            <span class="n">reach_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;readers - &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">log_lines</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">adding_reach_lines</span><span class="p">:</span>
+        <span class="n">reach_logs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;FAILURE&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">reach_lines</span><span class="p">)))</span></div>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">log_lines</span><span class="p">),</span> <span class="n">reach_logs</span>
+
+
+<span class="k">def</span> <span class="nf">get_top_level_summary_of_log</span><span class="p">(</span><span class="n">log_str</span><span class="p">):</span>
+    <span class="n">ret_str</span> <span class="o">=</span> <span class="s1">&#39;Event Summary:&#39;</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">ret_str</span><span class="p">)</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Useful INFO:</span><span class="se">\n</span><span class="s1">  &#39;</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+        <span class="p">(</span><span class="s1">&#39;INFO: \[.*?\] indra/((?!readers).* - &#39;</span>
+         <span class="s1">&#39;(?!Got no statements|Saving sparser)(?=.*\d.*).*)&#39;</span><span class="p">),</span>
+        <span class="n">log_str</span><span class="p">))</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">WARNINGS that occured:</span><span class="se">\n</span><span class="s1">  &#39;</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">get_indra_logs_by_priority</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="s1">&#39;WARNING&#39;</span><span class="p">)))</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">ERRORS that occured:</span><span class="se">\n</span><span class="s1">  &#39;</span>
+    <span class="n">ret_str</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">get_indra_logs_by_priority</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">ret_str</span>
+
+
+<span class="k">def</span> <span class="nf">get_top_level_summary_of_logs</span><span class="p">(</span><span class="n">log_str_list</span><span class="p">):</span>
+    <span class="n">ret_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;total_stats&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;err_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;warn_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;unyielding_tcids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_failures&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">log_str</span> <span class="ow">in</span> <span class="n">log_str_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">stat_dict</span> <span class="o">=</span> <span class="n">get_reading_stats</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+            <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;total_stats&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;total_stats&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span>
+                                       <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">stat_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">except</span> <span class="n">GetReadingStatsError</span><span class="p">:</span>
+            <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_failures&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;err_set&#39;</span><span class="p">]</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">get_indra_logs_by_priority</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span>
+                                                              <span class="s1">&#39;ERROR&#39;</span><span class="p">))</span>
+        <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;warn_set&#39;</span><span class="p">]</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">get_indra_logs_by_priority</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span>
+                                                               <span class="s1">&#39;WARNING&#39;</span><span class="p">))</span>
+        <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;unyielding_tcids&#39;</span><span class="p">]</span> <span class="o">|=</span> <span class="n">get_unyielding_tcids</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;err_tcids&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">,</span> <span class="n">err_str</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+                             <span class="k">for</span> <span class="n">err_str</span> <span class="ow">in</span> <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;err_set&#39;</span><span class="p">]</span>
+                             <span class="k">if</span> <span class="s1">&#39;Got exception creating statements&#39;</span> <span class="ow">in</span> <span class="n">err_str</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">ret_dict</span>
+
+
+<span class="k">def</span> <span class="nf">get_indra_logs_by_priority</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="n">priority</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: \[.*?\] indra/(.*)&#39;</span> <span class="o">%</span> <span class="n">priority</span><span class="p">,</span> <span class="n">log_str</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_unyielding_tcids"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.get_unyielding_tcids">[docs]</a><span class="k">def</span> <span class="nf">get_unyielding_tcids</span><span class="p">(</span><span class="n">log_str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extract the set of tcids for which no statements were created.&quot;&quot;&quot;</span>
+    <span class="n">tcid_strs</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;INFO: \[.*?\].*? - Got no statements for (\d+).*&#39;</span><span class="p">,</span>
+                           <span class="n">log_str</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">tcid_str</span><span class="p">)</span> <span class="k">for</span> <span class="n">tcid_str</span> <span class="ow">in</span> <span class="n">tcid_strs</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="GetReadingStatsError"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.GetReadingStatsError">[docs]</a><span class="k">class</span> <span class="nc">GetReadingStatsError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">get_reading_stats</span><span class="p">(</span><span class="n">log_str</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">re_get_nums</span><span class="p">(</span><span class="n">patt_str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">re_ret</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt_str</span><span class="p">,</span> <span class="n">log_str</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">re_ret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">num_str</span><span class="p">)</span> <span class="k">for</span> <span class="n">num_str</span> <span class="ow">in</span> <span class="n">re_ret</span><span class="o">.</span><span class="n">groups</span><span class="p">()]</span>
+        <span class="k">elif</span> <span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">GetReadingStatsError</span><span class="p">(</span><span class="s2">&quot;couldn&#39;t match patt </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">patt_str</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="n">default</span><span class="p">]</span><span class="o">*</span><span class="n">patt_str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nums</span>
+    <span class="n">ret_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_prex_readings&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Found (\d+) pre-existing readings&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_new_readings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Made (\d+) new readings&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_new_readings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_succeeded&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Adding (\d+)/\d+ reading entries&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_stmts&#39;</span><span class="p">],</span> <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_readings&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Found (\d+) statements from (\d+) readings&#39;</span><span class="p">)</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_agents&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Received request to copy (\d+) entries &#39;</span>
+                    <span class="s1">&#39;into .{3,4}agents&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ret_dict</span><span class="p">[</span><span class="s1">&#39;num_statements&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">re_get_nums</span><span class="p">(</span><span class="s1">&#39;Received request to copy (\d+) entries into &#39;</span>
+                    <span class="s1">&#39;.{3,4}statements&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ret_dict</span>
+
+
+<div class="viewcode-block" id="analyze_db_reading"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.log_analysis_tools.analyze_db_reading">[docs]</a><span class="k">def</span> <span class="nf">analyze_db_reading</span><span class="p">(</span><span class="n">job_prefix</span><span class="p">,</span> <span class="n">reading_queue</span><span class="o">=</span><span class="s1">&#39;run_db_reading_queue&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Run various analysis on a particular reading job.&quot;&quot;&quot;</span>
+    <span class="c1"># Analyze reach failures</span>
+    <span class="n">log_strs</span> <span class="o">=</span> <span class="n">get_logs_from_db_reading</span><span class="p">(</span><span class="n">job_prefix</span><span class="p">,</span> <span class="n">reading_queue</span><span class="p">)</span>
+    <span class="n">indra_log_strs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_reach_logs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">log_stats</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">log_str</span> <span class="ow">in</span> <span class="n">log_strs</span><span class="p">:</span>
+        <span class="n">log_str</span><span class="p">,</span> <span class="n">reach_logs</span> <span class="o">=</span> <span class="n">separate_reach_logs</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+        <span class="n">all_reach_logs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">reach_logs</span><span class="p">)</span>
+        <span class="n">indra_log_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+        <span class="n">log_stats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_reading_stats</span><span class="p">(</span><span class="n">log_str</span><span class="p">))</span>
+
+    <span class="c1"># Analayze the reach failures.</span>
+    <span class="n">failed_reach_logs</span> <span class="o">=</span> <span class="p">[</span><span class="n">reach_log_str</span>
+                         <span class="k">for</span> <span class="n">result</span><span class="p">,</span> <span class="n">reach_log_str</span> <span class="ow">in</span> <span class="n">all_reach_logs</span>
+                         <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="s1">&#39;FAILURE&#39;</span><span class="p">]</span>
+    <span class="n">failed_id_dicts</span> <span class="o">=</span> <span class="p">[</span><span class="n">analyze_reach_log</span><span class="p">(</span><span class="n">log_str</span><span class="o">=</span><span class="n">reach_log</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">reach_log</span> <span class="ow">in</span> <span class="n">failed_reach_logs</span> <span class="k">if</span> <span class="nb">bool</span><span class="p">(</span><span class="n">reach_log</span><span class="p">)]</span>
+    <span class="n">tcids_unfinished</span> <span class="o">=</span> <span class="p">{</span><span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;not_done&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">id_dict</span> <span class="ow">in</span> <span class="n">failed_id_dicts</span><span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">%d</span><span class="s2"> unfinished tcids.&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">tcids_unfinished</span><span class="p">))</span>
+
+    <span class="c1"># Summarize the global stats</span>
+    <span class="k">if</span> <span class="n">log_stats</span><span class="p">:</span>
+        <span class="n">sum_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">log_stats</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">log_stat</span> <span class="ow">in</span> <span class="n">log_stats</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">log_stat</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_stat</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">sum_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">log_stat</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+                    <span class="n">sum_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">sum_dict</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">log_stat</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+                                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">log_stat</span><span class="p">[</span><span class="n">k</span><span class="p">]))]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sum_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">sum_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">sum_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+=</span> <span class="n">log_stat</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sum_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</div>
+    <span class="k">return</span> <span class="n">tcids_unfinished</span><span class="p">,</span> <span class="n">sum_dict</span><span class="p">,</span> <span class="n">log_stats</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

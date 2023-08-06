@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.tools.reading.util.reporter &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../../index.html"/> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.tools.reading.util.reporter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.tools.reading.util.reporter</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">reportlab.lib.enums</span> <span class="k">import</span> <span class="n">TA_JUSTIFY</span>
+<span class="kn">from</span> <span class="nn">reportlab.lib.pagesizes</span> <span class="k">import</span> <span class="n">letter</span>
+<span class="kn">from</span> <span class="nn">reportlab.platypus</span> <span class="k">import</span> <span class="n">SimpleDocTemplate</span><span class="p">,</span> <span class="n">Paragraph</span><span class="p">,</span> <span class="n">Spacer</span><span class="p">,</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">reportlab.lib.styles</span> <span class="k">import</span> <span class="n">getSampleStyleSheet</span><span class="p">,</span> <span class="n">ParagraphStyle</span>
+<span class="kn">from</span> <span class="nn">reportlab.lib.units</span> <span class="k">import</span> <span class="n">inch</span>
+
+
+<div class="viewcode-block" id="Reporter"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter">[docs]</a><span class="k">class</span> <span class="nc">Reporter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A class to produce a simple pdf report using the reportlab package.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        A name that will be the name of this file, and the title by default.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">styles</span> <span class="o">=</span> <span class="n">getSampleStyleSheet</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">styles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ParagraphStyle</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Justify&quot;</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">TA_JUSTIFY</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">story</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.set_title"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.set_title">[docs]</a>    <span class="k">def</span> <span class="nf">set_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Overwrite the default title with a string title of your choosing.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.add_section"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.add_section">[docs]</a>    <span class="k">def</span> <span class="nf">add_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a section of the report, to be headed by section_name</span>
+
+<span class="sd">        Text and images can be added by using the `section` argument of the</span>
+<span class="sd">        `add_text` and `add_image` methods. Sections can also be ordered by</span>
+<span class="sd">        using the `set_section_order` method.</span>
+
+<span class="sd">        By default, text and images that have no section will be placed after</span>
+<span class="sd">        all the sections, in the order they were added. This behavior may be</span>
+<span class="sd">        altered using the `sections_first` attribute of the `make_report`</span>
+<span class="sd">        method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">section_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Section </span><span class="si">%s</span><span class="s2"> already exists.&quot;</span> <span class="o">%</span> <span class="n">section_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="n">section_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.set_section_order"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.set_section_order">[docs]</a>    <span class="k">def</span> <span class="nf">set_section_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section_name_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the order of the sections, which are by default unorderd.</span>
+
+<span class="sd">        Any unlisted sections that exist will be placed at the end of the</span>
+<span class="sd">        document in no particular order.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span> <span class="o">=</span> <span class="n">section_name_list</span><span class="p">[:]</span>
+        <span class="k">for</span> <span class="n">section_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">section_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">section_name_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">section_name</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.add_text"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.add_text">[docs]</a>    <span class="k">def</span> <span class="nf">add_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add text to the document.</span>
+
+<span class="sd">        Text is shown on the final document in the order it is added, either</span>
+<span class="sd">        within the given section or as part of the un-sectioned list of content.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        text : str</span>
+<span class="sd">            The text to be added.</span>
+<span class="sd">        style : str</span>
+<span class="sd">            Choose the style of the text. Options include &#39;Normal&#39;, &#39;Code&#39;,</span>
+<span class="sd">            &#39;Title&#39;, &#39;h1&#39;. For others, see `getSampleStyleSheet` from</span>
+<span class="sd">            `reportlab.lib.styles`.</span>
+<span class="sd">        space : tuple (num spaces, font size)</span>
+<span class="sd">            The number and size of spaces to follow this section of text.</span>
+<span class="sd">            Default is (1, 12).</span>
+<span class="sd">        fontsize : int</span>
+<span class="sd">            The integer font size of the text (e.g. 12 for 12 point font).</span>
+<span class="sd">            Default is 12.</span>
+<span class="sd">        alignment : str</span>
+<span class="sd">            The alignment of the text. Options include &#39;left&#39;, &#39;right&#39;, and</span>
+<span class="sd">            &#39;center&#39;. Default is &#39;left&#39;.</span>
+<span class="sd">        section : str</span>
+<span class="sd">            (This must be a keyword) Select a section in which to place this</span>
+<span class="sd">            text. Default is None, in which case the text will be simply be</span>
+<span class="sd">            added to a default list of text and images.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Pull down some kwargs.</span>
+        <span class="n">section_name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;section&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Actually do the formatting.</span>
+        <span class="n">para</span><span class="p">,</span> <span class="n">sp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preformat_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="c1"># Select the appropriate list to update</span>
+        <span class="k">if</span> <span class="n">section_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">relevant_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">story</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">relevant_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="n">section_name</span><span class="p">]</span>
+
+        <span class="c1"># Add the new content to list.</span>
+        <span class="n">relevant_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">para</span><span class="p">)</span>
+        <span class="n">relevant_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.add_image"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.add_image">[docs]</a>    <span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add an image to the document.</span>
+
+<span class="sd">        Images are shown on the final document in the order they are added,</span>
+<span class="sd">        either within the given section or as part of the un-sectioned list of</span>
+<span class="sd">        content.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        image_path : str</span>
+<span class="sd">            A path to the image on the local file system.</span>
+<span class="sd">        width : int or float</span>
+<span class="sd">            The width of the image in the document in inches.</span>
+<span class="sd">        height : int or float</span>
+<span class="sd">            The height of the image in the document in incehs.</span>
+<span class="sd">        section : str</span>
+<span class="sd">            (This must be a keyword) Select a section in which to place this</span>
+<span class="sd">            image. Default is None, in which case the image will be simply be</span>
+<span class="sd">            added to a default list of text and images.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">width</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">*</span><span class="n">inch</span>
+        <span class="k">if</span> <span class="n">height</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">height</span> <span class="o">=</span> <span class="n">height</span><span class="o">*</span><span class="n">inch</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">section</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">story</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="n">section</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reporter.make_report"><a class="viewcode-back" href="../../../../../modules/tools/reading/utils.html#indra.tools.reading.util.reporter.Reporter.make_report">[docs]</a>    <span class="k">def</span> <span class="nf">make_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sections_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">section_header_params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create the pdf document with name `self.name + &#39;.pdf&#39;`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sections_first : bool</span>
+<span class="sd">            If True (default), text and images with sections are presented first</span>
+<span class="sd">            and un-sectioned content is appended afterword. If False, sectioned</span>
+<span class="sd">            text and images will be placed before the sections.</span>
+<span class="sd">        section_header_params : dict or None</span>
+<span class="sd">            Optionally overwrite/extend the default formatting for the section</span>
+<span class="sd">            headers. Default is None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">full_story</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_preformat_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+                                               <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Set the default section header parameters</span>
+        <span class="k">if</span> <span class="n">section_header_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">section_header_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="s1">&#39;h1&#39;</span><span class="p">,</span> <span class="s1">&#39;fontsize&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                     <span class="s1">&#39;alignment&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">}</span>
+
+        <span class="c1"># Merge the sections and the rest of the story.</span>
+        <span class="k">if</span> <span class="n">sections_first</span><span class="p">:</span>
+            <span class="n">full_story</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_sections</span><span class="p">(</span><span class="o">**</span><span class="n">section_header_params</span><span class="p">)</span>
+            <span class="n">full_story</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">story</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">full_story</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">story</span>
+            <span class="n">full_story</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_sections</span><span class="p">(</span><span class="o">**</span><span class="n">section_header_params</span><span class="p">)</span>
+
+        <span class="n">fname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;.pdf&#39;</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">SimpleDocTemplate</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">letter</span><span class="p">,</span>
+                                <span class="n">rightMargin</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">leftMargin</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span>
+                                <span class="n">topMargin</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">bottomMargin</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+        <span class="n">doc</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">full_story</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">fname</span>
+
+    <span class="k">def</span> <span class="nf">_make_sections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">section_hdr_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Flatten the sections into a single story list.&quot;&quot;&quot;</span>
+        <span class="n">sect_story</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">section_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section_headings</span><span class="p">:</span>
+            <span class="n">section_story</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="n">section_name</span><span class="p">]</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">20</span>
+            <span class="n">section_head_text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">section_name</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+            <span class="n">title</span><span class="p">,</span> <span class="n">title_sp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preformat_text</span><span class="p">(</span><span class="n">section_head_text</span><span class="p">,</span>
+                                                   <span class="o">**</span><span class="n">section_hdr_params</span><span class="p">)</span>
+            <span class="n">sect_story</span> <span class="o">+=</span> <span class="p">[</span><span class="n">title</span><span class="p">,</span> <span class="n">title_sp</span><span class="p">]</span> <span class="o">+</span> <span class="n">section_story</span>
+        <span class="k">return</span> <span class="n">sect_story</span>
+
+    <span class="k">def</span> <span class="nf">_preformat_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+                        <span class="n">alignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Format the text for addition to a story list.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">space</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">space</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">ptext</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&lt;para alignment=</span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s1">&gt;&lt;font size=</span><span class="si">%d</span><span class="s1">&gt;</span><span class="si">%s</span><span class="s1">&lt;/font&gt;&lt;/para&gt;&#39;</span>
+                 <span class="o">%</span> <span class="p">(</span><span class="n">alignment</span><span class="p">,</span> <span class="n">fontsize</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+        <span class="n">para</span> <span class="o">=</span> <span class="n">Paragraph</span><span class="p">(</span><span class="n">ptext</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">styles</span><span class="p">[</span><span class="n">style</span><span class="p">])</span>
+        <span class="n">sp</span> <span class="o">=</span> <span class="n">Spacer</span><span class="p">(</span><span class="o">*</span><span class="n">space</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">para</span><span class="p">,</span> <span class="n">sp</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

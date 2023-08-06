@@ -1,0 +1,898 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.tools.reading.submit_reading_pipeline &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.tools.reading.submit_reading_pipeline</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.tools.reading.submit_reading_pipeline</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">boto3</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">botocore.session</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">indra.literature</span> <span class="k">import</span> <span class="n">elsevier_client</span> <span class="k">as</span> <span class="n">ec</span>
+<span class="kn">from</span> <span class="nn">indra.literature.elsevier_client</span> <span class="k">import</span> <span class="n">_ensure_api_keys</span>
+<span class="kn">from</span> <span class="nn">indra.util.aws</span> <span class="k">import</span> <span class="n">get_job_log</span><span class="p">,</span> <span class="n">tag_instance</span><span class="p">,</span> <span class="n">get_batch_command</span>
+
+<span class="n">bucket_name</span> <span class="o">=</span> <span class="s1">&#39;bigmech&#39;</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;indra.tools.reading.submit_reading_pipeline&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BatchReadingError"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.BatchReadingError">[docs]</a><span class="k">class</span> <span class="nc">BatchReadingError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="wait_for_complete"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.wait_for_complete">[docs]</a><span class="k">def</span> <span class="nf">wait_for_complete</span><span class="p">(</span><span class="n">queue_name</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">poll_interval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">idle_log_timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">kill_on_log_timeout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stash_log_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">tag_instances</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">result_record</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return when all jobs in the given list finished.</span>
+
+<span class="sd">    If not job list is given, return when all jobs in queue finished.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    queue_name : str</span>
+<span class="sd">        The name of the queue to wait for completion.</span>
+<span class="sd">    job_list : Optional[list(dict)]</span>
+<span class="sd">        A list of jobID-s in a dict, as returned by the submit function.</span>
+<span class="sd">        Example: [{&#39;jobId&#39;: &#39;e6b00f24-a466-4a72-b735-d205e29117b4&#39;}, ...]</span>
+<span class="sd">        If not given, this function will return if all jobs completed.</span>
+<span class="sd">    job_name_prefix : Optional[str]</span>
+<span class="sd">        A prefix for the name of the jobs to wait for. This is useful if the</span>
+<span class="sd">        explicit job list is not available but filtering is needed.</span>
+<span class="sd">    poll_interval : Optional[int]</span>
+<span class="sd">        The time delay between API calls to check the job statuses.</span>
+<span class="sd">    idle_log_timeout : Optional[int] or None</span>
+<span class="sd">        If not None, then track the logs of the active jobs, and if new output</span>
+<span class="sd">        is not produced after `idle_log_timeout` seconds, a warning is printed.</span>
+<span class="sd">        If `kill_on_log_timeout` is set to True, the job will also be</span>
+<span class="sd">        terminated.</span>
+<span class="sd">    kill_on_log_timeout : Optional[bool]</span>
+<span class="sd">        If True, and if `idle_log_timeout` is set, jobs will be terminated</span>
+<span class="sd">        after timeout. This has no effect if `idle_log_timeout` is None.</span>
+<span class="sd">        Default is False.</span>
+<span class="sd">    stash_log_method : Optional[str]</span>
+<span class="sd">        Select a method to store the job logs, either &#39;s3&#39; or &#39;local&#39;. If no</span>
+<span class="sd">        method is specified, the logs will not be loaded off of AWS. If &#39;s3&#39; is</span>
+<span class="sd">        specified, then `job_name_prefix` must also be given, as this will</span>
+<span class="sd">        indicate where on s3 to store the logs.</span>
+<span class="sd">    tag_instances : bool</span>
+<span class="sd">        Default is False. If True, apply tags to the instances. This is toady</span>
+<span class="sd">        typically done by each job, so in most cases this should not be needed.</span>
+<span class="sd">    result_record : dict</span>
+<span class="sd">        A dict which will be modified in place to record the results of the job.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">stash_log_method</span> <span class="o">==</span> <span class="s1">&#39;s3&#39;</span> <span class="ow">and</span> <span class="n">job_name_prefix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;A job_name_prefix is required to post logs on s3.&#39;</span><span class="p">)</span>
+
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">job_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_id_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">job_id_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_list</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">result_record</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">result_record</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">get_jobs_by_status</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">job_id_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">list_jobs</span><span class="p">(</span><span class="n">jobQueue</span><span class="o">=</span><span class="n">queue_name</span><span class="p">,</span>
+                                     <span class="n">jobStatus</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">maxResults</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+        <span class="n">jobs</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;jobSummaryList&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">job_name_prefix</span><span class="p">:</span>
+            <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span> <span class="k">if</span>
+                    <span class="n">job</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">job_name_prefix</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">job_id_filter</span><span class="p">:</span>
+            <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">job_def</span> <span class="k">for</span> <span class="n">job_def</span> <span class="ow">in</span> <span class="n">jobs</span>
+                    <span class="k">if</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">job_id_filter</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">jobs</span>
+
+    <span class="n">job_log_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">check_logs</span><span class="p">(</span><span class="n">job_defs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Updates teh job_log_dict.&quot;&quot;&quot;</span>
+        <span class="n">stalled_jobs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="c1"># Check the status of all the jobs we&#39;re tracking.</span>
+        <span class="k">for</span> <span class="n">job_def</span> <span class="ow">in</span> <span class="n">job_defs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Get the logs for this job.</span>
+                <span class="n">log_lines</span> <span class="o">=</span> <span class="n">get_job_log</span><span class="p">(</span><span class="n">job_def</span><span class="p">,</span> <span class="n">write_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+                <span class="c1"># Get the job id.</span>
+                <span class="n">jid</span> <span class="o">=</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span>
+                <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">jid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">job_log_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="c1"># If the job is new...</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Adding job </span><span class="si">%s</span><span class="s2"> to the log tracker at </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                                <span class="o">%</span> <span class="p">(</span><span class="n">jid</span><span class="p">,</span> <span class="n">now</span><span class="p">))</span>
+                    <span class="n">job_log_dict</span><span class="p">[</span><span class="n">jid</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;log&#39;</span><span class="p">:</span> <span class="n">log_lines</span><span class="p">,</span>
+                                         <span class="s1">&#39;last change time&#39;</span><span class="p">:</span> <span class="n">now</span><span class="p">}</span>
+                <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_log_dict</span><span class="p">[</span><span class="n">jid</span><span class="p">][</span><span class="s1">&#39;log&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">log_lines</span><span class="p">):</span>
+                    <span class="c1"># If the job log hasn&#39;t changed, announce as such, and check</span>
+                    <span class="c1"># to see if it has been the same for longer than stall time.</span>
+                    <span class="n">check_dt</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">job_log_dict</span><span class="p">[</span><span class="n">jid</span><span class="p">][</span><span class="s1">&#39;last change time&#39;</span><span class="p">]</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">((</span><span class="s1">&#39;Job </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;</span><span class="s1"> has not produced output for &#39;</span>
+                                    <span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> seconds.&#39;</span><span class="p">)</span>
+                                   <span class="o">%</span> <span class="p">(</span><span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">],</span> <span class="n">check_dt</span><span class="o">.</span><span class="n">seconds</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="n">check_dt</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&gt;</span> <span class="n">idle_log_timeout</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Job </span><span class="se">\&#39;</span><span class="si">%s</span><span class="se">\&#39;</span><span class="s2"> has stalled.&quot;</span>
+                                       <span class="o">%</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">])</span>
+                        <span class="n">stalled_jobs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">jid</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># If the job is known, and the logs have changed, update the</span>
+                    <span class="c1"># &quot;last change time&quot;.</span>
+                    <span class="n">old_log</span> <span class="o">=</span> <span class="n">job_log_dict</span><span class="p">[</span><span class="n">jid</span><span class="p">][</span><span class="s1">&#39;log&#39;</span><span class="p">]</span>
+                    <span class="n">old_log</span> <span class="o">+=</span> <span class="n">log_lines</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">old_log</span><span class="p">):]</span>
+                    <span class="n">job_log_dict</span><span class="p">[</span><span class="n">jid</span><span class="p">][</span><span class="s1">&#39;last change time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">now</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="c1"># Sometimes due to sync et al. issues, a part of this will fail.</span>
+                <span class="c1"># Such things are usually transitory issues so we keep trying.</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Failed to check log for: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">job_def</span><span class="p">))</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+        <span class="c1"># Pass up the set of job id&#39;s for stalled jobs.</span>
+        <span class="k">return</span> <span class="n">stalled_jobs</span>
+
+    <span class="c1"># Don&#39;t start watching jobs added after this command was initialized.</span>
+    <span class="n">observed_job_def_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">def</span> <span class="nf">get_dict_of_job_tuples</span><span class="p">(</span><span class="n">job_defs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">jdef</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]:</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">jdef</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">,</span> <span class="s1">&#39;jobId&#39;</span><span class="p">]]</span>
+                <span class="k">for</span> <span class="n">jdef</span> <span class="ow">in</span> <span class="n">job_defs</span><span class="p">}</span>
+
+    <span class="n">batch_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tag_instances</span><span class="p">:</span>
+        <span class="n">ecs_cluster_name</span> <span class="o">=</span> <span class="n">get_ecs_cluster_for_queue</span><span class="p">(</span><span class="n">queue_name</span><span class="p">,</span> <span class="n">batch_client</span><span class="p">)</span>
+
+    <span class="n">terminate_msg</span> <span class="o">=</span> <span class="s1">&#39;Job log has stalled for at least </span><span class="si">%f</span><span class="s1"> minutes.&#39;</span>
+    <span class="n">terminated_jobs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">stashed_id_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">pre_run</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;SUBMITTED&#39;</span><span class="p">,</span> <span class="s1">&#39;PENDING&#39;</span><span class="p">,</span> <span class="s1">&#39;RUNNABLE&#39;</span><span class="p">,</span> <span class="s1">&#39;STARTING&#39;</span><span class="p">):</span>
+            <span class="n">pre_run</span> <span class="o">+=</span> <span class="n">get_jobs_by_status</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">job_id_list</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">)</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="n">get_jobs_by_status</span><span class="p">(</span><span class="s1">&#39;RUNNING&#39;</span><span class="p">,</span> <span class="n">job_id_list</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">)</span>
+        <span class="n">failed</span> <span class="o">=</span> <span class="n">get_jobs_by_status</span><span class="p">(</span><span class="s1">&#39;FAILED&#39;</span><span class="p">,</span> <span class="n">job_id_list</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">)</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="n">get_jobs_by_status</span><span class="p">(</span><span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">,</span> <span class="n">job_id_list</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">)</span>
+
+        <span class="n">observed_job_def_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">get_dict_of_job_tuples</span><span class="p">(</span><span class="n">pre_run</span> <span class="o">+</span> <span class="n">running</span><span class="p">))</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%d</span><span class="s1"> s)=(pre: </span><span class="si">%d</span><span class="s1">, running: </span><span class="si">%d</span><span class="s1">, failed: </span><span class="si">%d</span><span class="s1">, done: </span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                    <span class="p">((</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pre_run</span><span class="p">),</span>
+                     <span class="nb">len</span><span class="p">(</span><span class="n">running</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">failed</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">done</span><span class="p">)))</span>
+
+        <span class="c1"># Check the logs for new output, and possibly terminate some jobs.</span>
+        <span class="n">stalled_jobs</span> <span class="o">=</span> <span class="n">check_logs</span><span class="p">(</span><span class="n">running</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">idle_log_timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kill_on_log_timeout</span><span class="p">:</span>
+                <span class="c1"># Keep track of terminated jobs so we don&#39;t send a terminate</span>
+                <span class="c1"># message twice.</span>
+                <span class="k">for</span> <span class="n">jid</span> <span class="ow">in</span> <span class="n">stalled_jobs</span> <span class="o">-</span> <span class="n">terminated_jobs</span><span class="p">:</span>
+                    <span class="n">batch_client</span><span class="o">.</span><span class="n">terminate_job</span><span class="p">(</span>
+                        <span class="n">jobId</span><span class="o">=</span><span class="n">jid</span><span class="p">,</span>
+                        <span class="n">reason</span><span class="o">=</span><span class="n">terminate_msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">idle_log_timeout</span><span class="o">/</span><span class="mf">60.0</span><span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Terminating </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">jid</span><span class="p">)</span>
+                    <span class="n">terminated_jobs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">jid</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">job_id_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">failed</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">done</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_id_list</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">failed</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">done</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> \
+               <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pre_run</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">running</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">tag_instances</span><span class="p">:</span>
+            <span class="n">tag_instances_on_cluster</span><span class="p">(</span><span class="n">ecs_cluster_name</span><span class="p">)</span>
+
+        <span class="c1"># Stash the logs of things that have finished so far. Note that jobs</span>
+        <span class="c1"># terminated in this round will not be picked up until the next round.</span>
+        <span class="k">if</span> <span class="n">stash_log_method</span><span class="p">:</span>
+            <span class="n">stash_logs</span><span class="p">(</span><span class="n">observed_job_def_dict</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">failed</span><span class="p">,</span> <span class="n">queue_name</span><span class="p">,</span>
+                       <span class="n">stash_log_method</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">,</span>
+                       <span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">_%H%M%S&#39;</span><span class="p">),</span>
+                       <span class="n">ids_stashed</span><span class="o">=</span><span class="n">stashed_id_set</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="n">poll_interval</span><span class="p">)</span>
+
+    <span class="c1"># Pick up any stragglers</span>
+    <span class="k">if</span> <span class="n">stash_log_method</span><span class="p">:</span>
+        <span class="n">stash_logs</span><span class="p">(</span><span class="n">observed_job_def_dict</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">failed</span><span class="p">,</span> <span class="n">queue_name</span><span class="p">,</span>
+                   <span class="n">stash_log_method</span><span class="p">,</span> <span class="n">job_name_prefix</span><span class="p">,</span>
+                   <span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">_%H%M%S&#39;</span><span class="p">),</span>
+                   <span class="n">ids_stashed</span><span class="o">=</span><span class="n">stashed_id_set</span><span class="p">)</span>
+
+    <span class="n">result_record</span><span class="p">[</span><span class="s1">&#39;terminated&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">terminated_jobs</span>
+    <span class="n">result_record</span><span class="p">[</span><span class="s1">&#39;failed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">failed</span>
+    <span class="n">result_record</span><span class="p">[</span><span class="s1">&#39;succeeded&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">done</span>
+</div>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span> <span class="nf">_get_job_ids_to_stash</span><span class="p">(</span><span class="n">job_def_list</span><span class="p">,</span> <span class="n">stashed_id_set</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">job_def</span> <span class="ow">in</span> <span class="n">job_def_list</span>
+            <span class="k">if</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stashed_id_set</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">stash_logs</span><span class="p">(</span><span class="n">job_defs</span><span class="p">,</span> <span class="n">success_jobs</span><span class="p">,</span> <span class="n">failure_jobs</span><span class="p">,</span> <span class="n">queue_name</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">,</span>
+               <span class="n">job_name_prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s1">&#39;stash&#39;</span><span class="p">,</span> <span class="n">ids_stashed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ids_stashed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ids_stashed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="n">success_ids</span> <span class="o">=</span> <span class="n">_get_job_ids_to_stash</span><span class="p">(</span><span class="n">success_jobs</span><span class="p">,</span> <span class="n">ids_stashed</span><span class="p">)</span>
+    <span class="n">failure_ids</span> <span class="o">=</span> <span class="n">_get_job_ids_to_stash</span><span class="p">(</span><span class="n">failure_jobs</span><span class="p">,</span> <span class="n">ids_stashed</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;s3&#39;</span><span class="p">:</span>
+        <span class="n">s3_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">stash_log</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="n">name_base</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.log&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name_base</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+            <span class="n">s3_client</span><span class="o">.</span><span class="n">put_object</span><span class="p">(</span>
+                <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket_name</span><span class="p">,</span>
+                <span class="n">Key</span><span class="o">=</span><span class="s1">&#39;reading_results/</span><span class="si">%s</span><span class="s1">/logs/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">job_name_prefix</span><span class="p">,</span>
+                    <span class="n">queue_name</span><span class="p">,</span>
+                    <span class="n">name</span><span class="p">),</span>
+                <span class="n">Body</span><span class="o">=</span><span class="n">log_str</span>
+                <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;local&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">job_name_prefix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_name_prefix</span> <span class="o">=</span> <span class="s1">&#39;batch_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">tag</span>
+        <span class="n">dirname</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_job_logs&#39;</span> <span class="o">%</span> <span class="n">job_name_prefix</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">stash_log</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="n">name_base</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="n">name_base</span> <span class="o">+</span> <span class="s1">&#39;.log&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">log_str</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid method: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">method</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">jobId</span><span class="p">,</span> <span class="n">job_def_tpl</span> <span class="ow">in</span> <span class="n">job_defs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">jobId</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">success_ids</span> <span class="ow">and</span> <span class="n">jobId</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">failure_ids</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># Logs aren&#39;t done and ready to be loaded.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">job_def</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">job_def_tpl</span><span class="p">)</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">get_job_log</span><span class="p">(</span><span class="n">job_def</span><span class="p">,</span> <span class="n">write_file</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">lines</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;No logs found for </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">])</span>
+                <span class="k">continue</span>
+            <span class="n">log_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+            <span class="n">base_name</span> <span class="o">=</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">success_ids</span><span class="p">:</span>
+                <span class="n">base_name</span> <span class="o">+=</span> <span class="s1">&#39;/SUCCESS&#39;</span>
+            <span class="k">elif</span> <span class="n">job_def</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">failure_ids</span><span class="p">:</span>
+                <span class="n">base_name</span> <span class="o">+=</span> <span class="s1">&#39;/FAILED&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Job cannot be logged unless completed.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Stashing &#39;</span> <span class="o">+</span> <span class="n">base_name</span><span class="p">)</span>
+            <span class="n">stash_log</span><span class="p">(</span><span class="n">log_str</span><span class="p">,</span> <span class="n">base_name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Failed to save logs for: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">job_def_tpl</span><span class="p">))</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="n">ids_stashed</span> <span class="o">|=</span> <span class="p">{</span><span class="n">jid</span> <span class="k">for</span> <span class="n">jids</span> <span class="ow">in</span> <span class="p">[</span><span class="n">success_ids</span><span class="p">,</span> <span class="n">failure_ids</span><span class="p">]</span> <span class="k">for</span> <span class="n">jid</span> <span class="ow">in</span> <span class="n">jids</span><span class="p">}</span>
+    <span class="k">return</span>
+
+
+<div class="viewcode-block" id="get_ecs_cluster_for_queue"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.get_ecs_cluster_for_queue">[docs]</a><span class="k">def</span> <span class="nf">get_ecs_cluster_for_queue</span><span class="p">(</span><span class="n">queue_name</span><span class="p">,</span> <span class="n">batch_client</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the name of the ecs cluster using the batch client.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">batch_client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+
+    <span class="n">queue_resp</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">describe_job_queues</span><span class="p">(</span><span class="n">jobQueues</span><span class="o">=</span><span class="p">[</span><span class="n">queue_name</span><span class="p">])</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">queue_resp</span><span class="p">[</span><span class="s1">&#39;jobQueues&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">queue</span> <span class="o">=</span> <span class="n">queue_resp</span><span class="p">[</span><span class="s1">&#39;jobQueues&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BatchReadingError</span><span class="p">(</span><span class="s1">&#39;Error finding queue with name </span><span class="si">%s</span><span class="s1">.&#39;</span>
+                                <span class="o">%</span> <span class="n">queue_name</span><span class="p">)</span>
+
+    <span class="n">compute_env_names</span> <span class="o">=</span> <span class="n">queue</span><span class="p">[</span><span class="s1">&#39;computeEnvironmentOrder&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">compute_env_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">compute_env_name</span> <span class="o">=</span> <span class="n">compute_env_names</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;computeEnvironment&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BatchReadingError</span><span class="p">(</span><span class="s1">&#39;Error finding the compute environment name &#39;</span>
+                                <span class="s1">&#39;for </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">queue_name</span><span class="p">)</span>
+
+    <span class="n">compute_envs</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">describe_compute_environments</span><span class="p">(</span>
+        <span class="n">computeEnvironments</span><span class="o">=</span><span class="p">[</span><span class="n">compute_env_name</span><span class="p">]</span>
+        <span class="p">)[</span><span class="s1">&#39;computeEnvironments&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">compute_envs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">compute_env</span> <span class="o">=</span> <span class="n">compute_envs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BatchReadingError</span><span class="p">(</span><span class="s2">&quot;Error getting compute environment </span><span class="si">%s</span><span class="s2"> for </span><span class="si">%s</span><span class="s2">. &quot;</span>
+                                <span class="s2">&quot;Got </span><span class="si">%d</span><span class="s2"> environments instead of 1.&quot;</span>
+                                <span class="o">%</span> <span class="p">(</span><span class="n">compute_env_name</span><span class="p">,</span> <span class="n">queue_name</span><span class="p">,</span>
+                                   <span class="nb">len</span><span class="p">(</span><span class="n">compute_envs</span><span class="p">)))</span>
+
+    <span class="n">ecs_cluster_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">compute_env</span><span class="p">[</span><span class="s1">&#39;ecsClusterArn&#39;</span><span class="p">])</span></div>
+    <span class="k">return</span> <span class="n">ecs_cluster_name</span>
+
+
+<div class="viewcode-block" id="tag_instances_on_cluster"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.tag_instances_on_cluster">[docs]</a><span class="k">def</span> <span class="nf">tag_instances_on_cluster</span><span class="p">(</span><span class="n">cluster_name</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="s1">&#39;cwc&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adds project tag to untagged instances in a given cluster.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cluster_name : str</span>
+<span class="sd">        The name of the AWS ECS cluster in which running instances</span>
+<span class="sd">        should be tagged.</span>
+<span class="sd">    project : str</span>
+<span class="sd">        The name of the project to tag instances with.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get the relevant instance ids from the ecs cluster</span>
+    <span class="n">ecs</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;ecs&#39;</span><span class="p">)</span>
+    <span class="n">task_arns</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">list_tasks</span><span class="p">(</span><span class="n">cluster</span><span class="o">=</span><span class="n">cluster_name</span><span class="p">)[</span><span class="s1">&#39;taskArns&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">task_arns</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">describe_tasks</span><span class="p">(</span><span class="n">cluster</span><span class="o">=</span><span class="n">cluster_name</span><span class="p">,</span> <span class="n">tasks</span><span class="o">=</span><span class="n">task_arns</span><span class="p">)[</span><span class="s1">&#39;tasks&#39;</span><span class="p">]</span>
+    <span class="n">container_instances</span> <span class="o">=</span> <span class="n">ecs</span><span class="o">.</span><span class="n">describe_container_instances</span><span class="p">(</span>
+        <span class="n">cluster</span><span class="o">=</span><span class="n">cluster_name</span><span class="p">,</span>
+        <span class="n">containerInstances</span><span class="o">=</span><span class="p">[</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;containerInstanceArn&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">]</span>
+        <span class="p">)[</span><span class="s1">&#39;containerInstances&#39;</span><span class="p">]</span>
+    <span class="n">ec2_instance_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">ci</span><span class="p">[</span><span class="s1">&#39;ec2InstanceId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">container_instances</span><span class="p">]</span>
+
+    <span class="c1"># Instantiate each instance to tag as a resource and create project tag</span>
+    <span class="k">for</span> <span class="n">instance_id</span> <span class="ow">in</span> <span class="n">ec2_instance_ids</span><span class="p">:</span>
+        <span class="n">tag_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">)</span></div>
+    <span class="k">return</span>
+
+
+<span class="nd">@_ensure_api_keys</span><span class="p">(</span><span class="s1">&#39;remote batch reading&#39;</span><span class="p">,</span> <span class="p">[])</span>
+<span class="k">def</span> <span class="nf">get_elsevier_api_keys</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">ec</span><span class="o">.</span><span class="n">API_KEY_ENV_NAME</span><span class="p">,</span>
+         <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">ec</span><span class="o">.</span><span class="n">ELSEVIER_KEYS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-ELS-APIKey&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)},</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">ec</span><span class="o">.</span><span class="n">INST_KEY_ENV_NAME</span><span class="p">,</span>
+         <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">ec</span><span class="o">.</span><span class="n">ELSEVIER_KEYS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;X-ELS-Insttoken&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)},</span>
+        <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">get_environment</span><span class="p">():</span>
+    <span class="c1"># Get the Elsevier keys from the Elsevier client</span>
+    <span class="n">environment_vars</span> <span class="o">=</span> <span class="n">get_elsevier_api_keys</span><span class="p">()</span>
+
+    <span class="c1"># Only include values that are not empty.</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">var_dict</span> <span class="k">for</span> <span class="n">var_dict</span> <span class="ow">in</span> <span class="n">environment_vars</span>
+            <span class="k">if</span> <span class="n">var_dict</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">var_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span>
+
+
+<span class="k">class</span> <span class="nc">Submitter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">_s3_input_name</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">_purpose</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">_job_queue</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+    <span class="n">_job_def</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basename</span><span class="p">,</span> <span class="n">readers</span><span class="p">,</span> <span class="n">project_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">basename</span> <span class="o">=</span> <span class="n">basename</span>
+        <span class="k">if</span> <span class="s1">&#39;all&#39;</span> <span class="ow">in</span> <span class="n">readers</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">readers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reach&#39;</span><span class="p">,</span> <span class="s1">&#39;sparser&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">readers</span> <span class="o">=</span> <span class="n">readers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project_name</span> <span class="o">=</span> <span class="n">project_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_list</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">=</span><span class="n">options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids_per_job</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the options of reading job.&quot;&quot;&quot;</span>
+        <span class="c1"># This should be more specifically implemented in a child class.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_make_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">):</span>
+        <span class="n">job_name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%d</span><span class="s1">_</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">)</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_base</span><span class="p">(</span><span class="n">job_name</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;-r&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">readers</span>
+        <span class="n">cmd</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extensions</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">cmd</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Argument of command is not a string: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                               <span class="o">%</span> <span class="nb">repr</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">job_name</span><span class="p">,</span> <span class="n">cmd</span>
+
+    <span class="k">def</span> <span class="nf">_get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_name</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">_get_extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">submit_reading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_fname</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">,</span> <span class="n">ids_per_job</span><span class="p">,</span>
+                       <span class="n">num_tries</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="c1"># stash this for later.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ids_per_job</span> <span class="o">=</span> <span class="n">ids_per_job</span>
+
+        <span class="c1"># Upload the pmid_list to Amazon S3</span>
+        <span class="n">id_list_key</span> <span class="o">=</span> <span class="s1">&#39;reading_results/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span>
+                                                 <span class="bp">self</span><span class="o">.</span><span class="n">_s3_input_name</span><span class="p">)</span>
+        <span class="n">s3_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+        <span class="n">s3_client</span><span class="o">.</span><span class="n">upload_file</span><span class="p">(</span><span class="n">input_fname</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">id_list_key</span><span class="p">)</span>
+
+        <span class="c1"># If no end index is specified, read all the PMIDs</span>
+        <span class="k">if</span> <span class="n">end_ix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+                <span class="n">end_ix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">start_ix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">start_ix</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Get environment variables</span>
+        <span class="n">environment_vars</span> <span class="o">=</span> <span class="n">get_environment</span><span class="p">()</span>
+
+        <span class="c1"># Iterate over the list of PMIDs and submit the job in chunks</span>
+        <span class="n">batch_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">,</span> <span class="n">region_name</span><span class="o">=</span><span class="s1">&#39;us-east-1&#39;</span><span class="p">)</span>
+        <span class="n">job_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">job_start_ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">,</span> <span class="n">ids_per_job</span><span class="p">):</span>
+            <span class="n">job_end_ix</span> <span class="o">=</span> <span class="n">job_start_ix</span> <span class="o">+</span> <span class="n">ids_per_job</span>
+            <span class="k">if</span> <span class="n">job_end_ix</span> <span class="o">&gt;</span> <span class="n">end_ix</span><span class="p">:</span>
+                <span class="n">job_end_ix</span> <span class="o">=</span> <span class="n">end_ix</span>
+            <span class="n">job_name</span><span class="p">,</span> <span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_command</span><span class="p">(</span><span class="n">job_start_ix</span><span class="p">,</span> <span class="n">job_end_ix</span><span class="p">)</span>
+            <span class="n">command_list</span> <span class="o">=</span> <span class="n">get_batch_command</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">purpose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_purpose</span><span class="p">,</span>
+                                             <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_name</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Command list: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">command_list</span><span class="p">))</span>
+            <span class="n">job_info</span> <span class="o">=</span> <span class="n">batch_client</span><span class="o">.</span><span class="n">submit_job</span><span class="p">(</span>
+                <span class="n">jobName</span><span class="o">=</span><span class="n">job_name</span><span class="p">,</span>
+                <span class="n">jobQueue</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_job_queue</span><span class="p">,</span>
+                <span class="n">jobDefinition</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_job_def</span><span class="p">,</span>
+                <span class="n">containerOverrides</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s1">&#39;environment&#39;</span><span class="p">:</span> <span class="n">environment_vars</span><span class="p">,</span>
+                    <span class="s1">&#39;command&#39;</span><span class="p">:</span> <span class="n">command_list</span><span class="p">},</span>
+                <span class="n">retryStrategy</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;attempts&#39;</span><span class="p">:</span> <span class="n">num_tries</span><span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;submitted...&quot;</span><span class="p">)</span>
+            <span class="n">job_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;jobId&#39;</span><span class="p">:</span> <span class="n">job_info</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_list</span> <span class="o">=</span> <span class="n">job_list</span>
+        <span class="k">return</span> <span class="n">job_list</span>
+
+    <span class="k">def</span> <span class="nf">watch_and_wait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">poll_interval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">idle_log_timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">kill_on_timeout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stash_log_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">tag_instances</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This provides shortcut access to the wait_for_complete_function.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">wait_for_complete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_job_queue</span><span class="p">,</span> <span class="n">job_list</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_list</span><span class="p">,</span>
+                                 <span class="n">job_name_prefix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span>
+                                 <span class="n">poll_interval</span><span class="o">=</span><span class="n">poll_interval</span><span class="p">,</span>
+                                 <span class="n">idle_log_timeout</span><span class="o">=</span><span class="n">idle_log_timeout</span><span class="p">,</span>
+                                 <span class="n">kill_on_log_timeout</span><span class="o">=</span><span class="n">kill_on_timeout</span><span class="p">,</span>
+                                 <span class="n">stash_log_method</span><span class="o">=</span><span class="n">stash_log_method</span><span class="p">,</span>
+                                 <span class="n">tag_instances</span><span class="o">=</span><span class="n">tag_instances</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PmidSubmitter</span><span class="p">(</span><span class="n">Submitter</span><span class="p">):</span>
+    <span class="n">_s3_input_name</span> <span class="o">=</span> <span class="s1">&#39;pmids&#39;</span>
+    <span class="n">_purpose</span> <span class="o">=</span> <span class="s1">&#39;pmid_reading&#39;</span>
+    <span class="n">_job_queue</span> <span class="o">=</span> <span class="s1">&#39;run_reach_queue&#39;</span>
+    <span class="n">_job_def</span> <span class="o">=</span> <span class="s1">&#39;run_reach_jobdef&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_get_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_name</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">):</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;indra.tools.reading.pmid_reading.read_pmids_aws&#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span> <span class="s1">&#39;/tmp&#39;</span><span class="p">,</span> <span class="s1">&#39;16&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_ix</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_ix</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">base</span>
+
+    <span class="k">def</span> <span class="nf">_get_extensions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">extensions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">opt_key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;force_read&#39;</span><span class="p">,</span> <span class="s1">&#39;force_fulltext&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">opt_key</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;--&#39;</span> <span class="o">+</span> <span class="n">opt_key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">extensions</span>
+
+    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">force_read</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force_fulltext</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the options for this run.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;force_read&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">force_read</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;force_fulltext&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">force_fulltext</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">submit_combine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">job_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_list</span>
+        <span class="k">if</span> <span class="n">job_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: boto3 cannot support waiting for more than 20 jobs.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please wait for the reading to finish, then run again with the&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`combine` option.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Get environment variables</span>
+        <span class="n">environment_vars</span> <span class="o">=</span> <span class="n">get_environment</span><span class="p">()</span>
+
+        <span class="n">job_name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_combine_reading_results&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">basename</span>
+        <span class="n">command_list</span> <span class="o">=</span> <span class="n">get_batch_command</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;indra.tools.reading.assemble_reading_stmts_aws&#39;</span><span class="p">,</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">readers</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s1">&#39;pmid_reading&#39;</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_name</span>
+            <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Command list: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">command_list</span><span class="p">))</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobName&#39;</span><span class="p">:</span> <span class="n">job_name</span><span class="p">,</span> <span class="s1">&#39;jobQueue&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_queue</span><span class="p">,</span>
+                  <span class="s1">&#39;jobDefinition&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_def</span><span class="p">,</span>
+                  <span class="s1">&#39;containerOverrides&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;environment&#39;</span><span class="p">:</span> <span class="n">environment_vars</span><span class="p">,</span>
+                                         <span class="s1">&#39;command&#39;</span><span class="p">:</span> <span class="n">command_list</span><span class="p">,</span>
+                                         <span class="s1">&#39;memory&#39;</span><span class="p">:</span> <span class="mi">60000</span><span class="p">,</span> <span class="s1">&#39;vcpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>
+        <span class="k">if</span> <span class="n">job_ids</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;dependsOn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">job_ids</span>
+        <span class="n">batch_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+        <span class="n">batch_client</span><span class="o">.</span><span class="n">submit_job</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;submitted...&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+
+<div class="viewcode-block" id="submit_reading"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.submit_reading">[docs]</a><span class="k">def</span> <span class="nf">submit_reading</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">pmid_list_filename</span><span class="p">,</span> <span class="n">readers</span><span class="p">,</span> <span class="n">start_ix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">end_ix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pmids_per_job</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">num_tries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                   <span class="n">force_read</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force_fulltext</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">project_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Submit an old-style pmid-centered no-database s3 only reading job.</span>
+
+<span class="sd">    This function is provided for the sake of backward compatibility. It is</span>
+<span class="sd">    preferred that you use the object-oriented PmidSubmitter and the</span>
+<span class="sd">    submit_reading job going forward.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">PmidSubmitter</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">readers</span><span class="p">,</span> <span class="n">project_name</span><span class="p">)</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">force_read</span><span class="p">,</span> <span class="n">force_fulltext</span><span class="p">)</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">submit_reading</span><span class="p">(</span><span class="n">pmid_list_filename</span><span class="p">,</span> <span class="n">start_ix</span><span class="p">,</span> <span class="n">end_ix</span><span class="p">,</span> <span class="n">pmids_per_job</span><span class="p">,</span>
+                       <span class="n">num_tries</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">sub</span><span class="o">.</span><span class="n">job_list</span>
+
+
+<div class="viewcode-block" id="submit_combine"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.submit_reading_pipeline.submit_combine">[docs]</a><span class="k">def</span> <span class="nf">submit_combine</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">readers</span><span class="p">,</span> <span class="n">job_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">project_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Submit a batch job to combine the outputs of a reading job.</span>
+
+<span class="sd">    This function is provided for backwards compatibility. You should use the</span>
+<span class="sd">    PmidSubmitter and submit_combine methods.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">PmidSubmitter</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">readers</span><span class="p">,</span> <span class="n">project_name</span><span class="p">)</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">job_list</span> <span class="o">=</span> <span class="n">job_ids</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">submit_combine</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">sub</span>
+
+
+<span class="k">def</span> <span class="nf">create_submit_parser</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">argparse</span>
+    <span class="n">parent_submit_parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">parent_submit_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;basename&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Defines job names and S3 keys&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_submit_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--readers&#39;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;readers&#39;</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sparser&#39;</span><span class="p">,</span> <span class="s1">&#39;reach&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">],</span>
+        <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">],</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Choose which reader(s) to use.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_submit_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--project&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Set the project name. Default is DEFAULT_AWS_PROJECT in the &#39;</span>
+              <span class="s1">&#39;config.&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">parent_submit_parser</span>
+
+
+<span class="k">def</span> <span class="nf">create_read_parser</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">argparse</span>
+    <span class="n">parent_read_parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;input_file&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Path to file containing input ids of content to read. For the &#39;</span>
+              <span class="s1">&#39;no-db options, this is simply a file with each line being a &#39;</span>
+              <span class="s1">&#39;pmid. For the with-db options, this is a file where each line &#39;</span>
+              <span class="s1">&#39;is of the form </span><span class="se">\&#39;</span><span class="s1">&lt;id type&gt;:&lt;id&gt;</span><span class="se">\&#39;</span><span class="s1">, for example </span><span class="se">\&#39;</span><span class="s1">pmid:12345</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--start_ix&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Start index of ids to read.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--end_ix&#39;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;End index of ids to read. If `None`, read content from all ids.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--force_read&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Read papers even if previously read by current REACH.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--force_fulltext&#39;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Get full text content even if content already on S3.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">parent_read_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--ids_per_job&#39;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of PMIDs to read for each AWS Batch job.&#39;</span>
+    <span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39; Not currently supported.</span>
+<span class="sd">    parent_read_parser.add_argument(</span>
+<span class="sd">        &#39;--num_tries&#39;,</span>
+<span class="sd">        default=2,</span>
+<span class="sd">        type=int,</span>
+<span class="sd">        help=&#39;Maximum number of times to try running job.&#39;</span>
+<span class="sd">        )</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">parent_read_parser</span>
+
+
+<span class="k">def</span> <span class="nf">create_parser</span><span class="p">():</span>
+    <span class="n">parent_submit_parser</span> <span class="o">=</span> <span class="n">create_submit_parser</span><span class="p">()</span>
+    <span class="n">parent_read_parser</span> <span class="o">=</span> <span class="n">create_read_parser</span><span class="p">()</span>
+
+    <span class="c1"># Make non_db_parser and get subparsers</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="s1">&#39;indra.tools.reading.submit_reading_pipeline.py&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Run reading by collecting content, and save as pickles. &#39;</span>
+                     <span class="s1">&#39;This option requires that ids are given as a list of &#39;</span>
+                     <span class="s1">&#39;pmids, one line per pmid.&#39;</span><span class="p">),</span>
+        <span class="n">epilog</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Note that `python wait_for_complete.py ...` should be run as &#39;</span>
+                <span class="s1">&#39;soon as this command completes successfully. For more &#39;</span>
+                <span class="s1">&#39;details use `python wait_for_complete.py -h`.&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Job Type&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Type of jobs to submit.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">dest</span> <span class="o">=</span> <span class="s1">&#39;job_type&#39;</span>
+
+    <span class="c1"># Create subparsers for the no-db option.</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span>
+        <span class="s1">&#39;read&#39;</span><span class="p">,</span>
+        <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">parent_read_parser</span><span class="p">,</span> <span class="n">parent_submit_parser</span><span class="p">],</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Run reading on AWS batch and cache INDRA Statements on S3.&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Run reading on batch and cache INDRA Statements on S3.&#39;</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span>
+    <span class="p">)</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span>
+        <span class="s1">&#39;combine&#39;</span><span class="p">,</span>
+        <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">parent_submit_parser</span><span class="p">],</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Combine INDRA Statement subsets into a single file.&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Combine INDRA Statement subsets into a single file.&#39;</span>
+    <span class="p">)</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span>
+        <span class="s1">&#39;full&#39;</span><span class="p">,</span>
+        <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">parent_read_parser</span><span class="p">,</span> <span class="n">parent_submit_parser</span><span class="p">],</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Run reading and combine INDRA Statements when done.&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Run reading and combine INDRA Statements when done.&#39;</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">create_parser</span><span class="p">()</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">job_ids</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">PmidSubmitter</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">readers</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">project</span><span class="p">)</span>
+    <span class="n">sub</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">force_read</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">force_fulltext</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">job_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="s1">&#39;full&#39;</span><span class="p">]:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">submit_reading</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input_file</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">start_ix</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">end_ix</span><span class="p">,</span>
+                           <span class="n">args</span><span class="o">.</span><span class="n">ids_per_job</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">job_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;combine&#39;</span><span class="p">,</span> <span class="s1">&#39;full&#39;</span><span class="p">]:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">submit_combine</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

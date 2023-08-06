@@ -1,0 +1,931 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.statements.agent &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.statements.agent</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.statements.agent</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span>
+<span class="kn">from</span> <span class="nn">future.utils</span> <span class="k">import</span> <span class="n">python_2_unicode_compatible</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Agent&#39;</span><span class="p">,</span> <span class="s1">&#39;BoundCondition&#39;</span><span class="p">,</span> <span class="s1">&#39;MutCondition&#39;</span><span class="p">,</span> <span class="s1">&#39;ModCondition&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;ActivityCondition&#39;</span><span class="p">]</span>
+
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span> <span class="k">as</span> <span class="n">_o</span>
+<span class="kn">from</span> <span class="nn">indra.util</span> <span class="k">import</span> <span class="n">unicode_strs</span>
+<span class="kn">from</span> <span class="nn">indra.statements.statements</span> <span class="k">import</span> <span class="n">modtype_conditions</span><span class="p">,</span> <span class="n">modtype_to_modclass</span>
+<span class="kn">from</span> <span class="nn">.concept</span> <span class="k">import</span> <span class="n">Concept</span>
+<span class="kn">from</span> <span class="nn">.resources</span> <span class="k">import</span> <span class="n">get_valid_residue</span><span class="p">,</span> <span class="n">get_valid_location</span><span class="p">,</span> <span class="n">activity_types</span><span class="p">,</span> \
+    <span class="n">amino_acids</span>
+
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Agent"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.Agent">[docs]</a><span class="nd">@python_2_unicode_compatible</span>
+<span class="k">class</span> <span class="nc">Agent</span><span class="p">(</span><span class="n">Concept</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A molecular entity, e.g., a protein.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        The name of the agent, preferably a canonicalized name such as an</span>
+<span class="sd">        HGNC gene name.</span>
+<span class="sd">    mods : list of :py:class:`ModCondition`</span>
+<span class="sd">        Modification state of the agent.</span>
+<span class="sd">    bound_conditions : list of :py:class:`BoundCondition`</span>
+<span class="sd">        Other agents bound to the agent in this context.</span>
+<span class="sd">    mutations : list of :py:class:`MutCondition`</span>
+<span class="sd">        Amino acid mutations of the agent.</span>
+<span class="sd">    activity : :py:class:`ActivityCondition`</span>
+<span class="sd">        Activity of the agent.</span>
+<span class="sd">    location : str</span>
+<span class="sd">        Cellular location of the agent. Must be a valid name (e.g. &quot;nucleus&quot;)</span>
+<span class="sd">        or identifier (e.g. &quot;GO:0005634&quot;)for a GO cellular compartment.</span>
+<span class="sd">    db_refs : dict</span>
+<span class="sd">        Dictionary of database identifiers associated with this agent.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mods</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">activity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">bound_conditions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mutations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">db_refs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Agent</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">db_refs</span><span class="o">=</span><span class="n">db_refs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">mods</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mods</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Promote to list</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mods</span><span class="p">,</span> <span class="n">ModCondition</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mods</span> <span class="o">=</span> <span class="p">[</span><span class="n">mods</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mods</span> <span class="o">=</span> <span class="n">mods</span>
+
+        <span class="k">if</span> <span class="n">bound_conditions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Promote to list</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bound_conditions</span><span class="p">,</span> <span class="n">BoundCondition</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">bound_conditions</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span> <span class="o">=</span> <span class="n">bound_conditions</span>
+
+        <span class="k">if</span> <span class="n">mutations</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mutations</span><span class="p">,</span> <span class="n">MutCondition</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span> <span class="o">=</span> <span class="p">[</span><span class="n">mutations</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span> <span class="o">=</span> <span class="n">mutations</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">activity</span> <span class="o">=</span> <span class="n">activity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">get_valid_location</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Agent.matches_key"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.Agent.matches_key">[docs]</a>    <span class="k">def</span> <span class="nf">matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a key to identify the identity and state of the Agent.&quot;&quot;&quot;</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entity_matches_key</span><span class="p">(),</span>
+               <span class="bp">self</span><span class="o">.</span><span class="n">state_matches_key</span><span class="p">())</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Agent.entity_matches_key"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.Agent.entity_matches_key">[docs]</a>    <span class="k">def</span> <span class="nf">entity_matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a key to identify the identity of the Agent not its state.&quot;&quot;&quot;</span>
+        <span class="n">db_refs_key</span> <span class="o">=</span> <span class="s1">&#39;FPLX:</span><span class="si">%s</span><span class="s1">;UP:</span><span class="si">%s</span><span class="s1">;HGNC:</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FPLX&#39;</span><span class="p">),</span>
+                                                 <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;UP&#39;</span><span class="p">),</span>
+                                                 <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HGNC&#39;</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">db_refs_key</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Agent.state_matches_key"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.Agent.state_matches_key">[docs]</a>    <span class="k">def</span> <span class="nf">state_matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a key to identify the state of the Agent.&quot;&quot;&quot;</span>
+        <span class="c1"># NOTE: Making a set of the mod matches_keys might break if</span>
+        <span class="c1"># you have an agent with two phosphorylations at serine</span>
+        <span class="c1"># with unknown sites.</span>
+        <span class="n">act_key</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">m</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">]),</span>
+               <span class="nb">sorted</span><span class="p">([</span><span class="n">m</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">]),</span>
+               <span class="n">act_key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span>
+               <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">),</span>
+               <span class="nb">tuple</span><span class="p">((</span><span class="n">bc</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">matches_key</span><span class="p">(),</span> <span class="n">bc</span><span class="o">.</span><span class="n">is_bound</span><span class="p">)</span>
+                     <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">,</span>
+                                      <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="c1"># Function to get the namespace to look in</span>
+    <span class="k">def</span> <span class="nf">get_grounding</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">indra.databases.hgnc_client</span> <span class="k">as</span> <span class="nn">hgc</span>
+        <span class="kn">import</span> <span class="nn">indra.databases.uniprot_client</span> <span class="k">as</span> <span class="nn">upc</span>
+        <span class="n">be</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FPLX&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">be</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;FPLX&#39;</span><span class="p">,</span> <span class="n">be</span><span class="p">)</span>
+        <span class="n">hgnc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HGNC&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">hgnc</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hgnc</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">hgnc</span> <span class="o">=</span> <span class="n">hgnc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;HGNC&#39;</span><span class="p">,</span> <span class="n">hgc</span><span class="o">.</span><span class="n">get_hgnc_name</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hgnc</span><span class="p">)))</span>
+        <span class="n">up</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;UP&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">up</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">up</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">up</span> <span class="o">=</span> <span class="n">up</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">upc</span><span class="o">.</span><span class="n">is_human</span><span class="p">(</span><span class="n">up</span><span class="p">):</span>
+                <span class="n">gene_name</span> <span class="o">=</span> <span class="n">upc</span><span class="o">.</span><span class="n">get_gene_name</span><span class="p">(</span><span class="n">up</span><span class="p">,</span> <span class="n">web_fallback</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">gene_name</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;HGNC&#39;</span><span class="p">,</span> <span class="n">gene_name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;UP&#39;</span><span class="p">,</span> <span class="n">up</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">isa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">hierarchies</span><span class="p">):</span>
+        <span class="c1"># Get the namespaces for the comparison</span>
+        <span class="p">(</span><span class="n">self_ns</span><span class="p">,</span> <span class="n">self_id</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_grounding</span><span class="p">()</span>
+        <span class="p">(</span><span class="n">other_ns</span><span class="p">,</span> <span class="n">other_id</span><span class="p">)</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">get_grounding</span><span class="p">()</span>
+        <span class="c1"># If one of the agents isn&#39;t grounded to a relevant namespace,</span>
+        <span class="c1"># there can&#39;t be an isa relationship</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">((</span><span class="n">self_ns</span><span class="p">,</span> <span class="n">self_id</span><span class="p">,</span> <span class="n">other_ns</span><span class="p">,</span> <span class="n">other_id</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># Check for isa relationship</span>
+        <span class="k">return</span> <span class="n">hierarchies</span><span class="p">[</span><span class="s1">&#39;entity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isa_or_partof</span><span class="p">(</span><span class="n">self_ns</span><span class="p">,</span> <span class="n">self_id</span><span class="p">,</span> <span class="n">other_ns</span><span class="p">,</span>
+                                                   <span class="n">other_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">refinement_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">hierarchies</span><span class="p">):</span>
+        <span class="c1"># Make sure the Agent types match</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># ENTITIES</span>
+        <span class="c1"># Check that the basic entity of the agent either matches or is related</span>
+        <span class="c1"># to the entity of the other agent. If not, no match.</span>
+
+        <span class="c1"># If the entities, match, then we can continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entity_matches</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">isa</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">hierarchies</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># BOUND CONDITIONS</span>
+        <span class="c1"># Now check the bound conditions. For self to be a refinement of</span>
+        <span class="c1"># other in terms of the bound conditions, it has to include all of the</span>
+        <span class="c1"># bound conditions in the other agent, and add additional context.</span>
+        <span class="c1"># TODO: For now, we do not check the bound conditions of the bound</span>
+        <span class="c1"># conditions.</span>
+        <span class="c1"># FIXME: This matching procedure will get confused if the same</span>
+        <span class="c1"># entity is included more than once in one of the sets--this will</span>
+        <span class="c1"># be picked up as a match</span>
+        <span class="c1"># Iterate over the bound conditions in the other agent, and make sure</span>
+        <span class="c1"># they are all matched in self.</span>
+        <span class="k">for</span> <span class="n">bc_other</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">:</span>
+            <span class="c1"># Iterate over the bound conditions in self to find a match</span>
+            <span class="n">bc_found</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">bc_self</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">bc_self</span><span class="o">.</span><span class="n">is_bound</span> <span class="o">==</span> <span class="n">bc_other</span><span class="o">.</span><span class="n">is_bound</span><span class="p">)</span> <span class="ow">and</span> \
+                        <span class="n">bc_self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">refinement_of</span><span class="p">(</span><span class="n">bc_other</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="n">hierarchies</span><span class="p">):</span>
+                    <span class="n">bc_found</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="c1"># If we didn&#39;t find a match for this bound condition in self, then</span>
+            <span class="c1"># no refinement</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">bc_found</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># MODIFICATIONS</span>
+        <span class="c1"># Similar to the above, we check that self has all of the modifications</span>
+        <span class="c1"># of other.</span>
+        <span class="c1"># Here we need to make sure that a mod in self.mods is only matched</span>
+        <span class="c1"># once to a mod in other.mods. Otherwise (&#39;phoshporylation&#39;) would be</span>
+        <span class="c1"># considered a refinement of (&#39;phosphorylation&#39;, &#39;phosphorylation&#39;)</span>
+        <span class="n">matched_indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># This outer loop checks that each modification in the other Agent</span>
+        <span class="c1"># is matched.</span>
+        <span class="k">for</span> <span class="n">other_mod</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">mods</span><span class="p">:</span>
+            <span class="n">mod_found</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="c1"># We need to keep track of indices for this Agent&#39;s modifications</span>
+            <span class="c1"># to make sure that each one is used at most once to match</span>
+            <span class="c1"># the modification of one of the other Agent&#39;s modifications.</span>
+            <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">self_mod</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">self_mod</span><span class="o">.</span><span class="n">refinement_of</span><span class="p">(</span><span class="n">other_mod</span><span class="p">,</span>
+                                          <span class="n">hierarchies</span><span class="p">[</span><span class="s1">&#39;modification&#39;</span><span class="p">]):</span>
+                    <span class="c1"># If this modification hasn&#39;t been used for matching yet</span>
+                    <span class="k">if</span> <span class="n">ix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matched_indices</span><span class="p">:</span>
+                        <span class="c1"># Set the index as used</span>
+                        <span class="n">matched_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+                        <span class="n">mod_found</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+            <span class="c1"># If we didn&#39;t find an exact match for this mod in other, then</span>
+            <span class="c1"># no refinement</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">mod_found</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># MUTATIONS</span>
+        <span class="c1"># Similar to the above, we check that self has all of the mutations</span>
+        <span class="c1"># of other.</span>
+        <span class="n">matched_indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># This outer loop checks that each mutation in the other Agent</span>
+        <span class="c1"># is matched.</span>
+        <span class="k">for</span> <span class="n">other_mut</span> <span class="ow">in</span> <span class="n">other</span><span class="o">.</span><span class="n">mutations</span><span class="p">:</span>
+            <span class="n">mut_found</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="c1"># We need to keep track of indices for this Agent&#39;s mutations</span>
+            <span class="c1"># to make sure that each one is used at most once to match</span>
+            <span class="c1"># the mutation of one of the other Agent&#39;s mutations.</span>
+            <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">self_mut</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">self_mut</span><span class="o">.</span><span class="n">refinement_of</span><span class="p">(</span><span class="n">other_mut</span><span class="p">):</span>
+                    <span class="c1"># If this mutation hasn&#39;t been used for matching yet</span>
+                    <span class="k">if</span> <span class="n">ix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">matched_indices</span><span class="p">:</span>
+                        <span class="c1"># Set the index as used</span>
+                        <span class="n">matched_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+                        <span class="n">mut_found</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+            <span class="c1"># If we didn&#39;t find an exact match for this mut in other, then</span>
+            <span class="c1"># no refinement</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">mut_found</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># LOCATION</span>
+        <span class="c1"># If the other location is specified and this one is not then self</span>
+        <span class="c1"># cannot be a refinement</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># If both this location and the other one is specified, we check the</span>
+        <span class="c1"># hierarchy.</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># If the other location is part of this location then</span>
+            <span class="c1"># self.location is not a refinement</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">hierarchies</span><span class="p">[</span><span class="s1">&#39;cellular_component&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">partof</span><span class="p">(</span>
+                    <span class="s1">&#39;INDRA_LOCATIONS&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span>
+                    <span class="s1">&#39;INDRA_LOCATIONS&#39;</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">location</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># ACTIVITY</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">other</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">other</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">refinement_of</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">activity</span><span class="p">,</span>
+                                               <span class="n">hierarchies</span><span class="p">[</span><span class="s1">&#39;activity&#39;</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="c1"># Everything checks out</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">and</span> \
+                  <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">activity</span><span class="p">)</span> <span class="ow">and</span> \
+                  <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">location</span><span class="p">)</span> <span class="ow">and</span> \
+                  <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">db_refs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">mods</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">mods</span><span class="p">):</span>
+                <span class="n">matches</span> <span class="o">=</span> <span class="n">matches</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">mutations</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">mutations</span><span class="p">):</span>
+                <span class="n">matches</span> <span class="o">=</span> <span class="n">matches</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">):</span>
+                <span class="n">matches</span> <span class="o">=</span> <span class="n">matches</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">agent</span><span class="p">)</span> <span class="ow">and</span> \
+                          <span class="n">s</span><span class="o">.</span><span class="n">is_bound</span> <span class="o">==</span> <span class="n">o</span><span class="o">.</span><span class="n">is_bound</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="n">matches</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">_o</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">})</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;mods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">mc</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span> <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;mutations&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">mc</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span> <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;bound_conditions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span> <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span>
+                                             <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;activity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span>
+        <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;db_refs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db_refs</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">db_refs</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;db_refs&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">mods</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mods&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">mutations</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mutations&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">activity</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;activity&#39;</span><span class="p">)</span>
+        <span class="n">bound_conditions</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bound_conditions&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Agent missing name.&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">db_refs</span><span class="p">:</span>
+            <span class="n">db_refs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">db_refs</span><span class="o">=</span><span class="n">db_refs</span><span class="p">)</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">mods</span> <span class="o">=</span> <span class="p">[</span><span class="n">ModCondition</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span> <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">mods</span><span class="p">]</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">mutations</span> <span class="o">=</span> <span class="p">[</span><span class="n">MutCondition</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">mut</span><span class="p">)</span> <span class="k">for</span> <span class="n">mut</span> <span class="ow">in</span> <span class="n">mutations</span><span class="p">]</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">bound_conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">BoundCondition</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">bc</span><span class="p">)</span>
+                                  <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">bound_conditions</span><span class="p">]</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
+        <span class="k">if</span> <span class="n">activity</span><span class="p">:</span>
+            <span class="n">agent</span><span class="o">.</span><span class="n">activity</span> <span class="o">=</span> <span class="n">ActivityCondition</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">activity</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">agent</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">attr_strs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">:</span>
+            <span class="n">mod_str</span> <span class="o">=</span> <span class="s1">&#39;mods: &#39;</span>
+            <span class="n">mod_str</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mods</span><span class="p">])</span>
+            <span class="n">attr_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mod_str</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+                <span class="n">attr_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">activity_type</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">attr_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">activity_type</span><span class="p">,</span>
+                                             <span class="bp">self</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">is_active</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">:</span>
+            <span class="n">mut_str</span> <span class="o">=</span> <span class="s1">&#39;muts: &#39;</span>
+            <span class="n">mut_str</span> <span class="o">+=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutations</span><span class="p">])</span>
+            <span class="n">attr_strs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mut_str</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">:</span>
+            <span class="n">attr_strs</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;bound: [</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">is_bound</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">:</span>
+            <span class="n">attr_strs</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;location: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">]</span>
+        <span class="c1">#if self.db_refs:</span>
+        <span class="c1">#    attr_strs.append(&#39;db_refs: %s&#39; % self.db_refs)</span>
+        <span class="n">attr_str</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attr_strs</span><span class="p">)</span>
+        <span class="n">agent_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">agent_name</span><span class="p">,</span> <span class="n">attr_str</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BoundCondition"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.BoundCondition">[docs]</a><span class="k">class</span> <span class="nc">BoundCondition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Identify Agents bound (or not bound) to a given Agent in a given context.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    agent : :py:class:`Agent`</span>
+<span class="sd">        Instance of Agent.</span>
+<span class="sd">    is_bound : bool</span>
+<span class="sd">        Specifies whether the given Agent is bound or unbound in the current</span>
+<span class="sd">        context. Default is True.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    EGFR bound to EGF:</span>
+
+<span class="sd">    &gt;&gt;&gt; egf = Agent(&#39;EGF&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; egfr = Agent(&#39;EGFR&#39;, bound_conditions=[BoundCondition(egf)])</span>
+
+<span class="sd">    BRAF *not* bound to a 14-3-3 protein (YWHAB):</span>
+
+<span class="sd">    &gt;&gt;&gt; ywhab = Agent(&#39;YWHAB&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; braf = Agent(&#39;BRAF&#39;, bound_conditions=[BoundCondition(ywhab, False)])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">is_bound</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent</span> <span class="o">=</span> <span class="n">agent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_bound</span> <span class="o">=</span> <span class="n">is_bound</span>
+
+    <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">matches_key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">matches_key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_bound</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">_o</span><span class="p">({</span><span class="s1">&#39;agent&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
+                        <span class="s1">&#39;is_bound&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_bound</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+        <span class="n">agent_entry</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;agent&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">agent_entry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;BoundCondition missing agent.&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="o">.</span><span class="n">_from_json</span><span class="p">(</span><span class="n">agent_entry</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">agent</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">is_bound</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;is_bound&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_bound</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;BoundCondition missing is_bound, defaulting &#39;</span>
+                           <span class="s1">&#39;to True.&#39;</span><span class="p">)</span>
+            <span class="n">is_bound</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">bc</span> <span class="o">=</span> <span class="n">BoundCondition</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">is_bound</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">unicode_strs</span><span class="p">(</span><span class="n">bc</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="n">bc</span>
+
+
+<div class="viewcode-block" id="MutCondition"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.MutCondition">[docs]</a><span class="nd">@python_2_unicode_compatible</span>
+<span class="k">class</span> <span class="nc">MutCondition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Mutation state of an amino acid position of an Agent.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    position : str</span>
+<span class="sd">        Residue position of the mutation in the protein sequence.</span>
+<span class="sd">    residue_from : str</span>
+<span class="sd">        Wild-type (unmodified) amino acid residue at the given position.</span>
+<span class="sd">    residue_to : str</span>
+<span class="sd">        Amino acid at the position resulting from the mutation.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Represent EGFR with a L858R mutation:</span>
+
+<span class="sd">    &gt;&gt;&gt; egfr_mutant = Agent(&#39;EGFR&#39;, mutations=[MutCondition(&#39;858&#39;, &#39;L&#39;, &#39;R&#39;)])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">residue_from</span><span class="p">,</span> <span class="n">residue_to</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span> <span class="o">=</span> <span class="n">get_valid_residue</span><span class="p">(</span><span class="n">residue_from</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span> <span class="o">=</span> <span class="n">get_valid_residue</span><span class="p">(</span><span class="n">residue_to</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">matches_key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span><span class="p">),</span>
+               <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">pos_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+        <span class="n">residue_from_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_from</span><span class="p">)</span>
+        <span class="n">residue_to_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_to</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pos_match</span> <span class="ow">and</span> <span class="n">residue_from_match</span> <span class="ow">and</span> <span class="n">residue_to_match</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">_o</span><span class="p">({</span><span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">,</span>
+                        <span class="s1">&#39;residue_from&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span><span class="p">,</span>
+                        <span class="s1">&#39;residue_to&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="k">def</span> <span class="nf">to_hgvs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">res_from</span> <span class="o">=</span> <span class="n">_aa_short_caps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span><span class="p">)</span>
+        <span class="n">res_to</span> <span class="o">=</span> <span class="n">_aa_short_caps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">res_to</span> <span class="ow">and</span> <span class="n">res_from</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="n">hgvs_str</span> <span class="o">=</span> <span class="s1">&#39;p.</span><span class="si">%s%s%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">res_from</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">res_to</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">res_to</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">res_from</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">:</span>
+            <span class="n">hgvs_str</span> <span class="o">=</span> <span class="s1">&#39;p.</span><span class="si">%s%s</span><span class="s1">?&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">res_from</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">hgvs_str</span> <span class="o">=</span> <span class="s1">&#39;p.?&#39;</span>
+        <span class="k">return</span> <span class="n">hgvs_str</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
+        <span class="n">residue_from</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;residue_from&#39;</span><span class="p">)</span>
+        <span class="n">residue_to</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;residue_to&#39;</span><span class="p">)</span>
+        <span class="n">mc</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">residue_from</span><span class="p">,</span> <span class="n">residue_to</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">unicode_strs</span><span class="p">(</span><span class="n">mc</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">mc</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;(</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">,</span>
+                              <span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;MutCondition&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">refinement_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">from_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_from</span> <span class="ow">or</span>
+                      <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_from</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_from</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="n">to_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_to</span> <span class="ow">or</span>
+                    <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue_to</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">residue_to</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="n">pos_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span> <span class="ow">or</span>
+                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">from_match</span> <span class="ow">and</span> <span class="n">to_match</span> <span class="ow">and</span> <span class="n">pos_match</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ModCondition"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.ModCondition">[docs]</a><span class="nd">@python_2_unicode_compatible</span>
+<span class="k">class</span> <span class="nc">ModCondition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Post-translational modification state at an amino acid position.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mod_type : str</span>
+<span class="sd">        The type of post-translational modification, e.g., &#39;phosphorylation&#39;.</span>
+<span class="sd">        Valid modification types currently include: &#39;phosphorylation&#39;,</span>
+<span class="sd">        &#39;ubiquitination&#39;, &#39;sumoylation&#39;, &#39;hydroxylation&#39;, and &#39;acetylation&#39;.</span>
+<span class="sd">        If an invalid modification type is passed an InvalidModTypeError is</span>
+<span class="sd">        raised.</span>
+<span class="sd">    residue : str or None</span>
+<span class="sd">        String indicating the modified amino acid, e.g., &#39;Y&#39; or &#39;tyrosine&#39;.</span>
+<span class="sd">        If None, indicates that the residue at the modification site is</span>
+<span class="sd">        unknown or unspecified.</span>
+<span class="sd">    position : str or None</span>
+<span class="sd">        String indicating the position of the modified amino acid, e.g., &#39;202&#39;.</span>
+<span class="sd">        If None, indicates that the position is unknown or unspecified.</span>
+<span class="sd">    is_modified : bool</span>
+<span class="sd">        Specifies whether the modification is present or absent. Setting the</span>
+<span class="sd">        flag specifies that the Agent with the ModCondition is unmodified</span>
+<span class="sd">        at the site.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Doubly-phosphorylated MEK (MAP2K1):</span>
+
+<span class="sd">    &gt;&gt;&gt; phospho_mek = Agent(&#39;MAP2K1&#39;, mods=[</span>
+<span class="sd">    ... ModCondition(&#39;phosphorylation&#39;, &#39;S&#39;, &#39;202&#39;),</span>
+<span class="sd">    ... ModCondition(&#39;phosphorylation&#39;, &#39;S&#39;, &#39;204&#39;)])</span>
+
+<span class="sd">    ERK (MAPK1) unphosphorylated at tyrosine 187:</span>
+
+<span class="sd">    &gt;&gt;&gt; unphos_erk = Agent(&#39;MAPK1&#39;, mods=(</span>
+<span class="sd">    ... ModCondition(&#39;phosphorylation&#39;, &#39;Y&#39;, &#39;187&#39;, is_modified=False)))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mod_type</span><span class="p">,</span> <span class="n">residue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">is_modified</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mod_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">modtype_conditions</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Unknown modification type: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mod_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span> <span class="o">=</span> <span class="n">mod_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="o">=</span> <span class="n">get_valid_residue</span><span class="p">(</span><span class="n">residue</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span> <span class="o">=</span> <span class="n">is_modified</span>
+
+    <span class="k">def</span> <span class="nf">refinement_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">mod_hierarchy</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">is_modified</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">type_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">mod_type</span> <span class="ow">or</span>
+                      <span class="n">mod_hierarchy</span><span class="o">.</span><span class="n">isa</span><span class="p">(</span><span class="s1">&#39;INDRA_MODS&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span><span class="p">,</span>
+                                        <span class="s1">&#39;INDRA_MODS&#39;</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">mod_type</span><span class="p">))</span>
+        <span class="n">residue_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue</span> <span class="ow">or</span>
+                         <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">residue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="n">pos_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span> <span class="ow">or</span>
+                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">type_match</span> <span class="ow">and</span> <span class="n">residue_match</span> <span class="ow">and</span> <span class="n">pos_match</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">matches_key</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue</span><span class="p">),</span>
+               <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ms</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ms</span> <span class="o">+=</span> <span class="s1">&#39;, </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ms</span> <span class="o">+=</span> <span class="s1">&#39;, </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span><span class="p">:</span>
+            <span class="n">ms</span> <span class="o">+=</span> <span class="s1">&#39;, False&#39;</span>
+        <span class="n">ms</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">ms</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+        <span class="k">return</span> <span class="n">ms</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">_o</span><span class="p">({</span><span class="s1">&#39;mod_type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span><span class="p">})</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;residue&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">residue</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span>
+        <span class="n">json_dict</span><span class="p">[</span><span class="s1">&#39;is_modified&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+        <span class="n">mod_type</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mod_type&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">mod_type</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;ModCondition missing mod_type.&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">mod_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">modtype_to_modclass</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Unknown modification type: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mod_type</span><span class="p">)</span>
+        <span class="n">residue</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;residue&#39;</span><span class="p">)</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
+        <span class="n">is_modified</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;is_modified&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_modified</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;ModCondition missing is_modified, defaulting &#39;</span>
+                           <span class="s1">&#39;to True&#39;</span><span class="p">)</span>
+            <span class="n">is_modified</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">mc</span> <span class="o">=</span> <span class="n">ModCondition</span><span class="p">(</span><span class="n">mod_type</span><span class="p">,</span> <span class="n">residue</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">is_modified</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">unicode_strs</span><span class="p">(</span><span class="n">mc</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">mc</span>
+
+    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">type_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mod_type</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">mod_type</span><span class="p">)</span>
+        <span class="n">residue_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">residue</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">residue</span><span class="p">)</span>
+        <span class="n">pos_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+        <span class="n">is_mod_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_modified</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">is_modified</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">type_match</span> <span class="ow">and</span> <span class="n">residue_match</span> <span class="ow">and</span> <span class="n">pos_match</span> <span class="ow">and</span> <span class="n">is_mod_match</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matches_key</span><span class="p">())</span>
+
+
+<div class="viewcode-block" id="ActivityCondition"><a class="viewcode-back" href="../../../modules/statements.html#indra.statements.statements.ActivityCondition">[docs]</a><span class="k">class</span> <span class="nc">ActivityCondition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An active or inactive state of a protein.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Kinase-active MAP2K1:</span>
+
+<span class="sd">    &gt;&gt;&gt; mek_active = Agent(&#39;MAP2K1&#39;,</span>
+<span class="sd">    ...                    activity=ActivityCondition(&#39;kinase&#39;, True))</span>
+
+<span class="sd">    Transcriptionally inactive FOXO3:</span>
+
+<span class="sd">    &gt;&gt;&gt; foxo_inactive = Agent(&#39;FOXO3&#39;,</span>
+<span class="sd">    ...                     activity=ActivityCondition(&#39;transcription&#39;, False))</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    activity_type : str</span>
+<span class="sd">        The type of activity, e.g. &#39;kinase&#39;. The basic, unspecified molecular</span>
+<span class="sd">        activity is represented as &#39;activity&#39;. Examples of other activity</span>
+<span class="sd">        types are &#39;kinase&#39;, &#39;phosphatase&#39;, &#39;catalytic&#39;, &#39;transcription&#39;,</span>
+<span class="sd">        etc.</span>
+<span class="sd">    is_active : bool</span>
+<span class="sd">        Specifies whether the given activity type is present or absent.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activity_type</span><span class="p">,</span> <span class="n">is_active</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">activity_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">activity_types</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Invalid activity type: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">activity_type</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span> <span class="o">=</span> <span class="n">activity_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">=</span> <span class="n">is_active</span>
+
+    <span class="k">def</span> <span class="nf">refinement_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">activity_hierarchy</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">activity_type</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">activity_hierarchy</span><span class="o">.</span><span class="n">isa</span><span class="p">(</span><span class="s1">&#39;INDRA_ACTIVITIES&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span><span class="p">,</span>
+                                  <span class="s1">&#39;INDRA_ACTIVITIES&#39;</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">activity_type</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">type_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">activity_type</span><span class="p">)</span>
+        <span class="n">is_act_match</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_active</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">is_active</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">type_match</span> <span class="ow">and</span> <span class="n">is_act_match</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">matches_key</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">matches_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">is_active</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="n">_o</span><span class="p">({</span><span class="s1">&#39;activity_type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span><span class="p">,</span>
+                        <span class="s1">&#39;is_active&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+        <span class="n">activity_type</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;activity_type&#39;</span><span class="p">)</span>
+        <span class="n">is_active</span> <span class="o">=</span> <span class="n">json_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;is_active&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">activity_type</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;ActivityCondition missing activity_type, &#39;</span> <span class="o">+</span>
+                         <span class="s1">&#39;defaulting to `activity`&#39;</span><span class="p">)</span>
+            <span class="n">activity_type</span> <span class="o">=</span> <span class="s1">&#39;activity&#39;</span>
+        <span class="k">if</span> <span class="n">is_active</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;ActivityCondition missing is_active, &#39;</span> <span class="o">+</span>
+                           <span class="s1">&#39;defaulting to True&#39;</span><span class="p">)</span>
+            <span class="n">is_active</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="n">ActivityCondition</span><span class="p">(</span><span class="n">activity_type</span><span class="p">,</span> <span class="n">is_active</span><span class="p">)</span>
+        <span class="k">assert</span><span class="p">(</span><span class="n">unicode_strs</span><span class="p">(</span><span class="n">ac</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ac</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">activity_type</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;, False&#39;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_aa_short_caps</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">res_info</span> <span class="o">=</span> <span class="n">amino_acids</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">res_info</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">res_info</span><span class="p">[</span><span class="s1">&#39;short_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.tools.live_curation &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.tools.live_curation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.tools.live_curation</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This REST service allows real-time curation and belief updates for</span>
+<span class="sd">a corpus of INDRA Statements.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span><span class="p">,</span> <span class="n">abort</span><span class="p">,</span> <span class="n">Response</span>
+<span class="c1"># Note: preserve EidosReader install as first one from indra</span>
+<span class="kn">from</span> <span class="nn">indra.sources.eidos.reader</span> <span class="k">import</span> <span class="n">EidosReader</span>
+<span class="kn">from</span> <span class="nn">indra.belief</span> <span class="k">import</span> <span class="n">BeliefEngine</span>
+<span class="kn">from</span> <span class="nn">indra.tools</span> <span class="k">import</span> <span class="n">assemble_corpus</span> <span class="k">as</span> <span class="n">ac</span>
+<span class="kn">from</span> <span class="nn">indra.belief.wm_scorer</span> <span class="k">import</span> <span class="n">get_eidos_bayesian_scorer</span>
+<span class="kn">from</span> <span class="nn">indra.statements</span> <span class="k">import</span> <span class="n">stmts_from_json_file</span><span class="p">,</span> <span class="n">stmts_to_json</span>
+<span class="kn">from</span> <span class="nn">indra.preassembler.hierarchy_manager</span> <span class="k">import</span> <span class="n">YamlHierarchyManager</span>
+<span class="kn">from</span> <span class="nn">indra.preassembler.make_eidos_hume_ontologies</span> <span class="k">import</span> <span class="n">eidos_ont_url</span><span class="p">,</span> \
+    <span class="n">load_yaml_from_url</span><span class="p">,</span> <span class="n">rdf_graph_from_yaml</span>
+
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;live_curation&#39;</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">corpora</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<div class="viewcode-block" id="Corpus"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.Corpus">[docs]</a><span class="k">class</span> <span class="nc">Corpus</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represent a corpus of statements with curation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    statements : list[indra.statement.Statement]</span>
+<span class="sd">        A list of INDRA Statements to embed in the corpus.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    statements : dict</span>
+<span class="sd">        A dict of INDRA Statements keyed by UUID.</span>
+<span class="sd">    curations : dict</span>
+<span class="sd">        A dict keeping track of the curations submitted so far for Statement</span>
+<span class="sd">        UUIDs in the corpus.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statements</span><span class="p">,</span> <span class="n">raw_statements</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">=</span> <span class="p">{</span><span class="n">st</span><span class="o">.</span><span class="n">uuid</span><span class="p">:</span> <span class="n">st</span> <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">statements</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">raw_statements</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">raw_statements</span> <span class="k">else</span> <span class="n">raw_statements</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curations</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Corpus(</span><span class="si">%s</span><span class="s1"> -&gt; </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">curations</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="InvalidCorpusError"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.InvalidCorpusError">[docs]</a><span class="k">class</span> <span class="nc">InvalidCorpusError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">default_assembly</span><span class="p">(</span><span class="n">stmts</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">indra.belief.wm_scorer</span> <span class="k">import</span> <span class="n">get_eidos_scorer</span>
+    <span class="kn">from</span> <span class="nn">indra.preassembler.hierarchy_manager</span> <span class="k">import</span> <span class="n">get_wm_hierarchies</span>
+    <span class="n">hm</span> <span class="o">=</span> <span class="n">get_wm_hierarchies</span><span class="p">()</span>
+    <span class="n">scorer</span> <span class="o">=</span> <span class="n">get_eidos_scorer</span><span class="p">()</span>
+    <span class="n">stmts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">run_preassembly</span><span class="p">(</span><span class="n">stmts</span><span class="p">,</span> <span class="n">belief_scorer</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span>
+                               <span class="n">return_toplevel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                               <span class="n">flatten_evidence</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                               <span class="n">flatten_evidence_collect_from</span><span class="o">=</span><span class="s1">&#39;supported_by&#39;</span><span class="p">,</span>
+                               <span class="n">poolsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">stmts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">merge_groundings</span><span class="p">(</span><span class="n">stmts</span><span class="p">)</span>
+    <span class="n">stmts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">merge_deltas</span><span class="p">(</span><span class="n">stmts</span><span class="p">)</span>
+    <span class="n">stmts</span> <span class="o">=</span> <span class="n">ac</span><span class="o">.</span><span class="n">standardize_names_groundings</span><span class="p">(</span><span class="n">stmts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stmts</span>
+
+
+<span class="k">def</span> <span class="nf">_make_un_ontology</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">YamlHierarchyManager</span><span class="p">(</span><span class="n">load_yaml_from_url</span><span class="p">(</span><span class="n">eidos_ont_url</span><span class="p">),</span>
+                                <span class="n">rdf_graph_from_yaml</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="LiveCurator"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.LiveCurator">[docs]</a><span class="k">class</span> <span class="nc">LiveCurator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class coordinating the real-time curation of a corpus of Statements.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    scorer : indra.belief.BeliefScorer</span>
+<span class="sd">        A scorer object to use for the curation</span>
+<span class="sd">    corpora : dict[str, Corpus]</span>
+<span class="sd">        A dictionary mapping corpus IDs to Corpus objects.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scorer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">corpora</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corpora</span> <span class="o">=</span> <span class="n">corpora</span> <span class="k">if</span> <span class="n">corpora</span> <span class="k">else</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scorer</span> <span class="o">=</span> <span class="n">scorer</span> <span class="k">if</span> <span class="n">scorer</span> <span class="k">else</span> <span class="n">get_eidos_bayesian_scorer</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ont_manager</span> <span class="o">=</span> <span class="n">_make_un_ontology</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eidos_reader</span> <span class="o">=</span> <span class="n">EidosReader</span><span class="p">()</span>
+
+    <span class="c1"># TODO: generalize this to other kinds of scorers</span>
+<div class="viewcode-block" id="LiveCurator.reset_scorer"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.LiveCurator.reset_scorer">[docs]</a>    <span class="k">def</span> <span class="nf">reset_scorer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reset the scorer used for couration.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scorer</span> <span class="o">=</span> <span class="n">get_eidos_bayesian_scorer</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">corpus_id</span><span class="p">,</span> <span class="n">corpus</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">corpora</span><span class="o">.</span><span class="n">items</span><span class="p">():</span></div>
+            <span class="n">corpus</span><span class="o">.</span><span class="n">curations</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="LiveCurator.get_corpus"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.LiveCurator.get_corpus">[docs]</a>    <span class="k">def</span> <span class="nf">get_corpus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">corpus_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a corpus given an ID.</span>
+
+<span class="sd">        If the corpus ID cannot be found, an InvalidCorpusError is raised.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        corpus_id : str</span>
+<span class="sd">            The ID of the corpus to return.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Corpus</span>
+<span class="sd">            The corpus with the given ID.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">corpus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corpora</span><span class="p">[</span><span class="n">corpus_id</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">corpus</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span></div>
+            <span class="k">raise</span> <span class="n">InvalidCorpusError</span>
+
+<div class="viewcode-block" id="LiveCurator.submit_curation"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.LiveCurator.submit_curation">[docs]</a>    <span class="k">def</span> <span class="nf">submit_curation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">corpus_id</span><span class="p">,</span> <span class="n">curations</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Submit correct/incorrect curations fo a given corpus.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        corpus_id : str</span>
+<span class="sd">            The ID of the corpus to which the curations apply.</span>
+<span class="sd">        curations : dict</span>
+<span class="sd">            A dict of curations with keys corresponding to Statement UUIDs and</span>
+<span class="sd">            values corresponding to correct/incorrect feedback.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">corpus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_corpus</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">)</span>
+        <span class="c1"># Start tabulating the curation counts</span>
+        <span class="n">prior_counts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">subtype_counts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># Take each curation from the input</span>
+        <span class="k">for</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">correct</span> <span class="ow">in</span> <span class="n">curations</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Save the curation in the corpus</span>
+            <span class="c1"># TODO: handle already existing curation</span>
+            <span class="n">stmt</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">statements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">stmt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is not in the corpus.&#39;</span> <span class="o">%</span> <span class="n">uuid</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">corpus</span><span class="o">.</span><span class="n">curations</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="n">correct</span>
+            <span class="c1"># Now take all the evidences of the statement and assume that</span>
+            <span class="c1"># they follow the correctness of the curation and contribute to</span>
+            <span class="c1"># counts for their sources</span>
+            <span class="k">for</span> <span class="n">ev</span> <span class="ow">in</span> <span class="n">stmt</span><span class="o">.</span><span class="n">evidence</span><span class="p">:</span>
+                <span class="c1"># Make the index in the curation count list</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">correct</span> <span class="k">else</span> <span class="mi">1</span>
+                <span class="n">extraction_rule</span> <span class="o">=</span> <span class="n">ev</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;found_by&#39;</span><span class="p">)</span>
+                <span class="c1"># If there is no extraction rule then we just score the source</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">extraction_rule</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">prior_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="n">prior_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                        <span class="n">prior_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="c1"># Otherwise we score the specific extraction rule</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">subtype_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">][</span><span class="n">extraction_rule</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> \
+                            <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">ev</span><span class="o">.</span><span class="n">source_api</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subtype_counts</span><span class="p">:</span>
+                            <span class="n">subtype_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                        <span class="n">subtype_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">][</span><span class="n">extraction_rule</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                        <span class="n">subtype_counts</span><span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">source_api</span><span class="p">][</span><span class="n">extraction_rule</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> \
+                            <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># Finally, we update the scorer with the new curation counts</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scorer</span><span class="o">.</span><span class="n">update_counts</span><span class="p">(</span><span class="n">prior_counts</span><span class="p">,</span> <span class="n">subtype_counts</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LiveCurator.update_beliefs"><a class="viewcode-back" href="../../../modules/tools/index.html#indra.tools.live_curation.LiveCurator.update_beliefs">[docs]</a>    <span class="k">def</span> <span class="nf">update_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">corpus_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return updated belief scores for a given corpus.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        corpus_id : str</span>
+<span class="sd">            The ID of the corpus for which beliefs are to be updated.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A dictionary of belief scores with keys corresponding to Statement</span>
+<span class="sd">            UUIDs and values to new belief scores.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">corpus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_corpus</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">)</span>
+        <span class="n">be</span> <span class="o">=</span> <span class="n">BeliefEngine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scorer</span><span class="p">)</span>
+        <span class="n">stmts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">corpus</span><span class="o">.</span><span class="n">statements</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">be</span><span class="o">.</span><span class="n">set_prior_probs</span><span class="p">(</span><span class="n">stmts</span><span class="p">)</span>
+        <span class="c1"># Here we set beliefs based on actual curation</span>
+        <span class="k">for</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">correct</span> <span class="ow">in</span> <span class="n">corpus</span><span class="o">.</span><span class="n">curations</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">stmt</span> <span class="o">=</span> <span class="n">corpus</span><span class="o">.</span><span class="n">statements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">stmt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is not in the corpus.&#39;</span> <span class="o">%</span> <span class="n">uuid</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">stmt</span><span class="o">.</span><span class="n">belief</span> <span class="o">=</span> <span class="n">correct</span>
+        <span class="n">belief_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">st</span><span class="o">.</span><span class="n">uuid</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">belief</span> <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">stmts</span><span class="p">}</span></div>
+        <span class="k">return</span> <span class="n">belief_dict</span>
+
+    <span class="k">def</span> <span class="nf">update_groundings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">corpus_id</span><span class="p">):</span>
+        <span class="n">corpus</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_corpus</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">)</span>
+
+        <span class="c1"># Send the latest ontology and list of concept texts to Eidos</span>
+        <span class="n">yaml_str</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ont_manager</span><span class="o">.</span><span class="n">yaml_root</span><span class="p">)</span>
+        <span class="n">concepts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">corpus</span><span class="o">.</span><span class="n">raw_statements</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">concept</span> <span class="ow">in</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent_list</span><span class="p">():</span>
+                <span class="n">concept_txt</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;TEXT&#39;</span><span class="p">)</span>
+                <span class="n">concepts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">concept_txt</span><span class="p">)</span>
+        <span class="n">groundings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eidos_reader</span><span class="o">.</span><span class="n">reground_texts</span><span class="p">(</span><span class="n">concepts</span><span class="p">,</span> <span class="n">yaml_str</span><span class="p">)</span>
+        <span class="c1"># Update the corpus with new groundings</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">corpus</span><span class="o">.</span><span class="n">raw_statements</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">concept</span> <span class="ow">in</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent_list</span><span class="p">():</span>
+                <span class="n">concept</span><span class="o">.</span><span class="n">db_refs</span><span class="p">[</span><span class="s1">&#39;UN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">groundings</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">assembled_statements</span> <span class="o">=</span> <span class="n">default_assembly</span><span class="p">(</span><span class="n">corpus</span><span class="o">.</span><span class="n">raw_statements</span><span class="p">)</span>
+        <span class="n">corpus</span><span class="o">.</span><span class="n">statements</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="o">.</span><span class="n">uuid</span><span class="p">:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">assembled_statements</span><span class="p">}</span></div>
+        <span class="k">return</span> <span class="n">assembled_statements</span>
+
+
+<span class="c1"># From here on, a Flask app built around a LiveCurator is implemented</span>
+
+<span class="n">curator</span> <span class="o">=</span> <span class="n">LiveCurator</span><span class="p">(</span><span class="n">corpora</span><span class="o">=</span><span class="n">corpora</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/reset_curation&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">reset_curation</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Reset the curations submitted until now.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+    <span class="n">curator</span><span class="o">.</span><span class="n">reset_scorer</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({})</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/submit_curation&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">submit_curation</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Submit curations for a given corpus.</span>
+
+<span class="sd">    The submitted curations are handled to update the probability model but</span>
+<span class="sd">    there is no return value here. The update_belief function can be called</span>
+<span class="sd">    separately to calculate update belief scores.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    corpus_id : str</span>
+<span class="sd">        The ID of the corpus for which the curation is submitted.</span>
+<span class="sd">    curations : dict</span>
+<span class="sd">        A set of curations where each key is a Statement UUID in the given</span>
+<span class="sd">        corpus and each key is 0 or 1 with 0 corresponding to incorrect and</span>
+<span class="sd">        1 corresponding to correct.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+    <span class="c1"># Get input parameters</span>
+    <span class="n">corpus_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;corpus_id&#39;</span><span class="p">)</span>
+    <span class="n">curations</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;curations&#39;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">curator</span><span class="o">.</span><span class="n">submit_curation</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">,</span> <span class="n">curations</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">InvalidCorpusError</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;The corpus_id &quot;</span><span class="si">%s</span><span class="s1">&quot; is unknown.&#39;</span> <span class="o">%</span> <span class="n">corpus_id</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({})</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/update_beliefs&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">update_beliefs</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return updated beliefs based on current probability model.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+    <span class="c1"># Get input parameters</span>
+    <span class="n">corpus_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;corpus_id&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">belief_dict</span> <span class="o">=</span> <span class="n">curator</span><span class="o">.</span><span class="n">update_beliefs</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">InvalidCorpusError</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;The corpus_id &quot;</span><span class="si">%s</span><span class="s1">&quot; is unknown.&#39;</span> <span class="o">%</span> <span class="n">corpus_id</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
+        <span class="k">return</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">belief_dict</span><span class="p">)</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/add_ontology_entry&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">add_ontology_entry</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+
+    <span class="c1"># Get input parameters</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;entry&#39;</span><span class="p">)</span>
+    <span class="n">examples</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;examples&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="c1"># Add the entry and examples to the in-memory representation</span>
+    <span class="c1"># of the onotology</span>
+    <span class="n">curator</span><span class="o">.</span><span class="n">ont_manager</span><span class="o">.</span><span class="n">add_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">examples</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({})</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/reset_ontology&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">reset_ontology</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+
+    <span class="c1"># Reload the original ontology</span>
+    <span class="n">curator</span><span class="o">.</span><span class="n">ont_manager</span> <span class="o">=</span> <span class="n">_make_un_ontology</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({})</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/update_groundings&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">update_groundings</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="n">Response</span><span class="p">(</span><span class="s1">&#39;Missing application/json header.&#39;</span><span class="p">,</span> <span class="mi">415</span><span class="p">))</span>
+
+    <span class="c1"># Get input parameters</span>
+    <span class="n">corpus_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;corpus_id&#39;</span><span class="p">)</span>
+    <span class="c1"># Run the actual regrounding</span>
+    <span class="n">stmts</span> <span class="o">=</span> <span class="n">curator</span><span class="o">.</span><span class="n">update_groundings</span><span class="p">(</span><span class="n">corpus_id</span><span class="p">)</span>
+    <span class="n">stmts_json</span> <span class="o">=</span> <span class="n">stmts_to_json</span><span class="p">(</span><span class="n">stmts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">stmts_json</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Process arguments</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Choose a corpus for live curation.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--json&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--raw_json&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--pickle&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--corpus_id&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--host&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--port&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">8001</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c1"># Load the corpus</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">json</span><span class="p">:</span>
+        <span class="n">stmts</span> <span class="o">=</span> <span class="n">stmts_from_json_file</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">json</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">pickle</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pickle</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="n">stmts</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raw_json</span><span class="p">:</span>
+        <span class="n">raw_stmts</span> <span class="o">=</span> <span class="n">stmts_from_json_file</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">raw_json</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">raw_stmts</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Loaded corpus </span><span class="si">%s</span><span class="s1"> with </span><span class="si">%d</span><span class="s1"> statements.&#39;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">corpus_id</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">stmts</span><span class="p">)))</span>
+    <span class="n">curator</span><span class="o">.</span><span class="n">corpora</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">corpus_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">Corpus</span><span class="p">(</span><span class="n">stmts</span><span class="p">,</span> <span class="n">raw_stmts</span><span class="p">)</span>
+
+    <span class="c1"># Run the app</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="n">threaded</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

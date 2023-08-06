@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.util.aws &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.util.aws</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.util.aws</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">boto3</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">argparse</span> <span class="k">import</span> <span class="n">ArgumentParser</span><span class="p">,</span> <span class="n">ArgumentDefaultsHelpFormatter</span>
+<span class="kn">from</span> <span class="nn">indra</span> <span class="k">import</span> <span class="n">get_config</span><span class="p">,</span> <span class="n">has_config</span>
+<span class="kn">from</span> <span class="nn">indra.util.nested_dict</span> <span class="k">import</span> <span class="n">NestedDict</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="kill_all"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.kill_all">[docs]</a><span class="k">def</span> <span class="nf">kill_all</span><span class="p">(</span><span class="n">job_queue</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;None given&#39;</span><span class="p">,</span> <span class="n">states</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Terminates/cancels all RUNNING, RUNNABLE, and STARTING jobs.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">states</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STARTING&#39;</span><span class="p">,</span> <span class="s1">&#39;RUNNABLE&#39;</span><span class="p">,</span> <span class="s1">&#39;RUNNING&#39;</span><span class="p">]</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+    <span class="n">runnable</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">list_jobs</span><span class="p">(</span><span class="n">jobQueue</span><span class="o">=</span><span class="n">job_queue</span><span class="p">,</span> <span class="n">jobStatus</span><span class="o">=</span><span class="s1">&#39;RUNNABLE&#39;</span><span class="p">)</span>
+    <span class="n">job_info</span> <span class="o">=</span> <span class="n">runnable</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jobSummaryList&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">job_info</span><span class="p">:</span>
+        <span class="n">job_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_info</span><span class="p">]</span>
+        <span class="c1"># Cancel jobs</span>
+        <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">job_ids</span><span class="p">:</span>
+            <span class="n">batch</span><span class="o">.</span><span class="n">cancel_job</span><span class="p">(</span><span class="n">jobId</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
+    <span class="n">res_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">list_jobs</span><span class="p">(</span><span class="n">jobQueue</span><span class="o">=</span><span class="n">job_queue</span><span class="p">,</span> <span class="n">jobStatus</span><span class="o">=</span><span class="n">status</span><span class="p">)</span>
+        <span class="n">job_info</span> <span class="o">=</span> <span class="n">running</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jobSummaryList&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">job_info</span><span class="p">:</span>
+            <span class="n">job_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_info</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">job_id</span> <span class="ow">in</span> <span class="n">job_ids</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Killing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">job_id</span><span class="p">)</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">terminate_job</span><span class="p">(</span><span class="n">jobId</span><span class="o">=</span><span class="n">job_id</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">)</span>
+                <span class="n">res_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">res_list</span>
+
+
+<div class="viewcode-block" id="tag_instance"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.tag_instance">[docs]</a><span class="k">def</span> <span class="nf">tag_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="o">**</span><span class="n">tags</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Tag a single ec2 instance.&quot;&quot;&quot;</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Got request to add tags </span><span class="si">%s</span><span class="s2"> to instance </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                 <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tags</span><span class="p">),</span> <span class="n">instance_id</span><span class="p">))</span>
+    <span class="n">ec2</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s1">&#39;ec2&#39;</span><span class="p">)</span>
+    <span class="n">instance</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">)</span>
+
+    <span class="c1"># Remove None&#39;s from `tags`</span>
+    <span class="n">filtered_tags</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tags</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">k</span><span class="p">}</span>
+
+    <span class="c1"># Check for existing tags</span>
+    <span class="k">if</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">existing_tags</span> <span class="o">=</span> <span class="p">{</span><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Key&#39;</span><span class="p">):</span> <span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+                         <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">}</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ignoring existing tags; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">existing_tags</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">tag_key</span> <span class="ow">in</span> <span class="n">existing_tags</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">filtered_tags</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">tag_key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># If we have new tags to add, add them.</span>
+    <span class="n">tag_list</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;Key&#39;</span><span class="p">:</span> <span class="n">k</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">filtered_tags</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag_list</span><span class="p">):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Adding project tags &quot;</span><span class="si">%s</span><span class="s1">&quot; to instance </span><span class="si">%s</span><span class="s1">&#39;</span>
+                    <span class="o">%</span> <span class="p">(</span><span class="n">filtered_tags</span><span class="p">,</span> <span class="n">instance_id</span><span class="p">))</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">create_tags</span><span class="p">(</span><span class="n">Tags</span><span class="o">=</span><span class="n">tag_list</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;No new tags from: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">tags</span><span class="p">))</span></div>
+    <span class="k">return</span>
+
+
+<div class="viewcode-block" id="tag_myself"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.tag_myself">[docs]</a><span class="k">def</span> <span class="nf">tag_myself</span><span class="p">(</span><span class="n">project</span><span class="o">=</span><span class="s1">&#39;cwc&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">other_tags</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function run when indra is used in an EC2 instance to apply tags.&quot;&quot;&quot;</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;http://169.254.169.254&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="s2">&quot;/latest/meta-data/instance-id&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Could not connect to service. Note this should only &quot;</span>
+                       <span class="s2">&quot;be run from within a batch job.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">instance_id</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">tag_instance</span><span class="p">(</span><span class="n">instance_id</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="n">project</span><span class="p">,</span> <span class="o">**</span><span class="n">other_tags</span><span class="p">)</span></div>
+    <span class="k">return</span>
+
+
+<div class="viewcode-block" id="get_batch_command"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.get_batch_command">[docs]</a><span class="k">def</span> <span class="nf">get_batch_command</span><span class="p">(</span><span class="n">command_list</span><span class="p">,</span> <span class="n">project</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">purpose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get the command appropriate for running something on batch.&quot;&quot;&quot;</span>
+    <span class="n">command_str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">command_list</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;indra.util.aws&#39;</span><span class="p">,</span> <span class="s1">&#39;run_in_batch&#39;</span><span class="p">,</span> <span class="n">command_str</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">project</span> <span class="ow">and</span> <span class="n">has_config</span><span class="p">(</span><span class="s1">&#39;DEFAULT_AWS_PROJECT&#39;</span><span class="p">):</span>
+        <span class="n">project</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;DEFAULT_AWS_PROJECT&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">project</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;--project&#39;</span><span class="p">,</span> <span class="n">project</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">purpose</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;--purpose&#39;</span><span class="p">,</span> <span class="n">purpose</span><span class="p">]</span></div>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">def</span> <span class="nf">run_in_batch</span><span class="p">(</span><span class="n">command_list</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">purpose</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
+    <span class="n">tag_myself</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">purpose</span><span class="o">=</span><span class="n">purpose</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="mi">20</span><span class="o">*</span><span class="s1">&#39;=&#39;</span><span class="o">+</span><span class="s1">&#39; Begin Primary Command Output &#39;</span><span class="o">+</span><span class="mi">20</span><span class="o">*</span><span class="s1">&#39;=&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ret_code</span> <span class="o">=</span> <span class="n">call</span><span class="p">(</span><span class="n">command_list</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="mi">21</span><span class="o">*</span><span class="s1">&#39;=&#39;</span><span class="o">+</span><span class="s1">&#39; End Primary Command Output &#39;</span><span class="o">+</span><span class="mi">21</span><span class="o">*</span><span class="s1">&#39;=&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret_code</span>
+
+
+<div class="viewcode-block" id="get_jobs"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.get_jobs">[docs]</a><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="n">job_queue</span><span class="o">=</span><span class="s1">&#39;run_reach_queue&#39;</span><span class="p">,</span> <span class="n">job_status</span><span class="o">=</span><span class="s1">&#39;RUNNING&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a list of dicts with jobName and jobId for each job with the</span>
+<span class="sd">    given status.&quot;&quot;&quot;</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">list_jobs</span><span class="p">(</span><span class="n">jobQueue</span><span class="o">=</span><span class="n">job_queue</span><span class="p">,</span> <span class="n">jobStatus</span><span class="o">=</span><span class="n">job_status</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">jobs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jobSummaryList&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_job_log"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.get_job_log">[docs]</a><span class="k">def</span> <span class="nf">get_job_log</span><span class="p">(</span><span class="n">job_info</span><span class="p">,</span> <span class="n">log_group_name</span><span class="o">=</span><span class="s1">&#39;/aws/batch/job&#39;</span><span class="p">,</span>
+                <span class="n">write_file</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets the Cloudwatch log associated with the given job.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    job_info : dict</span>
+<span class="sd">        dict containing entries for &#39;jobName&#39; and &#39;jobId&#39;, e.g., as returned</span>
+<span class="sd">        by get_jobs()</span>
+<span class="sd">    log_group_name : string</span>
+<span class="sd">        Name of the log group; defaults to &#39;/aws/batch/job&#39;</span>
+<span class="sd">    write_file : boolean</span>
+<span class="sd">        If True, writes the downloaded log to a text file with the filename</span>
+<span class="sd">        &#39;%s_%s.log&#39; % (job_name, job_id)</span>
+
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of strings</span>
+<span class="sd">        The event messages in the log, with the earliest events listed first.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_name</span> <span class="o">=</span> <span class="n">job_info</span><span class="p">[</span><span class="s1">&#39;jobName&#39;</span><span class="p">]</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="n">job_info</span><span class="p">[</span><span class="s1">&#39;jobId&#39;</span><span class="p">]</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">)</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">describe_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="o">=</span><span class="p">[</span><span class="n">job_id</span><span class="p">])</span>
+    <span class="n">job_desc</span> <span class="o">=</span> <span class="n">resp</span><span class="p">[</span><span class="s1">&#39;jobs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">job_def_name</span> <span class="o">=</span> <span class="n">job_desc</span><span class="p">[</span><span class="s1">&#39;jobDefinition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">task_arn_id</span> <span class="o">=</span> <span class="n">job_desc</span><span class="p">[</span><span class="s1">&#39;container&#39;</span><span class="p">][</span><span class="s1">&#39;taskArn&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">log_stream_name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/default/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">job_def_name</span><span class="p">,</span> <span class="n">task_arn_id</span><span class="p">)</span>
+    <span class="n">stream_resp</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">describe_log_streams</span><span class="p">(</span>
+                            <span class="n">logGroupName</span><span class="o">=</span><span class="n">log_group_name</span><span class="p">,</span>
+                            <span class="n">logStreamNamePrefix</span><span class="o">=</span><span class="n">log_stream_name</span><span class="p">)</span>
+    <span class="n">streams</span> <span class="o">=</span> <span class="n">stream_resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;logStreams&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">streams</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;No streams for job&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">streams</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;More than 1 stream for job, returning first&#39;</span><span class="p">)</span>
+    <span class="n">log_stream_name</span> <span class="o">=</span> <span class="n">streams</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;logStreamName&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting log for </span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">job_name</span><span class="p">,</span> <span class="n">job_id</span><span class="p">))</span>
+    <span class="n">out_file</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">.log&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">job_name</span><span class="p">,</span> <span class="n">job_id</span><span class="p">))</span> <span class="k">if</span> <span class="n">write_file</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">get_log_by_name</span><span class="p">(</span><span class="n">log_group_name</span><span class="p">,</span> <span class="n">log_stream_name</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">lines</span>
+
+
+<div class="viewcode-block" id="get_log_by_name"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.get_log_by_name">[docs]</a><span class="k">def</span> <span class="nf">get_log_by_name</span><span class="p">(</span><span class="n">log_group_name</span><span class="p">,</span> <span class="n">log_stream_name</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Download a log given the log&#39;s group and stream name.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    log_group_name : str</span>
+<span class="sd">        The name of the log group, e.g. /aws/batch/job.</span>
+
+<span class="sd">    log_stream_name : str</span>
+<span class="sd">        The name of the log stream, e.g. run_reach_jobdef/default/&lt;UUID&gt;</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lines : list[str]</span>
+<span class="sd">        The lines of the log as a list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">)</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;logGroupName&#39;</span><span class="p">:</span> <span class="n">log_group_name</span><span class="p">,</span>
+              <span class="s1">&#39;logStreamName&#39;</span><span class="p">:</span> <span class="n">log_stream_name</span><span class="p">,</span>
+              <span class="s1">&#39;startFromHead&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">logs</span><span class="o">.</span><span class="n">get_log_events</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># If we&#39;ve gotten all the events already, the nextForwardToken for</span>
+        <span class="c1"># this call will be the same as the last one</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nextForwardToken&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nextToken&#39;</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">events</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;events&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">events</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">evt</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> <span class="n">evt</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
+                          <span class="k">for</span> <span class="n">evt</span> <span class="ow">in</span> <span class="n">events</span><span class="p">]</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;nextToken&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nextForwardToken&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">out_file</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="s1">&#39;wt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">lines</span>
+
+
+<div class="viewcode-block" id="dump_logs"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.dump_logs">[docs]</a><span class="k">def</span> <span class="nf">dump_logs</span><span class="p">(</span><span class="n">job_queue</span><span class="o">=</span><span class="s1">&#39;run_reach_queue&#39;</span><span class="p">,</span> <span class="n">job_status</span><span class="o">=</span><span class="s1">&#39;RUNNING&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Write logs for all jobs with given the status to files.&quot;&quot;&quot;</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="n">get_jobs</span><span class="p">(</span><span class="n">job_queue</span><span class="p">,</span> <span class="n">job_status</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">:</span></div>
+        <span class="n">get_job_log</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">write_file</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_s3_file_tree"><a class="viewcode-back" href="../../../modules/util/index.html#indra.util.aws.get_s3_file_tree">[docs]</a><span class="k">def</span> <span class="nf">get_s3_file_tree</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Overcome s3 response limit and return NestedDict tree of paths.</span>
+
+<span class="sd">    The NestedDict object also allows the user to search by the ends of a path.</span>
+
+<span class="sd">    The tree mimics a file directory structure, with the leave nodes being the</span>
+<span class="sd">    full unbroken key. For example, &#39;path/to/file.txt&#39; would be retrieved by</span>
+
+<span class="sd">        ret[&#39;path&#39;][&#39;to&#39;][&#39;file.txt&#39;][&#39;key&#39;]</span>
+
+<span class="sd">    The NestedDict object returned also has the capability to get paths that</span>
+<span class="sd">    lead to a certain value. So if you wanted all paths that lead to something</span>
+<span class="sd">    called &#39;file.txt&#39;, you could use</span>
+
+<span class="sd">        ret.get_paths(&#39;file.txt&#39;)</span>
+
+<span class="sd">    For more details, see the NestedDict docs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">get_some_keys</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">marker</span><span class="p">:</span>
+            <span class="n">relevant_files</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span>
+                                             <span class="n">Marker</span><span class="o">=</span><span class="n">marker</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">relevant_files</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">)</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Key&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">relevant_files</span><span class="p">[</span><span class="s1">&#39;Contents&#39;</span><span class="p">]</span>
+                     <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Key&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">marker</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">relevant_files</span><span class="p">[</span><span class="s1">&#39;IsTruncated&#39;</span><span class="p">]</span>
+
+    <span class="n">file_keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="n">get_some_keys</span><span class="p">(</span><span class="n">file_keys</span><span class="p">,</span> <span class="n">marker</span><span class="p">):</span>
+        <span class="n">marker</span> <span class="o">=</span> <span class="n">file_keys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">file_tree</span> <span class="o">=</span> <span class="n">NestedDict</span><span class="p">()</span>
+    <span class="n">pref_path</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># avoid the trailing empty str.</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">file_keys</span><span class="p">:</span>
+        <span class="n">full_path</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="n">relevant_path</span> <span class="o">=</span> <span class="n">full_path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">pref_path</span><span class="p">):]</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">file_tree</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">relevant_path</span><span class="p">:</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="p">[</span><span class="n">step</span><span class="p">]</span>
+        <span class="n">curr</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span></div>
+    <span class="k">return</span> <span class="n">file_tree</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="s1">&#39;aws.py&#39;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Use some of INDRA</span><span class="se">\&#39;</span><span class="s1">s aws tools. For more specific help, &#39;</span>
+                     <span class="s1">&#39;select one of the Methods with the `-h` option.&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">subparsers</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_subparsers</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Task&#39;</span><span class="p">)</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">subparsers</span><span class="o">.</span><span class="n">dest</span> <span class="o">=</span> <span class="s1">&#39;task&#39;</span>
+
+    <span class="c1"># Create parent parser classes for second layer of options</span>
+    <span class="n">parent_run_parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">parent_run_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;command&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Enter the command as a single string to be run as if in a &#39;</span>
+              <span class="s1">&#39;batch environment.&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">parent_run_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--project&#39;</span><span class="p">,</span> <span class="s1">&#39;-P&#39;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;cwc&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Give a name for the project.&#39;</span>
+        <span class="p">)</span>
+    <span class="n">parent_run_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--purpose&#39;</span><span class="p">,</span> <span class="s1">&#39;-p&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Give the task some meaning.&#39;</span>
+        <span class="p">)</span>
+    <span class="n">parent_kill_parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">parent_kill_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;queue_name&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Select the batch queue in which all jobs should be terminated.&#39;</span>
+        <span class="p">)</span>
+    <span class="n">parent_kill_parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s1">&#39;--reason&#39;</span><span class="p">,</span> <span class="s1">&#39;-R&#39;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Give a reason for killing all the jobs.&#39;</span>
+        <span class="p">)</span>
+    <span class="c1"># Make non_db_parser and get subparsers</span>
+    <span class="n">run_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span>
+        <span class="s1">&#39;run_in_batch&#39;</span><span class="p">,</span>
+        <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">parent_run_parser</span><span class="p">],</span>
+        <span class="n">description</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;This should be called to run any command wtihin an aws &#39;</span>
+                     <span class="s1">&#39;batch job instance.&#39;</span><span class="p">),</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">ArgumentDefaultsHelpFormatter</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Make db parser and get subparsers.</span>
+    <span class="n">kill_parser</span> <span class="o">=</span> <span class="n">subparsers</span><span class="o">.</span><span class="n">add_parser</span><span class="p">(</span>
+        <span class="s1">&#39;kill_all&#39;</span><span class="p">,</span>
+        <span class="n">parents</span><span class="o">=</span><span class="p">[</span><span class="n">parent_kill_parser</span><span class="p">],</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Kill all the jobs running in a given queue.&#39;</span><span class="p">,</span>
+        <span class="n">formatter_class</span><span class="o">=</span><span class="n">ArgumentDefaultsHelpFormatter</span>
+        <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">task</span> <span class="o">==</span> <span class="s1">&#39;run_in_batch&#39;</span><span class="p">:</span>
+        <span class="n">ret_code</span> <span class="o">=</span> <span class="n">run_in_batch</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">command</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="n">args</span><span class="o">.</span><span class="n">project</span><span class="p">,</span>
+                                <span class="n">args</span><span class="o">.</span><span class="n">purpose</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ret_code</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Job endend well.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Job failed!&#39;</span><span class="p">)</span>
+            <span class="kn">import</span> <span class="nn">sys</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">ret_code</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">task</span> <span class="o">==</span> <span class="s1">&#39;kill_all&#39;</span><span class="p">:</span>
+        <span class="n">kill_all</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">queue_name</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

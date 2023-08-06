@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Util (indra.util) &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../index.html"/>
+        <link rel="up" title="INDRA modules reference" href="../index.html"/>
+        <link rel="next" title="Tutorials" href="../../tutorials/index.html"/>
+        <link rel="prev" title="Low-level utilities used for or by reading pipelines (indra.tools.reading.util)" href="../tools/reading/utils.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">INDRA modules reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../statements.html">INDRA Statements (<code class="docutils literal notranslate"><span class="pre">indra.statements</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sources/index.html">Processors for knowledge input (<code class="docutils literal notranslate"><span class="pre">indra.sources</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases/index.html">Database clients (<code class="docutils literal notranslate"><span class="pre">indra.databases</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../literature/index.html">Literature clients (<code class="docutils literal notranslate"><span class="pre">indra.literature</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preassembler/index.html">Preassembly (<code class="docutils literal notranslate"><span class="pre">indra.preassembler</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../belief/index.html">Belief Engine (<code class="docutils literal notranslate"><span class="pre">indra.belief</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mechlinker/index.html">Mechanism Linker (<code class="docutils literal notranslate"><span class="pre">indra.mechlinker</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assemblers/index.html">Assemblers of model output (<code class="docutils literal notranslate"><span class="pre">indra.assemblers</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explanation/index.html">Explanation (<code class="docutils literal notranslate"><span class="pre">indra.explanation</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Util (<code class="docutils literal notranslate"><span class="pre">indra.util</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-indra.util.aws">Utilities for using AWS (<code class="docutils literal notranslate"><span class="pre">indra.util.aws</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-indra.util.get_version">A utility to get the INDRA version (<code class="docutils literal notranslate"><span class="pre">indra.util.get_version</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-indra.util.kappa_util">A simple utility to get graphs from kappa (<code class="docutils literal notranslate"><span class="pre">indra.util.kappa_util</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-indra.util.nested_dict">Define NestedDict (<code class="docutils literal notranslate"><span class="pre">indra.util.nested_dict</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-indra.util.plot_formatting">Some shorthands for plot formatting (<code class="docutils literal notranslate"><span class="pre">indra.util.plot_formatting</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">INDRA modules reference</a> &raquo;</li>
+        
+      <li>Util (<code class="docutils literal notranslate"><span class="pre">indra.util</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/modules/util/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="util-indra-util">
+<h1>Util (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util</span></code>)<a class="headerlink" href="#util-indra-util" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-indra.util.aws">
+<span id="utilities-for-using-aws-indra-util-aws"></span><h2>Utilities for using AWS (<a class="reference internal" href="#module-indra.util.aws" title="indra.util.aws"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util.aws</span></code></a>)<a class="headerlink" href="#module-indra.util.aws" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="indra.util.aws.dump_logs">
+<code class="descclassname">indra.util.aws.</code><code class="descname">dump_logs</code><span class="sig-paren">(</span><em>job_queue='run_reach_queue'</em>, <em>job_status='RUNNING'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#dump_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.dump_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write logs for all jobs with given the status to files.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.get_batch_command">
+<code class="descclassname">indra.util.aws.</code><code class="descname">get_batch_command</code><span class="sig-paren">(</span><em>command_list</em>, <em>project=None</em>, <em>purpose=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#get_batch_command"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.get_batch_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the command appropriate for running something on batch.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.get_job_log">
+<code class="descclassname">indra.util.aws.</code><code class="descname">get_job_log</code><span class="sig-paren">(</span><em>job_info</em>, <em>log_group_name='/aws/batch/job'</em>, <em>write_file=True</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#get_job_log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.get_job_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Cloudwatch log associated with the given job.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>job_info</strong> (<em>dict</em>) – dict containing entries for ‘jobName’ and ‘jobId’, e.g., as returned
+by get_jobs()</li>
+<li><strong>log_group_name</strong> (<em>string</em>) – Name of the log group; defaults to ‘/aws/batch/job’</li>
+<li><strong>write_file</strong> (<em>boolean</em>) – If True, writes the downloaded log to a text file with the filename
+‘%s_%s.log’ % (job_name, job_id)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The event messages in the log, with the earliest events listed first.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of strings</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.get_jobs">
+<code class="descclassname">indra.util.aws.</code><code class="descname">get_jobs</code><span class="sig-paren">(</span><em>job_queue='run_reach_queue'</em>, <em>job_status='RUNNING'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#get_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.get_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of dicts with jobName and jobId for each job with the
+given status.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.get_log_by_name">
+<code class="descclassname">indra.util.aws.</code><code class="descname">get_log_by_name</code><span class="sig-paren">(</span><em>log_group_name</em>, <em>log_stream_name</em>, <em>out_file=None</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#get_log_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.get_log_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a log given the log’s group and stream name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>log_group_name</strong> (<em>str</em>) – The name of the log group, e.g. /aws/batch/job.</li>
+<li><strong>log_stream_name</strong> (<em>str</em>) – The name of the log stream, e.g. run_reach_jobdef/default/&lt;UUID&gt;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>lines</strong> – The lines of the log as a list.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.get_s3_file_tree">
+<code class="descclassname">indra.util.aws.</code><code class="descname">get_s3_file_tree</code><span class="sig-paren">(</span><em>s3</em>, <em>bucket</em>, <em>prefix</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#get_s3_file_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.get_s3_file_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overcome s3 response limit and return NestedDict tree of paths.</p>
+<p>The NestedDict object also allows the user to search by the ends of a path.</p>
+<p>The tree mimics a file directory structure, with the leave nodes being the
+full unbroken key. For example, ‘path/to/file.txt’ would be retrieved by</p>
+<blockquote>
+<div>ret[‘path’][‘to’][‘file.txt’][‘key’]</div></blockquote>
+<p>The NestedDict object returned also has the capability to get paths that
+lead to a certain value. So if you wanted all paths that lead to something
+called ‘file.txt’, you could use</p>
+<blockquote>
+<div>ret.get_paths(‘file.txt’)</div></blockquote>
+<p>For more details, see the NestedDict docs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.kill_all">
+<code class="descclassname">indra.util.aws.</code><code class="descname">kill_all</code><span class="sig-paren">(</span><em>job_queue</em>, <em>reason='None given'</em>, <em>states=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#kill_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.kill_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminates/cancels all RUNNING, RUNNABLE, and STARTING jobs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.tag_instance">
+<code class="descclassname">indra.util.aws.</code><code class="descname">tag_instance</code><span class="sig-paren">(</span><em>instance_id</em>, <em>**tags</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#tag_instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.tag_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tag a single ec2 instance.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.aws.tag_myself">
+<code class="descclassname">indra.util.aws.</code><code class="descname">tag_myself</code><span class="sig-paren">(</span><em>project='cwc'</em>, <em>**other_tags</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/aws.html#tag_myself"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.aws.tag_myself" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function run when indra is used in an EC2 instance to apply tags.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.util.get_version">
+<span id="a-utility-to-get-the-indra-version-indra-util-get-version"></span><h2>A utility to get the INDRA version (<a class="reference internal" href="#module-indra.util.get_version" title="indra.util.get_version"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util.get_version</span></code></a>)<a class="headerlink" href="#module-indra.util.get_version" title="Permalink to this headline">¶</a></h2>
+<p>This tool provides a uniform method for createing a robust indra version
+string, both from within python and from commandline. If possible, the version
+will include the git commit hash. Otherwise, the version will be marked with
+‘UNHASHED’.</p>
+<dl class="function">
+<dt id="indra.util.get_version.get_git_info">
+<code class="descclassname">indra.util.get_version.</code><code class="descname">get_git_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/get_version.html#get_git_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.get_version.get_git_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a dict with useful git info.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.get_version.get_version">
+<code class="descclassname">indra.util.get_version.</code><code class="descname">get_version</code><span class="sig-paren">(</span><em>with_git_hash=True</em>, <em>refresh_hash=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/get_version.html#get_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.get_version.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an indra version string, including a git hash.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.util.kappa_util">
+<span id="a-simple-utility-to-get-graphs-from-kappa-indra-util-kappa-util"></span><h2>A simple utility to get graphs from kappa (<a class="reference internal" href="#module-indra.util.kappa_util" title="indra.util.kappa_util"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util.kappa_util</span></code></a>)<a class="headerlink" href="#module-indra.util.kappa_util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="indra.util.kappa_util.cm_json_to_graph">
+<code class="descclassname">indra.util.kappa_util.</code><code class="descname">cm_json_to_graph</code><span class="sig-paren">(</span><em>im_json</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/kappa_util.html#cm_json_to_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.kappa_util.cm_json_to_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pygraphviz Agraph from Kappy’s contact map JSON.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_json</strong> (<em>dict</em>) – A JSON dict which contains a contact map generated by Kappy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> – A graph representing the contact map.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">pygraphviz.Agraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.kappa_util.im_json_to_graph">
+<code class="descclassname">indra.util.kappa_util.</code><code class="descname">im_json_to_graph</code><span class="sig-paren">(</span><em>im_json</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/kappa_util.html#im_json_to_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.kappa_util.im_json_to_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return networkx graph from Kappy’s influence map JSON.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>im_json</strong> (<em>dict</em>) – A JSON dict which contains an influence map generated by Kappy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>graph</strong> – A graph representing the influence map.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">networkx.MultiDiGraph</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.util.nested_dict">
+<span id="define-nesteddict-indra-util-nested-dict"></span><h2>Define NestedDict (<a class="reference internal" href="#module-indra.util.nested_dict" title="indra.util.nested_dict"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util.nested_dict</span></code></a>)<a class="headerlink" href="#module-indra.util.nested_dict" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="indra.util.nested_dict.NestedDict">
+<em class="property">class </em><code class="descclassname">indra.util.nested_dict.</code><code class="descname">NestedDict</code><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dict-like object that recursively populates elements of a dict.</p>
+<p>More specifically, this acts like a recursive defaultdict, allowing, for
+example:</p>
+<p>&gt;&gt; nd = NestedDict()
+&gt;&gt; nd[‘a’][‘b’][‘c’] = ‘foo’</p>
+<p>In addition, useful methods have been defined that allow the user to search
+the data structure. Note that the are not particularly optimized methods at
+this time. However, for convenience, you can for example simply call
+<cite>get_path</cite> to get the path to a particular key:</p>
+<p>&gt;&gt; nd.get_path(‘c’)
+((‘a’, ‘b’, ‘c’), ‘foo’)</p>
+<p>and the value at that key. Similarly:</p>
+<p>&gt;&gt; nd.get_path(‘b’)
+((‘a’, ‘b’), NestedDict(</p>
+<blockquote>
+<div>‘c’: ‘foo’</div></blockquote>
+<p>))</p>
+<p><cite>get</cite>, <cite>gets</cite>, and <cite>get_paths</cite> operate on similar principles, and are
+documented below.</p>
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.export_dict">
+<code class="descname">export_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.export_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.export_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this into an ordinary dict (of dicts).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the first value within the tree which has the key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.get_leaves">
+<code class="descname">get_leaves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.get_leaves"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.get_leaves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the deepest entries as a flat set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.get_path">
+<code class="descname">get_path</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.get_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <cite>get</cite>, but also return the path taken to the value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.get_paths">
+<code class="descname">get_paths</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.get_paths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.get_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <cite>gets</cite>, but include the paths, like <cite>get_path</cite> for all matches.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.util.nested_dict.NestedDict.gets">
+<code class="descname">gets</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/nested_dict.html#NestedDict.gets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.nested_dict.NestedDict.gets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like <cite>get</cite>, but return all matches, not just the first.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.util.plot_formatting">
+<span id="some-shorthands-for-plot-formatting-indra-util-plot-formatting"></span><h2>Some shorthands for plot formatting (<a class="reference internal" href="#module-indra.util.plot_formatting" title="indra.util.plot_formatting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.util.plot_formatting</span></code></a>)<a class="headerlink" href="#module-indra.util.plot_formatting" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="indra.util.plot_formatting.format_axis">
+<code class="descclassname">indra.util.plot_formatting.</code><code class="descname">format_axis</code><span class="sig-paren">(</span><em>ax</em>, <em>label_padding=2</em>, <em>tick_padding=0</em>, <em>yticks_position='left'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/plot_formatting.html#format_axis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.plot_formatting.format_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set standardized axis formatting for figure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.util.plot_formatting.set_fig_params">
+<code class="descclassname">indra.util.plot_formatting.</code><code class="descname">set_fig_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/indra/util/plot_formatting.html#set_fig_params"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.util.plot_formatting.set_fig_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set standardized font properties for figure.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../tools/reading/utils.html" class="btn btn-neutral" title="Low-level utilities used for or by reading pipelines (indra.tools.reading.util)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

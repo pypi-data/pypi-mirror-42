@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.sources.rlimsp.processor &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.sources.rlimsp.processor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.sources.rlimsp.processor</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">indra.databases</span> <span class="k">import</span> <span class="n">hgnc_client</span><span class="p">,</span> <span class="n">uniprot_client</span>
+<span class="kn">from</span> <span class="nn">indra.statements</span> <span class="k">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Phosphorylation</span><span class="p">,</span> <span class="n">Evidence</span><span class="p">,</span> <span class="n">BioContext</span><span class="p">,</span> \
+    <span class="n">RefContext</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="RlimspProcessor"><a class="viewcode-back" href="../../../../modules/sources/rlimsp/index.html#indra.sources.rlimsp.processor.RlimspProcessor">[docs]</a><span class="k">class</span> <span class="nc">RlimspProcessor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Convert RLIMS-P JSON into INDRA Statements.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rlimsp_json</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_json</span> <span class="o">=</span> <span class="n">rlimsp_json</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extract_statements</span><span class="p">()</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="RlimspProcessor.extract_statements"><a class="viewcode-back" href="../../../../modules/sources/rlimsp/index.html#indra.sources.rlimsp.processor.RlimspProcessor.extract_statements">[docs]</a>    <span class="k">def</span> <span class="nf">extract_statements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Extract the statements from the json.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">p_info</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_json</span><span class="p">:</span>
+            <span class="n">para</span> <span class="o">=</span> <span class="n">RlimspParagraph</span><span class="p">(</span><span class="n">p_info</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">para</span><span class="o">.</span><span class="n">get_statements</span><span class="p">())</span></div></div>
+        <span class="k">return</span>
+
+
+<div class="viewcode-block" id="RlimspParagraph"><a class="viewcode-back" href="../../../../modules/sources/rlimsp/index.html#indra.sources.rlimsp.processor.RlimspParagraph">[docs]</a><span class="k">class</span> <span class="nc">RlimspParagraph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An object that represents a single RLIMS-P Paragraph.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_info</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="n">p_info</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sentences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sentence_starts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">p_info</span><span class="p">[</span><span class="s1">&#39;sentence&#39;</span><span class="p">]:</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;charStart&#39;</span><span class="p">]</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;charEnd&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sentence_starts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text_refs</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">p_info</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pmid&#39;</span><span class="p">,</span> <span class="s1">&#39;pmcid&#39;</span><span class="p">]}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_relations</span> <span class="o">=</span> <span class="n">p_info</span><span class="p">[</span><span class="s1">&#39;relation&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_entity_dict</span> <span class="o">=</span> <span class="n">p_info</span><span class="p">[</span><span class="s1">&#39;entity&#39;</span><span class="p">]</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_get_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entity_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert the entity dictionary into an INDRA Agent.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">entity_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">entity_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">entity_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entity_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Entity key did not resolve to entity.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># This will be the default name. If we get a gene name, it will</span>
+        <span class="c1"># override this rawtext name.</span>
+        <span class="n">raw_text</span> <span class="o">=</span> <span class="n">entity_info</span><span class="p">[</span><span class="s1">&#39;entityText&#39;</span><span class="p">]</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">raw_text</span>
+
+        <span class="c1"># Get the db refs.</span>
+        <span class="n">refs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;TEXT&#39;</span><span class="p">:</span> <span class="n">raw_text</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">id_dict</span> <span class="ow">in</span> <span class="n">entity_info</span><span class="p">[</span><span class="s1">&#39;entityId&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Entrez&#39;</span><span class="p">:</span>
+                <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;EGID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;idString&#39;</span><span class="p">]</span>
+                <span class="n">hgnc_id</span> <span class="o">=</span> <span class="n">hgnc_client</span><span class="o">.</span><span class="n">get_hgnc_from_entrez</span><span class="p">(</span><span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;idString&#39;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">hgnc_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># Check against what we may have already inferred from</span>
+                    <span class="c1"># UniProt. If it disagrees with this, let it be. Inference</span>
+                    <span class="c1"># from Entrez isn&#39;t as reliable.</span>
+                    <span class="k">if</span> <span class="s1">&#39;HGNC&#39;</span> <span class="ow">in</span> <span class="n">refs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="k">if</span> <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;HGNC&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hgnc_id</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;HGNC id for Entrez id </span><span class="si">{EGID}</span><span class="s2"> did not &quot;</span>
+                                        <span class="s2">&quot;match id inferred from UniProt id &quot;</span>
+                                        <span class="s2">&quot;</span><span class="si">{UP}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">refs</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;HGNC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hgnc_id</span>
+            <span class="k">elif</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;UniProt&#39;</span><span class="p">:</span>
+                <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;UP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;idString&#39;</span><span class="p">]</span>
+                <span class="n">gene_name</span> <span class="o">=</span> <span class="n">uniprot_client</span><span class="o">.</span><span class="n">get_gene_name</span><span class="p">(</span><span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;idString&#39;</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">gene_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="n">gene_name</span>
+                    <span class="n">hgnc_id</span> <span class="o">=</span> <span class="n">hgnc_client</span><span class="o">.</span><span class="n">get_hgnc_id</span><span class="p">(</span><span class="n">gene_name</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">hgnc_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="c1"># Check to see if we have a conflict with an HGNC id</span>
+                        <span class="c1"># found from the Entrez id. If so, overwrite with this</span>
+                        <span class="c1"># one, in which we have greater faith.</span>
+                        <span class="k">if</span> <span class="s1">&#39;HGNC&#39;</span> <span class="ow">in</span> <span class="n">refs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;HGNC&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">hgnc_id</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;HGNC id for Entrez id </span><span class="si">{EGID}</span><span class="s2"> did not &quot;</span>
+                                        <span class="s2">&quot;match id inferred from UniProt id &quot;</span>
+                                        <span class="s2">&quot;</span><span class="si">{UP}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">refs</span><span class="p">))</span>
+                        <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;HGNC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hgnc_id</span>
+            <span class="k">elif</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Tax&#39;</span><span class="p">:</span>
+                <span class="n">refs</span><span class="p">[</span><span class="s1">&#39;TAX&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_dict</span><span class="p">[</span><span class="s1">&#39;idString&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unhandled id type: </span><span class="si">{source}</span><span class="s2">=</span><span class="si">{idString}</span><span class="s2">&quot;</span>
+                               <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">id_dict</span><span class="p">))</span>
+
+        <span class="n">raw_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">entity_info</span><span class="p">[</span><span class="s1">&#39;charStart&#39;</span><span class="p">],</span> <span class="n">entity_info</span><span class="p">[</span><span class="s1">&#39;charEnd&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">Agent</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">db_refs</span><span class="o">=</span><span class="n">refs</span><span class="p">),</span> <span class="n">raw_coords</span>
+
+    <span class="k">def</span> <span class="nf">_get_site</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">site_id</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">site_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="n">site_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity_dict</span><span class="p">[</span><span class="n">site_id</span><span class="p">]</span>
+        <span class="n">site_text</span> <span class="o">=</span> <span class="n">site_info</span><span class="p">[</span><span class="s1">&#39;attribute&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+        <span class="n">residue</span> <span class="o">=</span> <span class="n">site_text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">site_parts</span> <span class="o">=</span> <span class="n">site_text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">site_parts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="n">site_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">site_info</span><span class="p">[</span><span class="s1">&#39;charStart&#39;</span><span class="p">],</span> <span class="n">site_info</span><span class="p">[</span><span class="s1">&#39;charEnd&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">residue</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">coords</span>
+
+    <span class="k">def</span> <span class="nf">_get_evidence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_id</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">agent_coords</span><span class="p">,</span> <span class="n">site_coords</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the evidence using the info in the trigger entity.&quot;&quot;&quot;</span>
+        <span class="n">trigger_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity_dict</span><span class="p">[</span><span class="n">trigger_id</span><span class="p">]</span>
+
+        <span class="c1"># Get the sentence index from the trigger word.</span>
+        <span class="n">s_idx_set</span> <span class="o">=</span> <span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_entity_dict</span><span class="p">[</span><span class="n">eid</span><span class="p">][</span><span class="s1">&#39;sentenceIndex&#39;</span><span class="p">]</span>
+                     <span class="k">for</span> <span class="n">eid</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">values</span><span class="p">()}</span>
+        <span class="n">i_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">s_idx_set</span><span class="p">)</span>
+        <span class="n">i_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">s_idx_set</span><span class="p">)</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;. &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sentences</span><span class="p">[</span><span class="n">i_min</span><span class="p">:(</span><span class="n">i_max</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+
+        <span class="n">s_start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sentence_starts</span><span class="p">[</span><span class="n">i_min</span><span class="p">]</span>
+        <span class="n">annotations</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;agents&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;coords&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">_fix_coords</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">s_start</span><span class="p">)</span>
+                                  <span class="k">for</span> <span class="n">coords</span> <span class="ow">in</span> <span class="n">agent_coords</span><span class="p">]},</span>
+            <span class="s1">&#39;trigger&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;coords&#39;</span><span class="p">:</span> <span class="n">_fix_coords</span><span class="p">([</span><span class="n">trigger_info</span><span class="p">[</span><span class="s1">&#39;charStart&#39;</span><span class="p">],</span>
+                                               <span class="n">trigger_info</span><span class="p">[</span><span class="s1">&#39;charEnd&#39;</span><span class="p">]],</span>
+                                              <span class="n">s_start</span><span class="p">)}</span>
+            <span class="p">}</span>
+        <span class="k">if</span> <span class="n">site_coords</span><span class="p">:</span>
+            <span class="n">annotations</span><span class="p">[</span><span class="s1">&#39;site&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;coords&#39;</span><span class="p">:</span> <span class="n">_fix_coords</span><span class="p">(</span><span class="n">site_coords</span><span class="p">,</span> <span class="n">s_start</span><span class="p">)}</span>
+
+        <span class="k">return</span> <span class="n">Evidence</span><span class="p">(</span><span class="n">text_refs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_refs</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+                        <span class="n">source_api</span><span class="o">=</span><span class="s1">&#39;rlimsp&#39;</span><span class="p">,</span> <span class="n">pmid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_text_refs</span><span class="p">[</span><span class="s1">&#39;pmid&#39;</span><span class="p">],</span>
+                        <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_statements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">stmts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">rel_key</span><span class="p">,</span> <span class="n">rel_info</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relations</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Turn the arguments into a dict.</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="n">e</span><span class="p">[</span><span class="s1">&#39;role&#39;</span><span class="p">]:</span> <span class="n">e</span><span class="p">[</span><span class="s1">&#39;entity_duid&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">rel_info</span><span class="p">[</span><span class="s1">&#39;argument&#39;</span><span class="p">]}</span>
+            <span class="n">entity_args</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="c1"># Remove some special cases.</span>
+            <span class="n">trigger_id</span> <span class="o">=</span> <span class="n">entity_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;TRIGGER&#39;</span><span class="p">)</span>
+            <span class="n">site_id</span> <span class="o">=</span> <span class="n">entity_args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;SITE&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="c1"># Get the entity ids.</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="p">{</span><span class="n">role</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_agent</span><span class="p">(</span><span class="n">eid</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">role</span><span class="p">,</span> <span class="n">eid</span> <span class="ow">in</span> <span class="n">entity_args</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+            <span class="n">rel_type</span> <span class="o">=</span> <span class="n">rel_info</span><span class="p">[</span><span class="s1">&#39;relationType&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">rel_type</span> <span class="o">==</span> <span class="s1">&#39;PHOSPHORYLATION&#39;</span><span class="p">:</span>
+
+                <span class="c1"># Get the agents.</span>
+                <span class="n">enz</span><span class="p">,</span> <span class="n">enz_coords</span> <span class="o">=</span> <span class="n">entities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;KINASE&#39;</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+                <span class="n">sub</span><span class="p">,</span> <span class="n">sub_coords</span> <span class="o">=</span> <span class="n">entities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;SUBSTRATE&#39;</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+                <span class="c1"># Get the site</span>
+                <span class="n">residue</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">site_coords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_site</span><span class="p">(</span><span class="n">site_id</span><span class="p">)</span>
+
+                <span class="c1"># Get the evidence</span>
+                <span class="n">ev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_evidence</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span>
+                                        <span class="p">[</span><span class="n">enz_coords</span><span class="p">,</span> <span class="n">sub_coords</span><span class="p">],</span>
+                                        <span class="n">site_coords</span><span class="p">)</span>
+
+                <span class="c1"># Turn taxonomy into context, sub TAX takes precedence</span>
+                <span class="n">tax</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">enz</span> <span class="ow">and</span> <span class="s1">&#39;TAX&#39;</span> <span class="ow">in</span> <span class="n">enz</span><span class="o">.</span><span class="n">db_refs</span><span class="p">:</span>
+                    <span class="n">tax</span> <span class="o">=</span> <span class="n">enz</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;TAX&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">sub</span> <span class="ow">and</span> <span class="s1">&#39;TAX&#39;</span> <span class="ow">in</span> <span class="n">sub</span><span class="o">.</span><span class="n">db_refs</span><span class="p">:</span>
+                    <span class="n">tax</span> <span class="o">=</span> <span class="n">sub</span><span class="o">.</span><span class="n">db_refs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;TAX&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">tax</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">context</span> <span class="o">=</span> \
+                        <span class="n">BioContext</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="n">RefContext</span><span class="p">(</span><span class="n">tax</span><span class="p">,</span>
+                                                      <span class="p">{</span><span class="s1">&#39;TAXONOMY&#39;</span><span class="p">:</span> <span class="n">tax</span><span class="p">}))</span>
+                    <span class="n">ev</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">context</span>
+
+                <span class="n">stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Phosphorylation</span><span class="p">(</span><span class="n">enz</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">residue</span><span class="o">=</span><span class="n">residue</span><span class="p">,</span>
+                                             <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span>
+                                             <span class="n">evidence</span><span class="o">=</span><span class="p">[</span><span class="n">ev</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unhandled statement type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rel_type</span><span class="p">)</span>
+</div>
+        <span class="k">return</span> <span class="n">stmts</span>
+
+
+<span class="k">def</span> <span class="nf">_fix_coords</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adjust the entity coordinates to the beginning of the sentence.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">n</span> <span class="o">-</span> <span class="n">offset</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">])</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

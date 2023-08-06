@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.tools.reading.readers &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.tools.reading.readers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.tools.reading.readers</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Objects for interacting with bulk nlp reading tools.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">builtins</span> <span class="k">import</span> <span class="nb">dict</span><span class="p">,</span> <span class="nb">str</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">zlib</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">mkdir</span><span class="p">,</span> <span class="n">environ</span><span class="p">,</span> <span class="n">listdir</span><span class="p">,</span> <span class="n">remove</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">Pool</span>
+<span class="kn">from</span> <span class="nn">platform</span> <span class="k">import</span> <span class="n">system</span>
+
+<span class="kn">from</span> <span class="nn">indra</span> <span class="k">import</span> <span class="n">get_config</span>
+<span class="kn">from</span> <span class="nn">indra.sources</span> <span class="k">import</span> <span class="n">sparser</span><span class="p">,</span> <span class="n">reach</span><span class="p">,</span> <span class="n">trips</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Set a character limit for reach reading</span>
+<span class="n">CONTENT_CHARACTER_LIMIT</span> <span class="o">=</span> <span class="mf">5e5</span>
+<span class="n">CONTENT_MAX_SPACE_RATIO</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+
+<span class="k">def</span> <span class="nf">_get_dir</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">dirname</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+        <span class="n">dirpath</span> <span class="o">=</span> <span class="n">dirname</span>
+    <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+        <span class="n">dirpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dirpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="n">dirname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dirpath</span><span class="p">):</span>
+        <span class="n">mkdir</span><span class="p">(</span><span class="n">dirpath</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dirpath</span>
+
+
+<span class="k">def</span> <span class="nf">_time_stamp</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">%H%M%S&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_mem_total</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Linux&#39;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/proc/meminfo&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">tot_entry</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;MemTotal&#39;</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tot_entry</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;kB&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<div class="viewcode-block" id="ReadingError"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReadingError">[docs]</a><span class="k">class</span> <span class="nc">ReadingError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="ReachError"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachError">[docs]</a><span class="k">class</span> <span class="nc">ReachError</span><span class="p">(</span><span class="n">ReadingError</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="SparserError"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserError">[docs]</a><span class="k">class</span> <span class="nc">SparserError</span><span class="p">(</span><span class="n">ReadingError</span><span class="p">):</span></div>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">formats</span><span class="p">:</span>
+    <span class="n">JSON</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+    <span class="n">TEXT</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span>
+    <span class="n">XML</span> <span class="o">=</span> <span class="s1">&#39;xml&#39;</span>
+
+
+<div class="viewcode-block" id="Content"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content">[docs]</a><span class="k">class</span> <span class="nc">Content</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An object to regularize the content passed to the readers.</span>
+
+<span class="sd">    To use this class, use one of the two constructor methods:</span>
+<span class="sd">     - `from_file` : use content from a file on the filesystem.</span>
+<span class="sd">     - `from_string` : Pass a string (or bytes) directly as content.</span>
+
+<span class="sd">    This class also regularizes the handling of id&#39;s and formats, as well as</span>
+<span class="sd">    allowing for decompression and decoding, in the manner standard in the INDRA</span>
+<span class="sd">    project.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">compressed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_exists</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compressed</span> <span class="o">=</span> <span class="n">compressed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoded</span> <span class="o">=</span> <span class="n">encoded</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="nb">format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Content.from_file"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.from_file">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">compressed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a content object from a file path.&quot;&quot;&quot;</span>
+        <span class="n">file_id</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">file_format</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">file_id</span><span class="p">,</span> <span class="n">file_format</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">encoded</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">file_exists</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">_location</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">content</span>
+
+<div class="viewcode-block" id="Content.from_string"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.from_string">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">raw_content</span><span class="p">,</span> <span class="n">compressed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">encoded</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a Content object from string/bytes content.&quot;&quot;&quot;</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">encoded</span><span class="p">)</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">_raw_content</span> <span class="o">=</span> <span class="n">raw_content</span></div>
+        <span class="k">return</span> <span class="n">content</span>
+
+    <span class="k">def</span> <span class="nf">_load_raw_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_exists</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_filepath</span><span class="p">(),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Content.change_id"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.change_id">[docs]</a>    <span class="k">def</span> <span class="nf">change_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change the id of this content.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_raw_content</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="n">new_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_filename</span><span class="p">(</span><span class="n">renew</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_filepath</span><span class="p">(</span><span class="n">renew</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Content.change_format"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.change_format">[docs]</a>    <span class="k">def</span> <span class="nf">change_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_format</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change the format label of this content.</span>
+
+<span class="sd">        Note that this does NOT actually alter the format of the content, only</span>
+<span class="sd">        the label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_raw_content</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">=</span> <span class="n">new_format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_filename</span><span class="p">(</span><span class="n">renew</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_filepath</span><span class="p">(</span><span class="n">renew</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Content.set_location"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.set_location">[docs]</a>    <span class="k">def</span> <span class="nf">set_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_location</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set/change the location of this content.</span>
+
+<span class="sd">        Note that this does NOT change the actual location of the file. To do</span>
+<span class="sd">        so, use the `copy_to` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_raw_content</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="o">=</span> <span class="n">new_location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_filepath</span><span class="p">(</span><span class="n">renew</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Content.is_format"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.is_format">[docs]</a>    <span class="k">def</span> <span class="nf">is_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">formats</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check the format of this content.&quot;&quot;&quot;</span></div>
+        <span class="k">return</span> <span class="nb">any</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">_format</span> <span class="o">==</span> <span class="n">fmt</span> <span class="k">for</span> <span class="n">fmt</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span>
+
+    <span class="k">def</span> <span class="nf">get_format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span>
+
+<div class="viewcode-block" id="Content.get_text"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.get_text">[docs]</a>    <span class="k">def</span> <span class="nf">get_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the loaded, decompressed, and decoded text of this content.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_raw_content</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">ret_cont</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">compressed</span><span class="p">:</span>
+                <span class="n">ret_cont</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">ret_cont</span><span class="p">,</span> <span class="n">zlib</span><span class="o">.</span><span class="n">MAX_WBITS</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoded</span><span class="p">:</span>
+                <span class="n">ret_cont</span> <span class="o">=</span> <span class="n">ret_cont</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="n">ret_cont</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span>
+
+<div class="viewcode-block" id="Content.get_filename"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.get_filename">[docs]</a>    <span class="k">def</span> <span class="nf">get_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renew</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the filename of this content.</span>
+
+<span class="sd">        If the file name doesn&#39;t already exist, we created it as {id}.{format}.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">renew</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span>
+
+<div class="viewcode-block" id="Content.get_filepath"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Content.get_filepath">[docs]</a>    <span class="k">def</span> <span class="nf">get_filepath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renew</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the file path, joining the name and location for this file.</span>
+
+<span class="sd">        If no location is given, it is assumed to be &quot;here&quot;, e.g. &quot;.&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">renew</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span></div>
+        <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filename</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filename</span><span class="p">()</span>
+        <span class="n">fpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_exists</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_content</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_filepath</span><span class="p">(),</span> <span class="n">fpath</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fname</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_location</span> <span class="o">=</span> <span class="n">location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_exists</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="n">fpath</span>
+
+
+<div class="viewcode-block" id="ReadingData"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReadingData">[docs]</a><span class="k">class</span> <span class="nc">ReadingData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Object to contain the data produced by a reading.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    content_id : int or str</span>
+<span class="sd">        A unique identifier of the text content that produced the reading,</span>
+<span class="sd">        which can be mapped back to that content.</span>
+<span class="sd">    reader : str</span>
+<span class="sd">        The name of the reader, consistent with it&#39;s `name` attribute, for</span>
+<span class="sd">        example: &#39;REACH&#39;</span>
+<span class="sd">    reader_version : str</span>
+<span class="sd">        A string identifying the version of the underlying nlp reader.</span>
+<span class="sd">    content_format : str</span>
+<span class="sd">        The format of the content. Options are in indra.db.formats.</span>
+<span class="sd">    content : str or dict</span>
+<span class="sd">        The content of the reading result. A string in the format given by</span>
+<span class="sd">        `content_format`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content_id</span><span class="p">,</span> <span class="n">reader</span><span class="p">,</span> <span class="n">reader_version</span><span class="p">,</span> <span class="n">content_format</span><span class="p">,</span>
+                 <span class="n">content</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content_id</span> <span class="o">=</span> <span class="n">content_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">=</span> <span class="n">reader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reader_version</span> <span class="o">=</span> <span class="n">reader_version</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="n">content_format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="ReadingData.get_statements"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReadingData.get_statements">[docs]</a>    <span class="k">def</span> <span class="nf">get_statements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reprocess</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;General method to create statements.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">reprocess</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">==</span> <span class="n">ReachReader</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="n">formats</span><span class="o">.</span><span class="n">JSON</span><span class="p">:</span>
+                    <span class="c1"># Process the reach json into statements.</span>
+                    <span class="n">json_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+                    <span class="n">processor</span> <span class="o">=</span> <span class="n">reach</span><span class="o">.</span><span class="n">process_json_str</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">ReadingError</span><span class="p">(</span><span class="s2">&quot;Incorrect format for Reach output: </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                                       <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">==</span> <span class="n">SparserReader</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="n">formats</span><span class="o">.</span><span class="n">JSON</span><span class="p">:</span>
+                    <span class="c1"># Process the sparser content into statements</span>
+                    <span class="n">processor</span> <span class="o">=</span> <span class="n">sparser</span><span class="o">.</span><span class="n">process_json_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">processor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">processor</span><span class="o">.</span><span class="n">set_statements_pmid</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">ReadingError</span><span class="p">(</span><span class="s2">&quot;Sparser should only ever be JSON, not &quot;</span>
+                                       <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span> <span class="o">==</span> <span class="n">TripsReader</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="n">processor</span> <span class="o">=</span> <span class="n">trips</span><span class="o">.</span><span class="n">process_xml</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ReadingError</span><span class="p">(</span><span class="s2">&quot;Unknown reader: </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">processor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Production of statements from </span><span class="si">%s</span><span class="s2"> failed for </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                             <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reader</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">content_id</span><span class="p">))</span>
+                <span class="n">stmts</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stmts</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">statements</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span> <span class="o">=</span> <span class="n">stmts</span><span class="p">[:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stmts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statements</span><span class="p">[:]</span></div></div>
+        <span class="k">return</span> <span class="n">stmts</span>
+
+
+<div class="viewcode-block" id="Reader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Reader">[docs]</a><span class="k">class</span> <span class="nc">Reader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This abstract object defines and some general methods for readers.&quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_proc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">check_content</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">input_character_limit</span><span class="o">=</span><span class="n">CONTENT_CHARACTER_LIMIT</span><span class="p">,</span>
+                 <span class="n">max_space_ratio</span><span class="o">=</span><span class="n">CONTENT_MAX_SPACE_RATIO</span><span class="p">,</span>
+                 <span class="n">ResultClass</span><span class="o">=</span><span class="n">ReadingData</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">base_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;run_&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_proc</span> <span class="o">=</span> <span class="n">n_proc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="n">_get_dir</span><span class="p">(</span><span class="n">base_dir</span><span class="p">)</span>
+        <span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span>
+            <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_job_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">_time_stamp</span><span class="p">()),</span>
+            <span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">tmp_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_dir</span> <span class="o">=</span> <span class="n">_get_dir</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_maps</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">do_content_check</span> <span class="o">=</span> <span class="n">check_content</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_character_limit</span> <span class="o">=</span> <span class="n">input_character_limit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_space_ratio</span> <span class="o">=</span> <span class="n">max_space_ratio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ResultClass</span> <span class="o">=</span> <span class="n">ResultClass</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id_maps</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="Reader.add_result"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Reader.add_result">[docs]</a>    <span class="k">def</span> <span class="nf">add_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content_id</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;Add a result to the list of results.&quot;&quot;&quot;</span>
+        <span class="n">result_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ResultClass</span><span class="p">(</span><span class="n">content_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
+                                         <span class="n">formats</span><span class="o">.</span><span class="n">JSON</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_object</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">_check_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content_str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if the content is likely to be successfully read.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_content_check</span><span class="p">:</span>
+            <span class="n">space_ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">content_str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">content_str</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">space_ratio</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_space_ratio</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;space-ratio: </span><span class="si">%f</span><span class="s2"> &gt; </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">space_ratio</span><span class="p">,</span>
+                                                 <span class="bp">self</span><span class="o">.</span><span class="n">max_space_ratio</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">content_str</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_character_limit</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;too long: </span><span class="si">%d</span><span class="s2"> &gt; </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content_str</span><span class="p">),</span>
+                                              <span class="bp">self</span><span class="o">.</span><span class="n">input_character_limit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Reader.read"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.Reader.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read_list</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="s2">&quot;Read a list of items and return a dict of output files.&quot;</span></div></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="ReachReader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachReader">[docs]</a><span class="k">class</span> <span class="nc">ReachReader</span><span class="p">(</span><span class="n">Reader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This object encodes an interface to the reach reading script.&quot;&quot;&quot;</span>
+    <span class="n">REACH_MEM</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># GB</span>
+    <span class="n">MEM_BUFFER</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># GB</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;REACH&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exec_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_reach_env</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ReachReader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">conf_fmt_fname</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                                   <span class="s1">&#39;util/reach_conf_fmt.txt&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conf_file_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;indra.conf&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">conf_fmt_fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fmt_file</span><span class="p">:</span>
+            <span class="n">fmt</span> <span class="o">=</span> <span class="n">fmt_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;INFO&#39;</span>
+            <span class="c1"># log_level = &#39;DEBUG&#39; if logger.level == logging.DEBUG else &#39;INFO&#39;</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conf_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+                    <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tmp_dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="n">num_cores</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_proc</span><span class="p">,</span>
+                               <span class="n">loglevel</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
+                    <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">_get_dir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;output&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_join_json_files</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Join different REACH output JSON files into a single JSON object.</span>
+
+<span class="sd">        The output of REACH is broken into three files that need to be joined</span>
+<span class="sd">        before processing. Specifically, there will be three files of the form:</span>
+<span class="sd">        `&lt;prefix&gt;.uaz.&lt;subcategory&gt;.json`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        prefix : str</span>
+<span class="sd">            The absolute path up to the extensions that reach will add.</span>
+<span class="sd">        clear : bool</span>
+<span class="sd">            Default False - if True, delete the files as soon as they are</span>
+<span class="sd">            loaded.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        json_obj : dict</span>
+<span class="sd">            The result of joining the files, keyed by the three subcategories.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filetype_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;entities&#39;</span><span class="p">,</span> <span class="s1">&#39;events&#39;</span><span class="p">,</span> <span class="s1">&#39;sentences&#39;</span><span class="p">]</span>
+        <span class="n">json_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">filetype</span> <span class="ow">in</span> <span class="n">filetype_list</span><span class="p">:</span>
+                <span class="n">fname</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;.uaz.&#39;</span> <span class="o">+</span> <span class="n">filetype</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">json_dict</span><span class="p">[</span><span class="n">filetype</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">clear</span><span class="p">:</span>
+                    <span class="n">remove</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Removed </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">fname</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="s1">&#39;Failed to open JSON files for </span><span class="si">%s</span><span class="s1">; REACH error?&#39;</span> <span class="o">%</span> <span class="n">prefix</span>
+                <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">json_dict</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_check_reach_env</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Check that the environment supports runnig reach.&quot;&quot;&quot;</span>
+        <span class="c1"># Get the path to the REACH JAR</span>
+        <span class="n">path_to_reach</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;REACHPATH&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path_to_reach</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">path_to_reach</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;REACHPATH&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path_to_reach</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_to_reach</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">ReachError</span><span class="p">(</span>
+                <span class="s1">&#39;Reach path unset or invalid. Check REACHPATH environment var &#39;</span>
+                <span class="s1">&#39;and/or config file.&#39;</span>
+                <span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Using REACH jar at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">path_to_reach</span><span class="p">)</span>
+
+        <span class="c1"># Get the reach version.</span>
+        <span class="n">reach_version</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;REACH_VERSION&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reach_version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">reach_version</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;REACH_VERSION&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reach_version</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;REACH version not set in REACH_VERSION&#39;</span><span class="p">)</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;reach-(.*?)\.jar&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path_to_reach</span><span class="p">))</span>
+            <span class="n">reach_version</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;-SNAP.*?$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Using REACH version: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">reach_version</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">path_to_reach</span><span class="p">,</span> <span class="n">reach_version</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">version</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_check_reach_env</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">version</span>
+
+<div class="viewcode-block" id="ReachReader.prep_input"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachReader.prep_input">[docs]</a>    <span class="k">def</span> <span class="nf">prep_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Apply the readers to the content.&quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Prepping input.&quot;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">read_list</span><span class="p">:</span>
+            <span class="c1"># Check the quality of the text, and skip if there are any issues.</span>
+            <span class="n">quality_issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_content</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">quality_issue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Skipping </span><span class="si">%d</span><span class="s2"> due to: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                               <span class="o">%</span> <span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_id</span><span class="p">(),</span> <span class="n">quality_issue</span><span class="p">))</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Look for things that are more like file names, rather than ids.</span>
+            <span class="n">cid</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get_id</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cid</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\w*?\d+$&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">new_id</span> <span class="o">=</span> <span class="s1">&#39;FILE</span><span class="si">%06d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">id_maps</span><span class="p">[</span><span class="n">new_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">cid</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">change_id</span><span class="p">(</span><span class="n">new_id</span><span class="p">)</span>
+                <span class="n">new_fpath</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_dir</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Put the content in the appropriate directory.</span>
+                <span class="n">new_fpath</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_dir</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> saved for reading by reach.&#39;</span>
+                         <span class="o">%</span> <span class="n">new_fpath</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="ReachReader.get_output"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachReader.get_output">[docs]</a>    <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the output of a reading job as a list of filenames.&quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Getting outputs.&quot;</span><span class="p">)</span>
+        <span class="c1"># Get the set of prefixes (each will correspond to three json files.)</span>
+        <span class="n">json_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span><span class="p">,</span> <span class="s1">&#39;*.json&#39;</span><span class="p">))</span>
+        <span class="n">json_prefixes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">json_files</span><span class="p">:</span>
+            <span class="c1"># Remove .uaz.&lt;subfile type&gt;.json</span>
+            <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+            <span class="n">json_prefixes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">prefix</span><span class="p">))</span>
+
+        <span class="c1"># Join each set of json files and store the json dict.</span>
+        <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">json_prefixes</span><span class="p">:</span>
+            <span class="n">base_prefix</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">base_prefix</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+                <span class="n">base_prefix</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base_prefix</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">base_prefix</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_maps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">base_prefix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_maps</span><span class="p">[</span><span class="n">base_prefix</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_join_json_files</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Could not load result for prefix </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">prefix</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">base_prefix</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Joined files for prefix </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">base_prefix</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span>
+
+<div class="viewcode-block" id="ReachReader.clear_input"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachReader.clear_input">[docs]</a>    <span class="k">def</span> <span class="nf">clear_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Remove all the input files (at the end of a reading).&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_dir</span><span class="p">):</span>
+            <span class="n">item_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">item_path</span><span class="p">):</span>
+                <span class="n">remove</span><span class="p">(</span><span class="n">item_path</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Removed input </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">item_path</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="ReachReader.read"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.ReachReader.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read_list</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read the content, returning a list of ReadingData objects.&quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">mem_tot</span> <span class="o">=</span> <span class="n">_get_mem_total</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">mem_tot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mem_tot</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">REACH_MEM</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MEM_BUFFER</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="s2">&quot;Too little memory to run reach. At least </span><span class="si">%s</span><span class="s2"> required.&quot;</span> <span class="o">%</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">REACH_MEM</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MEM_BUFFER</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;REACH not run.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">read_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Prep the content</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prep_input</span><span class="p">(</span><span class="n">read_list</span><span class="p">)</span>
+            <span class="c1"># Run REACH!</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Beginning reach.&quot;</span><span class="p">)</span>
+            <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;java&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;-Dconfig.file=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">conf_file_path</span><span class="p">,</span>
+                <span class="s1">&#39;-jar&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">exec_path</span>
+                <span class="p">]</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                                 <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+            <span class="n">log_file_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+                <span class="n">log_line</span> <span class="o">=</span> <span class="s1">&#39;REACH: &#39;</span> <span class="o">+</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">log_line</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+                    <span class="n">log_file_str</span> <span class="o">+=</span> <span class="n">log_line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;reach_run.log&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">log_file_str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+            <span class="n">p_out</span><span class="p">,</span> <span class="n">p_err</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Problem running REACH:&#39;</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Stdout: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">p_out</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Stderr: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">p_err</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">ReachError</span><span class="p">(</span><span class="s2">&quot;Problem running REACH&quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Reach finished.&quot;</span><span class="p">)</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_output</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clear_input</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="n">ret</span>
+
+
+<div class="viewcode-block" id="SparserReader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserReader">[docs]</a><span class="k">class</span> <span class="nc">SparserReader</span><span class="p">(</span><span class="n">Reader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This object provides methods to interface with the commandline tool.&quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;SPARSER&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SparserReader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">sparser</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SparserReader.prep_input"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserReader.prep_input">[docs]</a>    <span class="k">def</span> <span class="nf">prep_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read_list</span><span class="p">):</span>
+        <span class="s2">&quot;Prepare the list of files or text content objects to be read.&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Prepping input for sparser.&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">read_list</span><span class="p">:</span>
+            <span class="n">quality_issue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_content</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">quality_issue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Skipping </span><span class="si">%d</span><span class="s2"> due to: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                               <span class="o">%</span> <span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_id</span><span class="p">(),</span> <span class="n">quality_issue</span><span class="p">))</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">content</span><span class="o">.</span><span class="n">is_format</span><span class="p">(</span><span class="s1">&#39;nxml&#39;</span><span class="p">):</span>
+                <span class="c1"># If it is already an nxml, we just need to adjust the</span>
+                <span class="c1"># name a bit, if anything.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">content</span><span class="o">.</span><span class="n">get_filename</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;PMC&#39;</span><span class="p">):</span>
+                    <span class="n">content</span><span class="o">.</span><span class="n">change_id</span><span class="p">(</span><span class="s1">&#39;PMC&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_id</span><span class="p">()))</span>
+                <span class="n">fpath</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">content</span><span class="o">.</span><span class="n">is_format</span><span class="p">(</span><span class="s1">&#39;txt&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">):</span>
+                <span class="c1"># Otherwise we need to frame the content in xml and put it</span>
+                <span class="c1"># in a new file with the appropriate name.</span>
+                <span class="n">nxml_str</span> <span class="o">=</span> <span class="n">sparser</span><span class="o">.</span><span class="n">make_nxml_from_text</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+                <span class="n">new_content</span> <span class="o">=</span> <span class="n">Content</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;PMC&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">get_id</span><span class="p">()),</span>
+                                                  <span class="s1">&#39;nxml&#39;</span><span class="p">,</span> <span class="n">nxml_str</span><span class="p">)</span>
+                <span class="n">fpath</span> <span class="o">=</span> <span class="n">new_content</span><span class="o">.</span><span class="n">copy_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_dir</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SparserError</span><span class="p">(</span><span class="s2">&quot;Unrecognized format </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                                   <span class="o">%</span> <span class="n">content</span><span class="o">.</span><span class="n">format</span><span class="p">)</span></div>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="SparserReader.get_output"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserReader.get_output">[docs]</a>    <span class="k">def</span> <span class="nf">get_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_files</span><span class="p">,</span> <span class="n">clear</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="s2">&quot;Get the output files as an id indexed dict.&quot;</span>
+        <span class="n">patt</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(.*?)-semantics.*?&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">outpath</span> <span class="ow">in</span> <span class="n">output_files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">outpath</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Found outpath with value None. Skipping.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="n">re_out</span> <span class="o">=</span> <span class="n">patt</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">outpath</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">re_out</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SparserError</span><span class="p">(</span><span class="s2">&quot;Could not get prefix from output path </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                                   <span class="o">%</span> <span class="n">outpath</span><span class="p">)</span>
+            <span class="n">prefix</span> <span class="o">=</span> <span class="n">re_out</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;PMC&#39;</span><span class="p">):</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+                <span class="c1"># In this case we assume the prefix is a tcid.</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outpath</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Could not load reading content from </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                             <span class="o">%</span> <span class="n">outpath</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">clear</span><span class="p">:</span>
+                <span class="n">input_path</span> <span class="o">=</span> <span class="n">outpath</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-semantics.json&#39;</span><span class="p">,</span> <span class="s1">&#39;.nxml&#39;</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">remove</span><span class="p">(</span><span class="n">outpath</span><span class="p">)</span>
+                    <span class="n">remove</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Could not remove sparser files </span><span class="si">%s</span><span class="s2"> and </span><span class="si">%s</span><span class="s2">.&quot;</span>
+                                 <span class="o">%</span> <span class="p">(</span><span class="n">outpath</span><span class="p">,</span> <span class="n">input_path</span><span class="p">))</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span>
+
+    <span class="k">def</span> <span class="nf">read_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fpath</span><span class="p">,</span> <span class="n">outbuf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">fpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outbuf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">outbuf</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
+        <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Reading </span><span class="si">%s</span><span class="s1">.</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">fpath</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+        <span class="n">outbuf</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Reading </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">fpath</span><span class="p">)</span>
+        <span class="n">outpath</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">outpath</span> <span class="o">=</span> <span class="n">sparser</span><span class="o">.</span><span class="n">run_sparser</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="n">outbuf</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Failed to run sparser on </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span>
+                             <span class="n">fpath</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Reading failed.----------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;-------------------------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">outpath</span><span class="p">,</span> <span class="n">outbuf</span>
+
+<div class="viewcode-block" id="SparserReader.read_some"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserReader.read_some">[docs]</a>    <span class="k">def</span> <span class="nf">read_some</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fpath_list</span><span class="p">,</span> <span class="n">outbuf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="s2">&quot;Perform a few readings.&quot;</span>
+        <span class="n">outpath_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="n">fpath_list</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">,</span> <span class="n">outbuf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_one</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">outbuf</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">outpath_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">outpath_list</span><span class="p">,</span> <span class="n">outbuf</span>
+
+<div class="viewcode-block" id="SparserReader.read"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.SparserReader.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read_list</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_per_proc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="s2">&quot;Perform the actual reading.&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prep_input</span><span class="p">(</span><span class="n">read_list</span><span class="p">)</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">L</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ret</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Beginning to run sparser.&quot;</span><span class="p">)</span>
+        <span class="n">output_file_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">log_name</span> <span class="o">=</span> <span class="s1">&#39;sparser_run_</span><span class="si">%s</span><span class="s1">.log&#39;</span> <span class="o">%</span> <span class="n">_time_stamp</span><span class="p">()</span>
+            <span class="n">outbuf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">outbuf</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_proc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">fpath</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="p">:</span>
+                    <span class="n">outpath</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_one</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="n">outbuf</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">outpath</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">output_file_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">outpath</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">n_per_proc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">n_per_proc</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">L</span><span class="o">//</span><span class="bp">self</span><span class="o">.</span><span class="n">n_proc</span><span class="o">//</span><span class="mi">2</span><span class="p">))</span>
+                <span class="n">pool</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">pool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_proc</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">n_per_proc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">batches</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="p">[</span><span class="n">n</span><span class="o">*</span><span class="n">n_per_proc</span><span class="p">:(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">n_per_proc</span><span class="p">]</span>
+                                   <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="o">//</span><span class="n">n_per_proc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+                        <span class="n">out_lists_and_buffs</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read_some</span><span class="p">,</span>
+                                                       <span class="n">batches</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">out_files_and_buffs</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read_one</span><span class="p">,</span>
+                                                       <span class="bp">self</span><span class="o">.</span><span class="n">file_list</span><span class="p">)</span>
+                        <span class="n">out_lists_and_buffs</span> <span class="o">=</span> <span class="p">[([</span><span class="n">out_files</span><span class="p">],</span> <span class="n">buffs</span><span class="p">)</span>
+                                               <span class="k">for</span> <span class="n">out_files</span><span class="p">,</span> <span class="n">buffs</span>
+                                               <span class="ow">in</span> <span class="n">out_files_and_buffs</span><span class="p">]</span>
+                <span class="k">finally</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">pool</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                        <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">out_list</span><span class="p">,</span> <span class="n">buff</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">out_lists_and_buffs</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">out_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">output_file_list</span> <span class="o">+=</span> <span class="n">out_list</span>
+                    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+                        <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Log for producing output </span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">.</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                     <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">out_lists_and_buffs</span><span class="p">)))</span>
+                        <span class="k">if</span> <span class="n">buff</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="n">buff</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                            <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buff</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="o">+</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">outbuf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;ERROR: no buffer was None. &#39;</span>
+                                         <span class="sa">b</span><span class="s1">&#39;No logs available.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+                        <span class="n">outbuf</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+                <span class="n">outbuf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Sparser logs may be found at </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span>
+                                <span class="n">log_name</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_output</span><span class="p">(</span><span class="n">output_file_list</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">ret</span>
+
+
+<div class="viewcode-block" id="EmptyReader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.EmptyReader">[docs]</a><span class="k">class</span> <span class="nc">EmptyReader</span><span class="p">(</span><span class="n">Reader</span><span class="p">):</span></div>
+    <span class="sd">&quot;&quot;&quot;A class name to use for Readers that are not implemented yet.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="TripsReader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.TripsReader">[docs]</a><span class="k">class</span> <span class="nc">TripsReader</span><span class="p">(</span><span class="n">EmptyReader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A stand-in for TRIPS reading.</span>
+
+<span class="sd">    Currently, we do not run TRIPS (more specifically DRUM) regularly at large</span>
+<span class="sd">    scales, however on occasion we have outputs from TRIPS that were generated</span>
+<span class="sd">    a while ago.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;TRIPS&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="TripsReader.read"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.TripsReader.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span></div>
+        <span class="k">return</span> <span class="s1">&#39;STATIC&#39;</span>
+
+
+<div class="viewcode-block" id="get_reader_classes"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.get_reader_classes">[docs]</a><span class="k">def</span> <span class="nf">get_reader_classes</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">Reader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get all childless the descendants of a parent class, recursively.&quot;&quot;&quot;</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span>
+    <span class="n">descendants</span> <span class="o">=</span> <span class="n">children</span><span class="p">[:]</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+        <span class="n">grandchildren</span> <span class="o">=</span> <span class="n">get_reader_classes</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">grandchildren</span><span class="p">:</span>
+            <span class="n">descendants</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="n">descendants</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">grandchildren</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">descendants</span>
+
+
+<div class="viewcode-block" id="get_reader_class"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.get_reader_class">[docs]</a><span class="k">def</span> <span class="nf">get_reader_class</span><span class="p">(</span><span class="n">reader_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get a particular reader class by name.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">reader_class</span> <span class="ow">in</span> <span class="n">get_reader_classes</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">reader_class</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">reader_name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">reader_class</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;No such reader: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">reader_name</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="get_reader"><a class="viewcode-back" href="../../../../modules/tools/reading/tools.html#indra.tools.reading.readers.get_reader">[docs]</a><span class="k">def</span> <span class="nf">get_reader</span><span class="p">(</span><span class="n">reader_name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get an instantiated reader by name.&quot;&quot;&quot;</span></div>
+    <span class="k">return</span> <span class="n">get_reader_class</span><span class="p">(</span><span class="n">reader_name</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

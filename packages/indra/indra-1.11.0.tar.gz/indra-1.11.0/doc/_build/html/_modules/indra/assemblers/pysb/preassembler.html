@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>indra.assemblers.pysb.preassembler &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules/index.html">INDRA modules reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>indra.assemblers.pysb.preassembler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for indra.assemblers.pysb.preassembler</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">indra.statements</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">indra.util</span> <span class="k">import</span> <span class="n">fast_deepcopy</span>
+<span class="kn">from</span> <span class="nn">.base_agents</span> <span class="k">import</span> <span class="n">BaseAgentSet</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PysbPreassembler"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.preassembler.PysbPreassembler">[docs]</a><span class="k">class</span> <span class="nc">PysbPreassembler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Pre-assemble Statements in preparation for PySB assembly.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    stmts : list[indra.statements.Statement]</span>
+<span class="sd">        A list of Statements to assemble</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stmts</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">stmts</span><span class="p">:</span>
+            <span class="n">stmts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">=</span> <span class="n">stmts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_set</span> <span class="o">=</span> <span class="n">BaseAgentSet</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PysbPreassembler.add_statements"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.preassembler.PysbPreassembler.add_statements">[docs]</a>    <span class="k">def</span> <span class="nf">add_statements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stmts</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a list of Statements for assembly.&quot;&quot;&quot;</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">+=</span> <span class="n">stmts</span>
+
+    <span class="k">def</span> <span class="nf">_gather_active_forms</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Collect all the active forms of each Agent in the Statements.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">ActiveForm</span><span class="p">):</span>
+                <span class="n">base_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_set</span><span class="o">.</span><span class="n">get_create_base_agent</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">agent</span><span class="p">)</span>
+                <span class="c1"># Handle the case where an activity flag is set</span>
+                <span class="n">agent_to_add</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent</span>
+                <span class="k">if</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">activity</span><span class="p">:</span>
+                    <span class="n">new_agent</span> <span class="o">=</span> <span class="n">fast_deepcopy</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">agent</span><span class="p">)</span>
+                    <span class="n">new_agent</span><span class="o">.</span><span class="n">activity</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">agent_to_add</span> <span class="o">=</span> <span class="n">new_agent</span>
+                <span class="n">base_agent</span><span class="o">.</span><span class="n">add_activity_form</span><span class="p">(</span><span class="n">agent_to_add</span><span class="p">,</span> <span class="n">stmt</span><span class="o">.</span><span class="n">is_active</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PysbPreassembler.replace_activities"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.preassembler.PysbPreassembler.replace_activities">[docs]</a>    <span class="k">def</span> <span class="nf">replace_activities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Replace ative flags with Agent states when possible.&quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Running PySB Preassembler replace activities&#39;</span><span class="p">)</span>
+        <span class="c1"># TODO: handle activity hierarchies</span>
+        <span class="n">new_stmts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span> <span class="nf">has_agent_activity</span><span class="p">(</span><span class="n">stmt</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot;Return True if any agents in the Statement have activity.&quot;&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent_list</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">Agent</span><span class="p">)</span> <span class="ow">and</span> <span class="n">agent</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># First collect all explicit active forms</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gather_active_forms</span><span class="p">()</span>
+        <span class="c1"># Iterate over all statements</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="p">),</span> <span class="n">stmt</span><span class="p">))</span>
+            <span class="c1"># If the Statement doesn&#39;t have any activities, we can just</span>
+            <span class="c1"># keep it and move on</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">has_agent_activity</span><span class="p">(</span><span class="n">stmt</span><span class="p">):</span>
+                <span class="n">new_stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">stmt_agents</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="n">agent_list</span><span class="p">()</span>
+            <span class="n">num_agents</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stmt_agents</span><span class="p">)</span>
+            <span class="c1"># Make a list with an empty list for each Agent so that later</span>
+            <span class="c1"># we can build combinations of Agent forms</span>
+            <span class="n">agent_forms</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">stmt_agents</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">agent</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">stmt_agents</span><span class="p">):</span>
+                <span class="c1"># This is the case where there is an activity flag on an</span>
+                <span class="c1"># Agent which we will attempt to replace with an explicit</span>
+                <span class="c1"># active form</span>
+                <span class="k">if</span> <span class="n">agent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">Agent</span><span class="p">)</span> <span class="ow">and</span> \
+                        <span class="n">agent</span><span class="o">.</span><span class="n">activity</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">base_agent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_set</span><span class="o">.</span><span class="n">get_create_base_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+                    <span class="c1"># If it is an &quot;active&quot; state</span>
+                    <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">activity</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+                        <span class="n">active_forms</span> <span class="o">=</span> <span class="n">base_agent</span><span class="o">.</span><span class="n">active_forms</span>
+                        <span class="c1"># If no explicit active forms are known then we use</span>
+                        <span class="c1"># the generic one</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">active_forms</span><span class="p">:</span>
+                            <span class="n">active_forms</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+                    <span class="c1"># If it is an &quot;inactive&quot; state</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">active_forms</span> <span class="o">=</span> <span class="n">base_agent</span><span class="o">.</span><span class="n">inactive_forms</span>
+                        <span class="c1"># If no explicit inactive forms are known then we use</span>
+                        <span class="c1"># the generic one</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">active_forms</span><span class="p">:</span>
+                            <span class="n">active_forms</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+                    <span class="c1"># We now iterate over the active agent forms and create</span>
+                    <span class="c1"># new agents</span>
+                    <span class="k">for</span> <span class="n">af</span> <span class="ow">in</span> <span class="n">active_forms</span><span class="p">:</span>
+                        <span class="n">new_agent</span> <span class="o">=</span> <span class="n">fast_deepcopy</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_set_agent_context</span><span class="p">(</span><span class="n">af</span><span class="p">,</span> <span class="n">new_agent</span><span class="p">)</span>
+                        <span class="n">agent_forms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_agent</span><span class="p">)</span>
+                <span class="c1"># Otherwise we just copy over the agent as is</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">agent_forms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+            <span class="c1"># Now create all possible combinations of the agents and create new</span>
+            <span class="c1"># statements as needed</span>
+            <span class="n">agent_combs</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">agent_forms</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">agent_comb</span> <span class="ow">in</span> <span class="n">agent_combs</span><span class="p">:</span>
+                <span class="n">new_stmt</span> <span class="o">=</span> <span class="n">fast_deepcopy</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span>
+                <span class="n">new_stmt</span><span class="o">.</span><span class="n">set_agent_list</span><span class="p">(</span><span class="n">agent_comb</span><span class="p">)</span>
+                <span class="n">new_stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_stmt</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">=</span> <span class="n">new_stmts</span>
+
+<div class="viewcode-block" id="PysbPreassembler.add_reverse_effects"><a class="viewcode-back" href="../../../../modules/assemblers/pysb_assembler.html#indra.assemblers.pysb.preassembler.PysbPreassembler.add_reverse_effects">[docs]</a>    <span class="k">def</span> <span class="nf">add_reverse_effects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add Statements for the reverse effects of some Statements.</span>
+
+<span class="sd">        For instance, if a protein is phosphorylated but never dephosphorylated</span>
+<span class="sd">        in the model, we add a generic dephosphorylation here. This step is</span>
+<span class="sd">        usually optional in the assembly process.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># TODO: generalize to other modification sites</span>
+        <span class="n">pos_mod_sites</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">neg_mod_sites</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">syntheses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">degradations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">statements</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">Phosphorylation</span><span class="p">):</span>
+                <span class="n">agent</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="n">sub</span><span class="o">.</span><span class="n">name</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">pos_mod_sites</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">stmt</span><span class="o">.</span><span class="n">residue</span><span class="p">,</span> <span class="n">stmt</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">pos_mod_sites</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">stmt</span><span class="o">.</span><span class="n">residue</span><span class="p">,</span> <span class="n">stmt</span><span class="o">.</span><span class="n">position</span><span class="p">)]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">Dephosphorylation</span><span class="p">):</span>
+                <span class="n">agent</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="n">sub</span><span class="o">.</span><span class="n">name</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">neg_mod_sites</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">stmt</span><span class="o">.</span><span class="n">residue</span><span class="p">,</span> <span class="n">stmt</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">neg_mod_sites</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">stmt</span><span class="o">.</span><span class="n">residue</span><span class="p">,</span> <span class="n">stmt</span><span class="o">.</span><span class="n">position</span><span class="p">)]</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">Influence</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">stmt</span><span class="o">.</span><span class="n">overall_polarity</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">syntheses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">stmt</span><span class="o">.</span><span class="n">overall_polarity</span><span class="p">()</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">degradations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">IncreaseAmount</span><span class="p">):</span>
+                <span class="n">syntheses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">DecreaseAmount</span><span class="p">):</span>
+                <span class="n">degradations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stmt</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="n">new_stmts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">agent_name</span><span class="p">,</span> <span class="n">pos_sites</span> <span class="ow">in</span> <span class="n">pos_mod_sites</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">neg_sites</span> <span class="o">=</span> <span class="n">neg_mod_sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">agent_name</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">no_neg_site</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pos_sites</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">neg_sites</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">residue</span><span class="p">,</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">no_neg_site</span><span class="p">:</span>
+                <span class="n">st</span> <span class="o">=</span> <span class="n">Dephosphorylation</span><span class="p">(</span><span class="n">Agent</span><span class="p">(</span><span class="s1">&#39;phosphatase&#39;</span><span class="p">),</span>
+                                           <span class="n">Agent</span><span class="p">(</span><span class="n">agent_name</span><span class="p">),</span>
+                                           <span class="n">residue</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+                <span class="n">new_stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">agent_name</span> <span class="ow">in</span> <span class="n">syntheses</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">agent_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">degradations</span><span class="p">:</span>
+                <span class="n">st</span> <span class="o">=</span> <span class="n">DecreaseAmount</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">Agent</span><span class="p">(</span><span class="n">agent_name</span><span class="p">))</span>
+                <span class="n">new_stmts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">statements</span> <span class="o">+=</span> <span class="n">new_stmts</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_set_agent_context</span><span class="p">(</span><span class="n">from_agent</span><span class="p">,</span> <span class="n">to_agent</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">from_agent</span><span class="p">,</span> <span class="n">Agent</span><span class="p">)</span> <span class="ow">or</span> \
+                <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">to_agent</span><span class="p">,</span> <span class="n">Agent</span><span class="p">):</span>
+            <span class="k">return</span>
+        <span class="k">def</span> <span class="nf">add_no_duplicate</span><span class="p">(</span><span class="n">from_lst</span><span class="p">,</span> <span class="n">to_lst</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">fm</span> <span class="ow">in</span> <span class="n">from_lst</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">for</span> <span class="n">tm</span> <span class="ow">in</span> <span class="n">to_lst</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">fm</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="n">tm</span><span class="p">):</span>
+                        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+                    <span class="n">to_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fm</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">to_lst</span>
+        <span class="c1"># TODO: what can we do about semantic conflicts here like the same</span>
+        <span class="c1"># bound condition with True/False is_bound appearing in the</span>
+        <span class="c1"># two contexts?</span>
+        <span class="n">to_agent</span><span class="o">.</span><span class="n">bound_conditions</span> <span class="o">=</span> \
+            <span class="n">add_no_duplicate</span><span class="p">(</span><span class="n">to_agent</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">,</span>
+                             <span class="n">from_agent</span><span class="o">.</span><span class="n">bound_conditions</span><span class="p">)</span>
+        <span class="n">to_agent</span><span class="o">.</span><span class="n">mods</span> <span class="o">=</span> <span class="n">add_no_duplicate</span><span class="p">(</span><span class="n">to_agent</span><span class="o">.</span><span class="n">mods</span><span class="p">,</span> <span class="n">from_agent</span><span class="o">.</span><span class="n">mods</span><span class="p">)</span>
+        <span class="n">to_agent</span><span class="o">.</span><span class="n">mutations</span> <span class="o">=</span> <span class="n">add_no_duplicate</span><span class="p">(</span><span class="n">to_agent</span><span class="o">.</span><span class="n">mutations</span><span class="p">,</span>
+                                              <span class="n">from_agent</span><span class="o">.</span><span class="n">mutations</span><span class="p">)</span>
+        <span class="n">to_agent</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">from_agent</span><span class="o">.</span><span class="n">location</span></div>
+        <span class="n">to_agent</span><span class="o">.</span><span class="n">activity</span> <span class="o">=</span> <span class="n">from_agent</span><span class="o">.</span><span class="n">activity</span>
+
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

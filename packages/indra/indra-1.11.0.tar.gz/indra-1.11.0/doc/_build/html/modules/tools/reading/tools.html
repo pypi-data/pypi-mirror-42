@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>High-throughput reading tools (indra.tools.reading) &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Tools (indra.tools)" href="../index.html"/>
+        <link rel="next" title="Low-level utilities used for or by reading pipelines (indra.tools.reading.util)" href="utils.html"/>
+        <link rel="prev" title="High-throughput reading CLI’s" href="interfaces.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">INDRA modules reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../statements.html">INDRA Statements (<code class="docutils literal notranslate"><span class="pre">indra.statements</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sources/index.html">Processors for knowledge input (<code class="docutils literal notranslate"><span class="pre">indra.sources</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../databases/index.html">Database clients (<code class="docutils literal notranslate"><span class="pre">indra.databases</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../literature/index.html">Literature clients (<code class="docutils literal notranslate"><span class="pre">indra.literature</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preassembler/index.html">Preassembly (<code class="docutils literal notranslate"><span class="pre">indra.preassembler</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../belief/index.html">Belief Engine (<code class="docutils literal notranslate"><span class="pre">indra.belief</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mechlinker/index.html">Mechanism Linker (<code class="docutils literal notranslate"><span class="pre">indra.mechlinker</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assemblers/index.html">Assemblers of model output (<code class="docutils literal notranslate"><span class="pre">indra.assemblers</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/index.html">Explanation (<code class="docutils literal notranslate"><span class="pre">indra.explanation</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.assemble_corpus">Run assembly components in a pipeline (<code class="docutils literal notranslate"><span class="pre">indra.tools.assemble_corpus</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.live_curation">Real-time feedback for assembly (<code class="docutils literal notranslate"><span class="pre">indra.tools.live_curation</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.gene_network">Build a network from a gene list (<code class="docutils literal notranslate"><span class="pre">indra.tools.gene_network</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.executable_subnetwork">Build an executable model from a fragment of a large network (<code class="docutils literal notranslate"><span class="pre">indra.tools.executable_subnetwork</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.incremental_model">Build a model incrementally over time (<code class="docutils literal notranslate"><span class="pre">indra.tools.incremental_model</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.machine">The RAS Machine (<code class="docutils literal notranslate"><span class="pre">indra.tools.machine</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#high-throughput-reading-tools-indra-tools-reading">High-throughput Reading Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pipelines.html">Remote Reading Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interfaces.html">High-throughput reading CLI’s</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">High-throughput reading tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.html">Low-level utilities used for or by reading pipelines (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading.util</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../util/index.html">Util (<code class="docutils literal notranslate"><span class="pre">indra.util</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">INDRA modules reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a> &raquo;</li>
+        
+      <li>High-throughput reading tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/modules/tools/reading/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="high-throughput-reading-tools-indra-tools-reading">
+<h1>High-throughput reading tools (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)<a class="headerlink" href="#high-throughput-reading-tools-indra-tools-reading" title="Permalink to this headline">¶</a></h1>
+<p>INDRA defines interfaces to many text reading tools, however many of those only
+handle reading at small scales. These tools are developed to harness reading at
+arbitrary scales.</p>
+<div class="section" id="module-indra.tools.reading.read_files">
+<span id="tools-used-to-run-reading-on-a-set-of-locally-stored-files-indra-tools-reading-read-files"></span><h2>Tools used to run reading on a set of locally stored files (<a class="reference internal" href="#module-indra.tools.reading.read_files" title="indra.tools.reading.read_files"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.read_files</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.read_files" title="Permalink to this headline">¶</a></h2>
+<p>Read a list of files located in your local directory.</p>
+<dl class="function">
+<dt id="indra.tools.reading.read_files.make_parser">
+<code class="descclassname">indra.tools.reading.read_files.</code><code class="descname">make_parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/read_files.html#make_parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.read_files.make_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the argument parser, derived from the general scripts parser.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.read_files.read_files">
+<code class="descclassname">indra.tools.reading.read_files.</code><code class="descname">read_files</code><span class="sig-paren">(</span><em>files</em>, <em>readers</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/read_files.html#read_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.read_files.read_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the files in <cite>files</cite> with the reader objects in <cite>readers</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>files</strong> (<em>list</em><em> [</em><em>str</em><em>]</em>) – A list of file paths to be read by the readers. Supported files are
+limited to text and nxml files.</li>
+<li><strong>readers</strong> (<em>list</em><em> [</em><em>Reader instances</em><em>]</em>) – A list of Reader objects to be used reading the files.</li>
+<li><strong>**kwargs</strong> – Other keyword arguments are passed to the <cite>read</cite> method of the readers.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>output_list</strong> – A list of ReadingData objects with the contents of the readings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list [<a class="reference internal" href="#indra.tools.reading.readers.ReadingData" title="indra.tools.reading.readers.ReadingData">ReadingData</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.tools.reading.readers">
+<span id="classes-defining-and-implementing-interfaces-to-different-readers-indra-tools-reading-readers"></span><h2>Classes defining and implementing interfaces to different readers (<a class="reference internal" href="#module-indra.tools.reading.readers" title="indra.tools.reading.readers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.readers</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.readers" title="Permalink to this headline">¶</a></h2>
+<p>Objects for interacting with bulk nlp reading tools.</p>
+<dl class="class">
+<dt id="indra.tools.reading.readers.Content">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">Content</code><span class="sig-paren">(</span><em>id</em>, <em>format</em>, <em>compressed=False</em>, <em>encoded=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object to regularize the content passed to the readers.</p>
+<dl class="docutils">
+<dt>To use this class, use one of the two constructor methods:</dt>
+<dd><ul class="first last simple">
+<li><cite>from_file</cite> : use content from a file on the filesystem.</li>
+<li><cite>from_string</cite> : Pass a string (or bytes) directly as content.</li>
+</ul>
+</dd>
+</dl>
+<p>This class also regularizes the handling of id’s and formats, as well as
+allowing for decompression and decoding, in the manner standard in the INDRA
+project.</p>
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.change_format">
+<code class="descname">change_format</code><span class="sig-paren">(</span><em>new_format</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.change_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.change_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the format label of this content.</p>
+<p>Note that this does NOT actually alter the format of the content, only
+the label.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.change_id">
+<code class="descname">change_id</code><span class="sig-paren">(</span><em>new_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.change_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.change_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the id of this content.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="indra.tools.reading.readers.Content.from_file">
+<em class="property">classmethod </em><code class="descname">from_file</code><span class="sig-paren">(</span><em>file_path</em>, <em>compressed=False</em>, <em>encoded=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.from_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a content object from a file path.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="indra.tools.reading.readers.Content.from_string">
+<em class="property">classmethod </em><code class="descname">from_string</code><span class="sig-paren">(</span><em>id</em>, <em>format</em>, <em>raw_content</em>, <em>compressed=False</em>, <em>encoded=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.from_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Content object from string/bytes content.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.get_filename">
+<code class="descname">get_filename</code><span class="sig-paren">(</span><em>renew=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.get_filename"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.get_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the filename of this content.</p>
+<p>If the file name doesn’t already exist, we created it as {id}.{format}.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.get_filepath">
+<code class="descname">get_filepath</code><span class="sig-paren">(</span><em>renew=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.get_filepath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.get_filepath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file path, joining the name and location for this file.</p>
+<p>If no location is given, it is assumed to be “here”, e.g. “.”.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.get_text">
+<code class="descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.get_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the loaded, decompressed, and decoded text of this content.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.is_format">
+<code class="descname">is_format</code><span class="sig-paren">(</span><em>*formats</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.is_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.is_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the format of this content.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Content.set_location">
+<code class="descname">set_location</code><span class="sig-paren">(</span><em>new_location</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Content.set_location"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Content.set_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set/change the location of this content.</p>
+<p>Note that this does NOT change the actual location of the file. To do
+so, use the <cite>copy_to</cite> method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.EmptyReader">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">EmptyReader</code><span class="sig-paren">(</span><em>base_dir=None</em>, <em>n_proc=1</em>, <em>check_content=True</em>, <em>input_character_limit=500000.0</em>, <em>max_space_ratio=0.5</em>, <em>ResultClass=&lt;class 'indra.tools.reading.readers.ReadingData'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#EmptyReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.EmptyReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class name to use for Readers that are not implemented yet.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="indra.tools.reading.readers.ReachError">
+<em class="property">exception </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">ReachError</code><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.ReachReader">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">ReachReader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>This object encodes an interface to the reach reading script.</p>
+<dl class="method">
+<dt id="indra.tools.reading.readers.ReachReader.clear_input">
+<code class="descname">clear_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachReader.clear_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachReader.clear_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all the input files (at the end of a reading).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.ReachReader.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachReader.get_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachReader.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the output of a reading job as a list of filenames.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.ReachReader.prep_input">
+<code class="descname">prep_input</code><span class="sig-paren">(</span><em>read_list</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachReader.prep_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachReader.prep_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the readers to the content.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.ReachReader.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>read_list</em>, <em>verbose=False</em>, <em>log=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReachReader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReachReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the content, returning a list of ReadingData objects.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.Reader">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">Reader</code><span class="sig-paren">(</span><em>base_dir=None</em>, <em>n_proc=1</em>, <em>check_content=True</em>, <em>input_character_limit=500000.0</em>, <em>max_space_ratio=0.5</em>, <em>ResultClass=&lt;class 'indra.tools.reading.readers.ReadingData'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Reader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Reader" title="Permalink to this definition">¶</a></dt>
+<dd><p>This abstract object defines and some general methods for readers.</p>
+<dl class="method">
+<dt id="indra.tools.reading.readers.Reader.add_result">
+<code class="descname">add_result</code><span class="sig-paren">(</span><em>content_id</em>, <em>content</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Reader.add_result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Reader.add_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Add a result to the list of results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.Reader.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>read_list</em>, <em>verbose=False</em>, <em>log=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#Reader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.Reader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a list of items and return a dict of output files.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.ReadingData">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">ReadingData</code><span class="sig-paren">(</span><em>content_id</em>, <em>reader</em>, <em>reader_version</em>, <em>content_format</em>, <em>content</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReadingData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReadingData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object to contain the data produced by a reading.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>content_id</strong> (<em>int</em><em> or </em><em>str</em>) – A unique identifier of the text content that produced the reading,
+which can be mapped back to that content.</li>
+<li><strong>reader</strong> (<em>str</em>) – The name of the reader, consistent with it’s <cite>name</cite> attribute, for
+example: ‘REACH’</li>
+<li><strong>reader_version</strong> (<em>str</em>) – A string identifying the version of the underlying nlp reader.</li>
+<li><strong>content_format</strong> (<em>str</em>) – The format of the content. Options are in indra.db.formats.</li>
+<li><strong>content</strong> (<em>str</em><em> or </em><em>dict</em>) – The content of the reading result. A string in the format given by
+<cite>content_format</cite>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="indra.tools.reading.readers.ReadingData.get_statements">
+<code class="descname">get_statements</code><span class="sig-paren">(</span><em>reprocess=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReadingData.get_statements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReadingData.get_statements" title="Permalink to this definition">¶</a></dt>
+<dd><p>General method to create statements.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="indra.tools.reading.readers.ReadingError">
+<em class="property">exception </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">ReadingError</code><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#ReadingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.ReadingError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="indra.tools.reading.readers.SparserError">
+<em class="property">exception </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">SparserError</code><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.SparserReader">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">SparserReader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>This object provides methods to interface with the commandline tool.</p>
+<dl class="method">
+<dt id="indra.tools.reading.readers.SparserReader.get_output">
+<code class="descname">get_output</code><span class="sig-paren">(</span><em>output_files</em>, <em>clear=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserReader.get_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserReader.get_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the output files as an id indexed dict.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.SparserReader.prep_input">
+<code class="descname">prep_input</code><span class="sig-paren">(</span><em>read_list</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserReader.prep_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserReader.prep_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the list of files or text content objects to be read.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.SparserReader.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>read_list</em>, <em>verbose=False</em>, <em>log=False</em>, <em>n_per_proc=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserReader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the actual reading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="indra.tools.reading.readers.SparserReader.read_some">
+<code class="descname">read_some</code><span class="sig-paren">(</span><em>fpath_list</em>, <em>outbuf=None</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#SparserReader.read_some"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.SparserReader.read_some" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a few readings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="indra.tools.reading.readers.TripsReader">
+<em class="property">class </em><code class="descclassname">indra.tools.reading.readers.</code><code class="descname">TripsReader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#TripsReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.TripsReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>A stand-in for TRIPS reading.</p>
+<p>Currently, we do not run TRIPS (more specifically DRUM) regularly at large
+scales, however on occasion we have outputs from TRIPS that were generated
+a while ago.</p>
+<dl class="method">
+<dt id="indra.tools.reading.readers.TripsReader.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#TripsReader.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.TripsReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a list of items and return a dict of output files.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.readers.get_reader">
+<code class="descclassname">indra.tools.reading.readers.</code><code class="descname">get_reader</code><span class="sig-paren">(</span><em>reader_name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#get_reader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.get_reader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an instantiated reader by name.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.readers.get_reader_class">
+<code class="descclassname">indra.tools.reading.readers.</code><code class="descname">get_reader_class</code><span class="sig-paren">(</span><em>reader_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#get_reader_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.get_reader_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a particular reader class by name.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.readers.get_reader_classes">
+<code class="descclassname">indra.tools.reading.readers.</code><code class="descname">get_reader_classes</code><span class="sig-paren">(</span><em>parent=&lt;class 'indra.tools.reading.readers.Reader'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/readers.html#get_reader_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.readers.get_reader_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all childless the descendants of a parent class, recursively.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.tools.reading.run_drum_reading">
+<span id="tools-to-run-the-drum-reading-system-indra-tools-reading-run-drum-reading"></span><h2>Tools to run the DRUM reading system (<a class="reference internal" href="#module-indra.tools.reading.run_drum_reading" title="indra.tools.reading.run_drum_reading"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.run_drum_reading</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.run_drum_reading" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="indra.tools.reading.run_drum_reading.read_pmid_sentences">
+<code class="descclassname">indra.tools.reading.run_drum_reading.</code><code class="descname">read_pmid_sentences</code><span class="sig-paren">(</span><em>pmid_sentences</em>, <em>**drum_args</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/run_drum_reading.html#read_pmid_sentences"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.run_drum_reading.read_pmid_sentences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read sentences from a PMID-keyed dictonary and return all Statements</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pmid_sentences</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>list</em><em>[</em><em>str</em><em>]</em><em>]</em>) – A dictonary where each key is a PMID pointing to a list of sentences
+to be read.</li>
+<li><strong>**drum_args</strong> – Keyword arguments passed directly to the DrumReader. Typical
+things to specify are <cite>host</cite> and <cite>port</cite>. If <cite>run_drum</cite> is specified
+as True, this process will internally run the DRUM reading system
+as a subprocess. Otherwise, DRUM is expected to be running
+independently.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>all_statements</strong> – A list of INDRA Statements resulting from the reading</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list[indra.statement.Statement]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.run_drum_reading.read_text">
+<code class="descclassname">indra.tools.reading.run_drum_reading.</code><code class="descname">read_text</code><span class="sig-paren">(</span><em>text</em>, <em>**drum_args</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/run_drum_reading.html#read_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.run_drum_reading.read_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read sentences from a PMID-keyed dictonary and return all Statements</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>str</em>) – A block of text to run DRUM on</li>
+<li><strong>**drum_args</strong> – Keyword arguments passed directly to the DrumReader. Typical
+things to specify are ‘host’ and ‘port’.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>statements</strong> – A list of INDRA Statements resulting from the reading</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list[indra.statement.Statement]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-indra.tools.reading.submit_reading_pipeline">
+<span id="python-tools-for-submitting-reading-pipelines-indra-tools-reading-submit-reading-pipeline"></span><h2>Python tools for submitting reading pipelines (<a class="reference internal" href="#module-indra.tools.reading.submit_reading_pipeline" title="indra.tools.reading.submit_reading_pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.submit_reading_pipeline</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.submit_reading_pipeline" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="indra.tools.reading.submit_reading_pipeline.BatchReadingError">
+<em class="property">exception </em><code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">BatchReadingError</code><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#BatchReadingError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.BatchReadingError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.submit_reading_pipeline.get_ecs_cluster_for_queue">
+<code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">get_ecs_cluster_for_queue</code><span class="sig-paren">(</span><em>queue_name</em>, <em>batch_client=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#get_ecs_cluster_for_queue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.get_ecs_cluster_for_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the ecs cluster using the batch client.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.submit_reading_pipeline.submit_combine">
+<code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">submit_combine</code><span class="sig-paren">(</span><em>basename</em>, <em>readers</em>, <em>job_ids=None</em>, <em>project_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#submit_combine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.submit_combine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit a batch job to combine the outputs of a reading job.</p>
+<p>This function is provided for backwards compatibility. You should use the
+PmidSubmitter and submit_combine methods.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.submit_reading_pipeline.submit_reading">
+<code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">submit_reading</code><span class="sig-paren">(</span><em>basename</em>, <em>pmid_list_filename</em>, <em>readers</em>, <em>start_ix=None</em>, <em>end_ix=None</em>, <em>pmids_per_job=3000</em>, <em>num_tries=2</em>, <em>force_read=False</em>, <em>force_fulltext=False</em>, <em>project_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#submit_reading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.submit_reading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Submit an old-style pmid-centered no-database s3 only reading job.</p>
+<p>This function is provided for the sake of backward compatibility. It is
+preferred that you use the object-oriented PmidSubmitter and the
+submit_reading job going forward.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.submit_reading_pipeline.tag_instances_on_cluster">
+<code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">tag_instances_on_cluster</code><span class="sig-paren">(</span><em>cluster_name</em>, <em>project='cwc'</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#tag_instances_on_cluster"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.tag_instances_on_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds project tag to untagged instances in a given cluster.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cluster_name</strong> (<em>str</em>) – The name of the AWS ECS cluster in which running instances
+should be tagged.</li>
+<li><strong>project</strong> (<em>str</em>) – The name of the project to tag instances with.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.submit_reading_pipeline.wait_for_complete">
+<code class="descclassname">indra.tools.reading.submit_reading_pipeline.</code><code class="descname">wait_for_complete</code><span class="sig-paren">(</span><em>queue_name</em>, <em>job_list=None</em>, <em>job_name_prefix=None</em>, <em>poll_interval=10</em>, <em>idle_log_timeout=None</em>, <em>kill_on_log_timeout=False</em>, <em>stash_log_method=None</em>, <em>tag_instances=False</em>, <em>result_record=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/submit_reading_pipeline.html#wait_for_complete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.submit_reading_pipeline.wait_for_complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return when all jobs in the given list finished.</p>
+<p>If not job list is given, return when all jobs in queue finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>queue_name</strong> (<em>str</em>) – The name of the queue to wait for completion.</li>
+<li><strong>job_list</strong> (<em>Optional</em><em>[</em><em>list</em><em>(</em><em>dict</em><em>)</em><em>]</em>) – A list of jobID-s in a dict, as returned by the submit function.
+Example: [{‘jobId’: ‘e6b00f24-a466-4a72-b735-d205e29117b4’}, …]
+If not given, this function will return if all jobs completed.</li>
+<li><strong>job_name_prefix</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – A prefix for the name of the jobs to wait for. This is useful if the
+explicit job list is not available but filtering is needed.</li>
+<li><strong>poll_interval</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The time delay between API calls to check the job statuses.</li>
+<li><strong>idle_log_timeout</strong> (<em>Optional</em><em>[</em><em>int</em><em>] or </em><em>None</em>) – If not None, then track the logs of the active jobs, and if new output
+is not produced after <cite>idle_log_timeout</cite> seconds, a warning is printed.
+If <cite>kill_on_log_timeout</cite> is set to True, the job will also be
+terminated.</li>
+<li><strong>kill_on_log_timeout</strong> (<em>Optional</em><em>[</em><em>bool</em><em>]</em>) – If True, and if <cite>idle_log_timeout</cite> is set, jobs will be terminated
+after timeout. This has no effect if <cite>idle_log_timeout</cite> is None.
+Default is False.</li>
+<li><strong>stash_log_method</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Select a method to store the job logs, either ‘s3’ or ‘local’. If no
+method is specified, the logs will not be loaded off of AWS. If ‘s3’ is
+specified, then <cite>job_name_prefix</cite> must also be given, as this will
+indicate where on s3 to store the logs.</li>
+<li><strong>tag_instances</strong> (<em>bool</em>) – Default is False. If True, apply tags to the instances. This is toady
+typically done by each job, so in most cases this should not be needed.</li>
+<li><strong>result_record</strong> (<em>dict</em>) – A dict which will be modified in place to record the results of the job.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="Low-level utilities used for or by reading pipelines (indra.tools.reading.util)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="interfaces.html" class="btn btn-neutral" title="High-throughput reading CLI’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

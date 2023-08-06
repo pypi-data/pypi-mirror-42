@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Remote Reading Pipelines &mdash; INDRA 1.11.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="INDRA 1.11.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Tools (indra.tools)" href="../index.html"/>
+        <link rel="next" title="High-throughput reading CLI’s" href="interfaces.html"/>
+        <link rel="prev" title="Tools (indra.tools)" href="../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> INDRA
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License and funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting started with INDRA</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">INDRA modules reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../statements.html">INDRA Statements (<code class="docutils literal notranslate"><span class="pre">indra.statements</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sources/index.html">Processors for knowledge input (<code class="docutils literal notranslate"><span class="pre">indra.sources</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../databases/index.html">Database clients (<code class="docutils literal notranslate"><span class="pre">indra.databases</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../literature/index.html">Literature clients (<code class="docutils literal notranslate"><span class="pre">indra.literature</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preassembler/index.html">Preassembly (<code class="docutils literal notranslate"><span class="pre">indra.preassembler</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../belief/index.html">Belief Engine (<code class="docutils literal notranslate"><span class="pre">indra.belief</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mechlinker/index.html">Mechanism Linker (<code class="docutils literal notranslate"><span class="pre">indra.mechlinker</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../assemblers/index.html">Assemblers of model output (<code class="docutils literal notranslate"><span class="pre">indra.assemblers</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explanation/index.html">Explanation (<code class="docutils literal notranslate"><span class="pre">indra.explanation</span></code>)</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.assemble_corpus">Run assembly components in a pipeline (<code class="docutils literal notranslate"><span class="pre">indra.tools.assemble_corpus</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.live_curation">Real-time feedback for assembly (<code class="docutils literal notranslate"><span class="pre">indra.tools.live_curation</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.gene_network">Build a network from a gene list (<code class="docutils literal notranslate"><span class="pre">indra.tools.gene_network</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.executable_subnetwork">Build an executable model from a fragment of a large network (<code class="docutils literal notranslate"><span class="pre">indra.tools.executable_subnetwork</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.incremental_model">Build a model incrementally over time (<code class="docutils literal notranslate"><span class="pre">indra.tools.incremental_model</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#module-indra.tools.machine">The RAS Machine (<code class="docutils literal notranslate"><span class="pre">indra.tools.machine</span></code>)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#high-throughput-reading-tools-indra-tools-reading">High-throughput Reading Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Remote Reading Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interfaces.html">High-throughput reading CLI’s</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html">High-throughput reading tools (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="utils.html">Low-level utilities used for or by reading pipelines (<code class="docutils literal notranslate"><span class="pre">indra.tools.reading.util</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../util/index.html">Util (<code class="docutils literal notranslate"><span class="pre">indra.util</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rest_api.html">REST API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">INDRA</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">INDRA modules reference</a> &raquo;</li>
+        
+          <li><a href="../index.html">Tools (<code class="docutils literal notranslate"><span class="pre">indra.tools</span></code>)</a> &raquo;</li>
+        
+      <li>Remote Reading Pipelines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/modules/tools/reading/pipelines.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="remote-reading-pipelines">
+<h1>Remote Reading Pipelines<a class="headerlink" href="#remote-reading-pipelines" title="Permalink to this headline">¶</a></h1>
+<p>There are three reading pipelines that have been developed for reading on
+remote high-performance systems.</p>
+<div class="section" id="a-pipeline-that-uses-aws-batch-and-caches-on-s3-indra-tools-reading-pmid-reading">
+<h2>A pipeline that uses AWS Batch and caches on S3 (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.pmid_reading</span></code>)<a class="headerlink" href="#a-pipeline-that-uses-aws-batch-and-caches-on-s3-indra-tools-reading-pmid-reading" title="Permalink to this headline">¶</a></h2>
+<p>This pipeline makes use of AWS Batch jobs to scale readings arbitrarily, and
+optimizes the reading by caching results on S3, thus preventing the user from
+needing to reread content unnecessarily. This pipeline may someday be retired
+in favor of the RDS reading pipeline (see below), however at this time this
+method is nominally maintained.</p>
+<div class="section" id="module-indra.tools.reading.pmid_reading.read_pmids">
+<span id="the-machinery-for-reading-a-list-of-pmids-with-reach-or-sparser-indra-tools-reading-pmid-reading-read-pmids"></span><h3>The machinery for reading a list of PMIDs with REACH or SPARSER (<a class="reference internal" href="#module-indra.tools.reading.pmid_reading.read_pmids" title="indra.tools.reading.pmid_reading.read_pmids"><code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.pmid_reading.read_pmids</span></code></a>)<a class="headerlink" href="#module-indra.tools.reading.pmid_reading.read_pmids" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="indra.tools.reading.pmid_reading.read_pmids.get_stmts">
+<code class="descclassname">indra.tools.reading.pmid_reading.read_pmids.</code><code class="descname">get_stmts</code><span class="sig-paren">(</span><em>pmids_unread</em>, <em>cleanup=True</em>, <em>sparser_version=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/pmid_reading/read_pmids.html#get_stmts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.pmid_reading.read_pmids.get_stmts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run sparser on the pmids in pmids_unread.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.pmid_reading.read_pmids.join_json_files">
+<code class="descclassname">indra.tools.reading.pmid_reading.read_pmids.</code><code class="descname">join_json_files</code><span class="sig-paren">(</span><em>prefix</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/pmid_reading/read_pmids.html#join_json_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.pmid_reading.read_pmids.join_json_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join different REACH output JSON files into a single JSON object.</p>
+<p>The output of REACH is broken into three files that need to be joined
+before processing. Specifically, there will be three files of the form:
+<cite>&lt;prefix&gt;.uaz.&lt;subcategory&gt;.json</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prefix</strong> (<em>str</em>) – The absolute path up to the extensions that reach will add.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>json_obj</strong> – The result of joining the files, keyed by the three subcategories.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.pmid_reading.read_pmids.read_pmid">
+<code class="descclassname">indra.tools.reading.pmid_reading.read_pmids.</code><code class="descname">read_pmid</code><span class="sig-paren">(</span><em>pmid</em>, <em>source</em>, <em>cont_path</em>, <em>sparser_version</em>, <em>outbuf=None</em>, <em>cleanup=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/pmid_reading/read_pmids.html#read_pmid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.pmid_reading.read_pmids.read_pmid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run sparser on a single pmid.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.pmid_reading.read_pmids.run_reach">
+<code class="descclassname">indra.tools.reading.pmid_reading.read_pmids.</code><code class="descname">run_reach</code><span class="sig-paren">(</span><em>pmid_list</em>, <em>base_dir</em>, <em>num_cores</em>, <em>start_index</em>, <em>end_index</em>, <em>force_read</em>, <em>force_fulltext</em>, <em>cleanup=False</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/pmid_reading/read_pmids.html#run_reach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.pmid_reading.read_pmids.run_reach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run reach on a list of pmids.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="indra.tools.reading.pmid_reading.read_pmids.run_sparser">
+<code class="descclassname">indra.tools.reading.pmid_reading.read_pmids.</code><code class="descname">run_sparser</code><span class="sig-paren">(</span><em>pmid_list</em>, <em>tmp_dir</em>, <em>num_cores</em>, <em>start_index</em>, <em>end_index</em>, <em>force_read</em>, <em>force_fulltext</em>, <em>cleanup=True</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/indra/tools/reading/pmid_reading/read_pmids.html#run_sparser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#indra.tools.reading.pmid_reading.read_pmids.run_sparser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the sparser reader on the pmids in pmid_list.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="a-pipeline-that-uses-aws-batch-and-rds-indra-db-reading">
+<h2>A pipeline that uses AWS Batch and RDS (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra_db.reading</span></code>)<a class="headerlink" href="#a-pipeline-that-uses-aws-batch-and-rds-indra-db-reading" title="Permalink to this headline">¶</a></h2>
+<p>This pipeline no longer exists under the umbrella of INDRA, but rather lives in
+the INDRA DB repo:</p>
+<blockquote>
+<div><a class="reference external" href="https://github.com/indralab/indra_db/tree/master/indra_db/reading">https://github.com/indralab/indra_db/tree/master/indra_db/reading</a></div></blockquote>
+<p>More information can be found in the <cite>indra_db</cite> documentation. Unlike the other
+pipelines, this system is aimed at continuous automatic reading of all content.</p>
+</div>
+<div class="section" id="a-pipeline-that-uses-starcluster-indra-tools-reading-starcluster-reading">
+<h2>A pipeline that uses StarCluster (<code class="xref py py-mod docutils literal notranslate"><span class="pre">indra.tools.reading.starcluster_reading</span></code>)<a class="headerlink" href="#a-pipeline-that-uses-starcluster-indra-tools-reading-starcluster-reading" title="Permalink to this headline">¶</a></h2>
+<p>The first pipeline developed for large scale reading. This method is no longer
+actively maintained.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interfaces.html" class="btn btn-neutral float-right" title="High-throughput reading CLI’s" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Tools (indra.tools)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, B. M. Gyori, J. A. Bachman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.11.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
