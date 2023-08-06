@@ -1,0 +1,80 @@
+- project:
+    templates:
+      - check-requirements
+      - openstack-cover-jobs-neutron
+      - openstack-lower-constraints-jobs-neutron
+      - openstack-python-jobs-neutron
+      - openstack-python35-jobs-neutron
+      - openstack-python36-jobs-neutron
+      - periodic-stable-jobs-neutron
+      - publish-openstack-docs-pti
+      - release-notes-jobs-python3
+    check:
+      jobs:
+        - neutron-fwaas-networking-midonet-cross-py35:
+            voting: false
+        - legacy-neutron-fwaas-v2-dsvm-tempest
+        - legacy-neutron-fwaas-dsvm-functional
+        - legacy-grenade-dsvm-neutron-fwaas-multinode:
+            voting: false
+            irrelevant-files:
+              - ^(test-|)requirements.txt$
+              - ^setup.cfg$
+        - legacy-neutron-fwaas-v2-dsvm-tempest-multinode:
+            voting: false
+    gate:
+      jobs:
+        - legacy-neutron-fwaas-v2-dsvm-tempest
+        - legacy-neutron-fwaas-dsvm-functional
+    experimental:
+      jobs:
+        - legacy-neutron-fwaas-dsvm-fullstack
+
+- job:
+    name: neutron-fwaas-networking-midonet-cross-py35
+    parent: openstack-tox-py35
+    description: |
+      Run Python 35 tests on networking-midonet repository.
+    vars:
+      zuul_work_dir: src/git.openstack.org/openstack/networking-midonet
+    required-projects:
+      - openstack/requirements
+      - openstack/networking-midonet
+      - openstack/neutron
+      - openstack/neutron-vpnaas
+      - openstack/neutron-lbaas
+      - openstack/neutron-dynamic-routing
+      - openstack/networking-l2gw
+      - openstack/tap-as-a-service
+
+- job:
+    name: neutron-fwaas-fullstack
+    parent: legacy-dsvm-base
+    run: playbooks/neutron-fwaas-fullstack/run.yaml
+    post-run: playbooks/neutron-fwaas-fullstack/post.yaml
+    timeout: 7800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/neutron
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^neutron/locale/.*$
+      - ^releasenotes/.*$
+
+
+- job:
+    name: neutron-fwaas-fullstack-python35
+    parent: legacy-dsvm-base
+    run: playbooks/legacy/neutron-fullstack-python35/run.yaml
+    post-run: playbooks/legacy/neutron-fullstack-python35/post.yaml
+    timeout: 7800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/neutron
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^neutron/locale/.*$
+      - ^releasenotes/.*$
+    voting: false
