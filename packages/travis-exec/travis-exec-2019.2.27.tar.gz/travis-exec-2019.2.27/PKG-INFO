@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: travis-exec
+Version: 2019.2.27
+Summary: execute command for every travis repo
+Home-page: https://github.com/looking-for-a-job/travis-exec
+License: UNKNOWN
+Description: <b>execute command for every travis repo</b>
+        
+        #### Install
+        ```bash
+        $ [sudo] pip install travis-exec
+        ```
+        
+        #### Features
+        +   `{}` replaced with repo name
+        
+        #### CLI
+        ```bash
+        usage: travis-exec args ...
+        ```
+        
+        #### Examples
+        ```bash
+        $ travis-exec travis status -r {}
+        $ travis-exec python -m travis_cron.add {} master daily no
+        $ travis-exec python -m travis_env.set {} WEBHOOK_URL "$WEBHOOK_URL"
+        ```
+        
+        <p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+Keywords: travis
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
