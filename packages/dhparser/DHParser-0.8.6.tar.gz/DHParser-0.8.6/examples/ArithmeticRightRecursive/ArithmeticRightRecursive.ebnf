@@ -1,0 +1,101 @@
+# Arithmetic-grammar
+
+#######################################################################
+#
+#  EBNF-Directives
+#
+#######################################################################
+
+@ whitespace  = vertical           # implicit whitespace, includes any number of line feeds
+@ literalws   = right              # literals have implicit whitespace on the right hand side
+@ comment     = /#.*/              # comments range from a '#'-character to the end of the line
+@ ignorecase  = False              # literals and regular expressions are case-sensitive
+@ drop        = whitespace, token  # drop anonymous whitespace
+
+
+#######################################################################
+#
+#: Expressions
+#
+#######################################################################
+
+expression  = add | sub | term
+add         = term "+" expression
+sub         = term "-" expression
+
+
+#######################################################################
+#
+#: Terms
+#
+#######################################################################
+
+term        = mul | div | factor
+mul         = factor "*" term
+div         = factor "/" term
+
+
+#######################################################################
+#
+#: Factors
+#
+#######################################################################
+
+factor      = [sign] ([element] tail | element) ~
+tail        = (seq | tail_elem) [i]
+seq         = tail_elem tail
+sign        = PLUS | MINUS
+
+
+#######################################################################
+#
+#: Elements
+#
+#######################################################################
+
+element     = pow | value
+pow         = value `^` [sign] element
+value       = (number | tail_value) [i]
+
+tail_elem   = tail_pow | tail_value
+tail_pow    = tail_value [i] `^` element
+tail_value  = special | function | VARIABLE | group
+group       = `(` §expression `)`
+
+
+#######################################################################
+#
+#: Functions
+#
+#######################################################################
+
+function    = sin | cos | tan | log
+sin         = 'sin(' §expression `)`
+cos         = 'cos(' §expression `)`
+tan         = 'tan(' §expression `)`
+log         = 'log(' §expression `)`
+
+
+#######################################################################
+#
+#: Numbers
+#
+#######################################################################
+
+number      = NUMBER
+special     = (pi | e)
+pi          = `pi` | `π`
+e           = `e`
+i           = `i`           # imaginary number unit
+
+
+#######################################################################
+#
+#: Tokens
+#
+#######################################################################
+
+PLUS        = /\+/
+MINUS       = /-/
+NUMBER      = /(?:0|(?:[1-9]\d*))(?:\.\d+)?/
+VARIABLE    = /[a-dj-z]/
