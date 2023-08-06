@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pyphilote
+Version: 0.1.0
+Summary: A Python client for the Philote pubsub server
+Home-page: https://github.com/taibende/pyphilote
+Author: Simon Liu
+Author-email: taibende@126.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

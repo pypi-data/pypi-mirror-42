@@ -1,0 +1,9 @@
+README.rst
+setup.py
+pyphilote/__init__.py
+pyphilote/network.py
+pyphilote.egg-info/PKG-INFO
+pyphilote.egg-info/SOURCES.txt
+pyphilote.egg-info/dependency_links.txt
+pyphilote.egg-info/requires.txt
+pyphilote.egg-info/top_level.txt
