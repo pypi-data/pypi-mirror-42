@@ -1,0 +1,14 @@
+pysemigroup/__init__.py,sha256=roEYoJijgfxcAfk37ZAs0roeeZGDr0FWNG-lEparVx8,237
+pysemigroup/automata.py,sha256=PO2X_Bob2QPI3WpZrdZ0CQWLH4wE4yXtVMT3izkbYOQ,35271
+pysemigroup/generate.py,sha256=sWE4JLUEj5Sy4EkeFLNMb0tBd5MfNw38Ushsn0mshQA,492
+pysemigroup/logic.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pysemigroup/regular_language.py,sha256=idq8p0Wz33X1kot9M7gTiAJWr9ske89nuzaRadhpAW0,16733
+pysemigroup/ring.py,sha256=tdziSccoiFF2L1TMuCi1I4lLn10YuaTMsFMli1Zslek,2594
+pysemigroup/transition_semigroup.py,sha256=DfZj3vST_ehw8TpUKx_Iof9FFw5NUzNsf09tbGAQY2Q,38588
+pysemigroup/utils.py,sha256=QW_wcfWg_qgONjn5i6dEufGzpXzxg2eA_Q4UrF3Tt6Q,2230
+pysemigroup-0.3a2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pysemigroup-0.3a2.dist-info/METADATA,sha256=4LEexZtPHhk6R1r4sUVqUVOZ5CEtVEsA35oFhC8ECi4,404
+pysemigroup-0.3a2.dist-info/RECORD,,
+pysemigroup-0.3a2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+pysemigroup-0.3a2.dist-info/metadata.json,sha256=MjBS_Tgy5lzQd3spOo4rnCHPj2dTWQTwhipQ5dJwWjg,626
+pysemigroup-0.3a2.dist-info/top_level.txt,sha256=f6SZRsJbNnnqxHSe3gYcAOC8Evv_m_BF9TQ6p365eV4,12
