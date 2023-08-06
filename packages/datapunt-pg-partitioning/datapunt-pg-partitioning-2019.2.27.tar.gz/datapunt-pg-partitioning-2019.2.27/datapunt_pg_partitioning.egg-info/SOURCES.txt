@@ -1,0 +1,10 @@
+README.md
+setup.py
+datapunt_pg_partitioning.egg-info/PKG-INFO
+datapunt_pg_partitioning.egg-info/SOURCES.txt
+datapunt_pg_partitioning.egg-info/dependency_links.txt
+datapunt_pg_partitioning.egg-info/requires.txt
+datapunt_pg_partitioning.egg-info/top_level.txt
+src/date_partition_util.py
+src/pg_connection.py
+src/pg_partition.py
