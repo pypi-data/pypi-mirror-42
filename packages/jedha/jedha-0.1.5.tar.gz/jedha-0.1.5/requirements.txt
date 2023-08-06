@@ -1,0 +1,4 @@
+setuptools
+sphinx
+twine
+pylint
