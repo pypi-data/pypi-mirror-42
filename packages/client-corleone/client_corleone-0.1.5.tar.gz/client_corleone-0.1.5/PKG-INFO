@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: client_corleone
+Version: 0.1.5
+Summary: A python experimental client for Telegram bot API you can't refuse
+Home-page: https://github.com/sieira/client_corleone
+Author: Luis Sieira
+Author-email: luis.sieira@spacebar.fr
+License: BSD
+Description: # Client Corleone
+        
+        This is a python experimental client for Telegram bot API.
+        
+        DO NOT USE THIS CLIENT, AS IT IS UNTESTED, UNSAFE, AND BLATANTLY UNCOOL
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
