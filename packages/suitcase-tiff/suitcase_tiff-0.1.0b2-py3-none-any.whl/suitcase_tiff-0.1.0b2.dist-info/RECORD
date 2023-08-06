@@ -1,0 +1,10 @@
+suitcase/tiff/__init__.py,sha256=Nq83kEdBMohQMggLWX5r0BG6TLo8idFip5m83cwGEyE,12257
+suitcase/tiff/_version.py,sha256=U84fljkm-G5STucrfx4D_Xrqp6_UT7UM4Cm4V3Os2o8,499
+suitcase/tiff/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+suitcase/tiff/tests/conftest.py,sha256=zUIKZsfJBZDpM40_HHp0IhYh12MJO_Eoe72CZV03HPE,213
+suitcase/tiff/tests/tests.py,sha256=LRN-80LsQ-zq5Y-8903k7UYxb3Zvatjr0_DIFrmRlt8,2718
+suitcase_tiff-0.1.0b2.dist-info/METADATA,sha256=h-MqZTHYymk7RTS3uo8hZnJv8RlQZcJ9AmLZb1UD0fs,547
+suitcase_tiff-0.1.0b2.dist-info/RECORD,,
+suitcase_tiff-0.1.0b2.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+suitcase_tiff-0.1.0b2.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+suitcase_tiff-0.1.0b2.dist-info/top_level.txt,sha256=sXSuqavclz0Rr3FReaX4wdgvAx61STPGF4A1lpA8_m8,9
