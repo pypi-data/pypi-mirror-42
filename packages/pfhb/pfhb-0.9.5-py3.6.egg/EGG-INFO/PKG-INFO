@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pfhb
+Version: 0.9.5
+Summary: Python package to dig hosts and generate PF (Packet Filter) rules
+Home-page: https://github.com/ricardofalasca/packet-filter-host-blocker/
+Author: Ricardo Falasca
+Author-email: ricardo@falasca.com.br
+License: MIT
+Description: # packet-filter-host-blocker
+        
+        
+        A small Python package (class and cli) that digs into domains to find its related IPs and (if enabled) IP classes from the same ASN Origin due to generate PF (Packet Filter) tables and rules to block access into those services.
+        
+        
+        ## Requirements
+        
+        * user privileges to install `pfhb`, read `pf.conf`, write in `/etc/pfhb` and to run `pfctl`
+        * packet filter enabled (OpenBSD, FreeBSD, NetBSD or macOS)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
