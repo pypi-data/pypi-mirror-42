@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "==3.7.6"
+mock = "==1.0.1"
+codecov = "==2.0.15"
+pytest = "*"
+pytest-cov = "*"
+twine = "*"
+tox = "*"
+pytest-runner = "*"
+
+[packages]
+colorama = "==0.4.1"
+GitPython = "==2.1.11"
+pandas = "==0.24.1"
+
+[requires]
+python_version = "2.7"
