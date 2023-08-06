@@ -1,0 +1,5 @@
+python-xlib
+pillow-simd
+docopt
+psutil
+attrs
