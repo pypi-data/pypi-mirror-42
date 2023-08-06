@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pomw
+Version: 0.0.10
+Summary: The Pomodoro Technique using TaskWarrior and TimeWarrior
+Home-page: https://tjaart.gitlab.io/pomw
+Author: Tjaart van der Walt
+Author-email: tjaart@tjaart.org
+Keywords: pomodoro,timewarrior,taskwarrior
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: python-dateutil (>=2.7,<3.0)
+Requires-Dist: semver (>=2.8,<3.0)
+Requires-Dist: taskw (>=1.2,<2.0)
+Requires-Dist: timew (>=0.0.18,<0.0.19)
+Requires-Dist: unijson (>=1.0,<2.0)
+Requires-Dist: urwid (>=2.0,<3.0)
+Project-URL: Documentation, https://tjaart.gitlab.io/pomw/docs
+Project-URL: Repository, https://gitlab.com/tjaart/pomw
