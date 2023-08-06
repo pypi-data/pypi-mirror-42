@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: myconf
+Version: 1.0.1
+Summary: load json or yaml files as python dict, auto refresh when file changing
+Home-page: https://github.com/thuhak/myconf
+Author: thuhak
+Author-email: thuhak.zhou@nio.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: config file loader
+Platform: UNKNOWN
