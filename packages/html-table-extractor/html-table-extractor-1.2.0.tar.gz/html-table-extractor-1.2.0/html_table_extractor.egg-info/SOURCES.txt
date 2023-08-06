@@ -1,0 +1,8 @@
+setup.py
+html_table_extractor/__init__.py
+html_table_extractor/extractor.py
+html_table_extractor.egg-info/PKG-INFO
+html_table_extractor.egg-info/SOURCES.txt
+html_table_extractor.egg-info/dependency_links.txt
+html_table_extractor.egg-info/requires.txt
+html_table_extractor.egg-info/top_level.txt
