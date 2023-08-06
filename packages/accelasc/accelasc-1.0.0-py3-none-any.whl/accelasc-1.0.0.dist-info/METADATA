@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: accelasc
+Version: 1.0.0
+Summary: implementation of accel_asc algorithm for integer partitions
+Home-page: https://github.com/anthony-aylward/accelasc.git
+Author: Anthony Aylward
+Author-email: aaylward@eng.ucsd.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# accelasc
+
+Implementation of the `accel_asc` algorithm for integer partitions. See
+[this stackoverflow post](https://stackoverflow.com/questions/10035752/elegant-python-code-for-integer-partitioning)
+and [Jerome Kelleher's website](http://jeromekelleher.net/category/combinatorics.html).
+
+
