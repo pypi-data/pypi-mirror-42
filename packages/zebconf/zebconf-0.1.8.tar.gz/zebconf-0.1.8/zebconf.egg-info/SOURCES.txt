@@ -1,0 +1,17 @@
+README.md
+setup.py
+zebconf/__init__.py
+zebconf/__main__.py
+zebconf/cli.py
+zebconf/connection.py
+zebconf/device.py
+zebconf/firmware.py
+zebconf/logging.py
+zebconf.egg-info/PKG-INFO
+zebconf.egg-info/SOURCES.txt
+zebconf.egg-info/dependency_links.txt
+zebconf.egg-info/entry_points.txt
+zebconf.egg-info/requires.txt
+zebconf.egg-info/top_level.txt
+zebconf/tests/__init__.py
+zebconf/tests/test01_basic.py
