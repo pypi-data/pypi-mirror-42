@@ -1,0 +1,14 @@
+django_dowser/__init__.py,sha256=eHeex1oD2Odgm87csHKZxHT6deZqqvaGYKRbkHiL06w,2447
+django_dowser/reftree.py,sha256=Km0maggmGNnHmxOXQsNx__PiM2tnyE1KThCNio0KVTI,5845
+django_dowser/urls.py,sha256=wFf5MajEKlpUOYERDfShEF0LZ9C0o2sIVL29Iixa_4I,474
+django_dowser/views.py,sha256=-ytmvCqWz4DvKeUwUhYQ1g3l0xhTVHGse03_moGexyI,8780
+django_dowser/templates/django_dowser/base.html,sha256=fOg8oao5d6F5kxz9N-zDvmCs4542zqBQj32uxMm6jno,470
+django_dowser/templates/django_dowser/graphs.html,sha256=Xv2RkwFtTM55ZkKv3xQ4sbVfEaLtO-RKcdccgz7CFvE,278
+django_dowser/templates/django_dowser/main.css,sha256=7t81N6WU5kYFhbGunSHJeXEhlzLyg-OYznzK-wOoLk0,1402
+django_dowser/templates/django_dowser/trace.html,sha256=DAQWlNe2rBI-_rKH1GR1el50MvDQrYs_xc1QEiZqFNM,311
+django_dowser/templates/django_dowser/tree.html,sha256=3qruqF7cXZw5u6kxkNjU-1gfjfql4WCszTsD9qRrjbQ,309
+django_dowser-0.1.7.dist-info/LICENSE,sha256=CZ7fRGCQr8_Is_DSU8huE_0JgdIU8eyFBNrPY_Sa8cY,1079
+django_dowser-0.1.7.dist-info/METADATA,sha256=kh-gwwU9jU1aqf6XLr9UbPXd9XCpuqSWH2XL6x2pZDI,4019
+django_dowser-0.1.7.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+django_dowser-0.1.7.dist-info/top_level.txt,sha256=2wXEHQX9mvaFp7Qgu6vYAAOqClEqbyVQjgIfyspGHdw,14
+django_dowser-0.1.7.dist-info/RECORD,,
