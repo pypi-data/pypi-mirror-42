@@ -1,0 +1,5 @@
+numpy
+pyparsing
+
+[test]
+pytest
