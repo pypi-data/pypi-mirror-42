@@ -1,0 +1,70 @@
+Metadata-Version: 1.1
+Name: ocredis
+Version: 0.0.1
+Summary: A wrapper for redis-py, instrumented using OpenCensus for distributed tracing and metrics
+Home-page: https://github.com/opencensus-integrations/ocredispy
+Author: OpenCensus Authors
+Author-email: census-developers@googlegroups.com
+License: Apache-2.0
+Description: ocredis
+        =======
+        
+        Redis-Py wrapper that provides observability using OpenCensus for
+        distributed tracing and metrics.
+        
+        
+        Tests
+        -----
+        Tests can be run by using pytest, for example
+        
+        ```shell
+        pytest
+        ```
+        
+        
+        Metrics available
+        -----------------
+        
+        - calls
+        - latency
+        - key_length
+        - value_length
+        
+        .. csv-table::
+            :header: "Metric", "View Name", "Unit", "Tags"
+            :widths: 20, 20, 20, 20
+        
+            "Latency", "redispy/latency", "ms", "'error', 'method', 'status'"
+            "Calls", "redispy/calls", "1", "'error', 'method', 'status'"
+            "Key lengths", "redispy/key_length", "By", "'error', 'method', 'status'"
+            "Value lengths", "redispy/value_length", "By", "'error', 'method', 'status'"
+        
+        
+        Installing it
+        -------------
+        
+        pip install ocredis
+        
+        
+        Using it
+        --------
+        
+        You can initialize exactly how you would for redis.Redis. In fact it is meant to be a drop replacement with just:
+        
+        - Changing the import statement from "import redis" to "import ocredis"
+        - Changing the client initialization from `client = redis.Redis(host=host, port=port)` to `client = ocredis.OcRedis(host=host, port=port)`
+        
+        and the rest is trivial to use then.
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
