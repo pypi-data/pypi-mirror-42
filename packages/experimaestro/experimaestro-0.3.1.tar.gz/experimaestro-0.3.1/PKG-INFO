@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: experimaestro
+Version: 0.3.1
+Summary: Computer science experiment manager - experimental plans, job scheduling, parameter handling
+Home-page: http://github.com/experimaestro/experimaestro
+Author: Benjamin Piwowarski
+Author-email: benjamin@piwowarski.fr
+License: UNKNOWN
+Description: [![CircleCI](https://circleci.com/gh/experimaestro/experimaestro-python.svg?style=svg)](https://circleci.com/gh/experimaestro/experimaestro-python)
+        [![PyPI version](https://badge.fury.io/py/experimaestro.svg)](https://badge.fury.io/py/experimaestro)
+        
+        Python bindings for experimaestro
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
