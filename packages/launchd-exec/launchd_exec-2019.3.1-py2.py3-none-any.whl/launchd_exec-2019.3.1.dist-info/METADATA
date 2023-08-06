@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: launchd-exec
+Version: 2019.3.1
+Summary: execute script via launchd and log stdout, stderr
+Home-page: https://github.com/looking-for-a-job/launchd-exec
+License: UNKNOWN
+Keywords: launchd exec
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: Unix
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+Requires-Dist: setuptools
+
+#### Install
+```bash
+$ [sudo] pip install launchd-exec
+```
+
+#### CLI
+```bash
+usage: launchd-exec command [args ...]
+```
+
+#### Examples
+```bash
+$ launchd-exec bash -l path/to/script.sh
+```
+
+logs:
+```
+~/Library/Logs/launchd-exec/bash/<datetime>.<pid>/launchd.plist
+~/Library/Logs/launchd-exec/bash/<datetime>.<pid>/out.log
+~/Library/Logs/launchd-exec/bash/<datetime>.<pid>/err.log
+```
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
