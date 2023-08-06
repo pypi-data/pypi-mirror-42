@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: openkiwi
+Version: 0.1.0
+Summary: Machine Translation Quality Estimation Toolkit
+Home-page: https://github.com/Unbabel/OpenKiwi
+Author: AI Research, Unbabel
+Author-email: openkiwi@unbabel.com
+Keywords: OpenKiwi,Quality Estimation,Machine Translation,Unbabel
+Requires-Python: >=3.5,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Provides-Extra: embeddings
+Provides-Extra: mlflow
+Provides-Extra: plots
+Requires-Dist: configargparse (>=0.14.0,<0.15.0)
+Requires-Dist: mlflow (>=0.8,<0.9); extra == "mlflow"
+Requires-Dist: more-itertools (>=5.0,<6.0)
+Requires-Dist: numpy (>=1.16,<2.0)
+Requires-Dist: pathlib2 (>=2.3,<3.0); python_version == "3.5"
+Requires-Dist: polyglot (>=16.7,<17.0); extra == "embeddings"
+Requires-Dist: pyyaml (>=3.13,<4.0)
+Requires-Dist: scipy (>=1.2,<2.0)
+Requires-Dist: seaborn (>=0.9.0,<0.10.0); extra == "plots"
+Requires-Dist: torch (>=0.4.1)
+Requires-Dist: torchtext (>=0.3.1,<0.4.0)
+Requires-Dist: tqdm (>=4.29,<5.0)
+Project-URL: Documentation, https://unbabel.github.io/OpenKiwi/
+Project-URL: Repository, https://github.com/Unbabel/OpenKiwi
