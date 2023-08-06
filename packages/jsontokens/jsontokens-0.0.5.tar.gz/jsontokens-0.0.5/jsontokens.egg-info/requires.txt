@@ -1,0 +1,2 @@
+cryptography>=2.6
+keylib>=0.1.1
