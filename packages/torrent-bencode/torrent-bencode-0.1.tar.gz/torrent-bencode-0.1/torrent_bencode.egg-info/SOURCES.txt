@@ -1,0 +1,7 @@
+README.rst
+setup.py
+bencode/__init__.py
+torrent_bencode.egg-info/PKG-INFO
+torrent_bencode.egg-info/SOURCES.txt
+torrent_bencode.egg-info/dependency_links.txt
+torrent_bencode.egg-info/top_level.txt
