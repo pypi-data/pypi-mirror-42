@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: sanic-healthchecks
+Version: 0.1.0
+Summary: A small wrapper for making it easy to add a healthcheck server to your Sanic application
+Home-page: UNKNOWN
+License: MIT
+Keywords: sanic
+Author: Aaron
+Author-email: AaronBatilo@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: aiohttp (>=3.5,<4.0)
+Description-Content-Type: text/markdown
+
+
