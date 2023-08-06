@@ -1,0 +1,49 @@
+Metadata-Version: 1.1
+Name: djqdqtranslations
+Version: 0.6
+Summary: Python django commands for crowding translations management
+Home-page: https://gitlab.qdqmedia.com/shared-projects/djqdqtranslations.git
+Author: QdqMedia Web Team
+Author-email: equipo_web@qdqmedia.com
+License: MIT License
+Download-URL: https://gitlab.qdqmedia.com/shared-projects/djqdqtranslations/repository/archive.tar.bz2
+Description: Django QDQMedia Translations
+        ====================
+        
+        Installs Django commands to manages translations.
+        
+        Installation
+        ------------
+        
+            pip install --extra-index-url http://pypi.qdqmedia.com:8888/simple djqdqtranslations
+        
+        Configure
+        ---------
+        
+        - Add ``djqdqtranslations`` to the INSTALLED_APPS.
+        - Define the variable THEMES_REPOS in your project settings.
+        
+        
+        Development
+        ---------------
+        
+        Install `requirements-dev.txt` into a virtualenv.
+        
+        Using _virtualenvwrapper_:
+        
+            mkvirtualenv djqdqtranslations
+            workon djqdqtranslations
+            pip install -r requirements-dev.txt
+        
+        
+        Run tests:
+        
+            python -m djqdqtranslations.tests
+        
+Keywords: qdqmedia,translation,django
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python

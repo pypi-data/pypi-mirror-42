@@ -1,0 +1,4 @@
+Django>=1.5,<=1.9.13
+crowdin-cli-py==0.95.1
+polib==1.0.4
+Unipath==1.1
