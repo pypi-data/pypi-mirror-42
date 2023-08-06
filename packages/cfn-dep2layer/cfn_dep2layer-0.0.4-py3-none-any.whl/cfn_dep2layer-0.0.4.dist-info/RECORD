@@ -1,0 +1,11 @@
+cfn_dep2layer-0.0.4.data/scripts/dep2layer,sha256=BuaBbELXjDRnY7p0jfWzMRo9Kv7-BpAT_oHeSB6JP7k,1453
+dep2layer/__init__.py,sha256=ouQ856vOE_AjcAxqQZ53ECyRL8kxbWQQnyjXLCbB86Q,28
+dep2layer/downloaders.py,sha256=yUIkzXVXjYih4Y8gpRnA7LN8kqo-UQh0Fgn6zSJ_t9M,1341
+dep2layer/main.py,sha256=igS4zIlCF3fvpCRLZuaJrXDMUPFSHuk8HTZelMfoGh4,3537
+dep2layerlib/__init__.py,sha256=ouQ856vOE_AjcAxqQZ53ECyRL8kxbWQQnyjXLCbB86Q,28
+dep2layerlib/downloaders.py,sha256=yUIkzXVXjYih4Y8gpRnA7LN8kqo-UQh0Fgn6zSJ_t9M,1341
+dep2layerlib/main.py,sha256=igS4zIlCF3fvpCRLZuaJrXDMUPFSHuk8HTZelMfoGh4,3537
+cfn_dep2layer-0.0.4.dist-info/METADATA,sha256=M5BdQBNppoWaW79HaYkijH4atJQKx1HXZcC3rACh8Bg,431
+cfn_dep2layer-0.0.4.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+cfn_dep2layer-0.0.4.dist-info/top_level.txt,sha256=lmeCSMe2Pk2sx8hHNr0MKMkv72yJ9F_h-tJYN6vxyHo,13
+cfn_dep2layer-0.0.4.dist-info/RECORD,,
