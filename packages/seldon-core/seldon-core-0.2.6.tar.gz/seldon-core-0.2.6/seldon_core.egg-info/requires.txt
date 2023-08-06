@@ -1,0 +1,15 @@
+flask
+flask-cors
+redis
+tornado<5,>=4.3
+requests
+numpy
+flatbuffers
+protobuf
+grpcio
+tensorflow
+Flask-OpenTracing==0.2.0
+opentracing<2,>=1.2.2
+jaeger-client
+grpcio-opentracing
+pyyaml
