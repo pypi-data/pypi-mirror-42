@@ -1,0 +1,14 @@
+dpcontracts
+requests
+
+[dev]
+pre-commit
+wheel
+twine
+
+[test]
+pytest
+pytest-cov
+pytest-sugar
+pytest-icdiff
+hypothesis
