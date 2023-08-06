@@ -1,0 +1,3 @@
+[console_scripts]
+ecs-metrics = ECSMetrics.__main__:main
+

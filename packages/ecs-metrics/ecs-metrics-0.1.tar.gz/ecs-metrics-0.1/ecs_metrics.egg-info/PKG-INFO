@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ecs-metrics
+Version: 0.1
+Summary: Gives detailed overview of user activities
+Home-page: UNKNOWN
+Author: Kanishk Saxena
+Author-email: kanishk.saxena@cred.club
+License: MIT
+Description: UNKNOWN
+Keywords: ECS,Logs,CloudWatch
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
