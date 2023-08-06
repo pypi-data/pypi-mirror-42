@@ -1,0 +1,4 @@
+[console_scripts]
+burnlight = burnlight.client.client:cli
+burnlightd = burnlight.server.server:main
+
