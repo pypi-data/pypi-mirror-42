@@ -1,0 +1,14 @@
+epigeec_ihecmetadata/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+epigeec_ihecmetadata/ihecmetadata.py,sha256=A5LJEEpeBzu8Ur3Ewb9z3mJMHElJI8P_36JeSeY051s,891
+epigeec_ihecmetadata/converter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+epigeec_ihecmetadata/converter/legacyconverter.py,sha256=DpoOFvLvTFPakb6yk7LM3Emw7_Q4Rg6UoeMuShDTrXY,88
+epigeec_ihecmetadata/filter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+epigeec_ihecmetadata/filter/browserfilter.py,sha256=3uV9sQSjqEUfqRju2Hjg_eCDs12N2UhZbhrgGBIlA74,1382
+epigeec_ihecmetadata/ihecjson/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+epigeec_ihecmetadata/ihecjson/decoder.py,sha256=z_a9Cl9-Xm-08MTPSuonb-dMQw5Z-s9puOI3yxatszI,762
+epigeec_ihecmetadata/ihecjson/encoder.py,sha256=cVLo_YyQt4MEbKsR_qkt_EBaN4pt41nVaRqJ5F-WIqk,1176
+epigeec_ihecmetadata-0.1.0.dist-info/LICENSE,sha256=J2C9whLPpHEMh3XAc4htuSTWATuqQeHyfk7ti6jxkxI,11065
+epigeec_ihecmetadata-0.1.0.dist-info/METADATA,sha256=4wtNULxHhJyqLd0d1V_vl_xG4MBEHXCqcQrBjH92EoQ,837
+epigeec_ihecmetadata-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+epigeec_ihecmetadata-0.1.0.dist-info/top_level.txt,sha256=5Sw8V1Zv3T3dmIyBpPaxa5dlvVwIfk28LNtLUuJtkyc,21
+epigeec_ihecmetadata-0.1.0.dist-info/RECORD,,
