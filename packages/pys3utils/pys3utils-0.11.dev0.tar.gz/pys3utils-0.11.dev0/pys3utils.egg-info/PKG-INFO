@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pys3utils
+Version: 0.11.dev0
+Summary: Python utilities for aws s3
+Home-page: https://github.com/rspeare/pys3utils
+Author: Rob Speare
+Author-email: robert.speare@gmail.com
+License: MIT
+Description: # pys3utils
+        
+        (Python s3 scripts and utilities). This library is intended to 
+        help push/pull resources from s3.
+        
+        ## Usage
+        
+        To recursively sync a directory to s3 -- only syncing those files 
+        have been recently updated -- write:
+        
+        ```bash
+        python push_project_to_s3.py MY_DIRECTORY MY_BUCKET
+        ``` 
+        
+        This will walk through all files listed 
+        
+        
+        ## Compiling the package for PyPI
+        
+        ```python
+        python setup.py sdist
+        twine upload dist/*
+        ```
+Keywords: python aws s3
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
