@@ -1,0 +1,6 @@
+dramatiq_pg/__init__.py,sha256=KHGE2wSIeBG9sRoTbQhJqmlkWH3YvDkMxN2LDgtWjaA,72
+dramatiq_pg/broker.py,sha256=39ZTsrequlom2xBFrfBt7eOquvNlq2lq5ET_g_7WrKU,5246
+dramatiq_pg/schema.sql,sha256=-y4OMs-8-JxlzVKKj_U6MeZZpbGJcR3E4VqL0t96GNE,437
+dramatiq_pg-0.2.0.dist-info/WHEEL,sha256=OyjuYVC9vVJqb-Aqln3fyrroYJ4WrcSwx2msO2AokVc,85
+dramatiq_pg-0.2.0.dist-info/METADATA,sha256=_YV55a3nDGZR2NiDRPKAdr_nVUMPv5qD7Qhz4AUOIt4,1914
+dramatiq_pg-0.2.0.dist-info/RECORD,,
