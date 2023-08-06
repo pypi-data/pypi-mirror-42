@@ -1,0 +1,58 @@
+# r2c-cli
+
+This is the CLI for interacting with the R2C platform. More documentation on the way!
+
+## Installation (wip)
+
+### Prerequisites
+
+- [Install Docker](https://docs.docker.com/install/) for your platform
+- Python 3.7 and up
+
+### Setup
+
+- Download the `r2c-lib` and `r2c-cli` `.whl` files.
+- Install the wheel files using `pip3` (change the filenames to match):
+
+  ```
+  pip3 install r2c_lib.whl r2c_cli.whl
+  ```
+
+  Since the wheels aren't publicly available on PyPI yet, you must provide both wheels to `pip3`, or else it won't be able to resolve dependencies properly.
+
+- Run `r2c` to check that the CLI was installed properly. You should see usage info.
+
+## Usage
+
+```
+r2c <command> [options]
+```
+
+You can also run `r2c -h` or just `r2c` to see usage information.
+
+For help with a command in particular, you can run `r2c <command> -h` and see help specifically for that command.
+
+Many commands require that you run them in an analyzer directory (i.e. a directory containing an `analyzer.json` and associated files).
+
+## Testing
+
+Integration tests could be defined in the `src/examples` directory.
+Integration test on a github REPO@COMMIT could be defined as
+
+```
+{
+"target": "{REPO}",
+"target_hash": "{COMMIT}",
+"expected": []
+}
+```
+
+## Troubleshooting
+
+- If you run into issues and need to reinstall the CLI, you can run:
+
+  ```
+  pip3 install --upgrade --force-reinstall r2c_lib.whl r2c_cli.whl
+  ```
+
+- If you receive a message stating that the .whl "is not supported wheel on this platform", make sure that the filename hasn't been altered. PIP determines platform compatibility based on the filename, so if you downloaded it twice and your browser added a "(1)" it will think it doesn't work on your platform.
