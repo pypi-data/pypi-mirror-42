@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: brent
+Version: 0.2.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Description: # brent 
+        
+        > They're good DAGs brent. 
+        
+        ## What it is
+        
+        Suppose we have a graph like below. 
+        
+        ![](images/dag1.png)
+        
+        Calculating the marginal probability is defined via; 
+        
+        ```math
+        p(A, B, C, D, E, F, G) = p(A|E) p(B|A) p(C|A,B) p(D|A,B,E) p(E) p(F|C,G) p(G)
+        ```
+        
+        Brent is a small, but fun, tool that makes it easy to explore causal graphical modelling and do-calculus. 
+        
+        ## inference plots 
+        
+        ![](images/dag2.svg)
+        
+        
+        ## planned usage 
+        
+        ```python
+        from brent import DAG, Query
+        dag = Graph(data=df)
+        
+        dag.add_edge("smoking", "tar")
+        dag.add_edge("tar", "cancer")
+        dag.add_edge("smoking", "cancer")
+        ```
+        
+        ## project structure 
+        
+        ```
+        │
+        ├── data/               <- The original, immutable data dump. 
+        ├── notebooks/          <- Jupyter notebooks. Naming convention is a short `-` delimited 
+        │                          description, a number (for ordering), and the creator's initials,
+        │                          e.g. `initial-data-exploration-01-hg`.
+        ├── tests/              <- Unit tests.
+        ├── dagger/             <- Python module with source code of this project.
+        ├── Makefile            <- Makefile with commands like `make environment`
+        └── README.md           <- The top-level README for developers using this project.
+        ```
+        
+        ## installation 
+        
+        Install `brent` in the virtual environment via:
+        
+        ```bash
+        $ pip install --editable .
+        ```
+        
+        You can generate documentation locally by running: 
+        
+        ```bash
+        $ pdoc --html --overwrite --template-dir doc/pdoc_template --http 0.0.0.0:12345 dagger
+        ```
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Provides-Extra: dev
