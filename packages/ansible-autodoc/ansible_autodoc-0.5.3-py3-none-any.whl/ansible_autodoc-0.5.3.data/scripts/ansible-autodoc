@@ -1,0 +1,8 @@
+#!python
+
+from ansibleautodoc.AutodocCli import AnsibleAutodoc
+
+if __name__ == "__main__":
+   doc = AnsibleAutodoc()
+
+
