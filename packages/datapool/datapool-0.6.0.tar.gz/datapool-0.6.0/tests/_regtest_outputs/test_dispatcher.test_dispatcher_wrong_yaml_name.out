@@ -1,0 +1,6 @@
+INFO     eawag.datapool  connected to db sqlite+pysqlite:///<tmpdir_from_fixture>/datapool.db
+INFO     eawag.datapool  dispatch: data/invalid_name.yaml
+INFO     eawag.datapool  message: timing: data/invalid_name.yaml creation to fs event handling: <TIME> msec
+INFO     eawag.datapool  message: timing: data/invalid_name.yaml creation to dispatch: <TIME> msec
+INFO     eawag.datapool  message: don't know how to handle data/invalid_name.yaml
+INFO     eawag.datapool  message: timing: data/invalid_name.yaml creation to end of processing: <TIME> msec

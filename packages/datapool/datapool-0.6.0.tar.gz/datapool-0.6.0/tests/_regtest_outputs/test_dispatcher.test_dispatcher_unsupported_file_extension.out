@@ -1,0 +1,6 @@
+INFO     eawag.datapool  connected to db sqlite+pysqlite:///<tmpdir_from_fixture>/datapool.db
+INFO     eawag.datapool  dispatch: new_file.txt
+INFO     eawag.datapool  message: timing: new_file.txt creation to fs event handling: <TIME> msec
+INFO     eawag.datapool  message: timing: new_file.txt creation to dispatch: <TIME> msec
+INFO     eawag.datapool  message: ignore file new_file.txt
+INFO     eawag.datapool  message: timing: new_file.txt creation to end of processing: <TIME> msec

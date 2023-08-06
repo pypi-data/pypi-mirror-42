@@ -1,0 +1,8 @@
+# dont forget to update setup.py
+pytest
+pytest-regtest
+coverage
+flake8
+tox
+alembic
+requests

@@ -1,0 +1,8 @@
+INFO     eawag.datapool  connected to db sqlite+pysqlite:///<tmpdir_from_fixture>/datapool.db
+INFO     eawag.datapool  dispatch: data/parameters.yaml
+INFO     eawag.datapool  message: timing: data/parameters.yaml creation to fs event handling: <TIME> msec
+INFO     eawag.datapool  message: timing: data/parameters.yaml creation to dispatch: <TIME> msec
+INFO     eawag.datapool  load <tmpdir_from_fixture>/landing_zone/data/parameters.yaml
+WARNING  eawag.datapool  file <tmpdir_from_fixture>/landing_zone/data/parameters.yaml is empty
+INFO     eawag.datapool  message: when parsing data/parameters.yaml: file <tmpdir_from_fixture>/landing_zone/data/parameters.yaml is empty
+INFO     eawag.datapool  message: timing: data/parameters.yaml creation to end of processing: <TIME> msec
