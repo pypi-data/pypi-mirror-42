@@ -1,0 +1,9 @@
+README.md
+setup.py
+rtoolz/__init__.py
+rtoolz/parallelize.py
+rtoolz.egg-info/PKG-INFO
+rtoolz.egg-info/SOURCES.txt
+rtoolz.egg-info/dependency_links.txt
+rtoolz.egg-info/not-zip-safe
+rtoolz.egg-info/top_level.txt
