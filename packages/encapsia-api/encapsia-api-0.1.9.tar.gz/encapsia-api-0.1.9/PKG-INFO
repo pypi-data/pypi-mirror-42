@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: encapsia-api
+Version: 0.1.9
+Summary: Client API for talking to an Encapsia system.
+Home-page: https://github.com/tcorbettclark/encapsia-api
+Author: Timothy Corbett-Clark
+Author-email: timothy.corbettclark@gmail.com
+Keywords: encapsia,eSource,EDC,Clinical Trials
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: requests[security] (>=2.20,<3.0)
+Requires-Dist: toml (>=0.10.0,<0.11.0)
