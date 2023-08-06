@@ -1,0 +1,15 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+GrilloModem.egg-info/PKG-INFO
+GrilloModem.egg-info/SOURCES.txt
+GrilloModem.egg-info/dependency_links.txt
+GrilloModem.egg-info/entry_points.txt
+GrilloModem.egg-info/requires.txt
+GrilloModem.egg-info/top_level.txt
+grillo/__init__.py
+grillo/cli.py
+grillo/config.py
+grillo/grillo.py
+grillo/modem.py
