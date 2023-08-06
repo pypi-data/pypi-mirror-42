@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mstr-rest-requests
+Version: 0.0.1
+Summary: A custom subclass of sessions Session object for interacting with the MicroStrategy REST API
+Home-page: UNKNOWN
+Author: Paul Bailey
+Author-email: bailey@dreamshake.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
