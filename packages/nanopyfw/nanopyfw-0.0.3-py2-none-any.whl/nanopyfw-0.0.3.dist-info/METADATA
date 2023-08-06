@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: nanopyfw
+Version: 0.0.3
+Summary: HEP Analysis on flat TTrees, like CMS NanoAOD
+Home-page: https://github.com/AndreasAlbert/nanopyfw.git
+Author: Andreas Albert
+Author-email: andreas.albert@cern.ch
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: root-numpy
+Requires-Dist: numba
+Requires-Dist: uproot
+
+UNKNOWN
+
+
