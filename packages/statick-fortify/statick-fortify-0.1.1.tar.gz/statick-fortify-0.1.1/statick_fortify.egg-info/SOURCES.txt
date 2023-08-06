@@ -1,0 +1,11 @@
+README.md
+setup.py
+./rsc/plugin_mapping/fortify.txt
+fortify_plugin/__init__.py
+fortify_plugin/fortify_tool_plugin.py
+fortify_plugin/fortify_tool_plugin.yapsy-plugin
+statick_fortify.egg-info/PKG-INFO
+statick_fortify.egg-info/SOURCES.txt
+statick_fortify.egg-info/dependency_links.txt
+statick_fortify.egg-info/requires.txt
+statick_fortify.egg-info/top_level.txt
