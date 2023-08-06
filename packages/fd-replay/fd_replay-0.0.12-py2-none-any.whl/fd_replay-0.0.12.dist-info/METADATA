@@ -1,0 +1,38 @@
+Metadata-Version: 2.0
+Name: fd-replay
+Version: 0.0.12
+Summary: fd-replay
+Home-page: https://github.com/decryptus/fd-replay
+Author: Adrien Delle Cave
+Author-email: pypi@doowan.net
+License: License GPL-2
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Requires-Dist: dwho (>=0.2.87)
+Requires-Dist: httpdis (>=0.5.6)
+Requires-Dist: pycurl
+Requires-Dist: pyyaml (>=3.10)
+Requires-Dist: sonicprobe (>=0.2.59)
+Requires-Dist: requests (>=2.0)
+
+# fd-replay project
+
+fd-replay is an open-source daemon for replaying live HTTP traffic into multiple test environments.
+
+## Getting started
+For example, if you use nginx in our production environment, you can add mirror (http://nginx.org/en/docs/http/ngx_http_mirror_module.html) or post_action directive to forward traffic to fd-replay.
+Edit fd-replay.yml file to declare your differents endpoints.
+
+## Installation
+
+pip install fd-replay
+
+### Running daemon
+
+`fd-replay -c <conffile> -p <pidfile> --logfile <logfile>`
+
+### Running foreground
+
+`fd-replay -f -c <conffile> -p <pidfile> --logfile <logfile>`
+
+
