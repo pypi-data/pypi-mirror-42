@@ -1,0 +1,8 @@
+flask_ipban/__init__.py,sha256=s4Y2kmPzubHsotHCYR8o6-nmH_PNaLi1huKGNeCSCqw,662
+flask_ipban/ip_ban.py,sha256=vjkBEKBfYye5Deqi8blt8q6IDBhBevCZieR_RUmV10c,10663
+flask_ipban/test.py,sha256=jaNUMl-_cldN-3ArbpBPm7cP76ixq5ie9SFFLlurf_s,7865
+flask_ipban-0.1.6.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+flask_ipban-0.1.6.dist-info/METADATA,sha256=AD85Wk-ZN2m7IBFWER3pWONlibwWege3I39kcgmvkDo,4249
+flask_ipban-0.1.6.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+flask_ipban-0.1.6.dist-info/top_level.txt,sha256=9u915YwQ6azL00M-wX4E84_jejNN8ooqgSPjHeoAuoM,12
+flask_ipban-0.1.6.dist-info/RECORD,,
