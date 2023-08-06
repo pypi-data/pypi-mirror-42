@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: kipoi-interpret
+Version: 0.1.2
+Summary: Kipoi interpret: interepretation plugin for Kipoi
+Home-page: https://github.com/kipoi/kipoi-interpret
+Author: Kipoi team
+Author-email: avsec@in.tum.de
+License: MIT license
+Keywords: model zoo,deep learning,computational biology,bioinformatics,genomics
+Platform: UNKNOWN
+Requires-Dist: kipoi (>=0.6.7)
+Requires-Dist: kipoi-utils (>=0.1.1)
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: h5py
+Requires-Dist: deeplift
+Provides-Extra: develop
+Requires-Dist: bumpversion ; extra == 'develop'
+Requires-Dist: wheel ; extra == 'develop'
+Requires-Dist: jedi ; extra == 'develop'
+Requires-Dist: epc ; extra == 'develop'
+Requires-Dist: pytest (>=3.3.1) ; extra == 'develop'
+Requires-Dist: pytest-xdist ; extra == 'develop'
+Requires-Dist: pytest-pep8 ; extra == 'develop'
+Requires-Dist: pytest-cov ; extra == 'develop'
+Requires-Dist: coveralls ; extra == 'develop'
+Requires-Dist: scikit-learn ; extra == 'develop'
+Requires-Dist: cython ; extra == 'develop'
+Requires-Dist: keras ; extra == 'develop'
+Requires-Dist: tensorflow ; extra == 'develop'
+Requires-Dist: deeplift ; extra == 'develop'
+
+Kipoi interpret: interepretation plugin for Kipoi
+
+
