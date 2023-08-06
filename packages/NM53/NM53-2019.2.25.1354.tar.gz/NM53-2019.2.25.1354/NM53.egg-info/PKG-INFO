@@ -1,0 +1,35 @@
+Metadata-Version: 1.0
+Name: NM53
+Version: 2019.2.25.1354
+Summary: create and update backups of GitHub repositories of a user
+Home-page: https://github.com/wdbm/NM53
+Author: Will Breaden Madden
+Author-email: wbm@protonmail.ch
+License: GPLv3
+Description: NM53
+        ====
+        
+        create and update backups of GitHub repositories of a user
+        
+        This program by default only lists commands, but can execute them. See
+        ``--help`` for documentation on this.
+        
+        setup
+        =====
+        
+        .. code:: bash
+        
+            pip install NM53
+        
+        usage
+        =====
+        
+        .. code:: bash
+        
+            NM53 --help
+        
+        .. code:: bash
+        
+            NM53 --user=wdbm
+        
+Platform: UNKNOWN

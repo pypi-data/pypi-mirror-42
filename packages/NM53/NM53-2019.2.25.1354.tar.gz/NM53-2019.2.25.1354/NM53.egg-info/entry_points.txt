@@ -1,0 +1,3 @@
+[console_scripts]
+NM53 = NM53.__init__:main
+
