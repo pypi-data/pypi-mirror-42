@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+bin/
+build/
+dist/
+docs/
+*.autosave
+__pycache__
+.eggs
+vorta.egg-info
+.coverage
+.tox
+.python-version
+.vagrant
+*.log
+htmlcov
+*.qm
