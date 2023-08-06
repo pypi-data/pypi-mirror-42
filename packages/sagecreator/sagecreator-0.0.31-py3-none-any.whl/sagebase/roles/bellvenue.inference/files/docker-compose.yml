@@ -1,0 +1,4 @@
+version: '2.0'
+services:
+  model:
+    image: "inmatevip/inference:v0.1"

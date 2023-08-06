@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: sagecreator
+Version: 0.0.31
+Summary: Package to provision and install architecture in AWS
+Home-page: https://bitbucket.org/r_j7/ansible
+Author: evoneutron
+Author-email: evoneutron@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/x-rst; charset=UTF-8
+Requires-Dist: ansible (==2.7.2)
+Requires-Dist: boto (==2.49.0)
+Requires-Dist: boto3 (==1.9.82)
+Requires-Dist: botocore (==1.12.82)
+Requires-Dist: click (==7.0)
+
+
+sagecreator
+===========
+
+| SageCreator is a package to provision and install cloud architecture in AWS.
+
+
