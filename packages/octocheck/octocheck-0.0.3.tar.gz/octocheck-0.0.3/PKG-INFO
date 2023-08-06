@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: octocheck
+Version: 0.0.3
+Summary: A reporter utility for Github Checks
+Home-page: https://github.com/sigmaris/octocheck
+Author: Hugh Cole-Baker
+Author-email: sigmaris@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7

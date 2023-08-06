@@ -1,0 +1,10 @@
+README.md
+octocheck.py
+setup.cfg
+setup.py
+octocheck.egg-info/PKG-INFO
+octocheck.egg-info/SOURCES.txt
+octocheck.egg-info/dependency_links.txt
+octocheck.egg-info/entry_points.txt
+octocheck.egg-info/requires.txt
+octocheck.egg-info/top_level.txt

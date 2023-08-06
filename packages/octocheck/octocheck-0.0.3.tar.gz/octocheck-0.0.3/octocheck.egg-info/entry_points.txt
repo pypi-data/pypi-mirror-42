@@ -1,0 +1,3 @@
+[console_scripts]
+octocheck = octocheck:cli
+
