@@ -1,0 +1,6 @@
+requests
+future
+
+[dev]
+nose
+robotframework
