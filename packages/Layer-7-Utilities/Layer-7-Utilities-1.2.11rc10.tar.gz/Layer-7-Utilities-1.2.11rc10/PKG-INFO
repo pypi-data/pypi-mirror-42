@@ -1,0 +1,106 @@
+Metadata-Version: 2.1
+Name: Layer-7-Utilities
+Version: 1.2.11rc10
+Summary: This is a set of utilities used by https://Layer7.Solutions for the software tools we create. It includes a logger with default configuration information we setup as well as an oAuth wrapper to be able to pull login information from a custom database.
+Home-page: https://Layer7.Solutions
+Author: Layer 7 Solutions (Mike Wohlrab)
+Author-email: Mike@Layer7.Solutions
+License: MIT
+Description: # What is this?
+        
+        This is a set of utilities used by https://Layer7.Solutions for the software tools we create. It includes a logger with default configuration information we setup as well as an oAuth wrapper to be able to pull login information from a custom database.
+        
+        To create the oAuth database, the following creation SQL can be used:
+        
+        ```sql
+        create table oauth_data
+        (
+          username    text not null
+            constraint oauth_pkey
+              primary key,
+          password    text,
+          app_id      text,
+          app_secret  text,
+          app_refresh text,
+          agent_of    text
+        );
+        ```
+        # How To Build And Install
+        
+        1. Be inside the root of the folder
+        2. Run `python3 setup.py sdist`
+        3. Run `pip install .`
+        
+        ---
+        
+        # How To Use:
+        
+        ### Logger:
+        
+        This creates a custom logger using default file handler, sentry.io integration, and log rotation. A default logspath is set to '/opt/skynet/RedditBots/logs/' however you can override that to your own location.
+        Initialization and configuration.
+        
+        Note, if using the new sentry_sdk then you need to add the following import and line after the variables but before the creation of the logger. The `raven` parameter for `LoggerConfig()` also needs to be set to False.
+        
+        ```Python
+        import sentry_sdk
+        sentry_sdk.init(dsn=__dsn__, release=__version__)
+        ```
+        
+        If you are going to use the legacy Raven then you need to install Raven as a pre-req: `pip install raven`.
+        
+        ```Python
+        import logging.config
+        from layer7_utilities import LoggerConfig
+        
+        __botname__     = 'Short_Name_For_The_Bot'
+        __description__ = 'Description of the bot'
+        __author__      = 'Authors Name/Info'
+        __version__     = '1.2.3'
+        __dsn__         = 'Get from Sentry.io'
+        
+        # Sets up the sentry_sdk integration:
+        import sentry_sdk
+        sentry_sdk.init(dsn=__dsn__, release=__version__)
+        
+        
+        # Create the logger (with Raven (legacy) disabled)
+        logspath = 'Path/To/The/Logs/Folder/'  # With trailing backslash.
+        loggerconfig = LoggerConfig(__dsn__, __botname__, __version__, logspath, raven=False)
+        logging.config.dictConfig(loggerconfig.get_config())
+        logger = logging.getLogger('root')
+        logger.info(u"/*********Starting App*********\\")
+        logger.info(u"App Name: {} | Version: {}".format(__botname__, __version__))
+        ```
+        
+        
+        ### Auth
+        
+        Auth relies on a custom table housing the Reddit application ID, Secret, Username, Password, etc. This is not intended to be setup by anyone else. However if you have access to our database, or are writing a bot that will take advantage, then it can be setup as such.
+        
+        In the Layer 7 environment the Auth Database Table is 'TheTraveler'.
+        
+        ```Python
+        from layer7_utilities import oAuth
+        
+        __botname__     = 'Short_Name_For_The_Bot'
+        __description__ = 'Description of the bot'
+        __author__      = 'Authors Name/Info'
+        __version__     = '1.2.3'
+        __dsn__         = 'Get from Sentry.io'
+        __agent_of__    = 'category value'
+        
+        auth = oAuth()
+        auth.get_accounts(__agent_of__, __description__, __version__, __author__, __botname__, DB_USERNAME, DB_PASSWORD, DB_HOST, DatabaseTableName)
+        
+        for account in auth.accounts:
+            r = account.login()
+            me = r.user.me()
+            print('Started Reddit Instance: u/%s' % me)
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown

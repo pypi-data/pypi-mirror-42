@@ -1,0 +1,4 @@
+recursive-include layer7_utilities/logger logging_config.json
+
+include LICENSE.txt
+include ReadMe.md
