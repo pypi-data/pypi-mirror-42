@@ -1,0 +1,3 @@
+[console_scripts]
+fritz = fritz.__main__:main
+
