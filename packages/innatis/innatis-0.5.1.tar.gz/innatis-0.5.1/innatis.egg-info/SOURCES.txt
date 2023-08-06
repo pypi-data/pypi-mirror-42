@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+innatis/__init__.py
+innatis/test.py
+innatis.egg-info/PKG-INFO
+innatis.egg-info/SOURCES.txt
+innatis.egg-info/dependency_links.txt
+innatis.egg-info/requires.txt
+innatis.egg-info/top_level.txt
+innatis/extractors/__init__.py
+innatis/extractors/composite_data_extractor.py
+innatis/extractors/composite_entity_extractor.py
+innatis/featurizers/__init__.py
+innatis/featurizers/universal_sentence_encoder_featurizer.py
