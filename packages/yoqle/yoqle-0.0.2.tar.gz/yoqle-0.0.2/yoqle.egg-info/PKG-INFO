@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: yoqle
+Version: 0.0.2
+Summary: Command-line development streamlining tool.
+Home-page: https://github.com/CTC97/yoqle
+Author: Connor Curnin
+Author-email: curnin@wisc.edu
+License: UNKNOWN
+Description: Yoqle allows users to streamline the process of creating and using command line scripts.
+        
+        Creator: Connor Curnin
+        
+        Version: 0.1.0
+        
+Platform: UNKNOWN
