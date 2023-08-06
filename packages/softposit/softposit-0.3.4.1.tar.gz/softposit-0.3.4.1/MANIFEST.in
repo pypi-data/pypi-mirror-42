@@ -1,0 +1,2 @@
+include SoftPosit-master/build/Linux-x86_64-GCC/*.h
+include SoftPosit-master/source/include/*.h
