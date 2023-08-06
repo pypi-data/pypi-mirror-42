@@ -1,0 +1,317 @@
+<!DOCTYPE html>  <!-- HTML5 document type -->
+<html>
+<head>
+<style type="text/css">
+html, pre {
+  font-family: 'PingFangSC', 'Microsoft YaHei', 'sans-serif', 'Arial', 'Helvetica', 'Helvetica Neue', 'Hiragina Sans GB';
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    overflow: auto;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+    min-height: 25px;
+    min-width: 25px;
+    border: 1px solid #e0e0e0;
+}
+::-webkit-scrollbar-track {
+    background-color: #f7f7f7;
+    border: 1px solid #efefef;
+}
+</style>
+<script src="/static/gojs.js"></script>
+</head>
+<body>
+<div id="myDiagramDiv" style="width: 100%; height:1080px; background-color: #DAE4E4;"></div>
+<div style="display: none; padding: 15px; position: fixed; top: 0; right: 20px; line-height: 22px; z-index: 99999;" id="info-div">
+    <h4 class="Subhead-heading">Node Info</h4>
+    <pre id="info" style="font-size: 14px;"></pre>
+</div>
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+function syntaxHighlight(json) {
+  if (typeof json != 'string') {
+    json = JSON.stringify(json, undefined, 2);
+  }
+  json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
+  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+
+var InitDiagram = function (divelement) {
+  var GO = go.GraphObject.make;
+
+  var myToolTip = GO(go.HTMLInfo, {
+    show: showToolTip,
+  })
+
+  function mouseEnter(e, obj) {
+    var shape = obj.findObject("SHAPE");
+    if(last_node != obj){
+      shape.fill = "#6DAB80";
+    }
+    last_mover_node = obj;
+  };
+
+  function mouseLeave(e, obj) {
+    hideToolTip();
+    if(last_node == null){
+      var shape = obj.findObject("SHAPE");
+      shape.fill = GO(go.Brush, "Linear", {0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)"});
+    }
+    if (last_mover_node != null && last_mover_node != last_node){
+      var shape = last_mover_node.findObject("SHAPE");
+      shape.fill = GO(go.Brush, "Linear", {0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)"});
+    }
+  };
+
+  function linkmouseEnter(e, obj) {
+    var HIGHLIGHT = obj.findObject("HIGHLIGHT");
+    HIGHLIGHT.stroke = "skyblue";
+    HIGHLIGHT.fill = "skyblue";
+    HIGHLIGHT.strokeWidth = 6;
+  }
+
+  function linkmouseLeave(e, obj) {
+    var HIGHLIGHT = obj.findObject("HIGHLIGHT");
+    HIGHLIGHT.stroke = "gray";
+    HIGHLIGHT.fill = "gray";
+    HIGHLIGHT.strokeWidth = 2;
+
+  }
+
+
+  // Called with a Node (or null) that the mouse is over or near
+  function showToolTip(obj, diagram, tool) {
+    return;
+    // var toolTipDIV = document.getElementById('toolTipDIV');
+    // var pt = diagram.lastInput.viewPoint;
+    // toolTipDIV.style.left = (pt.x + 50) + "px";
+    // toolTipDIV.style.top = (pt.y + 50) + "px";
+    // $('#toolTipParagraph').empty();
+    // $('#toolTipParagraph').html(syntaxHighlight(obj.data.info));
+    // toolTipDIV.style.display = "block";
+  }
+
+  function hideToolTip(diagram, tool) {
+    return;
+    //var toolTipDIV = document.getElementById('toolTipDIV');
+    //toolTipDIV.style.display = "none";
+  }
+  //上一个点击的节点
+  var last_node = null;
+  var last_mover_node = null;
+  var myDiagram =
+    GO(go.Diagram, divelement,
+      {
+        initialAutoScale:go.Diagram.Uniform,
+        "toolManager.mouseWheelBehavior": go.ToolManager.WheelZoom,
+        "undoManager.isEnabled": true,
+        "toolManager.hoverDelay": 0,
+        "toolManager.toolTipDuration": Infinity,
+        layout: GO(go.TreeLayout, {angle: 90, layerSpacing: 40}),
+        isReadOnly: true,
+        /* mouseOver: doMouseOver,  // this event handler is defined below*/
+      }
+    );
+
+  myDiagram.addDiagramListener("ObjectSingleClicked", function(e) {
+    $('#info-div').show();
+    if(last_node != null){
+      var shape = last_node.findObject("SHAPE");
+      //shape.stroke = null;
+      //shape.strokeWidth = null;
+      shape.fill = GO(go.Brush, "Linear", {0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)"});
+    }
+    var info = e.subject.part.Zd.info;
+    $('#info').empty();
+    $('#info').html(syntaxHighlight(info));
+    var shape = e.subject.part.findObject("SHAPE");
+    // shape.stroke = '#007bff';
+    // shape.strokeWidth = 2;
+    shape.fill = "#007bffb8";
+    var info = e.subject.part.Zd.info;
+    last_node = e.subject.part;
+  });
+
+  myDiagram.addDiagramListener("BackgroundSingleClicked", function(e) {
+    $('#info-div').hide();
+    $('#info').empty();
+    if(last_node != null){
+      var shape = last_node.findObject("SHAPE");
+      //shape.stroke = null;
+      //shape.strokeWidth = null;
+      shape.fill = GO(go.Brush, "Linear", {0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)"});
+    }
+    last_node = null;
+  });
+
+  myDiagram.nodeTemplate = GO(go.Node, "Spot",{
+            selectable: false,
+            toolTip: myToolTip,
+            mouseEnter: mouseEnter,
+            mouseLeave: mouseLeave
+        },
+        { locationSpot: go.Spot.Center, locationObjectName: "BODY" },
+        { selectionObjectName: "BODY" },
+    
+        GO(go.Panel, "Auto",
+            { name: "BODY"},
+            { portId: "" },
+            GO(go.Shape, "RoundedRectangle", {
+                parameter1: 20,  // the corner has a large radius
+                fill: GO(go.Brush, "Linear", {0: "rgb(254, 201, 0)", 1: "rgb(254, 162, 0)"}),
+                stroke: null,
+                portId: "",  // this Shape is the Node's port, not the whole Node
+                fromLinkable: true, fromLinkableSelfNode: true, fromLinkableDuplicates: true,
+                toLinkable: true, toLinkableSelfNode: true, toLinkableDuplicates: true,
+                cursor: "pointer",
+                name: "SHAPE"
+            }, 
+            //new go.Binding("fill", "color")
+            ),
+            GO(go.TextBlock, 
+               new go.Binding("text", "name"),
+               new go.Binding("stroke", "color"),
+            )
+        ),
+        GO(go.Panel, "Spot",
+            new go.Binding("opacity", "ribbon", function(t) { return t ? 1 : 0; }),
+            // note that the opacity defaults to zero (not visible),
+            // in case there is no "ribbon" property
+            { opacity: 0,
+            alignment: new go.Spot(1, 0, 15, 0),
+            alignmentFocus: go.Spot.TopRight },
+            GO(go.TextBlock,
+                new go.Binding("text", "ribbon"),
+                { 
+                    alignment: new go.Spot(1, 0, -7, 7),
+                    //angle: 45, 
+                    maxSize: new go.Size(100, NaN),
+                    stroke: "red", 
+                    font: "bold 20px sans-serif", 
+                    textAlign: "center" 
+                },
+               new go.Binding("stroke", "color")
+            )
+        )
+  );
+
+
+  // replace the default Link template in the linkTemplateMap
+  myDiagram.linkTemplate =
+    GO(go.Link,  // the whole link panel
+      {
+        curve: go.Link.JumpOver, adjusting: go.Link.Stretch,
+        reshapable: true, relinkableFrom: true, relinkableTo: true,
+        toShortLength: 3,
+        mouseEnter: linkmouseEnter,
+        mouseLeave: linkmouseLeave,
+        routing: go.Link.AvoidsNodes //链接路由应该避免节点
+      },
+      new go.Binding("points"),
+      new go.Binding("curviness"),
+      GO(go.Shape,  // the link path shape
+        {isPanelMain: true, stroke: "gray", strokeWidth: 2, fill: "gray", name: "HIGHLIGHT"}),
+      GO(go.Shape,  // the arrowhead
+        {toArrow: "standard", stroke: null}),
+      GO(go.Panel, "Auto",
+        GO(go.Shape,  // the label background, which becomes transparent around the edges
+          {
+            fill: GO(go.Brush, "Radial",
+              {0: "rgb(240, 240, 240)", 0.3: "rgb(240, 240, 240)", 1: "rgba(240, 240, 240, 0)"}),
+            stroke: null
+          }
+        ),
+        GO(go.TextBlock, "transition",  // the label text
+          {
+            textAlign: "center",
+            font: "9pt helvetica, arial, sans-serif",
+            margin: 4,
+            editable: true  // enable in-place editing
+          },
+          // editing the text automatically updates the model data
+          new go.Binding("text"))
+      ),
+      {
+        toolTip:   //为每个将颜色显示为文本的链接定义工具提示
+          GO(go.Adornment, "Auto",
+            GO(go.Shape, {fill: "white"}),
+            GO(go.TextBlock, {margin: 4},
+              new go.Binding("text", "text"))
+          )
+      }
+    );
+  return myDiagram;
+}
+
+var diagram =  InitDiagram("myDiagramDiv");
+
+function update_data(data, diagram){
+  var nodeDataArray = [];
+  var linkDataArray = [];
+  var source_node = [];
+  var target_node = [];
+  for (var i = 0; i < data.edges.length; i++) {
+    source_node.push(data.edges[i].source);
+    target_node.push(data.edges[i].target);
+  }
+  var outputs_node = source_node.concat(target_node).filter(v => !source_node.includes(v) || !target_node.includes(v));
+  for (var i = 0; i < data.node.length; i++) {
+    var node = {
+      "id": i,
+      "name": data.node[i].name,
+      "info": JSON.stringify(data.node[i], null, 2),
+      "ribbon": i+1
+    };
+    if(outputs_node.indexOf(data.node[i].name) != -1){
+        node.color = "black";
+    }
+    nodeDataArray.push(node);
+  }
+
+  for (var i = 0; i < data.edges.length; i++) {
+    var edge = {
+      "from": data.edges[i].source,
+      "to": data.edges[i].target,
+      "text": data.edges[i].shape,
+      "curviness": 10
+    }
+    linkDataArray.push(edge);
+  }
+  var modelData = {
+    "nodeKeyProperty": "name",
+    "nodeDataArray": nodeDataArray,
+    "linkDataArray": linkDataArray
+  }
+  diagram.model = go.Model.fromJson(modelData);
+}
+jQuery.getJSON('/sg', function(data){
+  update_data(data, diagram);
+});
+</script>
+</body>
+</head>
+</html>
