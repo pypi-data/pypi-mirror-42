@@ -1,0 +1,8 @@
+README.md
+setup.py
+bai_stats/__init__.py
+bai_stats/goodness_of_fit.py
+bai_stats.egg-info/PKG-INFO
+bai_stats.egg-info/SOURCES.txt
+bai_stats.egg-info/dependency_links.txt
+bai_stats.egg-info/top_level.txt
