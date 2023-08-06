@@ -1,0 +1,3 @@
+[console_scripts]
+codon_harmony = codon_harmony.codon_harmony:main
+
