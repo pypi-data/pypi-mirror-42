@@ -1,0 +1,199 @@
+{
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x715018a6"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x8da5cb5b"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x8f32d59b"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xf2fde38b"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_did",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_checksum",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "_lastUpdatedBy",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_blockNumberUpdated",
+          "type": "uint256"
+        }
+      ],
+      "name": "DIDAttributeRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xc4d66de8"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_did",
+          "type": "bytes32"
+        },
+        {
+          "name": "_checksum",
+          "type": "bytes32"
+        },
+        {
+          "name": "_value",
+          "type": "string"
+        }
+      ],
+      "name": "registerAttribute",
+      "outputs": [
+        {
+          "name": "size",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x33a330bd"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getBlockNumberUpdated",
+      "outputs": [
+        {
+          "name": "updateAt",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xbbc1dede"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_did",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getDIDOwner",
+      "outputs": [
+        {
+          "name": "didOwner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x6c2ef524"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061082c806100206000396000f3fe608060405234801561001057600080fd5b50600436106100a5576000357c0100000000000000000000000000000000000000000000000000000000900480638f32d59b116100785780638f32d59b146101b9578063bbc1dede146101d5578063c4d66de8146101f2578063f2fde38b14610218576100a5565b806333a330bd146100aa5780636c2ef5241461016e578063715018a6146101a75780638da5cb5b146101b1575b600080fd5b61015c600480360360608110156100c057600080fd5b8135916020810135918101906060810160408201356401000000008111156100e757600080fd5b8201836020820111156100f957600080fd5b8035906020019184600183028401116401000000008311171561011b57600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955061023e945050505050565b60408051918252519081900360200190f35b61018b6004803603602081101561018457600080fd5b5035610495565b60408051600160a060020a039092168252519081900360200190f35b6101af6104b0565b005b61018b61051a565b6101c1610529565b604080519115158252519081900360200190f35b61015c600480360360208110156101eb57600080fd5b503561053a565b6101af6004803603602081101561020857600080fd5b5035600160a060020a031661054f565b6101af6004803603602081101561022e57600080fd5b5035600160a060020a03166105fa565b600083815260666020526040812054600160a060020a031615806102785750600084815260666020526040902054600160a060020a031633145b15156102b85760405160e560020a62461bcd0281526004018080602001828103825260308152602001806107a36030913960400191505060405180910390fd5b81516108001015610313576040805160e560020a62461bcd02815260206004820152601260248201527f496e76616c69642076616c75652073697a650000000000000000000000000000604482015290519081900360640190fd5b604080517f36e2d0c9000000000000000000000000000000000000000000000000000000008152606660048201526024810186905260448101859052905173__DIDRegistryLibrary____________________916336e2d0c9916064808301926020929190829003018186803b15801561038c57600080fd5b505af41580156103a0573d6000803e3d6000fd5b505050506040513d60208110156103b657600080fd5b505060008481526066602090815260408083205481513381850181905243938201849052606080835288519083015287518996600160a060020a03909416958b957f8f8b755e50eb4efaa1a82e62cbfe4c58d83374b2f20db5960764ba69e062ae43958b959193919283926080840192918801918190849084905b83811015610449578181015183820152602001610431565b50505050905090810190601f1680156104765780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a461048d610619565b949350505050565b600090815260666020526040902054600160a060020a031690565b6104b8610529565b15156104c357600080fd5b603354604051600091600160a060020a0316907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a36033805473ffffffffffffffffffffffffffffffffffffffff19169055565b603354600160a060020a031690565b603354600160a060020a0316331490565b60009081526066602052604090206003015490565b600054610100900460ff1680610568575061056861061f565b80610576575060005460ff16155b15156105b65760405160e560020a62461bcd02815260040180806020018281038252602e8152602001806107d3602e913960400191505060405180910390fd5b60008054600161010061ff00198316811760ff1916919091179092550460ff166105df82610625565b600080549115156101000261ff001990921691909117905550565b610602610529565b151561060d57600080fd5b61061681610724565b50565b60675490565b303b1590565b600054610100900460ff168061063e575061063e61061f565b8061064c575060005460ff16155b151561068c5760405160e560020a62461bcd02815260040180806020018281038252602e8152602001806107d3602e913960400191505060405180910390fd5b60008054600161010061ff00198316811760ff19169190911783556033805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0386811691909117918290556040519290930460ff1693921691907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a3600080549115156101000261ff001990921691909117905550565b600160a060020a038116151561073957600080fd5b603354604051600160a060020a038084169216907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e090600090a36033805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905556fe41747472696275746573206d75737420626520726567697374657265642062792074686520444944206f776e6572732e436f6e747261637420696e7374616e63652068617320616c7265616479206265656e20696e697469616c697a6564a165627a7a72305820063bb35342087d50b6ecb28d9c5e0a034db1b069e00b7ce97bc3d25f816eb9ca0029",
+  "address": "0x956488d50a1C7930201A7F06Fc77830Ae0a821A7",
+  "version": "v0.8.0"
+}
