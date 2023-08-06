@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: Dans-Diffraction
+Version: 1.3.0
+Summary: Generate diffracted intensities from crystals
+Home-page: https://github.com/DanPorter/Dans_Diffraction
+Author: Dan Porter
+Author-email: d.g.porter@outlook.com
+License: UNKNOWN
+Download-URL: https://github.com/DanPorter/Dans_Diffraction/archive/0.1.tar.gz
+Description-Content-Type: UNKNOWN
+Description: # Dans_Diffaction
+        Reads crystallographic cif files and simulates diffraction
+        By Dan Porter, Diamond Light Source
+        2018
+        
+        Usage:
+        ```python
+        import Dans_Diffraction as dif
+        xtl = dif.Crystal('some_file.cif')
+        xtl.info()
+        xtl.Scatter.print_all_reflections(energy_kev=5)
+        xtl.Plot.simulate_powder(energy_kev=8)
+        plt.show()
+        xtl.start_gui()
+        ```
+        
+        For comments, queries or bugs - email dan.porter@diamond.ac.uk
+        
+Keywords: crystal,cif,diffraction,crystallography,science,x-ray,neutron,resonant,magnetic,magnetism
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 3 - Alpha
