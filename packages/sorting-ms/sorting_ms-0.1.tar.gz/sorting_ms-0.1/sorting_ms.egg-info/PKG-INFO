@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: sorting-ms
+Version: 0.1
+Summary: some simple sorting functions
+Home-page: https://gitlab.propulsion-home.ch/marita-salz/week-3/day-4
+Author: Marita Salz
+Author-email: marita.salz@hispeed.ch
+License: MIT
+Description: Exercise to create a python package that has some simple sorting functions included
+Keywords: sorting function marita salz
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Text Processing :: Linguistic
