@@ -1,0 +1,14 @@
+juicebox_cli/__init__.py,sha256=KCgP6owu0dQX-ZVFjez96vgXmiWc1iCDGAk7braz_Ag,23
+juicebox_cli/auth.py,sha256=9Ytsg9PoMUaGJ_nW0rZXX21Z4qlsfJwZdPuyb6h_-u8,5563
+juicebox_cli/cli.py,sha256=rxisIqRC54H0Yv-EyVoXbTU-LhiTKpH6skA5oA-m3Rc,2960
+juicebox_cli/config.py,sha256=VkbkagdEuHe8dxuWPMMzX1fW3SYDR7aMy0LeAZk-1h8,229
+juicebox_cli/exceptions.py,sha256=FtnOwRrUjBbd1MvMRe8__Q_vWQlhnsnUQ19cfuRoNKM,47
+juicebox_cli/jb_requests.py,sha256=7wPRR9JL8jOyU7TK6Ks_RZelO5FNRDwyw8FaPNhJGbY,185
+juicebox_cli/logger.py,sha256=7lH6b21yzVKWkg0x75oVEuwj98eSwUMUBcOZI4Qr98g,473
+juicebox_cli/upload.py,sha256=qjSj98x4g8ODvwmJ_YzZ5E_c64Zp7psx0b7RUatdRpc,5161
+juicebox_cli-2.0.0.dist-info/LICENSE.txt,sha256=nPXeFptZXNrjF1Ue9pp5S1n6PR4VHbQZDTN_4I0T1fg,10255
+juicebox_cli-2.0.0.dist-info/METADATA,sha256=rnhbqMWHLz4ZuH-yyoTkwOinvqW4ek7dPafWb4G0u7A,1490
+juicebox_cli-2.0.0.dist-info/WHEEL,sha256=GP9ACJkAJDyZNf-YPXDAJ8MdtRSNk4H2JK7vR-x05CE,116
+juicebox_cli-2.0.0.dist-info/entry_points.txt,sha256=fABlmLN6Gt59SvO7YI3JAW3Sl9QFVkhV284V8Eim4r0,48
+juicebox_cli-2.0.0.dist-info/top_level.txt,sha256=etb3xl2K25U3ia5wKTd9UEB_nQXlS3jyVTpjgJ6yak8,13
+juicebox_cli-2.0.0.dist-info/RECORD,,
