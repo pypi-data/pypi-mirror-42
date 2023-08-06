@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: aiohttp-transmute
+Version: 2.0.0
+Summary: a toolset to generate routes from functions for aiohttp.
+Home-page: UNKNOWN
+Author: Yusuke Tsutsumi
+Author-email: yusuke@tsutsumi.io
+License: UNKNOWN
+Description: =================
+        aiohttp-transmute
+        =================
+        
+        **NOTE: this library is now deprecated, with transute-core supporting aiohttp directly. See https://transmute-core.readthedocs.io/**
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: System :: Software Distribution
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
