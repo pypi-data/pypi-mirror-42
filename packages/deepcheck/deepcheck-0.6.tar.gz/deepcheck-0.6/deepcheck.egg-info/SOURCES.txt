@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+deepcheck/__init__.py
+deepcheck/library.py
+deepcheck.egg-info/PKG-INFO
+deepcheck.egg-info/SOURCES.txt
+deepcheck.egg-info/dependency_links.txt
+deepcheck.egg-info/requires.txt
+deepcheck.egg-info/top_level.txt
