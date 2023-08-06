@@ -1,0 +1,9 @@
+README.md
+setup.py
+szgo/__init__.py
+szgo.egg-info/PKG-INFO
+szgo.egg-info/SOURCES.txt
+szgo.egg-info/dependency_links.txt
+szgo.egg-info/top_level.txt
+szgo/engine/__init__.py
+szgo/engine/board.py
