@@ -1,0 +1,6 @@
+colorama==0.4.1
+docopt==0.6.2
+rply==0.7.6
+
+[dev]
+pytest==4.1.0
