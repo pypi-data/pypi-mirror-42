@@ -1,0 +1,12 @@
+README.md
+setup.py
+pygram11/__init__.py
+pygram11/_core.cpp
+pygram11/histogram.py
+pygram11/version.py
+pygram11.egg-info/PKG-INFO
+pygram11.egg-info/SOURCES.txt
+pygram11.egg-info/dependency_links.txt
+pygram11.egg-info/not-zip-safe
+pygram11.egg-info/requires.txt
+pygram11.egg-info/top_level.txt

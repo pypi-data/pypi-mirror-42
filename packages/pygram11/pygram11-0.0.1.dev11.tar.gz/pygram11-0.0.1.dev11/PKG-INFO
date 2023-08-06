@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pygram11
+Version: 0.0.1.dev11
+Summary: Fast histogramming in python built on pybind11
+Home-page: https://github.com/drdavis/pygram11
+Author: Doug Davis
+Author-email: ddavis@ddavis.io
+License: UNKNOWN
+Description: Fast histogramming in python built on pybind11
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Science/Research
