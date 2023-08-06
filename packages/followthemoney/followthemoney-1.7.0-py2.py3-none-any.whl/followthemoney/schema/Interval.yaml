@@ -1,0 +1,39 @@
+Interval:
+  label: "Interval"
+  matchable: false
+  abstract: true
+  featured:
+    - startDate
+    - endDate
+  properties:
+    startDate:
+      label: "Start date"
+      type: date
+    endDate:
+      label: "End date"
+      type: date
+    date:
+      label: "Date"
+      type: date
+    summary:
+      label: "Summary"
+      type: text
+    recordId:
+      label: "Record ID"
+    sourceUrl:
+      label: "Source URL"
+      type: url
+    publisher:
+      label: "Publishing source"
+    publisherUrl:
+      label: "Publishing source URL"
+      type: url
+    alephUrl:
+      label: Aleph URL
+      type: url
+    modifiedAt:
+      label: "Modified on"
+      type: date
+    retrievedAt:
+      label: "Retrieved on"
+      type: date
