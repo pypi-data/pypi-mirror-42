@@ -1,0 +1,3 @@
+[vak.network]
+VakTestNet = vak_test_net:VakTestNet
+
