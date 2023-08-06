@@ -1,0 +1,111 @@
+#!/bin/bash
+
+PORT=3571
+COMMAND=$1
+TYPE=$2
+NAME=$3
+URL=$4
+GIT_REPOSITORY="https://github.com/zoltancsontos/pystack-framework.git ${NAME}"
+CURRENT_INSTALLATION_FILE=${PWD}/pystack.py
+
+# Set default value for command argument
+if [ -z "$1" ]; then
+	COMMAND=help
+fi
+
+# Set default value for type
+if [ -z "$2" ]; then
+	TYPE=none
+fi
+
+# Set default value for name argument
+if [ -z "$3" ]; then
+	NAME=none
+fi
+
+# Set default value for url argument
+if [ -z "$4" ]; then
+	URL=none
+fi
+
+# ===========================================================================
+# Functions
+# ===========================================================================
+# Forwards to main pystack process
+forward_to_pystack () {
+	# Check if the application exists
+	if [ ! -f $CURRENT_INSTALLATION_FILE ]; then
+		echo "ERROR: Not a PyStack application"
+		return
+	else
+		python pystack.py "$@"
+		if [ "${1}" != "run" ]
+		then
+			echo "Creating new ${2} called ${3}, accessible on: ${4}"
+		fi
+		return
+	fi
+}
+
+# Missing mandatory argument functionality
+missing_parameter_or_argument () {
+	echo "ERROR: Missing or misspelled mandatory argument"
+}
+
+# ===========================================================================
+# Main command logic
+# ===========================================================================
+#handle the app / resource creation here
+if [ $COMMAND == "create" ]
+then
+	#Creates the app installation and cd to the fresh folder
+	if [ "${TYPE}" == "app" ]
+	then
+		git clone $GIT_REPOSITORY
+        cd $NAME
+        rm -rf .git
+        pip3 install -r requirements.txt
+        echo ""
+        echo "=========================================================================="
+        echo "                        New PyStack app created"
+        echo "App path:" ${PWD}
+        echo "=========================================================================="
+        echo ""
+        exec
+    # Forwards to pystack after validation
+	else
+		if [[ "${TYPE}" == "page" || "${TYPE}" == "resource" ]]
+		then
+			if [ "${NAME}" != "none" ]
+			then
+				if [ "${URL}" != "none" ]
+				then
+					forward_to_pystack "$@"
+				else
+					missing_parameter_or_argument
+				fi
+			else
+				missing_parameter_or_argument
+			fi
+		else
+			missing_parameter_or_argument
+		fi
+	fi
+#handle the run scenario
+elif [ $COMMAND == "run" ]
+then
+	forward_to_pystack "$@"
+else
+    echo ""
+    echo "================================================================"
+    echo "                    PyStack Framework v1.0             		  "
+    echo "================================================================"
+    echo ""
+    echo "List of CLI options:"
+    echo ""
+    echo "pystack create app appName - creates a new pystack application with the specified name"
+    echo "pystack run --port=port - runs the application on the specified port"
+    echo "pystack create page PageName page-url - creates a page"
+    echo "pystack create resource ResourceName resource-url - creates a standard rest api"
+    echo ""
+fi
