@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+intmux.egg-info/PKG-INFO
+intmux.egg-info/SOURCES.txt
+intmux.egg-info/dependency_links.txt
+intmux.egg-info/entry_points.txt
+intmux.egg-info/top_level.txt
+scripts/__init__.py
+scripts/connections.py
+scripts/intmux.py
+scripts/test_connections.py
+scripts/tmux.py
