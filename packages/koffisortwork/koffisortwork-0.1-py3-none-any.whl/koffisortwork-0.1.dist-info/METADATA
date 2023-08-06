@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: koffisortwork
+Version: 0.1
+Summary: The koffisortwork algorithm
+Home-page: http://gitlab.propulsion-home.ch/koffi-fiadjigbe/week3/day4
+Author: koffi fiadjigbe
+Author-email: koffifiadjigbe@gmail.com
+License: MIT
+Keywords: sort elelments in different ways
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Dist: markdown
+
+Sorting algorithm
+------------------
+
+To use (with caution), simply do::
+
+    >>> import koffisortwork
+    >>> print sorting.bubble_sort()
+    >>> print sorting.selection_sort()
+    >>> print sorting.insertion_sort()
+    >>> print sorting.quick_sort()
+
+
