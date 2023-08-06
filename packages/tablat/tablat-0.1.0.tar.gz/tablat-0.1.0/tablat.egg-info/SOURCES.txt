@@ -1,0 +1,8 @@
+README.md
+setup.py
+tablat/Table.py
+tablat/__init__.py
+tablat.egg-info/PKG-INFO
+tablat.egg-info/SOURCES.txt
+tablat.egg-info/dependency_links.txt
+tablat.egg-info/top_level.txt
