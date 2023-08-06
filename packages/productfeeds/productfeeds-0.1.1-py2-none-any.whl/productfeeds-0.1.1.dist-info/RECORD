@@ -1,0 +1,17 @@
+productfeeds-0.1.1-py2.7-nspkg.pth,sha256=WfKOG5R7vE3BeMNF-TJtmhFEVLLk5eSAuV-CPqZLmIA,569
+productfeeds/command.py,sha256=c7-qDzDsIGBxa_nJhYolojJr4N-ey0HY_cZ3eBoboG8,1029
+productfeeds/importer.py,sha256=SCM3ky75utQe_lFXNjBgI9XUbQlEAhlS_w5BXI6m4aQ,886
+productfeeds/models.py,sha256=YPfR2FSyNnFYC-WpzVXoFswnXkY0I_kRhXuEDyig2sQ,1102
+productfeeds/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+productfeeds/api/convertiserapi.py,sha256=2AyAGx87Eya62nHMSD-3bN-Z9GrKU5EaOVG7zIN1tHM,2796
+productfeeds/api/webepartnersapi.py,sha256=tAFTfZAJzNyp-gww7Mg4WRkq8Bp_B2XGWU18ETxI9UA,6910
+productfeeds/storage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+productfeeds/storage/mysqlstorage.py,sha256=8pJR2BAv3yHEApZ_VHxOI0THEgkBu7bnUV6PVggvXAI,2612
+productfeeds/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+productfeeds/test/importer_test.py,sha256=4SkAokbvxNulGBmHpbqB4sZMUfGdSgZZhlfXDGKDXwY,3544
+productfeeds-0.1.1.dist-info/METADATA,sha256=vNs80fS1Ug08oV6-5TEJbMKWIwpDaPKOA20RJ1_z-mg,434
+productfeeds-0.1.1.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+productfeeds-0.1.1.dist-info/entry_points.txt,sha256=bKW3tkb09ykmiFY229O8R_vfVfIeo3eyFqqaIpRoBTM,74
+productfeeds-0.1.1.dist-info/namespace_packages.txt,sha256=tEMRzoU0OVbq253esd0WddS4JqF3bRSXMQ-wCeBssss,13
+productfeeds-0.1.1.dist-info/top_level.txt,sha256=tEMRzoU0OVbq253esd0WddS4JqF3bRSXMQ-wCeBssss,13
+productfeeds-0.1.1.dist-info/RECORD,,

@@ -1,0 +1,3 @@
+[console_scripts]
+productfeed-import = productfeeds.command:import_feeds
+
