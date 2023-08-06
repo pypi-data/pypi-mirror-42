@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: sensys
+Version: 0.2.0
+Summary: Python Sen(try) --> Sys(log) workaround.
+Home-page: https://github.com/mu-team/sensys
+Author: Kirill (kxnes) Kolesnikov
+Author-email: kkxnes@gmail.com
+License: The MIT License
+Description: Sen(try)Sys(log)
+        ===============================
+        
+        Raven Python Syslog Client (sentry messaging through syslog).
+        
+        ### System requirements
+        
+        ```bash
+        python --version == 3.4.*, 3.5.*, 3.6.*
+        ```
+        
+        ### Installation
+        
+        Parameter `SEPARATOR` - how plugin must separate `syslogtag` from `msg` body.
+        
+        ```bash
+        ${PWD}/scripts/install.sh SEPARATOR
+        
+        # new map will be copied with --backup=numbered option
+        sudo vim /etc/sensys/map.json  # configure mapping
+        
+        sudo systemctl restart rsyslog.service
+        ```
+        
+        ### Todo
+        
+        1. Update deployment script;
+        2. Make plugin as binary.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

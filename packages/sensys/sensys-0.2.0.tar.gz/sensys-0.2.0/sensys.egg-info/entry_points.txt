@@ -1,0 +1,3 @@
+[console_scripts]
+sensys = sensys.plugin:main
+
