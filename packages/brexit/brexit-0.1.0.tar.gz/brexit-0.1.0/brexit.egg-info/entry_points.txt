@@ -1,0 +1,3 @@
+[console_scripts]
+brexit = brexit.cli:main
+
