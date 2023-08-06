@@ -1,0 +1,15 @@
+README
+setup.py
+bin/vitabs
+vitabs/__init__.py
+vitabs/commands.py
+vitabs/editor.py
+vitabs/music.py
+vitabs/player.py
+vitabs/symbols.py
+vitabs/tablature.py
+vitabs.egg-info/PKG-INFO
+vitabs.egg-info/SOURCES.txt
+vitabs.egg-info/dependency_links.txt
+vitabs.egg-info/requires.txt
+vitabs.egg-info/top_level.txt
