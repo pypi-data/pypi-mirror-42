@@ -1,0 +1,11 @@
+{% import 'components/menu_labels.html' as ml %}
+
+{% macro menu(menus, class='') %}
+    <nav class="menu {{class}}">
+        <ul>
+        {% for name,url in menus %}
+            <li><a class="menu_item menu_item--{{name}}" {{ {'href': url}|xmlattr }}>{{ml.label[name]}}</a></li>
+        {% endfor %}
+        </ul>
+    </nav>
+{% endmacro %}

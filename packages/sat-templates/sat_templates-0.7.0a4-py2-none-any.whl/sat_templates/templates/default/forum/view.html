@@ -1,0 +1,18 @@
+{% if not embedded %}{% extends 'base/base.html' %}{% endif %}
+{% set dates_format='relative' if single else 'short' %}
+{% import 'blog/macros.html' as blog with context %}
+{% import 'input/textbox.html' as textbox with context %}
+{% import 'input/navigation.html' as navigation with context %}
+
+{% block body %}
+{{ icon_defs('angle-double-left', 'angle-double-right') }}
+
+<div id="blog_items">
+    {{ blog.show_items(items, expanded=true) }}
+</div>
+<div class="forum_topic_answer">
+    {{- textbox.comment_or_login(service=service, node=node, placeholder=_("Enter your message here")) -}}
+</div>
+
+{{ navigation.prev_next(_("newer articles"), _("older articles")) }}
+{% endblock body %}

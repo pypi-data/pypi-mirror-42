@@ -1,0 +1,15 @@
+#body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#link_section {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+article p:last-child {
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+@media (min-width: 500px) {
+    #main_area {
+        background-image: var(--bg-img);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
