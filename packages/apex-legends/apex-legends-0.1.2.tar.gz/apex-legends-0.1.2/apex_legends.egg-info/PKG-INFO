@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: apex-legends
+Version: 0.1.2
+Summary: Python wrapper for https://apex.tracker.gg/ api.
+Home-page: https://github.com/xcodinas/apex-legends
+Author: Xavier Codinas
+Author-email: xavier19966@gmail.com
+License: MIT
+Description: [![PyPI version](https://badge.fury.io/py/apex-legends.svg)](https://badge.fury.io/py/apex-legends)
+        
+        # apex-legends
+        Python wrapper for https://apex.tracker.gg/ api.
+        
+        ## Installation
+        
+        You can install it via setup.py
+        
+        ```
+        python setup.py install
+        ```
+        
+        or from pip:
+        
+        ```
+        pip install apex-legends
+        ```
+        
+        
+        ## Usage
+        
+        You need to register for an api key at https://apex.tracker.gg/
+        
+        Then it's just easy as:
+        
+        ```
+        from apex_legends import ApexLegends
+        
+        apex = ApexLegends("apex_api_key")
+        
+        player = apex.player('NRG_dizzy')
+        
+        print(player)
+        
+        for legend in player.legends:
+            print(legend.legend_name)
+            print(legend.icon)
+            print(legend.damage)
+        ```
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
