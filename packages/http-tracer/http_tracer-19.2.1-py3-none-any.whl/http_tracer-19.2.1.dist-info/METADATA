@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: http-tracer
+Version: 19.2.1
+Summary: A simple script that follows redirects and returns each websites headers, cookies and url along its path.
+Home-page: https://github.com/danielmichaels/http-tracer
+Author: Daniel Michaels
+Author-email: dans.address@outlook.com
+License: MIT
+Download-URL: https://github.com/danielmichaels/http-tracer/tarball/19.2.1
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: click (==6.7)
+Requires-Dist: colorama
+
+A simple script that follows redirects and returns each websites headers, cookies and url along its path.
+
+

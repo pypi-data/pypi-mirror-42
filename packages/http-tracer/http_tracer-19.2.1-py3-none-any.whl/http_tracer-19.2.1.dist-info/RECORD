@@ -1,0 +1,11 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/context.py,sha256=6yAfHpag82n4BKMrqUhq3NLxr4o56aACp8uYgbCoUBM,195
+tests/test_basic.py,sha256=81gCS2bmpd7AAZ8-cxozxgfRAd3VrglG2t27lNQo6iw,436
+tracer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tracer/main.py,sha256=-ztFMFdnKNlJtMFGRjcgxbAEPhnmK_q036SnKD2WG-M,9852
+http_tracer-19.2.1.dist-info/LICENCE.txt,sha256=Qflji1XYciq_iW2OUAMBgSfPAI1FN4BOtMwlN0ZlvCY,1072
+http_tracer-19.2.1.dist-info/METADATA,sha256=0Y0bxZJPvpcdqeg9Zxrc9KKdREiX7zncItyf22oebyI,860
+http_tracer-19.2.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+http_tracer-19.2.1.dist-info/entry_points.txt,sha256=5QCgw-keDAQSG09qWWjcxhHBPA55UIFBqeWFUyLh_5o,50
+http_tracer-19.2.1.dist-info/top_level.txt,sha256=eK-iB7ComnMFJNzRfaU8SD9GHnTrWmgKq9i4G64Ax28,13
+http_tracer-19.2.1.dist-info/RECORD,,
