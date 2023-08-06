@@ -1,0 +1,14 @@
+psautohint/__init__.py,sha256=wAt7Gu6PFD4jfPQrQ4i2JqmpHOq1SFod-T2OOZzcgzA,4758
+psautohint/__main__.py,sha256=Jx_x6zmIjmsVMbiR4YzX774o26CIMSF8-9CPQhIhLo8,31145
+psautohint/_psautohint.pyd,sha256=Fly4sY1Stv6SLqiassPBLNgL88JTP7qtMPgIqbhtKbE,111616
+psautohint/autohint.py,sha256=dDnXd6-jZHLheR8itO5tsnkKWdz7SCED8PVlA6obNqo,27073
+psautohint/autohintexe.exe,sha256=0GbhRXJczYQtjGlbayG6gXKC4_e2kaRmAMR82guxrWc,105472
+psautohint/fdTools.py,sha256=iGIFaUCcSAcmlit2dSyXIWxOT_0j9LPZtYn9cQ6q65I,19984
+psautohint/otfFont.py,sha256=ETjzy0Y7XtfY2tgcBvz69K09kWtgi8Rz_3cUXQtwR3M,32971
+psautohint/ufoFont.py,sha256=wH2QMyWn0hJJMteIYCu7_4e2p0e1IF8gi8k4MW3CKKs,47535
+psautohint-1.9.2b2.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+psautohint-1.9.2b2.dist-info/METADATA,sha256=_ZaUpVx9HDzfq_nuSLeQVpe-V_u-ut1u8jZ8wL_yxz0,2821
+psautohint-1.9.2b2.dist-info/WHEEL,sha256=bIuiZDYMUGBgJak0wCClR8ErkEXGYOpZVIqarxK9hXA,102
+psautohint-1.9.2b2.dist-info/entry_points.txt,sha256=eHFM6Yzs2vtXKnF-KVr9pkleIKZ7EqNF6Xdn1r4vfJk,99
+psautohint-1.9.2b2.dist-info/top_level.txt,sha256=qjPoTzjcI1WsEohIiqKa3vHqb8rxM296e_uTh-fzE00,11
+psautohint-1.9.2b2.dist-info/RECORD,,
