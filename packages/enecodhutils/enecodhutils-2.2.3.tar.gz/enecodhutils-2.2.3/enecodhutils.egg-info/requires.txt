@@ -1,0 +1,7 @@
+requests
+pykafka
+pyodbc<=4.0.24
+deprecated
+retrying
+azure
+azure-storage
