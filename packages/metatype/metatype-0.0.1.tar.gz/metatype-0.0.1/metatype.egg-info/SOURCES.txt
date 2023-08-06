@@ -1,0 +1,11 @@
+README.md
+setup.py
+metatype/__init__.py
+metatype.egg-info/PKG-INFO
+metatype.egg-info/SOURCES.txt
+metatype.egg-info/dependency_links.txt
+metatype.egg-info/entry_points.txt
+metatype.egg-info/not-zip-safe
+metatype.egg-info/requires.txt
+metatype.egg-info/top_level.txt
+metatype/mft1/__init__.py
