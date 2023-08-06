@@ -1,0 +1,5 @@
+numpy>=1.12.0
+Cython
+Sphinx
+pytest
+PyQt5
