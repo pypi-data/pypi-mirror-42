@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: dnos
+Version: 0.1.2
+Summary: Protobuf models for DNOS application
+Home-page: https://github.com/dnosproject/dnos-core-grpc-python
+Author: Adib Rastegarnia
+Author-email: adib.rastegarnia@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+## dnos-core-grpc-python
+
+
+
