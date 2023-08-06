@@ -1,0 +1,12 @@
+docutils>=0.11
+polib
+regex
+
+[dev]
+bandit
+black
+detox
+flake8
+isort
+mypy
+pylint
