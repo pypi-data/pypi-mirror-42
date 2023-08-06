@@ -1,0 +1,12 @@
+r2c/__init__.py,sha256=YC1Dz8x1NbFP6noX-JiALN2TAW60oGgOEBcualPSEMY,132
+r2c/cli/__init__.py,sha256=Rke2azUDBtxYcrmEhCooIHF1DeCO6-AjjINEvN88HWg,107
+r2c/cli/__main__.py,sha256=f9Bs6UtRovRs2e7InVUGdIUnbsukfDWekOntPxNO2dc,113
+r2c/cli/core.py,sha256=e59IfxUGbaKcBu13FNfWpU2ZY9T44C9hOTzRiOhDBbA,21421
+r2c/cli/create_template.py,sha256=tPM6DikBkIbZ57rBWgXywauqGUgm9EtFBHCqNEpjrzU,2093
+r2c_cli-0.0.4.data/scripts/r2c,sha256=GsXW8gulWQi7wztwF3JN-TeP-XyjJ37PJRHVWifY5m8,503
+r2c_cli-0.0.4.data/scripts/r2c.cmd,sha256=9XBU3BFLMT-XCGOOlW0vBfOlMGTcQAoO_zn7WNwAoYI,82
+r2c_cli-0.0.4.dist-info/LICENSE,sha256=39EWhYH-N6XlLnnbPkrc8VU2PLf8IzyyIDWDmbQjALM,52
+r2c_cli-0.0.4.dist-info/METADATA,sha256=RTpFOrBgvggQPySNxMlFVzFHa_4RTYkBGvD4NBqKCfQ,2704
+r2c_cli-0.0.4.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+r2c_cli-0.0.4.dist-info/top_level.txt,sha256=5VfCSAvyKrsyPqy4wUbNrdA6qk6GDT5XGqxabb2kKbg,4
+r2c_cli-0.0.4.dist-info/RECORD,,
