@@ -1,0 +1,11 @@
+directory_sso_api_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+directory_sso_api_client/client.py,sha256=B3jeyrt2lJEx1S9sjQXLh9mUoJGcyYPqQUPsYAi51rQ,836
+directory_sso_api_client/testapiclient.py,sha256=sfkErhZzcBUg90L0jIRaFlNPFPzrNRBzfSMA7f4ELqk,785
+directory_sso_api_client/user.py,sha256=3BGXDajUuC70Pz3C6gyDfXLc-5kPCDQDoPGfsXpMrjE,2533
+directory_sso_api_client/version.py,sha256=Scda0UUFVb7qbFUcPQv1u49WIDXZDp4ukvwbousnYO4,22
+directory_sso_api_client-4.1.1.dist-info/DESCRIPTION.rst,sha256=EHOHVdm-KlISmeHE1fWxY5NSsH_LrjXszobdapf6Jd8,2132
+directory_sso_api_client-4.1.1.dist-info/METADATA,sha256=Mk3eFSKsNAV5FwfRA-ainObdWLymoyiaBblAj-L_lBk,2939
+directory_sso_api_client-4.1.1.dist-info/RECORD,,
+directory_sso_api_client-4.1.1.dist-info/WHEEL,sha256=8Lm45v9gcYRm70DrgFGVe4WsUtUMi1_0Tso1hqPGMjA,92
+directory_sso_api_client-4.1.1.dist-info/metadata.json,sha256=Q3RehbmxS7uqp0HmAnO8mkbav5t8iBnZ7p6ovicGChI,936
+directory_sso_api_client-4.1.1.dist-info/top_level.txt,sha256=ctlxm_U43nCbxD69iYv-O5DI5b0YqkVCljjoLnmQnV0,25
