@@ -1,0 +1,4 @@
+[console_scripts]
+genetest = genetest.scripts.cli:main
+imputed-stats2genetest = genetest.scripts.convert:main
+
