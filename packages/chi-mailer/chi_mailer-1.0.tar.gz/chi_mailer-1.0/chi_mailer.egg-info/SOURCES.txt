@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+chi_mailer/Qi.py
+chi_mailer/__init__.py
+chi_mailer/contacts.txt
+chi_mailer/messages.txt
+chi_mailer.egg-info/PKG-INFO
+chi_mailer.egg-info/SOURCES.txt
+chi_mailer.egg-info/dependency_links.txt
+chi_mailer.egg-info/top_level.txt
+samples/sample_contact.txt
+samples/sample_message.txt
