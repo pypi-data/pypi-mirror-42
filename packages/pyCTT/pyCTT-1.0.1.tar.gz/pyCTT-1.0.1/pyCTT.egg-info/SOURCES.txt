@@ -1,0 +1,12 @@
+README.md
+setup.py
+pyCTT/__init__.py
+pyCTT/consts.py
+pyCTT/items.py
+pyCTT/scrapper.py
+pyCTT.egg-info/PKG-INFO
+pyCTT.egg-info/SOURCES.txt
+pyCTT.egg-info/dependency_links.txt
+pyCTT.egg-info/requires.txt
+pyCTT.egg-info/top_level.txt
+pyCTT.egg-info/zip-safe
