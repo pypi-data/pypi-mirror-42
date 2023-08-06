@@ -1,0 +1,8 @@
+[distutils.setup_keywords]
+scmver = scmver.setuptools:scmver
+
+[scmver.parse]
+.git = scmver.git:parse
+.hg = scmver.mercurial:parse
+.hg_archival.txt = scmver.mercurial:parse
+

@@ -1,0 +1,12 @@
+scmver/__init__.py,sha256=UswDTHOQlAfzci8W0aYYVHXUC0AxJd3ukaHydqaosfs,1345
+scmver/__version__.py,sha256=9AziFKMT2GhdwTNXXSXHKetdRubWJZ8456JOmzk7IZw,61
+scmver/core.py,sha256=Gc35HsWODGCaIcnR5Vbd_ihTygykgYpqoT-QL7oNycA,10859
+scmver/git.py,sha256=V0aKWiG7GV26wgxciHUtMSqUtLk1z48NKaHYOobAlPM,2179
+scmver/mercurial.py,sha256=6p926q9pI4-6R2W6-ES-NNsnQTirAq3pPcpt_cAu0II,3247
+scmver/setuptools.py,sha256=vqRq57e4PZjkkhkwx4xxYnyp-dN1KP57JuqZt7REj7o,1435
+scmver/util.py,sha256=zAk1p2RhCQUX6oHK543bd_PY6M9UCasiZ0tFUIPwdQA,2107
+scmver-0.1.dist-info/METADATA,sha256=ea2x5P0EUbaCR-ZE-lCpHo3YqCTP3EIzf_ITdFecNaM,4549
+scmver-0.1.dist-info/WHEEL,sha256=05Ahrak1u2K61DpLp9CDNSbUImLTITCMom_cqTFk6pE,116
+scmver-0.1.dist-info/entry_points.txt,sha256=wKrQvzVe9myvLojvx9PMTeosgZBsW5E9spfWksfRa3Y,173
+scmver-0.1.dist-info/top_level.txt,sha256=rTgxIvgz4DserhaC9JAHUtdyxpaI20MyJ4pDVm1MkCo,7
+scmver-0.1.dist-info/RECORD,,
