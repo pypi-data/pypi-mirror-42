@@ -1,0 +1,11 @@
+#!python
+
+try:
+    from spoppy import main
+except ImportError:
+    import sys
+    import os
+    sys.path.append(os.path.abspath('.'))
+    from spoppy import main
+
+main()
