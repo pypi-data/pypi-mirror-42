@@ -1,0 +1,10 @@
+README.md
+setup.py
+bromine/__init__.py
+bromine/browser.py
+bromine/pytest.py
+gambit_bromine.egg-info/PKG-INFO
+gambit_bromine.egg-info/SOURCES.txt
+gambit_bromine.egg-info/dependency_links.txt
+gambit_bromine.egg-info/requires.txt
+gambit_bromine.egg-info/top_level.txt
