@@ -1,0 +1,9 @@
+siuba/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+siuba/meta_hook.py,sha256=fi4EVEY6Li7UsYcCDq2IC4Dj3sWvVP6oWQfuyUtWxEg,2193
+siuba/siu.py,sha256=dVjPdHs7moMfJZQNrZUdTTTKv-4pvwAOj649u3dC0YU,9627
+siuba/sql.py,sha256=vc_hoH_mqN1LgVX4J7cDeVi8E-R58ybYDmhlaCqDWaY,5311
+siuba/tidy.py,sha256=SUP4ldDWuYnnfucE4m_IWK-EkCevqoJzB3jSo4CcA-w,16162
+siuba-0.0.2.dist-info/METADATA,sha256=uZUngg8sOnynfqV-ToOXb-9NcOhLkHRGaUMF1d7P3AI,537
+siuba-0.0.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+siuba-0.0.2.dist-info/top_level.txt,sha256=GhQQ_zZ03dvUY3JAHHiJTPyFbxAsCw5M9tECHUp0cIA,6
+siuba-0.0.2.dist-info/RECORD,,
