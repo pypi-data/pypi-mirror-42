@@ -1,0 +1,9 @@
+Spans-1.0.2.dist-info/METADATA,sha256=GAQHOLT0vHlx8slre3WEbpTVfVwtjnmaC720xsTBtbo,11762
+Spans-1.0.2.dist-info/RECORD,,
+Spans-1.0.2.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+Spans-1.0.2.dist-info/top_level.txt,sha256=QParybNdBkGkKIvBQsPvhovT4FMiCJvcK1aMtaHACJU,6
+spans/__init__.py,sha256=-qWKS_XT0ICkClT_-nZr0lkrR6To0z4V1spSu-CHLtM,822
+spans/_compat.py,sha256=-Cn6mryK8IWgRC_Emciiqe7U47fkH_zpJKu0GVVbI2I,2308
+spans/_utils.py,sha256=gEy6EhdV1MJZHvPXdCvbxV-c3g2T0CSTpSPZciyaUN4,2297
+spans/settypes.py,sha256=wAUZCx1f9x_WCAyjEsEyTqJVtgR3xJ0C-epG5U0tYcU,21747
+spans/types.py,sha256=V11CfEoVXnyw_Op2o_Hw39JO0B_7iQG7xKmm0K28Pyo,47962
