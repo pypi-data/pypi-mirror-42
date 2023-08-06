@@ -1,0 +1,7 @@
+python-gitlab>=1.6.0
+mimir-cli
+flask
+jinja2
+
+[:platform_system == "Windows"]
+pyreadline

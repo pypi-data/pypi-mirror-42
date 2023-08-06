@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{{ expected.course_name }} Verify Project Output</title>
+  </head>
+  <body>
+  <h6>{{ incorrect_settings }} student(s) have incorrect settings</h6>
+  <h6>{{ correct_settings }} student(s) have correct settings</h6>
+  {% if errorLog is defined %}
+    {% for error in errorLog %}
+      <h4><mark>{{ error }}</mark></h4>
+    {% endfor %}
+  {% endif %}
+  {% for user in users %}
+    {% if user.incorrect_settings %}
+      <h3>{{ user.Username }}</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Setting</th>
+            <th scope="col">Actual</th>
+            <th scope="col">Expected</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if user.Graders == "None" %}
+            {% for graders in expected.grader_usernames %}
+            <tr>
+              <th scope="row">Grader</th>
+              <td class="table-danger"></td>
+              <td>{{ graders.grader_usernames }}</td>
+            </tr>
+            {% endfor %}
+          {% else %}
+            {% for graders in expected.grader_usernames %}
+              {% if graders not in user.Graders %}
+              <tr>
+                <th scope="row">Grader</th>
+                <td class="table-danger"></td>
+                <td>{{ graders }}</td>
+              </tr>
+              {% endif %}
+              {% if user.Graders[graders] is defined %}
+                {% if user.Graders[graders] != expected_grader_access %}
+                <tr>
+                  <th scope="row">Grader</th>
+                  <td>{{ graders }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Grader Access</th>
+                  <td class="table-danger">{{ user.Graders[graders] }}</td>
+                  <td>{{ expected_grader_access }}</td>
+                </tr>
+                {% endif %}
+              {% else %}
+              <tr>
+                <th scope="row">Grader Access</th>
+                <td class="table-danger"></td>
+                <td>{{ expected_grader_access }}</td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if user.Project == "NOT ~ user.Project ~" %}
+          <tr>
+            <th scope="row">Project</th>
+            <td class="table-danger">{{ user.Project }}</td>
+            <td>{{ expected_project }}</td>
+          </tr>
+          {% endif %}
+          {% if user.Sub_group_access != expected_sub_access %}
+          <tr>
+            <th scope="row">Sub Group Access</th>
+            <td class="table-danger">{{ user.Sub_group_access }}</td>
+            <td>{{ expected_sub_access }}</td>
+          </tr>
+          {% endif %}
+          {% if user.Visibility == "public" or user.Visibility == "" %}
+          <tr>
+            <th scope="row">Visibility</th>
+            <td class="table-danger">{{ user.Visibility }}</td>
+            <td>private</td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  {% endfor %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
