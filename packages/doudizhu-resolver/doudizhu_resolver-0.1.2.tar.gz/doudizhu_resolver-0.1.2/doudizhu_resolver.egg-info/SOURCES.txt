@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+doudizhu_resolver/__init__.py
+doudizhu_resolver/play.py
+doudizhu_resolver.egg-info/PKG-INFO
+doudizhu_resolver.egg-info/SOURCES.txt
+doudizhu_resolver.egg-info/dependency_links.txt
+doudizhu_resolver.egg-info/top_level.txt
+doudizhu_resolver/doudizhu/__init__.py
+doudizhu_resolver/doudizhu/card.py
+doudizhu_resolver/doudizhu/compat.py
+doudizhu_resolver/doudizhu/engine.py
