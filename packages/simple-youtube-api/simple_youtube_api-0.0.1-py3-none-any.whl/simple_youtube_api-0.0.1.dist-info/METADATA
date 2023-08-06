@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: simple-youtube-api
+Version: 0.0.1
+Summary: A python YouTube API wrapper
+Home-page: https://github.com/jonnekaunisto/simple-youtube-api
+Author: Jonne Kaunisto
+Author-email: jonneka@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+Simple Youtube API
+=======
+
+
+Simple Youtube API is a Youtube API wrapper for python, making it easier to search and upload your videos.
+
+
+Examples
+------------
+
+
+Installation
+------------
+
+
+
+Documentation
+-------------
+
+
+Running Tests
+-------------
+
+
+
+Contribute
+----------
+
+
+Maintainers
+-----------
+jonnekaunisto (owner)
+
