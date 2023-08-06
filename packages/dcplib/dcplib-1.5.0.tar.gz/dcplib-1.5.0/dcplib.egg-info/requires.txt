@@ -1,0 +1,4 @@
+puremagic
+crcmod==1.7
+boto3>=1.7.13
+requests<3,>=2.18.4
