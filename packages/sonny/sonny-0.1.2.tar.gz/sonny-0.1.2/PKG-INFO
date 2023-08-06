@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: sonny
+Version: 0.1.2
+Summary: A command line translation software.
+Home-page: UNKNOWN
+Author: suowei
+Author-email: suowei_66@qq.com
+License: MIT
+Description: ﻿sonny：控制台翻译软件
+        
+        
+        0.1.2
+        ------
+        
+        - 修改BUG
+        
+        0.1.1
+        ------
+        
+        - 修改BUG
+        
+        0.1.0
+        ------
+        
+        - Added to PyPI
+Platform: any
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython

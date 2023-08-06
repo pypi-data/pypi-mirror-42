@@ -1,0 +1,11 @@
+README.rst
+run.py
+setup.py
+sonny/__init__.py
+sonny/core.py
+sonny.egg-info/PKG-INFO
+sonny.egg-info/SOURCES.txt
+sonny.egg-info/dependency_links.txt
+sonny.egg-info/entry_points.txt
+sonny.egg-info/not-zip-safe
+sonny.egg-info/top_level.txt
