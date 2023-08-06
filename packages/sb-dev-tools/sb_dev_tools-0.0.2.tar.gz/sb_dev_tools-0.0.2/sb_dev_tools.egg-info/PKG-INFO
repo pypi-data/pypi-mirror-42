@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: sb-dev-tools
+Version: 0.0.2
+Summary: The sb_dev_tools package is a set of basic utility tools used within the snoodleboot libraries and packages. They are designed with SOLID principles in mind and are used to speed up the development process and enable configuration-as-code (CaC).
+Home-page: http://packages.python.org/an_example_pypi_project
+Author: John Aven
+Author-email: john.aven.phd@gmail.com
+License: Apache version 2.0
+Description: # sb_dev_tools
+        
+        ## About
+        The sb_dev_tools package is a set of basic utility tools used within the
+        snoodleboot libraries and packages. They are designed with SOLID
+        principles in mind and are used to speed up the development process and
+        enable configuration-as-code (CaC).
+        
+        
+        ## Examples
+Keywords: polymorphic factory,factory,utities
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License  
