@@ -1,0 +1,7 @@
+Click>=6.0
+sqlalchemy
+tabulate
+python-dateutil
+configparser
+pylatex
+num2words
