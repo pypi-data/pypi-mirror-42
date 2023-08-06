@@ -1,0 +1,16 @@
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1-py2.7-nspkg.pth,sha256=BRP8mvEvEhIFmA57wbSTfAVbaAesjZh6WbtWMKUVv1c,1118
+odoo/addons/hr_expense_operating_unit/README.rst,sha256=4prjrhYX7sl-W7KPajPm8g2A8ZR1YBa5XChMFJ8opzg,1793
+odoo/addons/hr_expense_operating_unit/__init__.py,sha256=EBZ-t5ev9MEkIvNSqnQ6_BpOVM1ZuRRYt0tM4-eD9xU,262
+odoo/addons/hr_expense_operating_unit/__manifest__.py,sha256=mjMKfskZv0qE1t-b4QADZgNq7O2tY54BcmjY3zoVPAY,768
+odoo/addons/hr_expense_operating_unit/models/__init__.py,sha256=3PUg4blapauiKWAUST4iEiNBslSLy-HFvrtyWyTqeu4,247
+odoo/addons/hr_expense_operating_unit/models/hr_expense.py,sha256=lp-NZXMe7jYnAs7RqgPjesCBVxkHYB09afTzTqDxaAg,3431
+odoo/addons/hr_expense_operating_unit/security/hr_expense_security.xml,sha256=cvjyCj-z_ezmceja26uPZw3q9Mlz47WOEpmT-gdCIsg,1480
+odoo/addons/hr_expense_operating_unit/static/description/icon.png,sha256=6xBPJauaFOF0KDHfHgQopSc28kKvxMaeoQFQWZtfZDo,9455
+odoo/addons/hr_expense_operating_unit/tests/__init__.py,sha256=eCXgBs7xzHIRMPChGzVFz7ECTfKEMv2a8741oR177pM,267
+odoo/addons/hr_expense_operating_unit/tests/test_hr_expense_operating_unit.py,sha256=OU8eFjQNIyxevPzYjsLLAViYhfi2rWGYhvWVEw5OJGI,6515
+odoo/addons/hr_expense_operating_unit/views/hr_expense_view.xml,sha256=-wZiKnf6ud7d2-33Ii64_qiFosCzDfT6mBVYa63EdKg,2411
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1.dist-info/METADATA,sha256=KYMm6kLPwEwuVxQ3NszsMhSCSz8sQPYRMti0Ilb2KHg,2434
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1.dist-info/RECORD,,
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1.dist-info/WHEEL,sha256=_V8uWu5F_h-lvAz5Mbq4oZqV_uCfL4cHgm4IIlDevzU,92
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1.dist-info/namespace_packages.txt,sha256=igDP6S4ywc6jzcMqzrKZpRtAUXrS-iYaA_Hu1EtlI48,17
+odoo10_addon_hr_expense_operating_unit-10.0.1.0.0.99.dev1.dist-info/top_level.txt,sha256=qBj40grFkGOfDZ2WDSw3y1RnDlgG0u8rP8pvGNdbz4w,5
