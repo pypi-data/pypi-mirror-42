@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: template-specialize
+Version: 0.8.2
+Summary: Recursive template file specializer.
+Home-page: https://github.com/craigahobbs/template-specialize
+Author: Craig Hobbs
+Author-email: craigahobbs@gmail.com
+License: MIT
+Description: [![Build Status](https://travis-ci.org/craigahobbs/template-specialize.svg?branch=master)](https://travis-ci.org/craigahobbs/template-specialize)
+        [![Code Coverage](https://codecov.io/gh/craigahobbs/template-specialize/branch/master/graph/badge.svg)](https://codecov.io/gh/craigahobbs/template-specialize)
+        [![Version](https://img.shields.io/pypi/v/template-specialize.svg)](https://pypi.org/project/template-specialize/)
+        
+        template-specialize is a recursive [Jinja2](http://jinja.pocoo.org/docs/2.10/templates/) template renderer (specializer).
+        
+        ##  Usage
+        
+        ```
+        usage: template-specialize [-h] [-c FILE] [-e ENV] [--key KEY] [--value VALUE]
+                                   [--dump] [-v]
+                                   [SRC] [DST]
+        
+        positional arguments:
+          SRC            the source template file or directory
+          DST            the destination file or directory
+        
+        optional arguments:
+          -h, --help     show this help message and exit
+          -c FILE        the environment files
+          -e ENV         the environment name
+          --key KEY      add a template key. Must be paired with a template value.
+          --value VALUE  add a template value. Must be paired with a template key.
+          --dump         dump the template variables
+          -v, --version  show version number and quit
+        ```
+        
+Keywords: template specialize
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+Provides-Extra: tests
