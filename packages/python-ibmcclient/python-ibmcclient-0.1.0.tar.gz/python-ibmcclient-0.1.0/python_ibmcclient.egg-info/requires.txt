@@ -1,0 +1,9 @@
+requests>=2.14.2
+six>=1.10.0
+
+[dev]
+check-manifest
+flake8
+
+[test]
+coverage
