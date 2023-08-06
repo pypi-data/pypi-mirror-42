@@ -1,0 +1,5 @@
+libdw
+pygame
+requests
+Pyro4
+cryptography<2.6
