@@ -1,0 +1,7 @@
+syntax:glob
+*~
+
+syntax:re
+^__pycache__$
+\.py[co]$
+\.pytest_cache$
