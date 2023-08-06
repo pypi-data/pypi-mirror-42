@@ -1,0 +1,3 @@
+[console_scripts]
+burl-manager = burl.manage:main
+
