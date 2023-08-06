@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tox_pyo3/__init__.py
+tox_pyo3/plugin.py
+tox_pyo3.egg-info/PKG-INFO
+tox_pyo3.egg-info/SOURCES.txt
+tox_pyo3.egg-info/dependency_links.txt
+tox_pyo3.egg-info/entry_points.txt
+tox_pyo3.egg-info/requires.txt
+tox_pyo3.egg-info/top_level.txt
