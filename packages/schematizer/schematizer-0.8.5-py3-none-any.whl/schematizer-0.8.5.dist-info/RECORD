@@ -1,0 +1,16 @@
+schematizer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+schematizer/exceptions.py,sha256=ZL2hycLiyVYJRXwkj_RzAbrdrZT2J7flBJTBaE1j1Ok,1534
+schematizer/key.py,sha256=61TE1O34ckxJGzOiacsiaBsvJEjwghjVTGje9Gtg3HY,213
+schematizer/validators.py,sha256=wPOVZpkm7blHpjhm_yJVnrCpXcEoUQUr63_rxjtG2Fs,1510
+schematizer/schemas/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+schematizer/schemas/base.py,sha256=7jea9IGrs-kjX6HQdhF9lIrhcOpWR000Vuct5IG4rrE,693
+schematizer/schemas/compound.py,sha256=M6kSg6-Ba27q-nn2IFsZpmJesIdPKpZssuwCLfr1VL0,4892
+schematizer/schemas/simple.py,sha256=MuxgtPavWT6yJFcuYTyA_uQhq5ZiaTJJsxUlshLT7s0,1657
+schematizer/vendor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+schematizer/vendor/django/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+schematizer/vendor/django/validators.py,sha256=oE2cVcdOr8TCVAJ5af8nCUgvllDhRVYL-Xr4D3rLQCA,1083
+schematizer-0.8.5.dist-info/LICENSE.rst,sha256=Rb1QFRBvNXVWZQpNzHHelKLxOTP0PYOltVRWnbeD_cM,1081
+schematizer-0.8.5.dist-info/METADATA,sha256=-gBF6bhuOXSV5zH-fm2dCbd-SBKROY1j_1LlasGkjpw,2262
+schematizer-0.8.5.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+schematizer-0.8.5.dist-info/top_level.txt,sha256=IeOWpiZJtTMxt2gIv46M44aLAeLemG1Yk2Sq7gu_2xE,12
+schematizer-0.8.5.dist-info/RECORD,,
