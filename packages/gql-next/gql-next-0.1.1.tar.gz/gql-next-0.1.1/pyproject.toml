@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "gql-next"
+version = "0.1.1"
+description = "Python GraphQL Client Library"
+authors = ["Eran Kampf <eran@ekampf.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include="gql", from="." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^7.0"
+graphql-core-next = "~=1.0.1"
+requests = "^2.21"
+jinja2 = "^2.10"
+inflection = "^0.3.1"
+dataclasses-json = "^0.2.0"
+
+aiohttp = {version = "^3.5", optional = true}
+watchdog = "^0.9.0"
+
+[tool.poetry.extras]
+async = ["aiohttp"]
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.2.2"
+pytest = "^4.0.1"
+pytest-describe = "*"
+pytest-expecter = "*"
+pytest-random = "*"
+pytest-cov = "*"
+freezegun = "*"
+verchew = "^1.5"
+pre_commit = "~=1.13.0"
+ipython = "^7.0"
+pytest-mock = "^1.10"
+deepdiff = "^3.3"
+
+[tool.poetry.scripts]
+gql = 'gql.cli:cli'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

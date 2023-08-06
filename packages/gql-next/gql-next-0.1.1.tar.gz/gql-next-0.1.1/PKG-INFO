@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: gql-next
+Version: 0.1.1
+Summary: Python GraphQL Client Library
+Home-page: None
+Author: Eran Kampf
+Author-email: eran@ekampf.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: async
+Requires-Dist: aiohttp (>=3.5,<4.0); extra == "async"
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: dataclasses-json (>=0.2.0,<0.3.0)
+Requires-Dist: graphql-core-next (>=1.0.0,<1.1.0)
+Requires-Dist: inflection (>=0.3.1,<0.4.0)
+Requires-Dist: jinja2 (>=2.10,<3.0)
+Requires-Dist: requests (>=2.21,<3.0)
+Requires-Dist: watchdog (>=0.9.0,<0.10.0)
