@@ -1,0 +1,3 @@
+[console_scripts]
+tempest-zigzag = tempest_zigzag.cli:main
+

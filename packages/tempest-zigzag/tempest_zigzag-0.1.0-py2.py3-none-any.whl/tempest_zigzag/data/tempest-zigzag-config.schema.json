@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "tempest-zigzag-config",
+  "description": "A JSON schema for tempest-zigzag configuration files.",
+  "type": "object",
+  "required": ["tempest_zigzag_env_vars"],
+  "properties": {
+    "tempest_zigzag_env_vars": {
+      "description": "An object to contain a list of environment variables to extract and include in the JUnitXML global properties.",
+      "type": "object",
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}
