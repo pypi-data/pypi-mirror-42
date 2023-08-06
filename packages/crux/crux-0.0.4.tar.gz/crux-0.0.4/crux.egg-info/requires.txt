@@ -1,0 +1,4 @@
+google-resumable-media[requests]
+
+[:python_version < "3.5"]
+typing
