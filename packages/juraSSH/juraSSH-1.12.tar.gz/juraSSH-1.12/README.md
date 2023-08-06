@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<h2>SSH Client Framework</h2>
+
+<h1></h1>
+
+<h4>This framework is to be used for DevOps, Infrastructure As Code and Network Automation projects.</h4>
+
+<p></p>
+
+<p></p>
+
+
+<h3>Advantages:</h3>
+<h4>Simple, Fast and Secure method to:</h4>
+<ul>
+    <li>Create automated tools to <strong>backup Routers, Switches and Access-Points</strong></li>
+    <li>Create automated tools for <strong>dynamic network configuration generation</strong></li>
+    <li>Create automated tools for <strong>configurations roll-out</strong></li>
+    <li>Create automated tools for <strong>network devices audit</strong></li>
+    <li>Create automated tools for <strong>network devices inventory generation</strong></li>
+    <li>Create automated tools for <strong>network devices trouble-shooting</strong></li>
+</ul>
+
+<h1></h1>
+
+
+<!-- How to make paragraph lines-->
+<p>How to use the framework.</p>
+
+<h3>Example 1</h3>
+<h4>To send a single command to multiple remote machines in parallel:</h4>
+<ol>
+    <li>"pip install juraSSH" in your machine</li>
+    <li>"from juraSSH import oneCMD"</li>
+    <li>my_hosts = ["8.8.8.555", "4.4.4.444"]</li>
+    <li>oneCMD.run_one_cmd(username, password, "show clock", my_hosts)</li>
+</ol>
+
+
+<h3>Example 2</h3>
+<h4>To send multiple commands to multiple remote machines in parallel:</h4>
+<ol>
+    <li>"pip install juraSSH" in your machine</li>
+    <li>"from juraSSH import multipleCMDs"</li>
+    <li>my_hosts = ["8.8.8.555", "4.4.4.444"]</li>
+    <li>commands = ["show clock", "show ip int brief", "show version"]</li>
+    <li>multipleCMDs.run_multiple_cmds(username, password, commands, my_hosts)</li>
+</ol>
+
+<p></p>
+
+<h1></h1>
+
+
+<p>You can execute multiple command on hundreds or thousands devices in parallel !!.</p>
+
+<h1></h1>
+
+
