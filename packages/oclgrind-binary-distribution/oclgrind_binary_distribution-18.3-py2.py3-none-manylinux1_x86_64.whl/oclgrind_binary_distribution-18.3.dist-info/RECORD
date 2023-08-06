@@ -1,0 +1,16 @@
+oclgrind_binary_distribution/__init__.py,sha256=3K7Xf7k-l4T3xI_nLhAoAxXhyvJQLbeshCMWOdcefqk,1119
+oclgrind_binary_distribution/.libs/libz-a147dcb0.so.1.2.3,sha256=1IGoOjRpujOMRn7cZ29ERtAxBt6SxTUlRLBkSqa_lsk,87848
+oclgrind_binary_distribution-18.3.dist-info/top_level.txt,sha256=S06vLB6nmzCtS5BiggE2EMCOT9YUnCs2c9W780cOuRI,29
+oclgrind_binary_distribution-18.3.dist-info/RECORD,,
+oclgrind_binary_distribution-18.3.dist-info/METADATA,sha256=ep1ESLdsbEnGqFTMz-iPgFEcs_g3h42ovkVfXQsiVso,296
+oclgrind_binary_distribution-18.3.dist-info/WHEEL,sha256=CbYeirExrUAi--XrTXcHry9Loqw9vz4MtGkA3fRo4Ls,161
+pyopencl/.libs/liboclgrind-rt-icd-c4a8ac4d.so,sha256=nc1DuHCLYrwh2OzXktY1Z0GTESgXmJta1SZv1CtE9yI,272984
+pyopencl/.libs/liboclgrind-0ea8d459.so,sha256=v-W0c5jDegwmt5DSsrM_KrF58UhZm6dTJlYJdqrYM5k,61441912
+pyopencl/.libs/oclgrind.icd,sha256=OyotYYqaPM2lM-q9-ObrFNjLv1vFCsNcV7UtdU--GMc,30
+pyopencl/.libs/share/oclgrind/licenses/OCLGRIND_LICENSE.txt,sha256=cezWYzPztb0YZ89OJe5D4X9zf_OPLTjnTmD4_Zp-5c0,1536
+pyopencl/.libs/share/oclgrind/licenses/clang_LICENSE.txt,sha256=3kx5Zl8PVoiwrOF8um-OA0OSW7leCUnWbUe71FJzENY,2749
+pyopencl/.libs/share/oclgrind/licenses/LLVM_LICENSE.txt,sha256=q9TYeUgIussetpJNSe-v2atu74j6qutdPPoT7jZw1nI,3192
+pyopencl/.libs/include/oclgrind/opencl-c-1.2-64.pch,sha256=5dVmclTR1ptaUqQzZIBi44YadHb7xN_43ZUPJN5TgSo,2517852
+pyopencl/.libs/include/oclgrind/opencl-c-2.0-64.pch,sha256=9duoqDnjrnA1FZ5p756RiXYW0RyowBEOuOJ7BOgPJqo,2556076
+pyopencl/.libs/include/oclgrind/opencl-c-2.0-32.pch,sha256=W_dPiZ9sXV35EqQyN9y36Wctd9Edn24c0MCp9_8VV8U,2555696
+pyopencl/.libs/include/oclgrind/opencl-c-1.2-32.pch,sha256=WBL9qEvF-QCB8oL00odAoJKm7neNyNTNFd6eTO5VWaQ,2517472
