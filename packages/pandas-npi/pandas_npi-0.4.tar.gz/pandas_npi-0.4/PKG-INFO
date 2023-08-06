@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pandas_npi
+Version: 0.4
+Summary: NPI validation made easy with Pandas.
+Home-page: https://github.com/Lyonk71/pandas-npi
+Author: Keith Lyons
+Author-email: lyonk71@gmail.com
+License: UNKNOWN
+Description: # pandas-npi
+        NPI validation made easy with Pandas
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
