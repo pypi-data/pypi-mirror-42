@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: multi
+Version: 0.0.1
+Summary: Comprehensive library for univariate and multivariate time series analysis
+Home-page: https://multipy.org
+Author: Fabian Raters
+Author-email: mail@ratmaster.de
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.6
+
+UNKNOWN
+
+
