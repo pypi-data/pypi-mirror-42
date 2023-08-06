@@ -1,0 +1,26 @@
+cython
+networkx
+numba
+numpy
+pillow
+planarity
+scipy
+sympy
+
+[:python_version == "2.7"]
+matplotlib<3.0,>=2.0
+
+[:python_version == "3.6"]
+matplotlib>=2.0
+
+[optimisation]
+pyopencl
+pycuda
+
+[robotics]
+roslibpy
+
+[viewers]
+PyOpenGL
+PySide2
+vtk
