@@ -1,0 +1,9 @@
+ujson
+chardet
+graphviz
+ply
+filelock
+
+[dev]
+pytest
+pytest-profiling
