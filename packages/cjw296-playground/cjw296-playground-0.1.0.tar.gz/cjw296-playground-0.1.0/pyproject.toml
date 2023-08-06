@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cjw296-playground"
+version = "0.1.0"
+description = ""
+authors = ["Chris Withers <chris@withers.org>"]
+packages = [
+    { include = "playground.py" },
+]
+
+[tool.poetry.dependencies]
+python = "*"
+sphinx = "^1.8"
+pkginfo = "^1.4"
+requests = "^2.21"
+
+[tool.poetry.dev-dependencies]
+more-itertools = "*"  # poetry bug?
+pytest = "^4"
+pytest-cov = "^2.6"
+codecov = "^2.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

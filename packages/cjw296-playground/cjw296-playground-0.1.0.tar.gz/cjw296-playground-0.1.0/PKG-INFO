@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cjw296-playground
+Version: 0.1.0
+Summary: 
+Home-page: None
+Author: Chris Withers
+Author-email: chris@withers.org
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: pkginfo (>=1.4,<2.0)
+Requires-Dist: requests (>=2.21,<3.0)
+Requires-Dist: sphinx (>=1.8,<2.0)
