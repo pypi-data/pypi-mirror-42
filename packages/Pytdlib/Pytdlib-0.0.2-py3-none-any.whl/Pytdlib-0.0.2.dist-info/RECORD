@@ -1,0 +1,15 @@
+pytdlib/__init__.py,sha256=L844CeQJb2zGZTIEDEo9-2yo2DnPytR72dYj6FQkAqw,51
+pytdlib/version.py,sha256=QvlVh4JTl3JL7jQAja76yKtT-IvF4631ASjWY1wS6AQ,22
+pytdlib/td/__init__.py,sha256=qOBeIYbd6H-ff31nk6T1acSEJzqYO1KJbdxFMpDFIxk,60
+pytdlib/td/td.py,sha256=zDqEtKUBxWrJPMQYXXsARDddx322_sIa9DJ5onCYeU4,594
+pytdlib/td/client/__init__.py,sha256=w3RODW009UC_ZlRUHV3bRr0lTXvVYy67hu0D3BpyOb4,108
+pytdlib/td/client/client.py,sha256=0YpLHLFJW5hCsMp-7sZgPIUp423XKHSU6jOa5krTLCc,1957
+pytdlib/td/client/json_client/__init__.py,sha256=OZcc2LJ4MHqye2qgnxRfdiZu3BhkPJEsfgn3CW9Gu6w,658
+pytdlib/td/client/json_client/json_client.py,sha256=gSSCICFA4r4y1xtSEZXn9GlkgTUPL1GUOk6QE0NrQRg,3286
+pytdlib/td/log/__init__.py,sha256=bv4Cl_z75_jfRgPDmx1uxI0MLB6iqIXxf47c17VG-uc,549
+pytdlib/td/log/log.py,sha256=pYMByRkinXSXjFDhL0SEjpJYBlUD1jPkOaf6EA3g4P8,2786
+Pytdlib-0.0.2.dist-info/LICENSE,sha256=BMg4hljCUbQJH5beLEERmqdlztdkZwjfG525SPDw1gA,1064
+Pytdlib-0.0.2.dist-info/METADATA,sha256=RKK2KjxK4ZbvRfDo2m2DO8vjmjzeuYrgYbWtetpF7i8,1063
+Pytdlib-0.0.2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+Pytdlib-0.0.2.dist-info/top_level.txt,sha256=PI3TyXHiHwf9gIwL1qICWtgUcenAzdNqxHY-oh-Hshs,8
+Pytdlib-0.0.2.dist-info/RECORD,,
