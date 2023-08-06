@@ -1,0 +1,9 @@
+README.md
+setup.py
+soon/__init__.py
+soon/soon.py
+soon.egg-info/PKG-INFO
+soon.egg-info/SOURCES.txt
+soon.egg-info/dependency_links.txt
+soon.egg-info/requires.txt
+soon.egg-info/top_level.txt
