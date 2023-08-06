@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+data/test1.csv
+jvstats/__init__.py
+jvstats/console.py
+jvstats.egg-info/PKG-INFO
+jvstats.egg-info/SOURCES.txt
+jvstats.egg-info/dependency_links.txt
+jvstats.egg-info/entry_points.txt
+jvstats.egg-info/not-zip-safe
+jvstats.egg-info/requires.txt
+jvstats.egg-info/top_level.txt
