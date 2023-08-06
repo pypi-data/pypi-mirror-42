@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: django-whisper
+Version: 0.2.3
+Summary: Chat with rooms for Django based on websockets
+Home-page: https://github.com/PragmaticMates/django-whisper
+Author: Pragmatic Mates
+Author-email: info@pragmaticmates.com
+Maintainer: Pragmatic Mates
+Maintainer-email: info@pragmaticmates.com
+License: BSD License
+Description: # django-whisper
+        Django chat app with rooms
+        
+Keywords: django chat room channels websocket
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Development Status :: 3 - Alpha
+Description-Content-Type: text/markdown
