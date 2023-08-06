@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pytwgasprices
+Version: 0.0.1
+Summary: A simple package to fetch the latest Taiwan gas prices
+Home-page: https://github.com/Serge45/pytwgasprices
+Author: Serge45
+Author-email: Serge45497@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: bs4
+
+# pytwgasprices - a simple package to fetch the latest Taiwan gas prices
+
+
