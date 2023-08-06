@@ -1,0 +1,8 @@
+README.md
+setup.py
+git_root/__init__.py
+git_root/git_root.py
+git_root.egg-info/PKG-INFO
+git_root.egg-info/SOURCES.txt
+git_root.egg-info/dependency_links.txt
+git_root.egg-info/top_level.txt
