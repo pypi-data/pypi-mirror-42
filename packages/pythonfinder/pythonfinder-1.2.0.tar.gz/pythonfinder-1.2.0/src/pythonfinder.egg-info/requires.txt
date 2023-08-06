@@ -1,0 +1,49 @@
+attrs
+cached-property
+click
+crayons
+packaging
+six
+vistir[spinner]>=0.3
+
+[:python_version < "3.5"]
+pathlib2
+
+[:python_version <= "3.4"]
+backports.functools_lru_cache
+
+[dev]
+parver
+invoke
+twine
+lxml
+flake8
+rope
+pre-commit
+isort
+
+[dev:python_version >= "3.5"]
+flake8-bugbear
+
+[dev:python_version >= "3.6"]
+black
+
+[tests]
+pytest
+pytest-cov
+pytest-timeout
+twine
+readme_renderer[md]
+
+[typing]
+mypy-extensions
+pyannotate
+
+[typing:python_version >= "3.4"]
+mypy
+mypytools
+pytype
+typed-ast
+
+[typing:python_version >= "3.6"]
+monkeytype
