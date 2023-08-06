@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+blus.egg-info/PKG-INFO
+blus.egg-info/SOURCES.txt
+blus.egg-info/dependency_links.txt
+blus.egg-info/requires.txt
+blus.egg-info/top_level.txt
