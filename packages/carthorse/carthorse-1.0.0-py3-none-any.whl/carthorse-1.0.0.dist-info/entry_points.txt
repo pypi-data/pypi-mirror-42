@@ -1,0 +1,3 @@
+[console_scripts]
+carthorse=carthorse.cli:main
+
