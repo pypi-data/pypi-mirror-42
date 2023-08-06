@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: ttrpy
+Version: 0.1.1
+Summary: Technical analysis and other functions to construct technical trading rules with Python
+Home-page: https://github.com/joelowj/ttrpy
+Author: joelowj
+Author-email: ong.joel.94@gmail.com
+License: Apache License 2.0
+Download-URL: https://github.com/joelowj/ttrpy/archive/v0.1.0.tar.gz
+Description: UNKNOWN
+Keywords: finance,technical analysis,technical indicators,investment
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
