@@ -1,0 +1,16 @@
+LICENSE-MIT
+MANIFEST.in
+README.md
+setup.py
+examples/__init__.py
+examples/interactive_test_pixel_shader.py
+tests/__init__.py
+torchrender/__init__.py
+torchrender/pixel_shader.py
+torchrender/util.py
+torchrender/vertex_shader.py
+torchrender.egg-info/PKG-INFO
+torchrender.egg-info/SOURCES.txt
+torchrender.egg-info/dependency_links.txt
+torchrender.egg-info/requires.txt
+torchrender.egg-info/top_level.txt
