@@ -1,0 +1,15 @@
+README.md
+setup.py
+pygssw/__init__.py
+pygssw/align.py
+pygssw/gssw.c
+pygssw/gssw.h
+pygssw/gssw.py
+pygssw/gssw_wrap.c
+pygssw/test.py
+pygssw/tests.py
+pygssw.egg-info/PKG-INFO
+pygssw.egg-info/SOURCES.txt
+pygssw.egg-info/dependency_links.txt
+pygssw.egg-info/not-zip-safe
+pygssw.egg-info/top_level.txt
