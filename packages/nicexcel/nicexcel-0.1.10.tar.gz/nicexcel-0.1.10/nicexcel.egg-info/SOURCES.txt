@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+nicexcel/__init__.py
+nicexcel/const.py
+nicexcel/excel_format.py
+nicexcel/utils.py
+nicexcel/wrapper.py
+nicexcel.egg-info/PKG-INFO
+nicexcel.egg-info/SOURCES.txt
+nicexcel.egg-info/dependency_links.txt
+nicexcel.egg-info/requires.txt
+nicexcel.egg-info/top_level.txt
+test/__init__.py
+test/test_wrapper.py
