@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: wrappa
+Version: 0.4.0
+Summary: wrappa wraps ds app in http server
+Home-page: UNKNOWN
+Author: seka17
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: aiohttp (>=3.4.4python-consul>=1.0.1)
+Requires-Dist: requests (>=2.13.0)
+Requires-Dist: requests-toolbelt (>=0.8.0)
+Requires-Dist: pyyaml (>=3.13)
+Requires-Dist: numpy (>=1.14.0)
+Requires-Dist: Pillow (>=5.0.0)
+
+UNKNOWN
+
+
