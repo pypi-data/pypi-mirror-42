@@ -1,0 +1,15 @@
+#[test]timer: 2 -> test action: init param 1, init param 2, init_par1=True, init_par2=False, init_par3= teste teste | trigger_result=$return_result, run param 1, run param2, run_par1=True, run_par2=False, run_par3= teste teste 
+#[test]timer: 5, start=true -> test action: trigger_result=$return_result, index=$index;  test action: trigger_result=$return_result, index=$index;  test action: trigger_result=$return_result, index=$index
+#timer: 5, start=true -> test action: locals=$vars, protected=$$vars, public=$$$vars, index=$index; test action: locals=$vars, protected=$$vars, public=$$$vars, index=$index; test action: locals=$vars, protected=$$vars, public=$$$vars, index=$index; test action: locals=$vars, protected=$$vars, public=$$$vars, index=$index; test action: locals=$vars, protected=$$vars, public=$$$vars, index=$index
+
+display: off   -> set power plan: Power saver
+
+display: on    -> start process: cmd, /C, echo oi&&pause, windowed=True
+display: on    -> set power plan: Balanced
+display: on    -> rest request: GET, http\://192.168.10.11\:2280/surveillance/stop, wait_time=1
+
+session end    -> rest request: GET, http\://192.168.10.11\:2280/surveillance/start
+
+system suspend -> rest request: GET, http\://192.168.10.11\:2280/surveillance/start
+
+TP-Link device: connect  -> if:$is_on; set TP-Link device property: device=$device, is_on=False; wait: 0.5; set TP-Link device property: device=$device, is_on=True; end if
