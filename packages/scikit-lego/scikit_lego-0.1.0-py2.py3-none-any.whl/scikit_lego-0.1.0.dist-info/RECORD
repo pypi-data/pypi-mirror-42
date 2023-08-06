@@ -1,0 +1,12 @@
+sklego/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sklego/common.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sklego/transformers.py,sha256=GQUUyiSgx7Oe03lylcaJx7FV6OnWVcI_jgeWfBxM8y4,332
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=eihwZyL8zjJe_oiDPz43NBfBCsySOd7yMntF5HpNMrQ,315
+tests/test_basic.py,sha256=9GLnpfQT3mNpVGsS2ZfGDNMZiMBL9fqqsSJpA4XtM8k,33
+tests/test_transformers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_transformers/test_randomadder.py,sha256=TRybW5BBQ9OtPkjn0BCdPig71tEuccpTOn93_XUm7_g,191
+scikit_lego-0.1.0.dist-info/METADATA,sha256=O-2wPt8PJ5CIGdYqzFwHaivdeazUA8CL3rwud_jXG5I,545
+scikit_lego-0.1.0.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+scikit_lego-0.1.0.dist-info/top_level.txt,sha256=F-ihne49QeNjfptieqnxaSXib2HcivdF96bUFihKXm8,13
+scikit_lego-0.1.0.dist-info/RECORD,,

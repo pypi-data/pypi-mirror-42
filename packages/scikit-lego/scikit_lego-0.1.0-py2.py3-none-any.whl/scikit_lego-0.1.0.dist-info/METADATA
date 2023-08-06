@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: scikit-lego
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy (>=1.15.4)
+Requires-Dist: scipy (>=1.2.0)
+Requires-Dist: scikit-learn (>=0.20.2)
+Requires-Dist: pandas (>=0.23.4)
+Requires-Dist: matplotlib (>=3.0.2)
+Requires-Dist: torch (>=1.0.0)
+Requires-Dist: plotnine (>=0.5.1)
+Requires-Dist: pytest (==4.0.2)
+Requires-Dist: jupyter (==1.0.0)
+Requires-Dist: jupyterlab (==0.35.4)
+Requires-Dist: flake8 (==3.6.0)
+
+UNKNOWN
+
+
