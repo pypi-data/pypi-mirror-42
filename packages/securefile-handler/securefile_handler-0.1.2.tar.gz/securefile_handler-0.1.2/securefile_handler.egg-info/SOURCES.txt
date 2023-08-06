@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+securefile_handler/__init__.py
+securefile_handler/_erase_helpers.c
+securefile_handler/erase_helpers.py
+securefile_handler/errors.py
+securefile_handler/securefile_handler.py
+securefile_handler.egg-info/PKG-INFO
+securefile_handler.egg-info/SOURCES.txt
+securefile_handler.egg-info/dependency_links.txt
+securefile_handler.egg-info/not-zip-safe
+securefile_handler.egg-info/top_level.txt
