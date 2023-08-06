@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+src/pyvesync_v2/__init__.py
+src/pyvesync_v2/vesync.py
+src/pyvesync_v2.egg-info/PKG-INFO
+src/pyvesync_v2.egg-info/SOURCES.txt
+src/pyvesync_v2.egg-info/dependency_links.txt
+src/pyvesync_v2.egg-info/not-zip-safe
+src/pyvesync_v2.egg-info/requires.txt
+src/pyvesync_v2.egg-info/top_level.txt
