@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: feelfree
+Version: 0.1
+Summary: The free version of FEEL package
+Home-page: https://github.com/fangj99/feelfree
+Author: Lau & Fang
+Author-email: fangj99@gmail.com
+License: GNU
+Description: # feelfree
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
