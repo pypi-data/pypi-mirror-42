@@ -1,0 +1,11 @@
+smamp/__init__.py,sha256=6WER5CnqKBXbPLzdUmSuISXzSmyadwrAexqkdYzCDE0,217
+smamp/average_cost.py,sha256=7mcy1khC1LkdHGSt_hvomVcZ89bCNpfLOlZiJinpOgs,4566
+smamp/calc_horton_charges.py,sha256=xqKVdGgjn13Xa8fstC-2b76XIcpA2hw_aPOPKQhmItE,285
+smamp/charges_to_rft.py,sha256=OfHJ9t-SkowtDdaFIgdtg-SELjsxO1TVv6NPKgTdr0U,4450
+smamp/gpaw_optimize_and_esp.py,sha256=ppVF_Mde5eWN2NDs_WffLOtTbncPnyCGsIepDAWBCB8,3245
+smamp/insertHbyList.py,sha256=wgfYFt3cMEpsAeYDW6J9B_VH5sADfCoGXRXCmwZ4qic,7991
+smamp-0.1.dist-info/LICENSE,sha256=s2G-5hT535jeAbZe8cAWr6pExYxv7vvMC75zLgyLwoA,1057
+smamp-0.1.dist-info/METADATA,sha256=HQi0r9VBHQcm1EkBCPhoPb6KZoUP28AlaL7r3h93PvM,225
+smamp-0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+smamp-0.1.dist-info/top_level.txt,sha256=x28lIbb780JbqEcvY4v9io3ufod8lfwmXP6wZnxhdRY,6
+smamp-0.1.dist-info/RECORD,,
