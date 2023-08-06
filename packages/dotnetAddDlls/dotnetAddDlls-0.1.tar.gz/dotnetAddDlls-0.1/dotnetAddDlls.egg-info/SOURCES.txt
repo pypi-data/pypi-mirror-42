@@ -1,0 +1,8 @@
+setup.py
+dotnetAddDlls/RefTemplate.xml
+dotnetAddDlls/__init__.py
+dotnetAddDlls.egg-info/PKG-INFO
+dotnetAddDlls.egg-info/SOURCES.txt
+dotnetAddDlls.egg-info/dependency_links.txt
+dotnetAddDlls.egg-info/entry_points.txt
+dotnetAddDlls.egg-info/top_level.txt
