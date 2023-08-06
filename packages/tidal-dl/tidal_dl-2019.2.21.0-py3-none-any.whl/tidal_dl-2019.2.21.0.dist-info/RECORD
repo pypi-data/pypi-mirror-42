@@ -1,0 +1,10 @@
+tidal_dl/__init__.py,sha256=aVxoNRvaXpEdxxGYZ_rAPwa2YA2w2bF1glW86gmjMj0,3069
+tidal_dl/__main__.py,sha256=l6Qu6sQMeO6tMV5S1sP_kuRX_DBG7NElku51PB-DuzY,123
+tidal_dl/decryption.py,sha256=6Bsa9bFKsYt_RzSwTugERMWKJo2Di8XwGojNL0xqSzY,1479
+tidal_dl/download.py,sha256=QLKhgWu-NRwvNZYoZ7St20IMpsW-Nkncf0g6C7sQf_A,12252
+tidal_dl/tidal.py,sha256=n_NQ-22SNw4nCx57MCW4JubFpPjVpjhmT4Dr9KmuRBA,9886
+tidal_dl-2019.2.21.0.dist-info/METADATA,sha256=0_IK67p-9pWqQI6v_41kZmMDhwhsI6ngeOkX0FJhr4k,302
+tidal_dl-2019.2.21.0.dist-info/WHEEL,sha256=NvLheO0f8_uAcwoMijaCN7IVIIaldpzEnN1plXS6P6E,97
+tidal_dl-2019.2.21.0.dist-info/entry_points.txt,sha256=1_Ou5qzOx_fVvsKbTIMTY8vABvDDwib7OODuBun7mLs,44
+tidal_dl-2019.2.21.0.dist-info/top_level.txt,sha256=EN7RuT_MYl3YKu51XNey1oaJC04c_phtRQKSn3eynAM,9
+tidal_dl-2019.2.21.0.dist-info/RECORD,,
