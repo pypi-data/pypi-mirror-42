@@ -1,0 +1,12 @@
+python_yeelightbt-0.0.4.dist-info/METADATA,sha256=E48EoNu4-V2wJlpPU2nGaEwmhUuciyJTjELNH8IrNGY,608
+python_yeelightbt-0.0.4.dist-info/RECORD,,
+python_yeelightbt-0.0.4.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+python_yeelightbt-0.0.4.dist-info/entry_points.txt,sha256=-qtmZmwU4j-I9B3vDE02tobIVeXIgSWES5qQSZnW5pc,51
+python_yeelightbt-0.0.4.dist-info/top_level.txt,sha256=VIOOvK8eAJtcJ8SVvI3AcTzYN2CRxjyEcyQw8rsen6k,11
+yeelightbt/__init__.py,sha256=6hhw5dGh-kRp2OsnvIRQz7H3dEX_J9S07G_Z7Tlb7ek,71
+yeelightbt/cli.py,sha256=gJO8c7Um_XR4mdJNsiCl9AzvQT7qPzn_SqaZ1k5Zcis,6159
+yeelightbt/connection.py,sha256=tSlWR0nnwcv1oKMEnio3-i5TdKcF-5_-Xo1I_P-7FEI,3911
+yeelightbt/lamp.py,sha256=Dq4PBv-Rh6hlH6avBmUAAzGrLgU4MimUjq1XjcrKfao,7031
+yeelightbt/structures.py,sha256=IIdVlqe5LiMPjggrNhSOG4UHc-zwn9HBoHoSIoledFE,10977
+yeelightbt/test.py,sha256=a3NgjdUB7JinQCB8FnA6Vygefc9XUgs2phqKvBt3zyg,389
+yeelightbt/version.py,sha256=LuRPyTMLdNEbwGTIexgysx2bQ85D5TV72PGalNx3TwY,37

@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: python-yeelightbt
+Version: 0.0.4
+Summary: Python library for interfacing with yeelight's bt lights
+Home-page: https://github.com/rytilahti/python-yeelightbt
+Author: Teemu Rytilahti
+Author-email: tpr@iki.fi
+License: GPLv3
+Keywords: yeelight bluepy
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.4
+Requires-Dist: bluepy
+Requires-Dist: construct
+Requires-Dist: click
+
+UNKNOWN
+
+
