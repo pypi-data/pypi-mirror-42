@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: aimlufotech
+Version: 0.0.2
+Summary: AIML Package with special functions
+Home-page: https://gitlab.com/ufotech/aiml-ufotech.git
+Author: Ufotech
+Author-email: juanpestana96@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+AIML MacondoLab
+
+Modified AIML package to create conversations easily with more capabilities. 
+Made in fablab MacondoLab, located in Barranquilla, Colombia.
+
+This aiml package has some new tags and other tags have been modified in order to help
+developer to make converstions easily.
+
+
