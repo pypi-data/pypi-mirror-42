@@ -1,0 +1,283 @@
+#!python
+from __future__ import print_function
+import codecs
+import os
+import signal
+import datetime
+import sys
+import simplejson
+import os.path
+import shutil
+import re
+from subprocess import call, Popen, PIPE
+from siebel.maintenance.crash import fix_thread_id
+from siebel.maintenance.crash import find_thread_id, manage_comp_alias
+from siebel.maintenance.crash import find_logs, find_last
+from siebel.maintenance.crash import signal_map, readConfig
+
+"""
+Script to search for Siebel Server crash files and generate a report to help to
+identify the problem.
+If any is found, it will execute all the require steps to retrieve information
+from the core dumps, FDR, crash file and related log files to generate a
+complete information about the crash. A summary with the information is
+generated as a JSON to STDOUT.
+The core and FDR files might be removed right after (see the configuration
+file).
+This script will work on Linux only. It is expected that the gdb program is
+also available (to extract the core dumps backtrace).
+To generate HTML documentation for this module issue the command:
+    pydoc -w crash_monitor
+
+
+COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 of Alceu Rodrigues de Freitas Junior,
+glasswalk3r@yahoo.com.br.
+
+This file is part of siebel-crash-report.
+
+siebel-crash-report is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+siebel-crash-report is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with siebel-crash-report.  If not, see http://www.gnu.org/licenses/.
+"""
+
+
+def signal_handler(signal, frame):
+    """
+    SIGINT handler. Just print to STDOUT a message asking to wait operations to
+    finish.
+    This is an attempt to try to finish the process correctly in case of server
+    bounce.
+    """
+    print('Received SIGINT signal')
+    print('Resuming operations, please wait')
+
+
+# to try to finish the process in case of server bounce
+signal.signal(signal.SIGINT, signal_handler)
+# TODO: add try/catch
+
+cfg = readConfig()
+bin_dir = cfg['server']['paths']['bin_dir']
+today = datetime.date.today()
+crash_dir = cfg['server']['paths']['crash_dir']
+enterprise_log_dir = cfg['server']['paths']['enterprise_log_dir']
+log_archive = cfg['server']['paths']['log_archive']
+enterprise_log_file = cfg['server']['files']['enterprise_log_file']
+enterprise_log = os.path.join(enterprise_log_dir, enterprise_log_file)
+crashes = {}
+introduction = """Greetings,
+
+This report will search for specific files on this Siebel Server file system
+that are corresponding for component crashes.
+Please beware that some files might be missing, specially if the crashes
+happened during the Siebel Server restarted, occasion when the log files are
+rotated.
+
+Once information is extracted, some of those files (core dump and FDR) will be
+removed from the server to maintain storage space available.
+
+List of files found:
+----
+"""
+
+print(introduction)
+from_to = signal_map()
+
+for filename in os.listdir(bin_dir):
+
+    if filename[0:5] == 'core.':
+        print('Found core dump %s' % (filename))
+
+        if (not(os.path.isdir(crash_dir))):
+            os.mkdir(crash_dir)
+
+        core_path = os.path.join(bin_dir, filename)
+        statinfo = os.stat(core_path)
+        last_mod = datetime.datetime.fromtimestamp(statinfo.st_mtime)
+        output = (Popen(['file', core_path],
+                        stdout=PIPE).communicate()[0]).rstrip()
+        """
+        /<PATH>/siebsrvr/bin/core.23340: ELF 32-bit LSB core file Intel 80386,
+        version 1 (SYSV), SVR4-style, from 'siebmtshmw'
+        """
+        bin = ((output.split(','))[-1]).replace(" from '", "").replace("'", "")
+        # this can raise an exception
+        pid = int((filename.split('.'))[1])
+
+        if pid in crashes:
+            crashes[pid]['core'] = {'filename': filename,
+                                    'size': statinfo.st_size,
+                                    'last_mod': str(last_mod),
+                                    'executable': bin,
+                                    'generated_by': 'unknown'}
+        else:
+            crashes[pid] = {'core': {'filename': filename,
+                                     'size': statinfo.st_size,
+                                     'last_mod': str(last_mod),
+                                     'executable': bin,
+                                     'generated_by': 'unknown'}}
+
+        if sys.platform.startswith('linux'):
+            print('\tExtracting information from the core file with gdb... ',
+                  end='')
+            gdb_cmd_filename = os.path.join(crash_dir, 'gdb.cmd')
+            gdb = open(gdb_cmd_filename, 'w')
+            gdb.write('bt\n')
+            gdb.close()
+            gdb_out = open((os.path.join(crash_dir, 'gdb_core.txt')), 'a')
+            gdb_out.write('Analyzing core ' + core_path + '\n')
+            popen = Popen(['/usr/bin/gdb', bin,
+                           os.path.join(bin_dir, bin, core_path),
+                           '-batch', '-x', gdb_cmd_filename],
+                          bufsize=0, shell=False, stdout=PIPE)
+            out, err = popen.communicate()
+            signal_regex = re.compile(
+                r'^Program\sterminated\swith\ssignal\s(\d+)', re.MULTILINE)
+            found = signal_regex.findall(out)
+
+            if len(found) >= 1:
+                crashes[pid]['core']['generated_by'] = from_to[int(found[0])]
+
+            gdb_out.write(out)
+            gdb_out.close()
+
+            if err is not None:
+                print('GDB returned an error: %s.' % (err))
+            else:
+                print('done.')
+
+            if cfg['clean_files']:
+                os.remove(core_path)
+
+            os.remove(gdb_cmd_filename)
+
+        manage_comp_alias(crashes=crashes, pid=pid, default_log=enterprise_log,
+                          archive_dir=log_archive, crash_dir=crash_dir,
+                          enterprise_log_file=enterprise_log_file)
+        continue
+
+    if filename[-4:] == '.fdr':
+        print('Found FDR file %s' % (filename))
+
+        if (not(os.path.isdir(crash_dir))):
+            os.mkdir(crash_dir)
+
+        fdr_path = os.path.join(bin_dir, filename)
+        statinfo = os.stat(fdr_path)
+        last_mod = datetime.datetime.fromtimestamp(statinfo.st_mtime)
+
+        # this can raise an exception
+        # T201504072041_P028126.fdr
+        pid = int((((filename.split('_'))[1].split('.'))[0])[1:])
+
+        if pid in crashes:
+            crashes[pid]['fdr'] = {'filename': filename,
+                                   'size': statinfo.st_size,
+                                   'last_mod': str(last_mod)}
+        else:
+            crashes[pid] = {'fdr': {'filename': filename,
+                                    'size': statinfo.st_size,
+                                    'last_mod': str(last_mod)}}
+
+        csv_file = os.path.join(crash_dir, (filename + '.csv'))
+
+        ret = call(['sarmanalyzer', '-o', csv_file, '-x', '-f', fdr_path])
+
+        if ret != 0:
+            print(' '.join(('\tsarmanalizer execution failed with code',
+                            str(ret))))
+
+        if cfg['clean_files']:
+            os.remove(fdr_path)
+
+        thread_id = find_thread_id(csv_file)
+
+        if thread_id is not None:
+            crashes[pid]['thread'] = fix_thread_id(thread_id)
+        else:
+            print(" ".join(("\tCouldn't find the thread id of the crashing \
+thread of process", str(pid), 'by reading the export FDR information')))
+
+        manage_comp_alias(crashes=crashes, pid=pid, default_log=enterprise_log,
+                          archive_dir=log_archive, crash_dir=crash_dir)
+
+        continue
+
+    if filename == 'crash.txt':
+        print('Found file crash.txt, copying it... ', end='')
+
+        if (not(os.path.isdir(crash_dir))):
+            os.mkdir(crash_dir)
+
+        if cfg['clean_files']:
+            os.rename((os.path.join(bin_dir, filename)),
+                      (os.path.join(crash_dir, filename)))
+        else:
+            shutil.copy2((os.path.join(bin_dir, filename)), crash_dir)
+
+        os.rename((os.path.join(bin_dir, filename)), (os.path.join(
+            crash_dir, filename)))
+        print('done.')
+
+if len(crashes):
+    for pid in crashes.keys():
+
+        if 'comp_alias' in crashes[pid]:
+            log_counter = 0
+
+            if 'thread' in crashes[pid]:
+                print('Searching for log files of component %s, pid %s, thread\
+ id %s...' % (crashes[pid]['comp_alias'], str(pid), crashes[pid]['thread']),
+                      end='')
+                ent_regex = re.compile(crashes[pid]['comp_alias'] + r'.*\.log')
+                log_counter = find_logs(log_dir=enterprise_log_dir,
+                                        regex=ent_regex, crash_dir=crash_dir,
+                                        pid=str(pid),
+                                        thread_num=crashes[pid]['thread'])
+
+                if (log_counter > 0):
+                    print('found %s log files.' % (str(log_counter)))
+                else:
+                    print('no log files found in %s.' % (enterprise_log_dir))
+                    print('Trying to find in the logarchive... ', end='')
+                    # sane setting
+                    log_counter = 0
+                    last_one = find_last(log_archive)
+                    log_counter = find_logs(log_dir=last_one, regex=ent_regex,
+                                            crash_dir=crash_dir, pid=str(pid),
+                                            thread_num=crashes[pid]['thread'])
+
+                    if (log_counter > 0):
+                        print('found %s log files.' % (str(log_counter)))
+                    else:
+                        print('no log files found in %s' % (last_one))
+            else:
+                print('PID %s is missing thread id, cannot search for \
+logs.' % (str(pid)))
+
+        else:
+            print('PID %s is missing component alias, cannot search for \
+logs.' % (str(pid)))
+
+    print('\n----\nDumping technical details of component crashes found:\n \
+%s\n----' % (str(crashes)))
+    print('Also dumping all technical details found in JSON format to crashes\
+ info.json file')
+    crashes_info = os.path.join(crash_dir, 'crashes_info.json')
+    fp = codecs.open(crashes_info, 'w', encoding='utf8')
+    simplejson.dump(crashes, fp)
+    fp.close()
+    print('\n')
+
+print('End of report. If files were found, they will be located in the home \
+directory of the server, under %s directory.' % (crash_dir))

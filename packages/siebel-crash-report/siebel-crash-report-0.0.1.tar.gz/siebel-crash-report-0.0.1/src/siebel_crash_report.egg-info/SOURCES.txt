@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/crash_reporter
+src/siebel/__init__.py
+src/siebel/maintenance/__init__.py
+src/siebel/maintenance/crash.py
+src/siebel_crash_report.egg-info/PKG-INFO
+src/siebel_crash_report.egg-info/SOURCES.txt
+src/siebel_crash_report.egg-info/dependency_links.txt
+src/siebel_crash_report.egg-info/requires.txt
+src/siebel_crash_report.egg-info/top_level.txt
