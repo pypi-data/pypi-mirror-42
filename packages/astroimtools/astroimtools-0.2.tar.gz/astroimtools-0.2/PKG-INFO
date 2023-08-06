@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: astroimtools
+Version: 0.2
+Summary: Astronomical Image Tools
+Home-page: https://github.com/spacetelescope/astroimtools
+Author: STScI
+Author-email: help@stsci.edu
+License: BSD 3-Clause
+Description: Astronomical Image Tools
+Keywords: astronomy,astrophysics
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Requires-Python: >=3.5
