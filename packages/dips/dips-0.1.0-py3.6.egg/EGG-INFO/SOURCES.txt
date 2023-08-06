@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+bin/dips
+dips/__init__.py
+dips/dips.py
+dips.egg-info/PKG-INFO
+dips.egg-info/SOURCES.txt
+dips.egg-info/dependency_links.txt
+dips.egg-info/requires.txt
+dips.egg-info/top_level.txt
+examples/kic3547874_sap.data
+examples/kic3953981_sap.data
+examples/synthetic.data
