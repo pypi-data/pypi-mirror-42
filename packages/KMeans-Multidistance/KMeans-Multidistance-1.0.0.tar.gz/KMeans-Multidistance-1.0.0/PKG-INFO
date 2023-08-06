@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: KMeans-Multidistance
+Version: 1.0.0
+Summary: K-Means implementation with multiple distance choices
+Home-page: https://github.com/dperede/KMeans-Multidistance
+Author: David Perez Delgado
+Author-email: cathan.89@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/dperede/KMeans-Multidistance/archive/v1.0.0.tar.gz
+Description: 
+        A library that allows to use the K-Means algorithm using having the possibility to choose between multiple metrics to calculate the distance between the data points in the feature space.
+        
+Platform: UNKNOWN
