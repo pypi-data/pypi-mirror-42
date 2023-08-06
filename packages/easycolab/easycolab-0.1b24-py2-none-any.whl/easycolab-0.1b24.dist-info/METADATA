@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: easycolab
+Version: 0.1b24
+Summary: EasyColab: Easy access to the most used methods on Google Colab
+Home-page: https://github.com/wittmannf/easycolab/
+Author: Fernando Marcos Wittmann
+Author-email: fernando.wittmann@gmail.com
+License: MIT
+Keywords: easycolab
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+Easy to use tools to be used on Google Colab. This Python package implements some of the most useful commands such as mounting Google drive folders, download of big files and zip/unzip files.
+
+## How to install
+1. Open a Google Colab Session.
+2. On a new cell, type:
+```
+!pip install easycolab
+```
+3. Try importing easycolab to check if the installation worked:
+```
+import easycolab as ec
+```
+
+
+
