@@ -1,0 +1,10 @@
+README.md
+setup.py
+whatimage/__init__.py
+whatimage/image_format.py
+whatimage/isobmff_formats.py
+whatimage/simple_formats.py
+whatimage.egg-info/PKG-INFO
+whatimage.egg-info/SOURCES.txt
+whatimage.egg-info/dependency_links.txt
+whatimage.egg-info/top_level.txt
