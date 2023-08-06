@@ -1,0 +1,10 @@
+README.md
+setup.py
+pmini/__init__.py
+pmini/mini1.py
+pmini/mini2.py
+pmini/mxmul.py
+pmini.egg-info/PKG-INFO
+pmini.egg-info/SOURCES.txt
+pmini.egg-info/dependency_links.txt
+pmini.egg-info/top_level.txt
