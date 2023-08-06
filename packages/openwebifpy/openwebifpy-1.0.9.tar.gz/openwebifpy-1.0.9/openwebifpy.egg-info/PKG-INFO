@@ -1,0 +1,89 @@
+Metadata-Version: 1.1
+Name: openwebifpy
+Version: 1.0.9
+Summary: Provides a python interface to interact with a device running OpenWebIf
+Home-page: https://github.com/fbradyirl/openwebifpy
+Author: Finbarr Brady
+Author-email: fbradyirl@github.io
+License: MIT license
+Description: ===========
+        openwebifpy
+        ===========
+        
+        
+        .. image:: https://img.shields.io/pypi/v/openwebifpy.svg
+                :target: https://pypi.python.org/pypi/openwebifpy
+        
+        .. image:: https://img.shields.io/travis/fbradyirl/openwebifpy.svg
+                :target: https://travis-ci.org/fbradyirl/openwebifpy
+        
+        .. image:: https://readthedocs.org/projects/openwebifpy/badge/?version=latest
+                :target: https://openwebifpy.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        
+        .. image:: https://pyup.io/repos/github/fbradyirl/openwebifpy/shield.svg
+             :target: https://pyup.io/repos/github/fbradyirl/openwebifpy/
+             :alt: Updates
+        
+        
+        
+        Provides a python interface to interact with a device running OpenWebIf
+        
+        
+        * Free software: MIT license
+        * Documentation: https://openwebifpy.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        -------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        =======
+        History
+        =======
+        
+        1.0.4 (2019-03-01)
+        ------------------
+        
+        * Move to new repo.
+        
+        1.0.5 (2019-03-01)
+        ------------------
+        
+        * First travis deploy
+        
+        1.0.6 (2019-03-04)
+        ------------------
+        * added get_bouquet_sources
+        
+        1.0.7 (2019-03-04)
+        ------------------
+        * Load src on startup + add select source
+        
+        1.0.8 (2019-03-04)
+        ------------------
+        * Fix tox
+        
+        1.0.9 (2019-03-04)
+        ------------------
+        * Retry deploy
+        
+Keywords: openwebif
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
