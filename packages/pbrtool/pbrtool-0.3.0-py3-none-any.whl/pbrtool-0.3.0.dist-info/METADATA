@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: pbrtool
+Version: 0.3.0
+Summary: Python Pbr generate tool
+Home-page: http://www.singein.com
+Author: Singein
+Author-email: Singein@outlook.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Requires-Dist: fire (==0.1.3)
+Requires-Dist: osprofile
+
+PBR-TOOL
+========
+
+``pbrtool`` 是一个生成setup.py模板的命令行工具
+
+安装
+----
+
+.. code:: bash
+
+   pip install pbrtool
+
+快速开始
+--------
+
+自动生成setup模板
+~~~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+   pbrtool mkpbr --path='.'
+
+转换 README.md 到 README.rst
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+   pbrtool md2rst --path='.'
+
+
+
