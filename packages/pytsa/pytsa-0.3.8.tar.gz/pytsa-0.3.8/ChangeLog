@@ -1,0 +1,84 @@
+CHANGES
+=======
+
+0.3.8
+-----
+
+* Updated Pytsa summary
+
+0.3.7
+-----
+
+* Updated classifiers in setup.cfg
+
+0.3.6
+-----
+
+* updated setup.cfg
+
+0.3.5
+-----
+
+* test config
+
+0.3.3
+-----
+
+* removed trailing ' after classifiers in setup.cfg
+
+0.3.2
+-----
+
+* Used Pandoc to change Markdown README to ReStructuredText
+
+0.3.1
+-----
+
+* removed comma from summary
+
+0.3.0
+-----
+
+* added description content type markdown
+* added setup.cfg for PBR
+* Updated readme
+* added global disable with tests on environment variable 'PYTSA\_DISABLED' == 'True'
+* Added allow\_none to readme
+* reformatted whole codebase
+* allow\_none functional for all rules
+* moved utils from tests to src
+* allow\_none functional for sa\_int
+* added test cases to test\_sa\_list
+* added test allow\_none with other rules test cases
+* added test cases to all rules except list
+* Implemented allow\_none rule for sa\_int
+* added test cases for allow\_none to test\_sa\_int
+* Fixed float test multiple rules test cases
+* updated sa\_float to accept number as arguments to rules
+* Updated sa\_int rules to accept the number as type to rules
+* Updated readme with expected behaviour
+* updated sa\_float and sa\_int rules to accept numbers instead of their own type
+* Fixed module tests
+* added test cases for sa\_number
+* updated readme with new sa\_path rules
+* added rules: can\_owner\_read, can\_group\_read, can\_others\_read, can\_owner\_execute, can\_group\_execute, and can\_others\_execute
+* Abstracted permission test case and added tests for can\_group\_write and can\_others\_write
+* added rule 'owner\_can\_write' with functioning test
+* changed create file structure method to set dir and file permissions to 777
+* all path test now make use of temporary file structures
+* changed test\_rule\_exists\_true to use temp dir
+* added foobar methods to demo code
+* Removed whole rule behaviour section as the test cases describe the behaviour better
+* Added sa\_path rules to readme
+* added is\_dir, is\_file and is\_abs rules
+* added sa\_path with tests and rule 'exists'
+* if boolean rule is False, do not create wrapping checker
+* Replaced TODO in sa\_list with the appropriate new sa\_type rule
+* added type test to all base type test cases
+* Added sa\_type
+* Update README.md
+* Added how to use section to README
+* Formatted code and moved demo from bottom to top of readme
+* Added List in the README Rules section
+* added list not empty rule
+* added sa\_list len rule with tests
