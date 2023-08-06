@@ -1,0 +1,40 @@
+"""Provides storage utilities"""
+def path_from_uuid(uuid_):
+    """
+    create a filepath from a UUID
+    e.g.
+    uuid_ = cbb33a87-6754-4dfd-abd3-7466d4463ebc
+    will return
+    cb/b3/cbb33a87-6754-4dfd-abd3-7466d4463ebc
+    """
+    uuid_1 = uuid_.split('-')[0]
+    first_stanza = uuid_1[0:2]
+    second_stanza = uuid_1[2:4]
+    path = (first_stanza, second_stanza, uuid_)
+    return fs.path.join(*path)
+
+def format_hash(hash_alg, hash_):
+    """
+    format the hash including version and algorithm
+    """
+    return '-'.join(('v0', hash_alg, hash_))
+
+# Import urllparse from python2/3
+print('Importing urlparse')
+try:
+    from urllib.parse import urlparse, parse_qs
+except ImportError:
+    from urlparse import urlparse, parse_qs
+
+def parse_storage_url(urlstring):
+    """Parse the given urllstring.
+
+    Args:
+        urlstring (str): The url string to parse
+
+    Returns:
+        tuple: A tuple of scheme, bucket_name, path, query
+    """
+    result = urlparse(urlstring)
+    parsed_query = parse_qs(result.query)
+    return result.scheme, result.netloc, result.path, parsed_query
