@@ -1,0 +1,554 @@
+#!/usr/bin/env python
+#
+# Tool to manage the "alternatives" structure in the LHCb siteroot
+#
+#
+import os, sys
+import logging
+
+def checkSiteroot(siteroot=None):
+    """ Check if the siteroot is defined and exists """
+
+    if siteroot == None: 
+        siteroot =  os.environ.get("MYSITEROOT", None)
+        # If still None fater we tried from the env we have a problem
+        if siteroot == None:
+            raise Exception("MYSITEROOT env var is not defined")
+        
+        if not os.path.exists(siteroot):
+            raise Exception("siteroot directory %s does not exist" % siteroot)
+
+        if not os.path.exists(os.path.join(siteroot, 'etc')):
+            os.makedirs(os.path.join(siteroot, 'etc'))
+
+    # Finally return the dir found
+    return siteroot
+
+
+def createSiteCustomizationPy(dirname, recreate=False):
+    """ Create the sitecustomize.py file that adds all subdirs to the
+    python path """
+    
+    basename = "sitecustomize.py"
+    fullname = os.path.join(dirname, basename)
+
+    # Check if files exists and if we were requested to recreate
+    if os.path.exists(fullname):
+        if not recreate:
+            logging.warning("%s already exists. Skipping" % fullname)
+            return
+        else:
+            logging.warning("%s already exists. Removing" % fullname)
+            os.remove(fullname)
+
+    # Now creating the file
+    with open(fullname, "w") as f:
+        f.write("""
+import sys
+from os.path import dirname, isdir, join, curdir, pardir
+from os import listdir
+
+_base = dirname(__file__)
+sys.path = filter(isdir,
+                  [join(_base, d)
+                   for d in listdir(_base)
+                   if d not in (curdir, pardir)]) + sys.path
+
+""")
+
+
+class AlternativesManager:
+
+    LINK_TYPES = [ "bin", "lib", "python", "config" ]
+    SPECIAL_ACTIONS = { "python": createSiteCustomizationPy }
+    CONFIG_NAME = "alternatives.json"
+
+    def __init__(self, siteroot=None):
+        """ In the constructor we check the main directories 
+        and create some if necessary """
+
+        # Checking the siteroot
+        tmp = checkSiteroot(siteroot)
+
+        # Settint the vars
+        self._siteroot = os.path.abspath(tmp)
+        self._etc = os.path.join(self._siteroot, "etc")
+        self._alt = os.path.join(self._etc, "alternatives")
+
+        if not os.path.exists(self._alt):
+            os.makedirs(self._alt)
+
+        # Map with the dirs for each architecture
+        # Empty by now, filled in once they have been checked to exist
+        self._archdirs = {}
+
+        # The names of the subdirs in the arch directories
+        self._archsubdirnames =  AlternativesManager.LINK_TYPES
+
+    # directory tools
+    #########################################################################                        
+    def _getArchDirs(self, arch):
+        """ Return the dictionary with all directories """
+        archdirs = self._archdirs.get(arch) 
+        if archdirs == None:
+            # In this case we haven't checked yet, doing it
+            archdirs = {}
+            maindir = os.path.join(self._alt, arch)
+            if not os.path.exists(maindir):
+                os.makedirs(maindir)
+            archdirs["main"] = maindir
+
+            subdirs = self._archsubdirnames
+            for s in subdirs:
+                # sdir is the fill path to the subdirectory
+                # sdirname is its base name
+                sdir = os.path.join(maindir, s)
+                sdirname = s
+                if not os.path.exists(sdir):
+                    # Creating the sub directories
+                    logging.info("Creating subdirectory: %s" % sdir)
+                    os.makedirs(sdir)
+                    # Looking to special actions to take for the directory
+                    a = AlternativesManager.SPECIAL_ACTIONS.get(sdirname)
+                    if a != None:
+                        logging.info("Invoking: %s on %s" % (a, sdir))
+                        a(sdir)
+
+                archdirs[sdirname] = sdir
+            self._archdirs = archdirs
+        # Finally returned what we had or created
+        return archdirs
+
+    def getArchDir(self, arch, name = "main"):
+        """ Get the top directory containing all links for a given architecture """
+        archdirs =self._getArchDirs(arch)
+        return archdirs[name]
+
+    def getArchConfig(self, arch):
+        """ Returns the path to the config file """
+        return os.path.join(self._alt, arch, "config", AlternativesManager.CONFIG_NAME)
+
+    # Tool utilities
+    #########################################################################                        
+
+    def getTool(self, arch, toolname):
+        """ Returns the path of the link for the tool """
+        archdir =self.getArchDir(arch)
+        toolpath = os.path.join(archdir, toolname)
+        if not os.path.exists(toolpath):
+            raise Exception("Trying use a non installed tool: %s" % toolpath)
+        return toolpath
+
+    def listtools(self, arch):
+        """ List all tools for a specific architecture 
+        """
+        allalts = []
+        maindir = self.getArchDir(arch)
+        for f in [ d for d in  os.listdir(maindir) if d not in self._archsubdirnames]:
+            (name, path) = (f, None)
+            fullname = os.path.join(maindir, f)
+            if os.path.islink(fullname):
+                path = os.readlink(fullname)
+            allalts.append([name, path])
+        return allalts
+
+    def settool(self, arch, toolname, toolpath):
+        """ Creates a tool symlink """
+        if toolname in AlternativesManager.LINK_TYPES:
+            raise Exception("Cannot use name %s, already reserved for by the tool" 
+                            % toolname)
+        
+        archdir = self.getArchDir(arch)
+        toolsymlinkpath = os.path.join(archdir, toolname)
+        
+        # Using lexists as we want to knwo if we have broken symbolic links
+        if os.path.lexists(toolsymlinkpath): 
+           if os.path.islink(toolsymlinkpath):
+               curtoolpath = os.path.realpath(os.readlink(toolsymlinkpath))
+               realtoolpath = os.path.realpath(toolpath)
+               if (curtoolpath == realtoolpath):
+                   logging.warning("Link %s -> %s (%s) already exists. Nothing to do" % \
+                                   (toolname, toolpath, realtoolpath))
+                   return
+               else:
+                   logging.warning("Removing link :%s" % toolsymlinkpath)
+                   os.remove(toolsymlinkpath)
+           else:
+               raise Exception("Tool %s exists but isn't a link" \
+                               %  toolsymlinkpath)
+
+        logging.warning("Creating: %s" % toolsymlinkpath)
+        os.symlink(toolpath, toolsymlinkpath)
+
+
+    def _removetool(self, arch, toolname):
+        """ Creates a tool symlink """
+        archdir = self.getArchDir(arch)
+        toolsymlinkpath = os.path.join(archdir, toolname)
+
+        # We log but ignore cases when the tools has gone
+        if not os.path.exists(toolsymlinkpath):
+            logging.warning("Tool %s does not exist" % toolsymlinkpath)
+            return
+
+        # Checking if the link is in use
+        binsfortool = [b[1] for b in self.list(arch) if b[2] == toolname and b[2] != None]
+        if len(binsfortool) > 0:
+            raise Exception("Tool %s cannot be removed. Links: %s depend on it" % \
+                                (toolname, " ".join(binsfortool)))
+
+        # Now removing the symlink
+        if os.path.islink(toolsymlinkpath):
+            linkdest = os.readlink(toolsymlinkpath)
+            logging.warning("Removing %s pointing to %s" % (toolsymlinkpath, linkdest))
+            os.remove(toolsymlinkpath)
+        else:
+            raise Exception("%s is not a link not removing" % toolsymlinkpath)
+
+    # utilities to deal with individual links
+    #########################################################################                        
+
+    def list(self, arch):
+        """ List all alternatives for a specific architecture 
+            Returns an array containing:
+            Binary name,
+            Link target,
+            Tool name,
+            Real path,
+            Tool path
+        """
+
+        allalts = []
+        # Iterating on various types of links (bin, lib, python)
+        for bt in AlternativesManager.LINK_TYPES:
+            bindir = self.getArchDir(arch, bt)
+            for f in os.listdir(bindir):
+                (name, l1, l1group, absbin) = (f, None, None, None)
+                fullname = os.path.join(bindir, f)
+                l1group = None
+                toollink = None
+                absbin = None
+                if os.path.islink(fullname):
+                    # If we have a link we check to which "group" it belongs
+                    # (that's the name of the dir above pointing to the proper 
+                    # release dir
+                    l1 = os.readlink(fullname)
+                    l1split = [ e for e in l1.split(os.sep) if e != '']
+                    if l1split[0] == '..' and len(l1split)>1:
+                        l1group = l1split[1]
+                        toollink = os.path.realpath(os.path.join(fullname, '..', '..'))
+                    absbin = os.path.realpath(fullname)
+                allalts.append([name, l1, l1group, absbin, toollink])
+       
+        return allalts
+
+
+    def set(self, arch, linktype, linkname, toolname, relpath=None):
+        """ Creates a binary link """
+        if linktype not in AlternativesManager.LINK_TYPES:
+            raise Exception("Unknown link type %s. Can only deal with %s" % \
+                            (linktype, ",".join(AlternativesManager.LINK_TYPES)))
+
+        archdir = self.getArchDir(arch)
+        archlinkdir = self.getArchDir(arch, linktype)
+        
+        linkpath = os.path.join(archlinkdir, linkname)
+        if relpath == None:
+            # By default we expect the linked fileto be in the tool's
+            # <linktype> directory but that can be overriden
+            relpath = os.path.join("..", toolname, linktype, linkname)
+
+        # Check that the tool exists
+        self.getTool(arch, toolname)
+
+        # finally create the symlink
+        if os.path.lexists(linkpath):
+            if not os.path.islink(linkpath):
+                raise Exception("%s exists but is not a link, Not removing")
+            else:
+                # We have a link, checking if it is identical to the previous one
+                # before removing
+                currelpath = os.readlink(linkpath)
+                if currelpath == relpath:
+                    logging.warning("%s already pointing to %s. Nothing to do" % (linkpath, relpath))
+                    return
+                else:
+                    logging.warning("Removing %s to recreate" % linkpath)
+                    os.remove(linkpath)
+
+        logging.warning("Creating link: %s -> %s" % (linkpath, relpath))
+        os.symlink(relpath, linkpath)
+
+    def remove(self, arch, name):
+        """ Creates a binary link """
+        archdir = self.getArchDir(arch)
+
+        for t in AlternativesManager.LINK_TYPES:
+            archlinkdir = self.getArchDir(arch, t)
+
+            linkpath = os.path.join(archlinkdir, name)
+            if os.path.exists(linkpath):
+                self._removelink(arch, name) 
+            else:
+                self._removetool(arch, name)
+
+
+                            
+    def _removebin(self, arch, binname):
+        """ Creates a binary link """
+        archdir = self.getArchDir(arch)
+        archbindir = self.getArchDir(arch, "bin")
+        
+        binpath = os.path.join(archbindir, binname)
+        # We log but ignore cases when the tools has gone
+        if not os.path.exists(binpath):
+            logging.warning("Link %s does not exist" % binpath)
+            return
+
+        #  actually removing the link
+        if os.path.islink(binpath):
+            logging.warning("Removing %s pointing to %s" % 
+                            (binpath, os.readlink(binpath)))
+            os.remove(binpath)
+        else:
+            raise Exception("%s is not a link not removing" % binpath)
+
+                       
+    def gctool(self, arch):
+        """ Creates a tool symlink """
+        archdir = self.getArchDir(arch)
+
+        # Getting the list of binaries and tools referenced
+        alltools = set([x[0] for x in self.listtools(arch)])
+        usedtools = set([x[2] for x in self.list(arch) if x[2] != None])
+
+        # Removing the unnecessary ones
+        for t in  alltools - usedtools:
+            self._removetool(arch, t)
+        
+
+    # utilities to deal with individual links
+    #########################################################################                        
+
+    def load(self, arch, filename=None):
+        """ Loads the metadata file and creates the links accordingly"""
+        
+        if filename == None:
+            filename = self.getArchConfig(arch)
+
+        # Loading the config file
+        config = {}
+        import json
+        with open(filename, "r") as f:
+            config = json.load(f)
+
+        # Setting the tools
+        for (name, path) in config["TOOLS"].iteritems():
+            try:
+                fullpath =  os.path.expandvars(path)
+                self.settool(arch, name, fullpath)
+            except:
+                e = sys.exc_info()[0]
+                print "Error:", e
+        
+        # Setting the links
+        for entry in config["LINKS"]:
+            try:
+                (linkname, linktype, toolname, relpath) = entry
+                self.set(arch, linktype, linkname, toolname, relpath)
+            except:
+                e = sys.exc_info()[0]
+                print "Error:", e
+                
+
+
+def main():
+
+    commands = [ "list", "set", "remove", "settool", "listtools", "gc", "load" ]
+    helpmap = {}
+    helpmap["list"] = """List all links in the ${MYSITEROOT}/etc/alternatives/${ARCH}/bin, lib and python
+
+For each of them, it returns the name , tool (i.e. the entry in  the ${MYSITEROOT}/etc/alternatives/${ARCH} 
+it points to) and the file referenced.
+"""
+    helpmap["set"] = """
+Creates a link ${MYSITEROOT}/etc/alternatives/${ARCH}/bin
+
+Arguments: <type> <name> <tool to be used ((i.e. the entry in  the ${MYSITEROOT}/etc/alternatives/${ARCH} to use)>
+By default a link to "../<tool>/<type>/<name> (for bin and lib)is created but that can be overriden by a third optional option.
+"""
+    helpmap["remove"] = """
+Remove a tool or a link to a executable
+
+Arguments: <name>
+"""
+    helpmap["listtools"] = """List all links in the ${MYSITEROOT}/etc/alternatives/${ARCH}
+
+For each of them, it returns the name and the dir referenced.
+"""
+
+    helpmap["settool"] = """
+Creates a link ${MYSITEROOT}/etc/alternatives/${ARCH}
+
+Arguments: <name> <directory to point to>
+"""
+    helpmap["gc"] = """
+garbage collect unsused links in ${MYSITEROOT}/etc/alternatives/${ARCH}
+"""
+
+    helpmap["load"] = """
+Loads config file and creates the appropriate links.
+Default filename: ${MYSITEROOT}/etc/alternatives/${ARCH}/alternatives.json
+"""
+
+    from optparse import OptionParser
+    usage = """usage: %prog [options] args
+
+Tool to manage the "alternatives" links in the $MYSITEROOT/etc/alternatives/$ARCH 
+in the install area.
+
+Links to a whole tool
+---------------------
+
+It allows managing links to a directory containing a whole version of a tool in:
+ $MYSITEROOT/etc/alternatives/$ARCH
+
+* Creation
+
+lb-alternatives --settool gdb /afs/cern.ch/sw/lcg/contrib/gdb/7.8/x86_64-slc6-gcc48-opt
+
+will create $MYSITEROOT/etc/alternatives/$ARCH/gdb pointing to 
+/afs/cern.ch/sw/lcg/contrib/gdb/7.8/x86_64-slc6-gcc48-opt
+
+* Listing of such links
+
+lb-alternatives --listtools
+
+* Removal
+
+Same command as for individual links (c.f. below)
+
+Links in the "bin", "lib" and "python" directory
+------------------------------------------------
+
+* Creation
+
+lb-alternatives --set gdb bin gdb
+
+will create $MYSITEROOT/etc/alternatives/$ARCH/gdb pointing to 
+../gdb/bin/gdb
+which when derefenced points to the actual gdb executable in 
+/afs/cern.ch/sw/lcg/contrib/gdb/7.8/x86_64-slc6-gcc48-opt
+
+
+* Listing
+
+lb-alternatives --list
+
+* Removal
+
+lb-alternatives --remove gdb
+
+
+ Loading a whole configuration file
+------------------------------------------------
+
+lb-alternatives --load <filename>
+
+The file is optional, by default 
+$MYSITEROOT/etc/alternatives/$ARCH/alternatives.json is used
+
+
+"""
+    parser = OptionParser(usage=usage)
+    parser.add_option("-d", "--debug", action="store_true",
+                      default = False, help="Help set logging output")
+    for c in commands:
+        parser.add_option("--" + c, dest=c, action="store_true",
+                          default=False, help=helpmap[c])
+    
+
+    (options, args) = parser.parse_args()
+    if options.debug:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.WARNING)
+
+    mgr =  AlternativesManager()
+    import platform
+    arch = platform.machine()
+
+    cmddone = False
+    if options.list:
+        cmddone = True
+        allalts = mgr.list(arch)
+        mysep = " "
+        if len(allalts) > 0:
+            for a in allalts:
+                print "=================================================="
+                print "Name: ", a[0]
+                print "Link: ", a[1]
+                print "Real path: ", a[3]
+                print "Tool: ", a[2]
+                print "Tool path: ", a[4]
+
+    if options.listtools:
+        cmddone = True
+        allalts = mgr.listtools(arch)
+        mysep = "\t"
+        if len(allalts) > 0:
+            print mysep.join(["Name", "Tool"])
+            for a in allalts:
+                print mysep.join([str(e) for e in a])
+
+    if options.settool:
+        cmddone = True
+        if len(args) < 2:
+            raise Exception("Please specify: toolname path")
+        toolname = args[0]
+        toolpath = args[1]
+
+        if not os.path.exists(toolpath):
+            raise Exception("Path %s does not exist" % toolpath)
+
+        mgr.settool(arch, toolname, toolpath)
+            
+    if options.set:
+        cmddone = True
+        relpath = None
+        if len(args) < 2:
+            raise Exception("Please specify: linktype linkname toolname <relative path>")
+        linktype = args[0]
+        linkname = args[1]
+        toolname = args[2]
+        if len(args) >=4:
+            relpath = args[3]
+
+        mgr.set(arch, linktype, linkname, toolname, relpath)
+
+    if options.remove:
+        cmddone = True
+        if len(args) < 1:
+            raise Exception("Please specify the binary or tool to remove")
+
+        name =  args[0]
+        mgr.remove(arch, name)
+
+    if options.gc:
+        cmddone = True
+        mgr.gctool(arch)
+
+
+    if options.load:
+        cmddone = True
+        filename = None
+        if len(args) > 0:
+            filename =args[0] 
+        mgr.load(arch, filename)
+
+
+    if not cmddone:
+        parser.print_help()
+        
+if __name__ == "__main__":
+    main()
