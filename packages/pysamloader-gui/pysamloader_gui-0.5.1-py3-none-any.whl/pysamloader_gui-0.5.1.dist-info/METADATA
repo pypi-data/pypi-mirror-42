@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: pysamloader-gui
+Version: 0.5.1
+Summary: Kivy GUI for pysamloader
+Home-page: https://github.com/chintal/pysamloader-gui
+Author: Chintalagiri Shashank
+Author-email: shashank@chintal.in
+License: GPLv3+
+Keywords: utilities
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Dist: pysamloader
+Requires-Dist: cython
+Requires-Dist: kivy
+Provides-Extra: build
+Requires-Dist: doit ; extra == 'build'
+Requires-Dist: setuptools-scm ; extra == 'build'
+Requires-Dist: wheel ; extra == 'build'
+Requires-Dist: twine ; extra == 'build'
+Requires-Dist: pygithub ; extra == 'build'
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-argparse ; extra == 'docs'
+Requires-Dist: sphinxcontrib-documentedlist ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+
+UNKNOWN
+
+
