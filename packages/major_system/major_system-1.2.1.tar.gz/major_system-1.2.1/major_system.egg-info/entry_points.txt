@@ -1,0 +1,3 @@
+[console_scripts]
+major_words = major_system.major_system:main
+

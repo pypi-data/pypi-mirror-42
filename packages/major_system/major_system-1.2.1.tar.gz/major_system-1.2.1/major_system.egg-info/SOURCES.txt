@@ -1,0 +1,10 @@
+setup.py
+major_system/__init__.py
+major_system/major_system.py
+major_system/test_major_system.py
+major_system.egg-info/PKG-INFO
+major_system.egg-info/SOURCES.txt
+major_system.egg-info/dependency_links.txt
+major_system.egg-info/entry_points.txt
+major_system.egg-info/requires.txt
+major_system.egg-info/top_level.txt
