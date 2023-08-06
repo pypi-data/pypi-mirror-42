@@ -1,0 +1,13 @@
+ligo_lvalert_overseer-0.1.3-nspkg.pth,sha256=jdWwfooSrKfn-WHKPklJlCjnB2MDxP-F_eeikKStZIE,529
+ligo/overseer/__init__.py,sha256=_A7A42aNXpwYCpASLrqmDKdPuKzDQYa3aNm1eh5Y2nU,742
+ligo/overseer/lvalert_client.py,sha256=lgF9JHkGbHTxw9BzgWA1cmc-_ddnRUdiySCiGq75OoY,6049
+ligo/overseer/overseer_client.py,sha256=LjJMhCUlp7ZRH_-mcGqKbpiKJ1lu6TrfDYS87NGTVtc,3307
+ligo_lvalert_overseer-0.1.3.data/scripts/lvalert_overseer,sha256=Zz0FCIIV-R-RIsoR9ywXr_u6Yw7WR5SO_-viU7gNQu8,12634
+ligo_lvalert_overseer-0.1.3.data/scripts/overseer_test_client,sha256=Ml4mSJRegaaoEnW1paXpEhVPfxLIin64Bje_qNPdMZo,1464
+ligo_lvalert_overseer-0.1.3.dist-info/DESCRIPTION.rst,sha256=7_4Sl-9w9CB5hBUbw1iQ8rEUaPejsQPbZSwHdt-1g38,170
+ligo_lvalert_overseer-0.1.3.dist-info/METADATA,sha256=f9Kh0LA7M1UpxvfXpVgmwqAD3oTL1R9AQn_MhBSqW0Y,476
+ligo_lvalert_overseer-0.1.3.dist-info/RECORD,,
+ligo_lvalert_overseer-0.1.3.dist-info/WHEEL,sha256=hZvi-8L6mc2COqhOUWREM_h2lvnJbaHycZt8eohtmso,92
+ligo_lvalert_overseer-0.1.3.dist-info/metadata.json,sha256=YENGsXMGJ3nqyUTonxt6g1__tKqP85265YNtW1qwoZU,467
+ligo_lvalert_overseer-0.1.3.dist-info/namespace_packages.txt,sha256=y5fy5GsmifPZH6RR8fYXooXAJfv7HJTAqxc_rGrN-RE,5
+ligo_lvalert_overseer-0.1.3.dist-info/top_level.txt,sha256=y5fy5GsmifPZH6RR8fYXooXAJfv7HJTAqxc_rGrN-RE,5
