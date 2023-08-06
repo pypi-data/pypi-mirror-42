@@ -1,0 +1,11 @@
+numpy
+pandas
+shapely
+fiona
+six
+pyproj
+geopandas
+jupyter
+jupyterlab
+ipywidgets
+ipyleaflet
