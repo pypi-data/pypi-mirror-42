@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+tests/__init__.py
+tests/test_decoder_component.py
+tests/test_encoder_component.py
+tests/test_feed_forward.py
+tests/test_transformer.py
+torch_transformer/__init__.py
+torch_transformer/feed_forward.py
+torch_transformer/transformer.py
+torch_transformer.egg-info/PKG-INFO
+torch_transformer.egg-info/SOURCES.txt
+torch_transformer.egg-info/dependency_links.txt
+torch_transformer.egg-info/requires.txt
+torch_transformer.egg-info/top_level.txt

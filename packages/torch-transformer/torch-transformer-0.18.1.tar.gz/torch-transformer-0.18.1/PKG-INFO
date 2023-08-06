@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: torch-transformer
+Version: 0.18.1
+Summary: Transformer implemented in PyTorch
+Home-page: https://github.com/CyberZHG/torch-transformer
+Author: CyberZHG
+Author-email: CyberZHG@gmail.com
+License: MIT
+Description: # PyTorch Transformer
+        
+        [![Travis](https://travis-ci.org/CyberZHG/torch-transformer.svg)](https://travis-ci.org/CyberZHG/torch-transformer)
+        [![Coverage](https://coveralls.io/repos/github/CyberZHG/torch-transformer/badge.svg?branch=master)](https://coveralls.io/github/CyberZHG/torch-transformer)
+        
+        ## Install
+        
+        ```bash
+        pip install torch-transformer
+        ```
+        
+        ## Usage
+        
+        ```python
+        
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
