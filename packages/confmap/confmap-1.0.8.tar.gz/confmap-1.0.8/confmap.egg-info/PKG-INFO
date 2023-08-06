@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: confmap
+Version: 1.0.8
+Summary: Conformal mapping on images and videos
+Home-page: https://fcoulombeau.frama.io/git/transconf/
+Author: F.Coulombeau 2019
+Author-email: coulombeau@gmail.com
+License: MIT License
+Description: ConformalMapping
+        ================
+        
+        Python classes for transformations of pictures and videos using conformal mappings of the complex plane.
+        
+        Author : François Coulombeau
+        
+        Note : I did my best to translate and comment this code which I originally wrote in french (and mainly uncommented) for my own purpose. Yet, being french speaking, my comments might be hard to understand. Feel free to feedback about the code or the comments.
+Keywords: conformal mapping complex analysis
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English, French
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Multimedia :: Video
+Classifier: Topic :: Multimedia :: Image
+Description-Content-Type: text/markdown
+Provides-Extra: doc
+Provides-Extra: test
+Provides-Extra: optional
