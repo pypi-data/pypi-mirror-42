@@ -1,0 +1,10 @@
+bandit
+cmakelint
+lizard
+pycodestyle
+pydocstyle
+pyflakes
+PyYAML
+xmltodict
+yamllint
+yapsy
