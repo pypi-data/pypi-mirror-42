@@ -1,0 +1,36 @@
+Metadata-Version: 1.0
+Name: hfda
+Version: 0.1.1
+Summary: Implementation of Higuchi Fractal Dimension Analysis.
+Home-page: https://github.com/hiroki-kojima/HFDA
+Author: Hiroki Kojima
+Author-email: 7316072@gmail.com
+License: BSD
+Description: HFDA
+        ====
+        
+        Implementation of Higuchi Fractal Dimension Analysis.
+        
+        Install
+        ----------
+        
+        .. code-block:: text
+        
+            pip install hfda
+        
+        Example
+        -------
+        
+        .. code-block:: python
+        
+            import numpy as np
+            import hfda
+        
+        
+            N = np.power(2, 15)
+            X = np.sin(np.linspace(0, 1000, N))
+            k_max = 5
+        
+            D = hfda.measure(X, k_max)
+        
+Platform: UNKNOWN

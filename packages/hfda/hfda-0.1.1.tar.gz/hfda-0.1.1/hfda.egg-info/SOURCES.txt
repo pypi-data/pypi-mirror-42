@@ -1,0 +1,10 @@
+README.rst
+setup.py
+hfda/__init__.py
+hfda/core.py
+hfda.egg-info/PKG-INFO
+hfda.egg-info/SOURCES.txt
+hfda.egg-info/dependency_links.txt
+hfda.egg-info/not-zip-safe
+hfda.egg-info/requires.txt
+hfda.egg-info/top_level.txt
