@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: MongoDBTools
+Version: 0.1.1
+Summary: MongoDB tooling for KPMG Eskapade package
+Home-page: http://eskapade.kave.io
+Author: KPMG N.V. The Netherlands
+Author-email: kave@kpmg.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Requires-Dist: Eskapade-Core (>=1.0.0)
+Requires-Dist: pymongo (>=3.4.0)
+Requires-Dist: pandas (>=0.20.1)
+
+UNKNOWN
+
+

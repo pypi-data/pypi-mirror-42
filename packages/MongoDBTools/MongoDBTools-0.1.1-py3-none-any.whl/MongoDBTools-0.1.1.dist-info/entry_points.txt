@@ -1,0 +1,3 @@
+[console_scripts]
+mongo_reset_collections = mongodbtools.entry_points:mongo_reset_collections
+
