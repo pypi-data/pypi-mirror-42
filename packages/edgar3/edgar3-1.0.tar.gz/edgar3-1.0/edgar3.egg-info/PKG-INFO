@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: edgar3
+Version: 1.0
+Summary: Yet another SEC Edgar Tool
+Home-page: https://github.com/kfarr3/edgar3
+Author: Ken Farr
+Author-email: ken@farr.ai
+License: UNKNOWN
+Description: # edgar3
+        
+        Edgar3 was originally created to scrape 13f files from SEC's Edgar database and convert them into Pandas DataFrames
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

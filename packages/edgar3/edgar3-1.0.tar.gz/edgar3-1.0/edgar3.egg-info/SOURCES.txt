@@ -1,0 +1,11 @@
+README.md
+setup.py
+edgar3/__init__.py
+edgar3/edgar.py
+edgar3/filing.py
+edgar3/filing_13f.py
+edgar3/test.py
+edgar3.egg-info/PKG-INFO
+edgar3.egg-info/SOURCES.txt
+edgar3.egg-info/dependency_links.txt
+edgar3.egg-info/top_level.txt
