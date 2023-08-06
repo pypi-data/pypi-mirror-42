@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: qcportal
+Version: 0.5.0.post1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: MolSSI
+Author-email: UNKNOWN
+License: BSD-3-Clause
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: numpy (>=1.7)
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: pydantic (>=0.19)
+Requires-Dist: qcelemental (>=0.2.6)
+
+A client interface to the QC Archive Project
+
+
