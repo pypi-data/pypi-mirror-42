@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+mailDropper/__init__.py
+mailDropper/sendmail.py
+mailDropper/sendmailD.py
+mailDropper.egg-info/PKG-INFO
+mailDropper.egg-info/SOURCES.txt
+mailDropper.egg-info/dependency_links.txt
+mailDropper.egg-info/not-zip-safe
+mailDropper.egg-info/top_level.txt
