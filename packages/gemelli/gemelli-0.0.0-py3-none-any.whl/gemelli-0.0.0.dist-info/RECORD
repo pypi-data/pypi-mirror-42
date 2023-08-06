@@ -1,0 +1,11 @@
+gemelli/__init__.py,sha256=ShXQBVjyiSOHxoQJS2BvNG395W4KZfqMxZWBAR0MZrE,22
+gemelli/base.py,sha256=v78bIXcC5AiPxN6_h7NjIzuFNqymFoSWFQwjU76uWW8,831
+gemelli/tenals.py,sha256=zHRwX3YYFZQ9gVeKr65QMQN8MpGkmoBD6ys7EPExafM,4646
+gemelli/tensor_factorization.py,sha256=Y8GklqD6_qR8gddzVc-F17OKFS-Wu6XYkVi2TYPaMTk,2689
+gemelli/tensor_preprocessing.py,sha256=E7PNqpML788fTXDn1YuupR1nxmWu42EXxFcWTqKarf8,6732
+gemelli/utils.py,sha256=Re6x8nhzIVGr0FDuN7KWpnMncp_yKlwl06hQyD29bX0,926
+gemelli-0.0.0.dist-info/LICENSE,sha256=YV-ip0TgwT19DEyOCgrbhpkJWmWAoaxKEgWxPalIizU,1516
+gemelli-0.0.0.dist-info/METADATA,sha256=IIzqG9MERFBXkOSteoyvifLh8cxF_DHlq-lDZQCZYS8,1575
+gemelli-0.0.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+gemelli-0.0.0.dist-info/top_level.txt,sha256=PXbBeFfjLSkKHMAA8wG9oUzYSUurwc9AEv0YB8i1zGs,8
+gemelli-0.0.0.dist-info/RECORD,,
