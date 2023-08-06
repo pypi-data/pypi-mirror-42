@@ -1,0 +1,69 @@
+Metadata-Version: 1.2
+Name: steemengine
+Version: 0.1.0
+Summary: command line tool and python library for sending steem engine tokens
+Home-page: UNKNOWN
+Author: Holger Nahrstaedt
+Author-email: holger@nahrstaedt.de
+Maintainer: Holger Nahrstaedt
+Maintainer-email: holger@nahrstaedt.de
+License: UNKNOWN
+Description: # steemengine
+        Python tools for obtaining and processing steem engine tokens
+        
+        [![Build Status](https://travis-ci.org/holgern/steemengine.svg?branch=master)](https://travis-ci.org/holgern/steemengine)
+        
+        ## Installation
+        ```
+        pip install steemengine
+        ```
+        
+        
+        ## Commands
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.getLatestBlockInfo())
+        ```
+        
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.getBlockInfo(1910))
+        ```
+        
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.getContract("tokens"))
+        ```
+        
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.find("tokens", "tokens"))
+        ```
+        
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.findOne("tokens", "tokens"))
+        ```
+        
+        ```
+        from steemengine.api import Api
+        api = Api()
+        print(api.get_history("holger80", "NINJA"))
+        ```
+Keywords: steem,tools
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
