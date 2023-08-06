@@ -1,0 +1,16 @@
+CHANGES.rst
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+rentier_rotating_proxies/__init__.py
+rentier_rotating_proxies/expire.py
+rentier_rotating_proxies/middlewares.py
+rentier_rotating_proxies/policy.py
+rentier_rotating_proxies/utils.py
+rentier_scrapy_proxy_rotator.egg-info/PKG-INFO
+rentier_scrapy_proxy_rotator.egg-info/SOURCES.txt
+rentier_scrapy_proxy_rotator.egg-info/dependency_links.txt
+rentier_scrapy_proxy_rotator.egg-info/requires.txt
+rentier_scrapy_proxy_rotator.egg-info/top_level.txt
