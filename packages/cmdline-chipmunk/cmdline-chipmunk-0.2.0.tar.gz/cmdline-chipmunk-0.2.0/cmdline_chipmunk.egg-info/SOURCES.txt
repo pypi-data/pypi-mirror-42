@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+chipmunk/__init__.py
+chipmunk/__main__.py
+chipmunk/chipmunk.py
+chipmunk/stuff.py
+cmdline_chipmunk.egg-info/PKG-INFO
+cmdline_chipmunk.egg-info/SOURCES.txt
+cmdline_chipmunk.egg-info/dependency_links.txt
+cmdline_chipmunk.egg-info/entry_points.txt
+cmdline_chipmunk.egg-info/top_level.txt
