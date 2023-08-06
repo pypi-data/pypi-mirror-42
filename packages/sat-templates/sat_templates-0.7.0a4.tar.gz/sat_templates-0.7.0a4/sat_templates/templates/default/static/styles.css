@@ -1,0 +1,1311 @@
+/*************
+ * Constants *
+ *************/
+
+:root {
+  --box-bg-color: #efefef;
+  --box--expand_limit: 20rem;
+  --box--expand_height-min: 9rem;
+  --select-bg-color: #ddd;
+  --size-small: 1.5rem;
+  --size-medium: 3rem;
+  --color-prim: #fafafa;
+  --color-prim--light: #ffffff;
+  --color-prim--dark: #c7c7c7;
+  --color-sec: #448aff;
+  --color-sec--light: #83b9ff;
+  --color-sec--dark: #005ecb;
+}
+
+/*****************
+ * Main Elements *
+ *****************/
+
+html {
+    font-family: "sat-base-font";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+blockquote {
+    margin: 1em 0;
+    padding-left: 0.3em;
+    border-left: 0.3rem solid #CCC;
+}
+
+code {
+	border: solid 1px #DDD;
+	padding: 0.2em;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    /* this value is used when js is not enabled */
+    height: 100%;
+}
+
+#main_area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#body {
+    flex: 1;
+    position: relative;
+}
+
+.page__footer {
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+.page__footer span {
+    background: white;
+}
+
+
+.post_confirm {
+    text-align: center;
+    background-color: lightgreen;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 60%;
+    margin: 1.5em auto;
+}
+
+/**********
+ * States *
+ **********/
+
+.state_init {
+    cursor: pointer;
+}
+
+.other_lang.state_init>* {
+    display: none;
+}
+
+.show_if_init {
+    display: none;
+}
+
+.state_init.show_if_init {
+    /* unset is not working well here (it uses "inline", not element default) */
+    display: block;
+}
+
+.show_if_parent_init {
+    display: none;
+}
+
+.state_init>.show_if_parent_init {
+    display: block;
+}
+
+.show_if_parent_clicked {
+    display: none;
+}
+
+.state_clicked>.show_if_parent_clicked {
+    /* cf. .show_if_init */
+    display: block;
+}
+
+.state_clicked>span.show_if_parent_clicked {
+    /* cf. .show_if_init */
+    display: inline;
+}
+
+.state_clicked>.show_if_parent_not_clicked {
+    display: none;
+}
+
+.show_if_grandparent_clicked {
+    display: none;
+}
+
+.state_clicked>*>.show_if_grandparent_clicked {
+    /* cf. .show_if_init */
+    display: block;
+}
+
+.state_clicked>*>.show_if_grandparent_not_clicked {
+    display: none;
+}
+
+/***********
+ * Generic *
+ ***********/
+
+/** Common Sizes **/
+
+/** Buttons **/
+
+.btn {
+    padding: 0.3em 0.5em;
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 0.8em;
+    font-weight: bold;
+}
+
+
+.btn:hover {
+    background-color: var(--color-sec);
+}
+
+.btn-fold {
+    border: none;
+    border-radius: 1em;
+    background-color: var(--color-prim--light);
+    color: #727272;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-fold:hover {
+    font-weight: bold;
+}
+
+/** Labels **/
+
+.labels {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.labels a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.labels span {
+    font-variant: small-caps;
+    font-size: 0.8rem;
+    background-color: #ddd;
+    border-radius: 0.4em;
+    padding: 0 0.5em;
+    transition: all 0.5s;
+}
+
+.labels a>span {
+    cursor: pointer;
+}
+
+.labels a>span:hover {
+    box-shadow: 0px 0px 6px 1px #000;
+}
+
+/** heading **/
+.heading__subtitle {
+    font-size: 2em;
+    text-align: center;
+}
+
+/** instructions **/
+
+.instructions--head {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.instructions--border {
+	border: 0.2em solid #ccc;
+}
+
+.instructions--alt {
+    text-align: center;
+    font-style: italic;
+}
+
+/** descriptions **/
+
+.description {
+    padding: 1em;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.description--emphasis {
+    font-weight: bold;
+}
+
+/** images **/
+
+.img--center{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.img--float-left {
+    float: left;
+}
+
+.img--float-right {
+    float: right;
+}
+
+.img--inline {
+    vertical-align: middle;
+}
+
+.img--inline-bottom {
+    vertical-align: bottom;
+}
+
+.img--very-small {
+    height: 2em;
+}
+
+.img--small {
+    height: 100px;
+}
+
+.img--medium {
+    height: 10rem;
+}
+
+.img--large {
+    width: 40rem;
+}
+
+/** other language **/
+
+.other_lang.state_init>div.info>p {
+    margin: 0;
+    padding: 0.2em;
+    text-align: center;
+    font-style: italic;
+}
+
+/** misc **/
+
+.items_vert--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link--center {
+    display: block;
+    text-align: center;
+}
+
+/*********
+ * pages *
+ *********/
+
+.page__title {
+    text-align: center;
+
+}
+
+/*********
+ * boxes *
+ *********/
+
+.box {
+    background: var(--color-prim--light);
+    position: relative;
+    margin: 0 auto;
+    padding: 0.3rem;
+    max-width: 100em;
+}
+
+.box__content {
+    text-align: justify;
+}
+
+.box__content img {
+    margin: 0;
+    max-width: 100%;
+}
+
+.box__content video {
+    max-width: 100%;
+    height: auto;
+}
+
+.box__content--plaintext {
+    white-space: pre-wrap;
+}
+
+.box--large {
+    max-width: 60rem;
+}
+
+.box--plain {
+    background-color: var(--box-bg-color);
+}
+
+.box--medium {
+    max-width: 50rem;
+}
+
+.box--small {
+    max-width: 20rem;
+}
+
+.box--hollow {
+    border-radius: 0;
+    border-style: solid;
+    border-color: silver;
+    border-width: 1px 0;
+    margin: 0;
+}
+
+.box--paper {
+    text-align: center;
+    font-variant: small-caps;
+    border: none;
+}
+
+.box--comment {
+    max-width: 40rem;
+    background: var(--color-prim);
+}
+
+.box--middle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box--zero {
+/* box with no padding or decoration, used when we want only the margin */
+    border: none;
+    padding: 0;
+}
+
+.box--expand {
+    /* a box which is folded when too big */
+    max-height: var(--box--expand_limit);
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.box--quarter-screen{
+    min-height: 25vh;
+}
+
+.box--third-screen{
+    min-height: 33vh;
+}
+
+.box--half-screen{
+    min-height: 50vh;
+}
+
+.box--screen{
+    /* box taking a whole screen */
+    min-height: 100vho
+}
+
+.box__expand_zone {
+    /* zone to click to expand/fold the box */
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.5s;
+}
+
+.box__expand_zone--top {
+    top: 0;
+}
+
+.box__expand_zone--bottom {
+    bottom: 0;
+}
+
+.box__expand_zone p {
+    background-color: white;
+    margin: 0;
+    text-align: center;
+    font-size: 0.8em;
+    font-variant: small-caps;
+}
+
+.state_clicked>.box__expand_zone {
+    opacity: 0;
+}
+
+.state_clicked>.box__expand_zone:hover {
+    opacity: 1;
+}
+
+.box__expand_zone--bottom::before {
+    /* we do a gradient to show that text can be expanded */
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0),#ffffff);
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4em;
+    border: none;
+}
+
+.state_clicked>.box__expand_zone--bottom::before {
+    display: none;
+}
+
+.box__tools {
+    /* toolbar in a box */
+    margin: 0;
+    padding: 0;
+}
+
+.box__tools a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.2em;
+    border-radius: 0.4em;
+}
+
+.box__tools a:hover {
+    background-color: var(--select-bg-color);
+}
+
+.box__under {
+    /* block under a box showing action buttons */
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: right;
+}
+
+/********
+ * Blog *
+ ********/
+
+.blog__title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.blog__title a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.blog__metadata {
+    text-align: right;
+}
+
+.blog__author {
+    font-weight: bold;
+}
+
+.blog__author a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.blog__author::after {
+    content: ", ";
+}
+
+.blog__date {
+}
+
+.blog__date a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/**********
+ * Panels *
+ **********/
+
+.panel-drawer {
+    /* A panel which is hidden by default but can be
+       opened when it's clicked */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, opacity 0.5s;
+}
+
+.panel-drawer.state_clicked {
+    opacity: 1;
+}
+
+/**********
+ * blocks *
+ **********/
+
+.block_separator {
+    font-size: 1.4em;
+    display: flex;
+}
+
+.block_separator__label {
+    display: inline-block;
+    margin: 0 0.2em;
+}
+
+.block_separator__line {
+    height: 1px;
+    background: #ccc;
+    flex: 1;
+    margin-top: 0.7em;
+}
+
+/*********
+ * lists *
+ *********/
+
+.list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.list--features {
+    font-variant: small-caps;
+}
+
+.list--features svg {
+    margin-right: 0.5em;
+}
+
+.list--inline {
+    flex-direction: row;
+    margin: 0;
+}
+
+.list__item {
+    margin: 0.5em;
+}
+
+.list__item>a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list__item--selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/*********
+ * Grids *
+ *********/
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.grid {
+    list-style: none;
+}
+
+.grid--center {
+    justify-content: center;
+}
+
+li.grid__item>a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.grid__item--medium {
+   width: 170px;
+   padding: 0.2em;
+   text-align: center;
+}
+
+.grid__item--selectable {
+    cursor: pointer;
+}
+
+.grid__item--selectable:hover {
+    background-color: var(--select-bg-color);
+}
+
+/**********
+ * Tables *
+ **********/
+
+.table--main {
+    margin: 1em auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table--main th {
+    font-variant: small-caps;
+    border: 1px solid;
+    padding: 0.5em;
+}
+
+.table--main td {
+    border: 1px solid;
+    padding: 0 0.5em;
+}
+
+.table__total {
+    font-variant: small-caps;
+}
+
+.table__total_value {
+    font-weight: bold;
+}
+
+/***********
+ * Avatars *
+ ***********/
+
+.avatar {
+    height: 2rem;
+    width: 2rem;
+    align-content: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+}
+
+.avatar--generated{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.avatar--float-left {
+    float: left;
+}
+
+.avatar__content {
+
+}
+
+.avatar--medium {
+    height: var(--size-medium);
+    width: var(--size-medium);
+    border-radius: 0.5rem;
+}
+
+.avatar--generated {
+    text-align: center;
+    background:  #43d2f6;
+}
+
+/*********
+ * icons *
+ *********/
+
+.icon--block {
+    display: block;
+    margin: 0 auto;
+}
+
+.icon--text {
+    height: 1em;
+    vertical-align: middle;
+}
+
+.icon--small {
+    height: var(--size-small);
+}
+
+.icon--medium {
+    height: var(--size-medium);
+}
+
+.icon--soft {
+    fill: #777;
+}
+
+.icon__name {
+
+}
+
+/************
+ * Messages *
+ ************/
+
+.message--info {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: justify;
+}
+
+.message--info pre {
+    background: #ddd;
+    padding: 1em;
+}
+
+.message--note {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+}
+
+/*********
+ * Menus *
+ *********/
+
+.menu ul {
+    display: flex;
+    margin-top: 8px;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-variant: small-caps;
+}
+
+.main_menu {
+    min-width: 200px;
+    /* background-color: #eaeaea; */
+    background-color: #333;
+    color: white;
+    overflow: auto;
+}
+
+.main_menu ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.main_menu li {
+    flex: 1;
+    padding: 0;
+    margin: 0 0.5em;
+}
+
+.main_menu a {
+    display: inline;
+    white-space: nowrap;
+}
+
+.main_menu a:hover {
+    background-color: initial;
+    text-shadow: 1px 1px 2px;
+    font-weight: bold;
+}
+
+.category_menu ul {
+    justify-content: center;
+}
+
+.category_menu li {
+    margin: 0.5em;
+    text-align: center;
+}
+
+.category_menu a {
+    border: solid 1px;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    background: #eee;
+}
+
+/**************
+ * containers *
+ **************/
+
+/* tabs */
+
+.tab__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab__header {
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+.tab__header ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: white;
+}
+
+.tab__page {
+    box-sizing: border-box;
+    padding-top: 2em;
+    border: 1px solid lightgrey;
+    border-top: none;
+    display: None;
+}
+
+.tab__page.state_clicked {
+    display: block;
+}
+
+.tab__btn {
+    display: inline;
+    color: grey;
+    background-color: white;
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 1em;
+    cursor: pointer;
+    /* we go down by 1px to remove bottom border from .tab_header */
+    margin-bottom: -1px;
+}
+
+.tab__btn.state_clicked {
+    /* background: lightgrey; */
+    color: inherit;
+    border-bottom: none;
+}
+
+li.tab__btn:last-child {
+    border-right: 1px solid lightgrey;
+}
+
+.tab__btn input {
+    display: None;
+}
+
+.tab__btn label {
+    margin: 1em;
+}
+
+.tab__button input:checked + label {
+    font-weight: bold;
+}
+
+/*********
+ * Forms *
+ *********/
+
+/* a form with only one field */
+
+.form--paper label {
+    font-variant: small-caps;
+}
+
+.form--paper label.required:after {
+    content: " *";
+    font-weight: bold;
+}
+
+.form--paper textarea {
+    resize: vertical;
+}
+
+.form--single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form--single input:not([type="submit"]) {
+    margin: 1em 1em;
+    width: 15em;
+    border-radius: 0.7em;
+    outline: none;
+    border: 1px solid black;
+    padding: 0.4em;
+    box-shadow: none;
+}
+
+.form--single .form_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.form_submit {
+    margin: 1em auto 0;
+    display: block;
+}
+
+.form--single .form_submit {
+    margin: 0;
+}
+
+.form_jid {
+    text-align: center;
+}
+
+.form__panel--vertical {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+}
+
+.form__panel--vertical label {
+    display: block;
+}
+
+.form__panel--vertical .form_input {
+    margin: 0.5em 0;
+}
+
+.form__panel--center textarea,input:not([type="radio"]) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__panel--center label {
+    text-align: center;
+}
+
+.form__field--tiny>input {
+    box-sizing: border-box;
+    width: 3em;
+}
+
+.form__field--small>input {
+    box-sizing: border-box;
+    width: 20em;
+    max-width: 95%;
+}
+
+.form__field--medium>input {
+    box-sizing: border-box;
+    width: 50em;
+    max-width: 95%;
+}
+
+.form__field--big>input,textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/*************
+ * Textboxes *
+ *************/
+
+.textbox {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form.textbox>* {
+    display: block;
+    margin: 1em auto;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+form.textbox>textarea {
+    text-align: left;
+}
+
+.log_request {
+    text-align: center;
+}
+
+/*****************
+ * paired slides *
+ ****************/
+
+ .paired-slides {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+ }
+
+ div.paired-slides:nth-child(odd) {
+     flex-direction: row-reverse;
+ }
+
+ .paires-slides
+
+
+/**************
+ * Navigation *
+ **************/
+
+.prev_next ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.prev_next li {
+    flex: 1;
+}
+
+.prev_next li.prev_next__next {
+    text-align: right;
+}
+
+
+.prev_next a {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.2em;
+    text-decoration: None;
+    color: inherit;
+    font-variant: small-caps;
+    background-color: var(--color-prim--light);
+    border-radius: 0.5em;
+}
+
+.prev_next a:hover {
+    background-color: #ddd;
+}
+
+/*********
+ * XMLUI *
+ *********/
+
+.xmlui_cont_vertical>* {
+    display: block;
+    box-sizing: border-box;
+}
+
+.xmlui_cont_vertical>.xmlui_widget {
+    width: 100%;
+    min-height: 1em;
+    min-width: 1px;
+}
+
+label.xmlui_label {
+    font-weight: bold;
+}
+
+ul.xmlui_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.xmlui_list li {
+    display: inline-flex;
+    background: #eee;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    border: 1px solid silver;
+}
+
+.xmlui_list li:hover {
+    background: yellow;
+}
+
+.xmlui_list a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.xmlui_list a:visited {
+    color: inherit;
+}
+
+.xmlui_field__id {
+    font-style: italic;
+    padding-right: 1em;
+}
+
+.xmlui_field__title {
+    padding-right: 1em;
+}
+
+
+
+td a {
+  /* we use <a> for non JS links in table
+   * so we don't want specific color/text-decoration by default
+   */
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+/*****************
+ * Notifications *
+ *****************/
+
+.notification.retry {
+    position: fixed;
+    top: 1rem;
+    margin: auto;
+    width: 80%;
+    background: #DB1616;
+    border: 3px solid silver;
+    left: 10%;
+    text-align: center;
+}
+
+#retry_counter {
+    font-weight: bold;
+}
+
+#retry_now {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (min-width: 800px) {
+
+    /*****************
+     * Main Elements *
+     *****************/
+
+    html {
+        background-size: auto;
+    }
+
+    body {
+        flex-direction: row;
+    }
+
+    #main_area {
+        overflow: auto;
+    }
+
+    /***********
+     * Generic *
+     ***********/
+
+    .btn-fold {
+        padding: 0.3em;
+    }
+
+    /** instructions **/
+
+    .instructions--alt {
+        padding-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+
+    /*********
+     * boxes *
+     *********/
+
+    .box {
+        border-radius: 0.2em;
+        box-shadow: 2px 4px 4px 0px rgba(0,0,0,0.2);
+        margin: 1em auto;
+        border: solid 1px;
+        border-color: #9ca0a8;
+    }
+
+    .box--medium {
+        width: 43rem;
+        max-width: 100%;
+    }
+
+    .box--hollow {
+        border-radius: 0.2em;
+        border-width: 1px;
+        margin: 0.5em;
+    }
+
+    .box--extra-margin {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .box--zero {
+        box-shadow: none;
+        border: none;
+        background: none;
+    }
+
+    .box__under {
+        /* block under a box showing action buttons */
+        box-shadow: none;
+        border: none;
+        background: none;
+        text-align: right;
+    }
+
+    /*********
+     * Forms *
+     *********/
+
+    .form__panel--vertical {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    .form__field--big>input,textarea {
+        box-sizing: border-box;
+        width: 95%;
+    }
+
+    .form--single input:not([type="submit"]) {
+        margin: 0 1em;
+    }
+
+    .form--single {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .form--single .form_input {
+        flex-direction: row;
+    }
+
+    /*****************
+     * paired slides *
+     ****************/
+
+     .paired-slides {
+         flex-wrap: nowrap;
+     }
+
+     .paired-slides>*:last-child {
+         margin-left: 1em;
+     }
+
+    /*********
+     * Menus *
+     *********/
+
+    .main_menu a {
+        display: block;
+        padding: 1em 0;
+    }
+
+    .main_menu ul {
+        flex-direction: column;
+        padding-left: 2em;
+    }
+}

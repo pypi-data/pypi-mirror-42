@@ -1,0 +1,81 @@
+{# display a blog item which can be expanded/retracted by clicking on it
+
+    if the locale differs from item language, it will be totally reduced, and will need a click to be displayed
+
+    @variable item(data_object.BlogItem): item to display
+    @variable identities(data_object.Identities): identities which can be used to display info on item author
+    @variable dates_format(unicode): format of the date to use (see date_fmt filter)
+#}
+
+{% block item %}
+
+{% if item.language and locale and locale.language != item.language %}
+    {# we may display items in different language in a specific way #}
+    {% set other_lang = " other_lang" if expanded else " other_lang state_init" %}
+{% endif %}
+
+    <article id="{{item.id}}" class="box {{"box--comment" if comment else "box--large"}} {{"" if (expanded or comment) else "box--expand"}}{{other_lang}}" >
+
+    {# following message is displayed if item lang is different from page locale #}
+    {% if other_lang is defined %}
+        <div class="info show_if_parent_init"><p>{% trans language=locale.language_name %}This message is not in {{language}}, click to display anyway{% endtrans %}</p></div>
+    {% endif %}
+
+    <header>
+        {% block header %}
+        {# title and publication date link to a HTTP page if items_http_uri is set #}
+        {% set item_http_uri = items_http_uri.get(item.id) if items_http_uri is defined else none %}
+
+        <div class="blog__title">
+            {% block blog_title scoped %}
+                {% set title = item.title_xhtml or item.title or '' %}
+                {% if item_http_uri %}
+                    <a href="{{item_http_uri}}">{{title}}</a>
+                {% else %}
+                    {{title}}
+                {% endif %}
+            {% endblock %}
+        </div>
+            {% block metadata scoped %}
+            <div class="blog__metadata">
+            {% if identities is defined %}
+                {% if avatar is defined %}
+                    {{ avatar.avatar(item.author_jid, "avatar--float-left") }}
+                {% endif %}
+                <span class="blog__author">{{identities[item.author_jid].nick | default(item.author)}}</span>
+            {% else %}
+                <span class="blog__author">{{item.author}}</span>
+            {% endif %}
+            {% set published = item.published|date_fmt(fmt=dates_format) %}
+            {% if item_http_uri %}
+                <span class="blog__date"><a href="{{item_http_uri}}">{{published}}</a></span>
+            {% else %}
+                {{- published -}}
+            {% endif %}
+            </div>
+            {% if item.tags %}
+                <div class="labels">
+                    {% if tags_http_uri is defined %}
+                        {% for tag in item.tags %}
+                            <a href="{{tags_http_uri[tag]}}"><span>{{tag}}</span></a>
+                        {% endfor %}
+                    {% else %}
+                        {% for tag in item.tags %}
+                            <span>{{tag}}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% endblock metadata %}
+        {% endblock header %}
+    </header>
+
+    <div class="box__content{{' box__content--plaintext' if not item.content_xhtml}}">
+        {% block content %}
+        {{- item.content_xhtml or item.content|urlize or '' -}}
+        {% endblock content %}
+    </div>
+
+</article>
+
+{% endblock item %}

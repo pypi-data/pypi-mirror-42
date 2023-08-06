@@ -1,0 +1,29 @@
+/*******************************************************
+ * This styles are used when javascript is not enabled *
+ *******************************************************/
+
+
+/*************
+ * Constants *
+ *************/
+
+:root {
+  --box--expand_limit: none;
+}
+
+/*********
+ * boxes *
+ *********/
+
+.box__under {
+    display: none;
+}
+
+/************
+ * Comments *
+ ************/
+
+.comments_panel {
+    max-height: none;
+    opacity: 1;
+}

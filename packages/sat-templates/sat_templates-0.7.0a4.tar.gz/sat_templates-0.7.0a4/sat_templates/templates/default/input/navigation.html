@@ -1,0 +1,22 @@
+{% macro prev_next(prev_label=_("newer"), next_label=_("older")) %}
+    <nav class="prev_next box box--large box--zero">
+        <ul class="list list--inline">
+            {% if previous_page_url is defined %}
+                <li class="prev_next__previous">
+                    <a href="{{previous_page_url}}">
+                        {{ icon('angle-double-left', cls='icon--text') }}
+                        {{prev_label}}
+                    </a>
+                </li>
+            {% endif %}
+            {% if next_page_url is defined %}
+                <li class="prev_next__next">
+                    <a href="{{next_page_url}}">
+                        {{next_label}}
+                        {{ icon('angle-double-right', cls='icon--text') }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endmacro %}

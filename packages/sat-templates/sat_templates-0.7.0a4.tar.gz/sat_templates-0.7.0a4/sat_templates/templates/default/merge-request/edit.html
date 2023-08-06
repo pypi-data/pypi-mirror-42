@@ -1,0 +1,29 @@
+{# edit an existing ticket #}
+
+{% set category_menu = [('merge-requests', url_tickets_list),
+                        ('merge-request_new', url_tickets_new)] %}
+{% extends 'base/base.html' %}
+{% import 'input/form.html' as form with context %}
+{% import 'input/field.html' as field with context %}
+{% import 'input/xmlui.html' as xmlui with context %}
+
+{% block body %}
+<div class='instructions instructions--border box box--medium'>
+    <p>
+        <strong>{% trans %}Note:{% endtrans %}</strong>
+        {% trans app_name=C.APP_NAME%}to modify content of the merge request, you'll have to use command line (with jp){% endtrans %}
+    </p>
+</div>
+<div class="create single ticket box box--medium">
+{% call form.form() %}
+    {{ xmlui.generate(new_ticket_xmlui,
+                      attributes = {'title': {'required': 'required',
+                                              'placeholder': _("Short description of your issue/request")},
+                                    'body': {'required': 'required',
+                                             'placeholder': _("Please describe your issue/request with as much details as possible. You can use Markdown syntax.")},
+                                    'labels': {'placeholder': _("You can enter one or several labels separated by commas")},
+                                    })}}
+    {{ field.submit(_("Modify ticket")) }}
+{% endcall %}
+</div>
+{% endblock body %}
