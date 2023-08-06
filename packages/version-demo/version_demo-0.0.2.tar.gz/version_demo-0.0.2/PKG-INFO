@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: version_demo
+Version: 0.0.2
+Summary: Just demo for checking how is version work
+Home-page: https://bitbucket.org/avneesh111995/mrchantintionpythonlibrary/
+Author: avneesh gupta
+Author-email: avneesh.gupta@paytm.com
+License: UNKNOWN
+Description: This is version demo.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
