@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+bin/r2c
+bin/r2c.cmd
+r2c/__init__.py
+r2c/cli/__init__.py
+r2c/cli/__main__.py
+r2c/cli/core.py
+r2c/cli/create_template.py
+r2c_cli.egg-info/PKG-INFO
+r2c_cli.egg-info/SOURCES.txt
+r2c_cli.egg-info/dependency_links.txt
+r2c_cli.egg-info/requires.txt
+r2c_cli.egg-info/top_level.txt
