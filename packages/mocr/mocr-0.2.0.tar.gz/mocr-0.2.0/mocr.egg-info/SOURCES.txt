@@ -1,0 +1,17 @@
+COPYING
+LICENSE
+MANIFEST.in
+NOTICE
+README.rst
+setup.cfg
+setup.py
+mocr/__init__.py
+mocr/__main__.py
+mocr/face_detection.py
+mocr/text_recognition.py
+mocr.egg-info/PKG-INFO
+mocr.egg-info/SOURCES.txt
+mocr.egg-info/dependency_links.txt
+mocr.egg-info/requires.txt
+mocr.egg-info/top_level.txt
+mocr/haarcascades/haarcascade_frontalface_default.xml
