@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+toothbrush
+toothbrush.py
+toothbrush.egg-info/PKG-INFO
+toothbrush.egg-info/SOURCES.txt
+toothbrush.egg-info/dependency_links.txt
+toothbrush.egg-info/requires.txt
+toothbrush.egg-info/top_level.txt

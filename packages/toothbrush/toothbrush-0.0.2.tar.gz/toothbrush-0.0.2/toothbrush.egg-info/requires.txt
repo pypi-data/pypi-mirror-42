@@ -1,0 +1,6 @@
+setuptools
+docopt
+blus
+
+[console]
+docopt

@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: toothbrush
+Version: 0.0.2
+Summary: Receive BLE packets from Oral-B toothbrushC
+Home-page: https://github.com/molobrakos/toothbrush
+Author: Erik
+Author-email: error.errorsson@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: console
