@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+django_ubigeo.egg-info/PKG-INFO
+django_ubigeo.egg-info/SOURCES.txt
+django_ubigeo.egg-info/dependency_links.txt
+django_ubigeo.egg-info/top_level.txt
+ubigeo/__init__.py
+ubigeo/admin.py
+ubigeo/apps.py
+ubigeo/models.py
+ubigeo/tests.py
+ubigeo/views.py
+ubigeo/fixtures/ubigeo.json
+ubigeo/migrations/0001_initial.py
+ubigeo/migrations/__init__.py
