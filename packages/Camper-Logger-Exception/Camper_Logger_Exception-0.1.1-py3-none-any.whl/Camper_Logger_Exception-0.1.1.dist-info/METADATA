@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Camper-Logger-Exception
+Version: 0.1.1
+Summary: Python logging and exception catcher library for lazy
+Home-page: https://github.com/abdullahkulcu/Camper-Logger-Exception
+Author: Abdullah KULCU
+Author-email: abdullahkulcu@outlook.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+This is a simple example package. You can use
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
+
