@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: lineflow
+Version: 0.1.1
+Summary: Minimal NLP data pipeline in Python
+Home-page: https://github.com/yasufumy/lineflow
+Author: Yasufumi Taniguchi
+Author-email: yasufumi.taniguchi@gmail.com
+License: MIT
+Description: # lineflow: Minimal NLP data pipeline in Python
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
