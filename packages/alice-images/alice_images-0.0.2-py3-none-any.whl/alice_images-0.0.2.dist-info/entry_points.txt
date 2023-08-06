@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        alice_images=alice_images.cli:cli
+    
