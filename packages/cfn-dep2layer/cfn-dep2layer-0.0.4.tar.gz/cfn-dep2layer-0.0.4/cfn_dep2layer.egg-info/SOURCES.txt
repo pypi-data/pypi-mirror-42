@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/dep2layer
+cfn_dep2layer.egg-info/PKG-INFO
+cfn_dep2layer.egg-info/SOURCES.txt
+cfn_dep2layer.egg-info/dependency_links.txt
+cfn_dep2layer.egg-info/requires.txt
+cfn_dep2layer.egg-info/top_level.txt
+dep2layerlib/__init__.py
+dep2layerlib/downloaders.py
+dep2layerlib/main.py
