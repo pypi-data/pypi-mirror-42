@@ -1,0 +1,13 @@
+protmapper/__init__.py,sha256=RKa92j3-jfiFDFcgMxXW3ZHCuTPFXs5SrPgGDvH85sU,610
+protmapper/api.py,sha256=8pNqjSIqzQK9ocVVi5Q1uJPhF7M5WPPg-tlDR-6cCHg,26271
+protmapper/curated_site_map.csv,sha256=6qPhdzoQhxdwUTZk8JLc_TSkTxIy2ltCeuE2r8OJNvU,8118
+protmapper/phosphosite_client.py,sha256=PxX4lZjGFF3eDEfF3COcPPoM9bPDY1_WW18fOLR47jQ,7666
+protmapper/resources.py,sha256=8ppMV12WdHfOawJpkXsYdus7cdoQ-SUw4GIWRaVugRU,7835
+protmapper/uniprot_client.py,sha256=ji6qCotfbz0ncqo_Fl3anph0_JCUXoxcqD9FaqJNG-k,23402
+protmapper/tests/test_cache_read.pkl,sha256=unmiyc5fFMuaRGqpcrjNOv0cAl37Q8cfpD_zNK2LEqo,297
+protmapper-0.0.2.dist-info/DESCRIPTION.rst,sha256=zGJ1v5zBygXvORP-whn_coGP0fkushnJVQFtsTbW97s,224
+protmapper-0.0.2.dist-info/METADATA,sha256=ctBBO8KR9nFFkXLFc88OrD-C-Tys1n3awnXqq6XQouw,980
+protmapper-0.0.2.dist-info/RECORD,,
+protmapper-0.0.2.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+protmapper-0.0.2.dist-info/metadata.json,sha256=-s6z8KYYd9YxUG-olPVpQn07R53BmFBetgRSiLLc7mY,954
+protmapper-0.0.2.dist-info/top_level.txt,sha256=wCrQRlcHX83cCRg01oSxLQmkZqZD0A_pqdPvvq26Wqc,11
