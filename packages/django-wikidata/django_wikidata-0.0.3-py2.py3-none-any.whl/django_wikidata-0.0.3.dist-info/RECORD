@@ -1,0 +1,10 @@
+django_wikidata/__init__.py,sha256=UnG6o0z9JWmXcSu76S0kFDdJsoLHqILLE89g6HDQhm8,77
+django_wikidata/fields.py,sha256=ybZwdhFAbSI4GGj0iRcAYNxGDjIrNPckNqMtd--VXhg,3775
+django_wikidata/forms.py,sha256=ssZYXRjW1Z9Y3oDurpfCMOQeCx7UK-beFxrhmTWWNaA,1057
+django_wikidata/mixins.py,sha256=OkBRVzZfoMe4fJseh636YWNObxgentT7TwvmADUHpO8,2089
+django_wikidata/validators.py,sha256=9s7LAQASRR0V125rm_w--5XysXLAJ5yuuN0GBhqP0ys,404
+django_wikidata/widgets.py,sha256=8LTR0PxjQJ1IWbDb4fJhuyXYDd6PHQJKyczL0jpa2wA,503
+django_wikidata-0.0.3.dist-info/METADATA,sha256=sOqz_bj036VweP2SeoMkSbN8bJe5YIMRvAj5006iXbw,768
+django_wikidata-0.0.3.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+django_wikidata-0.0.3.dist-info/top_level.txt,sha256=IHj2T4S4uKpfzucBr1DK5PPeJAoeTOPlCzEP1DVJIvs,16
+django_wikidata-0.0.3.dist-info/RECORD,,
