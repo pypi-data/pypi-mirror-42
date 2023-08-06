@@ -1,0 +1,7 @@
+requests
+click
+termcolor
+
+[keras]
+keras
+tensorflow
