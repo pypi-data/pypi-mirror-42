@@ -1,0 +1,5 @@
+docker-py
+pycrypto
+python-dateutil
+requests
+loomengine_utils==0.7.2rc9
