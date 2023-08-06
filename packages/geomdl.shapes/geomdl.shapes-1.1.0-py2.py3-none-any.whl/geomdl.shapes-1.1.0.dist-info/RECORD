@@ -1,0 +1,9 @@
+geomdl/shapes/__init__.py,sha256=hjQE8Y8dA_rp4woY08DmKLlAE4y4ZutCfH_GSVt5slA,388
+geomdl/shapes/analytic.py,sha256=A_EmtYKmVXqQpbXgg9BoHGgwZxeIYn_F1sb1OtKXdBg,4307
+geomdl/shapes/curve2d.py,sha256=oTIG3777rSedexuT1TjoNP6K6Wjp5KT4adzx1aB1Wck,2436
+geomdl/shapes/surface.py,sha256=N8dQulRuFceHTkPWeVuBUCC--I7YSy6R4ix8heMwKAM,2343
+geomdl.shapes-1.1.0.dist-info/LICENSE,sha256=GCiZXPB51_QNu4RlND03Ii7cmodj44E88lEFVeiNULg,1073
+geomdl.shapes-1.1.0.dist-info/METADATA,sha256=iw7Os-lSujzndqIzGOh0tUWh9-R4gPoEN2eLJbo6Ems,2020
+geomdl.shapes-1.1.0.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+geomdl.shapes-1.1.0.dist-info/top_level.txt,sha256=PJsVrb8WhEFGW2UKamf_02X6dl6nAaH2LrGe8MLkjeE,7
+geomdl.shapes-1.1.0.dist-info/RECORD,,
