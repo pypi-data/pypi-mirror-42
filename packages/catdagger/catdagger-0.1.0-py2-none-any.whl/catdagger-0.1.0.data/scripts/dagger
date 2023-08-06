@@ -1,0 +1,4 @@
+#!python
+
+from catdagger import __main__ as driver
+driver.main()
