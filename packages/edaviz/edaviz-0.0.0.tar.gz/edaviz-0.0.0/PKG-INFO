@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: edaviz
+Version: 0.0.0
+Summary: Exploratory Data Anlysis and Vizualisation
+Home-page: https://github.com/tkrabel/edaviz
+Author: Tobias Krabel
+Author-email: tobiaskrabel@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/tkrabel/edaviz/archive/0.0.0.tar.gz
+Description: UNKNOWN
+Keywords: vizualisation,exploration,data analysis,data vizualisation
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
