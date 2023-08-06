@@ -1,0 +1,12 @@
+zenroom/__init__.py,sha256=fjCV8TGu8Pdlk458HI1q1JIkxP5adJYkySmQonZasX0,17
+zenroom/_zenroom.so,sha256=9G_tskNb9rNu8u7nKfpWRiQxH_NeTQkCqg03He1_sjg,1104304
+zenroom/_zenroom_3_5.so,sha256=yZxE-k1aSSJhi9XjAh7uEFtEoTd8ZESt1-lB4dCoI9w,3925232
+zenroom/_zenroom_3_6.so,sha256=QjiOlihmZx_7TmAzaKrUlmDEjoEuLHYZSfRLO1B23rM,3925760
+zenroom/_zenroom_3_7.so,sha256=uoJ4YT88Y30wWh5sFIT0zWspq4oaRMwlUXFXvGJOvao,3927368
+zenroom/zenroom.py,sha256=U5tsTFzYHSbD3I2vcXMCOyIDBPC9EJPor4Hdb_7ndVE,2657
+zenroom/zenroom_test.py,sha256=GUpe6-3YBxUli6bIQPPRBu-ImsrTb306bVMvtQh4LmY,2849
+zenroom-0.1.0.dist-info/LICENSE,sha256=TfPDBt3ar0uv_f9cqCDMZ5rIzW3CY8anRRd4PkL6ejs,34522
+zenroom-0.1.0.dist-info/METADATA,sha256=tslPgjkodNHAInSq85B5Pi6egTyV1neeStdAtIDwGzg,1437
+zenroom-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+zenroom-0.1.0.dist-info/top_level.txt,sha256=583htwdwzEJNDLQu3rdFX2SJ7JO_pO5NukzK6RAdrXc,8
+zenroom-0.1.0.dist-info/RECORD,,
