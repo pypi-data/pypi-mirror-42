@@ -1,0 +1,8 @@
+include *.lock
+include *.txt
+include Pipfile
+include src/*
+recursive-include examples *.sh
+recursive-include src *.py
+recursive-include src/apis *.py
+recursive-include src/commands *.py
