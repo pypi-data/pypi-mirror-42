@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+tests/__init__.py
+tests/test_embedding_sim.py
+torch_embed_sim/__init__.py
+torch_embed_sim/embedding_sim.py
+torch_embed_sim.egg-info/PKG-INFO
+torch_embed_sim.egg-info/SOURCES.txt
+torch_embed_sim.egg-info/dependency_links.txt
+torch_embed_sim.egg-info/requires.txt
+torch_embed_sim.egg-info/top_level.txt
