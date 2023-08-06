@@ -1,0 +1,11 @@
+README.md
+setup.py
+zerophone_api_daemon/__init__.py
+zerophone_api_daemon/rpc_api.py
+zerophone_api_daemon/sources.py
+zerophone_api_daemon/zerophone_api_daemon.py
+zerophone_api_daemon.egg-info/PKG-INFO
+zerophone_api_daemon.egg-info/SOURCES.txt
+zerophone_api_daemon.egg-info/dependency_links.txt
+zerophone_api_daemon.egg-info/requires.txt
+zerophone_api_daemon.egg-info/top_level.txt
