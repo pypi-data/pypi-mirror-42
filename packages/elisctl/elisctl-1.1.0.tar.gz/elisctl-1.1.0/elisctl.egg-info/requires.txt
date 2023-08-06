@@ -1,0 +1,10 @@
+pandas
+click
+click-shell
+xlrd
+requests
+jsondiff
+tabulate
+
+[:python_version < "3.7"]
+dataclasses
