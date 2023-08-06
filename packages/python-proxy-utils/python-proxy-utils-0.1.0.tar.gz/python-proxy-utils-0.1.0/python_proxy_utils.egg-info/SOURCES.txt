@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+python_proxy_utils/__init__.py
+python_proxy_utils/utils.py
+python_proxy_utils.egg-info/PKG-INFO
+python_proxy_utils.egg-info/SOURCES.txt
+python_proxy_utils.egg-info/dependency_links.txt
+python_proxy_utils.egg-info/requires.txt
+python_proxy_utils.egg-info/top_level.txt
