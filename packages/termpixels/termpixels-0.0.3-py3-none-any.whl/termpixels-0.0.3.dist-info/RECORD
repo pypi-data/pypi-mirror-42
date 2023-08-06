@@ -1,0 +1,14 @@
+termpixels/__init__.py,sha256=849LbPkkaN2UKRZKG28R5Zap8NOHKPZX_OU2UWV_msk,43
+termpixels/app.py,sha256=Nm8mge7NvxEOP7cSQBS-pgrFXSkkZDtKmJXl8CWlCT4,1455
+termpixels/detector.py,sha256=J2dzGUC6qjlaRvYSfcP1z-LWjVTQjiGtwSNSahKbjQI,143
+termpixels/observable.py,sha256=q9oYyBVxct9WyazR9idlOd6XmRdFMIFg5GCe-KTBeHs,413
+termpixels/screen.py,sha256=2PzSCXzosC1usofn_y75bG8AYHaSBq3KVTDEE8lVHwU,7262
+termpixels/terminfo.py,sha256=KGkN2MmrJTy_QLmZswj9qgpUzJ-C9BEE_CUBqRmCZyI,740
+termpixels/test.py,sha256=cQZoPj4fbZDqJiga48AbW2ETgt6xGdFKgz7NbTyAgi8,899
+termpixels/unix.py,sha256=qSE8jQW_7yHiV3h23J74Ny-yWLZpMzDPuoTAmfFHsEE,9648
+termpixels/unix_keys.py,sha256=3S5Zx0gkENgvi7XbHHKg8H30FyMSs5CThBOZCDuEYbU,4428
+termpixels-0.0.3.dist-info/LICENSE,sha256=vT6D6i8GRlAU5eE-l2XwbN-W9m_0DARh51CkukFW_6I,1057
+termpixels-0.0.3.dist-info/METADATA,sha256=VYk-bDLdI-tZlWTVK3-aPrprY2uR2H5aYIddC3p2WA4,458
+termpixels-0.0.3.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+termpixels-0.0.3.dist-info/top_level.txt,sha256=6gYr435kPy-ce98rincEt7KCDmtFX-ITyljg6546i9g,11
+termpixels-0.0.3.dist-info/RECORD,,
