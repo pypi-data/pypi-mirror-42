@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: har-transformer
+Version: 1.0.2.dev20190221094105
+Summary: A tool to convert HAR files into a locustfile.
+Home-page: https://github.com/zalando-incubator/transformer
+Author: Serhii Cherniavskyi
+Author-email: serhii.cherniavskyi@zalando.de
+Keywords: load testing,locust,har
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Testing :: Traffic Generation
+Requires-Dist: chevron (>=0.13,<0.14)
+Requires-Dist: docopt (>=0.6.2,<0.7.0)
+Requires-Dist: ecological (>=1.6,<2.0)
+Requires-Dist: pendulum (>=2.0,<3.0)
+Project-URL: Repository, https://github.com/zalando-incubator/transformer
