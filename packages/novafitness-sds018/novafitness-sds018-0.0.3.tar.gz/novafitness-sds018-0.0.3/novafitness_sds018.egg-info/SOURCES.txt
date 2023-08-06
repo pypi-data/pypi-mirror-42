@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+novafitness_sds018/__init__.py
+novafitness_sds018/novafitness_sds018.py
+novafitness_sds018.egg-info/PKG-INFO
+novafitness_sds018.egg-info/SOURCES.txt
+novafitness_sds018.egg-info/dependency_links.txt
+novafitness_sds018.egg-info/requires.txt
+novafitness_sds018.egg-info/top_level.txt
