@@ -1,0 +1,34 @@
+Metadata-Version: 1.2
+Name: limis
+Version: 0.0a2
+Summary: light microservice solution
+Home-page: https://limis.io
+Author: Philip Streck
+Author-email: philip@limis.io
+License: MIT
+Description: limis
+        =====
+        .. image:: https://travis-ci.org/limis-project/limis.svg?branch=master
+            :alt: limis build status
+            :target: https://travis-ci.org/limis-project/limis
+        
+        .. image:: https://codecov.io/gh/limis-project/limis/branch/master/graph/badge.svg
+            :alt: limis coverage status
+            :target: https://codecov.io/gh/limis-project/limis
+        
+        limis is a light microservice framework built in `Python <https://www.python.org/>`_ and powered by
+        `Tornado <https://www.tornadoweb.org/>`_. The project is currently in active development and should be considered alpha
+        grade at the moment. Features are being added and removed and expect the API to change frequently.
+Platform: any
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.5
