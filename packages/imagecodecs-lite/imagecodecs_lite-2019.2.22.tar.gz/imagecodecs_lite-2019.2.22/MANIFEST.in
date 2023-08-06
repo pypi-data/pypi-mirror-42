@@ -1,0 +1,21 @@
+include LICENSE
+include README.rst
+include pyproject.toml
+
+include imagecodecs/imagecodecs.c
+include imagecodecs/imagecodecs.h
+include imagecodecs/_imagecodecs_lite.c
+include imagecodecs/_imagecodecs_lite.pyx
+
+include tests/*.py
+include tests/*.txt
+include tests/*.bin
+include tests/*.npy
+
+exclude tests/*jpeg*.*
+exclude tests/*jxr*.*
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *-
+recursive-exclude * *.html
