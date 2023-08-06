@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: finxi-djangoanalytics
+Version: 0.1.9
+Summary: A django App to receive, process and foward google-analytics hits
+Home-page: UNKNOWN
+Author: Rodrigo Corbelli
+Author-email: rodrigo.corbelli@finxi.com.br
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: Django (==1.11.10)
+Requires-Dist: djangorestframework (==3.7.7)
+Requires-Dist: django-model-utils (==3.1.2)
+Requires-Dist: pytz (==2018.7)
+
+Django-Analytcs
+
+
+
+
