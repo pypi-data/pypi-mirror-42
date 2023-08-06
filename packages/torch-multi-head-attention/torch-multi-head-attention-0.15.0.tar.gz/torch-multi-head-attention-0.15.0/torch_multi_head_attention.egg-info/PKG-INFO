@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: torch-multi-head-attention
+Version: 0.15.0
+Summary: Multi-head attention implemented in PyTorch
+Home-page: https://github.com/CyberZHG/torch-multi-head-attention
+Author: CyberZHG
+Author-email: CyberZHG@gmail.com
+License: MIT
+Description: # PyTorch Multi-Head Attention
+        
+        [![Travis](https://travis-ci.org/CyberZHG/torch-multi-head-attention.svg)](https://travis-ci.org/CyberZHG/torch-multi-head-attention)
+        [![Coverage](https://coveralls.io/repos/github/CyberZHG/torch-multi-head-attention/badge.svg?branch=master)](https://coveralls.io/github/CyberZHG/torch-multi-head-attention)
+        
+        ## Install
+        
+        ```bash
+        pip install torch-multi-head-attention
+        ```
+        
+        ## Usage
+        
+        ```python
+        from torch_multi_head_attention import MultiHeadAttention
+        
+        MultiHeadAttention(in_features=768, head_num=12)
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

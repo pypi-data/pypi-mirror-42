@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+tests/__init__.py
+tests/test_multi_head_attention.py
+tests/test_scaled_dot_product_attention.py
+torch_multi_head_attention/__init__.py
+torch_multi_head_attention/multi_head_attention.py
+torch_multi_head_attention.egg-info/PKG-INFO
+torch_multi_head_attention.egg-info/SOURCES.txt
+torch_multi_head_attention.egg-info/dependency_links.txt
+torch_multi_head_attention.egg-info/requires.txt
+torch_multi_head_attention.egg-info/top_level.txt
