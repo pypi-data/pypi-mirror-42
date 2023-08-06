@@ -1,0 +1,12 @@
+.gitattributes
+.gitignore
+MANIFEST.in
+README.md
+create_python_package.md
+setup.py
+tcapy/__init__.py
+tcapy.egg-info/PKG-INFO
+tcapy.egg-info/SOURCES.txt
+tcapy.egg-info/dependency_links.txt
+tcapy.egg-info/not-zip-safe
+tcapy.egg-info/top_level.txt
