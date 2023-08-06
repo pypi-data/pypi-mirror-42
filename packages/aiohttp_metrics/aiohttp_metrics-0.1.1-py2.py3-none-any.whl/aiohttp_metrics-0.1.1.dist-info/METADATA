@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: aiohttp_metrics
+Version: 0.1.1
+Summary: Prometheus metrics for aiohttp-based microservices 
+Home-page: https://github.com/clayman74/aiohttp_metrics
+License: UNKNOWN
+Author: Kirill Sumorokov
+Author-email: sumorokov.k@gmail.com
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: aiohttp
+Requires-Dist: prometheus_client
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: flake8-bugbear; extra == "dev"
+Requires-Dist: flake8-builtins-unleashed; extra == "dev"
+Requires-Dist: flake8-comprehensions; extra == "dev"
+Requires-Dist: flake8-import-order; extra == "dev"
+Requires-Dist: flake8-pytest; extra == "dev"
+Requires-Dist: flake8-print; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: faker; extra == "test"
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-aiohttp; extra == "test"
+Requires-Dist: coverage; extra == "test"
+Provides-Extra: dev
+Provides-Extra: test
