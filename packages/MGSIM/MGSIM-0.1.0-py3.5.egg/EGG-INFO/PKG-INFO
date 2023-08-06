@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: MGSIM
+Version: 0.1.0
+Summary: Metagenome simulation of multiple synthetic communities
+Home-page: https://github.com/nick-youngblut/MGSIM
+Author: Nick Youngblut
+Author-email: nyoungb2@gmail.com
+License: MIT license
+Description-Content-Type: UNKNOWN
+Description: Metagenome simulation of multiple synthetic communities
+         See README for more information.
+Platform: UNKNOWN
