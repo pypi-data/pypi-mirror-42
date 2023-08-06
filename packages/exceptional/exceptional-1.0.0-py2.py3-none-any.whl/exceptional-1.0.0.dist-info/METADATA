@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: exceptional
+Version: 1.0.0
+Summary: exception handling utilities
+Home-page: https://github.com/wbolster/exceptional
+Author: wouter bolsterlee
+Author-email: wouter@bolsterl.ee
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+
+exceptional
+===========
+
+``exceptional`` is  Python library providing various exception handling utilities.
+
+Homepage: https://github.com/wbolster/exceptional
+
+Documentation: https://exceptional.readthedocs.io/en/latest/
+
+
