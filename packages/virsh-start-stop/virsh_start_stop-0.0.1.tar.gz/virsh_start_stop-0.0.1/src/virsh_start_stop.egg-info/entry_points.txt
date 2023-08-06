@@ -1,0 +1,3 @@
+[console_scripts]
+virsh-start-stop = virsh_start_stop.virsh_start_stop:cli_interface
+
