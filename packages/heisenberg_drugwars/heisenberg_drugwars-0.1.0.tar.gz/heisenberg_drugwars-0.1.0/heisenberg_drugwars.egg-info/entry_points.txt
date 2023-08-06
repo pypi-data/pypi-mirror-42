@@ -1,0 +1,3 @@
+[console_scripts]
+heisenberg = heisenberg.shell:run_shell
+
