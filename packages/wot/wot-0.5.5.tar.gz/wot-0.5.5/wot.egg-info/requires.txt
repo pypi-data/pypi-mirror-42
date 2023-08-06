@@ -1,0 +1,11 @@
+numpy
+pandas
+joblib
+h5py
+Cython
+anndata
+scanpy
+scikit-learn
+scipy
+matplotlib
+POT
