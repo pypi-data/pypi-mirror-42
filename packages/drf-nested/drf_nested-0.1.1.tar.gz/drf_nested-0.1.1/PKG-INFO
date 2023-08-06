@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: drf_nested
+Version: 0.1.1
+Summary: UNKNOWN
+Home-page: https://github.com/promoteinternational/drf-nested
+Author: Andréas Kühne, Artur Veres
+Author-email: andreas.kuhne@promoteint.com, artur8118@gmail.com
+Maintainer: Artur Veres
+Maintainer-email: artur8118@gmail.com
+License: UNKNOWN
+Description: 
+        ## DRF Nested Utils
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
