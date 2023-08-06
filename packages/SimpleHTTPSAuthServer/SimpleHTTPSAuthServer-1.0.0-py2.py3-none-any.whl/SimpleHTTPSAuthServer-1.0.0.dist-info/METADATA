@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: SimpleHTTPSAuthServer
+Version: 1.0.0
+Summary: HTTPS server with Basic authentication and client certificate authentication
+Home-page: https://github.com/oza6ut0ne/SimpleHTTPSAuthServer
+Author: oza6ut0ne
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+[![image](https://img.shields.io/pypi/pyversions/SimpleHTTPSAuthServer.svg)](https://pypi.org/project/SimpleHTTPSAuthServer/)
+
+# SimpleHTTPSAuthServer
+
+HTTPS server with Basic authentication and client certificate authentication for Python3 and 2.
+
+## Installation
+```sh
+pip install SimpleHTTPSAuthServer
+```
+
+
