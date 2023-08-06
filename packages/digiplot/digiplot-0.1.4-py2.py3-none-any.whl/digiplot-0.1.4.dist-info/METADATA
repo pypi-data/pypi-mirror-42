@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: digiplot
+Version: 0.1.4
+Summary: A tkinter code that helps users digitize curves from plot images.
+Home-page: http://digiplot.readthedocs.org/en/latest/
+Author: Charlie Taylor
+Author-email: cet@appliedpython.com
+License: GPL-3
+Download-URL: https://github.com/sonofeft/DigiPlot
+Keywords: digiplot setuptools development
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Provides-Extra: test
+Provides-Extra: dev
+Requires-Dist: future
+Requires-Dist: Pillow
+Requires-Dist: numpy
+Provides-Extra: dev
+Requires-Dist: check-manifest; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage; extra == 'test'
+
+
+.. image:: https://travis-ci.org/sonofeft/DigiPlot.svg?branch=master
+    :target: https://travis-ci.org/sonofeft/DigiPlot
+
+.. image:: https://img.shields.io/pypi/v/DigiPlot.svg
+    :target: https://pypi.python.org/pypi/digiplot
+
+.. image:: https://img.shields.io/pypi/pyversions/DigiPlot.svg
+    :target: https://wiki.python.org/moin/Python2orPython3
+
+.. image:: https://img.shields.io/pypi/l/DigiPlot.svg
+    :target: https://pypi.python.org/pypi/digiplot
+
+
+A Tkinter Code That Helps Users Digitize Curves From Plot Images.
+=================================================================
+
+
+See the Code at: `<https://github.com/sonofeft/DigiPlot>`_
+
+See the Docs at: `<http://digiplot.readthedocs.org/en/latest/>`_
+
+See PyPI page at:`<https://pypi.python.org/pypi/digiplot>`_
+
+
+
+If a 2D plot is available only on paper or an image file, but the user needs the x,y data pairs in digital form, DigiPlot will help to create those x,y data pairs.
+
+

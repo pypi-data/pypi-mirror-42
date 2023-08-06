@@ -1,0 +1,3 @@
+[console_scripts]
+digiplot = digiplot.tk_digiplot:main
+
