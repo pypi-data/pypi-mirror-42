@@ -1,0 +1,6 @@
+tqdm
+boto3
+botocore
+requests
+numpy
+torch
