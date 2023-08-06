@@ -1,0 +1,8 @@
+coverage
+sphinx
+mock
+twisted
+pytest<=4.0
+pytest-twisted
+pyOpenSSL
+towncrier
