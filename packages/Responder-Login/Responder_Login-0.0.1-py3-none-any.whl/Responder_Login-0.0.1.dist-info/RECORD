@@ -1,0 +1,12 @@
+Responder_Login-0.0.1.dist-info/DESCRIPTION.rst,sha256=Ua6bVPUpurQn12RMGknMtXZsXs2u881B0plshRPDw2g,136
+Responder_Login-0.0.1.dist-info/METADATA,sha256=PD3_ZXfqThw8dW1r5IxmNYbBDLLU31wpDn2FQLKnRLw,1027
+Responder_Login-0.0.1.dist-info/RECORD,,
+Responder_Login-0.0.1.dist-info/WHEEL,sha256=Vlaj2XNMTTJ893zWX-JvKeZUIs7q5E7d7Gise2Vouzc,97
+Responder_Login-0.0.1.dist-info/metadata.json,sha256=xwYpObROblVdorxwnENgXx1lwfwJIpmz16oNpi-Kc2k,1008
+Responder_Login-0.0.1.dist-info/top_level.txt,sha256=Xj-Ujn5gzixBpW2G9KcacnImRLfhmBtdJif2RsKG6tM,16
+responder_login/__about__.py,sha256=6QAddkMqGv4arrnEzHU7dCfd2d4b68brxnWCTX0hB1o,375
+responder_login/__init__.py,sha256=2M3mSx4GQKLopWKf8LKD406SdJuITJQ8FClGaMLGKMc,1213
+responder_login/config.py,sha256=Sbw-L7pkFTIS_n3O30MTquv2On8AmF88MUbhQw0rxVo,1308
+responder_login/default_callbacks.py,sha256=AfOew7IWbscPWJDMz6phEtWRybF5j_ltjL1_c0zYT3A,681
+responder_login/login_manager.py,sha256=ViUAdoLOsrQEQ1PSEAM1Za2Cf_hyD_XbuVY0rrvPzhw,7708
+responder_login/mixins.py,sha256=KfsM32X1XsJUSBxhhcP8bBJBiftt57N465ubf1aucXk,1034
