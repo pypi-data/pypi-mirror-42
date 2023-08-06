@@ -1,0 +1,7 @@
+---
+dependencies:
+  - role: bellvenue.initializer
+    app_name: "{{ inference_app_name }}"
+    app_version: "{{ app_version | default(None) }}"
+
+  - role: jupyter.installer
