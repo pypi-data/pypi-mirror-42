@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: elabjournal
+Version: 0.0.4
+Summary: UNKNOWN
+Home-page: https://github.com/matthijsbrouwer/elabjournal-python
+Author: Matthijs Brouwer
+Author-email: UNKNOWN
+License: Apache License 2.0
+Description: ## Python package elabjournal
+        
+        Source Python package [elabjournal](https://pypi.org/project/elabjournal/)
+        
+        Install with
+        
+        ```bash
+        pip install elabjournal
+        ```
+        
+        See [jupyter](https://github.com/matthijsbrouwer/jupyter-elabjournal) notebooks for
+        a demonstration of functionality.
+Platform: UNKNOWN
+Classifier: Framework :: Jupyter
+Classifier: Intended Audience :: Science/Research
