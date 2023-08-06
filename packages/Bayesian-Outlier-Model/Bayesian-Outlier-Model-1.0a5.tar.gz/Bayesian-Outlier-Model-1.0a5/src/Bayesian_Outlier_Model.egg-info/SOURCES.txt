@@ -1,0 +1,11 @@
+README.md
+setup.py
+src/Bayesian_Outlier_Model.egg-info/PKG-INFO
+src/Bayesian_Outlier_Model.egg-info/SOURCES.txt
+src/Bayesian_Outlier_Model.egg-info/dependency_links.txt
+src/Bayesian_Outlier_Model.egg-info/entry_points.txt
+src/Bayesian_Outlier_Model.egg-info/requires.txt
+src/Bayesian_Outlier_Model.egg-info/top_level.txt
+src/outlier_model/__init__.py
+src/outlier_model/lib.py
+src/outlier_model/main.py
