@@ -1,0 +1,10 @@
+pytidy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytidy/decorators.py,sha256=MEnLZ76A4vEgaVjwcG1HVQ0aY_y44gm8gCxJeudiUu8,459
+pytidy/error.py,sha256=MTEXg1Ur1-sRWkNCz0IecllIr0BFe9hr2RLfDIGSmA0,141
+pytidy/registry.py,sha256=SsNJmM825iOfE4OTOJrvCwfMQwxQXs2mOXXwrS-yz8w,1439
+pytidy/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytidy-0.1.0.dist-info/LICENSE,sha256=hlxYvhrstPDRTWtWfrGCKqxfXzMF6lt_IiM4PTMhRFI,1050
+pytidy-0.1.0.dist-info/METADATA,sha256=yEJTM9qn_9kfkqiLaI7IPILYcLvrrd60dcfSqOOnK1M,1261
+pytidy-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pytidy-0.1.0.dist-info/top_level.txt,sha256=vbJqukHmO1EIXdX38_xMmrP6vDBNDxuO4fkAECSy9ZE,7
+pytidy-0.1.0.dist-info/RECORD,,
