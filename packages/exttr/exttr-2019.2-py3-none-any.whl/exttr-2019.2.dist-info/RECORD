@@ -1,0 +1,10 @@
+exttr/__init__.py,sha256=JL-WgpjshNVYGtDKCXds6RbZJ-yZ7lSieiRicYurszw,633
+exttr/_version.py,sha256=YKvcs8ZzL0Vy0nqTKm0sHCzhnk9zkLOVADViThahpAQ,498
+exttr/core.py,sha256=jwobPcNS3q2Ho5BYmDDsu0lUeXkREqi40fr1W9nK30U,3402
+exttr/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+exttr/tests/test_.py,sha256=B54qOZkVmjZ9BmDq51l4XKYrp646B191T5aX5xtqNgY,2837
+exttr-2019.2.dist-info/LICENSE,sha256=siL8rptM-HFf6aOSRcr_OhVPrAfv0vWuU4NKf39oyw8,1071
+exttr-2019.2.dist-info/METADATA,sha256=d3Z4_CsmQS6QL_vjSwgOFEAShdpbuHtMQYo3O-nUz0g,1623
+exttr-2019.2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+exttr-2019.2.dist-info/top_level.txt,sha256=N_584exRm6xlHC8lZCF3BTNd6uy2h7_0-H0maqnkApY,6
+exttr-2019.2.dist-info/RECORD,,
