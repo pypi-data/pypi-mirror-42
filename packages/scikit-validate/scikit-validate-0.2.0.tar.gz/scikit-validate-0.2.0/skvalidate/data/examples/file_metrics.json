@@ -1,0 +1,26 @@
+{
+    "file1": {
+        "size_in_bytes": {
+            "value": 12582912,
+            "unit": "B",
+            "lower_is_better": true
+        },
+        "size_in_mb": {
+            "value": 12.0,
+            "unit": "MB",
+            "lower_is_better": true
+        }
+    },
+    "file2": {
+        "size_in_bytes": {
+            "value": 20971520,
+            "unit": "B",
+            "lower_is_better": true
+        },
+        "size_in_mb": {
+            "value": 20.0,
+            "unit": "MB",
+            "lower_is_better": true
+        }
+    }
+}
