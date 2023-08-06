@@ -1,0 +1,37 @@
+image: python:3.7-stretch
+
+stages:
+- test
+- publish
+
+test:3.7:
+  image: python:3.7-stretch
+  stage: test
+  script:
+  - pip install -r dev-requirements.txt
+  - tox -- --cov=timew -v -s
+
+test:3.6:
+  image: python:3.6
+  stage: test
+  script:
+  - pip install -r dev-requirements.txt
+  - tox -- --cov=timew -v -s
+
+pages:
+  stage: publish
+  only: [master]
+  script:
+  - pip install -r dev-requirements.txt
+  - tox -e docs
+  artifacts:
+    paths:
+    - public
+
+publish:
+  only: [tags]
+  stage: publish
+  script:
+  - pip install -r dev-requirements.txt
+  - tox
+  - twine upload -u ${PYPI_USER} -p ${PYPI_PASSWORD} .tox/dist/*

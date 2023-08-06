@@ -1,0 +1,61 @@
+CHANGES
+=======
+
+0.0.8
+-----
+
+* Release 0.0.8
+* Fix documentation
+* Update README
+* Create API documentation
+
+0.0.7
+-----
+
+* Release 0.0.7
+* Get PYPI to render Markdown
+
+0.0.6
+-----
+
+* Release 0.0.6
+* Get PYPI to render Markdown
+
+0.0.5
+-----
+
+* Release 0.0.5
+* Fix release process
+
+0.0.4
+-----
+
+* Release 0.0.4
+* Fix Markdown rendering for PYPI
+* Update README
+* Update README
+
+0.0.3
+-----
+
+* Release 0.0.3
+* Release --help
+* Update README
+* Fix args
+* Fix commands + update tests
+* Add data structures for Duration and Interval
+* Remove sphinx dependency from requirements and add to dev-requirements
+
+0.0.2
+-----
+
+* Fix release process
+
+0.0.1
+-----
+
+* Release --help
+* Prepare code for first release
+* Add codebeat badge
+* Add LICENSE
+* Initial commit
