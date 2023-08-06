@@ -1,0 +1,12 @@
+lesspass/__init__.py,sha256=-ElVt0FTjmy0tilDbmw0wa-638SfdOLc8gMYBg9AT8k,75
+lesspass/cli.py,sha256=uvxNTkmyUZ7hpp9tu8AU-Q4v9UjUUximKfP_7kBGInM,3716
+lesspass/clipboard.py,sha256=8X4jSUc4hcd_cxf6v0Oe9iIylzpwDqEXQ1QRHnWCwDg,1234
+lesspass/core.py,sha256=6joNfkCRDiBOpPYun0PZMhSHrrWlvp0pVc9s9jE3Imo,1857
+lesspass/password.py,sha256=nBuJ0q0yQ4jFgRdzRV3Pgg3l_WO531NuZiqWhDTeuUo,3685
+lesspass/profile.py,sha256=rw1YBXEFYzfVzliVmuYNELyafCVQLf35lzCzVm9KeuU,598
+lesspass/version.py,sha256=co6LyaBArt-ahHXYZSdSER8TFZ2vVTb86CNG6X8Pxwc,22
+lesspass-7.0.1.dist-info/METADATA,sha256=GXmD2BW5bMw2mPsoOf3cROULb-6a2aEWFuZlTBdAM9o,455
+lesspass-7.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+lesspass-7.0.1.dist-info/entry_points.txt,sha256=iXoCIMqqgUt76PHNPnK6AWByBRij6QizJ15tgp_blkw,67
+lesspass-7.0.1.dist-info/top_level.txt,sha256=BUktki24NMTZxDUGlyuuEWMLaUJtgDPfrl4wgp4ejh0,9
+lesspass-7.0.1.dist-info/RECORD,,
