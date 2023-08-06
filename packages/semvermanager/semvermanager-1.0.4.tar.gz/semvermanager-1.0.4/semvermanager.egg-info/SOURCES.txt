@@ -1,0 +1,12 @@
+README.md
+setup.py
+semvermanager/__init__.py
+semvermanager/__main__.py
+semvermanager/command.py
+semvermanager/semvermgr.py
+semvermanager/version.py
+semvermanager.egg-info/PKG-INFO
+semvermanager.egg-info/SOURCES.txt
+semvermanager.egg-info/dependency_links.txt
+semvermanager.egg-info/entry_points.txt
+semvermanager.egg-info/top_level.txt
