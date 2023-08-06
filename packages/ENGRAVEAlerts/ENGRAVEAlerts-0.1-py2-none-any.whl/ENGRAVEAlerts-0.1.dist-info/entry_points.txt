@@ -1,0 +1,3 @@
+[console_scripts]
+ealerts = ENGRAVEAlerts.cl_utils:main
+
