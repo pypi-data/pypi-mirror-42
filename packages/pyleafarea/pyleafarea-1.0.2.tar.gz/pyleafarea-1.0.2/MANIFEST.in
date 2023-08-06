@@ -1,0 +1,7 @@
+include pyleaf/test_images/*.*
+include pyleaf/saved_images/*.*
+include pyleaf/limited_test_images/*.*
+include pyleaf/all_photos/*.*
+include pyleaf/model.*
+include pyleaf/leaf_top.png
+include pyleaf/pyleaf.pdf
