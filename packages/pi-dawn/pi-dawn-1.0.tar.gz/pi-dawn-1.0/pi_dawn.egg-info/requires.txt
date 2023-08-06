@@ -1,0 +1,10 @@
+adafruit-ws2801
+attrs
+click
+Flask
+Flask-SQLAlchemy
+redis
+
+[dev]
+check-manifest
+pygame
