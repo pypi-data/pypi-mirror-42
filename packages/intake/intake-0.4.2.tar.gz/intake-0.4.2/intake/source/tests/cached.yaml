@@ -1,0 +1,43 @@
+sources:
+  calvert:
+    driver: csv
+    args:
+      urlpath: '{{ CATALOG_DIR }}/calvert_uk.zip'
+    cache:
+      - type: compressed
+        argkey: urlpath
+        regex: '{{ CATALOG_DIR }}'
+  calvert_infer:
+    driver: csv
+    args:
+      urlpath: '{{ CATALOG_DIR }}/calvert_uk.zip'
+    cache:
+      - type: compressed
+        argkey: urlpath
+        regex: '{{ CATALOG_DIR }}'
+        decomp: infer
+  calvert_badkey:
+    driver: csv
+    args:
+      urlpath: '{{ CATALOG_DIR }}/calvert_uk.zip'
+    cache:
+      - type: compressed
+        argkey: urlpath
+        regex: '{{ CATALOG_DIR }}'
+        decomp: unknown
+  dirs:
+    driver: textfiles
+    args:
+      urlpath: '{{ CATALOG_DIR }}/main'
+    cache:
+      - type: dir
+        regex: '{{ CATALOG_DIR }}'
+        argkey: urlpath
+        depth: 2
+  dat_data:
+    driver: textfiles
+    args:
+      urlpath: 'dat://66ef52101a2543e1721c901e84d2dd7a758c94283b8501d34a691abefe3fb3d6/*.json'
+      decoder: json.loads
+    cache:
+      - type: dat
