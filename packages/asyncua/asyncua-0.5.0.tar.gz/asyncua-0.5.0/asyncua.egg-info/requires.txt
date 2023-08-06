@@ -1,0 +1,8 @@
+aiofiles
+asyncio-contextmanager
+python-dateutil
+pytz
+lxml
+
+[encryption]
+cryptography
