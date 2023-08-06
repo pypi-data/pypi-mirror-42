@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: facelesscloud
+Version: 1.0.0
+Summary: FacelessCloud is a client to spawn Instances/VM servers with cryptocurrency paiement method.
+Home-page: https://github.com/facelesscloud/facelesscloud-python3-client.git
+Author: Faceless Cloud
+Author-email: UNKNOWN
+License: This is a free software. Anyone is free to copy, modify, publish, use, compile, sell or distribute this software. Do what ever the fuck you want.
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
