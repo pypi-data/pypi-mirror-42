@@ -1,0 +1,13 @@
+cursewords/__init__.py,sha256=Hh4ejR8z3bsE7GNwwQ3Yfarh4_M2-ytxUBzJZSgKYIc,26
+cursewords/__main__.py,sha256=6MQb4OMtwrhg5LX4JUJWf_Z1XbEm3LBDfyF2KWUkF3A,37
+cursewords/characters.py,sha256=MTcNmK1LNIIHLL6GTA0sWfMN_2eYwbBGpW6loWmdxa0,263
+cursewords/chars.py,sha256=MTcNmK1LNIIHLL6GTA0sWfMN_2eYwbBGpW6loWmdxa0,263
+cursewords/core.py,sha256=iSYxr6t_hsiIIe7t8Wj35Or5Bl-_52o2osT6_3b6OxU,37602
+cursewords/cursewords.py,sha256=TdmRazGXqaVbg46-CoRm_6rECxhT638c4-s-5pFpbGU,37724
+cursewords/version,sha256=SiZUzbjMQILYZGK_QnQl5_zOISolluja1ghb9FitcXo,7
+cursewords-1.0rc2.dist-info/LICENSE,sha256=mjIQlTdVTVHdg3kvPp1pmTduCXTR0wnLH5IqytOUbRw,34524
+cursewords-1.0rc2.dist-info/METADATA,sha256=PWDHlzo4C8Gwgj2v2NVBEj56DpX7SmUCYbXS5ttCu-M,2551
+cursewords-1.0rc2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+cursewords-1.0rc2.dist-info/entry_points.txt,sha256=nlqpj1yj9xKImIrKo5-Ck7DQxgZ4rnWJCBUjdBOoan4,48
+cursewords-1.0rc2.dist-info/top_level.txt,sha256=7K7V8jI5QKoiWMVolRY3BWxfTgNFIE6NLSAaJEI--As,11
+cursewords-1.0rc2.dist-info/RECORD,,
