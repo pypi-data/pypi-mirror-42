@@ -1,0 +1,9 @@
+README.md
+setup.py
+pyphantomapi/__init__.py
+pyphantomapi/phantom.py
+pyphantomapi.egg-info/PKG-INFO
+pyphantomapi.egg-info/SOURCES.txt
+pyphantomapi.egg-info/dependency_links.txt
+pyphantomapi.egg-info/requires.txt
+pyphantomapi.egg-info/top_level.txt
