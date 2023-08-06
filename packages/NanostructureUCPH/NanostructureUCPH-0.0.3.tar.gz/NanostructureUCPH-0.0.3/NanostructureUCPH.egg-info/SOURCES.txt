@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+NanostructureUCPH/__init__.py
+NanostructureUCPH.egg-info/PKG-INFO
+NanostructureUCPH.egg-info/SOURCES.txt
+NanostructureUCPH.egg-info/dependency_links.txt
+NanostructureUCPH.egg-info/not-zip-safe
+NanostructureUCPH.egg-info/requires.txt
+NanostructureUCPH.egg-info/top_level.txt
+NanostructureUCPH/CifConverter/__init__.py
+NanostructureUCPH/CifConverter/cifConverter.py
+NanostructureUCPH/PearsonFitting/__init__.py
+NanostructureUCPH/PearsonFitting/pearson.py
