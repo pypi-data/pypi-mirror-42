@@ -1,0 +1,10 @@
+{
+    "dashboard_name": "Storage Accounts",
+    "description": "Public Traffic Allowed",
+    "rationale": "You should define firewall rules to restrict access, allowing traffic just for a set of selected networks.",
+    "path": "storageaccounts.storage_accounts.id",
+    "conditions": [ "and",
+        [ "storageaccounts.storage_accounts.id.public_traffic_allowed", "true", "" ]
+    ],
+    "id_suffix": "public_traffic_allowed"
+}

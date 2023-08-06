@@ -1,0 +1,55 @@
+{
+  "about": "Default private ruleset for Azure.",
+  "rules": {
+    "network-security-groups-external-inbound-service_private.json": [
+      {
+        "args": [
+          "RDP",
+          "3389"
+        ],
+        "enabled": true,
+        "level": "danger"
+      },
+      {
+        "args": [
+          "SSH",
+          "22"
+        ],
+        "enabled": true,
+        "level": "danger"
+      },
+      {
+        "args": [
+          "SQL",
+          "1433"
+        ],
+        "enabled": true,
+        "level": "danger"
+      }
+    ],
+    "storageaccount-account-allowing-clear-text.json": [
+      {
+        "enabled": true,
+        "level": "warning"
+      }
+    ],
+    "storageaccount-public-traffic-allowed_private.json": [
+      {
+        "enabled": true,
+        "level": "warning"
+      }
+    ],
+    "storageaccount-public-blob-container.json": [
+      {
+        "enabled": true,
+        "level": "danger"
+      }
+    ],
+    "storageaccount-access-keys-not-rotated.json": [
+      {
+        "enabled": true,
+        "level": "warning"
+      }
+    ]
+  }
+}
