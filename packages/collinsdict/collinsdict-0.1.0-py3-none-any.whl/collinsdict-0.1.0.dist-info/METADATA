@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: collinsdict
+Version: 0.1.0
+Summary: Collins Dictionary
+Home-page: https://github.com/Lisz21/CollinsDict
+Author: liszt21
+Author-email: 1832666492@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/plain
+
+# CollinsDict
+## A collins dictionary write with python
+
+## Usage
+```
+from collinsdict import Word
+
+word = Word('test')
+print(word)
+```
+## Todo
+* Add cmd
+* Filter
+
+
