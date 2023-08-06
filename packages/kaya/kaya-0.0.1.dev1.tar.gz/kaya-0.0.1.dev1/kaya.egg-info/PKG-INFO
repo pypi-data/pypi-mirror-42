@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: kaya
+Version: 0.0.1.dev1
+Summary: Testing framework inspired by jest
+Home-page: https://github.com/JeongUkJae/kaya
+Author: Jeong Ukjae
+Author-email: jeongukjae@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
