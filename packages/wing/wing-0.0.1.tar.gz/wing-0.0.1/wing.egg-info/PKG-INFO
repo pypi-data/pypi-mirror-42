@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: wing
+Version: 0.0.1
+Summary: Data science utils to help you wing it
+Home-page: https://github.com/puzzler10/wing
+Author: Tom Roth
+Author-email: tom.roth@live.com.au
+License: UNKNOWN
+Description: # wing 
+        
+        The package contains data science utility functions to make machine learning a bit easier and quicker.  
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
