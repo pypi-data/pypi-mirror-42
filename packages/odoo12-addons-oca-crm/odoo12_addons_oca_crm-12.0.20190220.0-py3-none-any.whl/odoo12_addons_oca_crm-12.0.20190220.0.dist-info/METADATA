@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: odoo12-addons-oca-crm
+Version: 12.0.20190220.0
+Summary: Meta package for oca-crm Odoo addons
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Requires-Dist: odoo12-addon-crm-claim
+Requires-Dist: odoo12-addon-crm-lead-code
+Requires-Dist: odoo12-addon-crm-lead-product
+Requires-Dist: odoo12-addon-crm-phonecall
+
+UNKNOWN
+
+
