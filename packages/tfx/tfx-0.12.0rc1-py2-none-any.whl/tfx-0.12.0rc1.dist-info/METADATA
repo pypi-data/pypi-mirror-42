@@ -1,0 +1,90 @@
+Metadata-Version: 2.1
+Name: tfx
+Version: 0.12.0rc1
+Summary: TensorFlow Extended (TFX) is a TensorFlow-based general-purpose machine learning platform implemented at Google
+Home-page: https://www.tensorflow.org/tfx
+Author: Google LLC
+Author-email: tensorflow-extended-dev@googlegroups.com
+License: Apache 2.0
+Download-URL: https://github.com/tensorflow/tfx/tags
+Keywords: tensorflow tfx
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=2.7,<3
+Description-Content-Type: text/markdown
+Requires-Dist: absl-py (<1,>=0.1.6)
+Requires-Dist: apache-beam[gcp] (<3,>=2.10)
+Requires-Dist: google-api-python-client (<2,>=1.7.8)
+Requires-Dist: ml-metadata (<0.14,>=0.13.2)
+Requires-Dist: protobuf (<4,>=3.7)
+Requires-Dist: six (<2,>=1.10)
+Requires-Dist: tensorflow-data-validation (<0.13,>=0.12)
+Requires-Dist: tensorflow-model-analysis (<0.13,>=0.12)
+Requires-Dist: tensorflow-transform (<0.13,>=0.12)
+
+<!-- See: www.tensorflow.org/tfx/ -->
+
+# TFX
+
+[![Python](https://img.shields.io/pypi/pyversions/tfx.svg?style=plastic)](https://github.com/tensorflow/tfx)
+[![PyPI](https://badge.fury.io/py/tfx.svg)](https://badge.fury.io/py/tfx)
+
+TensorFlow Extended (TFX) is a TensorFlow-based general-purpose machine learning
+platform implemented at Google. We’ve open sourced some of the TFX libraries
+listed below. The [TFX repository](https://github.com/tensorflow/tfx) will
+contain horizontal components that integrate these libraries in one platform.
+For now, it will include examples of how to use the already open sourced TFX
+libraries together.
+
+## Examples
+
+*   [Chicago Taxi Example](https://github.com/tensorflow/tfx/tree/master/examples/chicago_taxi_pipeline)
+
+## Available TFX libraries
+
+### [TensorFlow Data Validation](https://github.com/tensorflow/data-validation)
+
+A library for exploring and validating machine learning data.
+
+### [TensorFlow Transform](https://github.com/tensorflow/transform)
+
+A preprocessing pipeline to perform full-pass analyze phases over data to create
+transformation graphs that are consistently applied during training and serving.
+
+### [TensorFlow Model Analysis](https://github.com/tensorflow/model-analysis)
+
+Libraries and visualization components to compute full-pass and sliced model
+metrics over large datasets, and analyze them in a notebook.
+
+### [TensorFlow Serving](https://github.com/tensorflow/serving)
+
+A flexible, high-performance serving system for machine learning models,
+designed for production environments.
+
+## Compatible versions
+* ml-metadata
+
+The following table describes how the `tfx` package versions are compatible
+with its major dependency Pypi packages. This is determined by our testing
+framework, but other *untested* combinations may also work.
+
+|tfx                                                                                |tensorflow    |apache-beam[gcp]|tensorflow-data-validation|tensorflow-model-analysis|tensorflow-transform|ml-metadata|tensorflow-metadata|
+|-----------------------------------------------------------------------------------|--------------|----------------|--------------------------|--------------------------------|--------------------|-----------|-------------------|
+|[GitHub master](https://github.com/tensorflow/tfx/blob/master/tfx/g3doc/RELEASE.md)|nightly (1.x) |2.10.0          |0.12.0                    |0.12.1                           |0.12.0              |0.13.1     |0.12.1             |
+
+
