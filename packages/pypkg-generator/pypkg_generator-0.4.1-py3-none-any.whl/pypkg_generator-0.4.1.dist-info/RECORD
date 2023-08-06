@@ -1,0 +1,11 @@
+pypkg_generator/__init__.py,sha256=Axg-KWTqMTtMO-TQXtOWtAaLgPE6jso6AZ130m1-Vvc,64
+pypkg_generator/__main__.py,sha256=qfK0lsm991wW273lS2VjUHp3S2xa2SLAwDlCHhj6AuA,2066
+pypkg_generator/config.py,sha256=2z04JJZOkwJJfcOeWf7F3Pf3OzgHoiAd5W0Wt_RtBGI,259
+pypkg_generator/exceptions.py,sha256=W7TBs_EKe5gVHCWPt2PqoaMKhqUBgmZeIdtWewd3Bs8,293
+pypkg_generator/package_generator.py,sha256=2NWo5Sc1O1jmYSrU7ASON39WG3o0PwLotq6SaT4UpAE,3322
+pypkg_generator-0.4.1.dist-info/LICENSE,sha256=2j7OLS2vXIEshgbSkiCU9RgYJY1M4OBBtO6ECbo7OB8,1056
+pypkg_generator-0.4.1.dist-info/METADATA,sha256=qWC1F72iDMwFmoCHykRV15x71ItDgCexWtQsf5nPUX8,2743
+pypkg_generator-0.4.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pypkg_generator-0.4.1.dist-info/entry_points.txt,sha256=2VY1RVMBySSRLyPFvxbD09HHJdRv5tlS1tEvr7Nzb84,65
+pypkg_generator-0.4.1.dist-info/top_level.txt,sha256=OM34JUj6irJAPzigPFv5WHZPsZlhzzLcbwvifwi7h3g,16
+pypkg_generator-0.4.1.dist-info/RECORD,,
