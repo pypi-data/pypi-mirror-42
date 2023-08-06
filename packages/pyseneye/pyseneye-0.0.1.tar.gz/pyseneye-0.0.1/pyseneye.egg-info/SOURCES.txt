@@ -1,0 +1,9 @@
+README.rst
+setup.py
+pyseneye/__init__.py
+pyseneye/sud.py
+pyseneye.egg-info/PKG-INFO
+pyseneye.egg-info/SOURCES.txt
+pyseneye.egg-info/dependency_links.txt
+pyseneye.egg-info/requires.txt
+pyseneye.egg-info/top_level.txt
