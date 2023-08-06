@@ -1,0 +1,13 @@
+decopatch/__init__.py,sha256=I9AhroQszusZaPdojDfh-8QemuUY8a3_VPnBlr40iLo,525
+decopatch/main.py,sha256=KF5TRKTKOPAGmCE8-VsxlSdhGJdhCrpRixYySvSzqWA,38691
+decopatch/utils_signatures.py,sha256=hTSMWAjSeb0LDApUeLuiFHojFr_abVrK_WYvLD-dN7A,1860
+decopatch/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+decopatch/tests/_test_doc_py3.py,sha256=N9KEIEN_pRn_JJLkFgk6NvxemtX4qq770Mh1KfpGYe4,1672
+decopatch/tests/test_doc.py,sha256=TERW1V-GW6VMIk6I23xnOlTTTf7G0dbim_7Kxqtg1fI,12449
+decopatch/tests/test_main2.py,sha256=Q4b9vEoZn4YMhIo9-8VH2AC-ZEBUApaVBpwMlYq1Ug4,20479
+decopatch/tests/test_main2_parametrizers.py,sha256=VVPlNwdIjBV1_qOknqz9IEUfY92_TX9RheznVBMeXZM,7826
+decopatch-0.5.0.dist-info/LICENSE,sha256=JipSav17Ux2_r051tc1v9vh2luZbhDEek-cneA-EmzQ,1506
+decopatch-0.5.0.dist-info/METADATA,sha256=84pOFQjfdnuvgA7xsVjL1bejQX7vUjrW30ygieDNqBo,2580
+decopatch-0.5.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+decopatch-0.5.0.dist-info/top_level.txt,sha256=xX2QjNva8Jn3HS4CrWsqhL8ZuuRnyTX_KvvnuLHTdgY,10
+decopatch-0.5.0.dist-info/RECORD,,
