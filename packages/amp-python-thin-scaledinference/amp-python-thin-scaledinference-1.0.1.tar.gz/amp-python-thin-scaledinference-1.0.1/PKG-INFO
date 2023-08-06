@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: amp-python-thin-scaledinference
+Version: 1.0.1
+Summary: Amp Python Thin Client
+Home-page: https://github.com/ScaledInference/amp-python-thin
+Author: Scaled Inference
+Author-email: dev.opera@scaledinference.com
+License: UNKNOWN
+Description: # amp-python-thin
+        Python thin client for Amp.ai
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

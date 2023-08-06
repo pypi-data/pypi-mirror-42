@@ -1,0 +1,11 @@
+README.md
+setup.py
+amp_python_thin_scaledinference.egg-info/PKG-INFO
+amp_python_thin_scaledinference.egg-info/SOURCES.txt
+amp_python_thin_scaledinference.egg-info/dependency_links.txt
+amp_python_thin_scaledinference.egg-info/top_level.txt
+si/__init__.py
+si/amp.py
+si/example.py
+si/session.py
+si/utils.py
