@@ -1,0 +1,8 @@
+README.md
+setup.py
+arith_lib/__init__.py
+arith_lib/arith.py
+arith_lib.egg-info/PKG-INFO
+arith_lib.egg-info/SOURCES.txt
+arith_lib.egg-info/dependency_links.txt
+arith_lib.egg-info/top_level.txt
