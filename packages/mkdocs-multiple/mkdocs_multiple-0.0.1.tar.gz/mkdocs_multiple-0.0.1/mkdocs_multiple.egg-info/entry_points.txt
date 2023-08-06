@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+zotero-notes = mkdocs_multiple.plugin:MultiplePlugin
+
