@@ -1,0 +1,13 @@
+README.md
+setup.py
+bin/ghstack
+ghstack/__init__.py
+ghstack/__main__.py
+ghstack/config.py
+ghstack/endpoint.py
+ghstack/shell.py
+ghstack.egg-info/PKG-INFO
+ghstack.egg-info/SOURCES.txt
+ghstack.egg-info/dependency_links.txt
+ghstack.egg-info/requires.txt
+ghstack.egg-info/top_level.txt
