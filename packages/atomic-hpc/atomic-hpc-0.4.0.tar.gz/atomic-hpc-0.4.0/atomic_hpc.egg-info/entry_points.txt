@@ -1,0 +1,4 @@
+[console_scripts]
+retrieve_config = atomic_hpc.frontend.retrieve_config:main
+run_config = atomic_hpc.frontend.run_config:main
+
