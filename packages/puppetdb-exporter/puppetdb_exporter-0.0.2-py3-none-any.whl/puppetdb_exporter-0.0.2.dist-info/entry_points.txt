@@ -1,0 +1,3 @@
+[console_scripts]
+puppetdb_exporter = puppetdb_exporter.__init__:main
+
