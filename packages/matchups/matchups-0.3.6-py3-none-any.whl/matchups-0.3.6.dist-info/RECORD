@@ -1,0 +1,13 @@
+matchups/__init__.py,sha256=cktb6rcDSpWccprIxjx0EINYABO4M09WRDyIo_5Ll7o,102
+matchups/defaults.json,sha256=miFpcSrEP9tpJ6w3ITHj6PNtxGxlOquPee0vCDF4trM,1253516
+matchups/matchups.py,sha256=0wqtfV3yJ92RsQc0aHDvBFz-lav6S5cYDc33J4FrT1Y,6618
+matchups/schema.json,sha256=6DvwGtVuazHEcEAfj1R4x5nwDutOTnISirWVJvoVwIQ,250
+matchups/utils.py,sha256=P8a2EGl5eGMPuLJg75jvW8xJI31g0LvGCAu9jzGDpjs,1152
+matchups/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+matchups/tests/test_inputs.py,sha256=VUok8zWgUWeefdGPBeJiL6vTaKCrZXxsoei8iGrS1i4,1387
+matchups/tests/test_outputs.py,sha256=E5DB3JphpXOpjKiseeVXvb4-NtiD_jxgpgMQsUXV9I0,477
+matchups-0.3.6.dist-info/LICENSE,sha256=Lus4A7lwv75kGeScSAQ8dnOHHDJ92hdZI2wab5sG74Q,1068
+matchups-0.3.6.dist-info/METADATA,sha256=IE9JoC7uw4yoYMQ8OFGqLzb9ZAXwOLZKF_Likoc8Jj8,827
+matchups-0.3.6.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+matchups-0.3.6.dist-info/top_level.txt,sha256=5KBc9J1BOiC949Ju61MEuChnnJbL8t6H-XpMzm9NhAA,9
+matchups-0.3.6.dist-info/RECORD,,
