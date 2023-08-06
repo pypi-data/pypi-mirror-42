@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: mantichora
+Version: 0.1.1
+Summary: A simple interface to threading and multiprocessing
+Home-page: https://github.com/alphatwirl/mantichora
+Author: Tai Sakuma
+Author-email: tai.sakuma@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: atpbar (>=0.9.7)
+
+
+# mantichora
+
+A simple interface to threading and multiprocessing
+
+_mantichora_ provides a simple interface
+[threading](https://docs.python.org/3/library/threading.html) and
+[multiprocessing](https://docs.python.org/3/library/multiprocessing.html).
+
+The code in this package was originally developed as modules in the
+sub-package
+[_concurrently_](https://github.com/alphatwirl/alphatwirl/tree/v0.23.2/alphatwirl/concurrently)
+in [_alphatwirl_](https://github.com/alphatwirl/alphatwirl).
+
+
+## License
+
+- mantichora is licensed under the BSD license.
+
+*****
+
+## Contact
+
+- Tai Sakuma - tai.sakuma@gmail.com
+
+
