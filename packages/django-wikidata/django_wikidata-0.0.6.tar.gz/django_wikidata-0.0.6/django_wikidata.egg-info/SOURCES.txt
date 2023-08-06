@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+django_wikidata/__init__.py
+django_wikidata/entity.py
+django_wikidata/fields.py
+django_wikidata/forms.py
+django_wikidata/mixins.py
+django_wikidata/validators.py
+django_wikidata/widgets.py
+django_wikidata.egg-info/PKG-INFO
+django_wikidata.egg-info/SOURCES.txt
+django_wikidata.egg-info/dependency_links.txt
+django_wikidata.egg-info/requires.txt
+django_wikidata.egg-info/top_level.txt
