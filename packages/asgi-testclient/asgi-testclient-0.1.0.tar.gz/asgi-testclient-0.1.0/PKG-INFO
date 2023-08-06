@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: asgi-testclient
+Version: 0.1.0
+Summary: Test Clietn for ASGI web applications
+Home-page: https://github.com/oldani/asgi-testClient
+Author: Ordanis Sanchez
+Author-email: ordanisanchez@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Testing
+Project-URL: Repository, https://github.com/oldani/asgi-testClient
