@@ -1,0 +1,13 @@
+fakear/__init__.py,sha256=6Rs9rY0rvZ5goTqijCJn5Q8CDiKdW3d8hbOK61iVVJg,8652
+fakear/templates.py,sha256=v0BliPnWt1hrZezAQvKYJjfDatDdJTgPi-IQVxgiTgI,683
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/run_py27.py,sha256=8YQx804hf3qOArgF3cGvirnB4FEtloMB8dIL1v9yaZM,327
+tests/run_py3.py,sha256=85vgBQT0Lwz245i_J2ywKVOzfn5cRZfiIcuGQyM1wAE,98
+tests/test_basic.py,sha256=-9mFYo2jC67mJEfAatVInsSiINStrXEjz1ReJ3_jeT4,803
+tests/test_e2e.py,sha256=hPcBVqfXuW_U-9UvFwOirYP0XkB9APjEE5L7k2D2NCs,3646
+tests/test_errors.py,sha256=qPjGdJZWM6kMmmng9extty-2yUJBjt5ECfLTe-1g3bQ,719
+fakear-0.1.1.dist-info/LICENCE.md,sha256=i7qdl69YNZ7Ktk03RNUAH9kP1pRt6qn6aGNuEWeggmg,1088
+fakear-0.1.1.dist-info/METADATA,sha256=zmvZ8YPWc2aW9TDCmhkO-jw5G30ckxoPd8pNQGQtrEo,4681
+fakear-0.1.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+fakear-0.1.1.dist-info/top_level.txt,sha256=ZbskrJQhr4_DZ6sbtz7NL0Dn4xzzPXVywqe4Epb50Oc,13
+fakear-0.1.1.dist-info/RECORD,,
