@@ -1,0 +1,15 @@
+---
+
+- name: Install users
+  loop: '{{ users }}'
+  loop_control:
+    loop_var: user
+  when: user['name']|key_pub_exists
+  include_tasks: user.yml
+
+- name: Remove users to remove
+  with_items: '{{ users_remove|default([]) }}'
+  user:
+    name: '{{ item }}'
+    state: absent
+

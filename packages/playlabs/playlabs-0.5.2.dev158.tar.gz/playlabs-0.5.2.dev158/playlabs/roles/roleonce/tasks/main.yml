@@ -1,0 +1,5 @@
+---
+
+- name: Install dependency role if necessary
+  when: not ansible_facts.ansible_local[name]|default(false)
+  include: install.yml
