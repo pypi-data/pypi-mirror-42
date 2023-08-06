@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "simpledms"
+version = "0.1.4"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.6"
+pyqt5 = "^5.11"
+pyqt5-sip = "^4.19"
+qtmodern = "^0.1.4"
+qdarkstyle = "^2.6"
+wand = "^0.5.0"
+pypdf2 = "^1.26"
+pdfminer3 = "^2018.12"
+python-dateutil = "^2.8"
+python-magic = "^0.4.15"
+tika = "^1.19"
+opencv-contrib-python = "^4.0"
+dateparser = "^0.7.1"
+pdfrw = "^0.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.1"
+flake8 = "^3.6"
+isort = "^4.3"
+bandit = "^1.5"
+eradicate = "^1.0"
+xenon = "^0.5.4"
+mypy = "^0.660.0"
+pre-commit = "^1.14"
+pytest-cov = "^2.6"
+safety = "^1.8"
+trufflehog = "^2.0"
+pydocstyle = "^3.0"
+pylint = "^2.2"
+flake8-builtins = "^1.4"
+flake8-docstrings = "^1.3"
+flake8-rst-docstrings = "^0.0.8"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
