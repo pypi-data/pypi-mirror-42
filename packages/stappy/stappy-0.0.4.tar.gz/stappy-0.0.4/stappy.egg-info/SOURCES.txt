@@ -1,0 +1,8 @@
+README.md
+setup.py
+stappy/__init__.py
+stappy.egg-info/PKG-INFO
+stappy.egg-info/SOURCES.txt
+stappy.egg-info/dependency_links.txt
+stappy.egg-info/requires.txt
+stappy.egg-info/top_level.txt
