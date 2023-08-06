@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: gdds_fit9133
+Version: 1.0
+Summary: fit9133 module
+Home-page: UNKNOWN
+Author: lei yang
+Author-email: lei.yang@monash.edu
+License: UNKNOWN
+Description: This fit9133 module provides stamp class
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
