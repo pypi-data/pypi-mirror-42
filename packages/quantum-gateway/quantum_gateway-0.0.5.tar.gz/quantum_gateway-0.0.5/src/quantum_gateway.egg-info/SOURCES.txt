@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+Pipfile
+Pipfile.lock
+README.md
+requirements.txt
+setup.py
+src/quantum_gateway.py
+src/quantum_gateway.egg-info/PKG-INFO
+src/quantum_gateway.egg-info/SOURCES.txt
+src/quantum_gateway.egg-info/dependency_links.txt
+src/quantum_gateway.egg-info/requires.txt
+src/quantum_gateway.egg-info/top_level.txt
+tests/test_basic.py
