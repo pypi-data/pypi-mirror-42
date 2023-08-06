@@ -1,0 +1,6 @@
+mypy-lang==0.4.5
+toposort==1.5
+jpype1==0.6.2
+astunparse==1.6.2
+typed-ast==0.6.3
+pytest==3.3.0
