@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pstat-simpledb
+Version: 0.0.1
+Summary: Python SimpleDB API SDK
+Home-page: http://github.com/PolicyStat/python-simpledb
+Author: Michael Malone
+Author-email: mjmalone@gmail.com
+License: BSD 3-Clause
+Platform: UNKNOWN
+Requires: httplib2
+Requires: elementtree
+Provides: simpledb
+
+UNKNOWN
+
+

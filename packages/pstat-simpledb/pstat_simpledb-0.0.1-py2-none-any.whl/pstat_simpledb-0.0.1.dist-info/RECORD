@@ -1,0 +1,10 @@
+pstat_simpledb-0.0.1.data/data/LICENSE,sha256=gitDPND07u_DLxJKm6njUBvocXlQ1IoSP9QL-S2Gzs0,1534
+simpledb/__init__.py,sha256=MTe_7dZSXZQlokEMB2VA5RoxGKHOAZpr-INfEtufmn4,144
+simpledb/config.py,sha256=jzwvoF1V2E0XtVgjfrTVIENEKVfPOB3cefZhP2zSCxU,33
+simpledb/models.py,sha256=0IvkyeKBDQFzcBBrC_UI7yUAbXqv7JA9AF9c8oeXJN0,12304
+simpledb/simpledb.py,sha256=cGN8Xr8jVWwKjqHdhGj1BAfOBjeC0UsXFuub6Hcyuw4,34559
+pstat_simpledb-0.0.1.dist-info/LICENSE,sha256=gitDPND07u_DLxJKm6njUBvocXlQ1IoSP9QL-S2Gzs0,1534
+pstat_simpledb-0.0.1.dist-info/METADATA,sha256=UYAVNosPrGn9enh8TZllR5xEkvAuKwTfXmPM4IGbROM,314
+pstat_simpledb-0.0.1.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+pstat_simpledb-0.0.1.dist-info/top_level.txt,sha256=73K022Gz6wUufRX1Hswz1Jl1sKRSDnOS_JWGfzpcZT8,9
+pstat_simpledb-0.0.1.dist-info/RECORD,,
