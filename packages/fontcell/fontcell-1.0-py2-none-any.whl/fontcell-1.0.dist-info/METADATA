@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: fontcell
+Version: 1.0
+Summary: FOntCell - A software tool for automatic parallel computed fusion of ontologies
+Home-page: UNKNOWN
+Author: Javier Cabau Laporta
+Author-email: jcabaulaporta@outlook.es
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Operating System :: OS Independent
+Requires-Dist: StringDist (>=1.0.9)
+Requires-Dist: bigmpi4py (>=1.2.3)
+Requires-Dist: graphviz (>=0.10.1)
+Requires-Dist: matplotlib (>=2.2.4)
+Requires-Dist: mpi4py (>=3.0.1)
+Requires-Dist: networkx (>=2.2)
+Requires-Dist: numpy (>=1.16.1)
+Requires-Dist: pandas (>=0.24.1)
+Requires-Dist: plotly (>=3.6.1)
+Requires-Dist: pyexcel (>=0.5.12)
+Requires-Dist: pyexcel-ods (>=0.5.4)
+Requires-Dist: seaborn (>=0.9.0)
+
+UNKNOWN
+
+
