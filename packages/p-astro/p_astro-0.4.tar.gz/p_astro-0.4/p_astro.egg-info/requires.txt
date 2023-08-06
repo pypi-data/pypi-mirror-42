@@ -1,0 +1,6 @@
+astropy
+lalsuite
+numpy
+pandas
+scikit-learn==0.19.2
+scipy
