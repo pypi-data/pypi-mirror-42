@@ -1,0 +1,15 @@
+venmo/__init__.py,sha256=l84FWLk1vLS1-UUi-699m2LVzEErjU8rOoApkjq0ogc,372
+venmo/__version__.py,sha256=qHJ_q-NtoZ98rdflBB5GKtBzx_sUvAVe96rJSun_DEU,23
+venmo/auth.py,sha256=kiEDiLS8VIt6xbq6AokJ_WZZMEo1nlmvvi1v0opCErw,8243
+venmo/cli.py,sha256=d668qPgM34NBaac1e0GE0K_fgU0MetLsj7sPp-KNPe0,2927
+venmo/cookies.py,sha256=2Bg1rdEyPUpImEAjOYA9wvnNiV1jOTamZc2LlipHPdM,555
+venmo/payment.py,sha256=_mEKX3RKA9FmYurHJUCxUfRaVxYl9BEGeOLKIo7wfFI,2094
+venmo/settings.py,sha256=kX8cgYh_DwyYkhejLXQWIKswapcuQBK8DtpKt3O-ShM,617
+venmo/singletons.py,sha256=jqD5_iX0VX3QNMOSzEyEwQ08aF_qTmQ5vZQja92U0vo,334
+venmo/types.py,sha256=ZOIrb6NbgeyeKRhxohfjlgG2969xRTnyZJDldV6eT5U,180
+venmo/user.py,sha256=2TkLh__OOhKj-ukWX_fcL2ASzXICyW-SQFdWq3MPHLk,917
+venmo-0.12.0.dist-info/METADATA,sha256=sTVvHd9QnN95jrHjFz26VrMoySN5GA_ovtueeJjgENs,1383
+venmo-0.12.0.dist-info/WHEEL,sha256=CihQvCnsGZQBGAHLEUMf0IdA4fRduS_NBUTMgCTtvPM,110
+venmo-0.12.0.dist-info/entry_points.txt,sha256=hbPVZksIsVU6RyOfFVlBm358Qb3yBTrRDrLEgNCPMvc,42
+venmo-0.12.0.dist-info/top_level.txt,sha256=jt8qb9qsJAtOq3_x7opyZ8asNP-mq33WzNFw24e3NYo,6
+venmo-0.12.0.dist-info/RECORD,,
