@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: rescue_api
+Version: 1.0.2
+Summary: A Python wrapper for the RescueTime API.
+Home-page: https://git.sr.ht/~mjorgensen/spark
+Author: Matthew Jorgensen
+Author-email: matthew@jrgnsn.net
+License: UNKNOWN
+Description: # rescue-api
+        
+        * Documentation
+          * [Official][0]
+          * [Unofficial][1]
+        * [Issue Tracker][2]
+        * [PyPi][3]
+        
+        [0]: https://www.rescuetime.com/anapi/setup/documentation
+        [1]: https://man.sr.ht/~mjorgensen/rescuetime-api-docs/
+        [2]: https://todo.sr.ht/%7Emjorgensen/rescue-api
+        [3]: https://pypi.org/project/rescue-api/
+        
+        This is a Python 3 implementation of the RescueTime API.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
