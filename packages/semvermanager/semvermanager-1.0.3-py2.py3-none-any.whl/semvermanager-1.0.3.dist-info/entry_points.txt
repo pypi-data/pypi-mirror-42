@@ -1,0 +1,3 @@
+[console_scripts]
+semvermgr = semvermanager:main
+
