@@ -1,0 +1,15 @@
+typeform/__init__.py,sha256=IqNQwB194TfL9DK5Bhjv-FPXmg31yafpa2jea-RgOas,384
+typeform/client.py,sha256=88xP0M_3_MweFk6r5cb8Fo430FPtxWPbf4fM_MM7_FE,1043
+typeform/constants.py,sha256=Cke5IbVOfD_lS2gJcYri3dpZDx5xmt_lvgD71hepfEs,521
+typeform/forms.py,sha256=TD_Z79MCnQvF_OCxjWCmUoDflQYABc6uCkquJeU67FI,3365
+typeform/utils.py,sha256=yRwT1kM3dqDOLjevHSY4L7xhc2tZE-M-szxnkucAm-A,619
+typeform/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+typeform/test/fixtures.py,sha256=Q87OT_TRLo1jBjy8_ikElaIs983nWGAWfjYi37XiMSI,141
+typeform/test/suite.py,sha256=cOuugEgsmb6U52KQH0_ORtt6JdYWtaEv_GnmaTBder8,146
+typeform/test/test_client.py,sha256=zhDS-U5TxY7kNVr8jmvOXUtHYAZ2Iefra2Xuxq3rX6I,1068
+typeform/test/test_forms.py,sha256=u5lGN0V9hcxMm-CoyMQIphiP_nH9pjzSaZzfbyOJ0lc,5656
+typeform-1.0.1.dist-info/LICENSE,sha256=eQEYWnmxlAk4ijFi6msDGhfPtZDNO8gULtBxhh6Cp4A,1071
+typeform-1.0.1.dist-info/METADATA,sha256=ZSN0WrcXqAuUzyt-GimG3w5epTg58hwzqEJZ4yZPL-0,4783
+typeform-1.0.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+typeform-1.0.1.dist-info/top_level.txt,sha256=Ir2AjnHM-_Vnztd9XSslqQ4RsTjnhNmxAZF-p7uf8Rc,9
+typeform-1.0.1.dist-info/RECORD,,
