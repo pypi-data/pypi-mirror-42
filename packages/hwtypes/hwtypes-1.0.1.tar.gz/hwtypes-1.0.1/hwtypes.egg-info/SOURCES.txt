@@ -1,0 +1,11 @@
+README.md
+setup.py
+hwtypes/__init__.py
+hwtypes/bit_vector.py
+hwtypes/bit_vector_abc.py
+hwtypes/compatibility.py
+hwtypes.egg-info/PKG-INFO
+hwtypes.egg-info/SOURCES.txt
+hwtypes.egg-info/dependency_links.txt
+hwtypes.egg-info/requires.txt
+hwtypes.egg-info/top_level.txt
