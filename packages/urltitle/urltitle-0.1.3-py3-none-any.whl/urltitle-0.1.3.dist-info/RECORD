@@ -1,0 +1,12 @@
+urltitle/__init__.py,sha256=Ldz_mMEpM1YAGeEK2UH8APjkr9zCX1YYeJ526EBBdVk,52
+urltitle/config.py,sha256=Qy3ys4Tao72gZMpdcAt7sD6eBZpsIMmg89PFfQG8XLI,4218
+urltitle/urltitle.py,sha256=rH26gGkcSwzZ4nABYnJFNE9pyAf9Cf7Z8W3xb7eNF-w,14979
+urltitle/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+urltitle/util/humanize.py,sha256=IPWAUFRkMpEX_0lc5ygOI8WA1BeTs-i1AYDVFJK58dQ,383
+urltitle/util/math.py,sha256=hJN1xqR3TWxJWlRBNA0g8PW3kYBxxskDe0-uA69FTHc,58
+urltitle/util/pikepdf.py,sha256=dNidDigupZRxkjYEoiEsFwuXdtudrtuYCp74hMu084I,747
+urltitle-0.1.3.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+urltitle-0.1.3.dist-info/METADATA,sha256=e95SagDXuBaDgDoIXo08dIHfeiU6VafxFs9uqjzoSDI,5158
+urltitle-0.1.3.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+urltitle-0.1.3.dist-info/top_level.txt,sha256=KyHzLhH1fiLAOYu4jMxDTYpWN-aerFZDlyerYoG_0MY,9
+urltitle-0.1.3.dist-info/RECORD,,
