@@ -1,0 +1,18 @@
+node(
+  name:"example mini language",
+  initialise: block(
+
+    RoLXML<{
+
+      <print><string>hello</string></print>
+
+      }>,
+
+    Cpp<{
+
+      int x = 1;
+
+      }>
+
+    )
+)
