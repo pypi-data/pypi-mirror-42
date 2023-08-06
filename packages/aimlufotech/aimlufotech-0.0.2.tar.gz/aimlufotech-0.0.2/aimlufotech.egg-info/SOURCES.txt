@@ -1,0 +1,14 @@
+README.md
+setup.py
+aimlufotech/AimlParser.py
+aimlufotech/DefaultSubs.py
+aimlufotech/InMemorySessionManager.py
+aimlufotech/Kernel.py
+aimlufotech/PatternMgr.py
+aimlufotech/Utils.py
+aimlufotech/WordSub.py
+aimlufotech/__init__.py
+aimlufotech.egg-info/PKG-INFO
+aimlufotech.egg-info/SOURCES.txt
+aimlufotech.egg-info/dependency_links.txt
+aimlufotech.egg-info/top_level.txt
