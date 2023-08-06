@@ -1,0 +1,11 @@
+wg_utilities/__init__.py,sha256=fssXcwMe9wlwvZvVTTLMDLUn27C2TmpgyP8xWMZ73V4,22
+wg_utilities/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wg_utilities/helpers/dict_to_object.py,sha256=p4E_eurBS2_qrHreywYXjIX96RFGzWlxIuvMiINbAEU,321
+wg_utilities/helpers/functions.py,sha256=l0wG9yBB0VhlLP6ij4QizvZwvdjxMIPr3JNdziNAWGc,2860
+wg_utilities/references/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wg_utilities/references/constants.py,sha256=czspFFchsMA2rXRW5V6Wb08nOXnPOoyJggjX5iIy0ek,647
+wg_utilities-0.3.1.dist-info/LICENSE,sha256=ixuiBLtpoK3iv89l7ylKkg9rs2GzF9ukPH7ynZYzK5s,35148
+wg_utilities-0.3.1.dist-info/METADATA,sha256=fIWx6Fx_jNb58dSk8zT914AbM8KREPU8p_BEJJFdN6E,546
+wg_utilities-0.3.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+wg_utilities-0.3.1.dist-info/top_level.txt,sha256=zmTYexWa1UEZnQIsDCiYAQNiSWONJjetKf5IojX1KmY,13
+wg_utilities-0.3.1.dist-info/RECORD,,
