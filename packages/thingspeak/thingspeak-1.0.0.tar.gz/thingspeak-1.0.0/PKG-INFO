@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: thingspeak
+Version: 1.0.0
+Summary: Client library for the thingspeak.com API
+Home-page: https://thingspeak.readthedocs.io/
+Author: Mikołaj Chwalisz
+Author-email: m.chwalisz@gmail.com
+Requires-Python: >=3.4,<4.0
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: docopt (>=0.6.2,<0.7.0)
+Requires-Dist: requests (>=2.21,<3.0)
+Project-URL: Documentation, https://thingspeak.readthedocs.io/
