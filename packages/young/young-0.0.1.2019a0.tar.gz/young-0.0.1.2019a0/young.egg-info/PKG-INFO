@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: young
+Version: 0.0.1.2019a0
+Summary: Jason Young's personal Machine Translation System used for daily research in Natural Language Processing
+Home-page: https://github.com/Jason-Young-NLP/YoungMT
+Author: Jason Young
+Author-email: Jason.Young.NLP@gmail.com
+License: UNKNOWN
+Description: 
+        # Young
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
