@@ -1,0 +1,17 @@
+tqdm
+pybids<0.8.0a0,>=0.7.0
+requests
+
+[all]
+datalad
+pytest
+pytest-xdist
+
+[datalad]
+datalad
+
+[doc]
+
+[tests]
+pytest
+pytest-xdist
