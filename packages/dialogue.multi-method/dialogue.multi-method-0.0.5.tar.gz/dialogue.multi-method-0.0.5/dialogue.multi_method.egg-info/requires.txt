@@ -1,0 +1,15 @@
+
+[dev]
+black
+isort
+pre-commit
+pytest
+pytest-watch
+python-semantic-release
+
+[test]
+codecov
+pylama
+pytest
+pytest-cov
+tox
