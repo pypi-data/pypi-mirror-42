@@ -1,0 +1,10 @@
+README.md
+setup.py
+localpubsub/__init__.py
+localpubsub/localpubsub.py
+localpubsub.egg-info/PKG-INFO
+localpubsub.egg-info/SOURCES.txt
+localpubsub.egg-info/dependency_links.txt
+localpubsub.egg-info/top_level.txt
+tests/__init__.py
+tests/test_variable_pubsub.py

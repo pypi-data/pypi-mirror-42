@@ -1,0 +1,45 @@
+Metadata-Version: 1.2
+Name: localpubsub
+Version: 0.0.3
+Summary: UNKNOWN
+Home-page: https://github.com/_/localpubsub
+Author: SimLeek
+Author-email: josh.miklos@gmail.com
+Maintainer: SimLeek
+Maintainer-email: josh.miklos@gmail.com
+License: MIT
+Description: localpubsub
+        ===========
+        
+        -----
+        
+        .. contents:: **Table of Contents**
+            :backlinks: none
+        
+        Installation
+        ------------
+        
+        localpubsub is distributed on `PyPI <https://pypi.org>`_ as a universal
+        wheel and is available on Linux/macOS and Windows and supports
+        Python 2.7/3.5+ and PyPy.
+        
+        .. code-block:: bash
+        
+            $ pip install localpubsub
+        
+        License
+        -------
+        
+        localpubsub is distributed under the terms of the
+        `MIT License <https://choosealicense.com/licenses/mit>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
