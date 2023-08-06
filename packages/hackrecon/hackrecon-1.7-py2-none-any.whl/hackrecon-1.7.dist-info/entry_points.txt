@@ -1,0 +1,3 @@
+[console_scripts]
+hackrecon = hackrecon.hackrecon:main_with_args
+
