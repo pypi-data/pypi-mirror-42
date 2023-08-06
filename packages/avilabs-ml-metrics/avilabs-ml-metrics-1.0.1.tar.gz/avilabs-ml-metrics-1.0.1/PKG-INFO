@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: avilabs-ml-metrics
+Version: 1.0.1
+Summary: Metrics for Machine Learning
+Home-page: https://gitlab.com/avilay/ml-metrics
+Author: Avilay Parekh
+Author-email: avilay@gmail.com
+License: MIT
+Description: 
+        # ML Metrics
+        A simple and flexible API to log metrics. Currently a metrics logger for logging to SQLite is implemented. Other backends can be implemented as needed.
+        
+        # Quickstart
+        ## Write Logs
+        ```python
+        from mlmetrics.sqlitemetrics.sqlite_metric import SqliteMetric
+        
+        db = './metrics.db'
+        metric = SqliteMetric(db, name='fuel_gauge', labels={'model', 'trip'})
+        metric.log(model='toyota', trip='short', value=1.2)
+        ```
+        
+        ## Query Logs
+        ```python
+        from mlmetrics.sqlitemetrics.sqlite_metric import SqliteMetric
+        
+        db = './metrics.db'
+        logs = metric.logs(start=1550554038.80172, end=1550554038.80265)
+        for row in logs:
+            for fld in row.keys():
+                print(fld, row[fld])
+        ```
+        
+        For more details see the [Homepage](https://gitlab.com/avilay/ml-metrics)
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
