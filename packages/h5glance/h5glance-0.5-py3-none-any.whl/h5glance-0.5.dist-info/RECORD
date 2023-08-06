@@ -1,0 +1,15 @@
+h5glance/__init__.py,sha256=u39jrwftWeILfRvagZHHEcTNdYyNbR0YnCUUH5HKOT4,123
+h5glance/__main__.py,sha256=u2elA_tHFd8TmyDNQy5z-alnQqucEgMdMNv8uOHg8KQ,34
+h5glance/completer.py,sha256=GakoHKiQ6ZixAlASGe5cR-XGp_iRKdiGjP_akPdTVOo,1359
+h5glance/completion.bash,sha256=JdUgWR93EKW_lgl93IXSeM9zA2MJzBovMcUVMKzy8u0,1119
+h5glance/completion.zsh,sha256=QfFDlqmxPbK9YSMFImgOpJyUkzcZGT7VC3MiYYqld7I,1944
+h5glance/copypath.js,sha256=o7s6ppzYzYF4cbabOmFiEMi4rJtarARA6E2xuojIXJY,2664
+h5glance/generate.py,sha256=l9OC9kHfLJf6Zt1br7WUYC_VTIsXtojqxgDNrMQMg6M,4981
+h5glance/html_cli.py,sha256=h5kwV8-K-npqOzTYWfCLQCrSrDKGtx_DbCB2a3qxiSU,1645
+h5glance/terminal.py,sha256=neBrNkRiqPF-XDFCAbK11gW1VgMphk4Uldj-8oEw0G0,9945
+h5glance/treeview.css,sha256=q-ny7jkxNL8Tp54NCzp2raa0woXDw0NYFALnFldrj_4,1847
+h5glance-0.5.dist-info/entry_points.txt,sha256=v1OkNpYsM1_n7biyp9i_B2ZqMXRgpj4DAp8xGHh2r2I,88
+h5glance-0.5.dist-info/LICENSE,sha256=wD9X3a6eMFMQ8txT7iGhTho80ybSVPPCAZWuaZ_5QlI,1548
+h5glance-0.5.dist-info/WHEEL,sha256=JXk7EE_UnY8Q4113Zu8f6SlrMizLH61VvvtIzqzkSKE,79
+h5glance-0.5.dist-info/METADATA,sha256=svLdFdiN_aL9t77frvbhwbgKxHnLDhUDjeWkBQA8L6g,1656
+h5glance-0.5.dist-info/RECORD,,
