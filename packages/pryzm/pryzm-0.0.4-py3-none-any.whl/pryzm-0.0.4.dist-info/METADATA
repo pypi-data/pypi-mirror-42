@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: pryzm
+Version: 0.0.4
+Summary: Basic support for asci color text on linux terminals
+Home-page: https://github.com/hydraseq/pryzm
+Author: Efrain Olivares
+Author-email: efrain.olivares@gmail.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+
+## Pryzm, color convenient class for linux/mac cli
+
+### Install it
+
+
+```pip install pryzm```
+
+### Use it
+```
+from pryzm import *
+pr = Pryzm()
+print pr.fg('Red Text') # prints in red foreground
+print pr.encode([31,47], "Red font with white background")
+```
+
+### Change log
+* 0.4 Add screen_size
+* 0.3 Add some cursor movement
+* 0.2 Add encode convenience function
+* 0.1 Initial commit, fg_ bg_ at_ functions
+
+
