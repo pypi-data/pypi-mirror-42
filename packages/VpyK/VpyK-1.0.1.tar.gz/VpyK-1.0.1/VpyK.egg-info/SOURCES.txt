@@ -1,0 +1,10 @@
+README.md
+setup.py
+VpyK/__init__.py
+VpyK/api.py
+VpyK/longpoll.py
+VpyK/methods.py
+VpyK.egg-info/PKG-INFO
+VpyK.egg-info/SOURCES.txt
+VpyK.egg-info/dependency_links.txt
+VpyK.egg-info/top_level.txt
