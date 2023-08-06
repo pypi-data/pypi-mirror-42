@@ -1,0 +1,3 @@
+[console_scripts]
+limis-management = limis.management:execute_limis_management
+
