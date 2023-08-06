@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: nagini
+Version: 0.8
+Summary: Static verifier for Python 3, based on Viper.
+Home-page: http://www.pm.inf.ethz.ch/research/nagini.html
+Author: Viper Team
+Author-email: viper@inf.ethz.ch
+License: MPL-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development
+Requires: distribute
+Requires-Dist: mypy-lang
+Requires-Dist: toposort
+Requires-Dist: jpype1
+Requires-Dist: astunparse
+Requires-Dist: typed-ast
+Requires-Dist: pyzmq
+
+UNKNOWN
+
+
