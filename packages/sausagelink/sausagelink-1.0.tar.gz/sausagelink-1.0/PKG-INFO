@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: sausagelink
+Version: 1.0
+Summary: Like BlockChain But Tastier™️
+Home-page: https://github.com/maxhumber/sausagelink
+Author: Max Humber
+Author-email: max.humber@gmail.com
+License: MIT
+Description: # sausagelink
+        Like BlockChain but way more meaty
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
