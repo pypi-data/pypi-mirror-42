@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+mappyfile_colors.py
+setup.cfg
+setup.py
+mappyfile_colors.egg-info/PKG-INFO
+mappyfile_colors.egg-info/SOURCES.txt
+mappyfile_colors.egg-info/dependency_links.txt
+mappyfile_colors.egg-info/entry_points.txt
+mappyfile_colors.egg-info/not-zip-safe
+mappyfile_colors.egg-info/requires.txt
+mappyfile_colors.egg-info/top_level.txt
+tests/test_colors.py
+tests/test_plugin.py
