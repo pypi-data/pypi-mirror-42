@@ -1,0 +1,8 @@
+README.md
+setup.py
+TestHelloNada/hello.py
+TestHelloNada.egg-info/PKG-INFO
+TestHelloNada.egg-info/SOURCES.txt
+TestHelloNada.egg-info/dependency_links.txt
+TestHelloNada.egg-info/entry_points.txt
+TestHelloNada.egg-info/top_level.txt
