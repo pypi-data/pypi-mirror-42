@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pysimplelogger
+Version: 0.1.4
+Summary: Simple Logger based on python logging
+Home-page: http://github.com/rickalm/pysimplelogger
+License: MIT
+Author: Rick Alm
+Author-email: rickealm@gmail.com
+Requires-Python: >=3,<4
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: pyrandomtools (>=0.1.1,<0.2.0)
+Project-URL: Repository, http://github.com/rickalm/pysimplelogger
