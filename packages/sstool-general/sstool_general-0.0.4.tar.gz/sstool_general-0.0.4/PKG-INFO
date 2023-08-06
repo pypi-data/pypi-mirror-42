@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: sstool_general
+Version: 0.0.4
+Summary: A general code for the sstool.
+Home-page: UNKNOWN
+Author: Iryna Lokhvytska
+Author-email: ilokh@softserveinc.com
+License: MIT
+Description: # SSTOOL JENERAL
+        
+        This is a simple package with general code from the
+        Softserve - Sprints Scheduling Tool project.
+        
+Keywords: sanic swagger jira
+Platform: any
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.6.*

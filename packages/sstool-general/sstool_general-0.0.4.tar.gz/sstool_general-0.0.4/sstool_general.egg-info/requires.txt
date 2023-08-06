@@ -1,0 +1,6 @@
+aio_pika==4.6.3
+aiohttp==3.4.4
+aioredis==1.2.0
+motor==2.0.0
+sanic>=0.8.3
+attrs>=18.2.0
