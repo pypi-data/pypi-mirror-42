@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: stock_crawler_utils
+Version: 0.0.10
+Summary: Utils for stock-crawler project
+Home-page: https://github.com/Coykto/stock_crawler_utils
+Author: Evgeny Basmov
+Author-email: coykto@gmail.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
