@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: propose
+Version: 0.1.0a0
+Summary: Build truthtables with your command line
+Home-page: UNKNOWN
+Author: Jonas Hübotter
+Author-email: me@jonhue.me
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/jonhue/propose/issues
+Project-URL: Source, https://github.com/jonhue/propose
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: colorama (==0.4.1)
+Requires-Dist: docopt (==0.6.2)
+Requires-Dist: rply (==0.7.6)
+Provides-Extra: dev
+Requires-Dist: pytest (==4.1.0) ; extra == 'dev'
+
+# Propose
+
+Build truthtables with your command line.
+
+![capture](https://user-images.githubusercontent.com/13420273/53683290-4d235900-3cff-11e9-9e1f-3ee883a91b8b.PNG)
+
+### Operands
+
+```
+F <-> G | biconditional
+F -> G  | implication
+F xor G | exclusive or
+F + G   | or
+F * G   | and
+!F      | not
+```
+
+## Installation
+
+Install Propose with PIP
+
+    $ pip3 install propose
+
+## Usage
+
+Pass an inline formula:
+
+    $ propose "a * b"
+
+Pass a file instead:
+
+    $ propose --file formula.propose
+
+To get a list of all available commands and options:
+
+    $ propose --help
+
+## Development
+
+1. Clone this repository
+
+    ```
+    $ git clone git@github.com:jonhue/propose.git
+    ```
+
+2. Install Propose with Pip. You may want to use a virtualenv
+
+    ```
+    $ make setup
+    ```
+
+Rebuild & reinstall Propose:
+
+    $ make reload
+
+Run tests:
+
+    $ make spec
+
+
