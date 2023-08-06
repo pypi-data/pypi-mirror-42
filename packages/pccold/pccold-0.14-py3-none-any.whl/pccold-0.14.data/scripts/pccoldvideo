@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+import pccold
+
+print('PcCold with DKZ download video')
+pccold.downloadVideo()
