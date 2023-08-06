@@ -1,0 +1,35 @@
+{% from 'macros.jinja2' import naturalfar %}
+{% include 'authors.jinja2' %}
+
+{% if include_initial_circ %}
+{% include 'initial_body.jinja2' %}
+{% endif %}
+
+{% filter rewrap %}
+{% if SNEWS %}
+A search performed by the RAVEN pipeline found a temporal coincidence between
+{{super_event}} and a SNEWS neutrino {{external_trigger}}.
+{% endif %}
+{% if GRB %}
+A search performed by the RAVEN pipeline found a temporal coincidence between
+{{super_event_id}} and a GRB {{external_trigger}}. The false alarm rate for the time
+coincidence is {{naturalfar(time_coinc_FAR)}}.
+{% endif %}
+{% if not include_initial_circ %}
+This gravitational wave candidate is not significant enough on its own to produce a
+public alert but its coincidence with the {% if SNEWS %}SNEWS neutrino{% endif %}{% if GRB %}GRB{% endif %} trigger increases its significance.
+
+The event's properties can be found at this URL:
+
+{{ gracedb_service_url }}{{ super_event_id }}
+{% endif %}
+
+{% if combined_skymap is defined %}
+A combined skymap is also available:
+ * {{combined_skymap}}, the normalized product of the GW and GRB localizations.
+
+The false alarm rate for the space-time coincidence is{% if space_time_coinc_FAR is not none %} {{naturalfar(space_time_coinc_FAR)}}{% else %} not available{% endif %}.
+{% endif %}
+
+{% include 'userguide_conclusion.jinja2'%}
+{% endfilter %}
