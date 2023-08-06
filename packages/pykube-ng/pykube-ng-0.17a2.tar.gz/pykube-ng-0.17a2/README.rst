@@ -1,0 +1,234 @@
+pykube
+======
+
+.. image:: https://img.shields.io/travis/hjacobs/pykube.svg
+   :target: https://travis-ci.org/hjacobs/pykube
+
+.. image:: https://coveralls.io/repos/github/hjacobs/pykube/badge.svg?branch=master;_=1
+   :target: https://coveralls.io/github/hjacobs/pykube?branch=master
+   :alt: Code Coverage
+
+.. image:: https://img.shields.io/pypi/dm/pykube-ng.svg
+   :target:  https://pypi.python.org/pypi/pykube-ng/
+
+.. image:: https://img.shields.io/pypi/v/pykube-ng.svg
+   :target:  https://pypi.python.org/pypi/pykube-ng/
+
+.. image:: https://img.shields.io/pypi/pyversions/pykube-ng.svg
+   :target:  https://pypi.python.org/pypi/pykube-ng/
+
+.. image:: https://img.shields.io/badge/license-apache-blue.svg
+   :target:  https://pypi.python.org/pypi/pykube-ng/
+
+**IMPORTANT**: This is a fork of `kelproject/pykube <https://github.com/kelproject/pykube>`_ which is no longer maintained (archived)!
+
+Python client library for Kubernetes
+
+.. image:: https://storage.googleapis.com/kel-assets/kel_full-02_200.jpg
+   :target: http://kelproject.com/
+
+Kel is an open source Platform as a Service (PaaS) from Eldarion, Inc. that
+makes it easy to manage web application deployment and hosting through the
+entire lifecycle from development through testing to production. It adds
+components and tools on top of Kubernetes that help developers manage their
+application infrastructure. Kel builds on Eldarion's 7+ years experience running
+one of the leading Python and Django PaaSes.
+
+For more information about Kel, see `kelproject.com`_, follow us on Twitter
+`@projectkel`_, and join our `Slack team`_.
+
+.. _kelproject.com: http://kelproject.com/
+.. _@projectkel: https://twitter.com/projectkel
+.. _Slack team: http://slack.kelproject.com/
+
+Features
+--------
+
+* HTTP interface using requests using kubeconfig for authentication
+* Python native querying of Kubernetes API objects
+
+Installation
+------------
+
+To install pykube, use pip::
+
+    pip install pykube-ng
+
+Usage
+-----
+
+Query for all ready pods in a custom namespace:
+
+.. code:: python
+
+    import operator
+    import pykube
+
+    api = pykube.HTTPClient(pykube.KubeConfig.from_file("/Users/<username>/.kube/config"))
+    pods = pykube.Pod.objects(api).filter(namespace="gondor-system")
+    ready_pods = filter(operator.attrgetter("ready"), pods)
+
+Access any attribute of the Kubernetes object:
+
+.. code:: python
+
+    pod = pykube.Pod.objects(api).filter(namespace="gondor-system").get(name="my-pod")
+    pod.obj["spec"]["containers"][0]["image"]
+
+Selector query:
+
+.. code:: python
+
+    pods = pykube.Pod.objects(api).filter(
+        namespace="gondor-system",
+        selector={"gondor.io/name__in": {"api-web", "api-worker"}},
+    )
+    pending_pods = pykube.objects.Pod.objects(api).filter(
+        field_selector={"status.phase": "Pending"}
+    )
+
+Watch query:
+
+.. code:: python
+
+    watch = pykube.Job.objects(api, namespace="gondor-system")
+    watch = watch.filter(field_selector={"metadata.name": "my-job"}).watch()
+
+    # watch is a generator:
+    for watch_event in watch:
+        print(watch_event.type) # 'ADDED', 'DELETED', 'MODIFIED'
+        print(watch_event.object) # pykube.Job object
+
+Create a Deployment:
+
+.. code:: python
+
+    obj = {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+            "name": "my-deploy",
+            "namespace": "gondor-system"
+        },
+        "spec": {
+            "replicas": 3,
+            "selector": {
+                "matchLabels": {
+                    "app": "nginx"
+                }
+            },
+            "template": {
+                "metadata": {
+                    "labels": {
+                        "app": "nginx"
+                    }
+                },
+                "spec": {
+                    "containers": [
+                        {
+                            "name": "nginx",
+                            "image": "nginx",
+                            "ports": [
+                                {"containerPort": 80}
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    pykube.Deployment(api, obj).create()
+
+Delete a Deployment:
+
+.. code:: python
+
+    obj = {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "metadata": {
+            "name": "my-deploy",
+            "namespace": "gondor-system"
+        }
+    }
+    pykube.Deployment(api, obj).delete()
+
+Check server version:
+
+.. code:: python
+
+    api = pykube.HTTPClient(pykube.KubeConfig.from_file("~/.kube/config"))
+    api.version
+
+
+HTTPie
+------
+
+pykube can be used together with HTTPie for Kubernetes command line querying goodness. For example:
+
+.. code:: shell
+
+    pip install httpie
+    http pykube://minikube/api/v1/services
+
+The above example will construct an HTTP request to the cluster behind the ``minikube`` context and
+show you the response containing all services.
+
+
+Requirements
+------------
+
+* Python 3.6+
+* requests (included in ``install_requires``)
+* PyYAML (included in ``install_requires``)
+
+
+Local Development
+-----------------
+
+You can run pykube against your current kubeconfig context, e.g. local Minikube_:
+
+.. code-block:: bash
+
+    $ pipenv install --dev
+    $ pipenv run python3
+    >>> import pykube
+    >>> config = pykube.KubeConfig.from_file('~/.kube/config')
+    >>> api = pykube.HTTPClient(config)
+    >>> list(pykube.Deployment.objects(api))
+
+To run PEP8 (flake8) checks and unit tests including coverage report:
+
+.. code-block:: bash
+
+    $ make test
+
+
+License
+-------
+
+The code in this project is licensed under the Apache License, version 2.0
+(included in this repository under LICENSE).
+
+
+Contributing
+------------
+
+Easiest way to contribute is to provide feedback! We would love to hear what you like and what you think is missing.
+Create an issue or `ping try_except_ on Twitter`_.
+
+PRs are welcome. Please also have a look at `issues labeled with "help wanted"`_.
+
+
+Code of Conduct
+----------------
+
+In order to foster a kind, inclusive, and harassment-free community, the Kel
+Project follows the `Contributor Covenant Code of Conduct`_.
+
+.. _Contributor Covenant Code of Conduct: http://contributor-covenant.org/version/1/4/
+
+
+.. _ping try_except_ on Twitter: https://twitter.com/try_except_
+.. _issues labeled with "help wanted": https://github.com/hjacobs/pykube/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+.. _Minikube: https://github.com/kubernetes/minikube
