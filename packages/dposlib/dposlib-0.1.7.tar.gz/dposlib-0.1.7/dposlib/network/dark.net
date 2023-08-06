@@ -1,0 +1,21 @@
+{
+	"timeout": 5,
+	"familly": "ark.v2",
+	"maxvotepertx": 1,
+	"maxvote": 1,
+	"minversion": "2.1",
+
+	"wif": "aa",
+	"marker": "1e",
+	"slip44": "111",
+
+	"bip32": {
+		"private": 46089520,
+		"public": 46090600
+	},
+
+	"seeds": [
+		"https://dexplorer.ark.io:8443"
+	],
+	"broadcast": 10
+}
