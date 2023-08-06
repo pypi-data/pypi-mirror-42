@@ -1,0 +1,8 @@
+README.md
+setup.py
+pyrts/__init__.py
+pyrts/server.py
+python_microRTS.egg-info/PKG-INFO
+python_microRTS.egg-info/SOURCES.txt
+python_microRTS.egg-info/dependency_links.txt
+python_microRTS.egg-info/top_level.txt
