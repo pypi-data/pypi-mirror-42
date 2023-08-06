@@ -1,0 +1,9 @@
+kucoin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+kucoin/client.py,sha256=5t-w2XM9CJJG4U8JrQr5q3Jx8ffaZbvoii8AfXbRS-s,48744
+kucoin/exceptions.py,sha256=a_5_-RZ9R3td9UG_T4-BCdjnOu0JErJ0cX7Fejb5e14,2265
+kucoin/helpers.py,sha256=hC6W2cEkwFtXKRIpHRsxfgPiv78372g4K2MVZ-Ee8S0,843
+python_kucoin-2.0.2.dist-info/LICENSE,sha256=sOZ_Wlz0vmPhfC4m212erhkaDlBxjkomFyQXwgmiR-w,1067
+python_kucoin-2.0.2.dist-info/METADATA,sha256=JzoGhvaz4bP2KO2_RAfr9hHVPQcNzc2wEZLAD9Gbv-0,888
+python_kucoin-2.0.2.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+python_kucoin-2.0.2.dist-info/top_level.txt,sha256=4b6K_6oF2HhZSF9vOinP59_LdAYPMTzXTu1cl9hUiMA,7
+python_kucoin-2.0.2.dist-info/RECORD,,
