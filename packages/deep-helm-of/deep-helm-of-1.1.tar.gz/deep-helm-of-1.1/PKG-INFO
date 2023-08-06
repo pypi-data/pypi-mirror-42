@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: deep-helm-of
+Version: 1.1
+Summary: A punch for suckers
+Home-page: https://github.com/davidmart/deep-helm-of
+Author: David Martirosyan
+Author-email: david.mart@sadasystems.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
