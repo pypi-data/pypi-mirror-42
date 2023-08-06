@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+kjson/__init__.py
+kjson/impl.py
+kjson.egg-info/PKG-INFO
+kjson.egg-info/SOURCES.txt
+kjson.egg-info/dependency_links.txt
+kjson.egg-info/requires.txt
+kjson.egg-info/top_level.txt
+tests/__init__.py
+tests/test_kjson.py

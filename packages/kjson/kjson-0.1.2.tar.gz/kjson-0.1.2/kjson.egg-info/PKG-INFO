@@ -1,0 +1,25 @@
+Metadata-Version: 1.2
+Name: kjson
+Version: 0.1.2
+Summary: A JSON encoder and decoder with support for Python types.
+Home-page: https://bitbucket.org/tran-smit/py-kjson
+Author: Tran-Smit Software
+Author-email: frank@tran-smit.nl
+License: ISC
+Description: kjson
+        =====
+        
+        Extension of Python's JSON module and has the same interface.
+        
+        It supports:
+        
+        - datetime.date
+        - datetime.datetime
+        - datetime.time
+        - datetime.timedelta
+        - decimal.Decimal
+        - uuid.UUID
+        - anything derived from Django's Promise object (encoded to string)
+        
+Platform: UNKNOWN
+Requires-Python: >=3.6.0
