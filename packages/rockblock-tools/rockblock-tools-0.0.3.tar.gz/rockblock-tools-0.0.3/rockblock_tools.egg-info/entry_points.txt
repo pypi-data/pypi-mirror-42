@@ -1,0 +1,3 @@
+[console_scripts]
+rockblock = rockblock_tools.command:main
+
