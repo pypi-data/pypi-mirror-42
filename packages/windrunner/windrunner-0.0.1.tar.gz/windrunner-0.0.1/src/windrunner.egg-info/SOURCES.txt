@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/windrunner/__init__.py
+src/windrunner.egg-info/PKG-INFO
+src/windrunner.egg-info/SOURCES.txt
+src/windrunner.egg-info/dependency_links.txt
+src/windrunner.egg-info/entry_points.txt
+src/windrunner.egg-info/not-zip-safe
+src/windrunner.egg-info/top_level.txt
+src/windrunner/scripts/__init__.py
