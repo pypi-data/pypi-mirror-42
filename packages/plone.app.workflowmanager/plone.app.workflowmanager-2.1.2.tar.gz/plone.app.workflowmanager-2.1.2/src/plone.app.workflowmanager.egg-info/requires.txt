@@ -1,0 +1,12 @@
+Plone
+setuptools
+plone.api
+plone.app.jquery>=1.7
+plone.app.jquerytools
+
+[test]
+plone.app.testing
+plone.app.jquerytools
+plone.app.robotframework
+interlude
+unittest2
