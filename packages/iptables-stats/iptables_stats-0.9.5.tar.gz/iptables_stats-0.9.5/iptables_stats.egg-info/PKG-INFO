@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: iptables-stats
+Version: 0.9.5
+Summary: Periodically gathers and publishes statistics about iptables
+Home-page: https://github.com/verybadsoldier/iptables_stats
+Author: vbs
+Author-email: vbs@springrts.de
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: mqtt iptables ipset
+Platform: UNKNOWN
+Requires-Python: >=3.6
