@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: lolaml
+Version: 0.0.3
+Summary: LolaML - track your ML experiments
+Home-page: https://pypi.org/project/lolaml
+Author: Stefan Otte
+Author-email: stefan.otte@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: altair (>=2.3,<3.0)
+Requires-Dist: click (>=6.0,<7.0)
+Requires-Dist: cloudstorage (>=0.9.0,<0.10.0)
+Requires-Dist: dataclasses (>=0.6.0,<0.7.0)
+Requires-Dist: filelock (>=3.0,<4.0)
+Requires-Dist: flask (>=1.0,<2.0)
+Requires-Dist: google-cloud-storage (>=1.14,<2.0)
+Requires-Dist: minilog (>=0.4,<0.5)
+Requires-Dist: numpy
+Requires-Dist: pandas (>=0.24.1,<0.25.0)
+Requires-Dist: tomlkit (>=0.5.3,<0.6.0)
+Requires-Dist: xattr (>=0.9.6,<0.10.0)
+Project-URL: Documentation, https://lolaml.readthedocs.io
+Project-URL: Repository, https://gitlab.com/stefan-otte/lolaml/
