@@ -1,0 +1,12 @@
+thermostate/__init__.py,sha256=vMzTTDqaF6bUTuySyWgvgfI-g7xiNamfH7hbJYWA110,159
+thermostate/_version.py,sha256=v33-Tsq5WxjgTLlbmHtnzWNk8A3g6zWmfO0OPrkI0r4,169
+thermostate/abbreviations.py,sha256=TdXHiTIKPQSCT-L5YCnN5PCSR1lTq2c3TzugyzPKhtA,1123
+thermostate/thermostate.py,sha256=yaIxsAhrSYucRcAnrsg4LT3o6SMj3Mw9WetTJhRnoKI,12246
+thermostate/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+thermostate/tests/test_abbreviations.py,sha256=TpwqdjwFeiNE5To-Ob_WFUPspHA8sYMdcXH5Lv5el-k,504
+thermostate/tests/test_thermostate.py,sha256=wo-Ib7VMBDiyHCz1SBUHcCVOMcEyKAtNIQgaVG26crk,36190
+thermostate-0.5.3.dist-info/LICENSE.md,sha256=aJWmWtjb-m_mQKcoheeUOylRQP3XHpxmjBVbwbSJtfs,1519
+thermostate-0.5.3.dist-info/METADATA,sha256=62eR2GSoyHBMsRI2hpwfOjETpZHca4v5_0QicrpFj1s,11619
+thermostate-0.5.3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+thermostate-0.5.3.dist-info/top_level.txt,sha256=Rp9zO_REInehD1mHIezNn74YImUAO-ySStlBakjFxYI,12
+thermostate-0.5.3.dist-info/RECORD,,
