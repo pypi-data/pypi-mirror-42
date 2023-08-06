@@ -1,0 +1,13 @@
+numpy
+six>=1.7.0
+pandas>=0.23.4
+sh
+singleton
+PyYAML
+future
+argparse
+numpy
+plotly
+bs4
+lxml
+biopython

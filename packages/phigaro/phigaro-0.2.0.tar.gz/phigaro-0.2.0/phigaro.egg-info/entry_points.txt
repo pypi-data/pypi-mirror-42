@@ -1,0 +1,4 @@
+[console_scripts]
+phigaro-setup = phigaro.cli.helper:main
+phigaro = phigaro.cli.batch:main
+
