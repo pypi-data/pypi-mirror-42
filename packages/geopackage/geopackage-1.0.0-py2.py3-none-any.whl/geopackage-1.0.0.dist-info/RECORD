@@ -1,0 +1,12 @@
+geopackage/__init__.py,sha256=LzRX6g0uq4J5Xd5S4oZbxsgUHJeBS0yedZIM2mPujsY,120
+geopackage/_coord.py,sha256=a1g1b7ia4W6JPleKfh0ni979rFT7J65f46iDbFKXZXA,2632
+geopackage/_geopackage.py,sha256=mtycWFg1hqBNLL-SOjexurfpzz5fyyzRCUAVlTOqTqE,36630
+geopackage/_gpkg.py,sha256=D0lsqUqZwvDw_yMclHZRcEIw239QKRl7J8xcZ4A58lA,20918
+geopackage/_rtree.py,sha256=gOMjzb6L0kJd2HalAkCxy6zRszNlrBmVaoVTdPMAYSA,2556
+geopackage/_utils.py,sha256=IisPfU9C-XwobDYPd4AzDyjG6j3Rj7qosaHg9n92PGg,3820
+geopackage/_wkb.py,sha256=ueygC_6JULXYRWfgMpisNld4XTJB5EC1q1ow0G8-ZaM,28109
+geopackage/prj.json,sha256=CWbmsZNysTxiMWpRRxZlZOhy3cmGffsA1izmVOw1qWM,3055922
+geopackage-1.0.0.dist-info/METADATA,sha256=_nu-oO8dI0Npa5xT2NzE-TaVzBMGZaMGW8NmmkcCmYc,322
+geopackage-1.0.0.dist-info/RECORD,,
+geopackage-1.0.0.dist-info/WHEEL,sha256=CG516Me1TEyQqkQMqQpnDadrWi7ujPk88poSAu3OliQ,116
+geopackage-1.0.0.dist-info/top_level.txt,sha256=jG_Drs6Z0gv_fo8HabecGDEJQErc-w089900C0SNwTI,11
