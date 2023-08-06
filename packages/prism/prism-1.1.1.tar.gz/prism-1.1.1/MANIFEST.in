@@ -1,0 +1,14 @@
+include LICENSE
+include README.rst
+include MANIFEST.in
+include requirements*.txt
+recursive-include prism data/*
+
+exclude docs joss_paper prism_trash .github
+recursive-exclude docs *
+recursive-exclude joss_paper *
+recursive-exclude prism_trash *
+recursive-exclude .github *
+exclude *.yml
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
