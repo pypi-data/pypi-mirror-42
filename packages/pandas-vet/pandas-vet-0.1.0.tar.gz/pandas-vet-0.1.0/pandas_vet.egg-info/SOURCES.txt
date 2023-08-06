@@ -1,0 +1,10 @@
+README.md
+setup.py
+pandas_vet/__init__.py
+pandas_vet/version.py
+pandas_vet.egg-info/PKG-INFO
+pandas_vet.egg-info/SOURCES.txt
+pandas_vet.egg-info/dependency_links.txt
+pandas_vet.egg-info/entry_points.txt
+pandas_vet.egg-info/requires.txt
+pandas_vet.egg-info/top_level.txt
