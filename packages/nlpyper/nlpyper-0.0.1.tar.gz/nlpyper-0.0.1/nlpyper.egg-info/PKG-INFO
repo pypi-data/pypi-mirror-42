@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: nlpyper
+Version: 0.0.1
+Summary: A tiny framework to create NLP pipelines in python
+Home-page: https://github.com/zbeloki/nlpyper
+Author: Zuhaitz Beloki
+Author-email: zbeloki@gmail.com
+License: UNKNOWN
+Description: A tiny framework to create NLP pipelines in python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

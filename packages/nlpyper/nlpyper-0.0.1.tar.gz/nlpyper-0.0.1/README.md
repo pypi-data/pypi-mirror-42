@@ -1,0 +1,1 @@
+A tiny framework to create NLP pipelines in python
