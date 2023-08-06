@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: leafy
+Version: 0.1.0a1
+Summary: Another fast graph algorithms library
+Home-page: https://github.com/ajaali/leafy
+Author: Ahmed Ali
+Author-email: ahmed@ajaali.com
+License: MIT
+Keywords: graph dag algorithm library
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy (>=1.16.1)
+Requires-Dist: cython (>=0.29.4)
+
+# Graphs, how fun!
+
+
