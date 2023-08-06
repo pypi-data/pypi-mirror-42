@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: fever-allennlp
+Version: 1.0.9
+Summary: Fact Extraction and VERification experiments built on AllenNLP
+Home-page: https://jamesthorne.co.uk
+Author: James Thorne
+Author-email: james@jamesthorne.co.uk
+License: See http://www.python.org/3.6/license.html
+Description-Content-Type: UNKNOWN
+Description: readme
+Platform: UNKNOWN
+Requires-Python: >=3.6
