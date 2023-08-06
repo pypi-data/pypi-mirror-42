@@ -1,0 +1,13 @@
+README.md
+setup.py
+intervallum/__init__.py
+intervallum/box.py
+intervallum/box_functions.py
+intervallum/inclusion_functions.py
+intervallum/interval.py
+intervallum/interval_functions.py
+intervallum.egg-info/PKG-INFO
+intervallum.egg-info/SOURCES.txt
+intervallum.egg-info/dependency_links.txt
+intervallum.egg-info/requires.txt
+intervallum.egg-info/top_level.txt
