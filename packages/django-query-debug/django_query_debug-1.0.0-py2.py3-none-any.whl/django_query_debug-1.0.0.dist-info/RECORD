@@ -1,0 +1,11 @@
+django_query_debug/__init__.py,sha256=THm70-GsKQ90k0P_NZATE6MBli6fcveV3T_lVx8re7k,70
+django_query_debug/__version__.py,sha256=RPjQ5Y0AiaPLfWvQ71qrhQNq1NbU9aCHLb9B242Whhg,63
+django_query_debug/apps.py,sha256=Xjp6lwHUs9igH1VGfnIFXcfPZ2CrwPw3jPyc7gJc-b8,350
+django_query_debug/mixins.py,sha256=3zUyS25eP5LcJCuuucUlOD5H2RJtlCOCN_eJoWnvhLo,6515
+django_query_debug/patch.py,sha256=O9d3i9mEI5bCaGbK4wF-vTweJHO4K0rSJ__ypTzh8zs,5604
+django_query_debug/utils.py,sha256=ebEDcuZNcfztmN4VYUXksV5J_slT7wTL_QbO2XVEjfI,6484
+django_query_debug-1.0.0.dist-info/LICENSE,sha256=kCPgEs_u7gy8Mlz7qRsCvL6l_uP2w-o60BzY-H_hMrw,1068
+django_query_debug-1.0.0.dist-info/METADATA,sha256=YhhKD3MvCCVrrwFG0L-Q_UScoykCqXpW8-xRW0zWZN4,7443
+django_query_debug-1.0.0.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+django_query_debug-1.0.0.dist-info/top_level.txt,sha256=GuJCedgaalIw1eZCxB1E4Q8-Z_bb5V8kscMvzR2g7wQ,19
+django_query_debug-1.0.0.dist-info/RECORD,,
