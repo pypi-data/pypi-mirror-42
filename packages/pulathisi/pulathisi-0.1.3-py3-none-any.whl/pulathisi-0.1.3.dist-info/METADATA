@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: pulathisi
+Version: 0.1.3
+Summary: Brain
+Home-page: https://github.com/dewmal/pybrain
+Author: Dewmal Nilanka
+Author-email: dewmal@egreen.io
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+Py Brain.
+
+### Features
+
+1.  Process Streams
+
+     ``` .env
+     Process 1   S1(t) ---> Pp1.1(t) ---> Pp1.2(t) ---> Pp1.3(t) ---> Pp1.4(t)  
+
+     Process 2   S2(t) ---------------> Pp2.1(t) ----> Pp2.1(t)
+                                \
+                                 \
+                                  \
+                                  _\|
+     Process 3                      T1 (t) -----> Tp1.1 (t) ----> Tp1.1 (t)
+     ```
+
+
+2. Gather Any data from stream by index (t)
+
+    ```python
+    from pulathisi import Brain
+    def stream_process_1(context:Brain.Context):
+       (<index>,<data>)=context.get_current_value('source_name') # Get latest stored value 
+
+    ```
+
+3. Support for async process
+
+4. Support for multiprocessing
+
+5. In build Message queue
+
+6. In build Brain Features
+
+    ##### 1. sum sources
+    ```python
+           @reactor.sum(name="sum_report", sources=['daily_summary', 'weekly_summary'])
+           async def take_order_action(context: Reactor.Context, index, data):
+               print(context.brain.reactor_time, index, data)
+    ```
+    ##### output
+    ``` console
+        300000 300000 {'daily_summary': (300000, 'd300000'), 'weekly_summary': (299898, 'w299898')}
+
+        400000 400000 {'daily_summary': (400000, 'd400000'), 'weekly_summary': (399946, 'w399946')}
+
+        500000 500000 {'daily_summary': (500000, 'd500000'), 'weekly_summary': (499765, 'w499765')}
+
+        600000 600000 {'daily_summary': (600000, 'd600000'), 'weekly_summary': (599795, 'w599795')}
+
+        700000 700000 {'daily_summary': (700000, 'd700000'), 'weekly_summary': (699966, 'w699966')}
+
+    ```
+
+6. support for python development process                 
+
