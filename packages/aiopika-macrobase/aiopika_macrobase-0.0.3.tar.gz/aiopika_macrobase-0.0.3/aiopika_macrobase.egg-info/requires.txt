@@ -1,0 +1,4 @@
+macrobase-driver>=0.0.5
+aio-pika==5.2.2
+python-rapidjson==0.7.0
+structlog==19.1.0
