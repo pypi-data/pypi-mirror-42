@@ -1,0 +1,17 @@
+README.rst
+setup.cfg
+setup.py
+afinn/__init__.py
+afinn/afinn.py
+afinn/data/AFINN-111.txt
+afinn/data/AFINN-96.txt
+afinn/data/AFINN-da-32.txt
+afinn/data/AFINN-emoticon-8.txt
+afinn/data/AFINN-en-165-gaming.txt
+afinn/data/AFINN-en-165.txt
+afinn/data/AFINN-fr-165.txt
+afinn/data/AFINN-sv-165.txt
+afinn_gaming.egg-info/PKG-INFO
+afinn_gaming.egg-info/SOURCES.txt
+afinn_gaming.egg-info/dependency_links.txt
+afinn_gaming.egg-info/top_level.txt
