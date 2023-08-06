@@ -1,0 +1,5 @@
+msldap>=0.0.4
+minikerberos>=0.0.7
+
+[:platform_system == "Windows"]
+winsspi
