@@ -1,0 +1,10 @@
+tensorflow
+numpy
+scipy
+matplotlib
+joblib
+crowsetta
+
+[tests]
+vak_test_net
+tweetynet>=0.1.1a3
