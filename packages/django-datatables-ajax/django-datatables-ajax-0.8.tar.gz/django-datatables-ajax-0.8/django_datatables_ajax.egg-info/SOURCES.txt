@@ -1,0 +1,9 @@
+README.md
+setup.py
+datatables_ajax/__init__.py
+datatables_ajax/datatables.py
+django_datatables_ajax.egg-info/PKG-INFO
+django_datatables_ajax.egg-info/SOURCES.txt
+django_datatables_ajax.egg-info/dependency_links.txt
+django_datatables_ajax.egg-info/requires.txt
+django_datatables_ajax.egg-info/top_level.txt
