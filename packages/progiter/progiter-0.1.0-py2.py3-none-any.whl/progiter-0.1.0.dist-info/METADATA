@@ -1,0 +1,32 @@
+Metadata-Version: 2.0
+Name: progiter
+Version: 0.1.0
+Summary: A single-threaded alternative to tqdm.
+Home-page: https://github.com/Erotemic/progiter
+Author: Jon Crall
+Author-email: erotemic@gmail.com
+License: Apache 2
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: tests
+Provides-Extra: all
+Provides-Extra: all
+Requires-Dist: xdoctest; extra == 'all'
+Requires-Dist: pytest; extra == 'all'
+Requires-Dist: pytest-cov; extra == 'all'
+Requires-Dist: coverage; extra == 'all'
+Provides-Extra: tests
+Requires-Dist: xdoctest; extra == 'tests'
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+Requires-Dist: coverage; extra == 'tests'
+
+UNKNOWN
+
+
