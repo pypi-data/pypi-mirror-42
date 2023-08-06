@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: apscheduler-dramatiq-executor
+Version: 1.0.0
+Summary: Executor for APScheduler which doesn't execute jobs directrly, but pass it to Dramatiq worker.
+Home-page: https://github.com/cthtuf/apcsheduler-dramatiq-executor
+Author: cthtuf
+Author-email: sergey.yarlov@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
