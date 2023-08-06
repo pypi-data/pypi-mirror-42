@@ -1,0 +1,10 @@
+README.md
+setup.py
+entity_embeddings_categorical.egg-info/PKG-INFO
+entity_embeddings_categorical.egg-info/SOURCES.txt
+entity_embeddings_categorical.egg-info/dependency_links.txt
+entity_embeddings_categorical.egg-info/entry_points.txt
+entity_embeddings_categorical.egg-info/top_level.txt
+tests/__init__.py
+tests/test_embedding_config.py
+tests/test_embedding_network.py
