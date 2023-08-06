@@ -1,0 +1,4 @@
+[console_scripts]
+snowav = scripts.snow:run
+snowav_airflow = scripts.snowav_airflow:run
+
