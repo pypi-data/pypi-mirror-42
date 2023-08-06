@@ -1,0 +1,5 @@
+[console_scripts]
+build_ami_maps = awscfnctl.build_ami_maps:main
+cfnctl = awscfnctl.cfnctl:main
+getamiinfo = awscfnctl.getamiinfo:main
+
