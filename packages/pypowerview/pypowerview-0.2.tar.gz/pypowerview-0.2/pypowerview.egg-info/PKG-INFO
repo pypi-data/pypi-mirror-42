@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: pypowerview
+Version: 0.2
+Summary: Python API for talking to Powerview Hub
+Home-page: https://github.com/koolsb/pypowerview
+Author: Ben Kools
+Author-email: koolsb@my.uwstout.edu
+License: UNKNOWN
+Description: ## Status
+        
+        # pypowerview
+        Python3 interface implementation for Powerview Hub
+        
+        ## Notes
+        This is for use with [Home-Assistant](http://home-assistant.io)
+        
+        ## Usage
+        ```python
+        from pypowerview import PowerView
+        
+        # Connect via IP
+        pv = PowerView('192.168.1.50')
+        
+        # Return an array of shade objects
+        shades = pv.get_shades()
+        
+        # Return first shade in array
+        shade = shades[0]
+        
+        # Return attributes of shade
+        print(shade.id)
+        print(shade.name)
+        print(shade.position) # Position represented 0 (close) to 100 (open)
+        
+        # Update shade position
+        
+        pv.get_status(shade)
+        
+        # Close shade
+        
+        pv.close_shade(shade)
+        
+        # Open Shade
+        
+        pv.open_shade(shade)
+        
+        # Stop shade in motion
+        
+        pv.stop_shade(shade)
+        
+        # Set shade to specific position (0 - 100)
+        
+        pv.set_shade_position(shade, 55)
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Description-Content-Type: text/markdown
