@@ -1,0 +1,311 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Version 1.0 &#8212; Lino Welfare</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/linodocs.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="next" title="Version 1.0.1" href="1.0.1.html" />
+    <link rel="prev" title="2018-10-25" href="20181025.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="1.0.1.html" title="Version 1.0.1"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="20181025.html" title="2018-10-25"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Lino Welfare</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Release-Notizen Lino Welfare „Eupen“</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+  <div class="section" id="version-1-0">
+<h1>Version 1.0<a class="headerlink" href="#version-1-0" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Erste Inbetriebnahme am 30.10.2012, offizielles Release am 31.10.2012.</p>
+<div class="section" id="feedback-erwunscht">
+<h2>Feedback erwünscht<a class="headerlink" href="#feedback-erwunscht" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Änderungsprotokoll.
+Konfiguration gemeinsam anschauen und klären, welche Tabellen protokoliert werden und welche nicht.</li>
+</ul>
+</div>
+<div class="section" id="nach-dem-release">
+<h2>Nach dem Release<a class="headerlink" href="#nach-dem-release" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>SiteConfig : system_note_type</li>
+<li>Benutzer konfigurieren: Begleitungsdienst und Kompetenzen</li>
+<li>Verträge .odt :
+<cite>self.contact.person</cite> ersetzen durch <cite>self.contact_person</cite>
+<cite>self.contact.type</cite> ersetzen durch <cite>self.contact_role</cite></li>
+</ul>
+</div>
+<div class="section" id="losung-gemeldeter-probleme">
+<h2>Lösung gemeldeter Probleme<a class="headerlink" href="#losung-gemeldeter-probleme" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Im Schnellsuche-Feld braucht man
+jetzt nicht mehr [TAB] zu drücken, um die Suche zu starten,
+sondern Lino tut das automatisch wenn man länger als eine
+Viertelsekunde lang nichts tippt.
+(Endlich! Auf dieses Feature habt ihr ca. ein Jahr lang gewartet!)</li>
+<li>Kontaktperson löschen geht nicht.
+„Bei einer Firma wechselt der Direktor.
+In den Kontaktpersonen der Firma wollen wir den alten
+Direktor nicht mehr sehen,
+aber es gibt Verträge, bei denen er die Firma vertritt.“
+–&gt; in den Verträgen (VSE und Art 60-7) wurde das bisherige
+Feld <cite>contact</cite> ersetzt durch zwei Felder <cite>contact_person</cite>
+und <cite>contact_function</cite>.
+Benutzung wie bisher, aber man kann jetzt in der Tabelle
+ContactsByCompany Zeilen löschen,
+auch wenn ein Vertrag mit dieser Kontaktperson existiert.
+Oder wenn eine Kontaktperson vom GF zum Direktor avanciert,
+kann man dort nun einfach das „GF“ durch „Direktor“ ersetzen, ohne
+dass anschließend alle alten Verträge (nach einem „Cache löschen“)
+mit „Direktor“ gedruckt würden.</li>
+<li>Tx25 hat ein paar neue TI handler.</li>
+<li>Bug „Imbiss Firat“: watch_tim konnte seit 20120728 nicht mehr von
+Person nach Firma konvertieren. Also z.B. wenn man die MWSt-Nr
+eines Partners in TIM löschte. Dann kam die Fehlermeldung
+„Aus TIM importierte Partner dxfcrfen nicht gelöscht werden.“</li>
+<li>AG-Sperren: Feld „Begründung“ darf jetzt leer sein.</li>
+<li>Wenn hochgeladene Datei Sonderzeichen im Namen hat, werden diese ab jetzt auf dem Server durch Unterstriche ersetzt (statt dass Lino im „Bitte warten…“-Modus steckenbleibt und der Systemverwalter per E-Mail einen Traceback  <cite>UnicodeEncodeError ‚ascii‘ codec can’t encode character u‘…‘ in position …: ordinal not in range(128)</cite> kriegt.</li>
+<li>„Ich habe 7 Kunden die unter VSE sind für einen Sprachkurs.
+Aber in meiner Liste „Klienten“ sind die Spalten „Vertrag beginnt“
+und „Vertrag endet“ leer“
+–&gt;
+„Das war ein Bug. Die VSEs dieser Leute beginnen erst in der Zukunft,
+und Lino denkt sich dann „die sind noch nicht aktiv, die interessieren
+keinen“. Was natürlich falsch ist.“
+Behoben.</li>
+<li>Erstelldatum wird jetzt aus TIM synchronisiert.
+Allerdings haben wir bisher noch keine systematische nachträgliche
+Synchronisierung aller Partner gemacht.</li>
+</ul>
+</div>
+<div class="section" id="neue-features">
+<h2>Neue Features<a class="headerlink" href="#neue-features" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Willkommensgruß.
+Die Idee ist, dass dort idealerweise keine Warnungen stehen sollten.</p>
+</li>
+<li><p class="first">Lino unterscheidet jetzt zwischen Klienten und Personen.
+Unter „Personen“ verstehen wir <em>alle Menschen, die Lino kennt</em>.
+Das sind nicht nur Klienten, sondern auch Benutzer,
+Kontaktpersonen in Firmen oder Institutionen usw.
+„Klienten“ sind Personen, über die Lino mehr wissen will als über normale
+Leute.</p>
+<p>Im Detail einer Person gibt es ein Feld „ist Klient“.
+Damit kann man eine bestehende Person zu einem Klienten machen.</p>
+</li>
+<li><p class="first">Überhaupt haben wir diverse Änderungen im Detail eines Klienten,
+vor allem den neuen Reiter „Begleitungen“:</p>
+<ul class="simple">
+<li>Arbeitsablauf Klienten.
+Das frühere Feld <cite>is_active</cite> wurde ersetzt durch Bearbeitsungszustand „Begleitet“,
+das frühere Feld <cite>newcomer</cite> durch Zustand „Neuantrag“.
+Siehe <a class="reference external" href="http://welfare-userman.lino-framework.org/de/user/clients.html">Benutzerhandbuch</a>.</li>
+<li>(für Neuanträge) eine Tabelle der „verfügbaren Begleiter“</li>
+<li>Neue Tabelle „Klientenkontakte“ (im Reiter „Begleitungen“)
+ersetzt und erweitert die bisherigen Felder
+<cite>Ansprechpartner ADG</cite>, <cite>Krankenkasse</cite>, und <cite>Apotheke</cite>.</li>
+<li>Neue Tabelle „Begleitungen“ ersetzt die bisherigen Felder <cite>Begleitet von/bis</cite> und
+<cite>Begleiter 1 und 2</cite>.
+Eine <em>primäre</em> Begleitung ist, was aus <cite>TIM-&gt;IdUsr</cite> importiert wurden.</li>
+</ul>
+</li>
+<li><p class="first">Neue Tabelle „Änderungen“
+zeigt geloggte Änderungen im Webinterface statt in der <cite>system.log</cite>.</p>
+</li>
+<li><p class="first">Neue Felder „Erstellt am/um“ und „Letzte Änderung“ pro <cite>Partner</cite>.</p>
+</li>
+<li><p class="first">Liste der offenen Kursanfragen</p>
+</li>
+</ul>
+</div>
+<div class="section" id="nebenwirkungen">
+<h2>Nebenwirkungen<a class="headerlink" href="#nebenwirkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Sorry, aber ich musste euch eine Umstrukturierung des Hauptmenüs zumuten.
+Liegt daran, dass wir in vielen Listen jetzt die intuitiveren Filterparameter haben,
+und dass jetzt bald auch andere Dienste in Lino arbeiten.
+Zum Beispiel ist das Menü „Mein Menü“ weg:
+die Befehle, die dort standen, sind jetzt unter ihren jeweiligen Titeln.
+Also z.B.<ul>
+<li><span class="menuselection">Mein Menü ‣ Meine VSEs</span> steht jetzt unter <span class="menuselection">DSBE ‣ VSEs</span></li>
+<li><span class="menuselection">Mein Menü ‣ Meine Art.-60§7-Konventionen</span> steht jetzt unter
+<span class="menuselection">DSBE ‣ Art.-60§7-Konventionen</span></li>
+</ul>
+</li>
+<li>Die automatische Erinnerung „Begleitung endet in 1 Monat“ wird momentan nicht gemacht.
+Ist das schlimm?</li>
+<li>Manche Personen haben unter Bemerkungen jetzt stehen:
+„Datenmigration 20121024: Person hatte weder NISS noch Gesdos-Nr
+und wurde deshalb kein Klient. Folgende Angaben gingen dabei verloren : …“
+Beispiele: Person 22340, 96000101, 96000137</li>
+<li>Im Detail von Personen und Partnern haben wir zwischen Land und Ort
+ein neues Feld „Region“. Wird in Belgien nicht benutzt, aber ich habe
+mir noch nicht die Mühe gemacht, es euch zu verstecken.
+Lino now features a field „region“
+to specify addresses. For Belgian addresses it contains the <em>province</em>.
+This field is not usually present in Belgian sites because it’s not needed
+in our small country. But for an address in the U.S.
+it would contain the state (or in Estonia the <em>maakond</em>).</li>
+<li>Es gibt eine neue Tabelle „Kontenpläne“ (Account Charts), in der bis
+auf weiteres jedoch nur ein einziger Kontenplan „debts Default“ steht.
+Später kommt dort mindestens ein weiterer Kontenplan „Buchhaltung“ hinzu.</li>
+<li>Database migration is automatic.
+Details see <code class="xref py py-func docutils literal notranslate"><span class="pre">lino_welfare.modlib.pcsw.migrate.migrate_from_1_4_10()</span></code>.</li>
+<li>Note that version number jumps down from 1.4.10 to 1.0
+Lino (the framework) changes to version 1.5.0, but this is no longer relevant
+for database migrations. Lino/Welfare starts with 1.0.</li>
+</ul>
+</div>
+</div>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_web3.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Inhalt</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tour/index.html">Lino-Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../klienten.html">Klienten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coachings.html">Begleitungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../partner.html">Partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watch_tim.html">watch_tim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cal.html">Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../excerpts.html">Bescheinigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aids.html">Beihilfen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/index.html">Selbsthilfe</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Release-Notizen Lino Welfare „Eupen“</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coming.html">Kommende Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20170523.html">2017-05-23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017_3_0.html">Lino Welfare (Eupen) 2017.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20181025.html">2018-10-25</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.1.html">Version 1.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.10.html">Version 1.0.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.11.html">Version 1.0.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.12.html">Version 1.0.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.13.html">Version 1.0.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.14.html">Version 1.0.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.15.html">Version 1.0.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.16.html">Version 1.0.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.17.html">Version 1.0.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.2.html">Version 1.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.3.html">Version 1.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.4.html">Version 1.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.5.html">Version 1.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.6.html">Version 1.0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.7.html">Version 1.0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.8.html">Version 1.0.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.9.html">Version 1.0.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.0.html">Version 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.1.html">Lino-Welfare 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.12.html">Version 1.1.12 (coming)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testlauf.html">Manueller Testlauf</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Über Lino Welfare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kontakt.html">Kontakt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handbuch.html">Handbuch</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><p align="center">
+<a href="https://github.com/lsaffre/lino-welfare" target="_blank">GitHub</a>
+<a href="http://pypi.python.org/pypi/lino-welfare" target="_blank">pypi</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="1.0.1.html" title="Version 1.0.1"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="20181025.html" title="2018-10-25"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Lino Welfare</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Release-Notizen Lino Welfare „Eupen“</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2012-2018 Luc Saffre.
+      Zuletzt aktualisiert am Nov. 01, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.0.    
+    <a href="https://raw.github.com/lino-framework/welfare/master/docs_de/changes/1.0.0.rst"
+           rel="nofollow">Quellcode anzeigen</a>.
+    <a href="http://de.welfare.lino-framework.org/changes/1.0.0.html">Online Link</a>.
+    </div>
+  </body>
+</html>

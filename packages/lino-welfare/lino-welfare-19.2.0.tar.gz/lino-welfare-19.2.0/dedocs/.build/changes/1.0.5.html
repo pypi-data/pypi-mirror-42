@@ -1,0 +1,202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Version 1.0.5 &#8212; Lino Welfare</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/linodocs.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="next" title="Version 1.0.6" href="1.0.6.html" />
+    <link rel="prev" title="Version 1.0.4" href="1.0.4.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="1.0.6.html" title="Version 1.0.6"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="1.0.4.html" title="Version 1.0.4"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Lino Welfare</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Release-Notizen Lino Welfare „Eupen“</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+  <div class="section" id="version-1-0-5">
+<h1>Version 1.0.5<a class="headerlink" href="#version-1-0-5" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="anderungen">
+<h2>Änderungen<a class="headerlink" href="#anderungen" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Neuzugänge. Verfügbare Begleiter.
+In dieser Tabelle ist jetzt eine „Quote“ in Prozent, die besagt,
+„wie sehr Lino diesen Sozi als Begleiter empfiehlt“.</li>
+<li>Sprachkurse verwalten: Eintragen / Austragen funktionierte nicht.</li>
+<li>VSE drucken jetzt nicht nur „Er“ und „Sie“ korrekt, sondern
+wenn Geschlecht des Klienten unbekannt ist, kriegt er keinen Rappel
+sondern druckt wie früher „Er/Sie“.
+Kann sein, dass ich in der Dokumentvorlage noch Stellen übersehen habe.
+Irgendwann sollten wir dann auch die Art60-7 an dieses neue Feature anpassen.</li>
+<li>Termine vormerken.
+Divere Weiterentwicklungen im Kalender-Workflow.
+Insbesondere kann man jetzt einen Termin einem anderen Benutzer „zuweisen“.</li>
+</ul>
+</div>
+<div class="section" id="upgrade-instructions">
+<h2>Upgrade instructions<a class="headerlink" href="#upgrade-instructions" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Database structure changes:<ul>
+<li><cite>contacts.Gender</cite> renamed to <cite>lino.Genders</cite></li>
+<li><cite>lino_welfare.modlib.newcomers.Faculty.weight</cite> and <cite>lino_welfare.modlib.newcomers.Competence.weight</cite></li>
+</ul>
+</li>
+<li>change local templates: replace <cite>self.client.gender.fm(f,m)</cite> by <cite>self.client.fm(f,m,u)</cite></li>
+<li>accounts.Account : ref max_length increased from 10 to 100.
+ref fields in both accounts.Group and accounts.Account are now nullable</li>
+</ul>
+</div>
+</div>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_web3.png" alt="Logo"/>
+            </a></p>
+<h3><a href="../index.html">Inhalt</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tour/index.html">Lino-Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../klienten.html">Klienten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coachings.html">Begleitungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../partner.html">Partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watch_tim.html">watch_tim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cal.html">Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../excerpts.html">Bescheinigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aids.html">Beihilfen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/index.html">Selbsthilfe</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Release-Notizen Lino Welfare „Eupen“</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coming.html">Kommende Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20170523.html">2017-05-23</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2017_3_0.html">Lino Welfare (Eupen) 2017.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20181025.html">2018-10-25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.0.html">Version 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.1.html">Version 1.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.10.html">Version 1.0.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.11.html">Version 1.0.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.12.html">Version 1.0.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.13.html">Version 1.0.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.14.html">Version 1.0.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.15.html">Version 1.0.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.16.html">Version 1.0.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.17.html">Version 1.0.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.2.html">Version 1.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.3.html">Version 1.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.4.html">Version 1.0.4</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 1.0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.6.html">Version 1.0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.7.html">Version 1.0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.8.html">Version 1.0.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.0.9.html">Version 1.0.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.0.html">Version 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.1.html">Lino-Welfare 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1.12.html">Version 1.1.12 (coming)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../testlauf.html">Manueller Testlauf</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Über Lino Welfare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kontakt.html">Kontakt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handbuch.html">Handbuch</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><p align="center">
+<a href="https://github.com/lsaffre/lino-welfare" target="_blank">GitHub</a>
+<a href="http://pypi.python.org/pypi/lino-welfare" target="_blank">pypi</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="1.0.6.html" title="Version 1.0.6"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="1.0.4.html" title="Version 1.0.4"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Lino Welfare</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Release-Notizen Lino Welfare „Eupen“</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2012-2018 Luc Saffre.
+      Zuletzt aktualisiert am Nov. 01, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.0.    
+    <a href="https://raw.github.com/lino-framework/welfare/master/docs_de/changes/1.0.5.rst"
+           rel="nofollow">Quellcode anzeigen</a>.
+    <a href="http://de.welfare.lino-framework.org/changes/1.0.5.html">Online Link</a>.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Manueller Testlauf &#8212; Lino Welfare</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/linodocs.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="about.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Über Lino Welfare" href="about.html" />
+    <link rel="prev" title="Version 1.1.12 (coming)" href="changes/1.1.12.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="about.html" title="Über Lino Welfare"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="changes/1.1.12.html" title="Version 1.1.12 (coming)"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Lino Welfare</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+  <div class="section" id="manueller-testlauf">
+<h1>Manueller Testlauf<a class="headerlink" href="#manueller-testlauf" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="logdatei-anzeigen">
+<h2>Logdatei anzeigen<a class="headerlink" href="#logdatei-anzeigen" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Um die system.log anzuzeigen, ein ssh-terminal auf lino öffnen und:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">django</span><span class="o">/</span><span class="n">testlino</span>
+<span class="o">./</span><span class="n">showlogs</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="navigation-im-detail-fenster">
+<h2>Navigation im Detail-Fenster<a class="headerlink" href="#navigation-im-detail-fenster" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Anmelden als Administrator</li>
+<li><span class="menuselection">Kontakte ‣ Klienten</span>.</li>
+<li>Doppelklick auf einem Klienten der Liste, der nicht importiert ist.</li>
+<li>Beachte oben rechts die <em>message area</em> des Navigators:
+dort steht etwas im Stil „Record 4 von 57“.</li>
+<li>Im Reiter „Sonstiges“ das Feld „veraltet“ einschalten.</li>
+<li>Sich den Namen des Klienten merken und dann Speichern.
+Nach dem Speichern prüfen:</li>
+<li>ist der Klient noch der Gleiche?</li>
+<li>wurden alle vier Navigationsbuttons deaktiviert?</li>
+<li>steht die message area des Navigators auf „No navigation“?</li>
+</ul>
+</div>
+<div class="section" id="speichern">
+<h2>Speichern<a class="headerlink" href="#speichern" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li><span class="menuselection">Kontakte ‣ Partner (alle)</span>.</li>
+<li>Doppelklick auf dem ersten Partner der Liste</li>
+<li>Im Navigator ist der Button „Vorige Seite“ deaktiviert, die anderen drei Buttons nicht</li>
+<li>Auf einem <em>aus TIM importierten</em> Partner:<ul>
+<li>Ohne vorher was zu ändern den Speichern-Button klicken.
+Dadurch sollte sich nichts verändern und es dürfte keine Änderung
+im Änderungslog erscheinen.</li>
+</ul>
+</li>
+<li>Auf einem Partner, der nicht importiert ist:<ul>
+<li>Checkbox „veraltet“ ankreuzen, Speichern. Bleibt sie angeschaltet?</li>
+<li>Wieder ausschalten und wieder speichern. Bleibt sie ausgeschaltet?</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="sprachkenntnisse">
+<h2>Sprachkenntnisse<a class="headerlink" href="#sprachkenntnisse" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Im Reiter „Sprachen“ eine neue Sprache in „Sprachkenntnisse“ eingeben.
+Die Änderung wird gleich nach Verlassen der Zelle in der <a class="reference external" href="http://www.lino-framework.org/dev/logging.html#xfile-system.log" title="(in Lino v18.08)"><code class="xref std std-xfile docutils literal notranslate"><span class="pre">system.log</span></code></a>
+erscheinen.
+Dann den Speichern-Button der Person klicken.
+Dabei sollte nichts passieren und es dürfte <em>keine Änderung</em>
+in der <a class="reference external" href="http://www.lino-framework.org/dev/logging.html#xfile-system.log" title="(in Lino v18.08)"><code class="xref std std-xfile docutils literal notranslate"><span class="pre">system.log</span></code></a> erscheinen.
+<a class="reference external" href="http://luc.lino-framework.org/blog/2011/0406.html">2011-04-06</a></li>
+</ul>
+</div>
+<div class="section" id="polymorphie">
+<h2>Polymorphie<a class="headerlink" href="#polymorphie" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Detail einer Organisation aufrufen, die <em>kein Kursanbieter</em> ist.</p>
+<p>Ohne vorher was zu ändern den Speichern-Button klicken.
+Dabei sollte nichts passieren und es dürfte <em>keine Änderung</em> in der system.log erscheinen.
+<a class="reference external" href="http://luc.lino-framework.org/blog/2011/0406.html">2011-04-06</a></p>
+<p>Checkbox „Kursanbieter“ einschalten und speichern.
+Die Checkbox sollte angeschaltet bleiben.</p>
+<p>In einem zweiten Browserfenster <span class="menuselection">Kurse‣Kursanbieter</span> aufrufen:
+die Firma sollte dort nun sichtbar sein.</p>
+<p>Checkbox „Kursanbieter“ wieder ausschalten und speichern.
+Die Checkbox sollte ausgeschaltet bleiben.</p>
+<p>Im zweiten Browserfenster auf „Refresh“ klicken :
+Firma sollte aus der Liste verschwunden sein.</p>
+<p><a class="reference external" href="http://luc.lino-framework.org/blog/2011/0406.html">2011-04-06</a></p>
+</li>
+</ul>
+</div>
+<div class="section" id="einfugetexte">
+<h2>Einfügetexte<a class="headerlink" href="#einfugetexte" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Notiz erstellen. Im Inhalt ein bisschen eintippen,
+einige Einfügetexte einfügen, speichern, drucken.
+Nach den Drucken sind die meisten Felder schreibgeschützt (blau).
+Auf <span class="guilabel">Cache löschen</span> klicken (Felder werden wieder bearbeitbar).
+Eine kleine Änderung im Inhalt machen, speichern, drucken.
+Prüfen, ob Änderung auch im Ausdruck sichtbar ist.</p>
+</li>
+<li><p class="first">Eine weitere Notiz erstellen.
+Folgenden Textabschnitt (Quelle: Wikipedia) kopieren und einfügen:</p>
+<blockquote>
+<div><p><strong>Interpunktionsregeln bei Aufzählungen</strong></p>
+<p>Grundsätzlich werden aus Sicht der Interpunktionsregeln Aufzählungszeichen so behandelt, als seien sie nicht vorhanden. Das heißt, dass Interpunktion so gesetzt werden muss, als gäbe es keine typografische Gliederung.</p>
+<p>Beispiel:</p>
+<blockquote>
+<div><p>Der Mann erblickte ein gelbes Auto, einen schwarzen Hund, eine grüne Handtasche und ein braunes Pferd in seiner Küche.</p>
+</div></blockquote>
+<p>Dieser Satz wird zu folgendem:</p>
+<blockquote>
+<div><p>Der Mann erblickte</p>
+<ul class="simple">
+<li>ein gelbes Auto,</li>
+<li>einen schwarzen Hund,</li>
+<li>eine grüne Handtasche</li>
+<li>und ein braunes Pferd</li>
+</ul>
+<p>in seiner Küche.</p>
+</div></blockquote>
+</div></blockquote>
+<p>Speichern &amp; drucken.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_web3.png" alt="Logo"/>
+            </a></p>
+<h3><a href="index.html">Inhalt</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tour/index.html">Lino-Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="klienten.html">Klienten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coachings.html">Begleitungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partner.html">Partner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watch_tim.html">watch_tim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cal.html">Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">Allgemeines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="excerpts.html">Bescheinigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aids.html">Beihilfen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help/index.html">Selbsthilfe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes/index.html">Release-Notizen Lino Welfare „Eupen“</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manueller Testlauf</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Über Lino Welfare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kontakt.html">Kontakt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handbuch.html">Handbuch</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><p align="center">
+<a href="https://github.com/lsaffre/lino-welfare" target="_blank">GitHub</a>
+<a href="http://pypi.python.org/pypi/lino-welfare" target="_blank">pypi</a>
+</p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="about.html" title="Über Lino Welfare"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="changes/1.1.12.html" title="Version 1.1.12 (coming)"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Lino Welfare</a> &#187;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2012-2018 Luc Saffre.
+      Zuletzt aktualisiert am Nov. 01, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.0.    
+    <a href="https://raw.github.com/lino-framework/welfare/master/docs_de/testlauf.rst"
+           rel="nofollow">Quellcode anzeigen</a>.
+    <a href="http://de.welfare.lino-framework.org/testlauf.html">Online Link</a>.
+    </div>
+  </body>
+</html>
