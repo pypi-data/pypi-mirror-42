@@ -1,0 +1,16 @@
+documentation/__init__.py,sha256=3SB6d6PnUWKZWuOIaZCM5OhnX9cNw9ljDC6qDgryUr8,45
+documentation/generate.py,sha256=feEM-EcCLYrhmMl85SyNhLzb06FFD-ph_Ie-uMdXCB4,8593
+documentation/readme.py,sha256=qUANBeNm4pmZc1vRgW9SzYYd8yTJVVmPTe78LAOIYu4,581
+documentation/routes.py,sha256=iEAxRyqnz5OS7iheqc6Vhhq7bb2b2YB23hr-K54-Lq8,1787
+documentation/utils.py,sha256=LoTD6zfqpeNcSr2RnaMthxOD_5kP0om7KZrvzmpgBtU,1665
+exceptions/__init__.py,sha256=6nvfENmnqiqOLHA_nmUQ5zhFgzIl8QjfJ3yIEFmM6-s,1018
+exceptions/auth.py,sha256=Fs48KlxoMQDpQ6HqdR4e_22QGNWDNuip_ux0eOIySII,2637
+exceptions/bad_request.py,sha256=EzVWI0uamxFBlbNYtqLD3XTZlzdMXX1mK1D5r3lU8WQ,2071
+exceptions/base.py,sha256=XYbO12AbLBGQB0bqtlWhDCtyEnbdULtV49lzrmp8LD0,1206
+exceptions/forbidden.py,sha256=JqF_vvWVDdYDdcoutOGX_oOmoO02PIDANti86yvk73Y,1086
+exceptions/not_found.py,sha256=q6dI84c6GtS-a-O2CY_IHwWiF6Z3PsMaTaSEImOKgKE,1009
+awokado-0.3b5.dist-info/LICENSE,sha256=elsQzHPzvyyY1e_7wdkmkbG3UZia7lUSoiuzImbmUxE,1070
+awokado-0.3b5.dist-info/METADATA,sha256=dEyliwiAkUF99NmJpvY6cxGLu7EClhF7f9cxBDF34_Y,5428
+awokado-0.3b5.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+awokado-0.3b5.dist-info/top_level.txt,sha256=Yj_PJGA9IBx20l2KZXBGgbhluPHLD_nBOnkRftj3GU4,25
+awokado-0.3b5.dist-info/RECORD,,
