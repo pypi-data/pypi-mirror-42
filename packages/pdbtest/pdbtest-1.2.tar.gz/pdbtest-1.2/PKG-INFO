@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pdbtest
+Version: 1.2
+Summary: A unittest shim to make PDB debugging of test cases easy.
+Home-page: https://github.com/zack112358/pdbtest/
+Author: Zachary J. McCord
+Author-email: zjmccord@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: testing,pdb,unittest
+Platform: UNKNOWN
