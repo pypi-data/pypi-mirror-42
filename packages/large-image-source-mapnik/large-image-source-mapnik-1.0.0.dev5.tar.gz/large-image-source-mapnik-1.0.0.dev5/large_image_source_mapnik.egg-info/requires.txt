@@ -1,0 +1,8 @@
+large-image>=1.0.0.dev0
+gdal
+mapnik
+palettable
+pyproj
+
+[girder]
+girder-large-image>=1.0.0.dev0
