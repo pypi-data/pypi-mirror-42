@@ -1,0 +1,9 @@
+juraSSH/__init__.py,sha256=JmqRa-PpIJAIS0zMjpw1qoNFpsX4fsvRdPhJLzIQhoA,67
+juraSSH/file_handler.py,sha256=BelWbP5X_NvSvs5KTWfWKObjImF1kkaGu1FNbx0uYdE,520
+juraSSH/multipleCMDs.py,sha256=JYA98JknMkiJ00AcIXf88FKI_sTCvarUaWhSnOOKCac,2086
+juraSSH/oneCMD.py,sha256=5Qmc_awK5Km5GH9NFCXubDIAVzesMirWrPNke0mViYU,1955
+juraSSH/ssh.py,sha256=kWanI9Ny5lVWtdP39m-5MiProc6gzcaQDI73IRi5W4M,2395
+juraSSH-1.8.dist-info/METADATA,sha256=zDmWCxOj8MM3OAiSOM6MZsBoQBaCn_xCPrh25nW_-k0,1856
+juraSSH-1.8.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+juraSSH-1.8.dist-info/top_level.txt,sha256=yegqQKegwWFtCH-Sv6aJYfPZugDYuj6bVVoIrUwcG0c,8
+juraSSH-1.8.dist-info/RECORD,,

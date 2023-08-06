@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: juraSSH
+Version: 1.8
+Summary: SSH Client Framework for Network Automation
+Home-page: https://johnnes-smarts.ch
+Author: David Johnnes
+Author-email: david.johnnes@gmail.com
+License: License :: OSI Approved :: MIT License
+Keywords: SSH Client,DevOps SSH,Network Automation,Network Orchestration,Vendor-Neutral Network Programmability
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# This framework is to be used for DevOps, Infrastructure As Code, Network Automation projects.
+
+# Author: David Johnnes
+# email: david.johnnes@gmail.com
+
+# First step: run 'pip install juraSSH' in your machine.
+# ========================================================
+
+
+# Example1:
+# ========
+# To send a single command to multiple remote machines in parallel:
+
+#  from juraSSH import oneCMD
+
+#  my_hosts = ["8.8.8.8", "4.4.4.4"]
+#  oneCMD.run_one_cmd(username="cisco", password="cisco", command="show clock", hosts_file=my_hosts)
+
+
+
+# Example2:
+# ========
+# To send multiple commands to multiple remote machines in parallel:
+
+#  from juraSSH import multipleCMDs
+
+#  my_hosts = ["8.8.8.8", "4.4.4.4"]
+#  my_commands = ["show clock", "show ip int brief", "show version"]
+#  multipleCMDs.run_multiple_cmds(username="cisco", password="cisco", commands=my_commands, hosts_file=my_hosts)
+
+
+
+
+# If you need some help: drop me an e-mail.
+# If you need an Expert for your network automation projects: drop me an e-mail.
+# If you need an Expert to introduce network automation in you company: drop me an e-mail.
+# If you need an Expert to help you create your own automation tools: drop me an e-mail.
+# If you need an Expert to teach 'Python for Network Engineers' on premises: drop me an e-mail.
+
