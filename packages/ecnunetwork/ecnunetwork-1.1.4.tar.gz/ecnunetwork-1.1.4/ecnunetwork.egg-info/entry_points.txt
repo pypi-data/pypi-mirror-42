@@ -1,0 +1,4 @@
+[console_scripts]
+ecnunetwork = ecnunetwork.commandline:main
+network = ecnunetwork.commandline:main
+

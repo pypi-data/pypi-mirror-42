@@ -1,0 +1,6 @@
+requests
+
+[test]
+pytest-sugar
+pytest-cov
+pytest-localserver
