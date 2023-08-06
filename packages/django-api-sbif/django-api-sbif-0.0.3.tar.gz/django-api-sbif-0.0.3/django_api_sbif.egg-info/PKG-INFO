@@ -1,0 +1,58 @@
+Metadata-Version: 1.1
+Name: django-api-sbif
+Version: 0.0.3
+Summary: API de la Superintendencia de Bancos e Instituciones Financieras de Chile
+Home-page: https://github.com/jupitercl/django-api-sbif
+Author: Francisco Jordan
+Author-email: franciscojordan@live.com
+License: MIT
+Description: API SBIF .v3
+        =================================================
+        
+        ``VERSION 3``
+        ===================================
+        
+        Información obtenida de la API de la Superintendencia de Bancos e Instituciones Financieras de Chile
+        
+        https://api.sbif.cl/
+        
+        Pypi
+        ====
+        
+        https://pypi.python.org/pypi/django-api-sbif
+        
+        
+        Installation
+        ------------
+        
+        install **django-api-sbif** using **pip**
+        
+        
+            pip install django-api-sbif
+        
+        add **apisbif** to **INSTALLED_APPS**
+        
+        settings.py
+        -----------
+        
+            # ...
+        
+            INSTALLED_APPS =[
+            ...
+            'apisbif',
+            ]
+        
+            # ...
+        
+Keywords: django chile api sbif
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django :: 1.11
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Spanish
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
