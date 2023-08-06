@@ -1,0 +1,126 @@
+Metadata-Version: 2.1
+Name: django-ubuntu-deployer
+Version: 4.0.3
+Summary: Simple way to deploy Django app in Ubuntu Server.
+Home-page: https://github.com/Maksych/django_ubuntu_deployer
+Author: Maksym Sichkaruk
+Author-email: maxim.18.08.1997@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+# Django Ubuntu Deployer
+##### This is a simple package for deploying django projects on ubuntu server 16.04 or latest.
+Does what is written in article [How To Set Up Django with Postgres, Nginx, and Gunicorn on Ubuntu 16.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04).
+
+# In Ubuntu Server
+```text
+ubuntu@server:~# cd /home/
+ubuntu@server:/home# sudo apt-get update
+ubuntu@server:/home# sudo apt-get install python3-pip python3-dev libpq-dev nginx
+```
+
+##### Install virtualenv for creating virtual environment: 
+```text
+ubuntu@server:/home# pip3 install virtualenv
+```
+
+##### Create project folder and enter in:
+```text
+ubuntu@server:/home# mkdir project && cd project
+```
+
+##### Create virtual environment and activate: 
+```text
+ubuntu@server:/home/project# virtualenv venv
+ubuntu@server:/home/project# source venv/bin/activate
+```
+
+##### Install Django, django_ubuntu_deployer and gunicorn
+```text
+(venv)ubuntu@server:/home/project# pip install django django_ubuntu_deployer gunicorn
+```
+
+##### Register django_ubuntu_deployer in INSTALLED_APPS
+```python
+INSTALLED_APPS = [
+    ...,
+    'ubuntu_deployer',
+]
+```
+
+##### Add domains to ALLOWED_HOSTS:
+```python
+ALLOWED_HOSTS = [
+    'your domain 1',
+    ...,
+    'your domain n',
+]
+```
+
+##### Collectstatic files:
+```text
+(venv)ubuntu@server:/home/project# python manage.py collectstatic
+```
+
+##### Now deploy your APP in Ubuntu Server (use for this username and password):
+```text
+(venv)ubuntu@server:/home/project# python manage.py deploy
+```
+Or restart server
+```text
+(venv)ubuntu@server:/home/project# python manage.py deploy --restart
+```
+
+# Configure gunicorn, nginx and virtual environment folder
+##### In your settings.py:
+```python
+DJANGO_UBUNTU_DEPLOYER = {
+    # gunicorn config
+    # required in gunicorn config {user}, {path}, {gunicorn}, {sock}, {name}
+    'GUNICORN_CONFIG': """
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User={user}
+Group=www-data
+WorkingDirectory={path}
+ExecStart={gunicorn} --access-logfile - --workers 3 --bind unix:{sock} {name}.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+    """,
+
+    # nginx config
+    # required in nginx config {domains}, {static}, {media}, {path}, {sock}, {extras}
+    'NGINX_CONFIG': """
+server {{
+    listen 80;
+    server_name {domains};
+
+    location = /favicon.ico {{ access_log off; log_not_found off; }}
+
+    location {static} {{
+        root {path};
+    }}
+
+    location {media} {{
+        root {path};
+    }}
+
+    location / {{
+        include proxy_params;
+        proxy_pass http://unix:{sock};
+    }}
+
+    {extras}
+}}
+    """,
+
+    # nginx_config extras
+    'NGINX_EXTRAS': '',
+}
+```
+
+
