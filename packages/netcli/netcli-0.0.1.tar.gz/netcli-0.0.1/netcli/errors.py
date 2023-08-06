@@ -1,0 +1,2 @@
+class NetcliError(Exception):
+    pass
