@@ -1,0 +1,40 @@
+Metadata-Version: 1.1
+Name: virtualenvrunner
+Version: 1.1
+Summary: Runner for shell commands in virtualenv
+Home-page: https://github.com/nokia/virtualenvrunner
+Author: Petri Huovinen
+Author-email: petri.huovinen@nokia.com
+License: BSD 3-Clause
+Description: .. Copyright (C) 2019, Nokia
+        
+        README
+        ======
+        
+        run_in_virtualenv tool
+        ----------------------
+        
+        This distribution contains *run_in_virtualenv* tool and programmatic usage of
+        the tool. The tool is for running shell commands in virtualenv.
+        
+        The tool is similar to *allvirtualenv* in *virtualenvwrapper* or *tox* but
+        restricted to the command line run only.
+        
+        Moreover, the library provides Python function for running generic runner
+        function in virtualenv.
+        
+        Development practices
+        ---------------------
+        
+        The development and the testing follows the Common Robot Libraries development
+        practices defined in https://github.com/nokia/crl-devutils.
+        
+Keywords: virtualenv
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development
