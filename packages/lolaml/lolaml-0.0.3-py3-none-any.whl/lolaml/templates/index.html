@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The dashboard that does not deserve the name</title>
+
+    <!-- <link rel="stylesheet" href="static/sakura.css" type="text/css"> -->
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+
+
+
+    <!-- vega -->
+    <style>
+        .vega-actions a {
+            margin-right: 12px;
+            color: #757575;
+            font-weight: normal;
+            font-size: 13px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+
+    <!-- datatables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+</head>
+
+<body>
+    <h1>Lola - Dashboard</h1>
+
+    <div>
+        <h2>Overview</h2>
+            Toggle columns: (TODO reset)
+            <br>
+            {% for item in table_column_names %}
+                | <a href="#" data-column="{{ loop.index - 1 }}" class="toggle-vis">{{ item["title"] }}</a>
+            {% endfor %}
+        <table id="table-overview" class="display compact" width="100%"></table>
+    </div>
+
+    <div>
+        <h2>Plots</h2>
+        {% for vega_spec in vega_specs %}
+            <div id="vis{{ loop.index }}"></div>
+        {% endfor %}
+    </div>
+
+    <script>
+        $(document).ready( function () {
+            var table = $('#table-overview').DataTable({
+                "data": {{ table_data | safe }},
+                "columns": {{ table_column_names | safe }},
+                "paging": false,
+                "scrollY": "300px",
+            });
+
+            $('a.toggle-vis').on('click', function (e) {
+                e.preventDefault();
+                // Get the column API object
+                var column = table.column( $(this).attr('data-column') );
+                // Toggle the visibility
+                column.visible( ! column.visible() );
+            });
+
+        });
+
+        var embedOpt = { "mode": "vega-lite" };
+        function showError(el, error) {
+            el.innerHTML = (
+                '<div class="error" style="color:red;">'
+                + '<p>JavaScript Error: ' + error.message + '</p>'
+                + "<p>This usually means there's a typo in your chart specification. "
+                + "See the javascript console for the full traceback.</p>"
+                + '</div>'
+            );
+            throw error;
+        }
+
+        {% for vega_spec in vega_specs %}
+            var spec{{ loop.index }} = {{ vega_spec | safe }};
+            const el{{ loop.index }} = document.getElementById('vis{{ loop.index }}');
+            vegaEmbed("#vis{{ loop.index}}", spec{{ loop.index }}, embedOpt)
+                .catch(error => showError(el{{ loop.index }}, error));
+        {% endfor %}
+    </script>
+</body>
+
+</html>
