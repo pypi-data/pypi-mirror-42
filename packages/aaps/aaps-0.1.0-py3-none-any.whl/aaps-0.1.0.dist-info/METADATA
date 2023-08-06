@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: aaps
+Version: 0.1.0
+Summary: Paquete con todas las herramientas para la aplicacion AAPS-LAB.
+Home-page: https://github.com/sergio-chumacero/aaps
+Author: Sergio Chumacero
+Author-email: sergio.chumacero.fi@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: shapely
+Requires-Dist: fiona
+Requires-Dist: six
+Requires-Dist: pyproj
+Requires-Dist: geopandas
+Requires-Dist: jupyter
+Requires-Dist: jupyterlab
+Requires-Dist: ipywidgets
+Requires-Dist: ipyleaflet
+
+# Herramientas AAPS-LAB 
+
+Paquete con todas las herramientas para la aplicacion AAPS-LAB.
+
+## Inicio
+
+Estas instrucciones te proveerÃ¡n una copia del proyecto en funcionamiento en tu mÃ¡quina local para su uso.  
+
+### Prerequisitos
+
+Para instalar y usar este paquete es necesario una instalaciÃ³n de python.
+
+Recomendamos usar el instalador a medida que estÃ¡ disponible a travÃ©s del sistema AAPS-API. Este instalador instalarÃ¡ python, conda, el paquete `aaps` y todas sus dependencias.
+
+Este paquete hace uso de las librerÃ­as geo-espaciales [GEOS](https://trac.osgeo.org/geos/) (objetos y funciones espaciales), [GDAL](https://www.gdal.org/) (formatos espaciales) y [PROJ4](https://proj4.org/) (transformaciÃ³n de coordenadas), por lo que estas deben estar previamente instaladas para instalar este paquete desde la fuente.
+
+Si se utiliza `conda`, las dependencias son instaladas de manera automÃ¡tica.
+
+### InstalaciÃ³n
+
+Si no se usa el instalador a medida, este paquete tambiÃ©n estÃ¡ disponible en PyPI y Anaconda Cloud. 
+
+Para instalar usando el gestor de paquetes `conda` (recomendado), puedes usar el comando
+
+```
+conda install -c sergio.chumacero aaps
+```
+
+Para instalar usando el gestor de paquetes `pip`, puedes usar el comando
+
+```
+pip install aaps
+```
+
+Puedes verificar la instalaciÃ³n y la versiÃ³n usando el comando `conda list` (conda) y `pip freeze` (pip). 
+
+<!-- ## Running the tests -->
+
+<!-- Explain how to run the automated tests for this system -->
+
+<!-- ### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+``` -->
+
+<!-- ### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+``` -->
+<!-- 
+## Deployment
+
+Add additional notes about how to deploy this on a live system -->
+
+<!-- ## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
+
+<!-- ## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
+
+<!-- ## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
+
+## Autores
+
+* **Sergio Chumacero** - *trabajo inicial* - [GitHub](https://github.com/sergio-chumacero) - contacto: sergio.chumacero.fi@gmail.com
+
+## License
+
+Este proyecto se encuentra bajo la licencia MIT, que es del tipo "open source". VÃ©ase [LICENSE.md](LICENSE.md) para ver detalles.
+
+<!-- This project is licensed under the MIT License - see the  -->
+
+<!-- ## Reconocimientos
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc -->
+
+
