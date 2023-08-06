@@ -1,0 +1,15 @@
+microstatistics/__init__.py,sha256=t5MdXVwSe0c5ZykQcrSydkaZ141YlQM9EErvbIOXnLY,8655
+microstatistics/command_line.py,sha256=aOp376HuVrB3VgpJ6MoJC70c0Rm3-P4CWiGzTZngZA0,59
+microstatistics/diversities.py,sha256=FyoZa_sEVgtVWAGlazkS4OHJk8dTSVfyp1fasHDwejs,3469
+microstatistics/diversities_test.py,sha256=d45IsvBbyXARckLdojzdNMPGjC22GrfnwJ3eCUKbZgc,1992
+microstatistics/graphing_functions.py,sha256=yh8PutyfRxHaIFyNFR7PWavvjIbYBAq4JdOryCcGJFg,6312
+microstatistics/gui_licence.py,sha256=ucX0jRCnwI-B_MVJbYmuk89_J5ZC12b6ratvFXXWr9g,167999
+microstatistics/gui_manual.py,sha256=_Tg_ndUCMiGtYO-m0f82IhPo6ZVpdM4DmihJyQBWOiQ,64017
+microstatistics/gui_microstatistics.py,sha256=ZyEWIh_AgbTD9IIzsa0rd8QMj9D6m1y0xbI3Ka53ScE,10175
+microstatistics-0.5.5.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+microstatistics-0.5.5.dist-info/LICENSE.md,sha256=HxGQwWA6E5hgGKcr07mRadOfWeVEj5MR3yFxK-TyK4s,33796
+microstatistics-0.5.5.dist-info/METADATA,sha256=7pEtCMbtZYXOPqeH0m_I6VjHZVC1G7wjqUvFkCXWUw8,871
+microstatistics-0.5.5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+microstatistics-0.5.5.dist-info/entry_points.txt,sha256=yFDMuJLiMkwFFLlB1MZLb-U4kl14U9kVo9R9gZHuDYM,77
+microstatistics-0.5.5.dist-info/top_level.txt,sha256=iVLjXAsROSxOTkhrgqfHV7I8d6Ozws25SyjZt3sCtLI,16
+microstatistics-0.5.5.dist-info/RECORD,,
