@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: aslookup
+Version: 0.20
+Summary: IP-BGP query script
+Home-page: https://github.com/dspruell/aslookup
+Author: Darren Spruell
+Author-email: phatbuckett@gmail.com
+License: UNKNOWN
+Description: Client script for Shadowserver or Team Cymru IP-ASN lookup service over DNS
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Programming Language :: Python :: 3
