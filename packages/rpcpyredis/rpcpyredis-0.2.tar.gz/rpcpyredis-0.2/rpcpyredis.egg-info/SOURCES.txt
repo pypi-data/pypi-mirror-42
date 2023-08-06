@@ -1,0 +1,12 @@
+README.md
+setup.py
+rpcoverredis/__init__.py
+rpcoverredis/client.py
+rpcoverredis/registry.py
+rpcoverredis/rpcpyredis.py
+rpcoverredis/server.py
+rpcoverredis/resources/__init__.py
+rpcpyredis.egg-info/PKG-INFO
+rpcpyredis.egg-info/SOURCES.txt
+rpcpyredis.egg-info/dependency_links.txt
+rpcpyredis.egg-info/top_level.txt
