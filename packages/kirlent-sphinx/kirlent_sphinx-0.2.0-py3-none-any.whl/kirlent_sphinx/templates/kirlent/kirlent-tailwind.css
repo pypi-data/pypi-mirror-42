@@ -1,0 +1,80 @@
+@tailwind preflight;
+
+* {
+  border-color: inherit;
+}
+
+.columns {
+  @apply flex flex-row;
+}
+
+.column {
+  @apply flex-auto;
+}
+
+.w-1-2 {
+  @apply w-1/2 flex-none;
+}
+
+.w-1-3 {
+  @apply w-1/3 flex-none;
+}
+
+.w-2-3 {
+  @apply w-2/3 flex-none;
+}
+
+.w-1-4 {
+  @apply w-1/4 flex-none;
+}
+
+.w-3-4 {
+  @apply w-3/4 flex-none;
+}
+
+.no-left-divider {
+  @apply border-l-0;
+}
+
+.single-left-divider {
+  @apply border-l-2;
+}
+
+.double-left-divider {
+  border-left-width: 6px;
+  border-left-style: double;
+}
+
+.no-right-divider,
+.single-right-divider,
+.double-right-divider {
+  @apply border-r-0;
+}
+
+.single-right-divider:last-child {
+  @apply border-r-2;
+}
+
+.double-right-divider:last-child {
+  border-right-width: 6px;
+  border-right-style: double;
+}
+
+.reveal .slides section .highlight {
+  @apply bg-transparent;
+}
+
+table.horizontal-dividers thead tr {
+  border-bottom-width: 6px;
+  border-bottom-style: double;
+}
+
+table.horizontal-dividers tbody tr:not(:first-child) {
+  @apply border-t-2;
+}
+
+table.striped tr.row-even {
+  @apply bg-grey-light;
+}
+
+@tailwind utilities;
