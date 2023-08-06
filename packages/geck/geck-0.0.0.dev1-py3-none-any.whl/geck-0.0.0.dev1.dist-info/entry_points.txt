@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    geck=geck.__main__:run
+    
