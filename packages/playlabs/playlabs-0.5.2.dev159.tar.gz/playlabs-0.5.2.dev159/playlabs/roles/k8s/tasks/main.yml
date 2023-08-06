@@ -1,0 +1,16 @@
+---
+- name: Dependency roles
+  include_role:
+    name: roleonce
+  vars:
+    name: docker
+
+- include: setup.yml
+
+- name: Install users
+  include: users.yml
+  when: users|default()
+
+- name: Install namespaces
+  include: namespaces.yml
+  when: namespaces|default()

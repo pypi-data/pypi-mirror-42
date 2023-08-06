@@ -1,0 +1,21 @@
+---
+
+- name: Get nginx userid
+  shell: docker exec -it nginx-proxy id -u nginx
+  register: nginx_uid
+
+- name: Install htaccess
+  with_items: '{{ users|default([]) }}'
+  tags: users
+  when: >-
+    item.name|vaulted_password(false)
+    and (
+        htaccess_service in item.get('roles', {})
+        or htaccess_service in item.get('roles', {}).get('superuser', [])
+    )
+  htpasswd:
+    path: '{{ nginx_home }}/htpasswd/{{ htaccess_dns }}'
+    name: '{{ item.name }}'
+    password: '{{ item.name|vaulted_password() }}'
+    owner: '{{ nginx_uid.stdout }}'
+    mode: 0600
