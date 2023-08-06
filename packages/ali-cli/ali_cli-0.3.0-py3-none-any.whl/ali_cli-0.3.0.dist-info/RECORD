@@ -1,0 +1,14 @@
+ali/__init__.py,sha256=VrXpHDu3erkzwl_WXrqINBm9xWkcyUy53IQOj042dOs,22
+ali/cli.py,sha256=6-go5AupPT7FYXJDkLfqDsa-e76Rx1hs_-dsluavSaE,1179
+ali/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ali/commands/configure.py,sha256=LkZRX0n8Zl70PcN75Mw5pilFnzYhFAo5hYMJSmhawgE,242
+ali/commands/ros.py,sha256=3rT7LSfBcZzQmFmxClY7vpMgFWlRvmLnZ0EfynRyHT0,5705
+ali/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ali/helpers/auth.py,sha256=tlD8VQvZGyumuRToaO9brhWtATpI8QwKJXLUX2vIhTI,1060
+ali/helpers/output.py,sha256=ov5gC-bkESm5RwjorQR93e0FOGndx0Ye4axU9zwf63g,544
+ali/helpers/template.py,sha256=uki-Jjk12JDlNJcbM0_D6xwdGMZD1Xy4vYne_cC7K0Y,1511
+ali_cli-0.3.0.dist-info/METADATA,sha256=vQU6cei_ypXxTHU0016K2Nxa2Hpmz4TGejgkzyYLMAY,3944
+ali_cli-0.3.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+ali_cli-0.3.0.dist-info/entry_points.txt,sha256=uJUI7xx2eUqLB6dknCoDpc0GuY8UMZCBXU3-hlWiCKE,42
+ali_cli-0.3.0.dist-info/top_level.txt,sha256=h-eEeE1E4XoDkxXcGxQwWLG6_ATN-HLXbDIlj8tWbPI,4
+ali_cli-0.3.0.dist-info/RECORD,,
