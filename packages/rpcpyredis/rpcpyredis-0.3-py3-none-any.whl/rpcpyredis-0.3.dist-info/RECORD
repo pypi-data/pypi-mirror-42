@@ -1,0 +1,13 @@
+rpcoverredis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rpcoverredis/client.py,sha256=bvl36b0wam6Hfjpf5cGe0CZP_i3n56Tyzk0BlY2lqT8,592
+rpcoverredis/registry.py,sha256=dSB1i2kARzt99oUS4JjtxePpHRP88hlGZQpLg0wX0Zo,2739
+rpcoverredis/rpcpyredis.py,sha256=8-ThuUwfUyGb0XTk3DzImXMnCwwrjfuf87kNNIMkBDg,6284
+rpcoverredis/server.py,sha256=IAgBja0jXT2QOCYN_AFko8JU2Bb3dioG22paIr0rgj0,588
+rpcoverredis/example/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rpcoverredis/example/client.py,sha256=vjN2XluCEdsBBWKlF0bX8EcPZ9HWJ53qpvx_vb2D4bI,463
+rpcoverredis/example/server.py,sha256=P5SmYEFAD2gF8zWkFtl1_bqhEgNseIrZ7d-w9h-ogcM,711
+rpcoverredis/resources/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rpcpyredis-0.3.dist-info/METADATA,sha256=tJBeu3JBRNGIhuZVSIJwIx9Wpfk4p4Ki39kF-k3G6dQ,349
+rpcpyredis-0.3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+rpcpyredis-0.3.dist-info/top_level.txt,sha256=AbemyLcsAK9Iponm9rbAuurqwDi1ISlh1pABvvelLro,13
+rpcpyredis-0.3.dist-info/RECORD,,
