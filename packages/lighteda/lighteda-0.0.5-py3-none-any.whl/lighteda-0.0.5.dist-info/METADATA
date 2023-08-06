@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: lighteda
+Version: 0.0.5
+Summary: A package for exploratoriy data analysis.
+Home-page: https://github.com/j84lee/lighteda
+Author: Johnny Li
+Author-email: l.johnny@outlook.com
+License: UNKNOWN
+Keywords: EDA,Data Science
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# lighteda
+LightEDA is a light python package that simplify the Exploratory Data Analysis tasks.
+[Project package](https://github.com/j84lee/lighteda)
+
+
