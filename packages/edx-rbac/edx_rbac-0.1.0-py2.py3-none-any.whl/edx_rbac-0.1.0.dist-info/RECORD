@@ -1,0 +1,12 @@
+edx_rbac/__init__.py,sha256=qSKwtteS3RFjTsyO4XMy0LmHrmoN9f-fcJ-nmNB6ppY,242
+edx_rbac/apps.py,sha256=GOYa5rA_AXbtYsbweWRpQotPWUjxutas9BCefoWtNdE,297
+edx_rbac/models.py,sha256=b5J_dkNiQFudlydj93aHev9BdAcc5g3azRuV42G10HM,1508
+edx_rbac/urls.py,sha256=DYSQK_hqlMpLOwqOi6dAQADMfHHwKkIqT5_aigplbGw,279
+edx_rbac/templates/edx_rbac/base.html,sha256=wtjBYqfHmOnyEY5tN3VGOmzYLsOD24MXdEUhTZ7OmwI,662
+edx_rbac-0.1.0.dist-info/AUTHORS,sha256=GdA1LgN_uminN0OiHDuJ3SRD9WsN70HiDss3BLxoZR4,31
+edx_rbac-0.1.0.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+edx_rbac-0.1.0.dist-info/LICENSE.txt,sha256=oo7U8J5ol7nYAbcDsvx3uWytl-gnOHwQykwubuQHFLE,35119
+edx_rbac-0.1.0.dist-info/METADATA,sha256=TNbRCPzDv2XkTgJaI9zXx-H9tOnJJL6s4MEcW-4X_2s,4507
+edx_rbac-0.1.0.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+edx_rbac-0.1.0.dist-info/top_level.txt,sha256=O6g2WouZ0TG5yFiANg3xkFHl7pGHv26ToQpTA3KtdtQ,9
+edx_rbac-0.1.0.dist-info/RECORD,,
