@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: brazilpinpoint
+Version: 0.0.1
+Summary: Using a latitude and longitude a pin point is marked on Brazil map
+Home-page: https://github.com/NewtonGaliza/BrazilPinPoint-PyPi-
+Author: Newton Galiza
+Author-email: newtonjgaliza@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: folium
+
+This is a Python package coded by Newton Galiza
+
+##Installation
+pip install brazilpinpoint
+
+##How to use
+
+python brazilpinpoint --lat <lat number> llong <long number> --filename <enter a file name>
+
+
