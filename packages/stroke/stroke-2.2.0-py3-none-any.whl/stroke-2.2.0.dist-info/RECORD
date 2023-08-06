@@ -1,0 +1,12 @@
+stroke/__init__.py,sha256=xjXFHrK5iY0gzueKrpNUXj77eLuQ6DKCukfUV5wCauQ,125
+stroke/line/__init__.py,sha256=bh05iYB54j5SBPRFEKAyKkL1U6Vkeu9NN5s37ApFCZM,1549
+stroke/line/abstract.py,sha256=GR3HK9j9vWNoWegAOfhnlyzvmZMDn7pGSMUAqAT6uko,351
+stroke/parse/__init__.py,sha256=AvkY-fWaxyukcDxr5N9LjiZUcs1LlxcGyFmvoGecuhw,2021
+stroke/parse/abstract.py,sha256=cs4qvX7SFYAvOxNSt6lOn67ThLEgLzWN-PD9v3UgPuc,881
+stroke/search/__init__.py,sha256=44ljMi_cYWwzZY1uMyce81-a4mFoWRGfLUV22IQYOcA,1572
+stroke/search/abstract.py,sha256=tkw8fS69Se4xNXzKAbgNwOW18FNLvBjr01LaU8Bbi8M,450
+stroke-2.2.0.dist-info/LICENCE,sha256=3T7-vsjOBAnMZF_F0c-CID1cGqsmI5kdpyQVnVJmZ8Y,1078
+stroke-2.2.0.dist-info/METADATA,sha256=HVGki_rzWPHX4oF84Lfqq8jYLU-yHnMIHR9QxBlS-zY,782
+stroke-2.2.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+stroke-2.2.0.dist-info/top_level.txt,sha256=c8TB4NBILoXm-S9e_N_MgAbm-r4JjEhII1FaI9K6EuU,7
+stroke-2.2.0.dist-info/RECORD,,
