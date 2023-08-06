@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+tap_toast/__init__.py
+tap_toast/discover.py
+tap_toast/streams.py
+tap_toast/sync.py
+tap_toast/toast.py
+tap_toast.egg-info/PKG-INFO
+tap_toast.egg-info/SOURCES.txt
+tap_toast.egg-info/dependency_links.txt
+tap_toast.egg-info/entry_points.txt
+tap_toast.egg-info/requires.txt
+tap_toast.egg-info/top_level.txt
+tap_toast/schemas/orders.json
