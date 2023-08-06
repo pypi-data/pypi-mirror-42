@@ -1,0 +1,4 @@
+[console_scripts]
+benchmark = blind_eval:benchmark
+plot=blind_eval:plotevaluate_set = blind_eval:evaluate_set
+
