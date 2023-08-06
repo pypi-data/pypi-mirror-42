@@ -1,0 +1,8 @@
+README.rst
+setup.py
+flib/__init__.py
+flib.egg-info/PKG-INFO
+flib.egg-info/SOURCES.txt
+flib.egg-info/dependency_links.txt
+flib.egg-info/requires.txt
+flib.egg-info/top_level.txt
