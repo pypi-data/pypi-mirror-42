@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: waluigi-facade
+Version: 0.1.0
+Summary: The python part of the waluigi library
+Home-page: https://github.com/0xddom/waluigi
+Author: Daniel Domínguez
+Author-email: daniel.dominguez@imdea.org
+License: LICENSE
+Platform: UNKNOWN
+Requires-Dist: luigi
+
+UNKNOWN
+
+
