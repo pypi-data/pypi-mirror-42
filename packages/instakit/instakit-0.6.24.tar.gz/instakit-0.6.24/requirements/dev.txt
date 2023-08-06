@@ -1,0 +1,6 @@
+-r install.txt
+bumpversion
+flake8
+flake8-bugbear
+twine
+pytest
