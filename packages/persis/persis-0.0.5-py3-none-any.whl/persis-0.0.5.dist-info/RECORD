@@ -1,0 +1,11 @@
+persis/__init__.py,sha256=IEYB61NkcDy_OB_486IkvsSrXZbOjcTuHDF8KfI7SnE,363
+persis/persis.py,sha256=Qq_MV___ghTnTC0swesvZpVR9s3rhhfTy1tTSEH1vMo,1108
+persis/data/data.txt,sha256=rcFrkzYakC_OCogPdZ71Vz7DKMYcHNkiUFHEmWL45Hg,44
+persis/data/df.pkl,sha256=Z1eO6PwLyjLKd9tlWox9siBY-fHeBmZvOzulcLhyGR4,685
+persis/models/knn.pkl,sha256=-MToMtulOdvmZLYKV__QES-qftQlrPVWQwF72PAwTfc,56266
+persis-0.0.5.dist-info/AUTHORS.rst,sha256=KqfelGNmm5Yc2x8yew5dfiXMdFhAZVwc8W2_YfCCPJc,80
+persis-0.0.5.dist-info/LICENSE.txt,sha256=xsk7vJ9HFwUHaixZC6zY0q8rxqiFHomtJux4-oW1_M0,1077
+persis-0.0.5.dist-info/METADATA,sha256=Hw6Vt-A7gd8Tom6TboCPl2FWhWqnfmGpWRnb598Wenk,1465
+persis-0.0.5.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+persis-0.0.5.dist-info/top_level.txt,sha256=AEMpTEmD64NE51H3nZ5LWrP5VAJTfXMRxbSuy6hfmDw,7
+persis-0.0.5.dist-info/RECORD,,
