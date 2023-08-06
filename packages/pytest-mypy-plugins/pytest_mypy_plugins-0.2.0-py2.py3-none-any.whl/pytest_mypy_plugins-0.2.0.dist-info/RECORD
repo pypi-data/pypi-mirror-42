@@ -1,0 +1,11 @@
+pytest_mypy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_mypy/collect.py,sha256=wLCGHMwdD9SbcBYBqE3hhI8_MLvJXJO1y1fvsrXNSUQ,1599
+pytest_mypy/item.py,sha256=2L-v-iXe_jDYoW_A9PH03hKs3JGFv3h_3t-DH4ax4ak,8963
+pytest_mypy/parser.py,sha256=iLGbYTphq7N7KqqPROoPUvh25uLi6qojZHmTQQg-XGI,4915
+pytest_mypy/utils.py,sha256=1IB30vrB6t9QhoOUfgEt_djhJbrskEZD-O1Y7ciPakg,9439
+pytest_mypy_plugins-0.2.0.dist-info/LICENSE,sha256=QZk-T5zxJNfur8-oGJubA9_zxq3QiOaapkyBDAIznVk,1054
+pytest_mypy_plugins-0.2.0.dist-info/METADATA,sha256=7A11fDEkc_Y61uLBctTn_7oRvmzCwT23HHBBOwSanrw,1419
+pytest_mypy_plugins-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+pytest_mypy_plugins-0.2.0.dist-info/entry_points.txt,sha256=lhHFwQwGXr8eiVi8soM41dLlcdXtIi37vcRhJqEzp-U,54
+pytest_mypy_plugins-0.2.0.dist-info/top_level.txt,sha256=UQfC2UKbYCr71K2v5cfinkiY9Rh0Pqngums3qq1zSbI,12
+pytest_mypy_plugins-0.2.0.dist-info/RECORD,,
