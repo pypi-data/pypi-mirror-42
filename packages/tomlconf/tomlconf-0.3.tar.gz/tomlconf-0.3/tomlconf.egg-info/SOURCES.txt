@@ -1,0 +1,15 @@
+README.md
+setup.py
+tests/__init__.py
+tests/test_errors.py
+tests/test_tomlconf.py
+tomlconf/__init__.py
+tomlconf/appdir.py
+tomlconf/container.py
+tomlconf/core.py
+tomlconf/errors.py
+tomlconf.egg-info/PKG-INFO
+tomlconf.egg-info/SOURCES.txt
+tomlconf.egg-info/dependency_links.txt
+tomlconf.egg-info/requires.txt
+tomlconf.egg-info/top_level.txt
