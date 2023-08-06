@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: keras-adabound
+Version: 0.1.0
+Summary: AdaBound in Keras
+Home-page: https://github.com/CyberZHG/keras-adabound
+Author: CyberZHG
+Author-email: CyberZHG@gmail.com
+License: MIT
+Description: # Keras AdaBound
+        
+        [![Travis](https://travis-ci.org/CyberZHG/keras-adabound.svg)](https://travis-ci.org/CyberZHG/keras-adabound)
+        [![Coverage](https://coveralls.io/repos/github/CyberZHG/keras-adabound/badge.svg?branch=master)](https://coveralls.io/github/CyberZHG/keras-adabound)
+        
+        ## Install
+        
+        ```bash
+        pip install keras-adabound
+        ```
+        
+        ## Usage
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
