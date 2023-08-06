@@ -1,0 +1,3 @@
+include modeller/svchash3.pkl
+include *.md
+include LICENSE.txt
