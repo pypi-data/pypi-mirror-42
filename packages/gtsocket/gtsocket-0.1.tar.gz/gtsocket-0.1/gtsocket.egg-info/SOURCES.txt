@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+bin/gtsocket-setup
+bin/gtsocket-test
+gtsocket/__init__.py
+gtsocket/gtsocket.cfg
+gtsocket/gtsocket.py
+gtsocket.egg-info/PKG-INFO
+gtsocket.egg-info/SOURCES.txt
+gtsocket.egg-info/dependency_links.txt
+gtsocket.egg-info/not-zip-safe
+gtsocket.egg-info/requires.txt
+gtsocket.egg-info/top_level.txt
+gtsocket/tests/__init__.py
+gtsocket/tests/test_encoding.py
+gtsocket/tests/test_socket.py
