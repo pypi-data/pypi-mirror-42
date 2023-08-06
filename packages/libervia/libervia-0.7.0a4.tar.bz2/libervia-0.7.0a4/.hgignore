@@ -1,0 +1,18 @@
+syntax: glob
+*.pyc
+*.pyv
+*.swp
+*.swo
+*.js
+tags
+twistd.log
+twistd.pid
+sat.egg-info
+*.un~
+dist
+MANIFEST
+*.sh
+build/
+Session.vim
+ctags_links/
+html/

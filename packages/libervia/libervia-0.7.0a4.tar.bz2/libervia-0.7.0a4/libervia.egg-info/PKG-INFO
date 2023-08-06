@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: libervia
+Version: 0.7.0a4
+Summary: Web frontend for Salut à Toi
+Home-page: https://www.salut-a-toi.org
+Author: Association « Salut à Toi »
+Author-email: contact@goffi.org
+License: UNKNOWN
+Description: Libervia is a web frontend for Salut à Toi (SàT), a multi-frontends and multi-purposes XMPP client.
+        It features chat, blog, forums, events, tickets, merge requests, file sharing, photo albums, etc.
+        It is also a decentralized, XMPP based web framework.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Twisted
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Communications :: Chat
+Requires-Python: ~=2.7
