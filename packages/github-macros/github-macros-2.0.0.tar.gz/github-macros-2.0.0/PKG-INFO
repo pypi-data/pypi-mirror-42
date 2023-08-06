@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: github-macros
+Version: 2.0.0
+Summary: 
+Home-page: None
+Author: David Alexander
+Author-email: opensource@thelonelyghost.com
+Requires-Python: >=3.5,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Code Generators
+Requires-Dist: python-dateutil (>=2.8.0,<3.0.0)
+Requires-Dist: requests (>=2.21.0,<3.0.0)
+Requires-Dist: sh (>=1.12.14,<2.0.0)
