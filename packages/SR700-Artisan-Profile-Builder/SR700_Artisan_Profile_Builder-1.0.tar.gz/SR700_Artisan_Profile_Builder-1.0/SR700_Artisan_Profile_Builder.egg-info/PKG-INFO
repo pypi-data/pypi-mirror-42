@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: SR700-Artisan-Profile-Builder
+Version: 1.0
+Summary: Create artisan profiles using the alarms and the modified version of the freshroastsr700 library for phidget
+Home-page: https://github.com/lucapinello/create_artisan_alarms_phidget
+Author: Luca Pinello
+Author-email: UNKNOWN
+License: GPLv3
+Description: UNKNOWN
+Platform: UNKNOWN
