@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: thewhitetools
+Version: 0.0.1
+Summary: A collection of functions and classes that come in handy for bioinformaticians.
+Home-page: https://github.com/enblacar/thewhitetools
+Author: Enrique Blanco Carmona
+Author-email: enblacar1996@gmail.com
+License: UNKNOWN
+Description: # thewhitetools
+        
+        Collection of functions and classes developed by Enrique Blanco Carmona
+        in order to facilitate bioinformatic tasks.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
