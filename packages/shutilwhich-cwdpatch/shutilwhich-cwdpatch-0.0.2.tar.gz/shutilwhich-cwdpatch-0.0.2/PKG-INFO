@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: shutilwhich-cwdpatch
+Version: 0.0.2
+Summary: Patch for shutil.which and shutilwhich that disables search in CWD on Windows.
+Home-page: https://github.com/kiwi0fruit/shutilwhich-cwdpatch
+Author: Peter Zagubisalo, Python Software Foundation
+Author-email: peter.zagubisalo@gmail.com
+License: PSFL
+Description: # shutilwhich-cwdpatch
+        
+        Patch for `shutil.which` and `shutilwhich` that doesn't prepend CWD in search on Windows.
+        
+        
+        # Install
+        
+        ```bash
+        conda install -c defaults -c conda-forge shutilwhich-cwdpatch
+        ```
+        
+        or
+        
+        ```bash
+        pip install shutilwhich-cwdpatch
+        ```
+        
+        
+        # Usage:
+        
+        Simply import shutilwhich-cwdpatch before importing `shutil.which` or `shutilwhich`:
+        
+        ```py
+        import shutilwhich_cwdpatch
+        from shutil import which
+        ```
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
