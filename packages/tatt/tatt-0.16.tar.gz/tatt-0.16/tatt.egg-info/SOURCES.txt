@@ -1,0 +1,17 @@
+README.md
+setup.py
+tatt/__init__.py
+tatt/config.py
+tatt/exceptions.py
+tatt/helpers.py
+tatt/transcribe.py
+tatt.egg-info/PKG-INFO
+tatt.egg-info/SOURCES.txt
+tatt.egg-info/dependency_links.txt
+tatt.egg-info/entry_points.txt
+tatt.egg-info/requires.txt
+tatt.egg-info/top_level.txt
+tatt/vendors/__init__.py
+tatt/vendors/amazon.py
+tests/__init__.py
+tests/test_amazon.py
