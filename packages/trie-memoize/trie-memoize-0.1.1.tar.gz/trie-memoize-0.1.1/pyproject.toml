@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "trie-memoize"
+version = "0.1.1"
+description = "A memoization algorithm in which each function argument represents a new key, creating a trie of caches as defined by your setup."
+readme = 'README.md'
+authors = ["Jared Lunde <jared@BeStellar.co>"]
+
+[tool.poetry.dependencies]
+python = "^3.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[tool.poetry.scripts]
+tests = "tests:main"
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
