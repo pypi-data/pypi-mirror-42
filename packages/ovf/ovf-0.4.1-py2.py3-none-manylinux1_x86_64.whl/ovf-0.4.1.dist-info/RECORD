@@ -1,0 +1,9 @@
+ovf/__init__.py,sha256=fecmuBN2bqrNa3lr_m0RuRXO36Arrk5QgpRIKyWHe88,211
+ovf/libovf.so,sha256=XA-dUOxVNIh6LaFYQFH2hQgwHaecXOqCnlRzNQH6ssM,2855760
+ovf/ovf.py,sha256=BlCUWDCYBGAfMKVIhNMBQNvzO3HoU5GOY_ZmCaw1sfA,7697
+ovf/ovflib.py,sha256=pD8reQ-QicStYmgMLS_jVOW_zVbiTYWfXk2pHrAiIDU,766
+ovf-0.4.1.dist-info/LICENSE.txt,sha256=lgQGcEQEAAE2oMOFvviC2himpzFFs5WmFbC3zbyNK7I,1098
+ovf-0.4.1.dist-info/METADATA,sha256=JvrbDLhwvWuJxhAImHy7Ql7YUcWVZEknd6J3DJYiCsU,16325
+ovf-0.4.1.dist-info/WHEEL,sha256=JMu0D6GO-LS3sEt1xLc4HpjEVn6jXSyAUWFXa9AAONw,138
+ovf-0.4.1.dist-info/top_level.txt,sha256=DkX2aQQ0Dh7o9an4k-YBn_MOSafQQIfe9GEn04JD_kA,4
+ovf-0.4.1.dist-info/RECORD,,
