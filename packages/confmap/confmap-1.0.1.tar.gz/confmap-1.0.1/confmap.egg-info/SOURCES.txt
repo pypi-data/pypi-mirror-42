@@ -1,0 +1,13 @@
+README.rst
+setup.py
+confmap/__init__.py
+confmap/functions.py
+confmap/imagetrans.py
+confmap/mask.py
+confmap/version.py
+confmap/videotrans.py
+confmap.egg-info/PKG-INFO
+confmap.egg-info/SOURCES.txt
+confmap.egg-info/dependency_links.txt
+confmap.egg-info/requires.txt
+confmap.egg-info/top_level.txt
