@@ -1,0 +1,97 @@
+{
+  "src/lib/components/LineProgressBarComponent.react.js": {
+    "description": "LineProgressBarComponent",
+    "displayName": "LineProgressBarComponent",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks"
+      },
+      "strokeWidth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The width of stroke, default 1, unit is percentage of SVG canvas size",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "strokeColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color of stroke, default #2db7f5",
+        "defaultValue": {
+          "value": "'#2db7f5'",
+          "computed": false
+        }
+      },
+      "trailWidth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The width of trail stroke, default & unit are the same as strokeWidth",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "trailColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color of trail",
+        "defaultValue": {
+          "value": "'#D9D9D9'",
+          "computed": false
+        }
+      },
+      "strokeLinecap": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "the shape to be used at the end of progres bar, {'butt', 'square', 'round'}\ndefault is round",
+        "defaultValue": {
+          "value": "'round'",
+          "computed": false
+        }
+      },
+      "percent": {
+        "type": {
+          "name": "custom",
+          "raw": "PropTypes.percent"
+        },
+        "required": false,
+        "description": "the percent of progress",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called whenever any of the\nproperties change"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Style of the element"
+      }
+    }
+  }
+}

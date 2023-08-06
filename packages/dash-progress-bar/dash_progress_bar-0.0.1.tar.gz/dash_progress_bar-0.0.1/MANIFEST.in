@@ -1,0 +1,5 @@
+include dash_progress_bar/dash_progress_bar.min.js
+include dash_progress_bar/dash_progress_bar.dev.js
+include dash_progress_bar/metadata.json
+include dash_progress_bar/package.json
+include README.md
