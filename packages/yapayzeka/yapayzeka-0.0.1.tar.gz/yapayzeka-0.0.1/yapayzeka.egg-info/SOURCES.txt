@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+modeller/svchash3.pkl
+yapayzeka/__init__.py
+yapayzeka/otom.py
+yapayzeka/otomasyondb.py
+yapayzeka/yapayzekacore.py
+yapayzeka.egg-info/PKG-INFO
+yapayzeka.egg-info/SOURCES.txt
+yapayzeka.egg-info/dependency_links.txt
+yapayzeka.egg-info/top_level.txt
