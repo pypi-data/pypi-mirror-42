@@ -1,0 +1,11 @@
+README.md
+setup.py
+LightEDA.egg-info/PKG-INFO
+LightEDA.egg-info/SOURCES.txt
+LightEDA.egg-info/dependency_links.txt
+LightEDA.egg-info/top_level.txt
+lighteda/__init__.py
+lighteda.egg-info/PKG-INFO
+lighteda.egg-info/SOURCES.txt
+lighteda.egg-info/dependency_links.txt
+lighteda.egg-info/top_level.txt
