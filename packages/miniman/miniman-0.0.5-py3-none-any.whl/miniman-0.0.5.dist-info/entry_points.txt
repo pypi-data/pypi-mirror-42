@@ -1,0 +1,3 @@
+[console_scripts]
+min = min.cli.cli:min_cli
+

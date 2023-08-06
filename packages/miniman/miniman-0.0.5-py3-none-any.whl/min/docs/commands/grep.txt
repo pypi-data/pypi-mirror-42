@@ -1,0 +1,28 @@
+search files for string patterns
+
+EXAMPLES
+	grep "pattern" file.txt
+		print lines of file.txt that contain a string matching the "pattern"
+	grep -c "pattern" file.txt
+		don't print actual matches, instead print the number of matches found
+	grep -rin "pattern" .
+		recursive, case-insensitive, print line-numbers, all files in . and below
+	grep -rinv "pattern" .
+		like above, but instead invert the matching (print non-matches)
+	
+FLAGS
+	-r	go recursively through all subdirectories
+	-i	ignore case in the search pattern
+	-o	print only the matching string, not the entire line containing a match
+	-v	invert matching (print non-matches instead of matches)
+	-n	add line numbers to printed matches
+	-c	output the number of matches instead of actual matches
+	-A	print matches with Ai lines of context above
+	-B	print matches with Bi lines of context below
+	-C	print matches with Ci lines of context above and below
+	-E	interpret the search pattern as a full-fledged regexp
+		(e.g. regexp operators like () don't need to be escaped)
+	-F	interpret the search pattern as a plain string
+
+RELATED
+	ag
