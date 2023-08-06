@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: lesspass
+Version: 7.0.1
+Summary: LessPass stateless password generator
+Home-page: https://github.com/lesspass/lesspass
+Author: Guillaume Vincent
+Author-email: contact@lesspass.com
+License: GPL-3.0
+Description: LessPass is a stateless password manager.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
