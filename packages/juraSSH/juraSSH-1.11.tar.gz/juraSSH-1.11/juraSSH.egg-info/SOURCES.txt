@@ -1,0 +1,11 @@
+README.md
+setup.py
+juraSSH/__init__.py
+juraSSH/file_handler.py
+juraSSH/multipleCMDs.py
+juraSSH/oneCMD.py
+juraSSH/ssh.py
+juraSSH.egg-info/PKG-INFO
+juraSSH.egg-info/SOURCES.txt
+juraSSH.egg-info/dependency_links.txt
+juraSSH.egg-info/top_level.txt
