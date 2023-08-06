@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: Flask-LND
+Version: 0.0.2
+Summary: An LND gRPC interface for Flask
+Home-page: https://github.com/bitstein/flask-lnd
+Author: Michael Goldstein
+Author-email: michael@bitstein.org
+License: MIT
+Description: 
+        Flask-LND
+        -------------
+        
+        Flask-LND initializes an LND gRPC interface that can be used across your app
+        for communicating with a local or remote LND node.
+        
+Keywords: lnd grpc flask
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
