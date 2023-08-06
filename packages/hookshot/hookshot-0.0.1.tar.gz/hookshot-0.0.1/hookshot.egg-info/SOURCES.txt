@@ -1,0 +1,9 @@
+README.md
+setup.py
+hookshot/__init__.py
+hookshot/hookshot.py
+hookshot.egg-info/PKG-INFO
+hookshot.egg-info/SOURCES.txt
+hookshot.egg-info/dependency_links.txt
+hookshot.egg-info/entry_points.txt
+hookshot.egg-info/top_level.txt
