@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: fancyhands-v3
+Version: 3.0.1
+Summary: fancyhands.com python API
+Home-page: https://github.com/fancyhands/fancyhands-python-v3
+Author: Fancy Hands
+Author-email: api@fancyhands.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: httplib2
+Requires-Dist: oauth2
+
+UNKNOWN
+
+
