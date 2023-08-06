@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: env-file
+Version: 2019.2.25
+Summary: .env file handler. required for django, docker, etc
+Home-page: https://github.com/looking-for-a-job/env-file.py
+License: UNKNOWN
+Keywords: env
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: public
+Requires-Dist: setuptools
+Requires-Dist: values
+
+[![](https://img.shields.io/badge/OS-Unix-blue.svg?longCache=True)]()
+[![](https://img.shields.io/pypi/pyversions/env-file.svg?longCache=True)](https://pypi.org/project/env-file/)
+
+#### Install
+```bash
+$ [sudo] pip install env-file
+```
+
+#### Classes
+`env_file.EnvFile` - .env file class
+
+#### Functions
+function|`__doc__`
+-|-
+`env_file.get(path='.env')`|return a dictionary wit .env file variables
+`env_file.load(path='.env')`|set environment variables from .env file
+
+#### Examples
+##### Django example
+
+`.env`
+```bash
+DJANGO_SETTINGS_MODULE = project.settings
+DJANGO_SECRETKEY = somerandomkey
+DB_NAME=dbname
+DB_PASS=secret
+```
+
+`manage.py`
+```python
+import env_file
+import sys
+
+if __name__ == "__main__":
+    #  os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+    env_file.load()
+
+    from django.core.management import execute_from_command_line
+
+    execute_from_command_line(sys.argv)
+```
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
