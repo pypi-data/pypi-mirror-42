@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pyICMP
+Version: 1.0.0
+Summary: A ping client for python
+Home-page: https://github.com/AndersBallegaard/pyICMP
+Author: Anders Ballegaard
+Author-email: anderstb@hotmail.dk
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# pyICMP
+## A ping implementation in python using native CLI clients
+
+
+### Getting started
+
+Install pyICMP
+```bash
+pip3 install pyICMP
+```
+
+Ping a single address
+```python
+#!/usr/bin/python3
+
+#import pyICMP
+import pyICMP
+
+result = pyICMP.ping('1.1.1.1')
+
+if result:
+    print("OK")
+else:
+    print("fail")
+```
+
