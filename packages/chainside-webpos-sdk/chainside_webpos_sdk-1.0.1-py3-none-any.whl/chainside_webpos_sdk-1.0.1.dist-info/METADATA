@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: chainside-webpos-sdk
+Version: 1.0.1
+Summary: Python SDK to integrate ChainsidePay webPOS.
+Home-page: https://github.com/chainside/webpos-sdk-python
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: moveax-sdk-boilerplate
+
+UNKNOWN
+
+
