@@ -1,0 +1,9 @@
+
+cluster: null
+service: True # Marked True to help test in config builder
+taskDefinition: null
+desiredCount: null
+deploymentConfiguration:
+  maximumPercent: 200
+  minimumHealthyPercent: 80
+forceNewDeployment: True
