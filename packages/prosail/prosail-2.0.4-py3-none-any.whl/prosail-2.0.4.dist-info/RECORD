@@ -1,0 +1,13 @@
+prosail/FourSAIL.py,sha256=yvhfHnzauEDRJZAvyD_S9yGcu9Xm4Fbh90xRXfq4fZA,16912
+prosail/__init__.py,sha256=LTjxnnduu9cFEPlPJT6UZcdVRAS29iB8oNMJvttQ2Js,356
+prosail/light_spectra.txt,sha256=ZAu3jrxd3vVYOs6G3B934LRM0GOAmReuDH0A96yePAk,105050
+prosail/prospect5_spectra.txt,sha256=LyTEl4r5lrL4LUmk0ps06wNNLPiv6_WXlye4kEm4784,315150
+prosail/prospect_d.py,sha256=xoL9Wu4Kx7NiNBwapbFaqzWqP38m_BG3yx_gEfkgjnM,7081
+prosail/prospect_d_spectra.txt,sha256=5wOzRfCghggI4jDKCGn1sQjKERWrmVDJZRop_ucsR00,209107
+prosail/sail_model.py,sha256=hRC00u2B33N-91OdzOmg07F9kxgtpFms76lKePbz8Pg,10366
+prosail/soil_reflectance.txt,sha256=a_xGqvtVR6xtT_rMcqzCmiQrVU6TwQzwioUJ32AKetE,105050
+prosail/spectral_library.py,sha256=V5mj2I8x1Bd-Fx8iSWPJmqgNViynJPM9LGG-jmpxcDM,1865
+prosail-2.0.4.dist-info/METADATA,sha256=w3EMW4jOmWW9LzDLZogMt-9PiTe6YHVodvWC75AW3D0,10123
+prosail-2.0.4.dist-info/RECORD,,
+prosail-2.0.4.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+prosail-2.0.4.dist-info/top_level.txt,sha256=dMHHe-NM313A_bBi14lizCXwyhMlkgsyk9M3GIVf6MI,8
