@@ -1,0 +1,9 @@
+README.md
+setup.py
+libscrna/__init__.py
+libscrna/libscrna.py
+libscrna.egg-info/PKG-INFO
+libscrna.egg-info/SOURCES.txt
+libscrna.egg-info/dependency_links.txt
+libscrna.egg-info/requires.txt
+libscrna.egg-info/top_level.txt
