@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: ppt
+Version: 0.0.2
+Summary: The Python Performance Tuner
+Home-page: http://www.seba1511.com
+Author: Seb Arnold
+Author-email: smr.arnold@gmail.com
+License: License :: OSI Approved :: Apache Software License
+Download-URL: https://github.com/seba-1511/ppt/archive/0.0.2.zip
+Description: # PPT - The Python Performance Tuner
+        
+        `ppt` is a tool for tuning the performance of Python programs.
+        
+Platform: UNKNOWN
