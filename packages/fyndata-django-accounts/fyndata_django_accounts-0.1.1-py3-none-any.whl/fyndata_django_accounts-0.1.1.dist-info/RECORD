@@ -1,0 +1,16 @@
+fd_dj_accounts/__init__.py,sha256=MaE8vz25d_YT5VgaUuEwuJfYunvOG2lnCE477XaM3YQ,3898
+fd_dj_accounts/apps.py,sha256=lyX-hqI7iHQYVLKgCHQfxfwYzGpMxpmK2LNhGyyHUjo,1189
+fd_dj_accounts/auth_backends.py,sha256=jKJOgsxArnoB4LSwnk1cFasAfAyV1bsZ4qqNj7fogWA,5925
+fd_dj_accounts/base_models.py,sha256=I7gdwmgcs_n7i8QpAvMJXg0kIzEjJeMPVB0wGVBnv1I,7747
+fd_dj_accounts/models.py,sha256=iwDw9j5WLAZOkpB3FHiBsgE9t6dVYxRLEY-JLWft8kY,4136
+fd_dj_accounts/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fd_dj_accounts/urls.py,sha256=DQNcU6EZe3cfyNyz10OXJentu5oy4LgFeuFjVZXWjsU,804
+fd_dj_accounts/views.py,sha256=iUHiaD9RBMArMLbROdt0p4LYFTU5VRorMP5MLkWSRDc,460
+fd_dj_accounts/migrations/0001_initial.py,sha256=Bv_YcxDb8lKdynJd-6gdBklYoK-euAalwFjICiWSIfg,3549
+fd_dj_accounts/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fyndata_django_accounts-0.1.1.dist-info/AUTHORS.rst,sha256=ojwqdVRQtaFIHGZ7Eoa-u8etSvZTk1wvLtQb11A7BmE,166
+fyndata_django_accounts-0.1.1.dist-info/LICENSE,sha256=T_4XWYEi4AKL8z4B5i4Tr-ogcutvPWvq_RDGxYYtl-A,1078
+fyndata_django_accounts-0.1.1.dist-info/METADATA,sha256=_drqMnq1iFHMB_ODU-dfdWg1gUEAJvSrINW4w0p-lvQ,3658
+fyndata_django_accounts-0.1.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+fyndata_django_accounts-0.1.1.dist-info/top_level.txt,sha256=oxwZtlw6H9hYh07j35oqWsjcwHfA73EOqcYbHPHIqzo,15
+fyndata_django_accounts-0.1.1.dist-info/RECORD,,
