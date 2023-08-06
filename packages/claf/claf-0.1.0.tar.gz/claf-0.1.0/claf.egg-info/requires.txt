@@ -1,0 +1,16 @@
+numpy
+torch>=0.4.1
+konlpy
+nltk
+spacy
+babel
+records
+h5py
+jsbeautifier
+overrides
+requests
+gensim
+tqdm
+tensorboardX
+pycm
+seqeval
