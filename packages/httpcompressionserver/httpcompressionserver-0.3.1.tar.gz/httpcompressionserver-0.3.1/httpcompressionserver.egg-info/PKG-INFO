@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: httpcompressionserver
+Version: 0.3.1
+Summary: Add support of HTTP compression to standard library module http.server
+Home-page: https://github.com/PierreQuentel/httpcompressionserver
+Author: Pierre Quentel
+Author-email: quentel.pierre@orange.fr
+License: BSD
+Description: This module adds support of HTTP compression (eg gzip) to the standard library
+        module http.server.
+        
+        Usage::
+        
+            python -m httpcompressionserver [-h] [--bind ADDRESS] [port]
+        
+            positional arguments:
+              port                  Specify alternate port [default: 8000]
+        
+            optional arguments:
+              -h, --help            show this help message and exit
+              --bind ADDRESS, -b ADDRESS
+                                    Specify alternate bind address [default: all
+                                    interfaces]
+        
+        
+Keywords: Python HTTP server compression
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
