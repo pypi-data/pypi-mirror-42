@@ -1,0 +1,2 @@
+paramiko==2.2.4
+django==1.11.19
