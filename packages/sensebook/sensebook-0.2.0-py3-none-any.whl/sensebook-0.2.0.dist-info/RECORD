@@ -1,0 +1,9 @@
+sensebook/__init__.py,sha256=uoqv6GsZs4Wu-Hmco2emoEES-F2naTP5qGD0joTJfDc,405
+sensebook/_abc.py,sha256=xDuRSYNSralSCSpx17xsZtq199wHzJWf4tPqxqtwvPE,1273
+sensebook/_login.py,sha256=JzAYUSCtzn1pbXToDPglRhvyan5OG-0GR-Kg-uRs7Zg,1587
+sensebook/_pull_handler.py,sha256=gHRZ2XyGhVIPS7TtHQG-HNDh5DUVxWGh97ErVl7oLE8,7574
+sensebook/_utils.py,sha256=LE4OURnUj8CGah_WOK0-IYXFZTMjD-LcfwCi2tmmhcw,1896
+sensebook-0.2.0.dist-info/LICENSE.txt,sha256=Z9OcC1ACLCKV6P3JUa65eXyJUgkV2L6iuWox6Xv2lNY,1513
+sensebook-0.2.0.dist-info/WHEEL,sha256=JXk7EE_UnY8Q4113Zu8f6SlrMizLH61VvvtIzqzkSKE,79
+sensebook-0.2.0.dist-info/METADATA,sha256=tn53MD5S0Dx5dorZfRmGnrrL80ol_Zz9mfyjxkTTfR8,3791
+sensebook-0.2.0.dist-info/RECORD,,
