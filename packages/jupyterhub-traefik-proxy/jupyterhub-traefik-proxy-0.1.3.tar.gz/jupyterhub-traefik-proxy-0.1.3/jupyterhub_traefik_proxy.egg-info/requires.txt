@@ -1,0 +1,5 @@
+jupyterhub>=0.9
+etcd3
+passlib
+toml
+escapism
