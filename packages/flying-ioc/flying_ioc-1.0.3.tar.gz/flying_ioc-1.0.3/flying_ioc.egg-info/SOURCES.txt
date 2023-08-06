@@ -1,0 +1,14 @@
+README.md
+setup.py
+flying_ioc/__init__.py
+flying_ioc/base_container.py
+flying_ioc/class_container.py
+flying_ioc/factory_container.py
+flying_ioc/ioc_decorator.py
+flying_ioc/ioc_manager.py
+flying_ioc/singleton_container.py
+flying_ioc/value_container.py
+flying_ioc.egg-info/PKG-INFO
+flying_ioc.egg-info/SOURCES.txt
+flying_ioc.egg-info/dependency_links.txt
+flying_ioc.egg-info/top_level.txt
