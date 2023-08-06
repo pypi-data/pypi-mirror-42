@@ -1,0 +1,4 @@
+soupsieve==1.7.3
+beautifulsoup4==4.7.1
+requests
+urllib3
