@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: srrpy
+Version: 0.7
+Summary: Simple Remote Run Python/Script
+Home-page: https://github.com/heysion/srrpy
+Author: Heysion
+Author-email: heysion@priv.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Jinja2 (==2.10)
+Requires-Dist: redis (==3.2.0)
+
+UNKNOWN
+
+
