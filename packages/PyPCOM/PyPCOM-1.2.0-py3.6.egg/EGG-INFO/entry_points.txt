@@ -1,0 +1,3 @@
+[pytest11]
+pypcom_state_repr = pypcom.pytest_plugin
+
