@@ -1,0 +1,7 @@
+[console_scripts]
+log.critical = logalpha.scripts:critical
+log.debug = logalpha.scripts:debug
+log.error = logalpha.scripts:error
+log.info = logalpha.scripts:info
+log.warning = logalpha.scripts:warning
+
