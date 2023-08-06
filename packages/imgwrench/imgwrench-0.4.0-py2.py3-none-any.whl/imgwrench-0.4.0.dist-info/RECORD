@@ -1,0 +1,14 @@
+imgwrench/__init__.py,sha256=AREONtURFBN3d43dXnF4Tq5OwcQRIRqaoL7SY0lwzFU,4003
+imgwrench/__main__.py,sha256=d39MKzphObTxujlUeBx6Li5JQYiAv7ap8JaMlvkTQ64,135
+imgwrench/colorfix.py,sha256=6Ox-zNE-gI7TyFC19CgpQU2GM6OY05AV4z25E0tQkV8,2141
+imgwrench/crop.py,sha256=IxnVZkRspTbLHbTOcc1sig-SvQcQfcXyy6DzqaX7EXU,1709
+imgwrench/resize.py,sha256=hfsAWC6wVjTdRo3B-ll6cBZTQUZIthYAdF17llG0eZo,858
+imgwrench/save.py,sha256=-kwNqwGuX9szzaCcIdAHVV33n8sn8H-BWc_2AghQQGQ,380
+imgwrench/stack.py,sha256=G_QP6YYth1PiUfnf5Q3DbtqwMTc5-4zjjhxo6BPc7q4,1684
+imgwrench-0.4.0.dist-info/AUTHORS.rst,sha256=x-L3MXM_LYF8CbRqzaQQ8Xkj_Wv4q21d3A3VSABnTUo,155
+imgwrench-0.4.0.dist-info/LICENSE,sha256=CwkJ_bq6cbb4h1NgVy92RgqJRYbWBnRUs1ELM7wwZiI,1066
+imgwrench-0.4.0.dist-info/METADATA,sha256=5TyJUAo7NnJuew2DL2Q0qjEGRnPhONk8RXo0FQhid58,4093
+imgwrench-0.4.0.dist-info/WHEEL,sha256=8T8fxefr_r-A79qbOJ9d_AaEgkpCGmEPHc-gpCq5BRg,110
+imgwrench-0.4.0.dist-info/entry_points.txt,sha256=4WApUJXloPU5MLcrgKeCgAkG-5iSkms5D-QxyIR2das,55
+imgwrench-0.4.0.dist-info/top_level.txt,sha256=nUnzKxq0w395BKIRwSjYVtkuV3M_rUkTz3hoGLzF7UM,10
+imgwrench-0.4.0.dist-info/RECORD,,
