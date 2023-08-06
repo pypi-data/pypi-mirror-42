@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: FastSent
+Version: 0.1.0
+Summary: FastSent is one of the solution for Sentiment classification using Recurrent Neural Networks. 
+Home-page: UNKNOWN
+Author: Pranjal-Vijay
+Author-email: pranjalvijaykota@gmail.com
+License: UNKNOWN
+Description: FastSent is a sentiment classification package for the input text.FastSent enables sequential model capabilities to enhance the sentiment classification of input text.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
