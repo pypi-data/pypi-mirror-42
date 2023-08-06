@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+test_requirements.txt
+atomic_hpc.egg-info/PKG-INFO
+atomic_hpc.egg-info/SOURCES.txt
+atomic_hpc.egg-info/dependency_links.txt
+atomic_hpc.egg-info/requires.txt
+atomic_hpc.egg-info/top_level.txt
+atomic_hpc.egg-info/zip-safe
+bin/retrieve_config
+bin/run_config
