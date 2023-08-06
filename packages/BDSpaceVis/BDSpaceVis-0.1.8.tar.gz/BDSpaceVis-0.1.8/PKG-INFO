@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: BDSpaceVis
+Version: 0.1.8
+Summary: Mayavi based visualisation tools for BDSpace package
+Home-page: https://github.com/bond-anton/BDSpaceVis
+Author: Anton Bondarenko
+Author-email: bond.anton@gmail.com
+License: Apache Software License
+Description: # BDSpaceVis
+        
+        Visualization tools for [BDSpace](https://github.com/bond-anton/BDSpace) package based on Mayavi.
+        
+        ## Installation
+        
+        In the root directory of BDSpaceVis distribution run
+        ```shell
+        python setup.py install
+        ```
+        ## Usage
+        
+        Please see the demo directory for the usage examples.
+        
+        ## License
+        
+        BDSpaceVis is free open source software licensed under Apache license version 2.0
+        
+Keywords: visualization 3D Space Mayavi
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
