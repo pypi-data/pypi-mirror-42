@@ -1,0 +1,34 @@
+Metadata-Version: 1.1
+Name: ablk
+Version: 0.2
+Summary: Terminal image viewer
+Home-page: https://github.com/moertle/ablk
+Author: Matthew Oertle
+Author-email: moertle@gmail.com
+License: MIT
+Description: ====
+        ablk
+        ====
+        Terminal image viewer.
+        ----------------------
+        Matthew Oertle <moertle@gmail.com>
+        
+        ablk is a image viewer that uses the UTF-8 block character and 24-bit ANSI escape sequences to render an image in the terminal window. Useful over SSH into a remote machine to get an idea of what an image file looks like.
+        
+        usage: ablk [-h] [--delay DELAY] [--no-name] images [images ...]
+        
+        positional arguments:
+          images                Image files
+        
+        optional arguments:
+          -h, --help            show this help message and exit
+          --delay DELAY, -d DELAY
+                                Delay between each image
+          --no-name, -n         Show filename of image
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Multimedia :: Graphics :: Viewers
