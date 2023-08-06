@@ -1,0 +1,13 @@
+SpatialKappa/__init__.py,sha256=BXP-sRqdPdTu3iLxbIyIwUnyAltUFeygCMN7lateTeM,6046
+SpatialKappa/share/SpatialKappa/SpatialKappa-v2.1.1.jar,sha256=IyI6v-WZjMy7eCCAVwdpvDYW-iDRfG_yEb3PGajd5lM,3991404
+SpatialKappa/share/SpatialKappa/SpatialKappa-v2.1.2.jar,sha256=jVDLdcuHoLncwIAEoTRuyNAlsl8VgHrafbbsXpEVwxw,3988694
+SpatialKappa/share/SpatialKappa/SpatialKappa-v2.1.3.jar,sha256=ReiYMdSbnP6lYHk7hu8h3APA-vSR1js0LMGjD1mJrxA,3979234
+SpatialKappa/share/SpatialKappa/ant-antlr-3.2.jar,sha256=4XP2YZ04XZCS0J2HNp7JdXvHOP8sKAlbYeqE1iSBnOg,2443703
+SpatialKappa/tests/__init__.py,sha256=iN4fmChJ-Pfaoztpw4fGzcFDdq1AZWkcef-_aPSSmj8,7844
+SpatialKappa/tests/caPump.ka,sha256=PcRe6PXFVMTEHM7WDU1qbDt7aqD-PcP4xYf-9Lnl4ZU,326
+SpatialKappa/tests/no_init.ka,sha256=rkDcXnvBTm_U7u28xPdFdDpdT6tf4evqoEt_ojchtI4,31
+SpatialKappa-2.1.3.dist-info/METADATA,sha256=r4L_1JdGoTxl2vu2fcRRce2rXa_F97DrEmOKf6f-8_g,2349
+SpatialKappa-2.1.3.dist-info/RECORD,,
+SpatialKappa-2.1.3.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+SpatialKappa-2.1.3.dist-info/top_level.txt,sha256=30nhAOLuFhps6a3bKT6OiD_-1Kakgbw1Sn-hoU1pyPk,13
+tests/__init__.py,sha256=D7a2euJ0yGXJQP7TUZEX0RSWL8RTriiNrw_qdAndgwI,4220
