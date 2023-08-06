@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+pymy/__init__.py
+pymy/create.py
+pymy/execute.py
+pymy/mysql_credentials.py
+pymy/send.py
+pymy.egg-info/PKG-INFO
+pymy.egg-info/SOURCES.txt
+pymy.egg-info/dependency_links.txt
+pymy.egg-info/requires.txt
+pymy.egg-info/top_level.txt
