@@ -1,0 +1,16 @@
+click<8,>=7
+construct>=2.9
+ecdsa>=0.9
+libusb1>=1.6.4
+mnemonic>=0.17
+pyblake2>=0.9.3
+requests>=2.4.0
+setuptools>=19.0
+typing_extensions>=3.6
+
+[ethereum]
+ethjsonrpc>=0.3.0
+rlp>=0.4.4
+
+[hidapi]
+hidapi>=0.7.99.post20
