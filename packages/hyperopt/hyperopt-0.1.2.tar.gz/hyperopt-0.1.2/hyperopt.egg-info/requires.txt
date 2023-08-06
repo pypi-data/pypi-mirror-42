@@ -1,0 +1,10 @@
+numpy
+scipy
+pymongo
+six
+networkx
+future
+tqdm
+
+[dill]
+dill
