@@ -1,0 +1,21 @@
+Metadata-Version: 1.2
+Name: cryptonita
+Version: 0.2.0
+Summary: Cryptanalysis swiss army knife
+Home-page: UNKNOWN
+Author: Di Paola Martin
+Author-email: use-github-issues@example.com
+License: GNU GPLv3
+Description: Cryptanalysis swiss army knife
+Keywords: crypto cryptography crypto-analysis
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Security
+Classifier: Topic :: Security :: Cryptography
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.3
