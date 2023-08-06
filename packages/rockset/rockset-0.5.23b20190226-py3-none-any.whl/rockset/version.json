@@ -1,0 +1,11 @@
+{
+    "format": "v1",
+    "major": "0",
+    "minor": "5",
+    "patch": "23",
+    "pre_release": ["beta", "20190226"],
+    "build_info": ["f5c15eeb93"],
+    "version": "0.5.23-beta.20190226+f5c15eeb93",
+    "dockertag": "0.5.23-beta.20190226-f5c15eeb93",
+    "python": "0.5.23b20190226"
+}
