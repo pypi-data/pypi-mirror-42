@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+Pipfile
+Pipfile.lock
+README.md
+setup.py
+mwman/__init__.py
+mwman/__main__.py
+mwman/application.py
+mwman.egg-info/PKG-INFO
+mwman.egg-info/SOURCES.txt
+mwman.egg-info/dependency_links.txt
+mwman.egg-info/entry_points.txt
+mwman.egg-info/requires.txt
+mwman.egg-info/top_level.txt

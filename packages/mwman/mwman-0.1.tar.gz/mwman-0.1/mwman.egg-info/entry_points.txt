@@ -1,0 +1,3 @@
+[console_scripts]
+mwman = mwman.application:main
+
