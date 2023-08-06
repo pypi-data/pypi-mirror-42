@@ -1,0 +1,4 @@
+
+      [console_scripts]
+      doku = doku.main:cli
+      
