@@ -1,0 +1,1 @@
+me = "example_pkg"
