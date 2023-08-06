@@ -1,0 +1,3 @@
+[console_scripts]
+a-john-shots = a_john_shots:command_line
+

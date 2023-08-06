@@ -1,0 +1,12 @@
+README.rst
+setup.py
+a_john_shots/__init__.py
+a_john_shots/core.py
+a_john_shots/defaults.py
+a_john_shots/hash.py
+a_john_shots/helpers.py
+a_john_shots.egg-info/PKG-INFO
+a_john_shots.egg-info/SOURCES.txt
+a_john_shots.egg-info/dependency_links.txt
+a_john_shots.egg-info/entry_points.txt
+a_john_shots.egg-info/top_level.txt
