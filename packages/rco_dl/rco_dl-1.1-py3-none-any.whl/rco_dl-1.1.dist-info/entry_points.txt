@@ -1,0 +1,3 @@
+[console_scripts]
+rco_dl=rco_dl:main
+
