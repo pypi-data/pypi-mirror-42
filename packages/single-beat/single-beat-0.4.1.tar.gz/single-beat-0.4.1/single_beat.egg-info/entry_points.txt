@@ -1,0 +1,4 @@
+[console_scripts]
+single-beat = singlebeat.beat:run_process
+single-beat-cli = singlebeat.cli:main
+
