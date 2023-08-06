@@ -1,0 +1,17 @@
+README.md
+setup.py
+pr_publisher/__init__.py
+pr_publisher/cli.py
+pr_publisher/entry.py
+pr_publisher/main.py
+pr_publisher.egg-info/PKG-INFO
+pr_publisher.egg-info/SOURCES.txt
+pr_publisher.egg-info/dependency_links.txt
+pr_publisher.egg-info/entry_points.txt
+pr_publisher.egg-info/requires.txt
+pr_publisher.egg-info/top_level.txt
+pr_publisher/publishers/__init__.py
+pr_publisher/publishers/base.py
+pr_publisher/publishers/slack.py
+pr_publisher/publishers/table.py
+tests/__init__.py

@@ -1,0 +1,3 @@
+[console_scripts]
+pr-publisher = pr_publisher.cli:main
+
