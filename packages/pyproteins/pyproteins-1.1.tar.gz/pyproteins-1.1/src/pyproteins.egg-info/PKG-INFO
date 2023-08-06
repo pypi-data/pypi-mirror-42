@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyproteins
+Version: 1.1
+Summary: Toolbox to manipulate protein sequence data
+Home-page: https://github.com/glaunay/pyproteins
+Author: Guillaume Launay
+Author-email: pitooon@gmail.com
+License: BSD
+Download-URL: https://github.com/glaunay/pyproteins/tarball/1.0
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Keywords: protein,sequence
+Platform: UNKNOWN
