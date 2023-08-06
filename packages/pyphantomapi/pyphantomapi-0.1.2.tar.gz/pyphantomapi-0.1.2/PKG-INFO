@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: pyphantomapi
+Version: 0.1.2
+Summary: Python Wrapper for the Splunk Phantom API
+Home-page: https://github.com/ryanplasma/pyphantomapi
+Author: Ryan Plas
+Author-email: ryan@wordplas.com
+License: MIT
+Download-URL: https://github.com/ryanplasma/pyphantomapi/archive/0.1.2.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
