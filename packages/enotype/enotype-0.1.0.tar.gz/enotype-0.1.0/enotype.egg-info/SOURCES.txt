@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+enotype/__init__.py
+enotype/de.py
+enotype/en.py
+enotype/es.py
+enotype.egg-info/PKG-INFO
+enotype.egg-info/SOURCES.txt
+enotype.egg-info/dependency_links.txt
+enotype.egg-info/not-zip-safe
+enotype.egg-info/top_level.txt
