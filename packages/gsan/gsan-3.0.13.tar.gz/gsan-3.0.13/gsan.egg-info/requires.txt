@@ -1,0 +1,8 @@
+colorama
+pyperclip
+termcolor
+tldextract
+tqdm
+pyopenssl
+pyasn1
+ndg-httpsclient
