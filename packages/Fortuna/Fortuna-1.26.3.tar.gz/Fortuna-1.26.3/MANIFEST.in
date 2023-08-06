@@ -1,0 +1,4 @@
+include Fortuna.hpp
+include Fortuna.pyx
+include fortuna_extras/README.md
+include fortuna_extras/LICENSE
