@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: h2o4gpu
+Version: 0.2.0
+Summary: H2O.ai GPU Edition
+Home-page: http://h2o.ai
+Author: H2O.ai, Inc.
+Author-email: h2ostream@googlegroups.com
+License: Apache v2.0
+Platform: UNKNOWN
+Requires-Dist: pandas (>=0.22.0)
+Requires-Dist: numpy (>=1.14.0)
+Requires-Dist: python-dateutil (>=2.6.1)
+Requires-Dist: pytz (>=2017.3)
+Requires-Dist: scipy (>=1.0.0)
+Requires-Dist: tabulate (>=0.8.2)
+Requires-Dist: future (>=0.16.0)
+Requires-Dist: psutil (>=5.4.2)
+Requires-Dist: scikit-learn (>=0.19.1)
+Requires-Dist: sklearn (>=0.0)
+
+UNKNOWN
+
+
