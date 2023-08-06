@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cloudperf
+Version: 0.0.2
+Summary: Relative performance index for cloud services
+Home-page: https://github.com/bra-fsn/cloudperf
+Author: NAGY, Attila
+Author-email: bra@fsn.hu
+License: UNKNOWN
+Description: # cloudperf
+        
+        https://bra-fsn.github.io/cloudperf/prices.html
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
