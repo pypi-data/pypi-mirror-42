@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: physionet
+Version: 0.0.0
+Summary: The PhysioNet Python Package
+Home-page: https://github.com/MIT-LCP/physionet-python
+Author: The Laboratory for Computational Physiology
+Author-email: support@physionet.org
+License: MIT
+Description: # The PhysioNet Python Package
+        
+        Tools for searching, managing, and downloading PhysioNet content.
+        
+Keywords: PhysioNet clinical waveform data
+Platform: UNKNOWN
