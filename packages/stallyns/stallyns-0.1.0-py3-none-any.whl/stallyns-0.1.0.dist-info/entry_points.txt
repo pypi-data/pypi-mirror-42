@@ -1,0 +1,3 @@
+[console_scripts]
+stallyns = stallyns.stallyns:main
+
