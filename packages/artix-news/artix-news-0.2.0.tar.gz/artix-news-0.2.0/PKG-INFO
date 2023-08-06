@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: artix-news
+Version: 0.2.0
+Summary: Artix News scraper
+Home-page: https://github.com/ryukinix/artix-news
+Author: Manoel Vilela
+Author-email: manoel_vilela@engineer.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/ryukinix/artix-news/issues
+Project-URL: Funding, https://donate.lerax.me
+Project-URL: Say Thanks!, http://saythanks.io/to/example
+Project-URL: Source, https://github.com/ryukinix/artix-news/
+Description: # artix-news
+        Artix's news CLI. Give to you a fast summary of the new artix changes
+        
+        ![demo](https://i.imgur.com/HEiOr3n.png)
+        
+        
+        # Install && Usage
+        
+        ``` bash
+        pip install --user artix-news
+        ```
+        
+        If installed with pip just call as `artix-news` from command-line.
+        
+        
+        # Author
+        Manoel Vilela
+        
+Keywords: scraping artix news setuptools development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.5, <4
+Description-Content-Type: text/markdown

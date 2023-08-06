@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.md
+artix_news.py
+setup.py
+artix_news.egg-info/PKG-INFO
+artix_news.egg-info/SOURCES.txt
+artix_news.egg-info/dependency_links.txt
+artix_news.egg-info/entry_points.txt
+artix_news.egg-info/top_level.txt
