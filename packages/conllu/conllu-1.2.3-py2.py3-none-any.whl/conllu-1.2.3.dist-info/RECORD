@@ -1,0 +1,9 @@
+conllu/__init__.py,sha256=jHzGT3kK7lwU2NevPrud0Y-zRKU4qZkJQCu4aHK9q90,978
+conllu/compat.py,sha256=pM2XOA29lK906kzXZuZw4VQjbuN9JZRZKmQLTTti-wA,646
+conllu/models.py,sha256=8sFzLFOikm5beUVcbTOE7mN8MNqY8GfPfvJPp9AUTpw,4551
+conllu/parser.py,sha256=jR_hyEu6MtuazC6Bx9AmeVii1IoQwFBjIQjyE_gjg1o,5697
+conllu-1.2.3.dist-info/LICENSE.txt,sha256=dzlTglzOalzgl4PTIdUqswS-F7d_QUIXYVpPVCAs2xY,1082
+conllu-1.2.3.dist-info/METADATA,sha256=yDlvko_C31xafDl284n0eEk8uYcHki1kmuLM7RTyxV4,9295
+conllu-1.2.3.dist-info/RECORD,,
+conllu-1.2.3.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+conllu-1.2.3.dist-info/top_level.txt,sha256=DQrKsr-voODlE3ln3nNNKw1nYQRkSGAONmQuQCAzocg,7
