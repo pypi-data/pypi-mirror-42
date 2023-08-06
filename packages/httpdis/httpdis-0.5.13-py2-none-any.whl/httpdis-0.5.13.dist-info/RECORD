@@ -1,0 +1,10 @@
+httpdis/__init__.py,sha256=da1PTClDMl-IBkrSvq6JC1lnS-K_BASzCvxVhNxN5Ls,13
+httpdis/httpdis.py,sha256=hLOEoMyrBsngcmksbWqTdkh52-VD0HT95-P0kpoUT-8,37006
+httpdis/ext/__init__.py,sha256=da1PTClDMl-IBkrSvq6JC1lnS-K_BASzCvxVhNxN5Ls,13
+httpdis/ext/httpdis_json.py,sha256=UOg5Rh25zqO1-J-OQlZv0fO-ebEjUHHEdZIJJ61fcKw,2622
+httpdis-0.5.13.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+httpdis-0.5.13.dist-info/METADATA,sha256=x3nQH6L8JvpkibOQf5nDAaOdXyYgkX_2VfnGCv_5Izs,417
+httpdis-0.5.13.dist-info/RECORD,,
+httpdis-0.5.13.dist-info/WHEEL,sha256=hZvi-8L6mc2COqhOUWREM_h2lvnJbaHycZt8eohtmso,92
+httpdis-0.5.13.dist-info/metadata.json,sha256=F81CHXXbXcFXxbZYz52iRnDJHTMz6FzVt1dyfe1tohI,591
+httpdis-0.5.13.dist-info/top_level.txt,sha256=jfmkI_-A3rOA6zTyJddcsCXJpqIEqmX0q0D7uKvie9k,8
