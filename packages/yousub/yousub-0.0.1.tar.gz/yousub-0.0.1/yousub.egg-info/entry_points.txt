@@ -1,0 +1,3 @@
+[console_scripts]
+yousub = yousub.__init__:main
+

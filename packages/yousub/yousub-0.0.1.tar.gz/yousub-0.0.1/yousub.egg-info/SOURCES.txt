@@ -1,0 +1,12 @@
+README.md
+setup.py
+yousub/__init__.py
+yousub/__main__.py
+yousub/models.py
+yousub/options.py
+yousub/tools.py
+yousub.egg-info/PKG-INFO
+yousub.egg-info/SOURCES.txt
+yousub.egg-info/dependency_links.txt
+yousub.egg-info/entry_points.txt
+yousub.egg-info/top_level.txt
