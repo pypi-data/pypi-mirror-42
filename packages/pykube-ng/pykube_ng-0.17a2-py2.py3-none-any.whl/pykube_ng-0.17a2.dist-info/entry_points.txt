@@ -1,0 +1,3 @@
+[httpie.plugins.transport.v1]
+httpie_pykube = pykube.contrib.httpie_plugin:PyKubeTransportPlugin
+
