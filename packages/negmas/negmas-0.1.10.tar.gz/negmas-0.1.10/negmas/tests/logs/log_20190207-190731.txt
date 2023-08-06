@@ -1,0 +1,22 @@
+2019-02-07 19:07:32,832 - DEBUG - section breaches added
+2019-02-07 19:07:32,833 - DEBUG - section stats added
+2019-02-07 19:07:32,833 - DEBUG - section settings added
+2019-02-07 19:07:32,833 - INFO - 0/10 [4e+01]: DummyWorld_0212ada7-6f71-44e2-809b-1ed6c1bcfa1e: World Created
+2019-02-07 19:07:32,833 - INFO - 0/10 [4e+01]: A1 joined
+2019-02-07 19:07:32,834 - INFO - 0/10 [4e+01]: A2 joined
+2019-02-07 19:07:32,834 - INFO - 0/10 [0.1]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,834 - INFO - 1/10 [0.2]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,834 - INFO - 2/10 [0.3]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,834 - INFO - 2/10 [0.3]: A1 requested None[None] with ['A2', 'A1'] (ID 9f34ad40-d6ce-4a24-afd9-3dc6c9f4580d)
+2019-02-07 19:07:32,836 - INFO - 2/10 [0.3]: A1 request was accepted
+2019-02-07 19:07:32,836 - INFO - 3/10 [0.4]: 1 Negotiations/1 _entities
+2019-02-07 19:07:32,855 - DEBUG - 3/10 [0.4]: Contract [signed]: ['A2', 'A1'] > {'EwL56nGisiWgNZq6': 0} on annotation 
+2019-02-07 19:07:32,855 - INFO - 4/10 [0.5]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,855 - INFO - 4/10 [0.5]: A2 requested None[None] with ['A1', 'A2'] (ID 77d7d044-e941-4ad3-93d1-9f9e447874f0)
+2019-02-07 19:07:32,856 - INFO - 4/10 [0.5]: A2 request was accepted
+2019-02-07 19:07:32,856 - INFO - 5/10 [0.6]: 1 Negotiations/1 _entities
+2019-02-07 19:07:32,874 - DEBUG - 5/10 [0.6]: Contract [signed]: ['A1', 'A2'] > {'MZyuKpslm0lcNQqE': 0} on annotation 
+2019-02-07 19:07:32,874 - INFO - 6/10 [0.7]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,874 - INFO - 7/10 [0.8]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,874 - INFO - 8/10 [0.9]: 0 Negotiations/1 _entities
+2019-02-07 19:07:32,874 - INFO - 9/10 [1e+00]: 0 Negotiations/1 _entities
