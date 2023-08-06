@@ -1,0 +1,15 @@
+README.md
+setup.py
+sslclient/__init__.py
+sslclient/messages_robocup_ssl_detection_pb2.py
+sslclient/messages_robocup_ssl_geometry_legacy_pb2.py
+sslclient/messages_robocup_ssl_geometry_pb2.py
+sslclient/messages_robocup_ssl_refbox_log_pb2.py
+sslclient/messages_robocup_ssl_wrapper_legacy_pb2.py
+sslclient/messages_robocup_ssl_wrapper_pb2.py
+sslclient/sslclient.py
+sslclient.egg-info/PKG-INFO
+sslclient.egg-info/SOURCES.txt
+sslclient.egg-info/dependency_links.txt
+sslclient.egg-info/requires.txt
+sslclient.egg-info/top_level.txt
