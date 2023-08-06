@@ -1,0 +1,10 @@
+numpy
+pymc3
+pandas
+tables
+click
+tqdm
+matplotlib
+scipy
+seaborn
+scikit-learn
