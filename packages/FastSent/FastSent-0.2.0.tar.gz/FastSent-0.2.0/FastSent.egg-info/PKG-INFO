@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: FastSent
+Version: 0.2.0
+Summary: FastSent is one of the solution for Sentiment classification using Recurrent Neural Networks(GRU)
+Home-page: UNKNOWN
+Author: Pranjal-Vijay
+Author-email: pranjalvijaykota@gmail.com
+License: UNKNOWN
+Description: FastSent is Sentiment Classification python library. It uses Sequential model for Sentiment classfication. FastSent is developed using GRU(Gated Recurrent Unit) model.
+        
+        Requirement
+        ------------
+        
+        FastSent support Python 3.6 or newer.
+        
+        Installation
+        ------------
+        
+            pip install FastSent
+        
+        Example
+        -------------
+        
+        This package is being developed for sentiment classfication using Sequential model GRU(Gated Recurrent Unit).
+        
+        	data = 'Sample.csv'
+        	labels = 'sentiment'
+        	text = 'content'
+        
+        	f = FastSent()
+        	X_train, X_test, y_train, y_test = f.train_test_split(data, labels, text)
+        	trained_model = f.fit_train(X_train, y_train, 500, 50, 7789, 5, 4)
+        	prediction = f.predict(trained_model, X_test, y_train, 4)
+        
+        
+        
+        
+        where ``sample`` is a training file containing labels and text.
+        
+        References
+        ----------
+        
+        DataSet Information
+        ~~~~~~~~~~~~~~~~~~~
+        
+        [1] Sample DataSet is being used for research purpose from  `*data.world* <https://data.world/crowdflower/sentiment-analysis-in-text>`.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
