@@ -1,0 +1,3 @@
+[console_scripts]
+bizarro = bizarro_lib.__init__:create_app
+
