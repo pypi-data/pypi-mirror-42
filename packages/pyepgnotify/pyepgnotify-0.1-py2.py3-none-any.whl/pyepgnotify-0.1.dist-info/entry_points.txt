@@ -1,0 +1,3 @@
+[console_scripts]
+pyepgnotify = pyepgnotify.epgnotify:main
+
