@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+requirements-dev.txt
+requirements.txt
+setup.cfg
+setup.py
+versioneer.py
+nbrr/__init__.py
+nbrr/_version.py
+nbrr/nbrr.py
+nbrr.egg-info/PKG-INFO
+nbrr.egg-info/SOURCES.txt
+nbrr.egg-info/dependency_links.txt
+nbrr.egg-info/entry_points.txt
+nbrr.egg-info/requires.txt
+nbrr.egg-info/top_level.txt

@@ -1,0 +1,7 @@
+depfinder
+easyargs
+gitpython
+ruamel.yaml
+
+[testing]
+pytest

@@ -1,0 +1,3 @@
+[console_scripts]
+nbrr = nbrr.nbrr:NBRR
+
