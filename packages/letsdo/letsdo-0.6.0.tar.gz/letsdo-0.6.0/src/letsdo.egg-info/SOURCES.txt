@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/configuration.py
+src/letsdo.py
+src/log.py
+src/timetoolkit.py
+src/letsdo.egg-info/PKG-INFO
+src/letsdo.egg-info/SOURCES.txt
+src/letsdo.egg-info/dependency_links.txt
+src/letsdo.egg-info/entry_points.txt
+src/letsdo.egg-info/requires.txt
+src/letsdo.egg-info/top_level.txt
+src/letsdo_scripts/__init__.py
+src/letsdo_scripts/letsdo_completion
