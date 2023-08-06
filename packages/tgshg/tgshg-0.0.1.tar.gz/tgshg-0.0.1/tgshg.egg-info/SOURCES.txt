@@ -1,0 +1,8 @@
+README.md
+setup.py
+tgshg/__init__.py
+tgshg/test_print.py
+tgshg.egg-info/PKG-INFO
+tgshg.egg-info/SOURCES.txt
+tgshg.egg-info/dependency_links.txt
+tgshg.egg-info/top_level.txt
