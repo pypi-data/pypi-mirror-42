@@ -1,0 +1,11 @@
+README.md
+setup.py
+watermarkImage/Logic.py
+watermarkImage/Position.py
+watermarkImage/__init__.py
+watermarkImage.egg-info/PKG-INFO
+watermarkImage.egg-info/SOURCES.txt
+watermarkImage.egg-info/dependency_links.txt
+watermarkImage.egg-info/entry_points.txt
+watermarkImage.egg-info/requires.txt
+watermarkImage.egg-info/top_level.txt
