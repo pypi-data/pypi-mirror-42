@@ -1,0 +1,16 @@
+spacytei/__init__.py,sha256=oedSZad_JDN4BR_mI8rvEHJyWG4WRSq4bXQcl3dfcYk,23
+spacytei/data_prep.py,sha256=n6OIONEQx7GaxqdObH2cDuZ_xvRQgbW9TYR7HEGtv7E,8914
+spacytei/eval.py,sha256=49tN6OQRai2nl-rjCoROf0KOFfqu4RPwxmaEIJ-wUyw,524
+spacytei/ner.py,sha256=MdNT2hmej65SIsIwi8fuv3TZWFMzc_GkW2JuEKqFs5E,1202
+spacytei/tei.py,sha256=-2KneCL38u5bDtiSPFs6SlgBG7XMIBsAY4gj3OT-74s,9479
+spacytei/tei_process.py,sha256=PZR6Btk6Yx9F7PJOHUKasHRtInG0urnDy2WWLcCAbpY,2542
+spacytei/tfc.py,sha256=YgC65tiKR0kH_q618XSnWdLs1ETZPi7fGrxAvIbgEt0,5523
+spacytei/tokenlist.py,sha256=gKEupTEovgOlOQ2trK9NNv0CrOdnGnWCEtjt6-svAwI,3169
+spacytei/train.py,sha256=7s7Q59Pq-4PUdts9FAwQ05lq-cyheTm5Po8uV9xY60Q,5633
+spacytei/vecs.py,sha256=yoNc9Ke67A-zU5RzrridMpfqKiEABfcCEWNRJLnD2J8,3830
+spacytei/xml.py,sha256=MCp4OK3zxmidez6MyZD0WyHTWz1T9oeTsXg-EduxH6E,1547
+acdh_spacytei-0.0.5.dist-info/LICENSE.txt,sha256=cHTLvbasQaWmtblodUYPomdA5mPpDzzRmzsnFIt8Pqg,1162
+acdh_spacytei-0.0.5.dist-info/METADATA,sha256=DE-SvX07WTCeUzQ7TcAN2fpaTfKKFusvCKa7DIRWj0M,1344
+acdh_spacytei-0.0.5.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+acdh_spacytei-0.0.5.dist-info/top_level.txt,sha256=KFQBCXbWsgz6IcsxDMX6olj6P5Ks3cytNXWzWHJKxfA,9
+acdh_spacytei-0.0.5.dist-info/RECORD,,
