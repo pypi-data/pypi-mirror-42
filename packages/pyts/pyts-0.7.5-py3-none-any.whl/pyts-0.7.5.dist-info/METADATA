@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pyts
+Version: 0.7.5
+Summary: A package for transformation and classification of time series
+Home-page: UNKNOWN
+Author: Johann Faouzi
+Author-email: johann.faouzi@gmail.com
+License: new BSD
+Project-URL: Documentation, https://johannfaouzi.github.io/pyts/
+Project-URL: Source, https://github.com/johannfaouzi/pyts
+Project-URL: Tracker, https://github.com/johannfaouzi/pyts/issues
+Keywords: time series machine learning transformation classification
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: numpy (>=1.13.3scipy>=0.13.3scikit-learn>=0.17.0future>=0.13.1)
+
+UNKNOWN
+
+
