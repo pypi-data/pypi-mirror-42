@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: trie-memoize
+Version: 0.1.1
+Summary: A memoization algorithm in which each function argument represents a new key, creating a trie of caches as defined by your setup.
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Jared Lunde
+Author-email: jared@BeStellar.co
+Requires-Python: >=3.3,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# trie-memoize
+
+`poetry add trie-memoize`
