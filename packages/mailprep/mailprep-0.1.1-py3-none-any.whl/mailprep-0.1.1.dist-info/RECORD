@@ -1,0 +1,14 @@
+mailprep/__init__.py,sha256=4AHsRKXRO9qSZUbJRCFQdV_vHT_n41EzVKIh7B82Eto,146
+mailprep/__main__.py,sha256=tnB7QP6NkZBRz1wmgISOpXdpmO2WuAEfPR9i1WrPU2k,66
+mailprep/cli.py,sha256=blAfIw8WLW_r9V8elqvyGFBHVUD9Xktjh9ffdRr6X0o,2343
+mailprep/template.svg,sha256=cmBRQkn3rWsvW4J6jj75472LtWb0Alda2G6Xr8swUfw,6845
+mailprep/__pycache__/__init__.cpython-37.pyc,sha256=ofZhFiXZ4uzXbFFPL7tsEYY4i8wAolWR5JMJycG8Mws,291
+mailprep/__pycache__/cli.cpython-37.pyc,sha256=DSg79P_qw3pk6Uxflm1iI9dOB9KBVJxhgNRTTYRZLoE,2068
+mailprep-0.1.1.dist-info/LICENSE-APACHE,sha256=uKBOOa_6pm928Xm026ohd8fJZAA7YP82OwvTdEQtC7Y,9753
+mailprep-0.1.1.dist-info/LICENSE-MIT,sha256=R-e3076ztwbiZt7sfmvKaffARfbZeBVQiVrNwncB4Mo,1070
+mailprep-0.1.1.dist-info/METADATA,sha256=StPrQVOJjAlt-13d9-v552Hf_7SducuUDLyPxfem92Y,3981
+mailprep-0.1.1.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+mailprep-0.1.1.dist-info/eager_resources.txt,sha256=qQWUr_3u6Z_zyr3S7xdvoSmy39Vqn365KV4YGxtUGY8,22
+mailprep-0.1.1.dist-info/entry_points.txt,sha256=64HYCcCqnK90JJaoMxfovUwgFjCwP8pR5aZ_GwI0YUY,52
+mailprep-0.1.1.dist-info/top_level.txt,sha256=qKpXc5S07Mnb6A1ahVtdNzZpQFbwp8f94NOd7b4obY8,9
+mailprep-0.1.1.dist-info/RECORD,,
