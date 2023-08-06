@@ -1,0 +1,13 @@
+glmdenoise/__init__.py,sha256=ZrLZgTOY7sucBUA0uWhr2hidT8yDHx-iApPu3sUo9IQ,42
+glmdenoise/data.py,sha256=sarSw2Js1yDci1h6nBpl5YT3A2oC7L4NraGL7_tmLPM,1531
+glmdenoise/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+glmdenoise/utils/choose.py,sha256=Q_nAZVuFlyiAo8ziPLuaQIJ2nipPMjyB37hG5XVFWXg,298
+glmdenoise/utils/getcanonicalhrf.py,sha256=kVzOsZR2emM-VyuR0x9QWDcxQmHgFaF6EUbaSRscCGA,5285
+glmdenoise/utils/isrowvector.py,sha256=x5fcGSfsV-ZdiDJ3qgJlNewD4QCiBzd5WtmlWBGRaa8,409
+glmdenoise/utils/normalisemax.py,sha256=ysr9x5fantGXoCRYjEpEnlypAIxt-Dpf22Cz-vA1XnY,583
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/basic_imports.py,sha256=Jfhz1_QGy77v04OHzxK_YhXnxnc1AiHV1R2J_P9WPXc,234
+glmdenoise-0.0.dist-info/METADATA,sha256=kwJnksYvzGqaWpVl-xTwUKqh_WCxan4EbvgWHYVxlHY,631
+glmdenoise-0.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+glmdenoise-0.0.dist-info/top_level.txt,sha256=IMnFo0DQNTG1T5OUEpdPibdhV2bzcSEIVRiILCapTpk,17
+glmdenoise-0.0.dist-info/RECORD,,
