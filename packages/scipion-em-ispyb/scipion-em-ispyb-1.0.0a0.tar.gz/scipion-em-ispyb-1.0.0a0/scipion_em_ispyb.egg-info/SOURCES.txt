@@ -1,0 +1,13 @@
+CHANGES.txt
+MANIFEST.in
+README.rst
+setup.py
+ispybmonitor/__init__.py
+ispybmonitor/bibtex.py
+ispybmonitor/protocols/__init__.py
+ispybmonitor/protocols/protocol_monitor_ispyb.py
+scipion_em_ispyb.egg-info/PKG-INFO
+scipion_em_ispyb.egg-info/SOURCES.txt
+scipion_em_ispyb.egg-info/dependency_links.txt
+scipion_em_ispyb.egg-info/requires.txt
+scipion_em_ispyb.egg-info/top_level.txt
