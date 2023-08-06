@@ -1,0 +1,7 @@
+multiprocess<1,>=0.70.5
+matplotlib
+scipy
+numpy
+numba<1,>=0.39.0
+dill
+joblib
