@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pycryptokg
+Version: 0.1
+Summary: Python library for some cryptographic algorithms
+Home-page: https://github.com/kunalgupta777/pycryptokg
+Author: Kunal Gupta
+Author-email: upanshug53@gmail.com
+License: MIT
+Download-URL: https://github.com/kunalgupta777/pycryptokg/archive/0.1.tar.gz
+Description: UNKNOWN
+Keywords: python,cryptography,RSA,DES,Ciphers
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
