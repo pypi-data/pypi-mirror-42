@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: specific
+Version: 0.0.1
+Summary: Specific - spec-first web framework
+Home-page: https://github.com/dtkav/specific
+Author: Daniel Grossmann-Kavanagh
+License: Apache License Version 2.0
+Description: UNKNOWN
+Keywords: openapi oai rest api oauth flask microservice framework
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Provides-Extra: tests
