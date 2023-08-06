@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: pyEstradasPT
+Version: 1.0.2
+Summary: Python library to retrieve information from Estradas.pt
+Home-page: https://github.com/dpjrodrigues/pyEstradasPT
+Author: Diogo Rodrigues
+Author-email: dpjrodrigues@gmail.com
+License: MIT License
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+
+[![PyPI version](https://badge.fury.io/py/pyEstradasPT.svg)](https://badge.fury.io/py/pyEstradasPT)
+
+# pyEstradasPT
+Python library to retrieve information from [Estradas.pt](http://estradas.pt)
+
+## Requirements
+- aiohttp
+- json
+
+## Changelog
+
+1.0.2 First Version
+
+## Credits
+Values are obtained from [Estradas.pt](http://estradas.pt)
+
+## Copyright
+
+(C) 2018 Diogo Rodrigues <dpjrodrigues@gmail.com> 
+
+
