@@ -1,0 +1,13 @@
+mac_afk/__init__.py,sha256=TO3Fiflr8___JGGaDpAMrdUYDGpUhnQOgGFf3ZZmryo,803
+mac_afk/apps.py,sha256=MwWem1aramSzke0UxpKEgh5buhoY3BUkFMXs8eW3_N0,107
+mac_afk/days.py,sha256=xo2AU5c-cB9YonLfgKvuKk1LiO4ELSgCveoPAoJPLVE,121
+mac_afk/hours.py,sha256=UnoF2GwCdFafqURjX4GJZtP5QVxMKUIpShk0lM3r-QE,123
+mac_afk/minutes.py,sha256=r8X1TnE321v2adrziblE4OvEMoXRKtyYPgyCg24Lk2E,127
+mac_afk/models.py,sha256=QDSt00eLqWS5TT6QHKVl3UN2fLWpjaj5LW4Rcmb7F_Y,663
+mac_afk/seconds.py,sha256=uPREIKQqQA9HRgL2al6v9sfqgnU7bhnqM8KmnfRxd3M,127
+mac_afk/migrations/0001_initial.py,sha256=2vOCX2otzdRYCt81-6k0-CeDSu_sAOYWKtLx5d-dg88,630
+mac_afk/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mac_afk-2019.2.27.dist-info/METADATA,sha256=p7IcK6rQJxo5sIb8Y2PfTZ7FmQzLeNZ0Ft_iZ998pOc,1587
+mac_afk-2019.2.27.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+mac_afk-2019.2.27.dist-info/top_level.txt,sha256=DHTRpElrXfWUsAQAgQhFzR2DThXAUNG_6bjVbEpeL3s,8
+mac_afk-2019.2.27.dist-info/RECORD,,
