@@ -1,0 +1,7 @@
+PyYAML
+boto3
+plac==0.9.6
+python-dateutil
+pytz
+configparser
+future
