@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+remotsylib/__init__.py
+remotsylib/api.py
+remotsylib.egg-info/PKG-INFO
+remotsylib.egg-info/SOURCES.txt
+remotsylib.egg-info/dependency_links.txt
+remotsylib.egg-info/top_level.txt
