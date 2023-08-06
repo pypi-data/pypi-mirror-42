@@ -1,0 +1,109 @@
+Metadata-Version: 1.1
+Name: panw_utils
+Version: 0.1.10
+Summary: Palo Alto Networks Utilities
+Home-page: https://github.com/dapacruz/panw-utils
+Author: David Paul Cruz
+Author-email: davidcruz72@gmail.com
+License: MIT license
+Description: ==========
+        panw-utils
+        ==========
+        
+        
+        .. image:: https://img.shields.io/pypi/v/panw_utils.svg
+                :target: https://pypi.python.org/pypi/panw_utils
+        
+        .. image:: https://img.shields.io/travis/dapacruz/panw_utils.svg
+                :target: https://travis-ci.org/dapacruz/panw_utils
+        
+        .. image:: https://readthedocs.org/projects/panw-utils/badge/?version=latest
+                :target: https://panw-utils.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        
+        
+        
+        Palo Alto Networks Utilities
+        
+        
+        * Free software: MIT license
+        * Documentation: https://panw-utils.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        panw-utils
+        
+        * Returns a list of available commands
+        
+        get-panw-api-key
+        
+        * Returns the current API key, suitable for piping to pbcopy (macOS) or clip.exe (Windows)
+        * Command line options
+        * Platform independent
+        * Save default user and firewall
+        * Update saved settings
+        * Receives pipeline input (stdin)
+        * Uses a default firewall if one not provided
+        * Prompts for required parameters if none provided
+        
+        get-panw-firewalls
+        
+        * Returns a list of firewalls including management address and serial number
+        * Output can be pasted directly into Excel
+        * Terse output option for piping to other commands
+        * Command line options
+        * Platform independent
+        * Save API key and default Panorama host
+        * Update saved settings
+        * Override/supply API key on the command line
+        
+        get-panw-interfaces
+        
+        * Returns a list of firewalls interfaces
+        * Output can be pasted directly into Excel
+        * Terse output option for piping to other commands
+        * Command line options
+        * Platform independent
+        * Save API key and default firewall
+        * Update saved settings
+        * Override/supply API key on the command line
+        * Filter on interface properties
+        
+        
+        =======
+        History
+        =======
+        
+        0.0.1 (2019-02-16)
+        ------------------
+        
+        * First release on PyPI.
+        
+        0.1.5 (2019-02-17)
+        -------------------
+        
+        * Update README.rst.
+        * Update descriptions.
+        * Implement helper command (panw-utils).
+        
+        0.1.6 (2019-02-17)
+        -------------------
+        
+        * Fix bug in saved settings update
+        
+        0.1.10 (2019-02-17)
+        -------------------
+        
+        * Configure Travis CI
+        
+Keywords: panw_utils
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
