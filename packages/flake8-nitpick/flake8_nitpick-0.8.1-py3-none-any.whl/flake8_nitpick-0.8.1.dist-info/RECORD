@@ -1,0 +1,17 @@
+flake8_nitpick/__init__.py,sha256=jbWs9TizYabfIxjcNspPY58IGZRGPqU_U_fFeQB-PBc,42
+flake8_nitpick/config.py,sha256=eo_FvtITgXS1RBXGO6FHzJ0LM7TRUqnCRuVjRrsJ1k0,6411
+flake8_nitpick/constants.py,sha256=8GnL5CwX8gmdTwy8Iw9Ezi9BbHGvosSsEtSLs2OETgo,576
+flake8_nitpick/files/__init__.py,sha256=s7gaibXmFrGs8ITmLmNnGospwsMZqfMlDqRQOtwZTds,162
+flake8_nitpick/files/base.py,sha256=hmtpENVt8D8xQMaKwXGEyO0dCzCiDQsf_trBcHVwTrA,2505
+flake8_nitpick/files/pre_commit.py,sha256=jUdKu1SQcIJldCzJQqU_A0J31TWVac8FclNyfGoNniM,5110
+flake8_nitpick/files/pyproject_toml.py,sha256=mPzOpkBZJVEkrXE0CWed74rnY6OLIaDoPyA3enqGYqo,1114
+flake8_nitpick/files/setup_cfg.py,sha256=KB54_7W50YX6L_NzKcfI9-bU4TT_XJGk_EbVqOZa_TA,4533
+flake8_nitpick/generic.py,sha256=hg8EnlgfC4dLbjy1_4bcqDSwqxVzh5p89AuuxEtEAEI,2373
+flake8_nitpick/plugin.py,sha256=qIcDInSK9q2ZWhmfwyBM4iRthwxPcjlwt5XwDnIoTHM,2523
+flake8_nitpick/types.py,sha256=oeX4REFEHD1C2h4jeYQIYIpGA8SWTzOMgxE8NQSn-_g,266
+flake8_nitpick/utils.py,sha256=2AYnlGhy0hTm0SIkAHVtZdIoMuh--vYBvobOiQBk-Ow,605
+flake8_nitpick-0.8.1.dist-info/entry_points.txt,sha256=hSSh6I0-u2QduHfqUhb-3BjL1-SR3v3HC-WS6ZnUoqc,61
+flake8_nitpick-0.8.1.dist-info/LICENSE,sha256=YM2R_XkylxF8dqXGZChBivDSTc_sUBpx5Xm-y-0t-oA,1080
+flake8_nitpick-0.8.1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+flake8_nitpick-0.8.1.dist-info/METADATA,sha256=rG_chqUXLiPv_puJfUBBXnn49uw-i21vkw45s7pXwcw,6165
+flake8_nitpick-0.8.1.dist-info/RECORD,,
