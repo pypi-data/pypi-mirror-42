@@ -1,0 +1,10 @@
+aiofiles
+aiohttp
+Click
+colorama
+graphviz
+Jinja2
+paramiko
+pydantic
+PyYAML
+toml

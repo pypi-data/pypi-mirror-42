@@ -1,0 +1,16 @@
+README
+setup.py
+conform/__init__.py
+conform/cli.py
+conform/formatter.py
+conform/mapping.py
+conform/models.py
+conform/nodes.py
+conform/parser.py
+conform.egg-info/PKG-INFO
+conform.egg-info/SOURCES.txt
+conform.egg-info/dependency_links.txt
+conform.egg-info/entry_points.txt
+conform.egg-info/not-zip-safe
+conform.egg-info/requires.txt
+conform.egg-info/top_level.txt

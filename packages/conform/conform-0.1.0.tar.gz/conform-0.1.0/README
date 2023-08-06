@@ -1,0 +1,22 @@
+# Conform
+
+A simple config generator, inspired by [ansible](https://www.ansible.com/) and 
+[terraform](https://www.terraform.io/).
+
+Very alpha. Do not use this yet.
+
+# Development
+
+You can use [docker](https://www.docker.com/) if you would like to work on this 
+project locally.
+
+```bash
+docker build -t conform .
+```
+
+```bash
+docker run -it --rm -v "${PWD}:/conform" conform bash
+```
+
+Windows: If volume is not linked correctly. Check Docker is allowed access to C: 
+drive. (Reset credentials)
