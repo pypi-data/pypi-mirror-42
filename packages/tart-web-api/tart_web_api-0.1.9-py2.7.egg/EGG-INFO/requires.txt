@@ -1,0 +1,7 @@
+Flask
+flask-jwt-extended
+flask-cli
+flask-cors
+flask-script
+tart_hardware_interface
+tart
