@@ -1,0 +1,3 @@
+[console_scripts]
+git-peek = git_peek.__main__:run
+
