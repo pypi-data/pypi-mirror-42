@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ai-utils
+Version: 1.1.2
+Summary: Utilities to be used with Tensorflow and Keras for AI techniques
+Home-page: http://github.com/rcluan/ai_utils
+Author: Luan Campos
+Author-email: luan.rios.campos@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: tensorflow
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: sklearn
+Requires-Dist: xlrd
+
+UNKNOWN
+
+
