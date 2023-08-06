@@ -1,0 +1,10 @@
+ghstack/__init__.py,sha256=YCJyn2uxGwlBO1P1A6VtLvi4I0WNvMgFcJu6uLigzrE,21233
+ghstack/__main__.py,sha256=APcVECevC3pgRr6d9jRGMFDwbZDadE2iZsVPP5p-tHo,1087
+ghstack/config.py,sha256=U9bnH1kVHxuYcU2mlNmZjeGlOp9iBgm0upeR2lGEcpE,1730
+ghstack/endpoint.py,sha256=3yoCwZ7izgF3yLnleq9usylwtyTgWRkB28pCnlys1As,3689
+ghstack/shell.py,sha256=Mcyc1dgya1Xn57nEr5GxgnYHesOkhE7yUVarLlfiNN0,7404
+ghstack-0.0.4.data/scripts/ghstack,sha256=yFt2fjiu_Kneo_GtxJspN17n0QG-GdTz0GtegvqqfL8,58
+ghstack-0.0.4.dist-info/METADATA,sha256=nSMA-DnwwaCJohLWQQkSSfU0EkItaphkuKYysaRPAEE,2691
+ghstack-0.0.4.dist-info/RECORD,,
+ghstack-0.0.4.dist-info/WHEEL,sha256=_V8uWu5F_h-lvAz5Mbq4oZqV_uCfL4cHgm4IIlDevzU,92
+ghstack-0.0.4.dist-info/top_level.txt,sha256=x03cUKxJavJwTNW3RZhyAR5Pfa-nnk-g-wZDy-Ywe4A,8
