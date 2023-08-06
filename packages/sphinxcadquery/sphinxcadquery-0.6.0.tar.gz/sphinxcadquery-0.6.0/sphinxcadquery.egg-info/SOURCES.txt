@@ -1,0 +1,14 @@
+README.rst
+setup.py
+sphinxcadquery/__init__.py
+sphinxcadquery/sphinxcadquery.py
+sphinxcadquery.egg-info/PKG-INFO
+sphinxcadquery.egg-info/SOURCES.txt
+sphinxcadquery.egg-info/dependency_links.txt
+sphinxcadquery.egg-info/requires.txt
+sphinxcadquery.egg-info/top_level.txt
+sphinxcadquery/thingiview/binaryReader.js
+sphinxcadquery/thingiview/stats.js
+sphinxcadquery/thingiview/thingiloader.js
+sphinxcadquery/thingiview/thingiview.js
+sphinxcadquery/thingiview/three.min.js
