@@ -1,0 +1,12 @@
+README.md
+setup.py
+./rsc/cert_severity_likelihood.txt
+rosm_registry_plugin/__init__.py
+rosm_registry_plugin/json_risk_assessment_reporting_plugin.py
+rosm_registry_plugin/json_risk_assessment_reporting_plugin.yapsy-plugin
+rosm_registry_plugin/risk_analyzer.py
+statick_rosm_registry.egg-info/PKG-INFO
+statick_rosm_registry.egg-info/SOURCES.txt
+statick_rosm_registry.egg-info/dependency_links.txt
+statick_rosm_registry.egg-info/requires.txt
+statick_rosm_registry.egg-info/top_level.txt
