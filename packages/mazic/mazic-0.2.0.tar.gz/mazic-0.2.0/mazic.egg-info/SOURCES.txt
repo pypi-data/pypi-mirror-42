@@ -1,0 +1,8 @@
+README.md
+setup.py
+mazic/__init__.py
+mazic/json_process.py
+mazic.egg-info/PKG-INFO
+mazic.egg-info/SOURCES.txt
+mazic.egg-info/dependency_links.txt
+mazic.egg-info/top_level.txt
