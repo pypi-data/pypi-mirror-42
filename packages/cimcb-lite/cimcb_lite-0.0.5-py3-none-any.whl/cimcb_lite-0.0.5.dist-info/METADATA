@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: cimcb-lite
+Version: 0.0.5
+Summary: This is a pre-release.
+Home-page: https://github.com/KevinMMendez/cimcb_lite
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: http://www.apache.org/licenses/LICENSE-2.0.html
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: bokeh
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: tqdm
+Requires-Dist: xlrd
+
+# cimcb_lite
+
+### pip install: github
+```console
+pip install https://github.com/KevinMMendez/cimcb_lite/archive/master.zip
+```
+
+### pip install: github
+```console
+pip install cimcb_lite
+```
+
+### conda install: 
+
+
