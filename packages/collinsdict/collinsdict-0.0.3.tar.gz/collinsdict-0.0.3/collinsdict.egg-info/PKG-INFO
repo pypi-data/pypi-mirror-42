@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: collinsdict
+Version: 0.0.3
+Summary: Collins Dictionary
+Home-page: https://github.com/Lisz21/CollinsDict
+Author: liszt21
+Author-email: 1832666492@qq.com
+License: UNKNOWN
+Description: #+TITLE: Collins Dictionary
+        
+        #+BEGIN_SRC shell
+        python setup.py sdist bdist_wheel
+        python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+        python -m pip install --index-url https://test.pypi.org/simple/ collinsdict
+        #+END_SRC
+        
+Platform: UNKNOWN
+Description-Content-Type: text/plain
