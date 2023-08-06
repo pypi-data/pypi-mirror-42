@@ -1,0 +1,11 @@
+BSD
+GPL
+LGPL
+MANIFEST.in
+MeCab_wrap.cxx
+README
+setup.py
+mecab_python_windows.egg-info/PKG-INFO
+mecab_python_windows.egg-info/SOURCES.txt
+mecab_python_windows.egg-info/dependency_links.txt
+mecab_python_windows.egg-info/top_level.txt
