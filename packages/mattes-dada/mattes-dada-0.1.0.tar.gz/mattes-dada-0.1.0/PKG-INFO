@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: mattes-dada
+Version: 0.1.0
+Summary: Semi-random text generator using Markov chains
+Home-page: https://github.com/mattesilver/dada
+Author: Raphael Krupinski
+Author-email: None
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Other Audience
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Games/Entertainment :: Fortune Cookies
+Requires-Dist: markovify (>=0.7.1,<0.8.0)
+Requires-Dist: nltk (>=3.4,<4.0)
+Requires-Dist: regex (>=2019.2,<2020.0)
+Project-URL: Repository, https://github.com/mattesilver/dada
