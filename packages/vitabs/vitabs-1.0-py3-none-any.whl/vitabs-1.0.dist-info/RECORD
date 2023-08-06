@@ -1,0 +1,13 @@
+vitabs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vitabs/commands.py,sha256=6qHsNssyPoA1Y5q_OGhKepiCst61Gah-o0tOiG5025U,17431
+vitabs/editor.py,sha256=XIO9APUGNH_sFqPQ1kwWu5ixHovspSMPbS6Yet2PkpY,20458
+vitabs/music.py,sha256=3MBbezhw5Vsp9GZ_VedJ6G362LeqJtZFQfrwhikP0GA,1579
+vitabs/player.py,sha256=nxRhIn_LCjeHUkwHLGa45y9ZOXcd5P5lw9E7q_G2r_M,4512
+vitabs/symbols.py,sha256=Csac3B6Ri_RBzQDVSknjTfKmS5pF_ZLDev9By8nrrfU,1289
+vitabs/tablature.py,sha256=YflHI1k64zyJywiGUOLXFg0YsnOZLSvIqfWopxUIxFk,5226
+vitabs-1.0.data/scripts/vitabs,sha256=Udm_Modi4SwvkGhhymcfCxDhGNHtWMvZwpgzltygqIE,1897
+vitabs-1.0.dist-info/COPYING,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+vitabs-1.0.dist-info/METADATA,sha256=3th6jGABaozTWXuR7METXCmORPrzVcbTWkOc6kU-DTE,1905
+vitabs-1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+vitabs-1.0.dist-info/top_level.txt,sha256=MRNz0YAi4j9BTbzDQQBUiLtKkvS8o2CuRoud_5fbj0s,7
+vitabs-1.0.dist-info/RECORD,,
