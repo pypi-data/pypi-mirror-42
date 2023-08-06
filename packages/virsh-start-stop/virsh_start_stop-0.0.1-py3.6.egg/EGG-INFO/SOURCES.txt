@@ -1,0 +1,12 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+src/virsh_start_stop/__init__.py
+src/virsh_start_stop/virsh_start_stop.py
+src/virsh_start_stop.egg-info/PKG-INFO
+src/virsh_start_stop.egg-info/SOURCES.txt
+src/virsh_start_stop.egg-info/dependency_links.txt
+src/virsh_start_stop.egg-info/entry_points.txt
+src/virsh_start_stop.egg-info/requires.txt
+src/virsh_start_stop.egg-info/top_level.txt
