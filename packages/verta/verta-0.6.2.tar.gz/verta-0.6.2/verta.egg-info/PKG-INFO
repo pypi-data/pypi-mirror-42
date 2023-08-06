@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: verta
+Version: 0.6.2
+Summary: Python client for interfacing with ModelDB
+Home-page: https://www.verta.ai/
+Maintainer: Michael Liu
+Maintainer-email: miliu@verta.ai
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
