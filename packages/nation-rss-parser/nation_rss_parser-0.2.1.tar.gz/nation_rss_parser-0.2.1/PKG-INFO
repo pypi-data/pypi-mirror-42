@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: nation_rss_parser
+Version: 0.2.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Felix Mutugi
+Author-email: stunnerszone@gmail.com
+License: UNKNOWN
+Description: # Nation RSS parser CMD
+        
+        This is a Really Simple Syndication that parsers https://www.nation.co.ke/ can be used on Windows Terminal.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows :: Windows 7
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
