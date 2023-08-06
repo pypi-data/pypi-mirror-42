@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+cfg.py
+dbworker.py
+game.py
+setup.py
+t.py
+duels_api/__init__.py
+duels_api/settings.py
+duels_api.egg-info/PKG-INFO
+duels_api.egg-info/SOURCES.txt
+duels_api.egg-info/dependency_links.txt
+duels_api.egg-info/top_level.txt
+duels_api/objects/clan.py
+duels_api/objects/item.py
+duels_api/objects/user.py
