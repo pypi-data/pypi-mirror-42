@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: openpipe
+Version: 0.0.108
+Summary: Plugin-driven engine for data collecting, analyzing and reporting
+Home-page: https://github.com/OpenPipe/openpipe
+Author: lamego.pinto@gmail.com
+Author-email: lamego.pinto@gmail.com
+License: Apache-2
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: Freely Distributable
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
