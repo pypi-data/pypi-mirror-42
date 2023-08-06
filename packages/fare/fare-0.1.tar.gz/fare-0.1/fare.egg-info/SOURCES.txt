@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+fare/__init__.py
+fare/audit.py
+fare/metrics.py
+fare.egg-info/PKG-INFO
+fare.egg-info/SOURCES.txt
+fare.egg-info/dependency_links.txt
+fare.egg-info/not-zip-safe
+fare.egg-info/requires.txt
+fare.egg-info/top_level.txt
