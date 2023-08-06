@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+cancerscope/SCOPE_predict.py
+cancerscope/__init__.py
+cancerscope/tests.py
+cancerscope.egg-info/PKG-INFO
+cancerscope.egg-info/SOURCES.txt
+cancerscope.egg-info/dependency_links.txt
+cancerscope.egg-info/not-zip-safe
+cancerscope.egg-info/requires.txt
+cancerscope.egg-info/top_level.txt
+cancerscope/resources/custom_ped_pog_diseasetypes_v8.txt
+cancerscope/resources/gene_mapping_and_hugo_ids.txt
