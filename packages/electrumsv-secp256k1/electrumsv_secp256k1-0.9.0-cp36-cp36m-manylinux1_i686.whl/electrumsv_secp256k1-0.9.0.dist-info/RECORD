@@ -1,0 +1,8 @@
+electrumsv_secp256k1/_windows_libsecp256k1.py,sha256=ru8kjkjeUHmO8nySzybPQXiT_1JrxCx-UvE81qK-N9c,5651
+electrumsv_secp256k1/__init__.py,sha256=gWiNYjL7LqH7JRylWWkSVVb1qYgd6MqQ-aMUGmkYv9k,1131
+electrumsv_secp256k1/_libsecp256k1.cpython-36m-i386-linux-gnu.so,sha256=UGEjZUyqO1Behg1jMu8U9Rrlp1MgYxz4vIB-S_3QUD8,620848
+electrumsv_secp256k1/.libs/libgmp-3321edf7.so.10.3.2,sha256=2uimyjiXQ63feyPEvgInQgrrgbMux3qtvzgF2Xb6Bc8,514584
+electrumsv_secp256k1-0.9.0.dist-info/METADATA,sha256=7ytu03bi-7ZWnCma1OZtol1k_ysSmCo-3a3IptVmJbE,3122
+electrumsv_secp256k1-0.9.0.dist-info/RECORD,,
+electrumsv_secp256k1-0.9.0.dist-info/WHEEL,sha256=4RUeCnPOaAmHKINNrvtBwd3oNgi5_IueObVoFx2ZrXo,107
+electrumsv_secp256k1-0.9.0.dist-info/top_level.txt,sha256=jKaOtAhbJf6agA6nvOgh11DBAtldWhd-7TunZYyyI0E,35
