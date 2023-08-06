@@ -1,0 +1,6 @@
+mesa
+pandas
+scipy
+pytest
+pathos
+ray[rllib]
