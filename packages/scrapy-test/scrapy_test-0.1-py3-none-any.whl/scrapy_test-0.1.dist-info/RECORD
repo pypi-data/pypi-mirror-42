@@ -1,0 +1,13 @@
+scrapytest/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scrapytest/cli.py,sha256=dNiZlt0akvTFdMI3kXyTBl9uTfCkoDOG3LE45tn5QHA,1984
+scrapytest/default_settings.py,sha256=ZpPhKwUk1-ZlihB6jwgvEElB0aOcyof70R-LmBWP_fI,172
+scrapytest/runner.py,sha256=r4Ez_76WAxWXzZznJIEHjAJPne6wBR7JaqyynNJuDkU,1848
+scrapytest/spec.py,sha256=a8PAlY5911ZsH-uJSbRQw8BQWZqCEZMfaCIDCMKZW68,1700
+scrapytest/tests.py,sha256=loBDBRPUEJjsGJtWUNAVCAojzYG9mtWYCWvcrJbO7NI,3965
+scrapytest/utils.py,sha256=zRHjnLbytOklVzCjUFXw06S6NuwXEKM3DfnpLq-Bl7s,1484
+scrapytest/validate.py,sha256=_doWARRPqa1Pbbw0HLwIhFsmSIRTGV8dQoTPm-CFfhA,3101
+scrapy_test-0.1.dist-info/METADATA,sha256=Cqe0X9geDLUc2UnrLgAxBHW_qrEd3WjDPlnlowOvzVo,4386
+scrapy_test-0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+scrapy_test-0.1.dist-info/entry_points.txt,sha256=y8a7iJBNqtgBwFqjS7_UJ7KsQL0I20Y31LUrlBf3xZI,53
+scrapy_test-0.1.dist-info/top_level.txt,sha256=Me2bG8nON6NylBKdeKBc2JZg2FkhkEC_Z0fQOPW8YVM,11
+scrapy_test-0.1.dist-info/RECORD,,
