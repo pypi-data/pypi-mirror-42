@@ -1,0 +1,89 @@
+from setuptools import setup, find_packages
+
+long_description = """
+
+## Features
+
+### Design according to Eurocode provisions (EN-1992-1)
+
+1. Evaluation of basic control perimeters (§6.4.2)
+
+   * Support for columns of arbitrary polygonal shape.
+   * Support for drop panels.
+   * Automatic classification of columns into 'internal', 'edge',
+     and 'corner'.
+
+2. Evaluation of design shear stress (§6.4.3) for biaxial eccentricity
+   of all classes of columns, using three methods:
+
+   * Analytical via numerical evaluation of the perimeter modulus W1
+     (6.40) in both directions.
+   * Approximate through Eq. (6.43).
+   * Simplified through §6.4.3(6).
+
+3. Design checks according to §6.4.4.
+
+   * Support for declaration of soil-pressure on raft-slabs:
+
+     * Uniform
+     * Discrete pressure field
+
+4. Evaluation of a code-compliant shear-cage layout according to
+   provisions of §6.4.5.
+
+*Not yet supported*:
+
+* Consideration of openings in the evaluation of basic control perimeters
+  (§6.4.2(3)).
+* Favourable effect of in-plane normal stresses in Eq. (6.47).
+* Evaluation of radial layout of shear reinforcement (Fig. 6.22A).
+
+### API
+
+We use the `dx` stack of packages (`dx-utilities`, `dx-base`, `dx-eurocode`)
+that enables:
+
+1. Geometric representation of structural elements using `shapely`.
+2. Geometric operations and linear algebra utilities with `numpy` and `mathutils`.
+3. Use of `dx_utilities.fields` for various representations.
+4. Visualization of results using `matplotlib`.
+5. Support for tabular reports using `pandas`.
+
+## Contribute
+
+Source code lives in https://gitlab.com/d-e/dx-punch.
+
+## Public API
+
+See the [documentation pages](https://d-e.gitlab.io/dx-punch/).
+
+"""
+
+setup(
+    name='dx-punch',
+    packages=find_packages(exclude=('test*', 'notebooks*')),
+    install_requires=[
+        "dx-eurocode>=1.0.0,<2.0.0",
+        "pandas==0.23.4",
+        "matplotlib==2.2.2",
+        ],
+    version='1.0.0',
+    author="Konstantinos Demartinos",
+    author_email="kostas@d-e.gr",
+    maintainer="demetriou engineering ltd.",
+    maintainer_email="mike@d-e.gr",
+    url="https://gitlab.com/d-e/dx-punch",
+    description="Punching-shear calculation package",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    keywords=["structural-design", "eurocode", "punching-shear"],
+    # https://pypi.org/classifiers/
+    classifiers=[
+        "Programming Language :: Python :: 3.6",
+        ("License :: OSI Approved :: GNU Affero General Public License "
+         "v3 or later (AGPLv3+)"),
+        "Operating System :: OS Independent",
+        "Topic :: Scientific/Engineering",
+        ],
+    license='AGPLv3+'
+    )
