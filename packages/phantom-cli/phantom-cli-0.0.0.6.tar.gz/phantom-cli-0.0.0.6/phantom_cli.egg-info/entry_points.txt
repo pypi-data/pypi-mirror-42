@@ -1,0 +1,5 @@
+[console_scripts]
+ph-get = phantomcli.scripts.phget:command
+ph-mock = phantomcli.scripts.phmock:command
+ph-test = phantomcli.scripts.phtest:command
+
