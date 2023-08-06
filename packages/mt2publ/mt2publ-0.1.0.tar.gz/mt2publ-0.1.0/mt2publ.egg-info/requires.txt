@@ -1,0 +1,5 @@
+pony
+
+[dev]
+pylint
+twine

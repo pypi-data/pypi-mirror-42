@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: mt2publ
+Version: 0.1.0
+Summary: A tool to convert a Movable Type site to a Publ site
+Home-page: https://github.com/PlaidWeb/Pushl
+Author: fluffy
+Author-email: fluffy@beesbuzz.biz
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/PlaidWeb/mt2publ/issues
+Project-URL: Funding, https://patreon.com/fluffy
+Project-URL: Source, https://github.com/PlaidWeb/mt2publ/
+Project-URL: Discord, https://discord.gg/xADP3ja
+Description: # mt2publ
+        
+        A tool to (partially) convert a Movable Type website for use with Publ.
+        
+        While this will eventually try to convert templates from MT to Publ-Jinja, there's only so much that is possible to do automatically.
+        
+Keywords: blog conversion movabletype mt publ
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Content Management System
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
+Provides-Extra: dev

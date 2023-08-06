@@ -1,0 +1,14 @@
+README.md
+setup.py
+mt2publ/__init__.py
+mt2publ/__main__.py
+mt2publ/__version__.py
+mt2publ/category.py
+mt2publ/entry.py
+mt2publ/model.py
+mt2publ.egg-info/PKG-INFO
+mt2publ.egg-info/SOURCES.txt
+mt2publ.egg-info/dependency_links.txt
+mt2publ.egg-info/entry_points.txt
+mt2publ.egg-info/requires.txt
+mt2publ.egg-info/top_level.txt
