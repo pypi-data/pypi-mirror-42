@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: TrainScanner
+Version: 0.11.4
+Summary: Generate a long image strip from a train video
+Home-page: https://github.com/vitroid/TrainScanner/
+Author: Masakazu Matsumoto
+Author-email: vitroid@gmail.com
+License: MIT
+Keywords: trainscanner
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: PyQt5
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: tiledimage
+Requires-Dist: sk-video
+Requires-Dist: videosequence
+
+UNKNOWN
+
+
