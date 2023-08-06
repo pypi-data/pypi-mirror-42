@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+tests/__init__.py
+tests/test_position_embedding.py
+torch_position_embedding/__init__.py
+torch_position_embedding/position_embedding.py
+torch_position_embedding.egg-info/PKG-INFO
+torch_position_embedding.egg-info/SOURCES.txt
+torch_position_embedding.egg-info/dependency_links.txt
+torch_position_embedding.egg-info/requires.txt
+torch_position_embedding.egg-info/top_level.txt
