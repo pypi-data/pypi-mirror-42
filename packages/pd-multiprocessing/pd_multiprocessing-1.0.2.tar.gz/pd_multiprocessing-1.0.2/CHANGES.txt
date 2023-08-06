@@ -1,0 +1,9 @@
+v1.0.2, 2019.02.20
+    - Changes due to pypi
+
+v1.0.1, 2019.02.20
+    - Modification for using travis ci and coveralls.io
+    - Compatibility with python 3.4
+
+v1.0.0, 2019.02.19
+    - Initial release
