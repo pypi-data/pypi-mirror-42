@@ -1,0 +1,50 @@
+search: PurchaseReceivingSearch
+GtkDialog(toplevel): title='Purchase Receiving Search', hidden
+  GtkBox(_main_vbox, orientation=vertical):
+    GtkBox(vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(header): hidden
+      GtkEventBox(main, expand=True, fill=True, padding=6): slave SearchSlave is attached
+        GtkBox(vbox, orientation=vertical):
+          GtkBox(orientation=horizontal, fill=True, padding=6):
+            GtkBox(filters_box, orientation=vertical, padding=6):
+              GtkBox(hbox, orientation=horizontal):
+                ComboSearchFilter(branch_filter):
+                  GtkLabel(): 'Branch:'
+                  ProxyComboBox(padding=6):
+                    item: 'Any'
+                    item: 'Moda Stoq', selected
+                    item: 'Stoq Elite Fashion'
+                    item: 'Dummy shop'
+                    item: 'Dummy shop (1)'
+                StringSearchFilter(_primary_filter):
+                  GtkLabel(): 'Search:'
+                  ProxyComboBox(padding=6): hidden
+                    item: 'Contains All Words', selected
+                  GtkEntry(search_entry, padding=6): ''
+                stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+          SearchResultListView(results, expand=True, fill=True):
+            column: title='Purchase #'
+            column: title='Purchase date'
+            column: title='Receival date'
+            column: title='Supplier', expand
+            column: title='Responsible', hidden, expand
+            column: title='Purchaser', hidden, expand
+            column: title='Invoice #'
+            column: title='Invoice total'
+            row: 81954, datetime.datetime(2012, 1, 15, 0, 0), datetime.datetime(2012, 1, 1, 0, 0), 'Mark', 'Administrator', 'Administrator', 222, <currency $0>
+            row: 78526, None, datetime.datetime(2012, 2, 2, 0, 0), 'Dominique', 'Administrator', 'Administrator', 222, <currency $0>
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(print_holder, expand=True, fill=True):
+        GtkEventBox(notice, fill=True):
+        GtkEventBox(details_holder, padding=6, pack-end): slave _SearchDialogDetailsSlave is attached
+          GtkBox(vbox1, orientation=vertical):
+            GtkBox(hbox1, orientation=horizontal, fill=True):
+              GtkLabel(label3, expand=True, fill=True):
+              GtkButtonBox(hbuttonbox1, orientation=horizontal, fill=True):
+                GtkButton(details_button, expand=True, fill=True):
+                GtkButton(print_button, expand=True, fill=True): 'gtk-print'
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel', hidden
+        GtkButton(ok_button, expand=True, fill=True, padding=6): 'gtk-ok', hidden

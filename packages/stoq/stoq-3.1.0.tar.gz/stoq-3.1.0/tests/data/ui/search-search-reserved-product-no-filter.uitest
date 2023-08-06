@@ -1,0 +1,60 @@
+search: UnconfirmedSaleItemsSearch
+GtkDialog(toplevel): title='Unconfirmed Sale Items Search', hidden
+  GtkBox(_main_vbox, orientation=vertical):
+    GtkBox(vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(header): hidden
+      GtkEventBox(main, expand=True, fill=True, padding=6): slave SearchSlave is attached
+        GtkBox(vbox, orientation=vertical):
+          GtkBox(orientation=horizontal, fill=True, padding=6):
+            GtkBox(filters_box, orientation=vertical, padding=6):
+              GtkBox(hbox, orientation=horizontal):
+                ComboSearchFilter(branch_filter):
+                  GtkLabel(): 'Branch:'
+                  ProxyComboBox(padding=6):
+                    item: 'Any'
+                    item: 'Moda Stoq', selected
+                    item: 'Stoq Elite Fashion'
+                    item: 'The Meaning of Life shop'
+                StringSearchFilter(_primary_filter):
+                  GtkLabel(): 'Search:'
+                  ProxyComboBox(padding=6): hidden
+                    item: 'Contains All Words', selected
+                  GtkEntry(search_entry, padding=6): ''
+                stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+          SearchResultListView(results, expand=True, fill=True):
+            column: title='Sale #'
+            column: title='Status'
+            column: title='Code'
+            column: title='Category'
+            column: title='Product', expand
+            column: title='Manufacturer', hidden, expand
+            column: title='Sales Person', hidden
+            column: title='Client', hidden
+            column: title='Open Date'
+            column: title='Price'
+            column: title='Quantity'
+            column: title='Delivered', hidden
+            column: title='Total'
+            column: title='WO #', hidden
+            column: title='WO Status', hidden
+            column: title='Estimated finish', hidden
+            column: title='WO Finish date', hidden
+            row: 73, 'Quoting', '', None, 'Holy Grail', None, 'SalesPerson', None, datetime.datetime(2013, 12, 11, 0, 0), <currency $100>, Decimal('29.000'), Decimal('29.000'), Decimal('2900.00'), None, '', None, None
+            row: 43, 'Quoting', '', None, 'Description', None, 'SalesPerson', None, datetime.datetime(2014, 6, 12, 0, 0), <currency $100>, Decimal('33.000'), Decimal('33.000'), Decimal('3300.00'), 44, 'Opened', None, None
+            row: 42, 'Ordered', '', None, 'Schrubbery', None, 'SalesPerson', None, datetime.datetime(2013, 12, 11, 0, 0), <currency $100>, Decimal('66.000'), Decimal('23.000'), Decimal('6600.00'), None, '', None, None
+      GtkBox(orientation=horizontal, fill=True):
+        GtkLabel(expand=True, fill=True):
+        GtkLabel(quantity_label): 'Quantity: 128'
+        GtkLabel(reserved_label): 'Delivered: 85'
+        GtkLabel(total_label): 'Total: $12,800.00'
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(print_holder, expand=True, fill=True):
+        GtkEventBox(notice, fill=True):
+        GtkEventBox(details_holder, padding=6, pack-end):
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel', hidden
+        GtkButton(ok_button, expand=True, fill=True, padding=6): 'gtk-ok', hidden
+        GtkButton(sale_details_button, padding=6): 'Sale Details'
+        GtkButton(csv_button, padding=6): 'Export to spreadsheet...'

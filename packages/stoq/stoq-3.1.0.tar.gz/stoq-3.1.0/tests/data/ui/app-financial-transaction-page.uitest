@@ -1,0 +1,156 @@
+app: FinancialApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(main_vbox, orientation=vertical, expand=True, fill=True):
+        GtkNotebook(notebook, expand=True, fill=True):
+          GtkBox(list_vbox, orientation=vertical):
+            GtkEventBox(search_holder, expand=True, fill=True):
+              AccountTree(accounts):
+                column: title='Account name', expand
+                column: title='Code'
+                column: title='Total'
+                row: 'Accounts Payable', None, None
+                row: 'Accounts Receivable', None, None
+                row: 'Assets', None, 0
+                row: 'Banks', None, Decimal('24688.32')
+                  row: 'Banco do Brasil', None, Decimal('24688.32')
+                row: 'Conta de Investimento', None, 0
+                row: 'Equity', None, 0
+                row: 'Expenses', None, Decimal('21064.50')
+                  row: 'Aluguel', None, Decimal('1700.00')
+                  row: 'Impostos', None, Decimal('9678.30')
+                  row: 'Luz', None, Decimal('258.66')
+                  row: 'Salários', None, Decimal('9195.24')
+                  row: 'Telefonia', None, Decimal('232.30')
+                row: 'Imbalance', None, Decimal('-436.00')
+                row: 'Income', None, Decimal('-45752.82')
+                row: 'Saldos Iniciais', None, 0
+                row: 'Tills', None, Decimal('436.00')
+          GtkBox(orientation=vertical):
+            GtkBox(orientation=horizontal, fill=True, padding=6):
+              GtkBox(orientation=vertical, padding=6):
+                GtkBox(orientation=horizontal):
+                  StringSearchFilter():
+                    GtkLabel(): 'Search:'
+                    ProxyComboBox(padding=6): hidden
+                      item: 'Contains All Words', selected
+                    GtkEntry(padding=6): ''
+                  stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(): 'Find'
+                DateSearchFilter():
+                  GtkLabel(): 'Date:'
+                  ProxyComboBox(padding=6):
+                    item: 'Any', selected
+                    item: 'January'
+                    item: 'February'
+                    item: 'March'
+                    item: 'April'
+                    item: 'May'
+                    item: 'June'
+                    item: 'July'
+                    item: 'August'
+                    item: 'September'
+                    item: 'October'
+                    item: 'November'
+                    item: 'December'
+                    item: 'Custom day'
+                    item: 'Custom interval'
+                  GtkLabel(): 'From:', insensitive
+                  ProxyDateEntry(padding=6): None, insensitive
+                  GtkLabel(): 'To:', insensitive
+                  ProxyDateEntry(padding=6): None, insensitive
+            FinancialSearchResults(expand=True, fill=True):
+              column: title='Date'
+              column: title='Code'
+              column: title='Description', expand
+              column: title='Account'
+              column: title='Deposit'
+              column: title='Withdrawal'
+              column: title='Total'
+              row: datetime.datetime(2012, 1, 1, 0, 0), '010101', 'Saldo inicial', 'Income', <currency $27,378.82>, <currency $27,378.82>, Decimal('27378.82')
+              row: datetime.datetime(2012, 1, 1, 0, 0), '010102', 'Aluguel Janeiro', 'Aluguel', Decimal('-850.00'), Decimal('-850.00'), Decimal('26528.82')
+              row: datetime.datetime(2012, 1, 4, 0, 0), '010401', 'Luz Fevereiro', 'Luz', Decimal('-120.18'), Decimal('-120.18'), Decimal('26408.64')
+              row: datetime.datetime(2012, 1, 8, 0, 0), '010801', 'Conta telefonia', 'Telefonia', Decimal('-79.90'), Decimal('-79.90'), Decimal('26328.74')
+              row: datetime.datetime(2012, 1, 19, 0, 0), '011901', 'Conta celular', 'Telefonia', Decimal('-152.40'), Decimal('-152.40'), Decimal('26176.34')
+              row: datetime.datetime(2012, 1, 23, 0, 0), '012301', 'Receita Janeiro', 'Income', <currency $18,374>, <currency $18,374>, Decimal('44550.34')
+              row: datetime.datetime(2012, 1, 27, 0, 0), '022701', 'Impostos Janeiro', 'Impostos', Decimal('-6843.91'), Decimal('-6843.91'), Decimal('37706.43')
+              row: datetime.datetime(2012, 1, 28, 0, 0), '012801', 'Salarío Cleusa Janeiro', 'Salários', Decimal('-945.82'), Decimal('-945.82'), Decimal('36760.61')
+              row: datetime.datetime(2012, 1, 28, 0, 0), '012802', 'Salarío Deivis Janeiro', 'Salários', Decimal('-1012.00'), Decimal('-1012.00'), Decimal('35748.61')
+              row: datetime.datetime(2012, 1, 28, 0, 0), '012803', 'Salarío Maria Janeiro', 'Salários', Decimal('-934.94'), Decimal('-934.94'), Decimal('34813.67')
+              row: datetime.datetime(2012, 1, 28, 0, 0), '012804', 'Salarío Osvaldo Janeiro', 'Salários', Decimal('-1800.00'), Decimal('-1800.00'), Decimal('33013.67')
+              row: datetime.datetime(2012, 2, 1, 0, 0), '020101', 'Aluguel Fevereiro', 'Aluguel', Decimal('-850.00'), Decimal('-850.00'), Decimal('32163.67')
+              row: datetime.datetime(2012, 2, 4, 0, 0), '020104', 'Luz Fevereiro', 'Luz', Decimal('-138.48'), Decimal('-138.48'), Decimal('32025.19')
+              row: datetime.datetime(2012, 2, 27, 0, 0), '022701', 'Impostos Feveiro', 'Impostos', Decimal('-2834.39'), Decimal('-2834.39'), Decimal('29190.80')
+              row: datetime.datetime(2012, 2, 28, 0, 0), '022801', 'Salarío Cleusa Fevereiro', 'Salários', Decimal('-945.82'), Decimal('-945.82'), Decimal('28244.98')
+              row: datetime.datetime(2012, 2, 28, 0, 0), '022802', 'Salarío Deivis Fevereiro', 'Salários', Decimal('-802.43'), Decimal('-802.43'), Decimal('27442.55')
+              row: datetime.datetime(2012, 2, 28, 0, 0), '022803', 'Salarío Maria Fevereiro', 'Salários', Decimal('-954.23'), Decimal('-954.23'), Decimal('26488.32')
+              row: datetime.datetime(2012, 2, 28, 0, 0), '022804', 'Salarío Osvaldo Fevereiro', 'Salários', Decimal('-1800.00'), Decimal('-1800.00'), Decimal('24688.32')
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Account..., insensitive
+                      GtkModelButton(fill=True): Transaction...
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Print this report...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Export to spreadsheet...
+                      GtkModelButton(fill=True): Import...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Payment methods
+      GtkMenuButton(): insensitive
+          GtkPopover(): hidden, insensitive
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Financial help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit

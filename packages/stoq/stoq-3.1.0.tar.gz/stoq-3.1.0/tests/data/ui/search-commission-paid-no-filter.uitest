@@ -1,0 +1,72 @@
+search: CommissionSearch
+GtkDialog(toplevel): title='Search for Commissions', hidden
+  GtkBox(_main_vbox, orientation=vertical):
+    GtkBox(vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(header): hidden
+      GtkEventBox(main, expand=True, fill=True, padding=6): slave SearchSlave is attached
+        GtkBox(vbox, orientation=vertical):
+          GtkBox(orientation=horizontal, fill=True, padding=6):
+            GtkBox(filters_box, orientation=vertical, padding=6):
+              GtkBox(hbox, orientation=horizontal):
+                ComboSearchFilter(_salesperson_filter):
+                  GtkLabel(): 'Sold by:'
+                  ProxyComboBox(padding=6):
+                    item: 'Any', selected
+                    item: 'Administrator'
+                    item: 'Cleusa Blanc Ferreira Norbiato'
+                    item: 'Deivis Alexandre Junior'
+                    item: 'Maria Aparecida Ardana'
+                    item: 'Osvaldo Denadai Marin'
+                    item: 'SalesPerson'
+                    item: 'SalesPerson (1)'
+                StringSearchFilter(_primary_filter):
+                  GtkLabel(): 'Search:'
+                  ProxyComboBox(padding=6): hidden
+                    item: 'Contains All Words', selected
+                  GtkEntry(search_entry, padding=6): ''
+                stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+              DateSearchFilter(_date_filter):
+                GtkLabel(): 'Date:'
+                ProxyComboBox(padding=6):
+                  item: 'Any'
+                  item: 'Today'
+                  item: 'Yesterday'
+                  item: 'Last week'
+                  item: 'Last month'
+                  item: 'Custom day'
+                  item: 'Custom interval', selected
+                GtkLabel(): 'From:'
+                ProxyDateEntry(padding=6): datetime.date(2010, 1, 1), invalid
+                GtkLabel(): 'To:'
+                ProxyDateEntry(padding=6): datetime.date(2012, 2, 15), invalid
+          SearchResultListView(results, expand=True, fill=True):
+            column: title='Sale #'
+            column: title='Salesperson', expand
+            column: title='Method'
+            column: title='Commission (%)'
+            column: title='Commission'
+            column: title='Date'
+            column: title='Payment value'
+            column: title='Sale total'
+            row: 74521, 'Deivis Alexandre Junior', 'Money', Decimal('0E-20'), <currency $0>, datetime.datetime(2012, 1, 15, 0, 0), Decimal('-10.00'), Decimal('0')
+            row: 85412, 'Maria Aparecida Ardana', 'Money', Decimal('0E-20'), <currency $0>, datetime.datetime(2012, 2, 15, 0, 0), Decimal('-10.00'), Decimal('0')
+      GtkBox(orientation=horizontal, fill=True):
+        GtkLabel(expand=True, fill=True):
+        GtkLabel(payments_label): 'Total payments: $-20.00'
+        GtkLabel(sales_label): 'Total sales: $0.00'
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(print_holder, expand=True, fill=True):
+        GtkEventBox(notice, fill=True):
+        GtkEventBox(details_holder, padding=6, pack-end): slave _SearchDialogDetailsSlave is attached
+          GtkBox(vbox1, orientation=vertical):
+            GtkBox(hbox1, orientation=horizontal, fill=True):
+              GtkLabel(label3, expand=True, fill=True):
+              GtkButtonBox(hbuttonbox1, orientation=horizontal, fill=True):
+                GtkButton(details_button, expand=True, fill=True): hidden
+                GtkButton(print_button, expand=True, fill=True): 'gtk-print'
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel', hidden
+        GtkButton(ok_button, expand=True, fill=True, padding=6): 'gtk-ok', hidden, insensitive
+        GtkButton(csv_button, padding=6): 'Export to spreadsheet...'

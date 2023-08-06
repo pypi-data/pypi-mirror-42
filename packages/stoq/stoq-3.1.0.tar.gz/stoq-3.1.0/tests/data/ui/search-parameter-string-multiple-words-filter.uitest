@@ -1,0 +1,14 @@
+search: ParameterSearch
+GtkBox(vbox1, orientation=vertical):
+  GtkBox(hbox1, orientation=horizontal, fill=True):
+    GtkLabel(label8, fill=True): 'Filter:'
+    GtkEntry(entry, expand=True, fill=True): 'city default'
+    GtkButton(search_button, fill=True): 'gtk-find'
+    GtkButton(show_all_button, fill=True): '_Show All'
+  ObjectList(results, expand=True, fill=True):
+    column: title='Group'
+    column: title='Parameter', expand
+    column: title='Current value'
+    row: 'General', 'Default city', 'São Carlos'
+  GtkButtonBox(hbuttonbox1, orientation=horizontal, fill=True):
+    GtkButton(edit_button): 'gtk-edit', insensitive

@@ -1,0 +1,41 @@
+editor: WorkOrderPackageSendEditor
+GtkDialog(main_dialog.toplevel): title='Add Send work orders', hidden
+  GtkBox(main_dialog._main_vbox, orientation=vertical):
+    GtkBox(main_dialog.vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(main_dialog.header):
+      GtkEventBox(main_dialog.main, expand=True, fill=True, padding=6): slave WorkOrderPackageSendEditor is attached
+        GtkBox(vbox1, orientation=vertical):
+          GtkTable(table1, expand=True, fill=True):
+            GtkLabel(label1): 'Identifier:'
+            ProxyEntry(identifier): '123321'
+            GtkLabel(label2): 'Destination:'
+            ProxyComboEntry(destination_branch):
+              item: 'Dummy shop', selected
+            ObjectList(workorders):
+              column: title='Send'
+              column: title='WO #'
+              column: title='Sale #', hidden
+              column: title='Status'
+              column: title='Equipment (Description)', expand
+              column: title='Equipment'
+              column: title='Equipment'
+              column: title='Branch', hidden
+              column: title='Client'
+              column: title='Salesperson', hidden
+              column: title='Open date', hidden
+              column: title='Approval date'
+              row: True, 666, None, 'Waiting', 'Description - Equipment 0', None, None, 'Moda Stoq', 'Client', None, datetime.datetime(2013, 1, 1, 0, 0), datetime.datetime(2013, 1, 1, 0, 0)
+              row: True, 667, None, 'Waiting', 'Description - Equipment 1', None, None, 'Moda Stoq', 'Client', None, datetime.datetime(2013, 1, 1, 0, 0), datetime.datetime(2013, 1, 1, 0, 0)
+              row: False, 668, None, 'Waiting', 'Description - Equipment 2', None, None, 'Moda Stoq', 'Client', None, datetime.datetime(2013, 1, 1, 0, 0), datetime.datetime(2013, 1, 1, 0, 0)
+          GtkBox(hbox1, orientation=horizontal):
+            GtkButton(edit_btn, fill=True): 'Observations', insensitive
+            GtkButton(details_btn, fill=True): 'gtk-info', insensitive
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(main_dialog.extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(main_dialog.print_holder, expand=True, fill=True):
+        GtkEventBox(main_dialog.notice, fill=True):
+        GtkEventBox(main_dialog.details_holder, padding=6, pack-end):
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(main_dialog.action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(main_dialog.cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel'
+        GtkButton(main_dialog.ok_button, expand=True, fill=True, padding=6): 'gtk-ok'

@@ -1,0 +1,123 @@
+app: LauncherApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(orientation=vertical, expand=True, fill=True):
+        GtkBox(orientation=vertical, expand=True, fill=True):
+          GtkScrolledWindow(expand=True, fill=True):
+            GtkIconView():
+              text: Branches, stock: stoq-branches
+              text: C.F.O.P., stock: stoq-movement-product
+              text: Client Categories, stock: stoq-clients
+              text: Clients, stock: stoq-clients
+              text: Computers, stock: stoq-system
+              text: Connect to Stoq.Link, stock: stoq-connect
+              text: Devices, stock: stoq-devices
+              text: Employees, stock: stoq-employee
+              text: Events, stock: stoq-status-warning
+              text: Fiscal Books, stock: stoq-book
+              text: Forms, stock: stoq-forms
+              text: Invoice Printers, stock: stoq-printer
+              text: Parameters, stock: stoq-parameters
+              text: Payment Categories, stock: stoq-payment-category
+              text: Payment Methods, stock: stoq-payment-type
+              text: Plugins, stock: stoq-plugin
+              text: Products, stock: stoq-products
+              text: Roles, stock: stoq-employee-card
+              text: Services, stock: stoq-services
+              text: Suppliers, stock: stoq-suppliers
+              text: Tax Classes, stock: stoq-tax-type
+              text: Taxes, stock: stoq-documents
+              text: Transporters, stock: stoq-transporter
+              text: User Profiles, stock: stoq-user-profiles
+              text: Users, stock: stoq-hr
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): User...
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Devices...
+                      GtkModelButton(fill=True): Payment methods...
+                      GtkModelButton(fill=True): Payment categories...
+                      GtkModelButton(fill=True): Client categories...
+                      GtkModelButton(fill=True): Taxes...
+                      GtkModelButton(fill=True): Sintegra...
+                      GtkModelButton(fill=True): Parameters...
+                      GtkModelButton(fill=True): Invoices...
+                      GtkModelButton(fill=True): Invoice printers...
+                      GtkModelButton(fill=True): Attribute Group...
+                      GtkModelButton(fill=True): Grid Attribute...
+                      GtkModelButton(fill=True): Forms...
+                      GtkModelButton(fill=True): Sale tokens...
+                      GtkModelButton(fill=True): Configure certificates...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Plugins...
+                      GtkModelButton(fill=True): Connect to Stoq.Link...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Roles...
+                      GtkModelButton(fill=True): Employees...
+                      GtkModelButton(fill=True): C.F.O.P...
+                      GtkModelButton(fill=True): Fiscal books...
+                      GtkModelButton(fill=True): Profiles...
+                      GtkModelButton(fill=True): Users...
+                      GtkModelButton(fill=True): Branches...
+                      GtkModelButton(fill=True): Computers...
+                      GtkModelButton(fill=True): Tax Classes...
+                      GtkModelButton(fill=True): Events...
+                      GtkModelButton(fill=True): Cost Centers...
+                      GtkModelButton(fill=True): Duplicated Persons...
+                      GtkModelButton(fill=True): Messages...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Admin help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit

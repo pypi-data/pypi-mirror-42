@@ -1,0 +1,127 @@
+app: LauncherApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(orientation=vertical, expand=True, fill=True):
+        GtkBox(orientation=vertical, expand=True, fill=True):
+          GtkEventBox(expand=True, fill=True):
+            GtkBox(orientation=vertical):
+              GtkBox(orientation=horizontal, fill=True, padding=6):
+                GtkBox(orientation=vertical, padding=6):
+                  GtkBox(orientation=horizontal):
+                    ComboSearchFilter():
+                      GtkLabel(): 'Branch:'
+                      ProxyComboBox(padding=6):
+                        item: 'Any'
+                        item: 'Moda Stoq', selected
+                        item: 'Stoq Elite Fashion'
+                    ComboSearchFilter():
+                      GtkLabel(): 'Show'
+                      ProxyComboBox(padding=6):
+                        item: 'All payments', selected
+                        item: 'Received payments'
+                        item: 'To receive'
+                        item: 'Late payments'
+                    StringSearchFilter():
+                      GtkLabel(): 'matching:'
+                      ProxyComboBox(padding=6): hidden
+                        item: 'Contains All Words', selected
+                      GtkEntry(padding=6): ''
+                    stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(): 'Find'
+              SearchResultListView(expand=True, fill=True):
+                column: title='Payment #'
+                column: title='Description', expand
+                column: title='Sale date'
+                column: title='Description'
+                column: title='Payment Method', hidden
+                column: title='Card Type', hidden
+                column: title='Comments', hidden
+                column: title='Drawee'
+                column: title='Drawee fancy name', hidden
+                column: title='Open date', hidden
+                column: title='Due date'
+                column: title='Paid date'
+                column: title='Status', hidden
+                column: title='Value'
+                column: title='Paid'
+                column: title='Category', hidden
+                row: 2, '1/1 Money for sale 00001', datetime.datetime(2008, 1, 1, 0, 0), None, 'Money', None, None, 'Vitalina Claudino', None, datetime.datetime(2008, 1, 1, 0, 0), datetime.datetime(2008, 1, 1, 0, 0), datetime.datetime(2008, 1, 1, 0, 0), 'Paid', <currency $436>, <currency $436>, None
+                row: 3, '1/1 Check for sale 00002', datetime.datetime(2008, 6, 1, 0, 0), None, 'Check', None, None, 'Alessandra Almeida Itaberá', None, datetime.datetime(2008, 6, 1, 0, 0), datetime.datetime(2008, 6, 15, 0, 0), None, 'To Pay', <currency $706>, None, None
+                row: 4, '1/1 Bill for sale 00003', datetime.datetime(2008, 9, 1, 0, 0), None, 'Bill', None, None, 'Luis Sergio da Silva Marin', None, datetime.datetime(2008, 9, 1, 0, 0), datetime.datetime(2008, 9, 15, 0, 0), None, 'To Pay', <currency $873>, None, None
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+        LazySummaryLabel():
+          GtkLabel(expand=True, fill=True, padding=6): '<b>Total</b>'
+          GtkLabel(): '<b>$2,015.00</b>'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Account receivable...
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Print this report...
+                      GtkModelButton(fill=True): Print document..., insensitive
+                      GtkModelButton(fill=True): Print receipt..., insensitive
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Export to spreadsheet...
+                      GtkModelButton(fill=True): Export bills...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Bills and checks...
+                      GtkModelButton(fill=True): Card payments...
+                      GtkModelButton(fill=True): Payment categories...
+                      GtkModelButton(fill=True): Payment flow history...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Accounts receivable help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit

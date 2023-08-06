@@ -1,0 +1,15 @@
+dialog: QuoteFillingDialog
+GtkBox(vbox1, orientation=vertical):
+  GtkEventBox(place_holder, expand=True, fill=True): slave ListSlave is attached
+    ListContainer(toplevel):
+      ObjectList(expand=True, fill=True):
+        column: title='Description', expand
+        column: title='Quantity'
+        column: title='Cost'
+        column: title='Last Cost'
+        column: title='Average Cost'
+        row: 'Description', Decimal('1.000'), <currency $125>, <currency $125>, <currency $125>
+      GtkBox(orientation=vertical, fill=True):
+        GtkButton(fill=True): 'gtk-add', hidden
+        GtkButton(fill=True): 'gtk-remove', hidden, insensitive
+        GtkButton(fill=True): 'gtk-edit', hidden, insensitive

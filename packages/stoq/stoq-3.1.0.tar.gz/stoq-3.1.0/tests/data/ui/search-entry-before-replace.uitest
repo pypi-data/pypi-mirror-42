@@ -1,0 +1,4 @@
+dialog: Window
+GtkWindow(): title=None, hidden
+  GtkBox(orientation=vertical): hidden
+    ProxyEntry(expand=True, fill=True): '', hidden

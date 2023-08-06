@@ -1,0 +1,43 @@
+search: SaleSellableSearch
+GtkDialog(toplevel): title='Item search', hidden
+  GtkBox(_main_vbox, orientation=vertical):
+    GtkBox(vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(header): hidden
+      GtkEventBox(main, expand=True, fill=True, padding=6): slave SearchSlave is attached
+        GtkBox(vbox, orientation=vertical):
+          GtkBox(orientation=horizontal, fill=True, padding=6):
+            GtkBox(filters_box, orientation=vertical, padding=6):
+              GtkBox(hbox, orientation=horizontal):
+                StringSearchFilter(_primary_filter):
+                  GtkLabel(): 'Search:'
+                  ProxyComboBox(padding=6): hidden
+                    item: 'Contains All Words', selected
+                  GtkEntry(search_entry, padding=6): 'cal'
+                stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+          SearchResultListView(results, expand=True, fill=True):
+            column: title='Code'
+            column: title='Barcode', hidden
+            column: title='Description', expand
+            column: title='Location', hidden
+            column: title='Manufacturer', hidden
+            column: title='Model', hidden
+            column: title='Price'
+            column: title='Category', hidden
+            column: title='Stock'
+            row: '05', '1595843695465', 'Calça Jeans com Bolso Traseiro', '', None, '', Decimal('189.00'), 'Calças Jeans', Decimal('3.000')
+            row: '06', '8596458216412', 'Calça Brigilda', '', None, '', Decimal('438.00'), 'Calças Poliester', Decimal('3.000')
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(extra_holder, expand=True, fill=True, padding=6): slave SearchEditorToolBar is attached
+          GtkBox(toplevel, orientation=horizontal): hidden
+            GtkButtonBox(hbuttonbox1, orientation=horizontal, fill=True):
+              GtkButton(new_button, expand=True, fill=True):
+              GtkButton(edit_button, expand=True, fill=True):
+            GtkEventBox(toolbar_holder, expand=True, fill=True):
+        GtkEventBox(print_holder, expand=True, fill=True):
+        GtkEventBox(notice, fill=True):
+        GtkEventBox(details_holder, padding=6, pack-end):
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel'
+        GtkButton(ok_button, expand=True, fill=True, padding=6): 'gtk-ok'
+        GtkButton(branch_stock_button, padding=6): 'Stock details'

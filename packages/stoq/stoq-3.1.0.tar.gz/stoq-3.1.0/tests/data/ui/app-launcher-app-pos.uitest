@@ -1,0 +1,147 @@
+app: LauncherApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(orientation=vertical, expand=True, fill=True):
+        GtkBox(orientation=vertical, expand=True, fill=True):
+          GtkBox(orientation=horizontal, fill=True):
+            GtkAlignment(expand=True, fill=True):
+              GtkBox(orientation=horizontal):
+                GtkBox(orientation=horizontal, fill=True):
+                  GtkLabel(expand=True, fill=True): 'Barcode:'
+                  ProxyEntry(expand=True, fill=True): '', insensitive
+                  ProxyLabel(expand=True, fill=True): 'Quantity:'
+                  ProxySpinButton(expand=True, fill=True): '1.000', insensitive
+                  GtkLabel(expand=True, fill=True): 'Price:', hidden
+                  ProxySpinButton(expand=True, fill=True): '0.00', hidden, insensitive
+                  GtkButtonBox(orientation=horizontal, expand=True, fill=True): insensitive
+                    GtkButton(): insensitive
+                    GtkButton():
+                GtkLabel(expand=True, fill=True):
+                GtkImage(fill=True, pack-end):
+          GtkAlignment(fill=True):
+            GtkBox(orientation=vertical):
+              ProxyLabel(expand=True, fill=True): hidden
+              GtkLabel(expand=True, fill=True): hidden
+          GtkBox(orientation=vertical, expand=True, fill=True):
+            GtkBox(orientation=vertical, expand=True, fill=True):
+              GtkHSeparator(fill=True):
+              ProxyLabel(expand=True, fill=True): '<span weight="bold" size="xx-large">Till closed</span>\n\n<span size="large"><a href="open-till">Open till</a></span>'
+              GtkHSeparator(fill=True):
+            GtkBox(orientation=horizontal, expand=True, fill=True): hidden
+              GtkLabel(expand=True, fill=True):
+              GtkBox(orientation=vertical, expand=True, fill=True):
+                GtkLabel(expand=True, fill=True):
+                GtkLabel(fill=True): 'Sale Token:'
+                ProxyEntry(fill=True): '', invalid
+                GtkEventBox(expand=True, fill=True):
+              GtkLabel(expand=True, fill=True):
+            GtkHPaned(expand=True, fill=True): hidden
+              ObjectTree(): insensitive
+                column: title='Reference'
+                column: title='Description', expand
+                column: title='Location', hidden
+                column: title='Price'
+                column: title='Quantity'
+                column: title='Total'
+              GtkBox(orientation=vertical):
+                ProxyLabel(fill=True):
+                GtkAspectFrame():
+                  GtkEventBox():
+                    GtkEventBox():
+                      GtkImage():
+                GtkLabel(expand=True, fill=True):
+                GtkExpander(fill=True):
+                  GtkLabel():
+                  GtkLabel(): 'More details'
+            GtkAlignment(fill=True):
+              GtkBox(orientation=horizontal):
+                GtkBox(orientation=vertical, fill=True):
+                  GtkButtonBox(orientation=horizontal, fill=True):
+                    GtkButton(): hidden, insensitive
+                    GtkButton(): insensitive
+                    GtkButton(): insensitive
+                    GtkButton(): insensitive
+                    GtkButton(): insensitive
+                    GtkButton(): insensitive
+                ProxyLabel(expand=True, fill=True): '<span size="xx-large" weight="bold">Total: $0.00</span>'
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Trade..., insensitive
+                      GtkModelButton(fill=True): Payment Receival..., insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Details viewer, insensitive
+                      GtkModelButton(fill=True): Close loan..., insensitive
+                      GtkModelButton(fill=True): Close work order..., insensitive
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Open Till...
+                      GtkModelButton(fill=True): Verify Till..., insensitive
+                      GtkModelButton(fill=True): Close Till..., insensitive
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Confirm..., insensitive
+                      GtkModelButton(fill=True): Cancel..., insensitive
+                      GtkModelButton(fill=True): Create delivery..., insensitive
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Sales...
+                      GtkModelButton(fill=True): Sold Items by Branch...
+                      GtkModelButton(fill=True): Total sales made by salesperson...
+                      GtkModelButton(fill=True): Clients...
+                      GtkModelButton(fill=True): Products...
+                      GtkModelButton(fill=True): Services...
+                      GtkModelButton(fill=True): Deliveries...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): POS help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit
