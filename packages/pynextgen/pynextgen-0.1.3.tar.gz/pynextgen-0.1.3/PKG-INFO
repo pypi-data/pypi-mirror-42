@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: pynextgen
+Version: 0.1.3
+Summary: [UNSTABLE] A package of custom tools to tackle bioinformatic projects.
+Home-page: http://pypi.org/project/pynextgen/
+Author: Etienne Kornobis
+Author-email: ekornobis@gmail.com
+License: UNKNOWN
+Description: PyNextGen
+        =========
+        
+        [UNSTABLE] A package of custom tools to tackle bioinformatic projects.
+        
+        .. image:: https://badge.fury.io/py/pynextgen.svg
+           :target: https://pypi.org/project/pynextgen/
+        
+        Installation
+        ------------
+        
+        With pip::
+          
+          pip install pynextgen
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
