@@ -1,0 +1,9 @@
+releasify/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+releasify/client.py,sha256=I9Gb_EMP4lMQdbXA_E9YNL0Syn_cuU9t6C4h0qq_2Yo,4516
+releasify/constants.py,sha256=tWiR2gHjpjMDb3AeUe0AtBD9zKjp81TePhkQU5hT3mA,119
+releasify/exceptions.py,sha256=Z9PHTTzw7BH4P0GSJo-pl0ZX23j6f_F8HoSEyL6ccWQ,1051
+releasify/utils.py,sha256=5r7cm5HdQNc85wnwxhiZ7D03ns2cLMpEjh6UNVupNSE,708
+releasify-0.7.0.dist-info/METADATA,sha256=Xo0WL0cSP0dKwsm_q-DpBA1EgZBprWxdvbZJchPNIJI,1079
+releasify-0.7.0.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+releasify-0.7.0.dist-info/top_level.txt,sha256=a8MDmIULAmSR_ksZ4OapmzMvWZH0WRQ_mqR4MPdGjcs,10
+releasify-0.7.0.dist-info/RECORD,,
