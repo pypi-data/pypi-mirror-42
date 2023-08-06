@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pynetrees
+Version: 1.0.1
+Summary: Tools to work with decision trees
+Home-page: https://github.com/francoistrahan/pynes
+License: GPL-3.0
+Author: François Trahan
+Author-email: francois.trahan@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: examples
+Requires-Dist: graphviz (>=0.10.1,<0.11.0)
+Requires-Dist: jupyter (>=1.0,<2.0); extra == "examples"
+Requires-Dist: matplotlib (>=3.0,<4.0)
+Requires-Dist: pandas (==0.23.4)
+Requires-Dist: seaborn (>=0.9.0,<0.10.0)
+Requires-Dist: tornado (>=5.1.1,<6.0.0)
+Project-URL: Repository, https://github.com/francoistrahan/pynes.git
