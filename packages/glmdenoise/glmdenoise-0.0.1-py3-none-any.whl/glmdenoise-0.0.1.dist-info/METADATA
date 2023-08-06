@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: glmdenoise
+Version: 0.0.1
+Summary: Python GLMdenoise
+Home-page: https://github.com/Charestlab/pyGLMdenoise
+Maintainer: Jasper van den Bosch
+Maintainer-email: vandejjf@bham.ac.uk
+License: UNKNOWN
+Keywords: neuroscience
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: twine
+
+# pyGLMdenoise
+python implementation of GLMdenoise
+
+
+### Usage
+
+```python
+from glmdenoise import GLMdenoisedata
+
+GLMdenoisedata(design, data, stimdur=0.5, tr=2)
+```
+
+
+### Unit tests
+
+To run the unit tests:
+
+```sh
+python setup.py tests -q
+```
+
+
