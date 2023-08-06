@@ -1,0 +1,15 @@
+AUTHORS.rst
+CHANGES.yml
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+hjoin/__init__.py
+hjoin/core.py
+hjoin.egg-info/PKG-INFO
+hjoin.egg-info/SOURCES.txt
+hjoin.egg-info/dependency_links.txt
+hjoin.egg-info/not-zip-safe
+hjoin.egg-info/requires.txt
+hjoin.egg-info/top_level.txt
+test/test_hjoin.py

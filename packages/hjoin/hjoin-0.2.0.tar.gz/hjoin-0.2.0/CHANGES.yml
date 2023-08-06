@@ -1,0 +1,13 @@
+-
+  version: 0.2.0
+  date: May 25, 2017
+  notes: >
+    Integrated with ``ansiwrap`` and made it a dependency.
+    Can now join text with embedded ANSI cnotrol sequences.
+    
+-
+  version: 0.1.0
+  date: May 23, 2017
+  notes: >
+    First release. Basic horizontal join function working 
+    and tested.
