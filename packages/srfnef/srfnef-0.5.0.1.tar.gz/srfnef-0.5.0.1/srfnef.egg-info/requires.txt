@@ -1,0 +1,9 @@
+scipy
+matplotlib
+typing
+h5py
+click
+numpy
+tqdm
+numba
+deepdish
