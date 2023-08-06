@@ -1,0 +1,4 @@
+pybind11
+docopt==0.*
+numpy
+scipy
