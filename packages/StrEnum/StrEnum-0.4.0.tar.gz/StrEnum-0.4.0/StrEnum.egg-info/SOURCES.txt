@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+StrEnum.egg-info/PKG-INFO
+StrEnum.egg-info/SOURCES.txt
+StrEnum.egg-info/dependency_links.txt
+StrEnum.egg-info/top_level.txt
+strenum/__init__.py
