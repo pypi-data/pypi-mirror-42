@@ -1,0 +1,9 @@
+statuscope/__init__.py,sha256=bV5YjqxK1UH2qBtVag_xJWX1doi1YMntz5RdtiapqRM,20
+statuscope/logger.py,sha256=aKVqREWJHNA1gotRmW60HiNKG2c3exLaWZYZW0oCMqc,4271
+statuscope/log/__init__.py,sha256=5eS24O9ugBl0m_AzO_MfMrotGnE2ntEGUUxPuKlKQhI,13
+statuscope/log/sender.py,sha256=ks7ItFHE-pwCpDkLN69-jHUxIbhfAX8Yr5ZkKr7dsiI,2041
+statuscope-0.0.8.dist-info/LICENSE,sha256=VolJ4a58uzsa0EM80Tp0mKmeF0mTsqnbfdhIjpycW-8,1070
+statuscope-0.0.8.dist-info/METADATA,sha256=NjyjIqv-Z8CS3_s1iR1AbEycVFg_1YTPBf9bWaMIW6E,2109
+statuscope-0.0.8.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+statuscope-0.0.8.dist-info/top_level.txt,sha256=sEfMu1i3fIcHHiQQh1hU87XpExYR1RrDz-iIzngmFSs,11
+statuscope-0.0.8.dist-info/RECORD,,
