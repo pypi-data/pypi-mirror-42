@@ -1,0 +1,17 @@
+language: python
+python:
+- 3.6
+install:
+  - pip install pipenv
+  - make env
+  - make setup
+script:
+  - make test
+deploy:
+  provider: pypi
+  user: locustv2
+  password:
+    secure: Ba+I6/O1qKM5Y2FoI2nmAft7WJQ88NouP5FH3nVSAZbJOyRx5R5O9NFSvhFbzfjfHdiJJHgxdr39CcdWnsmk6hEifSYyg06I+Kbwdso18eusIGcoOzuTm9chC9y76aYYt7zL6dzBoI9hrQg6dSqjbgAaVPqFzyyGKkObP7EvND0UsaLn97oQniaLT5hWISfPJSyUwbX4UDM6Mbd5yWJoR65LMECeIsYGgMPQA5bBM+4SWqHaCF5NOchFjIcyZBG2YyRJjS/j3+/m8TiyTC8c0zoZ3bU+D6dE0vMDlZlTG64Z3ud9pk84PHIykXCbhBIKW84UhoIUPl5xRf198yrgRhmTTLs+XVS64SuvPJZ2e8eLnvokuFlQiKBqp2exejlV9VgIHXbCIMkytwyvPhjZHy/ia9df8DH4dLK0/fHr0nGwM3to3X3iXhxNV9Cf8+f+KAMT/aURgWjYXLQuAwSeQmcuQE5ggf5XFNO0V7LEhE5mthNaNlu5jY9apUW8aezjMnjDyNJNDnL1hP69cJyfu9vStt/Fp40myKdLN9xecImJjxj9bE7yN6mDbPmJot9yAVzzUWJl5opK2XKkE3+/Wzl4JKLimZ0Mzkklk1/WCCn677/eY9yZ/DJ2RtcBQt2af4i7k/zE9vXP9/JBZ0+F4JlgDbj4ZlBiMcrPZ1XXdjw=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
