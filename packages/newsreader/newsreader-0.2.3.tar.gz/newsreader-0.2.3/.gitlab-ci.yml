@@ -1,0 +1,78 @@
+---
+image: python:3-slim
+stages:
+  - verify
+  - build
+  - publish
+
+before_script:
+  - pip install tox
+
+pycodestyle:
+  stage: verify
+  script: tox -e pycodestyle
+
+pylint:
+  stage: verify
+  script: tox -e pylint
+
+package-build:
+  stage: build
+  image: python:3
+  script: python setup.py sdist bdist_wheel
+  artifacts:
+      expire_in: 1 day
+      paths:
+          - build/
+          - dist/
+  only:
+      - tags
+      - master@bramwelt/newsreader
+
+publish-to-test:
+    stage: publish
+    variables:
+        TWINE_USERNAME: $PYPI_TEST_USERNAME
+        TWINE_PASSWORD: $PYPI_TEST_PASSWORD
+    before_script:
+        - pip install twine
+    script: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    only:
+        - master@bramwelt/newsreader
+    dependencies:
+        - package-build
+
+publish-to-prod:
+    stage: publish
+    variables:
+        TWINE_USERNAME: $PYPI_PROD_USERNAME
+        TWINE_PASSWORD: $PYPI_PROD_PASSWORD
+    before_script:
+        - pip install twine
+    script: twine upload dist/*
+    only:
+        - tags
+    dependencies:
+        - package-build
+
+# This job comes from Gitlab
+# https://gitlab.com/help/ci/examples/sast.md
+sast:
+  image: docker:stable
+  stage: verify
+  variables:
+    DOCKER_DRIVER: overlay2
+  allow_failure: true
+  services:
+    - docker:stable-dind
+  before_script: []
+  script:
+    - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run
+        --env SAST_CONFIDENCE_LEVEL="${SAST_CONFIDENCE_LEVEL:-3}"
+        --volume "$PWD:/code"
+        --volume /var/run/docker.sock:/var/run/docker.sock
+        "registry.gitlab.com/gitlab-org/security-products/sast:$SP_VERSION" /app/bin/run /code
+  artifacts:
+    reports:
+      sast: gl-sast-report.json
