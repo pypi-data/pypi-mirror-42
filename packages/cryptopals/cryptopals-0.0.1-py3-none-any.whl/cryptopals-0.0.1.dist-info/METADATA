@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cryptopals
+Version: 0.0.1
+Summary: Matasano cryptopals challenges
+Home-page: https://github.com/kmanc/cryptopals
+Author: Kevin Conley
+Author-email: kmanc@comcast.net
+License: MIT
+Keywords: Python,Crypto
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+
+UNKNOWN
+
+
