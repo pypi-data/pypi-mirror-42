@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: s3-concat
+Version: 0.0.2
+Summary: Concat files in s3
+Home-page: UNKNOWN
+Author: Eddy Hintze
+Author-email: eddy@hintze.co
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
