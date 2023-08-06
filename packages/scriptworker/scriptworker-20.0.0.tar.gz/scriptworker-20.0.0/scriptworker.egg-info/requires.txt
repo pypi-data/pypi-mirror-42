@@ -1,0 +1,12 @@
+aiohttp>=3
+arrow
+defusedxml
+dictdiffer
+frozendict
+github3.py
+jsonschema
+json-e>=2.5.0
+pexpect
+python-gnupg
+PyYAML
+taskcluster>=4.0.0
