@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: tcli
+Version: 1.0
+Summary: DEPRECATED - Build Nice User Interfaces In The Terminal
+Home-page: https://github.com/TankerHQ/tcli
+Author: Dimitri Merejkowsky
+Author-email: d.merej@gmail.com
+License: UNKNOWN
+Description: 
+        This project has been replaced by the `cli_ui` package.
+        The name is therefore free to use for your own project,
+        just contact me if you need access.
+Platform: UNKNOWN

@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tcli.egg-info/PKG-INFO
+tcli.egg-info/SOURCES.txt
+tcli.egg-info/dependency_links.txt
+tcli.egg-info/top_level.txt
