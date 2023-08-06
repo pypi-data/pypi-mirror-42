@@ -1,0 +1,10 @@
+README.md
+setup.py
+dogclient/__init__.py
+dogclient/client.py
+dogclient/events.py
+dogclient.egg-info/PKG-INFO
+dogclient.egg-info/SOURCES.txt
+dogclient.egg-info/dependency_links.txt
+dogclient.egg-info/requires.txt
+dogclient.egg-info/top_level.txt
