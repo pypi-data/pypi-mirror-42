@@ -1,0 +1,2 @@
+0.1.8 (2018-01-22): all functions implemented
+0.2.0 (2018-01-23): feature: SentimentIdentifier().identifySentiment accepts dict
