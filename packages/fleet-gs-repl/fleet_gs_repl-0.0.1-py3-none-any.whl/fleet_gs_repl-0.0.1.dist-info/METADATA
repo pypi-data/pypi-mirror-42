@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: fleet-gs-repl
+Version: 0.0.1
+Summary: internal tool for sending messages on mqtt
+Home-page: https://bitbucket.org/fleetspace/gs_repl/src
+Author: Fleet Space Technologies
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: aioconsole
+Requires-Dist: blessings
+Requires-Dist: hbmqtt
+Requires-Dist: yarl
+
+UNKNOWN
+
+
