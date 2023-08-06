@@ -1,0 +1,8 @@
+README.md
+setup.py
+sausagelink/__init__.py
+sausagelink/main.py
+sausagelink.egg-info/PKG-INFO
+sausagelink.egg-info/SOURCES.txt
+sausagelink.egg-info/dependency_links.txt
+sausagelink.egg-info/top_level.txt
