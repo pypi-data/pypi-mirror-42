@@ -1,0 +1,8 @@
+{% block finish_page %}
+<div class="{% block container_classes %}form-plugin finish-page{% endblock %}">
+    {% block finish_page_before %}{% endblock %}
+    {% block finish_title %}<h2 class="form-page-name">{{ finish_title }}</h2>{% endblock %}
+    {% block finish_text %}<p class="form-page-introduction">{{ finish_text|default:_("Thank you!") }}</p>{% endblock %}
+    {% block finish_page_after %}{% endblock %}
+</div>
+{% endblock %}
