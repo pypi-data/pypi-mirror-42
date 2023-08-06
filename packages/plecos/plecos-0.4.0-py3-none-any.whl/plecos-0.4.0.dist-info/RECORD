@@ -1,0 +1,22 @@
+plecos/OLD_validate_metadata.py,sha256=me_enLz6JabaWO_TUFYpbSn1gikA02rpTq6_RJZZBGE,2460
+plecos/__init__.py,sha256=BwhJpqgsleT-PFA1SS1FdxbnxqRl_E57mLfw3SfGo7c,132
+plecos/plecos.py,sha256=SqfxuFfXbrzWeoLv3RobyCp65JW6RhuZrnhx77sX3eg,5370
+plecos/validate_cli.py,sha256=UrzUfLemuJG7nxY0Ei8h2w912Hf2fEQiaIJKpw14xJc,1628
+plecos/samples/metadata_local.json,sha256=AnjDJVMehWyXJXXDR8N2oerl8gYSFKJOuYamTiBQmA0,4445
+plecos/samples/metadata_local_broken.json,sha256=Q_N1kBwY6ueJhAXF_bb4za7ysHG64ac3hcdkjIN-4HI,4432
+plecos/samples/metadata_remote.json,sha256=PjGOqyGcmR85gvSs3SGrICaD2AsEN9KMUl7CwHD2lKE,3348
+plecos/samples/other/simple.json,sha256=fC-hQ2JV-roplgvHnS2ndaOc23KBI5p8nWK6BMvrehw,139
+plecos/samples/other/squid_example.json,sha256=rcSggRb4RMwu2ojD5TMQ9waHz9A9RI2g4nlamlxnzik,1861
+plecos/samples/other/supersimple.json,sha256=OKg3_mped69CocMc2rWtcSfej9j8YtLbJyxuTr5MXpo,142
+plecos/samples/other/test.json,sha256=gGPTRcpHNp3wRX1oR2DenIGS5Xai5uoP-oYLB6hKMrU,289
+plecos/schemas/metadata_190118.json,sha256=8LPJYgjOiEkhmHWUNinwXhiVrGGnv2ffu0MKYGNHipw,7741
+plecos/schemas/metadata_190131.json,sha256=C08kHM6HX2zb69qvqm2b-joCigCxRF80LvVFNqQFc6w,11090
+plecos/schemas/metadata_190218.json,sha256=eSbBw6kdVOclsyR7ARhdUq9ak_PTY8cT7S8g7Fx2BSs,11016
+plecos/schemas/other/schema tool.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+plecos/schemas/other/simple.json,sha256=xUdA19r5QyilLn_CwgmWThvIxJYWIwcqgUoKp6TMNIw,1662
+plecos/schemas/other/supersimple.json,sha256=o6cCKa8bLlYPIGxCRf2s4SAdlJOUiptLtjiyZkynMRs,924
+plecos/schemas/other/test.json,sha256=yGuORia-7lxGo7sxcbKP14377OcABf3bg1j4X8JcuLY,793
+plecos-0.4.0.dist-info/METADATA,sha256=I8zXMH9ScTwhfxpfc1FSk7I8SQiq3-Sy7-OWxyFLjE0,5060
+plecos-0.4.0.dist-info/RECORD,,
+plecos-0.4.0.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+plecos-0.4.0.dist-info/top_level.txt,sha256=fMNsyZj2oF2f3CBTpWJktlhr5kfttg6mzvAlOgJBl4I,7
