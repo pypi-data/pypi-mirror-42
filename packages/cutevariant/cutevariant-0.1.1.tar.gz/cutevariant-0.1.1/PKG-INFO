@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: cutevariant
+Version: 0.1.1
+Summary: GUI to visualize and treat variant data
+Home-page: https://github.com/labsquare/CuteVariant-python
+Author: Sacha Schutz
+Author-email: sacha@labsquare.org
+License: GPL
+Description: UNKNOWN
+Keywords: GUI,health
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
