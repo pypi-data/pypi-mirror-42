@@ -1,0 +1,3 @@
+[console_scripts]
+euler = euler.__main__:main
+

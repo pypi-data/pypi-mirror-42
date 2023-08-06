@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: euler-cli
+Version: 0.1.0
+Summary: Cli app to get problem from project euler webpage
+Home-page: https://github.com/naren-m/euler
+Author: Naren Mudivarthy
+Author-email: naren.mudivarthy@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: fire
+Requires-Dist: requests
+Requires-Dist: bs4
+
+UNKNOWN
+
+
