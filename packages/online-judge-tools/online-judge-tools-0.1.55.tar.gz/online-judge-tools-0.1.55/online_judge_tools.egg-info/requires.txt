@@ -1,0 +1,16 @@
+appdirs
+beautifulsoup4
+colorama
+lxml
+requests
+sympy
+
+[dev]
+isort>=4.3.4
+mypy>=0.660
+yapf>=0.25.0
+
+[docs]
+sphinx
+sphinx-autodoc-typehints
+sphinx_rtd_theme
