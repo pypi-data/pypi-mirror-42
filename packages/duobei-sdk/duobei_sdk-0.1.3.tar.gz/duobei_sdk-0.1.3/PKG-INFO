@@ -1,0 +1,31 @@
+Metadata-Version: 1.1
+Name: duobei_sdk
+Version: 0.1.3
+Summary: SDK for duobei.
+Home-page: https://github.com/duoduo369/duobei_sdk
+Author: duoduo369
+Author-email: duoduo3369@gmail.com
+License: MIT
+Download-URL: https://github.com/duoduo369/duobei_sdk/archive/newest.zip
+Description-Content-Type: UNKNOWN
+Description: duobei sdk
+        ===
+        SDK for duobei.
+        
+        live.py
+        ---
+        多贝直播类接口
+        http://docs.duobeiyun.com
+        
+        usage
+        ---
+        demo 见 examples
+        
+Keywords: duobei,duobei sdk
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Internet
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python :: 2.7
