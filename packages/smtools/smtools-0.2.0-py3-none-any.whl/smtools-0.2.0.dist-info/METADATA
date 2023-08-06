@@ -1,0 +1,41 @@
+Metadata-Version: 2.0
+Name: smtools
+Version: 0.2.0
+Summary: Redding Lab analysis tools
+Home-page: https://github.com/github/ReddingLab/smtools
+Author: Sy Redding
+Author-email: UNKNOWN
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: scikit-image
+Requires-Dist: matplotlib
+
+# smtools 
+### Single Molecule analysis Tools
+
+----
+
+This package contains Redding Lab analysis tools. 
+
+tree for the Redding Lab smtools project
+
+    ├── smtools
+        ├── alignment.py
+        ├── point_fitting.py
+        ├── curtains.py
+        ├── misc.py
+        └── testdata
+
+Documentation: https://smtools.readthedocs.io/en/latest/
+
+![](https://github.com/ReddingLab/smtools/blob/master/images/alignment.png)
+
+![](https://github.com/ReddingLab/smtools/blob/master/images/curtain_finder.png)
+
+
