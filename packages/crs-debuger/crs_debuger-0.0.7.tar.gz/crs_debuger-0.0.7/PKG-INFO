@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: crs_debuger
+Version: 0.0.7
+Summary: crs debuger
+Home-page: https://github.com/ywyt738/crs_debuger
+Author: HuangXiaojun
+Author-email: huangxiaojun@sightp.com
+License: MIT
+Description: # CRS Debug
+        [![Build Status](https://travis-ci.com/ywyt738/crs_debuger.svg?branch=master)](https://travis-ci.com/ywyt738/crs_debuger)
+        ![pypi](https://img.shields.io/pypi/v/crs_debuger.svg)
+        ![license](https://img.shields.io/pypi/l/crs_debuger.svg)
+        
+        This is a tool for debuging crs.
+        
+        ## Installation
+        
+        ```bash
+        pip install crs_debuger
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Development Status :: 1 - Planning
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/markdown
