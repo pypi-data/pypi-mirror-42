@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: bedparse
+Version: 0.2.1
+Summary: A simple library and CLI tool to manipulate BED files
+Home-page: https://github.com/tleonardi/bedparse
+Author: Tommaso Leonardi
+Author-email: tom@tleo.io
+License: MIT
+Description: [![Build Status](https://travis-ci.org/tleonardi/bedparse.svg?branch=master)](https://travis-ci.org/tleonardi/bedparse)
+        [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+         
+        # Bedparse
+        
+        ![](docs/bedparse.svg)
+        
+        Bedparse is a simple python module and CLI tool to perform common operations on BED files.
+        
+        It offers the following functionality:
+        * Filtering of transcripts based on annotations
+        * Joining of annotation files based on transcript names
+        * Conversion from GTF to BED format
+        * Conversion from UCSC to Ensembl chromosome names (and viceversa)
+        * Conversion from bed12 to bed6
+        * Promoter reporting
+        * Intron reporting
+        * CDS reporting
+        * UTR reporting 
+        
+        ## Installation
+        
+        ```
+        pip install bedparse
+        ```
+        
+        ## Documentation
+        
+        Our documentation is hosted on [Read the Docs](https://bedparse.readthedocs.io/en/latest/).
+        
+        We also have a short [tutorial](https://bedparse.readthedocs.io/en/latest/Tutorial.html) to guide you through the basic functions.
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3
+Description-Content-Type: text/markdown
