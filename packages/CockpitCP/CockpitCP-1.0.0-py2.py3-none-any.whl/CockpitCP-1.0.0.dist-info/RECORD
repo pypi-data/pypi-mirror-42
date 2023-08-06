@@ -1,0 +1,11 @@
+CockpitCP-1.0.0.data/scripts/cockpit-ipc,sha256=NKJyCC0fONcaYytG9mysca37TZf8wBDISvRNAW-78pQ,9
+CockpitCP-1.0.0.data/scripts/cockpit-panel,sha256=NKJyCC0fONcaYytG9mysca37TZf8wBDISvRNAW-78pQ,9
+CockpitCP-1.0.0.data/scripts/cockpit-ssl-gen,sha256=NKJyCC0fONcaYytG9mysca37TZf8wBDISvRNAW-78pQ,9
+cockpit/__init__.py,sha256=RsZjRjMprNcDm97wqRRSk6rTLgTX8N0GyicZyZ8OsBQ,22
+etc/cockpit/config.json,sha256=fyo2wZuJK6rFYGyRTbJvRfcm8CitYLdL8F6ljRgDyck,365
+etc/init.d/cockpit,sha256=wCnsr7GY6-drmrA30eWhq9ZgYl1F8OYyWGQmRTohsKU,726
+var/lib/cockpit/plugins/.placeholder,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+CockpitCP-1.0.0.dist-info/METADATA,sha256=jvQboNAh_qtuzt4_uaUyCVl18nsJYPS2jwGwLpUa4hY,227
+CockpitCP-1.0.0.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+CockpitCP-1.0.0.dist-info/top_level.txt,sha256=SkwpY7j3zJjoh1YFTtIhNRT5amZ_98fh-JQTz-_UcPU,8
+CockpitCP-1.0.0.dist-info/RECORD,,
