@@ -1,0 +1,23 @@
+Metadata-Version: 1.2
+Name: DOE2-SIM-Parser
+Version: 0.2
+Summary: UNKNOWN
+Home-page: https://github.com/grammy-jiang/doe2-sim-parser
+Author: Grammy Jiang
+Author-email: grammy.jiang@gmail.com
+Maintainer: Grammy Jiang
+Maintainer-email: grammy.jiang@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Other Audience
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Terminals
