@@ -1,0 +1,6 @@
+requests
+gcloud
+oauth2client
+requests_toolbelt
+python_jwt
+sseclient
