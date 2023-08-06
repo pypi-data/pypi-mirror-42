@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+sugarcrm_cloud/__init__.py
+sugarcrm_cloud/client.py
+sugarcrm_cloud/exception.py
+sugarcrm_cloud_python.egg-info/PKG-INFO
+sugarcrm_cloud_python.egg-info/SOURCES.txt
+sugarcrm_cloud_python.egg-info/dependency_links.txt
+sugarcrm_cloud_python.egg-info/not-zip-safe
+sugarcrm_cloud_python.egg-info/requires.txt
+sugarcrm_cloud_python.egg-info/top_level.txt
