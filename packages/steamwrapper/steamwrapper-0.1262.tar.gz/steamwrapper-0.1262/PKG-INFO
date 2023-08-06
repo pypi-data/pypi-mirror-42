@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: steamwrapper
+Version: 0.1262
+Summary: API wrapper for Steam written in Python
+Home-page: https://github.com/truedl/steamwrapper
+Author: truedl
+Author-email: dauzduz1@gmail.com
+License: MIT
+Description: # steamwrapper
+        API wrapper for Steam written in Python.<br/>
+        <b>Get your api key here:</b> https://steamcommunity.com/dev/apikey<br/>
+        <b>Install steamwrapper</b>
+        ```
+        pip install steamwrapper
+        ```
+        
+        **New Docs coming soon**
+        
+Platform: UNKNOWN

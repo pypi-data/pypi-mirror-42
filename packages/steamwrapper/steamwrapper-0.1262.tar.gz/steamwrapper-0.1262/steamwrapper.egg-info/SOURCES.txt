@@ -1,0 +1,9 @@
+README.txt
+setup.py
+steamwrapper/__init__.py
+steamwrapper/steamwrapper.py
+steamwrapper.egg-info/PKG-INFO
+steamwrapper.egg-info/SOURCES.txt
+steamwrapper.egg-info/dependency_links.txt
+steamwrapper.egg-info/requires.txt
+steamwrapper.egg-info/top_level.txt
