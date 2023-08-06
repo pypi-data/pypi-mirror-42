@@ -1,0 +1,26 @@
+README.md
+setup.py
+monitors/__init__.py
+monitors/cregexp.py
+monitors/ere.py
+monitors/mtl.py
+monitors/regexp.py
+monitors/parser/ExtRegExpLexer.py
+monitors/parser/ExtRegExpListener.py
+monitors/parser/ExtRegExpParser.py
+monitors/parser/ExtRegExpVisitor.py
+monitors/parser/PastMTLLexer.py
+monitors/parser/PastMTLListener.py
+monitors/parser/PastMTLParser.py
+monitors/parser/PastMTLVisitor.py
+monitors/parser/RegExpLexer.py
+monitors/parser/RegExpListener.py
+monitors/parser/RegExpParser.py
+monitors/parser/RegExpVisitor.py
+monitors/parser/__init__.py
+python_monitors.egg-info/PKG-INFO
+python_monitors.egg-info/SOURCES (kybele's conflicted copy 2019-01-11).txt
+python_monitors.egg-info/SOURCES.txt
+python_monitors.egg-info/dependency_links.txt
+python_monitors.egg-info/requires.txt
+python_monitors.egg-info/top_level.txt
