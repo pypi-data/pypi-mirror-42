@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: figur
+Version: 0.0.1
+Summary: Figurenerkennung for German literary texts.
+Home-page: https://github.com/severinsimmler/figur
+Author: Severin Simmler
+License: MIT
+Description: 
+        # Named entity recognition for German literary texts.
+        
+        ## Installation
+        
+        ```
+        $ pip install figur
+        ```
+        
+        ## Example
+        
+        ```python
+        >>> import figur
+        >>> text = "Der Gärtner entfernte sich eilig, und Eduard folgte bald."
+        >>> figur.tag(text)
+            SentenceId      Token      Tag
+        0            0        Der        _
+        1            0    Gärtner  AppTdfW
+        2            0  entfernte        _
+        3            0       sich     pron
+        4            0      eilig        _
+        5            0          ,        _
+        6            0        und        _
+        7            0     Eduard     Core
+        8            0     folgte        _
+        9            0       bald        _
+        10           0          .        _
+        ```
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
