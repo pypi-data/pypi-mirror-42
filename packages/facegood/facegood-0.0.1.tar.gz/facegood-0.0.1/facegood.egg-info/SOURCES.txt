@@ -1,0 +1,9 @@
+README.md
+setup.py
+facegood/__init__.py
+facegood/processAudio.py
+facegood/test_print.py
+facegood.egg-info/PKG-INFO
+facegood.egg-info/SOURCES.txt
+facegood.egg-info/dependency_links.txt
+facegood.egg-info/top_level.txt
