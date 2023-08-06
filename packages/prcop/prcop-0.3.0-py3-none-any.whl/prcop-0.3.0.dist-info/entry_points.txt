@@ -1,0 +1,3 @@
+[console_scripts]
+prcop=prcop.cli:cli
+
