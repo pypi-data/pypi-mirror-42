@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+example.py
+setup.py
+hotbits/__init__.py
+hotbits/__main__.py
+hotbits.egg-info/PKG-INFO
+hotbits.egg-info/SOURCES.txt
+hotbits.egg-info/dependency_links.txt
+hotbits.egg-info/entry_points.txt
+hotbits.egg-info/requires.txt
+hotbits.egg-info/top_level.txt
