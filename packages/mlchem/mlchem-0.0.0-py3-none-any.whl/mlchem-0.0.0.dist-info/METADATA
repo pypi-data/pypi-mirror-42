@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: mlchem
+Version: 0.0.0
+Summary: Machine learning for chemistry
+Home-page: https://github.com/muammar/mlchem
+Author: Muammar El Khatib
+Author-email: muammarelkhatib@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+MLChem
+===========
+
+**MLChem** is machine-learning for chemistry.
+
+This package is written in Python, and features:
+
+- PyTorch backend.
+- GPU support.
+- ASE interface.
+- Completely modular. You can use any part in your project.
+- Free software <3. No secrets! Pull requests and additions more than welcome!
+- Good documentation (I hope!).
+- Explicit and idiomatic: `mlchem.get_me_a_coffee()`
+
+
