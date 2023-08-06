@@ -1,0 +1,6 @@
+Release 0.2.3
+-------------
+* Remove add permission from Django admin
+* Add Django 2.11 support
+* Drop Django 1.11 support
+* Update requirements
