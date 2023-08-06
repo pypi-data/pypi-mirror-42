@@ -1,0 +1,7 @@
+depocs
+django>=1.11.0
+sqlparse
+six==1.12.0
+
+[sql_formatting]
+pygments

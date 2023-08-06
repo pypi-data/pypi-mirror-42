@@ -1,0 +1,14 @@
+README.md
+setup.cfg
+setup.py
+django_query_debug/__init__.py
+django_query_debug/__version__.py
+django_query_debug/apps.py
+django_query_debug/mixins.py
+django_query_debug/patch.py
+django_query_debug/utils.py
+django_query_debug.egg-info/PKG-INFO
+django_query_debug.egg-info/SOURCES.txt
+django_query_debug.egg-info/dependency_links.txt
+django_query_debug.egg-info/requires.txt
+django_query_debug.egg-info/top_level.txt
