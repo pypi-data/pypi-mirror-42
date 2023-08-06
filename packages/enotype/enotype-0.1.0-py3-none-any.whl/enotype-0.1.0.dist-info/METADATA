@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: enotype
+Version: 0.1.0
+Summary: A cross-language standard library for types
+Home-page: https://eno-lang.org/
+Author: Simon Repp
+Author-email: simon@fdpl.io
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# enotype
+
+**A cross-language standard library for types.**
+
+```python
+from enotype import color
+
+color('#fff') # returns '#fff'
+color('#xyz') # raises ValueError('A color is required, for instance '#B6D918', '#fff' or '#01b'.')
+```
+
+enotype is a collection of minimalist pure functions that validate and convert type-unsafe `string` representations into type-safe, native types.
+
+It is the standard type library for the [eno notation language](https://eno-lang.org) but can be utilized in a multitude of other contexts as well.
+
+
