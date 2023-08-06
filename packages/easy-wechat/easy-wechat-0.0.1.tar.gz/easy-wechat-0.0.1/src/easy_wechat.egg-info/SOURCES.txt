@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+src/easy_wechat.egg-info/PKG-INFO
+src/easy_wechat.egg-info/SOURCES.txt
+src/easy_wechat.egg-info/dependency_links.txt
+src/easy_wechat.egg-info/requires.txt
+src/easy_wechat.egg-info/top_level.txt
+src/easy_wechat.egg-info/zip-safe
+src/tests/__init__.py
+src/wechat/__init__.py

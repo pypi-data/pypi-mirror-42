@@ -1,0 +1,18 @@
+Metadata-Version: 1.2
+Name: easy-wechat
+Version: 0.0.1
+Summary: My package description
+Home-page: https://github.com/youngershen/easy-wechat
+Author: "Younger Shen"
+Author-email: "younger.x.shen@gmail.com"
+License: MIT License
+Description: # Easy Wecat
+Keywords: wechat
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6
