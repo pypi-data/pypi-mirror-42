@@ -1,0 +1,6 @@
+
+[:python_version<"3.0"]
+doit==0.29.0
+
+[:python_version>="3.0"]
+doit==0.30.0
