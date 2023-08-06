@@ -1,0 +1,3 @@
+[console_scripts]
+watermarkImage = watermarkImage.Logic:main
+
