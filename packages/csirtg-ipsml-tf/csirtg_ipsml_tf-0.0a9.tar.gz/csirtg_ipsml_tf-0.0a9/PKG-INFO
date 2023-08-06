@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: csirtg_ipsml_tf
+Version: 0.0a9
+Summary: CSIRTG IP ML Framework - TensorFlow
+Home-page: https://github.com/csirtgadgets/csirtg-ipsml-tf-py
+Author: Wes Young
+Author-email: wes@csirtgadgets.com
+License: MPLv2
+Description: UNKNOWN
+Keywords: network,security
+Platform: UNKNOWN

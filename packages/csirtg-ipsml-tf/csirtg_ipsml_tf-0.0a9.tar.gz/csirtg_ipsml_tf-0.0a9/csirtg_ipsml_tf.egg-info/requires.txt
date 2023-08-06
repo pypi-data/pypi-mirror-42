@@ -1,0 +1,10 @@
+tensorflow==1.8
+pandas
+keras
+ipaddress
+scipy
+scikit-learn
+numpy
+geoip2
+arrow
+maxminddb

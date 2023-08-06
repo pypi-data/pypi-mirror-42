@@ -1,0 +1,4 @@
+[console_scripts]
+csirtg-ipsml-tf = csirtg_ipsml_tf:main
+csirtg-ipsml-tf-train = csirtg_ipsml_tf.train:main
+
