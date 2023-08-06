@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+Pipfile
+Pipfile.lock
+README.md
+setup.py
+examples/example.sh
+src/__init__.py
+src/ucp_cli.py
+src/python_ucp_cli.egg-info/PKG-INFO
+src/python_ucp_cli.egg-info/SOURCES.txt
+src/python_ucp_cli.egg-info/dependency_links.txt
+src/python_ucp_cli.egg-info/entry_points.txt
+src/python_ucp_cli.egg-info/requires.txt
+src/python_ucp_cli.egg-info/top_level.txt
