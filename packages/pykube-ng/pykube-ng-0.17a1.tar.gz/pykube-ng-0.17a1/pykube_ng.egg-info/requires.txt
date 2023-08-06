@@ -1,0 +1,8 @@
+requests>=2.12
+PyYAML
+six>=1.10.0
+tzlocal
+
+[gcp]
+google-auth
+jsonpath-ng
