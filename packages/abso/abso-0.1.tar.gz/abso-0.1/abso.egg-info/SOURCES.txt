@@ -1,0 +1,8 @@
+setup.py
+abso/__init__.py
+abso/path.py
+abso.egg-info/PKG-INFO
+abso.egg-info/SOURCES.txt
+abso.egg-info/dependency_links.txt
+abso.egg-info/not-zip-safe
+abso.egg-info/top_level.txt
