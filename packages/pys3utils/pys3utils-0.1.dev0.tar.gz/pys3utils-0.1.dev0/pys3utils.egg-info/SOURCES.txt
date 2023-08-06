@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+pys3utils/__init__.py
+pys3utils/push_project_to_s3.py
+pys3utils.egg-info/PKG-INFO
+pys3utils.egg-info/SOURCES.txt
+pys3utils.egg-info/dependency_links.txt
+pys3utils.egg-info/entry_points.txt
+pys3utils.egg-info/top_level.txt
+pys3utils.egg-info/zip-safe
