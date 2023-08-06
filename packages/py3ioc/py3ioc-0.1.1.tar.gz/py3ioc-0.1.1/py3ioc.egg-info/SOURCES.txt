@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+py3ioc.egg-info/PKG-INFO
+py3ioc.egg-info/SOURCES.txt
+py3ioc.egg-info/dependency_links.txt
+py3ioc.egg-info/requires.txt
+py3ioc.egg-info/top_level.txt
+pyioc/__init__.py
+pyioc/containers.py
+pyioc/locators.py
+pyioc/providers.py
