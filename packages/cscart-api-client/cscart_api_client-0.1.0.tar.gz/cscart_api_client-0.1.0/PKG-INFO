@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cscart-api-client
+Version: 0.1.0
+Summary: CS-Cart API Client for Python and also Human
+Home-page: https://github.com/Mizkino
+Author: Mizkino
+Author-email: Mizkino@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Requires-Dist: requests (>=2.21,<3.0)
+Project-URL: Documentation, https://github.com/Mizkino/cscart_api_client/blob/master/README.md
+Project-URL: Repository, https://github.com/Mizkino/cscart_api_client
