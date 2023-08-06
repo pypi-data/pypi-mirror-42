@@ -1,0 +1,11 @@
+README.md
+setup.py
+text_processing/__init__.py
+text_processing.egg-info/PKG-INFO
+text_processing.egg-info/SOURCES.txt
+text_processing.egg-info/dependency_links.txt
+text_processing.egg-info/top_level.txt
+text_processing/pos_processing/__init__.py
+text_processing/pos_processing/conftest.py
+text_processing/pos_processing/correct_text.py
+text_processing/pos_processing/test_correct_text.py
