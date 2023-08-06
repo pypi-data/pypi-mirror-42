@@ -1,0 +1,21 @@
+server {{
+    listen 80;
+    server_name {domains};
+
+    location = /favicon.ico {{ access_log off; log_not_found off; }}
+
+    location {static} {{
+        root {path};
+    }}
+
+    location {media} {{
+        root {path};
+    }}
+
+    location / {{
+        include proxy_params;
+        proxy_pass http://unix:{sock};
+    }}
+
+    {extras}
+}}
