@@ -1,0 +1,16 @@
+AUTHORS.rst
+CONTRIBUTING.rst
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+aiorest_client.py
+requirements.txt
+setup.cfg
+setup.py
+aiorest_client.egg-info/PKG-INFO
+aiorest_client.egg-info/SOURCES.txt
+aiorest_client.egg-info/dependency_links.txt
+aiorest_client.egg-info/not-zip-safe
+aiorest_client.egg-info/requires.txt
+aiorest_client.egg-info/top_level.txt

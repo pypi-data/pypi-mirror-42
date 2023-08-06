@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: aiorest_client
+Version: 0.1.11
+Summary: A helper to call REST API from aiohttp
+Home-page: https://github.com/klen/aiorest_client
+Author: Kirill Klenov
+Author-email: horneds@gmail.com
+License: MIT license
+Description: ==============
+        AIOREST Client
+        ==============
+        
+        
+        .. image:: https://img.shields.io/pypi/v/aiorest_client.svg
+                :target: https://pypi.python.org/pypi/aiorest_client
+        
+        .. image:: https://img.shields.io/travis/klen/aiorest-client.svg
+                :target: https://travis-ci.org/klen/aiorest-client
+        
+        .. image:: https://readthedocs.org/projects/aiorest-client/badge/?version=latest
+                :target: https://aiorest-client.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pyup.io/repos/github/klen/aiorest-client/shield.svg
+             :target: https://pyup.io/repos/github/klen/aiorest-client/
+             :alt: Updates
+        
+        A helper to call REST API from aiohttp
+        
+        * Free software: MIT license
+        * Documentation: https://aiorest-client.readthedocs.io.
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2019-01-29)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: aiorest_client aiohttp rest api async
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
