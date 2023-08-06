@@ -1,0 +1,1 @@
+C:/local/mpfr/mpfr.lib C:/local/mpir/gmp.lib C:/local/boost_libs/libboost_program_options-mgw81-mt-1_68.a -Wl,-Bstatic -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
