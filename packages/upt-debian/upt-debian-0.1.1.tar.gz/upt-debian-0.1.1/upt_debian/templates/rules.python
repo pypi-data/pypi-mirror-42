@@ -1,0 +1,7 @@
+{% extends 'rules' %}
+
+{% block rules %}
+export PYBUILD_NAME = {{ pkg.name }}
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'control' %}
+
+{% block maintainer %}
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+{% endblock %}
+
+{% block build_depends %}
+Build-Depends:
+  debhelper (>= 11),
+  dh-python,
+  python3-all,
+  python3-setuptools,
+{% for dep in pkg.run_depends + pkg.test_depends %}
+  {{ dep | debianize_requirement }},
+{% endfor %}
+{% endblock %}
+
+{% block vcs %}
+Vcs-Git: https://salsa.debian.org/python-team/modules/{{ pkg.name }}.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/{{ pkg.name }}
+{% endblock %}
+
+{% block depends %}
+Depends:
+  ${misc:Depends},
+  ${python3:Depends}
+{% for dep in pkg.run_depends %}
+  {{ dep | debianize_requirement }},
+{% endfor %}
+{% endblock %}

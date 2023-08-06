@@ -1,0 +1,3 @@
+[upt.backends]
+debian = upt_debian.upt_debian:DebianBackend
+
