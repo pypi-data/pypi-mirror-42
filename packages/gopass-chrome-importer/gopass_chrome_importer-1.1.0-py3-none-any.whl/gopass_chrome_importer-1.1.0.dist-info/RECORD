@@ -1,0 +1,14 @@
+gopass_chrome_importer/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gopass_chrome_importer/gopass_chrome_importer.py,sha256=53g6xZKnSSw6Fi19EnTiu8aouZKMgpu8PIiA9I9-J0Q,11732
+gopass_chrome_importer/summary/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+gopass_chrome_importer/summary/summary_manager.py,sha256=r4nIcn33COuNHwY3vAwfLtpfeEL3pKnQVlheRd57Sis,4679
+tests/__init__.py,sha256=3YM1h1q_s5ppNZSGBHJpz91xwdDvhmntYwzoO4zStUo,102
+tests/basic_test.py,sha256=yoQ61Aegx9hoe3Zz0vG-zidrENKJe0ueSM9T28KcMsw,585
+tests/ci/__init__.py,sha256=CNWFWbhI7R2TGrGZytGgy5qSiJhjubWf8KqGd2WcHJs,193
+tests/ci/ci_only_tests.py,sha256=CUW7sTbX6SByo9h0gFVLYaOjvMI84YJZ4cu6zLiDiFw,727
+gopass_chrome_importer-1.1.0.dist-info/LICENSE,sha256=DsFEt_tHr3kDIzj3G7__O-DrXnccaichC05D_baUmHc,1070
+gopass_chrome_importer-1.1.0.dist-info/METADATA,sha256=Qk2U6worXBM9Z0_HE4Am33NL3BUv_3gYDbEW1nJOoQQ,8010
+gopass_chrome_importer-1.1.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+gopass_chrome_importer-1.1.0.dist-info/entry_points.txt,sha256=cVtqAYdsx6p_uyqDOmvzQBT0gXFTusDgF3PiJlEsuYE,94
+gopass_chrome_importer-1.1.0.dist-info/top_level.txt,sha256=KJx_bS_jkecYK96k05CpQSBElJ-1LplPTlS22NspvVU,29
+gopass_chrome_importer-1.1.0.dist-info/RECORD,,
