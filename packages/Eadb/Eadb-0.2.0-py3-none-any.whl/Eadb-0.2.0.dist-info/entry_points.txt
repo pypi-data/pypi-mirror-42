@@ -1,0 +1,8 @@
+[console_scripts]
+adinfo = eadb.cli:get_info
+adname = eadb.cli:get_name
+adscreen = eadb.cli:get_screenshot
+adsize = eadb.cli:get_wm_size
+adversion = eadb.cli:get_version
+eadb = eadb.cli:main_eadb
+
