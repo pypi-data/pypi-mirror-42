@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: cjdropshipping
+Version: 0.0.1
+Summary: api for cjdropshipping-python
+Home-page: https://github.com/liuvae820/cjdropshipping-python3.git
+Author: liuvae
+Author-email: liuvae820@gmail.com
+License: UNKNOWN
+Description: # cjdropshipping-python3
+        api for cjdropshipping-python
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
