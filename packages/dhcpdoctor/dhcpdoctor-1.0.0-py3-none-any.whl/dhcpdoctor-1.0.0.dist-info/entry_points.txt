@@ -1,0 +1,3 @@
+[console_scripts]
+dhcpdoctor=dhcpdoctor.dhcpdoctor:main
+

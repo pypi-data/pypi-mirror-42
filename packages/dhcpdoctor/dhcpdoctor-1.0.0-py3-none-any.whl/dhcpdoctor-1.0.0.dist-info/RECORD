@@ -1,0 +1,8 @@
+dhcpdoctor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dhcpdoctor/dhcpdoctor.py,sha256=fY7_KM2REMVQohYG0yxQGVYHPwfe_mLOyzWobsrbJus,12918
+dhcpdoctor/settings.py,sha256=pZJOgmAoz8U75r8szESxVIkVLKf0GepDHOaOZR6KbPA,819
+dhcpdoctor-1.0.0.dist-info/entry_points.txt,sha256=2vCgT3d72hBxII9DX-c5tTvRW_BJw-MbZBu2nvHNF7g,57
+dhcpdoctor-1.0.0.dist-info/LICENSE,sha256=qfNcsdMSYlVZXO_YoSxvnU2h5dc9y4zEy66WNEl1rcU,1062
+dhcpdoctor-1.0.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+dhcpdoctor-1.0.0.dist-info/METADATA,sha256=6-wt3-uQXBUSl27itzEIzxauWyiyUzaWcrUGFHCHJ7k,4204
+dhcpdoctor-1.0.0.dist-info/RECORD,,
