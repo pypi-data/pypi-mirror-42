@@ -1,0 +1,8 @@
+README.rst
+pimple.py
+setup.py
+pimple.egg-info/PKG-INFO
+pimple.egg-info/SOURCES.txt
+pimple.egg-info/dependency_links.txt
+pimple.egg-info/entry_points.txt
+pimple.egg-info/top_level.txt
