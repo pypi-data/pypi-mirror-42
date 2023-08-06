@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: prcop
+Version: 0.1.1
+Summary: Send Slack alerts to remind your team when reviews are overdue on pull requests
+Home-page: https://github.com/RobbieClarken/prcop
+License: UNKNOWN
+Author: RobbieClarken
+Author-email: robbie.clarken@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Utilities
+Requires-Dist: click (>=7.0,<8.0)
+Requires-Dist: requests (>=2.21,<3.0)
+Description-Content-Type: text/markdown
+
+# prcop
+
+Send Slack alerts to remind your team when reviews are overdue on pull requests.
+
+Currently supports self-hosted Bitbucket servers.
+
+## Installation
+
+```
+python3.7 -m pip install prcop
+```
+
+## Usage
+
+```
+prcop run \
+  --bitbucket-url https://bitbucket.example.com/ \
+  --slack-webhook https://hooks.slack.com/services/<id> \
+  --slack-channel development \
+  project1/repo1 project1/repo2 project2/repo3
+```
+
