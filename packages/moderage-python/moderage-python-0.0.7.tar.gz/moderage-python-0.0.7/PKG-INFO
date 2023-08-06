@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: moderage-python
+Version: 0.0.7
+Summary: Mode Rage python client
+Home-page: https://gitlab.com/chrisbam4d/moderage-python-client
+Author: Chris Bamford
+Author-email: chrisbam4d@gmail.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Description: # Mode Rage python client
+        
+        [![PyPI version](https://badge.fury.io/py/moderage-python.svg)](https://badge.fury.io/py/moderage-python)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
