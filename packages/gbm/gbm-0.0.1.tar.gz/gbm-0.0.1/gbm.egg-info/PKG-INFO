@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: gbm
+Version: 0.0.1
+Summary: Read and analyze GBM data
+Home-page: https://github.com/ahnitz/gbm
+Author: Alexander Harvey Nitz
+Author-email: alex.nitz@gmail.com
+License: UNKNOWN
+Description: # Fermi Gamma-ray Burst Monitor Python Tools
+        
+        Utilities to read and do basic analysis of archival Fermi-GBM TTE data.
+        
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Description-Content-Type: text/markdown
