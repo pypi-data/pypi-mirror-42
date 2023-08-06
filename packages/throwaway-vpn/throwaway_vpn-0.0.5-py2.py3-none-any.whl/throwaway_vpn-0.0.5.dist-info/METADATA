@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: throwaway-vpn
+Version: 0.0.5
+Summary: Generate a throwaway VPN via DigitalOcean
+Home-page: https://pyscaffold.org/
+Author: dan
+Author-email: dan@ctrlengineering.com
+License: mit
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Dist: python-digitalocean (>=1.13)
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+UNKNOWN
+
+
