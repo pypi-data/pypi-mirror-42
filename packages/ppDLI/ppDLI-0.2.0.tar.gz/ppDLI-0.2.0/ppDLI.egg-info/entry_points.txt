@@ -1,0 +1,3 @@
+[console_scripts]
+ptm = pytaskmanager.cli.cli:cli
+
