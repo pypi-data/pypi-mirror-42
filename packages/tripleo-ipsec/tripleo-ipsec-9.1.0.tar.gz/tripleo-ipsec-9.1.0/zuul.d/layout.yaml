@@ -1,0 +1,9 @@
+- project:
+    templates:
+      - ansible-lint-jobs
+    check:
+      jobs:
+        - openstack-tox-linters
+    gate:
+      jobs:
+        - openstack-tox-linters
