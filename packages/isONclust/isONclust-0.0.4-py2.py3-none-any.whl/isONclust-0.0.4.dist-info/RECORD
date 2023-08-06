@@ -1,0 +1,13 @@
+isONclust-0.0.4.data/scripts/isONclust,sha256=voF0pCqT49uG1B7MbBTaA7a39vdZbgRac_471_wssUQ,10614
+isONclust-0.0.4.dist-info/METADATA,sha256=P0Pfwcmuf9MMSzFCRlWWkWrsjKoZy7LNCqsxHTKlknw,9621
+isONclust-0.0.4.dist-info/RECORD,,
+isONclust-0.0.4.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+isONclust-0.0.4.dist-info/top_level.txt,sha256=F7U4jdIxH3MVMmyX9rbajWuG0bj5tcZN4L1DZSxW72E,8
+modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modules/cluster.py,sha256=yloaevGgqP_1or-bhPlW-R_IeJQxAuhJHcG53B29ri8,18751
+modules/cluster_parallel.py,sha256=u7UPwfw_g8t7MvdkLkEj_GGbX0-uNRKlEgPymxijKBw,31658
+modules/compute_shared_minimizers_probabilities.py,sha256=NAeNE8y8H0MqXJgxPA_MOBU1C6yMCvUmvehPT_QqGcU,11425
+modules/get_sorted_fastq_for_cluster.py,sha256=oXniWZRijK9othDRIO_3vJddVhUVgqW0VpOjGEN7cpo,11085
+modules/help_functions.py,sha256=QM7-HX4v1Vpe7iUmZG8piUjjxdy6TSxJ_RTl-2ZX4XA,3007
+modules/p_minimizers_shared.py,sha256=6vfxx3fB21wkldLAdbbS6XOycKxwp-XiJR_7RVlmedI,1790771
+modules/parallelize.py,sha256=92Q-JvKfdDF0O0U2InMDN2OjKAcQHuy2PTxta4izlA8,8936
