@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: hashivault-vars
+Version: 0.1.4
+Summary: Ansible Vars Plugin for Hashicorp Vault
+Home-page: https://github.com/goethite/hashivault_vars
+Author: Graham Lee Bevan
+Author-email: graham.bevan@ntlworld.com
+License: MIT
+Description: UNKNOWN
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
