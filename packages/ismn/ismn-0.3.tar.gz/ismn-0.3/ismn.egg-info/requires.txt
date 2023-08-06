@@ -1,0 +1,12 @@
+pygeogrids
+numpy
+pandas
+matplotlib
+configparser
+scipy
+cython
+
+[test]
+pytest-cov
+pytest
+pytest-mpl

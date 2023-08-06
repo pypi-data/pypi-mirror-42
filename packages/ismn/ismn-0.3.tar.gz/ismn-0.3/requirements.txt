@@ -1,0 +1,9 @@
+# Add your requirements here like:
+pygeogrids
+numpy
+pandas
+matplotlib
+configparser
+scipy
+# cartopy
+cython
