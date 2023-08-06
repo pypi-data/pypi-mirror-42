@@ -1,0 +1,17 @@
+MANIFEST.in
+setup.py
+cwlbrowser/__init__.py
+cwlbrowser/browser.py
+cwlbrowser/util.py
+cwlbrowser/workflow.py
+cwlbrowser.egg-info/PKG-INFO
+cwlbrowser.egg-info/SOURCES.txt
+cwlbrowser.egg-info/dependency_links.txt
+cwlbrowser.egg-info/not-zip-safe
+cwlbrowser.egg-info/requires.txt
+cwlbrowser.egg-info/top_level.txt
+cwlbrowser/test/doc/add1.cwl
+cwlbrowser/test/doc/arithmeticfunction1.cwl
+cwlbrowser/test/doc/lobSTR.cwl
+cwlbrowser/test/doc/lobSTR_expected_inputs.txt
+cwlbrowser/test/doc/subtract1.cwl

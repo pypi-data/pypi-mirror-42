@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: cwlbrowser
+Version: 2.5
+Summary: Python library that browses and analyses workflows in CWL
+Home-page: https://gitlab.cs.man.ac.uk/mbaxasp7/cwlbrowser
+Author: Sean Pertet
+Author-email: sean.pertet@student.manchester.ac.uk
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
