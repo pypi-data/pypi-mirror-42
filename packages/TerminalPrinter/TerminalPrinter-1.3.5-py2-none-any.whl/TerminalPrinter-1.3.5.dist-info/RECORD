@@ -1,0 +1,15 @@
+printer/__init__.py,sha256=ajz1GSNU9xYVrFEDSz6Xwg7amWQ_yvW75tQa1ZvRIWc,3
+printer/http.py,sha256=wiS71ul2DFlyAW2-4k4N0jQrLuIlYNHvE4BGwy_F84Y,17885
+printer/painter.py,sha256=ObwLGhV0KBMaPFZgLSfRLJb7VOUMEmv9S5wDIJ5Subs,5558
+printer/resource.py,sha256=s5_qHyshUbY_KoaUGlpfK1eNAz4NyoyyHkZE3EvnJ-E,2437
+printer/run.py,sha256=2I3AiXDjdGi0xhkc5CD7e7HJ3xIi99_jbSN2z80ZtAw,3992
+printer/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+printer/test/command_test.py,sha256=ZATmvL63SAWj3qKomD9_jH8LI4aAgCH81beb0tLzsZE,2618
+printer/test/http_test.py,sha256=VSwLlXM8BDgeidwBHDZKNyi-fD2U84bSpBZsjgo1Oi0,7080
+printer/test/run.py,sha256=StljkahxmQsP-dejQdeqDSz41QNmJj9N4i8ajBH_YpA,732
+TerminalPrinter-1.3.5.dist-info/LICENSE,sha256=QhH5LScDakiCl2NDKwzWS2MxQesBm_9YIZfb3nH8b_8,1077
+TerminalPrinter-1.3.5.dist-info/METADATA,sha256=aSpCIcVIR0WM-3vhfPgsvygQty9PZ5uKI_umG01tSbM,907
+TerminalPrinter-1.3.5.dist-info/WHEEL,sha256=_eaHuBxOHdDlLnwQU30U16Q6vfvhsEhxIYEpcPcf8n0,92
+TerminalPrinter-1.3.5.dist-info/entry_points.txt,sha256=wrdB8_t3bMbEcUCKbhjkg1tOIc5hRfwYxx7MK4m00-k,51
+TerminalPrinter-1.3.5.dist-info/top_level.txt,sha256=f5Q2aIKx_PV7LCTVKGudMoKkize-H7QNVggUMRMgY2w,8
+TerminalPrinter-1.3.5.dist-info/RECORD,,
