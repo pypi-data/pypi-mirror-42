@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: opensoundscape
+Version: 0.2.2.dev0
+Summary: Open source, scalable acoustic classification for ecology and conservation
+Home-page: https://github.com/jkitzes/opensoundscape
+Author: Justin Kitzes
+Author-email: justin.kitzes@pitt.edu
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: Pillow (>=5.4,<6.0)
+Requires-Dist: docopt (==0.6.2)
+Requires-Dist: librosa (==0.6.2)
+Requires-Dist: llvmlite (==0.27.0)
+Requires-Dist: matplotlib (==3.0.2)
+Requires-Dist: numba (==0.42.0)
+Requires-Dist: numpy (==1.15.4)
+Requires-Dist: opencv-python-headless (==4.0.0.21)
+Requires-Dist: pandas (==0.23.4)
+Requires-Dist: pymongo (==3.7.2)
+Requires-Dist: pyqt5 (>=5.12,<6.0)
+Requires-Dist: scikit-image (==0.14.1)
+Requires-Dist: scipy (==1.2.0)
+Requires-Dist: toolz (>=0.9.0,<0.10.0)
+Project-URL: Repository, https://github.com/jkitzes/opensoundscape
