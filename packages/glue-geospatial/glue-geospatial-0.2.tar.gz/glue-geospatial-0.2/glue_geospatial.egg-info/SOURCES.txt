@@ -1,0 +1,17 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+glue_geospatial/__init__.py
+glue_geospatial/coordinates.py
+glue_geospatial/data_factory.py
+glue_geospatial/version.py
+glue_geospatial.egg-info/PKG-INFO
+glue_geospatial.egg-info/SOURCES.txt
+glue_geospatial.egg-info/dependency_links.txt
+glue_geospatial.egg-info/entry_points.txt
+glue_geospatial.egg-info/requires.txt
+glue_geospatial.egg-info/top_level.txt
+glue_geospatial/tests/__init__.py
+glue_geospatial/tests/test_coordinates.py

@@ -1,0 +1,3 @@
+glue-core>=0.11
+rasterio
+pyproj
