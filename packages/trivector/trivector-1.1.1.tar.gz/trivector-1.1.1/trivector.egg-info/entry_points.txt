@@ -1,0 +1,3 @@
+[console_scripts]
+trivector = trivector.__main__:main
+

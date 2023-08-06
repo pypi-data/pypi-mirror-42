@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+trivector/__init__.py
+trivector/__main__.py
+trivector/trivector.py
+trivector.egg-info/PKG-INFO
+trivector.egg-info/SOURCES.txt
+trivector.egg-info/dependency_links.txt
+trivector.egg-info/entry_points.txt
+trivector.egg-info/requires.txt
+trivector.egg-info/top_level.txt
