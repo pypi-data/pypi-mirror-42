@@ -1,0 +1,12 @@
+django_selectel/__init__.py,sha256=48n0EYUbvmSxZSi6yqQ5eVbLVqY5zaOJhpD5BPcFXB4,193
+django_selectel/api.py,sha256=d2ElgAc0_qDoAZYzYwvS9C2x1GqI5HOiqPlLSZo0Rsk,6694
+django_selectel/apps.py,sha256=P7F7wStR4zkq3SsmwLLqA0pcyAkXhLFhOeBIcI0bYu8,208
+django_selectel/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_selectel/settings.py,sha256=k3YU3P0_2c6oBsyT-ufH2uXsXWlzbwm3SkBnB1e8_0E,595
+django_selectel/utils.py,sha256=ggY4cj8V5_VWhWRcaQaEz554TJ60W8XItUAigVnoDeU,65
+django_selectel/storages/__init__.py,sha256=ykf9zZYzDrNiLzkJ9UwQFBmlL8i2K_Tgi2w_EbuojGo,91
+django_selectel/storages/api_storage.py,sha256=PXKewUQrmzA4bBvrujjF0mcnAiMvKw2JW-D2y65-UsY,5266
+django_selectel-2.0.2.dist-info/METADATA,sha256=T562TmH0PyIBKMgtlc35mrSgNmrDR52B08x3K869PvQ,4542
+django_selectel-2.0.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+django_selectel-2.0.2.dist-info/top_level.txt,sha256=MGaBgg9I4Sx875_EIOsl69uVyVl_5dlUk3kpdd4_8y4,16
+django_selectel-2.0.2.dist-info/RECORD,,
