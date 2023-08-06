@@ -1,0 +1,17 @@
+tatt/__init__.py,sha256=lM723iQLGrUjNejMhcfqOd1eoTxgOLJXgjqDY807Lhg,14
+tatt/config.py,sha256=HHF1cZzuGZ-woEoNuEloNcEJq81RMtXZhKFKl_XZQPk,565
+tatt/exceptions.py,sha256=LbvON6SPahxKav3R-1I-_m_OBX9HcZuAiK8cqkReylU,176
+tatt/helpers.py,sha256=c9M7HH3Qh9QtqDGc-4vN1e7bx49R2qFV6jsynf5nSew,3004
+tatt/transcribe.py,sha256=SrMNqVx6GnZdR4ZmJbVm-Mg6ZhhUERnw05ou7C8AgSU,3232
+tatt/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tatt/tests/test_amazon.py,sha256=j0icP_d6mDeF0bw6rr3hy4Vj0AVJMGgjbwtXME55HGs,1616
+tatt/tests/test_transcribe.py,sha256=IhqJRgxulMjMaiabbVZrsLx1ntST7YUDqatrSbaiqVI,1351
+tatt/tests/test_vendors.py,sha256=dR-X6yYc-vgo0bAMfGoMJ_y7JpSbZPs-H99yqH2oC3I,237
+tatt/vendors/__init__.py,sha256=g1FwoRZrUXUb_TnjuXxkJJoEQ4mMloZe1otNKWWfbw4,82
+tatt/vendors/amazon.py,sha256=H6uFQlPySFStquuLG7eZX_dNUC9U1E9Xhw0l2GqJEVQ,4420
+tatt-0.961.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+tatt-0.961.dist-info/METADATA,sha256=BBOM-pEzwxgpQsCddM_XlXhohXT9WA_4tsfUnv1GjRQ,3384
+tatt-0.961.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+tatt-0.961.dist-info/entry_points.txt,sha256=WDECYS3yT-xxl48NrYZ7jfoKU0rZur3UUsiYltb5T6U,70
+tatt-0.961.dist-info/top_level.txt,sha256=YtmxvQm8kNvKauk4zStnfUFicxnD0KRHfnlMNs7VcFY,5
+tatt-0.961.dist-info/RECORD,,
