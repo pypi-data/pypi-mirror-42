@@ -1,0 +1,11 @@
+README.md
+setup.py
+alice_images/__init__.py
+alice_images/alice_images_api.py
+alice_images/cli.py
+alice_images.egg-info/PKG-INFO
+alice_images.egg-info/SOURCES.txt
+alice_images.egg-info/dependency_links.txt
+alice_images.egg-info/entry_points.txt
+alice_images.egg-info/requires.txt
+alice_images.egg-info/top_level.txt
