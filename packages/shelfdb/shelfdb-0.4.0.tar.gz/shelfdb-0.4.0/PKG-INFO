@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: shelfdb
+Version: 0.4.0
+Summary: Python dict/json DB, Done right for Efficiency and Simplicity
+Home-page: https://github.com/nitipit/shelfdb
+Author: Nitipit Nontasuwan
+Author-email: nitipit@gmail.com
+License: MIT
+Description: Python dict/json DB `done right` to make your job done
+Keywords: dict json database
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
