@@ -1,0 +1,50 @@
+Metadata-Version: 1.2
+Name: Playschool Python
+Version: 0.0.3
+Summary: Python boilerplate short description
+Home-page: https://gitlab.yapbreak.fr/olivaa/playschool_python
+Author: Adrien Oliva
+Author-email: olivaa@yapbreak.fr
+License: GNU/GPL v3
+Description: =================
+        Playschool Python
+        =================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/playschool_python.svg
+           :target: https://pypi.python.org/pypi/playschool_python
+        
+        Python boilerplate short description
+        
+        
+        * Free software: GNU/GPL v3 license
+        
+        * Documentation: https://olivaa.pages.gitlab.yapbreak.fr/playschool_python/docs
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        -------
+        
+        This package was created with Cookiecutter_ and the `olivaa/python-gitlab-cookie`_ project template
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`olivaa/python-gitlab-cookie`: https://gitlab.yapbreak.fr/olivaa/python-gitlab-cookie
+        
+Keywords: playschool_python
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*

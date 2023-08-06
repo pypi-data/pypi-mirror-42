@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+Playschool_Python.egg-info/PKG-INFO
+Playschool_Python.egg-info/SOURCES.txt
+Playschool_Python.egg-info/dependency_links.txt
+Playschool_Python.egg-info/entry_points.txt
+Playschool_Python.egg-info/not-zip-safe
+Playschool_Python.egg-info/requires.txt
+Playschool_Python.egg-info/top_level.txt
+playschool_python/__init__.py
+playschool_python/__main__.py
+playschool_python/cli.py
