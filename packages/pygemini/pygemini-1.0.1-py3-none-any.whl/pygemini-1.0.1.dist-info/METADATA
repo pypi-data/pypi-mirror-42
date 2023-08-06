@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pygemini
+Version: 1.0.1
+Summary: PyGemini - Make List Diff Easy
+Home-page: https://github.com/bonfy/pygemini
+Author: BONFY
+Author-email: i@bonfy.im
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+
+
+# pygemini
+Python Compare List of Dictionary Data
+
+
