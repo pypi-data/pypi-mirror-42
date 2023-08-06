@@ -1,0 +1,6 @@
+numpy
+scipy
+ase
+future
+scikit-learn
+soaplite==1.0.2
