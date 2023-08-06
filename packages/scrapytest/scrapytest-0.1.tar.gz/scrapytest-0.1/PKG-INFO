@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: scrapytest
+Version: 0.1
+Summary: scrapy output testing framework
+Home-page: https://gitlab.com/granitosaurus/scrapy-test
+Author: granitosaurus
+Author-email: granitosaurus@pm.me
+License: GPLv3
+Description: UNKNOWN
+Platform: UNKNOWN
