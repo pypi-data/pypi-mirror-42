@@ -1,0 +1,24 @@
+Metadata-Version: 2.0
+Name: modest
+Version: 0.1a1
+Summary: A modular estimation library
+Home-page: https://modular-estimator.readthedocs.io/en/latest/index.html
+Author: Joel Runnels
+Author-email: runne010@umn.edu
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: Pint
+Requires-Dist: PyYAML
+Requires-Dist: astropy
+Requires-Dist: datetime
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pyquaternion
+Requires-Dist: requests
+Requires-Dist: scipy
+Requires-Dist: skyfield
+
+A modular estimation library
+
+
