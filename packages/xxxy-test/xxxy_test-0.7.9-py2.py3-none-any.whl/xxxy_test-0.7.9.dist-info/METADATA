@@ -1,0 +1,25 @@
+Metadata-Version: 2.0
+Name: xxxy-test
+Version: 0.7.9
+Summary: Command line tool for russell
+Home-page: https://github.com/RussellCloud/russell-cli
+Author: Russell
+Author-email: admin@chinahadoop.cn
+License: UNKNOWN
+Keywords: russell
+Platform: UNKNOWN
+Requires-Dist: checksumdir (>=1.1.4)
+Requires-Dist: click (>=6.7)
+Requires-Dist: marshmallow (>=2.11.1)
+Requires-Dist: pathlib2 (>=2.3.0)
+Requires-Dist: progressbar33 (>=2.4)
+Requires-Dist: pytz (>=2016.10)
+Requires-Dist: requests (>=2.12.4)
+Requires-Dist: shortuuid (>=0.4.3)
+Requires-Dist: tabulate (>=0.7.7)
+Requires-Dist: tzlocal (>=1.4)
+Requires-Dist: websocket-client (==0.47.0)
+
+UNKNOWN
+
+
