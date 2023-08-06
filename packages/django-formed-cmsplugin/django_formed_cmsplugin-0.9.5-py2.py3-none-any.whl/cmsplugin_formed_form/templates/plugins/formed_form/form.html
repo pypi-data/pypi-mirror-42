@@ -1,0 +1,52 @@
+{% block form %}
+    <form action="{{ form_action }}" method="post" class="{% block form_classes %}form form-page{% endblock %}"
+            {% block form_attributes %}{% endblock %} id="form-{{ instance.id }}">
+        {% if use_recapcha %}
+            <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+            <script>
+                var FormedOnSubmit = function (token) {
+                    document.getElementById("form-{{ instance.id }}").submit();
+                };
+            </script>
+        {% endif %}
+        {% csrf_token %}
+        {% block form_before %}{% endblock %}
+        {% block page_name %}
+            {% if form.page.name %}
+                <h2 class="form-page-name">{{ form.page.name }}</h2>
+            {% endif %}
+        {% endblock %}
+
+        {% block page_introduction %}
+            {% if form.page.introduction %}
+                <p class="form-page-introduction">{{ form.page.introduction }}</p>
+            {% endif %}
+        {% endblock %}
+
+        {% block form_fields %}
+            {{ form.hidden_fields|join:'' }}
+
+            {{ form.page }}
+        {% endblock %}
+
+        {% block form_submit_buttons %}
+            <p class="form-submit-buttons">
+                {# Make the 'next' submit the first submit button for when the user presses 'enter'. #}
+                {% if use_recapcha %}
+                    <input type="submit" class="button button-submit button-next g-recaptcha" name="{{ next_page_field_name }}"
+                           data-callback="FormedOnSubmit" data-sitekey="{{ recaptcha_site_key }}"
+                           value="{{ _('Submit') }}"/>
+                {% else %}
+                    <input type="submit" class="button button-submit button-next"
+                           name="{{ next_page_field_name }}" value="{{ _('Submit') }}"/>
+                {% endif %}
+                {% if form.has_previous_page %}
+                    <input type="submit" class="button button-submit button-previous"
+                           name="{{ previous_page_field_name }}" value="{{ _('Go back') }}">
+                {% endif %}
+            </p>
+        {% endblock %}
+
+        {% block form_after %}{% endblock %}
+    </form>
+{% endblock %}
