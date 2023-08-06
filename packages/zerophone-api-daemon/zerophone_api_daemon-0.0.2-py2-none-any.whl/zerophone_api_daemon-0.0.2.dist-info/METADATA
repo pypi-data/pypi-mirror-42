@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: zerophone-api-daemon
+Version: 0.0.2
+Summary: ZeroPhone API daemon
+Home-page: https://github.com/ZeroPhone/Zerophone-API-Daemon
+Author: CRImier
+Author-email: crimier@yandex.ru
+License: UNKNOWN
+Download-URL: https://github.com/ZeroPhone/Zerophone-API-Daemon/archive/0.0.2.tar.gz
+Platform: UNKNOWN
+Requires-Dist: PyRIC
+Requires-Dist: jsonrpclib
+Requires-Dist: zerophone-hw
+
+UNKNOWN
+
+
