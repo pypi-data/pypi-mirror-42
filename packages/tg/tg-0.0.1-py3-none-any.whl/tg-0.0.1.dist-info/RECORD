@@ -1,0 +1,11 @@
+tg/__init__.py,sha256=j57cAMzW0D7-JzBqSRs56IFx5YNryWmyKovCX6u77r8,58
+tg/main.py,sha256=x68CjV91sYZq2Nhuby0vxVrtR5W6XJ6Ei4vlCxCLWXk,1454
+tg/tg.png,sha256=ISdAbn3qZeBeNiWHO-wVFHmebYlT6jWxN0hmt_1DSBw,42473
+tg/utils.py,sha256=dFnoBdc4zchEd823bT_9gC1wrakvNKiEOAn02Feec64,584
+tg/controllers/__init__.py,sha256=vNACzX8Crj1SOv5KVjDiFTSD30Wfd2I7UtLi-ynmX0s,5325
+tg/models/__init__.py,sha256=1LspOdNjMDPYrkXdHkxJgfXOZybN9c_pKLw3W7bG0jA,6955
+tg/views/__init__.py,sha256=awtYn5YGW_TQeRLxvEr9yn5YBqK-luj8_RBynahWZck,10382
+tg-0.0.1.dist-info/entry_points.txt,sha256=gVTMI5MlokJdLonsmoHSO5k6TpaKLzYmva-lC4JaZ08,33
+tg-0.0.1.dist-info/WHEEL,sha256=JXk7EE_UnY8Q4113Zu8f6SlrMizLH61VvvtIzqzkSKE,79
+tg-0.0.1.dist-info/METADATA,sha256=gXho6eymIvmG421tAmE_iL2e1t0dbYopufmB9mpstTg,407
+tg-0.0.1.dist-info/RECORD,,
