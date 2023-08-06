@@ -1,0 +1,91 @@
+///////////////////////////////////////////////////////////////////////
+//
+//  {{ quantum.project.name|upper }} JENKINS INIT SCRIPT
+//
+//  Configures folders, jobs, secrets and other items for the
+//  {{ quantum.project.name|upper }} project.
+//
+///////////////////////////////////////////////////////////////////////
+import com.cloudbees.hudson.plugins.folder.*
+import com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider.FolderCredentialsProperty
+import com.cloudbees.plugins.credentials.domains.Domain
+import hudson.plugins.git.BranchSpec
+import hudson.plugins.git.GitSCM
+import hudson.plugins.git.UserRemoteConfig
+import jenkins.model.Jenkins
+import org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition
+import org.jenkinsci.plugins.workflow.flow.FlowDefinition
+import org.jenkinsci.plugins.workflow.job.WorkflowJob
+
+Jenkins jenkins = Jenkins.instance
+
+// Ensure that both the base and the project-specific folders
+// exist. If there is no base folder defined, the project
+// folder is created at the root level.
+def base_path = '{{ spec.jenkins.folder or "" }}'
+def base_folder = jenkins.getItemByFullName(base_path)
+def parent = null
+def project_name = '{{ quantum.project.name }}'
+def project_folder = (!!base_path) ?
+  jenkins.getItemByFullName("${base_path}/${project_name}")
+  : jenkins.getItemByFullName(project_name)
+def remote = '{{ quantum.ci.origin.remote }}'
+if (!!!base_folder && !!base_path) {
+  for (String folder_name: base_path.split('/')) {
+    parent = (!!parent) ? parent : jenkins
+    folder = parent.getItem(folder_name)
+    if (!!!folder) {
+      folder = parent.createProject(Folder.class, folder_name)
+    }
+    parent = folder
+  }
+  base_folder = jenkins.getItemByFullName(base_path)
+  assert base_folder : "Base folder should exist at this point."
+}
+parent = (!!base_path) ? base_folder : jenkins
+if (!!!project_folder) {
+  project_folder = parent.createProject(Folder.class, project_name)
+}
+
+// Ensure that the folder has a credentials domain so we can keep
+// repository-specific credentials, such as deployment keys.
+//def store = project_folder
+//  .getProperties()
+//  .get(FolderCredentialsProperty.class)
+//  .getStore()
+//Domain domain = new Domain('repository',
+//  "Credentials for the {{ quantum.project.name }} repository.", null)
+//if (!!store.addDomain(domain)) {
+//  println('Created credentials domain for the {{ quantum.project.name }} repository.')
+//}
+{%- if quantum.ci.strategy in ('trunk', 'trunk+tagged') %}
+
+// The deployment strategy for this project is based on the trunk-based
+// development model, meaning that each commit to master may be deployed
+// or published to a production environment.{% if quantum.ci.strategy == 'trunk+tagged' %} Since not all commits
+// represent a new version of the project artifact, this pipeline is
+// only triggered when a commit tag is present.{% endif %}
+assert remote : "Variable 'remote' is expected to be non-empty"
+def branches = [new BranchSpec('*/master')]
+{%- if quantum.ci.origin.credentials not in ('noop', None) %}
+def credentialsId = '{{ quantum.ci.origin.credentials }}'
+{%- elif quantum.ci.origin.credentials == 'noop' %}
+def credentialsId = null
+{%- else %}
+def credentialsId = '{{ quantum.project.name }}.secrets.origin'
+{%- endif %}
+
+// Configure the remote sources for this project and ensure that
+// the job exists, so we can configure it later.
+UserRemoteConfig origin = new UserRemoteConfig(remote, null,
+  null, credentialsId)
+GitSCM scm = new GitSCM([origin], branches, false, null, null, null, [])
+FlowDefinition flow = (FlowDefinition) new CpsScmFlowDefinition(scm, 'Jenkinsfile')
+def job = project_folder.getItem('{{ quantum.project.name }}-trunk')
+if (!!!job) {
+  job = project_folder.createProject(WorkflowJob, '{{ quantum.project.name }}-trunk')
+}
+
+job.setDefinition(flow)
+job.save()
+{%- endif %}
