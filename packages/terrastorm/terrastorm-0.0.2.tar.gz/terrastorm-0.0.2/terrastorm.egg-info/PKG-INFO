@@ -1,0 +1,230 @@
+Metadata-Version: 2.1
+Name: terrastorm
+Version: 0.0.2
+Summary: Use Terrastorm on Terraservices layout for terraform
+Home-page: UNKNOWN
+Author: Ross Crawford-d'Heureuse
+Author-email: sendrossemail@gmail.com
+License: MIT License
+Description: Terrastorm
+        ----------
+        
+        A simple cli to help you work with using terraservice layouts for terraform
+        
+        Terraservice?
+        
+        * https://www.youtube.com/watch?v=wgzgVm7Sqlk
+        * https://www.slideshare.net/opencredo/hashidays-london-2017-evolving-your-infrastructure-with-terraform-by-nicki-watt
+        * https://www.hibri.net/2017/11/13/terraform-for-grownups/
+        
+        *NB* Whats important to note is that we have added a `layers` abstraction. This abstraction allows you to compose infra objects that can then be used by your environments, instead of referencing modules directly.
+        
+        **Example layout**
+        
+        1. *modules* are standard terraform modules
+        2. *layers* implement *modules* - they dont store secrets, just compose object representations that can be used by the environments
+        3. *environments* implement any number of *layers* - here you configure secrets and variables for the individual environments
+        
+        
+        ### Environment - Services
+        
+        `Environments` allow us to implement `services` which are `instances` of `layers` with `environment specific configuration`
+        
+        * can take secrets
+        * compose layers
+        * maintain the remote encrypted s3 state
+        
+        ### Layers
+        
+        `Layers` allow us to combine a number of `modules` 
+        
+        * no secrets
+        * compose modules
+        
+        ### Modules
+        
+        `Modules` act as normal terraform modules and provide access to the standard concept.
+        
+        * stnadrad terraform modules
+        
+        
+        *But now you have to go to the `production` environment and run `terraform plan` and `terraform apply` for each of your `services` this gets repetative*
+        
+        ``` bash
+        ├── environments
+        │   ├── dev
+        │   │   ├── iam
+        │   │   │   ├── README.md
+        │   │   │   ├── main.tf
+        │   │   │   ├── secrets.auto.tfvars
+        │   │   │   └── terraform.tfvars
+        │   │   └── network
+        │   │       ├── README.md
+        │   │       ├── main.tf
+        │   │       ├── secrets.auto.tfvars
+        │   │       └── terraform.tfvars
+        │   └── prod
+        │       ├── iam
+        │       │   ├── README.md
+        │       │   ├── main.tf
+        │       │   ├── secrets.auto.tfvars
+        │       │   └── terraform.tfvars
+        │       └── network
+        │           ├── README.md
+        │           ├── main.tf
+        │           ├── secrets.auto.tfvars
+        │           └── terraform.tfvars
+        ├── layers
+        │   ├── iam
+        │   │   ├── README.md
+        │   │   ├── main.tf
+        │   │   ├── outputs.tf
+        │   │   └── variables.tf
+        │   └── network
+        │       ├── README.md
+        │       ├── main.tf
+        │       ├── outputs.tf
+        │       └── variables.tf
+        └── modules
+            ├── subnets
+            │   ├── README.md
+            │   ├── main.tf
+            │   ├── outputs.tf
+            │   └── variables.tf
+            └── vpc
+                ├── README.md
+                ├── main.tf
+                ├── outputs.tf
+                └── variables.tf
+        ```
+        
+        ## Usage
+        
+        Modify the makefile so your aws and ti-landscape are mounted to the right places
+        
+        ```sh
+        1. make shell
+        2. `terrastorm run nonprod init` <-- will init on all the services in nonprod
+        ```
+        
+        ### Story 1 - Setup a new Project
+        
+        As an infra-op
+        I need to create a new project based on the terraservices pattern
+        So that I can inject **sparkles** into the lives of our clients
+        
+        `terrastorm setup /path/to/project`
+        
+        * will create a new project based on the template defined in the `.terrastorm.yaml` templates.project=https://github.com/williamtsoi1/terraservices-example.git
+        
+        
+        ### Story 2 - See my settings
+        
+        As an infra-op
+        I want to see my current config settings
+        So that I can check all is well
+        
+        `terrastorm show_config`
+        
+        * will output the current config settings loaded from `~/.terrastorm.yaml` and the default `.terrastorm.yaml`
+        
+        
+        ### Story 3 - Create a new Terraform Module
+        
+        As an infra-op
+        I need to create a new segment of infrastructure
+        So that I can inject **sparkles** into the lives of our clients
+        
+        `terrastorm create module :new_module_name`
+        
+        * will create a new "module" with the appropriate `:name.tf`, `input.tf`, `output.tf` files
+        
+        
+        ### Story 4 - Create a new Layer
+        
+        As an infra-op
+        I need to create a new `layer` of infrastructure
+        So that I can compose an infrastructure represenation for use in my environments.
+        
+        `terrastorm create layer :new_module_name`
+        
+        * will create a new "module" with the appropriate `:name.tf`, `input.tf`, `output.tf` files
+        
+        
+        ### Story 5 - Create a new Environment
+        
+        As an infra-op
+        I need to create a new environment, optionally excluding or including certain modules
+        So that I can inject goodness into the lives of our clients
+        
+        `terrastorm create environment :new_environment_name`
+        
+        * will create a new environment
+        
+        
+        ### Story 6 - Add a new service to an Environment
+        
+        As an infra-op
+        I need to be able to add a module interface to an environment
+        So that I can **make magic happe**
+        
+        `terrastorm add service :environment :new_service_name`
+        
+        * will create a new service instance in the environment specified
+        
+        
+        ### Story 7 - Run a terraform command in an environment service
+        
+        As an infra-op
+        I need to run terraform commands on the appropriate environment
+        So that I can **make magic happe**
+        
+        `terrastorm run :environment :cmd :service_name|all`
+        
+        * environment - staging|production|...
+        * cmd - fmt|init|plan|apply
+        * service None|all|:name_of_your_service
+        
+        
+        ### Story 8 - Exec and shell command in an environment
+        
+        As an infra-op
+        I need to run shell commands in the appropriate environment
+        So that I can **make magic happe**
+        
+        `terrastorm cmd :environment ':cmd'`
+        
+        * environment - staging|production|...
+        * cmd - `ls -alh`|`tree . -L 3`
+        * service None|all|:name_of_your_service
+        cmd dev 'ls -alh'
+        
+        ## Development
+        
+        ``` bash
+        docker build -t terrastorm:latest .
+        docker run -it --rm \
+               -v $PWD:/src \
+               -v /Users/ross/p/ross.crawford/ti-landscape:/terraform \
+               terrastorm:latest sh
+        
+        docker run -it --rm \
+               -v $PWD:/src \
+               terrastorm:latest sh
+        ```
+        
+        ## Using
+        
+        ``` bash
+        docker run -it --rm \
+               -v $PWD:/src \
+               -v /path/to/project:/terraform \
+               rosscdh/terrastorm:latest sh
+        
+        >> terrastorm setup /terraform
+        >> ls /tearraform
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
