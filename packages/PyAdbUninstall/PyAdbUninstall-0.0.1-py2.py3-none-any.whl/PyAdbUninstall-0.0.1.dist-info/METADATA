@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: PyAdbUninstall
+Version: 0.0.1
+Summary: Thinker GUI for uninstall Android bloatware Apps via 'adb' without root.
+Home-page: https://github.com/jedie/PyAdbUninstall
+Author: Jens Diemer
+Author-email: pypi@jensdiemer.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+
+--------------
+PyAdbUninstall
+--------------
+
+Thinker GUI for uninstall Android bloatware Apps via "adb" without root.
+
+See also:
+
+* de: `https://www.kuketz-blog.de/android-system-apps-ohne-root-loeschen/ <https://www.kuketz-blog.de/android-system-apps-ohne-root-loeschen/>`_
+
+* en: `https://forum.xda-developers.com/honor-6x/how-to/guide-list-bloat-software-emui-safe-to-t3700814 <https://forum.xda-developers.com/honor-6x/how-to/guide-list-bloat-software-emui-safe-to-t3700814>`_
+
+created 2019 by Jens Diemer
+GNU General Public License v3 or later (GPLv3+)
+
+* `https://github.com/jedie/PyAdbUninstall/ <https://github.com/jedie/PyAdbUninstall/>`_
+
+* `https://pypi.org/project/PyAdbUninstall/ <https://pypi.org/project/PyAdbUninstall/>`_
+
+------------
+dev. startup
+------------
+
+::
+
+    # clone repository from github:
+    ~$ git clone https://github.com/jedie/PyAdbUninstall.git
+
+    # create virtualenv
+    ~$ cd PyAdbUninstall
+    ~/PyAdbUninstall$ ./create_env.sh
+
+    # activate virtualenv
+    ~/PyAdbUninstall$ source bin/activate
+
+    # Start GUI:
+    (.virtualenv) ~/PyAdbUninstall$ pyresizer
+
