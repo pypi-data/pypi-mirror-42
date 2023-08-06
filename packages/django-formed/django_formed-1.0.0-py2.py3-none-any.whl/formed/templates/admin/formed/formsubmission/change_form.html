@@ -1,0 +1,35 @@
+{% extends "admin/change_form.html" %}
+{% load definition_form_tags %}
+{% block after_field_sets %}
+    {% definition_pages original.form_definition as pages %}
+
+    {% for page in pages %}
+        <fieldset class="module aligned">
+            {% if page.name %}
+                <h2>{{ page.name }}</h2>
+            {% endif %}
+            {% for fieldset in page.fieldsets %}
+                {% if fieldset.legend %}
+                    <h3 class="form-row">{{ fieldset.legend }}</h3>
+                {% endif %}
+                {% for row in fieldset.rows %}
+                    <div class="form-row">
+                        {% for field in row.fields %}
+                            <div class="field-box">
+                                <label>{{ field.label }}</label>
+                                {% field_value field.name original.submission as value %}
+                                <p class="{{ field.type|lower }}">
+                                    {% if field.type == 'BooleanField' %}
+                                        {{ value|yesno }}
+                                    {% else %}
+                                        {{ value|default:_('&lt;empty&gt;') }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </fieldset>
+    {% endfor %}
+{% endblock %}
