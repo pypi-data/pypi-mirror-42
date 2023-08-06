@@ -1,0 +1,25 @@
+mfa-totp-device
+***************
+
+
+Description
+===========
+
+A *MfaTotpDevice* is an Mfa Totp device that the user can use to
+authenticate with OCI (Leslie will add more details here)
+
+
+Available Commands
+==================
+
+* activate
+
+* create
+
+* delete
+
+* generate-totp-seed
+
+* get
+
+* list
