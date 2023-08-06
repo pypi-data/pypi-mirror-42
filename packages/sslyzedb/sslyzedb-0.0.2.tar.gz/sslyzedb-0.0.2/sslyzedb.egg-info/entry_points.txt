@@ -1,0 +1,3 @@
+[console_scripts]
+sslyzedb = sslyzedb.__main__:run
+
