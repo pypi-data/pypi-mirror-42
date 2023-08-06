@@ -1,0 +1,13 @@
+README.md
+setup.py
+minepkg/__init__.py
+minepkg/cmdline.py
+minepkg/installer.py
+minepkg/makerepo.py
+minepkg/repository.py
+minepkg.egg-info/PKG-INFO
+minepkg.egg-info/SOURCES.txt
+minepkg.egg-info/dependency_links.txt
+minepkg.egg-info/entry_points.txt
+minepkg.egg-info/requires.txt
+minepkg.egg-info/top_level.txt

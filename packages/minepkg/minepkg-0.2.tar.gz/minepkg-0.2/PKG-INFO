@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: minepkg
+Version: 0.2
+Summary: A package manager for minetest mods
+Home-page: https://gitlab.com/MartijnBraam/minepkg
+Author: Martijn Braam
+Author-email: martijn@brixit.nl
+License: MIT
+Description: # MinePKG
+        
+        This is a package manager for minetest mods
+        
+        ## Usage
+        
+        Fetching the newest mod list:
+        
+        ```shell-session
+        $ minepkg update
+        ```
+        
+        Installing mods:
+        
+        ```shell-session
+        $ minepkg add moreblocks basic_materials
+        Installing packages:
+        - moreblocks
+        - basic_materials
+        
+        Installing to /home/martijn/.minetest/mods
+        Continue installing? [Y/n]
+        moreblocks: 39.0KB [00:00, 326KB/s]
+        basic_materials: 39.0KB [00:00, 389KB/s]                                                                                                                                                                   
+        Installing moreblocks...
+        Installing basic_materials...
+        ```
+Keywords: minetest
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown
