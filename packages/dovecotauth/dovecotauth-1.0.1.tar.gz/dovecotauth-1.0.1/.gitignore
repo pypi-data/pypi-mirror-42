@@ -1,0 +1,9 @@
+.*.sw?
+*~
+/.venv
+*.py[co]
+/.eggs
+/*.egg-info/
+*.orig
+/build/
+/dist/

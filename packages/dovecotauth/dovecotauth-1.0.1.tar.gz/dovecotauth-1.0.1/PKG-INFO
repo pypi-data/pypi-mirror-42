@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: dovecotauth
+Version: 1.0.1
+Summary: A client library for the Dovecot Authentication Protocol v1.1
+Home-page: https://github.com/kgaughan/dovecotauth
+Author: Keith Gaughan
+Author-email: k@stereochro.me
