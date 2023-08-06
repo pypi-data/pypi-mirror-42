@@ -1,0 +1,50 @@
+Metadata-Version: 1.1
+Name: pycrm
+Version: 0.1.0
+Summary: CRM analysis functions
+Home-page: https://github.com/pfcor/pycrm
+Author: Pedro Correia
+Author-email: pedrocorreia.rs@gmail.com
+License: MIT
+Description: pycrm
+        =====
+        
+        .. image:: https://img.shields.io/pypi/v/pycrm.svg
+            :target: https://pypi.python.org/pypi/pycrm
+            :alt: Latest PyPI version
+        
+        .. image:: https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal.png
+           :target: https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal
+           :alt: Latest Travis CI build status
+        
+        CRM analysis functions
+        
+        Usage
+        -----
+        
+        Installation
+        ------------
+        
+        Requirements
+        ^^^^^^^^^^^^
+        
+        Compatibility
+        -------------
+        
+        Licence
+        -------
+        
+        Authors
+        -------
+        
+        `pycrm` was written by `Pedro Correia <pedrocorreia.rs@gmail.com>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
