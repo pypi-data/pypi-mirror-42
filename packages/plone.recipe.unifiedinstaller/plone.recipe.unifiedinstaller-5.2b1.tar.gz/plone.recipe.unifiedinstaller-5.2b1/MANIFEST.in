@@ -1,0 +1,3 @@
+include *cfg *rst *txt
+recursive-include src/plone *
+global-exclude *.pyc
