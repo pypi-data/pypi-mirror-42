@@ -1,0 +1,55 @@
+{
+  "name": "jupyterlab-sql",
+  "version": "0.1.1",
+  "description": "JupyterLab extension for interacting with SQL databases",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "github.com/pbugnion/jupyterlab-sql",
+  "bugs": {
+    "url": "github.com/pbugnion/jupyterlab-sql/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "Pascal Bugnion",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "github.com/pbugnion/jupyterlab-sql.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "prepare": "npm run clean && npm run build",
+    "watch": "tsc -w",
+    "build:dist": "npm run prepare && rimraf labextension && mkdirp labextension && cd labextension && npm pack .."
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^0.19.1",
+    "@jupyterlab/codeeditor": "^0.19.1",
+    "@jupyterlab/launcher": "^0.19.1",
+    "@phosphor/datagrid": "^0.1.6",
+    "@phosphor/messaging": "^1.2.2",
+    "@phosphor/widgets": "^1.6.0",
+    "classnames": "^2.2.6",
+    "react": "~16.4.2",
+    "react-dom": "~16.4.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/uuid": "^3.4.4",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.3",
+    "typescript": "~3.1.1"
+  },
+  "jupyterlab": {
+    "extension": true
+  }
+}
