@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: testing-cookiecutter
+Version: 0.1.1
+Summary: testing on an opinionated, minimal cookiecutter template for Python packages
+Home-page: https://github.com/TrainTravel/testing_pypackaging.git
+Author: Train Chen
+Author-email: train981316@gmail.com
+License: MIT
+Description: testing_cookiecutter
+        ====================
+        
+        .. image:: https://img.shields.io/pypi/v/testing_cookiecutter.svg
+            :target: https://pypi.python.org/pypi/testing_cookiecutter
+            :alt: Latest PyPI version
+        
+        .. image:: https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal.png
+           :target: https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal
+           :alt: Latest Travis CI build status
+        
+        testing on an opinionated, minimal cookiecutter template for Python packages
+        
+        Usage
+        -----
+        
+        Installation
+        ------------
+        
+        Requirements
+        ^^^^^^^^^^^^
+        
+        Compatibility
+        -------------
+        
+        Licence
+        -------
+        
+        Authors
+        -------
+        
+        `testing_cookiecutter` was written by `Train Chen <train981316@gmail.com>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
