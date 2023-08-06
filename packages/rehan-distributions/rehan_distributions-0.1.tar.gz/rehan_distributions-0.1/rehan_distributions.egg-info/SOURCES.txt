@@ -1,0 +1,10 @@
+setup.py
+rehan_distributions/Binomialdistribution.py
+rehan_distributions/Gaussiandistribution.py
+rehan_distributions/Generaldistribution.py
+rehan_distributions/__init__.py
+rehan_distributions.egg-info/PKG-INFO
+rehan_distributions.egg-info/SOURCES.txt
+rehan_distributions.egg-info/dependency_links.txt
+rehan_distributions.egg-info/not-zip-safe
+rehan_distributions.egg-info/top_level.txt
