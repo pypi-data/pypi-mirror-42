@@ -1,0 +1,55 @@
+Metadata-Version: 1.1
+Name: nano-profiler
+Version: 0.1.7
+Summary: Very simple profiler of time execution
+Home-page: https://github.com/EvgeniyMakhmudov/nano_profiler
+Author: Makhmudov Evgeniy
+Author-email: john_16@list.ru
+License: MIT
+Description: # nano_profiler
+        Extreme simple profiler of time execution of code.
+        The major goal of `none_profiler` is simple time measure in long chain of code execution,
+        such as web applications.
+        
+        ## Quick example
+        
+        ```python
+        from time import sleep
+        
+        from nano_profiler import NanoProfiler
+        
+        n_p = NanoProfiler(name='Foo bar baz profiler', autostart=True)
+        
+        def foo():
+            sleep(0.1)
+            n_p.mark('Foo')
+        
+        def bar():
+            sleep(0.1)
+            n_p.mark('bar')
+        
+        def baz():
+            foo()
+            bar()
+            n_p.mark('baz')
+        
+        baz()
+        ```
+        
+        Output:
+        ```
+        -------------------Statistic of profiler Foo bar baz profiler-------------------
+        1: Foo execute in 0.102 seconds
+        2: bar execute in 0.100 seconds
+        3: baz execute in 0.000 seconds
+        ```
+        
+Keywords: profiler
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
