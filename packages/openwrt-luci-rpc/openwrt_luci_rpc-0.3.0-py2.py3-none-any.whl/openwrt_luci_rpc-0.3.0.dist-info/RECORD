@@ -1,0 +1,11 @@
+openwrt_luci_rpc/__init__.py,sha256=qaOt-A4_-oaeNe83DdIabqBk8XgJwNvA6siwJi5LJgk,1230
+openwrt_luci_rpc/cli.py,sha256=jIx7KAX6Xhs4Jzh_TGoloOPXzpdERbr3yK_I5rfV_oI,440
+openwrt_luci_rpc/constants.py,sha256=oZkxLxL4irGEIXclQNtOGH5IUf9RGkf93zgbu0eLgvQ,396
+openwrt_luci_rpc/exceptions.py,sha256=CT5ilBagAU7RyldZEa6KK9qhEbsjF9s0KJlwvFEFnPE,604
+openwrt_luci_rpc/openwrt_luci_rpc.py,sha256=JqB7IMXsus997_nWTvA57yGmoW74GvGr1t5NQoYG9PY,7645
+openwrt_luci_rpc-0.3.0.dist-info/AUTHORS.rst,sha256=e7Z7SLkq4JsPKifDHhOX4bbSSGIdmfZAJfqKMU_bGYU,158
+openwrt_luci_rpc-0.3.0.dist-info/LICENSE,sha256=pEZtnlCtnItLyRV6w25-0ySa7UKMcKjOWGt4AKfALaU,585
+openwrt_luci_rpc-0.3.0.dist-info/METADATA,sha256=Kv3719Q_0KjEskTEF3cch3C5Jwh7RkkssPw5olvZR_o,1900
+openwrt_luci_rpc-0.3.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+openwrt_luci_rpc-0.3.0.dist-info/top_level.txt,sha256=_Ln3D3ehuyBqdoPp8eop-w488gs-idG6lSpbJYXxBPU,17
+openwrt_luci_rpc-0.3.0.dist-info/RECORD,,
