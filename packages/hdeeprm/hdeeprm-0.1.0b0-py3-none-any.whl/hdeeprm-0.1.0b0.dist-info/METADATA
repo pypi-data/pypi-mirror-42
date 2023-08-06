@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: hdeeprm
+Version: 0.1.0b0
+Summary: Deep Reinforcement Learning for Workload Management in Heterogeneous Clusters
+Home-page: https://github.com/RaMdsC/hdeeprm
+Author: Adrián Herrera
+Author-email: adr.her.arc.95@gmail.com
+License: MIT
+Keywords: deep reinforcement learning workload management job scheduling resource simulator framework heterogeneous cluster batsim
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: defusedxml (>=0.5.0)
+Requires-Dist: gym (>=0.11.0)
+Requires-Dist: lxml (>=4.3.1)
+Requires-Dist: numpy (>=1.16.1)
+Requires-Dist: procset (>=1.0)
+Requires-Dist: pybatsim (>=3.1.0)
+Requires-Dist: torch (>=1.0.1)
+
+HDeepRM
+=======
+
+Framework for evaluating Deep Reinforcement Learning algorithms
+on Heterogeneous Clusters.
+
+.. include:: overview.rst
+
+
