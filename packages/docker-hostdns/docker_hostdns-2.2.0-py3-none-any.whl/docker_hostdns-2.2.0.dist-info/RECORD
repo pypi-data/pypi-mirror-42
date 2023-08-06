@@ -1,0 +1,14 @@
+docker_hostdns/__init__.py,sha256=b3jDGfTsOP2CR3osSyCpx6RVfPA0NvcXiDeIwyzI2qs,105
+docker_hostdns/__main__.py,sha256=aWTZykinP1nF9kYzATcmZ8-eOfKbsg0QMnu18WTxIy8,146
+docker_hostdns/console.py,sha256=lWMjDEI26qTzx2hYbQ5XDc8DduerketLTXTIplDHgsw,4065
+docker_hostdns/exceptions.py,sha256=l9yBrPbXMwTzoMs4tlqSSFm4iq-5Nc8Lf9b53nt9pU8,320
+docker_hostdns/hostdns.py,sha256=xhUZo_YDOk2LCdi30EJB4J6VpzA_OtPJ4qw5m2zdqfo,9646
+docker_hostdns/tests.py,sha256=zhknJI1OSGx-UqdRkOR3F2k6XjgQZWeaJZ3xvH5nhcw,9482
+docker_hostdns-2.2.0.dist-info/DESCRIPTION.rst,sha256=ZVIZ3pt4N_vifn76TOKB1fK3INb4Dq2bRAX0AnQxJWo,6555
+docker_hostdns-2.2.0.dist-info/METADATA,sha256=llBHU__8KvHKeHKSh7wvfBZy3vwkQWfHVLh9YwQ9zUs,7761
+docker_hostdns-2.2.0.dist-info/RECORD,,
+docker_hostdns-2.2.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+docker_hostdns-2.2.0.dist-info/entry_points.txt,sha256=fSCSbeHHnYb04oeKD5zjioDQNw8_RnZLU37gpM4fkys,67
+docker_hostdns-2.2.0.dist-info/metadata.json,sha256=H7b4z8tB2dMliUBfxQwEBIU62tgJVScSrABY68vP6Nw,1368
+docker_hostdns-2.2.0.dist-info/top_level.txt,sha256=anTxtO-EbHndyfwk9fsv5mm-o0g-T6-0Bz6Ri9HqNxI,15
+docker_hostdns-2.2.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
