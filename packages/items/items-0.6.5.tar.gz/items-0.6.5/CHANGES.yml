@@ -1,0 +1,21 @@
+-
+    version: 0.6.5
+    date: Feb 23, 2019
+    notes: >
+        Increased compatibility with collections.namedtuple instances, which
+        now convert well into Items.
+
+-
+    version: 0.6.0
+    date: Feb 21, 2019
+    notes: >
+        Added ability to process streams of lists, tuples, and scalars
+        by giving field names.
+
+        Started to bring routines under Python3 typing discipline.
+
+-
+    version: 0.5.0
+    date: May 28, 2018
+    notes: >
+        First release.
