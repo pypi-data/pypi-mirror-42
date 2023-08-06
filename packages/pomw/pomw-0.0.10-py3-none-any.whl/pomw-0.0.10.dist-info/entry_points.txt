@@ -1,0 +1,3 @@
+[console_scripts]
+pomw=pomw.console:main
+

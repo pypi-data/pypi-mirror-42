@@ -1,0 +1,141 @@
+Metadata-Version: 2.1
+Name: pomw
+Version: 0.0.10
+Summary: The Pomodoro Technique using TaskWarrior and TimeWarrior
+Home-page: https://tjaart.gitlab.io/pomw
+License: GPL-3.0-or-later
+Keywords: pomodoro,timewarrior,taskwarrior
+Author: Tjaart van der Walt
+Author-email: tjaart@tjaart.org
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: python-dateutil (>=2.7,<3.0)
+Requires-Dist: semver (>=2.8,<3.0)
+Requires-Dist: taskw (>=1.2,<2.0)
+Requires-Dist: timew (>=0.0.18,<0.0.19)
+Requires-Dist: unijson (>=1.0,<2.0)
+Requires-Dist: urwid (>=2.0,<3.0)
+Project-URL: Documentation, https://tjaart.gitlab.io/pomw/docs
+Project-URL: Repository, https://gitlab.com/tjaart/pomw
+Description-Content-Type: text/markdown
+
+# Pomodorowarrior #
+
+A command line tool that integrates with Taskwarrior and Timewarrior to implement the Pomodoro Technique.
+
+## Command Line Interface ##
+
+Pomodorowarrior uses a command with subcommands interface, similar to Taskwarrior itself. commands can be broken up into 3 different pomodoro phases.
+
+**Planning**
+
+```bash
+# Plan a new pomodoro
+pomw plan TASK_ID [-d DATE] [-q QUANTITY]
+``` 
+
+**Recording**
+
+```bash
+# Mark a pomodoro as completed
+pomw complete TASK_ID [-e END_TIME]`
+
+# Mark an internal or external interruption
+pomw interrupt TASK_ID {internal|external}
+
+# Void a pomodoro
+pomw void TASK_ID
+
+# Add non pomodoro time
+pomw nonpom TASK_ID [-q QUANTITY] [-d DURATION] [-s START_TIME] [-e END_TIME]
+```
+
+**Reporting**
+
+```bash
+# Print the To Do Today sheet
+pomw tdt
+```
+
+
+## Special notation for quantities ##
+
+To reduce the number of subcommands needed by the CLI (`unplan` or `delete` commands for example), I implemented a special notation for the `QUANTITIES` arguments
+
+```
++X => Current value = Current value + X
+-X => Current value = Current value - X
+ X => Current value = X
+```
+
+For example if you look at the following series of commands:
+
+```
+pomw plan 2 -q 1
+# Planned pomodoros for task 2 is 1
+pomw plan 2 -q +1
+# Planned pomodoros for task 2 is 2
+pomw plan 2 -q 1
+# Planned pomodoros for task 2 is 1
+pomw plan 2 -q -1
+# Planned pomodoros for task 2 is 0
+```
+
+## Configuration ##
+
+The configuration file should be located at `$HOME/.config/pomw/pomwrc`
+
+This example shows the supported configuration values
+
+```
+[pomodoro]
+# Pomodoro length in minutes
+length = 30
+
+[timew]
+# Should pomw sync values to Time Warrior
+sync = False
+```
+
+## Taskwarrior and Timewarrior integration ##
+
+Pomodorowarrior never mark tasks as completed in Taskwarrior, it only adds Pomodoros to a task. 
+Every time a Pomodoro gets marked as completed, the time is logged in Timewarrior.
+
+# Development #
+
+## Build System ##
+
+Starting with `0.0.3` we replace [setuptools](https://setuptools.readthedocs.io) with [poetry](https://poetry.eustace.io).
+Poetry is [PEP 518](https://www.python.org/dev/peps/pep-0518/) compliant, and uses `pyproject.toml` for configuration. In my opinion it provides for a simpler development experience.
+
+Poetry recommends that you install it isolated from the rest of your system. This can be done by running the install script:
+
+`curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python`
+
+## Release ##
+
+The script `./release.py` have been developed to automate cutting releases. It requires [git-extras](https://github.com/tj/git-extras) to be installed on your system.
+
+If you want to manually create a release, you have to follow these rules:
+
+- Only release from `master`
+- Update `pomw/__version__.py` with the new version number
+- Update `pyproject.toml` with the new version number
+- Update `Changelog` with the commits since the previous release
+
+## Upload a release to PYPI ##
+
+Once a tag is created, and pushed to Gitlab, the release is automatically uploaded to PYPI by the Gitlab CI publish stage.
+
+## TODO ##
+
+- Implement more reports
+- Tracking pomodoros using the interactive user interface
+
+
