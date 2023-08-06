@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: im-api-python-sdk-ns-test
+Version: 0.5
+Summary: Voximplant IM-API python SDK
+Home-page: https://voximplant.com/docs/references/messagingapi
+Author: Voximplant
+License: UNKNOWN
+Description: TODO long description
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
