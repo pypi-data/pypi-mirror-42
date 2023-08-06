@@ -1,0 +1,281 @@
+Metadata-Version: 2.1
+Name: cs.iso14496
+Version: 20190220
+Summary: Facilities for ISO14496 files - the ISO Base Media File Format, the basis for several things including MP4 and MOV.
+Home-page: https://bitbucket.org/cameron_simpson/css/commits/all
+Author: Cameron Simpson
+Author-email: cs@cskk.id.au
+License: UNKNOWN
+Description: Facilities for ISO14496 files - the ISO Base Media File Format,
+        the basis for several things including MP4 and MOV.
+        
+        ISO make the standard available here:
+        * [link](http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html)
+        * [link](http://standards.iso.org/ittf/PubliclyAvailableStandards/c068960_ISO_IEC_14496-12_2015.zip)
+        
+        ## Function `add_body_class(klass)`
+        
+        Register a box body class in KNOWN_BOXBODY_CLASSES.
+        
+        ## Function `add_body_subclass(superclass, box_type, section, desc)`
+        
+        Create and register a new BoxBody class that is simply a subclass of
+        another.  Returns the new class.
+        
+        ## Function `add_generic_sample_boxbody(box_type, section, desc, struct_format_v0, sample_fields, struct_format_v1=None, has_inferred_entry_count=False)`
+        
+        Create and add a specific Time to Sample box - section 8.6.1.
+        
+        ## Function `add_time_to_sample_boxbody(box_type, section, desc)`
+        
+        Add a Time to Sample box - section 8.6.1.
+        
+        ## Class `Box`
+        
+        MRO: `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        Base class for all boxes - ISO14496 section 4.2.
+        
+        This has the following PacketFields:
+        * `header`: a BoxHeader
+        * `body`: a BoxBody instance, usually a specific subclass
+        * `unparsed`: if there are unconsumed bytes from the Box they
+          are stored as here as a BytesesField; note that this field
+          is not present if there were no unparsed bytes
+        
+        ## Class `BoxBody`
+        
+        MRO: `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        Abstract basis for all Box bodies.
+        
+        ## Class `BoxHeader`
+        
+        MRO: `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An ISO14496 Box header packet.
+        
+        ## Class `BTRTBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        BitRateBoxBody - section 8.5.2.2.
+        
+        ## Class `CO64BoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'c064' Chunk Offset box - section 8.7.5.
+        
+        ## Class `ContainerBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A base class for pure container boxes.
+        
+        ## Class `CSLGBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'cslg' Composition to Decode box - section 8.6.1.4.
+        
+        ## Class `DINFBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'dinf' Data Information BoxBody - section 8.7.1.
+        
+        ## Class `DREFBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'dref' Data Reference box containing Data Entry boxes - section 8.7.2.1.
+        
+        ## Function `dump_box(B, indent='', fp=None, crop_length=170)`
+        
+        Recursively dump a Box.
+        
+        ## Class `ELNGBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A ELNGBoxBody is a Extended Language Tag box - ISO14496 section 8.4.6.
+        
+        ## Class `FREEBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'free' or 'skip' box - ISO14496 section 8.1.2.
+        Note the length and discard the data portion.
+        
+        ## Class `FTYPBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'ftyp' File Type box - ISO14496 section 4.3.
+        Decode the major_brand, minor_version and compatible_brands.
+        
+        ## Class `FullBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A common extension of a basic BoxBody, with a version and flags field.
+        ISO14496 section 4.2.
+        
+        ## Class `HDLRBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A HDLRBoxBody is a Handler Reference box - ISO14496 section 8.4.3.
+        
+        ## Function `main(argv)`
+        
+        Module main programme.
+        
+        ## Class `MDATBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A Media Data Box - ISO14496 section 8.1.1.
+        
+        ## Class `MDHDBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A MDHDBoxBody is a Media Header box - ISO14496 section 8.4.2.
+        
+        ## Class `METABoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'meta' Meta BoxBody - section 8.11.1.
+        
+        ## Class `MOOVBoxBody`
+        
+        MRO: `ContainerBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'moov' Movie box - ISO14496 section 8.2.1.
+        Decode the contained boxes.
+        
+        ## Class `MVHDBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'mvhd' Movie Header box - ISO14496 section 8.2.2.
+        
+        ## Class `OverBox`
+        
+        MRO: `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A fictitious Box encompassing all the Boxes in an input buffer.
+        
+        ## Function `parse(o, **kw)`
+        
+        Return an OverBox source (str, int, file).
+        
+        ## Function `parse_buffer(bfr, copy_offsets=None, **kw)`
+        
+        Parse an ISO14496 stream from the CornuCopyBuffer `bfr`,
+        yield top level Boxes.
+        
+        Parameters:
+        * `bfr`: a CornuCopyBuffer provided the stream data, preferably seekable
+        * `discard_data`: whether to discard unparsed data, default False
+        * `copy_offsets`: callable to receive Box offsets
+        
+        ## Function `parse_chunks(chunks, **kw)`
+        
+        Parse an ISO14496 stream from the iterator of data `chunks`,
+        yield top level Boxes.
+        
+        Parameters:
+        * `chunks`: an iterator yielding bytes objects
+        * `discard_data`: whether to discard unparsed data, default False
+        * `copy_offsets`: callable to receive BoxBody offsets
+        
+        ## Function `parse_fd(fd, discard_data=False, **kw)`
+        
+        Parse an ISO14496 stream from the file descriptor `fd`, yield top level Boxes.
+        `fd`: a file descriptor open for read
+        `discard_data`: whether to discard unparsed data, default False
+        `copy_offsets`: callable to receive BoxBody offsets
+        
+        ## Function `parse_file(fp, **kw)`
+        
+        Parse an ISO14496 stream from the file `fp`, yield top level Boxes.
+        `fp`: a file open for read
+        `discard_data`: whether to discard unparsed data, default False
+        `copy_offsets`: callable to receive BoxBody offsets
+        
+        ## Class `PDINBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'pdin' Progressive Download Information box - ISO14496 section 8.1.3.
+        
+        ## Function `pick_boxbody_class(box_type, default_type=None)`
+        
+        Infer a Python BoxBody subclass from the bytes `box_type`.
+        
+        * `box_type`: the 4 byte box type
+        * `default_type`: the default BoxBody subclass if there is no
+          specific mapping, default None; if None, use BoxBody.
+        
+        ## Class `SMHDBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'smhd' Sound Media Headerbox - section 12.2.2.
+        
+        ## Class `STCOBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'stco' Chunk Offset box - section 8.7.5.
+        
+        ## Class `STSCBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        'stsc' (Sample Table box - section 8.7.4.1.
+        
+        ## Class `STSZBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'stsz' Sample Size box - section 8.7.3.2.
+        
+        ## Class `STZ2BoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'stz2' Compact Sample Size box - section 8.7.3.3.
+        
+        ## Class `SubBoxesField`
+        
+        MRO: `cs.binary.ListField`, `cs.binary.PacketField`, `abc.ABC`  
+        A field which is itself a list of Boxes.
+        
+        ## Class `TKHDBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'tkhd' Track Header box - ISO14496 section 8.2.2.
+        
+        ## Class `TrackGroupTypeBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A TrackGroupTypeBoxBody contains a track group id - ISO14496 section 8.3.3.2.
+        
+        ## Class `TrackReferenceTypeBoxBody`
+        
+        MRO: `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A TrackReferenceTypeBoxBody contains references to other tracks - ISO14496 section 8.3.3.2.
+        
+        ## Class `TREFBoxBody`
+        
+        MRO: `ContainerBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        Track Reference BoxBody, container for trackReferenceTypeBoxes - ISO14496 section 8.3.3.
+        
+        ## Class `TTSB_Sample`
+        
+        MRO: `builtins.tuple`  
+        TTSB_Sample(count, delta)
+        
+        ## Class `URL_BoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'url ' Data Entry URL BoxBody - section 8.7.2.1.
+        
+        ## Class `URN_BoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        An 'urn ' Data Entry URL BoxBody - section 8.7.2.1.
+        
+        ## Class `VMHDBoxBody`
+        
+        MRO: `FullBoxBody`, `BoxBody`, `cs.binary.Packet`, `cs.binary.PacketField`, `abc.ABC`  
+        A 'vmhd' Video Media Headerbox - section 12.1.2.
+Keywords: python3
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Multimedia :: Video
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown
