@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: iptables-stats
+Version: 0.9.5
+Summary: Periodically gathers and publishes statistics about iptables
+Home-page: https://github.com/verybadsoldier/iptables_stats
+Author: vbs
+Author-email: vbs@springrts.de
+License: UNKNOWN
+Keywords: mqtt iptables ipset
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Requires-Dist: ipsetpy
+Requires-Dist: paho-mqtt
+Requires-Dist: pyptables
+Requires-Dist: python-iptables
+Requires-Dist: pyyaml
+Requires-Dist: schedule
+
+UNKNOWN
+
+
