@@ -1,0 +1,9 @@
+flask>=1.0.2
+ujson>=1.35
+pymongo>=3.7.2
+
+[all]
+redis
+requests
+gunicorn
+minio
