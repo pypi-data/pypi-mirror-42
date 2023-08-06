@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: grpc-micorservice-discover
+Version: 0.0.3
+Summary: Service registration discovery by etcd3
+Home-page: https://github.com/wqzhang0
+Author: wqzhang
+Author-email: wqzhang0@163.com
+License: UNKNOWN
+Description: Service registration and discovery based on etcd3, and dynamic invocation
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
