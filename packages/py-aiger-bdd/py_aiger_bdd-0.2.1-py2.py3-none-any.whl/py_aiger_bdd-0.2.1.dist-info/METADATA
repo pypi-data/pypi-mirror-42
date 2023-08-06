@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: py-aiger-bdd
+Version: 0.2.1
+Summary: Aiger <-> BDD bridge.
+Home-page: http://github.com/mvcisback/py-aiger-bdd
+Author: Marcell Vazquez-Chanlatte
+Author-email: marcell.vc@eecs.berkeley.edu
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: py-aiger
+Requires-Dist: dd
+Requires-Dist: bidict
+Requires-Dist: parsimonious
+
+UNKNOWN
+
+
