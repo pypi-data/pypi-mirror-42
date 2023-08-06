@@ -1,0 +1,14 @@
+ipyexperiments/__init__.py,sha256=ljsL9jywjTIBmbXQkMD3AayyvXdSwPC6b6XZxGePaHM,63
+ipyexperiments/cell_logger.py,sha256=_FZEQOVID2yo4RCESBxDzvLpKTi_oUgvbLNSKnVXiog,8031
+ipyexperiments/ipyexperiments.py,sha256=TTsQAGKMo9Th_10-_5UUKBrV-KY7AwmpgCLD8wCxA1A,15988
+ipyexperiments/version.py,sha256=FmITBCCMup1m8LSt47d_5_v8VyUf4B5tE8HLRdN_EWM,49
+ipyexperiments/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ipyexperiments/utils/inject_pynvx.py,sha256=qxi1YXqX2a9TcSNY8wi2UATVCB8Fvg4wX6MZUt3QI5k,1518
+ipyexperiments/utils/ipython.py,sha256=_fJOXAjTCxBKqeKy3jSDHo2glbg5tVymqPQFytvawPA,2236
+ipyexperiments/utils/mem.py,sha256=OqDNrZBS99u8gVB262Rdeqt4uLlQB2DCP-AGbgyTTJI,3756
+ipyexperiments-0.1.13.dist-info/AUTHORS.md,sha256=qZnxDzDpvjFeQZdViPaUeYzgQuqp1oAGZCG7H2_o8Ok,90
+ipyexperiments-0.1.13.dist-info/LICENSE,sha256=st5HZrYwYjWe3T0HVouf1Iij1PckwSEroBuTPaezMDQ,583
+ipyexperiments-0.1.13.dist-info/METADATA,sha256=EZBBpAEMt5Yuqi8I7UdOV-IclM-CjIWq8F0yttdV3-U,6315
+ipyexperiments-0.1.13.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+ipyexperiments-0.1.13.dist-info/top_level.txt,sha256=h2LZ9o32rx0ZCa-X0DrguuuMGYPxrTd4VCFiL4lYvqg,15
+ipyexperiments-0.1.13.dist-info/RECORD,,
