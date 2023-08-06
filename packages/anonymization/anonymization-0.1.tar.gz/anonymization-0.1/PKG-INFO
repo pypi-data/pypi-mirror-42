@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: anonymization
+Version: 0.1
+Summary: Text anonymization using Faker
+Home-page: https://github.com/gillesdami/anonymization
+Author: Damien Gilles
+Author-email: damien.gilles.pro@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Provides-Extra: spacyAnonymizers
