@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tests/test_cli.py
+weather/__init__.py
+weather/cli.py
+weather/user_settings.py
+weather/commands/__init__.py
+weather/commands/base.py
+weather/commands/today.py
+weather/commands/week.py
