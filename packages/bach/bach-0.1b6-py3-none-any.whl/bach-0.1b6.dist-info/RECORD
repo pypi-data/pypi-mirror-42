@@ -1,0 +1,13 @@
+bach-0.1b6.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+bach-0.1b6.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
+bach-0.1b6.dist-info/METADATA,sha256=c9L5pxBCFyticzoYBuoTS1Mob48YmCVAUV7W3Bvz1pg,865
+bach-0.1b6.dist-info/metadata.json,sha256=3-lGb5_tiupKYAbbvWrmxPufVPGyURhSlWSAm_OBjNw,895
+bach-0.1b6.dist-info/top_level.txt,sha256=Fccg5DZ4CNwdIebCnRiCdtkuIDeqWBOC_GOMzKfUoeo,5
+bach-0.1b6.dist-info/DESCRIPTION.rst,sha256=d9XVDTPauRq2dKWW_UIZ3LZs8fl-yB54-iy8wG2Se4g,74
+bach-0.1b6.dist-info/RECORD,,
+bach/__init__.py,sha256=4KcrlKVpy92LX4TEECNb4T3_JOeWnPqv3HemQf6rv4Q,47
+bach/bach.py,sha256=6jun1eWsjrseR7Sni69zDGkIvz6GijzLvaUVZYgwrE4,14222
+bach/io.py,sha256=ggHwHa4Zu5Ew91WzrDW6bhyu9G8hpnQe_p0lycrBsuA,1605
+bach/unpack.py,sha256=lEMHf-4Tt9Vm5F2L-qYkyR-AnX8VRa33Iu_yA_CNwQI,6861
+bach/translate/__init__.py,sha256=2LOPjGBTCAg5X6dGnGKnOkzTT_81KS6Y-3tluU4yd6c,19
+bach/translate/xml.py,sha256=hvCYgihi-EWC_WrsUoQPcdejNZV-2V8jgswwKwT2R8k,1202
