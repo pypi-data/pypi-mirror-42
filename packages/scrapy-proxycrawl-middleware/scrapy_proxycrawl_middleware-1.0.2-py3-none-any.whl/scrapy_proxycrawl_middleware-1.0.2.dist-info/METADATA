@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: scrapy-proxycrawl-middleware
+Version: 1.0.2
+Summary: Scrapy ProxyCrawl Proxy Middleware: ProxyCrawl interfacing middleware for Scrapy
+Home-page: https://github.com/proxycrawl/scrapy-proxycrawl-middleware
+Author: ProxyCrawl
+Author-email: info@proxycrawl.com
+License: Apache-2.0
+Keywords: scrapy middleware scraping scraper crawler crawling proxycrawl api
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+
+# ProxyCrawl API middleware for Scrapy
+
+Processes [Scrapy](http://scrapy.org/) requests using [ProxyCrawl](https://proxycrawl.com) services either with Normal or Javascript tokens
+
+
+## Installing
+
+Choose a way of installing:
+
+- Clone the repository inside your Scrapy project and run the following:
+```bash
+python setup.py install
+```
+- Or use [PyPi](https://pypi.org/project/scrapy-proxycrawl-middleware/) Python package manager. `pip install scrapy-proxycrawl-middleware`
+
+Then in your Scrapy `settings.py` add the following lines:
+
+```python
+# Activate the middleware
+PROXYCRAWL_ENABLED = True
+
+# The ProxyCrawl API token you wish to use, either normal of javascript token
+PROXYCRAWL_TOKEN = 'your token'
+
+# Enable the middleware
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_proxycrawl.ProxyCrawlMiddleware': 610
+}
+```
+
+If you have questions or need help using the library, please open an issue or [contact us](https://proxycrawl.com/contact).
+
+---
+
+Copyright 2019 ProxyCrawl
+
+
