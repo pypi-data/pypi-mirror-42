@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: sorting_algorithms
+Version: 0.1
+Summary: Sorting Functions
+Home-page: https://gitlab.propulsion-home.ch/vidal-rosas/week3/day4
+Author: Vidal Rosas
+Author-email: pepitoperez@hotmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: bubble insertion quick selection
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Text Processing :: Linguistic

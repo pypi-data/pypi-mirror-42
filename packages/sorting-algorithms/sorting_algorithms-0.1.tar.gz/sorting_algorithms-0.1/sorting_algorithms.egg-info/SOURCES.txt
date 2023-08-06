@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+sorting_algorithms/__init__.py
+sorting_algorithms/bubble_sort.py
+sorting_algorithms/insertion_sort.py
+sorting_algorithms/quick_sort.py
+sorting_algorithms/selection_sort.py
+sorting_algorithms.egg-info/PKG-INFO
+sorting_algorithms.egg-info/SOURCES.txt
+sorting_algorithms.egg-info/dependency_links.txt
+sorting_algorithms.egg-info/not-zip-safe
+sorting_algorithms.egg-info/requires.txt
+sorting_algorithms.egg-info/top_level.txt
