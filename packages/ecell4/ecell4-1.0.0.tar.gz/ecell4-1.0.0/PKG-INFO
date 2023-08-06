@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: ecell4
+Version: 1.0.0
+Summary: A software platform for modeling, simulation and analysis of complex, heterogeneous and multi-scale systems like the cell. E-Cell has multi-algorithm, multi-timescale and multi-spatial-representation as its central feature.
+Home-page: https://github.com/ecell/ecell4
+Author: Kazunari Kaizu
+Author-email: kaizu@riken.jp
+License: the GNU General Public License v2
+Description: # ecell4
+        
+        This provides pure Python libraries for E-Cell System version 4.
+        
+        ## Installation
+        
+        ```
+        pip install ecell4
+        ```
+        
+Platform: UNKNOWN
