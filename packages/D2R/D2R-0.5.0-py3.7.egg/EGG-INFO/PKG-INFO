@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: D2R
+Version: 0.5.0
+Summary: A new statistic for efficient detection of repetitive sequences
+Home-page: https://github.com/chansigit/D2R_codes
+Author: Sijie Chen
+Author-email: chansigit@gmail.com
+License: Free
+Description: UNKNOWN
+Keywords: statistics,D2R,alignment-free,DNA,repeat
+Platform: any
