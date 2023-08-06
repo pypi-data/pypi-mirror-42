@@ -1,0 +1,312 @@
+index:
+    # tipo de dado
+    # exemplo: Decisão, Processo, etc.
+    required: true
+    type: string
+
+id:
+    # chave primária do processo
+    # exemplo: hash gerada
+    minlength: 64
+    required: true
+    type: string
+
+metadata:
+    type: dict
+    schema:
+        numero_processo:
+            # número do processo
+            type: dict
+            schema:
+                cnj:
+                    type: string
+                    regex: ^\d{7}[-.]?\d\d\.?[12]\d{3}\.?\d\.?\d\d\.?\d{4}$
+                tribunal:
+                    type: string
+
+        tribunal:
+            # nome do tribunal
+            # exemplo: STJ
+            required: true
+            type: string
+
+        classe_processual:
+            # classe do processo
+            # exemplo: Ação Penal - Procedimento Ordinário
+            type: string
+            coerce: capitalize
+
+        area_de_conhecimento:
+            # area do processo
+            # exemplo: Criminal
+            type: list
+            schema:
+                type: string
+                coerce: capitalize
+
+        orgao_julgador:
+            # orgão julgador do processo
+            # exemplo: 1ª TURMA CRIMINAL
+            type: string
+            coerce: orgao_julgador
+
+        decisao:
+            # exemplo: Unanime
+            type: string
+
+        assunto:
+            type: list
+            schema:
+                type: dict
+                schema:
+                    titulo:
+                        # titulo do assunto
+                        # exemplo: Indenização por Dano Moral (10433)
+                        required: true
+                        type: string
+                        capitalized: True
+                    codigo_local:
+                        # código local do assunto
+                        # exemplo: 10433
+                        type: string
+                    codigo_nacional:
+                        # código nacional do assunto
+                        # exemplo: 10433
+                        type: string
+
+        provimento:
+            # provimento do processo
+            # exemplo: NEGO PROVIMENTO
+            type: string
+
+        polo:
+            # polos do processo
+            type: dict
+            schema:
+                passivo:
+                    # polo passivo
+                    type: list
+                    schema:
+                        type: dict
+                        schema:
+                            nome:
+                                type: string
+                                proper_name: True
+                            funcao:
+                                # funcao da parte
+                                # exemplo: Réu
+                                type: string
+                            cpf:
+                                type: string
+                            cnpj:
+                                type: string
+                            espolio:
+                                # boleano indicando se é o espólio da parte
+                                type: boolean
+                            advogados:
+                                # lista de representantes da parte
+                                type: list
+                                schema:
+                                    type: dict
+                                    schema:
+                                        nome:
+                                            type: string
+                                            proper_name: True
+                                        id:
+                                            # identificação única do advogado
+                                            type: string
+                                        funcao:
+                                            # título do defensor da parte
+                                            # exemplo: Advogado
+                                            type: string
+                                        oab:
+                                            # identificação / registro da OAB do Advogado
+                                            # exemplo: MG82038
+                                            type: string
+                ativo:
+                    # polo ativo
+                    type: list
+                    schema:
+                        type: dict
+                        schema:
+                            nome:
+                                type: string
+                                proper_name: True
+                            funcao:
+                                # funcao da parte
+                                # exemplo: Réu
+                                type: string
+                            cpf:
+                                type: string
+                            cnpj:
+                                type: string
+                            espolio:
+                                # boleano indicando se é o espólio da parte
+                                type: boolean
+                            advogados:
+                                # lista de representantes da parte
+                                type: list
+                                schema:
+                                    type: dict
+                                    schema:
+                                        nome:
+                                            type: string
+                                            proper_name: True
+                                        id:
+                                            # identificação única do advogado
+                                            type: string
+                                        funcao:
+                                            # título do defensor da parte
+                                            # exemplo: Advogado
+                                            type: string
+                                        oab:
+                                            # identificação / registro da OAB do Advogado
+                                            # exemplo: MG82038
+                                            type: string
+        votantes:
+            # Ministros ou desembargadores do acordao
+            type: list
+            schema:
+                type: dict
+                schema:
+                    nome:
+                        type: string
+                    cargo:
+                        type: string
+
+        relator:
+            # relator(es) do processo
+            type: dict
+            schema:
+                nome:
+                    required: true
+                    type: string
+                    proper_name: true
+                    coerce: relator
+                cargo:
+                    # funcao exercida pelo relator
+                    # exemplo: Juíz
+                    required: true
+                    type: string
+                    coerce: relator_cargo
+
+        relator_para_acordao:
+            type: dict
+            schema:
+                nome:
+                    type: string
+                    proper_name: true
+                    coerce: relator
+                cargo:
+                    type: string
+                    coerce: relator_cargo
+
+        tipo_decisao:
+            # tipo da decisão
+            # exemplo: monocratico, acordao
+            type: string
+            coerce: lowercase
+
+        origem:
+            type: dict
+            schema:
+                estado:
+                    type: string
+                    minlength: 2
+                    valid_state_acronym: true
+                    coerce: uppercase
+                comarca:
+                    type: string
+                    coerce: capitalize
+
+        numero_decisao:
+            # número do acordão
+            # exemplo: REsp 123456
+            required: true
+            type: string
+            coerce: capitalize
+
+        data_julgamento:
+            type: string
+            valid_date: true
+
+        data_publicacao:
+            type: string
+            valid_date: true
+            required: true
+
+        certidao_julgamento:
+            type: string
+
+        referencia_jurisprudencial:
+            type: list
+            schema:
+                type: string
+
+        referencia_legislativa:
+            type: list
+            schema:
+                type: string
+
+        comarca:
+            type: string
+            coerce: capitalize
+
+        diario:
+            type: dict
+            schema:
+                nome:
+                    type: string
+                numero:
+                    type: string
+                instancia:
+                    type: integer
+                comarca:
+                    type: string
+                nro_comarca:
+                    type: integer
+
+        tem_anexo:
+            # boleano indicando se o acordão tem anexo ou não
+            required: true
+            type: boolean
+
+        anexo:
+            # descrição do anexo do acordão
+            type: dict
+            schema:
+                url:
+                    type: string
+                    regex: ^https?://.*
+                tipo:
+                    type: string
+                nome:
+                    type: string
+
+body:
+    type: dict
+    schema:
+        ementa:
+            type: string
+            # required: true
+            # minlength: 10
+            coerce: text
+        acordao:
+            type: string
+            # minlength: 10
+            coerce: text
+        inteiro_teor:
+            type: string
+            # minlength: 10
+            coerce: text
+        provimento:
+            # provimento do processo
+            # exemplo: NEGO PROVIMENTO
+            type: string
+        referencia_jurisprudencial:
+            type: string
+        referencia_legislativa:
+            type: string
+        notas:
+            type: string
+
