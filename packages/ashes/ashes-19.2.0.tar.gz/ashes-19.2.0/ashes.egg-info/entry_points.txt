@@ -1,0 +1,3 @@
+[console_scripts]
+ashes = ashes:main
+
