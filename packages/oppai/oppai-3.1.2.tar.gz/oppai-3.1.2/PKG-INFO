@@ -1,0 +1,49 @@
+Metadata-Version: 1.1
+Name: oppai
+Version: 3.1.2
+Summary: osu! pp and difficulty calculator, C bindings
+Home-page: https://github.com/Francesco149/oppai-ng
+Author: Franc[e]sco
+Author-email: lolisamurai@tfwno.gf
+License: Unlicense
+Description: osu! pp and difficulty calculator. automatically generated C bindings for
+        https://github.com/Francesco149/oppai-ng
+        
+        usage
+        ===========
+        .. code-block:: sh
+        
+            pip install oppai
+        
+        
+        .. code-block:: python
+        
+            #!/usr/bin/env python
+        
+            import sys
+            from oppai import *
+        
+            ez = ezpp_new()
+            ezpp(ez, sys.argv[1])
+            print("%g pp" % ezpp_pp(ez))
+            ezpp_free(ez)
+        
+        
+        .. code-block:: sh
+        
+            ./example.py /path/to/file.osu
+        
+        .. code-block:: sh
+        
+            python -c 'help("oppai")'
+        
+        for a list of functions, or just read the top of oppai.c for better doc
+        
+Keywords: osu! osu
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
