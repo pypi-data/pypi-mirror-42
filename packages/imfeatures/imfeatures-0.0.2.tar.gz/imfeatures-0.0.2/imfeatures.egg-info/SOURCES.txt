@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+imfeatures/__init__.py
+imfeatures/features.py
+imfeatures.egg-info/PKG-INFO
+imfeatures.egg-info/SOURCES.txt
+imfeatures.egg-info/dependency_links.txt
+imfeatures.egg-info/requires.txt
+imfeatures.egg-info/top_level.txt
