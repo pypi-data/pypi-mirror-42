@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: planif-neige-client
+Version: 0.0.4
+Summary: A python client for Montreal's Planif-Neige snow removal API
+Home-page: https://github.com/kkr16/planif-neige-client
+Author: Karim Roukoz
+Author-email: roukoz@gmail.com
+License: UNKNOWN
+Keywords: montreal,snow removal,neige,deneigement,quebec
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: zeep
+
+# planif-neige-client
+
+A python client for the City of Montreal's Snow Removal API.
+I created this library to load street snow clearing status into my HomeAssistant based home automation setup.
+
+Data is provided under the city's Open Data initiaitve and requires an API key provided by the city of Montreal. For more info, and to request an API key, visit http://donnees.ville.montreal.qc.ca/dataset/deneigement
+
+DISCLAIMER: I am in no way affiliated to the City of Montreal. 
+
+
