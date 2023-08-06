@@ -1,0 +1,17 @@
+numpy>=1.14
+scikit-learn
+scipy
+
+[all]
+pytest-cov
+sphinx>=1.2
+pytest>=3.6
+sphinx_rtd_theme
+
+[doc]
+sphinx>=1.2
+sphinx_rtd_theme
+
+[tests]
+pytest>=3.6
+pytest-cov
