@@ -1,0 +1,25 @@
+Metadata-Version: 2.0
+Name: MoNeT-MGDrivE
+Version: 0.4.1
+Summary: MoNeT python package
+Home-page: https://chipdelmal.github.io/MoNeT/
+Author: Hector M. Sanchez C.
+Author-email: sanchez.hmsc@berkeley.edu
+License: MIT
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: ipython
+Requires-Dist: jupyter
+Requires-Dist: pandas
+Requires-Dist: sympy
+
+This module was created to accompany the [MGDrivE](https://marshalllab.github.io/MGDrivE/) project to make the analysis of the spatiotemporal simulations of gene-drive spreads as seamless as possible.
+
+PACKAGE DOCUMENTATION AND EXAMPLES UNDER DEVELOPMENT
+
+
