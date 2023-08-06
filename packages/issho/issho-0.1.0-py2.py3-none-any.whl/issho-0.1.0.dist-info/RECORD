@@ -1,0 +1,12 @@
+issho/__init__.py,sha256=KrVBb2wlf1QBlQN22KWyMjQadTP1v8MlvR7yKMSS7h0,156
+issho/helpers.py,sha256=5b-UN2kfTokk1Nu7PaP3gF5zpomQefVextzeMU7Knic,520
+issho/issho.py,sha256=8D54BO9vG-bxBE_b1I7BLdlnAbPy7LNAMkEUbFccLHE,3998
+smol/__init__.py,sha256=KrVBb2wlf1QBlQN22KWyMjQadTP1v8MlvR7yKMSS7h0,156
+smol/helpers.py,sha256=5b-UN2kfTokk1Nu7PaP3gF5zpomQefVextzeMU7Knic,520
+smol/smol.py,sha256=TxWvJ2C9Pti0nF1YI1PCTDjQxTDP2UqLSOusmvTwszc,3998
+issho-0.1.0.dist-info/AUTHORS.rst,sha256=HoSrZ2MhcSgrPC_3NMhxnmYiJzDp4T15wBzxHWo1Ft4,164
+issho-0.1.0.dist-info/LICENSE,sha256=LDRefwzypkqu0rSgmltzGVP6G35SiRz6Dez6yQ6NsvU,1072
+issho-0.1.0.dist-info/METADATA,sha256=Je2Sor7IpMIJIiURrOritWtytrL0_Du3Q2QkxJ0qQJE,2827
+issho-0.1.0.dist-info/WHEEL,sha256=8T8fxefr_r-A79qbOJ9d_AaEgkpCGmEPHc-gpCq5BRg,110
+issho-0.1.0.dist-info/top_level.txt,sha256=n7-HaL6nQgnOng5ACP2sEV5GUQANqrmpCvMyX1XN7Ew,6
+issho-0.1.0.dist-info/RECORD,,
