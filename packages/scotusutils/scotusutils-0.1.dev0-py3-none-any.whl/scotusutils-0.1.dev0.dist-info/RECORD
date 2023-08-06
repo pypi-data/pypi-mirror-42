@@ -1,0 +1,9 @@
+scotusutils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scotusutils/analysis.py,sha256=jF4thZUFqduSTyLliBHNhkOV1KevqAvWiqhRPTXqw1E,785
+scotusutils/dbtools.py,sha256=O9CsW1xXYmFMiYQTWf42VONaxECTq6R1uuzHAjHAFz4,208
+scotusutils/webscrape.py,sha256=NrRODreofXtMQvE3V9FTKeRxNBGi0LdHKQ1ImByWykI,300
+scotusutils-0.1.dev0.data/scripts/scotus-data-init,sha256=9XY7s_tZVFh-_kKj2mqY2nDdJ-oX57MWGE4L_vAVgWA,29
+scotusutils-0.1.dev0.dist-info/METADATA,sha256=fyLIpiesSHZtvnWW1cgApc1ZD1bQexUlaAU5efNPG3E,1607
+scotusutils-0.1.dev0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+scotusutils-0.1.dev0.dist-info/top_level.txt,sha256=KuLRtc0j2AAzcjkKFCXWgqFhQqXKKkKDezzu9AsztHc,12
+scotusutils-0.1.dev0.dist-info/RECORD,,
