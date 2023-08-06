@@ -1,0 +1,17 @@
+README.md
+setup.py
+glmdenoise/__init__.py
+glmdenoise/data.py
+glmdenoise.egg-info/PKG-INFO
+glmdenoise.egg-info/SOURCES.txt
+glmdenoise.egg-info/dependency_links.txt
+glmdenoise.egg-info/not-zip-safe
+glmdenoise.egg-info/requires.txt
+glmdenoise.egg-info/top_level.txt
+glmdenoise/utils/__init__.py
+glmdenoise/utils/choose.py
+glmdenoise/utils/getcanonicalhrf.py
+glmdenoise/utils/isrowvector.py
+glmdenoise/utils/normalisemax.py
+tests/__init__.py
+tests/basic_imports.py
