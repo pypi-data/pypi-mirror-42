@@ -1,0 +1,3 @@
+[console_scripts]
+commodity_tool = commodity_project_ir.command_line:main
+
