@@ -1,0 +1,11 @@
+a_john_shots/__init__.py,sha256=2dnS_YwNcVERCEAprRayJpBRudKlktbShloAeu7ivU4,6448
+a_john_shots/core.py,sha256=ysTQDlHJ-Byl1eg8KSIF_RhOALaR2s0CtSTjIs_jqSs,5329
+a_john_shots/defaults.py,sha256=2q7Lg61flvYhjWWm0r-oyo6B6bj_QTdWpmuwJWIlk5c,1774
+a_john_shots/hash.py,sha256=1KVd_mVQzkgRu6UR3ltXFXz-gSEr6kdqvvfpZX_5RQQ,3317
+a_john_shots/helpers.py,sha256=BYI7ny2dZ03wdMGly7-rYWmM4yltCItGFAroJrgax04,5760
+a_john_shots-2.0.0.dist-info/LICENSE,sha256=GhsBM8Sr8HlaXYYaaDI3TR504mj4G5Fk1hBvRhNCyv8,1106
+a_john_shots-2.0.0.dist-info/METADATA,sha256=IwZjti6efAP9DVYhuS4MmTYfiTsViiOHYxZ-HipVspE,5948
+a_john_shots-2.0.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+a_john_shots-2.0.0.dist-info/entry_points.txt,sha256=EXLX7obZMWUX7cPEwpLI3YQoZFXovo08qUKBzuEzfNk,60
+a_john_shots-2.0.0.dist-info/top_level.txt,sha256=2xQF7NF7LgMkAa3Y4jP4-08Vsfb7aFTG4I4__TA5CEk,13
+a_john_shots-2.0.0.dist-info/RECORD,,
