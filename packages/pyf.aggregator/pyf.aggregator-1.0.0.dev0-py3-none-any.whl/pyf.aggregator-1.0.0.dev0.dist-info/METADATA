@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: pyf.aggregator
+Version: 1.0.0.dev0
+Summary: Python Package Filter Aggregator
+Home-page: https://pypi.python.org/pypi/pyf.aggregator
+Author: 
+Author-email: 
+License: GNU General Public License v2 (GPLv2)
+Platform: UNKNOWN
+Classifier: Framework :: Pyramid
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: elasticsearch-dsl
+Requires-Dist: lxml
+Requires-Dist: requests
+Requires-Dist: setuptools
+Provides-Extra: dev
+Requires-Dist: pdbpp ; extra == 'dev'
+Provides-Extra: testing
+Requires-Dist: responses ; extra == 'testing'
+Requires-Dist: webtest ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+Python Package Filter Aggregator
+================================
+
+The Python Package Filter Aggregator (``pyf.aggregator``) aggregates the meta
+information of all Python packages in the PyPI.
+
+Quickstart
+----------
+
+For detailed installation instructions, read the `docs
+<https://pyfaggregator.readthedocs.io/en/latest/installation.html>`_.
+
+License
+-------
+
+The code is open-source and licensed under the Apache License 2.0.
+
+Credits
+-------
+
+* `@jensens <https://github.com/jensens>`_
+* `@veit <https://github.com/veit>`_
+* `@guziel <https://github.com/guziel>`_
+* `@pypa <https://github.com/pypa>`_
+
+
+Changelog
+=========
+
+1.0.0 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+
+

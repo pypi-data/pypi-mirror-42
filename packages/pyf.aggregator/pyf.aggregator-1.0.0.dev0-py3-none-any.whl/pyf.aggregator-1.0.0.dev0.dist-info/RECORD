@@ -1,0 +1,15 @@
+pyf.aggregator-1.0.0.dev0-py3.7-nspkg.pth,sha256=TA7l5DiP_dZ6MQPn3fRgcC0HEEVZ5ClT0JAuR0YcRik,524
+pyf/aggregator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyf/aggregator/config.py,sha256=1MTzUJSZJE0Ef6k6C_3s4HOV19at3pww-PcHdnHOg0o,1378
+pyf/aggregator/fetcher.py,sha256=XRnvvqNC8Jl5-Hee0TDYitxLO0pth1mXzUzLu3H1DFk,4583
+pyf/aggregator/indexer.py,sha256=7cMFwytVwd3XR016eOuH4u0Ova6SIfnPMIAsd6hkDsY,888
+pyf/aggregator/logger.py,sha256=khPLyTzQni957L7tKXr0kHBIbcQk8xcAnuMRS2B47Zo,103
+pyf/aggregator/main.py,sha256=ik8thpH1adMoOk0PTCR4jCguSIWITlXflpTeTeLvngM,1092
+pyf.aggregator-1.0.0.dev0.dist-info/AUTHORS.rst,sha256=zyVBsQgCY6idyWxjNKs1i68gxJpoiTeQRokEi1Mh3_s,174
+pyf.aggregator-1.0.0.dev0.dist-info/LICENSE,sha256=FO1UmQEg7-omBCJpiF3zbhtT24WL8EtAyM_IxeEvb7E,9695
+pyf.aggregator-1.0.0.dev0.dist-info/METADATA,sha256=bDFjBX_1t2Qg3Tr5jgiVaDZMogI0uc1znJq4bJAQHZI,1637
+pyf.aggregator-1.0.0.dev0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pyf.aggregator-1.0.0.dev0.dist-info/entry_points.txt,sha256=V2s0klgzNjchIa-cHaOCRkdZ028F7_0GlKgk9UYdMM4,60
+pyf.aggregator-1.0.0.dev0.dist-info/namespace_packages.txt,sha256=CteC13iIYu3h5WxsbUbghOc-95wGnsfXzBWMvz-LnHU,4
+pyf.aggregator-1.0.0.dev0.dist-info/top_level.txt,sha256=CteC13iIYu3h5WxsbUbghOc-95wGnsfXzBWMvz-LnHU,4
+pyf.aggregator-1.0.0.dev0.dist-info/RECORD,,
