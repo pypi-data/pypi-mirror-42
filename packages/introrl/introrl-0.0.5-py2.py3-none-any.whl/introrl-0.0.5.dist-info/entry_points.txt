@@ -1,0 +1,3 @@
+[console_scripts]
+introrl_build_mdp = introrl.build_mdp:main
+
