@@ -1,0 +1,8 @@
+README.md
+setup.py
+scribble/__init__.py
+scribble/core.py
+scribble.egg-info/PKG-INFO
+scribble.egg-info/SOURCES.txt
+scribble.egg-info/dependency_links.txt
+scribble.egg-info/top_level.txt
