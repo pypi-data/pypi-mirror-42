@@ -1,0 +1,3 @@
+[console_scripts]
+throwaway-vpn = throwaway_vpn.vpn:run
+
