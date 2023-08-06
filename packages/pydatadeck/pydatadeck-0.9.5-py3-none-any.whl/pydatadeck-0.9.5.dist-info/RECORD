@@ -1,0 +1,11 @@
+pydatadeck/__init__.py,sha256=D7Fm_RhHBv4-jnZDW0g6k_995X_S9m39z8NqPaVjFbc,36
+pydatadeck/datasource/__init__.py,sha256=D7Fm_RhHBv4-jnZDW0g6k_995X_S9m39z8NqPaVjFbc,36
+pydatadeck/datasource/datetime_util.py,sha256=TWH7wcs3xPu3oy8d83aiFX9iFRWCoJzRMLHKck0XNK0,1499
+pydatadeck/datasource/errors.py,sha256=Y4iFWgtfLw8ywbzCs9U2lP6NJewdfzLcQ5y219724sw,2008
+pydatadeck/datasource/operators.py,sha256=4cFksxI4SqexxBLGmg76VlZKdU6WEJNmZVzJcy0am1M,641
+pydatadeck/datasource/service_factory.py,sha256=CFsl9Ok5GZyLerAvMZsDpEVqlOo0xPqMJozwpj97t-Q,3698
+pydatadeck/datasource/translation.py,sha256=EdrTZ_2IqmXLS5g9ogjK0u9CAi5-ddE4ELRNLEctn-E,931
+pydatadeck-0.9.5.dist-info/METADATA,sha256=FdeY5FfDZQEeQBZDwqLtpqN-sNh6UWHGLYASpE0vivE,468
+pydatadeck-0.9.5.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+pydatadeck-0.9.5.dist-info/top_level.txt,sha256=lXUVrFYRonLnCimddzFbLPe0VNNum4_5-6iQ8uWJKB8,11
+pydatadeck-0.9.5.dist-info/RECORD,,
