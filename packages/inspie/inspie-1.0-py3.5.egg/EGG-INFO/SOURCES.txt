@@ -1,0 +1,11 @@
+README.rst
+setup.py
+inspie/__init__.py
+inspie/api.py
+inspie/config.py
+inspie/utils.py
+inspie.egg-info/PKG-INFO
+inspie.egg-info/SOURCES.txt
+inspie.egg-info/dependency_links.txt
+inspie.egg-info/requires.txt
+inspie.egg-info/top_level.txt
