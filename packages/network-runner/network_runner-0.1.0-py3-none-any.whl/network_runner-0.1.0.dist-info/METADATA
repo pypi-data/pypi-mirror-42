@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: network-runner
+Version: 0.1.0
+Summary: Abstracton and Python API for Ansible Networking
+Home-page: https://github.com/ansible-network/network-runner/
+Author: Ansible
+Author-email: info@ansible.com
+License: Apache 2
+Project-URL: Bug Tracker, https://github.com/ansible-network/network-runner/issues
+Project-URL: Source Code, https://github.com/ansible-network/network-runner/
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Python: >=2.7
+
+UNKNOWN
+
+
