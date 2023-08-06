@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Edit rules</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="main_simpledms.qrc">
+    <normaloff>:/icons/icons/outline_description_white_18dp.png</normaloff>:/icons/icons/outline_description_white_18dp.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="Germany"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="15" column="1">
+    <widget class="QPushButton" name="pushButton_ok">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>Keywords and title need to be filled.</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="main_simpledms.qrc">
+       <normaloff>:/icons/icons/outline_check_white_18dp.png</normaloff>:/icons/icons/outline_check_white_18dp.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QRadioButton" name="radioButton_any">
+     <property name="text">
+      <string>ANY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>of the following keywords</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" rowspan="4" colspan="2">
+    <widget class="QTextEdit" name="textEdit_keywords">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="acceptRichText">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Set these tags</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>If the document contains</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QRadioButton" name="radioButton_all">
+     <property name="text">
+      <string>ALL</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>and set this document title:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0">
+    <widget class="QPushButton" name="pushButton_cancel">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="main_simpledms.qrc">
+       <normaloff>:/icons/icons/outline_cancel_white_18dp.png</normaloff>:/icons/icons/outline_cancel_white_18dp.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0" colspan="2">
+    <widget class="QTextEdit" name="textEdit_tags"/>
+   </item>
+   <item row="12" column="0" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_doctitle"/>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="main_simpledms.qrc"/>
+ </resources>
+ <connections/>
+</ui>
