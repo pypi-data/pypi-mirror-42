@@ -1,0 +1,8 @@
+README.rst
+setup.py
+pyutils2/__init__.py
+pyutils2/pyutils.py
+pyutils2.egg-info/PKG-INFO
+pyutils2.egg-info/SOURCES.txt
+pyutils2.egg-info/dependency_links.txt
+pyutils2.egg-info/top_level.txt
