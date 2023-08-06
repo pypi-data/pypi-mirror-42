@@ -1,0 +1,3 @@
+[console_scripts]
+terrastorm = terrastorm.cli:run
+
