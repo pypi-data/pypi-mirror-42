@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: Flask-Inflate
+Version: 0.2
+Summary: Inflate / Decompress gzipped requests
+Home-page: https://github.com/ronlut/flask-inflate
+Author: Rony Lutsky
+Author-email: ronlut@gmail.com
+License: MIT
+Platform: any
+Classifier: Framework :: Flask
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: Flask
+
+
+Flask-Inflate
+-------------
+
+A simple flask extension to deal with gzipped (compressed) request data sent by clients.
+
+
