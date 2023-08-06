@@ -1,0 +1,10 @@
+elasticsearch_partition/__init__.py,sha256=O0Ymvh8LcYU4g2nO7TOCzUoFFjU4DccwEWXViI6EO9U,157
+elasticsearch_partition/formatters.py,sha256=wchPGKjF1LlHBaWU7TzwO2PqxXXdiLNJ1G0jLezPQLM,5450
+elasticsearch_partition/partitioning.py,sha256=HMnEi1rvyj_ZKS3dkClkUQG0t85JQAGyQTs3wr4QREE,7977
+elasticsearch_partition-1.0.2.dist-info/METADATA,sha256=cHB7zkHnoX74djKtiLteXP4O2FBtSrTCbphH3tuhcoI,8223
+elasticsearch_partition-1.0.2.dist-info/RECORD,,
+elasticsearch_partition-1.0.2.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+elasticsearch_partition-1.0.2.dist-info/top_level.txt,sha256=x56bUq8tqs8pGAr_saCA2y9UI3J-jK_YvuhUn1bHRJ4,30
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_formatters.py,sha256=TAYBLdHMvsC1Q4VgrGwGfEyI2reiRLoQYxzGLecOxQ8,4262
+tests/test_partitioning.py,sha256=Hs9owG-SMl0p_ytJKAwwarZuzCXyJ4RaeJFAazTgBCM,8446
