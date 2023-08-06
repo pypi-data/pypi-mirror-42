@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: euler-cli
+Version: 0.1.2
+Summary: Cli utility for setting up python modules to solve Project Euler
+Home-page: https://github.com/naren-m/euler
+Author: Naren Mudivarthy
+Author-email: naren.mudivarthy@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: fire
+Requires-Dist: requests
+Requires-Dist: bs4
+
+UNKNOWN
+
+
