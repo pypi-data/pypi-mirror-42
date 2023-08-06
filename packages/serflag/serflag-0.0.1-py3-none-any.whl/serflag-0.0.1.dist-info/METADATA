@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: serflag
+Version: 0.0.1
+Summary: Serializes flags to lists of strings with special values for ALL and NONE
+Home-page: https://github.com/pashazz/serflag
+Author: Pavel Borisov
+Author-email: pzinin@gmaill.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 2 - Pre-Alpha
+Description-Content-Type: text/markdown
+
+This is a library for creating serializable flags.
+Serialized into lists of strings with special values for `ALL`: `[ALL]` and `NONE`:`[]`
+
+Initial version
+
