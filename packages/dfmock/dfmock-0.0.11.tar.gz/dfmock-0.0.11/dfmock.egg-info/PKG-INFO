@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: dfmock
+Version: 0.0.11
+Summary: utility for generating mock data sets as pandas dataframes
+Home-page: https://github.com/IntegriChain1/DFMock
+Author: Ethan Knox
+Author-email: ethan.m.knox@gmail.com
+License: MIT
+Description: utility for generating mock data sets as pandas dataframes
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
