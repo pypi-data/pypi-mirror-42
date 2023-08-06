@@ -1,0 +1,17 @@
+numpy
+moviepy
+
+[:python_version >= "3.4"]
+matplotlib<3.0,>=2.0.0
+
+[doc]
+numpydoc<1.0,>=0.6.0
+sphinx_rtd_theme<1.0,>=0.1.10b0
+Sphinx<2.0,>=1.5.2
+
+[optional]
+
+[test]
+coveralls<2.0,>=1.1
+pytest-cov<3.0,>=2.5.1
+pytest<4.4,>=3.0.0
