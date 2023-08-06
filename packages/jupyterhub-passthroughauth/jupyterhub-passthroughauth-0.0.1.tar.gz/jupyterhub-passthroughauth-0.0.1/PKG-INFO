@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: jupyterhub-passthroughauth
+Version: 0.0.1
+Summary: Pass-through authentication for jupyterhub, enabling direct access to the session of a particular locked down user.
+Home-page: https://github.com/rohitggarg/jupyterhub-passthroughauth
+Author: Rohit Garg
+Author-email: rohitgarg19@gmail.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/rohitggarg/jupyterhub-passthroughauth/issues
+Project-URL: Funding, https://www.paypal.me/rohitggarg
+Project-URL: Say Thanks!, https://github.com/rohitggarg
+Project-URL: Source, https://github.com/rohitggarg/jupyterhub-passthroughauth
+Description: # jupyterhub-passthroughauth
+        Pass-through authentication for jupyterhub, enabling direct access to the session of a particular locked down user.
+        
+        The plugin (if installed and configured) could disable the standard form-based authentication of jupyterhub and provides direct access to the session from a particular user specified via config.
+        Think of this as a jupyterhub-singleuser functionality on a standard jupyterhub without the requirement of using tokens or passwords to gain access.
+        This kind of module is very useful if you like to provide guest access to your jupyterhub from a particular user or continue to use the standard PAM authentication just by flipping a switch in the config
+        
+        ### Installation
+        
+        * ```pip(3) install jupyterhub-passthroughauth```
+        
+        ### Configuration
+        
+        * jupyterhub_config.py
+        ```python
+        c.JupyterHub.authenticator_class = 'passthroughauth.PassThroughAuthenticator'
+        c.PassThroughAuthenticator.guest_user = 'ubuntu'
+        c.Authenticator.auto_login = True # Disables PAM login completely, use False otherwise
+        ```
+        
+        ### Access
+        
+        If the regular path ```/``` is accessed:
+        * Login page will be displayed if auto_login flag is set to ```False```
+        * Guest session page will be displayed if auto_login flag is set to ```True```
+        
+Keywords: jupyter jupyterhub login autologin pass through guest access
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=2.7, <4
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test

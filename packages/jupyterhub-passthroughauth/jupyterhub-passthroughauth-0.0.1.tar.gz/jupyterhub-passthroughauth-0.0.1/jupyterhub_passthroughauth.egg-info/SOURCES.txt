@@ -1,0 +1,9 @@
+README.md
+setup.py
+jupyterhub_passthroughauth.egg-info/PKG-INFO
+jupyterhub_passthroughauth.egg-info/SOURCES.txt
+jupyterhub_passthroughauth.egg-info/dependency_links.txt
+jupyterhub_passthroughauth.egg-info/requires.txt
+jupyterhub_passthroughauth.egg-info/top_level.txt
+passthroughauth/__init__.py
+passthroughauth/auth.py

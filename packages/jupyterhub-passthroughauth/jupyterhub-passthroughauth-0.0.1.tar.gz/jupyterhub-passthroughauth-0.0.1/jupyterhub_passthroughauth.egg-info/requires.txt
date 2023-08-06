@@ -1,0 +1,7 @@
+jupyterhub
+
+[dev]
+check-manifest
+
+[test]
+coverage
