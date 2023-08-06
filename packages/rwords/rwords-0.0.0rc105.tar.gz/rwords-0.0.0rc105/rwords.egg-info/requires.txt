@@ -1,0 +1,5 @@
+docopt
+requests>2.0
+sqlalchemy>=1.2
+readchar
+pygame>=1.6
