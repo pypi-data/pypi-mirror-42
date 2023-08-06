@@ -1,0 +1,6 @@
+# Misc
+include LICENSE.txt
+
+# Static files
+recursive-include flaskfilemanager/RichFilemanager *
+
