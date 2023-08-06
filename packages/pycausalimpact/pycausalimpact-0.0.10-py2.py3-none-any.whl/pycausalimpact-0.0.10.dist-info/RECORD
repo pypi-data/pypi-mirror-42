@@ -1,0 +1,14 @@
+causalimpact/__init__.py,sha256=tij-F94Cg_ASgACTQ-ygE-AKb7MbdIe_UmFfF8IuNOs,1156
+causalimpact/__version__.py,sha256=1vdKcBYAWnmZAotgeMFUsW5eaKHZJE5CXPUm5qw6Hk8,1185
+causalimpact/inferences.py,sha256=LUY5aFQt2nx6RNC3qfxPiX-Du26F_X9vIOVfT22HYQM,17443
+causalimpact/main.py,sha256=qTxDAlOjTBm1tpYOYo1jmZtfHigG34kQ_KT-OMMb3VM,28497
+causalimpact/misc.py,sha256=TPMUy4dDORMmtLACH6e0m7gN_Gh4A4b8U-SsTrloPt8,4741
+causalimpact/plot.py,sha256=D98RQPWx_rcqDeR5dcd3X4PS6l5pLLywGUXWGxfZgEQ,5253
+causalimpact/summary.py,sha256=OL9kBJc6v3hLaO0PucgaebX_EUmPad-mjPre_dDgwuM,3468
+causalimpact/templates/report,sha256=HD7VYiWSwQRjCn1lGQWYvlTYMmR-eYFv-u88PQYx1DQ,4879
+causalimpact/templates/summary,sha256=f1z7vLn6g7Ka5KDfRAZo10hOexlVqlVJfB50IX7zAUU,3729
+pycausalimpact-0.0.10.dist-info/LICENSE,sha256=OD07l1cGndGpNYzBQ54uoPTDckhVEMx9JsJ2NKmTlJk,1074
+pycausalimpact-0.0.10.dist-info/METADATA,sha256=e_djU-Bf1RM4mZiDLBQl9Gk0RITJkVlCVJolVzL3eJU,5542
+pycausalimpact-0.0.10.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+pycausalimpact-0.0.10.dist-info/top_level.txt,sha256=WPCTnIZxw0uCSdg6-AYjuLz2WWR4sXyvor6X7H5j3tw,13
+pycausalimpact-0.0.10.dist-info/RECORD,,
