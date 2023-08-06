@@ -1,0 +1,5 @@
+[console_scripts]
+tapedeck = tapedeck.cli.main:tapedeck_cli
+tdplay = tapedeck.cli.play:enter
+tdsearch = tapedeck.cli.search:enter
+
