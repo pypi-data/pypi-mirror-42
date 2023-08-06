@@ -1,0 +1,6 @@
+setup.py
+scvae/__init__.py
+scvae.egg-info/PKG-INFO
+scvae.egg-info/SOURCES.txt
+scvae.egg-info/dependency_links.txt
+scvae.egg-info/top_level.txt
