@@ -1,0 +1,11 @@
+envassume/__init__.py,sha256=Zzf7jfjnDQHTJB9kzeX5bwD8X7Y8OpEkiItHxzczgDQ,169
+envassume/arguments.py,sha256=zuQ3zo6ruGugUUnkLOrhKHeXz_cW_PtTEXNK-H2m5P8,2423
+envassume/exceptions.py,sha256=aGvjM6U3oDc25W2NtdUNc0V8IWO5uGvakN5D6PaGVNw,365
+envassume/main.py,sha256=q8zZ4PrYfk1ftLMlzHi3tMX-p3jd87xAwPBqBG51ptY,2115
+envassume/usage.py,sha256=HrXkd31t4Pnsy0Ixk6J1nZngdIQEA-4MkSkE8obHpxs,841
+envassume-1.0.4.dist-info/LICENSE,sha256=hMNRvNwjuj9TW7bUbk__jF_kEF_23TN6li14d5du34c,1078
+envassume-1.0.4.dist-info/METADATA,sha256=qH0RE7tHCAMHd2gE-ADP7fjcBL5JY7waGCfMztGxk6w,2175
+envassume-1.0.4.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+envassume-1.0.4.dist-info/entry_points.txt,sha256=1kfaJ4p-4WV3uRD_zbeAUICh8Qi8cpxASSP-YLXyxBQ,50
+envassume-1.0.4.dist-info/top_level.txt,sha256=wJHBJWOlskan2hma9Z2YaktDBtzFVKTNocyWtn8u6YI,10
+envassume-1.0.4.dist-info/RECORD,,
