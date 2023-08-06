@@ -1,0 +1,16 @@
+mopidy_pummeluff/__init__.py,sha256=0b_Ulo9VpP-uAG2pFjbr5cnqYQeooYnhNfwlUKmxiG4,1895
+mopidy_pummeluff/cards.py,sha256=3yLOsQ-j-VLD2K6wcvTQusIFNiOKnae63xFhCpzJRXc,7422
+mopidy_pummeluff/ext.conf,sha256=AXA1bxS5stfXZWiNN-9UkKQ4Q0AiLJK2X_BCnKLKeRw,26
+mopidy_pummeluff/frontend.py,sha256=Sw86KjaPWME1LnxmDzkWHZIpITgadIJ3Pe4cvE6nEDY,2577
+mopidy_pummeluff/registry.py,sha256=AvDplTaMQrNi56AGVV1KomXqaOXALzxtec3X45wNYe0,2116
+mopidy_pummeluff/rfid_reader.py,sha256=SFOwUlZtvjGrCnE23VlVK1_gkpRp-VeVbB1vxace3vM,1147
+mopidy_pummeluff/web.py,sha256=eF3O1m5mKEeghQax-vdVjJWdk79ey0iHdUCK1Y0qjXk,4541
+mopidy_pummeluff/webui/index.html,sha256=yqowJiyB5DXB2-fVradctYmP0YpKneq6O52nmjCJdqc,1638
+mopidy_pummeluff/webui/script.js,sha256=JZLtuYhglH0yabhGXjaDmT-MbOC7O4lCF1-V3u4ca1o,4718
+mopidy_pummeluff/webui/style.css,sha256=B-KhWYQT0UISxPHzBUVfxwHLo0lbYq9wQFTNN7UvMWI,2193
+Mopidy_Pummeluff-0.1.0.dist-info/LICENSE,sha256=weFckcTzv22qNPu_0Vb8Ep0korSjShn3S1gvZFY2cEM,1063
+Mopidy_Pummeluff-0.1.0.dist-info/METADATA,sha256=RWbvS7kppoO3rrSaUiA6MGt9IVA951mhbOMIDsJbp3Q,5415
+Mopidy_Pummeluff-0.1.0.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+Mopidy_Pummeluff-0.1.0.dist-info/entry_points.txt,sha256=OQTPqvuwXrPyAsVKEOEqe6iV-Z1jLEPtWpdEqzqc_1E,53
+Mopidy_Pummeluff-0.1.0.dist-info/top_level.txt,sha256=0ppljA4aq-61QF9hg2Vp16QFs7TD0LcerCVMvZyBzHg,17
+Mopidy_Pummeluff-0.1.0.dist-info/RECORD,,
