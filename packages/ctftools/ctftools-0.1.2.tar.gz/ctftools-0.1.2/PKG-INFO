@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: ctftools
+Version: 0.1.2
+Summary: A small collection of tools for solving CTF challenges
+Home-page: https://github.com/pietroferretti/ctftools
+Author: Pietro Ferretti
+Author-email: me@pietroferretti.com
+License: MIT
+Project-URL: Source, https://github.com/pietroferretti/ctftools
+Description: # CTF Tools [![Build Status](https://travis-ci.org/pietroferretti/ctftools.svg?branch=master)](https://travis-ci.org/pietroferretti/ctftools) [![pypi](https://img.shields.io/pypi/v/ctftools.svg?style=flat)](https://pypi.org/project/ctftools/) ![Python versions](https://img.shields.io/pypi/pyversions/ctftools.svg?style=flat)
+        
+        I wrote some simple tools to make my life easier with the most common cookie-cutter ctfs.
+        
+        All the tools are licensed under the MIT License.
+        
+        ## Installation
+        
+        ```
+        pip install ctftools
+        ```
+Keywords: ctf security cryptography
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Security
+Classifier: Topic :: Security :: Cryptography
+Description-Content-Type: text/markdown
+Provides-Extra: tests
