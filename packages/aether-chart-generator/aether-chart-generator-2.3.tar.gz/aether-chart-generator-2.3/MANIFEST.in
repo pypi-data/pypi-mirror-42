@@ -1,0 +1,1 @@
+recursive-include aether_chart_generator/templates *.tmpl.yaml *.tmpl.txt *.tmpl.tpl
