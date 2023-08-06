@@ -1,0 +1,24 @@
+import os
+
+PREFIX: str = os.getenv("PIPELINE_PREFIX", default="dev")
+# analyzer related
+S3_CODE_BUCKET_NAME: str = f"r2c-{PREFIX}-pipeline-code"
+S3_ANALYSIS_BUCKET_NAME: str = f"r2c-{PREFIX}-pipeline-analysis"
+S3_ANALYSIS_LOG_BUCKET_NAME: str = f"r2c-{PREFIX}-pipeline-analysis-log"
+
+# registry related
+# TODO remove this on API supports manifest
+
+S3_ORG_REGISTRY_BUCKET_NAME: str = f"r2c-{PREFIX}-pipeline-registry"
+S3_PUBLIC_REGISTRY_BUCKET_NAME: str = f"r2c-public-pipeline-registry"
+S3_REGISTRY_FILENAME: str = "registry.json"
+
+# only for local run
+DEFAULT_LOCAL_RUN_DIR: str = "/tmp/local-infra/"
+
+# TODO remove this on API supports manifest
+AWS_ACCOUNT: str = "338683922796"
+ECR_URL: str = f"{AWS_ACCOUNT}.dkr.ecr.us-west-2.amazonaws.com"
+
+SRC_CODE_ANALYZER_NAME = "public/source-code"
+SPECIAL_ANALYZERS = set([SRC_CODE_ANALYZER_NAME])
