@@ -1,0 +1,10 @@
+minepkg/__init__.py,sha256=mB4baeYwO8h1i4sJ5UTvG0RTMwyiWf59d-8QHb4feBE,66
+minepkg/cmdline.py,sha256=G7NsD-RBu2xCbi0RodHP9DncIbtKNqeJxY6L_Dpu3FA,1566
+minepkg/installer.py,sha256=gNjMYqejuAKvCiEHfq6zTmwax1QygQMVV31xqinkYJc,3574
+minepkg/makerepo.py,sha256=M6No2qZi762Y_hM22oltiNLlfDue2-ns7WpAwzzLAvg,510
+minepkg/repository.py,sha256=2HU5MFGejRdAWHTYv1m0XrpQwHk1VFS06Jh7BU8l4cM,1216
+minepkg-0.1.dist-info/METADATA,sha256=M1c3tL1wP_GZdIYQDCiXZSxP1ZcGYKyQ9ezhv0hvEd8,1241
+minepkg-0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+minepkg-0.1.dist-info/entry_points.txt,sha256=wfRyZT9OGpk1SYD0P6wiklq2iMYwQVkRLc-tZlwOvLM,51
+minepkg-0.1.dist-info/top_level.txt,sha256=7KnUp4lfIAOnzEurdl_unL7QP4OhLk6GZRFmv7W-UYc,8
+minepkg-0.1.dist-info/RECORD,,
