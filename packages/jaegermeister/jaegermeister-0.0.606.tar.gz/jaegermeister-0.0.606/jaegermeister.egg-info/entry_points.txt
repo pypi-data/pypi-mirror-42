@@ -1,0 +1,6 @@
+[console_scripts]
+jaegermeister-bootstrap = scripts.bootstrap:console_script
+
+[sagi_entry]
+string = jaegermeister:load
+
