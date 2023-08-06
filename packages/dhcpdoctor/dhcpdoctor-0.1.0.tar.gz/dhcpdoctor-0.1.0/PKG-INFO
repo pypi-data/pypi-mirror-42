@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: dhcpdoctor
+Version: 0.1.0
+Summary: Tool for testing IPv4 and IPv6 DHCP services
+Home-page: https://github.com/ArnesSI/dhcpdoctor
+Author: Matej Vadnjal
+Author-email: matej.vadnjal@arnes.si
+Requires-Python: >=3.4,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: System :: Monitoring
+Requires-Dist: scapy (>=2.4,<3.0)
+Project-URL: Repository, https://github.com/ArnesSI/dhcpdoctor
