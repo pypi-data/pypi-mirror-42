@@ -1,0 +1,41 @@
+====================
+ciscomobilityexpress
+====================
+
+
+.. image:: https://img.shields.io/pypi/v/ciscomobilityexpress.svg
+        :target: https://pypi.python.org/pypi/ciscomobilityexpress
+
+.. image:: https://img.shields.io/travis/fbradyirl/ciscomobilityexpress.svg
+        :target: https://travis-ci.org/fbradyirl/ciscomobilityexpress
+
+.. image:: https://readthedocs.org/projects/ciscomobilityexpress/badge/?version=latest
+        :target: https://ciscomobilityexpress.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+.. image:: https://pyup.io/repos/github/fbradyirl/ciscomobilityexpress/shield.svg
+     :target: https://pyup.io/repos/github/fbradyirl/ciscomobilityexpress/
+     :alt: Updates
+
+
+
+Module to interact with Cisco Mobility Express APIs to fetch connected devices.
+
+
+* Free software: MIT license
+* Documentation: https://ciscomobilityexpress.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

@@ -1,0 +1,68 @@
+Metadata-Version: 1.1
+Name: ciscomobilityexpress
+Version: 0.1.1
+Summary: Module to interact with Cisco Mobility Express APIs to fetch connected devices.
+Home-page: https://github.com/fbradyirl/ciscomobilityexpress
+Author: Finbarr Brady
+Author-email: fbradyirl@github.io
+License: MIT license
+Description: ====================
+        ciscomobilityexpress
+        ====================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/ciscomobilityexpress.svg
+                :target: https://pypi.python.org/pypi/ciscomobilityexpress
+        
+        .. image:: https://img.shields.io/travis/fbradyirl/ciscomobilityexpress.svg
+                :target: https://travis-ci.org/fbradyirl/ciscomobilityexpress
+        
+        .. image:: https://readthedocs.org/projects/ciscomobilityexpress/badge/?version=latest
+                :target: https://ciscomobilityexpress.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        
+        .. image:: https://pyup.io/repos/github/fbradyirl/ciscomobilityexpress/shield.svg
+             :target: https://pyup.io/repos/github/fbradyirl/ciscomobilityexpress/
+             :alt: Updates
+        
+        
+        
+        Module to interact with Cisco Mobility Express APIs to fetch connected devices.
+        
+        
+        * Free software: MIT license
+        * Documentation: https://ciscomobilityexpress.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        -------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.1 (2019-02-27)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: ciscomobilityexpress
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
