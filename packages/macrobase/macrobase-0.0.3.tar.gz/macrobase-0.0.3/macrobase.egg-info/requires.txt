@@ -1,0 +1,2 @@
+macrobase-driver>=0.0.5
+structlog==19.1.0
