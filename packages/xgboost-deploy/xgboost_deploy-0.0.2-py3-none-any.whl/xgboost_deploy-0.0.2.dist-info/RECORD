@@ -1,0 +1,8 @@
+xgb_deploy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+xgb_deploy/fmap.py,sha256=A2UKVUQzkyTFaXmR63BjJCGhdfTg6xVYO26r2FDsrUk,2571
+xgb_deploy/model.py,sha256=q0srJCjlm9yB4Eg3h8jkj1TyyFYARl4kHgDBolM9tS0,10261
+xgboost_deploy-0.0.2.dist-info/LICENSE,sha256=em6eQDd7tgWHXhcDb830HnpVab63PwRY1Lj2mK0w6X8,1070
+xgboost_deploy-0.0.2.dist-info/METADATA,sha256=kfbqU1XDKx1ypULHneBf8VXC6VwgaUVD56mHlXH99wM,9399
+xgboost_deploy-0.0.2.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+xgboost_deploy-0.0.2.dist-info/top_level.txt,sha256=HeYKjoU1Qhr8Q_RfRS8Cqt-w-mnCKMNFlNb7eTnmAQM,11
+xgboost_deploy-0.0.2.dist-info/RECORD,,
