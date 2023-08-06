@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: keras-mri
+Version: 0.0.2
+Summary: Neural network visualization tool for Keras
+Home-page: https://github.com/robianmcd/keras-mri
+Author: Rob McDiarmid
+Author-email: robianmcd@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: Keras
+Requires-Dist: flask
+
+# Keras MRI
+Keras MRI is a neural network visualization tool for Keras.
+
+
+## TODOs
+ - test with other networks
+ - support common layers. e.g. activation, max pooling, dropout?
+ - Add buttons for play/pause/next
+ - expand/colapse nodes. Maybe use different edge rendering technique when expanded 
+
+ - Show edge weights / show edge outputs
+ - Show convolutional filters
+    - https://www.analyticsvidhya.com/blog/2018/03/essentials-of-deep-learning-visualizing-convolutional-neural-networks/
+ - Integrate visualization techniques from https://raghakot.github.io/keras-vis/
+ - add configurable labels/icons for input/output layers
+ - Show node value in tooltip
+
+## Development
+
+**Install package locally**
+
+```
+pip install -e .
+```
+
+**Deploy**
+
+```
+python setup.py sdist bdist_wheel
+python -m twine upload dist/*
+```
+
