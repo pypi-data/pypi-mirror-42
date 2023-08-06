@@ -1,0 +1,4 @@
+[console_scripts]
+chtools = chtools.cli.cli:main
+perspective-tool = chtools.cli.cli:perspective_tool
+
