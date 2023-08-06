@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: iron-falcon
+Version: 1.2.2a0
+Summary: UNKNOWN
+Home-page: https://gitlab.guvenfuture.com/cagri.ulas/iron-falcon
+Author: 
+Author-email: 
+Maintainer: Çağrı ULAŞ
+Maintainer-email: cagriulas@gmail.com
+License: LGPLv3+
+Keywords: falcon
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: marshmallow (==2.15.6)
+Requires-Dist: ujson (==1.35)
+
+Embrace the power of marshmallow with falcon speed.
+
+
