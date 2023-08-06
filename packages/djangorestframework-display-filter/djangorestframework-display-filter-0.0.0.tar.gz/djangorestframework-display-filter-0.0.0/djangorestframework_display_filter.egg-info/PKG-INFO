@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: djangorestframework-display-filter
+Version: 0.0.0
+Summary: UNKNOWN
+Home-page: https://github.com/wakita181009/django-rest-framework-display-filter
+Author: wakita181009
+Author-email: wakita181009@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
