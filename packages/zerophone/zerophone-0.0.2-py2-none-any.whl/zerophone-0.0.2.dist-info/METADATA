@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: zerophone
+Version: 0.0.2
+Summary: ZeroPhone API library, with CLI
+Home-page: https://github.com/ZeroPhone/Zerophone-API-Python
+Author: CRImier
+Author-email: crimier@yandex.ru
+License: UNKNOWN
+Download-URL: https://github.com/ZeroPhone/zerophone-api-py/archive/0.0.2.tar.gz
+Platform: UNKNOWN
+Requires-Dist: jsonrpclib
+Requires-Dist: zerophone-api-daemon
+
+UNKNOWN
+
+
