@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: parsnet
+Version: 0.1
+Summary: TensorFlow implementation of the constraints necessary for parseval networks
+Home-page: https://github.com/mathialo/parsnet
+Author: Mathias Lohne
+Author-email: mathialo@ifi.uio.no
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: tensorflow (>=1.5)
+
+UNKNOWN
+
+
