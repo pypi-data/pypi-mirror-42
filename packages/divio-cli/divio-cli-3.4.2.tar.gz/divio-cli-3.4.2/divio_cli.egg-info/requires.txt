@@ -1,0 +1,9 @@
+requests
+click
+tabulate
+six
+attrs
+pyaml
+
+[crypto]
+cryptography
