@@ -1,0 +1,12 @@
+README.md
+setup.py
+typesystem/__init__.py
+typesystem/base.py
+typesystem/fields.py
+typesystem/formats.py
+typesystem/forms.py
+typesystem/schemas.py
+typesystem.egg-info/PKG-INFO
+typesystem.egg-info/SOURCES.txt
+typesystem.egg-info/dependency_links.txt
+typesystem.egg-info/top_level.txt
