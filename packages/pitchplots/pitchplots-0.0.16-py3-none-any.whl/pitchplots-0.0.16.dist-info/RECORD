@@ -1,0 +1,12 @@
+pitchplots/__init__.py,sha256=lYQkcrtqyW5gKLcSav_znPIMI6JjkfPqwAK2uqP3suE,19
+pitchplots/data_example.mxl,sha256=6kSCM2xR9WL1haG-KM1FysyNTMFnJr4KBkEWA6Lnt8o,7930
+pitchplots/functions.py,sha256=eYjNRbGPPJwdxB5amLkFvCuv1CFu8k-T9nOYdpmSaNs,8107
+pitchplots/modified_musicxml_parser.py,sha256=xGAp0Tj7frM2vJT0ANGtlVZ1bnSu-zfX12to45zo6EY,53957
+pitchplots/parser.py,sha256=8CMZAoW2c8RKKuasDFhbVGKGTh8jThcD_qZrm-sb9hU,7466
+pitchplots/reader.py,sha256=zrOKtNRAIXIe_RK7EEVw7HQOsRbbSIXCtfbI6-Kqz2Q,9188
+pitchplots/static.py,sha256=MSx2fnKh5MURtaYogvCYHr39oehdAJH5geE4CB3dVQE,28645
+pitchplots-0.0.16.dist-info/LICENCE.txt,sha256=cpjanjuNYpJROO8Pobxz-OgcMl_eyDWKje5hkUbF4ro,1101
+pitchplots-0.0.16.dist-info/METADATA,sha256=IzapnjRdOVS82jpVpWxOljWgWFkY__KwAOffrSGL7HA,2674
+pitchplots-0.0.16.dist-info/WHEEL,sha256=LRS-GSFNyYPLBJaJJ6kxdk4Urtb4kEVXWc5DpA8iv6o,97
+pitchplots-0.0.16.dist-info/top_level.txt,sha256=zL-Pi1lHwnJcGALtDWTrM1apPwUWnjOkavG87CqbSek,11
+pitchplots-0.0.16.dist-info/RECORD,,
