@@ -1,0 +1,8 @@
+cfn_dep2layer-0.0.15.data/scripts/dep2layer,sha256=KF9ez2h8pHGfJS02z2xMzVcDnNXPoNuV6NEGL4oy4sU,1788
+dep2layer/__init__.py,sha256=HoRxY11lqPizW2Q7YzyCcMK67HhPVJwl4AcdyPXh0P0,29
+dep2layer/downloaders.py,sha256=hS7k0S2zFBkMXBsP0zWRBskbrErw2HMVNkKqOG9zBd0,1730
+dep2layer/main.py,sha256=VyFndZeBmCBO5eR6tvcFIxm0-2aDNAxeQtQnadYa-CE,3779
+cfn_dep2layer-0.0.15.dist-info/METADATA,sha256=gYnLd33nZZx-D6ztjnd_wjYpjIQvPuLgKVWBLIPzX74,432
+cfn_dep2layer-0.0.15.dist-info/WHEEL,sha256=ZenmQtjt4etEZlyoFFA3Bd8pVkjneWord4ycgKmVLx4,92
+cfn_dep2layer-0.0.15.dist-info/top_level.txt,sha256=VwY6ycOACvhN5U02kYCPDLQXtgOk84bycoK1SP-SuQg,10
+cfn_dep2layer-0.0.15.dist-info/RECORD,,
