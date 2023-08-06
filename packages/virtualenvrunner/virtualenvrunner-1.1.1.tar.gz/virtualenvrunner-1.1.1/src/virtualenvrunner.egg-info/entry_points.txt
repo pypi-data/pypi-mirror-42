@@ -1,0 +1,17 @@
+[console_scripts]
+create_virtualenv = virtualenvrunner.cli:run_install
+create_virtualenv2.7 = virtualenvrunner.cli:PYTHONVERSIONRUNINSTALL.run_install27
+create_virtualenv3.4 = virtualenvrunner.cli:PYTHONVERSIONRUNINSTALL.run_install34
+create_virtualenv3.5 = virtualenvrunner.cli:PYTHONVERSIONRUNINSTALL.run_install35
+create_virtualenv3.6 = virtualenvrunner.cli:PYTHONVERSIONRUNINSTALL.run_install36
+run_in_readonly_virtualenv = virtualenvrunner.cli:run_readonly
+run_in_readonly_virtualenv2.7 = virtualenvrunner.cli:PYTHONVERSIONRUNREADONLY.run_readonly27
+run_in_readonly_virtualenv3.4 = virtualenvrunner.cli:PYTHONVERSIONRUNREADONLY.run_readonly34
+run_in_readonly_virtualenv3.5 = virtualenvrunner.cli:PYTHONVERSIONRUNREADONLY.run_readonly35
+run_in_readonly_virtualenv3.6 = virtualenvrunner.cli:PYTHONVERSIONRUNREADONLY.run_readonly36
+run_in_virtualenv = virtualenvrunner.cli:run
+run_in_virtualenv2.7 = virtualenvrunner.cli:PYTHONVERSIONRUN.run27
+run_in_virtualenv3.4 = virtualenvrunner.cli:PYTHONVERSIONRUN.run34
+run_in_virtualenv3.5 = virtualenvrunner.cli:PYTHONVERSIONRUN.run35
+run_in_virtualenv3.6 = virtualenvrunner.cli:PYTHONVERSIONRUN.run36
+
