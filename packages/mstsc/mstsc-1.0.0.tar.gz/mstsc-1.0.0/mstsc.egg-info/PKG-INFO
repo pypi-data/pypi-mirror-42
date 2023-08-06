@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mstsc
+Version: 1.0.0
+Summary: This is a security module
+Home-page: https://github.com/pypa/sampleproject
+Author: loyal888
+Author-email: h916232476@gmail.com
+License: UNKNOWN
+Description: # Readme
+        
+        This is a module for loyal888. Any problem please contact h916232476@gmail.com
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
