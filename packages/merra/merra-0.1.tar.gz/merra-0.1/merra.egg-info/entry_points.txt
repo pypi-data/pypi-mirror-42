@@ -1,0 +1,4 @@
+[console_scripts]
+merra_download = merra.download:run
+merra_repurpose = merra.reshuffle:run
+

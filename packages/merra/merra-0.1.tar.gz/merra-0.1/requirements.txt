@@ -1,0 +1,12 @@
+pyproj
+pygeogrids
+numpy
+pygeobase
+datedown>=0.3
+trollsift
+pytesmo
+netcdf4==1.2.8
+pyresample
+repurpose
+pynetcf==0.1.18
+datetime
