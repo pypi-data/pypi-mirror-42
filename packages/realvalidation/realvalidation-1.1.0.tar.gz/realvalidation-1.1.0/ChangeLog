@@ -1,0 +1,24 @@
+CHANGES
+=======
+
+1.1.0
+-----
+
+* feature: error segregation into errors.py
+* Updated setup.cfg project description to be all conclusive RealValidation api
+* fixed path appendation
+* Updated README.md
+* Added README.md
+
+1.0.0
+-----
+
+* removed doc/\_\*, added it to gitignore
+* added pbr to requiremnts.txt
+* added other sphinx doc
+* added docs
+* updated raise for ValueError on res.json() to be InvalidJSONResponseException
+* setup.py local\_scheme => node-and-timestamp
+* added setup requires setuptools\_scm to setup.cfg
+* added pbr to setup.py, made realvalidation package, added gitignore
+* init commit
