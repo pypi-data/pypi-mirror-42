@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: operator-courier
+Version: 1.0.2
+Summary: Build, verify and push operators
+Home-page: https://github.com/operator-framework/operator-courier
+Author: AOS Marketplace
+Author-email: aos-marketplace@redhat.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: operator,courier
+Platform: UNKNOWN
