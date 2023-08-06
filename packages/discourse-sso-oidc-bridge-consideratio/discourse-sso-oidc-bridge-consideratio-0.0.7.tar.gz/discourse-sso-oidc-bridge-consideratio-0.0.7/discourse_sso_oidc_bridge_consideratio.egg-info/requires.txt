@@ -1,0 +1,2 @@
+flask==1.0.*
+flask-pyoidc==2.0.*

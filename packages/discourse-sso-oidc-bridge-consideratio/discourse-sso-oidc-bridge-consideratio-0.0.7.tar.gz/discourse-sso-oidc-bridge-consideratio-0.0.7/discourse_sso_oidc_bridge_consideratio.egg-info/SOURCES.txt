@@ -1,0 +1,11 @@
+README.md
+setup.py
+discourse_sso_oidc_bridge/__init__.py
+discourse_sso_oidc_bridge/app.py
+discourse_sso_oidc_bridge/constants.py
+discourse_sso_oidc_bridge/default.py
+discourse_sso_oidc_bridge_consideratio.egg-info/PKG-INFO
+discourse_sso_oidc_bridge_consideratio.egg-info/SOURCES.txt
+discourse_sso_oidc_bridge_consideratio.egg-info/dependency_links.txt
+discourse_sso_oidc_bridge_consideratio.egg-info/requires.txt
+discourse_sso_oidc_bridge_consideratio.egg-info/top_level.txt
