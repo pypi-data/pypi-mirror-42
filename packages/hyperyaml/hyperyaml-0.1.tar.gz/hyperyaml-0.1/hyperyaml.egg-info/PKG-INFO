@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: hyperyaml
+Version: 0.1
+Summary: A library to build and run hyperparameter tuning schemes from yaml files
+Home-page: https://github.com/josmcg/HyperYAML
+Author: Josh McGrath
+Author-email: joshuawmcgrath@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
