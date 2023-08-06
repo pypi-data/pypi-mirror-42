@@ -1,0 +1,13 @@
+ocrd_kraken/__init__.py,sha256=U4El8sjs8UEZ8eFH9WgkkL63LAE7f0f36-1ekzmuJ_s,99
+ocrd_kraken/binarize.py,sha256=qCSlqueVHTZFxK6ihCno2qa5a0NgHDANH_fg_71UVWU,3367
+ocrd_kraken/cli.py,sha256=5zzW585RzUsj5klfeOKwL1bgLz6bg3CJ7dao4zurPhk,470
+ocrd_kraken/config.py,sha256=KIGdj-YnnMrMvR84YgNQJVH0BO4DUYC_bRZDKGE5aNw,138
+ocrd_kraken/ocr.py,sha256=DwrHCiEHrTD9UvUHHZFAemZcFn95rgv4KIuhJ6kOEm0,1926
+ocrd_kraken/ocrd-tool.json,sha256=VfUgy09M-D3nXp_npIEXVCUZuJPX-YhhjACngbJBUJM,2035
+ocrd_kraken/segment.py,sha256=pyWm5iO_uhWe1Jyvbfw0wGoyHw15BgFUg4vmiQMtAms,2395
+ocrd_kraken-0.1.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+ocrd_kraken-0.1.0.dist-info/METADATA,sha256=1754iQGiBuCPqNmxaAwpO_su2qX-DmrIXbdmxJ2SmIo,814
+ocrd_kraken-0.1.0.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+ocrd_kraken-0.1.0.dist-info/entry_points.txt,sha256=QG5k4Q0OEolOg_G3L3rVRPdN3NgzdMsb-2FnoEGz868,137
+ocrd_kraken-0.1.0.dist-info/top_level.txt,sha256=4Ng_e7aMeeT49Ptkl2nr7mgkn41j5dKIbBdlX6ioMp0,12
+ocrd_kraken-0.1.0.dist-info/RECORD,,
