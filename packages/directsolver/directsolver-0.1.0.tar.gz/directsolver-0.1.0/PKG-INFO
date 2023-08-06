@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: directsolver
+Version: 0.1.0
+Summary: Minimise a function in the complex plan
+Home-page: https://github.com/antoinelpp/directsolver
+Author: Antoine Tavant
+Author-email: antoinetavant@hotmail.fr
+License: GNU General Public License v3
+Description: 
+        
+        
+Keywords: directsolver
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
