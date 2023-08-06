@@ -1,0 +1,10 @@
+numpy
+pandas
+sklearn
+optuna
+
+[dev]
+check-manifest
+
+[test]
+coverage

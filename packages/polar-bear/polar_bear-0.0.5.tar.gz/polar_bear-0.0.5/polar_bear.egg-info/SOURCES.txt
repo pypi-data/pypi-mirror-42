@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+data/polar_bear.png
+polar_bear/__init__.py
+polar_bear/main.py
+polar_bear.egg-info/PKG-INFO
+polar_bear.egg-info/SOURCES.txt
+polar_bear.egg-info/dependency_links.txt
+polar_bear.egg-info/entry_points.txt
+polar_bear.egg-info/requires.txt
+polar_bear.egg-info/top_level.txt
