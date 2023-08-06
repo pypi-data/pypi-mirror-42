@@ -1,0 +1,16 @@
+djaptcha/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djaptcha/admin.py,sha256=K65-T6h_JIxxNQrQHIIERN99ZAic73RkzVB2KZeGMB4,100
+djaptcha/apps.py,sha256=KGFlbc9icL0VSoq9AHtUrRfgFbI6CoKjaMieAD8QZUU,90
+djaptcha/forms.py,sha256=2u3QieGu1d0z0pkqtVaqkA-A2t5zKqUVFOIi9Fgn2rs,1409
+djaptcha/models.py,sha256=ENBxaurHqHhCLmohV2IJUC7fLsiAc1rwRiwb6yVbi74,4053
+djaptcha/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+djaptcha/urls.py,sha256=AIVz3kRiRz-BBb1aU5v-oKiNBSpeyv1X3aHf_O-rn5I,443
+djaptcha/views.py,sha256=ANBPHJuk-XidgOt4b6qG63rjM73H_vv5UOuqv0e64r4,1790
+djaptcha/widgets.py,sha256=UD21FjHgUVrOj03GZIUjyhB3vw7tykOAAxmYX2bgc9k,744
+djaptcha/templates/djaptcha/cookies.html,sha256=oIAdaJJfTMTU1w_khRYU1zXiyKYeUOlTFRWssdM9Ba0,44
+djaptcha/templates/djaptcha/forms/widgets/captcha.html,sha256=vL3EW7mpHJyV3Zcn9Rz3sKszuBmGf4tzdtD00fSKfLA,89
+djaptcha-0.0.1.dist-info/LICENSE,sha256=ACwmltkrXIz5VsEQcrqljq-fat6ZXAMepjXGoe40KtE,1069
+djaptcha-0.0.1.dist-info/METADATA,sha256=rmDvVg3Az0V_z1eRQJ8KKBpoliJC4dLYBqPIieZmHSo,3550
+djaptcha-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+djaptcha-0.0.1.dist-info/top_level.txt,sha256=J3aQSOEKBrJ_ivCSPcM0K8wzNT9o69HP7Ng3deRoNNA,9
+djaptcha-0.0.1.dist-info/RECORD,,
