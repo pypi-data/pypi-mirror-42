@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: experimaestro
+Version: 0.3.0
+Summary: [![CircleCI](https://circleci.com/gh/experimaestro/experimaestro-python.svg?style=svg)](https://circleci.com/gh/experimaestro/experimaestro-python)
+[![PyPI version](https://badge.fury.io/py/experimaestro.svg)](https://badge.fury.io/py/experimaestro)
+
+Python bindings for experimaestro
+
+Home-page: http://github.com/experimaestro/experimaestro
+Author: Benjamin Piwowarski
+Author-email: benjamin@piwowarski.fr
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
