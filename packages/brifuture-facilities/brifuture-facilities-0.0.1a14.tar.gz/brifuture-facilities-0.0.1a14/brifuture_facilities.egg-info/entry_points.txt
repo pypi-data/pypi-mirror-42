@@ -1,0 +1,4 @@
+[console_scripts]
+bf_broadcast = myfacilities.broadcast:main
+bf_gitrepo = myfacilities.gitrepo:main
+
