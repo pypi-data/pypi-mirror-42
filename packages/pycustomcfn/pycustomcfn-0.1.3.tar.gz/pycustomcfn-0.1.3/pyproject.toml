@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "pycustomcfn"
+version = "0.1.3"
+description = 'Module for handling dispatch and response for a CustomCFN Lambda'
+repository = 'http://github.com/wpmedia/pycustomcfn'
+license = "MIT"
+authors = [
+  "Rick Alm <rick.alm@washpost.com>"
+  ]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+pyrandomtools = "^0.1.2"
+pysimplelogger = "^0.1.2"
+certifi = "^2018.11"
+urllib3 = "^1.24"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.2"
+aws_lambda_context = "^1.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
