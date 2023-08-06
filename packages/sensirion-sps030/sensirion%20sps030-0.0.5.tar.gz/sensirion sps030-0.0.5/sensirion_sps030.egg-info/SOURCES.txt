@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+sensirion_sps030/__init__.py
+sensirion_sps030/sensirion_error_codes.py
+sensirion_sps030/sensirion_sps030.py
+sensirion_sps030.egg-info/PKG-INFO
+sensirion_sps030.egg-info/SOURCES.txt
+sensirion_sps030.egg-info/dependency_links.txt
+sensirion_sps030.egg-info/requires.txt
+sensirion_sps030.egg-info/top_level.txt
