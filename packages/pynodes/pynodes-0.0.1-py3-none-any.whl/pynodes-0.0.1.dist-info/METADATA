@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: pynodes
+Version: 0.0.1
+Summary: A python library to simplify nodes and finding peers on the same network.
+Home-page: https://github.com/AgeOfMarcus/pynodes
+Author: Marcus Weinberger
+Author-email: marcus@marcusweinberger.com
+License: GPL
+Platform: UNKNOWN
+
+# pynodes
+A python library to simplify nodes and finding peers on the same network.
+
+
