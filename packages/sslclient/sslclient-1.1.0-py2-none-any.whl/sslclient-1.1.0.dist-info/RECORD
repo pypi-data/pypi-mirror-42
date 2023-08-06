@@ -1,0 +1,14 @@
+sslclient/__init__.py,sha256=yjtn4beQpJiyiqjI9bSznAeshJ26RowtwOWUJG2j8Sk,97
+sslclient/messages_robocup_ssl_detection_pb2.py,sha256=nKZ5cjRiS1RqnnnGpmwJGuGjKi5My3I4sf5Los7zCBs,11535
+sslclient/messages_robocup_ssl_geometry_legacy_pb2.py,sha256=M-kGBaP0l73RNpxplK_VybmjUNNuS50aJT4MOhWdFjY,9809
+sslclient/messages_robocup_ssl_geometry_pb2.py,sha256=RbahiKwYJB-QaxjFaHxD1ZOyjqPvxpt5wfANOBc2EoY,19888
+sslclient/messages_robocup_ssl_refbox_log_pb2.py,sha256=smvPcRCTxX_zjmKDVAEVkSegNTghXvLZSaKpwyet3HQ,3627
+sslclient/messages_robocup_ssl_wrapper_legacy_pb2.py,sha256=vY21ouA-kMsYKVtTHGTwvCtHKsd9imcXmYNSFw_5-Q0,3101
+sslclient/messages_robocup_ssl_wrapper_pb2.py,sha256=cs8TocEAAEkqlvKNMn3sSlJT5wS-C3p5-JwaZaQhYqw,2874
+sslclient/sslclient.py,sha256=nConrfOR6IPZpEbnpIhZeofp7rx9LICscpq37AXhJl8,1678
+sslclient-1.1.0.dist-info/DESCRIPTION.rst,sha256=OWkVz24WU_8S2HVct2ozuFgGM0EjDCQjJjy1xDocYMc,6179
+sslclient-1.1.0.dist-info/METADATA,sha256=Wm8xvBNCpbWk_5r7IRpn49b6PwuN7nBwV1HTTCzLszo,6431
+sslclient-1.1.0.dist-info/RECORD,,
+sslclient-1.1.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+sslclient-1.1.0.dist-info/metadata.json,sha256=B8YgHRb6cAeMjFFvAM8q-l7EPhjBs7dvSxV1VS53X3U,492
+sslclient-1.1.0.dist-info/top_level.txt,sha256=lV5StcIOhYkmPnEUN3HI8TkD36e5jQksRErM_dt8_D4,10
