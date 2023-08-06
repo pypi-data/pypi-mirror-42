@@ -1,0 +1,315 @@
+Metadata-Version: 1.1
+Name: openet-ndvi
+Version: 0.0.7
+Summary: Earth Engine based NDVI ET Model
+Home-page: https://github.com/Open-ET/openet-ndvi-beta
+Author: Charles Morton
+Author-email: charles.morton@dri.edu
+License: Apache
+Download-URL: https://github.com/Open-ET/openet-ndvi-beta/archive/v0.0.7.tar.gz
+Description: ======================
+        OpenET - NDVI ET Model
+        ======================
+        
+        |version| |build| |codecov|
+        
+        **WARNING: This code is in development, is being provided without support, and is subject to change at any time without notification**
+        
+        This repository provides an Earth Engine Python API based implementation of a simple model for computing evapotranspiration (ET) as a linear function of the normalized difference vegetation index (NDVI).  In this model, the fraction of reference ET (ETf) is computed as:
+        
+        .. math::
+        
+            ETf = m * NDVI + b
+        
+        where m and b have defaults of 1.25 and 0.0 respectively.  The actual ET is computed as:
+        
+        .. math::
+        
+            ET = ETf * ETr
+        
+        Input Collections
+        =================
+        
+        The NDVI ET model is currently implemented for the following Earth Engine image collections:
+        
+        Landsat TOA
+         * LANDSAT/LC08/C01/T1_TOA or LANDSAT/LC08/C01/T1_RT_TOA
+         * LANDSAT/LE07/C01/T1_TOA or LANDSAT/LE07/C01/T1_RT_TOA
+         * LANDSAT/LT05/C01/T1_TOA
+         * LANDSAT/LT04/C01/T1_TOA
+        Landsat SR
+         * LANDSAT/LC08/C01/T1_SR
+         * LANDSAT/LE07/C01/T1_SR
+         * LANDSAT/LT05/C01/T1_SR
+         * LANDSAT/LT04/C01/T1_SR
+        Sentinel 2 TOA
+         * COPERNICUS/S2
+        
+        Model Structure
+        ===============
+        
+        The primary way of interact with the NDVI-ET model are through the "Collection" and "Image" classes.
+        
+        Collection
+        ==========
+        
+        The Collection class should be used to generate image collections of ET (and and other model `Variables`_).  These collections can be for image "overpass" dates only or interpolated to daily, monthly, or annual time steps.  The collections can be built for multiple input collections types, such as merging Landsat 8 and Sentinel 2.
+        
+        The Collection class is built based on a list of input collections ID's, a date range, and a study area geometry.
+        
+        Required Inputs
+        ---------------
+        
+        collections
+            List of Earth Engine collection IDs (see `Input Collections`_).
+        start_date
+            ISO format start date string (i.e. YYYY-MM-DD) that is passed directly to the collection .filterDate() calls.
+        end_date
+            ISO format end date string that is passed directly to .filterDate() calls.  The end date must be exclusive (i.e. data will go up to this date but not include it).
+        geometry
+            ee.Geometry() that is passed to the collection .filterBounds() calls.
+            All images with a footprint that intersects the geometry will be included.
+        
+        Optional Inputs
+        ---------------
+        
+        etr_source
+            Reference ET source collection ID.
+            Optional, the default is 'IDAHO_EPSCOR/GRIDMET'.
+        etr_band
+            Reference ET source band name.
+            Optional, the default is 'etr'.
+        cloud_cover_max
+            Maximum cloud cover percentage.
+            The input collections will be filtered to images with a cloud cover percentage less than this value.
+            Optional, the default is 70 (%).
+        filter_args
+            Custom filter arguments for teh input collections.
+            This parameter is not yet implemented.
+        model_args
+            A dictionary of argument to pass through to the Image class initialization.
+            This parameter is not yet implemented.
+        
+        Overpass Method
+        ---------------
+        
+        variables
+            List of variables to calculate/return.
+        
+        Interpolate Method
+        ------------------
+        
+        variables
+            List of variables to calculate/return.
+        t_interval
+            Time interval over which to interpolate and aggregate values.
+            Choices: 'daily', 'monthly', 'annual'
+            Optional, the default is 'monthly'.
+        interp_type
+            Interpolation method.
+            Choices: 'daily', 'monthly', 'annual'
+            Optional, the default is 'linear'.
+        interp_days
+            Number of extra days before the start date and after the end date to include in the interpolation calculation.
+            Optional, the default is 32.
+        
+        Collection Examples
+        -------------------
+        
+        .. code-block:: python
+        
+            import openet.ndvi as ndvi_et
+        
+            overpass_coll = ndvi_et.Collection(
+                    collections=['LANDSAT/LC08/C01/T1_TOA'],
+                    start_date='2017-06-01',
+                    end_date='2017-09-01',
+                    geometry=ee.Geometry.Point(-121.5265, 38.7399),
+                    etr_source='IDAHO_EPSCOR/GRIDMET',
+                    etr_band='etr') \
+                .overpass(variables=['et', 'etr', 'etf'])
+        
+            monthly_coll = ndvi_et.Collection(
+                    collections=['LANDSAT/LC08/C01/T1_TOA'],
+                    start_date='2017-06-01',
+                    end_date='2017-09-01',
+                    geometry=ee.Geometry.Point(-121.5265, 38.7399),
+                    etr_source='IDAHO_EPSCOR/GRIDMET',
+                    etr_band='etr') \
+                .interpolate(variables=['et', 'etr', 'etf'] t_interval='monthly')
+        
+        Image
+        =====
+        
+        The Image class should be used to process a single image, an image collection with custom filtering, or to apply custom parameters to each image in a collection.
+        
+        Typically the NDVI-ET Image is initialized using one of the collection/sensor specific helper methods listed below (see below).  These methods rename the bands to a common naming scheme, apply basic cloud masking, and .
+        
+        Image collections can be built by mapping one of the helper methods over an image collection.  Please see the `Image Mapping <examples/image_mapping.ipynb>`__ example notebook for more details.
+        
+        The Image class can also be initialized using any Earth Engine image with an 'ndvi' band and a 'system:time_start' property.
+        
+        Landsat Collection 1 Top-of-Atmosphere (TOA) Input Image
+        --------------------------------------------------------
+        
+        To instantiate the class for a Landsat Collection 1 TOA image, use the Image.from_landsat_c1_toa() method.
+        
+        The input Landsat image must have the following bands and properties:
+        
+        =================  =============================================
+        SPACECRAFT_ID      Band Names
+        =================  =============================================
+        LANDSAT_4          B1, B2, B3, B4, B5, B7, B6, BQA
+        LANDSAT_5          B1, B2, B3, B4, B5, B7, B6, BQA
+        LANDSAT_7          B1, B2, B3, B4, B5, B7, B6_VCID_1, BQA
+        LANDSAT_8          B2, B3, B4, B5, B6, B7, B10, BQA
+        =================  =============================================
+        
+        =================  =============================================
+        Property           Description
+        =================  =============================================
+        system:index       - Landsat Scene ID
+                           - Must be in the Earth Engine format (e.g. LC08_044033_20170716)
+        system:time_start  Image datetime in milliseconds since 1970
+        SPACECRAFT_ID      - Used to determine which Landsat type (for band renaming)
+                           - Must be: LANDSAT_4, LANDSAT_5, LANDSAT_7, or LANDSAT_8
+        =================  =============================================
+        
+        Landsat Collection 1 Surface Reflectance (SR) Input Image
+        ---------------------------------------------------------
+        
+        To instantiate the class for a Landsat Collection 1 SR image, use the Image.from_landsat_c1_sr() method.
+        
+        The input Landsat image must have the following bands and properties:
+        
+        =================  =============================================
+        SATELLITE          Band Names
+        =================  =============================================
+        LANDSAT_4          B1, B2, B3, B4, B5, B7, B6, pixel_qa
+        LANDSAT_5          B1, B2, B3, B4, B5, B7, B6, pixel_qa
+        LANDSAT_7          B1, B2, B3, B4, B5, B7, B6, pixel_qa
+        LANDSAT_8          B2, B3, B4, B5, B6, B7, B10, pixel_qa
+        =================  =============================================
+        
+        =================  =============================================
+        Property           Description
+        =================  =============================================
+        system:index       - Landsat Scene ID
+                           - Must be in the Earth Engine format (e.g. LC08_044033_20170716)
+        system:time_start  Image datetime in milliseconds since 1970
+        SATELLITE          - Used to determine which Landsat type (for band renaming)
+                           - Must be: LANDSAT_4, LANDSAT_5, LANDSAT_7, or LANDSAT_8
+        =================  =============================================
+        
+        Sentinel 2 TOA Input Image
+        --------------------------
+        
+        To instantiate the class for a Landsat Collection 1 TOA image, use the Image.from_sentinel2_toa() method.
+        
+        The input Landsat image must have the following bands and properties:
+        
+        =================  =============================================
+        SPACECRAFT_NAME    Band Names
+        =================  =============================================
+        Sentinel-2A        B2, B3, B4, B8, B11, B12, QA60
+        Sentinel-2B        B2, B3, B4, B8, B11, B12, QA60
+        =================  =============================================
+        
+        =================  =============================================
+        Property           Description
+        =================  =============================================
+        system:index       - Sentinel 2 Scene ID
+                           - Must be in the Earth Engine format (e.g. 20180716T183929_20180716T185042_T10SGJ)
+        system:time_start  Image datetime in milliseconds since 1970
+        SPACECRAFT_NAME    - Used to determine which Sentinel 2 type
+                           - Must be: Sentinel-2A or Sentinel-2B
+                           - Not currently used or checked
+        =================  =============================================
+        
+        Image Example
+        -------------
+        
+        .. code-block:: python
+        
+            import openet.ndvi as ndvi_et
+            landsat_img = ee.Image('LANDSAT/LC08/C01/T1_TOA/LC08_044033_20170716')
+            et_img = ndvi_et.Image.from_landsat_c1_toa(landsat_img).et
+        
+        Variables
+        =========
+        
+        The NDVI-ET model can compute the following variables:
+        
+        ndvi
+           Normalized difference vegetation index [unitless]
+        etf
+           Fraction of reference ET [unitless]
+        etr
+           Reference ET (alfalfa) [mm]
+        et
+           Actual ET [mm]
+        
+        There is also a more general "calculate" method that can be used to return a multiband image of multiple variables (see example...)
+        
+        Reference ET
+        ============
+        
+        The reference ET data source is controlled using the "etr_source" and "etr_band" parameters.  Currently the default reference ET source for this model is the `GRIDMET <http://www.climatologylab.org/gridmet.html>`__ alfalfa reference (etr).
+        
+        Example Notebooks
+        =================
+        
+        Detailed Jupyter Notebooks of the various approaches for calling the OpenET NDVI ET model are provided in the "examples" folder.
+        
+         * `Computing daily ET for a single Landsat image <examples/single_image.ipynb>`__
+         * `Computing a collection of "overpass" ET images <examples/collection_overpass.ipynb>`__
+         * `Computing a collection of interpolated monthly ET images <examples/collection_interpolate.ipynb>`__
+        
+        Installation
+        ============
+        
+        The python OpenET NDVI based ET module can be installed via pip:
+        
+        .. code-block:: console
+        
+            pip install openet-ndvi
+        
+        Dependencies
+        ============
+        
+         * `earthengine-api <https://github.com/google/earthengine-api>`__
+         * `openet-core <https://github.com/Open-ET/openet-core-beta>`__
+        
+        OpenET Namespace Package
+        ========================
+        
+        Each OpenET model is stored in the "openet" folder (namespace).  The model can then be imported as a "dot" submodule of the main openet module.
+        
+        .. code-block:: console
+        
+            import openet.ndvi as ndvi_et
+        
+        Development and Testing
+        =======================
+        
+        Please see the `CONTRIBUTING.rst <CONTRIBUTING.rst>`__.
+        
+        References
+        ==========
+        
+        
+        
+        .. |build| image:: https://travis-ci.org/Open-ET/openet-ndvi-beta.svg?branch=master
+           :alt: Build status
+           :target: https://travis-ci.org/Open-ET/openet-ndvi-beta
+        .. |version| image:: https://badge.fury.io/py/openet-ndvi.svg
+           :alt: Latest version on PyPI
+           :target: https://badge.fury.io/py/openet-ndvi
+        .. |codecov| image:: https://codecov.io/gh/Open-ET/openet-ndvi-beta/branch/master/graphs/badge.svg
+           :alt: Coverage Status
+           :target: https://codecov.io/gh/Open-ET/openet-ndvi-beta
+        
+Keywords: NDVI OpenET Evapotranspiration Earth Engine
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
