@@ -1,0 +1,10 @@
+pytest_nginx/__init__.py,sha256=E-6wAZjiLRVInABFxrWoqdYlO_t-zVhK8XNfNnaDyzI,22
+pytest_nginx/factories.py,sha256=LTWBYeHR3Zc_rZW-7dK0Zh5L-rYoD8a9yHqzz5i37-g,11294
+pytest_nginx/plugin.py,sha256=2zinM45SU6JA4betxXucPBbjMKVw4nnydvo_V-U7YFQ,1682
+pytest_nginx/templates.py,sha256=sE4LANecSeq_pbLdDLkvOfI1W_D_5_Cf5Td5vIP0s7c,2849
+pytest_nginx_iplweb-1.1.1.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+pytest_nginx_iplweb-1.1.1.dist-info/METADATA,sha256=CVU-UB-xyJlnrLdClsHPHiYMePAIqnarFZdVx6oCvAc,5267
+pytest_nginx_iplweb-1.1.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pytest_nginx_iplweb-1.1.1.dist-info/entry_points.txt,sha256=QGPu5X_N0Zp7DvbOxkg1_FDq-XNttEo5YEI6p_mYxPQ,47
+pytest_nginx_iplweb-1.1.1.dist-info/top_level.txt,sha256=9BGuPmh09aibAQcCQte781fcID0P2-wFv0VytwpSHbo,13
+pytest_nginx_iplweb-1.1.1.dist-info/RECORD,,
