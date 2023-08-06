@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: QSoME
+Version: 0.1.0
+Summary: Quantum Solid state Method Embedding
+Home-page: https://github.com/Goodpaster/QSoME
+Author: Daniel Graham
+Author-email: graha682@umn.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+
+# QSoME
+Quantum Solid state and Molecular Embedding
+
+
