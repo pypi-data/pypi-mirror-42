@@ -1,0 +1,9 @@
+setup.py
+test/test_update.py
+updatetable/__init__.py
+updatetable/updatetable.py
+updatetable.egg-info/PKG-INFO
+updatetable.egg-info/SOURCES.txt
+updatetable.egg-info/dependency_links.txt
+updatetable.egg-info/requires.txt
+updatetable.egg-info/top_level.txt
