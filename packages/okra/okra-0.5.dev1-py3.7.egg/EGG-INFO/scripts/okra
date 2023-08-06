@@ -1,0 +1,46 @@
+#!/Users/tylerbrown/miniconda3/envs/okra/bin/python
+
+import argparse
+import logging
+
+from okra.logging_utils import enable_log
+from okra.repo_mgmt import repo_clone_main, repo_update_main
+from okra.assn1_data import extract_data_main
+
+logger = logging.getLogger(__name__)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("action",
+                    help="'get', 'update', 'extract_data' for git repos")
+parser.add_argument("repo_list",
+                    help="file path to list of GitHub repos")
+parser.add_argument("directory_path",
+                    help="file path to directory storing git repos")
+parser.add_argument("logname",
+                    help="name of log file")
+
+args = parser.parse_args()
+    
+enable_log(args.logname)
+logger.info("STARTED process")
+
+if args.action == "get":
+    logger.info("STARTED cloning github repos")
+    repo_clone_main(args.repo_list, args.directory_path)
+    logger.info("FINISHED cloning github repos")
+
+elif args.action == "update":
+    logger.info("STARTED updating github repos")
+    repo_update_main(args.repo_list, args.directory_path)
+    logger.info("FINISHED uppdating github repos")
+
+elif args.action == "extract_data":
+    logger.info("STARTED extracting data from git repos")
+    extract_data_main(args.repo_list, args.directory_path)
+    logger.info("FINISHED extracting data from git repos")
+
+else:
+    parser.print_help()
+
+logger.info("COMPLETED process")
+    
