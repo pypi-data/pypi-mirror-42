@@ -1,0 +1,8 @@
+README.md
+setup.py
+example_pkg/__init__.py
+example_pkg/min_max.py
+example_pkg_yyj.egg-info/PKG-INFO
+example_pkg_yyj.egg-info/SOURCES.txt
+example_pkg_yyj.egg-info/dependency_links.txt
+example_pkg_yyj.egg-info/top_level.txt
