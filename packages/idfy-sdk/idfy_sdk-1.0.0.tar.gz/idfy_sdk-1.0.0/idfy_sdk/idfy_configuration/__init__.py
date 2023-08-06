@@ -1,0 +1,1 @@
+from idfy_sdk.idfy_configuration.idfy_configuration import IdfyConfiguration
