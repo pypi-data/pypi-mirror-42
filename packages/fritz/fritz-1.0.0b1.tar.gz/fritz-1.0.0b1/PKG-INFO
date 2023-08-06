@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: fritz
+Version: 1.0.0b1
+Summary: Fritz Machine Learning Library.
+Home-page: https://github.com/fritzlabs/fritz-python
+Author: Fritz Engineering
+Author-email: engineering@fritz.ai
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: keras
