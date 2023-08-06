@@ -1,0 +1,15 @@
+setup.cfg
+setup.py
+geopackage/__init__.py
+geopackage/_coord.py
+geopackage/_geopackage.py
+geopackage/_gpkg.py
+geopackage/_rtree.py
+geopackage/_utils.py
+geopackage/_wkb.py
+geopackage.egg-info/PKG-INFO
+geopackage.egg-info/SOURCES.txt
+geopackage.egg-info/dependency_links.txt
+geopackage.egg-info/not-zip-safe
+geopackage.egg-info/requires.txt
+geopackage.egg-info/top_level.txt

@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: geopackage
+Version: 1.0.0
+Summary: Pure Python reader/writer of geopackages
+Home-page: https://github.com/achapkowski/pygeopackage
+Author: Andrew Chapkowski
+Author-email: andrewonboe@gmail.com
+License: Apache License 2.0
+Description: A package to read/write GeoPackage Vector Data.
+        
+        
+        ### Getting Started
+        
+        Use the GeoPackage library is easy as passing in a file path to the `GeoPackage` class.  This class contains the ability to manage, create, and modify spatial and attribute data.  It is designed to work with for `arcpy` and `shapely` geometries, so no matter what you do or how you want to manage your data, you now can.
+        
+        
+        ```python
+        from geopackage import GeoPackage
+        
+        fp = r"./data/geodata.gpkg"
+        with GeoPackage(fp) as gpkg:
+            # List all Tables
+            for table in gpkg.tables:
+                print(table)
+        ```
+        
+        GeoPackages is designed to create a simple approach to data management.  The context manager handles all the `close` and `save` operations.  
+        
+        ### Reading Table Data
+        
+        ```python
+        
+        fp = r"./data/geodata.gpkg"
+        with GeoPackage(fp) as gpkg:
+            # List all Tables
+            table = gpkg.get("census")
+            for row in table.rows():
+                print(row)
+        
+        ```
+        
+        When reading information, an optional where clause and field names can be given.
+        
+        ### Writing Data
+        
+        ```python
+        
+        fp = r"./data/geodata.gpkg"
+        with GeoPackage(fp) as gpkg:
+            # List all Tables
+            table = gpkg.get("census")
+            for row in table.rows():
+                print(row)
+        
+        ```
+Keywords: gis,geospatial,geographic,geopackage,ogc,wkb,wkt,geojson,spatial,Esri,ArcGIS,Python,ArcPy,qgis
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Esri REST API
+Classifier: Intended Audience :: Developers/GIS Users
+Classifier: License :: Apache License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >= 2.7
+Description-Content-Type: text/markdown
