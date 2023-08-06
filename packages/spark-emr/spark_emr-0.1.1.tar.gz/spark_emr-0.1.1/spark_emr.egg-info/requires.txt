@@ -1,0 +1,5 @@
+boto3
+loguru
+pyyaml
+spark-optimizer
+pluggy>=0.7
