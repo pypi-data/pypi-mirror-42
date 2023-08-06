@@ -1,0 +1,9 @@
+jupyter_python_languageserver/__init__.py,sha256=BBLYFNC35bBPCm2k4YnXCqzgSoAZvq4wvjDEGVoOGao,788
+jupyter_python_languageserver/_version.py,sha256=ncL1qawrynKAESxkk1-ZMHFQZB6dmr6f0VhYw5u311k,212
+jupyter_python_languageserver/langserver.py,sha256=YHdLqR-Kd6PwnNmlMsJe22gcQYp4xC7EJQxW-4LANRE,1569
+jupyter_python_languageserver-0.1.1.data/data/etc/jupyter/jupyter_notebook_config.d/jupyter_python_languageserver.json,sha256=6KQMj2Ad5EoYYc7WjZwOyHHm_6U70ZJVykbT7oQDh38,111
+jupyter_python_languageserver-0.1.1.dist-info/LICENSE.txt,sha256=P-N7cO84riF1EQCtNNL1I3s_NU3rWatqqBouBQNYZrw,1507
+jupyter_python_languageserver-0.1.1.dist-info/METADATA,sha256=h3KjnsODQ1-y5QFgJDjXam7vv95C9PnBgH8qWlawkaE,580
+jupyter_python_languageserver-0.1.1.dist-info/WHEEL,sha256=GP9ACJkAJDyZNf-YPXDAJ8MdtRSNk4H2JK7vR-x05CE,116
+jupyter_python_languageserver-0.1.1.dist-info/top_level.txt,sha256=Cz6QXbdyt_lbIJMnxJ8998Exag6g4cfxlNEtWOStcCg,30
+jupyter_python_languageserver-0.1.1.dist-info/RECORD,,
