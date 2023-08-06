@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: sanic-healthchecks
+Version: 0.1.1
+Summary: A small wrapper for making it easy to add a healthcheck server to your Sanic application
+Home-page: https://github.com/abatilo/sanic-healthchecks
+Author: Aaron
+Author-email: AaronBatilo@gmail.com
+Keywords: sanic,health,checks,healthchecks,observability
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: aiohttp (>=3.5,<4.0)
+Project-URL: Repository, https://github.com/abatilo/sanic-healthchecks
