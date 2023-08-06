@@ -1,0 +1,6 @@
+
+    [console_scripts]
+    canari=canari.entrypoints:main
+    dispatcher=canari.entrypoints:dispatcher
+    pysudo=canari.entrypoints:pysudo
+    
