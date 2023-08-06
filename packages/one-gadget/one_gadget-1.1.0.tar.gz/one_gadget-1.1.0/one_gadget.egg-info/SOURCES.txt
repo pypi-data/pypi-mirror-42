@@ -1,0 +1,8 @@
+README.md
+setup.py
+one_gadget/__init__.py
+one_gadget.egg-info/PKG-INFO
+one_gadget.egg-info/SOURCES.txt
+one_gadget.egg-info/dependency_links.txt
+one_gadget.egg-info/requires.txt
+one_gadget.egg-info/top_level.txt
