@@ -1,0 +1,12 @@
+setuptools
+six
+zope.app.appsetup
+zope.app.server
+zope.app.wsgi
+zope.component
+zope.interface
+zope.publisher
+zope.server
+
+[test]
+manuel
