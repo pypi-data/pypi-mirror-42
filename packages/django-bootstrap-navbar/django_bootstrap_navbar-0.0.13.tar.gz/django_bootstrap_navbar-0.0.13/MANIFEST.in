@@ -1,0 +1,2 @@
+graft bootstrap_navbar/templates/
+exclude bootstrap_navbar/tests/*

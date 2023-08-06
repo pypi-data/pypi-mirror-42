@@ -1,0 +1,9 @@
+<a
+  class="{{ class_list|join:' ' }}"
+  style="outline: none;"
+  {% include 'bootstrap_navbar/attrs.html' with attrs=attrs %}
+  {% if disabled %}disabled{% endif %}
+  href="{{ href }}">
+  {% if active %}<span class="sr-only">(current)</span>{% endif %}
+  {{ text }}
+</a>

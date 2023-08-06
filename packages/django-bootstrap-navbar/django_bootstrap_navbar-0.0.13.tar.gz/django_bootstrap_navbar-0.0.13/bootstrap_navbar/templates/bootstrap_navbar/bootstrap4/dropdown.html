@@ -1,0 +1,26 @@
+<div
+  {% if class_list %}
+  class="nav-item dropdown {{ class_list|join:' ' }}"
+  {% else %}
+  class="nav-item dropdown"
+  {% endif %}
+  {% include 'bootstrap_navbar/attrs.html' with attrs=attrs %}>
+  <a
+    href="#"
+    role="button"
+    style="outline: none;"
+    id="dropdown-content"
+    class="nav-link dropdown-toggle"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false">
+    {{ text }}
+  </a>
+  <div
+    class="dropdown-menu"
+    aria-labelledby="dropdown-content">
+    {% for child in children %}
+      {{ child.render }}
+    {% endfor %}
+  </div>
+</navitem>
