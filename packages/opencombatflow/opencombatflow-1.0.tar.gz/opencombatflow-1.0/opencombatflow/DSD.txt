@@ -1,0 +1,75 @@
+Dictionary Structure Definitions
+
+What is this?
+This file details the structure of the dictionaries ("blocks") used for exchanging data. I have tried to make them as extensible as possible.
+
+Note: The Symbol (DS) indicates a field that is dice-safe - that is, a dice-string can be used in place of an integer.
+ACTIONBLOCK:
+	(MANDATORY ATTRIBUTES)
+	"range": A RangeBlock specifying which characters are effected.
+	"user": The character using the action.
+	"name": Name of the action
+	
+	(NON-MANDATORY ATTRIBUTES)
+	"damage": A dictionary containing all of the types of damage dealt, on attack success.
+		"base": (DS) The default damage
+		<any string>: (DS) Specify what type of damage should be dealt (EX: Piercing, Bashing, Magic). If the person being attacked does not have a resistance to that type of damage, that damage will be treated as base damage.
+	"effects": A dictionary specifying effects to apply to effected parties. The strings need not follow any convention, and exist for further specification by the programmer.
+		<any string>: (DS) The duration of the effect specified by the string.
+	"chance": A string, in dice/decision form, representing the chance that the action succeeds. On failure, the action does not effect the targeted character, though it may effect others. If none is specified, the action succeeds 100% of the time.
+	"failureCondition": An ActionBlock that will be executed on the failure of the chance condition. If not provided, nothing will occur on failure. If "chance" is not provided, this will be ignored.
+
+RANGEBLOCK:
+	(NOTES)
+	All attributes of the RangeBlock should be understood as "AND" based, as opposed to "OR" based. For example, if both a group and an area range are specified, the RangeBlock will only target members of the group in the area range.
+	If empty, no-one will be selected.
+
+	(MANDATORY)
+	
+	(NON-MANDATORY)
+	"center": A tuple specifying the coordinate of the center of an area to be effected. Has no effect if range is not specified.
+	"range": Distance from center to effect. Has no effect if no center is not specified.
+	"group": Group of characters to effect.
+	"character": Specify a specific character.
+
+REACTIONBLOCK:
+	(MANDATORY)
+	"user": The character issuing this reaction.
+
+	(NON-MANDATORY)
+	"name": Name of the reaction. 
+	"resistance": A dictionary containing all resistances to different types of damage. Each field represents an amount of damage to reduce, with the minimum being 0. Dice format is accepted.
+		"base": (DS) Base damage reduction.
+		<any string>: (DS) Specific damage reduction.
+	"action": An actionBlock containing a retaliatory action to be executed.
+
+DAMAGEBLOCK:
+	(MANDATORY)
+	
+	(NON-MANDATORY)
+	"damageTaken": An integer representing the damage to be dealt to HP.
+	"effects": A dictionary specifying effects to add.
+		<any string>: The duration of the effect specified by the string.
+
+LOGBLOCK:
+	(MANDATORY)
+	"messageType": A string indicating what type of message this entry is.
+		Values of messageType:
+			"startOfTurn": A character's turn has started.
+			"action": Notification that character is beginning to execute an action.
+			"attackHit": Character has hit another character.
+			"attackFailure": Character has failed to hit another character.
+			"reaction": Character has reacted.
+			"death": Character has died.
+	
+	(CONDITIONALLY MANDATORY) (Mandatory in certain circumstances)
+	"character": Mandatory only if messageType="death" or "startOfTurn". The character who has died or whose turn has started.
+	"reaction": Mandatory only if messageType="reaction". The reaction to be communicated.
+	"action": Mandatory except when messageType="death" or "startOfTurn". Means different things in different contexts.
+		If messageType=...
+			"action", "attackHit", or "attackFailure": The action that is being carried out.
+			"reaction": The action that is being reacted to.
+			"death": The action that led to the character's death.
+	"damage": Mandatory only if messageType="attackHit". The damage done by the attack.
+	
+	
