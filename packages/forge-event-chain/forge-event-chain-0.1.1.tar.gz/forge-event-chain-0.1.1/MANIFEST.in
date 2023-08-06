@@ -1,0 +1,14 @@
+include config/forge.toml
+recursive-exclude flask_session *
+include Makefile
+include *.py
+include *.txt
+recursive-include raw_protos *.proto
+recursive-include static *.css
+recursive-include static *.ico
+recursive-include static *.jpg
+recursive-include static *.js
+recursive-include static *.png
+recursive-include static *.txt
+recursive-include templates *.html
+
