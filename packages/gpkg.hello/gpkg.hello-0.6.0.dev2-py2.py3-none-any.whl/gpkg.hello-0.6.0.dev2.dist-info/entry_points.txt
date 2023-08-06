@@ -1,0 +1,8 @@
+[guild.models]
+_check = guild.model:PackageModel
+hello = guild.model:PackageModel
+
+[guild.resources]
+hello:file-output = guild.model:PackageModelResource
+hello:msg-file = guild.model:PackageModelResource
+
