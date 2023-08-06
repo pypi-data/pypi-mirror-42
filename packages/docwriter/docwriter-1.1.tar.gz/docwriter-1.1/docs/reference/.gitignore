@@ -1,0 +1,6 @@
+# Markdown files
+*.md
+*.yml
+
+# Site folder
+site/
