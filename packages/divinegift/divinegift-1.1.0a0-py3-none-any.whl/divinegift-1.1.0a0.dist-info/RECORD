@@ -1,0 +1,14 @@
+divinegift/__init__.py,sha256=szw64Epo3H-vrhext22NFQ7vBXF1KR3IFt4LG2Xzdxk,19
+divinegift/banner.py,sha256=znW1Gk4Ws3DuolfeqFj4rP6SXVZjMmJX1nAba01f2D8,2809
+divinegift/cipher.py,sha256=7JnPN2H1Sja93PjzSfJGKoY98wMeLieu-21mgv4kZwY,1714
+divinegift/db.py,sha256=fBENgIGIxEP0fD7SSnPHbjPJCkYMCYjj8AGn3ZPLYxw,4174
+divinegift/excel.py,sha256=Cy_1CE5NhkTM2P9N8HcVlo_Sp8Lyc3KxIQ9SRd6Z3xY,4041
+divinegift/logger.py,sha256=xRHmuJy6TOZ4_A1pJ1s-Kt0VmypJFnlWmMk7gQH_onc,3952
+divinegift/sender.py,sha256=saRF6B_KQ8MsSlpyJieH-OYXHP_Y5F2zzU77_dPd6kM,5502
+divinegift/smain.py,sha256=hNL-806Sd6iy5KkHYKRRWPTljWarD9Pu38GdUNPdGFw,9526
+divinegift/templator.py,sha256=vY1qtqL2VL6OtUHvDAinAtJwQpY8q4ISzg3y7bDM6i8,7795
+divinegift/translit.py,sha256=FHIu35nambPY276lKqbPcblNFyPNDuZwHL-F0L9kWUU,1851
+divinegift-1.1.0a0.dist-info/METADATA,sha256=6hFBRibGDc3A9HMzjhrckt7Ov1YYU43u8TqGFekCM54,11216
+divinegift-1.1.0a0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+divinegift-1.1.0a0.dist-info/top_level.txt,sha256=zN6TWH--gAsX-S0YIwBET0JKvhHmY16bd0Q098I_RHc,11
+divinegift-1.1.0a0.dist-info/RECORD,,
