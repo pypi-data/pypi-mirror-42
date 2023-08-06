@@ -1,0 +1,44 @@
+Metadata-Version: 1.2
+Name: scikit-quant
+Version: 0.2.0
+Summary: Integrator for Python-based quantum computing software
+Home-page: http://scikit-quant.org
+Maintainer: Wim Lavrijsen
+Maintainer-email: WLavrijsen@lbl.gov
+License: LBNL BSD
+Description: scikit-quant
+        ============
+        
+        scikit-quant is an aggregator package to improve interoperability between
+        quantum computing software packages.
+        Our first focus in on classical optimizers, making the state-of-the art from
+        the Applied Math community available in Python for use in quantum computing.
+        
+        Website: http://scikit-quant.org
+        
+        
+        Installation
+        ------------
+        
+           pip install sckit-quant
+        
+Keywords: quantum computing optimizers
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: C++
+Classifier: Natural Language :: English

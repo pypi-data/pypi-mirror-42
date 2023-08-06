@@ -1,0 +1,11 @@
+README.rst
+setup.py
+./skquant/__init__.py
+./skquant/_version.py
+./skquant/opt/__init__.py
+scikit_quant.egg-info/PKG-INFO
+scikit_quant.egg-info/SOURCES.txt
+scikit_quant.egg-info/dependency_links.txt
+scikit_quant.egg-info/requires.txt
+scikit_quant.egg-info/top_level.txt
+test/test_optimizers.py
