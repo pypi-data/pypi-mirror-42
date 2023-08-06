@@ -1,0 +1,15 @@
+cutils.cp37-win32.pyd,sha256=Cc2xrSYFqTSyMJ6eKbb0v2OSvB4k5d1nErrhjxprpH8,131072
+KDEpy/BaseKDE.py,sha256=IUKheHSi73S1N12P9PtrXxbOoRhF60IFqLZAjOUTa74,8654
+KDEpy/FFTKDE.py,sha256=5tn2A2HTjAkC9YBGhNmwV-qNRw9rDoawTIgVZ224M0M,8140
+KDEpy/NaiveKDE.py,sha256=qfR0Mk4MuNcGGBOynGgonnHKIni4XiTKpR93BtN2Bkw,5183
+KDEpy/TreeKDE.py,sha256=38WYwYqBqrf3QmTFNoLbmrehx00DyTIf2-chK_tmBR4,6862
+KDEpy/__init__.py,sha256=qNE8CdW8diZkaZiluDd7sYIr-mpjiDZ2NursbvEN70o,306
+KDEpy/binning.py,sha256=dGPnTAZHJ8kkPQmgbAlbbD37gnd7cXv0GT4Aan_fxDE,16296
+KDEpy/bw_selection.py,sha256=uKWR5DN7E_D78-7YjM7JEiQEz9v4F3tnjVo5b8IfUzo,9330
+KDEpy/kernel_funcs.py,sha256=7Z2MaQvQkWPllXQ74Z3rrCCgW3f485kEAuX4drd2knk,9858
+KDEpy/utils.py,sha256=yTdHPXpQmk1j--NycgvLS15AbYAb0sqT4HmhT0OOVWo,3864
+KDEpy-0.6.11.dist-info/LICENSE,sha256=CuBIWlvTemPmNgNZZBfk6w5lMzT6bH-TLKOg6F1K8ic,35148
+KDEpy-0.6.11.dist-info/METADATA,sha256=ZPecWKpPSTzxu8-4jGA1Cg6ESF_MZeZcrwpx_4c9FBk,630
+KDEpy-0.6.11.dist-info/WHEEL,sha256=u4Efs1ohefs6i6rm-BSBkNuQzwmF2Y4Na3ETsbtk2VM,102
+KDEpy-0.6.11.dist-info/top_level.txt,sha256=fdiSxzDw2t14fbc3jVq8WIMxLzHE9-dSzruc-w6D1Ik,13
+KDEpy-0.6.11.dist-info/RECORD,,
