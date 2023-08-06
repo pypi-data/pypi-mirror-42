@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: y-trans
+Version: 0.0.2a0
+Summary: Machine translation with Yandex.Translate API
+Home-page: https://github.com/sergey-sy/y_trans
+Author: sergey-sy
+Author-email: maiyashik@gmail.com
+License: UNKNOWN
+Keywords: yandex,yandex translate,yandex translator,translator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+#  y_trans Package
+
+(For Russian scroll below.)
+
+This is the package for text translation with Yandex.Translate API.
+(For additional info about API check
+    https://tech.yandex.com/translate/doc/dg/concepts/About-docpage/)
+
+This description is not complete and will be filled.
+...
+
