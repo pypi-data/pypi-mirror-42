@@ -1,0 +1,4 @@
+[console_scripts]
+pi-dawn-daemon = pi_dawn.daemon:main
+pi-dawn-gamma-test = pi_dawn.gamma_test:main
+
