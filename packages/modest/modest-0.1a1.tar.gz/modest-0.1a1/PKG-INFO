@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: modest
+Version: 0.1a1
+Summary: A modular estimation library
+Home-page: https://modular-estimator.readthedocs.io/en/latest/index.html
+Author: Joel Runnels
+Author-email: runne010@umn.edu
+License: MIT
+Description: A modular estimation library
+Platform: UNKNOWN
