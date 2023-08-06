@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Sanic_Jinja
+Version: 0.0.1
+Summary: simple jinja2 template renderer for sanic
+Home-page: https://github.com/htwenning/sanic-jinja
+Author: wenning
+Author-email: ht.wenning@foxmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
