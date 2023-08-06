@@ -1,0 +1,10 @@
+README.md
+setup.py
+numpy_html/__init__.py
+numpy_html/formatter.py
+numpy_html/renderer.py
+numpy_html.egg-info/PKG-INFO
+numpy_html.egg-info/SOURCES.txt
+numpy_html.egg-info/dependency_links.txt
+numpy_html.egg-info/requires.txt
+numpy_html.egg-info/top_level.txt
