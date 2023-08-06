@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: ui-translator
+Version: 0.1
+Summary: Python module used for translating Qt .ui files between languages using Google Translate
+Home-page: https://github.com/Raptr3x/qt-ui-translator
+Author: Bogdan Caleta Ivkovic
+Author-email: bogdan.caleta@gmail.com
+License: MIT
+Download-URL: https://github.com/Raptr3x/qt-ui-translator/archive/v_01.tar.gz
+Description: UNKNOWN
+Keywords: ui,ui translator,translate
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
