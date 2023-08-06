@@ -1,0 +1,1 @@
+from dockerdetect.detect import is_inside_container

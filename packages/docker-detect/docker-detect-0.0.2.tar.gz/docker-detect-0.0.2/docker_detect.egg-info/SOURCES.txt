@@ -1,0 +1,8 @@
+README.md
+setup.py
+docker_detect.egg-info/PKG-INFO
+docker_detect.egg-info/SOURCES.txt
+docker_detect.egg-info/dependency_links.txt
+docker_detect.egg-info/top_level.txt
+dockerdetect/__init__.py
+dockerdetect/detect.py
