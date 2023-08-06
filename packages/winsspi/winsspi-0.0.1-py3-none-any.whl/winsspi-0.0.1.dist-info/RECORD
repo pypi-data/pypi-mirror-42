@@ -1,0 +1,17 @@
+winsspi/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winsspi/sspi.py,sha256=4Vxm8hB897-i0tmx6h1nFHYk7PV4rJtGII2qxAUnq_s,5644
+winsspi/test_main.py,sha256=rOhM7bP-N8JRAliD9wR89L6baSLgp6MHBt74QkNZmPg,4298
+winsspi/common/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winsspi/common/defines.py,sha256=8g1qVyNuMKaoY8DT1zxyL0hnM7IT6f-dP0aO1w4fj2c,24240
+winsspi/common/function_defs.py,sha256=nzG3Nc74tZHH3pXKM_2Hklyx8tPSPvjAVECDiAlczh0,14628
+winsspi/common/gssapi/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winsspi/common/gssapi/asn1_structs.py,sha256=b6dJeX4COT1na8xREIabKjdj5GYBRcTlFWryi4iQyk8,1452
+winsspi/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+winsspi/utils/ldap3_gssapi_patch.py,sha256=f53DlWLm79dn8jjQo1R_jk83BTFRwt8C0EUsodpiWIA,1558
+winsspi/utils/ldap3_patch.py,sha256=sbAKruCumYSU73lcMzbKTgk9CDwXoYB1Fp6xcE1T6Y4,656
+winsspi-0.0.1.dist-info/LICENSE,sha256=FWKmOdeuq0-as6Ji4MlsWTspqZtVAx_R7IOU7m3Xdyc,1078
+winsspi-0.0.1.dist-info/METADATA,sha256=FhWCIxVUaJ-XA3Qzryo0Rsd_Iys9_RSl4Ygc1nRLvOU,436
+winsspi-0.0.1.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+winsspi-0.0.1.dist-info/top_level.txt,sha256=Fa2BuDbhte3ch9nsVdosR8G2RymRxwaFnTIal9Yr4Pk,8
+winsspi-0.0.1.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
+winsspi-0.0.1.dist-info/RECORD,,
