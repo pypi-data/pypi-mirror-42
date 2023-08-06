@@ -1,0 +1,10 @@
+[console_scripts]
+pman = pman.cli:main
+
+[pman.converters]
+blend2bam = pman.hooks:converter_blend_bam
+
+[pman.renderers]
+basic = pman.basicrenderer:BasicRenderer
+none = pman.nullrenderer:NullRenderer
+
