@@ -1,0 +1,9 @@
+README.md
+setup.py
+igbo_text/__init__.py
+igbo_text/module.py
+igbo_text/test.py
+igbo_text.egg-info/PKG-INFO
+igbo_text.egg-info/SOURCES.txt
+igbo_text.egg-info/dependency_links.txt
+igbo_text.egg-info/top_level.txt
