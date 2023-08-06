@@ -1,0 +1,16 @@
+trollo/__init__.py,sha256=_8i8yySVHSNRJftjKkyGL25EB8nvCUVWTMm6oEBzTMg,1918
+trollo/actions.py,sha256=B2GqDlaVcOVMO3YJcOQ9TQE86GnLGnPftKJGgNu30ZQ,4474
+trollo/boards.py,sha256=h3civsi7pAweOxjJhSUHVp8OY9PmmdcJGRRmn-pAk5Q,8925
+trollo/cards.py,sha256=ker-xnw9uaZLZ80-FUfyqWclrrZQQ97RX5IvlhlIIvM,11844
+trollo/checklists.py,sha256=zrWJ8doFooaE196V4hZZ6kjzNrL8lgf424SmxFSp740,4203
+trollo/lists.py,sha256=iOpgkYMl5DiO3zFyQWe5fnuB3eyBQNLtTHYYCkMlkQM,4014
+trollo/members.py,sha256=kr_DeyE_byHlQcqAWmiRel4qRWZv1186m1Im3hPL1jY,7773
+trollo/notifications.py,sha256=PLX-p4xHNRRDwodu7kArJPXmMcfwSA2tmcEyVlE5EMc,5003
+trollo/organizations.py,sha256=Pr13_YKnwRzGwY7ZTxTOTl_7OGV4KrE05fxzEXgsT6g,5140
+trollo/tokens.py,sha256=-j_MEwXnl3iDCcQS2Y0XkA_Xvj_mngXbmcRc8z-yT4g,1404
+trollo/types.py,sha256=9SyORS4NO5ZjwRb3ljEbrF9PHxuZH8ZhJGMpmZQDIB4,570
+trollo-0.1.6.data/data/LICENSE.txt,sha256=RAJDRljGRoQ_YkNjeCkBZ8tkej_MGX8ysLoF6FwOMpw,1352
+trollo-0.1.6.dist-info/METADATA,sha256=3JIAGQfki3EqdKsWzTa5x9-lD7mz-cg2F4YnmoaokhI,1408
+trollo-0.1.6.dist-info/RECORD,,
+trollo-0.1.6.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+trollo-0.1.6.dist-info/top_level.txt,sha256=vEEQD7yVovCDw-ZrGZzTejV22iTZqvOpVPVILsTLY5M,7
