@@ -1,0 +1,10 @@
+cafeteria/asyncio/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cafeteria/asyncio/callbacks.py,sha256=QeP6kC3YEf1sMMwYexjk5Jcn8_EXhc36qDbeC2V1VFk,4685
+cafeteria/asyncio/commons.py,sha256=TTbB4UA3-gf5GzMEW6gMzHP2QrwJ9BEGymD0rjSyn1U,640
+cafeteria/asyncio/patterns/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cafeteria/asyncio/patterns/application.py,sha256=hcM1TxpUyiddnPnQkyN6hZ266higR--V8Lsnn_slvE4,698
+cafeteria/asyncio/synchronous.py,sha256=lRWPsiENSCGbwfO88XImcxPFhDtf_yOJSG9HT0ZO_cY,395
+cafeteria_asyncio-0.1.0.dist-info/LICENSE,sha256=QwcOLU5TJoTeUhuIXzhdCEEDDvorGiC6-3YTOl4TecE,11356
+cafeteria_asyncio-0.1.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+cafeteria_asyncio-0.1.0.dist-info/METADATA,sha256=stFXlLGjALAKme6rUwetR0xZAvrPOe-hMj677V2Uz6s,1695
+cafeteria_asyncio-0.1.0.dist-info/RECORD,,
