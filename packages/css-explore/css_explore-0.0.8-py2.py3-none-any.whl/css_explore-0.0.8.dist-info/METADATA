@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: css-explore
+Version: 0.0.8
+Summary: Visualizations of a css parse tree
+Home-page: https://github.com/asottile/css-explore
+Author: Anthony Sottile
+Author-email: asottile@umich.edu
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
+Description-Content-Type: text/markdown
+Requires-Dist: nodeenv
+Requires-Dist: six
+
+[![Build Status](https://travis-ci.org/asottile/css-explore.svg?branch=master)](https://travis-ci.org/asottile/css-explore)
+[![Coverage Status](https://img.shields.io/coveralls/asottile/css-explore.svg?branch=master)](https://coveralls.io/r/asottile/css-explore)
+
+css-explore
+==========
+
+This originally started as a tool to visualize the parse tree of a css
+document, but more or less turned into a pretty printer.
+
+The reason I made this project was to compare compilation outputs of various
+implementations of scss in an effort to switch a codebase from one compiler
+to another.
+
+This uses:
+- [reworkcss/css](https://github.com/reworkcss/css) for parsing
+- [ekalinin/nodeenv](https://github.com/ekalinin/nodeenv) for bootstrapping node
+
+
+## Usage
+
+```
+$ css-format --help
+usage: css-format [-h] filename
+
+positional arguments:
+  filename
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
+
+Example run:
+
+```
+$ echo 'body{color:red}' > test.css
+$ css-format test.css
+body {
+    color: red;
+}
+```
+
+
