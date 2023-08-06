@@ -1,0 +1,26 @@
+- project-template:
+    name: networking-ansible-tempest-jobs
+    check:
+      jobs:
+        - networking-ansible-tempest-ovs
+        - openstack-tox-docs:
+            required-projects:
+              - openstack/neutron
+    gate:
+      jobs:
+        - networking-ansible-tempest-ovs
+        - openstack-tox-docs:
+            required-projects:
+              - openstack/neutron
+
+- project:
+    templates:
+      - networking-ansible-tempest-jobs
+      - openstack-cover-jobs-neutron
+      - openstack-python-jobs-neutron
+      - openstack-python35-jobs-neutron
+      - periodic-jobs-with-neutron-lib-master
+      - check-requirements
+      - docs-on-readthedocs
+    vars:
+      rtd_webhook_id: '45496'
