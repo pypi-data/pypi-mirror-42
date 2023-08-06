@@ -1,0 +1,9 @@
+sqlalchemy
+numpy
+scipy
+numpy-sugar
+pandas>=0.23.0
+pandas-plink
+glimix-core>=2.0.0
+limix>=2.0.0
+scikit-learn
