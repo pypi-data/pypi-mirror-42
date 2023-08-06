@@ -1,0 +1,9 @@
+README.md
+setup.py
+pyftpsync_s3.egg-info/PKG-INFO
+pyftpsync_s3.egg-info/SOURCES.txt
+pyftpsync_s3.egg-info/dependency_links.txt
+pyftpsync_s3.egg-info/requires.txt
+pyftpsync_s3.egg-info/top_level.txt
+pyftpsyncs3/__init__.py
+pyftpsyncs3/s3target.py
