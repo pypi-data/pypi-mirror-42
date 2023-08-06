@@ -1,0 +1,5 @@
+{{ pkg.name }} ({{ pkg.version }}) unstable; urgency=medium
+
+ * Initial release (Closes: #XXX)
+
+-- XXX XXX <xxx@debian.org>  {{ pkg.now() }}
