@@ -1,0 +1,5 @@
+[jupyterhub.spawners]
+docker = dockerspawner:DockerSpawner
+docker-swarm = dockerspawner:SwarmSpawner
+docker-system-user = dockerspawner:SystemUserSpawner
+
