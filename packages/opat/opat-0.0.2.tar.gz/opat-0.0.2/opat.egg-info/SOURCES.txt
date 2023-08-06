@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+opat/__init__.py
+opat/_version.py
+opat/portfolio.py
+opat/stats.py
+opat.egg-info/PKG-INFO
+opat.egg-info/SOURCES.txt
+opat.egg-info/dependency_links.txt
+opat.egg-info/requires.txt
+opat.egg-info/top_level.txt
+opat/tests/__init__.py
+opat/tests/test_stats.py
