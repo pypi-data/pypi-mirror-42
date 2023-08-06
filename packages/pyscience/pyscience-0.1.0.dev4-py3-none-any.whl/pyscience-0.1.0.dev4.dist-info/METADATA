@@ -1,0 +1,122 @@
+Metadata-Version: 2.1
+Name: pyscience
+Version: 0.1.0.dev4
+Summary: python science programming
+Home-page: UNKNOWN
+Author: Manuel Alcaraz Zambrano
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Database
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+
+﻿Pyscience
+=========
+
+Pyscience is a easy python library and command-line application to work with
+mathematical operations and other science related programming. Also you can manage
+CSV data with the datam module. See API documentation for more information.
+
+Pyscience requires Python 3.7+ to work.
+
+Installation
+------------
+You can install Pyscience using pip (as root)::
+
+    pip3 install pyscience
+
+If you want to install the latest development version, you need to add the `--pre’
+flag::
+
+    pip3 install --pre pyscience
+
+Pre-releases have the latest features and bug fixes.
+
+At this time, only development versions are available.
+
+Basic usage
+-----------
+Once installed, you can run pyscience as a normal program::
+
+    pyscience
+
+This should start pyscience’s interactive interpreter. You can operate with
+variables::
+
+    > 2x+3x
+    5x
+    > 2x*7y
+    14xy
+
+Or get Chemical Elements information with the ‘CE’ function::
+
+    # Returns chemical element with symbol ‘H’
+    > CE(‘H’) 
+    ...
+    # Returns chemical element with atomic number 2
+    > CE(2)
+    ...
+    >
+
+
+Todo
+----
+Pyscience is in current development. Future features:
+
+* Math functions
+* Update chemicals elements information
+* Add multilingual support to program's messages
+* Polynomial division
+* Physics functions
+* Complete parser module. This feature is not enabled yet.
+* Documentation
+
+
+
+History
+-------
+
+#### Version 0.1.0.dev4 (February 20th 2019)
+
+- Initial release.
+
+
+License
+-------
+Copyright (c) 2019 Manuel Alcaraz Zambrano
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+

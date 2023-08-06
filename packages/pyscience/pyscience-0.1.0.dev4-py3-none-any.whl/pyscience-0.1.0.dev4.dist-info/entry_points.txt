@@ -1,0 +1,3 @@
+[console_scripts]
+pyscience = pyscience:__main__.run
+
