@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: smartlogin
+Version: 0.0.1
+Summary: Web General Login Module
+Home-page: https://github.com/EchoShoot/SmartLogin
+Author: EchoShoot
+Author-email: BiarFordlander@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.4
+Requires-Dist: selenium (>=3.9.0)
+
+UNKNOWN
+
+
