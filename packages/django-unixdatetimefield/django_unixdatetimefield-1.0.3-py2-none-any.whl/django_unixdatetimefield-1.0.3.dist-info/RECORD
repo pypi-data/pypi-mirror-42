@@ -1,0 +1,12 @@
+django_unixdatetimefield/__init__.py,sha256=oZAh9sIcV2Mq5HjErRBcJ7n05XSb5iwerj-oMWg8nu8,61
+django_unixdatetimefield/fields.py,sha256=76zM46EmnLpT7ns2893NpTMtQU68W9j2kIrovIg50ZU,1827
+django_unixdatetimefield/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_unixdatetimefield/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_unixdatetimefield/tests/models.py,sha256=MnsW-XzSUWZfgpaH3OO9g79Kr2rFYEVQfElbeYfCARk,781
+django_unixdatetimefield/tests/tests.py,sha256=vFSDm8mnQoB_03wjWAnavH_jRHZLwLEecdeVjmZCglA,1461
+django_unixdatetimefield-1.0.3.dist-info/DESCRIPTION.rst,sha256=nPHgN6--kzTfDcJln92illqeYMYZ6mU8Z_PEu5D7zXo,1950
+django_unixdatetimefield-1.0.3.dist-info/METADATA,sha256=__Llg61ZmagJxaRLu4Wo6G9mGzsptIBAI1S19mRvlH0,2459
+django_unixdatetimefield-1.0.3.dist-info/RECORD,,
+django_unixdatetimefield-1.0.3.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+django_unixdatetimefield-1.0.3.dist-info/metadata.json,sha256=sQ1Sa9byJkjQ32zblV0DU_96hsyGrwuHTpMV0kK-DGg,743
+django_unixdatetimefield-1.0.3.dist-info/top_level.txt,sha256=RGT50GXPIRsZQE_vWTkpS5g3TiilzAKgeCpbiyShxls,25
