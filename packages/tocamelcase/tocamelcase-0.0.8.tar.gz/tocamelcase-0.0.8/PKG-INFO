@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: tocamelcase
+Version: 0.0.8
+Summary: Convert to CamelCase 🐫
+Home-page: https://p.abranhe.com/tocamelcase
+Author: Carlos Abraham
+Author-email: abraham@abranhe.com
+License: MIT
+Project-URL: Source, https://github.com/abranhe/tocamelcase
+Project-URL: Issue Tracker, https://github.com/abranhe/tocamelcase/issues
+Description: 
+        <p align="center">
+        	🐫  <i><a href="https://pypi.org/project/tocamelcase">ToCamelCase</a></i>: Convert snake_case to CamelCase
+        </p>
+        
+        <p align="center">
+        	<a href="https://github.com/abranhe"><img src="https://abranhe.com/badge.svg"></a>
+        	<a href="https://cash.me/$abranhe"><img src="https://cdn.abranhe.com/badges/cash-me.svg"></a>
+        	<a href="https://www.patreon.com/abranhe"><img src="https://cdn.abranhe.com/badges/patreon.svg" /></a>
+        	<a href="https://github.com/abranhe/tocamelcase/blob/master/license"><img src="https://img.shields.io/github/license/abranhe/tocamelcase.svg" /></a>
+          <a href="https://travis-ci.org/abranhe/tocamelcase"><img src="https://img.shields.io/travis/abranhe/tocamelcase.svg?logo=travis" /></a>
+        	<a href="https://pypi.org/project/tocamelcase"><img src="https://img.shields.io/pypi/v/tocamelcase.svg" /></a>
+        </p>
+        
+        ## Install
+        
+        ```
+        $ pip install tocamelcase
+        ```
+        
+        ## Why?
+        
+        - Convert `non_camel_case` to `CamelCase`
+        - Clean and focused
+        - Actively maintained
+        
+        ## Usage
+        
+        ```py
+        import tocamelcase
+        
+        print (tocamelcase.convert("non_camel_case"))
+        # Eg: non_camel_case → NonCamelCase
+        ```
+        
+        ## Related
+        
+        - [🐍  decamelize](https://github.com/abranhe/decamelize): Convert a camelized string into snake_case
+        
+        ## Team
+        
+        |[![Carlos Abraham Logo](https://avatars3.githubusercontent.com/u/21347264?s=50)](https://abranhe.com)|
+        | :-: |	
+        | [Carlos Abraham](https://github.com/abranhe) |
+        
+        
+        ## License
+        
+        [MIT](https://github.com/abranhe/tocamelcase/blob/master/license) License © [Carlos Abraham](https://github.com/abranhe/tocamelcase)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: Environment :: Plugins
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown

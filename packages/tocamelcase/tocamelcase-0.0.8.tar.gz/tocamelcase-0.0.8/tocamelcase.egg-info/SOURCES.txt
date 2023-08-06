@@ -1,0 +1,9 @@
+MANIFEST.in
+license
+readme.md
+setup.py
+tocamelcase/__init__.py
+tocamelcase.egg-info/PKG-INFO
+tocamelcase.egg-info/SOURCES.txt
+tocamelcase.egg-info/dependency_links.txt
+tocamelcase.egg-info/top_level.txt
