@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pydouyu
+Version: 0.0.2
+Summary: Python implementation of douyu TV API
+Home-page: https://github.com/Kexiii/pydouyu
+Author: kexiii
+Author-email: kexiii@163.com
+License: UNKNOWN
+Description: # pydouyu
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
