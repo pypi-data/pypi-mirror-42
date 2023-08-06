@@ -1,0 +1,4 @@
+cubicweb>=3.19
+celery<5,>=4
+six>=1.4.0
+cw-celerytask-helpers<0.8.0,>=0.7.0
