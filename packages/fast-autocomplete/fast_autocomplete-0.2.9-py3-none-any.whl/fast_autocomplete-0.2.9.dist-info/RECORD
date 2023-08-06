@@ -1,0 +1,11 @@
+fast_autocomplete/__init__.py,sha256=aSxudFMMkMbWPF_y2PyFN2SQsL8TOTOhB-xU5B3jEgM,395
+fast_autocomplete/demo.py,sha256=GkZWSnen_dhtC1FApNBvBdOVTQQo3vBGXqSypsovIqw,1060
+fast_autocomplete/draw.py,sha256=YSJqRFwvJfMqlPEPrV4l9scM0wqkEfXmARTw_UY31Z0,3267
+fast_autocomplete/dwg.py,sha256=VF4kB48KKG4GYp0Y_fiNekMevudaI4j2l5xrDAXlkPs,20921
+fast_autocomplete/lfucache.py,sha256=aaFaQmFdX1VkFoy6-hVRiN_Da1OVLFcEeZHskZUiYj8,5921
+fast_autocomplete/misc.py,sha256=CCbXiT-IsO57qygmlGjHL7tKXw4HI4sMjOiU1pHpspk,3007
+fast_autocomplete/normalize.py,sha256=sQ0o9fyzhfWuLVAtV4Dk32CASsSjaZr4h0zTsrDkga0,1664
+fast_autocomplete-0.2.9.dist-info/METADATA,sha256=Dk500fOFfVv3J-xi0PI6b8znHdck6P_N5fHeQ3Ux490,12716
+fast_autocomplete-0.2.9.dist-info/RECORD,,
+fast_autocomplete-0.2.9.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+fast_autocomplete-0.2.9.dist-info/top_level.txt,sha256=_p1N76f3PMLf1_qUSRq1RxIXQ-jh8ZZJdzhjSncfeKE,18
