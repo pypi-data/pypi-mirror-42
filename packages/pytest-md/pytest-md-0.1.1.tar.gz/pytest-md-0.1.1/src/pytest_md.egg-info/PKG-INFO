@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: pytest-md
+Version: 0.1.1
+Summary: Plugin for generating Markdown reports for pytest results
+Home-page: https://github.com/hackebrot/pytest-md
+Author: Raphael Pierzina
+Author-email: raphael@hackebrot.de
+Maintainer: Raphael Pierzina
+Maintainer-email: raphael@hackebrot.de
+License: MIT
+Description: # pytest-md
+        
+        Plugin for generating Markdown reports for pytest results 📝
+        
+        ## Community
+        
+        Please note that **pytest-md** is released with a [Contributor Code of
+        Conduct][code of conduct]. By participating in this project you agree to abide
+        by its terms.
+        
+        [code of conduct]: https://github.com/hackebrot/pytest-md/blob/master/CODE_OF_CONDUCT.md
+        
+        ## License
+        
+        Distributed under the terms of the MIT license, **pytest-md** is free and open
+        source software.
+        
+        ## Credits
+        
+        This project is inspired by the fantastic [pytest-html] plugin!
+        
+        [pytest-html]: https://github.com/pytest-dev/pytest-html
+        
+Keywords: pytest,markdown
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
