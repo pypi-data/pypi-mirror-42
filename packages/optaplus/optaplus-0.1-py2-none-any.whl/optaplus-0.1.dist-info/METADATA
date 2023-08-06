@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: optaplus
+Version: 0.1
+Summary: Optaplus package is a range of functions to act as helping hands for people working with Opta and Tracab data.
+Home-page: http://github.com/tylerjrichards
+Author: Joe Mulberry, Tyler Richards
+Author-email: tylerjrichards@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: elementpath
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+UNKNOWN
+
+
