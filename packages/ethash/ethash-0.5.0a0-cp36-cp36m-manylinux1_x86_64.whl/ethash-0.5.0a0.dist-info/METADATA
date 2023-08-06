@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ethash
+Version: 0.5.0a0
+Summary: UNKNOWN
+Home-page: https://github.com/chfast/ethash
+Author: Paweł Bylica
+Author-email: pawel@ethereum.org
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: cffi (>=1.12)
+
+UNKNOWN
+
+
