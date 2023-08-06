@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: tensorflow_rl
+Version: 0.2.1
+Summary: tensorflow-rl: Modular Deep Reinforcement Learning Framework.
+Home-page: https://github.com/RLOpensource/tensorflow_RL
+Author: ChaKeumgang
+Author-email: chagmgang@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: tensorflow gym atari tensorflow machine reinforcement learning neural network
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Provides-Extra: tf-cpu
+Provides-Extra: tf-gpu
