@@ -1,0 +1,8 @@
+README.md
+setup.py
+demo/__init__.py
+demo/kernel.py
+example_pkg_xiangsheng.egg-info/PKG-INFO
+example_pkg_xiangsheng.egg-info/SOURCES.txt
+example_pkg_xiangsheng.egg-info/dependency_links.txt
+example_pkg_xiangsheng.egg-info/top_level.txt
