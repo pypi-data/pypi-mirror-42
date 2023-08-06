@@ -1,0 +1,11 @@
+COPYING
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+res_address/__init__.py
+res_address.egg-info/PKG-INFO
+res_address.egg-info/SOURCES.txt
+res_address.egg-info/dependency_links.txt
+res_address.egg-info/not-zip-safe
+res_address.egg-info/top_level.txt
