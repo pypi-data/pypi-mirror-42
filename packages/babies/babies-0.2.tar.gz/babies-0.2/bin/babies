@@ -1,0 +1,277 @@
+#!/usr/bin/env python
+
+import mpv
+import sys
+import argparse
+from readchar import readchar
+import termios
+from threading import Thread
+from datetime import datetime
+import os
+import re
+from types import SimpleNamespace
+
+from babies.db import Db
+from babies.yaml import yaml
+
+SHOW_EXTENSIONS = [
+    'mkv',
+    'avi',
+    'mpg',
+    'mp4',
+    'mpeg',
+    'ogv',
+    'wmv',
+    'flv',
+    'm4v',
+    'iso',
+    'mov'
+]
+
+def log_mpv(loglevel, component, message):
+    print('\r[{}] {}: {}'.format(loglevel, component, message))
+
+"""If path is a directory then load series into db and return next unwatched show else return path to file"""
+def path_to_video(db, path):
+    if os.path.isdir(path):
+        try:
+            db.load_series(path)
+            video_entry = db.get_next_in_series()
+            if not video_entry:
+                raise ValueError('series is complete')
+            video_path = os.path.join(path, video_entry['video'])
+            return video_path, video_entry
+        except FileNotFoundError as err:
+            # if there is a single video in the directory then use it
+            candidates = list(filter(is_video, os.listdir(path)))
+            if len(candidates) == 1:
+                return os.path.join(path, candidates[0]), None
+            else:
+                # TODO: allow user to select with pager?
+                raise ValueError('multiple candidates: ' + ', '.join(candidates))
+
+    else:
+        return path, None
+
+def display_video(path):
+    db = Db()
+    video_path, _ = path_to_video(db, path)
+    print(os.path.basename(video_path))
+
+def format_date(date):
+    return str(date).replace('-', '/')
+
+def format_duration(duration):
+    hours, min_secs = divmod(duration, 3600)
+    mins, secs = divmod(min_secs, 60)
+    fract = round((secs % 1) * 1000)
+
+    def timecomp(comp):
+        return str(round(comp)).zfill(2)
+
+    return str(round(hours)) + ':' + timecomp(mins) + ':' + timecomp(secs) + '.' + str(fract)
+
+def format_time_with_duration(time, duration):
+    return format_date(time) + ' at ' + format_duration(duration)
+
+def parse_duration(duration):
+    hours, mins, secs = duration.split(':')
+    print(duration, float(hours) * 3600 * float(mins) * 60 + float(secs))
+    return float(hours) * 3600 + float(mins) * 60 + float(secs)
+
+def watch_video(path, dont_record, night_mode):
+    player = mpv.MPV(log_handler=log_mpv, input_default_bindings=True, input_vo_keyboard=True, fullscreen=True, osc=True)
+    if night_mode:
+        # player['af'] = 'dynaudnorm=f=100:p=0.66'
+        # player['af'] = 'dynaudnorm=f=150:g=15'
+        player['af'] = 'dynaudnorm'
+
+    session = SimpleNamespace(position=None)
+
+    @player.on_key_press('Q')
+    @player.on_key_press('q')
+    def quit_binding():
+        session.position = player.time_pos
+        player.quit()
+
+    db = Db()
+    video_path, video_entry = path_to_video(db, path)
+
+    start_time = datetime.now()
+    player.play(video_path)
+    viewings = video_entry and video_entry.get('viewings', None)
+
+    # get duration of video
+    def set_duration(x):
+        if x:
+            session.duration = x
+            return True
+    player.wait_for_property('duration', set_duration, False)
+
+    start_position = 0
+    # once the duration has been read it seems to be safe to seek
+    if viewings:
+        final_viewing = viewings[-1]['end'].split(' at ')[1]
+        start_position = parse_duration(final_viewing)
+        player.seek(start_position)
+
+    video_filename = os.path.basename(video_path)
+    duration = format_duration(session.duration)
+
+    player.show_text(video_filename + ' (' + format_duration(start_position) + ' / ' + duration + ')' , 2000)
+
+    def readchars():
+        while True:
+            c = readchar()
+            player.command('keypress', c)
+
+    is_win = sys.platform in ('win32', 'cygwin')
+
+    # backup stdin settings, readchar messes with them
+    if not is_win:
+        stdin_fd = sys.stdin.fileno()
+        stdin_attr = termios.tcgetattr(stdin_fd)
+
+    cmd_thread = Thread(target = readchars)
+    cmd_thread.daemon = True
+    cmd_thread.start()
+
+    # wait for video to end
+    player.wait_for_playback()
+
+    # see above
+    if not is_win:
+        termios.tcsetattr(stdin_fd, termios.TCSADRAIN, stdin_attr)
+
+    # readchar blocks this, see daemon use above
+    # cmd_thread.join()
+
+    # process video finishing
+    end_time = datetime.now()
+
+    if session.position is None:
+        session.position = session.duration
+
+    if not dont_record:
+        start = format_time_with_duration(start_time, start_position)
+        end = format_time_with_duration(end_time, session.position)
+
+        # append the global record first in case the series update fails due to full
+        # disk or readonly mount etc.
+        db.append_global_record({
+            'video': video_filename,
+            'duration': duration,
+            'start': start,
+            'end': end,
+        })
+        print('recorded video in global record:', video_filename)
+
+        if video_entry:
+            if video_entry.get('duration', None) != duration:
+                video_entry['duration'] = duration
+            viewings = video_entry.setdefault('viewings', [])
+
+            viewings.append({ 'start': start, 'end': end })
+            db.write_series(path)
+            print('recorded video in series record:', video_filename)
+
+def is_video(path):
+    for suffix in SHOW_EXTENSIONS:
+        if path.endswith('.' + suffix):
+            return True
+    return False
+
+def create_show_db(dirpath, force):
+    db = Db()
+
+    # TODO: merge new content with old content instead
+    if not force and os.path.isfile(Db.get_series_db_path(dirpath)):
+        raise ValueError('new database already exists')
+
+    for filename in sorted(os.listdir(dirpath)):
+        if is_video(filename):
+            db.add_show_to_series({ 'video': filename })
+
+    db.write_series(dirpath)
+
+
+def grep_show_record(terms, quiet):
+    db = Db()
+    db.load_global_record()
+    matches = db.filter_global_record(
+        lambda record: all(re.search(term, record['video'], re.IGNORECASE) for term in terms)
+    )
+
+    if quiet:
+        print('\n'.join(list(map(lambda m: m['video'], matches))))
+    else:
+        yaml.dump(list(matches), sys.stdout)
+
+
+def main():
+    parser = argparse.ArgumentParser(description='enjoy your videos')
+
+    paths_help = 'paths to videos and/or directories containing series and or/videos'
+
+    subparsers = parser.add_subparsers(title='subcommands', dest='subcommand')
+    create = subparsers.add_parser('create', help='create series db', aliases=['c'])
+    create.add_argument('paths', help=paths_help, nargs='*')
+    create.add_argument('-f', '--force', action='store_true', help='force overwrite of existing database')
+
+    find = subparsers.add_parser('find', help='find entry in global record', aliases=['f'])
+    find.add_argument(
+        'search_terms', help='regular expressions, all must match', nargs='+'
+    )
+    find.add_argument('-q', '--quiet', action='store_true', help='only show video names')
+
+    watch = subparsers.add_parser('watch', help='watch [next] show at each path', aliases=['w', 'night', 'n', 'dryrun', 'd'])
+    watch.add_argument('paths', help=paths_help, nargs='*')
+    watch.add_argument(
+        '-d', '--dont-record', action='store_true', help='don\'t write to series or global records'
+    )
+    watch.add_argument(
+        '-n', '--night-mode', action='store_true', help='normalise audio'
+    )
+
+    subparsers.add_parser('print', help='display [next] show at each path', aliases=['p']).add_argument(
+        'paths', help=paths_help, nargs='*'
+    )
+
+    argv = sys.argv[1:]
+    # if the first argument is a file then prepend the "watch" command
+    if len(argv) and '.' in argv[0]:
+        argv = ['w'] + argv
+
+    args = parser.parse_args(argv)
+
+    paths = []
+    try:
+        if args.paths:
+            paths = args.paths
+    except AttributeError:
+        pass
+    if not paths:
+         paths = [ os.getcwd() ]
+
+    subcommand = args.subcommand
+    if subcommand is None:
+        watch_video(os.getcwd(), False, False)
+    elif subcommand == 'create' or subcommand == 'c':
+        for path in paths:
+            create_show_db(path, args.force)
+    elif subcommand == 'find' or subcommand == 'f':
+        grep_show_record(args.search_terms, args.quiet)
+    elif subcommand == 'print' or subcommand == 'p':
+        for path in paths:
+            display_video(path)
+    else:
+        night_mode = subcommand == 'night' or subcommand == 'n'
+        dry_run = subcommand == 'dryrun' or subcommand == 'd'
+        if night_mode or dry_run or subcommand == 'watch' or subcommand == 'w':
+            for path in paths:
+                watch_video(path, dry_run or args.dont_record, night_mode or args.night_mode)
+
+try:
+    main()
+except ValueError as err:
+    print(err.args[0])
