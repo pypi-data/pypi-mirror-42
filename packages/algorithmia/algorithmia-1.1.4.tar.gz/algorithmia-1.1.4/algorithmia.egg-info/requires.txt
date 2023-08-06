@@ -1,0 +1,4 @@
+requests
+six
+enum34
+algorithmia-api-client>=1.0.0,<2.0
