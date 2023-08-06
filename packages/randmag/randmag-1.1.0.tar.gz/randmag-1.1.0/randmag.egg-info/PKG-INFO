@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: randmag
+Version: 1.1.0
+Summary: Construct artifical MAGs from complete genomes according to distribution
+Home-page: https://bitbucket.org/EricHugo/randmag
+Author: Eric Hugoson
+Author-email: eric@hugoson.org
+License: GNU General Public License v3 or later (G  PLv3+)
+Description: ==============
+        **randMAG**
+        ==============
+        
+        - Eric Hugoson (eric@hugoson.org / hugoson@evolbio.mpg.de / @EricHugo)
+        
+        Produces randomised MAGs based on whole genomes provided and distribution of contig lengths given.
+Keywords: bioinformatics simulation metagenomics
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7

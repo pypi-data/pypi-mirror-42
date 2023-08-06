@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+randmag/__init__.py
+randmag/fitdist.py
+randmag/randmag.py
+randmag.egg-info/PKG-INFO
+randmag.egg-info/SOURCES.txt
+randmag.egg-info/dependency_links.txt
+randmag.egg-info/entry_points.txt
+randmag.egg-info/requires.txt
+randmag.egg-info/top_level.txt
