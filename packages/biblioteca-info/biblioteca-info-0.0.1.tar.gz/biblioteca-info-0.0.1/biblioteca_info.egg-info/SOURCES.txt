@@ -1,0 +1,9 @@
+README.md
+setup.py
+Biblioteca/__init__.py
+Biblioteca/pacote1.py
+Biblioteca/testa_pacotes.py
+biblioteca_info.egg-info/PKG-INFO
+biblioteca_info.egg-info/SOURCES.txt
+biblioteca_info.egg-info/dependency_links.txt
+biblioteca_info.egg-info/top_level.txt

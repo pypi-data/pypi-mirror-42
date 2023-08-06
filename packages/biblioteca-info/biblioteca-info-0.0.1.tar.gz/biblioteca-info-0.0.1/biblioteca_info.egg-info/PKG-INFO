@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: biblioteca-info
+Version: 0.0.1
+Summary: A small example package
+Home-page: https://gitlab.com/jp.brs
+Author: jp.brs
+Author-email: jp.brs96@gmail.com
+License: UNKNOWN
+Description: README
+        ======
+        
+        Para utilizar a função soma basta importar Biblioteca.pacote1 e introduzir um array como argumento.
+        EX :
+        import Biblioteca.pacote1 as pct
+        print(pct.soma([1,23,4,56,2,12])
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
