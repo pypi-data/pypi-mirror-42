@@ -1,0 +1,5 @@
+include README.md
+include VERSION
+include LICENSE.txt
+include src/lzmat/lzmat.h
+include pylzmat_build.py

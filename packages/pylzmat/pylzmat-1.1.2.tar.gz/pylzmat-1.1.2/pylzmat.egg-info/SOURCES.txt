@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+VERSION
+pylzmat.py
+pylzmat_build.py
+setup.py
+pylzmat.egg-info/PKG-INFO
+pylzmat.egg-info/SOURCES.txt
+pylzmat.egg-info/dependency_links.txt
+pylzmat.egg-info/requires.txt
+pylzmat.egg-info/top_level.txt
+src/lzmat/lzmat.h
+src/lzmat/lzmat_dec.c
+src/lzmat/lzmat_enc.c
+test/test_lzmat.py
