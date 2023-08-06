@@ -1,0 +1,8 @@
+aiohttp
+python-socketio
+requests
+six
+websocket-client
+numpy
+janus
+pyyaml
