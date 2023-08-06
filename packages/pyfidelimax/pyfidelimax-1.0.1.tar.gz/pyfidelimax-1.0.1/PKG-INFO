@@ -1,0 +1,155 @@
+Metadata-Version: 2.1
+Name: pyfidelimax
+Version: 1.0.1
+Summary: fidelimax.com.br integration
+Home-page: https://gitlab.com/yk2kus/pyfidelimax
+Author: Yogesh Kushwaha
+Author-email: info@tkopen.com
+License: MIT
+Description: **Installation**
+        
+            pip install pyfidelimax
+        
+        **Usage**
+        
+            import pyfidelimax
+        
+        **GetToken**
+        
+        Recupera o token para o acesso para as outras funcionalidades da API, esse token tem
+        validade de 24 horas, é necessário incluir na header da requisição um atributo com o nome
+        “AuthToken” e o valor de retorno desse enpoint.
+        Recebe como parâmetros obrigatórios o Login e Senha cadastrados na plataforma do
+        programa de fidelidade em: Configurações Sistema > Configuração API
+        
+            pyfidelimax.GetToken('login', 'password')
+        
+        **CadastrarConsumidor**
+        
+        Cadastrar novos consumidores ao programa de fidelidade.
+        
+            data = {}
+            pyfidelimax.CadastrarConsumidor('login', 'password', data=data)
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - nome : Nome do Consumidor 
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+         - sexo: Sexo do Consumidor, Masculino e Feminino
+         - nascimento: Data de nascimento do Consumidor, formato dd/mm/yyyy
+         - email: E-mail do consumidor string
+         - telefone: Telefone do Consumidor, formato (DDD)99999-9999
+         - cartao: Cartão que pode ser vinculado ao consumidor
+         - saldo: Saldo em pontos inicial que o consumidor pode iniciar
+        
+        
+        **AtualizarConsumidor**
+        
+        Atualiza as informações de um consumidor cadastrado no programa de fidelidade
+        
+            data = {}
+            pyfidelimax.AtualizarConsumidor('login', 'password', data=data)
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - nome : Nome do Consumidor 
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+         - sexo: Sexo do Consumidor, Masculino e Feminino
+         - nascimento: Data de nascimento do Consumidor, formato dd/mm/yyyy
+         - email: E-mail do consumidor string
+         - telefone: Telefone do Consumidor, formato (DDD)99999-9999
+         - cartao: Cartão que pode ser vinculado ao consumidor
+         
+         **ConsultaConsumidor**
+         
+        Consulta as informações do consumidor referente a pontuação do programa de fidelidade,
+        como seu saldo em pontos atual, os pontos que irão expirar até o fim do mês e uma lista de
+        prêmios que ele pode resgatar com sua pontuação atual.
+        Recebe como parâmetros obrigatórios o CPF ou o Token do consumidor.
+        
+            data = {}
+            pyfidelimax.ConsultaConsumidor('login', 'password', data=data)
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+        
+        
+         **RetornaDadosCliente**
+         
+        Consulta dados pessoais do consumidor.
+        Recebe como parâmetros obrigatórios o CPF ou o Token do consumidor.
+        
+            data = {}
+            pyfidelimax.RetornaDadosCliente('login', 'password', data=data)
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+        
+        
+        
+         **ResgataPremio**
+         
+        Realiza o resgate de um prêmio para um consumidor, debitando a pontuação correspondente
+        do seu saldo atual.
+        Recebe como parâmetros obrigatórios o CPF ou o Token do consumidor. E o Identificador do
+        prêmio que é cadastrado na plataforma, quando um prêmio é cadastrado.
+        
+            data = {}
+            pyfidelimax.ResgataPremio('login', 'password', data=data)
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+        
+        
+        
+         **PontuaConsumidor**
+         
+         Realiza o crédito de pontos para um consumidor
+        Recebe como parâmetros obrigatórios o CPF ou o Token do consumidor. E o preço em reais
+        que será convertido para a regra de pontuação do program
+         
+            data = {}
+            pyfidelimax.PontuaConsumidor('login', 'password', data=data)
+            
+        **Note**:
+            data dict can have following keys:
+        
+         - token_externo : Token do Consumidor enviado por autenticação de uma
+        API externa
+         - cpf: CPF do Consumidor, o CPF é usado como chave para
+        realizar a atualização
+        
+         **ListaProdutos**
+         
+         Realiza o crédito de pontos para um consumidor
+        Recebe como parâmetros obrigatórios o CPF ou o Token do consumidor. E o preço em reais
+        que será convertido para a regra de pontuação do program
+         
+         
+            pyfidelimax.ListaProdutos('login', 'password')
+        
+        
+        ** API Documentation ** 
+        
+        for more information on API. eg: variable allowed to pass in data dictionary
+        and datatype please visit the link https://api.fidelimax.com.br/Documentacao/Fidelimax-API.pdf
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

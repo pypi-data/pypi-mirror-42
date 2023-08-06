@@ -1,0 +1,10 @@
+README.md
+setup.py
+pyfidelimax/__init__.py
+pyfidelimax/auth.py
+pyfidelimax.egg-info/PKG-INFO
+pyfidelimax.egg-info/SOURCES.txt
+pyfidelimax.egg-info/dependency_links.txt
+pyfidelimax.egg-info/not-zip-safe
+pyfidelimax.egg-info/requires.txt
+pyfidelimax.egg-info/top_level.txt
