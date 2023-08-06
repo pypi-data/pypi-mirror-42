@@ -1,0 +1,7 @@
+README.rst
+setup.cfg
+setup.py
+pyforwarder.egg-info/PKG-INFO
+pyforwarder.egg-info/SOURCES.txt
+pyforwarder.egg-info/dependency_links.txt
+pyforwarder.egg-info/top_level.txt

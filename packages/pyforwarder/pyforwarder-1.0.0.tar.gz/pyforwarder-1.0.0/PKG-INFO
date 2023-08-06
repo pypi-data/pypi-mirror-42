@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: pyforwarder
+Version: 1.0.0
+Summary: Method forwarding library for Python
+Home-page: https://github.com/rkday/pyforwarder
+Author: Rob Day
+Author-email: rkd@rkd.me.uk
+License: MIT
+Description: pyforwarder - method forwarding library for Python
+        ==================================================
+        
+        This is a Python library inspired by https://github.com/RobertDober/Forwarder, intended to make method forwarding (and therefore composition-over-inheritance) easier in Python.
+        
+        See the ``tests/`` folder for usage examples.
+        
+Platform: UNKNOWN
