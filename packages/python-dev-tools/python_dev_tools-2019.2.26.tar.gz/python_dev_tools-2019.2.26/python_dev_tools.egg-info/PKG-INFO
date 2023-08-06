@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: python-dev-tools
+Version: 2019.2.26
+Summary: Needed and up-to-date tools to develop in Python
+Home-page: https://github.com/vpoulailleau/python_dev_tools
+Author: Vincent Poulailleau
+Author-email: vpoulailleau@gmail.com
+License: BSD license
+Description: Python Dev Tools
+        ================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/python_dev_tools.svg
+                :target: https://pypi.python.org/pypi/python_dev_tools
+        
+        .. image:: https://img.shields.io/pypi/l/python_dev_tools.svg
+                :target: https://github.com/vpoulailleau/python_dev_tools/blob/master/LICENSE
+        
+        .. image:: https://travis-ci.com/vpoulailleau/python-dev-tools.svg?branch=master
+                :target: https://travis-ci.com/vpoulailleau/python-dev-tools
+        
+        .. image:: https://readthedocs.org/projects/python-dev-tools/badge/?version=latest
+                :target: https://python-dev-tools.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pepy.tech/badge/python-dev-tools
+                :target: https://pepy.tech/project/python-dev-tools
+                :alt: Downloads
+        
+        .. image:: https://coveralls.io/repos/github/vpoulailleau/python-dev-tools/badge.svg?branch=master
+                :target: https://coveralls.io/github/vpoulailleau/python-dev-tools?branch=master
+                :alt: Coverage Status
+        
+        .. image:: https://api.codeclimate.com/v1/badges/282fcd71714dabd6a847/maintainability
+                :target: https://codeclimate.com/github/vpoulailleau/python-dev-tools/maintainability
+                :alt: Maintainability
+        
+        
+        
+        Needed and up-to-date tools to develop in Python (*WORK IN PROGRESS*)
+        
+        
+        * Free software: BSD 3-Clause license
+        * Documentation: https://python-dev-tools.readthedocs.io
+        
+        Features
+        --------
+        
+        Integrate features of commonly used tools. This package provides usual
+        dependencies to develop Python software.
+        
+        * Simple linter
+        
+          * ``whatalinter a_python_file.py`` lints a_python_file.py
+          * output is compatible with the one of pycodestyle (formerly named pep8) for
+            easy integration in text editors and IDE
+          * based on
+            * pycodestyle: https://github.com/PyCQA/pycodestyle
+            * PyFlakes: https://github.com/PyCQA/pyflakes
+        
+        * Simple formatter
+        
+          * TODO
+        
+        * Simple precommit hook
+        
+          * TODO
+        
+        TODO
+        ----
+        
+        * documentation
+        * linter
+        
+          * add more linters
+        
+        * formatter
+        * precommit
+        
+        Credits
+        -------
+        
+        This package was created with Cookiecutter_ and the
+        `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        History
+        =======
+        
+        2019.02.26
+        ----------
+        
+        * Add PyFlakes linter
+        * Add pycodestyle linter
+        
+        2019.02.23
+        ----------
+        
+        * First release on PyPI.
+        
+Keywords: python_dev_tools
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/x-rst
