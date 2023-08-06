@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: PyResizer
+Version: 0.0.1a0
+Summary: Tkinter GUI program to resize images via pillow
+Home-page: https://github.com/jedie/PyResizer
+Author: Jens Diemer
+Author-email: pypi@jensdiemer.de
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
