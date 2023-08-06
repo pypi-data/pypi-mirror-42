@@ -1,0 +1,3 @@
+[console_scripts]
+parse_event = kueventparser.core:main
+
