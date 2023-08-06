@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: falcon-redis-cache
+Version: 0.0.1
+Summary: Redis cache middleware for falcon resources.
+Home-page: https://neetjn.github.io/falcon-redis-cache/
+Author: John Nolette
+Author-email: john@neetgroup.net
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
