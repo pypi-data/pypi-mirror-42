@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: bert-sent-encoding
+Version: 0.1.3
+Summary: A bert sentence encoding tool
+Home-page: https://gitlab.leihuo.netease.com/shaojianzhi/bert-sent-encoding
+Author: Shao Jianzhi
+Author-email: shaojianzhi2012@163.com
+License: BSD
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: tqdm
+Requires-Dist: boto3
+Requires-Dist: botocore
+Requires-Dist: requests
+Requires-Dist: numpy
+Requires-Dist: torch
+
+This is a bert sentence encoding tool.
+
+## How to use it
+### install package
+
+    pip install --index-url https://pypi.python.org/simple/ bert-sent-encoding==0.1.2
+or
+
+    git clone ssh://git@gitlab.leihuo.netease.com:32200/shaojianzhi/bert-sent-encoding.git
+    cd bert-sent-encoding
+    python setup.py install
+### then use it
+
+    from bert_sent_encoding import bert_sent_encoding # 1st line
+    bse = bert_sent_encoding(model_path='bert_sent_encoding/model/chinese_L-12_H-768_A-12', seq_length=64, batch_size=8) # 2nd line
+    vector = bse.get_vector('你好', word_vector=False, layer=-1)   # 3rd line 1. get vector of string
+    vectors = bse.get_vector(['你好', '哈哈'], word_vector=False, layer=-1)  # 4th line 2. get vector list of strings
+    bse.write_txt2vector(input_file, output_file, word_vector=False, layer=-1)   # 5th line 3. get and write vectors of strings
+
+
+### for 2nd line:
+    bse = bert_sent_encoding(model_path='bert_sent_encoding/model/chinese_L-12_H-768_A-12', seq_length=64, batch_size=8)
+    *model_path is required, seq_length and batch_size are optional
+### for 3rd, 4th and 5th lines
+    vector = bse.get_vector('你好', word_vector=False, layer=-1)   # 3rd line 1. get vector of string
+    vectors = bse.get_vector(['你好', '哈哈'], word_vector=False, layer=-1)  # 4th line 2. get vector list of strings
+    bse.write_txt2vector(input_file, output_file, word_vector=False, layer=-1)   # 5th line 3. get and write vectors of strings
+    *word_vector and layer are optional*
+
+### for 5th line:
+    bse.write_txt2vector(input_file, output_file)   # 3. get and write vectors of strings
+path of **input_file** and **output_file** are defined by user and below is content of **input_file**:
+
+    the first line text
+    the second line text
+    ...
+
+
