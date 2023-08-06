@@ -1,0 +1,8 @@
+README.md
+setup.py
+vtclear/__init__.py
+vtclear/vtclear.py
+vtclear.egg-info/PKG-INFO
+vtclear.egg-info/SOURCES.txt
+vtclear.egg-info/dependency_links.txt
+vtclear.egg-info/top_level.txt
