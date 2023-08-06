@@ -1,0 +1,11 @@
+_softfloat.cp37-win_amd64.pyd,sha256=cyWn739yOLClBG9kVm37YZBiQH54mD6md0TmBdmXk-M,237056
+softfloat.py,sha256=IuhtehVjWIwajVcBpCoX2y-NtFd6lmkxsjnLiqTOdz0,64343
+pymanylinuxdemo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pymanylinuxdemo/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pymanylinuxdemo/tests/test_extension.py,sha256=MZ6A9RC3bi6n6LFLqRlgbNS022ISInQYXgxZAFB72eg,425
+softfloat-0.1.4.1.data/data/LICENSE,sha256=VTfU0Qt2uBtujf2LZESApLHvozL7sM22ESbFvnge97Q,6554
+softfloat-0.1.4.1.dist-info/LICENSE.txt,sha256=VTfU0Qt2uBtujf2LZESApLHvozL7sM22ESbFvnge97Q,6554
+softfloat-0.1.4.1.dist-info/METADATA,sha256=-NDJ7rvgDkD3hc78Q1NGGOu6SEUtcXEhtuxRqHyQ5Tg,471
+softfloat-0.1.4.1.dist-info/RECORD,,
+softfloat-0.1.4.1.dist-info/WHEEL,sha256=jmFYSwR2oi5DgMGgmnuB-EJxqLMkUojGGdmJ0wz35aI,106
+softfloat-0.1.4.1.dist-info/top_level.txt,sha256=VDo7vCIlKYHnBAO8Xh8G8ub5W9yw47IPncoyXcMlWuU,21
