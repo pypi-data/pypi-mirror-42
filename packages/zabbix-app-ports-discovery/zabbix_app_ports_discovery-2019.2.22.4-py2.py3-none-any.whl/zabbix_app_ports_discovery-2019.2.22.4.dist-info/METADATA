@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: zabbix-app-ports-discovery
+Version: 2019.2.22.4
+Summary: zabbix app listen ports low-level discovery.
+Home-page: https://github.com/talenhao/zabbix-app-ports-discovery
+Author: Tianfei Hao
+Author-email: talenhao@gmail.com
+License: BSD License
+Keywords: zabbix listen ports discovery low-level discovery
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: psutil
+Provides-Extra: dev
+Requires-Dist: check-manifest ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+
+zabbix low-level discovery插件.
+
+自动发现服务器上所有应用的监听端口,并使用APP名称标记应用以免重复及增加可读性.
+
+#Usage:
+```
+    Install:
+        pip install zabbix-app-ports-discovery
+    Add to you script:
+        import applistenports
+        getlistport = applistenports.GetListenPorts()
+        items = getlistport.process()
+        print(items)
+输出格式为zabbix low-level discovery要求的json格式
+
+
+{
+    "data": [
+        {
+            "{#APPNAME}": "sshd__/usr/sbin/sshd",
+            "{#APPPORT}": "22"
+        },
+        {
+            "{#APPNAME}": "master__/usr/libexec/postfix/master",
+            "{#APPPORT}": "25"
+        },
+        {
+            "{#APPNAME}": "zabbix_agentd__/usr/sbin/zabbix_agentd",
+            "{#APPPORT}": "10050"
+        },
+        {
+            "{#APPNAME}": "zabbix_server__/usr/sbin/zabbix_server_pgsql",
+            "{#APPPORT}": "10051"
+        }
+    ]
+}
+
+```
+
+
