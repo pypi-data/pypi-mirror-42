@@ -1,0 +1,10 @@
+pytest_zigzag/__init__.py,sha256=Ar_ELHw6khu_98lHdE8o1IHeFkJkix0ygFm9J_2Z0aM,10639
+pytest_zigzag/session_messages.py,sha256=CN1jGZ-JprUJPF3UBqiZnN-YqOGC6gXBxwnv4ZnaIQU,389
+pytest_zigzag/data/configs/default-config.json,sha256=7-cyIWFoTc7qdDXsvbRNp3eCIdwJGKpklCo74K2Zcxk,570
+pytest_zigzag/data/schema/pytest-zigzag-config.schema.json,sha256=pMvFf2Zd4IhyXW9ELuHO6hY_01oVcCJcUCE1nMLxOHs,444
+pytest_zigzag-1.1.1.dist-info/LICENSE,sha256=C07meMV9OzGipGjlMzkEPt28Fx53VGe7U4CIMt4DnP8,11346
+pytest_zigzag-1.1.1.dist-info/METADATA,sha256=VpsDFjrmbJbdcJNH5Z2qnuy33E8jphgVqGQGHEFbjHk,4293
+pytest_zigzag-1.1.1.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+pytest_zigzag-1.1.1.dist-info/entry_points.txt,sha256=gh41JcAcTVIyfWmjBLpb0HpLdB6LNmkt_pgj-THh1Xk,35
+pytest_zigzag-1.1.1.dist-info/top_level.txt,sha256=vkgw-oGo-P2-vy6CDmdrvqg8XxSzVyfy_d7Q8evi6X8,14
+pytest_zigzag-1.1.1.dist-info/RECORD,,
