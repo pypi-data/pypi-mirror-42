@@ -1,0 +1,8 @@
+include *.md
+include *.rst
+include *.txt
+include .flake8.ini
+include LICENSE
+include tox.ini
+recursive-include shellypython *.py
+graft tests

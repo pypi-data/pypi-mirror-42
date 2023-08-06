@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: shellypython
+Version: 0.0.2
+Summary: Python interface for Shelly.cloud devices.
+Home-page: https://github.com/marcogazzola/shelly-python
+Author: Marco Gazzola
+License: UNKNOWN
+Download-URL: https://github.com/marcogazzola/shelly-python/tarball/0.0.2
+Description: shelly-python
+        ==============
+        
+        |PyPI version| |Python versions| |Build Status| |Coverage Status| |Hound|
+        
+        Package for integrating with Shelly.Cloud Device
+        
+        
+        Supported devices
+        -----------------
+        
+        ======== ==========
+        Model    Api status
+        -------- ----------
+        Shelly1       x     
+        -------- ----------
+        Shelly2       x     
+        ======== ==========
+        
+        
+        Running the full test suite for multiple python versions
+        --------------------------------------------------------
+            tox
+        
+        
+        .. |PyPI version| image:: https://img.shields.io/pypi/v/shellypython.svg
+           :target: https://pypi.org/project/shellypython/
+        .. |Python versions| image:: https://img.shields.io/pypi/pyversions/shellypython.svg
+           :target: https://pypi.python.org/pypi/shellypython/
+        .. |Build Status| image:: https://img.shields.io/travis/marcogazzola/shelly-python/master.svg
+           :target: https://travis-ci.org/marcogazzola/shelly-python
+        .. |Code Health| image:: https://landscape.io/github/marcogazzola/shelly-python/landscape.svg?style=flat
+           :target: https://landscape.io/github/marcogazzola/shelly-python/master
+        .. |Coverage Status| image:: https://coveralls.io/repos/github/marcogazzola/shelly-python/badge.svg?branch=master
+           :target: https://coveralls.io/github/marcogazzola/shelly-python?branch=master
+        .. |Hound| image:: https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg
+           :alt: Hound
+           :target: https://houndci.com
+        
+Keywords: shelly,shelly-cloud,rele,api,mqtt
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/x-rst
