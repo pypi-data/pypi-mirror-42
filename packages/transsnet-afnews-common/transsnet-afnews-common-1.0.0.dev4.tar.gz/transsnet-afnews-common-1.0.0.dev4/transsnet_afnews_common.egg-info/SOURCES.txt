@@ -1,0 +1,9 @@
+setup.py
+test/TestIdGenerator.py
+transsnet_afnews_common/__init__.py
+transsnet_afnews_common.egg-info/PKG-INFO
+transsnet_afnews_common.egg-info/SOURCES.txt
+transsnet_afnews_common.egg-info/dependency_links.txt
+transsnet_afnews_common.egg-info/requires.txt
+transsnet_afnews_common.egg-info/top_level.txt
+transsnet_afnews_common/utils/__init__.py
