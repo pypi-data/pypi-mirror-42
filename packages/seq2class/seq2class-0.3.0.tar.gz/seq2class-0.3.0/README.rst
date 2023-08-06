@@ -1,0 +1,37 @@
+seq2class is a one stop solution for text classification. Text classification is made easy via seq2class package using sequential model(LSTM). This package is build by harnesing the capabilities of  LSTM(Long short term Memory) model.
+
+Requirement
+------------
+
+seq2class support Python 3.6 or newer.
+
+Installation
+------------
+
+
+    pip install seq2class
+
+Example
+-------------
+
+This package is being developed for text classification using sequential model.
+
+	data = 'movies.csv'
+	labels = 'title'
+	text = 'genres'
+
+	s = Sequence2class()
+	X_train, X_test, y_train, y_test = s.train_test_split(data, labels, text)
+	trained_model = s.fit_train(X_train, y_train, 500, 50, 7789, 5, 4)
+	prediction = s.predict(trained_model, X_test, y_train, 4)
+
+
+where ``movies.csv`` is a training file containing text and labels.
+
+References
+----------
+
+DataSet information
+~~~~~~~~~~~~~~~~~~~
+
+[1]  movies.csv dataset have been used for research purpose from this `*link* <http://files.grouplens.org/datasets/movielens/ml-latest-small.zip>`.
