@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: andaluh
+Version: 0.1.0
+Summary: Transliterate castellano (español) spelling to andaluz proposals
+Home-page: https://andaluh.es
+Author: J. Félix Ontañón
+Author-email: felixonta@gmail.com
+License: GNU LESSER GENERAL PUBLIC LICENSE
+Project-URL: Source Code, https://github.com/andalugeeks/andaluh-py
+Description: UNKNOWN
+Platform: win32
+Platform: linux2
