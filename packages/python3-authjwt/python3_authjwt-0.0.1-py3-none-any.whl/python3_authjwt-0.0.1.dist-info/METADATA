@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: python3-authjwt
+Version: 0.0.1
+Summary: Flask JWT auth security for Appengine
+Home-page: https://github.com/claudiokc/python3-authjwt
+Author: Claudio J. Cáceres
+Author-email: catocaceres@hotmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: pyjwt
+Requires-Dist: Flask
+
+UNKNOWN
+
+
