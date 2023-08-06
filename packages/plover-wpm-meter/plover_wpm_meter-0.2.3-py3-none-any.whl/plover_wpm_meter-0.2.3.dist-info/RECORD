@@ -1,0 +1,14 @@
+plover_wpm_meter/__init__.py,sha256=kNbDQBL8IghTRHbFAgggSoIjRsM7KgrNRqx5_1Nm9EU,6344
+plover_wpm_meter/resources_rc.py,sha256=B87R_e73lM13Uutbzf1l9a2gOvhKaTbNkr5V0TDSYTg,9930
+plover_wpm_meter/strokes_meter_ui.py,sha256=9eZRivOR2DK4mwOx4EWo8EkPSRLFvA3lrn4FzLDG22M,4214
+plover_wpm_meter/wpm_meter_ui.py,sha256=KDID8HDUzQvUCaRjRVinvHYDv7bE2gACD0-Czpwh3r4,3951
+plover_wpm_meter/textstat/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+plover_wpm_meter/textstat/textstat.py,sha256=i8WgkwcpP-21BQEpG8Jv06kzatBZrUETlqrtqkes-9c,10067
+plover_wpm_meter-0.2.3.dist-info/DESCRIPTION.rst,sha256=fgOclzUgt_PMJH4yJvZO0G9sMrfsG_B5aQ0jJGaeE7Y,1740
+plover_wpm_meter-0.2.3.dist-info/METADATA,sha256=OotkiDk5oNBmMd7fPdhfPR5JBtNhcNK7XpINgxGcnuY,2614
+plover_wpm_meter-0.2.3.dist-info/RECORD,,
+plover_wpm_meter-0.2.3.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+plover_wpm_meter-0.2.3.dist-info/entry_points.txt,sha256=iv0-rCnvTEUYgGrX9XsHP5p1XJEHm7v-PIqE7p77xHc,118
+plover_wpm_meter-0.2.3.dist-info/metadata.json,sha256=OTarh2nD9_Vo7nEJVY856oUFQRtBpvXGCPhStbcnQ8Q,1183
+plover_wpm_meter-0.2.3.dist-info/top_level.txt,sha256=hIUvNA2TNx7d-ubdAEMIyMAQKjsN8Ldt45Q9ORhXozc,17
+plover_wpm_meter-0.2.3.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
