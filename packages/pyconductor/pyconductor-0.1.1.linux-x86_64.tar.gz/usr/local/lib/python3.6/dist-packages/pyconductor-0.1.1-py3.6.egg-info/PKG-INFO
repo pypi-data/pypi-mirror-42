@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pyconductor
+Version: 0.1.1
+Summary: Conductor python client
+Home-page: https://github.com/skylarkdrones/pyconductor
+Author: Samarth Hattangady
+Author-email: samhattangady@gmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Keywords: netflix,conductor,pyconductor
+Platform: UNKNOWN
