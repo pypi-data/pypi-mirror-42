@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: entity_embeddings_categorical
+Version: 0.3
+Summary: UNKNOWN
+Home-page: https://github.com/bresan/entity_embeddings_categorical
+Author: Rodrigo Bresan
+Author-email: 
+License: BSD-3-Clause
+Description: Entity Embeddings Categorical
+        
+        Still under development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
