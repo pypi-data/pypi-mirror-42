@@ -1,0 +1,1 @@
+from betabernsum.bbs_test import bbs_test
