@@ -1,0 +1,3 @@
+[console_scripts]
+rough_graph_mapper = rough_graph_mapper.command_line_interface:main
+

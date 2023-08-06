@@ -1,0 +1,16 @@
+setup.py
+rough_graph_mapper/__init__.py
+rough_graph_mapper/command_line_interface.py
+rough_graph_mapper/filter_graphalignments.py
+rough_graph_mapper/linear_to_graph_mapper.py
+rough_graph_mapper/sam_to_graph_aligner.py
+rough_graph_mapper/single_read_aligner.py
+rough_graph_mapper/traverser.py
+rough_graph_mapper/util.py
+rough_graph_mapper.egg-info/PKG-INFO
+rough_graph_mapper.egg-info/SOURCES.txt
+rough_graph_mapper.egg-info/dependency_links.txt
+rough_graph_mapper.egg-info/entry_points.txt
+rough_graph_mapper.egg-info/not-zip-safe
+rough_graph_mapper.egg-info/requires.txt
+rough_graph_mapper.egg-info/top_level.txt
