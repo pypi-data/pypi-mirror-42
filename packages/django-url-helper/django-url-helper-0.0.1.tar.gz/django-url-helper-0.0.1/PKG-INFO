@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: django-url-helper
+Version: 0.0.1
+Summary: Helper functions and templatetags for Django.
+Home-page: https://github.com/hiimdoublej/django-url-helper
+Author: Johnny Chang
+Author-email: hiimdoublej.pi@gmail.com
+License: UNKNOWN
+Description: # Django Url Helper
+        
+Keywords: django,URL,template
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Framework :: Django
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
