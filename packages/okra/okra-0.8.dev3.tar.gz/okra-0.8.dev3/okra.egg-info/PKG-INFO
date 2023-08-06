@@ -1,0 +1,43 @@
+Metadata-Version: 1.0
+Name: okra
+Version: 0.8.dev3
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: MIT
+Description: # Okra
+        
+        Tools for working with GitHub data. It's helpful to have these tools
+        in a Python package because GitHub data requires moving across directory
+        structures. 
+        
+        We're going to use the ansible approach.
+        
+        ## Install
+        
+        ```shell
+        python setup.py install
+        ```
+        
+        ## Tests
+        
+        ```shell
+        python setup.py test
+        ```
+        
+        ## Documentation
+        
+        Generate documentation
+        
+        ```shell
+        python setup.py build_sphinx
+        ```
+        
+        View documentation
+        
+        ```shell
+        python -m http.server --directory build/sphinx/html/
+        ```
+        
+Platform: UNKNOWN
