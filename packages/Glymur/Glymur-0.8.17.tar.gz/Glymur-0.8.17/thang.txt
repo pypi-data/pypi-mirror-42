@@ -1,0 +1,25 @@
+CREATE TABLE bb(id INTEGER PRIMARY KEY, service TEXT, flag text, checkname text, message text);
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svca', 'red', 'rest', 'bad');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svca', 'red', 'wfs', 'bad');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svca', 'yellow', 'export', 'slow');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svcb', 'red', 'rest', 'bad');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svcb', 'red', 'wfs', 'bad');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svcb', 'yellow', 'export', 'slow');
+
+INSERT INTO bb (service, flag, checkname, message)
+VALUES  ('svcc', 'green', 'export', 'ok');
+
+select service, max(checkname) from bb group by service;
+
