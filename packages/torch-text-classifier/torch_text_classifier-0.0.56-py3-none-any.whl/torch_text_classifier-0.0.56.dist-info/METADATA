@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: torch-text-classifier
+Version: 0.0.56
+Summary: NLP tool
+Home-page: https://github.com/infinity-future/torch-text-classifier
+Author: infinityfuture
+Author-email: infinityfuture@foxmail.com
+License: MIT Licence
+Keywords: pip,pytorch,classifier
+Platform: any
+Requires-Dist: numpy
+Requires-Dist: pypinyin
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: torch
+Requires-Dist: tqdm
+
+NLP tool, text classifier
+
+
