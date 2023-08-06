@@ -1,0 +1,11 @@
+tokenizer/__init__.py,sha256=ukZQYwfZ78QxLADdd3a_Bgnm65xkSR0CbY_cK2KVrIA,640
+tokenizer/determine_language.py,sha256=-cLiS87wniCV5fks7HUPhWB7_uOqsqH9xfD3ASogKsg,608
+tokenizer/help_functions.py,sha256=2V65lG9przmmIRcrOeYnrJCwjNDBadAV4YSdhwCa6zw,2976
+tokenizer/sentence_finder.py,sha256=4dw8IvNLWgtXvN_sZFdgTh_inbv81Edsip3HIqldvQI,1674
+tokenizer/spellcheck.py,sha256=5GL1a8xT9LZDLo-NIFVCfDCG9fof5OhDRLomy6aH13w,2807
+tokenizer/tokenize_sentence.py,sha256=AsNY86a2JJ-Amx9Jpy8W0k6jV3elN9u_NtPSzeV9J7Q,2290
+tokenizer/tokenizer.py,sha256=zfN5-AFt8eNjqZ1BX9yZrOSSBSLHsGbMf21DhidTljk,1694
+tokenizer_cstm-0.1.dist-info/METADATA,sha256=apmMVaSnBswMGrCWm_RkvpmxhiJk3VX6i7aL0iuhMLA,239
+tokenizer_cstm-0.1.dist-info/RECORD,,
+tokenizer_cstm-0.1.dist-info/WHEEL,sha256=FRuHuBX28RTgsOL603qIpbSc2WeDgbsFBWKj9XFOCpg,92
+tokenizer_cstm-0.1.dist-info/top_level.txt,sha256=ODlQeKqMCvFle4_HiPNY1X5fX-qZyM3ABBmOPG__vnE,10
