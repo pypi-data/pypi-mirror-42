@@ -1,0 +1,12 @@
+README.md
+setup.py
+pure/__init__.py
+pure/colors.py
+pure/prompt.py
+pure.egg-info/PKG-INFO
+pure.egg-info/SOURCES.txt
+pure.egg-info/dependency_links.txt
+pure.egg-info/top_level.txt
+tests/__init__.py
+tests/colors_test.py
+tests/prompt_test.py
