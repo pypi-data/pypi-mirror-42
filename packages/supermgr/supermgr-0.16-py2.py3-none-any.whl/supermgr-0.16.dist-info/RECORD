@@ -1,0 +1,13 @@
+supermgr/__init__.py,sha256=Lhfg-p_Sy6dbMTi37Lv8LCe6UVjLwnbDwz1lLFxFKkA,81
+supermgr/_version.py,sha256=OaP0OHtQilnu6nYwnK_Yw3Za6hI1nobYh5C1tkIyRF0,20
+supermgr/action.py,sha256=76viUmX_O1aeLqTX_K1bBbke_dYAjV_Wj7k6RZqFIKc,789
+supermgr/cli.py,sha256=QG7DLWYAqeKP0vV4CspM8vLRxED5RSUsVkzpfs0eyQE,16809
+supermgr/config.py,sha256=1pgKbPpiTqdwD98ChUELZQtvIM3yedsjexZZmfjttOs,1077
+supermgr/procs.py,sha256=uyaHdutPy4CTZyZrb61m1vhhqFiK_fSP2_xCro2vm1s,1236
+supermgr/server.py,sha256=MrXogRYt-VyGdsdzZ_MR8a_YKmxzulIwqbA91KAwW4g,1060
+supermgr/worker.py,sha256=08_YoMgah-axBlUuIDRO8w9DeqgcH6y3f3TI7_lu8yE,1159
+supermgr-0.16.dist-info/METADATA,sha256=6JA7_HOCHo0d__tqRmnKcppZf8a9G1pUCiAx5FOoQz8,4301
+supermgr-0.16.dist-info/RECORD,,
+supermgr-0.16.dist-info/WHEEL,sha256=gduuPyBvFJQSQ0zdyxF7k0zynDXbIbvg5ZBHoXum5uk,110
+supermgr-0.16.dist-info/entry_points.txt,sha256=G6a-FoHgCQXLWs3JIkoU9h8YulDMflJUjUBFEtLeDXY,48
+supermgr-0.16.dist-info/top_level.txt,sha256=8M2rMrfBe7UJCgTPtUMxvyUeB3cFkBPk8J6mxjYBHBw,9
