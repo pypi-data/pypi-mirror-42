@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: wbswjc-greeting
+Version: 0.0.3
+Summary: Just say hi!
+Home-page: https://github.com/wbswjc/python-greeting
+Author: wbswjc
+Author-email: me@wujunchao.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# python-greeting
+Just say hi!
+
+
