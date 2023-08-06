@@ -1,0 +1,11 @@
+.version
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+customidenticon/__init__.py
+customidenticon.egg-info/PKG-INFO
+customidenticon.egg-info/SOURCES.txt
+customidenticon.egg-info/dependency_links.txt
+customidenticon.egg-info/requires.txt
+customidenticon.egg-info/top_level.txt
