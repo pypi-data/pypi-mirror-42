@@ -1,0 +1,9 @@
+README.md
+setup.py
+testpackage/__init__.py
+testpackage/test.py
+xwklwwltestpackage.egg-info/PKG-INFO
+xwklwwltestpackage.egg-info/SOURCES.txt
+xwklwwltestpackage.egg-info/dependency_links.txt
+xwklwwltestpackage.egg-info/not-zip-safe
+xwklwwltestpackage.egg-info/top_level.txt
