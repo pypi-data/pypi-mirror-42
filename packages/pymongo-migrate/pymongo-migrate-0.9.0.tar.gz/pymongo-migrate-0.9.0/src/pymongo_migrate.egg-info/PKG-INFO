@@ -1,0 +1,18 @@
+Metadata-Version: 1.2
+Name: pymongo-migrate
+Version: 0.9.0
+Summary: MongoDB data migration tool in Python
+Home-page: https://github.com/stxnext/pymongo-migrate
+License: Apache
+Description: UNKNOWN
+Keywords: mongo,mongodb,pymongo,migrate,migration
+Platform: any
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database
+Requires-Python: >=3.6
