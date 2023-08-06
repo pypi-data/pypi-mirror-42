@@ -1,0 +1,13 @@
+README.md
+setup.py
+wg_utilities/__init__.py
+wg_utilities.egg-info/PKG-INFO
+wg_utilities.egg-info/SOURCES.txt
+wg_utilities.egg-info/dependency_links.txt
+wg_utilities.egg-info/requires.txt
+wg_utilities.egg-info/top_level.txt
+wg_utilities/helpers/__init__.py
+wg_utilities/helpers/dict_to_object.py
+wg_utilities/helpers/functions.py
+wg_utilities/references/__init__.py
+wg_utilities/references/constants.py
