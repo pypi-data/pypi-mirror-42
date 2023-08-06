@@ -1,0 +1,9 @@
+README.md
+setup.py
+test/test_grammar.py
+trishula/__init__.py
+trishula/grammar.py
+trishula.egg-info/PKG-INFO
+trishula.egg-info/SOURCES.txt
+trishula.egg-info/dependency_links.txt
+trishula.egg-info/top_level.txt
