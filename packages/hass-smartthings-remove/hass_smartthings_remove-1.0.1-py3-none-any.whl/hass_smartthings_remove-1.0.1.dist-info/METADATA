@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: hass-smartthings-remove
+Version: 1.0.1
+Summary: Utility that removes SmartApps created by the Home Assistant SmartThings integration.
+Home-page: https://github.com/andrewsayre/hass-smartthings-remove
+Author: Andrew Sayre
+Author-email: andrew@sayre.net
+License: MIT
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Home Automation
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pysmartthings (==0.6.3)
+Requires-Dist: aiohttp (==3.5.4)
+
+# hass_smartthings_remove
+Utility that removes SmartApps/Automations created by the Home Assistant SmartThings integration
+
+## Installation
+```bash
+pip install hass_smartthings_remove
+```
+
+## Usage
+```bash
+hass_smartthings_remove PERSONAL_ACCESS_TOKEN
+```
+`PERSONAL_ACCESS_TOKEN` is the token created and used in the Home Assistant integration.
+
+_This command will remove all SmartApps/Automations for all Home Assistant integrations._
+

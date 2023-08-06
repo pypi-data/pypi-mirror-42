@@ -1,0 +1,3 @@
+[console_scripts]
+hass_smartthings_remove = hass_smartthings_remove.remove:main
+
