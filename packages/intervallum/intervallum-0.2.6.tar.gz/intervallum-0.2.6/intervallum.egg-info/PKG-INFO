@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: intervallum
+Version: 0.2.6
+Summary: Intervallum - package for interval computations
+Home-page: https://github.com/wol4aravio/Intervallum
+Author: Panovskiy Valentin
+Author-email: panovskiy.v@yandex.ru
+License: MIT License
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
