@@ -1,0 +1,15 @@
+README.txt
+setup.py
+humhelpers/__init__.py
+humhelpers/for_asyncio.py
+humhelpers/for_collections.py
+humhelpers/for_import.py
+humhelpers/for_paths.py
+humhelpers/for_strings.py
+humhelpers/test.py
+humhelpers/test____for_paths.py
+humhelpers/test____for_strings.py
+humhelpers.egg-info/PKG-INFO
+humhelpers.egg-info/SOURCES.txt
+humhelpers.egg-info/dependency_links.txt
+humhelpers.egg-info/top_level.txt

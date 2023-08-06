@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: humhelpers
+Version: 0.1.4
+Summary: Different shortcuts functions (helpers) for humanity.
+Home-page: https://bitbucket.org/vlad1777d/humhelpers
+Author: vlad1777d (Vladislav Naumov)
+Author-email: naumovvladislav@mail.ru
+License: UNKNOWN
+Description: Provides different shortcuts functions (helpers) for humanity.
+        
+        Created to be something like Ramda or Lodash for Python, but without
+        functional style.
+        
+        
+        For strings:
+        
+        `reverse` - Reverse a string.
+        `replace` -
+        	Replaces one substring in string to another.
+        	Analog to string method with same name,
+        	but also adds ability to change direction, from which to replace substring.
+        
+        
+        For collections:
+        
+        `get` - Returns or element from collection by index (key), or None if not found.
+        
+        
+        For asyncio:
+        
+        `run_async` - Asynchronously runs coroutine (function, defind with 'async def') until it completes.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
