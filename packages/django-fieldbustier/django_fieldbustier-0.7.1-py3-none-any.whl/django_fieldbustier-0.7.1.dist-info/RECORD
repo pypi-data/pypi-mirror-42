@@ -1,0 +1,10 @@
+django_fieldbustier/__init__.py,sha256=NIJCkrVgI65ZWwgoaM8yL8WFhhKRLc9qQ1rDirGvogg,67
+django_fieldbustier/apps.py,sha256=GiKAKWZjv-95486CcOZh101r4NdYZKutDLeVZKwnp04,3398
+django_fieldbustier/fieldbustier_config.py,sha256=DAIyQ5mZQrvGCHaOFq7CTrGwTiPqingNI54BhziDwrA,277
+django_fieldbustier/urls.py,sha256=Bjdewssljt0LIefjixBem9JN0kkghPvmrIETj3GdXbY,17
+django_fieldbustier/version.py,sha256=2KJZDSMOG7KS82AxYOrZ4ZihYxX0wjfUjDsIZh3L024,22
+django_fieldbustier-0.7.1.dist-info/LICENSE,sha256=jSlXbetk8Z2xUxGMjSkZLPtHRSprtBr1AW7N3QZg9k0,1063
+django_fieldbustier-0.7.1.dist-info/METADATA,sha256=prDek-E1Ik2WZLCeWhLP7E_o56sCgVy0ccRCx0pqmdw,3849
+django_fieldbustier-0.7.1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+django_fieldbustier-0.7.1.dist-info/top_level.txt,sha256=Kbf9nqJ2JYks07eSKCnD52efOX3HUXN4X4pn2YgJ7v4,20
+django_fieldbustier-0.7.1.dist-info/RECORD,,
