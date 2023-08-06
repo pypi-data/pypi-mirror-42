@@ -1,0 +1,267 @@
+---
+aws-ec2-new:
+  topology:
+    topology_name: ec2-new
+    resource_groups:
+      - resource_group_name: "aws"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demo-day
+            flavor: m1.small
+            role: aws_ec2
+            region: "{{ aws_region | default('us-east-1') }}"
+            image: "{{ aws_image | default('ami-984189e2') }}"
+            count: 1
+            instance_tags:
+              color: blue
+              shape: oval
+            security_group:
+              - default
+              - public
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-key-new:
+  topology:
+    topology_name: aws-ec2-key-new
+    resource_groups:
+      - resource_group_name: "aws"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: "ec2_keypair"
+            role: "aws_ec2_key"
+            region: "{{ aws_region | default('us-east-1') }}"
+
+aws-sg-new:
+  topology:
+    topology_name: aws-sg-new
+    resource_groups:
+      - resource_group_name: "aws"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: "aws_sg_test"
+            role: "aws_sg"
+            description: "aws ssh security group"
+            region: "{{ aws_region | default('us-east-1') }}"
+            rules:
+              - rule_type: "inbound"
+                from_port: "8"
+                to_port: -1
+                proto: "icmp"
+                cidr_ip: "0.0.0.0/0"
+              - rule_type: "inbound"
+                from_port: 22
+                to_port: 22
+                proto: "tcp"
+                cidr_ip: "0.0.0.0/0"
+              - rule_type: "outbound"
+                from_port: all
+                to_port: all
+                proto: "all"
+                cidr_ip: "0.0.0.0/0"
+
+aws-s3-new:
+  topology:
+    topology_name: aws-s3-new
+    resource_groups:
+      - resource_group_name: "aws_s3"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: "s3_bucket"
+            role: "aws_s3"
+            region: "{{ aws_region | default('us-east-1') }}"
+
+aws-ec2-eip:
+  topology:
+    topology_name: ec2-new
+    resource_groups:
+      - resource_group_name: "aws"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demoday
+            role: aws_ec2_eip
+            region: us-east-1
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-vpc-net:
+  topology:
+    topology_name: ec2vpc
+    resource_groups:
+      - resource_group_name: "awsvpc"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demo_day_vpc
+            role: aws_ec2_vpc_net
+            region: us-east-1
+            cidr_block: 10.10.0.0/16
+            tags:
+              module: aws_ec2_vpc_net
+              this: works
+            tenancy: dedicated
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-vpc-subnet:
+  topology:
+    topology_name: ec2vpcsubnetdemo
+    resource_groups:
+      - resource_group_name: "awsvpcsubnet"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demovpcnetsubnet
+            role: aws_ec2_vpc_net
+            region: us-east-1
+            cidr_block: 13.0.0.0/16
+            tags:
+              module: aws_ec2_vpc_net
+              this: alsoworks
+            tenancy: dedicated
+          - name: demodayvpcsubnet
+            role: aws_ec2_vpc_subnet
+            region: us-east-1
+            vpc_name: demovpcnetsubnet
+            cidr: 13.0.1.0/24
+            tags:
+              module: aws_ec2_vpc_subnet
+              this: alsoworks
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-vpc-routetable:
+  topology:
+    topology_name: ec2vpcroutetabledemo
+    resource_groups:
+      - resource_group_name: "awsroutetabledemo"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demo_vpc_net_r
+            role: aws_ec2_vpc_net
+            region: us-east-1
+            cidr_block: 15.0.0.0/16
+            tags:
+              module: aws_ec2_vpc_net
+              this: alsoworks
+            tenancy: dedicated
+          - name: demo_vpc_subnet_r
+            role: aws_ec2_vpc_subnet
+            region: us-east-1
+            vpc_name: demo_vpc_net_r
+            cidr: 15.0.1.0/24
+            tags:
+              module: aws_ec2_vpc_subnet
+              this: alsoworks
+          - name: demo_routetable
+            role: aws_ec2_vpc_routetable
+            region: us-east-1
+            vpc_name: demo_vpc_net_r
+            tags:
+              module: aws_ec2_vpc_routetable
+              this: alsoworks
+            subnets:
+              - 'demo_vpc_subnet_r'
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-vpc-endpoint:
+  topology:
+    topology_name: ec2vpcendpoint
+    resource_groups:
+      - resource_group_name: "awsroutetabledemo"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demo_vpc_net_ep
+            role: aws_ec2_vpc_net
+            region: us-east-1
+            cidr_block: 17.0.0.0/16
+            tags:
+              module: aws_ec2_vpc_net
+              some: aws_ec2_vpc_ep
+              this: alsoworks
+            tenancy: dedicated
+          - name: demo_vpc_subnet_ep
+            role: aws_ec2_vpc_subnet
+            region: us-east-1
+            vpc_name: demo_vpc_net_ep
+            cidr: 17.0.1.0/24
+            tags:
+              module: aws_ec2_vpc_subnet
+              this: alsoworks
+          - name: demo_routetable_ep
+            role: aws_ec2_vpc_routetable
+            region: us-east-1
+            vpc_name: demo_vpc_net_ep
+            tags:
+              module: aws_ec2_vpc_routetable
+              this: alsoworks
+            subnets:
+              - 'demo_vpc_subnet_ep'
+          - name: demo_ec2_vpc_ep
+            role: aws_ec2_vpc_endpoint
+            region: us-east-1
+            vpc_name: demo_vpc_net_ep
+            service: com.amazonaws.us-east-1.s3
+            route_table_name: demo_routetable_ep
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-elb-lb:
+  topology:
+    topology_name: ec2elblb
+    resource_groups:
+      - resource_group_name: "awsec2elblbdemo"
+        resource_group_type: "aws"
+        resource_definitions:
+          - name: demoec2elblb
+            role: aws_ec2_elb_lb
+            region: us-east-1
+            zones:
+            - us-east-1a
+            - us-east-1d
+            listeners:
+            - protocol: http # options are http, https, ssl, tcp
+              load_balancer_port: 80
+              instance_port: 80
+              proxy_protocol: True
+        credentials:
+          filename: aws.key
+          profile: default
+
+aws-ec2-template:
+  topology:
+    topology_name: aws-template-inventory
+    resource_groups:
+      - resource_group_name: "aws-template-inventory"
+        resource_group_type: "aws"
+        resource_definitions:
+        - name: "template-inventory{{ distro }}"
+          flavor: m1.small
+          role: aws_ec2
+          region: us-east-1
+          image: ami-984189e2
+          count: 1
+          instance_tags:
+            color: blue
+            shape: oval
+            distro: "{{ distro }}"
+          security_group:
+          - default
+          - public
+        credentials:
+          filename: aws.key
+          profile: default
+  layout:
+    inventory_layout:
+      vars:
+        hostname: __IP__
+      hosts:
+        example-node:
+          count: 1
+          host_groups:
+            - example

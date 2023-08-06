@@ -1,0 +1,169 @@
+---
+libvirt-new:
+  topology:
+    topology_name: libvirt-new
+    resource_groups:
+      - resource_group_name: libvirt-new
+        resource_group_type: libvirt
+        resource_definitions:
+          - role: libvirt_node
+            name: centos71
+            uri: qemu:///system
+            count: 1
+            image_src: http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz
+            memory: 2048
+            vcpus: 1
+            arch: x86_64
+            ssh_key: libvirt
+            networks:
+              - name: default
+            additional_storage: 10G
+            cloud_config:
+              users:
+                - name: herlo
+                  gecos: Clint Savage
+                  groups: wheel
+                  sudo: ALL=(ALL) NOPASSWD:ALL
+                  ssh_import_id: gh:herlo
+                  lock_passwd: true
+  layout:
+    inventory_layout:
+      vars:
+        hostname: __IP__
+      hosts:
+        example-node:
+          count: 1
+          host_groups:
+            - example
+    
+libvirt-network:
+  topology:
+    topology_name: "libvirt_network"
+    resource_groups:
+      - resource_group_name: "libvirt_network"
+        resource_group_type: "libvirt"
+        resource_definitions:
+          - name: linchpin-centos74
+            role: libvirt_network
+            uri: qemu:///system
+            ip: 192.168.74.100
+            dhcp_start: 192.168.74.101
+            forward_mode: nat
+            dhcp_end: 192.168.74.112
+            domain: linchpin.net
+            netmask: 255.255.255.0
+            delete_on_destroy: True
+
+libvirt-storage:
+  topology:
+    topology_name: libvirt-storage
+    resource_groups:
+      - resource_group_name: libvirt-storage
+        resource_group_type: libvirt
+        resource_definitions:
+          - role: libvirt_node
+            name: centos71
+            uri: qemu:///system
+            count: 1
+            image_src: http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1608.qcow2.xz
+            memory: 2048
+            vcpus: 2
+            arch: x86_64
+            ssh_key: libvirt
+            networks:
+              - name: default
+            additional_storage: 10G
+            storage:
+              - name: myscsi
+                size: 1
+                units: G
+                disk_type: virtio_scsi # can also be virtio_blk
+                device: sda
+
+libvirt-custom-img:
+  topology:
+    topology_name: libvirt-custom-img
+    resource_groups:
+      - resource_group_name: libvirt-custom-img
+        resource_group_type: libvirt
+        resource_definitions:
+          - role: libvirt_node
+            name: lci-centos7
+            uri: qemu:///system
+            count: 1
+            image_src: file:///home/herlo/Isos/CentOS-7-x86_64-GenericCloud.qcow2.xz
+            memory: 1024
+            vcpus: 1
+            arch: x86_64
+            networks:
+              - name: default
+            ssh_key: libvirt
+            additional_storage: 10G
+            cloud_config:
+              virt_type: virt-customize
+              root_password: "testrootpwd" # insecure plaintext password
+              users:
+                - name: herlo
+                  groups: wheel
+                  inject_ssh_keys: true  # by default linchpin generated libvirt key is injected.
+              run_commands:
+                - "yum install -y epel-release"
+              packages:
+                - nginx
+
+libvirt-network-dns:
+  topology:
+    topology_name: "libvirt_network"
+    resource_groups:
+      - resource_group_name: "libvirt_network"
+        resource_group_type: "libvirt"
+        resource_definitions:
+          - name: testnetworkdns
+            role: libvirt_network
+            uri: qemu:///system
+            ip: 192.168.123.2
+            dhcp_start: 192.168.123.22
+            dhcp_end: 192.168.123.44
+            domain: redhat.local
+            bridge: "testdnslinchpin"
+            netmask: 255.255.255.0
+            dns:
+              texts:
+              - name: example
+                value: examplevalue
+              - name: example2
+                value: examplevalue2
+              forwarders:
+              - domain: example.com
+                addr: 8.8.4.4
+              - domain: example.com
+              services:
+              - name: testservice
+                protocol: tcp
+                domain: test.domain.com
+                target: .
+                port: 1024
+                priority: 10
+                weight: 10
+              - name: someservice
+                protocol: udp
+                domain: some.domain.com
+                target: .
+                port: 1024
+                weight: 10
+              - name: anoservice
+                protocol: icmp
+                domain: ano.domain.com
+                target: .
+                port: 1022
+                weight: 1
+              hosts:
+              - ip: 192.168.122.2
+                hostnames:
+                - myhost
+                - myhostalias
+              - ip: 192.168.188.6
+                hostnames:
+                - testhost
+                - testhostalias
+
