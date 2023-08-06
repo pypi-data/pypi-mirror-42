@@ -1,0 +1,8 @@
+README.md
+setup.py
+ddmin/__init__.py
+ddmin/ddmin.py
+ddmin.egg-info/PKG-INFO
+ddmin.egg-info/SOURCES.txt
+ddmin.egg-info/dependency_links.txt
+ddmin.egg-info/top_level.txt
