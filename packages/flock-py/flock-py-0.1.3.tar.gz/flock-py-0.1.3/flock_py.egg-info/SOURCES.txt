@@ -1,0 +1,8 @@
+README.md
+setup.py
+flock/__init__.py
+flock_py.egg-info/PKG-INFO
+flock_py.egg-info/SOURCES.txt
+flock_py.egg-info/dependency_links.txt
+flock_py.egg-info/top_level.txt
+tests/__init__.py
