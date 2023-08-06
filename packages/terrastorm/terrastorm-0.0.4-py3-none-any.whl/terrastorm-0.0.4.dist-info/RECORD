@@ -1,0 +1,10 @@
+terrastorm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+terrastorm/cli.py,sha256=adRKzQJ7CX7a9yaMn4FAKUbJm9V1ts6yHFcuRVy9BWM,3744
+terrastorm/services.py,sha256=DRtx7Py1B45sz1PNgCnPpDJ_71hIaRSIChz_J3MqqY4,6746
+terrastorm/settings.py,sha256=K7zk0PzZ3EpwyAPBAsT1vLR8CaGWaOhWEyy700s-QJI,671
+terrastorm/templates.py,sha256=5tLhA4tUGgc5ZFcQFRcMGbty6vMiiANTDeUp4Jl5c08,752
+terrastorm-0.0.4.dist-info/METADATA,sha256=6gcdYttZzAjmxpYvGV3mV7aaypOKPwmzIfNs34NVDRs,6780
+terrastorm-0.0.4.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+terrastorm-0.0.4.dist-info/entry_points.txt,sha256=xtbpyw3U1W75zQnOLSG_2iuoXEhYURlrPHJfg80IvKM,51
+terrastorm-0.0.4.dist-info/top_level.txt,sha256=4w1IWn0b5UkGA4uKyfyekHADjuUoh3VR5p6UA4mEf10,11
+terrastorm-0.0.4.dist-info/RECORD,,
