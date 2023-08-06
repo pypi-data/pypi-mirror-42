@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        firestoretools=firestoretools.firestore_tools:cli
+    

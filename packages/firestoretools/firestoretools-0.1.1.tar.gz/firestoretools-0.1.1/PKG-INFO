@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: firestoretools
+Version: 0.1.1
+Summary: Useful tools to work with Google Firestore in Python
+Home-page: https://github.com/ncthuc/firestoretools
+Author: Thuc Nguyen
+Author-email: gthuc.nguyen@gmail.com
+License: MIT
+Download-URL: https://pypi.org/project/firestoretools/
+Description: Useful tools to work with Google Cloud Firestore database in Python
+        
+        # Description
+            
+        Main functions
+        
+        - `read`: recursively read collections and documents, and save to disk. Useful for backup operation.
+        - `write`: write whole folder with arbitrary levels of nested structure. Useful for restore operation.
+        
+        # Installation
+         
+        ## Normal installation
+        
+        ```bash
+        pip install firestoretools
+        ```
+        
+        ## Development installation
+        
+        ```bash
+        git clone https://github.com/ncthuc/firestoretools.git
+        cd firestoretools
+        pip install --editable .
+        ```
+        
+        # Usage
+        ## Backup data
+        ```bash
+        firestoretools read --help
+        ```
+        
+        ## Restore data
+        ```bash
+        firestoretools write --help
+        ```
+        
+        # Change log
+        
+        
+        ## [0.1.1] - 2019-02-27
+        
+        ### Added
+        - Add `read` that read data (document/collection) from Firestore and save to local file system
+        
+        ### Changed
+        
+        ### Removed
+        
+        ## [0.1.0] - 2019-02-27
+        
+        ### Added
+        - Init project
+        - Firestore setup with `firebase-admin` Python library
+        
+        ### Changed
+        
+        ### Removed
+Keywords: Firestore,Firebase,Google Cloud,Python 3
+Platform: UNKNOWN
+Description-Content-Type: text/markdown

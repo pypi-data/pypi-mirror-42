@@ -1,0 +1,10 @@
+README.md
+setup.py
+firestoretools/__init__.py
+firestoretools/firestore_tools.py
+firestoretools.egg-info/PKG-INFO
+firestoretools.egg-info/SOURCES.txt
+firestoretools.egg-info/dependency_links.txt
+firestoretools.egg-info/entry_points.txt
+firestoretools.egg-info/requires.txt
+firestoretools.egg-info/top_level.txt
