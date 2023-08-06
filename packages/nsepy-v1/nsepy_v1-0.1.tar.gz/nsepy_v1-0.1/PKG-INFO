@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: nsepy_v1
+Version: 0.1
+Summary: Library to download financial data in pandas dataframe
+Home-page: https://github.com/prateek3211/nsepy
+Author: Swapnil Jariwala
+Author-email: sjerry4u@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/prateek3211/nsepy/archive/v0.1.tar.gz
+Description: UNKNOWN
+Keywords: testing,logging,example
+Platform: UNKNOWN
