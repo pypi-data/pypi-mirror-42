@@ -1,0 +1,3 @@
+[console_scripts]
+sage = scripts.cli:cli
+
