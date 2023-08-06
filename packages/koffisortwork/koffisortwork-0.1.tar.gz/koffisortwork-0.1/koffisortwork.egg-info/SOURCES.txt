@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.py
+koffisortwork/__init__.py
+koffisortwork/bubble_sort.py
+koffisortwork/insertion_sort.py
+koffisortwork/quick_sort.py
+koffisortwork/selection_sort.py
+koffisortwork.egg-info/PKG-INFO
+koffisortwork.egg-info/SOURCES.txt
+koffisortwork.egg-info/dependency_links.txt
+koffisortwork.egg-info/not-zip-safe
+koffisortwork.egg-info/requires.txt
+koffisortwork.egg-info/top_level.txt
