@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: tomlconf
+Version: 0.3
+Summary: The tiny TOML configuration tool.
+Home-page: http://github.com/bpeterso2000/tomlconf
+Author: Brian Peterson
+Author-email: bpeterso2000@yahoo.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: tomlkit (>=0.5.3)
+
+UNKNOWN
+
+
