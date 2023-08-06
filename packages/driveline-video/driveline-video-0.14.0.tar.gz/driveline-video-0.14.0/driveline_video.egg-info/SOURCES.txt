@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+driveline_video.egg-info/PKG-INFO
+driveline_video.egg-info/SOURCES.txt
+driveline_video.egg-info/dependency_links.txt
+driveline_video.egg-info/requires.txt
+driveline_video.egg-info/top_level.txt
+src/video.c
