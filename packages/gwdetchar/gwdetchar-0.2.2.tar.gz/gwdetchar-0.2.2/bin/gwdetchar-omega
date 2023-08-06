@@ -1,0 +1,268 @@
+#!/usr/bin/env python
+# coding=utf-8
+# Copyright (C) LIGO Scientific Collaboration (2015-)
+#
+# This file is part of the GW DetChar python package.
+#
+# GW DetChar is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# GW DetChar is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GW DetChar.  If not, see <http://www.gnu.org/licenses/>.
+
+"""Compute an omega scan for a list of channels around a given GPS time
+
+This utility can be used to process an arbitrary list of detector channels
+with minimal effort in finding data. The input should be an INI-formatted
+configuration file that lists processing options and channels in contextual
+blocks, e.g.:
+
+```ini
+[GW]
+name = Gravitational Wave Strain
+q-range = 3.3166,150
+frequency-range = 4,2048
+resample = 4096
+frametype = H1_HOFT_C00
+state-flag = H1:DMT-GRD_ISC_LOCK_NOMINAL:1
+duration = 64
+fftlength = 8
+max-mismatch = 0.2
+snr-threshold = 5
+always-plot = True
+plot-time-durations = 1,4,16
+channels = H1:GDS-CALIB_STRAIN
+```
+
+For more information, see gwdetchar.omega.config.
+"""
+
+from __future__ import (division, print_function)
+
+import os
+import sys
+import traceback
+import numpy
+
+from gwpy.time import to_gps
+
+from matplotlib import use
+use('agg')  # nopep8
+
+from gwdetchar import (cli, omega, __version__)
+from gwdetchar.omega import (config, html, plot)
+from gwdetchar.io.datafind import (check_flag, get_data)
+
+__author__ = 'Alex Urban <alexander.urban@ligo.org>'
+__credits__ = 'Duncan Macleod <duncan.macleod@ligo.org>'
+
+
+# -- parse command line -------------------------------------------------------
+
+parser = cli.create_parser(description=__doc__)
+parser.add_argument('gpstime', type=to_gps,
+                    help='GPS time or datestring to scan')
+cli.add_ifo_option(parser, required=False)
+parser.add_argument('-o', '--output-directory',
+                    help='output directory for the omega scan, '
+                         'default: ~/public_html/wdq/{IFO}_{gpstime}')
+parser.add_argument('-f', '--config-file', action='append', default=None,
+                    help='path to configuration file to use, can be given '
+                         'multiple times (files read in order), default: '
+                         'choose a standard one based on IFO and GPS time')
+parser.add_argument('-d', '--disable-correlation', action='store_true',
+                    default=False, help='disable cross-correlation of aux '
+                                        'channels, default: False')
+parser.add_argument('-s', '--ignore-state-flags', action='store_true',
+                    default=False, help='ignore state flag definitions in '
+                                        'the configuration, default: False')
+parser.add_argument('-t', '--far-threshold', type=float, default=1e-10,
+                    help='white noise false alarm rate threshold for '
+                         'processing channels, default: %(default)s Hz')
+parser.add_argument('-c', '--colormap', default='viridis',
+                    help='name of colormap to use, default: %(default)s')
+cli.add_nproc_option(parser)
+parser.add_argument('-v', '--verbose', action='store_true', default=False,
+                    help='print verbose output, default: False')
+
+args = parser.parse_args()
+
+# get run parameters
+if args.ifo:
+    ifo = args.ifo
+else:
+    ifo = 'Network'
+gps = numpy.around(float(args.gpstime), 3)
+
+print("----------------------------------------------\n"
+      "Creating %s omega scan at GPS second %s" % (ifo, gps))
+
+# get default configuration
+if args.config_file is None:
+    args.config_file = config.get_default_configuration(ifo, gps)
+
+# parse configuration files
+args.config_file = [os.path.abspath(f) for f in args.config_file]
+if args.verbose:
+    print('Parsing the following configuration files:')
+    for fname in args.config_file:
+        print(''.join(['\t', fname]))
+cp = config.OmegaConfigParser(ifo=ifo)
+cp.read(args.config_file)
+
+# parse primary channel
+if not args.disable_correlation:
+    try:
+        primary = config.OmegaChannelList(
+            'primary', **dict(cp.items('primary')))
+    except Exception:
+        import warnings
+        warnings.warn(
+            'No primary configured, continuing without cross-correlation')
+        args.disable_correlation = True
+cp.remove_section('primary')
+
+# get contextual channel blocks
+blocks = cp.get_channel_blocks()
+
+# set up analyzed channel dict
+if sys.version_info >= (3, 7):  # python 3.7+
+    analyzed = {}
+else:
+    from collections import OrderedDict
+    analyzed = OrderedDict()
+
+# prepare html variables
+htmlv = {
+    'title': '%s Qscan | %s' % (ifo, gps),
+    'config': args.config_file,
+    'refresh': True,
+}
+
+# set output directory
+outdir = args.output_directory
+if outdir is None:
+    outdir = os.path.expanduser('~/public_html/wdq/{ifo}_{gps}'.format(
+        ifo=ifo, gps=gps))
+outdir = os.path.abspath(outdir)
+if not os.path.isdir(outdir):
+    os.makedirs(outdir)
+os.chdir(outdir)
+print("Output directory created as %s" % outdir)
+
+
+# -- Compute Qscan ------------------------------------------------------------
+
+# make subdirectories
+plotdir = 'plots'
+aboutdir = 'about'
+datadir = 'data'
+for d in [plotdir, aboutdir, datadir]:
+    if not os.path.isdir(d):
+        os.makedirs(d)
+
+# set up html output
+print('Setting up HTML at %s/index.html' % outdir)
+html.write_qscan_page(ifo, gps, analyzed, **htmlv)
+
+# launch omega scans
+print('Launching omega scans')
+
+# construct a matched-filter from primary channel
+if not args.disable_correlation:
+    print('Processing primary channel')
+    duration = primary.duration
+    fftlength = primary.fftlength
+    # process `duration` seconds of data centered on gps
+    name = primary.channel.name
+    start = gps - duration/2. - 1
+    end = gps + duration/2. + 1
+    correlate = get_data(
+        name, start, end, frametype=primary.frametype, source=primary.source,
+        nproc=args.nproc, verbose=args.verbose)
+    correlate = omega.primary(
+        gps, primary.length, correlate, fftlength, resample=primary.resample,
+        f_low=primary.flow)
+    plot.timeseries_plot(correlate, gps, primary.length, name,
+                         'plots/primary.png', ylabel='Whitened Amplitude')
+    # prepare HTML output
+    htmlv['correlated'] = True
+    htmlv['primary'] = name
+else:
+    correlate = None
+
+# range over channel blocks
+for block in blocks.values():
+    print('Processing block %s' % block.key)
+    chans = [c.name for c in block.channels]
+    # get configuration
+    duration = block.duration
+    fftlength = block.fftlength
+    # check that analysis flag is active for all of `duration`
+    if block.flag and (not args.ignore_state_flags):
+        if args.verbose:
+            print('Querying state flag %s' % block.flag)
+        if not check_flag(block.flag, gps, duration, pad=1):
+            print('%s not active, skipping block' % block.flag)
+            continue
+    # read in `duration` seconds of data centered on gps
+    start = gps - duration/2. - 1
+    end = gps + duration/2. + 1
+    data = get_data(
+        chans, start, end, frametype=block.frametype, source=block.source,
+        nproc=args.nproc, verbose=args.verbose)
+
+    # scan individual channels
+    for channel in block.channels:
+        try:
+            print('Scanning channel %s' % channel.name)
+            series = omega.scan(
+                gps, channel, data[channel.name].astype('float64'), fftlength,
+                resample=block.resample, fthresh=args.far_threshold,
+                search=block.search)
+        except Exception:
+            traceback.print_exc()
+            print('Problem encountered, skipping channel %s' % channel.name)
+            continue
+
+        if series is None:
+            continue  # channel is insignificant, skip it
+
+        print('Plotting omega scan products for channel %s' % channel.name)
+        plot.write_qscan_plots(gps, channel, series, colormap=args.colormap)
+
+        if correlate is not None:
+            print('Cross-correlating channel %s' % channel.name)
+            correlation = omega.cross_correlate(series[2], correlate)
+            channel.save_loudest_tile_features(
+                series[3], correlation, gps=gps, dt=block.dt)
+        else:
+            channel.save_loudest_tile_features(series[3])
+
+        try:  # update analyzed dict
+            analyzed[channel.section]['channels'].append(channel)
+        except KeyError:
+            analyzed[channel.section] = {'name': blocks[channel.section].name,
+                                         'channels': [channel]}
+        htmlv['toc'] = analyzed
+        html.write_qscan_page(ifo, gps, analyzed, **htmlv)
+
+
+# -- Prepare HTML -------------------------------------------------------------
+
+# write HTML page and finish
+print('Finalizing HTML at %s/index.html' % outdir)
+htmlv['refresh'] = False  # turn off auto-refresh
+if analyzed:
+    html.write_qscan_page(ifo, gps, analyzed, **htmlv)
+else:
+    reason = 'No significant channels found during active analysis segments'
+    html.write_null_page(ifo, gps, reason, **htmlv)
+print("-- index.html written, all done --")

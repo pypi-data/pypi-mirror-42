@@ -1,0 +1,16 @@
+astropy>=1.2
+gwdatafind
+gwpy>=0.13.0
+gwtrigfind
+lscsoft-glue>=1.60.0
+matplotlib>=2.0.0
+numpy>=1.10
+pandas
+pycondor
+scikit-learn
+scipy>=1.2.0
+setuptools
+six
+
+[:python_version < "3"]
+pathlib
