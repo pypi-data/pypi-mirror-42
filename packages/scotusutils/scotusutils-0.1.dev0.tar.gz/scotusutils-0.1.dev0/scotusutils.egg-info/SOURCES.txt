@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/scotus-data-init
+scotusutils/__init__.py
+scotusutils/analysis.py
+scotusutils/dbtools.py
+scotusutils/webscrape.py
+scotusutils.egg-info/PKG-INFO
+scotusutils.egg-info/SOURCES.txt
+scotusutils.egg-info/dependency_links.txt
+scotusutils.egg-info/top_level.txt
