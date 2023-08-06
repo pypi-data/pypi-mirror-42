@@ -1,0 +1,5 @@
+numpy>=1.7
+pandas
+requests
+pydantic>=0.19
+qcelemental>=0.2.6
