@@ -1,0 +1,3 @@
+[console_scripts]
+ftpmail = ftpmail.cli:main
+

@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+ftpmail/__init__.py
+ftpmail/cli.py
+ftpmail/quotes.txt
+ftpmail.egg-info/PKG-INFO
+ftpmail.egg-info/SOURCES.txt
+ftpmail.egg-info/dependency_links.txt
+ftpmail.egg-info/entry_points.txt
+ftpmail.egg-info/requires.txt
+ftpmail.egg-info/top_level.txt
