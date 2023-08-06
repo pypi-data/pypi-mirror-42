@@ -1,0 +1,8 @@
+include setup.py
+include ccas.py
+include *.md
+
+exclude test.py
+exclude demos.py
+exclude bench_mark.py
+exclude *.pyc
