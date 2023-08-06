@@ -1,0 +1,4 @@
+[console_scripts]
+generate_signv4_mqtt = aws_signv4_mqtt:generate_signv4_mqtt
+generate_signv4_mqtt_boto = aws_signv4_mqtt:generate_signv4_mqtt_boto
+
