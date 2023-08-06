@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: abstract
+Version: 0.1.2
+Summary: Python library for graph drawing
+Home-page: https://github.com/idin/abstract
+Author: Idin
+Author-email: py@idin.ca
+License: MIT
+Description: # Abstract
+        Abstract is a Python library for creating and drawing graphs 
+        and taking advantage of graph properties.
+        
+        It is developed and maintained by [Idin](https://github.com/idin) 
+        and its repository is hosted at 
+        [https://github.com/idin/abstract](https://github.com/idin/abstract.git).
+        
+        ## Installation
+        
+        ```bash
+        pip install abstract
+        ```
+        or
+        ```bash
+        pip install git+https://github.com/idin/abstract.git
+        ```
+        
+        
+        ## Graph
+        
+        In computer science, a graph is an abstract data type that 
+        is meant to implement the undirected graph and directed graph 
+        concepts from mathematics; specifically, the field of graph theory. 
+        [[1]](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
+        
+        A graph data structure consists of a finite (and possibly mutable) 
+        set of vertices or nodes or points, together with a set of 
+        unordered pairs of these vertices for an undirected graph or 
+        a set of ordered pairs for a directed graph. These pairs are known 
+        as edges, arcs, or lines for an undirected graph and as arrows, 
+        directed edges, directed arcs, or directed lines for a directed graph. 
+        The vertices may be part of the graph structure, or may be external 
+        entities represented by integer indices or references. 
+        [[1]](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
+        
+        ## Future Features
+        
+        * Create a graph from:
+          * list of dictionaries
+          * dataframe
+        * Create a new graph by filtering a graph
+        
+Keywords: graph
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
