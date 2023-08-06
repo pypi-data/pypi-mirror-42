@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: betabernsum
+Version: 0.0.2
+Summary: Agnostically load JSON or tabular data
+Home-page: https://github.com/anthony-aylward/jsontab.git
+Author: Anthony Aylward
+Author-email: aaylward@eng.ucsd.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+
+# jsontab
+Agnostically load JSON or tabular data in R or python3
+
+
