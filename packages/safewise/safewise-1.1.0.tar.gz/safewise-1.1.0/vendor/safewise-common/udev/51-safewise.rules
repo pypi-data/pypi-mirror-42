@@ -1,0 +1,17 @@
+# SafeWISE: The Original Hardware Wallet
+# https://safewise.io/
+#
+# Put this file into /etc/udev/rules.d
+#
+# If you are creating a distribution package,
+# put this into /usr/lib/udev/rules.d or /lib/udev/rules.d
+# depending on your distribution
+
+# SafeWISE
+SUBSYSTEM=="usb", ATTR{idVendor}=="1209", ATTR{idProduct}=="abba", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl", SYMLINK+="safewise%n"
+KERNEL=="hidraw*", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="abba",  MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
+
+# SafeWISE v2
+SUBSYSTEM=="usb", ATTR{idVendor}=="1209", ATTR{idProduct}=="abb8", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl", SYMLINK+="safewise%n"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1209", ATTR{idProduct}=="abb9", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl", SYMLINK+="safewise%n"
+KERNEL=="hidraw*", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="abb9",  MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
