@@ -1,0 +1,6 @@
+nose
+codecov
+vcrpy
+coverage
+confluent-kafka[avro]
+responses
