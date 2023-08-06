@@ -1,0 +1,6 @@
+include pygrisb/*
+include pygrisb/*/*
+include pygrisb/*/*/*
+include pygrisb/*/*/*/*
+include pygrisb/*/*/*/*/*
+include pygrisb/*/*/*/*/*/*
