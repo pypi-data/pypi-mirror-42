@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: flex-version
+Version: 1.2.3
+Summary: A cute Python library to manipulate version stuff.
+Home-page: https://github.com/caesar0301/FlexVersion
+Author: Xiaming Chen
+Author-email: chenxm35@gmail.com
+License: Apache License, Version 2.0
+Description: UNKNOWN
+Keywords: utility,versioning
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
