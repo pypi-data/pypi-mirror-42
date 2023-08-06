@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: applicake
+Version: 0.0.28
+Summary: A framework that simplifies the wrapping of external tools by standardizing input                  parameters, logging messages and output streams.
+Home-page: https://github.com/applicake-tools/applicake
+Author: Andreas Quandt
+Author-email: applicake.pypi@gmail.com
+Maintainer: Lars Malmstroem
+Maintainer-email: lars@malmstroem.net
+License: BSD license
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: configobj (>=5.0.6)
+
+UNKNOWN
+
+
