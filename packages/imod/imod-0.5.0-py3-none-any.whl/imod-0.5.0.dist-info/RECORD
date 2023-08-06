@@ -1,0 +1,15 @@
+imod/__init__.py,sha256=1mtZexSSILkpcR2iOGQeOT2CRjLrzbGkQs-hWbd2NsI,7225
+imod/_version.py,sha256=Frqrserptm0aYU4FRqTnZKQLxAhxYaOC35yt7bZphi0,518
+imod/idf.py,sha256=cYjYsL8A4GJguMYtGVwMtQCjBDUmg4J5pwh83bnCRqI,20787
+imod/ipf.py,sha256=O0m87wdQR3ShrR9Xk9KEchZcd8d3jDcSefFQ7cS_a0Q,15782
+imod/rasterio.py,sha256=2ERCHkw8eDs5ecrYIRvxCN45jbG009X8cR8rlmdVrKo,11330
+imod/run.py,sha256=vTyR2DY46JjtYj5FBFGXYg0vWA9BDM-ltByatKjbnQA,28406
+imod/tec.py,sha256=07RJgDCqNJyD0U7QlWeU3rD6y9bAu1UkrTad-vbTzuY,5761
+imod/util.py,sha256=szvWOp_DGBKND48ucjvchoJ-VO9LKIv-HYE0GlRRYRo,4738
+imod/templates/runfile.j2,sha256=52WXGR4bVB5fDOIQfUCYG7MkeZP-qjtvwVCLoJkAnpo,1823
+imod/templates/seawat_runfile.j2,sha256=kL2bbq_1e7397tol5Rj7Zn8NOtWGiVAk6d9_hSgATE0,7868
+imod-0.5.0.dist-info/LICENSE,sha256=NmtdaGIpyMy6UI8WuVm9Wjv6m5TxcMVcn4TmtklA3hU,1074
+imod-0.5.0.dist-info/METADATA,sha256=OV8cKkeSic7_kFbI5CHHIYE2qePRtmIquQqxlBDvXoQ,3528
+imod-0.5.0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+imod-0.5.0.dist-info/top_level.txt,sha256=a15Z2tKDkuSPm52fAxtuKfF53Jr5oiadc--Ag9wirhQ,5
+imod-0.5.0.dist-info/RECORD,,
