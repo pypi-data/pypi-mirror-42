@@ -1,0 +1,3 @@
+[console_scripts]
+nelson_siegel_svensson = nelson_siegel_svensson.cli:main
+
