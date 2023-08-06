@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: deepcheck
+Version: 0.6
+Summary: Build and release task for determining neural network susceptibility to adversarial machine learning
+Home-page: UNKNOWN
+Author: TeamDeepCheck
+Author-email: UNKNOWN
+License: GPL
+Keywords: pip,adversarial machine learning,deep learning
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: six
+Requires-Dist: scikit-learn
+Requires-Dist: adversarial-robustness-toolbox
+Requires-Dist: keras
+Requires-Dist: tensorflow
+Requires-Dist: Pillow
+
+# DeepCheck Library
+
+
