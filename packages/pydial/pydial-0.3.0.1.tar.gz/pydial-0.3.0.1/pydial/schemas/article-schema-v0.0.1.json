@@ -1,0 +1,64 @@
+{
+    "$id": "http://dial.uclouvain.be/schemas/dial-article.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "JSON schema describing a journal article into DIAL",
+    "type": "object",
+
+    "allOf": [
+        { "$ref": "http://dial.uclouvain.be/schemas/basics-publications.json" },
+        { "properties": {
+            "type":{
+                "properties": {
+                    "document-type": {
+                        "$comment": "limit main type to 'book' type",
+                        "enum": [
+                            "article"
+                        ]
+                    },
+                    "document-subtype": {
+                        "$comment": "limit subtype to some defined values for an article",
+                        "enum": [
+                            "Article de recherche",
+                            "Article de vulgarisation",
+                            "Compte-rendu",
+                            "Éditorial",
+                            "Essai clinique",
+                            "Lettre à l'éditeur",
+                            "Note ou chronique de jurisprudence",
+                            "Numéro entier",
+                            "Synthèse de littérature"
+                        ]
+                    }
+                }
+            },
+            "authors":{
+                "items":{
+                    "properties": {
+                        "role": {
+                            "$comment": "Limit role of authors to a subset of possible roles defined for authors",
+                            "enum": [
+                                "author",
+                                "collaborator",
+                                "translator",
+                                "scientific publisher"
+                            ]
+                        }
+                    }
+                }
+            },
+            "publication-status":{
+                "$ref": "http://dial.uclouvain.be/schemas/publication-status.json"
+            },
+            "doi": {
+                "$ref": "http://dial.uclouvain.be/schemas/doi.json"
+            },
+            "journal-issue":{
+                "$ref": "http://dial.uclouvain.be/schemas/journal-issue.json"
+            },
+            "publishers": {
+                "$ref": "http://dial.uclouvain.be/schemas/publishers.json"
+            }
+        }},
+        { "required": ["journal-issue"]}
+    ]
+}

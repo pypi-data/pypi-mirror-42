@@ -1,0 +1,90 @@
+{
+    "$id": "http://dial.uclouvain.be/schemas/dial-speech.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "JSON schema describing a journal article into DIAL",
+    "type": "object",
+
+    "allOf": [
+        { "$ref": "http://dial.uclouvain.be/schemas/basics-publications.json" },
+        { "properties": {
+            "type":{
+                "properties": {
+                    "document-type": {
+                        "$comment": "limit main type to 'speech' type",
+                        "enum": [
+                            "speech"
+                        ]
+                    },
+                    "document-subtype": {
+                        "$comment": "limit subtype to some defined values for a speech",
+                        "enum": [
+                            "Conférence invitée / Keynote",
+                            "Présentation orale avec comité de sélection",
+                            "Présentation orale sans comité de sélection",
+                            "Poster"
+                        ]
+                    }
+                }
+            },
+            "authors":{
+                "items":{
+                    "properties": {
+                        "role": {
+                            "$comment": "Limit role of authors to a subset of possible roles defined for authors",
+                            "enum": [
+                                "author",
+                                "collaborator",
+                                "translator",
+                                "scientific publisher"
+                            ]
+                        }
+                    }
+                }
+            },
+            "publication-status":{
+                "$ref": "http://dial.uclouvain.be/schemas/publication-status.json"
+            },
+            "event": {
+                "title": "Conference informations",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "title": "Conference name",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "place": {
+                        "title": "Conference location",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "start": {
+                        "title": "Conference start date",
+                        "type": "string",
+                        "pattern": "^([0-9]{2}\/)?([0-9]{2}\/)?[1-2][0-9]{3}$"
+                    },
+                    "end": {
+                        "title": "Conference end date",
+                        "type": "string",
+                        "pattern": "^([0-9]{2}\/)?([0-9]{2}\/)?[1-2][0-9]{3}$"
+                    }
+                },
+                "required": ["name"]
+            },
+            "doi": {
+                "$ref": "http://dial.uclouvain.be/schemas/doi.json"
+            },
+            "journal-issue":{
+                "$ref": "http://dial.uclouvain.be/schemas/journal-issue.json"
+            },
+            "host-document":{
+                "$ref": "http://dial.uclouvain.be/schemas/host-document.json"
+            },
+            "publishers": {
+                "$ref": "http://dial.uclouvain.be/schemas/publishers.json"
+            }
+        }},
+        { "required": ["event"]}
+    ]
+}

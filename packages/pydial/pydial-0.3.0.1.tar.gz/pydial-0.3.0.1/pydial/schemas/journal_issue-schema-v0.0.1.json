@@ -1,0 +1,63 @@
+{
+    "$id": "http://dial.uclouvain.be/schemas/journal-issue.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+
+    "title": "Journal informations",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "title": {
+            "title": "Journal title",
+            "description": "The complete name of the journal",
+            "type": "string",
+            "minLength": 1
+        },
+        "volume": {
+            "title": "Volume",
+            "type": "string"
+        },
+        "issue": {
+            "title": "Issue",
+            "description": "The issue number where this article was published",
+            "type": "string"
+        },
+        "page": {
+            "title": "Pages",
+            "description": "The start page and the endpage for this article in this issue",
+            "type": "string"
+        },
+        "year":{
+            "title": "Year",
+            "description": "The publication year of this issue",
+            "anyOf": [
+                { "type": "integer", "minimum": 1800, "maximum": 2100 },
+                { "type": "string", "enum": ["na"] }
+            ]
+        },
+        "issn-type": {
+            "title": "ISSN(s)",
+            "type": "array",
+            "additionalProperties": false,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "pattern": "^[0-9]{4}-?[0-9]{3}[0-9|X]$"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["issn", "eissn", "lissn"]
+                    }
+                }
+            },
+            "required": ["value", "type"]
+        },
+        "peer-reviewed": {
+            "title": "Peer-reviewed",
+            "description": "Is this journal is peer-reviewed",
+            "type": "boolean"
+        }
+    },
+    "required": ["title", "volume", "issue", "page", "year"]
+}

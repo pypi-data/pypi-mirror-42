@@ -1,0 +1,9 @@
+{
+    "$id": "http://dial.uclouvain.be/schemas/doi.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+
+     "title": "DOI",
+     "description": "The Digital Object Identifier (DOI) of the publication (starting with '10.')",
+     "type": "string",
+     "pattern": "^10\\.[0-9]{4,}\/"
+}

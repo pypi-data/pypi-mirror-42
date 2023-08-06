@@ -1,0 +1,80 @@
+{
+  "$id": "http://dial.uclouvain.be/schemas/dial-book.json",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "JSON schema describing a book into DIAL",
+  "type": "object",
+
+  "allOf": [
+        { "$ref": "http://dial.uclouvain.be/schemas/basics-publications.json" },
+        { "properties": {
+            "type":{
+                "properties": {
+                    "document-type": {
+                        "$comment": "limit main type to 'book' type",
+                        "enum": [
+                            "book"
+                        ]
+                    },
+                    "document-subtype": {
+                        "$comment": "limit subtype to some defined values for a book",
+                        "enum": [
+                            "Actes de colloque",
+                            "Dictionnaire /encyclopédie",
+                            "Monographie",
+                            "Manuel / précis / textbook",
+                            "Mélanges",
+                            "Autre"
+                        ]
+                    }
+                }
+            },
+            "authors":{
+                "items":{
+                    "properties": {
+                        "role": {
+                            "$comment": "Limit role of authors to a subset of possible roles defined for authors",
+                            "enum": [
+                                "author",
+                                "collaborator",
+                                "translator",
+                                "scientific publisher",
+                                "preface writer"
+                            ]
+                        }
+                    }
+                }
+            },
+            "publication-status":{
+               "$ref": "http://dial.uclouvain.be/schemas/publication-status.json"
+            },
+            "doi": {
+                "$ref": "http://dial.uclouvain.be/schemas/doi.json"
+            },
+            "number-of-pages": {
+                "title": "Number of pages",
+                "description": "the number of pages of the book",
+                "type": "number",
+                "minimum": 1
+            },
+            "edition-statement": {
+                "title": "Editor statement",
+                "description": "Description of the editor statement. Ex: '2nd edition', 'sample', ...",
+                "type": "string"
+            },
+            "isbn": {
+                "title": "ISBN",
+                "description": "The ISBN of the book ; typically the book barcode. Without the dashes",
+                "type": "string",
+                "pattern": "^97[8|9][0-9]{10}$"
+            },
+            "publishers": {
+                "$ref": "http://dial.uclouvain.be/schemas/publishers.json"
+            },
+            "series": {
+                "$ref": "http://dial.uclouvain.be/schemas/series.json"
+            }
+        }},
+        { "required": ["isbn"]}
+    ]
+
+}

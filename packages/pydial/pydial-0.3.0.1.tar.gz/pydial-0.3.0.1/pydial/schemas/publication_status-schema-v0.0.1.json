@@ -1,0 +1,13 @@
+{
+    "$id": "http://dial.uclouvain.be/schemas/publication-status.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+
+    "title": "Publication status",
+    "description": "Specify the publication status of this publication",
+    "type": "string",
+    "enum": [
+      "submitted",
+      "accepted",
+      "published"
+    ]
+}
