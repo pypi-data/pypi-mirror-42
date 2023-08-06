@@ -1,0 +1,14 @@
+p_astro-0.4.dev2-py3.6-nspkg.pth,sha256=jdWwfooSrKfn-WHKPklJlCjnB2MDxP-F_eeikKStZIE,529
+ligo/computeDiskMass.py,sha256=-mCGdG5Nmd4jItenCAInQ-zzcl4wW72XfvoaqBc5CHo,5850
+ligo/em_bright.py,sha256=v-rALwGpygDQ0lewZGbkjqbLxoPYK9GpNaHTb_0vBg4,2564
+ligo/p_astro.py,sha256=tNtEXunhRxjckgQhOc18ktVTSps4bFN-QqHGgCHpXEc,37215
+ligo/data/RF_classifier_emb_complete_set.pkl,sha256=3beixlOeRi1bTfmDY0J-nmBHNjvA5fN3XI-dqz53p68,2870122
+ligo/data/RF_classifier_ns_complete_set.pkl,sha256=w-bYRZniNpRAYjLIXpToPptqCB1OkJ6bt7BOWCBKNPg,2459722
+ligo/data/equil_2H.dat,sha256=44jXx9IpuQjyx3wHYyazSnh8_S8WKRKSo6qKbxGMfU8,53263
+ligo/data/scaler_set_all.pkl,sha256=xlqWa7yq2B9CyRaATgdFi6soBEI8VUKuJvciWCc8Xeo,616
+p_astro-0.4.dev2.dist-info/METADATA,sha256=KY4dyPOnSi8G5oc5SItp6djzKxtFSVNZxDL9-Vsjtzo,923
+p_astro-0.4.dev2.dist-info/RECORD,,
+p_astro-0.4.dev2.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+p_astro-0.4.dev2.dist-info/entry_points.txt,sha256=J3yJTPeORvT3k-cai0Ui1SLtH-sqWMeI679AhDkOcWs,410
+p_astro-0.4.dev2.dist-info/namespace_packages.txt,sha256=y5fy5GsmifPZH6RR8fYXooXAJfv7HJTAqxc_rGrN-RE,5
+p_astro-0.4.dev2.dist-info/top_level.txt,sha256=y5fy5GsmifPZH6RR8fYXooXAJfv7HJTAqxc_rGrN-RE,5
