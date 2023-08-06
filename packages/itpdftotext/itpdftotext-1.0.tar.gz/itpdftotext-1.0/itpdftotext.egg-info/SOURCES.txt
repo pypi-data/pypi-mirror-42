@@ -1,0 +1,8 @@
+README.md
+setup.py
+itpdftotext/__init__.py
+itpdftotext/pdf2text.py
+itpdftotext.egg-info/PKG-INFO
+itpdftotext.egg-info/SOURCES.txt
+itpdftotext.egg-info/dependency_links.txt
+itpdftotext.egg-info/top_level.txt
