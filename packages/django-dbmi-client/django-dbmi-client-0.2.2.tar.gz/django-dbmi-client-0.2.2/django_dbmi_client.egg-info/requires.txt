@@ -1,0 +1,8 @@
+django>=1.11
+djangorestframework
+cryptography
+requests
+jwcrypto
+furl
+pyjwt
+django-bootstrap3
