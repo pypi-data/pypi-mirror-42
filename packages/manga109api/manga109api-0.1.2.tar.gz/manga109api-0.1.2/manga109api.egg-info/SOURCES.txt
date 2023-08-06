@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+manga109api/__init__.py
+manga109api/manga109api.py
+manga109api.egg-info/PKG-INFO
+manga109api.egg-info/SOURCES.txt
+manga109api.egg-info/dependency_links.txt
+manga109api.egg-info/requires.txt
+manga109api.egg-info/top_level.txt
