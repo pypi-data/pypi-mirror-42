@@ -1,0 +1,13 @@
+coq_jupyter/__init__.py,sha256=K_idJSWg1CnZOFVXKFKyX5_lBJewteEeYyXsnRJLt9I,67
+coq_jupyter/__main__.py,sha256=XPDHaevGJ5IKYMCrqdTEwjRdx1dv21nJD1JOtttEN-E,164
+coq_jupyter/cell_comm.js,sha256=WH6GcrhEXh0XtJ1Ok4YVab8FBEwQC7ZFzFbYFMGIdVc,1931
+coq_jupyter/coqtop.py,sha256=-BGa7e6sOdBRokCbxQObG8BsrohbqYqsRoEjw96id8E,11607
+coq_jupyter/install.py,sha256=lKhRsO5tF48TejzS_fadFmTTOg1-2l7CmBkBXtw_6qI,2570
+coq_jupyter/kernel.js,sha256=K6T5irMz2h879Goaif0JRIaof3CRyDNtWKcTv7aIJWI,15645
+coq_jupyter/kernel.py,sha256=Cm6VsAfmMggsi5qFTU-0mBfWHpXMkOGFWH8mipg0IH4,8634
+coq_jupyter/renderer.py,sha256=rklVrVu6mmZVMHQb1rZYRBOrbzocfVklxnut2W1Aw78,2259
+coq_jupyter-1.4.0.dist-info/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+coq_jupyter-1.4.0.dist-info/METADATA,sha256=GcZSlM8wEmrvbBsiyf_cGUikUEhE-K9OB6zoBYtJiFo,893
+coq_jupyter-1.4.0.dist-info/WHEEL,sha256=aEiWNTQcG6AiGGAYQ9qHTifyKRnmFJvDeTI0hP5aohY,116
+coq_jupyter-1.4.0.dist-info/top_level.txt,sha256=nb1rfVZEGmY0gEqwLxyzlj6ku967izdTXv8RY7EkiD4,12
+coq_jupyter-1.4.0.dist-info/RECORD,,
