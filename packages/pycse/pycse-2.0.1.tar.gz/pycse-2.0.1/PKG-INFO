@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: pycse
+Version: 2.0.1
+Summary: python computations in science and engineering
+Home-page: http://github.com/jkitchin/pycse
+Author: John Kitchin
+Author-email: jkitchin@andrew.cmu.edu
+License: GPL
+Description-Content-Type: UNKNOWN
+Description: python computations in science and engineering
+        ===============================================
+        
+        This package provides functions that are useful in science and engineering
+        computations.
+        
+        See http://kitchingroup.cheme.cmu.edu/pycse for documentation.
+        
+              
+Platform: linux
