@@ -1,0 +1,6 @@
+[console_scripts]
+gh-permit=github_macros.cli.repo_permissions:main
+gh-protect=github_macros.cli.branch_protection:main
+gh-refresh=github_macros.cli.refresh:main
+gh-releases=github_macros.cli.releases:main
+

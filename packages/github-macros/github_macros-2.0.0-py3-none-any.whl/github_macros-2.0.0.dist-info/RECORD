@@ -1,0 +1,15 @@
+github_macros/__init__.py,sha256=GdV8bAweLrOCl3h2PJEE11XaoQxsBWanhTMnJKd4uKo,60
+github_macros/cli/__init__.py,sha256=aqqK-zU-EX1ZsImxW8d9hBUWGz2fKoCXPU48ydupXoo,38
+github_macros/cli/_base.py,sha256=NEFVoNoI09sdZysQghSWtUyJxGJGkKM9pG2-UZUuMvM,605
+github_macros/cli/branch_protection.py,sha256=wO8PUCkwIUKi8mQb5ZjJDsMWVseRQQrAVGNfoRK6kOQ,12072
+github_macros/cli/refresh.py,sha256=ngSAK-ZmCqA0M-qQbmFObQOPxPhzxvU5CHaGz8u9s5s,4755
+github_macros/cli/releases.py,sha256=xAJE72PrcIIVKdB8mdYXXow9Vg1EfouSoyNPE4r8-AI,3152
+github_macros/cli/repo_permissions.py,sha256=J_QsY9BzPCdw1_Q5e4eTpc9yu_F3DHvmGpN0tJrirEA,2756
+github_macros/common.py,sha256=JM_v2PQsVyqZIdjDI1NJCqfOJiUNGa5SH60NJalltsQ,1546
+github_macros/http.py,sha256=tLfZL3IZ2FvVa-gDQ9XdfLbUmPyQWHuV0OnfiJRQmbk,1127
+github_macros/models/__init__.py,sha256=aqqK-zU-EX1ZsImxW8d9hBUWGz2fKoCXPU48ydupXoo,38
+github_macros/models/github.py,sha256=0WBfkJbOi3IjfMCTkyyCbUE1WJHjWr3CV6oVgtyPCwI,20638
+github_macros-2.0.0.dist-info/entry_points.txt,sha256=TlaqHGLmEzc8sDjYYFynN5VI5IlgNC7xM9owwtNJPr4,207
+github_macros-2.0.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+github_macros-2.0.0.dist-info/METADATA,sha256=5f4XknzpXndB5JcBDKHOGZszvW0L77R8HzDb5iiMiLw,940
+github_macros-2.0.0.dist-info/RECORD,,
