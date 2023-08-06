@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: mdtoc
+Version: 1.1
+Summary: Adds table of contents to Markdown files
+Home-page: http://github.com/scottfrazer/mdtoc
+Author: Scott Frazer
+Author-email: scott.d.frazer@gmail.com
+License: MIT
+Keywords: Markdown,table of contents,toc
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Topic :: Utilities
+Classifier: Topic :: Text Processing
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Requires-Dist: xtermcolor
+Requires-Dist: requests (<3.0.0)
+
+UNKNOWN
+
+
