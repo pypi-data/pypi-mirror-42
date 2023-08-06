@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: nester-wrj
+Version: 0.0.4
+Summary: lalal!
+Home-page: https://github.com/JeckerWen
+Author: WenRj
+Author-email: jeckerWen@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+## Python打包轮子教程
+
+- 注册信息: `python -m twine register dist/nester1-0.0.1-py3-none-any.whl`
+- 打包轮子: `python setup.py sdist bdist_wheel`
+- 上传轮子: `python -m twine upload dist/nester_wrj-0.0.1-py3-none-any.whl`
+
+
+
