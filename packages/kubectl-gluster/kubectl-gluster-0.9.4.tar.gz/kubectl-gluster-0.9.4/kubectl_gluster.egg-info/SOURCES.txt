@@ -1,0 +1,12 @@
+setup.py
+kubectl_gluster/__init__.py
+kubectl_gluster/deploy.py
+kubectl_gluster/main.py
+kubectl_gluster/utils.py
+kubectl_gluster.egg-info/PKG-INFO
+kubectl_gluster.egg-info/SOURCES.txt
+kubectl_gluster.egg-info/dependency_links.txt
+kubectl_gluster.egg-info/entry_points.txt
+kubectl_gluster.egg-info/not-zip-safe
+kubectl_gluster.egg-info/requires.txt
+kubectl_gluster.egg-info/top_level.txt
