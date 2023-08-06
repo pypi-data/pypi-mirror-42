@@ -1,0 +1,13 @@
+attrs>=18
+intervaltree
+lib50
+numpy
+pygments
+jinja2
+termcolor
+tqdm
+
+[develop]
+sphinx
+sphinx_rtd_theme
+line_profiler
