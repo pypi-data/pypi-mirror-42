@@ -1,0 +1,3 @@
+[console_scripts]
+journal-software-engineering = journal_software_engineering.cli:main
+

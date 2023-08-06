@@ -1,0 +1,11 @@
+journal_software_engineering/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+journal_software_engineering/__main__.py,sha256=ChY3tDslB-xJ-CztW8PyfOcyQenIPxmPE1aA-jRv9gc,374
+journal_software_engineering/cli.py,sha256=mCnzn2M-Ac2lPAKGO3v6FHpB2p1b8kLFo4nyvEeziFo,2921
+journal_software_engineering/journal.py,sha256=dIpYybGImDfcQDJFbt051a76ahS24WPq9ChpXaKisZ8,4820
+journal_software_engineering-0.0.7.dist-info/AUTHORS.rst,sha256=HijnhZBNJ7OovYFXfsMHmfv9-mOoOGiK3DEnfhfpDpw,64
+journal_software_engineering-0.0.7.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+journal_software_engineering-0.0.7.dist-info/METADATA,sha256=8EdsGrnKSpW4jSWO7OKsZK_REiSx-x8jNXU2cdRZxnk,3021
+journal_software_engineering-0.0.7.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+journal_software_engineering-0.0.7.dist-info/entry_points.txt,sha256=OPQmzOqCB2RxgZyLvvJzcUa4chzrRoFJRha5KvUd-qM,88
+journal_software_engineering-0.0.7.dist-info/top_level.txt,sha256=m8Y_DzcAbvwxezQtOAyTpjEHseo4SFR4fIsC6KuttJw,29
+journal_software_engineering-0.0.7.dist-info/RECORD,,
