@@ -1,0 +1,15 @@
+README.md
+setup.py
+./vocab/vocab
+vocab/__init__.py
+vocab/lib/__init__.py
+vocab/lib/app.py
+vocab/lib/config.py
+vocab/lib/clilib/__init__.py
+vocab/lib/clilib/charDef.py
+vocab/lib/clilib/client.py
+vocab/lib/clilib/utils.py
+vocabs.egg-info/PKG-INFO
+vocabs.egg-info/SOURCES.txt
+vocabs.egg-info/dependency_links.txt
+vocabs.egg-info/top_level.txt
