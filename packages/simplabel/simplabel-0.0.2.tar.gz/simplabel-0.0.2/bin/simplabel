@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+
+import os
+import argparse
+import tkinter as tk
+
+import simplabel
+
+#Setup parser
+ap = argparse.ArgumentParser()
+ap.add_argument("-d", "--directory", default=os.getcwd(), help="Path of the directory")
+ap.add_argument("-c", "--categories", nargs='*', default=None, help="List of categories")
+ap.add_argument("--reset", action='store_true', help="Deletes any existing data and starts a new labelling task")
+
+args = ap.parse_args()
+
+# Get the variables from parser
+rawDirectory = args.directory
+categories = args.categories
+
+# Reset all saved data if requested
+if args.reset:
+    if os.path.exists(rawDirectory + "/labeled.pkl"):
+        print("Deleting labelling dictionary...")
+        os.remove(rawDirectory + "/labeled.pkl")
+    if os.path.exists(rawDirectory + "/labels.pkl"):
+        print("Deleting label list...")
+        os.remove(rawDirectory + "/labels.pkl")
+
+# Launch the app
+root = tk.Tk() 
+MyApp = simplabel.ImageClassifier(root, rawDirectory, categories)
+tk.mainloop()
