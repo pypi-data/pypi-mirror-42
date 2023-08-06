@@ -1,0 +1,9 @@
+enturclient/__init__.py,sha256=0CoDI5xuddwBsXOPmvw8iUSbDTSKUHTXGyiRk0p1Prg,53
+enturclient/api.py,sha256=7joZ6A9bGj7zbwitwX08b89PnugFitK74oJuJ0r9_AM,5298
+enturclient/dto.py,sha256=vEdUNnlvozgXM4fa5-RolDcXQPP7V0HsOWcEckk6K6U,4173
+enturclient/queries.py,sha256=aTUt29hMPTzGW3zFUM1NV90MpGU1WFYdH-F5JWEpviw,1267
+enturclient-0.2.0b3.dist-info/LICENSE,sha256=-kOilLC51GEzd1TIfy0HSDvU9lAK4B657WOVDDXiSI4,1094
+enturclient-0.2.0b3.dist-info/METADATA,sha256=VCTvK3dCEnR5MK83Ng2GQExGCTy_nabA6BLm09b3Fwo,2282
+enturclient-0.2.0b3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+enturclient-0.2.0b3.dist-info/top_level.txt,sha256=ljkyfOUKHD1FCVHCasHftkRIN9K_Ww8cQMf9FM2uAmU,12
+enturclient-0.2.0b3.dist-info/RECORD,,
