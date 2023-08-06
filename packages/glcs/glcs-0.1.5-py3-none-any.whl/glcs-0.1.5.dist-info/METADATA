@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: glcs
+Version: 0.1.5
+Summary: A utility for integrating GitLab into CS courses
+Home-page: UNKNOWN
+Author: Austin Fishbaugh
+Author-email: amf2015@wildcats.unh.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: python-gitlab (>=1.6.0)
+Requires-Dist: mimir-cli
+Requires-Dist: flask
+Requires-Dist: jinja2
+Requires-Dist: pyreadline ; platform_system == "Windows"
+
+# Example Package
+
+This is a simple example package. You can use
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
+
+

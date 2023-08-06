@@ -1,0 +1,6 @@
+[console_scripts]
+add-assignment = glcs.command_line:add_assignment
+add-lab = glcs.command_line:add_lab
+setup-course = glcs.command_line:setup_course
+verify-course = glcs.command_line:verify_course
+
