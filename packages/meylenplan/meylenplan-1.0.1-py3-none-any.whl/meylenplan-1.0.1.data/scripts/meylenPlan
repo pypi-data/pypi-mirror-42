@@ -1,0 +1,29 @@
+#!python
+
+import os
+from datetime import datetime
+from utils import menuDownloader
+from utils import menuLinkScraper
+from utils import menuParser
+from utils import menuPrinter
+
+year = datetime.today().year
+month = datetime.today().month
+week = datetime.today().isocalendar()[1]
+
+# Scrape link to current menu pdf from meyle website
+menu_url = menuLinkScraper.get_menu_link()
+
+# Download menu and get file name
+file_name = menuDownloader.download_menu(menu_url)
+
+# TODO: Conert pdf to text file
+# until done:
+path_to_script = os.path.dirname(os.path.abspath(__file__))
+text_file = str(path_to_script) + '/menus/txt/Tageskarte-Schlemmermeyle-KW02.txt'
+
+# Parse textfile and return today's menu
+menu = menuParser.parse_menu(text_file)
+
+# Print today's menu
+menuPrinter.print_menu(menu)
