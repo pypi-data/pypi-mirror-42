@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cfn-dep2layer
+Version: 0.0.7
+Summary: Package dependencies to layer
+Home-page: https://github.com/Just4test/aws-lambda-dependencies-to-layer
+Author: Just4test
+Author-email: myservice@just4test.net
+License: UNKNOWN
+Keywords: aws,lambda,layer,dependencies
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: cfn-yaml
+
+UNKNOWN
+
+
