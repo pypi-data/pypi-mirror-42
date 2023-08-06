@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pyespresso
+Version: 0.1
+Summary: Py. ESPRESSO
+Home-page: http://github.com/j-faria/pyespresso
+Author: João Faria
+Author-email: joao.faria@astro.up.pt
+License: GPL-3.0
+Description: # pyespresso
+        It's Py. It's ESPRESSO
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
