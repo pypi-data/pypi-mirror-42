@@ -1,0 +1,3 @@
+[console_scripts]
+steampak = steampak.cli:main
+
