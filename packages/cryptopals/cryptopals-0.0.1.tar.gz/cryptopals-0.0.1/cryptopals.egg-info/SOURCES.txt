@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+cryptopals/__init__.py
+cryptopals.egg-info/PKG-INFO
+cryptopals.egg-info/SOURCES.txt
+cryptopals.egg-info/dependency_links.txt
+cryptopals.egg-info/top_level.txt
