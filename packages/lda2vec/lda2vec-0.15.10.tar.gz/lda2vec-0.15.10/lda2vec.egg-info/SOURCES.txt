@@ -1,0 +1,13 @@
+README.md
+setup.py
+lda2vec/Lda2vec.py
+lda2vec/__init__.py
+lda2vec/dirichlet_likelihood.py
+lda2vec/embedding_mixture.py
+lda2vec/nlppipe.py
+lda2vec/utils.py
+lda2vec/word_embedding.py
+lda2vec.egg-info/PKG-INFO
+lda2vec.egg-info/SOURCES.txt
+lda2vec.egg-info/dependency_links.txt
+lda2vec.egg-info/top_level.txt
