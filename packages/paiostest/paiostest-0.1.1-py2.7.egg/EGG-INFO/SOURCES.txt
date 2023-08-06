@@ -1,0 +1,8 @@
+README.md
+setup.py
+paiostest/__init__.py
+paiostest/auth.py
+paiostest.egg-info/PKG-INFO
+paiostest.egg-info/SOURCES.txt
+paiostest.egg-info/dependency_links.txt
+paiostest.egg-info/top_level.txt
