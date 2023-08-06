@@ -1,0 +1,8 @@
+setup.py
+pyserverpilot/__init__.py
+pyserverpilot/serverpilot.py
+pyserverpilot.egg-info/PKG-INFO
+pyserverpilot.egg-info/SOURCES.txt
+pyserverpilot.egg-info/dependency_links.txt
+pyserverpilot.egg-info/requires.txt
+pyserverpilot.egg-info/top_level.txt
