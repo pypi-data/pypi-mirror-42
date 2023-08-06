@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: sensirion-sps030
+Version: 0.0.5
+Summary: An interface for Sensirion SPS030 particulate matter sensors
+Home-page: https://github.com/FEEprojects/sensirion-sps030
+Author: Florentin Bulot
+Author-email: f.bulot@soton.ac.uk
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.3, <4
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial
+
+# Sensirion SPS03 Particulate Sensor Python interface
+A basic python interface for interacting with the Sensirion SPS030 Particulate Matter sensor.  This code has been tested with the following devices: SPS030.
+
+This wrapper is based on: https://github.com/FEEprojects/plantower
+
+This wrapper has been developped as part of on-going work on the use of low-cost PM sensors to monitor air quality in urban areas.
+
+
