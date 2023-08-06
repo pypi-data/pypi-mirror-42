@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: flaskcli
+Version: 0.0.1
+Summary: Pythonic Flask cli Library
+Home-page: https://github.com/m1coco/Flaskcli
+Author: kele
+Author-email: loser7758@qq.com
+License: GNU Licence
+Description: Pythonic Flask cli Library
+Keywords: pip,flask
+Platform: any
