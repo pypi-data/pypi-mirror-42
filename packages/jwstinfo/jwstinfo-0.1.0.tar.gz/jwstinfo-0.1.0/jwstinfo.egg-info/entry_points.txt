@@ -1,0 +1,3 @@
+[console_scripts]
+jwstinfo = jwstinfo.jwstinfo:main
+
