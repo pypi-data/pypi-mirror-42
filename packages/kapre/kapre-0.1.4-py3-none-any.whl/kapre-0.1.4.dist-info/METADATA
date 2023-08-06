@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: kapre
+Version: 0.1.4
+Summary: Kapre: Keras Audio Preprocessors. Keras layers for audio pre-processing in deep learning
+Home-page: http://github.com/keunwoochoi/kapre/
+Author: Keunwoo Choi
+Author-email: keunwoo.choi@qmul.ac.uk
+License: MIT
+Keywords: audio music deep learning keras
+Platform: UNKNOWN
+Provides-Extra: tests
+Requires-Dist: keras (>=2.0.0)
+Requires-Dist: numpy (>=1.8.0)
+Requires-Dist: librosa (>=0.5)
+Requires-Dist: future
+Provides-Extra: tests
+Requires-Dist: tensorflow; extra == 'tests'
+
+UNKNOWN
+
+
