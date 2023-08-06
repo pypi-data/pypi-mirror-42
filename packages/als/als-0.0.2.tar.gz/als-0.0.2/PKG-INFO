@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: als
+Version: 0.0.2
+Summary: Python library for Alternating Least Squares (ALS)
+Home-page: https://github.com/ruivieira/python-als
+Author: Rui Vieira
+Author-email: ruidevieira@googlemail.com
+License: UNKNOWN
+Download-URL: https://github.com/ruivieira/python-als/archive/0.0.2.tar.gz
+Description: UNKNOWN
+Keywords: als,recommendation,scientific,machine-learning,models
+Platform: UNKNOWN
