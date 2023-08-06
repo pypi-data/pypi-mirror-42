@@ -1,0 +1,11 @@
+aiowebsocket/__init__.py,sha256=XeFQVz7VJAy2yrzahtwAbNO5G2ZbwaqC57M1cpG1un0,28
+aiowebsocket/converses.py,sha256=x0L_uwpoavc7UWl_iIHbNX5h9r2yQDVDhLE6doAcQkk,3946
+aiowebsocket/enumerations.py,sha256=uv25plF5O-dTWhd81CyVmAUtWxz256GFPkZ4f_vqDX4,2022
+aiowebsocket/exceptions.py,sha256=XUZXO7qP-8VTvrQjEK8z7n1_jC78ihiUUt3Mte7_0-o,118
+aiowebsocket/freams.py,sha256=fW3ksqre-FtOBQXoYzG7Z3binoRY1z_rW2BM3OvSVSE,12699
+aiowebsocket/handshakes.py,sha256=dn9Wm-rVuTCBTc4yRvkhSxV1BMrT0Sg8SJLKOqu53mg,3182
+aiowebsocket/parts.py,sha256=2a8PCU4cy2sbBcsTXVMjU9FVC3jskoOtG6iCXaUXtWA,966
+aiowebsocket-1.0.0.dev1.dist-info/METADATA,sha256=iYFwiEDmrKoiHLfNk5WjUMVfn5K9Lg5xIwZngRLW-lM,549
+aiowebsocket-1.0.0.dev1.dist-info/RECORD,,
+aiowebsocket-1.0.0.dev1.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+aiowebsocket-1.0.0.dev1.dist-info/top_level.txt,sha256=oBJaNinpOqoqIwKwBj3jnWL6gPDgQ53lr9JOsRKkvCI,13
