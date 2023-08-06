@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: mwman
+Version: 0.1
+Summary: A package manager for MediaWiki
+Home-page: https://github.com/spycrab/mwman
+Author: spycrab
+Author-email: spycrab@users.noreply.github.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
