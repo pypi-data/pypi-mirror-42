@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: skil-client
+Version: 1.2.1.3
+Summary: Endpoints
+Home-page: https://docs.skymind.ai
+Author: UNKNOWN
+Author-email: shams@skymind.io
+License: UNKNOWN
+Description:     Python endpoints API for different services in SKIL  # noqa: E501
+            
+Keywords: Swagger,Endpoints,SKIL,Client
+Platform: UNKNOWN
