@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: grot
+Version: 0.1.0
+Summary: Graphviz syntax wrapper. Draw graphs with pure python.
+Home-page: https://gitlab.com/kamichal/grot
+Author: Michal Kaczmarczyk
+Author-email: michal.s.kaczmarczyk@gmail.com
+Maintainer: Michal Kaczmarczyk
+Maintainer-email: michal.s.kaczmarczyk@gmail.com
+License: MIT license
+Description: Grot
+        ====
+        
+        **Grot** is a noun and means **arrowhead** in polish language.
+        
+        Makes graphviz usage simpler
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        Much less headache. Gets you faster into the point.
+        
+        .. code:: python
+        
+        
+            from grot import Grot
+        
+            g = Grot(filename='example_01', format='png')
+             
+            one = g.node("It is\neaiser")
+            two = "to define"
+            three = g.node("graphs")
+        
+            g.edge(one, two, three)
+        
+            assert g.source == r"""digraph test_grot {
+                graph [fontname=helvetica nodesep=0.5 ranksep=0.5 sep=0.4]
+                node [color="#13136c" fontname=helvetica penwidth=1.8 shape=box]
+                edge [fontname=helvetica]
+                n_a [label="It is\neaiser"]
+                n_1 [label=graphs]
+                n_d [label="to define" shape=none]
+                n_a -> n_d
+                n_d -> n_1
+            }"""
+            # to generate a pdf, call:
+        
+            g.render()
+        
+        |Rendered graph image|
+        
+        It will generate a ``example_01.png`` file in current directory.
+        
+        Refer to tests for more features information.
+        
+        .. |Rendered graph image| image:: tests/example_01.png?raw=true
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python
+Classifier: Topic :: Documentation
+Classifier: Topic :: Multimedia :: Graphics :: Presentation
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Utilities
+Description-Content-Type: text/x-rst
