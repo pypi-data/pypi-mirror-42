@@ -1,0 +1,16 @@
+pathlib2
+typing
+nbconvert
+nbformat
+jinja2
+traitlets
+tornado<6
+bibtexparser
+jsonextended>=0.7
+six>=1.11.0
+jsonschema
+ruamel.yaml
+panflute
+docutils
+jupytext
+shutilwhich
