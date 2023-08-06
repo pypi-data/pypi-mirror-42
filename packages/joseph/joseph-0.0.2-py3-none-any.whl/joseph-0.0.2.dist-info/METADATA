@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: joseph
+Version: 0.0.2
+Summary: derivatives tool
+Home-page: UNKNOWN
+Author: driller
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*
+Requires-Dist: ivolat3
+Requires-Dist: jpxtime3
+Requires-Dist: pandas
+Requires-Dist: pytradecli
+Requires-Dist: requests
+Requires-Dist: xarray
+
+UNKNOWN
+
+
