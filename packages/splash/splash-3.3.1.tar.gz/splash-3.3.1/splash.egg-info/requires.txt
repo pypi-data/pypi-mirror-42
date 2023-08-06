@@ -1,0 +1,7 @@
+Twisted>=18.9.0
+qt5reactor
+psutil
+adblockparser
+xvfbwrapper
+funcparserlib
+Pillow>=3.4.2
