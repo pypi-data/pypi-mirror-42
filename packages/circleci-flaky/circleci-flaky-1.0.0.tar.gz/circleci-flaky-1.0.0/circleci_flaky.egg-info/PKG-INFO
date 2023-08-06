@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: circleci-flaky
+Version: 1.0.0
+Summary: Fetch a list of flaky tests from a CircleCI project.
+Home-page: https://github.com/ryanwilsonperkin/circleci-flaky
+Author: Ryan Wilson-Perkin
+Author-email: ryanwilsonperkin@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
