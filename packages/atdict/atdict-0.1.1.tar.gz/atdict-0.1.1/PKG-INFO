@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: atdict
+Version: 0.1.1
+Summary: Attribute-access ordered dictionary
+Home-page: https://github.com/alphatwirl/atpbar
+Author: Tai Sakuma
+Author-email: tai.sakuma@gmail.com
+License: UNKNOWN
+Description: 
+        # atdict
+        
+        Attribute-access ordered dictionary
+        
+        *****
+        
+        ## License
+        
+        - atpbar is licensed under the BSD license.
+        
+        *****
+        
+        ## Contact
+        
+        - Tai Sakuma - tai.sakuma@gmail.com
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
