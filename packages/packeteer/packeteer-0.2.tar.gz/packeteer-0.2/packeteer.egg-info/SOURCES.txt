@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+packeteer/__init__.py
+packeteer/fields.py
+packeteer/packets.py
+packeteer.egg-info/PKG-INFO
+packeteer.egg-info/SOURCES.txt
+packeteer.egg-info/dependency_links.txt
+packeteer.egg-info/requires.txt
+packeteer.egg-info/top_level.txt
