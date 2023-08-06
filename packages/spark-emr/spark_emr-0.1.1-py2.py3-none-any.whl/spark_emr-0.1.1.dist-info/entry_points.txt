@@ -1,0 +1,3 @@
+[console_scripts]
+spark-emr = spark_emr.__main__:main
+
