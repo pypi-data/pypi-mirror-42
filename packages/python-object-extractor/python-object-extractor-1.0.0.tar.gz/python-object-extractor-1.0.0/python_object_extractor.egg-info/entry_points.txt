@@ -1,0 +1,3 @@
+[console_scripts]
+python-object-extractor = python_object_extractor.main:main
+

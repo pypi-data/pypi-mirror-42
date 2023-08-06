@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: python-object-extractor
+Version: 1.0.0
+Summary: Extract Python object (like class, function, etc) with its dependencies from local project.
+Home-page: https://github.com/oblalex/python-object-extractor
+Author: Alexander Oblovatnyi
+Author-email: oblovatniy@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Utilities
