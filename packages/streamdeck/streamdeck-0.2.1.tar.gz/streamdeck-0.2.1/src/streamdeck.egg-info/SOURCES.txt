@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+setup.py
+src/example.py
+src/streamdeck.egg-info/PKG-INFO
+src/streamdeck.egg-info/SOURCES.txt
+src/streamdeck.egg-info/dependency_links.txt
+src/streamdeck.egg-info/top_level.txt
