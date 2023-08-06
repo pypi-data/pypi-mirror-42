@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: prp
+Version: 0.0.2
+Summary: PRP - a Python runner
+Home-page: https://github.com/brettatoms/prp
+License: UNKNOWN
+Author: Brett Adams
+Author-email: brettadams@fastmail.com
+Description-Content-Type: text/markdown
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+
+## PRP runs Python
+
+### What's it do?
+- Creates virtual environments for you
+- Allows a poetry/pipenv like workflow using only pip
+
+### What it doesn't do?
+- Package management
+

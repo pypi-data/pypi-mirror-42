@@ -1,0 +1,10 @@
+prp/__init__.py,sha256=Dkrlbi7xLIE_sKsqY81K7ItbaCb7mhKCbG0JzyrxRAs,51
+prp/__main__.py,sha256=PZtWSfYmWRa5E6s3nfaejCt4Z8AWCwH0UZKfjXXse5c,104
+prp/appdirs.py,sha256=5GJeWiEbU12XjgZyfCPO-XTehhGRfqAm8iNh3ERZECI,8775
+prp/cli.py,sha256=XzoBeabgohZcopQeOXYuoADD4MjsXDXpN0L2TqyfKxQ,1433
+prp/config.py,sha256=e1WMho-7BPQXcgcwgJMtP8SNZ3Xnidpj-HHaPVuwZow,486
+prp/utils.py,sha256=-iDIirZuwf0xavfGLWf1eZUj8hvJqo4GcjGQMCK6lq0,718
+prp-0.0.2.dist-info/LICENSE,sha256=ZzKbH2vt6_RfyuulNNJfvYDMJywqqDAUGa6LAeiTgoM,1104
+prp-0.0.2.dist-info/WHEEL,sha256=RFGpeSWy2MhnOH7MbIZmX9ZR0evWl2eJvsMO-yF-tDc,97
+prp-0.0.2.dist-info/METADATA,sha256=SYvtdSSIMX9Rwz3rYu0bkXbmoEPzJU5SQiM2oDEu56w,633
+prp-0.0.2.dist-info/RECORD,,
