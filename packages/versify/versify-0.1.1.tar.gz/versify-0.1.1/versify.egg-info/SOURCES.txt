@@ -1,0 +1,13 @@
+AUTHORS
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+versify/__init__.py
+versify.egg-info/PKG-INFO
+versify.egg-info/SOURCES.txt
+versify.egg-info/dependency_links.txt
+versify.egg-info/requires.txt
+versify.egg-info/top_level.txt
