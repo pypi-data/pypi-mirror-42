@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+visa/__init__.py
+visa/version.py
+visa.egg-info/PKG-INFO
+visa.egg-info/SOURCES.txt
+visa.egg-info/dependency_links.txt
+visa.egg-info/not-zip-safe
+visa.egg-info/requires.txt
+visa.egg-info/top_level.txt
