@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+src/EZDrive.egg-info/PKG-INFO
+src/EZDrive.egg-info/SOURCES.txt
+src/EZDrive.egg-info/dependency_links.txt
+src/EZDrive.egg-info/top_level.txt
+src/ezdrive/__init__.py
+src/ezdrive/__main__.py

@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: EZDrive
+Version: 0.0.1
+Summary: A Pythonic interface to the Google Drive API.
+Home-page: https://github.com/asweigart/ezdrive
+Author: Al Sweigart
+Author-email: al@inventwithpython.com
+License: GPLv3+
+Description: # ezdrive
+        A Pythonic interface to the Google Drive API.
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
