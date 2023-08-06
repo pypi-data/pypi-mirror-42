@@ -1,0 +1,6 @@
+setup.py
+hello_pypi_yud.egg-info/PKG-INFO
+hello_pypi_yud.egg-info/SOURCES.txt
+hello_pypi_yud.egg-info/dependency_links.txt
+hello_pypi_yud.egg-info/top_level.txt
+test_yud/__init__.py
