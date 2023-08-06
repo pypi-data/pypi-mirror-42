@@ -1,0 +1,3 @@
+pika==0.13.0
+docker==3.7.0
+osimis_logging==0.1.0

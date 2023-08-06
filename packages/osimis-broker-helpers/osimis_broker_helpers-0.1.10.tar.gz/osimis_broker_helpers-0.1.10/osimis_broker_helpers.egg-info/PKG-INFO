@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: osimis-broker-helpers
+Version: 0.1.10
+Summary: A simple library to make queueing/retry easy.
+Home-page: https://bitbucket.org/osimis/python-osimis-broker-helpers
+Author: Benoit Crickboom
+Author-email: bc@osimis.io
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: Helpers,Broker,Rabbitmq,Queue
+Platform: UNKNOWN
