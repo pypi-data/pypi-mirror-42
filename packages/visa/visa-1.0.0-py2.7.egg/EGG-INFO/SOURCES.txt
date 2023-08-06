@@ -1,0 +1,17 @@
+README.md
+setup.cfg
+setup.py
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/PKG-INFO
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/SOURCES.txt
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/dependency_links.txt
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/not-zip-safe
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/requires.txt
+/Users/hoiphamngoc/code/visa-sdk/visa-python/visa.egg-info/top_level.txt
+visa/__init__.py
+visa/version.py
+visa.egg-info/PKG-INFO
+visa.egg-info/SOURCES.txt
+visa.egg-info/dependency_links.txt
+visa.egg-info/not-zip-safe
+visa.egg-info/requires.txt
+visa.egg-info/top_level.txt
