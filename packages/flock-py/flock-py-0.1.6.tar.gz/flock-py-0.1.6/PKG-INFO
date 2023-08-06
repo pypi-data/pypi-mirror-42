@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: flock-py
+Version: 0.1.6
+Summary: File lock
+Home-page: https://github.com/hotbaby/flock-py
+Author: Meng yangyang
+Author-email: mengyy_linux@163.com
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Description: # flock-py
+        文件锁
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
