@@ -1,0 +1,7 @@
+pylibosrm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pylibosrm/osrm_wrapper.cpython-37m-x86_64-linux-gnu.so,sha256=GVY49q3jjHYp_7Cg_xvrq0irbTKY8nQmGE19KT53fp8,3727592
+pylibosrm-0.1.1.dist-info/LICENSE,sha256=JYqQN3FkFazQ3OvIoINZiwy7e8PYZ8_-zH0IhKzT4Ho,1076
+pylibosrm-0.1.1.dist-info/METADATA,sha256=AVGX4ayCE99ivzPZTv6PX116hLYAE0bC7KaMFuwhWQU,723
+pylibosrm-0.1.1.dist-info/WHEEL,sha256=YEneJ83obVEnBlaLMiCSm3V1nKOZGNBxOUH09z4aHUY,104
+pylibosrm-0.1.1.dist-info/top_level.txt,sha256=R_AyEvbfDUcCpV3X5a5LJjntyeGbMREdGkDysOJU0Ps,10
+pylibosrm-0.1.1.dist-info/RECORD,,
