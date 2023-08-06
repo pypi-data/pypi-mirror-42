@@ -1,0 +1,90 @@
+CHANGES
+=======
+
+v2.1.0
+------
+
+* Changelog
+* Update pytest version
+* Docs improvement
+* Tags fixes & properly working Premium/Non-premium tests
+* Changelog
+* Adding 'me' command to print current, user's information
+* Fixing User's timeofday\_format choices
+* Changelog
+* Doc for Tags
+* Tests for Tags
+* Disabling GET detail for Tag
+* Fixing removing of Tags
+* Proper package name for version retrieval (#103)
+* Fixing tests for MappingField default attribute have passed config
+* Update mkdocs-material from 3.2.0 to 4.0.1
+* Update pytest-mock from 1.10.0 to 1.10.1
+* Update pytest from 4.1.1 to 4.2.1
+* Update pbr from 5.1.1 to 5.1.2
+* removed 'get' cli command for tags
+* Apply suggestions from code review: fixed failing lookup of tags by ID
+* Travis - Restricting integration tests to non-PR builds
+* Fixing correctly trying multiple fields
+* Forgot to change a final mention from 'Client' to 'Tag'
+* Added cli commands for tags. Don't always seem to work with ID as SPEC, but name works
+* Adding Tag to api.\_\_init\_\_
+* removed unnecessary specification of TagSet
+* Added Tag and TagSet classes to models
+* One last change for correct python\_requires
+* Fixing missed passing of config instance
+
+v2.0.2
+------
+
+* Fixing calculation of entrie's duration using correct timezone (#93)
+* Tweaks
+
+v2.0.1
+------
+
+* Correct required Python version
+
+v2.0.0
+------
+
+* Adding support to Travis for creating GitHub releases
+* PyUp badge and configuration
+* Update pytest-cov from 2.6.0 to 2.6.1
+* Update pytest from 4.0.2 to 4.1.1
+* Pinning latest dependencies
+* Fixing field's read restriction
+* Dropping Beta notification
+* Support for non-readable fields and created\_with usage of this feature (#89)
+* Refactoring is\_read\_only flag on TogglField into write flag
+* Fixing README in PyPi and other twekas
+
+v2.0.0b3
+--------
+
+* Changelog
+* Fixing test because of new year is here!
+* Dropping relative imports
+* Fixing ConfigBootstrap.get\_api\_key for wrong usage of inquirer's name attribute
+* Trying to get Pypi to take my Markdown readme
+
+v2.0.0b2
+--------
+
+* Changelog and tweaks
+* Fixing conversion of duration from miliseconds to seconds for report's Time Entries
+* Support for fetching all TimeEntries using Reports API
+* Allowing API wrapper's users to set custom default config object
+* Tweaking
+* Correct Python versions specification
+* Making public ConfigBootstrap.get\_api\_token()
+* Support for Google Analytics tracking
+* Support for PyPi markdown readme
+* Limit deployment to PyPi only to one build
+* Adding note about Beta
+
+v2.0.0b1
+--------
+
+* Modification of CHANGELOG
+* Beta release info
