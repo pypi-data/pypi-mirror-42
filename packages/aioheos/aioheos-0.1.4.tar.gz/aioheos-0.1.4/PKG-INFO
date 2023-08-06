@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: aioheos
+Version: 0.1.4
+Summary: Denon HEOS
+Home-page: http://github.com/easink/aioheos
+Author: Andreas Rydbrink
+Author-email: andreas.rydbrink@gmail.com
+License: MIT
+Description: # aioheos
+        
+        An asynchronous lib for Denon Heos
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
