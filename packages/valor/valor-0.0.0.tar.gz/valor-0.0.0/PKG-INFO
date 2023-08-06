@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: valor
+Version: 0.0.0
+Summary: valor library.
+Home-page: UNKNOWN
+Author: Dr. Ford
+Author-email: UNKNOWN
+License: GPLv3
+Description: valor
+        =====
+        
+        AI platform
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
