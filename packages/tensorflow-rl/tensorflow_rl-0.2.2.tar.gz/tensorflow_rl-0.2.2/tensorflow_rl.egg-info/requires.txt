@@ -1,0 +1,10 @@
+numpy>=1.13
+gym>=0.10.5
+Box2D>=2.3.2
+tensorboardX>=1.4
+
+[tf-cpu]
+tensorflow==1.10.0
+
+[tf-gpu]
+tensorflow-gpu==1.10.0
