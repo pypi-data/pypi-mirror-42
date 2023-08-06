@@ -1,0 +1,6 @@
+discord.py>=1.0.0a1691
+humanize
+inflect
+jishaku<2.0.0,>=1.6.1
+objgraph
+psutil
