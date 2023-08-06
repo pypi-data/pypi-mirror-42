@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: aunt
+Version: 0.2
+Summary: Auto Unattend
+Home-page: http://phyl.io/?page=aunt.html
+Author: Philippe Kappel
+Author-email: philippe.kappel@gmail.com
+License: MIT
+Description: `aunt` automates Windows installation with
+        [AutoUnattend.xml](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/automate-windows-setup)
+        and reduces [image](https://msdn.microsoft.com/en-us/library/windows/desktop/dd861280.aspx) size.
+        
+        Dependencies
+        ------------
+        
+        * [Python](https://www.python.org) 3.6+
+        * [7-Zip](https://www.7-zip.org)
+        * [Oscdimg](http://phyl.io/oscdimg.exe) — *add to Path*
+Keywords: Autounattend
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
