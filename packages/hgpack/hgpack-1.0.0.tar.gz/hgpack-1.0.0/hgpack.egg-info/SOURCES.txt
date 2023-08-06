@@ -1,0 +1,17 @@
+README.md
+hgpack.pyx
+setup.py
+hgpack.egg-info/PKG-INFO
+hgpack.egg-info/SOURCES.txt
+hgpack.egg-info/dependency_links.txt
+hgpack.egg-info/top_level.txt
+hgpack/src/GeneticOperations.cpp
+hgpack/src/HGMeans.cpp
+hgpack/src/MathUtils.cpp
+hgpack/src/Solution.cpp
+hgpack/src/hamerly/dataset.cpp
+hgpack/src/hamerly/general_functions.cpp
+hgpack/src/hamerly/hamerly_kmeans.cpp
+hgpack/src/hamerly/kmeans.cpp
+hgpack/src/hamerly/original_space_kmeans.cpp
+hgpack/src/hamerly/triangle_inequality_base_kmeans.cpp
