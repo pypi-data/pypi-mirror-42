@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: django-zuul
+Version: 1.0.1
+Summary: apigateway powered by django
+Home-page: https://github.com/infrascloudy/django-zuul
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Keywords: django,apigateway,dataproxy
+Platform: UNKNOWN
+Requires-Dist: django (==2.1.7)
+Requires-Dist: requests
+Requires-Dist: djangorestframework
+Requires-Dist: psycopg2-binary
+
+# Zuul
+
+## Description
+
+This is a simple api gateway powered by Django
+
+## Requirements
+
+* Python(3.6)
+* Django(2.1.7)
+* requests
+* djangorestframework
+* psycopg2 - for using Postgresql
+
+# Installation
+
+    pip install django-zuul
+
+
+
