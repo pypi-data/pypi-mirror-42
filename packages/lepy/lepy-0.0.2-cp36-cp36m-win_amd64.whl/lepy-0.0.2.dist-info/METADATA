@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: lepy
+Version: 0.0.2
+Summary: Lightweight and fast 3D visualisation engine writen on C++ with Python bindings
+Home-page: https://github.com/toodef/light-engine
+Author: Anton Fedotov
+Author-email: anton.fedotov.af@gmail.com.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+
+# Light Engine
+Lightweight and fast 3D visualisation engine writen on *C++* with *Python* bindings.
+![LE logo](docs/logo.jpg)
+
+* Using shaders for speedup rendering process
+* Cascade architecture for working from hight to low level
+* Automated shaders, buffers and other resources
+* Collection of predefined objects and controls
+
+# Installation
+``pip install lepy``
+
+## Getting started
+Basic usage samples places in *samples* folder. There you can find C++ and Python examples.
+
+
