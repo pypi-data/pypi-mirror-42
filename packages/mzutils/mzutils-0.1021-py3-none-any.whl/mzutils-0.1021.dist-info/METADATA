@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: mzutils
+Version: 0.1021
+Summary: A Mohan Zhang's utility package
+Home-page: https://github.com/Mohan-Zhang-u/mzutils
+Author: Mohan Zhang
+Author-email: mohan.zhang.mz@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: nltk
+
+# Mohan Zhang's Utils
+
+
