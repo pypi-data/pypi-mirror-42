@@ -1,0 +1,16 @@
+azure/__init__.py,sha256=jwUpEftyp-71KJZRiDO8VY0bF3pPg2gQauDzBT8mzRc,409
+azure/cli/__init__.py,sha256=jwUpEftyp-71KJZRiDO8VY0bF3pPg2gQauDzBT8mzRc,409
+azure/cli/command_modules/__init__.py,sha256=jwUpEftyp-71KJZRiDO8VY0bF3pPg2gQauDzBT8mzRc,409
+azure/cli/command_modules/hdinsight/__init__.py,sha256=FJJs99dx4NFgpDAbmGxfPxoz8Gr4csv7W00Tf5gKLJ8,1290
+azure/cli/command_modules/hdinsight/_client_factory.py,sha256=ni9ZAMOXG1aBAgGgXWqrVkLMR0giaDXkMCX9Z9uWih0,2125
+azure/cli/command_modules/hdinsight/_completers.py,sha256=H-ub-C_k-jPLXn_VJzuj9IgtxFHhzFBkp3IsMll4wEo,874
+azure/cli/command_modules/hdinsight/_help.py,sha256=ohP6vRuKMM_T0VpoL-XGgzzexPzynLUQqJak4ALQvkk,4981
+azure/cli/command_modules/hdinsight/_params.py,sha256=LuqtGJxect3AWsQMkPIQ1BaxBeuMyQsKWjwhvemlC4k,12070
+azure/cli/command_modules/hdinsight/_validators.py,sha256=zBCEKcohoYbDV4u-yBuHwfbHTXvrXd8Dp3SPo5JSjcg,3728
+azure/cli/command_modules/hdinsight/commands.py,sha256=SeqJVJKa3wICDP9HZBBxs1rkaIuWkb-uXse4styr1YQ,4480
+azure/cli/command_modules/hdinsight/custom.py,sha256=woPZIo3VoGnaxfPVWSFmucxMcychNFDs1NqNb--dUE0,18992
+azure/cli/command_modules/hdinsight/util.py,sha256=a1D9DzoAjOYF-ctHH-5DpW5ADsnS-h1LnT9jJZ3R_ec,6156
+azure_cli_hdinsight-0.3.1.dist-info/METADATA,sha256=qalaqezsg01VHkGoia4wGQaoKTPwCzo32gl2_f4Kk4Y,2057
+azure_cli_hdinsight-0.3.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+azure_cli_hdinsight-0.3.1.dist-info/top_level.txt,sha256=S7DhWV9m80TBzAhOFjxDUiNbKszzoThbnrSz5MpbHSQ,6
+azure_cli_hdinsight-0.3.1.dist-info/RECORD,,
