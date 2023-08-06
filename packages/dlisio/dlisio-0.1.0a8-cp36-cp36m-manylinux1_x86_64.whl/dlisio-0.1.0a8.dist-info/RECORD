@@ -1,0 +1,10 @@
+dlisio-0.1.0a8.dist-info/WHEEL,sha256=d2ILPScH-y2UwGxsW1PeA2TT-KW0Git4AJ6LeOK8sQo,109
+dlisio-0.1.0a8.dist-info/top_level.txt,sha256=mo6P24M3Ylvgz0sbmuvVIr3oovIZu6SIu4k_3djmU2c,7
+dlisio-0.1.0a8.dist-info/METADATA,sha256=_C3JwjJ4uHxMMTFtoZXSEtVOW7DbRuSC6ADcty-bS8E,216
+dlisio-0.1.0a8.dist-info/RECORD,,
+dlisio/objects.py,sha256=ZQ-72GdGXaQFsFwOWmHnUTA_2bTa8Ta9J8DSGtSfiY8,16678
+dlisio/__init__.py,sha256=98BOm0vxn_VNYeKEGHple-T_zuwJ-TAee-kfgIQk6Zw,3779
+dlisio/version.py,sha256=QgFBdQxhFN_7g7g-OUdThlg55wjJSu5KBDZt1BzTzPQ,118
+dlisio/core.cpython-36m-x86_64-linux-gnu.so,sha256=T7342pGRJs_aEqutTJtn09I7zmNBQocUiYVOFIuzE_8,314696
+dlisio/.libs/libdlisio-67fadada.so,sha256=iIgdRkddPnCnrAxRY99WuZVIDxgFbvnZ0pVht4vWHjk,30912
+dlisio/.libs/libdlisio-extension-b6bd74f3.so,sha256=j9CEatEGkcpjTKteKrMpWbHFbNNIygfuroh2CPQl22o,964536
