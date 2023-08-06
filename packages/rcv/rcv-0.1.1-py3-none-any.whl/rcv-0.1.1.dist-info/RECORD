@@ -1,0 +1,12 @@
+rcv/__init__.py,sha256=xT-rAuJpMBnsDQB_WYt3OOMr3yxmdqN9O_y7Bq4TSHk,285
+rcv/ballot.py,sha256=93C6NCPwxDrwXozeNP5PxwuyrVfBdrJhT7K7-0tS3hQ,1138
+rcv/candidate.py,sha256=SIEmjJlDi7jlg2iCkLxCBxi5j39iSfe2AfSp-ppt_64,452
+rcv/schedule.py,sha256=3axk2q-zjs6Gk6phFx17y7B0_qzeAFiqxjm6eRyQbYA,4105
+rcv/stv.py,sha256=1Lnq77F-zzc3x1UVo-CidWSk4KKxd2HXz7t3mSV0qHc,3701
+rcv/values_dict.py,sha256=gp6tB-m9LT0m7wxwnCGNZiqQRNApv1W7zNJScrrW9Ms,83
+rcv/weighted_set.py,sha256=eyc232bPovRBKEbcuiifQIjAj_GAjldJMJiQLdRjS4A,1694
+rcv-0.1.1.dist-info/LICENSE,sha256=ukMquW82vMnwHANTa5QKloVjjlkyFgXQsjjsGOlrFsU,1510
+rcv-0.1.1.dist-info/METADATA,sha256=YWaCpPfebaK0kRZQYsc2Xh_Djv3mWfSW1HJekTZoRug,1732
+rcv-0.1.1.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+rcv-0.1.1.dist-info/top_level.txt,sha256=UT1iDAtVDXcDS1_d8PObB6MzIiv4XwHjZZdGJ71shDs,4
+rcv-0.1.1.dist-info/RECORD,,
