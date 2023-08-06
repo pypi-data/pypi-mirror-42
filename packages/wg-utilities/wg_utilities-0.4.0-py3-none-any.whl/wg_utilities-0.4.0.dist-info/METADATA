@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: wg-utilities
+Version: 0.4.0
+Summary: Utilities for the using in personal projects.
+Home-page: https://github.com/worgarside/wg-utilities
+Author: Will Garside
+Author-email: worgarside@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: httplib2
+Requires-Dist: google-api-python-client
+
+wg-utilities
+
+
