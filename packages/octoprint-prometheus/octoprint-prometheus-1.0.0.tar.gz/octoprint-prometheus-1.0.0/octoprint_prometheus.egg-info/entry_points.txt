@@ -1,0 +1,3 @@
+[octoprint.plugin]
+prometheus = octoprint_prometheus
+
