@@ -1,0 +1,12 @@
+README.md
+setup.py
+magicdice/__init__.py
+magicdice/api_client.py
+magicdice/constants.py
+magicdice/core.py
+magicdice/utils.py
+magicdice.egg-info/PKG-INFO
+magicdice.egg-info/SOURCES.txt
+magicdice.egg-info/dependency_links.txt
+magicdice.egg-info/requires.txt
+magicdice.egg-info/top_level.txt
