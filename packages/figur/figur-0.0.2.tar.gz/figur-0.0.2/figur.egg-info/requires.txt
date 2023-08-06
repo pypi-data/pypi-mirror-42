@@ -1,0 +1,4 @@
+flair>=0.4.1
+gdown>=3.7.3
+spacy>=2.0.18
+pandas>=0.24.1
