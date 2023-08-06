@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+
+import pg_partition
+
+pg_partition.main()

@@ -1,0 +1,3 @@
+[console_scripts]
+pg_partition = pg_partition.pg_partition:main
+
