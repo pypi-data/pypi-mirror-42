@@ -1,0 +1,13 @@
+icq/__init__.py,sha256=NwnlaLf3HG6c2c017n51WQp_D4hvjshHQTTElRiPepo,170
+icq/bot.py,sha256=bOQp_LMWumc6RwhaYUKPQEUwHK3Le_sU1q1ALw9u0fE,21830
+icq/constant.py,sha256=QNHssYNPqOJt5Uaxpcam4-lbG1aDnK7yGmHA8UbX5Jo,2006
+icq/dispatcher.py,sha256=vfU06SkGr8quJvn9x5lUG4-sbk2oV_AyPMLrYD3eTaU,1086
+icq/event.py,sha256=7R36XxAYHmh8-GDK2oZAXVhrmnNvfwpgtCXhHM2PYn0,843
+icq/filter.py,sha256=4Q6B5hrySxTYUudawy5ssSOe4I01-y1StQY2Fd--XGg,5247
+icq/handler.py,sha256=tMK-38UcqwDE8Al194XUgi9l_gFNEkt9Kud34FmmQng,4833
+icq/util.py,sha256=bvgBNn2VHaKZjomA8uDuH1Nt87BaeIrjsNaTzTQpvt8,1870
+python_icq_bot-0.0.19.dist-info/LICENSE,sha256=Aqaa2BrHJI02e7V2yv5sCDhvoz_NvW6bHnaag19IXYM,1089
+python_icq_bot-0.0.19.dist-info/METADATA,sha256=OXVtIGe2D5ebn5waVWzZmXRMVjJRq4Od6b0Syaf1CvE,4767
+python_icq_bot-0.0.19.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+python_icq_bot-0.0.19.dist-info/top_level.txt,sha256=9Gk0g1zBQiUq-soTtUBm2FUOji5rGOgFzdpLBXeZRpQ,4
+python_icq_bot-0.0.19.dist-info/RECORD,,
