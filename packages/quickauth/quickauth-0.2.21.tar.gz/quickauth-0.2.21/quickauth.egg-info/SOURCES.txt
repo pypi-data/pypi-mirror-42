@@ -1,0 +1,9 @@
+README.rst
+setup.py
+quickauth/__init__.py
+quickauth/core.py
+quickauth.egg-info/PKG-INFO
+quickauth.egg-info/SOURCES.txt
+quickauth.egg-info/dependency_links.txt
+quickauth.egg-info/requires.txt
+quickauth.egg-info/top_level.txt
