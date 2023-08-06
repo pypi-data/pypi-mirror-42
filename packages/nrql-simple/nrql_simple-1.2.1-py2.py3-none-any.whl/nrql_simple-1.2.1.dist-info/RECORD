@@ -1,0 +1,9 @@
+nrql/__init__.py,sha256=zHvyxI4RzMueA31mtYrLneC3nxhj8NueJS_zmXmltaY,27
+nrql/__main__.py,sha256=cYN1Iv28egkON6JJAdUPJuy-C-F6p8KvWk7pYvPphsE,30
+nrql/api.py,sha256=DvM4afO_8n45_o0SrqJD83aZEvB9ZVxctT23gkf7cNQ,3061
+nrql/app.py,sha256=JW77MQ7VndXXr3yBWJ9QP-wT1IyF5LxW5jwycxED1Nc,2264
+nrql_simple-1.2.1.dist-info/METADATA,sha256=nDDwE9yJe7FQl3hLtukKtSdbvZsT50AGHj1VPnMCvOI,7075
+nrql_simple-1.2.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+nrql_simple-1.2.1.dist-info/entry_points.txt,sha256=yQf6AjPDBB7sDRXrHW9lC63sfQfQSRBV05UCg_kzXx8,40
+nrql_simple-1.2.1.dist-info/top_level.txt,sha256=PVqj4JKlrY0i-nhmeiAbYwEbrsLtEcDXU0VXqVa2pag,5
+nrql_simple-1.2.1.dist-info/RECORD,,
