@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/mdtoc
+mdtoc/__init__.py
+mdtoc/__main__.py
+mdtoc/main.py
+mdtoc.egg-info/PKG-INFO
+mdtoc.egg-info/SOURCES.txt
+mdtoc.egg-info/dependency_links.txt
+mdtoc.egg-info/requires.txt
+mdtoc.egg-info/top_level.txt
