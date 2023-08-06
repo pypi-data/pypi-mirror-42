@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.1.0/css/nes.min.css" rel="stylesheet" />
+    <style>
+        html, body, pre, code, kbd, samp {
+            font-family: "Press Start 2P";
+        }
+      </style>
+</head>
+<body>
+    <section class="nes-container with-title">
+        <h3 class="title">Users</h3>
+        <p>
+            <i class="nes-logo"></i>
+            <i class="snes-logo"></i>
+            {% for user in data.users %}
+            <form method="post" action="/change_user">
+                <input type="hidden" name="user" value="{{ user }}">
+                <button type="button submit" class="nes-btn {% if user == data.current_user %}is-primary{% endif %}">{{ user }}</button><br/>
+            </form>
+            {% endfor %}
+        </p>
+    </section>
+    <br/>
+    <section class="nes-container with-title">
+        <h3 class="title">System</h3>
+        <p>
+            <form method="post" action="/restart">
+                <button type="button submit" class="nes-btn is-success">restart emulator</button><br/>
+            </form>
+            <form method="post" action="/pi/reboot">
+                <button type="button submit" class="nes-btn is-warning">reboot system</button><br/>
+            </form>
+            <form method="post" action="/pi/shutdown">
+                <button type="button submit" class="nes-btn is-error">shutdown system</button><br/>
+            </form>
+        </p>
+    </section>
+</body>
+
+</html>

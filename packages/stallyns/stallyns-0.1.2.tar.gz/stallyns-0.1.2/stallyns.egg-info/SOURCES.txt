@@ -1,0 +1,11 @@
+README.md
+setup.py
+stallyns/__init__.py
+stallyns/stallyns.py
+stallyns.egg-info/PKG-INFO
+stallyns.egg-info/SOURCES.txt
+stallyns.egg-info/dependency_links.txt
+stallyns.egg-info/entry_points.txt
+stallyns.egg-info/requires.txt
+stallyns.egg-info/top_level.txt
+stallyns/templates/index.html
