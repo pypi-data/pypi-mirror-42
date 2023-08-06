@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: rzn
+Version: 0.1
+Summary: rzn - rsync/rclone git like push/pull wrapper
+Home-page: https://github.com/meeuw/rzn
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+
+Rzn leverages rsync or rclone to synchronize your files. It searches for the configuration file .rzn in the current or parent directories like git so you can run rzn push / pull from any (sub)directory.
+
+
