@@ -1,0 +1,3 @@
+[console_scripts]
+nhm = manager.core.managment:execute_from_command_line
+

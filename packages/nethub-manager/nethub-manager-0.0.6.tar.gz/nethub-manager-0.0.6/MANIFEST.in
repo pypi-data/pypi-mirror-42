@@ -1,0 +1,2 @@
+include manager/templates/netpy_template/*.pyt
+include manager/templates/keras_template/*.pyt
