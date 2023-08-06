@@ -1,0 +1,9 @@
+README.md
+setup.py
+mirrorshield/__init__.py
+mirrorshield/mirrorshield.py
+mirrorshield.egg-info/PKG-INFO
+mirrorshield.egg-info/SOURCES.txt
+mirrorshield.egg-info/dependency_links.txt
+mirrorshield.egg-info/entry_points.txt
+mirrorshield.egg-info/top_level.txt
