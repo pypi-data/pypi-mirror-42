@@ -1,0 +1,9 @@
+README.md
+setup.py
+fre/__init__.py
+fre/fnregex.py
+fre/opregex.py
+fre.egg-info/PKG-INFO
+fre.egg-info/SOURCES.txt
+fre.egg-info/dependency_links.txt
+fre.egg-info/top_level.txt
