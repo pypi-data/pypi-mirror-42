@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: mangadexpy
+Version: 0.1.0
+Summary: Acts as a wrapper between you and mangadex's API, to allow easy integration.
+Home-page: https://repl.it/@thatonedev/mangadexpy
+Author: thatonerandomdev
+Author-email: no@u.net
+License: UNKNOWN
+Description: # Quick Reference
+        
+        So far, all that is implemented is the "Manga" object.
+        
+        `mangadex.Manga(id, [session])` takes in an id, and a requests-html session (optional)
+        
+        That's it for now!
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

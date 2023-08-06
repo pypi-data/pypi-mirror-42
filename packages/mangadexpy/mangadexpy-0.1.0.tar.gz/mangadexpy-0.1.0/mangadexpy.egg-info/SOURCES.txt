@@ -1,0 +1,9 @@
+README.md
+setup.py
+mangadex/__init__.py
+mangadex/models.py
+mangadexpy.egg-info/PKG-INFO
+mangadexpy.egg-info/SOURCES.txt
+mangadexpy.egg-info/dependency_links.txt
+mangadexpy.egg-info/requires.txt
+mangadexpy.egg-info/top_level.txt
