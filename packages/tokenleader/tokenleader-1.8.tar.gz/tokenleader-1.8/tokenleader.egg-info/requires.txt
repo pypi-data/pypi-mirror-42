@@ -1,0 +1,13 @@
+requests==2.20.1
+configparser==3.5.0
+PyJWT==1.7.0
+PyYAML==3.13
+cryptography==2.3.1
+six==1.11.0
+Flask==1.0.2
+Flask-Testing==0.7.1
+Flask-Migrate==2.3.1
+Flask-SQLAlchemy==2.3.2
+konfig==1.1
+tokenleaderclient==0.9
+pyOpenSSL==19.0.0

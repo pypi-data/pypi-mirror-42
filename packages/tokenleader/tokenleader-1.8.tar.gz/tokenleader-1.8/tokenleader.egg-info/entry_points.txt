@@ -1,0 +1,4 @@
+[console_scripts]
+adminops = tokenleader.app1.adminops.admin_cli_parser:main
+tokenleader-start = tokenleader.app_run:main
+
