@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: chimit
+Version: 0.9.0
+Summary: Fabric commands for simplifying server deployments
+Home-page: https://github.com/chrisspen/chimit
+Author: Chris Spencer
+Author-email: chrisspen@gmail.com
+License: MIT
+Description: # Chimit
+        A version of `time` that plays a success or error chime based on the return code.
+        
+        # Installation:
+        
+            pip install chimit
+            chimit --init
+        
+        # Usage:
+        
+            chimit some arbitrary command
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Software Development

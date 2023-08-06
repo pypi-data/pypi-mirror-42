@@ -1,0 +1,4 @@
+[console_scripts]
+chimit = chimit.chimit:main
+chimit-2.7 = chimit.chimit:main
+

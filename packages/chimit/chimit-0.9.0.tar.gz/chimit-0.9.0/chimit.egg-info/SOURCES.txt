@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+requirements-test.txt
+setup.py
+chimit/__init__.py
+chimit/chimit.py
+chimit/tests.py
+chimit.egg-info/PKG-INFO
+chimit.egg-info/SOURCES.txt
+chimit.egg-info/dependency_links.txt
+chimit.egg-info/entry_points.txt
+chimit.egg-info/not-zip-safe
+chimit.egg-info/top_level.txt
