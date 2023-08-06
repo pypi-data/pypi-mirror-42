@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+log_generator/__init__.py
+log_generator/generate.py
+log_generator/schema.yaml
+log_generator.egg-info/PKG-INFO
+log_generator.egg-info/SOURCES.txt
+log_generator.egg-info/dependency_links.txt
+log_generator.egg-info/entry_points.txt
+log_generator.egg-info/not-zip-safe
+log_generator.egg-info/requires.txt
+log_generator.egg-info/top_level.txt
