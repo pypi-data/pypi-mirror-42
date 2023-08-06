@@ -1,0 +1,123 @@
+Metadata-Version: 1.1
+Name: django-dowser
+Version: 0.1.6
+Summary: Django fork of amazing memory leaks tracking application for python wsgi - the Dowser
+Home-page: http://github.com/munhitsu/django-dowser
+Author: Mateusz Lapsa-Malawski
+Author-email: m@cr3.io
+License: Copyright (c) 2008 Robert Brewer, 2009 cr3studio.com and individual contributors.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, 
+       this list of conditions and the following disclaimer.
+       
+    2. Redistributions in binary form must reproduce the above copyright 
+       notice, this list of conditions and the following disclaimer in the 
+       documentation and/or other materials provided with the distribution.
+       
+    3. Neither the name of the cr3studio.com nor the names of its contributors may be used 
+       to endorse or promote products derived from this software without 
+       specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR 
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON 
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Download-URL: http://pypi.python.org/packages/source/d/django-dowser/django-dowser-0.1.6.tar.gz
+Description: About
+        =====
+        
+        Based on: `Dowser <http://www.aminus.net/wiki/Dowser>`__
+        
+        A Django specific Dowser port.
+        
+        Following enhancements have been implemented on top of the original Dowser:
+        
+        -  long term historical analysis: 1m, 1h, 1d, 4w buffers
+        -  optimization by moving from lists to python deque
+        -  server load optimization by moving charts to google chart
+        -  only superuser can view the analysis (Django specific)
+        
+        .. figure:: https://github.com/munhitsu/django-dowser/raw/master/wiki/screen0.png
+           :alt: Screen shot
+        
+           Screen shot
+        
+        Future
+        ======
+        - move charts to javascript
+        - move inline html to templates
+        - drop Django 1.x and Python 2.x compatibility
+        
+        Installation
+        ============
+        
+        ::
+        
+            # latest release
+            pip install django-dowser
+            # or latest master
+            pip install git+git://github.com/munhitsu/django-dowser.git
+        
+        Next, modify project configuration.
+        
+        settings.py
+        -----------
+        
+        ::
+        
+            INSTALLED_APPS += ['django_dowser']
+        
+        urls.py
+        -------
+        
+        ::
+        
+            from django.urls import path, include
+            urlpatterns += [url(r'^dowser/', include('django_dowser.urls'))]
+        
+        
+        Note
+        ----
+        
+        Use django-dowser only on multithreaded/gevent servers. With forking, or multiple servers, each process
+        will have it's own Dowser storage, so you will only get a glimpse into one process and further requests may be load
+        balanced to the other servers.
+        
+        
+        Usage
+        -----
+        
+        Start the project and open link:
+        
+        ::
+        
+            http://domain/dowser/
+        
+        When running in the local development mode, it is usually:
+        
+        ::
+        
+            http://127.0.0.1:8000/dowser/
+        
+Keywords: django,dowser,debug,memory leak
+Platform: 
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Other Environment
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: BSD License
