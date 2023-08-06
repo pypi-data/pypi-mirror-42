@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+fwcl/__init__.py
+fwcl/api_params.py
+fwcl/api_results.py
+fwcl/base_facade.py
+fwcl/fwcl.py
+fwcl/login_facade.py
+fwcl.egg-info/PKG-INFO
+fwcl.egg-info/SOURCES.txt
+fwcl.egg-info/dependency_links.txt
+fwcl.egg-info/requires.txt
+fwcl.egg-info/top_level.txt
