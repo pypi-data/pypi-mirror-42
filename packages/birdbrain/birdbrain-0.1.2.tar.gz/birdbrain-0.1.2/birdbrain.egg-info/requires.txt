@@ -1,0 +1,15 @@
+ipywidgets>=7.0.1
+ipydatawidgets
+traittypes
+traitlets
+numpy>=1.11.0
+k3d
+nibabel
+nipy
+scipy
+matplotlib
+vtk
+pandas
+scikit-image
+tqdm
+patool
