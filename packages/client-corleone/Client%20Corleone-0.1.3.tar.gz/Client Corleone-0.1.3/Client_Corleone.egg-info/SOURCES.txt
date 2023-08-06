@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+Client_Corleone.egg-info/PKG-INFO
+Client_Corleone.egg-info/SOURCES.txt
+Client_Corleone.egg-info/dependency_links.txt
+Client_Corleone.egg-info/requires.txt
+Client_Corleone.egg-info/top_level.txt
+client_corleone/__init__.py
+client_corleone/botclient.py
+client_corleone/models.py
+client_corleone/serializers.py
