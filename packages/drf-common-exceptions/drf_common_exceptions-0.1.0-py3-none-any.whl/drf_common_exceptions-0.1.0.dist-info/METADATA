@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: drf-common-exceptions
+Version: 0.1.0
+Summary: Common exception for Django REST framework
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Andrey Bogoyavlensky
+Author-email: abogoyavlensky@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: django (>=1.11)
+Requires-Dist: djangorestframework (>=3.7,<4.0)
