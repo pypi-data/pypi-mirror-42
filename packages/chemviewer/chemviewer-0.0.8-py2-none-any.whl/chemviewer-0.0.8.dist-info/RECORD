@@ -1,0 +1,15 @@
+chemviewer/__init__.py,sha256=YQY-i8MemQTvHljd9BqOGgeJEu3FrzurE3TEKDwAax4,22
+chemviewer/core.py,sha256=2HYTQko1QbJARygCove_7BdMWNfao4aA_sOMCALeq0U,2566
+chemviewer/run.py,sha256=sf09L0Xgt16oroo5rzU2AXvEdBsAFgDKOpMeXjZ4Skw,285
+chemviewer/standalone.py,sha256=3PQKOdblSCGnlCygiOK3La4CvzgDCdp3stIESTJVxFI,1604
+chemviewer/webserver.py,sha256=008XdyOUKI14Ylk4cE5QAYkVzl3E21GJeonYiugy0_w,197
+chemviewer/static/css.css,sha256=C3JVDjMJIUFEfvutIuRGlJehw8-hp0AVjRQZfRJY8-c,535
+chemviewer/static/main.js,sha256=X4koqGju7OHhBFqByGxjg35Y-ec74TnNKT0rwdIgqDU,4704
+chemviewer/templates/index.html,sha256=MRi3ftAhrwgCj-HI4ki94GwCCuy1gU_2zEZkgoFLeTw,7556
+chemviewer-0.0.8.dist-info/DESCRIPTION.rst,sha256=mwTRV0IydTN4uE1_9yrLvDjysHIAs6ABk4i22CU2X8s,729
+chemviewer-0.0.8.dist-info/METADATA,sha256=e-DEwArV5QEcimugeEQR-b8tRcmw04yOueItH-VxYE0,1138
+chemviewer-0.0.8.dist-info/RECORD,,
+chemviewer-0.0.8.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+chemviewer-0.0.8.dist-info/entry_points.txt,sha256=iLL3ubSHh_Ivm6SSGEyO2HdCmgt8wVKwiPr9MNsDgQQ,52
+chemviewer-0.0.8.dist-info/metadata.json,sha256=eEnLf6w80VwS2PjreiGXKLKI7qjYPbgaeti-oeQw0lc,717
+chemviewer-0.0.8.dist-info/top_level.txt,sha256=S6r1unhMWZA3tUqwsGgIghWvTezdeyO2OsNn5ya4aJM,11
