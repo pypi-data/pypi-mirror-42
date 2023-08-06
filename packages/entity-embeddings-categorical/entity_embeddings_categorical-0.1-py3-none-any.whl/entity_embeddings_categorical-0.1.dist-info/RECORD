@@ -1,0 +1,8 @@
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_embedding_config.py,sha256=Tt8hN_-6tSSOk4uHCHlM2iqJs4wwH9Zj7vbTHgZxKNU,1379
+tests/test_embedding_network.py,sha256=ntNMo-eQaO1oPp2JwC7wt6nbRUYNp-v7o6q8sBAvp4M,1258
+entity_embeddings_categorical-0.1.dist-info/METADATA,sha256=NHe8h4WmeMwrNxG9oRCXWC9tfIIANwH14Spjj9axsyk,475
+entity_embeddings_categorical-0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+entity_embeddings_categorical-0.1.dist-info/entry_points.txt,sha256=JzE-EBZG7x9jS6aldIukxbKd0YH2jNNvCLgRzLBsvi0,45
+entity_embeddings_categorical-0.1.dist-info/top_level.txt,sha256=EdW7283x-lr_cbuivW8Ij7ANAP-ZJ9sLtILQseEPxXg,6
+entity_embeddings_categorical-0.1.dist-info/RECORD,,
