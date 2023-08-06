@@ -1,0 +1,7 @@
+setup.py
+pylodash/__init__.py
+pylodash.egg-info/PKG-INFO
+pylodash.egg-info/SOURCES.txt
+pylodash.egg-info/dependency_links.txt
+pylodash.egg-info/not-zip-safe
+pylodash.egg-info/top_level.txt
