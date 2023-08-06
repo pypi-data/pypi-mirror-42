@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: exxablock
+Version: 0.0.17
+Summary: ExxaBlock cryptocurrency and analytic package
+Home-page: https://github.com/exxablock/python/exxablock
+Author: Sunwoo Park
+Author-email: spark@exxablock.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: redis
+Requires-Dist: socketIO-client-nexus
+
+This package provides a collection of classes that access a wide range of ExxaBlock products and services. They include but are not limited to realtime market index and analytic feeds, cache server access, charts, and market data
+
+
