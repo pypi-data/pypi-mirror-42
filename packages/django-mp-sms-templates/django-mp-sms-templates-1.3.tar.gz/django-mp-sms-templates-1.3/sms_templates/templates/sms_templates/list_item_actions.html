@@ -1,0 +1,21 @@
+
+{% load i18n %}
+
+<a href="{% url 'admin:send-sms' object.id %}"
+   target="blank"
+   class="btn btn-primary btn-sm"
+   title="{% trans 'Send' %}">
+    <i class="fa fa-envelope"></i>
+</a>
+
+<a href="{% url 'admin:sms_templates_smstemplate_change' object.id %}"
+   class="btn btn-warning btn-sm"
+   title="{% trans 'Edit' %}">
+    <i class="fa fa-edit"></i>
+</a>
+
+<a href="{% url 'admin:sms_templates_smstemplate_delete' object.id %}"
+   class="btn btn-danger btn-sm"
+   title="{% trans 'Delete' %}">
+    <i class="fa fa-remove"></i>
+</a>
