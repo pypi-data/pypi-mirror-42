@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: stabl
+Version: 0.0.1
+Summary: STABL table language and markup tools
+Home-page: https://stabl.org
+Author: Fabian Raters
+Author-email: mail@ratmaster.de
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.6
+
+UNKNOWN
+
+
