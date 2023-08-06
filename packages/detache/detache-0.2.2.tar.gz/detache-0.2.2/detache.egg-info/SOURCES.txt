@@ -1,0 +1,12 @@
+setup.py
+detache/__init__.py
+detache/bot.py
+detache/command.py
+detache/errors.py
+detache/plugin.py
+detache/util.py
+detache/wrappers.py
+detache.egg-info/PKG-INFO
+detache.egg-info/SOURCES.txt
+detache.egg-info/dependency_links.txt
+detache.egg-info/top_level.txt
