@@ -1,0 +1,44 @@
+{% extends "djcms_blog/base_post.html" %}
+{% load i18n %}
+{% load humanize %}
+{% load djcms_blog %}
+{% load dj_markdownify %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as languages %}
+
+{% block navigation %}
+    <div class="right menu">
+        {% for lang_code, lang_name in languages %}
+            {% language lang_code %}
+                <a class="ui black button item {% ifequal LANGUAGE_CODE lang_code %}active{% endifequal %}" href="{% url 'post-detail' blog_slug=object.blog.slug post_slug=object.slug %}">{{ lang_name }}</a>
+            {% endlanguage %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block nav_navigation %}
+<a href="{% url 'blog-main' blog_slug=object.blog.slug %}" class="header item">
+    <img class="ui circular image logo" src="{% blog_navbar_image %}"> {% blog_root_title %}
+</a>
+{% endblock %}
+
+{% block title %}
+{{object.title}}
+{% endblock %}
+
+{% block content %}
+{{ object.body | markdown | safe }}
+<div class="ui divider"></div>
+<div class="post post-meta">
+    <a class="post-meta__user" href="/{{ LANGUAGE_CODE }}/author/{{object.author.slug}}">
+        <img class="ui avatar image" src="{{object.author.profile_img_url}}">{{post.author.user.username}}</a>
+    {% for tag in object.get_tags %}
+    <a href="/{{ LANGUAGE_CODE }}/{{object.blog.slug}}/tag/{{tag.slug}}/" class="ui {{tag.color}} label">
+        {{tag.name}}
+        <div class="detail">{{tag.get_post_count}}</div>
+    </a>
+    {% endfor %}
+    <div class="post-meta__time">{{ object.published_date|naturaltime }}</div>
+    {% include "djcms_blog/post_share.html" %}
+</div>
+{% endblock content %}
