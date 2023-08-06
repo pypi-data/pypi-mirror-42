@@ -1,0 +1,211 @@
+create
+******
+
+
+Description
+===========
+
+Creates a new steering policy in the specified compartment.
+
+
+Usage
+=====
+
+   oci dns steering-policy create [OPTIONS]
+
+
+Options
+=======
+
+
+--compartment-id, -c [text]
+---------------------------
+
+The OCID of the compartment containing the steering policy. [required]
+
+
+--display-name [text]
+---------------------
+
+A user-friendly name for the steering policy. Does not have to be
+unique, and it's changeable. Avoid entering confidential information.
+[required]
+
+
+--template [FAILOVER|LOAD_BALANCE|ROUTE_BY_GEO|ROUTE_BY_ASN|ROUTE_BY_IP|CUSTOM]
+-------------------------------------------------------------------------------
+
+The common pattern (or lack thereof) to which the steering policy
+adheres. This value restricts the possible configurations of rules,
+but thereby supports specifically tailored interfaces. Values other
+than "CUSTOM" require the rules to begin with an unconditional FILTER
+that keeps answers contingent upon *answer.isDisabled != true*,
+followed _if and only if the policy references a health check
+>>monitor_<< by an unconditional HEALTH rule, and require the last
+rule to be an unconditional LIMIT. What must precede the LIMIT rule is
+determined by the template value: - FAILOVER requires exactly an
+unconditional PRIORITY rule that ranks answers by pool.   Each answer
+pool must have a unique priority value assigned to it. Answer data
+must   be defined in the *defaultAnswerData* property for the rule and
+the *cases* property   must not be defined. - LOAD_BALANCE requires
+exactly an unconditional WEIGHTED rule that shuffles answers   by
+name. Answer data must be defined in the *defaultAnswerData* property
+for the   rule and the *cases* property must not be defined. -
+ROUTE_BY_GEO requires exactly one PRIORITY rule that ranks answers by
+pool using the   geographical location of the client as a condition.
+Within that rule you may only   use *query.client.geoKey* in the
+*caseCondition* expressions for defining the cases.   For each case in
+the PRIORITY rule each answer pool must have a unique priority   value
+assigned to it. Answer data can only be defined within cases and
+*defaultAnswerData* cannot be used in the PRIORITY rule. -
+ROUTE_BY_ASN requires exactly one PRIORITY rule that ranks answers by
+pool using the   ASN of the client as a condition. Within that rule
+you may only use   *query.client.asn* in the *caseCondition*
+expressions for defining the cases.   For each case in the PRIORITY
+rule each answer pool must have a unique priority   value assigned to
+it. Answer data can only be defined within cases and
+*defaultAnswerData* cannot be used in the PRIORITY rule. - ROUTE_BY_IP
+requires exactly one PRIORITY rule that ranks answers by pool using
+the   IP subnet of the client as a condition. Within that rule you may
+only use   *query.client.address* in the *caseCondition* expressions
+for defining the cases.   For each case in the PRIORITY rule each
+answer pool must have a unique priority   value assigned to it. Answer
+data can only be defined within cases and   *defaultAnswerData* cannot
+be used in the PRIORITY rule. - CUSTOM allows an arbitrary
+configuration of rules.
+
+For an existing steering policy, the template value may be changed to
+any of the supported options but the resulting policy must conform to
+the requirements for the new template type or else a Bad Request error
+will be returned. [required]
+
+
+--ttl [integer]
+---------------
+
+The Time To Live for responses from the steering policy, in seconds.
+If not specified during creation, a value of 30 seconds will be used.
+
+
+--health-check-monitor-id [text]
+--------------------------------
+
+The OCID of the health check monitor providing health data about the
+answers of the steering policy. A steering policy answer with *rdata*
+matching a monitored endpoint will use the health data of that
+endpoint. A steering policy answer with *rdata* not matching any
+monitored endpoint will be assumed healthy.
+
+
+--freeform-tags [complex type]
+------------------------------
+
+Simple key-value pair that is applied without any predefined name,
+type, or scope. For more information, see Resource Tags. Example:
+*{"bar-key": "value"}* This is a complex type whose value must be
+valid JSON. The value can be provided as a string on the command line
+or passed in as a file using the file://path/to/file syntax.
+
+The --generate-param-json-input option can be used to generate an
+example of the JSON which must be provided. We recommend storing this
+example in a file, modifying it as needed and then passing it back in
+via the file:// syntax.
+
+
+--defined-tags [complex type]
+-----------------------------
+
+Usage of predefined tag keys. These predefined keys are scoped to a
+namespace. Example: *{"foo-namespace": {"bar-key": "value"}}* This is
+a complex type whose value must be valid JSON. The value can be
+provided as a string on the command line or passed in as a file using
+the file://path/to/file syntax.
+
+The --generate-param-json-input option can be used to generate an
+example of the JSON which must be provided. We recommend storing this
+example in a file, modifying it as needed and then passing it back in
+via the file:// syntax.
+
+
+--answers [complex type]
+------------------------
+
+The set of all answers that can potentially issue from the steering
+policy.
+
+This option is a JSON list with items of type SteeringPolicyAnswer.
+For documentation on SteeringPolicyAnswer please see our API
+reference: https://docs.cloud.oracle.com/api/#/en/dns/20180115/dataty
+pes/SteeringPolicyAnswer. This is a complex type whose value must be
+valid JSON. The value can be provided as a string on the command line
+or passed in as a file using the file://path/to/file syntax.
+
+The --generate-param-json-input option can be used to generate an
+example of the JSON which must be provided. We recommend storing this
+example in a file, modifying it as needed and then passing it back in
+via the file:// syntax.
+
+
+--rules [complex type]
+----------------------
+
+The pipeline of rules that will be processed in sequence to reduce the
+pool of answers to a response for any given request.
+
+The first rule receives a shuffled list of all answers, and every
+other rule receives the list of answers emitted by the one preceding
+it. The last rule populates the response.
+
+This option is a JSON list with items of type SteeringPolicyRule.  For
+documentation on SteeringPolicyRule please see our API reference: htt
+ps://docs.cloud.oracle.com/api/#/en/dns/20180115/datatypes/SteeringPo
+licyRule. This is a complex type whose value must be valid JSON. The
+value can be provided as a string on the command line or passed in as
+a file using the file://path/to/file syntax.
+
+The --generate-param-json-input option can be used to generate an
+example of the JSON which must be provided. We recommend storing this
+example in a file, modifying it as needed and then passing it back in
+via the file:// syntax.
+
+
+--wait-for-state [ACTIVE|CREATING|DELETED|DELETING]
+---------------------------------------------------
+
+This operation creates, modifies or deletes a resource that has a
+defined lifecycle state. Specify this option to perform the action and
+then wait until the resource reaches a given lifecycle state. If
+timeout is reached, a return code of 2 is returned. For any other
+error, a return code of 1 is returned.
+
+
+--max-wait-seconds [integer]
+----------------------------
+
+The maximum time to wait for the resource to reach the lifecycle state
+defined by --wait-for-state. Defaults to 1200 seconds.
+
+
+--wait-interval-seconds [integer]
+---------------------------------
+
+Check every --wait-interval-seconds to see whether the resource to see
+if it has reached the lifecycle state defined by --wait-for-state.
+Defaults to 30 seconds.
+
+
+--from-json [text]
+------------------
+
+Provide input to this command as a JSON document from a file.
+
+Options can still be provided on the command line. If an option exists
+in both the JSON document and the command line then the command line
+specified value will be used
+
+
+-?, -h, --help
+--------------
+
+For detailed help on any of these individual commands, enter <command>
+--help.

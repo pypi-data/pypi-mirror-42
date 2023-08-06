@@ -1,0 +1,26 @@
+steering-policy-attachment
+**************************
+
+
+Description
+===========
+
+An attachment between a steering policy and a domain. An attachment
+occludes all records at its domain that are of a covered rtype,
+constructing DNS responses from its steering policy rather than from
+those domain records. A domain can have at most one attachment
+covering any given rtype.
+
+
+Available Commands
+==================
+
+* create
+
+* delete
+
+* get
+
+* list
+
+* update
