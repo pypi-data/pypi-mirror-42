@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- how to make header title -->
+<head>
+    <meta charset="UTF-8">
+    <title>SSH Client Framework </title>
+</head>
+
+
+
+
+<body>
+
+<!-- how to make headings with different size-->
+<h2>SSH Client Framework</h2>
+
+<h1></h1>
+
+<h4>This framework is to be used for DevOps, Infrastructure As Code and Network Automation projects.</h4>
+
+<p></p>
+<p></p>
+
+
+<h3>Advantages:</h3>
+<h4>Simple, Fast and Secure ways to:</h4>
+    <ul>
+        <li>Create automated tools to <strong>backup Routers, Switches and Access-Points</strong></li>
+        <li>Create automated tools for <strong>dynamic network configuration generation</strong></li>
+        <li>Create automated tools for <strong>configurations roll-out</strong></li>
+        <li>Create automated tools for <strong>network devices audit</strong> </li>
+        <li>Create automated tools for <strong>network devices inventory generation</strong> </li>
+        <li>Create automated tools for <strong>network devices trouble-shooting</strong> </li>
+    </ul>
+
+<h1></h1>
+
+
+<!-- How to make paragraph lines-->
+<p>How to use the framework.</p>
+<h3>Example 1</h3>
+<h4>To send a single command to multiple remote machines in parallel:</h4>
+    <ol>
+        <li>"pip install juraSSH" in your machine</li>
+        <li>"from juraSSH import oneCMD"</li>
+        <li>my_hosts = ["8.8.8.555", "4.4.4.444"]</li>
+        <li>oneCMD.run_one_cmd(username, password, "show clock", my_hosts)</li>
+    </ol>
+
+
+
+<h3>Example 2</h3>
+<h4>To send multiple commands to multiple remote machines in parallel:</h4>
+    <ol>
+        <li>"pip install juraSSH" in your machine</li>
+        <li>"from juraSSH import multipleCMDs"</li>
+        <li>my_hosts = ["8.8.8.555", "4.4.4.444"]</li>
+        <li>commands = ["show clock", "show ip int brief", "show version"]</li>
+        <li>multipleCMDs.run_multiple_cmds(username, password, commands, my_hosts)</li>
+    </ol>
+
+<p></p>
+<h1></h1>
+
+
+
+<p>You can execute multiple command on hundreds or thousands devices in parallel !!.</p>
+<h1></h1>
+
+
+
+<h4>Drop me an email if:</h4>
+    <ul>
+        <li>you need an Expert for your network automation projects.</li>
+        <li>you need an Expert to introduce network automation in you company.</li>
+        <li>you need an Expert to help you create your own automation tools.</li>
+        <li>you need an Expert to teach 'Python for Network Engineers' on premises.</li>
+        <li>you need an Expert for  Ansible infrastructure Automation.</li>
+    </ul>
+
+    <ul>
+        <li><strong>In-depth know-how and experience with:</strong></li>
+        <li>Cisco Routing & Switching</li>
+        <li>MPLS, OSPF, BGP, MP-BGP</li>
+        <li>Cisco WLAN</li>
+        <li>Data Center LAN & SAN</li>
+        <li>Cisco Hyper-Converged Infrastructures</li>
+        <li>Cisco ASR and ISR product families</li>
+        <li>Cisco Nexus product line</li>
+        <li>SDN</li>
+        <li>Campus LAN</li>
+        <li>WAN</li>
+    </ul>
+
+<h1></h1>
+
+    <ul>
+
+        <li><strong>Socia skills:</strong></li>
+        <li>Strong communication skills</li>
+        <li>High level of commitment</li>
+        <li>Resilient</li>
+        <li>Discreet and trustworthy</li>
+        <li>Team player</li>
+        <li>Flexibility</li>
+        <li>Initiative</li>
+        <li>Priority Based</li>
+        <li>Sense of responsibility</li>
+        <li>Sense of quality</li>
+        <li>Strong customer orientation</li>
+        <li>Highly structured and solution-oriented way of working</li>
+    </ul>
+    
+<h1></h1> 
+ 
+    <ul>
+        <li><strong>Methodological skills:</strong></li>
+        <li>Knowledge in project and process management (principles, methodologies, application)</li>    
+    </ul>
+
+<h1></h1> 
+ 
+    <ul>
+        <li><strong>Contact:</strong></li>
+        <li>david.johnnes@gmail.com</li>    
+    </ul>
+    
+</body>
+
+</html>
