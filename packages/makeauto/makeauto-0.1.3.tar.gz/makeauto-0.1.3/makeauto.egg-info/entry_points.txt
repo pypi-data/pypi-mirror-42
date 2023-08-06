@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    makeauto=makeauto.cli:cli
+  

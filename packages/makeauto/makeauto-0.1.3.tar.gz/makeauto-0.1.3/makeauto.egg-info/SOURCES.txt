@@ -1,0 +1,17 @@
+README.md
+setup.py
+makeauto/__init__.py
+makeauto/cli.py
+makeauto/event_handler.py
+makeauto/makeauto.py
+makeauto/parser.py
+makeauto/utils.py
+makeauto.egg-info/PKG-INFO
+makeauto.egg-info/SOURCES.txt
+makeauto.egg-info/dependency_links.txt
+makeauto.egg-info/entry_points.txt
+makeauto.egg-info/requires.txt
+makeauto.egg-info/top_level.txt
+makeauto/test/__init__.py
+makeauto/test/test_automake.py
+makeauto/test/test_makefileparser.py
