@@ -1,0 +1,15 @@
+decaptcha/__init__.py,sha256=EQDxssEPCgNsGKUuBktYJ1HKer_0YqdomzyuYX6tZtc,193
+decaptcha/apps.py,sha256=bjiWt23qIY1-4PHmbl2uaD3Ahp1B4lSaLtxkTvsrMMM,285
+decaptcha/challenges.py,sha256=c-Fdx8zYH00Z8lnLTBFKhJBD1NUtuvxM_SmNU-2hg_o,798
+decaptcha/models.py,sha256=OFpjn1sOzzCchApXtxi1iVRbsFNwmOHG3nLYxBo_INg,2364
+decaptcha/settings.py,sha256=Wv5q1MpYamiHi59bTiQOHkE4ZPinAOFgJnhd6uGBcAw,807
+decaptcha/tests.py,sha256=rhRHiBSBwdqtDTyqkF9r0oXQssW5biFpqU2a7ZlVOoU,2090
+decaptcha/urls.py,sha256=1863756fV-PpGENKcU6nMHThoAURdDbl76tvPd8gZ1U,471
+decaptcha/utils.py,sha256=CG31m1jQPqP-T6Os56tMX4KJVw-FqAktuioHtj1rXUE,513
+decaptcha/validators.py,sha256=RczrKzh08SPhmOh1jlfHBxSW1foEC8Bcizu4wv_Z69g,309
+decaptcha/views.py,sha256=VRStPiMzDJQi8ASKCKlgp6sKVbDEuDT5raRJQfuiJIA,2988
+django_easy_captcha-1.0.dist-info/LICENSE,sha256=zWgNUUJLdublp0wF0NN2mxrCqDd2bsFSm0ziOdnmHTw,1059
+django_easy_captcha-1.0.dist-info/METADATA,sha256=sJq_3Yon8W7Nm4VFScxL6rWwNs0gXaXL53jeDlN-UlI,838
+django_easy_captcha-1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+django_easy_captcha-1.0.dist-info/top_level.txt,sha256=cLPxO6i8u2Krc4-FcwfbWHd_cjBlqDNxKee_dTxxptU,10
+django_easy_captcha-1.0.dist-info/RECORD,,
