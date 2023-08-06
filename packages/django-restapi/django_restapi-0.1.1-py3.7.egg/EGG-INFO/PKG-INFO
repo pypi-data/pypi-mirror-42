@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: django-restapi
+Version: 0.1.1
+Summary: REST api for django
+Home-page: https://github.com/reindexer/django-restapi
+Author: reindexer
+Author-email: konglingkai@metatype.cn
+License: MIT Licence
+Description: REST api for django
+Keywords: pip,api,REST,django
+Platform: any
