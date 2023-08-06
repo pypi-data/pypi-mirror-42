@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: woodplotlib
+Version: 0.0.1
+Summary: A package for creating woodworking designs
+Home-page: https://github.com/daveroundy/woodplotlib
+Author: David Roundy
+Author-email: daveroundy@gmail.com
+License: UNKNOWN
+Description: # woodplotlib
+        
+        This is a package to create woodworking designs programmatically,
+        inspired by and implemented using matplotlib.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

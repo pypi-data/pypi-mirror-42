@@ -1,0 +1,9 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+woodplotlib/__init__.py
+woodplotlib.egg-info/PKG-INFO
+woodplotlib.egg-info/SOURCES.txt
+woodplotlib.egg-info/dependency_links.txt
+woodplotlib.egg-info/top_level.txt
