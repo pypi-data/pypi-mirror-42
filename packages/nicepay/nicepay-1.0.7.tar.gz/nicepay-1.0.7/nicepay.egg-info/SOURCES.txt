@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+nicepay/__init__.py
+nicepay/nicepay.py
+nicepay.egg-info/PKG-INFO
+nicepay.egg-info/SOURCES.txt
+nicepay.egg-info/dependency_links.txt
+nicepay.egg-info/top_level.txt
