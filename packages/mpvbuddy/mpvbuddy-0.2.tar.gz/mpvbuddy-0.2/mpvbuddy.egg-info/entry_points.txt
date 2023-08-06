@@ -1,0 +1,3 @@
+[console_scripts]
+mpvbuddy = mpvbuddy.__main__:main
+
