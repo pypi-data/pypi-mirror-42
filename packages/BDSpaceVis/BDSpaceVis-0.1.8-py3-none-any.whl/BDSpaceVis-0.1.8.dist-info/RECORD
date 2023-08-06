@@ -1,0 +1,15 @@
+BDSpaceVis/__init__.py,sha256=P3fS0zDa5Tix_ZMjTMFA1HHEGdfHLdSvClPu5LYgP5I,513
+BDSpaceVis/_version.py,sha256=C69ADlbQREQlR15trneyA2sk8x0-oH4rDAX5fsv19_U,22
+BDSpaceVis/coordinate_system.py,sha256=fxzgUfskbP3oXloG6BQ5ybpEBYAMnMn-POndbRXZDns,4636
+BDSpaceVis/curves.py,sha256=ywNRuotxurM9UoR5zGIh9oVFNviW_nw8ZMH3ByuI30o,4454
+BDSpaceVis/fields.py,sha256=DbiUGqW9oQ9benbVURxfipMC-Gz-SHknGywfGqwCvKg,4701
+BDSpaceVis/figures.py,sha256=UEuca8zsNCUOyAyr2GYkW1xMhqk8H7SxIbGIHCe72WI,3786
+BDSpaceVis/generators.py,sha256=v5zJwThR738McU_niiEKgDVQVMCg-0S-9MC_6BhBGYw,7436
+BDSpaceVis/space.py,sha256=8_x6WDUM7SlUHP4uzLkIlXig8hRhdt1fUS_xoGDxU88,4987
+BDSpaceVis/utils.py,sha256=OdqBixBNOahaZH8LV9I22RZfR-W5liDI2CAfUla1oWI,851
+BDSpaceVis-0.1.8.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+BDSpaceVis-0.1.8.dist-info/METADATA,sha256=E1KY8zELCTSBy95GZ-ByipjjI4novzeSPW-8cl4RqC4,1348
+BDSpaceVis-0.1.8.dist-info/NOTICE,sha256=8VEjtS76TUbe-_-TMpLp_qAAfvHdBRZsOzQr7sIte6o,78
+BDSpaceVis-0.1.8.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+BDSpaceVis-0.1.8.dist-info/top_level.txt,sha256=T2zTHjem3AwdJ6WVc7nRxCRsRgk036xoohMVTgZER_4,11
+BDSpaceVis-0.1.8.dist-info/RECORD,,
