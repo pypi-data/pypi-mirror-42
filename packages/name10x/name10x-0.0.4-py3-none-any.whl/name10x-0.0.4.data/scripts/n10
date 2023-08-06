@@ -1,0 +1,3 @@
+#!/bin/sh
+position=$(dirname `which python`)
+python $position/name10x.py $@
