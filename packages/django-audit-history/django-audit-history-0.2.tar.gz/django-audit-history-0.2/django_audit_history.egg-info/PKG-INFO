@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: django-audit-history
+Version: 0.2
+Summary: 
+    A library django for get history request, response and exception handler
+    
+Home-page: https://github.com/suryadana/django-audit-history/
+Author: Komang Suryadana
+Author-email: suryadana80@gmail.com
+License: MIT
+Description: I will make it when i have a mod.
+        
+Platform: UNKNOWN
