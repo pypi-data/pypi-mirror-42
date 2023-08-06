@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+Makefile
+Pipfile
+Pipfile.lock
+README.md
+setup.py
+contextfun/__init__.py
+contextfun/main.py
+contextfun.egg-info/PKG-INFO
+contextfun.egg-info/SOURCES.txt
+contextfun.egg-info/dependency_links.txt
+contextfun.egg-info/top_level.txt
+test/__init__.py
+test/test_contextual_filter.py
+test/test_contextual_map.py
+test/test_frameiter.py
