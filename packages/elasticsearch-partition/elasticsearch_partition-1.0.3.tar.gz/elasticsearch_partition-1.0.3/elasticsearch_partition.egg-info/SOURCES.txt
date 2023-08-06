@@ -1,0 +1,13 @@
+README.md
+setup.py
+elasticsearch_partition/__init__.py
+elasticsearch_partition/formatters.py
+elasticsearch_partition/partitioning.py
+elasticsearch_partition.egg-info/PKG-INFO
+elasticsearch_partition.egg-info/SOURCES.txt
+elasticsearch_partition.egg-info/dependency_links.txt
+elasticsearch_partition.egg-info/requires.txt
+elasticsearch_partition.egg-info/top_level.txt
+tests/__init__.py
+tests/test_formatters.py
+tests/test_partitioning.py
