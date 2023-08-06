@@ -1,0 +1,3 @@
+[console_scripts]
+rzn = rzn.rzn:main
+
