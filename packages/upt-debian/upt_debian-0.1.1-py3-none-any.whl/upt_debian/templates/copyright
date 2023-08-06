@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: {{ pkg.name }}
+Upstream-Contact: XXX
+{% block source %}
+Source: XXX
+{% endblock %}
+
+Files: *
+Copyright: XXX
+License: XXX
+
+Files: debian/*
+Copyright: XXX
+License: XXX
+
+License: XXX

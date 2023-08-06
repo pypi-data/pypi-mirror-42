@@ -1,0 +1,5 @@
+{% extends 'copyright' %}
+
+{% block source %}
+Source: https://pypi.org/project/{{ pkg.name }}
+{% endblock %}

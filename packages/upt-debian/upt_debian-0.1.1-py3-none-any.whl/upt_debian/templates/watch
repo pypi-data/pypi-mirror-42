@@ -1,0 +1,5 @@
+version=3
+opts=uversionmangle=s/(rc|a|b|c)/~$1/ \
+{% block url %}
+XXX
+{% endblock %}
