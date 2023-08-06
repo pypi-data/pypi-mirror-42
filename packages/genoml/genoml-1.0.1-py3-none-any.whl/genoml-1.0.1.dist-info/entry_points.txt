@@ -1,0 +1,5 @@
+[console_scripts]
+genoml-cli = genoml.main:cli
+genoml-inference = genoml.main:inference
+genoml-train = genoml.main:train
+
