@@ -1,0 +1,12 @@
+pyfw/__init__.py,sha256=QosTj92uHjt7mvcXPrqQLWgFMC0K4Hkgu5YP0Wr0jtU,114
+pyfw/config.py,sha256=COcPuGfbhTyFJavnguhyxeDprQZP-AaZM6vs5y5_QYQ,1789
+pyfw/manage.py,sha256=ez3Z_Bmv49bRxrxDFMDahsb5DrJb9Hc2ZwETNOnm0dg,3257
+pyfw/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyfw/tests/test_client.1py.py,sha256=nkOdDDlCUytUPlFZ-2RqjacUzki9PRinKSbmm79ZfWY,1429
+pyfw/tests/test_selenium.1py.py,sha256=de8n0dpSKelV77w3W-hlmPRqLfhjWiPNdlqwtJ3sFWo,3191
+pyfw/tests/test_user_model.py,sha256=bBiavaA1u2qrM9EcAG2eOnscwXCbKHLJNesWMce7U5k,1796
+pyfw-1.0.18.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pyfw-1.0.18.dist-info/METADATA,sha256=os9G-zZV79vWMmXT4pjnJFNlxQhQN4rd9ofEMiWRovE,2704
+pyfw-1.0.18.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+pyfw-1.0.18.dist-info/top_level.txt,sha256=G0xH9rDRPOxc2JcPwNHrqoTu9tN-4YT1mjFYC8p1ub0,5
+pyfw-1.0.18.dist-info/RECORD,,
