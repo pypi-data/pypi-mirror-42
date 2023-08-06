@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: email-master
+Version: 0.0.1
+Summary: Master Email Parsing Package
+Home-page: UNKNOWN
+Author: Swimlane
+Author-email: info@swimlane.com
+License: UNKNOWN
+Keywords: utilities,email,parsing,eml,msg
+Platform: UNKNOWN
+Requires-Dist: pendulum (==1.2.5)
+
+Email Master Parser
+
+Master Email Parsing Python Package
+
+
