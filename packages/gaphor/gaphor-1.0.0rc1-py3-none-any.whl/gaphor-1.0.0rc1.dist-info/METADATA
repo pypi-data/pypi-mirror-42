@@ -1,0 +1,121 @@
+Metadata-Version: 2.1
+Name: gaphor
+Version: 1.0.0rc1
+Summary: Gaphor is a UML modeling tool
+Home-page: https://gaphor.readthedocs.io/
+License: LGPL-2.0
+Keywords: gtk+,diagram,UML,MBSE,gaphor,modeling
+Author: Arjan J. Molenaar
+Author-email: gaphor@gmail.com
+Requires-Python: >=3.5,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: X11 Applications :: GTK
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Multimedia :: Graphics :: Editors :: Vector-Based
+Classifier: Topic :: Software Development :: Documentation
+Requires-Dist: PyGObject (>=3.30,<4.0)
+Requires-Dist: gaphas (>=1.0.0,<2.0.0)
+Requires-Dist: pycairo (>=1.18,<2.0)
+Requires-Dist: zope.component (>=4.5,<5.0)
+Project-URL: Documentation, https://gaphor.readthedocs.io/
+Project-URL: Repository, https://github.com/gaphor/gaphor
+Description-Content-Type: text/x-rst
+
+
+Gaphor
+======
+
+The UML modeling tool.
+
+|build| |license| |pypi| |downloads| |code style|
+
+.. NOTE::
+   The latest release of Gaphor (0.17.2) uses Python 2.x and PyGTK. The master version is using Python 3.x and PyGobject (GObject-introspection).
+   Since a 1.0 version of Gaphas (the canvas component) has been released lately, also requiring PyGObject and not PyGTK, the 1.0 version of Gaphas
+   is incompatible with Gaphor 0.17.2.
+
+   Therefore, when installing Gaphor via pip, Gaphas must be pinned to version 0.7.2 with::
+
+      $ python2 -m pip install -I gaphas==0.7.2
+
+   If a newer version is already installed in your environment, make sure to uninstall Gaphas again before pinning the version.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+Minimum requirements
+^^^^^^^^^^^^^^^^^^^^
+
+This is the software that should be present on your system prior to installing Gaphor.
+
+* Python 3.x (Python 2 is not supported!)
+* GTK+3 and GObject-introspection
+
+If you're on Linux, you will soon need to have GTK+ 3.10 or later. This is the version
+that ships starting with Ubuntu 14.04 and Fedora 20. You will also soon need to install
+the Python 3 bindings to GTK+.
+
+If you're on macOS, you will soon need to be on 10.7 (Lion) or newer.
+GTK+3 and GObject-introspection should be installed with `Homebrew`_::
+
+    $ brew install gobject-introspection gtk+3
+
+We're working on Windows support.
+
+Quickstart
+~~~~~~~~~~
+
+The easiest way to get started is to set up a project specific Virtual Environment::
+
+    $ source ./venv
+    $ gaphor
+
+Documentation
+~~~~~~~~~~~~~
+
+Documentation for Gaphor can be found on `Read The Docs`_.
+
+Community
+~~~~~~~~~
+
+You can talk to the community through:
+
+* The `gaphor`_ channel on Gitter.
+
+Contributing
+~~~~~~~~~~~~
+
+If you experience problems with Gaphor, `log them on GitHub`_. If you
+want to contribute code, please `fork the code`_ and `submit a pull request`_.
+
+.. _Read The Docs: https://gaphor.readthedocs.io
+.. _gaphor: https://gitter.im/gaphor/Lobby
+.. _log them on Github: https://github.com/gaphor/gaphor/issues
+.. _fork the code: https://github.com/gaphor/gaphor
+.. _submit a pull request: https://github.com/gaphor/gaphor/pulls
+.. _Homebrew: https://brew.sh
+.. |build| image:: https://travis-ci.com/gaphor/gaphor.svg?branch=master
+    :target: https://travis-ci.com/gaphor/gaphor
+.. |license| image:: https://img.shields.io/pypi/l/gaphor.svg
+    :target: https://github.com/gaphor/gaphor/blob/master/LICENSE.txt
+.. |pypi| image:: https://img.shields.io/pypi/v/gaphor.svg
+    :target: https://pypi.org/project/gaphor/
+.. |downloads| image:: https://pepy.tech/badge/gaphor
+    :target: https://pepy.tech/project/gaphor
+.. |code style| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
+
+
