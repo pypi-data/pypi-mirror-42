@@ -1,0 +1,11 @@
+shaarli_client/__init__.py,sha256=H40PTMSTHiTpLS-idpShPBZCup4bS_ZsbKilbgRFKek,163
+shaarli_client/config.py,sha256=4UUPGDHdX9-jXneCe-TocfGXLW4fsxMH_lB7ispeJMU,1686
+shaarli_client/main.py,sha256=Gn4ZC1eeKHk21WoaoLxLOs7yTb6Zuf9H9gSs31jY3Do,1775
+shaarli_client/utils.py,sha256=ZMw4WMtyIZ_tKohT2BI9TGWqNzw29jAFr7Lof052Gxo,1617
+shaarli_client/client/__init__.py,sha256=sH0OyxBRFfYjcfEJcYmQ2q8ra3d6rrWQuEe62ZZzDrQ,90
+shaarli_client/client/v1.py,sha256=SStUf5ftEg6dGGveNJKpGnsITx3t-HnouzRK1JC8qSM,9780
+shaarli_client-0.3.0.dist-info/METADATA,sha256=lPha8mHF6Gm7A-KyeCnWGVNjqjwBo2zRc_ohpLLFmAc,1490
+shaarli_client-0.3.0.dist-info/RECORD,,
+shaarli_client-0.3.0.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+shaarli_client-0.3.0.dist-info/entry_points.txt,sha256=ARR-L0JqbwJQS9tDEP2o7_B7Xa3dq2D_qCLEcyxYU7Y,54
+shaarli_client-0.3.0.dist-info/top_level.txt,sha256=47bNxbaRm_7Ike3eWjKbRf-7u6L06wVM9JUSKTDDZ3A,15
