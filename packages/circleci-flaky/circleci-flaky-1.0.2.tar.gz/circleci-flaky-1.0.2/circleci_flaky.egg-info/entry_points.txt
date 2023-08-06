@@ -1,0 +1,3 @@
+[console_scripts]
+circleci-flaky = circleci_flaky:main
+
