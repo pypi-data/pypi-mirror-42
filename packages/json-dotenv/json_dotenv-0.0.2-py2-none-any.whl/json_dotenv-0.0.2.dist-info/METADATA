@@ -1,0 +1,32 @@
+Metadata-Version: 2.0
+Name: json-dotenv
+Version: 0.0.2
+Summary: json-dotenv
+Home-page: https://github.com/decryptus/json-dotenv
+Author: Adrien Delle Cave
+Author-email: pypi@doowan.net
+License: License GPL-2
+Description-Content-Type: text/markdown
+Platform: UNKNOWN
+Requires-Dist: python-dotenv
+Requires-Dist: sonicprobe (>=0.2.71)
+
+# json-dotenv project
+
+## Installation
+
+pip install json-dotenv
+
+### Examples:
+
+`json-dotenv -c list -f foo.env`
+
+`json-dotenv -c keys -f foo.env`
+
+`cat foo.env | json-dotenv -c set -f - --key foo --value bar --key toto --value titi`
+
+`json-dotenv -c get -f foo.env --key foo --key toto`
+
+`json-dotenv -c unset -f foo.env --key foo --key toto`
+
+
