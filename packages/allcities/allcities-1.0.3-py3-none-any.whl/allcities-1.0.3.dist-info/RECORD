@@ -1,0 +1,12 @@
+allcities/__init__.py,sha256=KtelYKllcoXGWHLmULhd5p9nlG9h_g8FX6wr_J-GlCM,369
+allcities/__main__.py,sha256=Zo6quoJZOAShe_Cmqc0AxptHs79jsy9JVZAgxcPmUPk,446
+allcities/city.py,sha256=E6PA2XgaSvb68L4bVgMbGXACekzCFFPyPfqgAPoEmR0,4615
+allcities/cityset.py,sha256=a-W8OBueNTg9BW8vlKaNdXLJ7DXyXrCbv1MaCkFNVAA,5022
+allcities/core.py,sha256=ifuuIliCQw3lZqVRt9AR0EwatXZvp5K5q-mVuSEF51c,4023
+allcities/data/cities1000.pickle.gz,sha256=ulPwrhLSGh3IuiSB6ttiR4C13Zbxdu64oAbKYpQgJ5w,16458598
+allcities/data/last_update,sha256=5TMSNFXCp0ifbGqZQsh8Dj0b3rUWUro4LuQHZvk-rpI,17
+allcities-1.0.3.dist-info/LICENSE.md,sha256=SPCHcLB4KrFuCVWWNsFPoQ4AsxXrJNCOb6pGhs1KIls,1070
+allcities-1.0.3.dist-info/METADATA,sha256=-ELWgZFBsjMDLX7_ZwHc8BPFqbLE_vO_CwFT1kxT_JA,3790
+allcities-1.0.3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+allcities-1.0.3.dist-info/top_level.txt,sha256=YdwEDO26lyeJrXaPbGZgxzQ9bMSOB-Q1VnVmOe4msaQ,10
+allcities-1.0.3.dist-info/RECORD,,
