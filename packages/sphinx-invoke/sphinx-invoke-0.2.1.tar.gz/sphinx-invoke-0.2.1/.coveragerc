@@ -1,0 +1,5 @@
+[run]
+omit =
+  */_version.py
+  */exampletasks.py
+  */exampletasksnoargs.py
