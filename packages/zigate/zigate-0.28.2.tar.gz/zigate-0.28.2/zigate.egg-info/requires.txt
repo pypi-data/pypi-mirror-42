@@ -1,0 +1,10 @@
+pyserial
+pydispatcher
+bottle
+graphviz
+
+[dev]
+tox
+
+[mqtt]
+paho-mqtt
