@@ -1,0 +1,8 @@
+README.md
+setup.py
+num_to_str_repr/__init__.py
+num_to_str_repr/number_converter.py
+num_to_str_repr.egg-info/PKG-INFO
+num_to_str_repr.egg-info/SOURCES.txt
+num_to_str_repr.egg-info/dependency_links.txt
+num_to_str_repr.egg-info/top_level.txt

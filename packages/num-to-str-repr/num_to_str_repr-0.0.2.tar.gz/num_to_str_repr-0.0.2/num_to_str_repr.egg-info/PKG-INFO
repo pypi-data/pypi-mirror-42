@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: num-to-str-repr
+Version: 0.0.2
+Summary: Simple module that convert the number to the Russian string representation.
+Home-page: https://github.com/IrinaLokhvytska/num_to_str_repr
+Author: Iryna Lokhvytska
+Author-email: ilokh@softserveinc.com
+License: UNKNOWN
+Description: # NUM_TO_STR_REPR 
+        
+        Simple module that convert the number to the Russian string representation.
+        
+        Start number - 0, end number -googol.
+        
+        ## Installation
+        
+        Use the package manager [pip](https://pip.pypa.io/en/stable/) to install num-to-str-repr.
+        
+        ```bash
+        pip install num-to-str-repr
+        ```
+        
+        ## Example
+        
+        ```bash
+        from num_to_str_repr.number_converter import NumberConverter
+        
+        converter = NumberConverter(number)
+        converter.convert()
+        ```
+        
+        ## License
+        [MIT](https://choosealicense.com/licenses/mit/)
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
