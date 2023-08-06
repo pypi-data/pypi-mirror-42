@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+matterbabble/__init__.py
+matterbabble/__main__.py
+matterbabble/application.py
+matterbabble/consts.py
+matterbabble/discourse.py
+matterbabble/images.py
+matterbabble/matterbridge.py
+matterbabble/service.py
+matterbabble.egg-info/PKG-INFO
+matterbabble.egg-info/SOURCES.txt
+matterbabble.egg-info/dependency_links.txt
+matterbabble.egg-info/entry_points.txt
+matterbabble.egg-info/top_level.txt
