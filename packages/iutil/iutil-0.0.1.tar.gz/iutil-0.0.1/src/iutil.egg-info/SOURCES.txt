@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/iutil/__init__.py
+src/iutil.egg-info/PKG-INFO
+src/iutil.egg-info/SOURCES.txt
+src/iutil.egg-info/dependency_links.txt
+src/iutil.egg-info/not-zip-safe
+src/iutil.egg-info/top_level.txt
