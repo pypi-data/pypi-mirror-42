@@ -1,0 +1,4 @@
+
+        [buildbot.www]
+        sitenav = buildbot_sitenav:ep
+    

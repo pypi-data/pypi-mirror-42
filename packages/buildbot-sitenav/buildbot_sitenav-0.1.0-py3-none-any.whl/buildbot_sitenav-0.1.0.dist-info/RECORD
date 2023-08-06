@@ -1,0 +1,9 @@
+buildbot_sitenav/VERSION,sha256=6d2FB_S_DG9CRY5BrqgzrQvT9hJycjNe7pv01YVB7Wc,6
+buildbot_sitenav/__init__.py,sha256=_8EEtRFpe2gE-6-dmQlK6PozCH2ounC00eAoYfnQW3E,98
+buildbot_sitenav/static/scripts.js,sha256=s-c6jICgt1JtM-Cu0Bffe1Vde3vznH1fY9loF5tkQpE,2521
+buildbot_sitenav/static/styles.css,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+buildbot_sitenav-0.1.0.dist-info/METADATA,sha256=56WNQLECt2eBSk6VIC237tcLcUZ8IIWt94tpM4lnUL8,2119
+buildbot_sitenav-0.1.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+buildbot_sitenav-0.1.0.dist-info/entry_points.txt,sha256=BylXVjGpV71wnlMdq59BPOtprzdkUYPbzlwhMB6ugME,66
+buildbot_sitenav-0.1.0.dist-info/top_level.txt,sha256=OUUc7_46SogwM3668fn4m5MLZgyNa2nio2_LgzyNkoE,17
+buildbot_sitenav-0.1.0.dist-info/RECORD,,
