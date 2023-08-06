@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="nosetests" tests="42" errors="0" failures="0" skip="0"><testcase classname="LbSoftConfDb2Server.test.TestDbConnection.TestDbConnection" name="testGetConnection" time="0.001"></testcase><testcase classname="LbSoftConfDb2Server.test.TestDbConnection.TestDbConnection" name="testGetPwdFromSys" time="0.001"></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_Application" time="0.212"><system-err><![CDATA[2019-01-25 14:02:34,475 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_BuildTool" time="0.143"><system-err><![CDATA[2019-01-25 14:02:34,687 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_PVProperties" time="0.055"><system-err><![CDATA[2019-01-25 14:02:34,830 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_ProjectProperties" time="0.039"><system-err><![CDATA[2019-01-25 14:02:34,885 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_ProjectProperty" time="0.035"><system-err><![CDATA[2019-01-25 14:02:34,924 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_ReleaseFlag" time="0.164"><system-err><![CDATA[2019-01-25 14:02:34,960 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_active" time="0.123"><system-err><![CDATA[2019-01-25 14:02:35,124 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_addPVPlatform" time="0.072"><system-err><![CDATA[2019-01-25 14:02:35,247 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_delPVPlatform" time="0.097"><system-err><![CDATA[2019-01-25 14:02:35,319 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:35,385 - SoftCondDB - WARNING - Removing relationship: x65
+2019-01-25 14:02:35,399 - SoftCondDB - WARNING - No relation was found, exiting
+2019-01-25 14:02:35,406 - SoftCondDB - WARNING - Node not found, exiting
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_deletePv" time="0.053"><system-err><![CDATA[2019-01-25 14:02:35,417 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:35,450 - SoftCondDB - WARNING - Deleting: A v1r1
+2019-01-25 14:02:35,461 - SoftCondDB - WARNING - Deleting: A v1r1
+2019-01-25 14:02:35,463 - SoftCondDB - WARNING - Node not found, exiting
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getDependenciesAsDot" time="0.195"><system-err><![CDATA[2019-01-25 14:02:35,470 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getOrCreateBulkPV" time="0.249"><system-err><![CDATA[2019-01-25 14:02:35,665 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:35,707 - SoftCondDB - WARNING - Requesting release of A v1r0
+2019-01-25 14:02:35,733 - SoftCondDB - WARNING - Requesting release of B v1r0
+2019-01-25 14:02:35,766 - SoftCondDB - WARNING - Requesting release of D v1r0
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getOrCreatePV" time="0.098"><system-err><![CDATA[2019-01-25 14:02:35,915 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getOrCreatePVPattern" time="0.271"><system-err><![CDATA[2019-01-25 14:02:36,013 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:36,039 - SoftCondDB - WARNING - No match found for FIFI_v* pattern
+2019-01-25 14:02:36,042 - SoftCondDB - WARNING - Processing pattern: FIFI_v*
+2019-01-25 14:02:36,066 - SoftCondDB - WARNING - No match found for FIFI_v* pattern
+2019-01-25 14:02:36,068 - SoftCondDB - WARNING - Processing pattern: FIFI_v*
+2019-01-25 14:02:36,103 - SoftCondDB - WARNING - Processing pattern: TOTO_v*
+2019-01-25 14:02:36,126 - SoftCondDB - WARNING - Processing pattern: TOTO_v*
+2019-01-25 14:02:36,153 - SoftCondDB - WARNING - Processing pattern: TOTO_v*
+2019-01-25 14:02:36,184 - SoftCondDB - WARNING - Processing pattern: TOTO_v2r*
+2019-01-25 14:02:36,214 - SoftCondDB - WARNING - Processing pattern: TOTO_v2r*
+2019-01-25 14:02:36,249 - SoftCondDB - WARNING - Processing pattern: TOTO_v2r*
+2019-01-25 14:02:36,260 - SoftCondDB - WARNING - Processing pattern: TOTO_v*
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getOrCreateProjectNode" time="0.029"><system-err><![CDATA[2019-01-25 14:02:36,284 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getPV" time="0.024"><system-err><![CDATA[2019-01-25 14:02:36,313 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getProjectNode" time="0.011"><system-err><![CDATA[2019-01-25 14:02:36,337 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_getSourceURI" time="0.065"><system-err><![CDATA[2019-01-25 14:02:36,348 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:36,392 - SoftCondDB - WARNING - No Project/Version found for A v1r1
+2019-01-25 14:02:36,400 - SoftCondDB - WARNING - No Project/Version found for DAVINCI v1r1
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listDependencies" time="0.184"><system-err><![CDATA[2019-01-25 14:02:36,413 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listDependencyRelations" time="0.192"><system-err><![CDATA[2019-01-25 14:02:36,597 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listReferences" time="0.183"><system-err><![CDATA[2019-01-25 14:02:36,789 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listReleaseStacks" time="0.554"><system-err><![CDATA[2019-01-25 14:02:36,972 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+2019-01-25 14:02:37,507 - SoftCondDB - DEBUG - Starting listReleaseStacks
+2019-01-25 14:02:37,514 - SoftCondDB - DEBUG - Starting listReleaseStacks
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listStackPlatformsRequestedForRelease" time="0.104"><system-err><![CDATA[2019-01-25 14:02:37,526 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listStackPlatformsRequestedForRelease2" time="0.108"><system-err><![CDATA[2019-01-25 14:02:37,630 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_listStackPlatformsToRelease" time="0.239"><system-err><![CDATA[2019-01-25 14:02:37,738 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_matchAndSortVersions" time="0.003"><system-err><![CDATA[2019-01-25 14:02:37,978 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_nodesHaveRelationship" time="0.096"><system-err><![CDATA[2019-01-25 14:02:37,981 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_requires" time="0.129"><system-err><![CDATA[2019-01-25 14:02:38,077 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_show" time="0.141"><system-err><![CDATA[2019-01-25 14:02:38,207 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_sortVersions" time="0.003"><system-err><![CDATA[2019-01-25 14:02:38,349 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_tDatapkg" time="0.070"><system-err><![CDATA[2019-01-25 14:02:38,352 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_tag" time="0.120"><system-err><![CDATA[2019-01-25 14:02:38,423 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_unused" time="0.105"><system-out><![CDATA[Active: A v1r0
+Active: A v1r1
+Active: B v1r0
+Active: C v1r0
+Used: B v1r0
+AppUsed: A v1r0
+AppUsed: A v1r1
+Unused = Active - Used - AppUsed
+]]></system-out><system-err><![CDATA[2019-01-25 14:02:38,543 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_used" time="0.099"><system-err><![CDATA[2019-01-25 14:02:38,648 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_versionIsPattern" time="0.005"><system-err><![CDATA[2019-01-25 14:02:38,748 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestLbConfDb2.TestLbConfDb2" name="test_version_key" time="0.004"><system-err><![CDATA[2019-01-25 14:02:38,752 - SoftCondDB - DEBUG - Connecting to Neo4j DB: bolt://neo4j:lbneo4j@localhost:7687/db/data/
+]]></system-err></testcase><testcase classname="LbSoftConfDb2Server.test.TestNeo4jEnvSetup.TestNeo4JEnvSetup" name="testDownload" time="0.000"></testcase><testcase classname="LbSoftConfDb2Server.test.TestNeo4jEnvSetup.TestNeo4JEnvSetup" name="testInit" time="0.000"></testcase><testcase classname="LbSoftConfDb2Server.test.TestNeo4jEnvSetup.TestNeo4JEnvSetup" name="testInitialConfig" time="0.000"></testcase><testcase classname="LbSoftConfDb2Server.test.TestNeo4jEnvSetup.TestNeo4JEnvSetup" name="testSetup" time="0.000"></testcase></testsuite>
