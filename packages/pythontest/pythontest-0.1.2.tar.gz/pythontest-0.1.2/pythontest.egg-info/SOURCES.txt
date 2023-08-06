@@ -1,0 +1,7 @@
+README.md
+setup.py
+pythontest/__init__.py
+pythontest.egg-info/PKG-INFO
+pythontest.egg-info/SOURCES.txt
+pythontest.egg-info/dependency_links.txt
+pythontest.egg-info/top_level.txt
