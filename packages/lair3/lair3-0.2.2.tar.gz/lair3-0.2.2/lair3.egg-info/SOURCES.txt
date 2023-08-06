@@ -1,0 +1,13 @@
+README.md
+setup.py
+lair3/__init__.py
+lair3/address_walk.py
+lair3/http_packet.py
+lair3/securesocket.py
+lair3/sockets.py
+lair3/x509.py
+lair3.egg-info/PKG-INFO
+lair3.egg-info/SOURCES.txt
+lair3.egg-info/dependency_links.txt
+lair3.egg-info/requires.txt
+lair3.egg-info/top_level.txt
