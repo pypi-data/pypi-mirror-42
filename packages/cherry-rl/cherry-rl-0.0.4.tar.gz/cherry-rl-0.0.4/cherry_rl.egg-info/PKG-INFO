@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: cherry-rl
+Version: 0.0.4
+Summary: PyTorch Reinforcement Learning Framework
+Home-page: https://github.com/seba-1511/cherry
+Author: Seb Arnold
+Author-email: smr.arnold@gmail.com
+License: License :: OSI Approved :: Apache Software License
+Download-URL: https://github.com/seba-1511/cherry/archive/0.0.4.zip
+Description: PyTorch Reinforcement Learning Framework
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
