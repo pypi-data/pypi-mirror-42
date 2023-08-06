@@ -1,0 +1,216 @@
+General points about signals:
+
+* Indexing a `Signal` or a `MultichannelSignal` yields a scalar sample
+or a NumPy array of samples. To the extent possible, indexing a
+`Signal` or a `MultichannelSignal` should behave just like indexing
+a NumPy array with the same shape.
+
+* With the preceding point in mind, I have chosen not to allow the use
+of negative signal indices to index signal samples to the left of the
+origin. The use of negative signal indices is common in the field of
+signal processing, but in Python and NumPy negative indices are used
+to index a sequence relative to its end. The `Signal` and
+`MultichannelSignal` classes support the Pythonic use of negative
+indices for all signal axes.
+
+
+Signal
+
+* Sequence of n-dimensional sample arrays.
+* All sample arrays of a signal have the same dimensions.
+* Indexing yields NumPy array of samples.
+* First index is for time axis.
+* Other indices are for sample array axes.
+* Time axis has a nonnegative start index and a nonnegative length.
+* Reading outside of extent returns zeros.
+* Three levels of mutability: immutable, extendible, and editable.
+* Need thread synchronization for mutable signals.
+
+s.name                   # `str` or `None`
+
+s.parent                 # `MultichannelSignal` or `None`
+
+s.time_axis              # `TimeAxis`
+s.array_axes             # `NamedSequence` of `ArrayAxis` objects
+s.amplitude_axis         # `AmplitudeAxis`
+s.axes                   # mapping from axis name to axis object
+
+s.dtype                  # NumPy `dtype`
+
+s.shape                  # signal shape, an integer tuple
+len(s)                   # time axis length
+
+s[:]                     # all signal samples
+s[0]                     # sample array 0
+s[1]                     # sample array 1
+s[-1]                    # final sample array
+s[0:10]                  # sample arrays 0 through 9
+s[0, 10:20]              # part of sample array 0
+s[0, 10:-20]             # part of sample array 0
+
+
+MultichannelSignal
+
+* Sequence of channels, each a `Signal`.
+* All channels share start index, length, and sample array dimensions.
+* Sequence of sample arrays at a given signal index is a *sample frame*.
+* Indexing yields NumPy array of samples.
+* First index is channel number.
+* Second index is for time axis.
+* Other indices are for sample array axes.
+* Each channel has its own amplitude axis.
+
+s.name
+
+s.channels               # `NamedSequence` of `Signal` objects
+
+s.time_axis              # `TimeAxis`
+s.array_axes             # `NamedSequence` of `ArrayAxis` objects
+s.amplitude_axis         # `Axis` (no calibration
+s.axes                   # mapping from axis name to axis object
+
+s.dtype                  # NumPy `dtype`
+
+s.shape                  # tuple of number of channels and axis lengths
+len(s)                   # number of channels
+
+s[:]                     # all samples of all channels
+s[0]                     # all samples of channel 0
+s[0, 10]                 # sample array 10 of channel 0
+s[0, 10:20]              # sample arrays 10 through 19 of channel 0
+s[:, 10]                 # sample frame 10
+s[:, 10:20]              # sample frames 10 through 19
+
+
+Axis
+
+a.name                   # e.g. 'Time', 'Frequency'
+a.units                  # `Bunch` with `plural`, `singular`, and
+                         # `abbreviation` attributes
+
+
+IndexedAxis(Axis)
+
+Note the asymmetry between the start index and end index: the start index
+is always a nonnegative integer, while the end index is either a
+nonnegative integer or `None`. This is intentional, and reflects the
+fact that the start index and the length of an axis determine the
+extent of the axis, while the end index is simply a derived
+quantity provided for convenience. For mutable signals that grow from
+nothing, we want to be able to specify an integer start index (typically
+zero) and a zero length for the time axis at initialization, and then
+increase the length while leaving the start index alone as the signal
+grows. It would be undesirable to set the start index to an integer in
+the initializer, only to have it read `None` because the
+length was zero, and then magically attain the value passed to the
+initializer when the signal length became nonzero. It would also be
+undesirable to not be able to initialize the start index to a
+non-`None` value when the length is zero, and to have to set it to
+the desired non-`None` value later when the length became nonzero.
+
+a.start_index            # start of index range
+a.end_index              # end of index range, `None` if length zero
+a.length                 # axis length in indices
+
+
+TimeAxis(IndexedAxis)
+
+Axis values have units of seconds. A `TimeAxis` may be *date/time calibrated*,
+in which case the date and time of each sample are known.
+
+Note the asymmetries between the start time and the end time and the
+start datetime and end datetime. These follow from the asymmetry
+between the start index and the end index.
+
+a.sample_rate            # hertz
+a.sample_period          # seconds (same as `index_step_size`)
+
+a.index_to_time_mapping
+a.index_to_time(i)       # indices may be float
+a.time_to_index(t)       # indices are float
+
+a.start_time             # time at start index
+a.end_time               # time at end index, `None` if length zero
+a.span                   # end time less start time, `None` if length zero
+a.duration               # span plus sample period, zero if length zero
+
+a.reference_datetime     # `Bunch` with `index` and `datetime` attributes
+a.index_to_datetime(i)   # indices may be float
+a.datetime_to_index(dt)  # indices are float
+
+a.start_datetime         # `datetime` at start index, `None` if unknown
+a.end_datetime           # `datetime` at start index, `None` if unknown
+
+
+ArrayAxis(IndexedAxis)
+
+a.index_to_value_mapping
+a.index_to_value(i)      # indices may be float
+a.value_to_index(v)      # indices are float
+
+a.start_value            # value at start index
+a.end_value              # value at end index, `None` if length zero
+a.span                   # end value less start value, `None` if length zero
+
+
+AmplitudeAxis(Axis)
+
+For now, `AmplitudeAxis` is just a subclass of `Axis` with a specialized
+initializer and no other methods. It will (probably) eventually provide
+amplitude calibration functionality.
+
+
+* How do we support mutable signals? The two types of mutable signals
+  I can think of are *extensible* signals and *editable* signals. The
+  available extent of an extensible signal can change, but the sample
+  values (i.e. the values of the samples of any particular sample array)
+  of the signal never change. Both the available extent and the sample
+  values of an editable signal can change via cut and paste operations.
+  [Why have two classes of mutable signals? Why not have just editable
+  signals (though we might just call them mutable), which subsume
+  extendible signals?]
+  
+  Mutability complicates signal processing. I have in mind implementing
+  signal processing lazily inside various `Signal` subclasses. For
+  example, I would like to implement a `Spectrogram` subclass, an
+  instance of which computes a spectrogram of a wrapped waveform.
+  To support mutability, I have in mind making `Signal` instances
+  observable. Then a `Signal` that wraps another signal can observe
+  that signal, so that whenever the latter changes the former can
+  notify its observers of how it, in turn, has changed. The
+  notifications would include an indication of where along the time
+  axis the changes occurred.
+  
+  [Some signal processors might two or more output signals. For
+  example, a spectrograph might offer complex, magnitude, and
+  phase output signals. In this case the spectrograph would not
+  itself be a `Signal` or a `MultichannelSignal`, but would be
+  some other type of object (a `SignalProcessor`, perhaps) that
+  would offer several output signals, and that might tailor its
+  computation to which of those outputs are being observed. If
+  only the magnitude output of a spectrograph is being observed,
+  for example, it might use the SciPy `spectrogram` function
+  differently (in particular, to compute only the spectrogram
+  magnitude) than it would if its complex output was being
+  observed.
+  
+  We will also have to concern ourselves with thread synchronization
+  for mutable signals. We might just use locks for this, perhaps in
+  conjunction with Python's `with` statement.
+  
+  It seems to me that it might be good for the signal classes to
+  explicitly acknowledge the difference between real-time signals,
+  for which change is steady and predictable and places certain
+  constraints on processing, and editable signals, for which change
+  is less predictable but doesn't constrain processing as heavily.
+  The two cases are really quite different.
+
+  
+Audio File Utils
+  
+u.get_audio_file_type(file_path)
+u.create_multichannel_array_signal(file_)
+u.create_array_signal(file_)
+u.create_multichannel_audio_file_signal(file_)
+u.create_audio_file_signal(file_)
+  
