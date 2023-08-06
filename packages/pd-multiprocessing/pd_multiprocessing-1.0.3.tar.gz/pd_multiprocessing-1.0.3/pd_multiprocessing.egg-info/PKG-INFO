@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: pd-multiprocessing
+Version: 1.0.3
+Summary: pd_multiprocessing provides a simple, parallelized function to apply a user defined function rowwise on a Pandas Dataframe.
+Home-page: https://github.com/stavrakidis/pd_multiprocessing
+Author: Kyriakos Stavrakidis
+License: MIT license
+Project-URL: Source, https://github.com/stavrakidis/pd_multiprocessing
+Project-URL: Tracker, https://github.com/stavrakidis/pd_multiprocessing/issues
+Description: [![Build Status](https://travis-ci.org/stavrakidis/pd_multiprocessing.png)](https://travis-ci.org/stavrakidis/pd_multiprocessing)
+        [![Coverage Status](https://coveralls.io/repos/github/stavrakidis/pd_multiprocessing/badge.svg?branch=master)](https://coveralls.io/github/stavrakidis/pd_multiprocessing?branch=master)
+        
+        # pd_multiprocessing
+        
+        pd_multiprocessing provides a simple, parallelized function to apply a user defined function rowwise on a Pandas Dataframe.
+        
+        
+        ## Usage
+        
+        A typical usage looks like this
+        
+        ```python
+        import pandas as pd
+        from pd_multiprocessing.map import df_map
+        
+        
+        def twotimes(row):
+            row['col2'] = row['col1']*2
+            return row
+        
+        
+        if __name__ == '__main__':
+            df = pd.DataFrame.from_dict({'col1': range(100)})
+            print(df_map(twotimes, df))
+        ```
+        
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.4
+Description-Content-Type: text/markdown

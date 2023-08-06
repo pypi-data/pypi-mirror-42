@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+pd_multiprocessing/__init__.py
+pd_multiprocessing/map.py
+pd_multiprocessing.egg-info/PKG-INFO
+pd_multiprocessing.egg-info/SOURCES.txt
+pd_multiprocessing.egg-info/dependency_links.txt
+pd_multiprocessing.egg-info/requires.txt
+pd_multiprocessing.egg-info/top_level.txt
+pd_multiprocessing/test/__init__.py
+pd_multiprocessing/test/test_map_df_map.py
