@@ -1,0 +1,6 @@
+networkx>=2
+scipy
+pyvcf
+pysam
+sortedcontainers
+pandas
