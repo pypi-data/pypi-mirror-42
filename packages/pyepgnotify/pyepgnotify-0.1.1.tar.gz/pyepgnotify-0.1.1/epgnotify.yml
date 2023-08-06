@@ -1,0 +1,33 @@
+vdrhost: localhost
+vdrport: 6419
+#email: my.mail@internet.com
+vdradmin_link: http://vdradmin:vdradmin@VDRADMIN-AM.host:8001
+nochannel:
+- Sky Cinema
+- SYFY HD
+- Discovery HD
+notitle:
+- "Hachiko"
+- "Cake Boss: Buddys Tortenwelt"
+title:
+- Her
+- Albert
+- Lucy
+- Turbo
+- Wolfgang
+- Hop
+indescription:
+- David Attenborough
+- Terry Pratchett
+insubtitle:
+- David Attenborough
+- Terry Pratchett
+intitle:
+- Terry Pratchett
+- David Attenborough
+- intitle: Moderne Wunder
+  nosubtitle:
+  - Episode 1 
+- Abenteuer Erde
+- Avengers
+

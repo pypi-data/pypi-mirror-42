@@ -1,0 +1,12 @@
+README.md
+epgnotify.yml
+setup.cfg
+setup.py
+pyepgnotify/__init__.py
+pyepgnotify/epgnotify.py
+pyepgnotify.egg-info/PKG-INFO
+pyepgnotify.egg-info/SOURCES.txt
+pyepgnotify.egg-info/dependency_links.txt
+pyepgnotify.egg-info/entry_points.txt
+pyepgnotify.egg-info/requires.txt
+pyepgnotify.egg-info/top_level.txt
