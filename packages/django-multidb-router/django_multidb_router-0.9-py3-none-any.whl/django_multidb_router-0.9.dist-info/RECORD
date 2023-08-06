@@ -1,0 +1,9 @@
+multidb/__init__.py,sha256=qmRr5nhYC7XmfsHxfBBmMu4Ue2PLrvUsP_GO4C1ammE,4381
+multidb/middleware.py,sha256=zeToPoNe6hQ2RdqnmsIUadvUXP1o3c3-huZZohUDz5M,1964
+multidb/pinning.py,sha256=zM32k8j4WAbRaS17CFOBRU-_aeH4k6_IqvkBZZwoAlg,1977
+multidb/tests.py,sha256=iLxblANf4e_Vp67oiG5UYF_6YG69Zc3kRLV23ZZ-r-Q,9790
+django_multidb_router-0.9.dist-info/LICENSE,sha256=29LOymwfdcZzdth8eAv8OplHo5ynDwbsoWu375xYlXI,1523
+django_multidb_router-0.9.dist-info/METADATA,sha256=HU4BTpPnpC-HPKMo6TCe5054XLnFG799-ysmv2ejZ-Y,5050
+django_multidb_router-0.9.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+django_multidb_router-0.9.dist-info/top_level.txt,sha256=mJePhcTQTSps64pxEkIl1bcu-WXw77w_jOfznoWgKB0,8
+django_multidb_router-0.9.dist-info/RECORD,,
