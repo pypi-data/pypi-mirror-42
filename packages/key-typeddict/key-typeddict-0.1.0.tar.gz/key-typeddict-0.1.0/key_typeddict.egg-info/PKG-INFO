@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: key-typeddict
+Version: 0.1.0
+Summary: mypy_extensions.TypedDict with some additional features
+Home-page: https://github.com/mkurnikov/key-typeddict
+Author: Maksim Kurnikov
+Author-email: maxim.kurnikov@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

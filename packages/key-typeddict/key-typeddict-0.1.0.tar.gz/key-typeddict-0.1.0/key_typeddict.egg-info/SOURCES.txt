@@ -1,0 +1,12 @@
+setup.py
+key_typeddict/__init__.py
+key_typeddict/core.py
+key_typeddict/core.pyi
+key_typeddict/plugin.py
+key_typeddict/py.typed
+key_typeddict.egg-info/PKG-INFO
+key_typeddict.egg-info/SOURCES.txt
+key_typeddict.egg-info/dependency_links.txt
+key_typeddict.egg-info/not-zip-safe
+key_typeddict.egg-info/requires.txt
+key_typeddict.egg-info/top_level.txt
