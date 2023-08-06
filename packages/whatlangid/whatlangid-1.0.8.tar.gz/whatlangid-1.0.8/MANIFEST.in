@@ -1,0 +1,7 @@
+include README.md
+include README
+include LICENSE
+include MANIFEST.in
+include requirements.txt
+recursive-include whatlangid/model *
+

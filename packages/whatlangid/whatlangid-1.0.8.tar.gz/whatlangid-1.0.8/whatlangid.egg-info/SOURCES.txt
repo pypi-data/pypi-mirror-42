@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README
+README.md
+requirements.txt
+setup.py
+whatlangid/__init__.py
+whatlangid/exceptions.py
+whatlangid/predict_lang.py
+whatlangid/use_bin.py
+whatlangid.egg-info/PKG-INFO
+whatlangid.egg-info/SOURCES.txt
+whatlangid.egg-info/dependency_links.txt
+whatlangid.egg-info/requires.txt
+whatlangid.egg-info/top_level.txt
+whatlangid/model/lid.176.ftz

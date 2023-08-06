@@ -1,0 +1,4 @@
+fasttext>=0.8.22
+langid>=1.1.6
+tqdm>=4.23.3
+requests>=2.18.4
