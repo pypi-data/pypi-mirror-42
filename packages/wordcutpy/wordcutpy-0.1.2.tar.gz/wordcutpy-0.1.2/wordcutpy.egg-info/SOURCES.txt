@@ -1,0 +1,9 @@
+README.md
+setup.py
+wordcut/__init__.py
+wordcut/example.py
+wordcutpy.egg-info/PKG-INFO
+wordcutpy.egg-info/SOURCES.txt
+wordcutpy.egg-info/dependency_links.txt
+wordcutpy.egg-info/not-zip-safe
+wordcutpy.egg-info/top_level.txt
