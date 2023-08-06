@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: list-files-py
+Version: 1.0.0.dev1
+Summary: A list file python project
+Home-page: UNKNOWN
+Author: dong jian
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Keywords: list file python
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
