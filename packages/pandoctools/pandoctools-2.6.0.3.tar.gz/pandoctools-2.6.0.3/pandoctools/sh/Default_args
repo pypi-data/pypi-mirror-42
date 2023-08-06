@@ -1,0 +1,148 @@
+#!/bin/bash
+# May use variables predefined in the profile:
+#   $profile (profile name)
+#   ${md_input_only}
+
+# May use variables predefined in pandoctools:
+#   ${in_ext}    (input file extension like "md")
+#   ${out_ext}    (output file extension like "md")
+#   ${input_file}    (input file path with extension)
+#   ${output_file}    (output file path with extension)
+#   $from    (always lowercase. pandoc reader format + custom pandoctools formats)
+#   $to    (always lowercase. pandoc writer format + custom pandoctools formats)
+#   ${important_from}    (bool: "true" "false". Whether `$from` was set by user)
+#   ${important_to}    (bool: "true" "false". Whether `$to` was set by user)
+#   ${is_bin_ext_maybe}    (pandoctools nice guess if the ${output_file} extension
+#                           (or $to if no ext) means that pandoc needs adding 
+#                           `-o "${output_file}"` option)
+
+#   $source    (source bash script from PATH but not CWD)
+#   $resolve    (echoes resolved path to a file. Searches in 
+#                `$HOME/.pandoc/pandoctools` or `%APPDATA%\pandoc\pandoctools`
+#                then in `<...>/site-packages/pandoctools/sh` folders)
+
+#   $scripts    (`bin` on Unix, `Scripts` on Windows)
+#   ${root_env}    (root conda environment folder)
+#   ${env_path}    (conda or venv environment folder)
+
+# Exports vars:
+#   $from0    (original $from)
+#   $to0    (original $to)
+#   $from    (pandoc reader format without custom formats)
+#   $to    (pandoc writer format without custom formats)
+#   $t    (argument for pandoc filters)
+
+#   $metadata    (profile metadata file)
+#   ${extra_inputs}    (format specific part of the middle inputs -
+#                       metadata, other files)
+#   ${reader_args0}    (format specific part of the pandoc reader args)
+#   ${writer_args0}    (format specific part of the pandoc writer args)
+#   ${panfl_args0}    (format specific part of the panflute args)
+#   ${reader_args}    (all pandoc reader args)
+#   ${writer_args}    (all pandoc writer args)
+
+#   ${panfl_args}
+#   ${nbconvert_args}
+#   ${mathjax_url}
+#   $pytools
+#   $tmpdir    (temp dir in the same folder as ${output_file}
+#               It should be deleted at the end of all pipes)
+
+
+extra_inputs=()
+reader_args0=()
+writer_args0=()
+panfl_args0=()
+from0="$from"
+to0="$to"
+tmpdir="$(dirname "${output_file}")/__temp__"
+mkdir -p "$tmpdir"
+
+
+# deal with reader formats:
+# ---------------------------
+# mod $from only if it was autoset by pandoctools
+if [[ "${important_from}" == "true" ]]; then
+    :;
+elif [[ "${md_input_only}" == "true" ]]; then
+    from=markdown; fi
+
+
+# deal with writer formats:
+# ---------------------------
+_jupymd="ipynb-bracketed_spans-fenced_divs-link_attributes\
+-simple_tables-multiline_tables-grid_tables-pipe_tables\
+-fenced_code_attributes-markdown_in_html_blocks-table_captions-smart"
+_meta_ipynb_R="$("$resolve" "${profile}_ipynb_R.yml" --else Default_ipynb_R.yml)"
+_meta_ipynb_py3="$("$resolve" "${profile}_ipynb_py3.yml" --else Default_ipynb_py3.yml)"
+_templ_docx="$("$resolve" "$profile.docx" --else Default.docx)"
+
+
+# ........
+# mod $to only if it was autoset by pandoctools
+# (keep $to set by user):
+if [[ "${important_to}" == "true" ]]; then
+    :;
+
+# override ipynb Markdown flavor when only output extension was specified:
+elif [[ "${out_ext}" == "ipynb" ]]; then
+    to="${_jupymd}"
+
+# pandoctools overrides `pandoc -t html -o doc.pdf` combination:
+# (use `pandoc -t html5 -o doc.pdf` for default pandoc behaviour)
+elif [[ "${out_ext}" == "pdf" ]]; then
+    to="html"; fi
+
+
+# ........
+if [[ "$to" == "html" && "${out_ext}" == "pdf" ]]; then
+    inheader="$tmpdir/in-header.html"
+    cat "$("$resolve" "${profile}_mathjax.html" --else Default_mathjax.html)" > "$inheader"
+    echo '<script type="text/javascript">' >> "$inheader"
+    cat "$("$resolve" "${profile}_prism.js" --else Default_prism.js)" >> "$inheader"
+    echo '</script>' >> "$inheader"
+    pysassc "$("$resolve" "${profile}.sass" --else Default.sass)" "$tmpdir/profile.css"
+    writer_args0=(--mathjax --no-highlight \
+        --css "$("$resolve" "${profile}_prism.css" --else Default_prism.css)" \
+        --css "$("$resolve" _github_markdown.css)" \
+        --css "$tmpdir/profile.css" \
+        --include-in-header "$inheader" \
+        --template "$("$resolve" "${profile}.html" --else Default.html)")
+    panfl_args0=("pandoctools.language_prefix")
+
+# custom $to format: "r.ipynb" or "r.ipynb+format"
+elif [[ "${to:0:7}" == "r.ipynb" ]]; then
+    extra_inputs=("${_meta_ipynb_R}")
+    if [[ "${to:7}" != "" ]]; then
+        to="${to:2}"
+    else
+        to="${_jupymd}"; fi
+
+elif [[ "${to:0:5}" == "ipynb" ]]; then
+    extra_inputs=("${_meta_ipynb_py3}")
+
+elif [[ "${to:0:4}" == "html" ]]; then
+    writer_args0=(--mathjax)
+
+elif [[ "${out_ext}" == "docx" ]]; then
+    writer_args0=(--reference-doc "${_templ_docx}" -o "${output_file}")
+
+elif [[ "${is_bin_ext_maybe}" == "true" ]]; then
+    writer_args0=(-o "${output_file}"); fi
+
+
+# set other defaults:
+# ---------------------
+metadata="$("$resolve" "$profile.yml" --else Default.yml)"
+reader_args=(-f "$from" "${reader_args0[@]}")
+writer_args=(--standalone --self-contained -t "$to" "${writer_args0[@]}")
+t="$(pandoc-filter-arg "${writer_args[@]}")"
+
+panfl_args=(-t "$t" sugartex "${panfl_args0[@]}")
+nbconvert_args=(--to notebook --stdin --stdout)
+
+mathjax="$("$resolve" "${profile}_mathjax.py" --else Default_mathjax.py)"
+mathjax_url="$(py-mathjax-path --url)"
+
+# panfl -t $t sugartex == sugartex $t == sugartex
+# panfl -t $t sugartex.kiwi == sugartex --kiwi
