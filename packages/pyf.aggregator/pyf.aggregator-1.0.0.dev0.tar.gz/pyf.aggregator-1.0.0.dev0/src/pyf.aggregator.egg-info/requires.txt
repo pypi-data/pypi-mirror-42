@@ -1,0 +1,13 @@
+elasticsearch-dsl
+lxml
+requests
+setuptools
+
+[dev]
+pdbpp
+
+[testing]
+responses
+webtest
+pytest
+pytest-cov
