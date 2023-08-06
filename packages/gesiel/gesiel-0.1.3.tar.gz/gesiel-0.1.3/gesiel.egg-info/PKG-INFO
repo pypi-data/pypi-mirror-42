@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: gesiel
+Version: 0.1.3
+Summary: Simple and flexible schema definition.
+Home-page: https://github.com/gabrielweich/gesiel
+Author: Gabriel Weich
+Author-email: gabrielweich.dev@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
