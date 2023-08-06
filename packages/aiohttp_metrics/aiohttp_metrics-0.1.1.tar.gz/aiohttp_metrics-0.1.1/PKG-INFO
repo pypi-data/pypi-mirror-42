@@ -1,0 +1,7 @@
+Metadata-Version: 1.1
+Name: aiohttp_metrics
+Version: 0.1.1
+Summary: Prometheus metrics for aiohttp-based microservices 
+Home-page: https://github.com/clayman74/aiohttp_metrics
+Author: Kirill Sumorokov
+Author-email: sumorokov.k@gmail.com

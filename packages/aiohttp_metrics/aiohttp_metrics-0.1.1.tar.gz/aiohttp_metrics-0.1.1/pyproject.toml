@@ -1,0 +1,33 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "aiohttp_metrics"
+author = "Kirill Sumorokov"
+author-email = "sumorokov.k@gmail.com"
+home-page = "https://github.com/clayman74/aiohttp_metrics"
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+requires = [
+    "aiohttp",
+    "prometheus_client"
+]
+
+[tool.flit.metadata.requires-extra]
+dev = [
+    "flake8",
+    "flake8-bugbear",
+    "flake8-builtins-unleashed",
+    "flake8-comprehensions",
+    "flake8-import-order",
+    "flake8-pytest",
+    "flake8-print",
+    "mypy"
+]
+test = [
+    "faker",
+    "pytest",
+    "pytest-aiohttp",
+    "coverage"
+]
