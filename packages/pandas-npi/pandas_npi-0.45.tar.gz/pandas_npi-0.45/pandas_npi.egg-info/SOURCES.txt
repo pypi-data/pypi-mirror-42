@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+pandas_npi/__init__.py
+pandas_npi/utility_functions.py
+pandas_npi/validate.py
+pandas_npi.egg-info/PKG-INFO
+pandas_npi.egg-info/SOURCES.txt
+pandas_npi.egg-info/dependency_links.txt
+pandas_npi.egg-info/not-zip-safe
+pandas_npi.egg-info/requires.txt
+pandas_npi.egg-info/top_level.txt
