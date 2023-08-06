@@ -1,0 +1,11 @@
+brizo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+brizo/constants.py,sha256=561CvopBCVaM9IkcuwrR_ieVt1qVNHLpVcSJnFqRsgY,625
+brizo/log.py,sha256=cWG_WpJLARvsqm2LIITnRP0GAqNLDxUk-wbI70Nz6nY,951
+brizo/myapp.py,sha256=wFbr_uFZEnYWax36oqFDQIjwuBhDWok323gw6hRmhmY,502
+brizo/routes.py,sha256=pEIhTXb-ZnUt0R3a-K6Ap-dHqvYyV5TirAe5VzjOnoU,12860
+brizo/run.py,sha256=eha736C08ERvZFeCFJaNw1-8t-o6VzqIUHtBtUJbpO8,1390
+ocean_brizo-0.2.1.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+ocean_brizo-0.2.1.dist-info/METADATA,sha256=H31PoJgospBznkxFRFurseBhxFgz0EQpG0mGAQK1VWY,10927
+ocean_brizo-0.2.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+ocean_brizo-0.2.1.dist-info/top_level.txt,sha256=p8KhWMpAntuQ-YxeduCG4Fbh7_sTE5X0XYurA8sx73k,6
+ocean_brizo-0.2.1.dist-info/RECORD,,
