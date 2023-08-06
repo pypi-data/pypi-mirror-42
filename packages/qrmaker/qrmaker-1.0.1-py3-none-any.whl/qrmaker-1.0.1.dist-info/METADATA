@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: qrmaker
+Version: 1.0.1
+Summary: qr code poster maker
+Home-page: https://github.com/logan62334/qr-poster-maker.git
+Author: logan62334
+Author-email: logan62334@gmail.com
+License: MIT Licence
+Platform: any
+Requires-Dist: Pillow
+Requires-Dist: click
+
+# qr-poster-maker
+二维码海报生成器
+
+
