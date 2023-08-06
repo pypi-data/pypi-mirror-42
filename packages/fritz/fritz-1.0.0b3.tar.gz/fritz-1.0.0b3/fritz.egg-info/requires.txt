@@ -1,0 +1,8 @@
+requests
+click
+termcolor
+
+[train]
+keras
+tensorflow
+Pillow
