@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: invana-bot
+Version: 0.0.0a0
+Summary: A batteries included crawler framework built on top of scrapy for scale and intelligent crawling.
+Home-page: https://github.com/invanalabs/invana-bot
+Author: Ravi Raja Merugu
+Author-email: rrmerugu@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
