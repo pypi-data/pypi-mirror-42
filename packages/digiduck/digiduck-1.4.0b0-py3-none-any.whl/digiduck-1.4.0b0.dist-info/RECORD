@@ -1,0 +1,10 @@
+digiduck/__init__.py,sha256=hEd7A4jJUkgvbpvtu5VhnkXy5_tjg9Rhz-BWIesQXkc,1760
+digiduck/dparser.py,sha256=FhSz8K1zfAJmJFueakO-9_qkoVL55HPlzXss4sgeqI8,8576
+digiduck/ducklex.py,sha256=ZzcFH7ZNuY50jQxFxCd9NuH__UVrxgoknJ-tyLMahI4,2832
+digiduck/lexer.py,sha256=6FiE3NhJrBY149lI5ySXLxDckLdtiUy6pxYSdMAyKGc,806
+digiduck-1.4.0b0.dist-info/LICENSE.txt,sha256=70OWVxE6RUrUnBMx8qV7alWOuq0oKdmkrjrAaOJZjiM,1091
+digiduck-1.4.0b0.dist-info/METADATA,sha256=Urb6WZ2_Rae-P01W-9YBatfgyvFVbLczlER0JE8YtRo,296
+digiduck-1.4.0b0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+digiduck-1.4.0b0.dist-info/entry_points.txt,sha256=c5DrbR5zbLk-X5CHFaDLWWCmCPSlRwiEzNoOu9RU4dQ,44
+digiduck-1.4.0b0.dist-info/top_level.txt,sha256=KFKoJ4i2FTx3p2N_2WHGyQByJu2SNsFJboFz4R0NgrM,9
+digiduck-1.4.0b0.dist-info/RECORD,,

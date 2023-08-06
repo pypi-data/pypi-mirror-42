@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: digiduck
+Version: 1.4.0b0
+Summary: A program to compile Ducky Script to Digispark code
+Home-page: https://github.com/uslurper/digiduck
+Author: Uslurper
+Author-email: aklo101256@gmail.com
+License: MIT
+Requires-Dist: iterutils
+
+**DigiDuck: Ducky Script to Digispark**
+
+
