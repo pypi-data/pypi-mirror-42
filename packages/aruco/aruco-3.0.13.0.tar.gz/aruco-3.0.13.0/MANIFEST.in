@@ -1,0 +1,5 @@
+recursive-include src *
+recursive-include py2 *
+recursive-include py3 *
+include aruco_wrap.*
+LICENSE
