@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: TokenIO
+Version: 0.0.1a2
+Summary: Python SDK for interacting with the Token System
+Home-page: https://github.com/overcat/token-io
+Author: overcat
+Author-email: 4catcode@gmail.com
+License: MIT License
+Description: # token-io
+Keywords: token,token_io
+Platform: any
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
