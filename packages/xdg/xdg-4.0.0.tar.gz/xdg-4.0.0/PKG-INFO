@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: xdg
+Version: 4.0.0
+Summary: Variables defined by the XDG Base Directory Specification
+Home-page: https://github.com/srstevenson/xdg
+Author: Scott Stevenson
+Author-email: scott@stevenson.io
+Keywords: xdg,base,directory,specification
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Project-URL: Repository, https://github.com/srstevenson/xdg
