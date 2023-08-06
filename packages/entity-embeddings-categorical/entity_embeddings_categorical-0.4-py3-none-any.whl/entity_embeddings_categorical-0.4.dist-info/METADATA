@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: entity-embeddings-categorical
+Version: 0.4
+Summary: UNKNOWN
+Home-page: https://github.com/bresan/entity_embeddings_categorical
+Author: Rodrigo Bresan
+Author-email: 
+License: BSD-3-Clause
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: absl-py (==0.6.1)
+Requires-Dist: astor (==0.7.1)
+Requires-Dist: atomicwrites (==1.3.0)
+Requires-Dist: attrs (==18.2.0)
+Requires-Dist: bleach (==1.5.0)
+Requires-Dist: certifi (==2018.11.29)
+Requires-Dist: chardet (==3.0.4)
+Requires-Dist: Click (==7.0)
+Requires-Dist: coverage (==4.5.2)
+Requires-Dist: coveralls (==1.6.0)
+Requires-Dist: docopt (==0.6.2)
+Requires-Dist: docutils (==0.14)
+Requires-Dist: Flask (==1.0.2)
+Requires-Dist: gast (==0.2.1)
+Requires-Dist: grpcio (==1.17.1)
+Requires-Dist: h5py (==2.9.0)
+Requires-Dist: html5lib (==0.9999999)
+Requires-Dist: idna (==2.8)
+Requires-Dist: itsdangerous (==1.1.0)
+Requires-Dist: Jinja2 (==2.10)
+Requires-Dist: Keras (==2.2.4)
+Requires-Dist: Keras-Applications (==1.0.6)
+Requires-Dist: Keras-Preprocessing (==1.0.5)
+Requires-Dist: Markdown (==3.0.1)
+Requires-Dist: MarkupSafe (==1.1.0)
+Requires-Dist: more-itertools (==6.0.0)
+Requires-Dist: mypy (==0.670)
+Requires-Dist: mypy-extensions (==0.4.1)
+Requires-Dist: mysql-connector (==2.1.6)
+Requires-Dist: numpy (==1.15.4)
+Requires-Dist: pandas (==0.23.4)
+Requires-Dist: pkginfo (==1.4.2)
+Requires-Dist: pluggy (==0.8.1)
+Requires-Dist: protobuf (==3.6.1)
+Requires-Dist: py (==1.8.0)
+Requires-Dist: Pygments (==2.3.1)
+Requires-Dist: PyJWT (==1.7.1)
+Requires-Dist: pytest (==4.3.0)
+Requires-Dist: pytest-cov (==2.6.1)
+Requires-Dist: python-dateutil (==2.7.5)
+Requires-Dist: pytz (==2018.7)
+Requires-Dist: PyYAML (==3.13)
+Requires-Dist: readme-renderer (==24.0)
+Requires-Dist: requests (==2.21.0)
+Requires-Dist: requests-toolbelt (==0.8.0)
+Requires-Dist: scikit-learn (==0.20.2)
+Requires-Dist: scipy (==1.2.0)
+Requires-Dist: six (==1.12.0)
+Requires-Dist: tensorboard (==1.6.0)
+Requires-Dist: tensorflow (==1.5.0)
+Requires-Dist: tensorflow-tensorboard (==1.5.1)
+Requires-Dist: termcolor (==1.1.0)
+Requires-Dist: tqdm (==4.28.1)
+Requires-Dist: twine (==1.12.1)
+Requires-Dist: typed-ast (==1.3.1)
+Requires-Dist: urllib3 (==1.24.1)
+Requires-Dist: webencodings (==0.5.1)
+Requires-Dist: Werkzeug (==0.14.1)
+
+Entity Embeddings Categorical
+
+Still under development
+
