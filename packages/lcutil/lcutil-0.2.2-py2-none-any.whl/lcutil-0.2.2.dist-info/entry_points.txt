@@ -1,0 +1,4 @@
+[console_scripts]
+find_between = lcutil.find_between:main
+imap_tool = lcutil.imap_tool:main
+
