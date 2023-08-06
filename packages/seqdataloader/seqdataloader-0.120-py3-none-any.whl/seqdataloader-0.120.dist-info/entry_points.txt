@@ -1,0 +1,3 @@
+[console_scripts]
+genomewide_labels = seqdataloader.__init__:main
+
