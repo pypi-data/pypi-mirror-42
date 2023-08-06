@@ -1,0 +1,10 @@
+README.md
+setup.py
+python3_authjwt/__init__.py
+python3_authjwt/auth.py
+python3_authjwt.egg-info/PKG-INFO
+python3_authjwt.egg-info/SOURCES.txt
+python3_authjwt.egg-info/dependency_links.txt
+python3_authjwt.egg-info/not-zip-safe
+python3_authjwt.egg-info/requires.txt
+python3_authjwt.egg-info/top_level.txt
