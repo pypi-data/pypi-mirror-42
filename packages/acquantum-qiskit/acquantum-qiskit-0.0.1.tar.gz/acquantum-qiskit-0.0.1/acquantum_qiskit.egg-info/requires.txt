@@ -1,0 +1,5 @@
+acquantum-connector==0.0.5
+jsonschema<2.7
+marshmallow
+python-dateutil
+qiskit==0.7.0
