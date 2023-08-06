@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: Bayesian-Outlier-Model
+Version: 1.0a1
+Summary: A Bayesian model for identifying outliers for N-of-1 samples in gene expression data
+Home-page: https://github.com/jvivian/Bayesian-Outlier-Model
+Author: John Vivian
+Author-email: jtvivian@gmail.com
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
