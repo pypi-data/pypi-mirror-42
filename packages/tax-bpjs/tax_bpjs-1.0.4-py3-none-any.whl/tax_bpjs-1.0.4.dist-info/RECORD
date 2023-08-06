@@ -1,0 +1,13 @@
+tax_bpjs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tax_bpjs/bpjs.py,sha256=kBfP5aga7-7v-Bk5qcs9mXQlDsJeRuvUYAEOtTN1tCQ,17800
+tax_bpjs/tax.py,sha256=YWriX9_dMOvPnnETT1pjHc2AG8YvkSyOHmaiNOR9psk,16304
+tax_bpjs/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tax_bpjs/test/test_bpjs.py,sha256=4xbFXsnGVWRh2gjl1EMUrO0Z2eNYUddFAkIpRZq7z6o,8579
+tax_bpjs/test/test_cassette_bpjs.py,sha256=BhicfepC0uJEA38ZIOUXZk38MFOp-YgWnJ7CgbCVYuo,2115
+tax_bpjs/test/test_cassette_tax.py,sha256=pJkMaWDb80v1Z8bWsGocSWVqBP0AbFEFBYruz2lV6CU,2409
+tax_bpjs/test/test_tax.py,sha256=_vtTFI3QYVkhi049uNKtqwVbczaXLxSDUCCLLa7HPTQ,12094
+tax_bpjs-1.0.4.dist-info/LICENSE,sha256=KSxw-d_Hu7Wo1lV6GuH0yIGxvSiVUa-g0BxtGk32UKc,1070
+tax_bpjs-1.0.4.dist-info/METADATA,sha256=1iuC-S3-W_LSW7xeDVqJGc_ZIkeMnPnELKhM6BVLO9I,452
+tax_bpjs-1.0.4.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+tax_bpjs-1.0.4.dist-info/top_level.txt,sha256=UvVXy52jt8P3GX59Z9k2fSnrjraKwXmN8NlNQdIrwIw,9
+tax_bpjs-1.0.4.dist-info/RECORD,,
