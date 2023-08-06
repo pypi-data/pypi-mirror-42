@@ -1,0 +1,12 @@
+codeforces/__init__.py,sha256=plRLq1tl4I4ouP8QAuSf0ZMJrr9MbKjeAopGaifzLjI,172
+codeforces/api.py,sha256=U4wnDKOO-ukxmY3r2p9RutNy-XXL_pTAK8bpkwfLvxY,2082
+codeforces/cf_run.py,sha256=4rnVcUl5n2468dzDAnrnG-XSSqpx1GlLKdsxZccqfHw,2206
+codeforces/error.py,sha256=WkN9INx2AxZyM3MXDeukuwdRZmnCRnYhIJHCRgPDqno,385
+codeforces/problem.py,sha256=RgWwic3FS1HF9kQQBAuhHQ79S3YyTx-UHSUodGqTVCk,1986
+codeforces/submission.py,sha256=1cJnKvosNQPLlJbuqyYB6DRRWQfIIZyxcdCWJ51aa8E,911
+python_codeforces-0.2.5.dist-info/LICENSE,sha256=WWkyKmXBznKzYu1-gIqe5u90up7yf2usGNein7mShcM,1065
+python_codeforces-0.2.5.dist-info/METADATA,sha256=ABN7g7PK-H5fbxvimRYJE9s9dQl2WYQqnx3slSt4vQM,3413
+python_codeforces-0.2.5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+python_codeforces-0.2.5.dist-info/entry_points.txt,sha256=kC3O97oY_jhuF1CCJCaNn3WK9VAjBHGZlsbpTxL5DKo,51
+python_codeforces-0.2.5.dist-info/top_level.txt,sha256=pOMmDl8CdkllD9u7xBD6nnvY6Uys4Ohp_Q35Dgdu-rg,11
+python_codeforces-0.2.5.dist-info/RECORD,,
