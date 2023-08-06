@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: embeddingvectorizer
+Version: 0.02
+Summary: Sklearn vectorizers using word embedding model
+Home-page: UNKNOWN
+Author: Wouter van Atteveldt
+Author-email: wouter@vanatteveldt.com
+License: UNKNOWN
+Description: Package to create a scikit-learn vectorizer that uses a word2vec model.Has options for mean, max, and sum of vectors. Not properly tested yet, use at your own risk!
+Keywords: API,text
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Text Processing
