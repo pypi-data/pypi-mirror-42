@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: pyCTT
+Version: 1.0.0
+Summary: Python library to retrieve package information from CTT
+Home-page: https://github.com/dpjrodrigues/pyCTT
+Author: Diogo Rodrigues
+Author-email: dpjrodrigues@gmail.com
+License: MIT License
+Description: [![PyPI version](https://badge.fury.io/py/pyCTT.svg)](https://badge.fury.io/py/pyCTT)
+        
+        # pyCTT
+        Python library to retrieve information from [CTT.pt](http://www.ctt.pt)
+        
+        ## Requirements
+        - aiohttp
+        - lxml
+        
+        ## Changelog
+        
+        1.0.0 First Version
+        
+        ## Credits
+        Values are obtained from [CTT.pt](http://www.ctt.pt)
+        
+        ## Copyright
+        
+        (C) 2018 Diogo Rodrigues <dpjrodrigues@gmail.com> 
+        
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
