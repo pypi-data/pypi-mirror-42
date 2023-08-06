@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: protoparse
+Version: 0.1.0
+Summary: 
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Thibaut Le Page
+Author-email: thibaut.le.page@zalando.de
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
