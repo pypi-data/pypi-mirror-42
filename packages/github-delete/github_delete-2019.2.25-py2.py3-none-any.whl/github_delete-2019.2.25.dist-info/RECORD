@@ -1,0 +1,10 @@
+github_create/__init__.py,sha256=BSEG_BKFXJ7BnHI39Fa9xZ81gIo7o_kvMIJ9UzDQ5g0,583
+github_create/__main__.py,sha256=SJasMC2LvSA1gWml6g1Ndco1MpCqbX71FUTUcLw-hEs,380
+github_delete/__init__.py,sha256=FqPJDA5YJJ3jjijoF9vTlRybjkzqZ-LJcMQkS0nl45k,551
+github_delete/__main__.py,sha256=3iZZVBw2Onv1G1Sy7d1W5gA8i5n4PRrm2yFRmyHizas,380
+github_description/__init__.py,sha256=6dELvdCci2qzS57IkouMwRlD-p9psjcam7tS-2igc14,487
+github_description/__main__.py,sha256=o6D5duh7WiylK789k6Y641jJ2BBzDqtKgVD2qJW09VY,618
+github_delete-2019.2.25.dist-info/METADATA,sha256=7nxKRvvR7RDovn7oY7_5mMKzL5Xopzvehnain8WGjSw,1461
+github_delete-2019.2.25.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+github_delete-2019.2.25.dist-info/top_level.txt,sha256=eiYmoBGh66di7b835ROvRMfCNMHIJzOjsv9WccyotnQ,14
+github_delete-2019.2.25.dist-info/RECORD,,
