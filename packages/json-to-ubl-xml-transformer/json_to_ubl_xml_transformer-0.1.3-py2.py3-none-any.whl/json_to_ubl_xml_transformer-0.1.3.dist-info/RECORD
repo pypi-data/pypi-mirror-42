@@ -1,0 +1,12 @@
+json_to_ubl_xml_transformer/__init__.py,sha256=9KSGi4VgWUXCYVkf5dU1RXUmzbWz3gd-vXtJMiKBfZo,176
+json_to_ubl_xml_transformer/cli.py,sha256=eBbmYoHzmLO_mV5cmmizCEFjFDfEFbcpMocm2k_NyNk,1814
+json_to_ubl_xml_transformer/constants.py,sha256=2B7DU8GTC3_Hqy7INrE3KW_VcyFOQgkB67veBp7aMDs,3058
+json_to_ubl_xml_transformer/json_to_ubl_xml_transformer.py,sha256=QhMJWZJav-tRytOPVGgABp7eUBxzwGdKgMtz2VMR18Y,3016
+json_to_ubl_xml_transformer/transformers.py,sha256=XuLa7WEakLuM92n1akOs-2d6V56bv36zrzJXX6SIPkc,4074
+json_to_ubl_xml_transformer-0.1.3.dist-info/AUTHORS.rst,sha256=SlqIQxlBnnFmin_Jejs1epMpcfxjFDh8TLuHcHc7f78,162
+json_to_ubl_xml_transformer-0.1.3.dist-info/LICENSE,sha256=BoaSQQfAUafjzBiRDqH6DFjGj8Alzu9Ty6-z71PU5SM,1079
+json_to_ubl_xml_transformer-0.1.3.dist-info/METADATA,sha256=_0UfmBFpskLBoiMh1D0P8UAxJYGnA8W4sqHg7D2naS8,2858
+json_to_ubl_xml_transformer-0.1.3.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+json_to_ubl_xml_transformer-0.1.3.dist-info/entry_points.txt,sha256=GxOe9Pid8pLqjvqjFWHIXbuv7cjGLOlXjsFrKmf-Gvw,86
+json_to_ubl_xml_transformer-0.1.3.dist-info/top_level.txt,sha256=VotMwt24-_4Gi1Vv2IF5ethDgg4RBqQs06WYfjXGO6Q,28
+json_to_ubl_xml_transformer-0.1.3.dist-info/RECORD,,
