@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: swagger-spec-compatibility
+Version: 1.0.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Yelp, Inc.
+Author-email: opensource+swagger-spec-compatibility@yelp.com
+License: Copyright Yelp, Inc. 2018
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: bravado
+Requires-Dist: bravado-core
+Requires-Dist: swagger-spec-validator
+Requires-Dist: six
+Requires-Dist: termcolor
+Requires-Dist: typing-extensions
+Requires-Dist: functools32 ; python_version<"3.2"
+Requires-Dist: typing ; python_version<"3.5"
+
+UNKNOWN
+
+
