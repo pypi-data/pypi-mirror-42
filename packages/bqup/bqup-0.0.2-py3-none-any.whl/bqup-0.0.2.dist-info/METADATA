@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: bqup
+Version: 0.0.2
+Summary: BigQuery backup scripts
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: docopt
+Requires-Dist: google-cloud-bigquery (==1.1.0)
+
+UNKNOWN
+
+
