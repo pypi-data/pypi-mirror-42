@@ -1,0 +1,3 @@
+[console_scripts]
+cybele = cybele.cli:cybele
+
