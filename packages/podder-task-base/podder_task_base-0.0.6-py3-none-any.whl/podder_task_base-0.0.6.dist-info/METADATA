@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: podder-task-base
+Version: 0.0.6
+Summary: UNKNOWN
+Home-page: https://github.com/podder-ai/podder-task-base
+Author: podder-ai
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: grpcio-tools
+Requires-Dist: googleapis-common-protos
+Requires-Dist: python-daemon
+Requires-Dist: mysqlclient
+Requires-Dist: SQLAlchemy
+
+UNKNOWN
+
+
