@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+ns_jwt/__init__.py
+ns_jwt/ns_jwt.py
+ns_jwt.egg-info/PKG-INFO
+ns_jwt.egg-info/SOURCES.txt
+ns_jwt.egg-info/dependency_links.txt
+ns_jwt.egg-info/not-zip-safe
+ns_jwt.egg-info/requires.txt
+ns_jwt.egg-info/top_level.txt
