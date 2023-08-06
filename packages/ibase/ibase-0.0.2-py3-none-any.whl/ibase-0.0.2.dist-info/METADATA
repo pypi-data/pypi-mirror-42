@@ -1,0 +1,143 @@
+Metadata-Version: 2.1
+Name: ibase
+Version: 0.0.2
+Summary: interface testcase script basefunc
+Home-page: https://github.com/yangeren/ibase
+Author: Hanz
+Author-email: wanghan0406@autohome.com.cn
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+测试脚本自动生成项目
+====
+
+### 用例写法
+
+#### 通用参数
+
+
+#### 本地执行
+
+
+
+### 执行&调用
+
+#### 引用方式
+
+```python
+import sys
+from os.path import abspath, join, dirname
+sys.path.insert(0, join(abspath(dirname(__file__)), '../..'))
+```
+`..`代表上级目录
+
+`../..`代表上上级目录
+
+以此类推
+
+#### 代码环境
+
+> python 3.*
+
+#### 依赖包
+
+- 安装
+
+`pip install requests`
+
+#### 目录结构
+
+将执行脚本与base.py脚本放于同一目录下
+
+#### 沙盒环境
+
+
+
+#### 脚本执行方式
+
+假设生成的文件名为： `test_break_username.py`
+
+那么执行方式为： `python test_break_username.py`
+
+
+
+### 任务项&进度
+
+|任务名称|产出|功能|是否完成|
+|:---:|:---:|:---:|:---:|
+|测试基类|base.py|用于业务测试脚本继承|完成|
+|获取数据类|get_req_data.py|用于获取请求数据|完成|
+|json module解析类|json_modify.py|用于解析json module数据|未完成|
+|触发生成测试脚本文件|generate_script.py|用来生成对应接口的测试脚本文件|完成|
+|独立执行测试脚本命令|-|用于调用执行.py脚本|完成|
+|组装TestSuite并生成测试报告数据|generate_test_data.py|用于生成批量测试结果，持久化数据|未完成|
+
+### 调用顺序
+
+1. generate_script.py 生成执行脚本
+
+2. 执行test_this_is_the_path.py 脚本
+
+3. base.py 进入base类
+
+4. 调用获取数据类，get_req_data.py json_modify.py
+
+5. 执行base.py中的用例
+
+6. 继续执行test_this_is_the_path.py中的用例
+
+7. 返回测试结果
+
+
+可以通过命令行运行：模块、类、或者单个测试方法，具体的操作是如下：
+
+运行测试模块：python -m unittest test_module1 test_module2
+
+运行测试类：python -m unittest test_module.TestClass
+
+运行测试方法：python -m unittest test_module.TestClass.test_method
+
+
+- 通用模板
+- 执行方式
+- 返回结果组装
+- 调用上报接口
+
+
+
+|方法|检查一下|新的|
+|---|---|---|
+|assertEqual(a, b)|a == b| 
+|assertNotEqual(a, b)|a != b| 
+|assertTrue(x)|bool(x) is True| 
+|assertFalse(x)|bool(x) is False| 
+|assertIs(a, b)|a is b|2.7|
+|assertIsNot(a, b)|a is not b|2.7|
+|assertIsNone(x)|x is None|2.7|
+|assertIsNotNone(x)|x is not None|2.7|
+|assertIn(a, b)|a in b|2.7|
+|assertNotIn(a, b)|a not in b|2.7|
+|assertIsInstance(a, b)|isinstance(a, b)|2.7|
+|assertNotIsInstance(a, b)|not isinstance(a, b)|2.7|
+
+
+#### 更具体的
+
+|方法|检查一下|新的|
+|---|---|---|
+assertAlmostEqual(a, b)|round(a-b, 7) == 0| 
+assertNotAlmostEqual(a, b)|round(a-b, 7) != 0| 
+assertGreater(a, b)|a > b|2.7
+assertGreaterEqual(a, b)|a >= b|2.7
+assertLess(a, b)|a < b|2.7
+assertLessEqual(a, b)|a <= b|2.7
+assertRegexpMatches(s, r)|r.search(s)|2.7
+assertNotRegexpMatches(s, r)|not r.search(s)|2.7
+assertItemsEqual(a, b)|排序（a）==排序（b）并使用不可用的objs|2.7
+assertDictContainsSubset(a, b)|所有在键/值对一个在存在b|2.7
+
