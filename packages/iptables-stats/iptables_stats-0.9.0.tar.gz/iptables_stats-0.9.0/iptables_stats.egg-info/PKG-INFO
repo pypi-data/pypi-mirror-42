@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: iptables-stats
+Version: 0.9.0
+Summary: Publish IP statistics periodically
+Home-page: UNKNOWN
+Author: vbs
+Author-email: vbs@springrts.de
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: mqtt iptables ipset
+Platform: UNKNOWN
+Requires-Python: >=3.6
