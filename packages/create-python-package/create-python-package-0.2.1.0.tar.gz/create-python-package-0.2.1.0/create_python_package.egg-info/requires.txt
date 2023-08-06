@@ -1,0 +1,7 @@
+jinja2<2.20,>2.0
+
+[dev]
+black
+flake8
+mypy
+pipenv
