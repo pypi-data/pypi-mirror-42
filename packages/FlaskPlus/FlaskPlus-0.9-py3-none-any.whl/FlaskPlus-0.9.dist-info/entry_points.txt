@@ -1,0 +1,4 @@
+[console_scripts]
+fpd = flask_plus.starter.daemon:run
+fps = flask_plus.starter.server:run
+
