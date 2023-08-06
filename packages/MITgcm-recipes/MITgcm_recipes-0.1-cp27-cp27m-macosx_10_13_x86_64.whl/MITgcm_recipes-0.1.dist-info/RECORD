@@ -1,0 +1,17 @@
+MITgcm_recipes/__init__.py,sha256=7XKYJmxqgOIrv_QwujuyE3QeHAnknIDo6padhiNvKDg,135
+MITgcm_recipes/akima1d.so,sha256=ORKL8EjD0ktrPTmWZxGHqwb1dNykZX-n8T9VYdw4Ud4,57560
+MITgcm_recipes/data_organization.py,sha256=kQA3_pxLR_yfWe9OpQRUUJ9uPD9nwiXZhUN9T8RByiM,5745
+MITgcm_recipes/mod_drown_sosie.so,sha256=HaEl8pWC0G_Ub3dKFfqAJxGfK0tFYh7XsTxc0yk7d6U,70780
+MITgcm_recipes/monitoring.py,sha256=BJ-4Bzz5vBmcSJmld7qCdVkGs31xyR9StdtLV45JcSI,2911
+MITgcm_recipes/open_boundary.py,sha256=6pxqgRimIghsA6xGmU5X0mCwrNaamWawcNxElmk04pQ,2030
+MITgcm_recipes/plotting.py,sha256=H3yoMIUDLTNG86S3qB-qVNGHI1i6NGXiFYwueGIKAtk,9624
+MITgcm_recipes/regridding.py,sha256=TWacPfvt89fcspUs-4NRcmcWowlT4wwCn3bzVcY97SI,16322
+MITgcm_recipes/spatial.py,sha256=iUTp5bBDmWaiQJD2uENGS9aTs_FW4exaD9-n7B3H1xI,2513
+MITgcm_recipes/akima1d.so.dSYM/Contents/Info.plist,sha256=JfIPmmo9SsKEYNsgAEC-sIFGrCvNAV7RS9bOoaV8NIc,639
+MITgcm_recipes/akima1d.so.dSYM/Contents/Resources/DWARF/akima1d.so,sha256=O-PPsZ2oumQknpqRUhtd9wJsqP8ce6-i4g7_XyymIL8,87855
+MITgcm_recipes/mod_drown_sosie.so.dSYM/Contents/Info.plist,sha256=yfzRwi_RIOV8KkPFgyA90mvHjVsrWWU1DGoKTIScviw,647
+MITgcm_recipes/mod_drown_sosie.so.dSYM/Contents/Resources/DWARF/mod_drown_sosie.so,sha256=ZCJ5-zqvfsivGG4mx0ZzfAf4oDI95JJwSOyDiNB0B5k,69578
+MITgcm_recipes-0.1.dist-info/METADATA,sha256=5sc04JuKmmTm-d7N79Wc1qUHGdjOVDB8t57U2UkfmPo,261
+MITgcm_recipes-0.1.dist-info/WHEEL,sha256=uBb5fMDJn9LVFbseXKP1zK3bUBVuNgB06Bk0_-eFUb0,111
+MITgcm_recipes-0.1.dist-info/top_level.txt,sha256=yT9-RvpF8AOXKVQ8WILjGxD_p-XfPOlQZxNt9ZdTARc,15
+MITgcm_recipes-0.1.dist-info/RECORD,,
