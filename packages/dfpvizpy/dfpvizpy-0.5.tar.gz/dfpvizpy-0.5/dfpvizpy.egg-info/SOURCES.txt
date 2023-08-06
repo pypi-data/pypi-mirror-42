@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+dfpvizpy/Futura Heavy font.ttf
+dfpvizpy/Montserrat-Regular.ttf
+dfpvizpy/Montserrat-Thin.ttf
+dfpvizpy/dfp-line-logo-black.png
+dfpvizpy/dfp-logo.png
+dfpvizpy/dfpvizpy.py
+dfpvizpy.egg-info/PKG-INFO
+dfpvizpy.egg-info/SOURCES.txt
+dfpvizpy.egg-info/dependency_links.txt
+dfpvizpy.egg-info/not-zip-safe
+dfpvizpy.egg-info/top_level.txt
