@@ -1,0 +1,12 @@
+pyyaml>=3.13
+numpy>=1.16.1
+tqdm>=4.31.1
+
+[dev]
+pylint>=2.2.1
+codecov>=2.0.15
+isort>=4.3.4
+mypy>=0.641
+pytest>=4.3.0
+pytest-cov>=2.6.1
+sphinx-rtd-theme>=0.4.3
