@@ -1,0 +1,3 @@
+[console_scripts]
+news = newsapi.cli:main
+

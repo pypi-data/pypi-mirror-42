@@ -1,0 +1,15 @@
+newsapi/__init__.py,sha256=U3f_Jgr3zpgiYG2kLcvcT05TQsVzN9Kktg_f3Q9OZFA,22
+newsapi/cli.py,sha256=64QWvNaEOqHGPaNbCd85RX_nRPHvArZrUzzWc3Nn-LA,1497
+newsapi/user_settings.py,sha256=R0BWTqx7BOKDlEhjKfcrXNJjmyZCWzpvlpSyNdcYrWY,1214
+newsapi/commands/__init__.py,sha256=N71CKkLBWazPXh5HJkAySujyqBGtg2fs37P7QzDa1qg,71
+newsapi/commands/base.py,sha256=lLO1ybvtgg_Z0qUWvm1KSMrwautPt6av9HIxaP2_uJM,310
+newsapi/commands/headlines.py,sha256=3daUtFmDcb1ILv6unoQ-pB5NipkUz291jXbkhMoF5Z8,2100
+newsapi/commands/search.py,sha256=xjs_J-2TPF1Qr9vX5ERf2GZcNYrBKf7CqXAhEYJA-f8,972
+newsapi/commands/sources.py,sha256=QZtynPszHILNeam-frUcAlrLcvwMDi6_4jtqsbhG978,499
+newsapi_cli-1.2.0.dist-info/DESCRIPTION.rst,sha256=uzHPVzfvWMalrj6Q_vQ0KfXi-IYAVfckRKsB_kmBIsg,2030
+newsapi_cli-1.2.0.dist-info/METADATA,sha256=bGL7JeR8KJPNjkuX2yj_tsbOAoG1xsRUkaG28CaAOW4,3259
+newsapi_cli-1.2.0.dist-info/RECORD,,
+newsapi_cli-1.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+newsapi_cli-1.2.0.dist-info/entry_points.txt,sha256=lGd2l8C9wW9eqPdJNPgCF92YGu-aDgOzFZ9jumW9tgg,43
+newsapi_cli-1.2.0.dist-info/metadata.json,sha256=-k_2ysEyVsaDBy02rQqXamytfsWx7eddJyF9THzUdTs,1342
+newsapi_cli-1.2.0.dist-info/top_level.txt,sha256=SYwKIYYTwwvWrb0WFVZbt-pUoBPvp8L95A_KJ8v-LoQ,8
