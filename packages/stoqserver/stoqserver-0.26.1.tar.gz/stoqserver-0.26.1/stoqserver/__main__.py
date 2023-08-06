@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+
+import sys
+if 'flask' in sys.argv:
+    # Only patch if actually running flask (our restfull api). We should probably split this into a
+    # separate project soon.
+    # This needs to be done ASAP, before any other imports.
+    from gevent import monkey
+    monkey.patch_all()
+
+import multiprocessing
+import os
+
+
+if __name__ == '__main__':
+    if hasattr(sys, 'frozen'):
+        # We're using py2exe:
+        # By default, when using py2exe, there is only one item in PYTHONPATH, and
+        # thats the library.zip it created. We are also adding some eggs (including
+        # stoq, kiwi and stoqdrivers), so make sure those are also in the path
+        multiprocessing.freeze_support()
+
+        stoq_dir = os.path.join(os.environ['ALLUSERSPROFILE'], 'stoq')
+        os.environ['PGPASSFILE'] = os.path.join(stoq_dir, 'pgpass.conf')
+
+        executable = os.path.realpath(os.path.abspath(sys.executable))
+        root = os.path.dirname(executable)
+        for name in os.listdir(root):
+            if not name.endswith(('.egg', 'whl')):
+                continue
+            sys.path.insert(0, os.path.join(root, name))
+
+        # Also add it to the OS PATH, so that the libraries are correclty found.
+        os.environ['PATH'] = root + os.pathsep + os.environ['PATH']
+
+        # Allow .pyd files to be imported from egg files
+        from zipextimporter import ZipExtensionImporter
+        # zipextimporter.install would do an insert(0, ZipExtensionImporter)
+        # and that would cause it to try to import all eggs and fail
+        sys.path_hooks.append(ZipExtensionImporter)
+        sys.path_importer_cache.clear()
+
+        # FIXME: This is needed for windows multiprocessing. See:
+        # http://stackoverflow.com/questions/19984152/what-can-multiprocessing-and-dill-do-together
+        import dill
+        dill  # pyflakes
+
+    # pkg_resources import need to be delayed to work on windows (after the path is
+    # setup above)
+    import pkg_resources
+    from stoqserver.main import main
+    from stoqserver.common import SERVER_EGGS
+
+    for egg in SERVER_EGGS:
+        egg_filename = pkg_resources.resource_filename('stoqserver',
+                                                       'data/eggs/%s' % (egg, ))
+        if os.path.exists(egg_filename):
+            sys.path.insert(0, egg_filename)
+
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except KeyboardInterrupt:
+        raise SystemExit

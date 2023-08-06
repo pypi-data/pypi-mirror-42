@@ -1,0 +1,287 @@
+stoq-server (0.26.1) xenial; urgency=medium
+
+  * Release 0.26.1
+
+ -- Fabricio C Zuardi <fcz@laptop39>  Tue, 26 Feb 2019 22:59:25 -0300
+
+stoq-server (0.26.1~beta.1) xenial; urgency=medium
+
+  * Release 0.26.1~beta.1
+
+ -- Fabricio C Zuardi <fcz@laptop39>  Sun, 24 Feb 2019 17:31:06 -0300
+
+stoq-server (0.26.1~beta.0) xenial; urgency=medium
+
+  * Release 0.26.1~beta.0
+
+ -- Fabricio C Zuardi <fcz@laptop39>  Sun, 24 Feb 2019 16:39:05 -0300
+
+stoq-server (0.26.0) xenial; urgency=medium
+
+  * Release 0.26.0
+
+ -- Fabricio C Zuardi <fcz@laptop39>  Thu, 14 Feb 2019 00:06:53 -0200
+
+stoq-server (0.26.0~beta0) xenial; urgency=medium
+
+  * Release 0.26.0~beta0
+
+ -- Fabricio C Zuardi <fcz@laptop39>  Tue, 12 Feb 2019 23:51:01 -0200
+
+stoq-server (0.25.1) xenial; urgency=medium
+
+  * Release 0.25.1
+
+ -- Ronaldo Maia <romaia@async.com.br>  Fri, 11 Jan 2019 09:41:34 -0200
+
+stoq-server (0.25) xenial; urgency=medium
+
+  * Release 0.25
+
+ -- Ronaldo Maia <romaia@async.com.br>  Tue, 08 Jan 2019 16:23:14 -0200
+
+stoq-server (0.24) xenial; urgency=medium
+
+  * Release 0.24
+
+ -- Ronaldo Maia <romaia@async.com.br>  Wed, 26 Dec 2018 16:10:57 -0200
+
+stoq-server (0.23) xenial; urgency=medium
+
+  * Release 0.23
+
+ -- Ronaldo Maia <romaia@async.com.br>  Mon, 26 Nov 2018 08:10:43 -0200
+
+stoq-server (0.22) xenial; urgency=medium
+
+  * Release 0.22
+
+ -- Ronaldo Maia <romaia@async.com.br>  Thu, 22 Nov 2018 01:50:56 -0200
+
+stoq-server (0.21) xenial; urgency=medium
+
+  * Release 0.21
+
+ -- Ronaldo Maia <romaia@async.com.br>  Mon, 19 Nov 2018 11:27:06 -0200
+
+stoq-server (0.20.1) xenial; urgency=medium
+
+  * Release 0.20.1
+
+ -- Ronaldo Maia <romaia@async.com.br>  Sat, 10 Nov 2018 11:24:48 -0200
+
+stoq-server (0.19.1) xenial; urgency=medium
+
+  * Release 0.19.1
+
+ -- Ronaldo Maia <romaia@async.com.br>  Tue, 16 Oct 2018 15:36:13 -0300
+
+stoq-server (0.19) xenial; urgency=medium
+
+  * Release 0.19
+
+ -- Ronaldo Maia <romaia@async.com.br>  Tue, 16 Oct 2018 00:06:38 -0300
+
+stoq-server (0.18.6) xenial; urgency=medium
+
+  * Release 0.18.6
+
+ -- Ronaldo Maia <romaia@async.com.br>  Tue, 25 Sep 2018 14:29:14 -0300
+
+stoq-server (0.18.5) xenial; urgency=medium
+
+  * Release 0.18.5
+
+ -- Ronaldo Maia <romaia@async.com.br>  Mon, 10 Sep 2018 11:49:37 -0300
+
+stoq-server (0.18.4) xenial; urgency=medium
+
+  * Release 0.18.4
+
+ -- Ronaldo Maia <romaia@async.com.br>  Mon, 03 Sep 2018 00:38:20 -0300
+
+stoq-server (0.18.3) xenial; urgency=medium
+
+  * Release 0.18.3
+
+ -- Ronaldo Maia <romaia@async.com.br>  Wed, 22 Aug 2018 10:01:27 -0300
+
+stoq-server (0.18.2) xenial; urgency=medium
+
+  * Release 0.18.2
+
+ -- Ronaldo Maia <romaia@async.com.br>  Wed, 22 Aug 2018 09:38:45 -0300
+
+stoq-server (0.18.1) xenial; urgency=medium
+
+  * Bugfix release
+
+ -- Ronaldo Maia <romaia@async.com.br>  Mon, 20 Aug 2018 00:29:38 -0300
+
+stoq-server (0.18) xenial; urgency=medium
+
+  * New release
+
+ -- Ronaldo Maia <romaia@async.com.br>  Tue, 14 Aug 2018 17:01:14 -0300
+
+stoq-server (0.17.1) xenial; urgency=medium
+
+  * Bugfix release
+
+ -- Ronaldo Maia <romaia@async.com.br>  Thu, 02 Aug 2018 15:51:12 -0300
+
+stoq-server (0.17) xenial; urgency=medium
+
+  * New release
+
+ -- Ronaldo Maia <romaia@async.com.br>  Wed, 01 Aug 2018 16:22:18 -0300
+
+stoq-server (0.16.1) xenial; urgency=medium
+
+  * Bugfix release
+
+ -- Ronaldo Maia <romaia@async.com.br>  Thu, 03 May 2018 13:46:31 -0300
+
+stoq-server (0.16) xenial; urgency=medium
+
+  * New Release
+
+ -- Felipe Nehmi <felipe@async.com.br>  Mon, 09 Apr 2018 11:15:16 -0300
+
+stoq-server (0.15.1) xenial; urgency=medium
+
+  * New bugfix release
+
+ -- Felipe Nehmi <felipe@async.com.br>  Wed, 21 Mar 2018 10:32:52 -0300
+
+stoq-server (0.15) xenial; urgency=medium
+
+  * New Release
+
+ -- Felipe Nehmi <felipe@async.com.br>  Thu, 05 Oct 2017 16:42:30 -0300
+
+stoq-server (0.14.1) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Mon, 20 Mar 2017 11:56:04 -0300
+
+stoq-server (0.14) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 03 Mar 2017 17:23:02 -0300
+
+stoq-server (0.13.2) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Thu, 02 Feb 2017 13:59:39 -0200
+
+stoq-server (0.13.1) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Mon, 05 Dec 2016 15:17:28 -0200
+
+stoq-server (0.13) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 07 Oct 2016 15:51:50 -0300
+
+stoq-server (0.12) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Wed, 14 Sep 2016 15:56:56 -0300
+
+stoq-server (0.11) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Thu, 18 Aug 2016 12:25:56 -0300
+
+stoq-server (0.10) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 29 Jul 2016 17:16:54 -0300
+
+stoq-server (0.9) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 10 Jun 2016 13:13:02 -0300
+
+stoq-server (0.8) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Thu, 02 Jun 2016 18:31:44 -0300
+
+stoq-server (0.7) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Thu, 12 May 2016 18:19:46 -0300
+
+stoq-server (0.6.3) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Mon, 02 May 2016 17:00:14 -0300
+
+stoq-server (0.6.2) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Tue, 26 Apr 2016 17:19:20 -0300
+
+stoq-server (0.6.1) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Tue, 19 Apr 2016 18:38:39 -0300
+
+stoq-server (0.6) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Mon, 28 Mar 2016 14:56:57 -0300
+
+stoq-server (0.5) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Tue, 26 Jan 2016 16:44:38 -0200
+
+stoq-server (0.4) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 22 Jan 2016 12:12:52 -0200
+
+stoq-server (0.3.1) trusty; urgency=medium
+
+  * New bugfix release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 15 Jan 2016 17:04:12 -0200
+
+stoq-server (0.3) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Wed, 13 Jan 2016 16:03:08 -0200
+
+stoq-server (0.2) trusty; urgency=medium
+
+  * New release
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Fri, 18 Dec 2015 12:52:09 -0200
+
+stoq-server (0.1) trusty; urgency=medium
+
+  * Initial release.
+
+ -- Thiago Bellini Ribeiro <hackedbellini@async.com.br>  Tue, 24 Nov 2015 14:41:29 -0200
