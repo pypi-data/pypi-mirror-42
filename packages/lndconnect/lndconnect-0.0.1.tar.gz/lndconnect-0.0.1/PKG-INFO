@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: lndconnect
+Version: 0.0.1
+Summary: Parsing and creating lndconnect links
+Home-page: https://github.com/LN-Zap/py_lndconnect
+Author: Otto Suess
+Author-email: ottosuess@protonmail.com
+License: UNKNOWN
+Description: # Python lndconnect
+        
+        This is a simple example package.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
