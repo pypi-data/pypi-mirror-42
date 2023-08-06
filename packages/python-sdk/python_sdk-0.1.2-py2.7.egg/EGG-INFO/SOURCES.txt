@@ -1,0 +1,7 @@
+README.md
+setup.py
+demo/__init__.py
+python_sdk.egg-info/PKG-INFO
+python_sdk.egg-info/SOURCES.txt
+python_sdk.egg-info/dependency_links.txt
+python_sdk.egg-info/top_level.txt
