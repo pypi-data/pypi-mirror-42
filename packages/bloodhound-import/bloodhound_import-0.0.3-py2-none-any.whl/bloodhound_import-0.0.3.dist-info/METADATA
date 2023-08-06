@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: bloodhound-import
+Version: 0.0.3
+Summary: BloodHound import from python
+Home-page: https://github.com/fox-it/bloodhound-import
+Author: Matthijs Gielen / Fox-IT
+Author-email: matthijs.gielen@fox-it.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: neo4j-driver
+
+UNKNOWN
+
+
