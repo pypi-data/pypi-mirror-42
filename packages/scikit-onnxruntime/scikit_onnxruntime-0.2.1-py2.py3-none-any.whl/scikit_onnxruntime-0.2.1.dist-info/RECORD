@@ -1,0 +1,8 @@
+skonnxrt/__init__.py,sha256=adGaEzbt1_nx17jn6EcGIYYpJGXvj6GOno9blwOwLxQ,298
+skonnxrt/sklapi/__init__.py,sha256=qBlhytM34PUw1GFOwP2N2KDx8tJlT6Ork5tEUNaaYqg,49
+skonnxrt/sklapi/onnx_transformer.py,sha256=UbfwKp1O2wzYp7NzrCnfP7vKM3Z1wt0_h4BelW4PVII,5333
+scikit_onnxruntime-0.2.1.dist-info/LICENSE,sha256=8i9CMND70FZ1lxZ2YvJxl5yHFJdWm-Jm9Ybh6V4AnMs,1099
+scikit_onnxruntime-0.2.1.dist-info/METADATA,sha256=m27R9ieGivw84IyplYFmxI_6lXulaLkftdCcTeLEf9c,1681
+scikit_onnxruntime-0.2.1.dist-info/WHEEL,sha256=7cxsCAdV52i0emUNaVXkD_LyuggvPHpz0AyJu_tA0ZQ,116
+scikit_onnxruntime-0.2.1.dist-info/top_level.txt,sha256=qwCtJ4hrAaeJfeLBI8Z28uPJ4kV8rfZQUyKVPRjUjcs,9
+scikit_onnxruntime-0.2.1.dist-info/RECORD,,
