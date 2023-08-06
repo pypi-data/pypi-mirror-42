@@ -1,0 +1,17 @@
+hermes_python/__init__.py,sha256=nAwqeACNpdiRdj1t3oo4IxLy-DErF2RojVUPtiJ0gxw,100
+hermes_python/hermes.py,sha256=jUbcSOqSZOqAzozvUb7Y9U_PFL9cavflubBWTA1M0ow,12832
+hermes_python/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hermes_python/api/ffi.py,sha256=BPG9v0rvKIox--PV45BNTmOBXxetfQhlBM6wAZ0Kzxc,9697
+hermes_python/dylib/libhermes_mqtt_ffi.so,sha256=-43ySUvGvyZSgIqj0AmXemVhdAtKK2djzJp7OjBzLus,8986740
+hermes_python/ffi/utils.py,sha256=PIqKIqTFZ77rgwZakXYBgro-zYv55bGQ8KAQRn_yQGI,3713
+hermes_python/ffi/wrappers.py,sha256=Yu61bcnU-k9FrdsiV6hOFothM5Lst0_HAk-yDbeEmo4,3274
+hermes_python/ffi/__init__.py,sha256=0-ZLVKtE5Y_8xPYNoP_-CYhhq4x3X2FUQdMZDToEg6k,373
+hermes_python/ffi/ontology/__init__.py,sha256=koQV8ORaFHMN34MRnfU5o9Aj6mhuACWu5nI70dF0-2U,2170
+hermes_python/ffi/ontology/facades.py,sha256=T8skoiq7xMBpopzw16ChM0J4WFNsbNlVTy4fzqfPGTg,182
+hermes_python/ffi/ontology/dialogue.py,sha256=23KPJ7v5gFhHQewbfUgQgevmS7sPqjNUWemd2uejshA,16594
+hermes_python/ontology/__init__.py,sha256=4Vjo2SC3jFbQTTPisLZeq4Z2xagEwTdCytlM5QQ5Q7E,1436
+hermes_python/ontology/dialogue.py,sha256=BI74_3f_v5y60hpqzkX3PD7L6o2saQsV246UpFYg22E,27579
+hermes_python-0.3.1.dist-info/RECORD,,
+hermes_python-0.3.1.dist-info/METADATA,sha256=ERQMv06r-QDFOGxjq3Rr56ZugcAzwb1lUDt2ybq_wms,8097
+hermes_python-0.3.1.dist-info/top_level.txt,sha256=uVZ_8esEvuWcIebLBwvdj65hW0wMBPpb9paWqyrEgUY,14
+hermes_python-0.3.1.dist-info/WHEEL,sha256=c8uKbdQypV832y6wpTaH7LmB9UQOPgqCSt-bcR7krHw,109
