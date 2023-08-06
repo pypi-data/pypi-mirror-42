@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: django-zuul
+Version: 1.0.0
+Summary: apigateway powered by django
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Keywords: django,apigateway,dataproxy
+Platform: UNKNOWN
+Requires-Dist: django (==2.1.7)
+Requires-Dist: requests
+Requires-Dist: djangorestframework
+Requires-Dist: psycopg2-binary
+
+UNKNOWN
+
+
