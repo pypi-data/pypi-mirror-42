@@ -1,0 +1,8 @@
+six
+entrypoints
+
+[bash]
+argcomplete
+
+[thirdparty]
+splunk-sdk
