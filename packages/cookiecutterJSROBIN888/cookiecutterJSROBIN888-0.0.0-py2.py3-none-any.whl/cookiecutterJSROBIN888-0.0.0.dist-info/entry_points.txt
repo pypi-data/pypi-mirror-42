@@ -1,0 +1,3 @@
+[console_scripts]
+cookiecutterJSROBIN888 = cookiecutterJSROBIN888.cli:main
+
