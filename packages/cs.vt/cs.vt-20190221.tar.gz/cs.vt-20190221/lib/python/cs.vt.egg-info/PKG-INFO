@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: cs.vt
+Version: 20190221
+Summary: A content hash based data store with a filesystem layer, using variable sized blocks, arbitrarily sized data and utilising some domain knowledge to aid efficient block boundary selection.
+Home-page: https://bitbucket.org/cameron_simpson/css/commits/all
+Author: Cameron Simpson
+Author-email: cs@cskk.id.au
+License: UNKNOWN
+Description: A content hash based data store with a filesystem layer, using
+        variable sized blocks, arbitrarily sized data and utilising some
+        domain knowledge to aid efficient block boundary selection.
+        
+        *NOTE*: pre-Alpha; alpha release following soon once the packaging
+        is complete.
+        
+        The package provides the `vt` command to access
+        these facilities from the command line.
+        
+        This system has two main components:
+        * Stores: storage areas of variable sized data blocks
+          indexed by the cryptographic hashcode of their content
+        * Dirents: references to filesystem entities
+          containing hashcode based references to the content
+        
+        These are logically disconnected.
+        Dirents are not associated with particular Stores;
+        it is it sufficient to have access to any Store
+        containing the required blocks.
+        
+        The other common entity is the Archive,
+        which is just a text file containing
+        a timestamped log of revisions of a Dirent.
+        These can be mounted as a FUSE filesystem,
+        and the `vt pack` command simply stores
+        a directory tree into the current Store,
+        and records the stored reference in an Archive file.
+        
+        See also the Plan 9 Venti system:
+        (http://library.pantek.com/general/plan9.documents/venti/venti.html,
+        http://en.wikipedia.org/wiki/Venti)
+        which is also based on variable sized blocks.
+        
+        ## Function `totext(data)`
+        
+        Represent a byte sequence as a hex/text string.
+Keywords: python3
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: System :: Filesystems
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown

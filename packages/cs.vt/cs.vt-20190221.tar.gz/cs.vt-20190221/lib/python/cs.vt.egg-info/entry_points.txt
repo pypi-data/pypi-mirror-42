@@ -1,0 +1,4 @@
+[console_scripts]
+mount.vtfs = cs.vt.__main__:mount_vtfs
+vt = cs.vt.__main__:main
+
