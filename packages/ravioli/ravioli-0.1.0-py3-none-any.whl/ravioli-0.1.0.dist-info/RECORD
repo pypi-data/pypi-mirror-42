@@ -1,0 +1,15 @@
+ravioli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ravioli/__main__.py,sha256=hd6pT4LisAx5hLMyGQ4jzHd2xTleqAlaYhHHq-TEfY8,33
+ravioli/complexity.py,sha256=KKns0Viw_zeiSK6PlsOG3pjDy_OgFDOEkGzQ-JQw5Yw,3431
+ravioli/function.py,sha256=hBZvPvKqVdQhzq15ynblDeDWuvWFhDoldJJNq0-D8K4,177
+ravioli/global_finder.py,sha256=fAxEw-NSWEMyGmdxCtJMH7JCJ_mUAw0Ztiqy1P58nWU,1716
+ravioli/global_variable.py,sha256=StoeJlV7dCKgT4soT7rD8Cr6skofgOTFKN_a7f5638U,133
+ravioli/line_counter.py,sha256=W3ChnXVXFQlcpPrHyeZMzt9e7hSaw3lwZvRZ874FTLU,481
+ravioli/ravioli.py,sha256=ugZDL8nTCbUriHmUmPNqYiFZ_L4TUCr3LMzpZPdvoGA,5079
+ravioli/strip_comments.py,sha256=FuprqSq1Gmi9mDmsxotF4OH_B1icQY7DHXF9lnG5mjE,590
+ravioli-0.1.0.dist-info/LICENSE,sha256=K4gCucdVwiSEl1kGYU08VeutLXsIeU-LHKMHRKNnDoo,1092
+ravioli-0.1.0.dist-info/METADATA,sha256=khvzywnF81j-Ks4YmGTH-WhwX9fPwSKXqVk71sgIi6U,520
+ravioli-0.1.0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+ravioli-0.1.0.dist-info/entry_points.txt,sha256=MCfQ5BfVM4hp_9fn70Ua5fu2LBs--7EmwrBU8vWDREw,50
+ravioli-0.1.0.dist-info/top_level.txt,sha256=b7SE1XjPDICfyVp6sMMQOtVMxshTTMHMpxa5TLwIK-E,8
+ravioli-0.1.0.dist-info/RECORD,,
