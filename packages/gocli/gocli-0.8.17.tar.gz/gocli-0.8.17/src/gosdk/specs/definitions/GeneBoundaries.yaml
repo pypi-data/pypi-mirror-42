@@ -1,0 +1,13 @@
+properties:
+  chromosome:
+    format: int32
+    type: integer
+  end:
+    format: int32
+    type: integer
+  start:
+    format: int32
+    type: integer
+  gene:
+    type: string
+type: object
