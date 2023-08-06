@@ -1,0 +1,76 @@
+# hashget
+
+Deduplication tool for archiving (backup) debian virtual machines
+
+For example, very useful for backup LXC containers before uploading to Amazon Glacier.
+
+
+## Installation
+
+Pip (recommended):
+~~~
+pip3 install hashget
+~~~
+
+or clone from git:
+~~~
+git clone https://gitlab.com/yaroslaff/hashget.git
+~~~
+
+
+## QuickStart
+
+Create debian machine (optional). Later with this example we will use 'mydebvm' container in default LXC location.
+~~~
+lxc-create -n mydebvm -t download -- --dist=debian --release=stretch --arch=amd64
+~~~
+
+Update local and network hashdb with packages from this VM. (optional, but very recommended to get maximal efficiency)
+~~~
+hashget --debcrawl /var/lib/lxc/mydebvm/rootfs/ 
+~~~
+
+Now, main work, prepare 
+~~~
+# bin/hashget -p /var/lib/lxc/mydebvm/rootfs/
+~~~
+Creates .hashget-restore file in rootfs and (by default) creates `gethash-exclude` file (for later tar command) in homedir of current user.
+
+#### Tarring
+`# tar -czf /tmp/rootfs.tar.gz -X ~/gethash-exclude --exclude='var/lib/apt/lists' -C ~/delme/rootfs/ .`
+
+Effective tarring command, which excludes large directories (not needed for backup) and duplicate files
+
+`--exclude` - files to exclude (relative to start of directory)
+
+After this step, you have very small (just 29Mb for 300Mb+ generic debian 9 LXC machine rootfs)
+
+#### Untarring
+`# tar -xzf rootfs.tar.gz -C rootfs`
+
+Just unpack to any directory as usual tar.gz file
+
+~~~
+root@braconnier:/tmp# du -sh rootfs/
+80M	rootfs/
+~~~
+
+At this stage we have just 80 Mb out of 300+ Mb total.
+
+#### Restoring
+
+After unpacking, you can restore files to new rootfs
+~~~
+# hashget -u rootfs
+recovered rootfs/usr/bin/vim.basic
+recovered rootfs/lib/i386-linux-gnu/libdns-export.so.162.1.3
+...
+recovered rootfs/usr/share/doc/systemd/changelog.Debian.gz
+recovered rootfs/usr/share/doc/systemd/copyright
+~~~
+
+## Documentation
+For more detailed documentation see [Wiki](https://gitlab.com/yaroslaff/hashget/wikis/home).
+
+
+
