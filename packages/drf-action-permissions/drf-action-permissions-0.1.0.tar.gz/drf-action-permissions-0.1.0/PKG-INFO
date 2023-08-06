@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: drf-action-permissions
+Version: 0.1.0
+Summary: Flexible action level permissions for Django REST framework
+Home-page: https://github.com/abogoyavlensky/drf-action-permissions
+Author: Andrey Bogoyavlensky
+Author-email: abogoyavlensky@gmail.com
+Keywords: permissions,django,djangorestframework,drf,viewset
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: django (>=1.11)
+Requires-Dist: djangorestframework (>=3.7,<4.0)
+Project-URL: Documentation, https://github.com/abogoyavlensky/drf-action-permissions/blob/master/README.md
+Project-URL: Repository, https://github.com/abogoyavlensky/drf-action-permissions
