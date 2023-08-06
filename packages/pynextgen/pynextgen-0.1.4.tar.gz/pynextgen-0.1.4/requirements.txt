@@ -1,0 +1,16 @@
+bokeh
+click
+colorlog
+fire
+gffutils
+ipywidgets
+jinja2
+matplotlib
+matplotlib-venn
+mygene
+pandas
+pybedtools
+pybiomart
+pysam
+pyensembl
+seaborn

@@ -1,0 +1,4 @@
+[console_scripts]
+clean_featurecounts = pynextgen.scripts.clean_featurecounts:main
+divergent_transcription = pynextgen.scripts.divergent_transcription:main
+
