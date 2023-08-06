@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import os
+from utils import menuConverter
+from utils import menuDownloader
+from utils import menuLinkScraper
+from utils import menuParser
+from utils import menuPrinter
+
+# Scrape link to current menu pdf from meyle website
+menu_url = menuLinkScraper.get_menu_link()
+
+# Download menu and get file name
+menu_pdf = menuDownloader.download_menu(menu_url)
+
+# Convert pdf to txt
+menu_txt = menuConverter.convert_menu(menu_pdf)
+
+# Parse textfile and return today's menu
+menu = menuParser.parse_menu(menu_txt)
+
+# Print today's menu
+menuPrinter.print_menu(menu)
