@@ -1,0 +1,130 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of the shibboleth-authenticator module for Invenio.
+# Copyright (C) 2017  Helmholtz-Zentrum Dresden-Rossendorf
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+addons:
+  postgresql: "9.6"
+  apt:
+    packages:
+      - libxml2-dev
+      - libxmlsec1-dev
+
+notifications:
+  email: false
+
+dist: xenial
+
+sudo: false
+
+services:
+  - mysql
+  - postgresql
+  - redis
+
+language: python
+
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+cache:
+  - pip
+
+env:
+  - REQUIREMENTS=lowest EXTRAS=all,sqlite SQLALCHEMY_DATABASE_URI="sqlite:///test.db"
+  - REQUIREMENTS=lowest EXTRAS=all,mysql SQLALCHEMY_DATABASE_URI="mysql+pymysql://travis@localhost:3306/invenio"
+  - REQUIREMENTS=lowest EXTRAS=all,postgresql SQLALCHEMY_DATABASE_URI="postgresql+psycopg2://postgres@localhost:5432/invenio"
+  - REQUIREMENTS=release EXTRAS=all,sqlite SQLALCHEMY_DATABASE_URI="sqlite:///test.db"
+  - REQUIREMENTS=release EXTRAS=all,mysql SQLALCHEMY_DATABASE_URI="mysql+pymysql://travis@localhost:3306/invenio"
+  - REQUIREMENTS=release EXTRAS=all,postgresql SQLALCHEMY_DATABASE_URI="postgresql+psycopg2://postgres@localhost:5432/invenio"
+
+stages:
+  - test
+  - name: deploy-pypi
+    if: tag =~ ^v
+  - name: deploy-docs
+    if: tag =~ ^v
+
+before_install:
+  - "travis_retry pip install --upgrade pip setuptools py"
+  - "travis_retry pip install coveralls requirements-builder"
+  - "requirements-builder -e $EXTRAS --level=min setup.py > .travis-lowest-requirements.txt"
+  - "requirements-builder -e $EXTRAS --level=pypi setup.py > .travis-release-requirements.txt"
+  - "mysql -e 'CREATE DATABASE IF NOT EXISTS invenio;' -uroot"
+  - "mysql -e 'Grant ALL ON invenio.* TO 'travis'@'localhost';'"
+  - "psql -c 'CREATE DATABASE invenio;' -U postgres"
+
+install:
+  - "travis_retry pip install -r .travis-${REQUIREMENTS}-requirements.txt"
+  - "travis_retry pip install -e .[${EXTRAS}]"
+
+script:
+  - "sh run-tests.sh"
+jobs:
+  include:
+    - stage: test
+      script:
+        - "sh run-tests.sh"
+      after_success:
+        - coveralls
+    - python: 3.6
+      env: REQUIREMENTS=release EXTRAS=all,sqlite
+      script:
+        - pip install -U git+https://github.com/leokoppel/sphinxcontrib-versioning.git#egg=sphinxcontrib-versioning
+        - sphinx-versioning build -T -W "^v[0-9\.]*$" -w master docs/source docs/build/html
+    - stage: deploy-pypi
+      python: "3.6"
+      env: REQUIREMENTS=release EXTRAS=all,sqlite SQLALCHEMY_DATABASE_URI="sqlite:///test.db"
+      before_install: echo "Skipping before_install step..."
+      install: echo "Skipping install step..."
+      script: echo "Deploying to PyPI"
+      deploy:
+        - provider: pypi
+          user: "frust"
+          password:
+            secure: "OvkENQvoKrUabFDwnP4GvporaU3IFivbtqAwXXXBpwhf/3UtIEMxbMyXrVF9ifYJ+ghrT7X+FPMZXbNhEB/+JgKV1E4DLUUUHBu+s5k82AGhdm9wImv9b+Oeb6c1A/4Vqf/ODJlwGTEdfzrYTSGSdQzi27bKZMD85iKATN+8HH+ZW6un/NwZV1VZrVI4xWx7LvSNG8keyK2x6lOhN380XxnD96GkYFlaLNc3tf+YEMlu6E7YibrgXwn5yemtHiEIXoJE0Q6A/d0vjjWeC7TE+ir2ymxwBjPUmuVq6PnjMPqD5a4bKGIxt+pFfDC+e+8WlRBEe3I4aNKvvBjVfoqqefdMurJmou5DKCaqAESO4QAUgJwYUTM0mMtBEAX5QL52KDzfgJipUmX3wpWKpaY2eY3xx1f160Lck+KUub48elxRHtR9qOWVQJQJ9PNIiBihLMc/t+7Vdst6I+0iF2t4Pb30hXpVvYUeMwiuijFSNzXYKj22PvsekSF7KlvDEc9gt2QJJmKz6g+2UF6LbtuiC3LAxSrjjwOxpl7+tgnuxwty8cbHbU6rlYo8a2wrfPGEZcdPhKm2SJ+JlGCqWtEZz0Q56ruKjoHSxSvy7DNIbic6IvShaGwkEbjvD+yW8u/38aSsXAAgRJHBUPU35hvlXB6Lxw2ARyDxfd/nxb4bCjg="
+          distributions: "sdist bdist_wheel"
+          on:
+            tags: true
+            if: tag =~ ^v
+    - stage: deploy-docs
+      python: "3.6"
+      env: REQUIREMENTS=release EXTRAS=all,sqlite SQLALCHEMY_DATABASE_URI="sqlite:///test.db"
+      script:
+        - pip install -U git+https://github.com/leokoppel/sphinxcontrib-versioning.git#egg=sphinxcontrib-versioning
+        - sphinx-versioning build -T -W "^v[0-9\.]*$" -w master docs/source docs/build/html
+      before_deploy:
+        - "touch docs/build/html/.nojekyll"
+      deploy:
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          # deploy master branch to gh-pages
+          on:
+            branch: master
+          local_dir: "docs/build/html"
+          target_branch: gh-pages
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN
+          # deploy on new version tags to gh-pages
+          on:
+            tags: true
+            if: tag =~ ^v
+          local_dir: "docs/build/html"
+          target_branch: gh-pages
