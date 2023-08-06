@@ -1,0 +1,9 @@
+pd_multiprocessing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pd_multiprocessing/map.py,sha256=sSkmGTJXBaawpDpj0vGXkKk3D7wnXh5-ZNYKblR6oqM,1977
+pd_multiprocessing/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pd_multiprocessing/test/test_map_df_map.py,sha256=uHHPKTOrmFqwMBFcCjaGdD3wWrAhRF8leUwhMD1NZZE,3355
+pd_multiprocessing-1.0.3.dist-info/LICENSE,sha256=_pBCZwokplL2mBEl13SFO-XOCoUk8zHEbJzQFw0Zz58,1071
+pd_multiprocessing-1.0.3.dist-info/METADATA,sha256=iK4lbytcEQmJbSl02PcT_RH3GjY68gZdXlnXAjrxZSM,1658
+pd_multiprocessing-1.0.3.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+pd_multiprocessing-1.0.3.dist-info/top_level.txt,sha256=RIZaCGmaW2rk3PPI8mNRHscRop2wJiZuUzWCCCuSEJQ,19
+pd_multiprocessing-1.0.3.dist-info/RECORD,,
