@@ -1,0 +1,263 @@
+index:
+    # tipo de dado
+    # exemplo: Decisão, Processo, etc.
+    required: true
+    type: string
+
+id:
+    # chave primária do processo
+    # exemplo: hash gerada
+    minlength: 64
+    required: true
+    type: string
+
+metadata:
+    type: dict
+    schema:
+        numero_processo:
+            # número do processo
+            type: dict
+            schema:
+                cnj:
+                    type: string
+                    regex: ^\d{7}[-.]?\d\d\.?[12]\d{3}\.?\d\.?\d\d\.?\d{4}$
+                tribunal:
+                    type: string
+
+        tribunal:
+            # nome do tribunal
+            # exemplo: STJ
+            required: true
+            type: string
+
+        classe_processual:
+            # classe do processo
+            # exemplo: Ação Penal - Procedimento Ordinário
+            type: string
+            coerce: capitalize
+
+        area_de_conhecimento:
+            # area do processo
+            # exemplo: Criminal
+            type: list
+            schema:
+                type: string
+
+        orgao_julgador:
+            # orgão julgador do processo
+            # exemplo: 1ª TURMA CRIMINAL
+            type: string
+            coerce: orgao_julgador
+
+        assunto:
+            type: list
+            schema:
+                titulo:
+                    # titulo do assunto
+                    # exemplo: Indenização por Dano Moral (10433)
+                    required: true
+                    type: string
+                    capitalized: True
+                codigo_local:
+                    # código local do assunto
+                    # exemplo: 10433
+                    type: string
+                codigo_nacional:
+                    # código nacional do assunto
+                    # exemplo: 10433
+                    type: string
+
+        provimento:
+            # provimento do processo
+            # exemplo: NEGO PROVIMENTO
+            type: string
+
+        polo:
+            # polos do processo
+            type: dict
+            schema:
+                passivo:
+                    # polo passivo
+                    type: list
+                    schema:
+                        nome:
+                            type: string
+                            proper_name: True
+                        funcao:
+                            # funcao da parte
+                            # exemplo: Réu
+                            type: string
+                        cpf:
+                            type: string
+                        cnpj:
+                            type: string
+                        espolio:
+                            # boleano indicando se é o espólio da parte
+                            type: boolean
+                        advogados:
+                            # lista de representantes da parte
+                            type: list
+                            schema:
+                                nome:
+                                    type: string
+                                    proper_name: True
+                                id:
+                                    # identificação única do advogado
+                                    type: string
+                                funcao:
+                                    # título do defensor da parte
+                                    # exemplo: Advogado
+                                    type: string
+                                oab:
+                                    # identificação / registro da OAB do Advogado
+                                    # exemplo: MG82038
+                                    type: string
+                ativo:
+                    # polo ativo
+                    type: list
+                    schema:
+                        nome:
+                            required: true
+                            type: string
+                        funcao:
+                            # funcao da parte
+                            # exemplo: Autor
+                            type: string
+                        cpf:
+                            type: string
+                        cnpj:
+                            type: string
+                        espolio:
+                            # boleano indicando se é o espólio da parte
+                            type: boolean
+                        advogados:
+                            # lista de representantes da parte
+                            type: list
+                            schema:
+                                nome:
+                                    required: true
+                                    type: string
+                                id:
+                                    # identificação única do advogado
+                                    type: string
+                                funcao:
+                                    # título do defensor da parte
+                                    # exemplo: Advogado
+                                    type: string
+                                oab:
+                                    # identificação / registro da OAB do Advogado
+                                    # exemplo: MG82038
+                                    type: string
+
+        relator:
+            # relator(es) do processo
+            type: dict
+            schema:
+                nome:
+                    required: true
+                    type: string
+                    proper_name: true
+                    coerce: relator
+                cargo:
+                    # funcao exercida pelo relator
+                    # exemplo: Juíz
+                    required: true
+                    type: string
+                    coerce: relator_cargo
+
+        valor_causa:
+            # valor decimal da causa
+            # exemplo: 10000
+            type: decimal
+
+        status:
+            # status do processo
+            # exemplo: ativo ou inativo
+            type: string
+
+        datas:
+            type: dict
+            schema:
+                publicacao:
+                    # data de publicacao (ou intimação) - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    required: true
+                    type: string
+                julgamento:
+                    # data de julgamento - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    type: string
+                cadastramento:
+                    # data de cadastramento - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    type: string
+                primeira_distribuicao:
+                    # data da primeira distribuição - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    type: string
+                ultima_distribuicao:
+                    # data da última distribuição - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    type: string
+
+body:
+    type: dict
+    schema:
+        movimentacoes:
+            # vetor de movimentacoes / andamentos no processo
+            type: list
+            schema:
+
+                tem_anexo:
+                    # boleano indicando se a movimentação tem anexo ou não
+                    required: true
+                    type: boolean
+
+                anexo:
+                    # descrição do anexo da movimentação
+                    type: dict
+                    schema:
+                        url:
+                            type: string
+                            regex: ^https?://.*
+                        tipo:
+                            type: string
+                        nome:
+                            type: string        
+                descricao:
+                    # descrição da movimentação
+                    # exemplo: Expedição de comunicação via sistema.
+                    type: string
+                data:
+                    # data da movimentação - timestamp ISO 8601
+                    # exemplo: 2017-01-03T00:00:00.000+00:00
+                    required: true
+                    type: string
+                fase_atual:
+                    # fase atual do movimento
+                    # exemplo: petição inicial
+                    type: string
+                relator:
+                    # relator da movimentação
+                    # exemplo: 11353 - Fernando Simão
+                    type: string
+                local:
+                    # local da movimentação
+                    # exemplo: 90 - 7ª Câmara de Direito Criminal
+                    type: string
+                antecipacao_tutela:
+                    # boleano indicando atencipação de tutela no movimento
+                    type: boolean
+                transitado_julgado:
+                    # boleano indicando o movimento transitado julgado
+                    type: boolean
+                codigo_local:
+                    # código local do assunto
+                    # exemplo: 10433
+                    type: string
+                codigo_nacional:
+                    # código nacional do assunto
+                    # exemplo: 10433
+                    type: string
+                complemento:
+                    type: string
