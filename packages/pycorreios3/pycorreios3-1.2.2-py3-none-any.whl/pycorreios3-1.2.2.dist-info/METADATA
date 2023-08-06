@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pycorreios3
+Version: 1.2.2
+Summary: Acesso facil a todos os web services dos correios.
+Home-page: https://github.com/mbello/pycorreios3
+License: CC0-1.0
+Keywords: ECT,Correios,SigepWeb,Sigep,rastreamento,CalcPrecoPrazo
+Author: Marcelo Bello
+Author-email: mbello@users.noreply.github.com
+Requires-Python: >=3.5,<4.0
+Classifier: License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: requests (>=2.19,<3.0)
+Requires-Dist: zeep (>=3.1,<4.0)
+Project-URL: Repository, https://github.com/mbello/pycorreios3
+Description-Content-Type: text/markdown
+
+

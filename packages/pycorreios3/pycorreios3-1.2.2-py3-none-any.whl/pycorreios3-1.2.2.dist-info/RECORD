@@ -1,0 +1,14 @@
+pycorreios3/CEP.py,sha256=fQfPZXieM8OByO79p4jtm3mIocjg0kvOn6Lw5ewgk0A,2142
+pycorreios3/__init__.py,sha256=d34x0BrE2QhX1gJL4Qoa-zsUZHMX4WsyTd8QvIFfWfg,212
+pycorreios3/calc_preco_prazo.py,sha256=Jbdm6XlbjsOA0wSmQkw5aqjiev722SlJy1TRQoE2g6M,4551
+pycorreios3/cartao_postagem.py,sha256=tq8RLv7ulAF_YQhgGfXy8VzE01ZkblN9vsKc8OfpV1Q,859
+pycorreios3/correios_webservice_client.py,sha256=J44dp8_qCtr8kS8A62Lqt5hpsG8CYW777O0AzJ_X0fQ,2006
+pycorreios3/credenciais.py,sha256=nZnGCndTSvUjQzH4kcUvB3gQ8iThNPQWt9AByAFRI9M,2189
+pycorreios3/servicos.py,sha256=S6XXS3Tl5oTxYI7T5eZCvEhbblZv2uSU4rLMbxDcYaQ,7999
+pycorreios3/sigepweb.py,sha256=cF8VhQFGvM9e6uispnhwhkLuAM5Cf5SRR0SjK3Ocssg,2425
+pycorreios3/sro.py,sha256=1fn3hdLb0K30pSA6yWyp9RLAdSkV5DumsCox1aqzkQo,2408
+pycorreios3/volume.py,sha256=sEW3j-hU4nqPweLeqNX7W32eWtEmqg_t_brFxIgWeNk,2600
+pycorreios3-1.2.2.dist-info/LICENSE,sha256=wg_g6sY6k5JdtNpnB96inM8-IgW6vlZllECLoq-xryQ,185
+pycorreios3-1.2.2.dist-info/WHEEL,sha256=qtAdCj-IU6QldWlMjaadKoVfLWgvJaW3ljh8ILtCNHs,85
+pycorreios3-1.2.2.dist-info/METADATA,sha256=-HXclAMyo0sT-yzsMON-JWnTMdJmmZXHxPm9JiiVB_Q,793
+pycorreios3-1.2.2.dist-info/RECORD,,
