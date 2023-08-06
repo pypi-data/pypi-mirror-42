@@ -1,0 +1,8 @@
+nibabel
+numpy
+pandas
+dipy
+scipy
+tqdm
+cvxopt
+mpmath
