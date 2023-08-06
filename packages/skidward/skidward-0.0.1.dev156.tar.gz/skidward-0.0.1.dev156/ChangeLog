@@ -1,0 +1,134 @@
+CHANGES
+=======
+
+* Corrected Typos
+* Corrected Typos
+* Redefined Admin Interface to have sing admin instance
+* lpush task to 'MANUAL\_RUN'
+* Removed job\_creation and unused imports
+* Resolved merge conflicts
+* Resolved merge conflicts
+* Added form\_override and Removed inheriting from SkidwardView
+* Executed Manual Run
+* Added relationship from Job to Task
+* removed 'lazy=noload'
+* Added tests
+* Added list actions to Run manually, render JSON field for Context
+* Modifies Jobs relationship
+* modified job repr from task\_id to task
+* added SQLAlchemy-Utils to requirements
+* Created 'Task' model, updated 'Job' model and relationship among 'Worker->Task->Job'
+* Moved 'ModelViews' to 'views.py', display 'current\_user' on UI and some imports reformatted to be PEP8 complaint
+* Used environment variables for testing endpoints
+* erratum move back enable\_testing autouse fixture into conftest
+* import mock from unittest instead of installing mock package
+* move conftest and test\_backend into skidward/tests move test\_jobs\_handler into skidward/tests/jobs\_handler
+* move conftest and test\_backend into skidward/tests move test\_jobs\_handler into skidward/tests/jobs\_handler
+* remove the original backend file
+* pull master and fix import typo
+* move backend into skidward/skidward and modidy tests, also add import to handle new models location
+* remove requirements files and use global files
+* add test for exception in backend
+* cast dict\_key as list, as there is only one key the loop is maybe an overkill
+* add comments, use string instead of casting an int into a string, add assertions,
+* rename tests to be clearer
+* Only one backend is used, renamed 'backends' to 'backend', refactored code to remove list related stuff. Modified tests regarding those changes
+* Moved Models outside web
+* Remove usage of dotenv and use monkeypatch.setenv instead Also remove from backend.py a global and instead call directly the class
+* remove unused import
+* Moved .env to project root
+* merge with master, remove local .env to use the global one. Add some settings to the global .env.default file
+* remove comment change str.encode() into .encode('utf-8') in Confest change setup\_dummy\_backend into a fixture
+* unit test for backend
+* run automatically a fixture to add to .env the variable TESTING, remove the part to unset it as it's done when leaving the test
+* some modifications to fit the behavior of the redis LRANGE command
+* remove unused import
+* rename function
+* Conftest: 	setup all fixture to use the new backend implementation for Redis 	add and remove environment variable TESTING during test session 	mock sqlalchey generator returned after .filter
+* Replaced move cmd to copy, to leave committed files alone
+* Switched to pathlib to reach .env file. Apparently since Python3.5 the pathlib has been introduced to offer an easier way of navigating cross platform. Switched from paths using os.path to pathlib to offer crossplatform functionality
+* add module to redirect redis calls depending of test env or real env
+* Locked version on 3.6.7
+* Create .env file in CI and set some defaults for testing
+* Use absolute pathing
+* Modified path
+* Added fixture which loads env vars before executing test
+* Added extra settings in hopes of silencing the warnings
+* Moved web-tests to separate directory
+* move module into skidward/skidward
+* change current config to new values gotten from .env
+* Use .env files to store config
+* Ignore .env files
+* unused import
+* add a test when no job ready remove fixture mock\_job, not needed if I create two seperate tests and not using parametrize
+* remove foo variable
+* add conftest to mock a part of session used. Rename few variables
+* Removed pre-commit file
+* change table and test name. Use Enum instead of string
+* Moved worker\_detector to skidward
+* Only return module on load, not dict
+* Convert to use of dict from list, renamed file to be pep8 compliant, updated tests
+* remove tools made for test only
+* use config parameter to define timer when process will check DB
+* remove credentials
+* add test to verify data push to redis
+* rename job state as there is no more election for the moment
+* Changed default password hash to SHA512\_crypt from bcrypt
+* Missing newlines added
+* dev requirements && pre-commit-config for black's PEP8 enforcemnt added
+* Update requirements.txt
+* use proper attribute to set the readme content type
+* Moved password option to separate prompt. Use hash\_password instead of encrypt\_password due to deprecationwarnings
+* rename as for now we are not talking about election anymore
+* only distribute master branch
+* remove build artifacts
+* add home page
+* remove thread part, for now do as simple as possible
+* add tests and coverage check
+* delete and create Jobs table to erase everything and start again from healthy env
+* do not look for tests in poc folders
+* adding dependencies
+* Some typing cleanup
+* Updated mock object to take all arguments of super
+* Renamed module, rewritten and expanded tests and refactored detector
+* install the library itself with its dependencies
+* Now using Redis instead of homemade election process, we also change the goal for now, there is no more election, process just check from db if there is a job awaiting, in that case it adds it into redis list. Schedulers shall handle the lpop part to run the job
+* add script to populate db for test purpose
+* update gitlab CI instructions
+* add requirements and update package structure
+* update structure for publishing
+* First draft, create  a job table, start election process and grant the first scheduler
+* Update requirements.txt
+* Update requirements.txt
+* Update requirements.txt
+* Add LICENSE
+* Removed entrypoint in module & added requirements.txt
+* web-requirement.txt
+* Additional testing
+* Helpermethods and fixtures moved
+* Closing the stream connection at end of execution
+* Ignore unused config sections
+* Ignored redis dump
+* Added missing type
+* Sets logging handler to custom handler and emits a msg
+* Initial tests added for redis\_log\_handler
+* Stringified incoming LogRecord
+* Setup added for packaging
+* Initial stream to redis working
+* Deleted .idea/vcs.xml
+* Changed type checking to a more flexible form
+* Updated README and added CLI for creation of Superuser
+* Added and README.md and Packaged into web---Plz take this one into merge
+* Added and README.md and Packaged into web
+* Tests added
+* Restructured PoC to be properly testable
+* PEP8 and mypy compliant. Added newlines where necessary Added mypy configuration file and more static typing
+* Restructured as packaging
+* Updated admin interface with models and implemented logins with flask-security
+* Simpler check for module names
+* #2: Plugin detection - 2 workers added
+* Removed BIN file .DS\_Store and added to gitignore
+* #2: Detector added. Can be packaged to be run as
+* Don't track .pyc files
+* Created flask admin interface with Users Model
+* Initial commit
