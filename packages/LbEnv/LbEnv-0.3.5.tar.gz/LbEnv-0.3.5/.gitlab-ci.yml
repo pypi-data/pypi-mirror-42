@@ -1,0 +1,194 @@
+stages:
+  - test
+  - package
+  - deploy
+
+variables:
+  RPM_REPO: incubator
+  RPM_REPO_EOS: /eos/project/l/lhcbwebsites/www/lhcb-rpm/${RPM_REPO}
+  RPM_REPO_URL: "http://lhcb-rpm.web.cern.ch/lhcb-rpm/${RPM_REPO}/"
+
+centos7:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:centos7
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests --cover-package LbEnv
+    - mkdir -p cover_report && mv -f python/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+    when: always
+    expire_in: 1 week
+
+slc6:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:slc6
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests --cover-package LbEnv
+    - mkdir -p cover_report && mv -f python/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+    when: always
+    expire_in: 1 week
+
+python2.7:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-2.7
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests --cover-package LbEnv
+    - mkdir -p cover_report && mv -f python/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+      - public
+    when: always
+    expire_in: 1 week
+
+python3.5:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-3.5
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests
+    - mkdir -p cover_report && mv -f build/lib/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+    when: always
+    expire_in: 1 week
+
+python3.6:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-3.6
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests
+    - mkdir -p cover_report && mv -f build/lib/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+    when: always
+    expire_in: 1 week
+
+python3.7:
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-3.7
+  script:
+    - python --version
+    - pip install -e .
+    - python setup.py nosetests
+    - mkdir -p cover_report && mv -f build/lib/cover cover_report/$CI_JOB_NAME
+  artifacts:
+    paths:
+      - cover_report
+      - public
+    when: always
+    expire_in: 1 week
+
+
+# Packaging step
+pack-py3:
+  stage: package
+  only: [tags]
+  dependencies: []
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-3.7
+  script:
+    - python setup.py sdist --dist-dir public/${CI_PROJECT_NAME,,}
+    - python setup.py bdist_wheel --dist-dir public/${CI_PROJECT_NAME,,}
+  artifacts:
+    paths:
+      - public
+    when: always
+    expire_in: 1 week
+
+pack-py2:
+  stage: package
+  only: [tags]
+  dependencies: []
+  image: gitlab-registry.cern.ch/lhcb-docker/python-deployment:python-2.7
+  script:
+    - python setup.py bdist_wheel --dist-dir public/${CI_PROJECT_NAME,,}
+  artifacts:
+    paths:
+      - public
+    when: always
+    expire_in: 1 week
+
+pack-rpm:
+  stage: package
+  #only: [tags]
+  dependencies: []
+  image: gitlab-registry.cern.ch/lhcb-core/lbdocker/centos7-build
+  variables:
+    NO_LBLOGIN: "1"
+    NO_CVMFS: "1"
+  script:
+    - if [ -n "${CI_COMMIT_TAG}" ] ; then
+    -   version=${CI_COMMIT_TAG}
+    -   release=$(curl --silent ${RPM_REPO_URL} | grep LbEnv-${version} |
+          sed 's/<[^>]*>//g;s/\.noarch\.rpm.*//' |
+          awk -F- '{if (rev < $NF) rev = $NF}END{print rev + 1}' || true)
+    - else
+    -   version=$(git describe --tags)
+    -   release=${version#*-}
+    -   version=${version%%-*}
+    -   if [ "${release}" = "${version}" ] ; then release=1 ; fi
+    - fi
+    - release=${release//-/.}
+    - mkdir -p /userhome/rpmbuild/SOURCES
+    - git archive --output=/userhome/rpmbuild/SOURCES/LbEnv-${version}.tar.gz --prefix=LbEnv-${version}/ HEAD
+    - "sed -i \"s/^Version: .*/Version: ${version}/;s/^Release: .*/Release: ${release}/\" rpm/LbEnv.spec"
+    - rpmbuild -ba rpm/LbEnv.spec
+    - mkdir -p public
+    - mv /userhome/rpmbuild/SRPMS/LbEnv-${version}-${release}.src.rpm public
+    - mv /userhome/rpmbuild/RPMS/noarch/LbEnv-${version}-${release}.noarch.rpm public
+  artifacts:
+    paths:
+      - public
+    when: always
+    expire_in: 1 week
+
+
+# see https://gitlab.cern.ch/gitlabci-examples/deploy_eos for the details
+# of the configuration
+deploy-packages:
+  stage: deploy
+  only:
+    - tags
+  dependencies:
+    - pack-py3
+    - pack-py2
+  image: gitlab-registry.cern.ch/ci-tools/ci-web-deployer:latest
+  variables:
+    EOS_PATH: /eos/project/l/lhcbwebsites/www/lhcb-pypi/pool
+  script:
+    - test -z "$EOS_ACCOUNT_USERNAME" -o -z "$EOS_ACCOUNT_PASSWORD" && exit 0 || true
+    # Script that performs the deploy to EOS. Makes use of the variables defined in the project
+    # It will copy the generated content to the folder in EOS
+    - deploy-eos
+  # do not run any globally defined before_script or after_script for this step
+  before_script: []
+  after_script: []
+
+deploy-rpm:
+  stage: deploy
+  only:
+    - tags
+  dependencies:
+    - pack-rpm
+  image: gitlab-registry.cern.ch/ci-tools/ci-web-deployer:latest
+  script:
+    - test -z "$EOS_ACCOUNT_USERNAME" -o -z "$EOS_ACCOUNT_PASSWORD" && exit 0 || true
+    # we do not publish the source RPM
+    - rm -fv public/*.src.rpm
+    # Script that performs the deploy to EOS. Makes use of the variables defined in the project
+    # It will copy the generated content to the folder in EOS
+    - export EOS_PATH=${RPM_REPO_EOS}
+    - find public -type f -ls
+    - deploy-eos
+  # do not run any globally defined before_script or after_script for this step
+  before_script: []
+  after_script: []

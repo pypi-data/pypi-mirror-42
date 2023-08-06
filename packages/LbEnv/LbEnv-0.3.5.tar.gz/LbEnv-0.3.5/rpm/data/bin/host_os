@@ -1,0 +1,25 @@
+#!/bin/bash
+###############################################################################
+# (c) Copyright 2018 CERN                                                     #
+#                                                                             #
+# This software is distributed under the terms of the GNU General Public      #
+# Licence version 3 (GPL Version 3), copied verbatim in the file "LICENSE".   #
+#                                                                             #
+# In applying this licence, CERN does not waive the privileges and immunities #
+# granted to it by virtue of its status as an Intergovernmental Organization  #
+# or submit itself to any jurisdiction.                                       #
+###############################################################################
+
+if [ -e /etc/redhat-release ] ; then
+  if grep -q -E '(CentOS|Scientific Linux).*release 7' /etc/redhat-release ; then
+    _os=centos7
+  elif grep -q -E '(CentOS|Scientific Linux).*release 6' /etc/redhat-release ; then
+    _os=slc6
+  elif grep -q -E '(CentOS|Scientific Linux).*release 5' /etc/redhat-release ; then
+    _os=slc5
+  fi
+elif [ -e /etc/lsb-release ] ; then
+  _os=$(awk -F= '/^DISTRIB_ID/{n=tolower($2)}/^DISTRIB_RELEASE/{gsub("\\.", "", $2); v=$2}END{print n""v}' /etc/lsb-release)
+fi
+
+echo $(uname -m)-${_os}
