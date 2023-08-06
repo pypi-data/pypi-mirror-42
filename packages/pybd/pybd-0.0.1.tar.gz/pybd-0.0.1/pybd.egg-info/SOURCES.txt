@@ -1,0 +1,8 @@
+README.rst
+setup.py
+pybd/__init__.py
+pybd.egg-info/PKG-INFO
+pybd.egg-info/SOURCES.txt
+pybd.egg-info/dependency_links.txt
+pybd.egg-info/requires.txt
+pybd.egg-info/top_level.txt
