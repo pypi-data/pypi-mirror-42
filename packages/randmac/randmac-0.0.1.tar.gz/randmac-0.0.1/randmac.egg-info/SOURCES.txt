@@ -1,0 +1,13 @@
+HISTORY.md
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+randmac/__init__.py
+randmac/__version__.py
+randmac/randmac.py
+randmac.egg-info/PKG-INFO
+randmac.egg-info/SOURCES.txt
+randmac.egg-info/dependency_links.txt
+randmac.egg-info/top_level.txt
