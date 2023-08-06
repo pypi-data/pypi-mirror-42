@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: PythonKit
+Version: 0.0.2
+Summary: Write grpc application like Flask.
+Home-page: https://github.com/htwenning/python_kit
+Author: wenning
+Author-email: ht.wenning@foxmail.com
+License: BSD
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: any
