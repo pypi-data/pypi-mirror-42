@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: fair-flow
+Version: 0.0.6
+Summary: Simple Workflow Library
+Home-page: http://fairanswers.com
+Author: Joe Fair
+Author-email: joe@fairanswers.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
