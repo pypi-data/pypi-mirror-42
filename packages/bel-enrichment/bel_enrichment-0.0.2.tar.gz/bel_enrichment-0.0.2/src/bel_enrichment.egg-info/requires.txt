@@ -1,0 +1,9 @@
+pybel
+bel_repository
+indra
+xlrd
+
+[docs]
+sphinx
+sphinx-rtd-theme
+sphinx-click
