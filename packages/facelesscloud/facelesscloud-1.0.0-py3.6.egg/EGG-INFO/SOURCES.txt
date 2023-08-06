@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+facelesscloud/__init__.py
+facelesscloud/cli.py
+facelesscloud.egg-info/PKG-INFO
+facelesscloud.egg-info/SOURCES.txt
+facelesscloud.egg-info/dependency_links.txt
+facelesscloud.egg-info/entry_points.txt
+facelesscloud.egg-info/requires.txt
+facelesscloud.egg-info/top_level.txt
