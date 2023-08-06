@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+deslackify/__init__.py
+deslackify.egg-info/PKG-INFO
+deslackify.egg-info/SOURCES.txt
+deslackify.egg-info/dependency_links.txt
+deslackify.egg-info/entry_points.txt
+deslackify.egg-info/requires.txt
+deslackify.egg-info/top_level.txt
