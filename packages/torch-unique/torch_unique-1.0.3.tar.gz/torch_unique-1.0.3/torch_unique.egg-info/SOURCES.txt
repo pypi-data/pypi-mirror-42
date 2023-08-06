@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+cuda/unique.cpp
+cuda/unique_kernel.cu
+test/__init__.py
+test/test_unique.py
+test/utils.py
+torch_unique/__init__.py
+torch_unique/unique.py
+torch_unique.egg-info/PKG-INFO
+torch_unique.egg-info/SOURCES.txt
+torch_unique.egg-info/dependency_links.txt
+torch_unique.egg-info/requires.txt
+torch_unique.egg-info/top_level.txt
