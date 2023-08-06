@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Sanic_Sqlalchemy_DataTable
+Version: 0.0.2
+Summary: datatable backend.
+Home-page: https://github.com/htwenning/datatable
+Author: wenning
+Author-email: ht.wenning@foxmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
