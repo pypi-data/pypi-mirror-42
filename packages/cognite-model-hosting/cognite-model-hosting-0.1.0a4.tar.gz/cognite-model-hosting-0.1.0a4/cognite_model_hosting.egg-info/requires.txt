@@ -1,0 +1,3 @@
+aiohttp==2.3.10
+pandas
+marshmallow==3.0.0rc4
