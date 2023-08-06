@@ -1,0 +1,15 @@
+decaptcha/__init__.py,sha256=EQDxssEPCgNsGKUuBktYJ1HKer_0YqdomzyuYX6tZtc,193
+decaptcha/apps.py,sha256=bjiWt23qIY1-4PHmbl2uaD3Ahp1B4lSaLtxkTvsrMMM,285
+decaptcha/challenges.py,sha256=9wsz6tWrUyhN3DPCfHacrOo6Acx6j4Ljt6_6yNHFFbw,409
+decaptcha/models.py,sha256=5hbA79jKrgXkc2ZxhfWbWxzHVHJE2fK2rlqXQM7w_48,2066
+decaptcha/settings.py,sha256=tMaPcR1H1bsx9hpH_O8UUYq9CByqmpjZKJydlPurAbQ,725
+decaptcha/tests.py,sha256=sDqHl6jr9FKTfQWLv_voJavx9Ak2G0-JHu0j_xVBAMc,1772
+decaptcha/urls.py,sha256=w46_QgDOzBOKhfZyXAXV5C8ci13AH9H7XQUix5qu4QU,409
+decaptcha/utils.py,sha256=Hdiq5lK0_c_OfCJfFG-_eUMrOuVT9wGLoyOseITRRrQ,519
+decaptcha/validators.py,sha256=RczrKzh08SPhmOh1jlfHBxSW1foEC8Bcizu4wv_Z69g,309
+decaptcha/views.py,sha256=g2qustyeunGtQypUUy_prGQZXsCR9KztAPvDEgU64_U,2338
+django_easy_captcha-0.1.dist-info/LICENSE,sha256=zWgNUUJLdublp0wF0NN2mxrCqDd2bsFSm0ziOdnmHTw,1059
+django_easy_captcha-0.1.dist-info/METADATA,sha256=vTd6N0y8CQhXfso9PQAuFSqpGufOlqVjtT8ZHhGeAas,829
+django_easy_captcha-0.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+django_easy_captcha-0.1.dist-info/top_level.txt,sha256=cLPxO6i8u2Krc4-FcwfbWHd_cjBlqDNxKee_dTxxptU,10
+django_easy_captcha-0.1.dist-info/RECORD,,

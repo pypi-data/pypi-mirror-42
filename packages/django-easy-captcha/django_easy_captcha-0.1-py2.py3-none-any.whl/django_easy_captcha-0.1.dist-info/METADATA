@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: django-easy-captcha
+Version: 0.1
+Summary: a very easy to use captcha image generator for django.
+Home-page: https://github.com/youngershen/django-easy-captcha
+Author: Younger Shen
+Author-email: youngershen64@hotmail.com
+License: MIT
+Keywords: django,captcha,image
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Framework :: Django
+Requires-Python: >=3.6
+Requires-Dist: easy-captcha
+Requires-Dist: django-easy-validator
+Requires-Dist: django
+
+UNKNOWN
+
+
