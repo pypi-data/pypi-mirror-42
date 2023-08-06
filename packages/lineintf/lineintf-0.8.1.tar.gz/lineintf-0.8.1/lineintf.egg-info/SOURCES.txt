@@ -1,0 +1,7 @@
+setup.py
+lineintf/__init__.py
+lineintf.egg-info/PKG-INFO
+lineintf.egg-info/SOURCES.txt
+lineintf.egg-info/dependency_links.txt
+lineintf.egg-info/not-zip-safe
+lineintf.egg-info/top_level.txt
