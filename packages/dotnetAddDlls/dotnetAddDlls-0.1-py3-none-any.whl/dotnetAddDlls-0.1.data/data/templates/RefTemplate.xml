@@ -1,0 +1,8 @@
+<ItemGroup>
+  <Reference Include="{NAME}" Version="{VERSION}" publicKeyToken="{TOKEN}" culture="{CULTURE}"
+    processorArchitecture="{PROC}">
+    <HintPath>{PATH}</HintPath>
+    <SpecificVersion>{IS_VERSION}</SpecificVersion>
+    <!-- You may set it to true if your dll has a specific version -->
+  </Reference>
+</ItemGroup>
