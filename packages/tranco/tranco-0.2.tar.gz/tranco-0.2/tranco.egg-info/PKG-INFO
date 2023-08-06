@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: tranco
+Version: 0.2
+Summary: Tranco: A Research-Oriented Top Sites Ranking Hardened Against Manipulation
+Home-page: https://github.com/DistriNet/tranco-python-package
+Author: Victor Le Pochat
+Author-email: victor.lepochat@cs.kuleuven.be
+License: UNKNOWN
+Description: # Tranco
+        
+        This package allows easy access to the Tranco list, published at [https://tranco-list.eu]().
+        
+        ## Usage
+        
+        Create a `Tranco` object, indicating whether you want to cache downloaded lists:
+        ```python
+        from tranco import Tranco
+        t = Tranco(cache=True, cache_dir='.tranco')
+        ```
+        
+        You can then retrieve lists from this object using the `list` method:
+        
+        ```python
+        latest_list = t.list()
+        date_list = t.list(date='2019-02-25')
+        ```
+        
+        This method returns a `TrancoList`, which allows you to retrieve a certain prefix of the list (`top`), the list ID (`list_id`), the list page (`list_page`) or the rank of a domain (`rank`):
+        ```python
+        latest_list.top(10000)
+        latest_list.list_id
+        latest_list.list_page
+        latest_list.rank("google.com")
+        latest_list.rank("not.in.ranking") # returns -1
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
