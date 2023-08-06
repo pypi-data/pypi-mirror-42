@@ -1,0 +1,7 @@
+datapunt_pg_partitioning-2019.2.27.dist-info/METADATA,sha256=JLB3cwVExKglgKcEtpcTXT051sO8vpRSDykQTMcBmLA,2822
+datapunt_pg_partitioning-2019.2.27.dist-info/RECORD,,
+datapunt_pg_partitioning-2019.2.27.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+datapunt_pg_partitioning-2019.2.27.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
+src/date_partition_util.py,sha256=1rJZkzUKM4X7j5WZl-OkEy5JzpL33oXOYzcWISrITDs,1167
+src/pg_connection.py,sha256=8aapBGgjw_VTxRYoHMdUSpi2UBSP9pTMaICIZ7UyCv4,1844
+src/pg_partition.py,sha256=1LLL78oANShlBm_jTDbOJRz334kjeusjUwVGcdfcs5Y,7057
