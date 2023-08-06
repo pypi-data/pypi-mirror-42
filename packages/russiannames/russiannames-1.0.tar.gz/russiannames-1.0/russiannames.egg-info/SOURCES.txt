@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+bin/rusnames.py
+russiannames/__init__.py
+russiannames/consts.py
+russiannames/parser.py
+russiannames/processor.py
+russiannames/reader.py
+russiannames.egg-info/PKG-INFO
+russiannames.egg-info/SOURCES.txt
+russiannames.egg-info/dependency_links.txt
+russiannames.egg-info/not-zip-safe
+russiannames.egg-info/requires.txt
+russiannames.egg-info/top_level.txt
