@@ -1,0 +1,8 @@
+MANIFEST.in
+README.rst
+setup.py
+acdh_spacytei.egg-info/PKG-INFO
+acdh_spacytei.egg-info/SOURCES.txt
+acdh_spacytei.egg-info/dependency_links.txt
+acdh_spacytei.egg-info/requires.txt
+acdh_spacytei.egg-info/top_level.txt
