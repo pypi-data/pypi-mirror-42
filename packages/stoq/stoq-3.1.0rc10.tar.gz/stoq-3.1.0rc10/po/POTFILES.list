@@ -1,0 +1,7 @@
+include bin/stoq
+recursive-include stoq *.py
+recursive-include stoqlib *.py
+recursive-include plugins *.py
+recursive-include plugins *.ui
+recursive-include data *.ui
+recursive-include data *.html

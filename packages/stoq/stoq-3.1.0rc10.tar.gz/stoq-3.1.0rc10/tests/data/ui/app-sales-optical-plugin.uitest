@@ -1,0 +1,171 @@
+app: SalesApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(main_vbox, orientation=vertical, expand=True, fill=True):
+        GtkBox(menu_hbox, orientation=horizontal, fill=True): hidden
+        GtkBox(vbox4, orientation=vertical, expand=True, fill=True):
+          GtkEventBox(search_holder, expand=True, fill=True): slave SearchSlave is attached
+            GtkBox(vbox, orientation=vertical):
+              GtkBox(orientation=horizontal, fill=True, padding=6):
+                GtkBox(filters_box, orientation=vertical, padding=6):
+                  GtkBox(hbox, orientation=horizontal):
+                    ComboSearchFilter():
+                      GtkLabel(): 'Branch:'
+                      ProxyComboBox(padding=6):
+                        item: 'Any'
+                        item: 'Moda Stoq', selected
+                        item: 'Stoq Elite Fashion'
+                    ComboSearchFilter():
+                      GtkLabel(): 'Show sales'
+                      ProxyComboBox(padding=6):
+                        item: 'All Sales', selected
+                        item: 'Confirmed today'
+                        item: 'Confirmed in the last 7 days'
+                        item: 'Confirmed in the last 28 days'
+                        item: 'Expired quotes'
+                        item: 'sep'
+                        item: 'Opened'
+                        item: 'Quoting'
+                        item: 'Ordered'
+                        item: 'Confirmed'
+                        item: 'Cancelled'
+                        item: 'Returned'
+                        item: 'Renegotiated'
+                    StringSearchFilter(_primary_filter):
+                      GtkLabel(): 'matching:'
+                      ProxyComboBox(padding=6): hidden
+                        item: 'Contains All Words', selected
+                      GtkEntry(search_entry, padding=6): ''
+                    stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+              SearchResultListView(results, expand=True, fill=True):
+                column: title='Sale #'
+                column: title='Coupon #', hidden
+                column: title='Paid', hidden
+                column: title='Open date', hidden
+                column: title='Close date', hidden
+                column: title='Confirm date'
+                column: title='Cancel date', hidden
+                column: title='Return date', hidden
+                column: title='Expire date', hidden
+                column: title='Status', hidden
+                column: title='Client', expand
+                column: title='Client fancy name', hidden, expand
+                column: title='Salesperson'
+                column: title='Items'
+                column: title='Gross total'
+                column: title='Net total'
+                row: 1, 1001, True, datetime.datetime(2012, 1, 1, 0, 0), datetime.datetime(2012, 4, 5, 0, 0), datetime.datetime(2012, 2, 3, 0, 0), None, None, None, 'Confirmed', 'Vitalina Claudino', None, 'Deivis Alexandre Junior', Decimal('3.000'), <currency $436>, <currency $436>
+                row: 2, 1002, False, datetime.datetime(2012, 1, 1, 0, 0), datetime.datetime(2012, 4, 5, 0, 0), datetime.datetime(2012, 2, 3, 0, 0), None, None, None, 'Confirmed', 'Alessandra Almeida Itaberá', None, 'Deivis Alexandre Junior', Decimal('3.000'), <currency $706>, <currency $706>
+                row: 3, 1003, False, datetime.datetime(2012, 1, 1, 0, 0), datetime.datetime(2012, 4, 5, 0, 0), datetime.datetime(2012, 2, 3, 0, 0), None, None, None, 'Confirmed', 'Luis Sergio da Silva Marin', None, 'Deivis Alexandre Junior', Decimal('3.000'), <currency $873>, <currency $873>
+          GtkBox(list_vbox, orientation=vertical, fill=True):
+          GtkEventBox(list_toolbar_holder, fill=True):
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+        LazySummaryLabel(summary_label):
+          GtkLabel(expand=True, fill=True, padding=6): '<b>Gross total:</b>'
+          GtkLabel(): '<b>$2,015.00</b>'
+        LazySummaryLabel(_extra_summary):
+          GtkLabel(expand=True, fill=True, padding=6): '<b>Net total:</b>'
+          GtkLabel(): '<b>$2,015.00</b>'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Sale quote...
+                      GtkModelButton(fill=True): Sale with work order...
+                      GtkModelButton(fill=True): Loan...
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Print this report...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Export to spreadsheet...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Close loan...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Products...
+                      GtkModelButton(fill=True): Services...
+                      GtkModelButton(fill=True): Deliveries...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Clients...
+                      GtkModelButton(fill=True): Client Calls...
+                      GtkModelButton(fill=True): Client credit check history...
+                      GtkModelButton(fill=True): Clients with sales...
+                      GtkModelButton(fill=True): Clients with credit...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Sales by payment method...
+                      GtkModelButton(fill=True): Returned sales...
+                      GtkModelButton(fill=True): Commissions...
+                      GtkModelButton(fill=True): Total sales made by salesperson...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Unconfirmed sale items...
+                      GtkModelButton(fill=True): Sold items by branch...
+                      GtkModelButton(fill=True): Sold items by client...
+                      GtkModelButton(fill=True): Sold items by salesperson..
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Loans...
+                      GtkModelButton(fill=True): Loan items...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Medics...
+                      GtkModelButton(fill=True): Medics sold items...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Sales help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit

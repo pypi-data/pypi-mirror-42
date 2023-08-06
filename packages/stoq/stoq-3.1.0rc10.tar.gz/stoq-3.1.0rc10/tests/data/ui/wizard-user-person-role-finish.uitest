@@ -1,0 +1,203 @@
+wizard: PersonRoleWizard
+GtkDialog(toplevel): title='New User', hidden
+  GtkBox(PluggableWizard-vbox, orientation=vertical):
+    GtkBox(vbox1, orientation=vertical, expand=True, fill=True):
+      ProxyLabel(header_lbl, fill=True): hidden
+      GtkEventBox(slave_area, expand=True, fill=True): slave RoleEditorStep is attached
+        GtkBox(step.vbox1, orientation=vertical):
+          GtkEventBox(step.place_holder, expand=True, fill=True):
+            GtkBox(orientation=vertical):
+              GtkNotebook(expand=True, fill=True):
+                GtkEventBox():
+                  GtkAlignment():
+                    GtkTable():
+                      GtkLabel(): 'Username:'
+                      ProxyEntry(): 'username'
+                      GtkEventBox():
+                        GtkTable():
+                          GtkLabel(): 'Password:'
+                          ProxyEntry(): 'foobar'
+                          GtkLabel(): 'Confirm password:'
+                          ProxyEntry(): 'foobar'
+                      GtkLabel(): 'Profile:'
+                      ProxyComboBox():
+                        item: 'Administrator'
+                        item: 'Manager'
+                        item: 'Salesperson', selected
+                      ProxyLabel(): 'Role:'
+                      ProxyComboBox():
+                        item: 'No Role', selected
+                        item: 'Diretor'
+                        item: 'Financeiro'
+                        item: 'Gerente'
+                        item: 'Salesperson'
+                        item: 'Secretário'
+                        item: 'System Administrator'
+                      GtkButton(): hidden
+                GtkBox(orientation=vertical):
+                  GtkTable(fill=True):
+                    GtkLabel(): 'Name:'
+                    ProxyEntry(): 'user name'
+                    GtkLabel(): 'Phone Number:'
+                    ProxyEntry(): ''
+                    GtkLabel(): 'E-mail:'
+                    ProxyEntry(): ''
+                    GtkLabel(): 'Fax:'
+                    ProxyEntry(): ''
+                    GtkLabel(): 'Mobile:'
+                    ProxyEntry(): ''
+                  GtkBox(orientation=horizontal, fill=True):
+                    GtkLabel(expand=True, fill=True):
+                    GtkButton(fill=True): 'Co_ntacts...'
+                    GtkButton(fill=True): 'Credit Check History...', hidden
+                    GtkButton(fill=True): 'Calls...'
+                  GtkHSeparator(fill=True):
+                  GtkEventBox(fill=True):
+                    GtkTable():
+                      GtkLabel(): 'Street:'
+                      ProxyEntry(): 'street'
+                      GtkBox(orientation=horizontal):
+                        GtkLabel(expand=True, fill=True):
+                        ProxyCheckButton(fill=True): 'Number:', active
+                      GtkBox(orientation=horizontal):
+                        ProxyEntry(expand=True, fill=True): '123'
+                        GtkLabel(fill=True): 'Postal Code:'
+                        ProxyEntry(fill=True): '     -   '
+                      GtkLabel(): 'District:'
+                      ProxyEntry(): 'district'
+                      GtkLabel(): 'Complement:'
+                      ProxyEntry(): ''
+                      GtkLabel(): 'City:'
+                      ProxyEntry(): 'São Carlos'
+                      GtkLabel(): 'State:'
+                      ProxyEntry(): 'SP'
+                      GtkLabel(): 'Country:'
+                      ProxyComboEntry():
+                        item: 'Brazil', selected
+                        item: '... 252 more countries ...'
+                  GtkBox(orientation=horizontal, fill=True):
+                    ProxyLabel(expand=True, fill=True):
+                    GtkButton(fill=True): 'More _Addresses...'
+                  GtkEventBox(fill=True):
+                GtkBox(orientation=vertical):
+                  GtkFrame(fill=True):
+                    GtkEventBox():
+                      GtkTable():
+                        GtkLabel(): 'CPF:'
+                        ProxyEntry(): '   .   .   -  '
+                        GtkLabel(): 'RG Number:'
+                        ProxyEntry(): ''
+                        GtkLabel(): 'RG Expedition\nLocal:'
+                        ProxyEntry(): ''
+                        GtkLabel(): 'RG Expedition\nDate:'
+                        ProxyDateEntry(): None
+                        GtkLabel(): 'State Registry:'
+                        ProxyEntry(): ''
+                        GtkLabel(): 'City Registry:'
+                        ProxyEntry(): ''
+                  GtkFrame(fill=True): hidden
+                    GtkEventBox():
+                GtkBox(orientation=vertical):
+                  GtkEventBox(fill=True):
+                    GtkTable():
+                      GtkLabel(): 'Status:'
+                      ProxyRadioButton(): 'Active', active
+                      ProxyRadioButton(): 'Inactive'
+                      GtkLabel():
+                  GtkEventBox(fill=True):
+                    GtkBox(orientation=vertical):
+                      GtkTable(fill=True):
+                        GtkLabel(): 'Gender:'
+                        GtkBox(orientation=horizontal):
+                          GtkRadioButton(expand=True): 'Not set', active
+                          GtkRadioButton(expand=True): 'Male'
+                          GtkRadioButton(expand=True): 'Female'
+                        GtkLabel(): 'Birth Date:'
+                        ProxyDateEntry(): None
+                        GtkLabel(): 'Responsible:'
+                        GtkBox(orientation=horizontal):
+                          ProxyEntry(expand=True, fill=True): ''
+                          GtkButton(): insensitive
+                          GtkButton(): insensitive
+                        GtkLabel(): 'Occupation:'
+                        ProxyEntry(): ''
+                        GtkLabel(): 'Birth Country:'
+                        ProxyComboEntry():
+                          item: 'Brazil', selected
+                          item: '... 252 more countries ...'
+                        GtkLabel(): "Mother's name:"
+                        ProxyEntry(): ''
+                        GtkLabel(): 'Birth State:'
+                        ProxyEntry(): 'SP'
+                        GtkLabel(): "Father's Name:"
+                        ProxyEntry(): ''
+                        GtkLabel(): 'Birth City:'
+                        ProxyEntry(): 'São Carlos'
+                        GtkLabel(): 'Marital Status:'
+                        ProxyComboBox():
+                          item: 'Single', selected
+                          item: 'Married'
+                          item: 'Divorced'
+                          item: 'Widowed'
+                          item: 'Separated'
+                          item: 'Cohabitation'
+                        GtkLabel(): 'Spouse:', hidden
+                        ProxyEntry(): '', hidden
+                  GtkEventBox(expand=True, fill=True):
+                    GtkBox(orientation=vertical):
+                      GtkLabel(fill=True): hidden
+                      GtkLabel(fill=True): 'Observations:'
+                      GtkScrolledWindow(expand=True, fill=True):
+                        ProxyTextView():
+                GtkEventBox():
+                  GtkBox(orientation=vertical):
+                    GtkBox(orientation=horizontal, fill=True):
+                      GtkLabel(fill=True): 'Branch:'
+                      ProxyComboEntry(expand=True, fill=True): invalid
+                        item: 'branch', selected
+                        item: 'Moda Stoq'
+                        item: 'Stoq Elite Fashion'
+                      GtkButton(fill=True): 'gtk-add'
+                    GtkBox(orientation=vertical, expand=True, fill=True):
+                      ListContainer(expand=True, fill=True):
+                        GtkBox(orientation=vertical, expand=True, fill=True, padding=6):
+                          ObjectList(expand=True, fill=True):
+                            column: title='Branch Name', expand
+                          GtkBox(orientation=horizontal, fill=True):
+                            GtkButton(fill=True): 'gtk-add', hidden
+                            GtkButton(fill=True): 'gtk-remove', insensitive
+                            GtkButton(fill=True): 'gtk-edit', hidden, insensitive
+      ProxyLabel(notification_lbl, fill=True):
+      GtkBox(hbox1, orientation=horizontal, fill=True, pack-end):
+        GtkButtonBox(buttonbox, orientation=horizontal, expand=True, fill=True, pack-end):
+          GtkButton(cancel_button): 'gtk-cancel'
+          GtkButton(previous_button): 'gtk-go-back'
+          GtkButton(next_button): '_Finish'
+          GtkButton(ok_button): 'gtk-ok', hidden
+          GtkButton(help_button, expand=True, fill=True): 'gtk-help'
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(dialog-action_area1, orientation=horizontal, fill=True, pack-end):
+
+model: LoginUser<1>
+  is_active: True
+  person_id: Person<2>
+  pw_hash: '3858f62230ac3c915f300c664312c63f'
+  username: 'username'
+
+model: Person<2>
+  email: ''
+  fax_number: ''
+  mobile_number: ''
+  name: 'user name'
+  notes: ''
+  phone_number: ''
+
+model: Address<3>
+  complement: ''
+  district: 'district'
+  is_main_address: True
+  person_id: Person<2>
+  postal_code: ''
+  street: 'street'
+  streetnumber: 123
+

@@ -1,0 +1,59 @@
+wizard: StockDecreaseWizard
+GtkDialog(toplevel): title='Manual Stock Decrease', hidden
+  GtkBox(PluggableWizard-vbox, orientation=vertical):
+    GtkBox(vbox1, orientation=vertical, expand=True, fill=True):
+      ProxyLabel(header_lbl, fill=True): hidden
+      GtkEventBox(slave_area, expand=True, fill=True): slave DecreaseItemStep is attached
+        GtkBox(step.toplevel, orientation=vertical):
+          GtkTable(step.item_table, fill=True):
+            GtkBox(step.hbox2, orientation=horizontal):
+              ProxyLabel(step.item_lbl, fill=True): 'Item:'
+              ProxyEntry(step.barcode, fill=True): '', invalid
+              GtkButton(step.product_button):
+            ProxyLabel(step.kiwilabel2): 'Quantity:'
+            ProxySpinButton(step.quantity): '0', insensitive
+            ProxyLabel(step.unit_label): '<span weight="bold"></span>'
+            ProxyLabel(step.cost_label): 'Cost:', hidden
+            ProxySpinButton(step.cost): '0.00', hidden, insensitive
+            GtkButton(step.add_sellable_button): insensitive
+            ProxyLabel(step.sellable_description): '<span ></span>'
+            GtkLabel(step.minimum_quantity_lbl): 'Minimum:', hidden
+            ProxyLabel(step.minimum_quantity): '<span >0.0</span>', hidden
+            GtkLabel(step.stock_quantity_lbl): 'Stock:', hidden
+            ProxyLabel(step.stock_quantity): '<span >0.0</span>', hidden
+          GtkOverlay(step.overlay, expand=True, fill=True):
+            GtkEventBox(step.list_holder): slave AdditionListSlave is attached
+              GtkBox(vbox1, orientation=vertical):
+                GtkBox(list_vbox, orientation=vertical, expand=True, fill=True):
+                  ObjectTree(klist, expand=True, fill=True):
+                    column: title='Code'
+                    column: title='Description', expand
+                    column: title='Category', expand
+                    column: title='Quantity'
+                    column: title='Unit'
+                    row: '', 'Description', '', Decimal('1.000'), ''
+                  SummaryLabel(step.summary, fill=True):
+                    GtkLabel(expand=True, fill=True, padding=6): '<b>Total quantity:</b>'
+                    GtkLabel(): '<b>1</b>'
+                GtkBox(hbox1, orientation=horizontal, fill=True):
+                  GtkBox(button_box, orientation=horizontal):
+                    GtkButton(add_button): hidden
+                    GtkButton(edit_button): insensitive
+                    GtkButton(delete_button): insensitive
+                    GtkButton(step.delivery_button, pack-end): 'Add Delivery'
+                  GtkBox(message_hbox, orientation=horizontal, expand=True, fill=True): hidden
+                    GtkLabel(message_label, expand=True, fill=True):
+                    GtkButton(message_details_button, fill=True): 'Details'
+            GtkBox(step.box, orientation=horizontal):
+              GtkBox(step.warning_box, orientation=vertical, fill=True):
+                GtkLabel(step.warning_label, fill=True):
+                GtkLabel(step.dismiss_label, fill=True):
+      ProxyLabel(notification_lbl, fill=True):
+      GtkBox(hbox1, orientation=horizontal, fill=True, pack-end):
+        GtkButtonBox(buttonbox, orientation=horizontal, expand=True, fill=True, pack-end):
+          GtkButton(cancel_button): 'gtk-cancel'
+          GtkButton(previous_button): 'gtk-go-back'
+          GtkButton(next_button): '_Finish'
+          GtkButton(ok_button): 'gtk-ok', hidden
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(dialog-action_area1, orientation=horizontal, fill=True, pack-end):

@@ -1,0 +1,139 @@
+app: LauncherApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(orientation=vertical, expand=True, fill=True):
+        GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=vertical, expand=True, fill=True):
+          GtkEventBox(expand=True, fill=True):
+            GtkBox(orientation=vertical):
+              GtkBox(orientation=horizontal, fill=True, padding=6):
+                GtkBox(orientation=vertical, padding=6):
+                  GtkBox(orientation=horizontal):
+                    ComboSearchFilter():
+                      GtkLabel(): 'Show by:'
+                      ProxyComboBox(padding=6):
+                        item: 'All branches'
+                        item: 'Moda Stoq', selected
+                        item: 'Stoq Elite Fashion'
+                    StringSearchFilter():
+                      GtkLabel(): 'Search:'
+                      ProxyComboBox(padding=6): hidden
+                        item: 'Contains All Words', selected
+                      GtkEntry(padding=6): ''
+                    stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(): 'Find'
+              SearchResultListView(expand=True, fill=True):
+                column: title='Code'
+                column: title='Barcode'
+                column: title='Category', hidden
+                column: title='Description', expand
+                column: title='Manufacturer', hidden
+                column: title='Brand', hidden
+                column: title='Model', hidden
+                column: title='Location', hidden
+                column: title='Quantity'
+                column: title='Picture'
+                row: '01', '2368694135945', 'Bermudas Sarja', 'Bermuda Sarja', None, '', '', '', Decimal('3.000'), False
+                row: '02', '6234564656756', 'Bermudas Shorts', 'Shorts com Costuras', None, '', '', '', Decimal('3.000'), False
+                row: '03', '6985413595971', 'Tinturada', 'Camiseta Tinturada Xcuba Comp', None, '', '', '', Decimal('3.000'), False
+                row: '04', '2692149835416', 'Chinelos', 'Chinelo de Dedo', None, '', '', '', Decimal('3.000'), False
+                row: '05', '1595843695465', 'Calças Jeans', 'Calça Jeans com Bolso Traseiro', None, '', '', '', Decimal('3.000'), False
+                row: '06', '8596458216412', 'Calças Poliester', 'Calça Brigilda', None, '', '', '', Decimal('3.000'), False
+                row: '07', '9586249534513', 'Algodão', 'Casaco Vilan', None, '', '', '', Decimal('3.000'), False
+                row: '08', '7826592136954', 'Blusas Algodão', 'Blusa Frente-Única com Pregas', None, '', '', '', Decimal('3.000'), False
+                row: '09', '5892458629421', 'Blusas Poliester', 'Blusa Balonê com Bordado nas Costas', None, '', '', '', Decimal('3.000'), False
+                row: '10', '1598756984265', 'Viscose', 'Vestido Vadalena', None, '', '', '', Decimal('4.000'), False
+          GtkBox(orientation=horizontal):
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+        LazySummaryLabel():
+          GtkLabel(expand=True, fill=True, padding=6): '<b>Stock Total:</b>'
+          GtkLabel(): '<b>31.0</b>'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Order receival...
+                      GtkModelButton(fill=True): Transfer...
+                      GtkModelButton(fill=True): Stock decrease...
+                      GtkModelButton(fill=True): Loan...
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Print this report...
+                      GtkModelButton(fill=True): Print labels..., insensitive
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Export to spreadsheet...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Register initial stock...
+                      GtkModelButton(fill=True): Close loan...
+                      GtkModelButton(fill=True): Picture viewer
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Received purchases...
+                      GtkModelButton(fill=True): Product history...
+                      GtkModelButton(fill=True): Transfers...
+                      GtkModelButton(fill=True): Transfer items...
+                      GtkModelButton(fill=True): Stock decreases...
+                      GtkModelButton(fill=True): Returned items...
+                      GtkModelButton(fill=True): Purchased items...
+                      GtkModelButton(fill=True): Stock items...
+                      GtkModelButton(fill=True): Brand items...
+                      GtkModelButton(fill=True): Brand item by branch...
+                      GtkModelButton(fill=True): Batch items...
+                      GtkModelButton(fill=True): Closed stock Items...
+                      GtkModelButton(fill=True): Pending returned sales...
+                      GtkModelButton(fill=True): Loans...
+                      GtkModelButton(fill=True): Loan items...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Stock help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit

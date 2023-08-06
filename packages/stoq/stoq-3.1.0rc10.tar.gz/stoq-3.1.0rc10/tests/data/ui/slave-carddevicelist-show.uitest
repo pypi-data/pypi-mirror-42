@@ -1,0 +1,12 @@
+slave: CardDeviceListSlave
+ListContainer(toplevel):
+  ObjectList(expand=True, fill=True):
+    column: title='Description', expand
+    column: title='Monthly cost', expand
+    row: 'Cielo', None
+    row: 'Default', None
+    row: 'Santander', None
+  GtkBox(orientation=vertical, fill=True, padding=6):
+    GtkButton(fill=True): 'gtk-add'
+    GtkButton(fill=True): 'gtk-remove', insensitive
+    GtkButton(fill=True): 'gtk-edit', insensitive

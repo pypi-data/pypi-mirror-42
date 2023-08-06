@@ -1,0 +1,78 @@
+wizard: CloseLoanWizard
+GtkDialog(toplevel): title='Close Loan Wizard', hidden
+  GtkBox(PluggableWizard-vbox, orientation=vertical):
+    GtkBox(vbox1, orientation=vertical, expand=True, fill=True):
+      ProxyLabel(header_lbl, fill=True): hidden
+      GtkEventBox(slave_area, expand=True, fill=True): slave LoanItemSelectionStep is attached
+        GtkBox(step.toplevel, orientation=vertical):
+          GtkTable(step.item_table, fill=True): hidden
+            GtkBox(step.hbox2, orientation=horizontal):
+              ProxyLabel(step.item_lbl, fill=True): 'Item:'
+              ProxyEntry(step.barcode, fill=True): '', invalid
+              GtkButton(step.product_button):
+            ProxyLabel(step.kiwilabel2): 'Quantity:'
+            ProxySpinButton(step.quantity): '0.000', insensitive
+            ProxyLabel(step.unit_label): '<span weight="bold"></span>'
+            ProxyLabel(step.cost_label): 'Cost:'
+            ProxySpinButton(step.cost): '0.00', insensitive
+            GtkButton(step.add_sellable_button): insensitive
+            ProxyLabel(step.sellable_description): '<span ></span>'
+            GtkLabel(step.minimum_quantity_lbl): 'Minimum:', hidden
+            ProxyLabel(step.minimum_quantity): '<span >0.0</span>', hidden
+            GtkLabel(step.stock_quantity_lbl): 'Stock:', hidden
+            ProxyLabel(step.stock_quantity): '<span >0.0</span>', hidden
+          GtkOverlay(step.overlay, expand=True, fill=True):
+            GtkEventBox(step.list_holder): slave AdditionListSlave is attached
+              GtkBox(vbox1, orientation=vertical):
+                GtkBox(list_vbox, orientation=vertical, expand=True, fill=True):
+                  ObjectTree(klist, expand=True, fill=True):
+                    column: title='Code', hidden
+                    column: title='Barcode', hidden
+                    column: title='Description', expand
+                    column: title='Loaned'
+                    column: title='Sold'
+                    column: title='Returned'
+                    column: title='Remaining'
+                    column: title='Price'
+                    row: '', '', 'Description', Decimal('10.000'), Decimal('2.000'), Decimal('2.000'), Decimal('6.000'), <currency $10>
+                GtkBox(hbox1, orientation=horizontal, fill=True):
+                  GtkBox(button_box, orientation=horizontal):
+                    GtkButton(add_button): hidden
+                    GtkButton(edit_button): hidden, insensitive
+                    GtkButton(delete_button): hidden, insensitive
+                  GtkBox(message_hbox, orientation=horizontal, expand=True, fill=True): hidden
+                    GtkLabel(message_label, expand=True, fill=True):
+                    GtkButton(message_details_button, fill=True): 'Details'
+            GtkBox(step.box, orientation=horizontal):
+              GtkBox(step.warning_box, orientation=vertical, fill=True):
+                GtkLabel(step.warning_label, fill=True):
+                GtkLabel(step.dismiss_label, fill=True):
+      ProxyLabel(notification_lbl, fill=True):
+      GtkBox(hbox1, orientation=horizontal, fill=True, pack-end):
+        GtkButtonBox(buttonbox, orientation=horizontal, expand=True, fill=True, pack-end):
+          GtkButton(cancel_button): 'gtk-cancel'
+          GtkButton(previous_button): 'gtk-go-back'
+          GtkButton(next_button): '_Finish'
+          GtkButton(ok_button): 'gtk-ok', hidden
+          GtkButton(help_button, expand=True, fill=True): 'gtk-help'
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(dialog-action_area1, orientation=horizontal, fill=True, pack-end):
+
+model: Loan<1>
+  cancel_date: None
+  cancel_reason: None
+  close_date: None
+  expire_date: None
+  notes: ''
+  open_date: datetime.datetime(2012, 1, 1, 0, 0)
+  removed_by: ''
+  status: 'open'
+
+model: LoanItem<2>
+  base_price: <currency $10>
+  loan_id: Loan<1>
+  price: <currency $10>
+  quantity: Decimal('10.000')
+  return_quantity: Decimal('2.000')
+  sale_quantity: Decimal('2.000')
+

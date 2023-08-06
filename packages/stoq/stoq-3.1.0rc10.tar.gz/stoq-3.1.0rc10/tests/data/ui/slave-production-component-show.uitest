@@ -1,0 +1,44 @@
+slave: ProductComponentSlave
+GtkBox(vbox1, orientation=vertical):
+  GtkBox(production_time_box, orientation=horizontal, fill=True):
+    GtkLabel(label2, fill=True): 'Production time:'
+    ProxySpinButton(production_time, fill=True): '1'
+    GtkLabel(label3, expand=True, fill=True): 'days'
+    GtkLabel(yield_label, expand=True, fill=True): 'Yields:'
+    ProxySpinButton(yield_quantity, fill=True): '1.000'
+  GtkHSeparator(hseparator1, fill=True):
+  GtkBox(vbox2, orientation=vertical, fill=True):
+    GtkBox(hbox1, orientation=horizontal, expand=True, fill=True):
+      GtkLabel(label1, fill=True): 'Component:'
+      ProxyComboEntry(component_combo, expand=True, fill=True): invalid
+        item: '[Bermudas Sarja] Bermuda Sarja'
+        item: '[Blusas Poliester] Blusa Balonê com Bordado nas Costas'
+        item: '[Blusas Algodão] Blusa Frente-Única com Pregas'
+        item: '[Calças Poliester] Calça Brigilda'
+        item: '[Calças Jeans] Calça Jeans com Bolso Traseiro'
+        item: '[Tinturada] Camiseta Tinturada Xcuba Comp'
+        item: '[Algodão] Casaco Vilan'
+        item: '[Chinelos] Chinelo de Dedo'
+        item: 'Description'
+        item: '[Bermudas Shorts] Shorts com Costuras'
+        item: '[Viscose] Vestido Vadalena'
+      GtkButton(add_button, fill=True): 'gtk-add', insensitive
+    ProxyCheckButton(sort_components_check, expand=True, fill=True): 'Sort components by category'
+  GtkBox(component_tree_vbox, orientation=vertical, expand=True, fill=True):
+    ObjectTree(component_tree, expand=True, fill=True):
+      column: title='Code'
+      column: title='Quantity'
+      column: title='Unit'
+      column: title='Description', expand
+      column: title='Category'
+      column: title='Ref.'
+      column: title='Production Cost'
+      column: title='Total'
+      row: '', Decimal('1.000'), '', 'Description', '', '', <currency $125>, Decimal('125.00')
+    SummaryLabel(component_label, fill=True):
+      GtkLabel(expand=True, fill=True, padding=6): '<b>Total:</b>'
+      GtkLabel(): '<b>$125.00</b>'
+  GtkBox(hbox3, orientation=horizontal, fill=True):
+    GtkButton(remove_button): 'gtk-remove', insensitive
+    GtkButton(edit_button): 'gtk-edit', insensitive
+    ProxyLabel(info_label, expand=True, fill=True): '<span weight="bold"></span>'

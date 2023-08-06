@@ -1,0 +1,26 @@
+editor: InvoicePrinterEditor
+GtkDialog(main_dialog.toplevel): title='Add Invoice Printers', hidden
+  GtkBox(main_dialog._main_vbox, orientation=vertical):
+    GtkBox(main_dialog.vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(main_dialog.header):
+      GtkEventBox(main_dialog.main, expand=True, fill=True, padding=6): slave InvoicePrinterEditor is attached
+        GtkTable(toplevel):
+          GtkLabel(label1): 'Description:'
+          ProxyEntry(description): 'Untitled Printer'
+          GtkLabel(label2): 'Device name:'
+          ProxyEntry(device_name): '/dev/lp0'
+          GtkLabel(label3): 'Computer:'
+          ProxyComboBox(station):
+            item: 'Test station', selected
+          GtkLabel(label4): 'Layout:'
+          ProxyComboBox(layout):
+            item: 'Standard Invoice', selected
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(main_dialog.extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(main_dialog.print_holder, expand=True, fill=True):
+        GtkEventBox(main_dialog.notice, fill=True):
+        GtkEventBox(main_dialog.details_holder, padding=6, pack-end):
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(main_dialog.action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(main_dialog.cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel'
+        GtkButton(main_dialog.ok_button, expand=True, fill=True, padding=6): 'gtk-ok'

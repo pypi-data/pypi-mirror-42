@@ -1,0 +1,44 @@
+search: ClientsWithCreditSearch
+GtkDialog(toplevel): title='Clients with Credit', hidden
+  GtkBox(_main_vbox, orientation=vertical):
+    GtkBox(vbox, orientation=vertical, expand=True, fill=True):
+      GtkEventBox(header): hidden
+      GtkEventBox(main, expand=True, fill=True, padding=6): slave SearchSlave is attached
+        GtkBox(vbox, orientation=vertical):
+          GtkBox(orientation=horizontal, fill=True, padding=6):
+            GtkBox(filters_box, orientation=vertical, padding=6):
+              GtkBox(hbox, orientation=horizontal):
+                StringSearchFilter(_primary_filter):
+                  GtkLabel(): 'Search:'
+                  ProxyComboBox(padding=6): hidden
+                    item: 'Contains All Words', selected
+                  GtkEntry(search_entry, padding=6): ''
+                stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+          SearchResultListView(results, expand=True, fill=True):
+            column: title='Client', expand
+            column: title='Email', hidden
+            column: title='Phone', hidden
+            column: title='Category', hidden
+            column: title='Document', hidden
+            column: title='CPF', hidden
+            column: title='CNPJ', hidden
+            column: title='Received'
+            column: title='Spent'
+            column: title='Available'
+            row: 'With Credit', '', '', None, None, '', None, Decimal('100.00'), Decimal('25.00'), Decimal('75.00')
+      GtkBox(orientation=horizontal, fill=True):
+        GtkEventBox(extra_holder, expand=True, fill=True, padding=6):
+        GtkEventBox(print_holder, expand=True, fill=True):
+        GtkEventBox(notice, fill=True):
+        GtkEventBox(details_holder, padding=6, pack-end): slave _SearchDialogDetailsSlave is attached
+          GtkBox(vbox1, orientation=vertical):
+            GtkBox(hbox1, orientation=horizontal, fill=True):
+              GtkLabel(label3, expand=True, fill=True):
+              GtkButtonBox(hbuttonbox1, orientation=horizontal, fill=True):
+                GtkButton(details_button, expand=True, fill=True): insensitive
+                GtkButton(print_button, expand=True, fill=True): 'gtk-print', hidden
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(action_area, orientation=horizontal, fill=True, pack-end):
+        GtkButton(cancel_button, expand=True, fill=True, padding=6): 'gtk-cancel', hidden
+        GtkButton(ok_button, expand=True, fill=True, padding=6): 'gtk-ok', hidden, insensitive
+        GtkButton(csv_button, padding=6): 'Export to spreadsheet...'

@@ -1,0 +1,45 @@
+wizard: QuotePurchaseWizard
+GtkDialog(toplevel): title='New Quote', hidden
+  GtkBox(PluggableWizard-vbox, orientation=vertical):
+    GtkBox(vbox1, orientation=vertical, expand=True, fill=True):
+      ProxyLabel(header_lbl, fill=True): hidden
+      GtkEventBox(slave_area, expand=True, fill=True): slave QuoteSupplierStep is attached
+        GtkBox(step.vbox1, orientation=vertical):
+          GtkLabel(step.label1, fill=True): 'Select one or more suppliers to generate quote(s):'
+          ObjectList(step.quoting_list, expand=True, fill=True):
+            column: title=' '
+            column: title='Supplier', expand
+            column: title='Supplied/Total'
+            row: True, 'Supplier', '1/1'
+          GtkBox(step.hbox1, orientation=horizontal, fill=True):
+            GtkButtonBox(step.hbuttonbox1, orientation=horizontal, fill=True):
+              GtkButton(step.print_button, fill=True): 'gtk-print'
+              GtkButton(step.view_products_button, fill=True): '_View Products'
+              GtkButton(step.missing_products_button, fill=True): '_Missing Products'
+            ProxyCheckButton(step.include_all_products, fill=True): 'Include all products in quotes', active
+      ProxyLabel(notification_lbl, fill=True):
+      GtkBox(hbox1, orientation=horizontal, fill=True, pack-end):
+        GtkButtonBox(buttonbox, orientation=horizontal, expand=True, fill=True, pack-end):
+          GtkButton(cancel_button): 'gtk-cancel'
+          GtkButton(previous_button): 'gtk-go-back'
+          GtkButton(next_button): '_Finish'
+          GtkButton(ok_button): 'gtk-ok', hidden
+    GtkBox(orientation=horizontal, fill=True, pack-end):
+      GtkButtonBox(dialog-action_area1, orientation=horizontal, fill=True, pack-end):
+
+model: PurchaseOrder<1>
+  confirm_date: None
+  consigned: False
+  discount_value: <currency $0>
+  expected_freight: <currency $0>
+  expected_pay_date: datetime.today()
+  expected_receival_date: datetime.today()
+  freight_type: 'fob'
+  notes: ''
+  open_date: datetime.datetime(2010, 1, 3, 0, 0)
+  quote_deadline: datetime.datetime(2020, 1, 1, 0, 0)
+  receival_date: None
+  salesperson_name: ''
+  status: 'quoting'
+  surcharge_value: <currency $0>
+

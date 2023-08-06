@@ -1,0 +1,103 @@
+app: ProductionApp
+GtkApplicationWindow(toplevel): title='Moda Stoq', hidden
+  GtkBox(orientation=vertical):
+    GtkBox(orientation=horizontal, expand=True, fill=True):
+      GtkBox(main_vbox, orientation=vertical, expand=True, fill=True):
+        GtkBox(list_vbox, orientation=vertical, expand=True, fill=True):
+          GtkEventBox(search_holder, expand=True, fill=True): slave SearchSlave is attached
+            GtkBox(vbox, orientation=vertical):
+              GtkBox(orientation=horizontal, fill=True, padding=6):
+                GtkBox(filters_box, orientation=vertical, padding=6):
+                  GtkBox(hbox, orientation=horizontal):
+                    ComboSearchFilter(status_filter):
+                      GtkLabel(): 'Show productions with status'
+                      ProxyComboBox(padding=6):
+                        item: 'Any', selected
+                        item: 'Opened'
+                        item: 'Waiting'
+                        item: 'Producing'
+                        item: 'Quality Assurance'
+                        item: 'Closed'
+                        item: 'Cancelled'
+                    StringSearchFilter(_primary_filter):
+                      GtkLabel(): 'matching:'
+                      ProxyComboBox(padding=6): hidden
+                        item: 'Contains All Words', selected
+                      GtkEntry(search_entry, padding=6): ''
+                    stoqlib+gui+widgets+searchfilterbutton+SearchFilterButton(search_button): 'Find'
+              SearchResultListView(results, expand=True, fill=True):
+                column: title='Production #'
+                column: title='Status', hidden
+                column: title='Description', expand
+                column: title='Responsible'
+                column: title='Opened'
+                column: title='Closed'
+                column: title='Cancelled'
+    ShellStatusbar():
+      GtkFrame(expand=True, fill=True): hidden
+        GtkBox(orientation=horizontal):
+          GtkLabel(fill=True):
+      GtkBox(orientation=horizontal, fill=True):
+        GtkBox(orientation=horizontal, expand=True, fill=True):
+          GtkLabel(expand=True, fill=True): 'Test Statusbar test'
+          GtkVSeparator():
+          GtkButton(): 'Feedback'
+  GtkHeaderBar():
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton():
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Production order...
+                      GtkModelButton(fill=True): Purchase quote...
+    stoq+gui+widgets+ButtonGroup():
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+      GtkButton(): insensitive
+    GtkBox(orientation=horizontal):
+      GtkButton():
+      GtkButton():
+    stoq+gui+widgets+ButtonGroup():
+      GtkMenuButton(): insensitive
+          GtkPopover(): hidden, insensitive
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Production products...
+                      GtkModelButton(fill=True): Services...
+                      GtkModelButton(fill=True): Production items...
+                      GtkModelButton(fill=True): Production history...
+      GtkMenuButton():
+          GtkPopover(): hidden
+            GtkStack():
+              GtkMenuSectionBox(orientation=vertical):
+                GtkBox(orientation=vertical, pack-end):
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Preferences...
+                      GtkModelButton(fill=True): Change password...
+                      GtkModelButton(fill=True): Sign out...
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Production help
+                      GtkModelButton(fill=True): Contents
+                      GtkModelButton(fill=True): Translate Stoq...
+                      GtkModelButton(fill=True): Get support online...
+                      GtkModelButton(fill=True): Online chat...
+                      GtkModelButton(fill=True): About
+                  GtkMenuSectionBox(orientation=vertical, fill=True):
+                    GtkBox(orientation=vertical, pack-end):
+                      GtkModelButton(fill=True): Quit
