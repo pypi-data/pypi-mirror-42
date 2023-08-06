@@ -1,0 +1,9 @@
+setup.py
+OPCunix/__init__.py
+OPCunix/command_handler.py
+OPCunix/serial_manager.py
+OPCunix/ucass_subprocess.py
+UH_OPCunix_JGirdwood.egg-info/PKG-INFO
+UH_OPCunix_JGirdwood.egg-info/SOURCES.txt
+UH_OPCunix_JGirdwood.egg-info/dependency_links.txt
+UH_OPCunix_JGirdwood.egg-info/top_level.txt
