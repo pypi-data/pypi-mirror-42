@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: tcapy
+Version: 0.1.0
+Summary: tcapy is a transaction cost analysis library
+Home-page: https://github.com/cuemacro/tcapy
+Author: Saeed Amen
+Author-email: saeed@cuemacro.com
+License: Apache 2.0
+Keywords: tca
+Platform: UNKNOWN
+
+tcapy is a transaction cost analysis library
+
+
