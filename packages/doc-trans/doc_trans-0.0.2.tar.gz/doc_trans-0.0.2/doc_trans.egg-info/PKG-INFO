@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: doc-trans
+Version: 0.0.2
+Summary: Translate documentation from Python objects
+Home-page: https://github.com/sergey-sy/doc_trans
+Author: sergey-sy
+Author-email: maiyashik@gmail.com
+License: UNKNOWN
+Description: #  doc_trans Package
+        
+        (For Russian scroll below.)
+        
+        This is the package for translate documentation from Python objects.
+        
+        This description is not complete and will be filled.
+        ...
+Keywords: documentation,translate documentation,yandex translator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

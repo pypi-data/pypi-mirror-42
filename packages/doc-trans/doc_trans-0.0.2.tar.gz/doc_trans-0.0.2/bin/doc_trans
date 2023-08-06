@@ -1,0 +1,13 @@
+#!usr/bin/env python3
+
+from doc_trans import OutputInterceptor, rus_help
+
+
+def test_function():
+    """
+    This is doc string for test_function.
+    It contains 2 strings in multiple string block.
+    """  
+
+if __name__ == '__main__':
+    print(rus_help(input(":Plese Input func/method/class name to translate:\n")))

@@ -1,0 +1,10 @@
+README.md
+setup.py
+bin/doc_trans
+doc_trans/__init__.py
+doc_trans/get_output.py
+doc_trans.egg-info/PKG-INFO
+doc_trans.egg-info/SOURCES.txt
+doc_trans.egg-info/dependency_links.txt
+doc_trans.egg-info/requires.txt
+doc_trans.egg-info/top_level.txt
