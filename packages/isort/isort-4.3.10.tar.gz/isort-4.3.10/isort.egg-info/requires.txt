@@ -1,0 +1,18 @@
+
+[:python_version < "3.2"]
+backports.functools_lru_cache
+futures
+
+[pipfile]
+pipreqs
+requirementslib
+
+[pyproject]
+toml
+
+[requirements]
+pip
+pipreqs
+
+[xdg_home]
+appdirs
