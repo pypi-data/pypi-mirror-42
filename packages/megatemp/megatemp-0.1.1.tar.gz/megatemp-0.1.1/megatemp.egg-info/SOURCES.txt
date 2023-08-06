@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+actagm/__init__.py
+actagm/adapters.py
+actagm/agm_helper.py
+actagm/auth.py
+megatemp.egg-info/PKG-INFO
+megatemp.egg-info/SOURCES.txt
+megatemp.egg-info/dependency_links.txt
+megatemp.egg-info/requires.txt
+megatemp.egg-info/top_level.txt
