@@ -1,0 +1,482 @@
+---
+modules:
+- docassemble.base.util
+---
+metadata:
+  title: ICOP Observation Form
+---
+mandatory: True
+field: get_started
+question: |
+  This demo helps you fill out the ICOP Observation Form!
+subquestion: |
+  [THIS IS CODE, NOT LEGAL ADVICE](https://github.com/AriChivukula/docassemble.law/blob/master/docassemble/law/data/questions/icop.yml)
+continue button label: Get Started
+---
+mandatory: True
+code: |
+  you_title = "Your Information"
+  you_title_name = "Name"
+  you_title_assoc = "School/Firm/etc."
+  you_title_phone = "Phone"
+  you_title_email = "EMail"
+---
+question: |
+  ${you_title}
+subquestion: |
+  Please enter the observer's (your) information!
+fields:
+- ${you_title_name}: you_input_name
+- ${you_title_assoc}: you_input_assoc
+- ${you_title_phone}: you_input_phone
+- ${you_title_email}: you_input_email
+---
+mandatory: True
+code: |
+  you_output_name = you_input_name
+  you_output_assoc = you_input_assoc
+  you_output_phone = you_input_phone
+  you_output_email = you_input_email
+---
+mandatory: True
+code: |
+  proceeding_title = "Proceeding Information"
+  proceeding_title_date = "Date"
+  proceeding_title_time = "Time"
+  proceeding_title_judge = "Judge"
+  proceeding_title_case = "Case"
+  proceeding_title_type = "Type"
+---
+question: |
+  ${proceeding_title}
+subquestion: |
+  Please enter information on the proceeding you're observing ${you_output_name}!
+fields:
+- ${proceeding_title_date}: proceeding_input_date
+  datatype: date
+- ${proceeding_title_time}: proceeding_input_time
+  datatype: time
+- ${proceeding_title_judge}: proceeding_input_judge
+- ${proceeding_title_case}: proceeding_input_case
+  default: A-
+- ${proceeding_title_type}: proceeding_input_type
+  choices:
+  - Master Calendar: master
+  - Bond Hearing: bond
+---
+mandatory: True
+code: |
+  proceeding_output_date = proceeding_input_date
+  proceeding_output_time = proceeding_input_time
+  proceeding_output_judge = proceeding_input_judge
+  proceeding_output_case = proceeding_input_case
+  proceeding_output_type = proceeding_input_type
+---
+mandatory: True
+code: |
+  detainee_title = "Detainee Information"
+  detainee_title_name = "Name"
+  detainee_title_appearance = "How did they appear?"
+  detainee_title_languages = "Languages Spoken"
+  detainee_title_location = "Where are they being detained?"
+  detainee_title_location_other = "Other Location"
+  detainee_title_representation = "Do they have representation?"
+  detainee_title_representation_who = "Who?"
+  detainee_title_representation_continuance = "Was a continuance to find representation granted?"
+  detainee_title_representation_continuance_length = "How Long?"
+  detainee_title_representation_continuance_denial = "Why?"
+---
+question: |
+  ${detainee_title}
+subquestion: |
+  Please enter information for detainee in proceeding ${proceeding_output_case}!
+fields:
+- ${detainee_title_name}: detainee_input_name
+- ${detainee_title_appearance}: detainee_input_appearance
+  choices:
+  - In Person
+  - Video Conference
+- ${detainee_title_languages}: detainee_input_languages
+- ${detainee_title_location}: detainee_input_location
+  choices:
+  - Sacramento/Yuba
+  - Mesa Verde
+  - CoCo
+  - Other
+- ${detainee_title_location_other}: detainee_input_location_other
+  show if:
+    variable: detainee_input_location
+    is: Other
+- ${detainee_title_representation}: detainee_input_representation
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${detainee_title_representation_who}: detainee_input_representation_who
+  show if:
+    variable: detainee_input_representation
+    is: Yes
+- ${detainee_title_representation_continuance}: detainee_input_representation_continuance
+  choices:
+  - Yes
+  - No
+  - Unknown
+  show if:
+    variable: detainee_input_representation
+    is: No
+- ${detainee_title_representation_continuance_length}: detainee_input_representation_continuance_length
+  show if:
+    variable: detainee_input_representation_continuance
+    is: Yes
+- ${detainee_title_representation_continuance_denial}: detainee_input_representation_continuance_denial
+  show if:
+    variable: detainee_input_representation_continuance
+    is: No
+---
+mandatory: True
+code: |
+  detainee_output_name = detainee_input_name
+  detainee_output_appearance = detainee_input_appearance
+  detainee_output_languages = detainee_input_languages
+  detainee_output_location = detainee_input_location
+  detainee_output_location_other = "N/A"
+  if detainee_output_location == "Other":
+    detainee_output_location_other = detainee_input_location_other
+  detainee_output_representation = detainee_input_representation
+  detainee_output_representation_who = "N/A"
+  if detainee_output_representation == "Yes":
+    detainee_output_representation_who = detainee_input_representation_who
+  detainee_output_representation_continuance = "N/A"
+  if detainee_output_representation == "No":
+    detainee_output_representation_continuance = detainee_input_representation_continuance
+  detainee_output_representation_continuance_length = "N/A"
+  if detainee_output_representation_continuance == "Yes":
+    detainee_output_representation_continuance_length = detainee_input_representation_continuance_length
+  detainee_output_representation_continuance_denial = "N/A"
+  if detainee_output_representation_continuance == "No":
+    detainee_output_representation_continuance_denial = detainee_input_representation_continuance_denial
+---
+mandatory: True
+code: |
+  context_title = "Context Information"
+  context_title_anyone = "Did the detainee have trouble communicating with anyone?"
+  context_title_anyone_who = "With who?"
+  context_title_anyone_info = "How so?"
+  context_title_interpretation = "Did the detainee have issues with interpretation?"
+  context_title_interpretation_info = "How so?"
+  context_title_illness = "Did the detainee show signs of suffering from mental illness?"
+  context_title_illness_info = "How so?"
+  context_title_illness_addressed = "How was it addressed?"
+---
+question: |
+  ${context_title}
+subquestion: |
+  Please enter information on what you observe in ${detainee_output_name}'s case (${proceeding_output_case})!
+fields:
+- ${context_title_anyone}: context_input_anyone
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${context_title_anyone_who}: context_input_anyone_who
+  show if:
+    variable: context_input_anyone
+    is: Yes
+- ${context_title_anyone_info}: context_input_anyone_info
+  show if:
+    variable: context_input_anyone
+    is: Yes
+- ${context_title_interpretation}: context_input_interpretation
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${context_title_interpretation_info}: context_input_interpretation_info
+  show if:
+    variable: context_input_interpretation
+    is: Yes
+- ${context_title_illness}: context_input_illness
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${context_title_illness_info}: context_input_illness_info
+  show if:
+    variable: context_input_illness
+    is: Yes
+- ${context_title_illness_addressed}: context_input_illness_addressed
+  show if:
+    variable: context_input_illness
+    is: Yes
+---
+mandatory: True
+code: |
+  context_output_anyone = context_input_anyone
+  context_output_anyone_who = "N/A"
+  context_output_anyone_info = "N/A"
+  if context_output_anyone == "Yes":
+    context_output_anyone_who = context_input_anyone_who
+    context_output_anyone_info = context_input_anyone_info
+  context_output_interpretation = context_input_interpretation
+  context_output_interpretation_info = "N/A"
+  if context_output_interpretation == "Yes":
+    context_output_interpretation_info = context_input_interpretation_info
+  context_output_illness = context_input_illness
+  context_output_illness_info = "N/A"
+  context_output_illness_addressed = "N/A"
+  if context_output_illness == "Yes":
+    context_output_illness_info = context_input_illness_info
+    context_output_illness_addressed = context_input_illness_addressed
+---
+mandatory: True
+code: |
+  outcome_title = "Outcome Information"
+  outcome_title_relief = "Did detainee file any application for relief?"
+  outcome_title_relief_info = "What were they?"
+  outcome_title_relief_deadline = "What is the deadline?"
+  outcome_title_bond = "Did IJ grant bond?"
+  outcome_title_bond_amount = "Amount"
+  outcome_title_bond_denial = "Reason"
+---
+question: |
+  ${outcome_title}
+subquestion: |
+  Please enter information on outcomes for ${detainee_output_name}'s case (${proceeding_output_case})!
+fields:
+- ${outcome_title_relief}: outcome_input_relief
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${outcome_title_relief_info}: outcome_input_relief_info
+  show if:
+    variable: outcome_input_relief
+    is: Yes
+- ${outcome_title_relief_deadline}: outcome_input_relief_deadline
+  show if:
+    variable: outcome_input_relief
+    is: Yes
+---
+question: |
+  ${outcome_title}
+subquestion: |
+  Please enter information on outcomes for ${detainee_output_name}'s case (${proceeding_output_case})!
+fields:
+- ${outcome_title_bond}: outcome_input_bond
+  choices:
+  - Yes
+  - No
+  - Unknown
+- ${outcome_title_bond_amount}: outcome_input_bond_amount
+  show if:
+    variable: outcome_input_bond
+    is: Yes
+- ${outcome_title_bond_denial}: outcome_input_bond_denial
+  show if:
+    variable: outcome_input_bond
+    is: No
+---
+mandatory: True
+code: |
+  outcome_output_relief = "N/A"
+  outcome_output_relief_info = "N/A"
+  outcome_output_relief_deadline = "N/A"
+  outcome_output_bond = "N/A"
+  outcome_output_bond_amount = "N/A"
+  outcome_output_bond_denial = "N/A"
+  if proceeding_output_type == "Master":
+    outcome_output_relief = outcome_input_relief
+    if outcome_output_relief == "Yes":
+      outcome_output_relief_info = outcome_input_relief_info
+      outcome_output_relief_deadline = outcome_input_relief_deadline
+  elif proceeding_output_type == "Bond":
+    outcome_output_bond = outcome_input_bond
+    if outcome_output_bond == "Yes":
+      outcome_output_bond_amount = outcome_input_bond_amount
+    elif outcome_output_bond == "No":
+      outcome_output_bond_denial = outcome_input_bond_denial
+---
+mandatory: True
+code: |
+  hearing_title = "Hearing Information"
+  hearing_title_date = "Date"
+  hearing_title_time = "Time"
+  hearing_title_type = "Type"
+---
+question: |
+  ${hearing_title}
+subquestion: |
+  Please enter information on the next hearing for ${detainee_output_name}'s case (${proceeding_output_case})!
+fields:
+- ${hearing_title_date}: hearing_input_date
+  datatype: date
+  required: False
+- ${hearing_title_time}: hearing_input_time
+  datatype: time
+  required: False
+- ${hearing_title_type}: hearing_input_type
+  choices:
+  - Individual
+  - Master
+  - Bond
+  - Unknown
+  js show if: |
+    val("hearing_input_time") || val("hearing_input_date")
+---
+mandatory: True
+code: |
+  hearing_output_date = hearing_input_date
+  hearing_output_time = hearing_input_time
+  hearing_output_type = "N/A"
+  if hearing_output_date or hearing_output_time:
+    hearing_output_type = hearing_input_type
+---
+mandatory: True
+code: |
+  other_title = "Other Information"
+---
+question: |
+  ${other_title}
+subquestion: |
+  Please enter anything else we should know ${you_output_name}!
+fields:
+- Comment: other_input
+  datatype: area
+---
+mandatory: True
+code: |
+  other_output = other_input
+---
+mandatory: True
+question: Please download and review your completed form!
+attachment:
+- name: ICOP Observation Form
+  filename: unofficial_icop
+  variable name: unofficial_icop_var
+  content: |
+    # ${you_title}
+    ## ${you_title_name}
+    ${you_output_name}
+
+    ## ${you_title_assoc}
+    ${you_output_assoc}
+
+    ## ${you_title_phone}
+    ${you_output_phone}
+
+    ## ${you_title_email}
+    ${you_output_email}
+
+    # ${proceeding_title}
+    ## ${proceeding_title_date}
+    ${proceeding_output_date}
+
+    ## ${proceeding_title_time}
+    ${proceeding_output_time}
+
+    ## ${proceeding_title_judge}
+    ${proceeding_output_judge}
+
+    ## ${proceeding_title_case}
+    ${proceeding_output_case}
+
+    ## ${proceeding_title_type}
+    ${proceeding_output_type}
+
+    # ${detainee_title}
+    ## ${detainee_title_name}
+    ${detainee_output_name}
+
+    ## ${detainee_title_appearance}
+    ${detainee_output_appearance}
+
+    ## ${detainee_title_languages}
+    ${detainee_output_languages}
+
+    ## ${detainee_title_location}
+    ${detainee_output_location}
+
+    ## ${detainee_title_location_other}
+    ${detainee_output_location_other}
+
+    ## ${detainee_title_representation}
+    ${detainee_output_representation}
+
+    ## ${detainee_title_representation_who}
+    ${detainee_output_representation_who}
+
+    ## ${detainee_title_representation_continuance}
+    ${detainee_output_representation_continuance}
+
+    ## ${detainee_title_representation_continuance_length}
+    ${detainee_output_representation_continuance_length}
+
+    ## ${detainee_title_representation_continuance_denial}
+    ${detainee_output_representation_continuance_denial}
+
+    # ${context_title}
+    ## ${context_title_anyone}
+    ${context_output_anyone}
+
+    ## ${context_title_anyone_who}
+    ${context_output_anyone_who}
+
+    ## ${context_title_anyone_info}
+    ${context_output_anyone_info}
+
+    ## ${context_title_interpretation}
+    ${context_output_interpretation}
+
+    ## ${context_title_interpretation_info}
+    ${context_output_interpretation_info}
+
+    ## ${context_title_illness}
+    ${context_output_illness}
+
+    ## ${context_title_illness_info}
+    ${context_output_illness_info}
+
+    ## ${context_title_illness_addressed}
+    ${context_output_illness_addressed}
+
+    # ${outcome_title}
+    ## ${outcome_title_relief}
+    ${outcome_output_relief}
+
+    ## ${outcome_title_relief_info}
+    ${outcome_output_relief_info}
+
+    ## ${outcome_title_relief_deadline}
+    ${outcome_output_relief_deadline}
+
+    ## ${outcome_title_bond}
+    ${outcome_output_bond}
+
+    ## ${outcome_title_bond_amount}
+    ${outcome_output_bond_amount}
+
+    ## ${outcome_title_bond_denial}
+    ${outcome_output_bond_denial}
+
+    # ${hearing_title}
+    ## ${hearing_title_date}
+    ${hearing_output_date}
+
+    ## ${hearing_title_time}
+    ${hearing_output_time}
+
+    ## ${hearing_title_type}
+    ${hearing_output_type}
+
+    # ${other_title}
+    ## ${other_output}
+---
+mandatory: True
+code: |
+  sent_ok = send_email(to=["sf.icop@gmail.com"], template="", attachments=[unofficial_icop_var])
+---
+mandatory: True
+question: |
+  Thanks for volunteering ${you_name}
+buttons:
+- Exit: exit
