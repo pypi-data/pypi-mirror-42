@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: evepy
+Version: 1.1
+Summary: Simple lightweight data-interchange format, written in Python
+Home-page: https://github.com/Dmunch04/EVE
+Author: Munchii
+Author-email: contact@munchii.me
+License: MIT
+Description: # EVE
+        A lightweight data-interchange format.
+        
+        
+        # Example use
+        example.eve
+        ```
+        [
+          @ This is a comment
+          
+          @ String variables
+          'Name' :: 'Eric'
+          'Age' :: '21'
+          'Country' :: 'USA'
+          'City' :: 'New York'
+          
+          @ Boolean variables
+          ?hasGirlfriend = False
+        ];
+        ```
+        
+        example.py
+        ```python
+        import eve
+        
+        result = eve.load('example.eve')
+        print(result['Name']) # And so on
+        result['Age'] = '22'
+        eve.save(result, 'example.eve')
+        ```
+        
+        
+        # ATOM grammar syntax highlighting
+        1. Copy the folder: `eve` in the `editors\atom` folder
+        2. Paste that to the `.atom` folder in `C:\Users\yourusername\.atom\packages`
+        3. Now restart ATOM and it should work
+        
+Keywords: simple data interchange format python
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
