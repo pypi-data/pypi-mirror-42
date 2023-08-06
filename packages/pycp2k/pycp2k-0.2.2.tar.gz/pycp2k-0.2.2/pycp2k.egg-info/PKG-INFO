@@ -1,0 +1,25 @@
+Metadata-Version: 1.2
+Name: pycp2k
+Version: 0.2.2
+Summary: A Python interface for CP2K.
+Home-page: https://github.com/SINGROUP/pycp2k.git
+Author: Lauri Himanen
+Author-email: lauri.himanen@gmail.com
+License: Apache License 2.0
+Description: A Python interface for CP2K.
+Keywords: cp2k CP2k pycp2k PYCP2K
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=2.6, <4
