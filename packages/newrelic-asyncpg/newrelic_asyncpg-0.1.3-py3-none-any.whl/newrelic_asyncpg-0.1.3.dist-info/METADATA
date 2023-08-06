@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: newrelic-asyncpg
+Version: 0.1.3
+Summary: Unofficial asyncpg extensions for the NewRelic Python Agent
+Home-page: https://github.com/KorsaR-ZN/python-newrelic-asyncpg
+Author: Stanislav Kiryukhin
+Author-email: korsar.zn@gmail.com
+License: MIT
+Keywords: asyncpg,newrelic,extensions
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.5
+Requires-Dist: newrelic (>=4.10.0.112)
+
+# NewRelic extensions / asyncpg
+
+
+## Install
+
+```
+pip install newrelic_asyncpg
+```
+
+
+1) Append in your newrelic.ini
+
+```ini
+[import-hook:asyncpg]
+enabled = true
+execute = newrelic_asyncpg:instrument
+```
+
+
+
