@@ -1,0 +1,17 @@
+xmldiff/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+xmldiff/_diff_match_patch_py2.py,sha256=WoJrqVmY-z6EEf_aEvXiyzgefi5mR0nFyU6XthaXZJw,68015
+xmldiff/_diff_match_patch_py3.py,sha256=QpmtMuCQRZHNxTc3ot_poEPiHG46UzO1WcUu9REG6Mo,67405
+xmldiff/actions.py,sha256=a4dhpVeXSPv7JQHR236tfYZQVZ_9gZex-p57fgwMHz0,723
+xmldiff/diff.py,sha256=RUkJenBNAXtdMjaRDmR2p-u475pP4NEI8bJx4uIZOCY,17679
+xmldiff/diff_match_patch.py,sha256=4pbFSdAyM3aK9ijc_IB5SzauWX9MOtGEAeRfk8qi4og,142
+xmldiff/formatting.py,sha256=mmUCZm8OQTRIFd3tOgzpeWhNNt3wr45qbeoivpliEU8,30118
+xmldiff/main.py,sha256=aHYWFoyVe6pp-np9UN8Hr4QobE-rb_ZwLD4EQl18rhs,6222
+xmldiff/patch.py,sha256=qJmyyAEGFupYnwWg6nhbKdEFW_NKbuD0hLAM8letBg0,4875
+xmldiff/utils.py,sha256=B7ProIQVgHTRZj34suXdK8j6yJT_j1DrIS3VCm3NWko,4122
+xmldiff-2.3.dist-info/DESCRIPTION.rst,sha256=u46s_2eND_zbwBl2IRzxKUdOI0w6_il3EKusYOMgBcI,4940
+xmldiff-2.3.dist-info/METADATA,sha256=hrKaC80uFjGfy6h7gba4B9juPS3wUCSw3cAy1c_mces,5763
+xmldiff-2.3.dist-info/RECORD,,
+xmldiff-2.3.dist-info/WHEEL,sha256=kdsN-5OJAZIiHN-iO4Rhl82KyS0bDWf4uBwMbkNafr8,110
+xmldiff-2.3.dist-info/entry_points.txt,sha256=MtPV8h_74UwCKlgrNkGXEN4IE1Xb7PsmMauGLqJRwWc,93
+xmldiff-2.3.dist-info/metadata.json,sha256=gDkjyBU9lBPVKlUwD1pLYIWD2RZEfBtEhkEleZmQGy4,1205
+xmldiff-2.3.dist-info/top_level.txt,sha256=mf4uy3N7t3e4sFx32jJ7TixJnnLGZYnEFRZoHvCx8vY,8
