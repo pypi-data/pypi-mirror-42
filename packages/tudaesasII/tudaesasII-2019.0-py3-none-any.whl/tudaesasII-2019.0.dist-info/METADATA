@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: tudaesasII
+Version: 2019.0
+Summary: Python module related to the Master's course SASII at the faculty of Aeropsace Engineering, TU Delft
+Home-page: https://github.com/saullocastro/tudaesasII
+Author: Saullo G. P. Castro
+Author-email: S.G.P.Castro@tudelft.nl
+License: 3-Clause BSD
+Keywords: structural analysis vibration dynamics finite elements
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Education
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: Unix
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: coveralls
+Requires-Dist: structsolve
+
+TU Delft
+Aerospace Engineering
+Aerospace Structures and Computational Mechanics
+Stability and Analysis of Structures II
+Ae4-ASM-511
+
+This Python module can be used by the students to assist them in the
+assignments 
+
+
+License
+-------
+Distrubuted in the 2-Clause BSD license (https://raw.github.com/saullocastro/tudaesasII/master/LICENSE).
+
+Contact: S.G.P.Castro@tudelft.nl
+
+
+
