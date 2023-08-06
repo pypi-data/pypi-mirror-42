@@ -1,0 +1,136 @@
+Metadata-Version: 2.1
+Name: pyfw
+Version: 1.0.19
+Summary: python framework
+Home-page: https://github.com/wenanguo/pyfw
+Author: Andrew Wen
+Author-email: 79912844@qq.com
+License: MIT Licence
+Keywords: pip,cmcc,python,pyfw,framework
+Platform: any
+Requires-Dist: alembic (==1.0.0)
+Requires-Dist: aniso8601 (==3.0.2)
+Requires-Dist: asn1crypto (==0.24.0)
+Requires-Dist: blinker (==1.4)
+Requires-Dist: cffi (==1.11.5)
+Requires-Dist: click (==6.7)
+Requires-Dist: cryptography (==2.3)
+Requires-Dist: dominate (==2.3.1)
+Requires-Dist: Flask (==1.0.2)
+Requires-Dist: Flask-Bootstrap (==3.3.7.1)
+Requires-Dist: Flask-DebugToolbar (==0.10.1)
+Requires-Dist: Flask-HTTPAuth (==3.2.4)
+Requires-Dist: Flask-Login (==0.4.1)
+Requires-Dist: Flask-Mail (==0.9.1)
+Requires-Dist: Flask-Migrate (==2.2.1)
+Requires-Dist: Flask-Moment (==0.6.0)
+Requires-Dist: Flask-RESTful (==0.3.6)
+Requires-Dist: Flask-Script (==2.0.6)
+Requires-Dist: Flask-SQLAlchemy (==2.3.2)
+Requires-Dist: Flask-WTF (==0.14.2)
+Requires-Dist: idna (==2.7)
+Requires-Dist: itsdangerous (==0.24)
+Requires-Dist: Jinja2 (==2.10)
+Requires-Dist: Mako (==1.0.7)
+Requires-Dist: MarkupSafe (==1.0)
+Requires-Dist: pycparser (==2.18)
+Requires-Dist: PyMySQL (==0.9.2)
+Requires-Dist: python-dateutil (==2.7.3)
+Requires-Dist: python-editor (==1.0.3)
+Requires-Dist: pytz (==2018.5)
+Requires-Dist: six (==1.11.0)
+Requires-Dist: SQLAlchemy (==1.2.10)
+Requires-Dist: visitor (==0.1.3)
+Requires-Dist: Werkzeug (==0.14.1)
+Requires-Dist: WTForms (==2.2.1)
+Requires-Dist: ForgeryPy (==0.1)
+
+### 基础开发命令
+
+
+
+###### 启动命令
+```
+python manage.py runserver --host 0.0.0.0
+```
+
+###### 测试命令
+```
+python manage.py test
+```
+
+###### 覆盖报告
+```
+python manage.py test --coverage
+```
+
+---
+### 数据库迁移
+
+###### 初始化
+```
+python manage.py db init
+```
+
+###### 生成脚本
+```
+python manage.py db migrate -m "initial migration"
+```
+
+###### 更新数据库
+```
+python manage.py db upgrade
+```
+
+对第一个迁移来说， 其作用和调用db.create_all() 方法一样。但在后续的迁移中，
+upgrade 命令能把改动应用到数据库中，且不影响其中保存的数据。
+
+###### 代码性能分析
+```
+python manage.py profile  启动，浏览器请求
+```
+
+###### 服务器启动命令
+```
+gunicorn -b 0.0.0.0:8000  manage:app
+```
+
+
+UI框架
+
+DOC http://spin.webkom.co/docs/docs.html
+
+
+
+#### 打包
+```
+python3 setup.py sdist bdist_wheel
+
+twine upload  dist/*
+```
+
+
+
+#### 使用pip生成依赖文件：
+
+
+```
+pip freeze >requirements.txt
+```
+
+
+
+安装或升级包后，最好更新这个文件。
+
+#### 根据依赖文件安装包：
+
+
+```
+pip install -r requirements.txt
+```
+
+### 移除所有包
+```
+pip freeze | xargs pip uninstall -y
+```
+
