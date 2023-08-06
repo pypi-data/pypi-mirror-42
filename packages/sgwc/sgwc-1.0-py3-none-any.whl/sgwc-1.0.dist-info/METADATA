@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: sgwc
+Version: 1.0
+Summary: 搜狗微信文章爬虫
+Home-page: https://github.com/Czw96/sgwc
+Author: Czw_96
+Author-email: 459749926@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: lxml
+Requires-Dist: requests
+Requires-Dist: Pillow
+
+UNKNOWN
+
+
