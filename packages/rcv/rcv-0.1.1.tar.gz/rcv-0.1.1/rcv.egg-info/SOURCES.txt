@@ -1,0 +1,15 @@
+README.rst
+setup.cfg
+setup.py
+rcv/__init__.py
+rcv/ballot.py
+rcv/candidate.py
+rcv/schedule.py
+rcv/stv.py
+rcv/values_dict.py
+rcv/weighted_set.py
+rcv.egg-info/PKG-INFO
+rcv.egg-info/SOURCES.txt
+rcv.egg-info/dependency_links.txt
+rcv.egg-info/requires.txt
+rcv.egg-info/top_level.txt

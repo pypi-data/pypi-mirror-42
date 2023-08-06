@@ -1,0 +1,5 @@
+
+[test]
+pandas
+pytest
+pytest-cov
