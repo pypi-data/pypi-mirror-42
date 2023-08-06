@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: cta_transit_tracker
+Version: 0.0.1
+Summary: An asyncronous wrapper over the Chicago Transit Authority Bus Tracker and Train Tracker APIs
+Home-page: https://github.com/chalamka/cta_transit_tracker
+Author: Carter Halamka
+License: UNKNOWN
+Description: # CTA Transit Tracker
+        
+        Wrapper over the CTA Transit API.  Provides classes for interacting with Bus and Train API methods.
+        
+        Written for use in a Home Assistant sensor component 
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
