@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: updatetable
+Version: 0.0.1
+Summary: update table
+Home-page: UNKNOWN
+Author: xw20181227
+Author-email: weix@sensedeal.ai
+License: XW License
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pymysql
+Requires-Dist: pandas
+Requires-Dist: sense-core
+Requires-Dist: datetime
+Requires-Dist: sqlalchemy
+
+UNKNOWN
+
+
