@@ -1,0 +1,68 @@
+CHANGES
+=======
+
+2.0.1
+-----
+
+* hotfix lr scheduler
+* Disable CI for 3.7 until the coreml people get their shit together
+* Add jsonschema to conda envs
+
+2.0.0
+-----
+
+* Set new repository live
+* change stopper tests for new API
+* print model accuracy in show command
+* autofill accuracy in metadata
+* disable hyperparameter loading again
+* Fix fd exhaustion caused by parallel tensor loading
+* Add add\_loaded to GroundTruthDataset
+* Fix pagination in repo queries
+* make legacy peephole bilstm work again
+* skip openmp thread setting test
+* Add group normalization layer
+* Add schema validation to model upload functionality
+* Add model metadata JSON schema
+* Correctly handle RGBA input in ketos transcribe
+* Add usage note to ketos transcribe
+* New zenodo repository functions
+* Add masking to segmentation
+* Ensure binarized output is identical in size to original
+* Add explicit RNG seeds to ketos command
+* add mask parameter to segment()
+* fix typo in ketos arg command
+* Set min\_delta datatype to float
+* pin version of python to 3.6.6 in anaconda
+* add normalize\_whitespace to ketos train
+
+1.0.1
+-----
+
+* Temporarily disable script detection
+
+1.0.0
+-----
+
+* for some reason the openmp thread setter doesn't work in tests
+* more travis stuff
+* Add channels to travis
+* quiet down travis script
+* Update README for 1.0 release
+* rudimentary cli tests
+* skip existing distributions on pypi
+* Add pytorch 1.0.0 to requirements file
+* bump pytorch release to 1.0.0
+* fix typo in parallell loading
+* Add parallel data loading of non-preloaded sets
+* autoscale early stopping
+* lower min-delta in early stopping again
+* Fix python version in conda env to 3.6
+* Restore model location if saving fails
+* fix crash on infinite loss debug message
+* correctly encode training set in \`add\` mode
+* adjust train stopper tests to new behavior
+* disable script detection by default
+* partial early stopping fix
+* final part of sub-epoch saving/testing and stopping
+* allow sub-epoch testing/saving intervals
