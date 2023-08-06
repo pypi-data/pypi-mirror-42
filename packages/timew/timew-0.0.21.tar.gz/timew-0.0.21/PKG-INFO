@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: timew
+Version: 0.0.21
+Summary: Python bindings for your timewarrior database
+Home-page: https://gitlab.com/tjaart/python-timew
+Author: Tjaart van der Walt
+Author-email: tjaart@tjaart.org
+Keywords: timewarrior
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: python-dateutil (>=2.8,<3.0)
+Project-URL: Repository, https://gitlab.com/tjaart/python-timew
