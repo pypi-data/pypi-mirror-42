@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: signalrcore
+Version: 0.1.0
+Summary: A Python SignalR Core client 
+Home-page: https://github.com/mandrewcito/signalrcore
+Author: mandrewcito
+Author-email: anbaalo@gmail.com
+License: UNKNOWN
+Keywords: signalr core client
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Description-Content-Type: text/markdown
+
+# SignalR core client
+
+
