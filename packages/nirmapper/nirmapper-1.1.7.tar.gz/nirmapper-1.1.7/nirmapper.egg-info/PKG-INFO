@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: nirmapper
+Version: 1.1.7
+Summary: A 3D Mapper to map NIR images to a 3d tooth model.
+Home-page: https://github.com/fechbmaster/3DNIRmapper
+Author: fechbmaster
+Author-email: bernd.fecht1@hs-augsburg.de
+License: Apache-2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >2.7
