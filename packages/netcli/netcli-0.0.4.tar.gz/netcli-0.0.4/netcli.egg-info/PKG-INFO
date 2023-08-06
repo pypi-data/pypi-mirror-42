@@ -1,0 +1,21 @@
+Metadata-Version: 1.2
+Name: netcli
+Version: 0.0.4
+Summary: The CLI that doesn't impose you any language
+Home-page: UNKNOWN
+Author: Christian Adell
+Author-email: chadell@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: Git,GitHub,automation,networking,netmiko
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.5
