@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: alice-images
+Version: 0.0.1
+Summary: Work with alice skills images: upload|list|delete
+Home-page: https://github.com/AlekseevAV/alice-images
+Author: Aleksandr Alekseev
+Author-email: alekseevavx@gmail.com
+License: UNKNOWN
+Keywords: yandex alice images
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: Click
+Requires-Dist: requests
+
+# Alice-images
+
+Work with alice skills images: upload|list|delete
+
+[Yandex docs](https://tech.yandex.ru/dialogs/alice/doc/resource-upload-docpage/)
+
+
