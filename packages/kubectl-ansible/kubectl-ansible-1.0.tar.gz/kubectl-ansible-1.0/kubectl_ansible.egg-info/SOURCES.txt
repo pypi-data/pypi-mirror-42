@@ -1,0 +1,10 @@
+README.md
+kubectl-ansible
+kubectl-ansible-playbook
+setup.py
+kube_inventory/__init__.py
+kube_inventory/__main__.py
+kubectl_ansible.egg-info/PKG-INFO
+kubectl_ansible.egg-info/SOURCES.txt
+kubectl_ansible.egg-info/dependency_links.txt
+kubectl_ansible.egg-info/top_level.txt
