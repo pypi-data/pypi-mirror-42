@@ -1,0 +1,10 @@
+requests
+paramiko
+bitpermissions
+asyncssh
+aiohttp
+
+[test]
+pytest>=2.9.0
+flake8
+tenacity
