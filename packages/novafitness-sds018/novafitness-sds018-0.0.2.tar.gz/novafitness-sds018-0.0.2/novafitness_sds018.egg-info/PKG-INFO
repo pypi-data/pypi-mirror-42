@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: novafitness-sds018
+Version: 0.0.2
+Summary: An interface for novafitness SDS018 particulate matter sensors
+Home-page: https://github.com/FEEprojects/novafitness-sds018
+Author: Florentin Bulot
+Author-email: f.bulot@soton.ac.uk
+License: UNKNOWN
+Description: # Novafitness SDS018 Particulate Sensor Python interface
+        A basic python interface for interacting with the novafitness PM sensors.  This code has been tested with the following devices: Novafitness SDS018.
+         
+         It may work with other sensors from the novafitness range, if you try it please do let us know either way.  If there are any problems with it please either raise an issue or fix it and issue a pull request.
+        
+        
+        This wrapper is based on: https://github.com/FEEprojects/plantower
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.3, <4
+Description-Content-Type: text/markdown
