@@ -1,0 +1,13 @@
+README.rst
+setup.py
+bin/dagger
+catdagger/ModColor.py
+catdagger/__init__.py
+catdagger/__main__.py
+catdagger/logger.py
+catdagger.egg-info/PKG-INFO
+catdagger.egg-info/SOURCES.txt
+catdagger.egg-info/dependency_links.txt
+catdagger.egg-info/not-zip-safe
+catdagger.egg-info/requires.txt
+catdagger.egg-info/top_level.txt
