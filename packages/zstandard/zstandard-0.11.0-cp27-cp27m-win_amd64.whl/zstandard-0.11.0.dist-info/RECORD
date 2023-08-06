@@ -1,0 +1,9 @@
+_zstd_cffi.pyd,sha256=UnCL0ha0jnr3rYjs5_Go5oYBFm56YUKZ358_y9Z4M_w,630784
+zstd.pyd,sha256=gcNzKJAQJc-mFUqsLVTqxKbL2BWrAf1aXy4eAYpvP5Y,639488
+zstandard/__init__.py,sha256=TOSqF2v6yKBtC3S7VB33Voh8-e5P9d27iyXcAmhTsR4,2439
+zstandard/cffi.py,sha256=fJnfA65TtVyBorYbULWgYlb-qutrGR6rTu9NMo7liqE,83190
+zstandard-0.11.0.dist-info/LICENSE,sha256=eI_oXlNySkCymQUcSryc901Csn55aDJbgIkcJfea20s,1484
+zstandard-0.11.0.dist-info/METADATA,sha256=g66bpotufUAF6Lu7xkHqJNZx0Jz3aYiVyjeLEnhKmTs,64986
+zstandard-0.11.0.dist-info/WHEEL,sha256=JcIleF72ijdQxn6bJG3ZGV_gVLd0ZE6uQ89MSW0Jp7U,106
+zstandard-0.11.0.dist-info/top_level.txt,sha256=lnNgWkJr7yZ_Y2icf7CeCpjILnorYdtVRTichbXIwvY,26
+zstandard-0.11.0.dist-info/RECORD,,
