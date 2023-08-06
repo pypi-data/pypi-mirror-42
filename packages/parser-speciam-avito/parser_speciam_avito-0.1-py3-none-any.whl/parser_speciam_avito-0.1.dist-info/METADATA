@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: parser-speciam-avito
+Version: 0.1
+Summary: Parser
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: requests
+Requires-Dist: bs4
+Requires-Dist: regex
+
+UNKNOWN
+
+
