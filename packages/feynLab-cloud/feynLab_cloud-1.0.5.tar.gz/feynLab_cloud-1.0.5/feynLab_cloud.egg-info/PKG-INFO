@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: feynLab-cloud
+Version: 1.0.5
+Summary: Python Library for FeynLab Cloud
+Home-page: https://docs.feynlab.io/feynlab-cloud/supported-devices/raspberry-pi
+Author: FeynLab Technology, Inc.
+Author-email: social@feynlab.io
+License: UNKNOWN
+Description: Python Library for FeynLab Cloud
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Description-Content-Type: text/markdown
