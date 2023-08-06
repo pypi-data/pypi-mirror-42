@@ -1,0 +1,86 @@
+Metadata-Version: 2.1
+Name: abconfig
+Version: 0.2.5
+Summary: Abstract base class with hierarchical loading
+Home-page: https://github.com/kudato/abconfig.git
+Author: Alexander Shevchenko
+Author-email: kudato@me.com
+License: MIT
+Description: ## Easy-to-use abstract base class with hierarchical loading
+        
+        
+        ### How to use:
+        
+        ```
+        from abconfig import ABConfig
+        
+        
+        class YourConfig(ABConfig):
+            """ My config."""
+        
+            # Define sections and default values
+            postgres = dict(
+                host='127.0.0.1',
+                port='5432',
+                user='your_user',
+                password='your_pass'
+            )
+        
+            redis = dict(
+                host='127.0.0.1',
+                port='6379',
+                db='0'
+            )
+        
+        
+        config = YourConfig()
+        
+        # Get section like a dict
+        dbconfig = config['postgres'])
+        
+        # Get all:
+        print(config.get())
+        ```
+        
+        ### File loader
+        
+        > Values from this loader will be overwritten with values from Environment loader
+        
+        The default is to search for a file called _config/config.json/config.yaml_ in the directory from which the application is started, you can force a file path by adding an attribute **filepath** to the class
+        
+        ```
+        class MainConf(ABConfig):
+            file_path = '/etc/main.conf'
+            ...
+        ```
+        or by define a variable **CONFIG_PATH**, but the attribute has the highest priority and is preferred.
+        
+        
+        ### Environment loader
+        
+        > This loader has the highest priority
+        
+        The variable name make up of the section name + '\_' character and the parameter name (is key in the default values dictionary) in upper case, for example, if exist class:
+        
+        ```
+        class LogConfig(ABConfig):
+            logging = dict(
+                file='/var/log/my.log'
+            )
+            ...
+        ```
+        environment variable will be: **LOGGING_FILE**.
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
