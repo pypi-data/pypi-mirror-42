@@ -1,0 +1,4 @@
+[console_scripts]
+bench=bench:main
+tests=tests:main
+
