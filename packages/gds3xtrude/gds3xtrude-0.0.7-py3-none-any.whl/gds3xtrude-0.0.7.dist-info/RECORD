@@ -1,0 +1,12 @@
+gds3xtrude/__init__.py,sha256=wccr0D57yzuv-7_bASq61XUkfXAHqL4twdi1od9cxSk,57
+gds3xtrude/gds3xtrude.py,sha256=b69EeMH0_LJM4udR7ySt9wkU3iaye5vIF5GVjNVbsfc,11266
+gds3xtrude/include.py,sha256=MJAjOwTe3huWGgdh16mVX2wk_J6bIJA-WBder_K6pTs,1457
+gds3xtrude/layer_operations.py,sha256=94X6TO3frDTkIPykrnz5pd_jUQ9Ay7gYQIz5A0ET32s,1754
+gds3xtrude/polygon_approx.py,sha256=3i-1xrJXQQCsJ_9fy-4P655Soy6dfrVuvIMCFwtCgFM,4392
+gds3xtrude-0.0.7.data/scripts/gds3xtrude,sha256=fZh4Jg6vLMkNlqe-naB5nPPddmPPeywThVJV-ESMgkw,4424
+gds3xtrude-0.0.7.dist-info/COPYING,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+gds3xtrude-0.0.7.dist-info/LICENSE,sha256=DZak_2itbUtvHzD3E7GNUYSRK6jdOJ-GqncQ2weavLA,34523
+gds3xtrude-0.0.7.dist-info/METADATA,sha256=mvk6r6-cfYhRM3COq8vVQdhJj0iRtJqdZLZiP8AdH-4,5817
+gds3xtrude-0.0.7.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+gds3xtrude-0.0.7.dist-info/top_level.txt,sha256=FiceaDQ3g2C8tKhqhPsI9DDp8o3JXq7QhBWr_89FvxM,11
+gds3xtrude-0.0.7.dist-info/RECORD,,
