@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: ssss
+Version: 0.1
+Summary: Pure Python Shamir's secret sharing scheme implementation
+Home-page: https://git.cypherpunks.ru/cgit.cgi/pyssss.git/
+Author: Sergey Matveev
+Author-email: stargrave@stargrave.org
+License: LGPLv3+
+Description: Pure Python Shamir's secret sharing scheme implementation.
+        
+        ssss is free software: see the file COPYING for copying conditions.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

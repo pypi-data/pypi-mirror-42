@@ -1,0 +1,13 @@
+AUTHORS
+COPYING
+COPYING.LESSER
+MANIFEST.in
+README
+VERSION
+setup.py
+ssss.py
+test_ssss.py
+ssss.egg-info/PKG-INFO
+ssss.egg-info/SOURCES.txt
+ssss.egg-info/dependency_links.txt
+ssss.egg-info/top_level.txt

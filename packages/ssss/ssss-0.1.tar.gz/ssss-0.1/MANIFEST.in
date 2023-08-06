@@ -1,0 +1,6 @@
+include AUTHORS
+include COPYING
+include COPYING.LESSER
+include README
+include test_ssss.py
+include VERSION
