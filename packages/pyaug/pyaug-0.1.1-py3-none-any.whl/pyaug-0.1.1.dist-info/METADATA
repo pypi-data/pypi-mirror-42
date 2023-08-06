@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pyaug
+Version: 0.1.1
+Summary: A package to generate augmented data using Pandas DataFrames
+Home-page: https://github.com/pyaug/pyaug
+Author: Joshua David Wood
+Author-email: pyaugment@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+
+UNKNOWN
+
+
