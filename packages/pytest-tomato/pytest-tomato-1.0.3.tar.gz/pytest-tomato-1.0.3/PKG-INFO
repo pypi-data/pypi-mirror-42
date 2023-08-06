@@ -1,0 +1,54 @@
+Metadata-Version: 1.2
+Name: pytest-tomato
+Version: 1.0.3
+Summary: UNKNOWN
+Home-page: https://github.com/moshe/python-tomato
+Author: Moshe Zada
+License: UNKNOWN
+Description: 🍅 pytest-tomato
+        ===============
+        
+        pytest plugin for `tomato-bot <https://tomato-bot/>`__
+        
+        Installation
+        ------------
+        
+        ``pip install pytest-tomato``
+        
+        Usage
+        -----
+        
+        Nada, after installing pytest will publish test results to the
+        tomato-bot 🍅
+        
+        Setting junit-xml path
+        ----------------------
+        
+        In order to parse test results the tomato bot read junit xml files
+        created by pytest junit plugin. By default pytest doesn’t generates this
+        file so ``pytest-tomato`` enables junit xml generation. If you want
+        control the path of the xml pass ``--junit-xml=<location>.xml`` flag to
+        pytest.
+        
+Platform: linux
+Platform: osx
+Platform: win32
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
