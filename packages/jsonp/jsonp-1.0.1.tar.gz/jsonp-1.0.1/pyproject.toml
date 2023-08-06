@@ -1,0 +1,16 @@
+[tool.flit.metadata]
+module = "j"
+dist-name = "jsonp"
+description-file = "README.md"
+author = "Paul Nameless"
+author-email = "paul.nameless@icloud.com"
+home-page = 'https://github.com/paul-nameless/j'
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+]
+requires-python = ">=3.7"
+requires = ['pygments']
+
+[tool.flit.scripts]
+j = "j.__init__:main"
