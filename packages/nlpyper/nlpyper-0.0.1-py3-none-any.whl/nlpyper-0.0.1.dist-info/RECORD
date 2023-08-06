@@ -1,0 +1,13 @@
+nlpyper/__init__.py,sha256=S2jxLJSV5XTYXmdMoeZn9TNmMR4TVn6cVJcbIkL03rk,17
+nlpyper/base_module.py,sha256=g5T0rXoJSPjQWYAXIH4vxqCid7xT0U42ZpSnYl35Fjo,141
+nlpyper/batch_source_module.py,sha256=_XBxUjfSdx_d19rVteaYSuEzCnvDqH9OweCTBnZqDuQ,747
+nlpyper/docs_by_field_module.py,sha256=HIoM_NUw4rJ7Wn_n5OhlvbvOoS4jAZX_qCb8258O40M,932
+nlpyper/module.py,sha256=sHNaOc65ZXyMY-Jto0kDTrfnfmc3tbFfI5jiahvZC6U,510
+nlpyper/multi_doc_module.py,sha256=e_B4tjQtOlcECStzNtP1z2m5dptqnb5-QuWSVtJRT2s,742
+nlpyper/pipeline.py,sha256=i3lShdweKua9GlogHdta9XSRV1u2ZTM4WBMmz0_OJS4,8633
+nlpyper/single_doc_module.py,sha256=sA2F32PJTZgvckOu1khLCKEM1yDavmojiLRFwrK2Ti0,441
+nlpyper-0.0.1.dist-info/LICENSE,sha256=hvP6CGuZzLyUJ1babpPLIv7WYSLbG_-ZtFOTAoaHBr0,1058
+nlpyper-0.0.1.dist-info/METADATA,sha256=ZljGUW00GhEwfPTZh1Dswr_5R_Whv39xguBgvBCu0fU,487
+nlpyper-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+nlpyper-0.0.1.dist-info/top_level.txt,sha256=d3MXtq1k50piM72LYnkf9D1LYNhPxqW9n-_2hgoFNqQ,8
+nlpyper-0.0.1.dist-info/RECORD,,
