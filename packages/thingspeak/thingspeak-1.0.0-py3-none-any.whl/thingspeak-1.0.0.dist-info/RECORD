@@ -1,0 +1,11 @@
+CONTRIBUTORS,sha256=AYO0eT7eQtisWrd71wqeKNEYnX5cBvC8CIAqHbKIGC0,59
+examples/log.py,sha256=648sMU9s1wgc4HUqvlnm_8i9Z7BpdYL-iw0UHHdZIzk,525
+examples/pull.py,sha256=Pwl2BiecV9DT-OUJ4Dgh_Y0ZWqA5T6XqD_MucD45qpk,785
+examples/thingspeak_cpu_loop.py,sha256=xec2Fi2swg0lzZvauAScItrb_KYh2WVXXKTXVQbO-L4,778
+thingspeak/__init__.py,sha256=K4DGEvIhRq7VIM0JUHUbt2Z7gLq1Tmcp6JkRI_Gb0uk,4192
+thingspeak/cmdline.py,sha256=Tg0t9507n3A0t2e1us363gd89V66G-Fv7Pu-PqWtYzA,3189
+thingspeak-1.0.0.dist-info/entry_points.txt,sha256=IglzJXsqGN5saMWV_yhjl5FbWJI0wo_8P-M7EmRvGnE,54
+thingspeak-1.0.0.dist-info/LICENSE,sha256=2n6rt7r999OuXp8iOqW9we7ORaxWncIbOwN1ILRGR2g,7651
+thingspeak-1.0.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+thingspeak-1.0.0.dist-info/METADATA,sha256=lJBUyFAu2xj8EfHFyhxj63ccuYbd2afO5kZQ7mcQ92o,2211
+thingspeak-1.0.0.dist-info/RECORD,,
