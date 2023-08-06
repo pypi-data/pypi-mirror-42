@@ -1,0 +1,8 @@
+README.md
+setup.py
+pyktionary/__init__.py
+pyktionary/models.py
+pyktionary.egg-info/PKG-INFO
+pyktionary.egg-info/SOURCES.txt
+pyktionary.egg-info/dependency_links.txt
+pyktionary.egg-info/top_level.txt
