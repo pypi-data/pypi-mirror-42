@@ -1,0 +1,10 @@
+biomaj-core
+biomaj
+biomaj-user
+biomaj-zipkin
+redis
+PyYAML
+flask
+python-consul
+prometheus_client>=0.0.18
+requests

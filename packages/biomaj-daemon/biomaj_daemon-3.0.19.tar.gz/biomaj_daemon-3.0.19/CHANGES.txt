@@ -1,0 +1,58 @@
+3.0.19:
+  Fix traefix prefix
+3.0.18:
+  Fix some bank status info checks
+  Add new endpoint /api/daemon/bank/<bank>/owns
+  Add queued bank names in whatsup
+  Update pika dependency release
+  Add tags for traefik support
+3.0.17:
+  Allow use of env variables to override micro.x and rabbitmq variables in global.properties
+    like for config.yml.
+    Ex: WEB_LOCAL_ENDPOINT_DOWNLOAD defines proxy address for download web service,
+        WEB_LOCAL_ENDPOINT defines global proxy address for all web services, etc.
+    If not defined, will use values from global.properties
+3.0.16:
+  After migration checks, update db_schema to current version
+3.0.15:
+  Add --history option
+  Catch SIGTERM to cancel bank update for SIGKILL
+3.0.14:
+  Fake version for Pypi re-upload
+3.0.13:
+  Allow per service local_endpoint definition
+  Add --stats option
+  Modify --version option to get all module details
+  Add REST API to daemon (/api/daemon/...)
+
+3.0.12:
+  Add biomaj_daemon_consumer.py to python scripts for install with package
+3.0.11:
+  Disable daemon web service logging
+3.0.10:
+  Fix tail endpoint syntax
+3.0.9:
+  Fix #1 remove debug log
+  Fix #2 log dir not removed with --remove-all if proxy option not set
+3.0.8:
+  Fix #78, for multiple banks update in monolithic config, if one fails, next banks are not updated
+  Add /api/daemon/bank/x/log[/y] endpoint to get last bank session log file
+3.0.7:
+  Add whatsup support for non proxy config
+  Skip bank config with errors
+3.0.6:
+  Fix logging for monolithic setup
+  Add whatsup option
+  Fix prometheus stats
+3.0.5:
+  Fix for python 2.x
+3.0.4:
+  Fix status page with other services
+  Add missing README in package
+3.0.3:
+  Fix missing parameters
+3.0.2:
+  Move options to management to utils for reuse
+  Fix --about-me
+3.0.1:
+  Micro service to manage biomaj updates
