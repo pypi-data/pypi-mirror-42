@@ -1,0 +1,8 @@
+mysqlping/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mysqlping/apps.py,sha256=5NZrZCYjAp0wXNqVS4Hhlz_gMxFYDRzs12fbHkavRcY,93
+mysqlping/middleware.py,sha256=zdQvb1cibm0EXN7PbGF3jLhyix0wXk25WsFv3sMOgvI,667
+django_mysqlping-0.1.0.dist-info/LICENSE,sha256=rBsMOcNVKi3vKImWKXin9OtRjGYbzEbodDo2NTYuiyU,1068
+django_mysqlping-0.1.0.dist-info/METADATA,sha256=Gere7wdY7AHQiYUDqGgUJZ8HSYH6tnpY9gNC8G7DWtQ,2089
+django_mysqlping-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+django_mysqlping-0.1.0.dist-info/top_level.txt,sha256=g4UtX2F42l4mmta7VwqGzV-tbd8DsxFY4cYIIK1awio,10
+django_mysqlping-0.1.0.dist-info/RECORD,,
