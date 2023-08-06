@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: pyprecag
+Version: 0.2.2
+Summary: A suite of tools for Precision Agriculture
+Home-page: https://github.com/CSIRO-Precision-Agriculture/pyprecag
+Author: Christina Ratcliff
+Author-email: pat@csiro.au
+License: CSIRO Open Source Software License Agreement
+Platform: any
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Provides-Extra: test
+Provides-Extra: dev
+Requires-Dist: future
+Requires-Dist: fiona
+Requires-Dist: gdal
+Requires-Dist: rasterio (<=1.0.13,>1)
+Requires-Dist: geopandas (>=0.4.0)
+Requires-Dist: unidecode
+Requires-Dist: scipy
+Requires-Dist: chardet
+Provides-Extra: dev
+Requires-Dist: bumpversion; extra == 'dev'
+Requires-Dist: check-manifest; extra == 'dev'
+Requires-Dist: ipython; extra == 'dev'
+Requires-Dist: ipdb; extra == 'dev'
+Requires-Dist: pylint; extra == 'dev'
+Requires-Dist: sphinx; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme; extra == 'dev'
+Requires-Dist: wheel; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pylint; extra == 'test'
+Requires-Dist: tox; extra == 'test'
+
+===============================
+pyprecag
+===============================
+
+A suite of tools for Precision Agriculture
+
+* Free software: CSIRO Open Source Software License Agreement
+* Homepage: https://github.com/CSIRO-Precision-Agriculture/pyprecag
+* Documentation: https://CSIRO-Precision-Agriculture.github.io/pyprecag_docs
+* Version: 0.2.2
+
+pyprecag supports Python version 2.7
+
+
+.. include:: ./installation.rst
+
+Development
+===========
+
+There is a makefile in the project root with targets for the most common
+development operations such as lint checks, running unit tests, building the
+documentation, and building installer packages. `tox` does not have a target,
+as `make tox` is more typing than `tox`.
+
+Run make with no target to see the list of targets::
+
+    $ make
+
+`Bumpversion <https://pypi.python.org/pypi/bumpversion>`_ is used to manage the
+package version numbers. This ensures that the version number is correctly
+incremented in all required files. Please see the bumpversion documentation for
+usage instructions, and do not edit the version strings directly.
+
+Version numbers follow the `Semantic versioning guidelines <semver.org>`_.
+
+.. include:: ./contributing.rst
+
+Dependencies
+============
+
+* Python version 2.7
+* `GDAL <https://www.gdal.org/>`_
+* `Fiona <https://github.com/Toblerity/Fiona>`_
+* `Rasterio <https://github.com/mapbox/rasterio>`_
+* `Vesper <https://sydney.edu.au/agriculture/pal/software/vesper.shtml>`_ (for Kriging)
+
+
