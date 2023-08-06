@@ -1,0 +1,26 @@
+{
+    "stress --cpu 1 --io 1 --vm 1 --vm-bytes 200M --timeout 15s --verbose": {
+        "cpu_time_in_s": {
+            "value": 17.073695,
+            "unit": "s",
+            "lower_is_better": true
+        },
+        "max_rss_in_mb": {
+            "value": 189.1,
+            "unit": "MB",
+            "lower_is_better": true
+        }
+    },
+    "stress --cpu 1 --io 1 --vm 1 --vm-bytes 128M --timeout 10s --verbose": {
+        "cpu_time_in_s": {
+            "value": 11.227787,
+            "unit": "s",
+            "lower_is_better": true
+        },
+        "max_rss_in_mb": {
+            "value": 116.9,
+            "unit": "MB",
+            "lower_is_better": true
+        }
+    }
+}
