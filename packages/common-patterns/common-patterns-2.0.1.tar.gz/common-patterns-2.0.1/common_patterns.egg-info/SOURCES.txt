@@ -1,0 +1,9 @@
+README.md
+setup.py
+common_patterns/__init__.py
+common_patterns/common_patterns.py
+common_patterns.egg-info/PKG-INFO
+common_patterns.egg-info/SOURCES.txt
+common_patterns.egg-info/dependency_links.txt
+common_patterns.egg-info/requires.txt
+common_patterns.egg-info/top_level.txt
