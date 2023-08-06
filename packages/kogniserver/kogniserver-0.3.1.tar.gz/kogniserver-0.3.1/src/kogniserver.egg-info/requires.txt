@@ -1,0 +1,6 @@
+six
+crossbar<=18.4.1
+trollius
+rsb-python
+Twisted>=17.5.0
+attrs>=17.4.0
