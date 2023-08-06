@@ -1,0 +1,166 @@
+Metadata-Version: 2.1
+Name: collectd_eos
+Version: 0.2.1
+Summary: Collectd plugin to monitor EOS MGM metrics.
+Home-page: https://gitlab.cern.ch/ikadochn/collectd-eos
+Author: Ivan Kadochnikov
+Author-email: ivan.kadochikov@cern.ch
+License: UNKNOWN
+Description: ############
+        collectd-eos
+        ############
+        
+        Collectd plugin to collect EOS_ metrics.
+        Connects to a mgm instance using eos client and publishes node, fs and space metrics.
+        
+        Collectd config section example::
+        
+            <Plugin python>
+                Import collectd_eos
+                <Module collectd_eos>
+                    instance example root://eos.example
+                    instance another root://another.eos.instance.example
+                    instance third root://third.mgm.intance.example
+                    interval 60
+                    eos_client_command ssh client.host.example eos
+                </Module>
+            </Plugin>
+        
+        - **instance** expects 2 values:
+        
+          - EOS instance name / plugin instance name
+          - EOS MGM URL
+        
+        - **interval** overrides the default collection interval
+        
+        - **eos_client_command** is used when there is no eos client on the collectd node,
+          and ssh or docker are needed to run eos, especially during plugin development
+        
+        If there are no instances defined in config and $EOS_MGM_URL is set,
+        it is used as the default url with the instance name set to the hostname portion.
+        
+        If there are no instances defined in config and $EOS_MGM_URL is unset,
+        the current hostname is used as the instance name and url.
+        
+        *******
+        Testing
+        *******
+        
+        Test in virutalenv::
+        
+            virtualenv venv
+            . venv/bin/activate
+            pip install -r build-requirements.txt -r test-requirements.txt
+            pip install -e .
+            pytest
+            python setup.py sdist bdist_wheel
+            twine check dist/*
+            tox
+        
+        Use collectd.conf or collectd.docker.conf for functional testing: does the plugin cope with real metrics?
+        
+        On a host with eos::
+        
+            $ collectd -Tf -C collectd.conf
+        
+        Docker can be used for the eos client::
+        
+            $ docker run --name eos_client --rm -itd gitlab-registry.cern.ch/dss/eos:4.4.10
+            <container id output>
+            $ docker exec -it eos_client kinit <username>@CERN.CH
+            <password prompt>
+            $ collectd -Tf -C collectd.docker.conf
+            <check collectd log for errors>
+            $ docker stop eos_client
+        
+        .. _EOS: https://eos.web.cern.ch/
+        
+        *********
+        Changelog
+        *********
+        
+        All notable changes to this project will be documented in this file.
+        
+        The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
+        and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
+        
+        0.2.1_ - 2019-02-28
+        ===================
+        
+        Added
+        -----
+        
+        -   More testing
+        -   More documentation
+        
+        Fixed
+        -----
+        
+        -   Readme needed one more newline at the end to be used as the package description
+        
+        Removed
+        -------
+        
+        -   Python 2.6 support no longer promised, attempted, or tested.
+        
+        
+        0.2.0_ - 2019-02-27
+        ===================
+        
+        Added
+        -----
+        
+        -   pyproject.toml to define build requirements as per PEP-518_
+        -   build-requirements.txt and build-requirements.26.txt to document build requirements
+            in a more realistic, backwards-compatible way.
+        
+        Changed
+        -------
+        
+        -   Configuration section format. mgm_url key is removed
+            EOS instances are now defined by the key "instance" which expects two values:
+        
+            *   instance name, must be unique,
+                defines the collectd plugin instance name reported with the metrics
+            *   mgm_url, the url eos client will query for data
+        
+        Fixed
+        -----
+        
+        -   Don't sent interval of -1 to collectd, it does not interpret it as default
+        
+        0.1.0_ - 2019-02-26
+        ===================
+        
+        Added
+        -----
+        
+        -   README.rst and CHANGELOG.rst
+        -   package sources src/collectd_eos
+        -   unit tests in tests/ and tox.ini
+        -   collectd.conf and collectd.docker.conf for testing with collectd
+        -   eos.types.db to define eos time-series datasets for collectd
+        -   LICENSE Apache 2
+        
+        ..  _Unreleased: https://gitlab.cern.ch/ikadochn/collectd-eos/compare/v0.2.1...develop
+        ..  _0.2.1: https://gitlab.cern.ch/ikadochn/collectd-eos/compare/v0.2.0...v0.2.1
+        ..  _0.2.0: https://gitlab.cern.ch/ikadochn/collectd-eos/compare/v0.1.0...v0.2.0
+        ..  _0.1.0: https://gitlab.cern.ch/ikadochn/collectd-eos/tags/v0.1.0
+        
+        ..  _PEP-518: https://www.python.org/dev/peps/pep-0518/
+        
+Keywords: collectd eos storage monitoring
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: System :: Monitoring
+Description-Content-Type: text/x-rst

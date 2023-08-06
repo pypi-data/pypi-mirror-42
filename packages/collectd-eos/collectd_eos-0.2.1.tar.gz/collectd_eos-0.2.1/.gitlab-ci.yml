@@ -1,0 +1,32 @@
+---
+stages:
+  - test
+
+before_script:
+  - pip install tox -r build-requirements.txt
+
+python27:
+  image: python:2.7
+  stage: test
+  script: tox -e py27
+
+python35:
+  image: python:3.5
+  stage: test
+  script: tox -e py35
+
+python36:
+  image: python:3.6
+  stage: test
+  script: tox -e py36
+
+python37:
+  image: python:3.7
+  stage: test
+  script: tox -e py37
+
+coverage:
+  image: python:3.6
+  stage: test
+  script: tox -e coverage
+  coverage: '/__init__.py\s+\d+\s+\d+\s+(\d+%)/'

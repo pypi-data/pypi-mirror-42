@@ -1,0 +1,6 @@
+include *.koji
+include *.spec
+include *.yml
+include CHANGELOG.rst
+include LICENSE
+include tox.ini

@@ -1,0 +1,4 @@
+setuptools>=36
+wheel
+setuptools_scm
+twine
