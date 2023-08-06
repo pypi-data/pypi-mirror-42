@@ -1,0 +1,7 @@
+setuptools
+pyyaml
+requests
+logging
+mock
+requests_mock
+MySQL-python
