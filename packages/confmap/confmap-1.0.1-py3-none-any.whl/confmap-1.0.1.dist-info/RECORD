@@ -1,0 +1,12 @@
+confmap/__init__.py,sha256=AQfecPNuM6rENVQgyYAWYjknnB_lHwncZIMgBJ5pv9Y,90
+confmap/functions.py,sha256=a1AOPwa_q0lGiKxSrHeC6f3UYYghzbrRpGWIFlJGWcg,8834
+confmap/imagetrans.py,sha256=uxr_1XF699GXGFtWa7aVTTD_7IxmTNmU6b5npPrfBws,42006
+confmap/mask.py,sha256=4HV1_JM8wx5rslh-HmQB0LmXYhdSyMMEB3bkw_uHubo,2632
+confmap/version.py,sha256=x7SWnx8ho-VaDHLtK75ItIuboJ9SpcR_vy2GvXNmU4A,21
+confmap/videotrans.py,sha256=CblZBrmZ8LWXn5x8E-jmm-q1LrDmtMLXNwXmLdxVfSU,2183
+confmap-1.0.1.dist-info/DESCRIPTION.rst,sha256=nUzhvfI_ZZSiV9t99AJNetErlt8cj9_gQS6cjZlATIE,19
+confmap-1.0.1.dist-info/METADATA,sha256=3f94U8281Y7obDnfetr9_60Jq-m4mF5yPbx8I9OwKSY,773
+confmap-1.0.1.dist-info/RECORD,,
+confmap-1.0.1.dist-info/WHEEL,sha256=Vlaj2XNMTTJ893zWX-JvKeZUIs7q5E7d7Gise2Vouzc,97
+confmap-1.0.1.dist-info/metadata.json,sha256=Ct8e5UVgouNQnE45QSfegtl3aX9e1F0y6kdwgdWJa80,973
+confmap-1.0.1.dist-info/top_level.txt,sha256=lUoCI0gl8pnJ_uRqNF0JJMyil5KZI49tDry-lgoOOt8,8
