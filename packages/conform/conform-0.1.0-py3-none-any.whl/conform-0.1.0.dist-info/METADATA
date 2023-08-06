@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: conform
+Version: 0.1.0
+Summary: A simple config generator
+Home-page: https://bitbucket.org/jonsul/cfgen
+Author: Jon Sully
+Author-email: jon@sul.ly
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: aiofiles
+Requires-Dist: aiohttp
+Requires-Dist: Click
+Requires-Dist: colorama
+Requires-Dist: graphviz
+Requires-Dist: Jinja2
+Requires-Dist: paramiko
+Requires-Dist: pydantic
+Requires-Dist: PyYAML
+Requires-Dist: toml
+
+UNKNOWN
+
+

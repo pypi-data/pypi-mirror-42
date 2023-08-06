@@ -1,0 +1,3 @@
+[console_scripts]
+conform = conform.cli:cli
+
