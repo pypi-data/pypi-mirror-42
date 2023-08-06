@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: dogclient
+Version: 0.0.1
+Summary: Bounty hunting software
+Home-page: https://github.com/pypa/sampleproject
+Author: Bad Hombres
+Author-email: bad.hombres.team@gmail.com
+License: MIT
+Keywords: bugbounty automation
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: pyzmq
+
+Automation software for bounty hunting
+
+
