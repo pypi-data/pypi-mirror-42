@@ -1,0 +1,321 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[6]:
+
+
+import json
+import pandas as pd
+import re
+import requests
+
+from datetime import date, timedelta
+from pathlib import Path
+
+from money2float import money
+
+
+# In[90]:
+
+
+def get_day(days_back):
+    if days_back > 0:
+        day = (date.today() - timedelta(days_back)).isoformat()
+    else:
+        day = date.today().isoformat()
+    return day
+
+
+# In[9]:
+
+
+def get_content(download_url, auth_key):
+    res = requests.get(download_url, auth=(auth_key, ""), timeout=5)
+    try:
+        content = res.json()
+    except:
+        content = {}
+    return content
+
+
+# In[10]:
+
+
+def download_pdf(filename, url):
+    response = requests.get(url)
+    filename.write_bytes(response.content)
+
+
+# In[112]:
+
+
+def make_text_file_ready(text, strings_to_delete):
+    try:
+        text = re.sub("[^A-Za-z0-9\. ]+", "", text).lower()
+        text_list = text.split()
+        good_text = []
+        for item in text_list:
+            if item not in strings_to_delete:
+                good_text.append(item)
+                strings_to_delete.append(item)
+        text = "_".join(good_text)
+    except:
+        text = "missing_value"
+    return text
+
+
+# In[114]:
+
+
+def make_filename(header, remittance, strings_to_delete):
+    insured_shortname = make_text_file_ready(
+        header["insurer_short_name"], strings_to_delete
+    )
+    broker = make_text_file_ready(remittance.get("broker", ""), strings_to_delete)
+    remittance_date = make_text_file_ready(
+        remittance.get("remittance_date", "missing"), strings_to_delete
+    )
+    filename = make_text_file_ready(remittance["remote_id"], strings_to_delete)
+    return "_".join([insured_shortname, broker, remittance_date, filename])
+
+
+# In[115]:
+
+
+def make_header(remittance, strings_to_delete):
+    header = {}
+    try:
+        header["insurer"] = " ".join(remittance.get("insurer").split())
+    except:
+        header["insurer"] = ""
+    header["insurer_short_name"] = make_text_file_ready(header["insurer"])
+    header["broker"] = remittance.get("broker", "")
+    header["broker_abn"] = remittance.get("broker_abn", "")
+    header["remittance_date"] = remittance.get("remittance_date", "")
+    header["remittance_total"] = remittance.get("remittance_total", "")
+    header["doc_format"] = remittance.get("tagger", "")
+    header["new_filename"] = make_filename(header, remittance)
+    header["original_filename"] = remittance.get("file_name", "")
+    header["full_text"] = remittance.get("full_text", "")
+    return header
+
+
+# In[17]:
+
+
+money_columns_add = [
+    "premium_ex_gst",
+    "levies",
+    "gst_premium",
+    "premium_inc_commission_inc_gst",
+    "gross_premium_ex_commission",
+    "underwriting_fee",
+    "levies_01",
+    "levies_02",
+    "levies_03",
+]
+money_columns_subtract = ["broker_commission", "gst_broker_commission", "earlier_paid"]
+money_columns_total = ["line_net", "remittance_total"]
+money_columns_all = [*money_columns_add, *money_columns_subtract, *money_columns_total]
+money_columns_all
+
+
+# In[86]:
+
+
+def change_sign(target):
+    if "CR" in str(target) or "-" in str(target):
+        try:
+            target = target.strip("-")
+            target = target.strip("CR")
+        except:
+            pass
+        target = money(target) * -1
+    return money(target)
+
+
+def convert_money_columns(df, columns):
+    for column in columns:
+        if column in df.columns:
+            df[column] = df[column].apply(lambda x: money(x))
+    return df
+
+
+# In[88]:
+
+
+def validate_remittance(df, money_columns_add, money_columns_subtract, header):
+    add_columns = [x for x in money_columns_add if x in df.columns]
+    add = money(df[add_columns].sum().sum())
+    #     display(df[add_columns])
+    subtract_columns = [x for x in money_columns_subtract if x in df.columns]
+    subtract = money(df[subtract_columns].sum().sum())
+    #     display(df[subtract_columns])
+    add = money(add)
+    subtract = money(subtract)
+    line_total = add - subtract
+    line_total = money(line_total)
+    remittance_total = money(header["remittance_total"])
+    remittance_line_total = money(df["line_net"].sum())
+    difference = remittance_total - remittance_line_total
+    detail_difference = remittance_total - line_total
+    difference = money(difference)
+    print(f"{add} - {subtract} = {line_total}")
+    print(f"Remittance total: {remittance_total}")
+    print(f"Difference: {difference}")
+    print()
+    return difference, detail_difference
+
+
+# In[67]:
+
+
+def process_fee_group(row, fee_mapping):
+    fee_group = row["fee_group"].replace(" 3 ", " B ")
+    fee_group = fee_group.replace(" ", "")
+    fee_group = fee_group.replace(",", "")
+    fee_group = fee_group.replace("$", "")
+    print(fee_group)
+    letters = re.compile("[A-Z]")
+    numbers = re.compile("[0-9\.]+")
+    fees_dict = dict(zip(letters.findall(fee_group), numbers.findall(fee_group)))
+    for acronym, value in fees_dict.items():
+        print(acronym, value)
+        value = change_sign(value)
+        row[fee_mapping.get(acronym, "missing")] = value
+    return row
+
+
+# In[75]:
+
+
+def process_aub_group_rows(header, rows, columns):
+    fee_mapping = {
+        "P": "premium_ex_gst",
+        "U": "underwriting_fee",
+        "G": "gst_premium",
+        "S": "levies_01",
+        "F": "levies_02",
+        "B": "broker_commission",
+        "N": "gst_broker_commission",
+    }
+    transformed_rows = []
+    for row in rows:
+        row = process_fee_group(row, fee_mapping)
+        row["line_net"] = change_sign(row["line_net"])
+        final = {**header, **row}
+        final.pop("fee_group", None)
+        transformed_rows.append(final)
+    df = pd.DataFrame(transformed_rows)
+    df = convert_money_columns(df, money_columns_all)
+    try:
+        df = df[columns]
+    except:
+        pass
+    return df
+
+
+# In[100]:
+
+
+def process_standard_rows(header, rows, columns):
+    transformed_rows = []
+    for row in rows:
+        final = {**header, **row}
+        transformed_rows.append(final)
+    df = pd.DataFrame(transformed_rows)
+    df = convert_money_columns(df, money_columns_all)
+    try:
+        df = df[columns]
+    except:
+        pass
+    return df
+
+
+# In[26]:
+
+
+def save_remittance_output(folder, remittance, df, header, file_list):
+    pdf_filename = Path.cwd() / folder / header["file_name"]
+    json_remittance_filename = (Path.cwd() / folder / header["file_name"]).with_suffix(
+        ".json"
+    )
+    csv_filename = (Path.cwd() / folder / header["file_name"]).with_suffix(".csv")
+    if "pdf" in file_list:
+        download_pdf(pdf_filename, remittance["media_link"])
+    if "json" in file_list:
+        json_remittance_filename.write_text(json.dumps(remittance, indent=4))
+    if "csv" in file_list:
+        df.to_csv(csv_filename, index=False)
+
+
+# In[102]:
+
+
+def create_files_grouped_by_column(df, column):
+    gb = df.groupby(column)
+    [gb.get_group(x) for x in gb.groups]
+    return gb
+
+
+# Used to group by insurer_short_name
+
+
+# In[103]:
+
+
+def save_daily_files(all_dfs):
+    groups = create_files_grouped_by_insurer(all_dfs)
+    for group in groups:
+        display(group[0])
+        excel_filename = (op / group[0]).with_suffix(".xlsx")
+        group[1].to_excel(excel_filename, index=False)
+        display(group[1])
+
+
+# In[104]:
+
+
+def make_hyperlink(folder, value):
+    url = f'=HYPERLINK(".\\{folder}\\{value}", "PDF")'
+    return url
+
+
+# In[108]:
+
+
+def create_mapping(target, cp):
+    rows = pd.read_excel(cp / "company_mapping.xlsx", sheet_name=target)
+    rows.to_dict(orient="records")
+    mapping = {}
+    for row in rows.values:
+        mapping[row[0]] = row[1]
+    return mapping
+
+
+# In[107]:
+
+
+def replace_blanks(row, mapping, target):
+    if row[target] == None:
+        for item in mapping.keys():
+            if item in row["full_text"]:
+                return item
+    else:
+        return row[target]
+
+
+# In[111]:
+
+
+def check_for_tagger(remittance):
+    try:
+        remittance["tagger"]
+    except:
+        print("Failed - no tagger", remittance["remote_id"])
+
+
+# In[ ]:
+
+
+# In[ ]:
