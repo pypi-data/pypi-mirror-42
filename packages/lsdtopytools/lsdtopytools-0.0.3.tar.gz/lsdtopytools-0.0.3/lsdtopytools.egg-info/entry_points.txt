@@ -1,0 +1,6 @@
+[console_scripts]
+lsdtt-concavity-tools = scripts_for_lsdtopytools.lsdtt_concavity_tools:main_concavity
+lsdtt-depressions = scripts_for_lsdtopytools.lsdtt_basic_operations:PreProcess
+lsdtt-hypsometry = scripts_for_lsdtopytools.lsdtt_hypsometry:hypsometry_tools_general
+lsdtt-polyfits = scripts_for_lsdtopytools.lsdtt_basic_operations:Polyfit_Metrics
+
