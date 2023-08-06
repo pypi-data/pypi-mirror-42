@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: pyf.api
+Version: 1.0.0.dev0
+Summary: Python Package Filter API
+Home-page: https://pypi.python.org/pypi/pyf.api
+Author: 
+Author-email: 
+License: GNU General Public License v2 (GPLv2)
+Keywords: Python Buildout Extension
+Platform: UNKNOWN
+Classifier: Framework :: Pyramid
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Dist: cornice
+Requires-Dist: elasticsearch-dsl
+Requires-Dist: pyramid
+Requires-Dist: setuptools
+Provides-Extra: dev
+Requires-Dist: pyramid-debugtoolbar ; extra == 'dev'
+Requires-Dist: pdbpp ; extra == 'dev'
+Provides-Extra: testing
+Requires-Dist: responses ; extra == 'testing'
+Requires-Dist: webtest ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+Python Package Filter API
+=========================
+
+The Python Package Filter API (``pyf.api``)  helps you easily identify and
+evaluate python packages using classifiers, stats etc.
+
+Quickstart
+----------
+
+For detailed installation instructions, read the `docs
+<https://pyfapi.readthedocs.io/en/latest/installation.html>`_.
+
+#. `Install elasticsearch
+   <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>`_
+#. `Configure elasticsearch
+   <https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html#settings>`_,
+   especially set the path to the data directory.
+#. `Start elasticsearch
+   <https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html>`_
+
+API
+---
+
+
+
+License
+-------
+
+The code is open-source and licensed under the Apache License 2.0.
+
+Credits
+-------
+
+* `@jensens <https://github.com/jensens>`_
+* `@veit <https://github.com/veit>`_
+* `@guziel <https://github.com/guziel>`_
+* `@pypa <https://github.com/pypa>`_
+
+
+Changelog
+=========
+
+1.0.0 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+
+
