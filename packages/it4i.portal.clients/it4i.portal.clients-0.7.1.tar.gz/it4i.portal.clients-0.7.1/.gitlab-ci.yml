@@ -1,0 +1,79 @@
+stages:
+  - test
+  - build
+  - check
+  - deploy
+
+mdcheck:
+  stage: test
+  image: it4innovations/docker-mdcheck:latest
+  script:
+    - mdl -r ~MD013 *.md
+
+shellcheck:
+  stage: test
+  image: it4innovations/docker-shellcheck:latest
+  allow_failure: true
+  script:
+    - find . -type f -name "*.sh" -print0 | xargs -r -0 shellcheck
+
+pylint:
+  stage: test
+  image: it4innovations/docker-pycheck:latest
+  allow_failure: true
+  script:
+    - find . -type f -name "*.py" -print0 | xargs -r -0 pylint
+
+build:
+  stage: build
+  image: it4innovations/docker-pypi:latest
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist/it4i.portal.clients*tar.gz
+  script:
+    - export PYTHONIOENCODING=UTF-8
+    - export LC_CTYPE=en_US.UTF-8
+    - export IT4I_FACTORY_PREBUILD=1
+    - pip install mustache pystache setuptools-git-version setuptools-markdown
+    - echo "output_engine = mustache(\"restructuredtext\")" >> .gitchangelog.rc
+    - gitchangelog >> docs/HISTORY.txt
+    - cat docs/HISTORY.txt
+    - echo "output_engine = mustache(\"markdown\")" >> .gitchangelog.rc
+    - echo >> README.md
+    - gitchangelog | sed -r '1,/^# Changelog$/s/^(# Changelog)$/#\1/' >> README.md
+    - python setup.py --version
+    - echo "version = '$(python setup.py --version)'" >> version.py
+    - python setup.py sdist
+
+Install test:
+  stage: check
+  image: it4innovations/docker-pypi:latest
+  script:
+    - echo "[main]" >> /home/vop999/.it4ifree
+    - echo "extranet_api_url = https://extranet.it4i.cz/" >> /home/vop999/.it4ifree
+    - echo "it4i_username = vop999" >> /home/vop999/.it4ifree
+    - echo "it4ifreetoken = $IT4FREETOKEN" >> /home/vop999/.it4ifree
+    - chown vop999:vop999 /home/vop999/.it4ifree
+    - pip install dist/it4i.portal.clients*tar.gz
+    - su - vop999 -c 'it4ifree'
+    - rm /home/vop999/.it4ifree
+
+versioncheck:
+  stage: check
+  image: it4innovations/docker-pypi:latest
+  script:
+    - export IT4I_FACTORY_PREBUILD=1
+    - python setup.py --version
+    - export BUILD_VERSION="$(python setup.py --version)"
+    - export PUBLISHED_VERSION="$(yolk -V it4i.portal.clients | sed 's/it4i\.portal\.clients//' | grep -Eo '[0-9.]+')"
+    - CMP_VERSION="$(cmp-version $BUILD_VERSION $PUBLISHED_VERSION)"
+    - if [ $CMP_VERSION -eq 1 ]; then true; else echo "Building pip module is older/same version as module already available from public pypi repository"; false; fi
+
+upload:
+  stage: deploy
+  image: it4innovations/docker-pypi:latest
+  script:
+    - twine upload -u "$PYPI_USERNAME" -p "$PYPI_PASSWORD" dist/it4i.portal.clients*tar.gz
+  only:
+    - master
