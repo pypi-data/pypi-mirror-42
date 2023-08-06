@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+octoprint_prometheus/__init__.py
+octoprint_prometheus/gcodeparser.py
+octoprint_prometheus/octoprint_prometheus.py
+octoprint_prometheus/octoprint_prometheus_plugin.py
+octoprint_prometheus.egg-info/PKG-INFO
+octoprint_prometheus.egg-info/SOURCES.txt
+octoprint_prometheus.egg-info/dependency_links.txt
+octoprint_prometheus.egg-info/entry_points.txt
+octoprint_prometheus.egg-info/not-zip-safe
+octoprint_prometheus.egg-info/requires.txt
+octoprint_prometheus.egg-info/top_level.txt
