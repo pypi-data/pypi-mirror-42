@@ -1,0 +1,9 @@
+README.md
+setup.py
+pygemini/__init__.py
+pygemini/__version__.py
+pygemini/core.py
+pygemini.egg-info/PKG-INFO
+pygemini.egg-info/SOURCES.txt
+pygemini.egg-info/dependency_links.txt
+pygemini.egg-info/top_level.txt
