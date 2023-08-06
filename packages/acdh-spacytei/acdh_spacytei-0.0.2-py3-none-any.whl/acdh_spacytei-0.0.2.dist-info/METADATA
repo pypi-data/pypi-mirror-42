@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: acdh-spacytei
+Version: 0.0.2
+Summary: A package to ease processing (not only) TEI documents with spaCy
+Home-page: https://github.com/acdh-oeaw/acdh-spacytei
+Author: Peter Andorfer
+Author-email: peter.andorfer@oeaw.ac.at
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: spacy (>=2.0.18)
+Requires-Dist: gensim (>=3.7.1)
+Requires-Dist: lxml (>=4.1.1)
+Requires-Dist: pandas (>=0.23.3)
+Requires-Dist: requests (==2.20.1)
+
+Readme
+======
+
+acdh-spacytei is a python package providing utility classes and functions to processing XML (TEI, TCF) encoded documents with/for spaCy
+
+
+Installation
+------------
+
+`pip install acdh-spacy-tei`
+
+
+Licensing
+---------
+
+All code unless otherwise noted is licensed under the terms of the MIT License (MIT). Please refer to the file LICENSE in the root directory of this repository.
+
+
+
+
+History
+-------
+
+0.1.0 (2019-02-25)
+++++++++++++++++++
+
+* First version
+
+
