@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+kinesispipeline/__init__.py
+kinesispipeline/pipelines.py
+scrapy_kinesispipeline.egg-info/PKG-INFO
+scrapy_kinesispipeline.egg-info/SOURCES.txt
+scrapy_kinesispipeline.egg-info/dependency_links.txt
+scrapy_kinesispipeline.egg-info/not-zip-safe
+scrapy_kinesispipeline.egg-info/requires.txt
+scrapy_kinesispipeline.egg-info/top_level.txt
