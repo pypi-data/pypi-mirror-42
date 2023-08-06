@@ -1,0 +1,16 @@
+plspm/__init__.py,sha256=6LPpwURfjmoEcgcrCgIQKZkHtAyeRyV7xAJUkb8uD-c,706
+plspm/config.py,sha256=6ERWSpLHsVw_EsMSL4EmiWt7KOv-MWuRyp2fcHSif_c,5140
+plspm/inner_model.py,sha256=xET6GJeoxOprcygU1H57vkQgT7Lk-TLHXbJirxISEZY,2123
+plspm/inner_summary.py,sha256=1NZLZFZmD8ad36lGK0-2_N059ERzufMm_19vvrNmu1U,2600
+plspm/mode.py,sha256=NEoPbtEvJB8J8qE8upErdkCmmYtR9GAvptDokgHkWsg,2127
+plspm/outer_model.py,sha256=5XJapraG3_lMPwbvnfsKCWgK6qFSCdn63ve67I1cizo,1652
+plspm/plspm.py,sha256=C1OsR5cqnnyjBV82Gv8filj3RISyUD28E_vowT5_ve0,2869
+plspm/scale.py,sha256=7bHTrk8E27GaNSk2aaKGN7Ilwl3B6iflIh3pjnl12LI,3427
+plspm/scheme.py,sha256=Jt9GZnoqOwzblXcNjP6yZ4NjoXLqo5LohzX63_7w51U,1860
+plspm/util.py,sha256=IXQSlZQbDK1Z7oS9QuxNBDTtRhLBiI08SuVm3sRuSD4,2416
+plspm/weights.py,sha256=Y0GroOgGIacRGNH0tF5_SS0QnR25gPLa_B2OIOuSd2U,5977
+plspm-0.1.0.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+plspm-0.1.0.dist-info/METADATA,sha256=pJPU1QNBQO8Yh6EF14CnkMzyuHg_70lgobC5vqdYQzY,5993
+plspm-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+plspm-0.1.0.dist-info/top_level.txt,sha256=guUiqVpR9brhIEhtL9j9GCHzK6wFwN7OIn2m5QGXl_0,6
+plspm-0.1.0.dist-info/RECORD,,
