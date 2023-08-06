@@ -1,0 +1,10 @@
+README.md
+setup.py
+bin/y_trans
+y_trans/__init__.py
+y_trans/translator.py
+y_trans.egg-info/PKG-INFO
+y_trans.egg-info/SOURCES.txt
+y_trans.egg-info/dependency_links.txt
+y_trans.egg-info/requires.txt
+y_trans.egg-info/top_level.txt
