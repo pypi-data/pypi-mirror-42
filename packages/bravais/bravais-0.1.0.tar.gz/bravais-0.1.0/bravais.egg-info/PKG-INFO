@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: bravais
+Version: 0.1.0
+Summary: A simple package for representing Bravais lattices. Primarily useful to check the passed parameters represent a valid Bravais lattice.
+Home-page: UNKNOWN
+Author: Adam J. Plowman
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
