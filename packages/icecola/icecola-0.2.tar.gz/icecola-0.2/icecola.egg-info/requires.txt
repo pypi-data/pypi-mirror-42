@@ -1,0 +1,2 @@
+pymongo>=3.7.2
+pendulum>=2.0.3
