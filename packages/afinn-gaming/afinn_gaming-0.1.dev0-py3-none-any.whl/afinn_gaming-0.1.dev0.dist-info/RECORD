@@ -1,0 +1,15 @@
+afinn/__init__.py,sha256=s1_8lmC2IcBu6x9DXlSqAANdwGLjEIU5_jwMos_k-mA,157
+afinn/afinn.py,sha256=f3umhmYzja9elHRbM8xdkAlShzi2N-cc6v8ZSpdzuHY,11280
+afinn/data/AFINN-111.txt,sha256=_mFD2kLNG4D5ZBWABLwcEUsRdYNIrqjH3mLvDqj-U9s,30569
+afinn/data/AFINN-96.txt,sha256=LAqtHTE9PACkD4jPyBs2lxMZbrahWZAwgMqsqnWENZg,17733
+afinn/data/AFINN-da-32.txt,sha256=fab_enePgs3u-UBZVjYiUrjXJ2Ci9D72peI0XvSwd0o,48495
+afinn/data/AFINN-emoticon-8.txt,sha256=C7cZp6qzUiMsNbk4pfQFPEcpe1r35FeetJS8P7PwacQ,790
+afinn/data/AFINN-en-165-gaming.txt,sha256=RtFaO1n9EskguXfICbEcggNQruQDYYSymQPVPlNqkXo,42878
+afinn/data/AFINN-en-165.txt,sha256=blq9urVU8tvapigUpDCz3aUqJ3tQsDNQEPH3WsnXqrE,42849
+afinn/data/AFINN-fr-165.txt,sha256=Y84WC8Zti5g9HFv8rt1mnWg5PoK_3nVEDHjygOOPM7w,28676
+afinn/data/AFINN-sv-165.txt,sha256=U662QotsUELNE_nCm56TfL7smwTK6bthechmxLPFSr0,43264
+afinn_gaming-0.1.dev0.dist-info/LICENSE,sha256=65e5doCXJn78b29_oZcQV1GpaMUZochnfOtLsDZ0YL4,11586
+afinn_gaming-0.1.dev0.dist-info/METADATA,sha256=d80mM6ZZB7vryLzIRHOrlP0nca8iMO04oxBER5QdW3k,540
+afinn_gaming-0.1.dev0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+afinn_gaming-0.1.dev0.dist-info/top_level.txt,sha256=CC_x6s9FvBdJySbVfY-VfFRjBzaY1-sfyryKncui9QI,6
+afinn_gaming-0.1.dev0.dist-info/RECORD,,
