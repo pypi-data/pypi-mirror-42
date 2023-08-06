@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+waterbend/__init__.py
+waterbend.egg-info/PKG-INFO
+waterbend.egg-info/SOURCES.txt
+waterbend.egg-info/dependency_links.txt
+waterbend.egg-info/top_level.txt
