@@ -1,0 +1,4 @@
+
+      [console_scripts]
+      daskperimentboard = daskperiment.command:board
+      
