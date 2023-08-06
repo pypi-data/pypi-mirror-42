@@ -1,0 +1,8 @@
+aiodns
+aiohttp
+async-timeout
+colorlog
+requests
+uvloop
+backoff
+dnspython
