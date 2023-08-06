@@ -1,0 +1,209 @@
+#!/usr/bin/python3
+
+import os
+import sys
+import shutil
+import argparse
+import json
+import logging
+import time
+
+import hashget
+from hashget import *
+
+import filelock
+
+from hashget.debian import debsubmit
+
+
+def process_submitted(hashdb, newdir, webroot=None):
+
+    log.debug("process submitted {} {}".format(newdir, webroot))
+
+    for name in os.listdir(newdir):
+        """ for each upload dir """
+        dir = os.path.join(newdir, name)
+        try:
+            with open(os.path.join(dir,'_meta.json')) as f:
+                meta = json.load(f)
+
+
+
+            pkgbasename = meta['files']['package']
+            debsig = pkgbasename[:-4] # strip .deb
+
+            if not hashdb.sig_present('deb',debsig):
+                for basename in os.listdir(dir):
+                    path = os.path.join(dir, basename)
+                    if path.endswith('.deb'):
+                        attrs = dict()
+                        attrs['uploaded_ip'] = meta['ip']
+                        attrs['uploaded_time'] = meta['time']
+
+                        try:
+                            hp = debsubmit(hashdb, path, anchors, attrs=attrs)
+                        except ValueError as e:
+                            log.info(str(e))
+                        else:
+
+                            if webroot:
+                                hp.make_anchors(webroot)
+                            log.info('Submitted {} from {}'.format(hp, meta['ip']))
+        except (KeyError, FileNotFoundError):
+            pass
+
+        shutil.rmtree(dir)
+
+
+
+
+
+# raise limit for logger filelock
+fllog = logging.getLogger('filelock')
+fllog.setLevel(logging.ERROR)
+
+
+def_submitted = ('/var/run/takeup/uploads/new','/var/www/html/virtual/hashdb/hashdb')
+
+clean_targets = ['cacheget','hashdb','all']
+
+"""
+    Create arguments
+"""
+parser = argparse.ArgumentParser(description='HashGet fetcher and deduplicator')
+
+g = parser.add_argument_group('Commands')
+g.add_argument('--status', default=None, action='store_true', help='status for --project or all projects')
+g.add_argument('--list', default=False, action='store_true', help='briefly list all projects')
+g.add_argument('--addproject', default=False, action='store_true', help='create -p project')
+g.add_argument('--rmproject', default=False, action='store_true', help='delete -p project')
+g.add_argument('--modify', default=False, action='store_true', help='modify -p project')
+g.add_argument('--build', default=None, metavar='WEBROOT', help='build static web HashDB')
+g.add_argument('--submitted', nargs=2, default=None, metavar='UPLOADS_DIR, WEBROOT_DIR',
+               help='process submitted packages ({})'.format(def_submitted))
+g.add_argument('--purge', nargs='+', default=None, metavar=('PkgBaseName','WebRoot'),
+               help='purge package and links. (search/delete links if --full)')
+g.add_argument('--clean', default=None, metavar='TARGET',
+               help='one of: {}'.format(clean_targets))
+
+
+
+g = parser.add_argument_group('Options')
+g.add_argument('--project','-p', default=None, metavar='NAME', help='Project name')
+g.add_argument('--path', default=None, help='Path to local HashDB directories')
+# g.add_argument('--project', default=None, help='Project name')
+g.add_argument('--really', default=False, action='store_true', help='additonal flag for dangerous operations')
+g.add_argument('--full', default=False, action='store_true', help='for --purge')
+
+g.add_argument('--storage', default=None, help='use this storage type for hashdb')
+g.add_argument('--pkgtype', default=None, help='use this pkgtype for hashdb')
+
+g.add_argument('--verbose', '-v', default=False, action='store_true', help='verbose logging')
+# g.add_argument('--loop', default=False, action='store_true', help='work in loop (for --submitted)')
+
+
+args = parser.parse_args()
+
+log = logging.getLogger('hashget')
+
+if args.verbose:
+    loglevel = logging.DEBUG
+else:
+    loglevel = logging.INFO
+
+logging.basicConfig(level = loglevel, format='%(asctime)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+
+hashdb = hashget.hashdb.HashDBClient(path=args.path)
+anchors = hashget.AnchorList()
+
+if args.list:
+    for name, hdb in hashdb.items():
+        print(name, hdb)
+
+if args.status:
+    for name, hdb in hashdb.hashdb.items():
+        if name == args.project or not args.project:
+            print(name, hdb)
+            hdb.dump()
+
+if args.addproject:
+    print("create project {}".format(args.project))
+    hashdb.create_project(args.project)
+
+if args.rmproject:
+    if not args.really:
+        print("Not --really ...")
+        sys.exit(1)
+
+    print("rm project {}".format(args.project))
+    hashdb.remove_project(args.project)
+
+
+if args.modify:
+    print("modify project {}".format(args.project))
+    p = hashdb[args.project]
+    if args.storage:
+        p.storage = args.storage
+        print(p.storage)
+        p.dump()
+        p.write()
+
+    if args.pkgtype:
+        p.read_config()
+        p.pkgtype = args.pkgtype
+        p.write_config()
+
+    log.info(p)
+
+if args.build:
+    webroot = args.build
+
+    print("build web HashDB in {}".format(webroot))
+    for name, hdb in hashdb.hashdb.items():
+        if name == args.project or not args.project:
+            print(name)
+            for p in hdb.packages:
+                print(p)
+                p.make_anchors(webroot)
+
+
+if args.submitted:
+
+    if os.getuid():
+        lockfilename = os.path.expanduser("~/.hashget-admin.lock")
+    else:
+        lockfilename = '/var/run/hashget-admin.lock'
+
+    lock = filelock.FileLock(lockfilename)
+    try:
+        with lock.acquire(timeout=0):
+            process_submitted(hashdb, *args.submitted)
+    except filelock.Timeout:
+        log.warning("lockfile {} is already used".format(lockfilename))
+
+
+
+if args.purge:
+    if len(args.purge) == 2:
+        webroot = args.purge[1]
+    else:
+        webroot = None
+
+    try:
+        p = hashdb.basename2hp(args.purge[0])
+    except KeyError as e:
+        print(e)
+    else:
+        p.purge(webroot=webroot, full=args.full)
+
+if args.clean:
+    if not args.clean in clean_targets:
+        log.error("clean target must be one of {}".format(clean_targets))
+        sys.exit(1)
+
+    if args.clean in ['cacheget','all']:
+        cg = hashget.cacheget.CacheGet()
+        cg.clean()
+
+    if args.clean in ['hashdb','all']:
+        hashdb.clean()
