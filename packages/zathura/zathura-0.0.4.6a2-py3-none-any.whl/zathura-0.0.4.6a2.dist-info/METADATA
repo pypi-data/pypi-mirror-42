@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: zathura
+Version: 0.0.4.6a2
+Summary: Zathura is a small space logger. It logs stuff into her logbook as she drifts into vast unknown of development phase.
+Home-page: https://github.com/ibtehaz-shawon/Zathura
+Author: Ibtehaz Shawon
+Author-email: ibtehaz.92@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: peewee
+
+[![Build Status](https://travis-ci.org/ibtehaz-shawon/zathura.svg?branch=master)](https://travis-ci.org/ibtehaz-shawon/zathura)
+
+Hello World command: How to run: [From the virtualenv]
+
+<ol>
+
+<li>
+    pip install -r LoggerProject/requirements.txt
+</li> <li>
+    pip install --upgrade setuptools wheel
+</li> <li>
+    python3 setup.py sdist bdist_wheel [1 time for testing]
+</li> <li>
+    pip install . [everytime before running the code]
+</li>
+</ol>
+
