@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: cs.predicate
+Version: 20190221
+Summary: fnctions for expressing predicates
+Home-page: https://bitbucket.org/cameron_simpson/css/commits/all
+Author: Cameron Simpson
+Author-email: cs@cskk.id.au
+License: UNKNOWN
+Description: Trite support for code predicates, presently just the context manager `post_condition`.
+        
+        Interested people should also see the `icontract` module.
+        
+        ## Function `post_condition(*predicates)`
+        
+        Context manager to test post conditions.
+        
+        Predicates may either be a tuple of `(description,callable)`
+        or a plain callable.
+        For the latter the description is taken from `callable.__doc__`
+        or `str(callable)`.
+        Raises `AssertionError` if any predicates are false.
+Keywords: python2,python3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown
