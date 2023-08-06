@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: tensorflow-rl
+Version: 0.2.0
+Summary: tensorflow-rl: Modular Deep Reinforcement Learning Framework.
+Home-page: https://github.com/RLOpensource/tensorflow_RL
+Author: ChaKeumgang
+Author-email: chagmgang@gmail.com
+License: MIT
+Keywords: tensorflow gym atari tensorflow machine reinforcement learning neural network
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Provides-Extra: tf-cpu
+Provides-Extra: tf-gpu
+Requires-Dist: numpy (>=1.13)
+Requires-Dist: gym (>=0.10.5)
+Requires-Dist: Box2D (>=2.3.2)
+Requires-Dist: tensorboardX (>=1.4)
+Provides-Extra: tf-cpu
+Requires-Dist: tensorflow (==1.10.0); extra == 'tf-cpu'
+Provides-Extra: tf-gpu
+Requires-Dist: tensorflow-gpu (==1.10.0); extra == 'tf-gpu'
+
+UNKNOWN
+
+
