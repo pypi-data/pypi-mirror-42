@@ -1,0 +1,15 @@
+README.md
+setup.py
+ud4d/__init__.py
+ud4d/api.py
+ud4d/config.py
+ud4d/detector.py
+ud4d/docker_manager.py
+ud4d/event.py
+ud4d/logger.py
+ud4d/server.py
+ud4d.egg-info/PKG-INFO
+ud4d.egg-info/SOURCES.txt
+ud4d.egg-info/dependency_links.txt
+ud4d.egg-info/requires.txt
+ud4d.egg-info/top_level.txt
