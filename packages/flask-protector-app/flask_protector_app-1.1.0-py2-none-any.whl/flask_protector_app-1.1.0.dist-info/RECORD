@@ -1,0 +1,11 @@
+flask_protector_app/__init__.py,sha256=4Ij8dmnUOymnqGg5rRCvOi0zzr0m5v5iLA1sEmSHPio,5638
+flask_protector_app/config.py,sha256=ZECQAYnqzLa2LLpmfAfhUHuIP_SHYLS6Thc4ar8Y5dU,262
+flask_protector_app/example.py,sha256=SUKvnKfAuAn-gDyQpVXl4pXTa1MxAcZ47kW-A33O5Z0,1872
+flask_protector_app/static/style.css,sha256=hLoXSs0HxV5Ml-HPD57RgiE2zkhslpRufosa0n7g6dg,1320
+flask_protector_app/templates/base.html,sha256=4j90dK3cG49FxjixiOHvoXobZNKgVGAAkYSDm1_GNEU,398
+flask_protector_app/templates/login.html,sha256=2bkHZqs5kkbKQMMu8KiS4S2EkUtmgW4LsJBm2NkbPcw,1033
+flask_protector_app/templates/redirect.html,sha256=wrsXfztC6mVflEJsoh4S6nrcUbhR4uUQ5-Ail6oQz0I,460
+flask_protector_app-1.1.0.dist-info/METADATA,sha256=IaywxvkdAByfmWrO3mvmlSNT89bmTBpyacpH9maJipM,598
+flask_protector_app-1.1.0.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+flask_protector_app-1.1.0.dist-info/top_level.txt,sha256=kU5oMVzB8D6924-yEkefCZnFrxXFyaFgfHkmrDwnMUE,20
+flask_protector_app-1.1.0.dist-info/RECORD,,
