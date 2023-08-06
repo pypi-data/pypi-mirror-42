@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: hgpack
+Version: 1.1.3
+Summary: HG-means clustering package
+Home-page: https://github.com/danielgribel/hg-means
+Author: Daniel Gribel
+Author-email: dgribel@inf.puc-rio.br
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: clustering optimization
+Platform: UNKNOWN
