@@ -1,0 +1,12 @@
+chemmltoolkit/__init__.py,sha256=j-KfQSGwEqwlEZQ9Pa71V2yUDQOx0vR49TmL7CI8zVs,77
+chemmltoolkit/__version__.py,sha256=STXg5Ohzq5_d8D8vJyCNkhEChXoTbNXkX3r5FjB8cw8,28
+chemmltoolkit/processing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemmltoolkit/processing/smiles.py,sha256=BPBmphXr0Nr9vsmIR8Hjia8GPayAFLRshIzYaCTEXNw,587
+chemmltoolkit/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chemmltoolkit/utils/data_utils.py,sha256=Dve_tCSsWzcT0EsJvs4gtBZjjtKMgiRNR_riTHodIy8,1736
+chemmltoolkit/utils/install_utils.py,sha256=peE-EL07S7FbWfvzLMIWLBg4VtZs9G7a3zXEgMl58S0,1800
+chemmltoolkit-0.1.0.dev82.dist-info/LICENSE,sha256=ZMrufN_Vn2fi3mfcYgdmHt04yDqW4l4M8QDm0UGthk0,1073
+chemmltoolkit-0.1.0.dev82.dist-info/METADATA,sha256=TrxiO9NiY5uMsEOEQL_vQUhX9otoI8owMydk5OdrCsI,1469
+chemmltoolkit-0.1.0.dev82.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+chemmltoolkit-0.1.0.dev82.dist-info/top_level.txt,sha256=BkL0QuSEpf0dp94f9C42zHLRQPuD-O4VX7I6xT-g7Pk,14
+chemmltoolkit-0.1.0.dev82.dist-info/RECORD,,
