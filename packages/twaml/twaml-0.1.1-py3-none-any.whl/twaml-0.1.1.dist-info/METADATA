@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: twaml
+Version: 0.1.1
+Summary: tW Analysis Machine Learning
+Home-page: https://github.com/drdavis/twaml
+Author: Doug Davis
+Author-email: ddavis@ddavis.io
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >3.6.5
+Description-Content-Type: text/markdown
+Requires-Dist: uproot (>=3.0)
+Requires-Dist: matplotlib (>=3.0)
+Requires-Dist: pandas (>=0.24.0)
+Requires-Dist: scikit-learn (>=0.20)
+Requires-Dist: tables (>=3.4)
+Requires-Dist: h5py
+
+# twaml
+
+[![builds.sr.ht status](https://builds.sr.ht/~ddavis/twaml.svg)](https://builds.sr.ht/~ddavis/twaml?)
+[![Documentation Status](https://readthedocs.org/projects/twaml/badge/?version=stable)](https://twaml.readthedocs.io/en/stable/?badge=stable)
+![PyPI](https://img.shields.io/pypi/v/twaml.svg?logoColor=blue)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/twaml.svg)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
+tW Analysis (Machine Learning) python toolkit.
+
+
