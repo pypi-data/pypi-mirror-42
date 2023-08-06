@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: ahab-py
+Version: 1.0.0
+Summary: AHAB package
+Home-page: https://github.com/RENCI-NRIG/ahab
+Author: RENCI
+Author-email: kthare10@renci.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
+
+Python scripts in this directory talk to ORCA native API. Using '-h' option with each script should provide usage information. 
+
+You can create/delete/modify/extend slices, as well as retrieve and modify properties of existing reservations.
+
+
