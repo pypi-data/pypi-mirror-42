@@ -1,0 +1,3 @@
+[console_scripts]
+celltk=celltk.caller:main
+

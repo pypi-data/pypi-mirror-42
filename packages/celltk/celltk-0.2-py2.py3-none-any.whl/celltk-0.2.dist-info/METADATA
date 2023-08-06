@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: celltk
+Version: 0.2
+Summary: live-cell image analysis
+Home-page: UNKNOWN
+License: MIT
+Author: Takamasa Kudo
+Requires-Python: >=2.7,<3.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: Cython (==0.29.6)
+Requires-Dist: PyWavelets (==1.0.1)
+Requires-Dist: SimpleITK (==1.1.0)
+Requires-Dist: backports.functools_lru_cache (>=1.5,<2.0)
+Requires-Dist: backports.weakref (>=1.0,<2.0)
+Requires-Dist: centrosome (==1.0.5)
+Requires-Dist: fast-histogram (==0.5)
+Requires-Dist: joblib (==0.10.2)
+Requires-Dist: keras (==2.0.0)
+Requires-Dist: mahotas (==1.4.1)
+Requires-Dist: matplotlib (==2.1.1)
+Requires-Dist: mock (==2.0.0)
+Requires-Dist: numba (>=0.42.1,<0.43.0)
+Requires-Dist: numpy (==1.15.4)
+Requires-Dist: opencv-python (==3.2.0.7)
+Requires-Dist: pandas (==0.18.1)
+Requires-Dist: pymorph (==0.96)
+Requires-Dist: pypng (==0.0.18)
+Requires-Dist: scikit-image (==0.14.2)
+Requires-Dist: scipy (==0.19.0)
+Requires-Dist: subprocess32 (>=3.5,<4.0)
+Requires-Dist: tensorflow (==1.8.0)
+Requires-Dist: tifffile (==2018.11.6)
