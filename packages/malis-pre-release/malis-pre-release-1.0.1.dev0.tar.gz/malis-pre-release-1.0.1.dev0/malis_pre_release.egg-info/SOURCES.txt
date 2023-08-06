@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+malis/__init__.py
+malis/malis.pyx
+malis/malis_cpp.cpp
+malis/malis_cpp.h
+malis/malis_loss.py
+malis/setup.py
+malis/test_malis.py
+malis_pre_release.egg-info/PKG-INFO
+malis_pre_release.egg-info/SOURCES.txt
+malis_pre_release.egg-info/dependency_links.txt
+malis_pre_release.egg-info/not-zip-safe
+malis_pre_release.egg-info/requires.txt
+malis_pre_release.egg-info/top_level.txt
