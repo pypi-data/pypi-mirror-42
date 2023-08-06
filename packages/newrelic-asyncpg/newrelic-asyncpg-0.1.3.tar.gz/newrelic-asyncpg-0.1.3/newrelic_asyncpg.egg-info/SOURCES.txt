@@ -1,0 +1,9 @@
+README.md
+setup.py
+newrelic_asyncpg/__init__.py
+newrelic_asyncpg.egg-info/PKG-INFO
+newrelic_asyncpg.egg-info/SOURCES.txt
+newrelic_asyncpg.egg-info/dependency_links.txt
+newrelic_asyncpg.egg-info/entry_points.txt
+newrelic_asyncpg.egg-info/requires.txt
+newrelic_asyncpg.egg-info/top_level.txt
