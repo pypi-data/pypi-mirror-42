@@ -1,0 +1,3 @@
+[console_scripts]
+flask-create-app = flask_simpleapi.cmd:create_app
+
