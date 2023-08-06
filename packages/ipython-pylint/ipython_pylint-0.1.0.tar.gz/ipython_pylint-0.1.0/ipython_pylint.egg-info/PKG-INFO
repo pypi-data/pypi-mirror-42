@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: ipython-pylint
+Version: 0.1.0
+Summary: pylint-invoker ipython magic command
+Home-page: https://github.com/HoverHell/ipython_pylint
+Author: HoverHell
+Author-email: hoverhell@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
