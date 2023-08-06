@@ -1,0 +1,10 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+deterministic_zip/__init__.py
+deterministic_zip.egg-info/PKG-INFO
+deterministic_zip.egg-info/SOURCES.txt
+deterministic_zip.egg-info/dependency_links.txt
+deterministic_zip.egg-info/entry_points.txt
+deterministic_zip.egg-info/top_level.txt
