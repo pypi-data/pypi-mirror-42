@@ -1,0 +1,27 @@
+<style>
+	.alert{padding:0.75rem 0rem !important;}
+	
+          @media only screen and (max-width:768px)  {
+            .wrapper{display: block !important;}
+            .table{table-layout:fixed !important;overflow: auto !important; font-size:15px !important;}
+            .alert{margin-bottom:0.5rem !important;}
+          }
+</style>
+<div class="{{dashboard.cssClass}}" {{dashboard._get_custom_css()|safe}}>
+<table style="width:100%;">
+<tbody>
+{% for element in dashboard.childElements %}
+  <tr class="{{element.cssClass}}" style="padding-top:0.9375rem;padding-bottom:0.9375rem;">
+  {% for i in element %}
+    <td class="wrapper" colspan={{i.size}}">
+    <div>
+      {{i.toFinalElement()|safe}}
+    </div>
+    </td>
+    {% endfor %}
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
