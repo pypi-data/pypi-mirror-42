@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: py-aiger-bv
+Version: 0.4.2
+Summary: A python library for manipulating sequential and-inverter gates.
+Home-page: http://github.com/mvcisback/py-aiger-bv
+Author: Marcell Vazquez-Chanlatte
+Author-email: marcell.vc@eecs.berkeley.edu
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: funcy
+Requires-Dist: py-aiger
+Requires-Dist: attr
+
+UNKNOWN
+
+
