@@ -1,0 +1,2 @@
+recursive-include yoqle   *.py, *.txt, *.sh
+recursive-include yoqle/system  *.py
