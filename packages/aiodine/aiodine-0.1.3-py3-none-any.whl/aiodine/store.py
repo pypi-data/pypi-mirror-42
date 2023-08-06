@@ -1,0 +1,205 @@
+import inspect
+from contextlib import contextmanager, suppress
+from functools import partial, wraps
+from importlib import import_module
+from typing import Callable, Dict, List, NamedTuple, Optional, Tuple, Union
+
+from . import scopes
+from .compat import AsyncExitStack, wrap_async
+from .datatypes import CoroutineFunction
+from .exceptions import (
+    ConsumerDeclarationError,
+    RecursiveProviderError,
+    UnknownScope,
+)
+from .providers import Provider
+
+PositionalProviders = List[Tuple[str, Provider]]
+KeywordProviders = Dict[str, Provider]
+
+# Sentinel for parameters that have no provider.
+_NO_PROVIDER = object()
+
+
+class ResolvedProviders(NamedTuple):
+
+    positional: PositionalProviders
+    keyword: KeywordProviders
+
+    def __bool__(self):
+        return bool(self.positional) or bool(self.keyword)
+
+
+class Store:
+
+    __slots__ = (
+        "providers",
+        "scope_aliases",
+        "default_scope",
+        "providers_module",
+    )
+
+    def __init__(
+        self,
+        providers_module="providerconf",
+        scope_aliases: Dict[str, str] = None,
+        default_scope: str = scopes.FUNCTION,
+    ):
+        if scope_aliases is None:
+            scope_aliases = {}
+
+        self.providers: Dict[str, Provider] = {}
+        self.scope_aliases = scope_aliases
+        self.default_scope = default_scope
+        self.providers_module = providers_module
+
+    def empty(self):
+        return not self.providers
+
+    def has_provider(self, name: str) -> bool:
+        return name in self.providers
+
+    def _get(self, name: str) -> Optional[Provider]:
+        return self.providers.get(name)
+
+    def discover_default(self):
+        with suppress(ImportError):
+            self.discover(self.providers_module)
+
+    def discover(self, *module_paths: str):
+        for module_path in module_paths:
+            import_module(module_path)
+
+    def provider(
+        self,
+        func: Callable = None,
+        scope: str = None,
+        name: str = None,
+        lazy: bool = False,
+    ) -> Provider:
+        if func is None:
+            return partial(self.provider, scope=scope, name=name, lazy=lazy)
+
+        if scope is None:
+            scope = self.default_scope
+        else:
+            scope = self.scope_aliases.get(scope, scope)
+
+        if scope not in scopes.ALL:
+            raise UnknownScope(scope)
+
+        if name is None:
+            name = func.__name__
+
+        # NOTE: save the new provider before checking for recursion,
+        # so that its dependants can detect it as a dependency.
+        prov = Provider.create(func, name=name, scope=scope, lazy=lazy)
+        self._add(prov)
+
+        self._check_for_recursive_providers(name, func)
+
+        return prov
+
+    def _add(self, prov: Provider):
+        self.providers[prov.name] = prov
+
+    def _check_for_recursive_providers(self, name: str, func: Callable):
+        for other_name, other in self._get_providers(func).items():
+            if name in self._get_providers(other.func):
+                raise RecursiveProviderError(name, other_name)
+
+    def _get_providers(self, func: Callable) -> Dict[str, Provider]:
+        providers = {
+            param: self._get(param)
+            for param in inspect.signature(func).parameters
+        }
+        return dict(filter(lambda item: item[1] is not None, providers.items()))
+
+    def _resolve_providers(self, consumer: Callable) -> ResolvedProviders:
+        positional: PositionalProviders = []
+        keyword: KeywordProviders = {}
+
+        # NOTE: This flag goes down when we process a non-provider parameter.
+        # It allows to detect provider parameters declared *after*
+        # non-provider parameters.
+        # processing_providers = True
+
+        for name, parameter in inspect.signature(consumer).parameters.items():
+            prov: Optional[Provider] = self.providers.get(name)
+
+            if prov is None:
+                positional.append((name, _NO_PROVIDER))
+                continue
+
+            if parameter.kind == inspect.Parameter.KEYWORD_ONLY:
+                keyword[name] = prov
+            else:
+                positional.append((name, prov))
+
+        return ResolvedProviders(positional=positional, keyword=keyword)
+
+    def consumer(
+        self, consumer: Union[partial, Callable, CoroutineFunction]
+    ) -> CoroutineFunction:
+        if isinstance(consumer, partial):
+            if not inspect.iscoroutinefunction(consumer.func):
+                raise ConsumerDeclarationError(
+                    "'partial' consumers must wrap an async function"
+                )
+        elif not inspect.iscoroutinefunction(consumer):
+            consumer = wrap_async(consumer)
+
+        assert (
+            isinstance(consumer, partial)
+            and inspect.iscoroutinefunction(consumer.func)
+            or inspect.iscoroutinefunction(consumer)
+        )
+
+        providers = self._resolve_providers(consumer)
+
+        if not providers:
+            return consumer
+
+        @wraps(consumer)
+        async def with_providers(*args, **kwargs):
+            async with AsyncExitStack() as stack:
+
+                async def _get_value(prov: Provider):
+                    if prov.lazy:
+                        return prov(stack)
+                    return await prov(stack)
+
+                args = list(args)
+                injected_args = []
+                for name, prov in providers.positional:
+                    if prov is _NO_PROVIDER:
+                        # No provider exists for this argument. Get it from
+                        # `kwargs` in priority, and default to `args`.
+                        if name in kwargs:
+                            injected_args.append(kwargs.pop(name))
+                            continue
+                        with suppress(IndexError):
+                            injected_args.append(args.pop())
+                        continue
+                    # A provider exists for this argument. Use it!
+                    injected_args.append(await _get_value(prov))
+
+                injected_kwargs = {
+                    name: await _get_value(prov)
+                    for name, prov in providers.keyword.items()
+                    if name in kwargs
+                }
+
+                return await consumer(*injected_args, **injected_kwargs)
+
+        return with_providers
+
+    def freeze(self):
+        """Resolve providers consumed by each provider."""
+        for prov in self.providers.values():
+            prov.func = self.consumer(prov.func)
+
+    @contextmanager
+    def exit_freeze(self):
+        yield
+        self.freeze()
