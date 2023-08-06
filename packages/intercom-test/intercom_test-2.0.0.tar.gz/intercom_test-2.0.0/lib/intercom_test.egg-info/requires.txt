@@ -1,0 +1,6 @@
+PyYAML<4,>=3.11
+pyasn1<1,>=0.4.2
+
+[cli]
+docopt-subcommands<4,>=3.0
+pick<1,>=0.6.4
