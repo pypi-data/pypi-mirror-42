@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: zeroinger
+Version: 0.0.5
+Summary: group of tools for data process
+Home-page: https://github.com/liangjz92/zeroinger-utils
+Author: liangjz
+Author-email: liangjianzeng@qq.com   
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+
+
+# zeroinger
+一些可以加速的python编码的常用轮子
+### RaceTimer
+```
+from zeroinger.time.race_timer import RaceTimer
+import time
+timer = RaceTimer.create_instance()
+time.sleep(1)
+print(timer.snapshot())
+time.sleep(1)
+print(timer.duriation())
+timer.reset()
+time.sleep(1)
+print(timer.duriation())
+pass
+#--------------------------------
+1000
+2002
+1003
+```
+
+
