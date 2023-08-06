@@ -1,0 +1,7 @@
+*.pyc
+*~
+*.idea/
+#emacs autosave
+\#*\#
+build
+pymad8.egg-info/
