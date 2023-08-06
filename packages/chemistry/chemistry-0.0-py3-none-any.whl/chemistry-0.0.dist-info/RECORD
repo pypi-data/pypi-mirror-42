@@ -1,0 +1,8 @@
+chemistry/PeriodicTable.py,sha256=NX9M5Y-4OfWjcRrlrppdpFVES028mQBQ1rZZUqn8enM,499
+chemistry/__init__.py,sha256=RxRYEii31sH5ziaE8s_t7JQWeSjXEl2pqrsuR12vteM,41
+chemistry/data_files/periodic_table.csv,sha256=vfklCD3bZ0Ey12E4_H2dpy9elIPTyk1II1I8LTE-IZY,14979
+chemistry-0.0.data/data/chemistry/data_files/periodic_table.csv,sha256=vfklCD3bZ0Ey12E4_H2dpy9elIPTyk1II1I8LTE-IZY,14979
+chemistry-0.0.dist-info/METADATA,sha256=roIjA969Tr6L8rTrnbX1nLO6V4YpJu-x5ADWIuMKRkU,588
+chemistry-0.0.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+chemistry-0.0.dist-info/top_level.txt,sha256=UFsI93GjucCZi9KNfW2CWYxupsE4iTvpcV5JFNSdQPA,10
+chemistry-0.0.dist-info/RECORD,,
