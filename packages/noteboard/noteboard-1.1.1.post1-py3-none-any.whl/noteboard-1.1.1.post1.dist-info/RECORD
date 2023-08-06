@@ -1,0 +1,11 @@
+noteboard/__init__.py,sha256=GRK10F2G7x8PgPRvDMgW60hMqI4K1vYOtoDTLX1Fxdk,793
+noteboard/__version__.py,sha256=owJ9LCGjKLYUzSqM957zCcQRD8iQBoD5OwYqMkYR1U4,24
+noteboard/cli.py,sha256=rZw9um_pzsvYXS6NqVYIwhrVx2639igfmKmD9hoYF6o,32226
+noteboard/storage.py,sha256=NkYfncRNw9dSXWkSUbQ8Fr2vzqYHydCZvqumjCVI4fM,15108
+noteboard/utils.py,sha256=w3bb6vwXW0zXow5W9CzG6Sqzachv3yGDFmyN5HSpL3c,1912
+noteboard-1.1.1.post1.dist-info/LICENSE.txt,sha256=vbn8yjakaRWN2HMgupfQEWU9xoRX5jLNWh96HsHYBMQ,1065
+noteboard-1.1.1.post1.dist-info/METADATA,sha256=aAPZWAuJuabvzICOaHnU2L6TlNVh8nFj8LdosgK-pDs,1339
+noteboard-1.1.1.post1.dist-info/WHEEL,sha256=_NOXIqFgOaYmlm9RJLPQZ13BJuEIrp5jx5ptRD5uh3Y,92
+noteboard-1.1.1.post1.dist-info/entry_points.txt,sha256=_Ay0LnBuQPP0JGFO0z0-emNlEURefW1gEsNYlAaZbLg,46
+noteboard-1.1.1.post1.dist-info/top_level.txt,sha256=6WWbRqFITezoic4ac_AH_-BMouzQOHcz7eTPj30h1Lo,10
+noteboard-1.1.1.post1.dist-info/RECORD,,
