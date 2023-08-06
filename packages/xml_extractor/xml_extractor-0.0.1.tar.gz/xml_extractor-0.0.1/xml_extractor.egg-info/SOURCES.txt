@@ -1,0 +1,9 @@
+README.md
+setup.py
+xml_extractor/Main.py
+xml_extractor/__init__.py
+xml_extractor/constants.py
+xml_extractor.egg-info/PKG-INFO
+xml_extractor.egg-info/SOURCES.txt
+xml_extractor.egg-info/dependency_links.txt
+xml_extractor.egg-info/top_level.txt
