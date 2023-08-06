@@ -1,0 +1,8 @@
+README.md
+setup.py
+logeasy/__init__.py
+logeasy/handlers.py
+logeasy.egg-info/PKG-INFO
+logeasy.egg-info/SOURCES.txt
+logeasy.egg-info/dependency_links.txt
+logeasy.egg-info/top_level.txt
