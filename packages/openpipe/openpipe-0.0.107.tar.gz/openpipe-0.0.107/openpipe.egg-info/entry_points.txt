@@ -1,0 +1,3 @@
+[console_scripts]
+openpipe = openpipe.__main__:main
+
