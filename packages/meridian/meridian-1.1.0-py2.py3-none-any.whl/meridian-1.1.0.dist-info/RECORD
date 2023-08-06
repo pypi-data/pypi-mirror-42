@@ -1,0 +1,12 @@
+meridian/__init__.py,sha256=f9RSAqC-qgHkVcr0s3EJy-_ukCk0sD0UHz-OWAGrQKM,115
+meridian/__version__.py,sha256=60T5gCo1-ZMpCSFmXGSi2Lzl3X7EgEUuTDQ7ahGi1t4,62
+meridian/spatialdataset.py,sha256=-sZlgfwsIXKvVF6j4ThAs-hAwYlEhi26MJzDzQuG5UY,4354
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/conftest.py,sha256=y5JenqwyXihPRBfgWEqeV-PtjukNHNosUhXpDewvCnQ,2227
+test/test_spatialdata.py,sha256=NjruxZXFP1aMGmwVOLTw6vOkDJ0PURcEZ-vAuSgiooA,1008
+test/test_spatialdataset.py,sha256=Y66ZyIDA8_gTtYTDU1DaktO-TowgB58vJDEhjA24Rks,909
+meridian-1.1.0.dist-info/LICENSE,sha256=sRAU1acwueI-pw_A-McDCY6wB7uq-0fnP11oLA3jgLY,1049
+meridian-1.1.0.dist-info/METADATA,sha256=VamgjVSQkMrCLUnVunpHN7MsheU96PEr2NOtc9r6XHY,5673
+meridian-1.1.0.dist-info/WHEEL,sha256=CihQvCnsGZQBGAHLEUMf0IdA4fRduS_NBUTMgCTtvPM,110
+meridian-1.1.0.dist-info/top_level.txt,sha256=Q2SG5QgdEyXwVNek3wrj_52WKjluocWQiGJ9ZwjpXtM,14
+meridian-1.1.0.dist-info/RECORD,,
