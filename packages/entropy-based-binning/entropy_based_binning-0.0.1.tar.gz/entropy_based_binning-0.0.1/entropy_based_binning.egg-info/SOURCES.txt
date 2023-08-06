@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+entropy_based_binning/__init__.py
+entropy_based_binning/_main.py
+entropy_based_binning.egg-info/PKG-INFO
+entropy_based_binning.egg-info/SOURCES.txt
+entropy_based_binning.egg-info/dependency_links.txt
+entropy_based_binning.egg-info/requires.txt
+entropy_based_binning.egg-info/top_level.txt
