@@ -1,0 +1,39 @@
+- job:
+    name: os-vif-ovs
+    parent: legacy-dsvm-base
+    run: playbooks/os-vif-ovs/run.yaml
+    post-run: playbooks/os-vif-ovs/post.yaml
+    timeout: 7800
+    required-projects:
+      - openstack-infra/devstack-gate
+      - openstack/nova
+      - openstack/os-vif
+      - openstack/tempest
+
+- job:
+    name: openstack-tox-functional-ovs-with-sudo
+    parent: openstack-tox-functional-with-sudo
+    required-projects:
+      - git.openstack.org/openstack-dev/devstack
+    pre-run: playbooks/openstack-tox-functional-ovs-with-sudo/pre.yaml
+    timeout: 600
+
+- project:
+    templates:
+      - check-requirements
+      - openstack-lower-constraints-jobs
+      - openstack-python-jobs
+      - openstack-python36-jobs
+      - openstack-python37-jobs
+      - publish-openstack-docs-pti
+      - release-notes-jobs-python3
+    check:
+      jobs:
+        - kuryr-kubernetes-tempest-daemon-octavia:
+            voting: false
+        - openstack-tox-functional-ovs-with-sudo
+        - os-vif-ovs
+    gate:
+      jobs:
+        - openstack-tox-functional-ovs-with-sudo
+        - os-vif-ovs
