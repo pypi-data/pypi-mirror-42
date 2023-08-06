@@ -1,0 +1,15 @@
+[console_scripts]
+cisbuildapi_c = cis_interface.command_line:rebuild_c_api
+ciscc = cis_interface.command_line:ciscc
+cisccflags = cis_interface.command_line:cc_flags
+cisconfig = cis_interface.command_line:update_config
+cisldflags = cis_interface.command_line:ld_flags
+cisrun = cis_interface.command_line:cisrun
+cisschema = cis_interface.command_line:regen_schema
+cistest = cis_interface:run_tsts
+cistime_comm = cis_interface.command_line:cistime_comm
+cistime_lang = cis_interface.command_line:cistime_lang
+cistime_os = cis_interface.command_line:cistime_os
+cistime_py = cis_interface.command_line:cistime_py
+cisvalidate = cis_interface.command_line:validate_yaml
+
