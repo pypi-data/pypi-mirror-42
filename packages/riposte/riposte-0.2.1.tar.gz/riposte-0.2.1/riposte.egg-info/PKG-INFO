@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: riposte
+Version: 0.2.1
+Summary: REPL for humans
+Home-page: https://github.com/fwkz/riposte
+Author: Mariusz Kupidura
+Author-email: f4wkes@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Shells
+Requires-Python: >=3.6
+Provides-Extra: dev
