@@ -1,0 +1,4 @@
+[console_scripts]
+encrypt-pwd = linkInventory.configs.config_cli:main
+linv-start = linkInventory.app_run:main
+
