@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: aiowebsocket
+Version: 1.0.0.dev-1
+Summary: Asynchronous WebSocket Client .
+Home-page: https://github.com/asyncins/aiowebsocket
+Author: AsyncIns
+Author-email: asyncins@aliyun.com
+License: Apache 2.0
+Description: See https://github.com/asyncins/aiowebsocket
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
