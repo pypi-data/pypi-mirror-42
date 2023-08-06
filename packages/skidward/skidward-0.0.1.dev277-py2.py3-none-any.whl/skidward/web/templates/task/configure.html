@@ -1,0 +1,34 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).on('click', '.repeat', function (e) {
+            e.preventDefault();
+            $('.repeatable').parent('div.parent').append($('.parent').children('div:first').html());
+            });
+    </script>
+
+    <h1>Add Configuration for {{ name }} </h1><br>
+
+    {% from "macro_render_field.html" import render_field %}
+
+    <form method="POST">
+        <div class="parent">
+            <div class="repeatable">
+                {{ form.hidden_tag() }}
+                {{ render_field(form.key) }}
+                {{ render_field(form.value) }}<br><br>
+            </div>
+        </div>
+
+        <button type="button" id="add" class="btn btn-primary repeat">Add Key</button><br><br>
+
+        <!--<label for="task_name">Add Name to this Task </label><input type="text" name="task_name">-->
+        <!--<br><br>-->
+        <input type="submit" class="btn btn-success">
+        <a href='/admin/task'><button type="button" class="btn btn-danger">Cancel</button></a>
+    </form>
+
+{% endblock %}
