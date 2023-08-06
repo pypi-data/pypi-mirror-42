@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: flopth
+Version: 0.0.1
+Summary: A program to calculate FLOPs of Pytorch models
+Home-page: https://github.com/vra/flopth
+Author: Yunfeng Wang
+Author-email: wyf.brz@gmail.com
+License: MIT Licence
+Description: flopth is a program to calculate the FLOPs of a Pytorch model, with cli tool and APIs. Support multiple kinds of input, support CPU and GPU
+Keywords: flopth,Pytorch,Flops,Deep-learning
+Platform: any
