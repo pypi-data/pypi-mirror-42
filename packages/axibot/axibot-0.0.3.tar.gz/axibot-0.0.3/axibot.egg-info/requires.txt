@@ -1,0 +1,11 @@
+six
+pyserial
+svg.path<3.0
+colormath
+
+[debug]
+matplotlib
+
+[server]
+aiohttp
+aiohttp_mako
