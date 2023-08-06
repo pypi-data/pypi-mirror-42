@@ -1,0 +1,9 @@
+README.md
+setup.py
+serflag/__init__.py
+serflag/serflag.py
+serflag/serflagmeta.py
+serflag.egg-info/PKG-INFO
+serflag.egg-info/SOURCES.txt
+serflag.egg-info/dependency_links.txt
+serflag.egg-info/top_level.txt
