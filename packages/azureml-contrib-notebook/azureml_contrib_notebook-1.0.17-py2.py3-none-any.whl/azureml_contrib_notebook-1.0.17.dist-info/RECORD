@@ -1,0 +1,15 @@
+azureml/__init__.py,sha256=n0xtZ3iWcoVg5Qognsb7InYAUVAK8s3iaVeHB5GOaNA,251
+azureml/contrib/__init__.py,sha256=n0xtZ3iWcoVg5Qognsb7InYAUVAK8s3iaVeHB5GOaNA,251
+azureml/contrib/notebook/__init__.py,sha256=ETMnOPjzYDOJeOW-OPihIl6eD-5_eOgBSzftf1sVv0c,695
+azureml/contrib/notebook/extension.py,sha256=sbJwFErmln-ZGne1O_2fKbsYJNyB1z29pR-UG4mhxmI,1019
+azureml/contrib/notebook/_scripts/kernel.js,sha256=jeHFxEu-JhDKaWGznA1GmsMC2IZlbr4y8fePAda4z4w,427
+azureml/contrib/notebook/run/__init__.py,sha256=5v8bDvh2LVkBsx0KFxU45e46lJYSpKDNWqb3TGa379I,3497
+azureml_contrib_notebook-1.0.17.data/data/etc/jupyter/nbconfig/notebook.d/azureml_contrib_notebook.json,sha256=EmKP_ep8W4CAK400S8Nah1HdAMvV8ektL2xIgr3AqXw,63
+azureml_contrib_notebook-1.0.17.data/data/share/jupyter/nbextensions/azureml/kernel.js,sha256=jeHFxEu-JhDKaWGznA1GmsMC2IZlbr4y8fePAda4z4w,427
+azureml_contrib_notebook-1.0.17.dist-info/DESCRIPTION.rst,sha256=VFw4sJIt4Zc0-__eYnksN8Ku9qMhbPpHJEkXMWUiD30,4
+azureml_contrib_notebook-1.0.17.dist-info/LICENSE.txt,sha256=FOfkEEz4uS7g278F9Rq12rqKF3lLyBUZhVpLetuZrTg,1021
+azureml_contrib_notebook-1.0.17.dist-info/METADATA,sha256=pGt0zIUmrkvyWx4gUrar-eGJO86QIhSPPvV7Toj31XM,918
+azureml_contrib_notebook-1.0.17.dist-info/RECORD,,
+azureml_contrib_notebook-1.0.17.dist-info/WHEEL,sha256=BTHHj6QhsHpWhRUrxioIvCAgjx81u-a8gkPTO6bi_A0,116
+azureml_contrib_notebook-1.0.17.dist-info/metadata.json,sha256=l8wS5twBBSdEvQHTo1BrlEE8W0YnOrHPmonzVhTRY9w,1075
+azureml_contrib_notebook-1.0.17.dist-info/top_level.txt,sha256=ZOeEa0TAXo6i5wOjwBoqfIGEuxOcKuscGgNSpizqREY,8
