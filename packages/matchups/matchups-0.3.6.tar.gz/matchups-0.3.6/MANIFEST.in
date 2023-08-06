@@ -1,0 +1,2 @@
+include matchups/schema.json
+include matchups/defaults.json
