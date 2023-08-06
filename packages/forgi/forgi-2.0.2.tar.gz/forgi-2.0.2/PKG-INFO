@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: forgi
+Version: 2.0.2
+Summary: RNA Graph Library
+Home-page: http://www.tbi.univie.ac.at/~pkerp/forgi/
+Author: Bernhard Thiel, Peter Kerpedjiev
+Author-email: thiel@tbi.univie.ac.at
+License: GNU GPL 3.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Provides-Extra: development
+Provides-Extra: all
+Provides-Extra: pdbechem
+Provides-Extra: forgi.visual
+Provides-Extra: classification
