@@ -1,0 +1,10 @@
+sdkboil/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sdkboil/action.py,sha256=wNh34xYEsLmDYa2OdVyGAdpIlM9-YpaG0x2Ez6Q2_yY,20657
+sdkboil/apicontext.py,sha256=O26igoVptd6GwG5GuqxnQwer9zbCRV65lAbQzz1liKk,974
+sdkboil/exception.py,sha256=GjCfI9lwUl9I_CEdKKWb9ptXYoo6uFX0JVHSNmR7YTI,725
+sdkboil/object.py,sha256=ILZdWlHHD5gD0y-49UHl4g5Px8CdZhSWBOQWXxYTxr0,765
+sdkboil/test.py,sha256=oisMs-acZGoUDSHKMSb_ov6tZg6cKE-r0nGSAl89lS4,8643
+moveax_sdk_boilerplate-1.0.0.dist-info/METADATA,sha256=qM2Ppr-OfwJ6eRG-MCIaNfvR1Z_vVTjid0YwmyIKeg8,390
+moveax_sdk_boilerplate-1.0.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+moveax_sdk_boilerplate-1.0.0.dist-info/top_level.txt,sha256=lTDYUSkKwJetG3Vk3QRcPvW8CLYPcLaBUXcukjiINic,8
+moveax_sdk_boilerplate-1.0.0.dist-info/RECORD,,
