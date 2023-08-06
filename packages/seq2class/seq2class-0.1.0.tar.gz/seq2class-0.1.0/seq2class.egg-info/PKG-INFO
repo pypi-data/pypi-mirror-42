@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: seq2class
+Version: 0.1.0
+Summary: seq2class is a solution for text classification. 
+Home-page: UNKNOWN
+Author: Pranjal-Vijay
+Author-email: pranjalvijaykota@gmail.com
+License: UNKNOWN
+Description: text classification using lstm is made easy via seq2class package.This package is build by harnesing the capabilities of  LSTM(Long short term Memory) model.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
