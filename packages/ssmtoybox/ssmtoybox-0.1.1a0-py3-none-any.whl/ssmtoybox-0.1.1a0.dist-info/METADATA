@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: ssmtoybox
+Version: 0.1.1a0
+Summary: Local filters based on Bayesian quadrature
+Home-page: https://github.com/jacobnzw/SSMToybox/tree/v0.1.1-alpha
+Author: Jakub Prüher
+Author-email: jacobnzw@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/markdown
+
+# SSM Toybox
+Python 3 implementation of the nonlinear sigma-point filters based on Bayesian quadrature, such as
+
+* Gaussian Process Quadrature Kalman Filter [1]
+* Student's t-Process Quadrature Kalman Filter [2]
+
+Included are also the well-known classical nonlinear Kalman filters such as:
+
+* Extended Kalman Filter
+* Unscented Kalman Filter
+* Cubature Kalman Filter
+* Gauss-Hermite Kalman Filter
+
+
+### Build documentation
+```
+cd docs
+sphinx-apidoc -o ./ ../ssmtoybox ../ssmtoybox/tests
+make html
+```
+
+
+### Why toybox?
+Because 'toolbox' sounds too serious :-).
+
+
+### References
+[1]: [[DOI](http://dx.doi.org/10.1109/TAC.2017.2774444) | [PDF](https://arxiv.org/abs/1701.01356)] 
+PrÃ¼her, J. and Straka, O. Gaussian Process Quadrature Moment Transform, IEEE Transactions on Automatic Control, 2017
+
+[2]: [[DOI](http://dx.doi.org/10.23919/ICIF.2017.8009742) | [PDF](https://arxiv.org/abs/1703.05189)] 
+PrÃ¼her, J.; Tronarp, F.; Karvonen, T.; SÃ¤rkkÃ¤, S. and Straka, O. Student-t Process Quadratures for Filtering of 
+Non-linear Systems with Heavy-tailed Noise, 20th International Conference on Information Fusion (Fusion), 1-8, 2017 
+
+
+
