@@ -1,0 +1,11 @@
+KaiRoS/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+KaiRoS/reference.py,sha256=VcPvkqWk4FPMSxKpuP4dHHGDagbeXsaLjYAUJAO7kQ8,746
+KaiRoS/terminal.py,sha256=t3pvJBaMFUGW6vPGAYe8EAZBBi7Z5F-EW5nLMd-K4jU,5535
+KaiRoS/utils.py,sha256=MJ_XaozL4JcR9G-7_bcPN0Lx4sk1ink53IpIN31JD7Q,2037
+KaiRoS/weather.py,sha256=byS-3J_wJhqr4k4S61RyDe2byxNgGJRhhdmERyIWLug,1420
+wkairos-0.0.0.data/scripts/kairos,sha256=KHGjX2unhmVPxQhAzN4H2-eDuKcpXxDfwkUHL6tQtjs,800
+wkairos-0.0.0.dist-info/LICENSE,sha256=C7ZNYuszYWPeRPjK9bcl5EggkLG8_PrgWUSHGdBBrHA,1062
+wkairos-0.0.0.dist-info/METADATA,sha256=SwIbdtNEvBx_1C2cmcUQn6Co0JYHUv6ebLgHFvOC2HA,2075
+wkairos-0.0.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+wkairos-0.0.0.dist-info/top_level.txt,sha256=ticg02R8Wf6XO4eVWJ16Vc_-IqqsGeEL7lrWU_VnM8I,7
+wkairos-0.0.0.dist-info/RECORD,,
