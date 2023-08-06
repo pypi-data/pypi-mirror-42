@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: SuperQuant
+Version: 0.0.18.dev0
+Summary: SuperQuant:Quantitative Financial Strategy Framework
+Home-page: https://github.com/Fengbrain/SuperQuant
+Author: Junfeng Li
+Author-email: 617644591@qq.com
+License: MIT
+Description: tools
+Keywords: SuperQuant,quant,finance,Backtest,Framework
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
