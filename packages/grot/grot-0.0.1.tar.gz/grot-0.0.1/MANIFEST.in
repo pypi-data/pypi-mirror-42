@@ -1,0 +1,8 @@
+include *.md
+include *.txt
+include CHANGELOG
+include LICENSE
+include tox.ini
+recursive-include grot *.py
+recursive-include tests *.py
+recursive-exclude tests *.png example_*
