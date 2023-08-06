@@ -1,0 +1,11 @@
+setup.py
+siuba/__init__.py
+siuba/meta_hook.py
+siuba/siu.py
+siuba/sql.py
+siuba/tidy.py
+siuba.egg-info/PKG-INFO
+siuba.egg-info/SOURCES.txt
+siuba.egg-info/dependency_links.txt
+siuba.egg-info/requires.txt
+siuba.egg-info/top_level.txt
