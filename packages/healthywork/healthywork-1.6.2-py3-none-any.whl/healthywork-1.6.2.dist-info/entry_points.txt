@@ -1,0 +1,3 @@
+[console_scripts]
+healthywork = healthywork.app:cli
+
