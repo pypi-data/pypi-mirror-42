@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: tj
+Version: 2.8.5
+Summary: A simple but powerful module that will provide you many useful methods.
+Home-page: UNKNOWN
+Author: Tushar Jain
+Author-email: tusharlock10@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: autopy
+Requires-Dist: pyAesCrypt
+Requires-Dist: cryptography
+Requires-Dist: forex-python
+Requires-Dist: colorama
+
+A simple but powerful module that will provide you many useful methods.
+
+
