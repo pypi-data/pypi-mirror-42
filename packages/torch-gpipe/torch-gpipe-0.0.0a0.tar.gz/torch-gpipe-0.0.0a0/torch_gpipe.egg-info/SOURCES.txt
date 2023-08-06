@@ -1,0 +1,7 @@
+setup.py
+torch_gpipe.py
+torch_gpipe.egg-info/PKG-INFO
+torch_gpipe.egg-info/SOURCES.txt
+torch_gpipe.egg-info/dependency_links.txt
+torch_gpipe.egg-info/not-zip-safe
+torch_gpipe.egg-info/top_level.txt
