@@ -1,0 +1,33 @@
+numpy
+astropy<4.*,>=3.1
+matplotlib!=3.0.1,>=2.0
+jplephem
+scipy>=1.0
+beautifulsoup4>=4.5.3
+requests
+pandas
+plotly<4.*,>=3.6
+astroquery>=0.3.8
+
+[:implementation_name == "cpython"]
+numba>=0.39
+
+[dev]
+coverage
+isort
+pytest>=3.2
+pytest-cov<2.6.0
+pycodestyle
+sphinx
+nbsphinx
+ipython>=5.0
+jupyter-client
+ipykernel
+ipywidgets>=7.0
+
+[dev:python_version >= "3.6"]
+black
+
+[jupyter]
+notebook
+ipywidgets>=7.0
