@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: pysmarty
+Version: 0.3
+Summary: Python API for Salda Smarty Modbus TCP
+Home-page: https://github.com/z0mbieprocess/pysmarty
+Author: Theo Nicolau
+Author-email: theo.nicolau@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pymodbus (==2.2.0rc1)
+
+# pysmarty
+Python API for  Salda Smarty 2X/3X/4X P/V Ventilation Unit. This is used in [Home Assistant](https://home-assistant.io).
+
+
+## Install
+
+```bash
+pip install pysmarty
+```
+
+
