@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: confmap
+Version: 1.0.7
+Summary: Conformal mapping on images and videos
+Home-page: https://fcoulombeau.frama.io/git/transconf/
+Author: F.Coulombeau 2019
+Author-email: coulombeau@gmail.com
+License: MIT License
+Requires-Dist: numpy
+Requires-Dist: moviepy
+Requires-Dist: matplotlib (<3.0,>=2.0.0); python_version >= "3.4"
+Provides-Extra: doc
+Requires-Dist: numpydoc (<1.0,>=0.6.0); extra == 'doc'
+Requires-Dist: sphinx-rtd-theme (<1.0,>=0.1.10b0); extra == 'doc'
+Requires-Dist: Sphinx (<2.0,>=1.5.2); extra == 'doc'
+Provides-Extra: optional
+Provides-Extra: test
+Requires-Dist: pytest (<4.4,>=3.0.0); extra == 'test'
+
+ConformalMapping
+
+

@@ -1,0 +1,17 @@
+confmap/__init__.py,sha256=o7TnMGlsEiNV3qe2qgEjnYtBG9TSxZRZovcKDpwSbqw,132
+confmap/functions.py,sha256=a1AOPwa_q0lGiKxSrHeC6f3UYYghzbrRpGWIFlJGWcg,8834
+confmap/hyperbolic.py,sha256=AakZpFb0LJxCV6kC08veTG2QIJoAamBaxybFnYoFiwY,10663
+confmap/imagetrans.py,sha256=wxqQH8DoYFga28MEpM83dFDSdyeNwVhDp4li9Amj4f0,39099
+confmap/mask.py,sha256=4HV1_JM8wx5rslh-HmQB0LmXYhdSyMMEB3bkw_uHubo,2632
+confmap/version.py,sha256=98rTj2jvgnCZhTIeHpbml7e2xuhIqt_9BJNSWkWEQb8,21
+confmap/videotrans.py,sha256=CblZBrmZ8LWXn5x8E-jmm-q1LrDmtMLXNwXmLdxVfSU,2183
+confmap-1.0.7.dist-info/DESCRIPTION.rst,sha256=nUzhvfI_ZZSiV9t99AJNetErlt8cj9_gQS6cjZlATIE,19
+confmap-1.0.7.dist-info/METADATA,sha256=Yx1E2NkaG9H4FJN7xpJvNCTZCDvXgUbmaLK-lzET1vQ,660
+confmap-1.0.7.dist-info/RECORD,,
+confmap-1.0.7.dist-info/WHEEL,sha256=Vlaj2XNMTTJ893zWX-JvKeZUIs7q5E7d7Gise2Vouzc,97
+confmap-1.0.7.dist-info/metadata.json,sha256=WEwZUXIEF0EEFfy1REgEo4tymSWlEVmMz8S_yd2OJ4o,863
+confmap-1.0.7.dist-info/top_level.txt,sha256=8oFVKyUw9PhsRJdbIrxz597xgD9ShqkeWjf8nCo81-g,14
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_tilesAndTransform.py,sha256=awGZNSY9GtvbQ9U-kR6ojF1P_DxSCN_8WhPFlTL0TP4,1266
+tests/test_tiling.py,sha256=hZAOrw-bEnEQEC_uynpQOkjA24gmWTcsNV5rUmL0300,582
+tests/test_transform.py,sha256=LZX5qVHyG9sL2ixGqDjnlLOuRvLGQcArqFJoWgtpYao,605
