@@ -1,0 +1,10 @@
+breadboard/__init__.py,sha256=eosMvvAFErRJ-XEee1AeZT4MS3URuedw5UcnjgPoa9M,90
+breadboard/auth.py,sha256=gfAcpPFpzlaJvfaVwiwx0rOx45fKsZr34WgDUQUpTTU,231
+breadboard/client.py,sha256=blXDxX1J9Mzzq3ncQ_jnIllnaJnk4rT3bjB0wiZ1rOU,1311
+breadboard/mixins/ImageMixins.py,sha256=8vQ5iA_0K17ZxN2liHv7xquws_72_9sFFucN7ptMYX8,4710
+breadboard/mixins/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+breadboard-0.1.0.dist-info/LICENSE,sha256=fqVNdUSdiHkRhnV6EzPNiKzgXq5gLqZ1W14mmBigvro,1076
+breadboard-0.1.0.dist-info/METADATA,sha256=WxjHY11LCISK1VV_0XZFAyIV8kW-btss8eWpYexOpi4,1469
+breadboard-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+breadboard-0.1.0.dist-info/top_level.txt,sha256=f-4IqLc5JeMiA-jeSYusaw_YK3jsm7ibosUvubOxPjg,11
+breadboard-0.1.0.dist-info/RECORD,,
