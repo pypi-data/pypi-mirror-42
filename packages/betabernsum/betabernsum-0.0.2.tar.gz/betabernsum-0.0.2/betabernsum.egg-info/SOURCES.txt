@@ -1,0 +1,9 @@
+README.md
+setup.py
+betabernsum.egg-info/PKG-INFO
+betabernsum.egg-info/SOURCES.txt
+betabernsum.egg-info/dependency_links.txt
+betabernsum.egg-info/requires.txt
+betabernsum.egg-info/top_level.txt
+jsontab/__init__.py
+jsontab/jsontab.py
