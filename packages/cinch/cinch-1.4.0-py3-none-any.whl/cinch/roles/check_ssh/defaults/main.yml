@@ -1,0 +1,2 @@
+ssh_timeout: 600
+ssh_retry_delay: 6
