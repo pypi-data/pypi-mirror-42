@@ -1,0 +1,11 @@
+README.md
+setup.py
+chemistry/PeriodicTable.py
+chemistry/__init__.py
+chemistry.egg-info/PKG-INFO
+chemistry.egg-info/SOURCES.txt
+chemistry.egg-info/dependency_links.txt
+chemistry.egg-info/not-zip-safe
+chemistry.egg-info/requires.txt
+chemistry.egg-info/top_level.txt
+chemistry/data_files/periodic_table.csv
