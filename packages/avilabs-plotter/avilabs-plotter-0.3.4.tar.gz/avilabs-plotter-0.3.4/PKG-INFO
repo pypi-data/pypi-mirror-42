@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: avilabs-plotter
+Version: 0.3.4
+Summary: Python plotting APIs
+Home-page: https://bitbucket.org/avilay/plotter
+Author: Avilay Parekh
+Author-email: avilay@gmail.com
+License: MIT
+Description: 
+        # Plotter
+        A sane plotting and charting API with pluggable backends.
+        
+        # Quickstart
+        ```python
+        import plotter as pltr
+        pltr.set_backend(pltr.MatplotlibBackend)
+        
+        nodes = ['master', 'worker1', 'worker2']
+        cpus = [0.1, 0.6, 0.4]
+        cpusbar = pltr.VerticalBar(categories=nodes, values=cpus)
+        pltr.show_plot('CPU Performance', cpusbar)
+        ```
+        
+        For more details see the [Homepage](http://bitbucket.org/avilay/plotter)
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
