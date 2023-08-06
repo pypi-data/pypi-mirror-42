@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+chemviewer/__init__.py
+chemviewer/core.py
+chemviewer/run.py
+chemviewer/standalone.py
+chemviewer/webserver.py
+chemviewer.egg-info/PKG-INFO
+chemviewer.egg-info/SOURCES.txt
+chemviewer.egg-info/dependency_links.txt
+chemviewer.egg-info/entry_points.txt
+chemviewer.egg-info/top_level.txt
+chemviewer/static/css.css
+chemviewer/static/main.js
+chemviewer/templates/index.html
+scripts/chemviewer
