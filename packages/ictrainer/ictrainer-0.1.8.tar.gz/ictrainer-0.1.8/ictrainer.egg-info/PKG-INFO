@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: ictrainer
+Version: 0.1.8
+Summary: cli tool for training your own image classifier with one line command!
+Home-page: https://github.com/koji/ictrainer
+Author: koji kanao
+Author-email: koji.kanao@nyu.edu
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
