@@ -1,0 +1,14 @@
+.
+MANIFEST.in
+build_mmh3cffi.py
+csrc
+setup.py
+/
+csrc/mmh3.c
+csrc/pstdint.h
+mmh3cffi/__init__.py
+mmh3cffi.egg-info/PKG-INFO
+mmh3cffi.egg-info/SOURCES.txt
+mmh3cffi.egg-info/dependency_links.txt
+mmh3cffi.egg-info/requires.txt
+mmh3cffi.egg-info/top_level.txt
