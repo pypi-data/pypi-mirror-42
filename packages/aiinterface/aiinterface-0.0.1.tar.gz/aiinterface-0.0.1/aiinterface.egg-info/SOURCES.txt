@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+otom.py
+otomasyondb.py
+setup.py
+svchash3.pkl
+yapayzekacore.py
+aiinterface.egg-info/PKG-INFO
+aiinterface.egg-info/SOURCES.txt
+aiinterface.egg-info/dependency_links.txt
+aiinterface.egg-info/top_level.txt
