@@ -1,0 +1,14 @@
+README.rst
+setup.py
+seqgentools/__init__.py
+seqgentools/sequence.py
+seqgentools.egg-info/PKG-INFO
+seqgentools.egg-info/SOURCES.txt
+seqgentools.egg-info/dependency_links.txt
+seqgentools.egg-info/top_level.txt
+seqgentools/algorithms/__init__.py
+seqgentools/algorithms/combinatorics.py
+seqgentools/algorithms/hssgen.py
+tests/__init__.py
+tests/test_algorithms.py
+tests/test_primitives.py
