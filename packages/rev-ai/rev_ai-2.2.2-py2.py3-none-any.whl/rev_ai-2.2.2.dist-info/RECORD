@@ -1,0 +1,13 @@
+__init__.py,sha256=_srmMb9VidaAZFCIQmtQbyXB6LxPYEpM8sdbl9UYWUE,65
+rev_ai/__init__.py,sha256=TlWK7ELlwxdXSeZMGngznNgCIEA-HgO1e4L5RwUsiU4,139
+rev_ai/apiclient.py,sha256=UGaKz5kM4heTeXPZddPbsmu6o1N0tIU2IWhAVdT04BE,7117
+rev_ai/models/__init__.py,sha256=g4uG9uVqSEDYfFzxQUtxz2m9baW5tV6JIf-eCxgIrJ0,177
+rev_ai/models/account.py,sha256=tmLFB--JgfPFffyKGOOdBf7syG-fTvWu3MnX1nyqvNE,717
+rev_ai/models/job.py,sha256=vbRhdXi0VO23kIy1rFGJMLJkgE_1CrNoxY9eb6xilAU,2340
+rev_ai/models/job_status.py,sha256=TmyKnpNg_VH0Zuet4ROUaBpsrKhkxV_NU9uiJ6lPAFE,242
+rev_ai/models/transcript.py,sha256=h_sGoTlk989UhLdT72ktYOa12_-OAX0Yt7_PAowGo3A,2520
+rev_ai-2.2.2.dist-info/LICENSE,sha256=t2okHx6UCyoIq6pHBvccCpOCOqnD7HLrClB6yP6eMR8,1070
+rev_ai-2.2.2.dist-info/METADATA,sha256=G1-QYM7teLniY9PsuMdIE9dMW3Lv1894KEOppvv5bSk,3717
+rev_ai-2.2.2.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+rev_ai-2.2.2.dist-info/top_level.txt,sha256=p2N17YqT0B_Pcvez81XDzUiOIx8l07VL2plGjM5qwpg,16
+rev_ai-2.2.2.dist-info/RECORD,,
