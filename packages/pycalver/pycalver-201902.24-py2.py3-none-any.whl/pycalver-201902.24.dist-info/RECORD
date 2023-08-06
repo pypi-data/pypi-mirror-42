@@ -1,0 +1,16 @@
+pycalver/__init__.py,sha256=NplSuE3qT-4HqQam_DekK57ChizfmzXXTNWCydAp9no,433
+pycalver/__main__.py,sha256=NtgQK_wVsxKgIBxAovHbCepQaZUy4I74Vave6I8qlEU,9894
+pycalver/config.py,sha256=Bm7jvq9YMUFbKDlM4lBOitj3mS9IjUtA1IhsESrJclk,12152
+pycalver/lex_id.py,sha256=G1BH9ZJQVfCUUf2Xy9GofOheKmSVu3Q4ruY2ZWu5_0E,4225
+pycalver/parse.py,sha256=p3g6HQhhfwAT7jf_L-qXhRJ4hYwMb0tIodGEKnLay1I,1647
+pycalver/patterns.py,sha256=kJqHbwQwbbObHMVX8-LvLApmjFMu69z0jY2EoQZ_zcc,5029
+pycalver/rewrite.py,sha256=wFUvJtWLiuO09MckPgXSzwd-HlTHnuo6wLHXsg_vvIQ,6014
+pycalver/vcs.py,sha256=CrBCsRcH2x4Ejog_4endCdtQ6nCYTjYBXAXoXR2p2bY,5098
+pycalver/version.py,sha256=CXgOpMLBZeHBcv0pknuYRgFLbPJIdax-rEoteqeTf_k,13378
+pycalver-201902.24.dist-info/LICENSE,sha256=m2zsDsdREnudTxbsOSgzCCf2o_QdzcVUuZBim1Q_QvE,1123
+pycalver-201902.24.dist-info/METADATA,sha256=raD54J7_ZCRiwBlrng7Qw7isl4cP5qTK7lZgsTCZQls,34054
+pycalver-201902.24.dist-info/WHEEL,sha256=_wJFdOYk7i3xxT8ElOkUJvOdOvfNGbR9g-bf6UQT6sU,110
+pycalver-201902.24.dist-info/entry_points.txt,sha256=FVXJLklfvHm-1tLSDjgDMtjl2VFG1NAeuIhvGClibu8,70
+pycalver-201902.24.dist-info/top_level.txt,sha256=bWGHw0Ovq18zJkv3QdyBkouRzM1z2cmRulBvqYJDmYg,9
+pycalver-201902.24.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+pycalver-201902.24.dist-info/RECORD,,
