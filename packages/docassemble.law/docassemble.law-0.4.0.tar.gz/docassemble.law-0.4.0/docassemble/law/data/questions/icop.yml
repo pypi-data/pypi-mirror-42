@@ -1,0 +1,1637 @@
+---
+modules:
+  - docassemble.base.util
+---
+mandatory: True
+code: |
+  define("Today", today())
+---
+initial: True
+code: |
+  import datetime
+  import types
+  class FalseBoolean(object):
+    def primitive_value(self):
+      return False
+    def is_undefined(self):
+      return False
+    def __nonzero__(self):
+      return False
+    def logical_and(self, arg):
+      return self
+    def logical_or(self, arg):
+      if arg.is_undefined():
+        return Undefined()
+      else:
+        return (TrueBoolean() if arg.__nonzero__() else self)
+    def logical_not(self):
+      return TrueBoolean()
+    def logical_equals(self, arg):
+      if arg.is_undefined():
+        return Undefined()
+      else:
+        return (self if arg.__nonzero__() else TrueBoolean())
+  class TrueBoolean(object):
+    def primitive_value(self):
+      return True
+    def is_undefined(self):
+      return False
+    def __nonzero__(self):
+      return True
+    def logical_and(self, arg):
+      if arg.is_undefined():
+        return Undefined()
+      else:
+        return (self if arg.__nonzero__() else FalseBoolean())
+    def logical_or(self, arg):
+      return self
+    def logical_not(self):
+      return FalseBoolean()
+    def logical_equals(self, arg):
+      if arg.is_undefined():
+        return Undefined()
+      else:
+        return (self if arg.__nonzero__() else FalseBoolean())
+  class Undefined(object):
+    def is_undefined(self):
+      return True
+    def __nonzero__(self):
+      return False
+    def primitive_value(self):
+      return False
+    def logical_and(self, arg):
+      if arg.is_undefined():
+        return self
+      else:
+        return (self if arg.__nonzero__() else augment(False))
+    def logical_or(self, arg):
+      if arg.is_undefined():
+        return self
+      else:
+        return (augment(True) if arg.__nonzero__() else self)
+    def logical_not(self):
+      return self
+    def logical_equals(self, arg):
+      return self
+    def all_true(self):
+      return self
+    def all_false(self):
+      return self
+    def any_true(self):
+      return self
+    def all_false(self):
+      return self
+    def __add__(self, other):
+      return self
+    def __mul__(self, other):
+      return self
+    def __sub__(self, other):
+      return self
+    def __div__(self, other):
+      return self
+    def __eq__(self, other):
+      return self
+    def __lt__(self, other):
+      return self
+    def __le__(self, other):
+      return self
+    def __gt__(self, other):
+      return self
+    def __ge__(self, other):
+      return self
+    def __ne__(self, other):
+      return self
+    def __len__(self):
+      return self
+  class Datetime(datetime.datetime):
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return datetime.datetime(self.year, self.month, self.day, self.hour, self.minute, self.second, self.microsecond, self.tzinfo)
+    def __eq__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() == other.primitive_value())
+    def __lt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() < other.primitive_value())
+    def __le__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() <= other.primitive_value())
+    def __gt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() > other.primitive_value())
+    def __ge__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() >= other.primitive_value())
+    def __ne__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() != other.primitive_value())
+  class Time(datetime.time):
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return datetime.time(self.hour, self.minute, self.second, self.microsecond, self.tzinfo)
+    def __eq__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() == other.primitive_value())
+    def __lt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() < other.primitive_value())
+    def __le__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() <= other.primitive_value())
+    def __gt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() > other.primitive_value())
+    def __ge__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() >= other.primitive_value())
+    def __ne__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() != other.primitive_value())
+  class Float(float):
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return float(self)
+    def __add__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() + (other.primitive_value()))
+    def __mul__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() * (other.primitive_value()))
+    def __sub__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() - (other.primitive_value()))
+    def __div__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() / (other.primitive_value()))
+    def __eq__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() == other.primitive_value())
+    def __lt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() < other.primitive_value())
+    def __le__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() <= other.primitive_value())
+    def __gt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() > other.primitive_value())
+    def __ge__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() >= other.primitive_value())
+    def __ne__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() != other.primitive_value())
+  class Integer(int):
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return int(self)
+    def __add__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() + (other.primitive_value()))
+    def __mul__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() * (other.primitive_value()))
+    def __sub__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() - (other.primitive_value()))
+    def __div__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() / (other.primitive_value()))
+    def __eq__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() == other.primitive_value())
+    def __lt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() < other.primitive_value())
+    def __le__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() <= other.primitive_value())
+    def __gt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() > other.primitive_value())
+    def __ge__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() >= other.primitive_value())
+    def __ne__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() != other.primitive_value())
+  class String(object):
+    def __init__(self, string):
+      self.string = string
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return self.string
+    def __len__(self):
+      return Integer(self.primitive_value().__len__())
+    def __add__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() + (other.primitive_value()))
+    def __eq__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() == (other.primitive_value()))
+    def __lt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() < (other.primitive_value()))
+    def __le__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() <= (other.primitive_value()))
+    def __gt__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() > (other.primitive_value()))
+    def __ge__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() >= (other.primitive_value()))
+    def __ne__(self, other):
+      if other.is_undefined():
+        return other
+      else:
+        return augment(self.primitive_value() != (other.primitive_value()))
+  class Dictionary(object):
+    def __init__(self, da_dict):
+      self.da_dict = da_dict
+    def is_undefined(self):
+      return False
+    def primitive_value(self):
+      return self.da_dict
+    def all_true(self):
+      return augment(self.da_dict.all_true())
+    def all_false(self):
+      return augment(self.da_dict.all_false())
+    def any_true(self):
+      return augment(self.da_dict.any_true())
+    def any_false(self):
+      return augment(self.da_dict.any_false())
+    def __str__(self):
+      return unicode(self.da_dict)
+  def augment(something):
+    string_type = type('a')
+    bool_type = type(True)
+    integer_type = type(1)
+    float_type = type(1.0)
+    time_type = type(datetime.time())
+    datetime_type = type(datetime.datetime(1, 1, 1))
+    my_type = type(something)
+    alt_type = something.__class__.__name__
+    if(my_type == string_type or alt_type == 'unicode'):
+      return String(something)
+    elif(my_type == bool_type):
+      if(something == True):
+        return TrueBoolean()
+      else:
+        return FalseBoolean()
+    elif(my_type == integer_type or alt_type == 'int'):
+      return Integer(something)
+    elif(my_type == float_type or alt_type == 'float'):
+      return Float(something)
+    elif(my_type == time_type):
+      return Time(something.hour, something.minute, something.second, something.microsecond, something.tzinfo)
+    elif(my_type == datetime_type or alt_type == 'DADateTime'):
+      return Datetime(something.year, something.month, something.day, something.hour, something.minute, something.second, something.microsecond, something.tzinfo)
+    elif(alt_type == 'DADict'):
+      return Dictionary(something)
+    raise Exception("Couldn't augment because type() is " + unicode(my_type) + " and alt type is " + alt_type + " and argument was " + unicode(something))
+  def ternary(condition, true_value, false_value):
+    if type(condition) == type(Undefined()):
+      return Undefined()
+    elif condition:
+      return true_value
+    else:
+      return false_value
+---
+initial: True
+code: |
+  import re
+  from bs4 import BeautifulSoup
+  from markdown import markdown
+
+  def markdown_to_plaintext(markdown_string):
+    html = markdown(markdown_string)
+    html = re.sub(r'<pre>(.*?)</pre>', ' ', html)
+    html = re.sub(r'<code>(.*?)</code >', ' ', html)
+    soup = BeautifulSoup(html, "html.parser")
+    text = ''.join(soup.findAll(text=True))
+    return text
+---
+mandatory: True
+code: |
+  def ___define_until_idempotent():
+    original_dict = all_variables()
+    ___define_all()
+    if all_variables() != original_dict:
+      re_run_logic()
+  def ___define_all():
+    vars = all_variables()
+    if ((not ("you_title" in vars)) and (type(((augment("Your Information")))) != type(Undefined()))):
+      define("you_title", (((augment("Your Information"))).primitive_value()))
+    if ((not ("you_title_name" in vars)) and (type(((augment("Name")))) != type(Undefined()))):
+      define("you_title_name", (((augment("Name"))).primitive_value()))
+    if ((not ("you_title_assoc" in vars)) and (type(((augment("School/Firm/etc.")))) != type(Undefined()))):
+      define("you_title_assoc", (((augment("School/Firm/etc."))).primitive_value()))
+    if ((not ("you_title_phone" in vars)) and (type(((augment("Phone")))) != type(Undefined()))):
+      define("you_title_phone", (((augment("Phone"))).primitive_value()))
+    if ((not ("you_title_email" in vars)) and (type(((augment("EMail")))) != type(Undefined()))):
+      define("you_title_email", (((augment("EMail"))).primitive_value()))
+    if ((not ("proceeding_title" in vars)) and (type(((augment("Proceeding Information")))) != type(Undefined()))):
+      define("proceeding_title", (((augment("Proceeding Information"))).primitive_value()))
+    if ((not ("proceeding_title_date" in vars)) and (type(((augment("Date")))) != type(Undefined()))):
+      define("proceeding_title_date", (((augment("Date"))).primitive_value()))
+    if ((not ("proceeding_title_time" in vars)) and (type(((augment("Time")))) != type(Undefined()))):
+      define("proceeding_title_time", (((augment("Time"))).primitive_value()))
+    if ((not ("proceeding_title_judge" in vars)) and (type(((augment("Judge")))) != type(Undefined()))):
+      define("proceeding_title_judge", (((augment("Judge"))).primitive_value()))
+    if ((not ("proceeding_title_case" in vars)) and (type(((augment("Case")))) != type(Undefined()))):
+      define("proceeding_title_case", (((augment("Case"))).primitive_value()))
+    if ((not ("proceeding_title_type" in vars)) and (type(((augment("Type")))) != type(Undefined()))):
+      define("proceeding_title_type", (((augment("Type"))).primitive_value()))
+    if ((not ("detainee_title" in vars)) and (type(((augment("Detainee Information")))) != type(Undefined()))):
+      define("detainee_title", (((augment("Detainee Information"))).primitive_value()))
+    if ((not ("detainee_title_name" in vars)) and (type(((augment("Name")))) != type(Undefined()))):
+      define("detainee_title_name", (((augment("Name"))).primitive_value()))
+    if ((not ("detainee_title_appearance" in vars)) and (type(((augment("How did they appear?")))) != type(Undefined()))):
+      define("detainee_title_appearance", (((augment("How did they appear?"))).primitive_value()))
+    if ((not ("detainee_title_languages" in vars)) and (type(((augment("Languages Spoken")))) != type(Undefined()))):
+      define("detainee_title_languages", (((augment("Languages Spoken"))).primitive_value()))
+    if ((not ("detainee_title_location" in vars)) and (type(((augment("Where are they being detained?")))) != type(Undefined()))):
+      define("detainee_title_location", (((augment("Where are they being detained?"))).primitive_value()))
+    if ((not ("detainee_title_location_other" in vars)) and (type(((augment("Other Location")))) != type(Undefined()))):
+      define("detainee_title_location_other", (((augment("Other Location"))).primitive_value()))
+    if ((not ("detainee_title_representation" in vars)) and (type(((augment("Do they have representation?")))) != type(Undefined()))):
+      define("detainee_title_representation", (((augment("Do they have representation?"))).primitive_value()))
+    if ((not ("detainee_title_representation_who" in vars)) and (type(((augment("Who?")))) != type(Undefined()))):
+      define("detainee_title_representation_who", (((augment("Who?"))).primitive_value()))
+    if ((not ("detainee_title_representation_continuance" in vars)) and (type(((augment("Was a continuance to find representation granted?")))) != type(Undefined()))):
+      define("detainee_title_representation_continuance", (((augment("Was a continuance to find representation granted?"))).primitive_value()))
+    if ((not ("detainee_title_representation_continuance_length" in vars)) and (type(((augment("How Long?")))) != type(Undefined()))):
+      define("detainee_title_representation_continuance_length", (((augment("How Long?"))).primitive_value()))
+    if ((not ("detainee_title_representation_continuance_denial" in vars)) and (type(((augment("Why?")))) != type(Undefined()))):
+      define("detainee_title_representation_continuance_denial", (((augment("Why?"))).primitive_value()))
+    if ((not ("context_title" in vars)) and (type(((augment("Context Information")))) != type(Undefined()))):
+      define("context_title", (((augment("Context Information"))).primitive_value()))
+    if ((not ("context_title_anyone" in vars)) and (type(((augment("Did the detainee have trouble communicating with anyone?")))) != type(Undefined()))):
+      define("context_title_anyone", (((augment("Did the detainee have trouble communicating with anyone?"))).primitive_value()))
+    if ((not ("context_title_anyone_who" in vars)) and (type(((augment("With who?")))) != type(Undefined()))):
+      define("context_title_anyone_who", (((augment("With who?"))).primitive_value()))
+    if ((not ("context_title_anyone_info" in vars)) and (type(((augment("How so?")))) != type(Undefined()))):
+      define("context_title_anyone_info", (((augment("How so?"))).primitive_value()))
+    if ((not ("context_title_interpretation" in vars)) and (type(((augment("Did the detainee have issues with interpretation?")))) != type(Undefined()))):
+      define("context_title_interpretation", (((augment("Did the detainee have issues with interpretation?"))).primitive_value()))
+    if ((not ("context_title_interpretation_info" in vars)) and (type(((augment("How so?")))) != type(Undefined()))):
+      define("context_title_interpretation_info", (((augment("How so?"))).primitive_value()))
+    if ((not ("context_title_illness" in vars)) and (type(((augment("Did the detainee show signs of suffering from mental illness?")))) != type(Undefined()))):
+      define("context_title_illness", (((augment("Did the detainee show signs of suffering from mental illness?"))).primitive_value()))
+    if ((not ("context_title_illness_info" in vars)) and (type(((augment("How so?")))) != type(Undefined()))):
+      define("context_title_illness_info", (((augment("How so?"))).primitive_value()))
+    if ((not ("context_title_illness_addressed" in vars)) and (type(((augment("How was it addressed?")))) != type(Undefined()))):
+      define("context_title_illness_addressed", (((augment("How was it addressed?"))).primitive_value()))
+    if ((not ("outcome_title" in vars)) and (type(((augment("Outcome Information")))) != type(Undefined()))):
+      define("outcome_title", (((augment("Outcome Information"))).primitive_value()))
+    if ((not ("outcome_title_relief" in vars)) and (type(((augment("Did detainee file any application for relief?")))) != type(Undefined()))):
+      define("outcome_title_relief", (((augment("Did detainee file any application for relief?"))).primitive_value()))
+    if ((not ("outcome_title_relief_info" in vars)) and (type(((augment("What were they?")))) != type(Undefined()))):
+      define("outcome_title_relief_info", (((augment("What were they?"))).primitive_value()))
+    if ((not ("outcome_title_relief_deadline" in vars)) and (type(((augment("What is the deadline?")))) != type(Undefined()))):
+      define("outcome_title_relief_deadline", (((augment("What is the deadline?"))).primitive_value()))
+    if ((not ("outcome_title_bond" in vars)) and (type(((augment("Did IJ grant bond?")))) != type(Undefined()))):
+      define("outcome_title_bond", (((augment("Did IJ grant bond?"))).primitive_value()))
+    if ((not ("outcome_title_bond_amount" in vars)) and (type(((augment("Amount")))) != type(Undefined()))):
+      define("outcome_title_bond_amount", (((augment("Amount"))).primitive_value()))
+    if ((not ("outcome_title_bond_denial" in vars)) and (type(((augment("Reason")))) != type(Undefined()))):
+      define("outcome_title_bond_denial", (((augment("Reason"))).primitive_value()))
+    if ((not ("hearing_title" in vars)) and (type(((augment("Hearing Information")))) != type(Undefined()))):
+      define("hearing_title", (((augment("Hearing Information"))).primitive_value()))
+    if ((not ("hearing_title_date" in vars)) and (type(((augment("Date")))) != type(Undefined()))):
+      define("hearing_title_date", (((augment("Date"))).primitive_value()))
+    if ((not ("hearing_title_time" in vars)) and (type(((augment("Time")))) != type(Undefined()))):
+      define("hearing_title_time", (((augment("Time"))).primitive_value()))
+    if ((not ("hearing_title_type" in vars)) and (type(((augment("Type")))) != type(Undefined()))):
+      define("hearing_title_type", (((augment("Type"))).primitive_value()))
+    if ((not ("other_title" in vars)) and (type(((augment("Other Information")))) != type(Undefined()))):
+      define("other_title", (((augment("Other Information"))).primitive_value()))
+    if ((not ("___shortcut_82_choice" in vars)) and (("context_output_anyone" in vars))):
+      define("___shortcut_82_choice", ((((augment(context_output_anyone) if ("context_output_anyone" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_81_choice" in vars)) and (("context_output_anyone" in vars))):
+      define("___shortcut_81_choice", ((((augment(context_output_anyone) if ("context_output_anyone" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_91_choice" in vars)) and (("context_output_illness" in vars))):
+      define("___shortcut_91_choice", ((((augment(context_output_illness) if ("context_output_illness" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_90_choice" in vars)) and (("context_output_illness" in vars))):
+      define("___shortcut_90_choice", ((((augment(context_output_illness) if ("context_output_illness" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_87_choice" in vars)) and (("context_output_interpretation" in vars))):
+      define("___shortcut_87_choice", ((((augment(context_output_interpretation) if ("context_output_interpretation" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_86_choice" in vars)) and (("context_output_interpretation" in vars))):
+      define("___shortcut_86_choice", ((((augment(context_output_interpretation) if ("context_output_interpretation" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_48_choice" in vars)) and (("detainee_output_appearance" in vars))):
+      define("___shortcut_48_choice", ((((augment(detainee_output_appearance) if ("detainee_output_appearance" in vars) else Undefined()) == (augment("In Person"))).primitive_value())))
+    if ((not ("___shortcut_49_choice" in vars)) and (("detainee_output_appearance" in vars))):
+      define("___shortcut_49_choice", ((((augment(detainee_output_appearance) if ("detainee_output_appearance" in vars) else Undefined()) == (augment("Video Conference"))).primitive_value())))
+    if ((not ("___shortcut_52_choice" in vars)) and (("detainee_output_location" in vars))):
+      define("___shortcut_52_choice", ((((augment(detainee_output_location) if ("detainee_output_location" in vars) else Undefined()) == (augment("CoCo"))).primitive_value())))
+    if ((not ("___shortcut_53_choice" in vars)) and (("detainee_output_location" in vars))):
+      define("___shortcut_53_choice", ((((augment(detainee_output_location) if ("detainee_output_location" in vars) else Undefined()) == (augment("Mesa Verde"))).primitive_value())))
+    if ((not ("___shortcut_55_choice" in vars)) and (("detainee_output_location" in vars))):
+      define("___shortcut_55_choice", ((((augment(detainee_output_location) if ("detainee_output_location" in vars) else Undefined()) == (augment("Other"))).primitive_value())))
+    if ((not ("___shortcut_54_choice" in vars)) and (("detainee_output_location" in vars))):
+      define("___shortcut_54_choice", ((((augment(detainee_output_location) if ("detainee_output_location" in vars) else Undefined()) == (augment("Sacramento/Yuba"))).primitive_value())))
+    if ((not ("___shortcut_59_choice" in vars)) and (("detainee_output_representation" in vars))):
+      define("___shortcut_59_choice", ((((augment(detainee_output_representation) if ("detainee_output_representation" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_60_choice" in vars)) and (("detainee_output_representation" in vars))):
+      define("___shortcut_60_choice", ((((augment(detainee_output_representation) if ("detainee_output_representation" in vars) else Undefined()) == (augment("Unknown"))).primitive_value())))
+    if ((not ("___shortcut_58_choice" in vars)) and (("detainee_output_representation" in vars))):
+      define("___shortcut_58_choice", ((((augment(detainee_output_representation) if ("detainee_output_representation" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_65_choice" in vars)) and (("detainee_output_representation_continuance" in vars))):
+      define("___shortcut_65_choice", ((((augment(detainee_output_representation_continuance) if ("detainee_output_representation_continuance" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_66_choice" in vars)) and (("detainee_output_representation_continuance" in vars))):
+      define("___shortcut_66_choice", ((((augment(detainee_output_representation_continuance) if ("detainee_output_representation_continuance" in vars) else Undefined()) == (augment("Unknown"))).primitive_value())))
+    if ((not ("___shortcut_64_choice" in vars)) and (("detainee_output_representation_continuance" in vars))):
+      define("___shortcut_64_choice", ((((augment(detainee_output_representation_continuance) if ("detainee_output_representation_continuance" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_112_choice" in vars)) and (("outcome_output_bond" in vars))):
+      define("___shortcut_112_choice", ((((augment(outcome_output_bond) if ("outcome_output_bond" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_113_choice" in vars)) and (("outcome_output_bond" in vars))):
+      define("___shortcut_113_choice", ((((augment(outcome_output_bond) if ("outcome_output_bond" in vars) else Undefined()) == (augment("Unknown"))).primitive_value())))
+    if ((not ("___shortcut_110_choice" in vars)) and (("outcome_output_bond" in vars))):
+      define("___shortcut_110_choice", ((((augment(outcome_output_bond) if ("outcome_output_bond" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_106_choice" in vars)) and (("outcome_output_relief" in vars))):
+      define("___shortcut_106_choice", ((((augment(outcome_output_relief) if ("outcome_output_relief" in vars) else Undefined()) == (augment("No"))).primitive_value())))
+    if ((not ("___shortcut_111_choice" in vars)) and (("outcome_output_relief" in vars))):
+      define("___shortcut_111_choice", ((((augment(outcome_output_relief) if ("outcome_output_relief" in vars) else Undefined()) == (augment("Unknown"))).primitive_value())))
+    if ((not ("___shortcut_105_choice" in vars)) and (("outcome_output_relief" in vars))):
+      define("___shortcut_105_choice", ((((augment(outcome_output_relief) if ("outcome_output_relief" in vars) else Undefined()) == (augment("Yes"))).primitive_value())))
+    if ((not ("___shortcut_45_choice" in vars)) and (("proceeding_output_type" in vars))):
+      define("___shortcut_45_choice", ((((augment(proceeding_output_type) if ("proceeding_output_type" in vars) else Undefined()) == (augment("Bond Hearing"))).primitive_value())))
+    if ((not ("___shortcut_46_choice" in vars)) and (("proceeding_output_type" in vars))):
+      define("___shortcut_46_choice", ((((augment(proceeding_output_type) if ("proceeding_output_type" in vars) else Undefined()) == (augment("Master Calendar"))).primitive_value())))
+---
+initial: True
+code: |
+  ___define_until_idempotent()
+---
+code: |
+  ___shortcut_82_choice = (context_output_anyone == "No")
+---
+code: |
+  ___shortcut_81_choice = (context_output_anyone == "Yes")
+---
+code: |
+  ___shortcut_91_choice = (context_output_illness == "No")
+---
+code: |
+  ___shortcut_90_choice = (context_output_illness == "Yes")
+---
+code: |
+  ___shortcut_87_choice = (context_output_interpretation == "No")
+---
+code: |
+  ___shortcut_86_choice = (context_output_interpretation == "Yes")
+---
+code: |
+  ___shortcut_48_choice = (detainee_output_appearance == "In Person")
+---
+code: |
+  ___shortcut_49_choice = (detainee_output_appearance == "Video Conference")
+---
+code: |
+  ___shortcut_52_choice = (detainee_output_location == "CoCo")
+---
+code: |
+  ___shortcut_53_choice = (detainee_output_location == "Mesa Verde")
+---
+code: |
+  ___shortcut_55_choice = (detainee_output_location == "Other")
+---
+code: |
+  ___shortcut_54_choice = (detainee_output_location == "Sacramento/Yuba")
+---
+code: |
+  ___shortcut_59_choice = (detainee_output_representation == "No")
+---
+code: |
+  ___shortcut_60_choice = (detainee_output_representation == "Unknown")
+---
+code: |
+  ___shortcut_58_choice = (detainee_output_representation == "Yes")
+---
+code: |
+  ___shortcut_65_choice = (detainee_output_representation_continuance == "No")
+---
+code: |
+  ___shortcut_66_choice = (detainee_output_representation_continuance == "Unknown")
+---
+code: |
+  ___shortcut_64_choice = (detainee_output_representation_continuance == "Yes")
+---
+code: |
+  ___shortcut_112_choice = (outcome_output_bond == "No")
+---
+code: |
+  ___shortcut_113_choice = (outcome_output_bond == "Unknown")
+---
+code: |
+  ___shortcut_110_choice = (outcome_output_bond == "Yes")
+---
+code: |
+  ___shortcut_106_choice = (outcome_output_relief == "No")
+---
+code: |
+  ___shortcut_111_choice = (outcome_output_relief == "Unknown")
+---
+code: |
+  ___shortcut_105_choice = (outcome_output_relief == "Yes")
+---
+code: |
+  ___shortcut_45_choice = (proceeding_output_type == "Bond Hearing")
+---
+code: |
+  ___shortcut_46_choice = (proceeding_output_type == "Master Calendar")
+---
+mandatory: True
+code: |
+  def passive_possible_variables():
+    return { 'Today': (raw(Today) if defined("Today") else ''), 'context_output_anyone': (raw(context_output_anyone) if defined("context_output_anyone") else ''), '___shortcut_82_choice': (raw(___shortcut_82_choice) if defined("___shortcut_82_choice") else ''), '___shortcut_81_choice': (raw(___shortcut_81_choice) if defined("___shortcut_81_choice") else ''), 'context_output_anyone_info': (raw(context_output_anyone_info) if defined("context_output_anyone_info") else ''), 'context_output_anyone_who': (raw(context_output_anyone_who) if defined("context_output_anyone_who") else ''), 'context_output_illness': (raw(context_output_illness) if defined("context_output_illness") else ''), '___shortcut_91_choice': (raw(___shortcut_91_choice) if defined("___shortcut_91_choice") else ''), '___shortcut_90_choice': (raw(___shortcut_90_choice) if defined("___shortcut_90_choice") else ''), 'context_output_illness_addressed': (raw(context_output_illness_addressed) if defined("context_output_illness_addressed") else ''), 'context_output_illness_info': (raw(context_output_illness_info) if defined("context_output_illness_info") else ''), 'context_output_interpretation': (raw(context_output_interpretation) if defined("context_output_interpretation") else ''), '___shortcut_87_choice': (raw(___shortcut_87_choice) if defined("___shortcut_87_choice") else ''), '___shortcut_86_choice': (raw(___shortcut_86_choice) if defined("___shortcut_86_choice") else ''), 'context_output_interpretation_info': (raw(context_output_interpretation_info) if defined("context_output_interpretation_info") else ''), 'context_title': (raw(context_title) if defined("context_title") else ''), 'context_title_anyone': (raw(context_title_anyone) if defined("context_title_anyone") else ''), 'context_title_anyone_info': (raw(context_title_anyone_info) if defined("context_title_anyone_info") else ''), 'context_title_anyone_who': (raw(context_title_anyone_who) if defined("context_title_anyone_who") else ''), 'context_title_illness': (raw(context_title_illness) if defined("context_title_illness") else ''), 'context_title_illness_addressed': (raw(context_title_illness_addressed) if defined("context_title_illness_addressed") else ''), 'context_title_illness_info': (raw(context_title_illness_info) if defined("context_title_illness_info") else ''), 'context_title_interpretation': (raw(context_title_interpretation) if defined("context_title_interpretation") else ''), 'context_title_interpretation_info': (raw(context_title_interpretation_info) if defined("context_title_interpretation_info") else ''), 'detainee_output_appearance': (raw(detainee_output_appearance) if defined("detainee_output_appearance") else ''), '___shortcut_48_choice': (raw(___shortcut_48_choice) if defined("___shortcut_48_choice") else ''), '___shortcut_49_choice': (raw(___shortcut_49_choice) if defined("___shortcut_49_choice") else ''), 'detainee_output_languages': (raw(detainee_output_languages) if defined("detainee_output_languages") else ''), 'detainee_output_location': (raw(detainee_output_location) if defined("detainee_output_location") else ''), '___shortcut_52_choice': (raw(___shortcut_52_choice) if defined("___shortcut_52_choice") else ''), '___shortcut_53_choice': (raw(___shortcut_53_choice) if defined("___shortcut_53_choice") else ''), '___shortcut_55_choice': (raw(___shortcut_55_choice) if defined("___shortcut_55_choice") else ''), '___shortcut_54_choice': (raw(___shortcut_54_choice) if defined("___shortcut_54_choice") else ''), 'detainee_output_location_other': (raw(detainee_output_location_other) if defined("detainee_output_location_other") else ''), 'detainee_output_name': (raw(detainee_output_name) if defined("detainee_output_name") else ''), 'detainee_output_representation': (raw(detainee_output_representation) if defined("detainee_output_representation") else ''), '___shortcut_59_choice': (raw(___shortcut_59_choice) if defined("___shortcut_59_choice") else ''), '___shortcut_60_choice': (raw(___shortcut_60_choice) if defined("___shortcut_60_choice") else ''), '___shortcut_58_choice': (raw(___shortcut_58_choice) if defined("___shortcut_58_choice") else ''), 'detainee_output_representation_continuance': (raw(detainee_output_representation_continuance) if defined("detainee_output_representation_continuance") else ''), '___shortcut_65_choice': (raw(___shortcut_65_choice) if defined("___shortcut_65_choice") else ''), '___shortcut_66_choice': (raw(___shortcut_66_choice) if defined("___shortcut_66_choice") else ''), '___shortcut_64_choice': (raw(___shortcut_64_choice) if defined("___shortcut_64_choice") else ''), 'detainee_output_representation_continuance_denial': (raw(detainee_output_representation_continuance_denial) if defined("detainee_output_representation_continuance_denial") else ''), 'detainee_output_representation_continuance_length': (raw(detainee_output_representation_continuance_length) if defined("detainee_output_representation_continuance_length") else ''), 'detainee_output_representation_who': (raw(detainee_output_representation_who) if defined("detainee_output_representation_who") else ''), 'detainee_title': (raw(detainee_title) if defined("detainee_title") else ''), 'detainee_title_appearance': (raw(detainee_title_appearance) if defined("detainee_title_appearance") else ''), 'detainee_title_languages': (raw(detainee_title_languages) if defined("detainee_title_languages") else ''), 'detainee_title_location': (raw(detainee_title_location) if defined("detainee_title_location") else ''), 'detainee_title_location_other': (raw(detainee_title_location_other) if defined("detainee_title_location_other") else ''), 'detainee_title_name': (raw(detainee_title_name) if defined("detainee_title_name") else ''), 'detainee_title_representation': (raw(detainee_title_representation) if defined("detainee_title_representation") else ''), 'detainee_title_representation_continuance': (raw(detainee_title_representation_continuance) if defined("detainee_title_representation_continuance") else ''), 'detainee_title_representation_continuance_denial': (raw(detainee_title_representation_continuance_denial) if defined("detainee_title_representation_continuance_denial") else ''), 'detainee_title_representation_continuance_length': (raw(detainee_title_representation_continuance_length) if defined("detainee_title_representation_continuance_length") else ''), 'detainee_title_representation_who': (raw(detainee_title_representation_who) if defined("detainee_title_representation_who") else ''), 'hearing_output_date': (raw(hearing_output_date) if defined("hearing_output_date") else ''), 'hearing_output_time': (raw(hearing_output_time) if defined("hearing_output_time") else ''), 'hearing_output_type': (raw(hearing_output_type) if defined("hearing_output_type") else ''), 'hearing_title': (raw(hearing_title) if defined("hearing_title") else ''), 'hearing_title_date': (raw(hearing_title_date) if defined("hearing_title_date") else ''), 'hearing_title_time': (raw(hearing_title_time) if defined("hearing_title_time") else ''), 'hearing_title_type': (raw(hearing_title_type) if defined("hearing_title_type") else ''), 'other_output': (raw(other_output) if defined("other_output") else ''), 'other_title': (raw(other_title) if defined("other_title") else ''), 'outcome_output_bond': (raw(outcome_output_bond) if defined("outcome_output_bond") else ''), '___shortcut_112_choice': (raw(___shortcut_112_choice) if defined("___shortcut_112_choice") else ''), '___shortcut_113_choice': (raw(___shortcut_113_choice) if defined("___shortcut_113_choice") else ''), '___shortcut_110_choice': (raw(___shortcut_110_choice) if defined("___shortcut_110_choice") else ''), 'outcome_output_bond_amount': (raw(outcome_output_bond_amount) if defined("outcome_output_bond_amount") else ''), 'outcome_output_bond_denial': (raw(outcome_output_bond_denial) if defined("outcome_output_bond_denial") else ''), 'outcome_output_relief': (raw(outcome_output_relief) if defined("outcome_output_relief") else ''), '___shortcut_106_choice': (raw(___shortcut_106_choice) if defined("___shortcut_106_choice") else ''), '___shortcut_111_choice': (raw(___shortcut_111_choice) if defined("___shortcut_111_choice") else ''), '___shortcut_105_choice': (raw(___shortcut_105_choice) if defined("___shortcut_105_choice") else ''), 'outcome_output_relief_deadline': (raw(outcome_output_relief_deadline) if defined("outcome_output_relief_deadline") else ''), 'outcome_output_relief_info': (raw(outcome_output_relief_info) if defined("outcome_output_relief_info") else ''), 'outcome_title': (raw(outcome_title) if defined("outcome_title") else ''), 'outcome_title_bond': (raw(outcome_title_bond) if defined("outcome_title_bond") else ''), 'outcome_title_bond_amount': (raw(outcome_title_bond_amount) if defined("outcome_title_bond_amount") else ''), 'outcome_title_bond_denial': (raw(outcome_title_bond_denial) if defined("outcome_title_bond_denial") else ''), 'outcome_title_relief': (raw(outcome_title_relief) if defined("outcome_title_relief") else ''), 'outcome_title_relief_deadline': (raw(outcome_title_relief_deadline) if defined("outcome_title_relief_deadline") else ''), 'outcome_title_relief_info': (raw(outcome_title_relief_info) if defined("outcome_title_relief_info") else ''), 'proceeding_output_case': (raw(proceeding_output_case) if defined("proceeding_output_case") else ''), 'proceeding_output_date': (raw(proceeding_output_date) if defined("proceeding_output_date") else ''), 'proceeding_output_judge': (raw(proceeding_output_judge) if defined("proceeding_output_judge") else ''), 'proceeding_output_time': (raw(proceeding_output_time) if defined("proceeding_output_time") else ''), 'proceeding_output_type': (raw(proceeding_output_type) if defined("proceeding_output_type") else ''), '___shortcut_45_choice': (raw(___shortcut_45_choice) if defined("___shortcut_45_choice") else ''), '___shortcut_46_choice': (raw(___shortcut_46_choice) if defined("___shortcut_46_choice") else ''), 'proceeding_title': (raw(proceeding_title) if defined("proceeding_title") else ''), 'proceeding_title_case': (raw(proceeding_title_case) if defined("proceeding_title_case") else ''), 'proceeding_title_date': (raw(proceeding_title_date) if defined("proceeding_title_date") else ''), 'proceeding_title_judge': (raw(proceeding_title_judge) if defined("proceeding_title_judge") else ''), 'proceeding_title_time': (raw(proceeding_title_time) if defined("proceeding_title_time") else ''), 'proceeding_title_type': (raw(proceeding_title_type) if defined("proceeding_title_type") else ''), 'you_output_assoc': (raw(you_output_assoc) if defined("you_output_assoc") else ''), 'you_output_email': (raw(you_output_email) if defined("you_output_email") else ''), 'you_output_name': (raw(you_output_name) if defined("you_output_name") else ''), 'you_output_phone': (raw(you_output_phone) if defined("you_output_phone") else ''), 'you_title': (raw(you_title) if defined("you_title") else ''), 'you_title_assoc': (raw(you_title_assoc) if defined("you_title_assoc") else ''), 'you_title_email': (raw(you_title_email) if defined("you_title_email") else ''), 'you_title_name': (raw(you_title_name) if defined("you_title_name") else ''), 'you_title_phone': (raw(you_title_phone) if defined("you_title_phone") else '') }
+---
+features:
+  debug: False
+  inverse navbar: False
+---
+metadata:
+  title: |
+    Immigration Court Observation Form
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # Start
+fields:
+  - html: |
+      <blockquote>
+      <p><a href="https://github.com/AriChivukula/docassemble.law/blob/master/docassemble/law/data/questions/icop.yml">THIS IS CODE, NOT LEGAL ADVICE</a></p>
+      </blockquote>
+
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+---
+code: |
+  you_title = ((augment("Your Information"))).primitive_value()
+---
+code: |
+  you_title_name = ((augment("Name"))).primitive_value()
+---
+code: |
+  you_title_assoc = ((augment("School/Firm/etc."))).primitive_value()
+---
+code: |
+  you_title_phone = ((augment("Phone"))).primitive_value()
+---
+code: |
+  you_title_email = ((augment("EMail"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${you_title}
+fields:
+  - html: |
+      <p>Please enter the observer&#39;s (your) information!</p>
+
+
+  - "${you_title_name}": you_output_name
+    datatype: text
+    required: true
+
+  - "${you_title_assoc}": you_output_assoc
+    datatype: text
+    required: true
+
+  - "${you_title_phone}": you_output_phone
+    datatype: text
+    required: true
+
+  - "${you_title_email}": you_output_email
+    datatype: email
+    required: true
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+---
+code: |
+  proceeding_title = ((augment("Proceeding Information"))).primitive_value()
+---
+code: |
+  proceeding_title_date = ((augment("Date"))).primitive_value()
+---
+code: |
+  proceeding_title_time = ((augment("Time"))).primitive_value()
+---
+code: |
+  proceeding_title_judge = ((augment("Judge"))).primitive_value()
+---
+code: |
+  proceeding_title_case = ((augment("Case"))).primitive_value()
+---
+code: |
+  proceeding_title_type = ((augment("Type"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${proceeding_title}
+fields:
+  - html: |
+      <p>Please enter information on the proceeding you&#39;re observing ${you_output_name}!</p>
+
+
+  - "${proceeding_title_date}": proceeding_output_date
+    datatype: date
+    required: true
+
+  - "${proceeding_title_time}": proceeding_output_time
+    datatype: time
+    required: true
+
+  - "${proceeding_title_judge}": proceeding_output_judge
+    datatype: text
+    required: true
+
+  - "${proceeding_title_case}": proceeding_output_case
+    datatype: text
+    required: true
+    minlength: 0
+
+  - "${proceeding_title_type}": proceeding_output_type
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Bond Hearing": "Bond Hearing"
+      - "Master Calendar": "Master Calendar"
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+---
+code: |
+  detainee_title = ((augment("Detainee Information"))).primitive_value()
+---
+code: |
+  detainee_title_name = ((augment("Name"))).primitive_value()
+---
+code: |
+  detainee_title_appearance = ((augment("How did they appear?"))).primitive_value()
+---
+code: |
+  detainee_title_languages = ((augment("Languages Spoken"))).primitive_value()
+---
+code: |
+  detainee_title_location = ((augment("Where are they being detained?"))).primitive_value()
+---
+code: |
+  detainee_title_location_other = ((augment("Other Location"))).primitive_value()
+---
+code: |
+  detainee_title_representation = ((augment("Do they have representation?"))).primitive_value()
+---
+code: |
+  detainee_title_representation_who = ((augment("Who?"))).primitive_value()
+---
+code: |
+  detainee_title_representation_continuance = ((augment("Was a continuance to find representation granted?"))).primitive_value()
+---
+code: |
+  detainee_title_representation_continuance_length = ((augment("How Long?"))).primitive_value()
+---
+code: |
+  detainee_title_representation_continuance_denial = ((augment("Why?"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${detainee_title}
+fields:
+  - html: |
+      <p>Please enter information for detainee in proceeding ${proceeding_output_case}!</p>
+
+      <span hidden data-variable data-event-type='input' id='variable_4'/>
+
+  - "${detainee_title_name}": detainee_output_name
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_name'/>
+
+  - "${detainee_title_appearance}": detainee_output_appearance
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "In Person": "In Person"
+      - "Video Conference": "Video Conference"
+    html: |
+      <span hidden data-variable data-event-type='change' id='detainee_output_appearance'/>
+
+  - "${detainee_title_languages}": detainee_output_languages
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_languages'/>
+
+  - "${detainee_title_location}": detainee_output_location
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "CoCo": "CoCo"
+      - "Mesa Verde": "Mesa Verde"
+      - "Sacramento/Yuba": "Sacramento/Yuba"
+      - "Other": "Other"
+    html: |
+      <span hidden data-variable data-event-type='change' id='detainee_output_location'/>
+
+  - "${detainee_title_location_other}": detainee_output_location_other
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_location_other'/>
+
+  - "${detainee_title_representation}": detainee_output_representation
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+      - "Unknown": "Unknown"
+    html: |
+      <span hidden data-variable data-event-type='change' id='detainee_output_representation'/>
+
+  - "${detainee_title_representation_who}": detainee_output_representation_who
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_representation_who'/>
+
+  - "${detainee_title_representation_continuance}": detainee_output_representation_continuance
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+      - "Unknown": "Unknown"
+    html: |
+      <span hidden data-variable data-event-type='change' id='detainee_output_representation_continuance'/>
+
+  - "${detainee_title_representation_continuance_length}": detainee_output_representation_continuance_length
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_representation_continuance_length'/>
+
+  - "${detainee_title_representation_continuance_denial}": detainee_output_representation_continuance_denial
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='detainee_output_representation_continuance_denial'/>
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+script: |
+  <script>
+    // Those fields which should be conditionally shown
+    var detainee_output_location_other_field = $('#detainee_output_location_other').closest('.form-group');
+    var detainee_output_representation_who_field = $('#detainee_output_representation_who').closest('.form-group');
+    var detainee_output_representation_continuance_field = $('#detainee_output_representation_continuance').closest('.form-group');
+    var detainee_output_representation_continuance_length_field = $('#detainee_output_representation_continuance_length').closest('.form-group');
+    var detainee_output_representation_continuance_denial_field = $('#detainee_output_representation_continuance_denial').closest('.form-group');
+
+    // We track the values of all in-page fields
+    var allVariableValues = {
+      variable_4: null,
+      detainee_output_name: null,
+      detainee_output_appearance: null,
+      detainee_output_languages: null,
+      detainee_output_location: null,
+      detainee_output_location_other: null,
+      detainee_output_representation: null,
+      detainee_output_representation_who: null,
+      detainee_output_representation_continuance: null,
+      detainee_output_representation_continuance_length: null,
+      detainee_output_representation_continuance_denial: null,
+    };
+
+    // We need to be able to map in-page checkbox labels to their actual values
+    var checkboxLabelsAndValues = {
+      
+    }
+
+    var showIfCallbacks = [
+      { shouldShow: false, variableName: detainee_output_location_other, field: detainee_output_location_other_field, required: true, callback: function() { return allVariableValues['detainee_title_location'] == "Other" } },
+      { shouldShow: false, variableName: detainee_output_representation_who, field: detainee_output_representation_who_field, required: true, callback: function() { return allVariableValues['detainee_output_representation'] == "Yes" } },
+      { shouldShow: false, variableName: detainee_output_representation_continuance, field: detainee_output_representation_continuance_field, required: true, callback: function() { return allVariableValues['detainee_output_representation'] == "No" } },
+      { shouldShow: false, variableName: detainee_output_representation_continuance_length, field: detainee_output_representation_continuance_length_field, required: true, callback: function() { return allVariableValues['detainee_output_representation_continuance'] == "Yes" && allVariableValues['detainee_output_representation'] == "No" } },
+      { shouldShow: false, variableName: detainee_output_representation_continuance_denial, field: detainee_output_representation_continuance_denial_field, required: true, callback: function() { return allVariableValues['detainee_output_representation_continuance'] == "No" && allVariableValues['detainee_output_representation'] == "No" } },
+    ];
+
+    hideAllConditionalFields();
+    findCurrentValuesForAllFields();
+    conditionallyShowFieldsBasedOnValues();
+    assignFieldChangeListeners()
+
+    function hideAllConditionalFields() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+        currentItem.field.hide();
+      }
+    }
+
+    function findCurrentValuesForAllFields() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').each(function() {
+          if (this.type === 'radio') {
+            if ($(this).is(':checked')) calculateInputValue(this, variableName);
+          } else {
+            calculateInputValue(this, variableName);
+          }
+        });
+      });
+    }
+
+    function showConditionalFieldsBasedOnCurrentValue(speed = null) {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        if (currentItem.shouldShow) {
+          currentItem.field.find('input, select, textarea').removeAttr('disabled');
+          currentItem.field.show(speed);
+        } else {
+          currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+          currentItem.field.hide(speed);
+        }
+      }
+    }
+
+    function conditionallyShowFieldsBasedOnValues() {
+      get_interview_variables(function(data) {
+        if (data.success) {
+          var variables = data.variables;
+          delete variables.nav;
+          delete variables.url_args;
+          delete variables._internal;
+
+          var variableKeys = Object.keys(variables);
+
+          for (var i = 0; i < variableKeys.length; i++) {
+            var currentKey = variableKeys[i];
+            var currentVariable = variables[currentKey];
+            if (typeof currentVariable === 'object' && currentVariable.elements) {
+              variables[currentKey] = currentVariable.elements;
+            }
+          }
+          allVariableValues = Object.assign(allVariableValues, data.variables);
+        }
+
+        calculateShouldShowValues();
+        showConditionalFieldsBasedOnCurrentValue();
+      });
+    }
+
+    function calculateShouldShowValues() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        currentValue = showIfCallbacks[i];
+        currentValue.shouldShow = currentValue.callback();
+      }
+    }
+
+    function assignFieldChangeListeners() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var eventType = field.data('event-type');
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').on(eventType, function() {
+          calculateInputValue(this, variableName);
+          calculateShouldShowValues();
+          showConditionalFieldsBasedOnCurrentValue('fast');
+        });
+      });
+    }
+
+    function calculateInputValue(el, variableName) {
+      if (el.type === 'checkbox') {
+        var checkboxValue = checkboxLabelsAndValues[variableName][el.alt];
+        allVariableValues[variableName][checkboxValue] = $(el).is(':checked');
+      } else {
+        allVariableValues[variableName] = el.value;
+      }
+    }
+  </script>
+---
+code: |
+  context_title = ((augment("Context Information"))).primitive_value()
+---
+code: |
+  context_title_anyone = ((augment("Did the detainee have trouble communicating with anyone?"))).primitive_value()
+---
+code: |
+  context_title_anyone_who = ((augment("With who?"))).primitive_value()
+---
+code: |
+  context_title_anyone_info = ((augment("How so?"))).primitive_value()
+---
+code: |
+  context_title_interpretation = ((augment("Did the detainee have issues with interpretation?"))).primitive_value()
+---
+code: |
+  context_title_interpretation_info = ((augment("How so?"))).primitive_value()
+---
+code: |
+  context_title_illness = ((augment("Did the detainee show signs of suffering from mental illness?"))).primitive_value()
+---
+code: |
+  context_title_illness_info = ((augment("How so?"))).primitive_value()
+---
+code: |
+  context_title_illness_addressed = ((augment("How was it addressed?"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${context_title}
+fields:
+  - html: |
+      <p>Please enter information on what you observe in ${detainee_output_name}&#39;s case (${proceeding_output_case})!</p>
+
+      <span hidden data-variable data-event-type='input' id='variable_5'/>
+
+  - "${context_title_anyone}": context_output_anyone
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+    html: |
+      <span hidden data-variable data-event-type='change' id='context_output_anyone'/>
+
+  - "${context_title_anyone_who}": context_output_anyone_who
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='context_output_anyone_who'/>
+
+  - "${context_title_anyone_info}": context_output_anyone_info
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='context_output_anyone_info'/>
+
+  - "${context_title_interpretation}": context_output_interpretation
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+    html: |
+      <span hidden data-variable data-event-type='change' id='context_output_interpretation'/>
+
+  - "${context_title_interpretation_info}": context_output_interpretation_info
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='context_output_interpretation_info'/>
+
+  - "${context_title_illness}": context_output_illness
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+    html: |
+      <span hidden data-variable data-event-type='change' id='context_output_illness'/>
+
+  - "${context_title_illness_info}": context_output_illness_info
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='context_output_illness_info'/>
+
+  - "${context_title_illness_addressed}": context_output_illness_addressed
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='context_output_illness_addressed'/>
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+script: |
+  <script>
+    // Those fields which should be conditionally shown
+    var context_output_anyone_who_field = $('#context_output_anyone_who').closest('.form-group');
+    var context_output_anyone_info_field = $('#context_output_anyone_info').closest('.form-group');
+    var context_output_interpretation_info_field = $('#context_output_interpretation_info').closest('.form-group');
+    var context_output_illness_info_field = $('#context_output_illness_info').closest('.form-group');
+    var context_output_illness_addressed_field = $('#context_output_illness_addressed').closest('.form-group');
+
+    // We track the values of all in-page fields
+    var allVariableValues = {
+      variable_5: null,
+      context_output_anyone: null,
+      context_output_anyone_who: null,
+      context_output_anyone_info: null,
+      context_output_interpretation: null,
+      context_output_interpretation_info: null,
+      context_output_illness: null,
+      context_output_illness_info: null,
+      context_output_illness_addressed: null,
+    };
+
+    // We need to be able to map in-page checkbox labels to their actual values
+    var checkboxLabelsAndValues = {
+      
+    }
+
+    var showIfCallbacks = [
+      { shouldShow: false, variableName: context_output_anyone_who, field: context_output_anyone_who_field, required: true, callback: function() { return allVariableValues['context_output_anyone'] == "Yes" } },
+      { shouldShow: false, variableName: context_output_anyone_info, field: context_output_anyone_info_field, required: true, callback: function() { return allVariableValues['context_output_anyone'] == "Yes" } },
+      { shouldShow: false, variableName: context_output_interpretation_info, field: context_output_interpretation_info_field, required: true, callback: function() { return allVariableValues['context_output_interpretation'] == "Yes" } },
+      { shouldShow: false, variableName: context_output_illness_info, field: context_output_illness_info_field, required: true, callback: function() { return allVariableValues['context_output_illness'] == "Yes" } },
+      { shouldShow: false, variableName: context_output_illness_addressed, field: context_output_illness_addressed_field, required: true, callback: function() { return allVariableValues['context_output_illness'] == "Yes" } },
+    ];
+
+    hideAllConditionalFields();
+    findCurrentValuesForAllFields();
+    conditionallyShowFieldsBasedOnValues();
+    assignFieldChangeListeners()
+
+    function hideAllConditionalFields() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+        currentItem.field.hide();
+      }
+    }
+
+    function findCurrentValuesForAllFields() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').each(function() {
+          if (this.type === 'radio') {
+            if ($(this).is(':checked')) calculateInputValue(this, variableName);
+          } else {
+            calculateInputValue(this, variableName);
+          }
+        });
+      });
+    }
+
+    function showConditionalFieldsBasedOnCurrentValue(speed = null) {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        if (currentItem.shouldShow) {
+          currentItem.field.find('input, select, textarea').removeAttr('disabled');
+          currentItem.field.show(speed);
+        } else {
+          currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+          currentItem.field.hide(speed);
+        }
+      }
+    }
+
+    function conditionallyShowFieldsBasedOnValues() {
+      get_interview_variables(function(data) {
+        if (data.success) {
+          var variables = data.variables;
+          delete variables.nav;
+          delete variables.url_args;
+          delete variables._internal;
+
+          var variableKeys = Object.keys(variables);
+
+          for (var i = 0; i < variableKeys.length; i++) {
+            var currentKey = variableKeys[i];
+            var currentVariable = variables[currentKey];
+            if (typeof currentVariable === 'object' && currentVariable.elements) {
+              variables[currentKey] = currentVariable.elements;
+            }
+          }
+          allVariableValues = Object.assign(allVariableValues, data.variables);
+        }
+
+        calculateShouldShowValues();
+        showConditionalFieldsBasedOnCurrentValue();
+      });
+    }
+
+    function calculateShouldShowValues() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        currentValue = showIfCallbacks[i];
+        currentValue.shouldShow = currentValue.callback();
+      }
+    }
+
+    function assignFieldChangeListeners() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var eventType = field.data('event-type');
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').on(eventType, function() {
+          calculateInputValue(this, variableName);
+          calculateShouldShowValues();
+          showConditionalFieldsBasedOnCurrentValue('fast');
+        });
+      });
+    }
+
+    function calculateInputValue(el, variableName) {
+      if (el.type === 'checkbox') {
+        var checkboxValue = checkboxLabelsAndValues[variableName][el.alt];
+        allVariableValues[variableName][checkboxValue] = $(el).is(':checked');
+      } else {
+        allVariableValues[variableName] = el.value;
+      }
+    }
+  </script>
+---
+code: |
+  outcome_title = ((augment("Outcome Information"))).primitive_value()
+---
+code: |
+  outcome_title_relief = ((augment("Did detainee file any application for relief?"))).primitive_value()
+---
+code: |
+  outcome_title_relief_info = ((augment("What were they?"))).primitive_value()
+---
+code: |
+  outcome_title_relief_deadline = ((augment("What is the deadline?"))).primitive_value()
+---
+code: |
+  outcome_title_bond = ((augment("Did IJ grant bond?"))).primitive_value()
+---
+code: |
+  outcome_title_bond_amount = ((augment("Amount"))).primitive_value()
+---
+code: |
+  outcome_title_bond_denial = ((augment("Reason"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${outcome_title}
+fields:
+  - html: |
+      <p>Please enter information on outcomes for ${detainee_output_name}&#39;s case (${proceeding_output_case})!</p>
+
+      <span hidden data-variable data-event-type='input' id='variable_7'/>
+
+  - "${outcome_title_relief}": outcome_output_relief
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+      - "Unknown": "Unknown"
+    html: |
+      <span hidden data-variable data-event-type='change' id='outcome_output_relief'/>
+
+  - "${outcome_title_relief_info}": outcome_output_relief_info
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='outcome_output_relief_info'/>
+
+  - "${outcome_title_relief_deadline}": outcome_output_relief_deadline
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='outcome_output_relief_deadline'/>
+
+  - "${outcome_title_bond}": outcome_output_bond
+    input type: dropdown
+    required: true
+    datatype: text
+    choices:
+      - "Yes": "Yes"
+      - "No": "No"
+      - "Unknown": "Unknown"
+    html: |
+      <span hidden data-variable data-event-type='change' id='outcome_output_bond'/>
+
+  - "${outcome_title_bond_amount}": outcome_output_bond_amount
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='outcome_output_bond_amount'/>
+
+  - "${outcome_title_bond_denial}": outcome_output_bond_denial
+    datatype: text
+    required: true
+    html: |
+      <span hidden data-variable data-event-type='input' id='outcome_output_bond_denial'/>
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+script: |
+  <script>
+    // Those fields which should be conditionally shown
+    var outcome_output_relief_field = $('#outcome_output_relief').closest('.form-group');
+    var outcome_output_relief_info_field = $('#outcome_output_relief_info').closest('.form-group');
+    var outcome_output_relief_deadline_field = $('#outcome_output_relief_deadline').closest('.form-group');
+    var outcome_output_bond_field = $('#outcome_output_bond').closest('.form-group');
+    var outcome_output_bond_amount_field = $('#outcome_output_bond_amount').closest('.form-group');
+    var outcome_output_bond_denial_field = $('#outcome_output_bond_denial').closest('.form-group');
+
+    // We track the values of all in-page fields
+    var allVariableValues = {
+      variable_7: null,
+      outcome_output_relief: null,
+      outcome_output_relief_info: null,
+      outcome_output_relief_deadline: null,
+      outcome_output_bond: null,
+      outcome_output_bond_amount: null,
+      outcome_output_bond_denial: null,
+    };
+
+    // We need to be able to map in-page checkbox labels to their actual values
+    var checkboxLabelsAndValues = {
+      
+    }
+
+    var showIfCallbacks = [
+      { shouldShow: false, variableName: outcome_output_relief, field: outcome_output_relief_field, required: true, callback: function() { return allVariableValues['proceeding_output_type'] == "Master Calendar" } },
+      { shouldShow: false, variableName: outcome_output_relief_info, field: outcome_output_relief_info_field, required: true, callback: function() { return allVariableValues['outcome_output_relief'] == "Yes" && allVariableValues['proceeding_output_type'] == "Master Calendar" } },
+      { shouldShow: false, variableName: outcome_output_relief_deadline, field: outcome_output_relief_deadline_field, required: true, callback: function() { return allVariableValues['outcome_output_relief'] == "Yes" && allVariableValues['proceeding_output_type'] == "Master Calendar" } },
+      { shouldShow: false, variableName: outcome_output_bond, field: outcome_output_bond_field, required: true, callback: function() { return allVariableValues['proceeding_output_type'] == "Bond Hearing" } },
+      { shouldShow: false, variableName: outcome_output_bond_amount, field: outcome_output_bond_amount_field, required: true, callback: function() { return allVariableValues['outcome_output_bond'] == "Yes" && allVariableValues['proceeding_output_type'] == "Bond Hearing" } },
+      { shouldShow: false, variableName: outcome_output_bond_denial, field: outcome_output_bond_denial_field, required: true, callback: function() { return allVariableValues['outcome_output_bond'] == "No" && allVariableValues['proceeding_output_type'] == "Bond Hearing" } },
+    ];
+
+    hideAllConditionalFields();
+    findCurrentValuesForAllFields();
+    conditionallyShowFieldsBasedOnValues();
+    assignFieldChangeListeners()
+
+    function hideAllConditionalFields() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+        currentItem.field.hide();
+      }
+    }
+
+    function findCurrentValuesForAllFields() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').each(function() {
+          if (this.type === 'radio') {
+            if ($(this).is(':checked')) calculateInputValue(this, variableName);
+          } else {
+            calculateInputValue(this, variableName);
+          }
+        });
+      });
+    }
+
+    function showConditionalFieldsBasedOnCurrentValue(speed = null) {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        var currentItem = showIfCallbacks[i];
+        if (currentItem.shouldShow) {
+          currentItem.field.find('input, select, textarea').removeAttr('disabled');
+          currentItem.field.show(speed);
+        } else {
+          currentItem.field.find('input, select, textarea').attr('disabled', 'disabled');
+          currentItem.field.hide(speed);
+        }
+      }
+    }
+
+    function conditionallyShowFieldsBasedOnValues() {
+      get_interview_variables(function(data) {
+        if (data.success) {
+          var variables = data.variables;
+          delete variables.nav;
+          delete variables.url_args;
+          delete variables._internal;
+
+          var variableKeys = Object.keys(variables);
+
+          for (var i = 0; i < variableKeys.length; i++) {
+            var currentKey = variableKeys[i];
+            var currentVariable = variables[currentKey];
+            if (typeof currentVariable === 'object' && currentVariable.elements) {
+              variables[currentKey] = currentVariable.elements;
+            }
+          }
+          allVariableValues = Object.assign(allVariableValues, data.variables);
+        }
+
+        calculateShouldShowValues();
+        showConditionalFieldsBasedOnCurrentValue();
+      });
+    }
+
+    function calculateShouldShowValues() {
+      for (var i = 0; i < showIfCallbacks.length; i++) {
+        currentValue = showIfCallbacks[i];
+        currentValue.shouldShow = currentValue.callback();
+      }
+    }
+
+    function assignFieldChangeListeners() {
+      $('[data-variable]').each(function() {
+        var field = $(this);
+        var eventType = field.data('event-type');
+        var variableName = field.attr('id');
+        field.closest('.form-group').find('input, select, textarea').on(eventType, function() {
+          calculateInputValue(this, variableName);
+          calculateShouldShowValues();
+          showConditionalFieldsBasedOnCurrentValue('fast');
+        });
+      });
+    }
+
+    function calculateInputValue(el, variableName) {
+      if (el.type === 'checkbox') {
+        var checkboxValue = checkboxLabelsAndValues[variableName][el.alt];
+        allVariableValues[variableName][checkboxValue] = $(el).is(':checked');
+      } else {
+        allVariableValues[variableName] = el.value;
+      }
+    }
+  </script>
+---
+code: |
+  hearing_title = ((augment("Hearing Information"))).primitive_value()
+---
+code: |
+  hearing_title_date = ((augment("Date"))).primitive_value()
+---
+code: |
+  hearing_title_time = ((augment("Time"))).primitive_value()
+---
+code: |
+  hearing_title_type = ((augment("Type"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${hearing_title}
+fields:
+  - html: |
+      <p>Please enter information on the next hearing for ${detainee_output_name}&#39;s case (${proceeding_output_case})!</p>
+
+
+  - "${hearing_title_date}": hearing_output_date
+    datatype: date
+    required: false
+
+  - "${hearing_title_time}": hearing_output_time
+    datatype: time
+    required: false
+
+  - "${hearing_title_type}": hearing_output_type
+    datatype: text
+    required: false
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+---
+code: |
+  other_title = ((augment("Other Information"))).primitive_value()
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # ${other_title}
+fields:
+  - html: |
+      <p>Please enter anything else we should know ${you_output_name}!</p>
+
+
+  - "": other_output
+    datatype: area
+    required: false
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${()}
+---
+mandatory: |
+  True
+question: |
+    <img style='margin-top:-32px;max-width:250px;height:80px' src='https://community.lawyer/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkFSIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--44b1d48d4c3c31e50d2d981b29359c8133e06266/download.png'/>
+subquestion: |
+  # Thanks for volunteering ${you_output_name}!
+
+under: |
+
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+  ${ ('' if defined("___already_sent_icop_email_26e207fc10a5") else (___send_icop_email_26e207fc10a5())) }
+  ${()}
+---
+template: icop_template_af3e7002e7d6
+subject: |
+  Observation of Hearing for ${detainee_output_name if defined("detainee_output_name") else ""}(${proceeding_output_case if defined("proceeding_output_case") else ""})
+content: |
+  # ${you_title if defined("you_title") else ""}
+  - ${you_title_name if defined("you_title_name") else ""}: ${you_output_name if defined("you_output_name") else ""}
+  - ${you_title_assoc if defined("you_title_assoc") else ""}: ${you_output_assoc if defined("you_output_assoc") else ""}
+  - ${you_title_phone if defined("you_title_phone") else ""}: ${you_output_phone if defined("you_output_phone") else ""}
+  - ${you_title_email if defined("you_title_email") else ""}: ${you_output_email if defined("you_output_email") else ""}
+
+  # ${proceeding_title if defined("proceeding_title") else ""}
+  - ${proceeding_title_date if defined("proceeding_title_date") else ""}: ${proceeding_output_date if defined("proceeding_output_date") else ""}
+  - ${proceeding_title_time if defined("proceeding_title_time") else ""}: ${proceeding_output_time if defined("proceeding_output_time") else ""}
+  - ${proceeding_title_judge if defined("proceeding_title_judge") else ""}: ${proceeding_output_judge if defined("proceeding_output_judge") else ""}
+  - ${proceeding_title_case if defined("proceeding_title_case") else ""}: ${proceeding_output_case if defined("proceeding_output_case") else ""}
+  - ${proceeding_title_type if defined("proceeding_title_type") else ""}: ${proceeding_output_type if defined("proceeding_output_type") else ""}
+
+  # ${detainee_title if defined("detainee_title") else ""}
+  - ${detainee_title_name if defined("detainee_title_name") else ""}: ${detainee_output_name if defined("detainee_output_name") else ""}
+  - ${detainee_title_appearance if defined("detainee_title_appearance") else ""}: ${detainee_output_appearance if defined("detainee_output_appearance") else ""}
+  - ${detainee_title_languages if defined("detainee_title_languages") else ""}: ${detainee_output_languages if defined("detainee_output_languages") else ""}
+  - ${detainee_title_location if defined("detainee_title_location") else ""}: ${detainee_output_location if defined("detainee_output_location") else ""}
+  - ${detainee_title_location_other if defined("detainee_title_location_other") else ""}: ${detainee_output_location_other if defined("detainee_output_location_other") else ""}
+  - ${detainee_title_representation if defined("detainee_title_representation") else ""}: ${detainee_output_representation if defined("detainee_output_representation") else ""}
+  - ${detainee_title_representation_who if defined("detainee_title_representation_who") else ""}: ${detainee_output_representation_who if defined("detainee_output_representation_who") else ""}
+  - ${detainee_title_representation_continuance if defined("detainee_title_representation_continuance") else ""}: ${detainee_output_representation_continuance if defined("detainee_output_representation_continuance") else ""}
+  - ${detainee_title_representation_continuance_length if defined("detainee_title_representation_continuance_length") else ""}: ${detainee_output_representation_continuance_length if defined("detainee_output_representation_continuance_length") else ""}
+  - ${detainee_title_representation_continuance_denial if defined("detainee_title_representation_continuance_denial") else ""}: ${detainee_output_representation_continuance_denial if defined("detainee_output_representation_continuance_denial") else ""}
+
+  # ${context_title if defined("context_title") else ""}
+  - ${context_title_anyone if defined("context_title_anyone") else ""}: ${context_output_anyone if defined("context_output_anyone") else ""}
+  - ${context_title_anyone_who if defined("context_title_anyone_who") else ""}: ${context_output_anyone_who if defined("context_output_anyone_who") else ""}
+  - ${context_title_anyone_info if defined("context_title_anyone_info") else ""}: ${context_output_anyone_info if defined("context_output_anyone_info") else ""}
+  - ${context_title_interpretation if defined("context_title_interpretation") else ""}: ${context_output_interpretation if defined("context_output_interpretation") else ""}
+  - ${context_title_interpretation_info if defined("context_title_interpretation_info") else ""}: ${context_output_interpretation_info if defined("context_output_interpretation_info") else ""}
+  - ${context_title_illness if defined("context_title_illness") else ""}: ${context_output_illness if defined("context_output_illness") else ""}
+  - ${context_title_illness_info if defined("context_title_illness_info") else ""}: ${context_output_illness_info if defined("context_output_illness_info") else ""}
+  - ${context_title_illness_addressed if defined("context_title_illness_addressed") else ""}: ${context_output_illness_addressed if defined("context_output_illness_addressed") else ""}
+
+  # ${outcome_title if defined("outcome_title") else ""}
+  - ${outcome_title_relief if defined("outcome_title_relief") else ""}: ${outcome_output_relief if defined("outcome_output_relief") else ""}
+  - ${outcome_title_relief_info if defined("outcome_title_relief_info") else ""}: ${outcome_output_relief_info if defined("outcome_output_relief_info") else ""}
+  - ${outcome_title_relief_deadline if defined("outcome_title_relief_deadline") else ""}: ${outcome_output_relief_deadline if defined("outcome_output_relief_deadline") else ""}
+  - ${outcome_title_bond if defined("outcome_title_bond") else ""}: ${outcome_output_bond if defined("outcome_output_bond") else ""}
+  - ${outcome_title_bond_amount if defined("outcome_title_bond_amount") else ""}: ${outcome_output_bond_amount if defined("outcome_output_bond_amount") else ""}
+  - ${outcome_title_bond_denial if defined("outcome_title_bond_denial") else ""}: ${outcome_output_bond_denial if defined("outcome_output_bond_denial") else ""}
+
+  # ${hearing_title if defined("hearing_title") else ""}
+  - ${hearing_title_date if defined("hearing_title_date") else ""}: ${hearing_output_date if defined("hearing_output_date") else ""}
+  - ${hearing_title_time if defined("hearing_title_time") else ""}: ${hearing_output_time if defined("hearing_output_time") else ""}
+  - ${hearing_title_type if defined("hearing_title_type") else ""}: ${hearing_output_type if defined("hearing_output_type") else ""}
+
+  # ${other_title if defined("other_title") else ""}
+  > ${other_output if defined("other_output") else ""}
+---
+mandatory: True
+code: |
+  def ___send_icop_email_26e207fc10a5():
+    define("___already_sent_icop_email_26e207fc10a5", True)
+    background_action("___send_icop_email_26e207fc10a5_background")
+    return ''
+---
+event: ___send_icop_email_26e207fc10a5_background
+code: |
+  if True:
+    import requests
+    permission_response = requests.get(url = 'https://community.lawyer/delivery_permitted', params = { 'id': 44, 'key': 'Raup_jZ0Eb13lMncLMtf6Q', 'desired_deliveries': 3 })
+    data = permission_response.json()
+    if data['permitted']:
+      send_email(template=icop_template_af3e7002e7d6, to="sf.icop@gmail.com", sender="ari.c@berkeley.edu", cc="%s" % (you_output_email), bcc="ari.c@berkeley.edu")
+      requests.post(url = 'https://community.lawyer/increment_delivery', params = { 'id': 44, 'key': 'Raup_jZ0Eb13lMncLMtf6Q', 'increment': 3 })
+  background_response()
+---
+mandatory: |
+  True
+question: ''
+subquestion: |
+  Thank you for using this app. Your session is complete. ${()}
+
+under: |
+  <hr/>
+  Powered by [Community.lawyer](https://community.lawyer/), a public benefit company.
+---
