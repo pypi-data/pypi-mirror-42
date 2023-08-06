@@ -1,0 +1,4 @@
+[console_scripts]
+outlier-model = outlier_model.main:cli
+outlier-model-mn-test = outlier_model.mn_test:cli
+
