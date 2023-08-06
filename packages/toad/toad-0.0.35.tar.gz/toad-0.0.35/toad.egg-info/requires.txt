@@ -1,0 +1,6 @@
+numpy>=1.15
+pandas
+scipy
+sklearn
+statsmodels
+seaborn
