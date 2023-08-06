@@ -1,0 +1,11 @@
+README.md
+setup.py
+hinhello/__init__.py
+hinhello/api.py
+hinhello/chs.py
+hinhello.egg-info/PKG-INFO
+hinhello.egg-info/SOURCES.txt
+hinhello.egg-info/dependency_links.txt
+hinhello.egg-info/entry_points.txt
+hinhello.egg-info/not-zip-safe
+hinhello.egg-info/top_level.txt
