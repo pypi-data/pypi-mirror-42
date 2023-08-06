@@ -1,0 +1,712 @@
+﻿{
+    "Invoice": {
+        "@attrs": {
+            "xmlns:cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+            "xmlns:cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+            "xmlns": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+        },
+        "cbc:CustomizationID": "urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0",
+        "cbc:ProfileID": "urn:fdc:peppol.eu:2017:poacc:billing:01:1.0",
+        "cbc:ID": "2018210",
+        "cbc:IssueDate": "2018-02-08",
+        "cbc:DueDate": "2018-03-07",
+        "cbc:InvoiceTypeCode": "380",
+        "cbc:Note": "Document level Note",
+        "cbc:TaxPointDate": "2018-02-08",
+        "cbc:DocumentCurrencyCode": "SEK",
+        "cbc:TaxCurrencyCode": "EUR",
+        "cbc:AccountingCost": "BES, 87392",
+        "cbc:BuyerReference": "Buyer reference",
+        "cac:InvoicePeriod": {
+            "cbc:StartDate": "2018-02-01",
+            "cbc:EndDate": "2018-02-07"
+        },
+        "cac:OrderReference": {
+            "cbc:ID": "20180117",
+            "cbc:SalesOrderID": "INK/0117/JM"
+        },
+        "cac:BillingReference__0": {
+            "@name": "cac:BillingReference",
+            "cac:InvoiceDocumentReference": {
+                "cbc:ID": "Preceding invoice no.1",
+                "cbc:IssueDate": "2018-01-31"
+            }
+        },
+        "cac:BillingReference__1": {
+            "@name": "cac:BillingReference",
+            "cac:InvoiceDocumentReference": {
+                "cbc:ID": "Preceding invoice no.2"
+            }
+        },
+        "cac:DespatchDocumentReference": {
+            "cbc:ID": "Despatch Feb 01-07"
+        },
+        "cac:ReceiptDocumentReference": {
+            "cbc:ID": "Receipt 01-07"
+        },
+        "cac:OriginatorDocumentReference": {
+            "cbc:ID": "Tender 2017-12, lot no. 3"
+        },
+        "cac:ContractDocumentReference": {
+            "cbc:ID": "2017-123"
+        },
+        "cac:AdditionalDocumentReference__0": {
+            "@name": "cac:AdditionalDocumentReference",
+            "cbc:ID": {
+                "@attrs": {
+                    "schemeID": "AFL"
+                },
+                "@value": "DR35141"
+            }
+        },
+        "cac:AdditionalDocumentReference__1": {
+            "@name": "cac:AdditionalDocumentReference",
+            "cbc:ID": {
+                "@attrs": {
+                    "schemeID": "AFL"
+                },
+                "@value": "130-DR35141"
+            },
+            "cbc:DocumentTypeCode": "130",
+            "cbc:DocumentDescription": "Supporting document"
+        },
+        "cac:AdditionalDocumentReference__2": {
+            "@name": "cac:AdditionalDocumentReference",
+            "cbc:ID": "Timelist 1",
+            "cbc:DocumentDescription": "Time list",
+            "cac:Attachment": {
+                "cbc:EmbeddedDocumentBinaryObject": {
+                    "@attrs": {
+                        "mimeCode": "application/pdf",
+                        "filename": "Source PDF"
+                    },
+                    "@value": "VGhpcyBpcyBvbmx5IGEgdGVzdA=="
+                }
+            }
+        },
+        "cac:AdditionalDocumentReference__3": {
+            "@name": "cac:AdditionalDocumentReference",
+            "cbc:ID": {
+                "@attrs": {
+                    "schemeID": "ABT"
+                },
+                "@value": "Example 1"
+            },
+            "cac:Attachment": {
+                "cac:ExternalReference": {
+                    "cbc:URI": "http://www.example.com/index.html"
+                }
+            }
+        },
+        "cac:ProjectReference": {
+            "cbc:ID": "Project 99"
+        },
+        "cac:AccountingSupplierParty": {
+            "cac:Party": {
+                "cbc:EndpointID": {
+                    "@attrs": {
+                        "schemeID": "0007"
+                    },
+                    "@value": "1234567890"
+                },
+                "cac:PartyIdentification__0": {
+                    "@name": "cac:PartyIdentification",
+                    "cbc:ID": {
+                        "@attrs": {
+                            "schemeID": "0088"
+                        },
+                        "@value": "1230123456789"
+                    }
+                },
+                "cac:PartyIdentification__1": {
+                    "@name": "cac:PartyIdentification",
+                    "cbc:ID": "UBI-Chain"
+                },
+                "cac:PartyName": {
+                    "cbc:Name": "Ubiquitous Chain"
+                },
+                "cac:PostalAddress": {
+                    "cbc:StreetName": "Streetname-line1",
+                    "cbc:AdditionalStreetName": "AddStreetname-line2",
+                    "cbc:CityName": "Big City",
+                    "cbc:PostalZone": "11122",
+                    "cbc:CountrySubentity": "Delstat A",
+                    "cac:AddressLine": {
+                        "cbc:Line": "Line3"
+                    },
+                    "cac:Country": {
+                        "cbc:IdentificationCode": "SE"
+                    }
+                },
+                "cac:PartyTaxScheme__0": {
+                    "@name": "cac:PartyTaxScheme",
+                    "cbc:CompanyID": "SE123456789001",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                },
+                "cac:PartyTaxScheme__1": {
+                    "@name": "cac:PartyTaxScheme",
+                    "cbc:CompanyID": "Godkänd för F-skatt",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "TAX"
+                    }
+                },
+                "cac:PartyLegalEntity": {
+                    "cbc:RegistrationName": "The Ubiquitous Chain Sweden AB",
+                    "cbc:CompanyID": {
+                        "@attrs": {
+                            "schemeID": "0007"
+                        },
+                        "@value": "1234567890"
+                    },
+                    "cbc:CompanyLegalForm": "Säte: Big CIty"
+                },
+                "cac:Contact": {
+                    "cbc:Name": "A Persson",
+                    "cbc:Telephone": "0201234567",
+                    "cbc:ElectronicMail": "info@UCS.se"
+                }
+            }
+        },
+        "cac:AccountingCustomerParty": {
+            "cac:Party": {
+                "cbc:EndpointID": {
+                    "@attrs": {
+                        "schemeID": "0007"
+                    },
+                    "@value": "1234512345"
+                },
+                "cac:PartyIdentification": {
+                    "cbc:ID": {
+                        "@attrs": {
+                            "schemeID": "0088"
+                        },
+                        "@value": "9876543210987"
+                    }
+                },
+                "cac:PartyName": {
+                    "cbc:Name": "Project Services"
+                },
+                "cac:PostalAddress": {
+                    "cbc:StreetName": "Gata (rad1)",
+                    "cbc:AdditionalStreetName": "Box 8 (rad2)",
+                    "cbc:CityName": "Motown",
+                    "cbc:PostalZone": "10203",
+                    "cbc:CountrySubentity": "Delstat B",
+                    "cac:AddressLine": {
+                        "cbc:Line": "Building 4 (rad3)"
+                    },
+                    "cac:Country": {
+                        "cbc:IdentificationCode": "SE"
+                    }
+                },
+                "cac:PartyTaxScheme": {
+                    "cbc:CompanyID": "SE123451234501",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                },
+                "cac:PartyLegalEntity": {
+                    "cbc:RegistrationName": "Project services AB",
+                    "cbc:CompanyID": {
+                        "@attrs": {
+                            "schemeID": "0007"
+                        },
+                        "@value": "1234512345"
+                    }
+                },
+                "cac:Contact": {
+                    "cbc:Name": "B. E. Ställman",
+                    "cbc:Telephone": "070123456",
+                    "cbc:ElectronicMail": "B.E.Stallman@projekttjanst.se"
+                }
+            }
+        },
+        "cac:PayeeParty": {
+            "cac:PartyIdentification": {
+                "cbc:ID": {
+                    "@attrs": {
+                        "schemeID": "0088"
+                    },
+                    "@value": "9876543210987"
+                }
+            },
+            "cac:PartyName": {
+                "cbc:Name": "Finansiell Support u.p.a."
+            },
+            "cac:PartyLegalEntity": {
+                "cbc:CompanyID": {
+                    "@attrs": {
+                        "schemeID": "0007"
+                    },
+                    "@value": "1234512345"
+                }
+            }
+        },
+        "cac:TaxRepresentativeParty": {
+            "cac:PartyName": {
+                "cbc:Name": "Tax Administrators Inc."
+            },
+            "cac:PostalAddress": {
+                "cbc:StreetName": "TaxREP Streetname-rad1",
+                "cbc:AdditionalStreetName": "TaxREP AddStreetname-rad2",
+                "cbc:CityName": "TaxREP Village",
+                "cbc:PostalZone": "TaxREP 98765",
+                "cbc:CountrySubentity": "TaxREP State A",
+                "cac:AddressLine": {
+                    "cbc:Line": "TaxREP Rad3"
+                },
+                "cac:Country": {
+                    "cbc:IdentificationCode": "SE"
+                }
+            },
+            "cac:PartyTaxScheme": {
+                "cbc:CompanyID": "SE998877665501",
+                "cac:TaxScheme": {
+                    "cbc:ID": "VAT"
+                }
+            }
+        },
+        "cac:Delivery": {
+            "cbc:ActualDeliveryDate": "2017-12-01",
+            "cac:DeliveryLocation": {
+                "cbc:ID": {
+                    "@attrs": {
+                        "schemeID": "0088"
+                    },
+                    "@value": "9876543210999"
+                },
+                "cac:Address": {
+                    "cbc:StreetName": "DELIV Streetname-rad1",
+                    "cbc:AdditionalStreetName": "DELIV AddStreetname-rad2",
+                    "cbc:CityName": "DELIV Town",
+                    "cbc:PostalZone": "DELIV 90807",
+                    "cbc:CountrySubentity": "DELIV Delstat A",
+                    "cac:AddressLine": {
+                        "cbc:Line": "DELIV Rad3"
+                    },
+                    "cac:Country": {
+                        "cbc:IdentificationCode": "SE"
+                    }
+                }
+            },
+            "cac:DeliveryParty": {
+                "cac:PartyName": {
+                    "cbc:Name": "Deliver-to Name AS"
+                }
+            }
+        },
+        "cac:PaymentMeans__0": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": {
+                "@attrs": {
+                    "name": "Undefined"
+                },
+                "@value": "1"
+            }
+        },
+        "cac:PaymentMeans__1": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": "30",
+            "cbc:PaymentID": "1800355",
+            "cac:PayeeFinancialAccount": {
+                "cbc:ID": "1234567",
+                "cbc:Name": "Account name",
+                "cac:FinancialInstitutionBranch": {
+                    "cbc:ID": "BANKSBIC"
+                }
+            }
+        },
+        "cac:PaymentMeans__2": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": "30",
+            "cbc:PaymentID": "1800355",
+            "cac:PayeeFinancialAccount": {
+                "cbc:ID": "1112222",
+                "cac:FinancialInstitutionBranch": {
+                    "cbc:ID": "SE:BANKGIRO"
+                }
+            }
+        },
+        "cac:PaymentMeans__3": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": "30",
+            "cbc:PaymentID": "1800355",
+            "cac:PayeeFinancialAccount": {
+                "cbc:ID": "121212",
+                "cac:FinancialInstitutionBranch": {
+                    "cbc:ID": "SE:PLUSGIRO"
+                }
+            }
+        },
+        "cac:PaymentMeans__4": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": "54",
+            "cbc:PaymentID": "1800355",
+            "cac:CardAccount": {
+                "cbc:PrimaryAccountNumberID": "123236",
+                "cbc:NetworkID": "VISA",
+                "cbc:HolderName": "Card holders name"
+            }
+        },
+        "cac:PaymentMeans__5": {
+            "@name": "cac:PaymentMeans",
+            "cbc:PaymentMeansCode": "59",
+            "cbc:PaymentID": "1800355",
+            "cac:PaymentMandate": {
+                "cbc:ID": "123456",
+                "cac:PayerFinancialAccount": {
+                    "cbc:ID": "DK12328462834823"
+                }
+            }
+        },
+        "cac:PaymentTerms": {
+            "cbc:Note": "30 dagar netto. Dröjsmålsränta:12 %"
+        },
+        "cac:AllowanceCharge__0": {
+            "@name": "cac:AllowanceCharge",
+            "cbc:ChargeIndicator": "false",
+            "cbc:AllowanceChargeReasonCode": "95",
+            "cbc:AllowanceChargeReason": "Discount",
+            "cbc:MultiplierFactorNumeric": "0",
+            "cbc:Amount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:BaseAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cac:TaxCategory": {
+                "cbc:ID": "E",
+                "cbc:Percent": "0",
+                "cac:TaxScheme": {
+                    "cbc:ID": "VAT"
+                }
+            }
+        },
+        "cac:AllowanceCharge__1": {
+            "@name": "cac:AllowanceCharge",
+            "cbc:ChargeIndicator": "true",
+            "cbc:AllowanceChargeReasonCode": "WH",
+            "cbc:AllowanceChargeReason": "Warehousing",
+            "cbc:MultiplierFactorNumeric": "0",
+            "cbc:Amount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:BaseAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cac:TaxCategory": {
+                "cbc:ID": "E",
+                "cbc:Percent": "0",
+                "cac:TaxScheme": {
+                    "cbc:ID": "VAT"
+                }
+            }
+        },
+        "cac:TaxTotal__0": {
+            "@name": "cac:TaxTotal",
+            "cbc:TaxAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "2500"
+            },
+            "cac:TaxSubtotal__0": {
+                "@name": "cac:TaxSubtotal",
+                "cbc:TaxableAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "10000"
+                },
+                "cbc:TaxAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "2500"
+                },
+                "cac:TaxCategory": {
+                    "cbc:ID": "S",
+                    "cbc:Percent": "25",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                }
+            },
+            "cac:TaxSubtotal__1": {
+                "@name": "cac:TaxSubtotal",
+                "cbc:TaxableAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                },
+                "cbc:TaxAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                },
+                "cac:TaxCategory": {
+                    "cbc:ID": "E",
+                    "cbc:Percent": "0",
+                    "cbc:TaxExemptionReasonCode": "0",
+                    "cbc:TaxExemptionReason": "Skatteundantag",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                }
+            }
+        },
+        "cac:TaxTotal__1": {
+            "@name": "cac:TaxTotal",
+            "cbc:TaxAmount": {
+                "@attrs": {
+                    "currencyID": "EUR"
+                },
+                "@value": "249"
+            }
+        },
+        "cac:LegalMonetaryTotal": {
+            "cbc:LineExtensionAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "10000"
+            },
+            "cbc:TaxExclusiveAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "10000"
+            },
+            "cbc:TaxInclusiveAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "12500"
+            },
+            "cbc:AllowanceTotalAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:ChargeTotalAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:PrepaidAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:PayableRoundingAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cbc:PayableAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "12500"
+            }
+        },
+        "cac:InvoiceLine__0": {
+            "@name": "cac:InvoiceLine",
+            "cbc:ID": "1",
+            "cbc:Note": "Line level Note",
+            "cbc:InvoicedQuantity": {
+                "@attrs": {
+                    "unitCode": "EA"
+                },
+                "@value": "10000"
+            },
+            "cbc:LineExtensionAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "10000"
+            },
+            "cbc:AccountingCost": "Accounting 101-222-8",
+            "cac:InvoicePeriod": {
+                "cbc:StartDate": "2018-02-01",
+                "cbc:EndDate": "2018-02-07"
+            },
+            "cac:OrderLineReference": {
+                "cbc:LineID": "20080117/JM"
+            },
+            "cac:DocumentReference": {
+                "cbc:ID": {
+                    "@attrs": {
+                        "schemeID": "ABZ"
+                    },
+                    "@value": "130-DR35141"
+                },
+                "cbc:DocumentTypeCode": "130"
+            },
+            "cac:AllowanceCharge__0": {
+                "@name": "cac:AllowanceCharge",
+                "cbc:ChargeIndicator": "false",
+                "cbc:AllowanceChargeReasonCode": "95",
+                "cbc:AllowanceChargeReason": "Discount",
+                "cbc:MultiplierFactorNumeric": "0",
+                "cbc:Amount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                },
+                "cbc:BaseAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                }
+            },
+            "cac:AllowanceCharge__1": {
+                "@name": "cac:AllowanceCharge",
+                "cbc:ChargeIndicator": "true",
+                "cbc:AllowanceChargeReasonCode": "WH",
+                "cbc:AllowanceChargeReason": "Warehousing",
+                "cbc:MultiplierFactorNumeric": "0",
+                "cbc:Amount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                },
+                "cbc:BaseAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                }
+            },
+            "cac:Item": {
+                "cbc:Description": "Single room, b'fast incl.",
+                "cbc:Name": "Single room",
+                "cac:BuyersItemIdentification": {
+                    "cbc:ID": "Buyer's ID"
+                },
+                "cac:SellersItemIdentification": {
+                    "cbc:ID": "STDSI-V"
+                },
+                "cac:StandardItemIdentification": {
+                    "cbc:ID": {
+                        "@attrs": {
+                            "schemeID": "0088"
+                        },
+                        "@value": "12345678901234"
+                    }
+                },
+                "cac:OriginCountry": {
+                    "cbc:IdentificationCode": "SE"
+                },
+                "cac:ClassifiedTaxCategory": {
+                    "cbc:ID": "S",
+                    "cbc:Percent": "25",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                },
+                "cac:AdditionalItemProperty__0": {
+                    "@name": "cac:AdditionalItemProperty",
+                    "cbc:Name": "Egenskapsnamn1",
+                    "cbc:Value": "Egenskapsvärde1"
+                },
+                "cac:AdditionalItemProperty__1": {
+                    "@name": "cac:AdditionalItemProperty",
+                    "cbc:Name": "Egenskapsnamn2",
+                    "cbc:Value": "Egenskapsvärde2"
+                }
+            },
+            "cac:Price": {
+                "cbc:PriceAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "1"
+                },
+                "cbc:BaseQuantity": {
+                    "@attrs": {
+                        "unitCode": "EA"
+                    },
+                    "@value": "1"
+                },
+                "cac:AllowanceCharge": {
+                    "cbc:ChargeIndicator": "false",
+                    "cbc:Amount": {
+                        "@attrs": {
+                            "currencyID": "SEK"
+                        },
+                        "@value": "0"
+                    },
+                    "cbc:BaseAmount": {
+                        "@attrs": {
+                            "currencyID": "SEK"
+                        },
+                        "@value": "1"
+                    }
+                }
+            }
+        },
+        "cac:InvoiceLine__1": {
+            "@name": "cac:InvoiceLine",
+            "cbc:ID": "2",
+            "cbc:InvoicedQuantity": {
+                "@attrs": {
+                    "unitCode": "EA"
+                },
+                "@value": "10000"
+            },
+            "cbc:LineExtensionAmount": {
+                "@attrs": {
+                    "currencyID": "SEK"
+                },
+                "@value": "0"
+            },
+            "cac:Item": {
+                "cbc:Name": "Double room",
+                "cac:ClassifiedTaxCategory": {
+                    "cbc:ID": {
+                        "@attrs": {
+                            "schemeID": "UNCL5305"
+                        },
+                        "@value": "E"
+                    },
+                    "cbc:Percent": "0",
+                    "cac:TaxScheme": {
+                        "cbc:ID": "VAT"
+                    }
+                }
+            },
+            "cac:Price": {
+                "cbc:PriceAmount": {
+                    "@attrs": {
+                        "currencyID": "SEK"
+                    },
+                    "@value": "0"
+                }
+            }
+        }
+    }
+}
