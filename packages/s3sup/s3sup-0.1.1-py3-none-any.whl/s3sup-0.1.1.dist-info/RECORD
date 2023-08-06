@@ -1,0 +1,14 @@
+s3sup/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+s3sup/catalogue.py,sha256=jHWNdsDR9eq455q4Rw91nqCNXtmT9JLmvelwvGyQc-8,4988
+s3sup/fileprepper.py,sha256=5AXhG8CBrK8eQbUq2hGvooEWpPS68UPTAVoFQvYyyWI,5079
+s3sup/project.py,sha256=JElyUsPh7S4W-mT9b8LNu0OEd2wEOnkzT8zYZPtngiI,6168
+s3sup/rules.py,sha256=WBLDbvSJx8qEV8xce-9mz1Dn-U-XFsDsxSDFCgqaZ-0,997
+s3sup/rules.schema.json,sha256=Gg30PCouKgHJVbn3LwSaNmTa_ND2S9AMf0zfoPzBU3c,5032
+s3sup/scripts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+s3sup/scripts/s3sup.py,sha256=EERoV5u1gvlk9yGtpT_uC60SJG2in3CuYgjlRcRgQmY,4289
+s3sup-0.1.1.dist-info/LICENSE.txt,sha256=5X8cMguM-HmKfS_4Om-eBqM6A1hfbgZf6pfx2G24QFI,35150
+s3sup-0.1.1.dist-info/METADATA,sha256=NIivP5xwXNxS0Iud18OJ78PGyshnRN0FA7c2gCMFTSs,5660
+s3sup-0.1.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+s3sup-0.1.1.dist-info/entry_points.txt,sha256=HjClVys0tzpdrFPnC-D1MgudrcOXY8b5Xx6Uu2myKng,51
+s3sup-0.1.1.dist-info/top_level.txt,sha256=5F2RaSdx0dRlx4pacx4p1uh_wn0nOuAD3HvVWm-z0t0,6
+s3sup-0.1.1.dist-info/RECORD,,
