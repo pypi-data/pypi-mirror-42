@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: pylodash
+Version: 0.3.0
+Summary: A modern Python utility library delivering modularity, performance & extras.
+Home-page: https://gitlab.asoft-python.com/g-tuanluu/python-training
+Author: Tuan Luu
+Author-email: tuan.luu@asnet.com.vn
+License: MIT
+Description: Python Lodash
+        -------------
+        
+        To use (with caution), simply do:
+            >>> import pylodash
+            >>> print(pylodash.joke())
+Keywords: python lodash utilities
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Text Processing :: Linguistic

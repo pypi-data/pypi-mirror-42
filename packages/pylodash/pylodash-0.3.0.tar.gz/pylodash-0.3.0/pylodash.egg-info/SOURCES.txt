@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+pylodash.egg-info/PKG-INFO
+pylodash.egg-info/SOURCES.txt
+pylodash.egg-info/dependency_links.txt
+pylodash.egg-info/not-zip-safe
+pylodash.egg-info/requires.txt
+pylodash.egg-info/top_level.txt
+src/__init__.py
+src/arrays.py
+src/maths.py
+src/number.py
