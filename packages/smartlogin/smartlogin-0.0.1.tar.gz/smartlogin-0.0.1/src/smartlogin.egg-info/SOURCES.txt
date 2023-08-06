@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.py
+src/SmartLogin/Errors.py
+src/SmartLogin/Login.py
+src/SmartLogin/__init__.py
+src/SmartLogin/command.py
+src/SmartLogin/finder.py
+src/SmartLogin/monitor.py
+src/SmartLogin/resource/chromedriver
+src/smartlogin.egg-info/PKG-INFO
+src/smartlogin.egg-info/SOURCES.txt
+src/smartlogin.egg-info/dependency_links.txt
+src/smartlogin.egg-info/entry_points.txt
+src/smartlogin.egg-info/not-zip-safe
+src/smartlogin.egg-info/requires.txt
+src/smartlogin.egg-info/top_level.txt
