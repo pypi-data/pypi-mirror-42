@@ -1,0 +1,4 @@
+[console_scripts]
+mxos = mxos.mxos:main
+mxos-cube = mxos.mxos:main
+
