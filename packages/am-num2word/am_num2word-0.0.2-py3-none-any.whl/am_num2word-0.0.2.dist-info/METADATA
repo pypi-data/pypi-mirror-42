@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: am-num2word
+Version: 0.0.2
+Summary: Number to Amharic words representation package
+Home-page: https://github.com/mitiku1/AmharicNumber2Word
+Author: Mitiku Yohannes
+Author-email: se.mitiku.yohannes@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Amharic Number to Word
+<p>
+Converters Numbers from decimal representation to Amharic language word representation. 
+</p>
+
+### Usage
+
+### How to install
+
+### Lincense
+
+
