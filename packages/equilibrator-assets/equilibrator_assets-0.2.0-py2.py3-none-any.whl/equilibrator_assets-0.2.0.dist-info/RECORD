@@ -1,0 +1,17 @@
+equilibrator_assets/__init__.py,sha256=vUMYLEvzBPtDEICDYpAAV0ElleJba5u07kEerfhr2R4,1348
+equilibrator_assets/_version.py,sha256=OII2IQPOXdz10p33d1epJvG1WdwdQtZdY6jRYEQEKik,497
+equilibrator_assets/chemaxon.py,sha256=IY24OfRHBuddfk0YOfKbFn97c3PS-evQTWJYtDYBEv0,16652
+equilibrator_assets/cli.py,sha256=x-IvQdaV9bB_nx8_4XlrUlPbmJuf1Fk6n23TTEm6JNY,9474
+equilibrator_assets/compounds.py,sha256=4FhdA23-dBqo2vRt2ejmNgVMLaETyQkWPMuZxL7J7-A,10756
+equilibrator_assets/metanetx.py,sha256=qMLa8XSJi0zIOLgMSktVOcRj2fOMPWuoUyC8uLkz99s,5167
+equilibrator_assets/registry.py,sha256=pUueEfSDLAr0hGOXaj3IixhBAof0QwW1B-LSbYeQm98,4518
+equilibrator_assets/thermodynamics.py,sha256=E0bDSAGjfRrxT7KlCmwh-LpxD2vDGOpRlhAYlrXqXns,9825
+equilibrator_assets/data/__init__.py,sha256=I9Kw8hsz46c4KZ7jaqKl6aK6AmIsuuWQ7qogCpgPP3Q,1192
+equilibrator_assets/data/prefix_mapping.tsv,sha256=WHAGoSHFcLpa_QmSQkNrM9eGhInOlJDwQNwLZnT6TNw,261
+equilibrator_assets-0.2.0.dist-info/LICENSE,sha256=q7HxYWzS16TxmVWUm1s3064a7uBg_iftYsrBXci_tig,1223
+equilibrator_assets-0.2.0.dist-info/METADATA,sha256=SO62A5tKTruoGnEA4VruLlFCbO-UXtYNdNQSKAno1Hk,2846
+equilibrator_assets-0.2.0.dist-info/WHEEL,sha256=aSdOKpzTGLLkKenfdFGiq92od_Dmr98YfEe8iw7iZoo,110
+equilibrator_assets-0.2.0.dist-info/entry_points.txt,sha256=zWrZdXxeVYNmzx3dhC9X44m-Cl71bEg34ZKA5a-CNAs,62
+equilibrator_assets-0.2.0.dist-info/top_level.txt,sha256=zS97rKUsNUKGSf3s2i6v0uSHxMN8hyJeevO1LsCcLS0,20
+equilibrator_assets-0.2.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+equilibrator_assets-0.2.0.dist-info/RECORD,,
