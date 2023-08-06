@@ -1,0 +1,3 @@
+[console_scripts]
+slats = slats.main:main
+

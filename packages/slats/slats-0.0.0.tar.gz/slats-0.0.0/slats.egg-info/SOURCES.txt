@@ -1,0 +1,10 @@
+README.md
+setup.py
+slats/__init__.py
+slats/main.py
+slats/version.py
+slats.egg-info/PKG-INFO
+slats.egg-info/SOURCES.txt
+slats.egg-info/dependency_links.txt
+slats.egg-info/entry_points.txt
+slats.egg-info/top_level.txt

@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: slats
+Version: 0.0.0
+Summary: Save local albums to Spotify
+Home-page: https://github.com/mwiens91/slats
+Author: Matt Wiens
+Author-email: mwiens91@gmail.com
+License: BSD 3-clause "New" or "Revised License"
+Description: [![PyPI](https://img.shields.io/pypi/v/slats.svg)](https://pypi.org/project/slats/)
+        [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/slats.svg)](https://pypi.org/project/slats/)
+        [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+        
+        # slats
+        
+        ### NOTE: this project is an active work in progress
+        
+        Saves local albums to Spotify.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
