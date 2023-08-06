@@ -1,0 +1,3 @@
+nameko
+marshmallow
+elasticsearch_dsl<7,>=6
