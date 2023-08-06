@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: htklite
+Version: 0.0.1
+Summary: A lightweight version of HistomicsTK
+Home-page: https://github.com/topspinj/htklite
+Author: Jill Cates
+Author-email: jill@biosymetrics.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: scikit-image
+
+## HistomicsTK-Lite
+
+[![Build Status](https://travis-ci.org/topspinj/htklite.svg?branch=master)](https://travis-ci.org/topspinj/htklite)
+
+**htklite** is a lightweight version of [HistomicsTK](https://github.com/DigitalSlideArchive/HistomicsTK).
+
+
