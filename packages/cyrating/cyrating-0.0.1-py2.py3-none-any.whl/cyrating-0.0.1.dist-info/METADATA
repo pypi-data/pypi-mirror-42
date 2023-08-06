@@ -1,0 +1,110 @@
+Metadata-Version: 2.1
+Name: cyrating
+Version: 0.0.1
+Summary: Python wrapper for https://www.cyrating.com.
+Home-page: UNKNOWN
+Author: Cyrating
+Author-email: tech@cyrating.com
+License: ISCL
+Keywords: cyrating
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: PyJWT
+
+# python-cyrating
+
+A python wrapper for Cyrating https://www.cyrating.com.
+
+[![Latest PyPI Release](https://img.shields.io/pypi/v/cyrating.svg)](https://pypi.org/project/cyrating/)
+[![License](https://img.shields.io/pypi/l/cyrating.svg)](https://github.com/wq/python-requirejs/blob/master/LICENSE)
+[![Python Support](https://img.shields.io/pypi/pyversions/cyrating.svg)](https://pypi.org/project/cyrating/)
+
+## Installation
+```sh
+pip install cyrating
+```
+
+Then in your application root directory use the following command to set up your configuration including your Cyrating token which is provided in your user interface:
+
+```sh
+echo -e "[cyrating]\ntoken: cyratingtoken" > cyrating.ini
+```
+
+
+## Usage example
+
+```python
+>>> import cyrating
+>>> cr = cyrating.init()
+```
+
+Method  | Description
+------------- | -------------
+get_main_company  | returns main company
+get_entities  | returns list of entities
+get_suppliers | returns list of suppliers
+get_certificate | returns certificate of a specific company
+
+# Examples
+
+**Returns main company**
+```python
+>>> cr.get_main_company()
+{'_id': 'XXXXX', 'name': 'XXXXX', 'supersector': 'XXXXX', 'rating': XX}
+```
+
+**Returns list of entities**
+```python
+>>> cr.get_entities()
+[{'_id': 'XXXXX', 'name': 'XXXXX', 'supersector': 'XXXXX', 'rating': XX},{'_id': 'XXXXX', 'name': 'XXXXX', 'supersector': 'XXXXX', 'rating': XX}]
+```
+
+**Returns list of suppliers**
+```python
+>>> cr.get_suppliers()
+[{'_id': 'XXXXX', 'name': 'XXXXX', 'supersector': 'XXXXX', 'rating': XX},{'_id': 'XXXXX', 'name': 'XXXXX', 'supersector': 'XXXXX', 'rating': XX}]
+```
+
+**Returns certificate of a specific company**
+```python
+>>> main_company = cr.get_main_company()
+>>> cr.get_certificate(main_company)
+```
+
+**Save certificate of a specific company to a file**
+```python
+>>> main_company = cr.get_main_company()
+>>> cr.get_certificate(main_company, filename='Cyrating - Certificate of {}.pdf'.format(main_company['name']))
+```
+
+
+## Release History
+
+0.0.1 (2019-02-27)
+---------------------
+
+* The first proper release
+
+
+## Meta
+
+Cyrating – [@cyrating](https://twitter.com/cyrating) – hello@cyrating.com
+
+Distributed under the ISCL license. See ``LICENSE`` for more information.
+
+
+## Contributing
+
+1. Send issues to issues@cyrating.com
+
+
+
+
