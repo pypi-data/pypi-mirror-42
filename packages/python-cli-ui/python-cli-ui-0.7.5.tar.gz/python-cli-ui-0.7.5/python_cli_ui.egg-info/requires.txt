@@ -1,0 +1,9 @@
+colorama
+tabulate
+unidecode
+
+[dev]
+sphinx
+ghp-import
+pytest
+pyflakes
