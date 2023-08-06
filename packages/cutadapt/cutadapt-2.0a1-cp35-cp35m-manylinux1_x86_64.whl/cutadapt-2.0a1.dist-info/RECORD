@@ -1,0 +1,17 @@
+cutadapt-2.0a1.dist-info/top_level.txt,sha256=5vh-0TTDg3xtnzRAcRlcYqIkHwqh-GxRzuHZbXAN_Cg,9
+cutadapt-2.0a1.dist-info/RECORD,,
+cutadapt-2.0a1.dist-info/METADATA,sha256=lhJdrSF2GnwglyiOBi5EjaIy3pkVeR7vHIa7K_DTmKk,2762
+cutadapt-2.0a1.dist-info/LICENSE,sha256=gEDFtGic0dVhrgxry_7bXHf1K6gpPoDVguYhWNEsIFk,1092
+cutadapt-2.0a1.dist-info/entry_points.txt,sha256=X3kwRZwtixhmahCx4TPIFLkD5ug8jVMa9cx8jKDLGuw,53
+cutadapt-2.0a1.dist-info/WHEEL,sha256=vdFCDRjkdQ5H3ykxI_3Wjh7ApZPYaqotdBtJGKZc5LE,109
+cutadapt/report.py,sha256=t4Ljzld_FA4ROyu9qerdfhEGIyvBU3XK_yVtngiPlnI,17098
+cutadapt/qualtrim.cpython-35m-x86_64-linux-gnu.so,sha256=jln5yHnKx_kVw9kR7BGiFhxtYr5MTQU5bmkyuTVZuM8,31064
+cutadapt/pipeline.py,sha256=gS9CBEmKeKOQXGHl2wdTGg4KGQq7EXekmrDbvK_uDws,26568
+cutadapt/adapters.py,sha256=mxGIFhb_Z3-21L_mSIic4o3Fi0HNiWtf7FC-Ebjrk0s,40942
+cutadapt/align.py,sha256=MIRpI3OmFNwR0oMcL7WXNY6uRLhknaMB6o5caFq7Guw,1767
+cutadapt/filters.py,sha256=bNmXwmGcEFi_Aio--x78y9tAmgxBQL7PYMRR6qzkKG4,11369
+cutadapt/__main__.py,sha256=QunhFIwA2KdBdboP7q8xxm__9G3RrElnzqFmJlcgpz8,37584
+cutadapt/utils.py,sha256=sVg6m0ArekAaVTKi3ym9TjHaBRD6pFZueD_PW8ggn9k,3423
+cutadapt/_align.cpython-35m-x86_64-linux-gnu.so,sha256=TpostOf7cQ4Q--aMdjy0_bFqt2-dqWK91UkjkC_KOe4,179328
+cutadapt/modifiers.py,sha256=V1ZXUO9T1pFmYhnlFYnUjKX7MxbrubSApBvj2NpkKGo,11393
+cutadapt/__init__.py,sha256=joLcwJbJ7uCGWHrAaEGlZI_OS9TxcmCoqEp8O5THarQ,161
