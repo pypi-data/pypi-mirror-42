@@ -1,0 +1,4 @@
+requests>=2.19.1
+geopy>=1.16.0
+imageio>=2.3.0
+requests_futures>=0.9.7
