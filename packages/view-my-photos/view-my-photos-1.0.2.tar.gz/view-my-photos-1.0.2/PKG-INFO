@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: view-my-photos
+Version: 1.0.2
+Summary: Generates an HTML gallery of photos indicating the folder where they are stored.
+Home-page: https://github.com/tanrax/view-my-photos
+Author: Andros Fenollosa
+Author-email: andros@fenollosa.email
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: photos,terminal,console,html,css
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.6
