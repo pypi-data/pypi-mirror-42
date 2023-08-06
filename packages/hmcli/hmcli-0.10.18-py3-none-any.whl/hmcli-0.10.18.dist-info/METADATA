@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: hmcli
+Version: 0.10.18
+Summary: A command-line interface for the hackerman library.
+Home-page: https://github.com/AgeOfMarcus/hmcli
+Author: Marcus Weinberger
+Author-email: marcus@marcusweinberger.com
+License: GPL
+Platform: UNKNOWN
+Requires-Dist: hackerman (>=0.10.18)
+
+# hmcli
+A command-line interface for the [hackerman](https://github.com/ageofmarcus/hackerman) library.
+
+## known bugs
+- hmcli.scanners with mode "tcp" seems to produce only negative results
+
+
