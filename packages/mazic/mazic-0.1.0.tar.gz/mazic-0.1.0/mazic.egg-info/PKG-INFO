@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: mazic
+Version: 0.1.0
+Summary: contain some common preprocess function
+Home-page: https://github.com/mazicwong/mazic
+Author: mazicwong
+Author-email: mazic@gmail.com
+License: MIT Licence
+Description: A lib contain some common preprocess function
+Keywords: pip,usual lib,mazic,mazic
+Platform: any
