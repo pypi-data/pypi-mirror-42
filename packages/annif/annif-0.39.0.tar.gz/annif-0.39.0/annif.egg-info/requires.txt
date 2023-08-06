@@ -1,0 +1,17 @@
+connexion[swagger-ui]
+swagger_ui_bundle
+flask-cors
+click-log
+nltk
+gensim
+sklearn
+rdflib
+
+[fasttext]
+fasttextmirror
+
+[voikko]
+voikko
+
+[vw]
+vowpalwabbit
