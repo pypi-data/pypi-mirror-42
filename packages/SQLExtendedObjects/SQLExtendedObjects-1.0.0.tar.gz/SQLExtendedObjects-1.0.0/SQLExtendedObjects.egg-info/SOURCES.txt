@@ -1,0 +1,9 @@
+README.md
+setup.py
+SQLExtendedObjects.egg-info/PKG-INFO
+SQLExtendedObjects.egg-info/SOURCES.txt
+SQLExtendedObjects.egg-info/dependency_links.txt
+SQLExtendedObjects.egg-info/top_level.txt
+sql_extended_objects/__init__.py
+sql_extended_objects/sql_extended_objects.py
+sql_extended_objects/version
