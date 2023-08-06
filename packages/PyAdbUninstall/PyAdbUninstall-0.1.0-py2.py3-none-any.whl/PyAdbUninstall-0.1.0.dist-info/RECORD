@@ -1,0 +1,15 @@
+adb_uninstall/__init__.py,sha256=vsibUjEjToiCPNe2Rev9Ij9yv9OSCvTkpU_XK5LZPGA,172
+adb_uninstall/__main__.py,sha256=_5PNoQdCsYHhPMu5VSnrWdoYcCsv5MapSrFLhcr11jc,98
+adb_uninstall/adb_package.py,sha256=AuvLHL68X3FzyXQ3ZKhyj6ouKJu5DsbIUX9H1FEEiuk,1889
+adb_uninstall/constants.py,sha256=5c97QGmGoNKEGDRNhWV0901v3KsQ-9dX4M91QH7HtiE,2852
+adb_uninstall/gui.py,sha256=v4xuPuAv4vrRnyrCbAww71LzjSYyLQciwaNWFOJKdLw,12771
+adb_uninstall/subprocess2.py,sha256=5fhQ1L1FEMDwRNf_v71Q0bH-ZvhMNEKz7sIPzfrXZjM,1312
+adb_uninstall/tk_automenu.py,sha256=PLgx-poGpbQkWXcEkXF0TsuYti8AKgDBf30xT_zmvJ0,1567
+adb_uninstall/tk_statusbar.py,sha256=p5WWepivv6ApSuCpk70liDW_doMsopVPEqFjhPYggTQ,552
+PyAdbUninstall-0.1.0.dist-info/AUTHORS,sha256=HLaVCcuwArtsAcnShkki1tULoN6REmOZAxj_0VpVPJY,361
+PyAdbUninstall-0.1.0.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+PyAdbUninstall-0.1.0.dist-info/METADATA,sha256=6FUcI0YC2LKrsVKc_y9P8wwfLWM57iFEhzxHdluAAA8,3396
+PyAdbUninstall-0.1.0.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+PyAdbUninstall-0.1.0.dist-info/entry_points.txt,sha256=-iE6R6-3ip7ch09FagzO8e4CgGt-hOIIlyCYeX8qz38,58
+PyAdbUninstall-0.1.0.dist-info/top_level.txt,sha256=JnkSwvCYkpZ2az34bb9PwNGoXO4aLv2W4niay4c8ltU,14
+PyAdbUninstall-0.1.0.dist-info/RECORD,,
