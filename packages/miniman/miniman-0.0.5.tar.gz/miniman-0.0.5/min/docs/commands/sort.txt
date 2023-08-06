@@ -1,0 +1,12 @@
+sort lines of text
+
+EXAMPLES
+	sort < in.txt
+		sort lines by alphabet, print to stdout
+	sort -n < numbers.txt
+		sort lines numerically, print to stdout
+
+FLAGS
+	-n	correct numerical sort (e.g. 15 > 9)
+	-h	correct sort of human-readable numbers (e.g. 2k, 5G)
+	-r	reverse the sort order
