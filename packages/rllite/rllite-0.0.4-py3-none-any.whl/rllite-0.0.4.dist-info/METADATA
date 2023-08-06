@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: rllite
+Version: 0.0.4
+Summary: rl lite repository
+Home-page: https://github.com/ZJU-RL/rllite
+Author: zjurl
+Author-email: wangyunkai.zju@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: utils
+Requires-Dist: argparse
+Requires-Dist: tqdm
+Requires-Dist: typing
+Requires-Dist: gym
+Requires-Dist: scipy
+Requires-Dist: tensorboardX
+
+UNKNOWN
+
+
