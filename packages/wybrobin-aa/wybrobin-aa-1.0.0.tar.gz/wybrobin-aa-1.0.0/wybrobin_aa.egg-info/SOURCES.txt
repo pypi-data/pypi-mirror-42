@@ -1,0 +1,7 @@
+setup.py
+packtest/__init__.py
+packtest/a.py
+wybrobin_aa.egg-info/PKG-INFO
+wybrobin_aa.egg-info/SOURCES.txt
+wybrobin_aa.egg-info/dependency_links.txt
+wybrobin_aa.egg-info/top_level.txt
