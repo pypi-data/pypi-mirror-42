@@ -1,0 +1,13 @@
+gql/cli.py,sha256=M5d5nYcukC3YmOElRd5DvgDhJqF3ikdDFOB84yN71KM,4866
+gql/clients/__init__.py,sha256=guPbrIukluL5pkCOh8uKR-FieeiEsHXyYysADWITcDo,60
+gql/clients/asyncio.py,sha256=YGv9EvDpF0k8K5OMY6L3EF60OJYXhywCBnhgZDu4BEI,1315
+gql/clients/sync.py,sha256=rN2zfJ6jeyZkQMKLOS7v49fEl5GWjyR4mwUkMsiIlEA,1013
+gql/config.py,sha256=_U54X4Asm1vEDYajD3Mn6bKkq_W4su_uqCDkI3TyZAo,748
+gql/query_parser.py,sha256=t8jstHLjH6baa-R9SGnXYZYi41Mhq6ISE92nHDVtOoI,7196
+gql/renderer_dataclasses.py,sha256=la7sSfyrKm3sEE5vCcXtZsI7U9_gFhW2wHgckc617X0,7209
+gql/utils_codegen.py,sha256=ZBtx-OYl_AQotdaC0jlsVOVKajN7ivHT-iPjngdHJEw,1186
+gql/utils_schema.py,sha256=k8n_2xHzPmi_70EU2T7pXTtvVg63KAl-K1EKzEHYOQw,711
+gql_next-0.1.1.dist-info/entry_points.txt,sha256=_ttzxPtjJFuwijPl2VDZSxxRO-LiwWTQbPyOLMHzzSc,35
+gql_next-0.1.1.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+gql_next-0.1.1.dist-info/METADATA,sha256=DdLr37mM6AgpDOHmNEDBih9_qZtT819cviyNmm7I1Dc,3893
+gql_next-0.1.1.dist-info/RECORD,,
