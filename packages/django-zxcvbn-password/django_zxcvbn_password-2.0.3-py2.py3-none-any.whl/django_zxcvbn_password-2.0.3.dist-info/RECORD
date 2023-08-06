@@ -1,0 +1,14 @@
+django_zxcvbn_password-2.0.3.dist-info/DESCRIPTION.rst,sha256=Yadk2F-I5AEBoIvXXkwnFr9K_bwg6QY98eIUhUpHQYs,5716
+django_zxcvbn_password-2.0.3.dist-info/METADATA,sha256=agYRCufZNedTC_TbJDN2pnZFJFxWIEMa4nvhdKSWAP8,6689
+django_zxcvbn_password-2.0.3.dist-info/RECORD,,
+django_zxcvbn_password-2.0.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_zxcvbn_password-2.0.3.dist-info/metadata.json,sha256=NfGWxhfOiMA513AzaPGJ4V5vTdcEpr3eh4HuMElZbBc,1108
+django_zxcvbn_password-2.0.3.dist-info/top_level.txt,sha256=qCB7aiSP4IdnEIu9BDXXD26G-9BbTvgtyKXObLGlhD8,16
+zxcvbn_password/__init__.py,sha256=VaAyEmKI5ydg15yspeJjXFbE2DAVXo8egq2tKOH7CcE,549
+zxcvbn_password/fields.py,sha256=h4_LH8kZsd8n59mtENrdhcs6GNy-DvsEQaje-Lw73Cs,1707
+zxcvbn_password/utils.py,sha256=vhGplwl93q0buuiDhKgz18recM6IGriOjs76fPBoS_8,552
+zxcvbn_password/validators.py,sha256=niMsxBERLcmoJyUaj86ChiudmQrUcG707lS3JAnz0iE,1870
+zxcvbn_password/widgets.py,sha256=4Pl89EEpFV3LXRrihXx2rGYiBk0jzfHSemRVpcchs48,3490
+zxcvbn_password/static/zxcvbn_password/js/password_strength.js,sha256=7U16ucL8_9zkhta_eDuVYi1MuVUf6eLSym5K0vRvJWE,3830
+zxcvbn_password/static/zxcvbn_password/js/zxcvbn-async.js,sha256=oi1j7KgFYAIPR2sV859COHIRM2TVSc70S3TXc8d1uIk,348
+zxcvbn_password/static/zxcvbn_password/js/zxcvbn.js,sha256=Znf8FdJF85f1LV0JmPOob5qudSrns8pLPZ6qkd_-F0o,821711
