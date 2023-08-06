@@ -1,0 +1,112 @@
+Metadata-Version: 2.1
+Name: nicexcel
+Version: 0.1.11
+Summary: A package for writing nicely formatted Pandas dataframes in Excel data files
+Home-page: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+Requires-Dist: pandas (>=0.20.0)
+Requires-Dist: openpyxl (>=2.5.0)
+
+
+**nicexcel** is a lightweight Python package 
+that provides the possibility of exporting pandas 
+native DataFrame objects into nicely formatted MS Excel files.
+
+The package leverages **pandas** and **openpyxl** open-source 
+Python libraries to add some simple aesthetic details to output Excel files.
+This improves the overall aspect and usability of the files, hence, it 
+can help in the automation of reporting activities.
+
+1. Column widths auto-adapted to fit characters contained inside them
+2. Header row containing filterable columns within Excel (by default)
+3. Header row freezed (by default)
+4. No indexing by default (vs **pandas** default index set on)
+5. Columns in the output Excel file have a formatting that resembles 
+**pandas** default data types. However, it is still possible to specify some 
+number format via specific arguments
+
+#### Getting started with *to_excel()*
+
+The **nicexcel** package main functionality consists in the exporting of 
+pandas.DataFrame object. The *to_excel()* method is conceived as
+a wrapper of the popular *pd.DataFrame.to_excel()* that takes two 
+key inputs:
+   * **df**: pd.DataFrame instance
+   * **filename**: string containing file path where the output 
+   *.xlsx* file will be saved
+
+See below a simple example of application
+
+```python
+import nicexcel as nl
+import pandas as pd
+
+# instantiate mock data
+mock_df = pd.DataFrame(data={
+    'Product Line': ["T-Shirts", "Jeans", "Jackets"],
+    'Units sold': [11213, 9908, 2345],
+    'Yearly Revenues': [30000.0411, 45513.1228, 10220.103],
+    'Gross Margin (%)': [0.223, 0.1151, 0.458]})
+
+# column format
+cols_format = {'Integer': ['Yearly Income'], '%': ['Gross Margin (%)']}
+
+# generate nicely formatted excel
+nl.to_excel(
+    df=mock_df,
+    filename='output.xlsx',
+    cols_format=cols_format)
+``` 
+
+![Output Results](https://raw.githubusercontent.com/scouseralex/nicexcel/master/docs-images/method1_snippet.png)
+
+
+#### A second method: *to_excel_ms()*
+
+In a similar fashion, the *nicexcel.to_excel_ms()* [^1] allows the 
+possibility of exporting a group of different *pd.DataFrame* 
+objects to the same output .xlsx files on different worksheets.
+
+The method takes two main arguments
+   * **dfs**: dict of pd.DataFrame instances
+   * **filename**: string containing file path where the output 
+   *.xlsx* file will be saved
+
+See an example of application below.
+
+```python
+import nicexcel as nl
+import pandas as pd
+
+# get sample data
+tx_df = pd.DataFrame(data={
+    'date': ['11/08/2018', '09/04/2018', '30/03/2018'], 
+    'customer': ['XYZ Corporation', 'ABC Electric', 'XYZ Corporation'],
+    'price': [113.202, 220.99, 90.1011]})
+cust_df = pd.DataFrame(data={
+    'customer': ['ABC Electric', 'XYZ Corporation'],
+    'city': ['London', 'Tokyo'],
+    'revenue (M)': [100.2334, 76.23216]})
+
+# initiate dict of dataframes
+dfs = {'transactional_db': tx_df, 'customer_db': cust_df}
+
+# generate nicely formatted excel file
+nl.to_excel_ms(
+    dfs=dfs,
+    filename='output_ms')
+``` 
+)
+
+### Documentation
+The documentation is available in docstrings provided within 
+the code.
+
+
