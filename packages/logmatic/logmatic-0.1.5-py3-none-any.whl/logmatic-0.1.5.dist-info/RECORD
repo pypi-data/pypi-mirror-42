@@ -1,0 +1,11 @@
+logmatic/__init__.py,sha256=wFRYVVl9lJOxKrVCf1fIheIIeuz4w9TDOSF_FzOBnkQ,142
+logmatic/log.py,sha256=hqL4NWNdY8HJf0vC1vUcUVjcjgyTTxRhwVRQOeW-RbY,1241
+logmatic/logger.py,sha256=QurvVFLcIsKwW4krHVZV5fWD5F4LtWwAU-uvijMdH5M,13744
+logmatic/formatter/__init__.py,sha256=RV68KqErB9V30SBcKNoWLzut861ZaJ1o6OPIz4fZgAE,162
+logmatic/formatter/extended_json_formatter.py,sha256=V1agIOeR5muzKuCSclY5zez1qdJRxlUzZB6jeVwIpLQ,488
+logmatic/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+logmatic/utils/pather.py,sha256=fmD26PUzeyhHpn1Up5ytZTyYH_1vdz7_DXetXMrTImo,1224
+logmatic-0.1.5.dist-info/METADATA,sha256=fpBGjC14yctmaBsu7llWd1M71BUvSfGjWd1DrioTHZo,366
+logmatic-0.1.5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+logmatic-0.1.5.dist-info/top_level.txt,sha256=81Tj68p6NKiFq7YUcviQi1eBrliqgNcBbZURwFbRMt0,9
+logmatic-0.1.5.dist-info/RECORD,,
