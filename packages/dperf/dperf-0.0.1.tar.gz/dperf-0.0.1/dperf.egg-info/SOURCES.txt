@@ -1,0 +1,7 @@
+setup.py
+dperf/__init__.py
+dperf.egg-info/PKG-INFO
+dperf.egg-info/SOURCES.txt
+dperf.egg-info/dependency_links.txt
+dperf.egg-info/entry_points.txt
+dperf.egg-info/top_level.txt
