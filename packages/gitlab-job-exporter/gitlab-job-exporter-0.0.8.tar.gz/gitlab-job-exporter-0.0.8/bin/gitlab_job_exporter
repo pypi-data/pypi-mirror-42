@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+import json
+import time
+from pathlib import Path
+from prometheus_client import start_http_server
+from prometheus_client.core import REGISTRY
+from gitlab_job_exporter import GitlabJobCollector, throw_exception, parse_args, example_config
+
+def main():
+
+    try:
+        args = parse_args()
+        configfile = args.config
+
+        try:
+            configjson = Path(configfile)
+            contents = open(str(configjson), "r").read()
+            config = json.loads(contents)
+
+        except (FileNotFoundError) as exc:
+            throw_exception(exc, 'ERROR: Check name of configuration file')
+        except (json.JSONDecodeError) as exc:
+            throw_exception(exc, 'ERROR: Invalid json format of configuration file {0}'.format(example_config()))
+        except (OSError, IOError) as exc:
+            throw_exception(exc, 'ERROR: OSError / IOError')
+
+        # Read input data from configuration file
+        port_raw = config.get('port', "9118")
+        try:
+            port = int(port_raw)
+        except ValueError as exc:
+            throw_exception(exc, 'ERROR: Invalid format of port number')
+
+
+        interval_raw = config.get('interval', '10')
+
+        try:
+            interval = int(interval_raw)
+        except ValueError as exc:
+            throw_exception(exc, 'ERROR: Invalid format of scraping interval')
+
+        git_url         = config.get('git_url', None)
+        git_project_id  = config.get('git_project_id', -1)
+        git_token       = config.get('git_token', None)
+        git_branch      = config.get('git_branch', 'DefaultBranch')
+
+        REGISTRY.register(GitlabJobCollector(git_url, git_project_id, git_token, git_branch))
+
+        start_http_server(port)
+        while True:
+            time.sleep(interval)
+
+    except KeyboardInterrupt:
+        print('')
+        print(" Manually Interrupted")
+        exit(0)
+
+
+if __name__ == "__main__":
+    main()
