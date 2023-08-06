@@ -1,0 +1,16 @@
+bids_validator/__init__.py,sha256=zh0JP4RlXHkbIvV3Wg4zSP-SAxarwetjg-2ENsEalSE,206
+bids_validator/_version.py,sha256=RNYM8o7E9P0mU59zH4oW9NcFYSJKWYM6LDl5mTD0g34,497
+bids_validator/bids_validator.py,sha256=_xV2vI_edx3lf0FegOa8sN96ZSqAdbnjhyYLItZ7jNQ,5991
+bids_validator/rules/associated_data_rules.json,sha256=s8PUxHKzgYZCP3CkSXNvgbHBOFweYG4v6X3JU5Hkk6o,244
+bids_validator/rules/file_level_rules.json,sha256=xZ4uT-rmTl1SSvvOBn_5iEw-jYFdwJUm3BF4BndR3pg,6679
+bids_validator/rules/fixed_top_level_names.json,sha256=2UAUBWP2S2fQ6rHJYaZVKXDn30VLd2JvONXRMvkpn1M,236
+bids_validator/rules/path.json,sha256=M-j3d0Y4HxK5a4OLirPlo6J51Ly12UW2-6qlPAtms0M,111
+bids_validator/rules/phenotypic_rules.json,sha256=WIZffKespZSff38_qKLthPHuXy_woxcrDXG6xoyXvMM,91
+bids_validator/rules/session_level_rules.json,sha256=FzzExhAUlXmy77YfVRolfQwRsKxkdFzaVSkhOcuGw9w,2596
+bids_validator/rules/subject_level_rules.json,sha256=3IahK3Y71pFgzdfTofENPQvxXvNIvS8i52NQlDLZcZY,200
+bids_validator/rules/top_level_rules.json,sha256=Qir5fY5PKFvkZn3XBWcHL1nBdHs_vll5ElJSUza0Ypo,2598
+bids_validator/tsv/non_custom_columns.json,sha256=6Eb_uSsrS8N-zOmSFUHP2raMuQ6hlT8CUhxhL-LTtgg,715
+bids_validator-1.1.8.dist-info/METADATA,sha256=1ZqqT0D_Ms-HiyfMg5S1-FnOubiv8Po7ZDiKJcTDKRE,10682
+bids_validator-1.1.8.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+bids_validator-1.1.8.dist-info/top_level.txt,sha256=mFN8f8Vtia2LPvlruEKWZH8H-BRxHsr2WpYpge4_5b0,15
+bids_validator-1.1.8.dist-info/RECORD,,
