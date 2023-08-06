@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: jail
+Version: 0.0.3
+Summary: Native FreeBSD jail bindings with libc.
+Home-page: https://github.com/gronke/py-jail
+Author: Stefan Grönke
+Author-email: stefan@gronke.net
+License: UNKNOWN
+Description: py-jail
+        =======
+        
+        A native Python wrapper for FreeBSD jails using libc.
+        
+        ## Usage
+        
+        ### jail_set
+        
+        ```python
+        >>> import jail
+        >>> jiov = jail.Jiov(dict(persist=None, jid=23, path="/rescue"))
+        >>> jail.dll.jail_set(jiov.pointer, len(jiov), 1)
+        23
+        ```
+        
+        ### jail_remove
+        
+        ```python
+        >>> import jail
+        >>> jiov = jail.Jiov(dict(persist=None, jid=23, path="/rescue"))
+        >>> jail.dll.jail_remove(23)
+        -1
+        >>> jail.dll.jail_set(jiov.pointer, len(jiov), 1)
+        23
+        >>> jail.dll.jail_set(jiov.pointer, len(jiov), 1)
+        -1
+        >>> jiov.errmsg.value
+        b'jail 23 already exists'
+        >>> jail.dll.jail_remove(23)
+        0
+        >>> jail.dll.jail_set(jiov.pointer, len(jiov), 1)
+        23
+        ```
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
