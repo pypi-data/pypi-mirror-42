@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: scipion-em-nysbc
+Version: 1.0.2
+Summary: Plugin to use NYSBC programs within the Scipion framework
+Home-page: https://github.com/scipion-em/scipion-em-nysbc
+Author: Grigory Sharov
+Author-email: sharov.grigory@gmail.com
+License: UNKNOWN
+Description: # NYSBC - 3DFSC plugin
+        
+        This plugin allows to use 3D FSC program within the Scipion framework.
+        
+        3D FSC is a program for evaluating directional resolution. It is developed at Salk Institute and [NYSBC](https://github.com/nysbc/Anisotropy).
+        
+        Supported versions of NYSBC: 2.5, 3.0
+        
+        ![build status](http://arquimedes.cnb.csic.es:9980/badges/nysbc_devel.svg "Build status")
+        
+Keywords: scipion electron-microscopy cryo-em structural-biology image-processing scipion-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2.7
