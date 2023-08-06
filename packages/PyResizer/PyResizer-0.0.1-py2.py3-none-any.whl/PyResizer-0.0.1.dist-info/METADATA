@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: PyResizer
+Version: 0.0.1
+Summary: Tkinter GUI program to resize images via pillow
+Home-page: https://github.com/jedie/PyResizer
+Author: Jens Diemer
+Author-email: pypi@jensdiemer.de
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Requires-Dist: pillow
+
+# PyResizer
+
+Tkinter GUI program to resize images via pillow
+
+created 2019 by Jens Diemer
+GNU General Public License v3 or later (GPLv3+)
+
+* https://github.com/jedie/PyResizer/
+* https://pypi.org/project/PyResizer/
+
+## dev. startup
+
+```bash
+
+# clone repository from github:
+~$ git clone https://github.com/jedie/PyResizer.git
+
+# create virtualenv
+~$ cd PyResizer
+~/PyResizer$ ./create_env.sh
+
+# activate virtualenv
+~/PyResizer$ source bin/activate
+
+# Start GUI:
+(.virtualenv) ~/PyResizer$ pyresizer
+```
+
+
+

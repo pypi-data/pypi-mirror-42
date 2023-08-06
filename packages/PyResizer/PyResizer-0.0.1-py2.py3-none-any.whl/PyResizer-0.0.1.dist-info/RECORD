@@ -1,0 +1,12 @@
+pyresizer/__init__.py,sha256=8E8PIJGO3JyP51ss8UMP7PQF2MeMgBlVhYO6Vb97doo,171
+pyresizer/__main__.py,sha256=fIEA5GY2KVJKsJPRQQ7ZpuRDRCkgRvZqyqBcyTUIeh4,128
+pyresizer/constants.py,sha256=SYyBBlDUCNItBHWy9i9SRJ-8pfKUwT_w6ov669vJQmc,1173
+pyresizer/gui.py,sha256=ajxg18J1ABYIAeGt29yB3Ksp6bxf1penKHfibW9V1Eg,14489
+pyresizer/image.py,sha256=rhHRq9QINIOerlnVxieYmqOu8My-89Ozgf16JWrJ3vo,3785
+PyResizer-0.0.1.dist-info/AUTHORS,sha256=HLaVCcuwArtsAcnShkki1tULoN6REmOZAxj_0VpVPJY,361
+PyResizer-0.0.1.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+PyResizer-0.0.1.dist-info/METADATA,sha256=q5kI-36IvEK8T3SDsOm3jkvBT02IlcSrzDo3iYWoVIo,1018
+PyResizer-0.0.1.dist-info/WHEEL,sha256=HX-v9-noUkyUoxyZ1PMSuS7auUxDAR4VBdoYLqD0xws,110
+PyResizer-0.0.1.dist-info/entry_points.txt,sha256=jtIM0-3ipUdd1EhwcC52FuON6C-4EXPjl6J0MfCUQCM,50
+PyResizer-0.0.1.dist-info/top_level.txt,sha256=Xg3JCgAaZxLN3ZLSAVNneXYDfr2Xg5BgehSPuZDc-vI,10
+PyResizer-0.0.1.dist-info/RECORD,,
