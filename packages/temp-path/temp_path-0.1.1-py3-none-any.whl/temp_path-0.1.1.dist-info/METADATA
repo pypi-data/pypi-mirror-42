@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: temp-path
+Version: 0.1.1
+Summary: A tool to temporarily add folders to the path.
+Home-page: UNKNOWN
+License: UNKNOWN
+Author: Jan Freyberg
+Author-email: jan.freyberg@gmail.com
+Requires-Python: >=3.5,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+# temp_path
+
+This is a package to allow you to add a folder to the path temporarily.
+
+Often when you deal with other people's code, it's not set up to be importable /
+packaged. This tool allows you to import from those files anyways, without
+having to permanently modify your path.
+
+Simply run:
+
+```python
+from temp_path import temp_path
+with temp_path('../someone/elses/code'):
+    import their.messy.code
+
+their.messy.code.use()
+```
+
+Of course, this is not just for importing python modules but also for other
+stuff you might need on your path.
+
