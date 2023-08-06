@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pinnwand
+Version: 0.0.1
+Summary: Straightforward pastebin software.
+Home-page: https://github.com/supakeen/pinnwand
+Author: supakeen
+Author-email: cmdr@supakeen.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Provides-Extra: dev
