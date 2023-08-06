@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: dnslist
+Version: 0.1
+Summary: Domain list generator
+Home-page: https://github.com/marmeladema/dnslist/
+Author: Elie ROUDNINSKI
+Author-email: xademax@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3

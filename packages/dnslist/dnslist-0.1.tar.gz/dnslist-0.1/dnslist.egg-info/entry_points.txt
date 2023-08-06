@@ -1,0 +1,3 @@
+[console_scripts]
+dnslist = dnslist.__main__:main
+

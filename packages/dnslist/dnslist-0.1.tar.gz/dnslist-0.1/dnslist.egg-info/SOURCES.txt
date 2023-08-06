@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+dnslist/__init__.py
+dnslist/__main__.py
+dnslist.egg-info/PKG-INFO
+dnslist.egg-info/SOURCES.txt
+dnslist.egg-info/dependency_links.txt
+dnslist.egg-info/entry_points.txt
+dnslist.egg-info/top_level.txt
