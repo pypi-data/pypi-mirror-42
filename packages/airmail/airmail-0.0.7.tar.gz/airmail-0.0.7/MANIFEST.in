@@ -1,0 +1,5 @@
+include airmail/data/*.json
+include airmail/data/*.yml
+include airmail/bash/*.sh
+README.md
+LICENSE
