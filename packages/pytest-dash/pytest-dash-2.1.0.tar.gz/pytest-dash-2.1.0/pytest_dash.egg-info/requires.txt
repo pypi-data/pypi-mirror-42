@@ -1,0 +1,9 @@
+pytest
+percy
+flask
+requests
+dash
+waitress
+ruamel.yaml
+selenium
+lark-parser
