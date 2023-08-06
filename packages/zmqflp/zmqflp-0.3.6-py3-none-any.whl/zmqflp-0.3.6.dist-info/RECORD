@@ -1,0 +1,10 @@
+zmqflp/__init__.py,sha256=UUjc13RhcXId5rSH3R6sHnbYVfsrnrKKp9zdxsvpSaI,15
+zmqflp/zmqflp_api.py,sha256=ZiVlzP5DoaXyLLmCF7SfV-leTfeyBZ0nDBIGGpNaJbY,9209
+zmqflp/zmqflp_client.py,sha256=fAdm8lC1SErssOL0raFkqLtZN8cMDtwZW9PwhhK326E,863
+zmqflp/zmqflp_managed_client.py,sha256=6xy6mVyJF3Bz1I3vZbzp2YiMTtIlhNqlnRK1QBQhk9o,1095
+zmqflp/zmqflp_server.py,sha256=ymcjFLyohfWGD6Q61vJF5o02hNvmeOHemfZL4A8LFuM,2409
+zmqflp/zmqflp_tests.py,sha256=E-oUAGFxwyTkXRfanfB5Nm6wk9ps3Gz6auatZF-nBZU,2428
+zmqflp-0.3.6.dist-info/METADATA,sha256=XdOVdR90wH75tiLW25Y2GoxJqeFX6pygk8Y_tmYkZIU,2416
+zmqflp-0.3.6.dist-info/RECORD,,
+zmqflp-0.3.6.dist-info/WHEEL,sha256=cScVKDQXc_cp1jHmxFDq9fIOIg17a2BsmfS6J39H6Eo,97
+zmqflp-0.3.6.dist-info/top_level.txt,sha256=RDD2leVsJ0trTianw4UX5BnAcr9XqPhgqJlrg-7Rdmo,7
