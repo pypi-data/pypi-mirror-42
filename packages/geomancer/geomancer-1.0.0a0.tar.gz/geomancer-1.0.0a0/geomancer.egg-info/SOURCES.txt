@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+geomancer/__init__.py
+geomancer.egg-info/PKG-INFO
+geomancer.egg-info/SOURCES.txt
+geomancer.egg-info/dependency_links.txt
+geomancer.egg-info/not-zip-safe
+geomancer.egg-info/requires.txt
+geomancer.egg-info/top_level.txt
+geomancer/common/__init__.py
+geomancer/common/auth.py
+geomancer/spells/__init__.py
+geomancer/spells/base.py
+geomancer/spells/spells.py

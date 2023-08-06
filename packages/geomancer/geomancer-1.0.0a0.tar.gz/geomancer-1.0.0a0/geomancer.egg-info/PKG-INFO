@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: geomancer
+Version: 1.0.0a0
+Summary: Automated OSM Feature Engineering
+Home-page: https://github.com/thinkingmachines/geomancer
+Author: Thinking Machines Data Science
+Author-email: hello@thinkingmachin.es
+License: GNU General Public License v3 (GPLv3)
+Description: # geomancer
+        
+        Automated OSM Feature Engineering built on top of BigQuery
+        
+Keywords: osm,python client,geospatial
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.5
+Description-Content-Type: text/markdown
+Provides-Extra: test
