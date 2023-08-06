@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+pylibosrm/__init__.py
+pylibosrm/osrm_wrapper.cpp
+pylibosrm.egg-info/PKG-INFO
+pylibosrm.egg-info/SOURCES.txt
+pylibosrm.egg-info/dependency_links.txt
+pylibosrm.egg-info/top_level.txt
