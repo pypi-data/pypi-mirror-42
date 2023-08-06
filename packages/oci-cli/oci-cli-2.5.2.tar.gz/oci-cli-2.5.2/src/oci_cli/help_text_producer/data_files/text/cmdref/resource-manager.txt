@@ -1,0 +1,46 @@
+resource-manager
+****************
+
+
+Description
+===========
+
+Oracle Resource Manager CLI.
+
+
+Available Commands
+==================
+
+* job
+
+  * cancel
+
+  * create
+
+  * get
+
+  * get-job-logs
+
+  * get-job-logs-content
+
+  * get-job-tf-config
+
+  * get-job-tf-state
+
+  * list
+
+  * update
+
+* stack
+
+  * create
+
+  * delete
+
+  * get
+
+  * get-stack-tf-config
+
+  * list
+
+  * update
