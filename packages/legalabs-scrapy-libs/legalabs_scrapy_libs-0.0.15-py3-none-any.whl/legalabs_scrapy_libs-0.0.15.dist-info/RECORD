@@ -1,0 +1,17 @@
+legalabs_scrapy_libs/__init__.py,sha256=Ep3FRu0SzpJUVXzKgo8QeKAzBIA7TpzaZuxhfF99jY8,167
+legalabs_scrapy_libs/create_elastic.py,sha256=R9ikDlSpIUUQoD4xAUz-tHSplPj89DmKBXK6N6RuxhE,3692
+legalabs_scrapy_libs/items.py,sha256=_tVteJBKtagKLIN4OoJoKHjlv5oMSuISygv1Vtwa-LQ,609
+legalabs_scrapy_libs/legallabs_spyder.py,sha256=a07SK3BsdjQvzSvHMqad4H_uhSTQRj7xV1OzXOqcluQ,4157
+legalabs_scrapy_libs/middlewares.py,sha256=CywdAmNEyFhoeut2hmj3DZ1fR6Gz8eUhsz4qgIolh6g,3714
+legalabs_scrapy_libs/pipelines.py,sha256=Got3pCGDwasZdu8ccWtrfXdqg3RKQNTsXA5CUyjGAic,7260
+legalabs_scrapy_libs/settings.py,sha256=t8uju34UxDSmXHU7Gx-p3vJbWAO1na8VEHJOu6bjUVY,11
+legalabs_scrapy_libs/stopwords.py,sha256=cjr6nKdr0oc9SjR-Ks5vt63IhRmLX0gFm0aXqCtKIVs,296
+legalabs_scrapy_libs/utils.py,sha256=d8DAjrbl31dNtMua7Att8XJaMlUnsLtpuJ6zXECCLnU,3427
+legalabs_scrapy_libs/validation_functions.py,sha256=MV-bBQi2VpjBDMqupFHe-_Mz2fLuJ12m6qGsZbAmy1Y,2325
+legalabs_scrapy_libs/validator.py,sha256=gMoN3aanq9IBIGYhizODnL-EL1mLDhcMQGNr1pM-_4o,4467
+legalabs_scrapy_libs/schemas/acordao.yaml,sha256=27NViwZdr_QObRU7vGH4Gz1XYGcj0SS0QyYGwtOjrjo,11353
+legalabs_scrapy_libs/schemas/processo.yaml,sha256=UWLjr3Cfgd3cZD-djalsjG7GCUCgv0jGnrFsrydk4Ec,9538
+legalabs_scrapy_libs-0.0.15.dist-info/METADATA,sha256=5WxUbO3qLx4DXMe5s1OLEMDTJfbrRPKjpV5baQ0OaCk,459
+legalabs_scrapy_libs-0.0.15.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+legalabs_scrapy_libs-0.0.15.dist-info/top_level.txt,sha256=GX28GhqWAYODMXNnJehS19AE_zcdd8VNhSLDW0LVPUc,21
+legalabs_scrapy_libs-0.0.15.dist-info/RECORD,,
