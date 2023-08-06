@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: legalabs-scrapy-libs
+Version: 0.0.12
+Summary: Library with support functions for building scrapers
+Home-page: https://gitlab.com/LegalLabs/crawlers/scrapy_libs
+Author: Legal Labs
+Author-email: inteligencia@legalabs.com.br
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: CMRESHandler
+
+UNKNOWN
+
+
