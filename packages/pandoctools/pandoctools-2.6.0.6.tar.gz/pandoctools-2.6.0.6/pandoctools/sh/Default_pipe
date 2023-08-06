@@ -1,0 +1,27 @@
+#!/bin/bash
+export KNITTY=True
+
+pre-knitty "${input_file}" --yaml "$metadata" |
+pre-sugartex |
+cat-md stdin "$metadata" "${extra_inputs[@]}" |
+pandoc "${reader_args[@]}" -t json |
+knitty "$t" "${input_file}" "${reader_args[@]}" "${writer_args[@]}" |
+panfl "${panfl_args[@]}" |
+pandoc-crossref "$t" |
+if [[ "${to:0:5}" == "ipynb" ]]; then
+    panfl -t "$t" knitty.self_contained_raw_html_img
+else
+    cat
+fi |
+pandoc -f json "${writer_args[@]}" |
+if [[ "${to:0:5}" == "ipynb" ]]; then
+    jupyter nbconvert "${nbconvert_args[@]}"
+elif [[ "$to" == "html" && "${out_ext}" == "pdf" ]]; then
+    python "$mathjax" sub_pdf "${mathjax_url}" |
+    pyppdf -o "${output_file}" --goto temp
+elif [[ "${to:0:4}" == "html" ]]; then
+    python "$mathjax" sub
+else
+    cat
+fi
+if [[ -d "$tmpdir" ]]; then rm -rf "$tmpdir"; fi
