@@ -1,0 +1,10 @@
+setup.py
+thclient/__init__.py
+thclient/client.py
+thclient/perfherder.py
+treeherder_client.egg-info/PKG-INFO
+treeherder_client.egg-info/SOURCES.txt
+treeherder_client.egg-info/dependency_links.txt
+treeherder_client.egg-info/not-zip-safe
+treeherder_client.egg-info/requires.txt
+treeherder_client.egg-info/top_level.txt
