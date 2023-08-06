@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: get-env-pass
+Version: 1.0.0
+Summary: get-env-pass python package
+Home-page: https://github.ibm.com/cbcavale/python-getenvpass
+Author: Caesar Cavales
+Author-email: cbcavale@us.ibm.com
+License: MIT
+Description: get-env-pass python package
+Platform: UNKNOWN
