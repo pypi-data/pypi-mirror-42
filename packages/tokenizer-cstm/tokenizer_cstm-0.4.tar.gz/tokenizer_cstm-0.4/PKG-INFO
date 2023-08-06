@@ -1,0 +1,91 @@
+Metadata-Version: 1.0
+Name: tokenizer_cstm
+Version: 0.4
+Summary: fining sentences from raw text and tokenizing
+Home-page: UNKNOWN
+Author: Andrin Pelican
+Author-email: andrin.pelican@bluewin.ch
+License: UNKNOWN
+Description-Content-Type: text/markdown
+Description: 
+        # Tokenizer:
+        
+        
+        Transforms textdate into strucktured output.
+        
+        ## API:
+        
+        4 functions:
+        
+        
+        ### tocenize_sentence
+        
+        
+        [tokens, start_indexes, end_indexes] = tokenize_sentance(sentance, language)
+        
+        Sentance: a sting, with sentance intrerpretation. E.g. 'Hallo, wie geht es dir?'
+        
+        tokens: List of Stings: E.g. ['Hallo', ',' 'wie', 'geht', 'es', 'dir', '?']
+        start_indexes: List of indexes of the corresponding the first letter of the token: [0, 5, 7, 11, 16, 19, 22]
+        end_indexes: List of indexes of the corresponding the last letter of the token: [4, 5, 9, 14, 17, 21, 22]
+        
+        
+        ### find sentance
+        
+        sentance_list = find_sentances(raw_sting)
+        
+        raw_sting = ' Hallo wie geht es dir? Heute ist ein schöner Tag! Das sehe ich auch so.',
+        
+        sentance_list = ['Hallo wie geht es dir?',
+              'Heute ist ein schöner Tag!',
+              'Das sehe ich auch so.']
+              
+        
+        ### spellcheck
+            
+        word_correct = spellcheck(word, language_dict, lower_case_languge dict)
+        
+        word_correct = 'ich'
+        
+        word = 'ick'
+        
+        language_dict =  {
+            'ich' : 10,
+            'heisse': 4,
+            'Hans': 3 ,
+             'Hanf':1,
+            'gehen': 2,
+        }
+        
+        lower_case_languge = {
+            'ich' : 10,
+            'heisse': 4,
+            'hans': 3 ,
+            'hanf':1,
+            'gehen': 2,
+        }
+        
+        (values of languge dicts are  occurance number)
+        
+        
+        ### determine_language:
+        
+        probable_lang = determine_language(word_list, language_col_dict)
+        
+        probable_lang = 'DE'
+        
+        word_list = ['ich']
+        
+        language_col_dict = {
+            'DE':DE,
+            'EN':EN
+        }
+        
+        (where DE, and EN are language dictionaries of the respective language)
+        
+        ## ToDo:
+        
+        
+        
+        
+Platform: UNKNOWN
