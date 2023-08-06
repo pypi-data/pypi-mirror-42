@@ -1,0 +1,12 @@
+dpcontracts
+requests
+
+[dev]
+pre-commit
+
+[test]
+pytest
+pytest-cov
+pytest-sugar
+pytest-icdiff
+hypothesis
