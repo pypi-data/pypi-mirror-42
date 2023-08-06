@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+honeywell_hpma115s0/__init__.py
+honeywell_hpma115s0/honeywell_hpma115s0.py
+honeywell_hpma115s0.egg-info/PKG-INFO
+honeywell_hpma115s0.egg-info/SOURCES.txt
+honeywell_hpma115s0.egg-info/dependency_links.txt
+honeywell_hpma115s0.egg-info/requires.txt
+honeywell_hpma115s0.egg-info/top_level.txt
