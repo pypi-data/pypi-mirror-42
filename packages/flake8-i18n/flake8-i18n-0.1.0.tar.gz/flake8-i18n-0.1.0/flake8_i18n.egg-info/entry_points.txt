@@ -1,0 +1,3 @@
+[flake8.extension]
+I00 = flake8_i18n:Flake8i18n
+
