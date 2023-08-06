@@ -1,0 +1,14 @@
+[ikkuna.export.subscriber]
+BatchedSVCCASubscriber = ikkuna.export.subscriber.svcca:BatchedSVCCASubscriber
+HistogramSubscriber = ikkuna.export.subscriber.histogram:HistogramSubscriber
+LossSubscriber = ikkuna.export.subscriber.loss:LossSubscriber
+MeanSubscriber = ikkuna.export.subscriber.mean:MeanSubscriber
+MessageMeanSubscriber = ikkuna.export.subscriber.message_mean:MessageMeanSubscriber
+NormSubscriber = ikkuna.export.subscriber.norm:NormSubscriber
+RatioSubscriber = ikkuna.export.subscriber.ratio:RatioSubscriber
+SVCCASubscriber = ikkuna.export.subscriber.svcca:SVCCASubscriber
+SpectralNormSubscriber = ikkuna.export.subscriber.spectral_norm:SpectralNormSubscriber
+TestAccuracySubscriber = ikkuna.export.subscriber.test_accuracy:TestAccuracySubscriber
+TrainAccuracySubscriber = ikkuna.export.subscriber.train_accuracy:TrainAccuracySubscriber
+VarianceSubscriber = ikkuna.export.subscriber.variance:VarianceSubscriber
+
