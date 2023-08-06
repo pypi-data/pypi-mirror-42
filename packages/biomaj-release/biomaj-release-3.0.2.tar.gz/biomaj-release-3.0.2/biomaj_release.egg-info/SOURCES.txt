@@ -1,0 +1,13 @@
+CHANGES.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+bin/biomaj_release.py
+biomaj-release/__init__.py
+biomaj_release.egg-info/PKG-INFO
+biomaj_release.egg-info/SOURCES.txt
+biomaj_release.egg-info/dependency_links.txt
+biomaj_release.egg-info/requires.txt
+biomaj_release.egg-info/top_level.txt

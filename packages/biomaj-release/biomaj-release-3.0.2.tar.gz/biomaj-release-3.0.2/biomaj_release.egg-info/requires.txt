@@ -1,0 +1,9 @@
+biomaj
+biomaj-daemon
+biomaj-cli
+redis
+PyYAML
+flask
+python-consul
+prometheus_client
+influxdb
