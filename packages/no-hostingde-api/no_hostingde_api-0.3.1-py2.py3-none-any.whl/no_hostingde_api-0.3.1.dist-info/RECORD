@@ -1,0 +1,17 @@
+hostingde/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hostingde/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hostingde/api/client.py,sha256=qahNnEosDaztdVQjx_oIioHF6zmewTReuQzZJhcR4xc,1395
+hostingde/api/dns.py,sha256=eIMfUnGd-mhhL6xWFUbmzTn5GFga9YTx4vfClVNVM_w,16548
+hostingde/api/errors.py,sha256=mGkaGSAOo6LI3Od72i_dZ3hyXmF-paSj1O8i5GUJtvo,1156
+hostingde/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hostingde/helpers/dns.py,sha256=KblKkMlH1q4oZLJbJvvF7YXESujPFmze8EggxMnSAdw,3994
+hostingde/helpers/filters.py,sha256=I-HI-IsChlftRaX_wgwMSx2eaUTM70zbRku8T4MsWyo,1239
+hostingde/plugins/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hostingde/plugins/certbot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hostingde/plugins/certbot/dns_hostingde.py,sha256=usffptuedk6vDLtvrDuyLkZQKGKnIF2kGR7AU5qKwE4,4231
+no_hostingde_api-0.3.1.dist-info/LICENSE,sha256=tITaWB6rEZgCLTAGpl6lye9ubT9ENaVF5wgScOvjXK4,1088
+no_hostingde_api-0.3.1.dist-info/METADATA,sha256=AE9_1Yw73v64A8Xt6AxxFsfOGojKD_8LqHuWoyrih50,8076
+no_hostingde_api-0.3.1.dist-info/WHEEL,sha256=05Ahrak1u2K61DpLp9CDNSbUImLTITCMom_cqTFk6pE,116
+no_hostingde_api-0.3.1.dist-info/entry_points.txt,sha256=0mb54oOt2Ya5Ih4-bnSoO9DVHbvS_EFdzgluhPnBM_k,89
+no_hostingde_api-0.3.1.dist-info/top_level.txt,sha256=3wp9rplRmQhL_AJR50lO14zxwvaAdgeClnKd1WA8zb0,10
+no_hostingde_api-0.3.1.dist-info/RECORD,,
