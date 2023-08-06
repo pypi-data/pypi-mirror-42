@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: stepmotor
+Version: 0.0.3
+Summary: A package for controll step motors with parallel port
+Home-page: https://github.com/alejandroalfonsoyero/stepmotor
+Author: Alejandro Alfonso Yero
+Author-email: alejandroalfonso1994@gmail.com
+License: UNKNOWN
+Description: # stepmotor
+        
+        This is a package developed in python3 for controlling step motors with
+        the parallel port of PCs.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
