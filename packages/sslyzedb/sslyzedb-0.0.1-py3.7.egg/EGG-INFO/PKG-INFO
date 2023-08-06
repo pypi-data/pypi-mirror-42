@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: sslyzedb
+Version: 0.0.1
+Summary: DB driven SSLyze scanner
+Home-page: https://github.com/skelsec/sslyzedb
+Author: Tamas Jos
+Author-email: info@skelsec.com
+License: UNKNOWN
+Description: DB driven SSLyze scanner
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
