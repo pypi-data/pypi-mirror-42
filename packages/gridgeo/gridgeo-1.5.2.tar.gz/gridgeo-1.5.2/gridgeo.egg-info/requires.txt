@@ -1,0 +1,6 @@
+docopt
+netCDF4
+shapely
+
+[testing]
+pytest

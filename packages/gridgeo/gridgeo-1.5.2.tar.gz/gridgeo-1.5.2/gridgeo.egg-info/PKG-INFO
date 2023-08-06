@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: gridgeo
+Version: 1.5.2
+Summary: Convert UGRID, SGRID, and non-compliant ocean model grids to geo-like objects
+Home-page: https://github.com/pyoceans/gridgeo
+Author: Filipe Fernandes
+Author-email: ocefpaf@gmail.com
+License: BSD-3-Clause
+Description: gridgeo
+        -------
+        
+        [![PyPI](https://img.shields.io/pypi/v/gridgeo.svg?style=plastic)](https://pypi.python.org/pypi/gridgeo) [![Build Status](https://travis-ci.org/pyoceans/gridgeo.svg?branch=master)](https://travis-ci.org/pyoceans/gridgeo) [![DOI](https://zenodo.org/badge/5715/pyoceans/gridgeo.svg)](https://zenodo.org/badge/latestdoi/5715/pyoceans/gridgeo)
+        
+        Converts ocean numerical models grids,
+        including UGRID and SGRID compliant files,
+        to a variety of geo-like objects: GeoJSON, and shapefile.
+        
+        For some examples check the [notebook folder](https://nbviewer.jupyter.org/github/pyoceans/gridgeo/tree/master/notebooks/).
+        
+Keywords: geojson,shapefile,ocean models,ugrid,sgrid
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: testing
