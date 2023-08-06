@@ -1,0 +1,10 @@
+LICENSE.rst
+README.rst
+setup.cfg
+setup.py
+src/exceptional/__init__.py
+src/exceptional/exceptional.py
+src/exceptional.egg-info/PKG-INFO
+src/exceptional.egg-info/SOURCES.txt
+src/exceptional.egg-info/dependency_links.txt
+src/exceptional.egg-info/top_level.txt
