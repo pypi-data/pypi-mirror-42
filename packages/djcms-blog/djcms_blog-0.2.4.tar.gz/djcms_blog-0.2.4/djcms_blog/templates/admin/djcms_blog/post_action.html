@@ -1,0 +1,7 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+    <p class="deletelink-box"><a href="{% url 'unpublish-all' %}" class="deletelink">Unpublish Posts</a></p>
+    <br />
+    {{ block.super }}
+{% endblock %}
