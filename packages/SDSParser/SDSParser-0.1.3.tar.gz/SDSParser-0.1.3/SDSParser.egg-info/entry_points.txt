@@ -1,0 +1,3 @@
+[console_scripts]
+sdsparser = sdsparser.__main__:main
+
