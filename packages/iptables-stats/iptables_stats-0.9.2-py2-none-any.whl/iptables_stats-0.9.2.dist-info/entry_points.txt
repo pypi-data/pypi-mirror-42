@@ -1,0 +1,3 @@
+[console_scripts]
+iptables_stats = iptables_stats.__main__:main
+
