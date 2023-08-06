@@ -1,0 +1,10 @@
+README.md
+setup.py
+awsip/__init__.py
+awsip/__main__.py
+awsip.egg-info/PKG-INFO
+awsip.egg-info/SOURCES.txt
+awsip.egg-info/dependency_links.txt
+awsip.egg-info/entry_points.txt
+awsip.egg-info/requires.txt
+awsip.egg-info/top_level.txt
