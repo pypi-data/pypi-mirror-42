@@ -1,0 +1,153 @@
+Metadata-Version: 1.1
+Name: yarbs
+Version: 0.3.0
+Summary: Create incremental backups using Rsync.
+Home-page: https://gitlab.com/maranov/yarbs
+Author: maranov
+Author-email: maranov@outlook.com
+License: WTFPL
+Description: # *Y*et *A*nother *R*sync *B*ackup *S*cript
+        Create incremental backups using Rsync. The script takes advantage of Rsync's `--link-dest` functionality to create full snapshots that save space by linking to the previously backed-up files instead of creating new copies. This has the advantage that only new or changed files are copied, but at the same time all backups appear as complete full backups on the disk.
+        
+        Read more here on Admin Magazine: [Incremental Backups on Linux](http://www.admin-magazine.com/Articles/Using-rsync-for-Backups).
+        
+        ## Download and installation
+        Package can be installed or upgraded [using pip](https://docs.python.org/3/installing/index.html):
+        ```
+        python -m pip install --upgrade yarbs
+        ```
+        
+        Note: On some systems, use `python` or `py -3` instead of just `python`.
+        
+        ## Dependencies
+        [Rsync](https://rsync.samba.org) must be installed and in path. On Debian based Linux distros (e.g. Ubuntu) can be usually done by:
+        ``` bash
+        sudo apt install rsync
+        ```
+        
+        ## Usage
+        Display help:
+        ```
+        python -m yarbs --help
+        python -m yarbs backup --help
+        python -m yarbs prepare --help
+        python -m yarbs sync --help
+        ```
+        
+        Making a snapshot of `src` directory to `dst`:
+        ```
+        sudo python -m yarbs backup src dst
+        ```
+        
+        This will create a timestamped backup like `dst/src_2018-12-31T17-00`. This backup is used the next time a backup is executed as a source of links to avoid unnecessary file duplication. One a maximum a kept backups is reached, the oldest backup is removed.
+        
+        Example:
+        ```
+        # Create test directories.
+        $ mkdir src
+        $ touch src/test1
+        $ touch src/test2
+        $ mkdir src/subdir
+        $ touch src/subdir/test3
+        $ mkdir dst
+        
+        # Run the first backup.
+        $ sudo python -m yarbs backup src dst
+        INFO : Preparing "src" backup.
+        INFO : Backup dir: dst/src_2019-03-03T17-12-26
+        INFO : Syncing "src" backup.
+        cd+++++++++ ./
+        >f+++++++++ test1
+        >f+++++++++ test2
+        cd+++++++++ subdir/
+        >f+++++++++ subdir/test3
+        INFO : Finished "src" backup.
+        
+        # Check the backup:
+        $ ls dst
+        src_2019-03-03T17-12-26
+        $ ls dst/src_2019-03-03T17-12-26/
+        subdir  test1  test2
+        
+        
+        # Run the 2nd, incremental backup.
+        $ sudo python -m yarbs backup src dst
+        INFO : Preparing "src" backup.
+        INFO : Backup dir: dst/src_2019-03-03T17-15-07
+        INFO : Syncing "src" backup.
+        INFO : Finished "src" backup.
+        
+        # Check the backup and see that unchaged files have in fact the same Inode.
+        $ ls dst
+        src_2019-03-03T17-12-26  src_2019-03-03T17-15-07
+        $ stat dst/src_2019-03-03T17-12-26/test1 dst/src_2019-03-03T17-15-07/test1
+          File: 'dst/src_2019-03-03T17-12-26/test1'
+        ...
+        Device: b302h/45826d    Inode: 398303      Links: 2
+        ...
+          File: 'dst/src_2019-03-03T17-15-07/test1'
+        ...
+        Device: b302h/45826d    Inode: 398303      Links: 2
+        ...
+        
+        # Changing a file results in a new copy being made on the next backup.
+        $ echo 'change' >> src/test1
+        $ sudo python -m yarbs backup src dst
+        INFO : Preparing "src" backup.
+        INFO : Backup dir: dst/src_2019-03-03T17-20-02
+        INFO : Syncing "src" backup.
+        >f.st...... test1
+        INFO : Finished "src" backup.
+        ls dst/
+        src_2019-03-03T17-12-26  src_2019-03-03T17-15-07  src_2019-03-03T17-20-02
+        $ stat dst/src_2019-03-03T17-12-26/test1 dst/src_2019-03-03T17-15-07/test1 dst/src_2019-03-03T17-20-02/test1
+          File: 'dst/src_2019-03-03T17-12-26/test1'
+        ...
+        Device: b302h/45826d    Inode: 398303      Links: 2
+        ...
+          File: 'dst/src_2019-03-03T17-15-07/test1'
+        ...
+        Device: b302h/45826d    Inode: 398303      Links: 2
+        ...
+          File: 'dst/src_2019-03-03T17-20-02/test1'
+        ...
+        Device: b302h/45826d    Inode: 398758      Links: 1
+        ...
+        
+        # Setting limit of kept backups to 3 removes the oldest backup on the next run.
+        $ sudo python -m yarbs backup src dst --backups_kept 3
+        INFO : Preparing "src" backup.
+        INFO : Removing old backup: dst/src_2019-03-03T17-12-26
+        INFO : Backup dir: dst/src_2019-03-03T17-22-24
+        INFO : Syncing "src" backup.
+        INFO : Finished "src" backup.
+        $ ls dst/
+        src_2019-03-03T17-15-07  src_2019-03-03T17-20-02  src_2019-03-03T17-22-24
+        ```
+        
+        Preparation and synchronization can be split into individual actions. The following is an equivalent of `sudo python -m yarbs backup src dst`:
+        ```
+        python -m yarbs prepare src dst --backups_kept 3 | sudo python -m yarbs sync src
+        ```
+        
+        This can be useful for execution via SSH:
+        ```
+        ssh myserver python -m yarbs -v prepare backup dst --backups_kept 3 | \
+            python -c 'from json import load, dump; from sys import stdin, stdout; paths=load(stdin);paths["backup_path"]="myserver:"+paths["backup_path"];dump(paths, stdout)' | \
+            python -m yarbs -v sync src
+        ```
+        
+        Where `myserver` is an SSH server configured in your `~/.ssh/config`.
+        
+        The script is also importable:
+        ```python
+        from yarbs import backup
+        backup('src', 'dst')
+        ```
+        
+Keywords: rsync backup
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: System :: Archiving :: Backup
+Classifier: Programming Language :: Python :: 3.7
