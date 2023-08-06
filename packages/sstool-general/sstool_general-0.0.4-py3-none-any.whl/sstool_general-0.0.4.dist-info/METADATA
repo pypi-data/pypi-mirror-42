@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: sstool-general
+Version: 0.0.4
+Summary: A general code for the sstool.
+Home-page: UNKNOWN
+Author: Iryna Lokhvytska
+Author-email: ilokh@softserveinc.com
+License: MIT
+Keywords: sanic swagger jira
+Platform: any
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.6.*
+Requires-Dist: aio-pika (==4.6.3)
+Requires-Dist: aiohttp (==3.4.4)
+Requires-Dist: aioredis (==1.2.0)
+Requires-Dist: motor (==2.0.0)
+Requires-Dist: sanic (>=0.8.3)
+Requires-Dist: attrs (>=18.2.0)
+
+# SSTOOL JENERAL
+
+This is a simple package with general code from the
+Softserve - Sprints Scheduling Tool project.
+
+
