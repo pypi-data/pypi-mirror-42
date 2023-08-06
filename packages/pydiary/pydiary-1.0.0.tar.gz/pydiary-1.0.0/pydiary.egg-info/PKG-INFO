@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pydiary
+Version: 1.0.0
+Summary: MatLab style commands logger for the Python interpreter
+Home-page: https://github.com/nathanlepori/pydiary
+Author: Nathan Lepori
+Author-email: nathan.lepori@hotmail.com
+License: MIT
+Description: # pydiary
+        MatLab style commands logger for the Python interpreter
+        
+        ## Usage
+        The package exports a single class.
+        ```python
+        from pydiary import Diary
+        
+        Diary()                 # Turns diary on, saving commands to the default file diary.py
+        Diary('mydiary.py')     # Turns diary on, saving commands to a file called mydiary.py in the current directory
+        my_diary = Diary()      # You can save a reference to the Diary instance to use it later
+        
+        ...
+        
+        # The current active diary is automatically assigned to a variable called "diary"
+        diary.off()             # Turns diary off
+        
+        my_diary.on()           # Turns on the previously created diary
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Description-Content-Type: text/markdown
