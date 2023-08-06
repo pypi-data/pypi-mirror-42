@@ -1,0 +1,16 @@
+six
+future
+mkdir-p
+h5py>=2.7
+bistiming>=0.1.1
+numpy
+scipy
+networkx>=2
+pyyaml
+tables
+pandas
+h5sparse>=0.1.0
+pathlib2
+funcsigs
+tqdm
+python-dotenv

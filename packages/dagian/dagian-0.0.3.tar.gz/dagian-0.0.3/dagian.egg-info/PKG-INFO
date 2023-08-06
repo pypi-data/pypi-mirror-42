@@ -1,0 +1,29 @@
+Metadata-Version: 1.1
+Name: dagian
+Version: 0.0.3
+Summary: A data-centric DAG framework.
+Home-page: https://github.com/ianlini/dagian
+Author: Ian Lin
+Author-email: UNKNOWN
+License: MIT
+Description: Please visit  the `GitHub repository <https://github.com/ianlini/dagian>`_
+        for more information.
+        
+        Dagian
+        ======
+        .. image:: https://img.shields.io/travis/ianlini/dagian/master.svg
+           :target: https://travis-ci.org/ianlini/dagian
+        .. image:: https://img.shields.io/pypi/v/dagian.svg
+           :target: https://pypi.org/project/dagian/
+        .. image:: https://img.shields.io/pypi/l/dagian.svg
+           :target: https://pypi.org/project/dagian/
+        
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
