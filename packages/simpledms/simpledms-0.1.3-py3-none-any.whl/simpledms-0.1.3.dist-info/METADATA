@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: simpledms
+Version: 0.1.3
+Summary: 
+Home-page: UNKNOWN
+License: UNKNOWN
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: dateparser (>=0.7.1,<0.8.0)
+Requires-Dist: opencv-contrib-python (>=4.0,<5.0)
+Requires-Dist: pdfminer3 (>=2018.12,<2019.0)
+Requires-Dist: pdfrw (>=0.4.0,<0.5.0)
+Requires-Dist: pypdf2 (>=1.26,<2.0)
+Requires-Dist: pyqt5 (>=5.11,<6.0)
+Requires-Dist: pyqt5-sip (>=4.19,<5.0)
+Requires-Dist: python-dateutil (>=2.8,<3.0)
+Requires-Dist: python-magic (>=0.4.15,<0.5.0)
+Requires-Dist: qdarkstyle (>=2.6,<3.0)
+Requires-Dist: qtmodern (>=0.1.4,<0.2.0)
+Requires-Dist: tika (>=1.19,<2.0)
+Requires-Dist: wand (>=0.5.0,<0.6.0)
