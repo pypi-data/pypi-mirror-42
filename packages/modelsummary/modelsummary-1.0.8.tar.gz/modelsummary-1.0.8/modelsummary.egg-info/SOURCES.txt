@@ -1,0 +1,10 @@
+README.md
+setup.py
+modelsummary/__init__.py
+modelsummary/hierarchicalsummary.py
+modelsummary/modelsummary.py
+modelsummary.egg-info/PKG-INFO
+modelsummary.egg-info/SOURCES.txt
+modelsummary.egg-info/dependency_links.txt
+modelsummary.egg-info/requires.txt
+modelsummary.egg-info/top_level.txt
