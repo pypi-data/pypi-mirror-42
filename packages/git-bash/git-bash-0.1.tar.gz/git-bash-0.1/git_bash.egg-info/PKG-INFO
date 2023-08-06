@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: git-bash
+Version: 0.1
+Summary: Stub that prevents name clash with https://github.com/conda-forge/git-bash-feedstock For Git Bash see https://github.com/kiwi0fruit/py-bash
+Home-page: https://github.com/kiwi0fruit/py-bash
+Author: kiwi0fruit
+Author-email: peter.zagubisalo@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
