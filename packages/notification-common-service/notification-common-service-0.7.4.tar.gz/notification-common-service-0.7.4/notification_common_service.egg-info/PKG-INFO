@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: notification-common-service
+Version: 0.7.4
+Summary: Notifcation common service package
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: Notification Common service Package
+        ======================
+        
+        * Version 0.1
+          ** add baidu & jpush api sdk
+Keywords: django gizwits
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
