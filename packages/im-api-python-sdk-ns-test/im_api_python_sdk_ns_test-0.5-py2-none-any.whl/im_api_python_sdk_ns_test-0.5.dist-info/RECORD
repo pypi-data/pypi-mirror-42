@@ -1,0 +1,11 @@
+im_api_sdk/__init__.py,sha256=shra7XuWQ1MFdd6ZEtpV4kec22aOelgZ60E-LbaO61Q,20
+im_api_sdk/api_pb2_grpc.py,sha256=iX_Oa5hYx8DUwBjUR1Yfhpeb6dqZ0J-T9mISNtj2KHI,22824
+im_api_sdk/bot_pb2.py,sha256=NrNUe4D_VyUe_b9JXgeFHP_ASWYUQQ8Y-YSTS7D-5CE,42380
+im_api_sdk/generic_client_interceptor.py,sha256=Wbyl0NalEUSrABAda6arRPRJvWxRiGcA31iiGNkzjuM,2333
+im_api_sdk/structs_pb2.py,sha256=b2rU8vypSC78vvdmeW3O0lO5QBb_Q3TocGc7wKwWJQM,50909
+im_api_sdk/vox_bot_interceptor.py,sha256=qGWTXuIDVY3P6zb8QlFNUUBfZ4JgSvAavCYMH7A7DzE,1532
+im_api_sdk/vox_interceptor.py,sha256=Lsq3-58MSQYX5PmStiQeXbKA9PXzRGrQhGkF35gbcgI,2196
+im_api_python_sdk_ns_test-0.5.dist-info/METADATA,sha256=Sj1XpJ1pvCYIMS-q3lZTLJSbUD6cBILQtnjcFVfE3gs,512
+im_api_python_sdk_ns_test-0.5.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+im_api_python_sdk_ns_test-0.5.dist-info/top_level.txt,sha256=Re01TCaTQTPmZLs21yjHhu1mlJ89iEawFNFmQ5-pxp8,11
+im_api_python_sdk_ns_test-0.5.dist-info/RECORD,,
