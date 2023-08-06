@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+multichaincli/__init__.py
+multichaincli/client.py
+multichaincli.egg-info/PKG-INFO
+multichaincli.egg-info/SOURCES.txt
+multichaincli.egg-info/dependency_links.txt
+multichaincli.egg-info/requires.txt
+multichaincli.egg-info/top_level.txt
