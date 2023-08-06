@@ -1,0 +1,12 @@
+README.md
+setup.py
+flexiconf/__init__.py
+flexiconf/configuration.py
+flexiconf/loaders.py
+flexiconf/utils.py
+flexiconf.egg-info/PKG-INFO
+flexiconf.egg-info/SOURCES.txt
+flexiconf.egg-info/dependency_links.txt
+flexiconf.egg-info/top_level.txt
+tests/__init__.py
+tests/test_flexiconf.py
