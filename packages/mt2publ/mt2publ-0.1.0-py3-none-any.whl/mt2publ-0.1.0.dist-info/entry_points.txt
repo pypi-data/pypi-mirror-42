@@ -1,0 +1,3 @@
+[console_scripts]
+mt2publ = mt2publ.__main__:main
+

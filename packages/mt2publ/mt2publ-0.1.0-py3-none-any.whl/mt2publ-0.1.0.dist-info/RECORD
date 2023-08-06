@@ -1,0 +1,12 @@
+mt2publ/__init__.py,sha256=VRjR4jb4X0Bh_e6kVBkbff_vUDovKpCJk0ZPJh73VRY,1238
+mt2publ/__main__.py,sha256=O4mv5QijRjE79NClukM-RLpfLGgMKizUcIK9JLs_oVw,2415
+mt2publ/__version__.py,sha256=4sf8fRk72wh53e-9MHpJNkyLVh3TprslvlPdkRtQrxw,64
+mt2publ/category.py,sha256=I6fS3219MaVpCidbb2vRHQat1_SBfipCKyi2B_mg210,964
+mt2publ/entry.py,sha256=ZIGovrwldGSY9uRUpWXunv-EB4meF-x-p4MODAhsgeM,7923
+mt2publ/model.py,sha256=n6ZaIvNGbTrChci7EN_12HhmCEm89BKV8HdjgK7naao,3595
+mt2publ-0.1.0.dist-info/LICENSE,sha256=_9oGY-hT2u_ItB4lqdTavxAV6cX0bTyfba3LwvSPZLk,1088
+mt2publ-0.1.0.dist-info/METADATA,sha256=tJkzTCcB0k0-p1QsrQssaJXcfn4Am-9GNtCuYn83WeA,1522
+mt2publ-0.1.0.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+mt2publ-0.1.0.dist-info/entry_points.txt,sha256=537r_NmSUBYhdBRE-q8WwFf6ZkpTsErMJSYcuO2MLB4,51
+mt2publ-0.1.0.dist-info/top_level.txt,sha256=1mjbPohlaGtfjKlGz47iGCNp3JBASQo-UjWydst88FM,8
+mt2publ-0.1.0.dist-info/RECORD,,
