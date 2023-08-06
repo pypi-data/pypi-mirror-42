@@ -1,0 +1,15 @@
+autocompleteusers/__init__.py,sha256=-ZYmced1vaO1u_hz4TMEFZ3eZyIozulHojvAFh2cJZ0,58
+autocompleteusers/autocompleteusers.py,sha256=0PSDA6QA4q49LnTcQT-sCxH44LlXCyQk7Ry789xYxQo,6086
+autocompleteusers/htdocs/css/autocomplete.css,sha256=oh0UcaRpJrPsGTRolj2hDizMz17vlVy9AEla6qjYwUw,857
+autocompleteusers/htdocs/css/indicator.gif,sha256=7lOtphfyZ0y9cG47JPxnOMf1Py96OpWecfYRqoUNyUY,1737
+autocompleteusers/htdocs/js/autocomplete.js,sha256=jSaHMGA__kqoUvU2-X-tzZIkFai5QxF4aStslO-w74Q,22455
+autocompleteusers/htdocs/js/autocomplete_perms.js,sha256=0K19Ts5cngc84WPwQn0igiEx9xr6knFIpHLxF9Z0WXo,314
+autocompleteusers/htdocs/js/autocomplete_query.js,sha256=1MCFR1tR-i1AnKvMAiGwGfg7UMX-u_n_8BOL4EPioPQ,1946
+autocompleteusers/htdocs/js/autocomplete_ticket.js,sha256=owDC9iWvTy92dZiIqZhvXNXwjYOM-BwXriWnCB0_0jE,733
+autocompleteusers/htdocs/js/format_item.js,sha256=NqmSEbo6YCu0I1E_Q86X7OwGGrvQEFykuu_GEQYl4sI,1112
+TracAutocompleteUsersPlugin-0.4.5.dist-info/COPYING,sha256=46xasp3N-LCdh47LoAnGy9ddXSHbTsmIzwB1jTPwBlU,1557
+TracAutocompleteUsersPlugin-0.4.5.dist-info/METADATA,sha256=i7PtZPnj0heWBKF0lJJJa15-IgqtfypYDQOBVMGIKLE,1445
+TracAutocompleteUsersPlugin-0.4.5.dist-info/WHEEL,sha256=pqI-DBMA-Z6OTNov1nVxs7mwm6Yj2kHZGNp_6krVn1E,92
+TracAutocompleteUsersPlugin-0.4.5.dist-info/entry_points.txt,sha256=F-ymuqTBcgIdddf7G05ESMdIYfFqvZ3KzXPf4Eybejg,84
+TracAutocompleteUsersPlugin-0.4.5.dist-info/top_level.txt,sha256=WEvfTDn5QMZapqSHBqqMqVm3oIW11VmGs6Vz458zd6w,18
+TracAutocompleteUsersPlugin-0.4.5.dist-info/RECORD,,
