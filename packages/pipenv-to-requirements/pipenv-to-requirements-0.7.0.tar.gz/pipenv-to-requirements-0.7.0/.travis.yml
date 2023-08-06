@@ -1,0 +1,46 @@
+# Config file for automatic testing at travis-ci.org
+# This file will be regenerated if you run travis_pypi_setup.py
+
+language: python
+dist: xenial
+
+python:
+  - 3.7
+  - 3.6
+  - 3.5
+  - 3.4
+
+install:
+  - make ensure-pip-ci
+  - make dev-ci
+
+script:
+  - make check
+  - make requirements
+  - make test
+
+# after_success:
+#   coveralls
+
+# After you create the Github repo and add it to Travis, run the
+# travis_pypi_setup.py script to finish PyPI deployment setup
+deploy:
+  provider: pypi
+  user: stibbons
+  distributions: sdist bdist_wheel
+  password:
+    secure: >
+      rmzUjZdLlYuXMYrn7SCydppn/OGLbIriQLKq0ZYJFU1aqHTehBfYyp0wg3Fpj2jmcvxmy8ZNP
+      62Wlr59336JVttMNKQpgcHTAQXl0S22ETYX/NPoTKRnYBWbdYP+6i07gSabsoRiHTMBiNqa7G
+      bb28sgN5lf/zMwX6Ht6SPChmVJ5A06RdbmQXu60xpLa0FKBkakviCrdSxuRbGEbmHubrqD4Ge
+      W73X65MZWhFFWGq19IHJW02HWUC1sdQaO/uK3egcIYWY0OJX2hY9HVemf32fTaHJtSeoKb0Tp
+      iMp0Mg+CESK6M2K6QASOVVY2XaULnwd19n9x/B/j6WcU0R8I/n2t/DndNSrjACqTyzs9kslNs
+      HtM1Aqqx5pUQwK+w7npiYXUBlyyxNQKjSCFDSihFf6j5Yet8ItEjQBmsx419vuW8dgAoqgpRD
+      bAvt0D2MadeyCk0FqZ8PyRhqx/VwCb4ZNUslaA2aAUB7vGR5DD/bKhO9tbmknT4gld+bdhFo9
+      P5RQlI6Ld9dYEFza/pe0SqJQ/rIwVaSqI2bNDh34XEcGyThc9HHacFQPfKRCdAmIk/Pp5MCNn
+      rOxwoGfancrrJIFsDnUPTpap6cohcYUaP9Iqvop3qD9H5dsGifMv+clhgZ/GOqNEq3IgeTjli
+      Z1sHD5M25xMHg6YoDJNW6He0CA=
+  on:
+    tags: true
+    repo: gsemet/pipenv-to-requirements
+    branch: master
