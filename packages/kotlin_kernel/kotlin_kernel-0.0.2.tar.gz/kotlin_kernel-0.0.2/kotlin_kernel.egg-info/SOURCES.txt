@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+kotlin_kernel/__init__.py
+kotlin_kernel/__main__.py
+kotlin_kernel/install.py
+kotlin_kernel/kernel.py
+kotlin_kernel.egg-info/PKG-INFO
+kotlin_kernel.egg-info/SOURCES.txt
+kotlin_kernel.egg-info/dependency_links.txt
+kotlin_kernel.egg-info/requires.txt
+kotlin_kernel.egg-info/top_level.txt
