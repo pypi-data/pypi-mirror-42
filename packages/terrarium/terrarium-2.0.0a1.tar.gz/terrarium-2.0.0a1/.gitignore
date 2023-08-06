@@ -1,0 +1,9 @@
+docs/_build
+build
+dist
+terrarium.egg-info
+*.pyc
+.eggs
+.direnv
+.env
+.tox
