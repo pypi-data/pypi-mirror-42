@@ -1,0 +1,7 @@
+flake8_plugin_utils/__init__.py,sha256=wpM-HfHAZgqkk6bEubtZYNn95JMEs2d3N6Z9bHuX6ls,119
+flake8_plugin_utils/plugin.py,sha256=HZE6j3dTXcVl1mOFi5VORXZ3tr82OHnX6qXCcZmvsF8,1978
+flake8_plugin_utils/utils.py,sha256=cyPET-yG0xm69JzEgapUisIFXOwqQey86T_uRXVCufE,828
+flake8_plugin_utils-0.2.0.dist-info/LICENSE,sha256=AGxHY5NNLe6DOVAdA2gBnhTWMR-eTUgxRxC-tnJMJgQ,1073
+flake8_plugin_utils-0.2.0.dist-info/WHEEL,sha256=vZ9uOqWz9Nn_iQiloIvXrEesMclaDmme0lZSy9xq2xk,85
+flake8_plugin_utils-0.2.0.dist-info/METADATA,sha256=X0WSwM5Sm5zpo2Nc6YQ64S0UIQlGGFCKPZ2JTxy9clI,2398
+flake8_plugin_utils-0.2.0.dist-info/RECORD,,
