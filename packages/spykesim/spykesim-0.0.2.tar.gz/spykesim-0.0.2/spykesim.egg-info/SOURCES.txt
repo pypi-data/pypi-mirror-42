@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+spykesim/__init__.py
+spykesim/parallel.py
+spykesim/setup.py
+spykesim/test.py
+spykesim/test_npshare.py
+spykesim/tmp.py
+spykesim.egg-info/PKG-INFO
+spykesim.egg-info/SOURCES.txt
+spykesim.egg-info/dependency_links.txt
+spykesim.egg-info/top_level.txt
