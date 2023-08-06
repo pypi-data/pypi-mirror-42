@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+shutilwhich_cwdpatch/__init__.py
+shutilwhich_cwdpatch/__main__.py
+shutilwhich_cwdpatch/_version.py
+shutilwhich_cwdpatch/patch.py
+shutilwhich_cwdpatch.egg-info/PKG-INFO
+shutilwhich_cwdpatch.egg-info/SOURCES.txt
+shutilwhich_cwdpatch.egg-info/dependency_links.txt
+shutilwhich_cwdpatch.egg-info/top_level.txt
