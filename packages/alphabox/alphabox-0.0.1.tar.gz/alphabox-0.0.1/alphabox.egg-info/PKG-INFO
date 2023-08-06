@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: alphabox
+Version: 0.0.1
+Summary: Package to easily and programmatically interact with the BOX algorithm
+Home-page: https://github.com/yenicelik/alphabox
+Author: David Yenicelik
+Author-email: david@theaicompany.com
+License: Mozilla Public License Version 2.0
+Download-URL: https://github.com/yenicelik/alphabox/archive/0.0.1.tar.gz
+Description: UNKNOWN
+Keywords: optimization,blackbox,bayesian,optimization,box,alpha
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
