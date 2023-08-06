@@ -1,0 +1,3 @@
+[console_scripts]
+filthypasswordgenerator = filthypasswordgenerator.pwgenerator:main
+
