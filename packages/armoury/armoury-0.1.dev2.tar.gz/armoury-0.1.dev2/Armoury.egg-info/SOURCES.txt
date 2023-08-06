@@ -1,0 +1,10 @@
+README.rst
+setup.py
+Armoury.egg-info/PKG-INFO
+Armoury.egg-info/SOURCES.txt
+Armoury.egg-info/dependency_links.txt
+Armoury.egg-info/top_level.txt
+armoury/__init__.py
+armoury/dict.py
+armoury/list.py
+armoury.egg-info/SOURCES.txt
