@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: radar-server
+Version: 0.1.0
+Summary: 
+Home-page: https://github.com/jaredLunde/radar-resolver
+Author: Jared Lunde
+Author-email: jared@BeStellar.co
+Requires-Python: >=3.5,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: vital-tools (>=0.1.13,<0.2.0)
