@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+src/StreamDeck/DeviceManager.py
+src/StreamDeck/Devices/StreamDeck.py
+src/StreamDeck/Devices/StreamDeckMini.py
+src/StreamDeck/Devices/StreamDeckOriginal.py
+src/StreamDeck/Transport/Dummy.py
+src/StreamDeck/Transport/HIDAPI.py
+src/StreamDeck/Transport/Transport.py
+src/streamdeck.egg-info/PKG-INFO
+src/streamdeck.egg-info/SOURCES.txt
+src/streamdeck.egg-info/dependency_links.txt
+src/streamdeck.egg-info/requires.txt
+src/streamdeck.egg-info/top_level.txt
