@@ -1,0 +1,60 @@
+pywr.parameters.AnnualHarmonicSeriesParameter
+=============================================
+
+.. currentmodule:: pywr.parameters
+
+.. autoclass:: AnnualHarmonicSeriesParameter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AnnualHarmonicSeriesParameter.after
+      ~AnnualHarmonicSeriesParameter.before
+      ~AnnualHarmonicSeriesParameter.finish
+      ~AnnualHarmonicSeriesParameter.get_all_values
+      ~AnnualHarmonicSeriesParameter.get_double_lower_bounds
+      ~AnnualHarmonicSeriesParameter.get_double_upper_bounds
+      ~AnnualHarmonicSeriesParameter.get_double_variables
+      ~AnnualHarmonicSeriesParameter.get_integer_lower_bounds
+      ~AnnualHarmonicSeriesParameter.get_integer_upper_bounds
+      ~AnnualHarmonicSeriesParameter.get_integer_variables
+      ~AnnualHarmonicSeriesParameter.get_value
+      ~AnnualHarmonicSeriesParameter.load
+      ~AnnualHarmonicSeriesParameter.lower_bounds
+      ~AnnualHarmonicSeriesParameter.register
+      ~AnnualHarmonicSeriesParameter.reset
+      ~AnnualHarmonicSeriesParameter.set_double_variables
+      ~AnnualHarmonicSeriesParameter.set_integer_variables
+      ~AnnualHarmonicSeriesParameter.setup
+      ~AnnualHarmonicSeriesParameter.unregister
+      ~AnnualHarmonicSeriesParameter.update
+      ~AnnualHarmonicSeriesParameter.upper_bounds
+      ~AnnualHarmonicSeriesParameter.value
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~AnnualHarmonicSeriesParameter.amplitudes
+      ~AnnualHarmonicSeriesParameter.children
+      ~AnnualHarmonicSeriesParameter.comment
+      ~AnnualHarmonicSeriesParameter.double_size
+      ~AnnualHarmonicSeriesParameter.integer_size
+      ~AnnualHarmonicSeriesParameter.is_variable
+      ~AnnualHarmonicSeriesParameter.mean
+      ~AnnualHarmonicSeriesParameter.model
+      ~AnnualHarmonicSeriesParameter.name
+      ~AnnualHarmonicSeriesParameter.parents
+      ~AnnualHarmonicSeriesParameter.phases
+      ~AnnualHarmonicSeriesParameter.size
+   
+   

@@ -1,0 +1,60 @@
+pywr.parameters.IndexParameter
+==============================
+
+.. currentmodule:: pywr.parameters
+
+.. autoclass:: IndexParameter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IndexParameter.after
+      ~IndexParameter.before
+      ~IndexParameter.finish
+      ~IndexParameter.get_all_indices
+      ~IndexParameter.get_all_values
+      ~IndexParameter.get_double_lower_bounds
+      ~IndexParameter.get_double_upper_bounds
+      ~IndexParameter.get_double_variables
+      ~IndexParameter.get_index
+      ~IndexParameter.get_integer_lower_bounds
+      ~IndexParameter.get_integer_upper_bounds
+      ~IndexParameter.get_integer_variables
+      ~IndexParameter.get_value
+      ~IndexParameter.index
+      ~IndexParameter.load
+      ~IndexParameter.lower_bounds
+      ~IndexParameter.register
+      ~IndexParameter.reset
+      ~IndexParameter.set_double_variables
+      ~IndexParameter.set_integer_variables
+      ~IndexParameter.setup
+      ~IndexParameter.unregister
+      ~IndexParameter.update
+      ~IndexParameter.upper_bounds
+      ~IndexParameter.value
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~IndexParameter.children
+      ~IndexParameter.comment
+      ~IndexParameter.double_size
+      ~IndexParameter.integer_size
+      ~IndexParameter.is_variable
+      ~IndexParameter.model
+      ~IndexParameter.name
+      ~IndexParameter.parents
+      ~IndexParameter.size
+   
+   

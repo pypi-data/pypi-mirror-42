@@ -1,0 +1,43 @@
+# This build script is adapted from conda-smithy, see:
+# https://github.com/conda-forge/conda-smithy-feedstock
+
+environment:
+
+  matrix:
+    - TARGET_ARCH: x64
+      CONDA_PY: 36
+      CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
+    - TARGET_ARCH: x64
+      CONDA_PY: 37
+      CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
+
+# We always use a 64-bit machine, but can build x86 distributions
+# with the TARGET_ARCH variable.
+platform:
+    - x64
+
+install:
+    # Cywing's git breaks conda-build. (See https://github.com/conda-forge/conda-smithy-feedstock/pull/2.)
+    - cmd: rmdir C:\cygwin /s /q
+
+    # Add path and activate `conda`
+    - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
+    - cmd: set PYTHONUNBUFFERED=1
+
+    # Update conda
+    - cmd: conda update --yes --quiet conda
+
+    # Add our channels
+    - cmd: conda config --set show_channel_urls true
+    - cmd: conda config --add channels conda-forge
+
+
+    # Configure the VM.
+    - cmd: conda.exe install -n root --quiet --yes conda-forge-ci-setup
+    - cmd: run_conda_forge_build_setup
+
+# Skip .NET project specific build phase.
+build: off
+
+test_script:
+    - "%CMD_IN_ENV% conda build conda-recipe --quiet"

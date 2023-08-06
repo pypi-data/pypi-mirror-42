@@ -1,0 +1,57 @@
+pywr.parameters.DailyProfileParameter
+=====================================
+
+.. currentmodule:: pywr.parameters
+
+.. autoclass:: DailyProfileParameter
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DailyProfileParameter.after
+      ~DailyProfileParameter.before
+      ~DailyProfileParameter.finish
+      ~DailyProfileParameter.get_all_values
+      ~DailyProfileParameter.get_double_lower_bounds
+      ~DailyProfileParameter.get_double_upper_bounds
+      ~DailyProfileParameter.get_double_variables
+      ~DailyProfileParameter.get_integer_lower_bounds
+      ~DailyProfileParameter.get_integer_upper_bounds
+      ~DailyProfileParameter.get_integer_variables
+      ~DailyProfileParameter.get_value
+      ~DailyProfileParameter.load
+      ~DailyProfileParameter.lower_bounds
+      ~DailyProfileParameter.register
+      ~DailyProfileParameter.reset
+      ~DailyProfileParameter.set_double_variables
+      ~DailyProfileParameter.set_integer_variables
+      ~DailyProfileParameter.setup
+      ~DailyProfileParameter.unregister
+      ~DailyProfileParameter.update
+      ~DailyProfileParameter.upper_bounds
+      ~DailyProfileParameter.value
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~DailyProfileParameter.children
+      ~DailyProfileParameter.comment
+      ~DailyProfileParameter.double_size
+      ~DailyProfileParameter.integer_size
+      ~DailyProfileParameter.is_variable
+      ~DailyProfileParameter.model
+      ~DailyProfileParameter.name
+      ~DailyProfileParameter.parents
+      ~DailyProfileParameter.size
+   
+   

@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recorders &mdash; Pywr 0.5dev documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pywr.recorders.Recorder" href="generated/pywr.recorders.Recorder.html" />
+    <link rel="prev" title="pywr.parameters.DeficitParameter" href="generated/pywr.parameters.DeficitParameter.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Pywr
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Pywr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formulation.html">Problem formulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json.html">JSON model format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook/cookbook.html">Cookbook</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pywr.html">Python API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pywr.optimisation.html">pywr.optimisation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pywr.parameters.html">Parameters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Recorders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base-recorder-classes">Base Recorder classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.Recorder.html">pywr.recorders.Recorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NodeRecorder.html">pywr.recorders.NodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.StorageRecorder.html">pywr.recorders.StorageRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.ParameterRecorder.html">pywr.recorders.ParameterRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.IndexParameterRecorder.html">pywr.recorders.IndexParameterRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#numpy-array-recorders">Numpy array recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NumpyArrayNodeRecorder.html">pywr.recorders.NumpyArrayNodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NumpyArrayStorageRecorder.html">pywr.recorders.NumpyArrayStorageRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NumpyArrayLevelRecorder.html">pywr.recorders.NumpyArrayLevelRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NumpyArrayParameterRecorder.html">pywr.recorders.NumpyArrayParameterRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.NumpyArrayIndexParameterRecorder.html">pywr.recorders.NumpyArrayIndexParameterRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#flow-duration-curve-recorders">Flow duration curve recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.FlowDurationCurveRecorder.html">pywr.recorders.FlowDurationCurveRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.StorageDurationCurveRecorder.html">pywr.recorders.StorageDurationCurveRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.FlowDurationCurveDeviationRecorder.html">pywr.recorders.FlowDurationCurveDeviationRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.SeasonalFlowDurationCurveRecorder.html">pywr.recorders.SeasonalFlowDurationCurveRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deficit-recorders">Deficit recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.TotalDeficitNodeRecorder.html">pywr.recorders.TotalDeficitNodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.DeficitFrequencyNodeRecorder.html">pywr.recorders.DeficitFrequencyNodeRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#statistical-recorders">Statistical recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.AggregatedRecorder.html">pywr.recorders.AggregatedRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.MeanFlowNodeRecorder.html">pywr.recorders.MeanFlowNodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.TotalFlowNodeRecorder.html">pywr.recorders.TotalFlowNodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.MeanParameterRecorder.html">pywr.recorders.MeanParameterRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.TotalParameterRecorder.html">pywr.recorders.TotalParameterRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.RollingMeanFlowNodeRecorder.html">pywr.recorders.RollingMeanFlowNodeRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.MinimumVolumeStorageRecorder.html">pywr.recorders.MinimumVolumeStorageRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.MinimumThresholdVolumeStorageRecorder.html">pywr.recorders.MinimumThresholdVolumeStorageRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.RollingWindowParameterRecorder.html">pywr.recorders.RollingWindowParameterRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#index-recorders">Index recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.AnnualCountIndexParameterRecorder.html">pywr.recorders.AnnualCountIndexParameterRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#file-recorders">File recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.CSVRecorder.html">pywr.recorders.CSVRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.TablesRecorder.html">pywr.recorders.TablesRecorder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hydro-power-recorders">Hydro-power recorders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.HydropowerRecorder.html">pywr.recorders.HydropowerRecorder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pywr.recorders.TotalHydroEnergyRecorder.html">pywr.recorders.TotalHydroEnergyRecorder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pywr.domains.html">pywr.domains package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pywr.solvers.html">pywr.solvers package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pywr.notebook.html">Notebook Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pywr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="pywr.html">Pywr reference documentation.</a> &raquo;</li>
+        
+      <li>Recorders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/pywr.recorders.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recorders">
+<h1>Recorders<a class="headerlink" href="#recorders" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-recorder-classes">
+<h2>Base Recorder classes<a class="headerlink" href="#base-recorder-classes" title="Permalink to this headline">¶</a></h2>
+<p>All the <cite>Recorder</cite> subclasses in <cite>pywr</cite> are descended from a common base class.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.Recorder.html#pywr.recorders.Recorder" title="pywr.recorders.Recorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Recorder</span></code></a></td>
+<td>Base class for recording information from a <cite>pywr.model.Model</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.NodeRecorder.html#pywr.recorders.NodeRecorder" title="pywr.recorders.NodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeRecorder</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.StorageRecorder.html#pywr.recorders.StorageRecorder" title="pywr.recorders.StorageRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StorageRecorder</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.ParameterRecorder.html#pywr.recorders.ParameterRecorder" title="pywr.recorders.ParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterRecorder</span></code></a></td>
+<td>Base class for recorders that track <cite>Parameter</cite> values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.IndexParameterRecorder.html#pywr.recorders.IndexParameterRecorder" title="pywr.recorders.IndexParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndexParameterRecorder</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="numpy-array-recorders">
+<h2>Numpy array recorders<a class="headerlink" href="#numpy-array-recorders" title="Permalink to this headline">¶</a></h2>
+<p>The following parameters are used for storing results in memory. The data can be
+accessed following a model run before the model instances is destroyed.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.NumpyArrayNodeRecorder.html#pywr.recorders.NumpyArrayNodeRecorder" title="pywr.recorders.NumpyArrayNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyArrayNodeRecorder</span></code></a></td>
+<td>Recorder for timeseries information from a <cite>Node</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.NumpyArrayStorageRecorder.html#pywr.recorders.NumpyArrayStorageRecorder" title="pywr.recorders.NumpyArrayStorageRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyArrayStorageRecorder</span></code></a></td>
+<td>Recorder for timeseries information from a <cite>Storage</cite> node.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.NumpyArrayLevelRecorder.html#pywr.recorders.NumpyArrayLevelRecorder" title="pywr.recorders.NumpyArrayLevelRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyArrayLevelRecorder</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.NumpyArrayParameterRecorder.html#pywr.recorders.NumpyArrayParameterRecorder" title="pywr.recorders.NumpyArrayParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyArrayParameterRecorder</span></code></a></td>
+<td>Recorder for timeseries information from a <cite>Parameter</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.NumpyArrayIndexParameterRecorder.html#pywr.recorders.NumpyArrayIndexParameterRecorder" title="pywr.recorders.NumpyArrayIndexParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NumpyArrayIndexParameterRecorder</span></code></a></td>
+<td>Recorder for timeseries information from an <cite>IndexParameter</cite>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="flow-duration-curve-recorders">
+<h2>Flow duration curve recorders<a class="headerlink" href="#flow-duration-curve-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.FlowDurationCurveRecorder.html#pywr.recorders.FlowDurationCurveRecorder" title="pywr.recorders.FlowDurationCurveRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FlowDurationCurveRecorder</span></code></a></td>
+<td>This recorder calculates a flow duration curve for each scenario.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.StorageDurationCurveRecorder.html#pywr.recorders.StorageDurationCurveRecorder" title="pywr.recorders.StorageDurationCurveRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StorageDurationCurveRecorder</span></code></a></td>
+<td>This recorder calculates a storage duration curve for each scenario.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.FlowDurationCurveDeviationRecorder.html#pywr.recorders.FlowDurationCurveDeviationRecorder" title="pywr.recorders.FlowDurationCurveDeviationRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FlowDurationCurveDeviationRecorder</span></code></a></td>
+<td>This recorder calculates a Flow Duration Curve (FDC) for each scenario and then calculates their deviation from upper and lower target FDCs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.SeasonalFlowDurationCurveRecorder.html#pywr.recorders.SeasonalFlowDurationCurveRecorder" title="pywr.recorders.SeasonalFlowDurationCurveRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeasonalFlowDurationCurveRecorder</span></code></a></td>
+<td>This recorder calculates a flow duration curve for each scenario for a given season specified in months.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deficit-recorders">
+<h2>Deficit recorders<a class="headerlink" href="#deficit-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.TotalDeficitNodeRecorder.html#pywr.recorders.TotalDeficitNodeRecorder" title="pywr.recorders.TotalDeficitNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalDeficitNodeRecorder</span></code></a></td>
+<td>Recorder to total the difference between modelled flow and max_flow for a Node</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.DeficitFrequencyNodeRecorder.html#pywr.recorders.DeficitFrequencyNodeRecorder" title="pywr.recorders.DeficitFrequencyNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DeficitFrequencyNodeRecorder</span></code></a></td>
+<td>Recorder to return the frequency of timesteps with a failure to meet max_flow.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="statistical-recorders">
+<h2>Statistical recorders<a class="headerlink" href="#statistical-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.AggregatedRecorder.html#pywr.recorders.AggregatedRecorder" title="pywr.recorders.AggregatedRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AggregatedRecorder</span></code></a></td>
+<td>This Recorder is used to aggregate across multiple other Recorder objects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.MeanFlowNodeRecorder.html#pywr.recorders.MeanFlowNodeRecorder" title="pywr.recorders.MeanFlowNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeanFlowNodeRecorder</span></code></a></td>
+<td>Record the mean flow for a Node.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.TotalFlowNodeRecorder.html#pywr.recorders.TotalFlowNodeRecorder" title="pywr.recorders.TotalFlowNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalFlowNodeRecorder</span></code></a></td>
+<td>Recorder to total the flow for a Node.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.MeanParameterRecorder.html#pywr.recorders.MeanParameterRecorder" title="pywr.recorders.MeanParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MeanParameterRecorder</span></code></a></td>
+<td>Record the mean value of a <cite>Parameter</cite> during a simulation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.TotalParameterRecorder.html#pywr.recorders.TotalParameterRecorder" title="pywr.recorders.TotalParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalParameterRecorder</span></code></a></td>
+<td>Record the total value of a <cite>Parameter</cite> during a simulation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.RollingMeanFlowNodeRecorder.html#pywr.recorders.RollingMeanFlowNodeRecorder" title="pywr.recorders.RollingMeanFlowNodeRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RollingMeanFlowNodeRecorder</span></code></a></td>
+<td>Records the mean flow of a Node for the previous N timesteps</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.MinimumVolumeStorageRecorder.html#pywr.recorders.MinimumVolumeStorageRecorder" title="pywr.recorders.MinimumVolumeStorageRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MinimumVolumeStorageRecorder</span></code></a></td>
+<td>Record the minimum volume in a <cite>Storage</cite> node during a simulation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.MinimumThresholdVolumeStorageRecorder.html#pywr.recorders.MinimumThresholdVolumeStorageRecorder" title="pywr.recorders.MinimumThresholdVolumeStorageRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MinimumThresholdVolumeStorageRecorder</span></code></a></td>
+<td>Record whether a <cite>Storage</cite> node falls below a particular volume threshold during a simulation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.RollingWindowParameterRecorder.html#pywr.recorders.RollingWindowParameterRecorder" title="pywr.recorders.RollingWindowParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RollingWindowParameterRecorder</span></code></a></td>
+<td>Records the mean value of a Parameter for the last N timesteps.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="index-recorders">
+<h2>Index recorders<a class="headerlink" href="#index-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.AnnualCountIndexParameterRecorder.html#pywr.recorders.AnnualCountIndexParameterRecorder" title="pywr.recorders.AnnualCountIndexParameterRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AnnualCountIndexParameterRecorder</span></code></a></td>
+<td>Record the number of years where an IndexParameter is greater than or equal to a threshold</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="file-recorders">
+<h2>File recorders<a class="headerlink" href="#file-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.CSVRecorder.html#pywr.recorders.CSVRecorder" title="pywr.recorders.CSVRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CSVRecorder</span></code></a>(model,&nbsp;csvfile[,&nbsp;…])</td>
+<td>A Recorder that saves Node values to a CSV file.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.TablesRecorder.html#pywr.recorders.TablesRecorder" title="pywr.recorders.TablesRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TablesRecorder</span></code></a>(model,&nbsp;h5file[,&nbsp;nodes,&nbsp;…])</td>
+<td>A recorder that saves to PyTables CArray</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hydro-power-recorders">
+<h2>Hydro-power recorders<a class="headerlink" href="#hydro-power-recorders" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pywr.recorders.HydropowerRecorder.html#pywr.recorders.HydropowerRecorder" title="pywr.recorders.HydropowerRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HydropowerRecorder</span></code></a></td>
+<td>Calculates the power production using the hydropower equation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pywr.recorders.TotalHydroEnergyRecorder.html#pywr.recorders.TotalHydroEnergyRecorder" title="pywr.recorders.TotalHydroEnergyRecorder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalHydroEnergyRecorder</span></code></a></td>
+<td>Calculates the total energy production using the hydropower equation from a model run.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/pywr.recorders.Recorder.html" class="btn btn-neutral float-right" title="pywr.recorders.Recorder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pywr.parameters.DeficitParameter.html" class="btn btn-neutral" title="pywr.parameters.DeficitParameter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2014-17 Joshua Arnott, James E. Tomlinson, Atkins, University of Manchester.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.5dev',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

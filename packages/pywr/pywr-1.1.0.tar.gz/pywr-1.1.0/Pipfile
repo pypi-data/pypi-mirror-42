@@ -1,0 +1,38 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cython = "*"
+numpy = "*"
+packaging = "*"
+matplotlib = "*"
+pandas = "*"
+xlrd = "*"
+tables = "*"
+jupyter = "*"
+inspyred = "*"
+marshmallow = ">2"
+platypus-opt = "*"
+pygmo = "*"
+pyomo = "*"
+pytest-cov = "*"
+click = "*"
+"e1839a8" = {editable = true, path = "."}
+pywr-pyomo-solver = {editable = true, path = "/home/james/dev/pywr-pyomo-solver"}
+seaborn = "*"
+pytest-faulthandler = "*"
+
+[dev-packages]
+pytest = "*"
+twine = "*"
+sphinx = "*"
+numpydoc = "*"
+sphinx-rtd-theme = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
