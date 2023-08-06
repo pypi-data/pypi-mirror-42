@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.rst
+pngify.py
+setup.py
+pngify.egg-info/PKG-INFO
+pngify.egg-info/SOURCES.txt
+pngify.egg-info/dependency_links.txt
+pngify.egg-info/entry_points.txt
+pngify.egg-info/top_level.txt
