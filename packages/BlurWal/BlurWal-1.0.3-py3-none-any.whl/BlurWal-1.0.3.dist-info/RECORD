@@ -1,0 +1,16 @@
+blurwal/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+blurwal/__main__.py,sha256=aympVsQsy27dDYcwoz_mMe6twVQ5u7OHrvFWvgX7V-4,4031
+blurwal/_version.py,sha256=yuAldnXD-9o5HQltPpNVTQumjhoDAoFnNfMvFW1h3HI,73
+blurwal/blur.py,sha256=c4w4iT3Lg3pdT_onL37ObDfDi99hLQXCqXsBFIKQOQg,6297
+blurwal/frame.py,sha256=EUyPhSJ4FbW3qdIdS81agmvv2ZOxKbJNaggHit8AvN0,2776
+blurwal/paths.py,sha256=YM2y9pAXJP2J_l_UwFjty1wyGOUXpMcfnE3H_XIRK0c,537
+blurwal/transition.py,sha256=rG_nGGfeU31SxDHKrqB-CTrt7n5pJF-5n-el6qr-rE0,2289
+blurwal/utils.py,sha256=pUgi1f-_CRhAvDU8SJCqtrftAuaAdpQFghKMqJv0P6Q,1132
+blurwal/wallpaper.py,sha256=Ewy1L8_9umF2uymNO_FwcXEzjWLH38qFC6DRMTYmLIk,2561
+blurwal/window.py,sha256=rP9YE7eMrSPcy0qYSJwvkYOE8-C8hmgxJ34WxcMqCMQ,1898
+BlurWal-1.0.3.dist-info/LICENSE,sha256=Ak7R6_M47F3uvXnYRrJi20QvMyFLA1rDE0CaWzQIBvQ,1077
+BlurWal-1.0.3.dist-info/METADATA,sha256=hLH3wOBfdmH3ahpgBXv1DBK7qMgq0yxuYVj0UCwicyY,2781
+BlurWal-1.0.3.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+BlurWal-1.0.3.dist-info/entry_points.txt,sha256=A9hGpG_d4W8DxijurTn8ut01HiUPJ9p5dECMAQSHsJ4,51
+BlurWal-1.0.3.dist-info/top_level.txt,sha256=eWBLXC4vyZqP-ITo62YrlcroekpxyERxzxFYgev0VgA,8
+BlurWal-1.0.3.dist-info/RECORD,,
