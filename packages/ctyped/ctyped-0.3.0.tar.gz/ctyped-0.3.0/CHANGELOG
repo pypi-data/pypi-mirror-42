@@ -1,0 +1,21 @@
+ctyped changelog
+================
+
+
+v0.3.0
+------
++ 'functions_prefix' context manager is replaced by advanced 'scope'.
+
+
+v0.2.0
+------
++ Added 'int_bits' shortcut option.
++ Added 'int_sign' shortcut option.
++ Added CObject convenience.
++ Added support for Python strings as wide chars.
+* Result is now casted with 'errcheck'.
+
+
+v0.1.0
+------
++ Basic functionality.
