@@ -1,0 +1,2 @@
+[console_scripts]
+import_sessions = imagepypelines_tools.imagepypelines_tools:main
