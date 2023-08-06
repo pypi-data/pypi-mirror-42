@@ -1,0 +1,12 @@
+bc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bc/_version.py,sha256=2O7wU5HW_isUsdQ8BAhKmlDXg32hq2esi831QdHd7xE,26
+bc/dev/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bc/dev/decorators.py,sha256=NDCwgp2R97ug-pKk10LxXOfyPD7tBfsrkcleZ41iLVs,109
+bc/dev/handlers.py,sha256=0wYYB_uvbnJwBClzM--vLCp1yY8Fv8QIWfYsjCrjJ1Y,6316
+bc/dev/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bc/dev/wrappers.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bordercontrol-0.2.0.0.5.dist-info/LICENSE.txt,sha256=KvTRNpiZOhWEmoabTC7UlUzyUXaK0UXzcXdK25Zpfgw,1022
+bordercontrol-0.2.0.0.5.dist-info/METADATA,sha256=dmni936MeXHH6TXuG5fF-OyidEjFJH43wb3K6Vg30Ew,2564
+bordercontrol-0.2.0.0.5.dist-info/WHEEL,sha256=MYFsq5fFBwF_oyJgrOoFmYYB1K6Sw7MxY-0897ZLbdM,92
+bordercontrol-0.2.0.0.5.dist-info/top_level.txt,sha256=vBjNh4_BNpJodby0vdx_O6369CmPXdGp_UwblpK2JPw,3
+bordercontrol-0.2.0.0.5.dist-info/RECORD,,
