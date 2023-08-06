@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pycustomcfn
+Version: 0.1.3
+Summary: Module for handling dispatch and response for a CustomCFN Lambda
+Home-page: http://github.com/wpmedia/pycustomcfn
+License: MIT
+Author: Rick Alm
+Author-email: rick.alm@washpost.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: certifi (>=2018.11,<2019.0)
+Requires-Dist: pyrandomtools (>=0.1.2,<0.2.0)
+Requires-Dist: pysimplelogger (>=0.1.2,<0.2.0)
+Requires-Dist: urllib3 (>=1.24,<2.0)
+Project-URL: Repository, http://github.com/wpmedia/pycustomcfn
