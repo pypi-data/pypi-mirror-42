@@ -1,0 +1,8 @@
+apache-beam[gcp]<3,>=2.10
+ipywidgets<8,>=7.0
+jupyter<2,>=1.0
+numpy<2,>=1.14.5
+protobuf==3.7.0rc2
+scipy==0.19.1
+six<2,>=1.9
+tensorflow-transform<1,>=0.12
