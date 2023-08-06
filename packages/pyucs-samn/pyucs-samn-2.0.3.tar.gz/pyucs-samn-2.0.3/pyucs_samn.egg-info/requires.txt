@@ -1,0 +1,6 @@
+influxdb>=5.2.1
+pycrypt-samn>=1.2.6
+pyparsing>=2.3.1
+python-dateutil>=2.8.0
+pytz>=2018.9
+ucsmsdk>=0.9.8
