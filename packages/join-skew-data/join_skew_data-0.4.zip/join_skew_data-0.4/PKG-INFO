@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: join_skew_data
+Version: 0.4
+Summary: customize partitions with skew data for join
+Home-page: https://github.com/ijan10/pyspark_handle_skewed_data
+Author: itzik jan
+Author-email: itzikjan@gmail.com
+License: Undertone
+Download-URL: https://github.com/ijan10/pyspark_handle_skewed_data/archive/v_0.4.tar.gz
+Description: UNKNOWN
+Keywords: PySpark,skew,join
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
