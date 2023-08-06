@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: my-first-python-package-cdelacombaz
+Version: 0.1
+Summary: Creating my first Python package
+Home-page: UNKNOWN
+Author: Cedric Delacombaz
+Author-email: cdelacombaz@bluewin.ch
+License: UNKNOWN
+Description: My first python package as exercise
+        -----------------------------------
+        
+        First, create a list and pass it as argument when calling the function. This will return a sorted list. You need to print it if you want to see it.::
+        
+            >>> import my_first_python_package_cdelacombaz
+            >>> bubble_sort(l)
+            >>> insertion_sort(l)
+            >>> quick_sort(l)
+            >>> selection_sort(l)
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6

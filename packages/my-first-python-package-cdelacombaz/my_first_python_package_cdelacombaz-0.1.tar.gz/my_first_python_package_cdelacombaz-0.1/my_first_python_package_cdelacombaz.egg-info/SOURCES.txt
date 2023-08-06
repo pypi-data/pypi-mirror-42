@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+my_first_python_package_cdelacombaz/__init__.py
+my_first_python_package_cdelacombaz/bubble_sort.py
+my_first_python_package_cdelacombaz/insertion_sort.py
+my_first_python_package_cdelacombaz/quick_sort.py
+my_first_python_package_cdelacombaz/selection_sort.py
+my_first_python_package_cdelacombaz.egg-info/PKG-INFO
+my_first_python_package_cdelacombaz.egg-info/SOURCES.txt
+my_first_python_package_cdelacombaz.egg-info/dependency_links.txt
+my_first_python_package_cdelacombaz.egg-info/not-zip-safe
+my_first_python_package_cdelacombaz.egg-info/top_level.txt
