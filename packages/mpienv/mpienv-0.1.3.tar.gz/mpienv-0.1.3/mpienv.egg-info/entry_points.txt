@@ -1,0 +1,3 @@
+[console_scripts]
+mpienv-init = mpienv.mpienv_init:main
+
