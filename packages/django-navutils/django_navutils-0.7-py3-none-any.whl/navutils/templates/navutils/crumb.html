@@ -1,0 +1,5 @@
+{% load navutils_tags %}
+
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="{% block crumb_class %}crumb{% if crumb.css_class %} {% render_nested crumb.css_class %}{% endif %}{% endblock %}{% if last %} current{% endif %}">
+    <a itemprop="url" href="{% render_nested crumb.get_url %}"><span itemprop="title">{% block crumb_label %}{% render_nested crumb.label %}{% endblock %}</span></a>
+</li>
