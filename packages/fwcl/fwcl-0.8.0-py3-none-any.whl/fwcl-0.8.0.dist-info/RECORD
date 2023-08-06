@@ -1,0 +1,11 @@
+fwcl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwcl/api_params.py,sha256=0r1bWdlacoTAbEI1NBLGBLiAqgQTxnja4wpJtEimVMs,152
+fwcl/api_results.py,sha256=ElkWHIzLYmc72Ip6Pi6S8GADYRunwNc2CGUHCVmqrSc,1215
+fwcl/base_facade.py,sha256=__yVNP6ByxZenZ0XMnWohqIzVZJaV8r9wvJaBo_AUuk,920
+fwcl/fwcl.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fwcl/login_facade.py,sha256=AfQtGRTNG5bHEro82Ub7t15A-qfQsl9lI_jX1LIy1Xc,763
+fwcl-0.8.0.dist-info/LICENSE,sha256=VHWOdFVkyfwXtMvGcP79cEitf2Ot8LYgoqT-b2yE4AU,1087
+fwcl-0.8.0.dist-info/METADATA,sha256=ARAaz8IP0F5UoIRvStwOOxc3jQGIT8HWN-PX7PjYp0c,491
+fwcl-0.8.0.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+fwcl-0.8.0.dist-info/top_level.txt,sha256=sBeDalkDH1tU1QCCFqJdNpV9KuRouDcKbVK615i693c,5
+fwcl-0.8.0.dist-info/RECORD,,

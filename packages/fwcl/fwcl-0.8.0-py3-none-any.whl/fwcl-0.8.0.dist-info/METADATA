@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: fwcl
+Version: 0.8.0
+Summary: Fitworld Client Library
+Home-page: https://github.com/kaneshir/FWCLPython
+Author: Derek Kaneshiro
+Author-email: derek_kaneshiro@hotmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: json
+
+# FitWorld Client Library
+
+
+
