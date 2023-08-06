@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: safewiseagentlib
+Version: 1.1.0
+Summary: Using hardware wallets as SSH/GPG agent
+Home-page: http://github.com/coinwise-io/safewise-agent
+Author: CoinWISE
+Author-email: safewise@coinwise.io
+License: UNKNOWN
+Platform: POSIX
+Classifier: Environment :: Console
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: Communications
+Classifier: Topic :: Security
+Classifier: Topic :: Utilities
+Requires-Dist: docutils (>=0.14)
+Requires-Dist: wheel (>=0.32.3)
+Requires-Dist: backports.shutil-which (>=3.5.1)
+Requires-Dist: ConfigArgParse (>=0.12.1)
+Requires-Dist: python-daemon (>=2.1.2)
+Requires-Dist: ecdsa (>=0.13)
+Requires-Dist: ed25519 (>=1.4)
+Requires-Dist: mnemonic (>=0.18)
+Requires-Dist: pymsgbox (>=1.0.6)
+Requires-Dist: semver (>=2.2)
+Requires-Dist: unidecode (>=0.4.20)
+
+UNKNOWN
+
+
