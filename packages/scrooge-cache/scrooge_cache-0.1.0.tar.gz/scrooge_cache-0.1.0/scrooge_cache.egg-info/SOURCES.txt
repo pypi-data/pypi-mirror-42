@@ -1,0 +1,12 @@
+README.md
+setup.py
+scrooge/__init__.py
+scrooge/cache.py
+scrooge/client.py
+scrooge/exception.py
+scrooge_cache.egg-info/PKG-INFO
+scrooge_cache.egg-info/SOURCES.txt
+scrooge_cache.egg-info/dependency_links.txt
+scrooge_cache.egg-info/not-zip-safe
+scrooge_cache.egg-info/requires.txt
+scrooge_cache.egg-info/top_level.txt
