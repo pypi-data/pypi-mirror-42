@@ -1,0 +1,5 @@
+- name: wait for ssh connection
+  wait_for_connection:
+    sleep: '{{ ssh_retry_delay }}'
+    timeout: '{{ ssh_timeout }}'
+  when: ansible_connection == 'ssh'

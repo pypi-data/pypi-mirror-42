@@ -1,0 +1,6 @@
+ansible>=2.4
+plumbum>=1.6.0
+
+[docs]
+sphinx_rtd_theme
+sphinx
