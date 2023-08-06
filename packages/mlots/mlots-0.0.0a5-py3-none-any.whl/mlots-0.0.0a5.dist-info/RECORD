@@ -1,0 +1,15 @@
+mlots/DTW.py,sha256=zg6w5S4_KQ4Q50HUBCtj4hF-uux6zmFRvWHV0JGMiUc,1675
+mlots/DistMat.py,sha256=yzmzkxstarWp4-rGHLVyWOPmlsL_rKQf38McwZHdnsA,1638
+mlots/EditDistance.py,sha256=xUtBcTV2sQATVA4UHuCmD3Q7EdtOJKGEfaYkGFum23I,263
+mlots/Evaluation.py,sha256=89-lbnvw5zlBzFFVkrsqCkx592CERq9kJG4FpvCBFyA,1611
+mlots/KNN.py,sha256=oMtyIKtEr4ZgzPwXSmKOBuyTM2ETeCgRn_JQUiLOomc,1719
+mlots/Metrics.py,sha256=hBjGEDf2aL895v6GNsF4_ezPUhT3DHW3hNOxL1J5Q3w,769
+mlots/SAX.py,sha256=QHm_vRaw8dNLkWOaKVMF-I9GTnWGaMCL2zYqO9xS_4w,832
+mlots/TimeSeries.py,sha256=UqzGUCqCKtMiCusIT1gZ7OSps3lL2MENWX881RcixMY,778
+mlots/WagnerFischer.py,sha256=nErCCxbb1vaklY4bo2eUdkOAGVU6-7zT1-hBsfVWW98,6990
+mlots/__init__.py,sha256=14d5y3PbGsxJsb2gjRaqY9hy6gZ9Q4DDQI7OU4KWdRM,598
+mlots-0.0.0a5.dist-info/LICENSE.txt,sha256=QZo-NHApwjy6MDcEo3i28zCOT5yRZyyIRflctMiDR-Q,1072
+mlots-0.0.0a5.dist-info/METADATA,sha256=iHf--eqgbnujPhYFrauQmnV_Kzd47eryigM-Xtq2K6c,822
+mlots-0.0.0a5.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+mlots-0.0.0a5.dist-info/top_level.txt,sha256=C5pp4pEm8REvNMpiHGFVoe4m_h6flC2KLzeooojM9_c,6
+mlots-0.0.0a5.dist-info/RECORD,,
