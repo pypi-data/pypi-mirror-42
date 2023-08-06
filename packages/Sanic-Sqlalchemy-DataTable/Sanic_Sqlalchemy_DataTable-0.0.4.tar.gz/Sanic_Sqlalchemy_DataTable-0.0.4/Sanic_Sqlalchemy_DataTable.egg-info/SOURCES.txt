@@ -1,0 +1,9 @@
+README.md
+setup.py
+Sanic_Sqlalchemy_DataTable.egg-info/PKG-INFO
+Sanic_Sqlalchemy_DataTable.egg-info/SOURCES.txt
+Sanic_Sqlalchemy_DataTable.egg-info/dependency_links.txt
+Sanic_Sqlalchemy_DataTable.egg-info/not-zip-safe
+Sanic_Sqlalchemy_DataTable.egg-info/requires.txt
+Sanic_Sqlalchemy_DataTable.egg-info/top_level.txt
+sanic_sa_datatable/__init__.py
