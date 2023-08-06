@@ -1,0 +1,9 @@
+[console_scripts]
+eadb = eadb.cli:main_eadb
+edevices = eadb.cli:get_devices
+einfo = eadb.cli:get_info
+ename = eadb.cli:get_name
+escreen = eadb.cli:get_screenshot
+esize = eadb.cli:get_wm_size
+eversion = eadb.cli:get_version
+
