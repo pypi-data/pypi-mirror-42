@@ -1,0 +1,131 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ template "${envs['app']}.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  progressDeadlineSeconds: 180
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      {{ if .Values.kube2iam.enabled }}
+      annotations:
+        iam.amazonaws.com/role: {{ .Values.app.iam.role }}
+      {{ end }}
+      labels:
+        app: {{ .Chart.Name }}
+        release: {{ .Release.Name }}
+    spec:
+      initContainers:
+      - name: init
+        image: postgres:9.3-alpine
+        command: ['bash', '-c', './scripts/init.sh']
+        env:
+        ${generate_env('init')}
+        volumeMounts:
+        - mountPath: /scripts
+          name: {{ app }}-init
+        - name: cloudsql-instance-credentials
+          mountPath: /secrets/cloudsql
+          readOnly: true
+      containers:
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy",
+                  "-instances={{ .Values.database.instance }}=tcp:5432",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+      - name: {{ app }}
+        image: "{{ .Values.app.repository }}:{{ .Values.app.tag | default .Chart.Version }}"
+        ports:
+        - containerPort: {{ .Values.app.containerPort }}
+        args:
+        - {{ .Values.app.command }}
+        livenessProbe:
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          httpGet:
+            path: /health
+            port: .Values.app.containerPort
+            httpHeaders:
+            - name: X-Kubernetes-Health-Check
+              value: livenessProbe
+        readinessProbe:
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          httpGet:
+            path: /health
+            port: .Values.app.containerPort
+            httpHeaders:
+            - name: X-Kubernetes-Health-Check
+              value: check
+            - name: Host
+              value: {{ .Values.url }}
+        imagePullPolicy: {{ .Values.pullPolicy }}
+        env:
+        {{- if .Values.extra_env_vars -}}
+        {{- range $key, $value := .Values.extra_env_vars }}
+        - name: {{ $key }}
+          value: {{ . | quote }}
+        {{- end -}}
+        {{ end }}
+        ${generate_env('app')}
+      {{- if .Values.nginx -}}
+      - name: nginx
+        image: nginx:stable-alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/static
+          name: static-assets-volume
+        - mountPath: /etc/nginx/conf.d
+          name: {{ app }}-nginx-config
+      {- end -}
+      imagePullSecrets:
+      volumes:
+      {{- if .Values.nginx -}}
+      - name: static-assets-volume
+        emptyDir: {}
+      - name: {{ app }}-nginx-config
+        configMap:
+          name: {{ .Chart.Name }}-nginx-config
+      {- end -}
+      - name: {{ app }}-init
+        configMap:
+          name: {{ .Chart.Name }}-init
+          defaultMode: 0744
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: cloudsql-instance-credentials
+      - name: google-bucket-credentials
+        secret:
+          secretName: {{ .Values.app.storage.bucket.credentialsSecret }}
+      restartPolicy: Always
+
+<%def name="generate_env(type)">
+  % for env in envs['env'][type]:
+    % for k, v in env.items():
+      % if v['type'] == 'secret':
+        - name: ${k}
+          valueFrom:
+          secretKeyRef:
+            name: {{ .Values.${v['name']} }}
+            key: ${v['key']}
+      % else:
+        - name: ${k}
+          value: {{ .Values.${v['name']} }}
+      % endif
+    % endfor
+  % endfor
+</%def>

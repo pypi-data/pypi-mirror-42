@@ -1,0 +1,5 @@
+<% app = envs['app'] %>
+apiVersion: v1
+description: The ${app} Module for Aether, an open source development platform for data curation & dissemination
+name: aether-${app}
+version: 0.1.0

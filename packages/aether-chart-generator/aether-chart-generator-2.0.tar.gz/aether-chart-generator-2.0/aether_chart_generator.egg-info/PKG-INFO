@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: aether-chart-generator
+Version: 2.0
+Summary: Generate helm chart for aether
+Home-page: http://github.com/ehealthafrica/ehealh-deployment
+Author: Oluwafemi Olofintuyi
+Author-email: devops@ehealthafrica.org
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

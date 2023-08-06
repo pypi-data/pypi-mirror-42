@@ -1,0 +1,3 @@
+[console_scripts]
+aether-chart-generator = aether_chart_generator.generator:main
+
