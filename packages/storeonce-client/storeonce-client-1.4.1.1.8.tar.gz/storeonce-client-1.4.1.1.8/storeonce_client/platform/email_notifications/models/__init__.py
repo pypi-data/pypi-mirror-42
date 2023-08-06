@@ -1,0 +1,43 @@
+# coding: utf-8
+
+# flake8: noqa
+"""
+    (C) Copyright 2018-2019 Hewlett Packard Enterprise Development LP
+
+    Email Subscriptions
+
+    unused  # noqa: E501
+
+    Component version: 2.1-SNAPSHOT
+"""
+
+
+from __future__ import absolute_import
+
+# import models into model package
+from storeonce_client.platform.email_notifications.models.alerts_entry import AlertsEntry
+from storeonce_client.platform.email_notifications.models.alerts_entry_example import AlertsEntryExample
+from storeonce_client.platform.email_notifications.models.associated_resource import AssociatedResource
+from storeonce_client.platform.email_notifications.models.association import Association
+from storeonce_client.platform.email_notifications.models.catalog_key_pair import CatalogKeyPair
+from storeonce_client.platform.email_notifications.models.change_log import ChangeLog
+from storeonce_client.platform.email_notifications.models.email_configuration import EmailConfiguration
+from storeonce_client.platform.email_notifications.models.email_configurations_example1 import EmailConfigurationsExample1
+from storeonce_client.platform.email_notifications.models.email_configurations_example2 import EmailConfigurationsExample2
+from storeonce_client.platform.email_notifications.models.email_destinations import EmailDestinations
+from storeonce_client.platform.email_notifications.models.email_destinations_example import EmailDestinationsExample
+from storeonce_client.platform.email_notifications.models.members import Members
+from storeonce_client.platform.email_notifications.models.members_example1 import MembersExample1
+from storeonce_client.platform.email_notifications.models.members_example2 import MembersExample2
+from storeonce_client.platform.email_notifications.models.message_info import MessageInfo
+from storeonce_client.platform.email_notifications.models.receiver_email_example import ReceiverEmailExample
+from storeonce_client.platform.email_notifications.models.service_event_details import ServiceEventDetails
+from storeonce_client.platform.email_notifications.models.subscription import Subscription
+from storeonce_client.platform.email_notifications.models.subscription_example1 import SubscriptionExample1
+from storeonce_client.platform.email_notifications.models.subscription_example2 import SubscriptionExample2
+from storeonce_client.platform.email_notifications.models.subscription_example3 import SubscriptionExample3
+from storeonce_client.platform.email_notifications.models.subscription_example4 import SubscriptionExample4
+from storeonce_client.platform.email_notifications.models.subscription_example5 import SubscriptionExample5
+from storeonce_client.platform.email_notifications.models.subscriptions import Subscriptions
+from storeonce_client.platform.email_notifications.models.subscriptions_example1 import SubscriptionsExample1
+from storeonce_client.platform.email_notifications.models.subscriptions_example2 import SubscriptionsExample2

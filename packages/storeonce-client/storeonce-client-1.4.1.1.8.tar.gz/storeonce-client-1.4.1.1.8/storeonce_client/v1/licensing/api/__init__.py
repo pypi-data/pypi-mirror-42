@@ -1,0 +1,12 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from storeonce_client.v1.licensing.api.floating_license_resource_api import FloatingLicenseResourceApi
+from storeonce_client.v1.licensing.api.license_category_status_resource_api import LicenseCategoryStatusResourceApi
+from storeonce_client.v1.licensing.api.licensing_root_resource_api import LicensingRootResourceApi
+from storeonce_client.v1.licensing.api.seat_license_resource_api import SeatLicenseResourceApi
+from storeonce_client.v1.licensing.api.server_installed_licenses_resource_api import ServerInstalledLicensesResourceApi
+from storeonce_client.v1.licensing.api.server_config_api import ServerConfigApi
+from storeonce_client.v1.licensing.api.system_mode_selection_and_activation_api import SystemModeSelectionAndActivationApi

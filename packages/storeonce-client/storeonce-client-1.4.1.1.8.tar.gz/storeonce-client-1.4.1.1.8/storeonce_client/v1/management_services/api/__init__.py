@@ -1,0 +1,11 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+# import apis into api package
+from storeonce_client.v1.management_services.api.login_banner_resource_api import LoginBannerResourceApi
+from storeonce_client.v1.management_services.api.maintenance_mode_resource_api import MaintenanceModeResourceApi
+from storeonce_client.v1.management_services.api.raw_warranty_resource_api import RawWarrantyResourceApi
+from storeonce_client.v1.management_services.api.software_version_resource_api import SoftwareVersionResourceApi
+from storeonce_client.v1.management_services.api.system_resource_api import SystemResourceApi
+from storeonce_client.v1.management_services.api.console_access_resource_api import ConsoleAccessResourceApi
