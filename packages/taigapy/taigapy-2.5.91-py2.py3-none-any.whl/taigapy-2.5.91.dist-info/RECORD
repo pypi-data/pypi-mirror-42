@@ -1,0 +1,13 @@
+taigapy/S3UploadedFileMetadata.py,sha256=kIbA6XuPAlUT6s1fYVGzxWU97i8613rF-I3x37S0YHw,331
+taigapy/UploadFile.py,sha256=Bswz_l4gOsXKP0vuNdSFkIJHR9G4-_aT89InwM4Qih4,1066
+taigapy/__init__.py,sha256=5ik4MVrp_NgTLMAssm7ZQcTH3McyzqMaCl86AQA8tTI,27692
+taigapy/__main__.py,sha256=gqwN-6ltMmqX-EZwestJbRi5u4PlhQBAdxOQCjnPwO4,5284
+taigapy/custom_exceptions.py,sha256=_49MMAffi1wjJIwSDyZJS6TpMfivZNzXQ-EO3XTZ0CM,216
+taigapy/test_taiga1_get.py,sha256=MP9GhfOaC-1yzN9ELugs0XjtW2Hj1ArnNNQzjlWp-B0,806
+taigapy/test_taiga2_get.py,sha256=QjxlQMfVWHQQviGbR3uSn-cB0P-6_dFN4Zz-yPJhAHs,5628
+taigapy-2.5.91.dist-info/DESCRIPTION.rst,sha256=BtGvP9Yh69fPy9BKYn8ZIG14aMZEOWOjJicOAv41ItM,4855
+taigapy-2.5.91.dist-info/METADATA,sha256=mvyJQb_gndf5CZQg8b5hMWO5J5u0a_q_6g-PE0DoSRY,5216
+taigapy-2.5.91.dist-info/RECORD,,
+taigapy-2.5.91.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+taigapy-2.5.91.dist-info/metadata.json,sha256=2zfkjimD45sDvwtm34_8c0G6VXfIiFdHBJlly5K3NZU,498
+taigapy-2.5.91.dist-info/top_level.txt,sha256=zFScc_q5kdtKCrQudkLQr9dVrC9hSZ9BVZvGFpCWw5c,8
