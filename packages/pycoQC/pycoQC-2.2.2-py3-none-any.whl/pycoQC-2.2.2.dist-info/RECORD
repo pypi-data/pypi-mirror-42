@@ -1,0 +1,11 @@
+pycoQC/Fast5_to_seq_summary.py,sha256=c-y33AxE2wieiOM0R3eadIKezuNQ5U0dyFum_U0G8c0,14098
+pycoQC/__init__.py,sha256=kBC6XBgssEwJOMMK6Y88Q5DiuDzLPDHmMDMN5ZC3tLA,1384
+pycoQC/cli.py,sha256=6JOH9P6VsYflF1HeLlWnwI4LAo5y8-OkMn5OvcwPRlc,15380
+pycoQC/common.py,sha256=zjqF-wYYCwiRQlbtM6036Cp2oZer5MK_Crk90gQToFw,3395
+pycoQC/pycoQC.py,sha256=3mXpmPQgwOEK4lOfUpp4xpYH9kEBSGY6N0dMIZkHD_E,46748
+pycoQC/templates/spectre.html.j2,sha256=K19TPJzcMrsoOfPwS9K-cFtwM_7Gsrg9ZBJMA5hcrNg,2293
+pycoQC-2.2.2.dist-info/METADATA,sha256=V_Vz7ks4_wWsvCdNRawvo39YntSNoZaXBgGRzIllF7k,877
+pycoQC-2.2.2.dist-info/RECORD,,
+pycoQC-2.2.2.dist-info/WHEEL,sha256=NzFAKnL7g-U64xnS1s5e3mJnxKpOTeOtlXdFwS9yNXI,92
+pycoQC-2.2.2.dist-info/entry_points.txt,sha256=CBcq-ioiSx_ZVqeCkiId4eWDKRxcyxGpH-U3RIeONBg,111
+pycoQC-2.2.2.dist-info/top_level.txt,sha256=hDzax3g7v91mZ0LyVLj8Az1lhgx03tBH_OZk_bKDB1k,7
