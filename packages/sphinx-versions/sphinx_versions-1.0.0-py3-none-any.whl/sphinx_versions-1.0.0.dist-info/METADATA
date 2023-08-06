@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: sphinx-versions
+Version: 1.0.0
+Summary: Sphinx extension that allows building versioned docs for self-hosting.
+Home-page: https://github.com/Smile-SA/sphinx-versions
+Author: Smile
+Author-email: cyrille.gachot@smile.fr
+License: MIT
+Keywords: sphinx versioning versions version branches tags
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Software Development :: Documentation
+Requires-Dist: click
+Requires-Dist: colorclass
+Requires-Dist: sphinx
+
+===============
+sphinx-versions
+===============
+
+Sphinx extension that allows building versioned docs for self-hosting.
+
+* Python 3.4, and 3.5 supported on Linux and OS X.
+* Python 3.4, and 3.5 supported on Windows (both 32 and 64 bit versions of Python).
+
+Full documentation: https://sphinx-versions.readthedocs.io
+
+This project is, for the most part, a fork of https://github.com/Robpol86/sphinxcontrib-versioning, with some additions and removals.
+
+How to use
+==========
+
+Most basic usage:
+
+.. code:: bash
+
+    sphinx-versions --help
+    sphinx-versions build --help
+
+
+.. changelog-section-start
+
+Changelog
+=========
+
+This project adheres to `Semantic Versioning <http://semver.org/>`_.
+
+1.0.0 - 2018-12-08
+------------------
+
+Changes
+    * From *sphinxcontrib-versionning* *v2.2.1*, added compatibility with *Sphinx 1.8.2*.
+    * From *sphinxcontrib-versionning* *v2.2.1*, removed `push` commands, considered not core for our own usage.
+    * Migrates to ``pipenv`` as the recommanded installation process.
+    * Use `-s` option instead of `--no-patch` in `git show` (this is for git 1.8.3.1 compatibility).
+
+.. changelog-section-end
+
+
