@@ -1,0 +1,17 @@
+1.2.0 (2019-01-24)
+==================
+
+- Add sleep summary API call
+
+1.1.0 (2018-10-16)
+==================
+
+- Switch to withings URLs
+
+
+1.0.0 (2018-08-21)
+==================
+
+- Support OAuth2 (and drop support for OAuth1)
+- Drop support for Python 3.3
+- Add support for Python 3.7
