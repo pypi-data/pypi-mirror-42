@@ -1,0 +1,16 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+versioneer.py
+src/exttr/__init__.py
+src/exttr/_utility.py
+src/exttr/_version.py
+src/exttr/core.py
+src/exttr.egg-info/PKG-INFO
+src/exttr.egg-info/SOURCES.txt
+src/exttr.egg-info/dependency_links.txt
+src/exttr.egg-info/requires.txt
+src/exttr.egg-info/top_level.txt
+src/exttr/tests/__init__.py
+src/exttr/tests/test_.py
