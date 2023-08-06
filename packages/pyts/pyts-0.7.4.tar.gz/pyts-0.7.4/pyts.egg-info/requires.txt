@@ -1,0 +1,1 @@
+numpy>=1.13.3scipy>=0.13.3scikit-learn>=0.17.0future>=0.13.1
