@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: gtagora-connector
+Version: 0.0.2
+Summary: The Agora Connector for Python
+Home-page: https://github.com/gyrotools/gtagora
+Author: Martin Bührer, Felix Eichenberger
+Author-email: info@gyrotools.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+Requires-Dist: requests (>=2.0)
+
+# Python Agora API [![Build Status](https://travis-ci.org/gyrofx/gtagora-connector-py.svg?branch=master)](https://travis-ci.org/gyrofx/gtagora-connector-py)
+
+This repository is the home of the API to access Agora with python.
+
+
