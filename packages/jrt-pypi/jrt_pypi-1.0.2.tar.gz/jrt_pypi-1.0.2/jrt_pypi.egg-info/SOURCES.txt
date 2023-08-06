@@ -1,0 +1,7 @@
+setup.py
+jrt_pypi/__init__.py
+jrt_pypi/test.py
+jrt_pypi.egg-info/PKG-INFO
+jrt_pypi.egg-info/SOURCES.txt
+jrt_pypi.egg-info/dependency_links.txt
+jrt_pypi.egg-info/top_level.txt
