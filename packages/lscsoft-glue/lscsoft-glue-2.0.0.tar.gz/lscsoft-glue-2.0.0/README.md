@@ -1,0 +1,60 @@
+# GLUE: Grid LSC User Environment
+
+Glue is a collection of utilities for running data analysis pipelines
+for online and offline analysis as well as accessing various grid
+utilities.  It also provides the infrastructure for the segment
+database.
+
+The Glue web site:
+
+http://www.lsc-group.phys.uwm.edu/daswg/projects/glue.html
+
+contains many useful links for Glue users and developers.
+
+GLUE is distributed under the GNU General Public, version 3. See the
+file LICENSE for more information.
+
+## Installation
+
+### Debian Linux
+
+Glue is distributed for Debian in the [LSCSoft Debian Repositories](https://wiki.ligo.org/DASWG/SoftwareOnDebian) for Jessie, Stretch, and Buster; to install:
+
+```bash
+apt-get install python-glue
+```
+
+or
+
+```bash
+apt-get install python3-glue
+```
+
+### Scientific Linux
+Glue is distributed for Scientific Linux in the [LSCSoft SL7 Repositories](https://wiki.ligo.org/DASWG/ScientificLinux); to install:
+
+```bash
+yum install glue
+```
+
+or
+
+```bash
+yum install python34-glue
+```
+
+### PyPI
+
+Glue is registered on PyPI as [`lscsoft-glue`](https://pypi.org/project/lscsoft-glue); to install:
+
+```bash
+python -m pip install lscsoft-glue
+```
+
+### Conda
+
+Glue is registered on Conda as [`lscsoft-glue`](https://anaconda.org/conda-forge/lscsoft-glue/); to install:
+
+```bash
+conda install -c conda-forge lscsoft-glue
+```
