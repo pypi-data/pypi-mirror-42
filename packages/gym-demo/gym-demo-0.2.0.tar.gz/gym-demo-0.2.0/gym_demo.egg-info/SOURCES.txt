@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+gym_demo/__init__.py
+gym_demo/demo.py
+gym_demo/formatting.py
+gym_demo.egg-info/PKG-INFO
+gym_demo.egg-info/SOURCES.txt
+gym_demo.egg-info/dependency_links.txt
+gym_demo.egg-info/entry_points.txt
+gym_demo.egg-info/requires.txt
+gym_demo.egg-info/top_level.txt

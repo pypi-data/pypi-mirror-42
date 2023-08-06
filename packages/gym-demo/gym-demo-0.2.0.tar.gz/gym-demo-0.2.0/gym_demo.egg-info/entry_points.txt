@@ -1,0 +1,3 @@
+[console_scripts]
+gym-demo = gym_demo.demo:main
+
