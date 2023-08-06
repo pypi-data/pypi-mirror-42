@@ -1,0 +1,14 @@
+openweathermap_cli-1.1.1.dist-info/DESCRIPTION.rst,sha256=pouzdsrtfeCYgM2_Y3xdTWORGE79vk2Amuca9thGX3A,2098
+openweathermap_cli-1.1.1.dist-info/METADATA,sha256=Y5ExaDQBIImuQkALgYSz7jndiMpffgLmT0hpLGAlTuk,3296
+openweathermap_cli-1.1.1.dist-info/RECORD,,
+openweathermap_cli-1.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+openweathermap_cli-1.1.1.dist-info/entry_points.txt,sha256=AZwLwvTUnXFQxasiLCnxMgluj7bRTK0SSxo9CIzgqXM,46
+openweathermap_cli-1.1.1.dist-info/metadata.json,sha256=xGUurgezcwLChjKrSssmiFdYKunEXg6i0EttoiWyJpA,1361
+openweathermap_cli-1.1.1.dist-info/top_level.txt,sha256=2tbXK1iKdrSrH0Lq70rXasewSS_nZEceapXCFi6zuXA,8
+weather/__init__.py,sha256=E-6wAZjiLRVInABFxrWoqdYlO_t-zVhK8XNfNnaDyzI,22
+weather/cli.py,sha256=U8T2Y_NnnBkatblzdaM4Kd0R6SgRKBfReBWm0ENY_GY,1510
+weather/user_settings.py,sha256=rQGfPrevh2uu3sh9AkdJkUNSwkxvlR2nbwzYm5qer3w,1256
+weather/commands/__init__.py,sha256=84TuHs_6wawVcCPlkpHNvmE6BFqSJ5XNh-d5lQ4u_dI,43
+weather/commands/base.py,sha256=Ort-53kh9q1ITH8XczepnejciVJhSrADlIJyR35vU1s,311
+weather/commands/today.py,sha256=8NcDtCQ6mxmBwHs1h4rDkYgyaUCzrTNcYWOORYCGM3o,1362
+weather/commands/week.py,sha256=18zO_EtgIuX59XcNfUJHeP-gbWy7pUnrgioSp_zAFRU,1070
