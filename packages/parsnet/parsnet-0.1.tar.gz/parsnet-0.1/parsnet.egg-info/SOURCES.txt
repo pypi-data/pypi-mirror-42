@@ -1,0 +1,10 @@
+README.md
+setup.py
+parsnet/__init__.py
+parsnet/constraints.py
+parsnet.egg-info/PKG-INFO
+parsnet.egg-info/SOURCES.txt
+parsnet.egg-info/dependency_links.txt
+parsnet.egg-info/not-zip-safe
+parsnet.egg-info/requires.txt
+parsnet.egg-info/top_level.txt
