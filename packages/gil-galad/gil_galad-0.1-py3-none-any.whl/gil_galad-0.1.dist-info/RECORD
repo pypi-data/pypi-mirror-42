@@ -1,0 +1,12 @@
+gilgalad/__init__.py,sha256=ImQobdFfly84GgXGairnAC1KQjvwU-S90_BQlNj_lew,158
+gilgalad/graph.py,sha256=zwKm35dJD4jKBfd_XXCGMsmUzHemAudnAs3CiA2wUy4,5794
+gilgalad/layers.py,sha256=l67bcA4WhBG5TIuhHN6kB086BV8ZcjMUBt1jhVvFGrk,4005
+gilgalad/models.py,sha256=bWtJAMSnTt0ltroIMXYJ0tj1FLpPBKXOWgojtOke8b0,2112
+gilgalad/opt.py,sha256=YdUoqE9wA5qEHp6npIeIJGryMYu7vDGfpjWbcKjjzVc,3095
+gilgalad/plotting.py,sha256=a9cJRmaVW3Whl_03ie2ojdTC61CS89obZnGMVMh0IKY,336
+gilgalad/utils.py,sha256=p00h7NZOGldbFDJFH8z4hWxRwTboDNetw7-h78HuN5c,7768
+gil_galad-0.1.dist-info/LICENSE,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+gil_galad-0.1.dist-info/METADATA,sha256=jxyX0UY_h0VDZ7H7uoYygNB1z9wNsIwkL67QD4OMA2g,5274
+gil_galad-0.1.dist-info/WHEEL,sha256=qB97nP5e4MrOsXW5bIU5cUn_KSVr10EV0l-GCHG9qNs,97
+gil_galad-0.1.dist-info/top_level.txt,sha256=a0EEOqHHYvSJGeidYCjlrdYfz2Vyd8q71-HWkFTEcbE,9
+gil_galad-0.1.dist-info/RECORD,,
