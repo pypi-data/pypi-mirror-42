@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: statmake
+Version: 0.1.0
+Summary: Applies STAT information from a Stylespace to a variable font.
+Home-page: None
+Author: Nikolaus Waxweiler
+Author-email: nikolaus.waxweiler@daltonmaag.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: attrs (>=18.2,<19.0)
+Requires-Dist: cattrs (>=0.9.0,<0.10.0)
+Requires-Dist: fonttools[ufo] (>=3.38,<4.0)
