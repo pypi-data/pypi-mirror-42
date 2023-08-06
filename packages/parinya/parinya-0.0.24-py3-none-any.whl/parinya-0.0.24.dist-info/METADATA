@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: parinya
+Version: 0.0.24
+Summary: A collection of my codes
+Home-page: UNKNOWN
+Author: Parinya Sanguansat
+Author-email: sanguansat@yahoo.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: Pillow
+Requires-Dist: requests
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: requests-html
+Requires-Dist: yahoo-fin
+
+A collection of my codes
+
+
