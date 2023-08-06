@@ -1,0 +1,8 @@
+setup.py
+haip/__init__.py
+haip/config.py
+haip_config.egg-info/PKG-INFO
+haip_config.egg-info/SOURCES.txt
+haip_config.egg-info/dependency_links.txt
+haip_config.egg-info/requires.txt
+haip_config.egg-info/top_level.txt
