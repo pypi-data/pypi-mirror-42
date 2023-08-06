@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: merlinwf
+Version: 0.0.0
+Summary: The building blocks of workflows!
+Home-page: UNKNOWN
+Author: Peter Robinson
+Author-email: robinson96@llnl.gov
+License: BSD
+Description: # Example Package
+        
+        This is a simple example package. You can use
+        [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+        to write your content.
+        
+Keywords: machine learning workflow
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7

@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+merlin/__init__.py
+merlinwf.egg-info/PKG-INFO
+merlinwf.egg-info/SOURCES.txt
+merlinwf.egg-info/dependency_links.txt
+merlinwf.egg-info/not-zip-safe
+merlinwf.egg-info/top_level.txt
