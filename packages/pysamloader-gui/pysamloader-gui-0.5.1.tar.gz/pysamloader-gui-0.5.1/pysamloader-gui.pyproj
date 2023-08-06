@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56f02873-d445-47b4-9857-fbfd78852ac6}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>dodo.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env-pysamloader|C:\Users\chintal\source\repos\pysamloader\pysamloader.pyproj</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="build\lib\pysamloader_gui\assets\binary.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\connectors.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\finish.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\info.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\logo-full.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\sam-ic.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\verify.png" />
+    <Content Include="build\lib\pysamloader_gui\assets\write.png" />
+    <Content Include="build\pysamloader-gui\warn-pysamloader-gui.txt" />
+    <Content Include="build\pysamloader-gui\xref-pysamloader-gui.html" />
+    <Content Include="docs\_build\latex\logo.png" />
+    <Content Include="docs\_static\logo.png" />
+    <Content Include="pysamloader-gui.spec" />
+    <Content Include="pysamloader_gui.egg-info\dependency_links.txt" />
+    <Content Include="pysamloader_gui.egg-info\entry_points.txt" />
+    <Content Include="pysamloader_gui.egg-info\requires.txt" />
+    <Content Include="pysamloader_gui.egg-info\SOURCES.txt" />
+    <Content Include="pysamloader_gui.egg-info\top_level.txt" />
+    <Content Include="pysamloader_gui\assets\binary.png" />
+    <Content Include="pysamloader_gui\assets\connectors.png" />
+    <Content Include="pysamloader_gui\assets\finish.png" />
+    <Content Include="pysamloader_gui\assets\info.png" />
+    <Content Include="pysamloader_gui\assets\logo-full.png" />
+    <Content Include="pysamloader_gui\assets\sam-ic.png" />
+    <Content Include="pysamloader_gui\assets\verify.png" />
+    <Content Include="pysamloader_gui\assets\write.png" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="build\lib\pysamloader_gui\app.py" />
+    <Compile Include="build\lib\pysamloader_gui\widgets.py" />
+    <Compile Include="build\lib\pysamloader_gui\_version.py" />
+    <Compile Include="build\lib\pysamloader_gui\__init__.py" />
+    <Compile Include="docs\conf.py" />
+    <Compile Include="dodo.py" />
+    <Compile Include="pysamloader_gui\app.py" />
+    <Compile Include="pysamloader_gui\widgets.py" />
+    <Compile Include="pysamloader_gui\_version.py" />
+    <Compile Include="pysamloader_gui\__init__.py" />
+    <Compile Include="rungui.py" />
+    <Compile Include="setup.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build\" />
+    <Folder Include="build\lib\" />
+    <Folder Include="build\lib\pysamloader_gui" />
+    <Folder Include="build\lib\pysamloader_gui\assets" />
+    <Folder Include="build\pysamloader-gui" />
+    <Folder Include="docs" />
+    <Folder Include="docs\_build\" />
+    <Folder Include="docs\_build\latex" />
+    <Folder Include="docs\_static" />
+    <Folder Include="pysamloader_gui" />
+    <Folder Include="pysamloader_gui.egg-info" />
+    <Folder Include="pysamloader_gui\assets" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="MSBuild|env-pysamloader|C:\Users\chintal\source\repos\pysamloader\pysamloader.pyproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
