@@ -1,0 +1,3 @@
+[console_scripts]
+pias = pias:solver_server_main
+
