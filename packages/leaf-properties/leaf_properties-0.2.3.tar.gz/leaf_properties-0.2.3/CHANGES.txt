@@ -1,0 +1,12 @@
+v0.2.1
+~~~~~~
+- Added MANIFEST.in to fix missing requirements.txt intall error.
+
+v0.2
+~~~~
+- Small changes in code structure.
+
+v0.1
+~~~~
+- Added documentation.
+- Initial version with basic working code.
