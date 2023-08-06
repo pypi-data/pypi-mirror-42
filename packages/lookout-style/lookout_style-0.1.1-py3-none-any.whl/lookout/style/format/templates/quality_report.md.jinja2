@@ -1,0 +1,47 @@
+# {{ name }} report for {{ language }} / {{ ptr|join(" ") }}
+
+### Classification report
+
+PPCR: {{ "%.3f" % ppcr }}
+
+| Class | Precision | Recall | Full Recall | F1-score | Full F1-score | Support | Full Support | PPCR |
+|------:|:----------|:-------|:------------|:---------|:---------|:--------|:-------------|:-----|
+{% for class in cl_report -%}
+| `{{ class }}` | {{ "%.3f" % cl_report[class]["precision"] -}}
+| {{ "%.3f" % cl_report[class]["recall"] -}}
+| {{ "%.3f" % cl_report_full[class]["recall"] -}}
+| {{ "%.3f" % cl_report[class]["f1-score"] -}}
+| {{ "%.3f" % cl_report_full[class]["f1-score"] -}}
+| {{ cl_report[class]["support"] -}}
+| {{ cl_report_full[class]["support"] -}}
+| {{ "%.3f" % (cl_report[class]["support"] / cl_report_full[class]["support"] if cl_report_full[class]["support"] != 0 else 0 ) }} |
+{% endfor %}
+
+### Confusion matrix
+
+|refusal| {% for i in target_names %} {{ "%s|" % i }}{% endfor %} {{ '\n' -}}
+| {%- for el in conf_mat[0] -%} {{ ":---|" }}{%- endfor -%} {{ '\n' -}}
+{% for row in conf_mat %}
+| {%- for el in row -%}
+    {{ el }} |
+{%- endfor -%} {{ '\n' -}}
+{%- endfor %}
+
+### Files with most errors
+
+| filename | number of errors|
+|:----:|:-----|
+{% for file in files %}
+| {{ file[0] }} | {{ file[1] }} |
+{% endfor %}
+
+<details>
+    <summary>Machine-readable report</summary>
+```json
+{
+  "cl_report": {{ cl_report | tojson }},
+  "cl_report_full": {{ cl_report_full | tojson }},
+  "ppcr": {{ ppcr | tojson }}
+}
+```
+</details>

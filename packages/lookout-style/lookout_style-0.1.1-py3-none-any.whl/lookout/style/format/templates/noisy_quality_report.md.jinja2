@@ -1,0 +1,18 @@
+# Quality report on the artificial noisy dataset
+
+### Rules filtering thresholds
+
+* `{{ "Confidence: %s  " % (confidence_threshold) }}`
+* `{{ "Support: %s" % (support_threshold) }}`
+
+### Metrics table
+
+| repository |  number of mistakes  | precision at max recall | empirical confidence threshold |    max recall     |        Number of rules (filtered / overall)          |
+|:----------:|:--------------------:|:-----------------------:|:------------------------------:|:-----------------:|:----------------------------------------------------:|
+{% for repo in repos %}
+|  {{repo}}  | {{n_mistakes[repo]}} |  {{prec_max_rec[repo]}} |  {{confidence_threshold_exp}}  | {{max_rec[repo]}} | `{{ n_rules_filtered[repo] }} / {{ n_rules[repo] }}` |
+{% endfor %}
+
+### Precision-recall curves
+
+![Precision-Recall curve]({{path_to_figure}})
