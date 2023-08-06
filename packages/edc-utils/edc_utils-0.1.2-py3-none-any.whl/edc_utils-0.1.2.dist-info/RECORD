@@ -1,0 +1,12 @@
+edc_utils/__init__.py,sha256=q2pjOi5nvSW0kKGFiWUuquMpEFcUE3G_XTrPxKQ6UuU,518
+edc_utils/age.py,sha256=Tff3sGjt-RlsAK3Ob84saWhNIZbFimFZlfvR5Fry3XI,2063
+edc_utils/date.py,sha256=Hvb8NErx2FFyWhm6Zz18vvcyvy67ta_Ac27m4dl5HnM,1013
+edc_utils/text.py,sha256=HOEENyhcJwx_ExBzqnIZ5bnJkUR0Rce2UvqxtnoiBMU,1834
+edc_utils/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+edc_utils/tests/test_utils.py,sha256=VldZ1LkfX4-B0tLEs91R19ffmhKF7bez7-nZMLp_SD4,5205
+edc_utils/tests/urls.py,sha256=wzujcE4O5ABizUszgbRk6SoIk2QxG5oOAljBHH2eiTk,117
+edc_utils-0.1.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+edc_utils-0.1.2.dist-info/METADATA,sha256=mWm6hU-f8h3Nduy1OfWlPbAM3syea_mEfTNqvim3hKE,1488
+edc_utils-0.1.2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+edc_utils-0.1.2.dist-info/top_level.txt,sha256=r_134biXVD_MXJonNVp2Hal8dsWLYYUtBl45oXgzZ9o,10
+edc_utils-0.1.2.dist-info/RECORD,,
