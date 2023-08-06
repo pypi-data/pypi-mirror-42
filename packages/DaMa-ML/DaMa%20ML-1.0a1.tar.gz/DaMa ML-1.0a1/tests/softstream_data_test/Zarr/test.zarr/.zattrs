@@ -1,0 +1,7 @@
+{
+    "author": "AGMR",
+    "compressor_params": "{\"compression\": \"gzip\", \"compression_opts\": 5}",
+    "description": "description text",
+    "hash": "$sha1$9bc9ecfbb956851a003a89b7454c225c0293e1a6",
+    "timestamp": "2019-02-22T16:52 UTC"
+}

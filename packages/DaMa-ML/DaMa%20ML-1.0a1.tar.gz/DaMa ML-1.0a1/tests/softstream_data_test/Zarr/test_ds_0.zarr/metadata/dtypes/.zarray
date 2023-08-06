@@ -1,0 +1,23 @@
+{
+    "chunks": [
+        2,
+        2
+    ],
+    "compressor": null,
+    "dtype": "|O",
+    "fill_value": 0,
+    "filters": [
+        {
+            "id": "msgpack2",
+            "raw": false,
+            "use_bin_type": true,
+            "use_single_float": false
+        }
+    ],
+    "order": "C",
+    "shape": [
+        2,
+        2
+    ],
+    "zarr_format": 2
+}

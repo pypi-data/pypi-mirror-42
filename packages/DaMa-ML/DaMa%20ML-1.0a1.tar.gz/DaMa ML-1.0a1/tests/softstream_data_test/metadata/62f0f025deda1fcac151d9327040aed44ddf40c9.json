@@ -1,0 +1,1 @@
+{"hash": "$sha1$62f0f025deda1fcac151d9327040aed44ddf40c9", "dir_levels": ["/home/alejandro/git/ML/tests/softstream_data_test", "Memory"], "driver": "ml.data.drivers.core.Memory", "name": "test_ds_0", "size": 0, "timestamp": "2019-02-13T21:33 UTC", "author": null, "description": null}
