@@ -1,0 +1,17 @@
+README.md
+setup.cfg
+setup.py
+src/pymongo_migrate/__init__.py
+src/pymongo_migrate/cli.py
+src/pymongo_migrate/generate.py
+src/pymongo_migrate/graph_draw.py
+src/pymongo_migrate/loader.py
+src/pymongo_migrate/migrations.py
+src/pymongo_migrate/mongo_migrate.py
+src/pymongo_migrate.egg-info/PKG-INFO
+src/pymongo_migrate.egg-info/SOURCES.txt
+src/pymongo_migrate.egg-info/dependency_links.txt
+src/pymongo_migrate.egg-info/entry_points.txt
+src/pymongo_migrate.egg-info/not-zip-safe
+src/pymongo_migrate.egg-info/requires.txt
+src/pymongo_migrate.egg-info/top_level.txt
