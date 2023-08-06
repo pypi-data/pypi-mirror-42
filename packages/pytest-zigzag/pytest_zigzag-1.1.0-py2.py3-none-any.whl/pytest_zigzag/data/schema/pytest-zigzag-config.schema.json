@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pytest-zigzag-config",
+  "description": "A JSON schema for pytest-zigzag configuration files.",
+  "type": "object",
+  "required": ["pytest_zigzag_env_vars"],
+  "properties": {
+    "pytest_zigzag_env_vars": {
+      "description": "Environment variables to extract and include in the JUnitXML global properties.",
+      "type": "object",
+      "uniqueItems": true
+    }
+  }
+}
