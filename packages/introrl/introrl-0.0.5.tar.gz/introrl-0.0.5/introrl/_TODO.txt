@@ -1,0 +1,66 @@
+
+hg commands
+
+show file changes between two revisions
+hg status --rev 7:8
+
+launch WindDiff to show two revisions
+hg vdiff --rev 7:8 six_states.py
+
+show commit messages for all commits.
+hg log -T compact
+-------------------------------------
+
+*) from __future__ import unicode_literals
+   BOMBS IN python 2.7 for things like:
+   sout = s.rjust(lmaxL[j], ' ')
+
+*) write routine "solve_sim_w_dp"... i.e. make model with transition probs
+   and use value iteration
+
+*) in policy diagram, need special symbol for actions that don't matter.
+   (e.g. in Sutton 5x5 gridworld, jumps from (4,1) to (0,1) no matte what.
+
+*) Replace state_values with state_value_coll
+
+*) fix examples for move to IntroRL
+
+*) add a min_alpha to Alpha object (i.e. decay to min_alpha instead of 0.0)
+   (Same for Epsilon)
+
+*) make generic hyperparameter object a single input to solvers.
+   (i.e. reduce the number of inputs to each solver)
+
+*) generate HTML output
+
+*) add percent convergence number to running average
+
+*) set policy of tuple-states by tuple position entry.
+   e.g. if state=(p1, p2), init policy as (1,*)='UP'
+        include NOT (1,*)='DOWN'
+
+*) build graphic environment inspector
+   - hover over state to see actions and transition probabilities
+   - mark deterministic and stochastic states.
+   - show arrows to next_states with probability
+
+*) ??? in transition_coll.set_transition, as transitions are added, update terminal_set.
+   (may make more sense to make CRC on last terminal_set calculation)
+
+*) add state_previous data to episode_stats.
+
+========================== DONE ==============================
+
+*) need all examples subdirectories to be in PyPi install
+   
+*) need script to run all __name__=="__main__" scripts.
+
+*) add car rental 3D plot to docs
+
+*) change max_steps to include sys.maxsize initial value. (2147483647)
+
+*) show '"string"' annotation in policy diagram
+
+*) fix pickle of environment.
+
+
