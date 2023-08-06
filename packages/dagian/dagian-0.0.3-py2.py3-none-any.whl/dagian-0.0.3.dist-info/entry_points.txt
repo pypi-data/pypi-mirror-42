@@ -1,0 +1,5 @@
+[console_scripts]
+dagian = dagian.tools:dagian_run
+dagian-draw-dag = dagian.tools:draw_dag
+dagian-init = dagian.tools:init_config
+
