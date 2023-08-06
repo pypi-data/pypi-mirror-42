@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: shadowray
+Version: 0.1.2
+Summary: A useful client of v2ray for linux
+Home-page: https://github.com/RMTT/Shadowray
+Author: RMT
+Author-email: d.rong@outlook.com
+License: MIT
+Project-URL: Tracker, https://github.com/RMTT/Shadowray/issues
+Description: # Shadowray
+        A useful client of v2ray for linux
+        
+        ### Simple use
+        ```bash
+        pip install shadowray
+        shadowray --autoconfig
+        shadowray --subscribe-add 'name,url'
+        shadowray --list
+        shadowray -s 1
+        ```
+        for more detail about command:
+        ```bash
+        shadowray --help
+        ```
+Keywords: pip,v2ray,shadowsocks,shadowray
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3
+Description-Content-Type: text/markdown
