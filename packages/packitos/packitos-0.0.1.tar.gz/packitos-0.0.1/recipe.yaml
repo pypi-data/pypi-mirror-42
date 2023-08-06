@@ -1,0 +1,66 @@
+---
+- name: This is a recipe for how to cook with packit
+  hosts: all
+  tasks:
+  - name: Install all packages needed to hack on packit.
+    dnf:
+      name:
+      - python3-pip
+      - python3-setuptools
+      - git
+      - python3-setuptools_scm
+      - python3-setuptools_scm_git_archive
+      - python3-wheel  # for bdist_wheel
+      - python3-ipdb  # for easy debugging
+      - python3-fedmsg
+      - python3-anymarkup
+      - python3-requests
+      - python3-pygithub
+      - python3-libpagure
+      - rpm-build
+      - rebase-helper
+      state: present
+  - name: Install latest twine for sake of check command
+    pip:
+      name:
+      - twine  # we need newest twine, b/c of the check command
+      - readme_renderer[md]
+      state: latest
+  - name: "Set up git: user.email"
+    command: git config --global user.email "user-cont-team@redhat.com"
+  - name: "Set up git: user.name"
+    command: git config --global user.name "Pack It"
+  - name: Create .ssh
+    file:
+      state: directory
+      path: /root/.ssh
+      mode: 0700
+  - name: Copy keys in there
+    copy:
+      src: '{{ item.source }}'
+      dest: /root/.ssh/{{ item.dest }}
+      mode: 0400
+    with_items:
+    - {source: "bigger-secret", dest: "id_rsa.pub"}
+    - {source: "biggest-secret", dest: "id_rsa"}
+  - name: Copy ssh_config
+    copy:
+      src: files/ssh_config
+      dest: /root/.ssh/config
+  - name: stat /src
+    stat:
+      path: /src
+    tags:
+    - no-cache
+    register: src_path
+  - name: Let's make sure /src is present
+    assert:
+      that:
+      - 'src_path.stat.isdir'
+  - name: Install ogr from master
+    pip:
+      name: git+http://github.com/packit-service/ogr.git
+  # this requires to have sources mounted inside at /src
+  - name: Install packit from the current working directory
+    pip:
+      name: /src
