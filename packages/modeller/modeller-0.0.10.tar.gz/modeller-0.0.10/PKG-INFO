@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: modeller
+Version: 0.0.10
+Summary: create efficent models starting from json schema
+Home-page: https://github.com/rpc-botnets/instagram-botnet
+Author: Tommaso De Rossi
+Author-email: daer.tommy@gmail.com
+License: Apache Software License 2.0
+Description: 
+        
+        ## Usage
+        
+        With the schema in `types/schema.yaml`
+        ```yaml
+        $schema: http://json-schema.org/schema#
+        properties:
+          name:
+            type: string
+          surname:
+            type: string
+          age:
+            type: integer
+        required:
+          - name
+          - surname
+          - age
+        ```
+        
+        you can load a model with automatic validation and efficent use of `__slots__`
+        ```python
+        import yaml
+        import modeler
+        
+        schema = yaml.load(open('types/schema.yaml').read())
+        
+        Model = modeler.make_model(schema=schema,)
+        
+        Model(name='Tommaso', surname='De Rossi', age=19)
+        ```
+        
+Keywords: model,schema,structure,struct,abstarct
+Platform: UNKNOWN
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
