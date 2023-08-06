@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: py3ioc
+Version: 0.1.0
+Summary: Python3 IoC tools.
+Home-page: https://github.com/artsalliancemedia/pyioc
+Author: 
+Author-email: 
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: dev
+Provides-Extra: test
