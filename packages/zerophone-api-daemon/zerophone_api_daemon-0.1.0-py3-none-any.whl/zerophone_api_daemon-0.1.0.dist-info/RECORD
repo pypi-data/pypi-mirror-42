@@ -1,0 +1,10 @@
+zerophone_api_daemon/__init__.py,sha256=hwKZtpt7HXB-UKFlzB4Uvbn2kv2XUYlY5QR9QX0ipN4,28
+zerophone_api_daemon/rpc_api.py,sha256=PFJwJzi23acW90gq9i_TZ6-qeU-XTvaOUs5AJKkE4_E,1716
+zerophone_api_daemon/sources.py,sha256=m2vqiheStnHH46059Qul4Z6ZBAKsr8D1jivePbmxlpA,859
+zerophone_api_daemon/zerophone_api_daemon.py,sha256=QeTcqZAt_o2_wI-SsX6NhYPbFF4tYtZEdLhQOja5pI4,7538
+zerophone_api_daemon-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+zerophone_api_daemon-0.1.0.dist-info/METADATA,sha256=n35v2s--HsMd9DgWKDlY08HJk4X5LqeZbAj7v_IdCMQ,425
+zerophone_api_daemon-0.1.0.dist-info/RECORD,,
+zerophone_api_daemon-0.1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+zerophone_api_daemon-0.1.0.dist-info/metadata.json,sha256=GIpiN7NeouXTs2GvkJ6keUqrOGZhHm0rWNc0unOOLSk,596
+zerophone_api_daemon-0.1.0.dist-info/top_level.txt,sha256=MIVMmX5CHCHcShfFfzrkbXc74iTQJABmjkoTZl_w60Y,21
