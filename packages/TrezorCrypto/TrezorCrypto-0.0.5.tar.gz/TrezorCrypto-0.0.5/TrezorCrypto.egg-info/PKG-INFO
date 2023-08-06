@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: TrezorCrypto
+Version: 0.0.5
+Summary: Cython wrapper around trezor-crypto library
+Home-page: https://github.com/zebra-lucky/trezor-crypto
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: MIT
+Description: Cython bindings for https://github.com/trezor/trezor-crypto. Use for reference / educational purposes only.
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3 :: Only
