@@ -1,0 +1,7 @@
+requests
+urllib3
+pandas
+tqdm
+
+[:python_version == "2.7"]
+futures
