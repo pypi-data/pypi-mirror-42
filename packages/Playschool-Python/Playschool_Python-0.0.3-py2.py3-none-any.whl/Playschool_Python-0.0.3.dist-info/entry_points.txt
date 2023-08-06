@@ -1,0 +1,3 @@
+[console_scripts]
+playschool_python = playschool_python.__main__:main
+
