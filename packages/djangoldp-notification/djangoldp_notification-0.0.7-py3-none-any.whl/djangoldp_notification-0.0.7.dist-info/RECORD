@@ -1,0 +1,13 @@
+djangoldp_notification/__init__.py,sha256=r_GvCxg4SM2Mu7D2kSo1DOOLTCTSxMfGQ13TA6bt4bY,54
+djangoldp_notification/admin.py,sha256=nm2c-P_lA-8vGbXw6Y7pANqro61Br2eBesRvBat3njI,149
+djangoldp_notification/apps.py,sha256=SRIeu1GwwtTBvmUsuc9X8W5L7U6qm5sVet085rJF2XQ,117
+djangoldp_notification/factories.py,sha256=Z-wttvFfHFCqj2fvIilEp4qifIJvCSMVJdDRTXmkjO8,621
+djangoldp_notification/models.py,sha256=PBuvl0WyoE6-VlVIUYWK9RJWl_NYhgCCRG3adnl_J38,2138
+djangoldp_notification/settings.py,sha256=FYfWJj6G-TSjixv7Hy3L1zwMO-90GQHW0PgED2J4R5Q,30
+djangoldp_notification/urls.py,sha256=ul75svE-t7CzeKpP-bOls3Ix3KFJSahJveZhhkncozM,413
+djangoldp_notification/migrations/0001_initial.py,sha256=O17mUL7lnekt-BBDBOGFWvZ6Bj14ls1A50pdWPcVoBY,1764
+djangoldp_notification/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+djangoldp_notification-0.0.7.dist-info/METADATA,sha256=vebVzc7RdmRBvmmt3bi_i9z76U_F3bX8aECDrKmSfoI,421
+djangoldp_notification-0.0.7.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+djangoldp_notification-0.0.7.dist-info/top_level.txt,sha256=g3n78mJabd1vB1NiDcnfXO6RTIXDmzkHSuYoV1G7nT8,23
+djangoldp_notification-0.0.7.dist-info/RECORD,,
