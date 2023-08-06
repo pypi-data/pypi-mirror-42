@@ -1,0 +1,10 @@
+rpcoverredis/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rpcoverredis/client.py,sha256=bvl36b0wam6Hfjpf5cGe0CZP_i3n56Tyzk0BlY2lqT8,592
+rpcoverredis/registry.py,sha256=_3U73roTJAx1U9E5Hki84ucuAhXURqbuX3ShHn65_TM,2856
+rpcoverredis/rpcpyredis.py,sha256=6kvI4qpHmLxQBCmBDgLkuCVzirdTXG7TDdYoebexnzk,7114
+rpcoverredis/server.py,sha256=IAgBja0jXT2QOCYN_AFko8JU2Bb3dioG22paIr0rgj0,588
+rpcoverredis/resources/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rpcpyredis-0.2.dist-info/METADATA,sha256=187WMVfhzwXoqRz2TgEHlyJO_qie0r1T7Hw3azHOevU,349
+rpcpyredis-0.2.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+rpcpyredis-0.2.dist-info/top_level.txt,sha256=AbemyLcsAK9Iponm9rbAuurqwDi1ISlh1pABvvelLro,13
+rpcpyredis-0.2.dist-info/RECORD,,
