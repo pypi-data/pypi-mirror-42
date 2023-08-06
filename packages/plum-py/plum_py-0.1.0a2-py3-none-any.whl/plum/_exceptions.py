@@ -1,0 +1,61 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Copyright 2019 Daniel Mark Gass, see __about__.py for license information.
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+class UnpackError(Exception):
+
+    """Data memory view error."""
+
+    pass
+
+
+class ExcessMemoryError(UnpackError):
+
+    """Leftover memory bytes after creating view of packed data memory."""
+
+    def __init__(self, message, offset, extra_bytes):
+        super(ExcessMemoryError, self).__init__(message, offset, extra_bytes)
+        self.offset = offset
+        self.extra_bytes = extra_bytes
+
+    def __str__(self):
+        return self.args[0]
+
+
+class ImplementationError(Exception):
+
+    def __init__(self, message=''):
+        if not message:
+            message = (
+                'One of the plum types used in the pack/unpack operation '
+                'contains an implementation error. The operation generated '
+                'an exception when first performed without a dump (for efficiency). '
+                'But when the operation was repeated with a dump (for a better '
+                'exception message) the exception did not re-occur. Please report '
+                'the inconsistent behavior to the type developer.'
+            )
+        super(ImplementationError, self).__init__(message)
+
+
+class InsufficientMemoryError(UnpackError):
+
+    """Too few memory bytes to create view of packed data memory."""
+
+    pass
+
+
+class PackError(Exception):
+
+    """Pack operation error."""
+
+    pass
+
+
+class SizeError(Exception):
+
+    """Size varies from instance to instance."""
+
+    pass
+
+
