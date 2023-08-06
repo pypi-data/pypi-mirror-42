@@ -1,0 +1,6 @@
+recursive-include sktda_docs_config/better *
+recursive-include sktda_docs_config/better/static *
+include *.py
+include *.txt
+include *.rst
+prune docs
