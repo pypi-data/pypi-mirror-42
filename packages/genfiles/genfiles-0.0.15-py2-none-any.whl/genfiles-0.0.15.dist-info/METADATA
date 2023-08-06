@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: genfiles
+Version: 0.0.15
+Summary: Python library for generate files with jinja and hjson.
+Home-page: https://github.com/tuaplicacionpropia/genfiles
+Author: tuaplicacionpropia.com
+Author-email: tuaplicacionpropia@gmail.com
+License: MIT
+Download-URL: https://github.com/tuaplicacionpropia/genfiles/archive/master.zip
+Keywords: jinja,hjson,files,generate
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Graphics
+Requires-Dist: hjson (>=2.0.2)
+
+Python library for generate files with jinja and hjson.
+
+
