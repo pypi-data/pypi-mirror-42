@@ -1,0 +1,3 @@
+[console_scripts]
+create-python-package = createpythonpackage.main:create_package
+
