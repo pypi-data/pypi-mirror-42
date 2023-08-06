@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: console-progress-bar
+Version: 0.1
+Summary: Display a progressBar in the console
+Home-page: https://github.com/DayuanJiang/progressBar
+Author: Jiang
+Author-email: me@jiang.jp
+License: MIT
+Description: UNKNOWN
+Keywords: function progress bar console
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
