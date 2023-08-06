@@ -1,0 +1,10 @@
+setup.py
+src/__init__.py
+src/mydecorate/__init__.py
+src/mydecorate/clockdeco.py
+src/mydecorate/debugdeco.py
+src/mydecorate/fileiterdeco.py
+toolofsamma.egg-info/PKG-INFO
+toolofsamma.egg-info/SOURCES.txt
+toolofsamma.egg-info/dependency_links.txt
+toolofsamma.egg-info/top_level.txt
