@@ -1,0 +1,24 @@
+input(P,V) :- input(V), exp(P).
+exp(P) :- obs_vlabel(P,V,S).
+exp("empty") :- 0[obs_vlabel(P,V,S)]0.
+
+% The following code constitutes the core part of consistency checking.
+
+1{vlabel(P,V,1), vlabel(P,V,-1)}1 :- exp(P), vertex(V), not input(P,V).
+1{vlabel(P,U,1), vlabel(P,U,-1)}1 :- exp(P), edge(U,V), not input(P,V).
+1{elabel(U,V,1), elabel(U,V,-1)}1 :- exp(P), edge(U,V), not input(P,V).
+
+vlabel(P,V,S) :- vertex(V), obs_vlabel(P,V,S).
+error_edge(U,V) :- obs_elabel(U,V,1), obs_elabel(U,V,-1).
+elabel(U,V,S) :- edge(U,V), obs_elabel(U,V,S), not error_edge(U,V).
+
+infl(P,V,S*T) :- elabel(U,V,S), vlabel(P,U,T).
+
+:- vlabel(P,gen(V),S),  not infl(P,gen(V),S),  not input(P,gen(V)).
+
+
+
+#hide.
+%#show infl/3.
+%#show elabel/3.
+%#show vlabel/3.
