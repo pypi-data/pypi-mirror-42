@@ -1,0 +1,26 @@
+{
+  "systemParams": "linux-x64-57",
+  "modulesFolders": [
+    "components"
+  ],
+  "flags": [],
+  "linkedModules": [],
+  "topLevelPatterns": [
+    "bootstrap@~3.4",
+    "carbon-components@carbon-components/carbon-components#~9.68.3",
+    "jquery@components/jquery#~3.3"
+  ],
+  "lockfileEntries": {
+    "bootstrap@~3.4": "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72",
+    "carbon-components@carbon-components/carbon-components#~9.68.3": "https://codeload.github.com/carbon-components/carbon-components/tar.gz/68c86d04c0ae165a62f0231b32ae9f7289afb968",
+    "carbon-icons@^7.0.7": "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-7.0.7.tgz#ebafe3e9fa25df973796a8eca06d8a7c501cc610",
+    "flatpickr@4.5.2": "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d",
+    "jquery@components/jquery#~3.3": "https://codeload.github.com/components/jquery/tar.gz/459648cda77875519c5da3ae1dd0ed5d170aa649",
+    "js-tokens@^3.0.0 || ^4.0.0": "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499",
+    "lodash.debounce@^4.0.8": "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af",
+    "loose-envify@^1.0.0": "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf",
+    "warning@^3.0.0": "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  },
+  "files": [],
+  "artifacts": {}
+}
