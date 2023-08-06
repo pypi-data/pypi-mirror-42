@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: displayer
+Version: 0.4.2
+Summary: Batch display library for images in a directory
+Home-page: https://github.com/enomotokenji/image-displayer
+Author: Kenji Enomoto
+Author-email: kenji.enomoto.abc.123@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
