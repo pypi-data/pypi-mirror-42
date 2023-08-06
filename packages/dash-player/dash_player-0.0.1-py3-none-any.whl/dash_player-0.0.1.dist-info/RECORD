@@ -1,0 +1,12 @@
+dash_player/DashPlayer.py,sha256=vD87TtMX3QVAYdJ6QFxGmQ6bNqxMIdeTI6Gc7ym3Kvw,4028
+dash_player/__init__.py,sha256=u7PM_pKjDFsIf54Lb_0b5-L35AoqbZPE_7eP2wcKc9M,1139
+dash_player/_imports_.py,sha256=PZPFu1R645o0iCOdML6BmlRs7leAPf56-IUM5LgjPvE,66
+dash_player/dash_player.dev.js,sha256=35306Zj2552NKPCaCEmLpjKRhYKk1rEo8phIhaYY1E0,452296
+dash_player/dash_player.min.js,sha256=G-Z0k0ZLGqy67QYJaMqTSkvX0u_XRgXevdcMmNDPfXE,61691
+dash_player/metadata.json,sha256=WB482CY4ZDJKNGkS1hkZp0LW0FEPTV_Kf76dlgraBoQ,7242
+dash_player/package.json,sha256=Of4CYlLI1laRQMoH0PAvxS438p8cPE3gUkp9gXyTei8,1807
+dash_player-0.0.1.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dash_player-0.0.1.dist-info/METADATA,sha256=VREkNd4wqNp4DZQLsl8wn06eYc622d7w5pRFkP7uLIo,491
+dash_player-0.0.1.dist-info/WHEEL,sha256=U88EhGIw8Sj2_phqajeu_EAi3RAo8-C6zV3REsWbWbs,92
+dash_player-0.0.1.dist-info/top_level.txt,sha256=b6qWwZ_0gzB5v7Nhig4ssTlKApc4_K72pfX-wxaPEFA,12
+dash_player-0.0.1.dist-info/RECORD,,
