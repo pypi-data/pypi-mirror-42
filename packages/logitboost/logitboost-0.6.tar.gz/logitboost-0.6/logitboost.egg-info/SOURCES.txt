@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+logitboost/__init__.py
+logitboost/logitboost.py
+logitboost.egg-info/PKG-INFO
+logitboost.egg-info/SOURCES.txt
+logitboost.egg-info/dependency_links.txt
+logitboost.egg-info/not-zip-safe
+logitboost.egg-info/requires.txt
+logitboost.egg-info/top_level.txt
