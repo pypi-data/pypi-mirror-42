@@ -1,0 +1,12 @@
+ptyprocess
+pyyaml
+six
+transitions
+apscheduler
+deepdiff
+
+[:python_version < "3"]
+trollius
+
+[:python_version == "2.7"]
+futures>=3.0.0
