@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+spotinst_sdk/__init__.py
+spotinst_sdk/client.py
+spotinst_sdk/session.py
+spotinst_sdk/version.py
+spotinst_sdk_beta_v2.egg-info/PKG-INFO
+spotinst_sdk_beta_v2.egg-info/SOURCES.txt
+spotinst_sdk_beta_v2.egg-info/dependency_links.txt
+spotinst_sdk_beta_v2.egg-info/requires.txt
+spotinst_sdk_beta_v2.egg-info/top_level.txt
