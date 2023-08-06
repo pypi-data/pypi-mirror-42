@@ -1,0 +1,5 @@
+Django==1.11.20
+django-mptt==0.9.0
+django-extensions==2.0.7
+core-main-app==1.0.0
+xml-utils==1.0.0
