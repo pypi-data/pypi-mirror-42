@@ -1,0 +1,51 @@
+Metadata-Version: 1.1
+Name: aliasdict
+Version: 0.9.1
+Summary: a dict that supports alias of KEY
+Home-page: https://bitbucket.org/yokoshin/aliasdict
+Author: yokoshin
+Author-email: UNKNOWN
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description: ================
+        CacheLite
+        ================
+        
+        Documentation
+        -------------
+        
+        The full documentation is at https://cachelite.readthedocs.org/
+        
+        Quickstart
+        ----------
+        
+        Install cachelite::
+        
+            pip install aliasdict
+        
+        Then you can use it.
+        
+        .. code-block:: python
+        
+            import aliasdict from AliasDict
+        
+            adct = AliasDict()
+        
+            #put a key-value
+            adct["YOUR_KEY"] = "YOUR_VALUE"
+        
+            #set a alias to key
+            adct.set_alias("YOUR_KEY", "YOUR_ALIAS")
+        
+            #get value by alias
+            adct["YOUR_ALIAS"]
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
