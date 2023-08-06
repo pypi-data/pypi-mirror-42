@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: direnv
+Version: 2019.2.23
+Summary: direnv (environment switcher) python implementation
+Home-page: https://github.com/looking-for-a-job/direnv.py
+License: UNKNOWN
+Description: [![](https://img.shields.io/pypi/pyversions/direnv.svg?longCache=True)](https://pypi.org/project/direnv/)
+        
+        #### Install
+        ```bash
+        $ [sudo] pip install direnv
+        ```
+        
+        #### Functions
+        function|`__doc__`
+        -|-
+        `direnv.load(path=None)`|load environment variables depending on the current directory
+        `direnv.read(path=None)`|return a dictionary with environment variables depending on the current directory
+        
+        #### Examples
+        `path/to/parent-folder/current-folder/.envrc`
+        
+        `path/to/parent-folder/.envrc`
+        
+        ```python
+        >>> import direnv
+        >>> direnv.load()
+        ```
+        
+        #### Links
+        +   [direnv.net](https://direnv.net/)
+        
+        <p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+Keywords: direnv env
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
